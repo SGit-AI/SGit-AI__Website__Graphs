@@ -64,7 +64,7 @@ SCREEN_PDF_NAME = "meaning-through-connectivity-screen.pdf"  # screen/tablet, Le
 DATE = "21 August 2026"
 
 TITLE = "Meaning Through Connectivity"
-SUBTITLE = ("A discipline of graphs in which the edges carry the meaning — "
+SUBTITLE = ("A discipline of graphs in which the edges carry the meaning: "
             "the claim, the grammar, the full argument, and the worked proof.")
 EPIGRAPH = ("“in our graph we do not use properties, because properties do not have "
             "meaning, they are just words; we capture meaning through connectivity.”")
@@ -80,7 +80,7 @@ PARTS = [
      "tomorrow, and the concrete edge vocabulary this project uses."),
     ("III", "The full argument",
      "People and cars: where this discipline disagrees with schema-first practice, "
-     "and what falls out — at every boundary of a system — when you take it seriously."),
+     "and what falls out, at every boundary of a system, when you take it seriously."),
     ("IV", "The proof",
      "Real worked graphs with real numbers. Every count is labelled live or "
      "parsed-from-a-design-document, and the two are never mixed."),
@@ -88,8 +88,8 @@ PARTS = [
      "What is actually built, where six and a half months of thinking came from, and "
      "how the argument reaches the sibling sites."),
     ("VI", "Appendices",
-     "The vocabulary in plain English, and the disclosure of who is writing — "
-     "including where this approach loses."),
+     "The vocabulary in plain English, and the disclosure of who wrote this and "
+     "how, including where this approach loses."),
 ]
 
 # (part index 0-based, source page, chapter title)
@@ -109,13 +109,13 @@ CHAPTERS = [
     (4, "origins/index.html", "Origins: 2026"),
     (4, "network/index.html", "The network"),
     (5, "glossary/index.html", "Glossary"),
-    (5, "about/participant.html", "The author's interest — and where this loses"),
+    (5, "about/participant.html", "The author's interest, and where this loses"),
 ]
 
 ABOUT = f"""
 <main class="doc">
   <h2 id="about">About this book</h2>
-  <p>This book is <b>a projection of <a href="{HOST}/index.html">graphs.sgit.ai</a></b> — the
+  <p>This book is <b>a projection of <a href="{HOST}/index.html">graphs.sgit.ai</a></b>: the
   same content, in a reading order, in three formats. The chain has three links and one
   source of truth: the chapter text is <b>authored in markdown</b> (each chapter is
   fetchable at <code>{HOST}/content/&lt;chapter&gt;.md</code>), the site pages are rendered
@@ -123,6 +123,10 @@ ABOUT = f"""
   <code>admin/build/gen_book.py</code>. Nothing can drift: the build fails if a page lags
   its markdown or the book lags a page. That is the book's own argument — <em>documents
   are projections of graphs</em> — applied to the book itself.</p>
+  <p>It was written by Dinis Cruz together with a team of AI agents, from voice memos
+  developed into more than 1,300 structured briefs inside a corpus of some 3,300
+  documents; the full statement of how, with the numbers and their sources, is in the
+  closing chapter, <a href="{HOST}/about/participant.html">the author's interest</a>.</p>
   <p>The chapters therefore speak as the site speaks: where a page says “this site”,
   it means graphs.sgit.ai, of which this book is a view — and where a page says “this
   page”, the book says “this chapter”, because the projection rewrites self-references
@@ -130,20 +134,20 @@ ABOUT = f"""
   version you can read on a train.</p>
   <p>Four ways to read it, same content in all four — the two PDFs are regenerated together from the same chapters on every release, and each carries the site version it was generated from on its cover:</p>
   <ul>
-    <li><b><a href="index.html#toc">Chapter pages</a></b> — one chapter per page, with the
+    <li><b><a href="index.html#toc">Chapter pages</a></b>: one chapter per page, with the
     table of contents beside you.</li>
-    <li><b><a href="single.html">One single page</a></b> — the whole book in one HTML file,
+    <li><b><a href="single.html">One single page</a></b>: the whole book in one HTML file,
     for reading straight through, searching with ctrl-F, or fetching once.</li>
-    <li><b><a href="{SCREEN_PDF_NAME}">The screen PDF</a></b> — the single page printed at
-    US Letter in the site's own design: colour, one column, comfortable on a tablet.</li>
-    <li><b><a href="{PDF_NAME}">The print PDF</a></b> — a real 6&Prime;&nbsp;×&nbsp;9&Prime;
+    <li><b><a href="{SCREEN_PDF_NAME}">The screen PDF</a></b>: the single page printed at
+    US Letter in the site's own design. Colour, one column, comfortable on a tablet.</li>
+    <li><b><a href="{PDF_NAME}">The print PDF</a></b>: a real 6&Prime;&nbsp;×&nbsp;9&Prime;
     print interior with gutters, folios and a paginated contents; the edition a
     print-on-demand service takes.</li>
   </ul>
   <h2 id="print">The print edition, and the formats deliberately not offered</h2>
   <p>There are two PDF editions, generated together from the same chapters.
   <b><a href="{SCREEN_PDF_NAME}">The screen edition</a></b> is the site's own design at
-  US Letter — the one to read on a tablet. <b><a href="{PDF_NAME}">The print edition</a></b>
+  US Letter, the one to read on a tablet. <b><a href="{PDF_NAME}">The print edition</a></b>
   is not a printout of the web pages — it is a <b>print interior</b> in the standard
   technical-book format, ready for print-on-demand (KDP and equivalents):</p>
   <ul>
@@ -374,11 +378,11 @@ toc_index.append('</main>')
 idx = head("index.html", f"{TITLE} — the graphs.sgit.ai book",
            "The site's content as a book: sixteen chapters in six parts, readable as "
            "chapter pages, as one single page, or as a PDF. Generated from the site's "
-           "own pages — the book is a projection, and CI fails if they drift.",
+           "own pages; the book is a projection, and CI fails if they drift.",
            og_type="book")
 idx += cover()
 idx += '''<div class="noprint" style="text-align:center;margin:-.4rem 0 1.6rem">
-  <img class="coverimg" src="cover/front.svg" alt="Meaning Through Connectivity — the book cover: a graph whose labelled edges read as sentences">
+  <img class="coverimg" src="cover/front.svg" alt="Meaning Through Connectivity, the book cover: a graph whose labelled edges read as sentences">
 </div>
 '''
 idx += f'''<div class="ctas noprint" style="margin:-.6rem 0 2.4rem">
@@ -454,15 +458,21 @@ pp = f"""<!doctype html>
 </section>
 
 <section class="fm colophon">
-  <p><b>{TITLE}</b> — first edition, {DATE}. Generated from graphs.sgit.ai at site
+  <p><b>{TITLE}</b>, first edition, {DATE}. Generated from graphs.sgit.ai at site
   {VERSION} by <code>admin/build/gen_book.py</code>; the site is the living version of
   this text, and this book is a projection of it.</p>
+  <p>Written by Dinis Cruz together with a team of AI agents. The text was developed
+  from the author's voice memos, recorded almost daily across six and a half months
+  (February to August 2026) on thinking that goes back many years, into more than
+  1,300 structured briefs inside a corpus of some 3,300 markdown documents; the ~55
+  core conceptual documents alone run to around 135,000 words. The numbers are
+  measured, not estimated, and their sources are published with the book.</p>
   <p>This work is released under the Creative Commons Attribution 4.0 International
   licence (CC BY 4.0). You are free to share and adapt this material for any purpose,
   including commercially, as long as you give appropriate credit. Third-party material
   quoted within it stays under its own terms.</p>
   <p>The raw source documents behind every chapter are published at
-  {HOST}/documents/ — the markdown is the source of truth, and this rendering is
+  {HOST}/documents/; the markdown is the source of truth, and this rendering is
   presentation. Hyperlinks are live in the digital editions at {HOST}/book/.</p>
   <p>Interior: 6&Prime; × 9&Prime;, no bleed, typeset with WeasyPrint. Set in Liberation
   Serif, Liberation Sans and Liberation Mono.</p>

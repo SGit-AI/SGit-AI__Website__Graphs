@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.1</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.2</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -97,6 +97,11 @@
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
       <tr>
+        <td class="vnum">v0.3.2</td>
+        <td>21 August 2026</td>
+        <td><b>The publication pass: book-first prose, expanded shorthand, and the author's method stated with numbers.</b> Founder editorial policy, now codified in <code>content/STYLE.md</code>, applied across all sixteen chapters ahead of print-on-demand publication. Three changes of substance. <b>(1) Book-first, neutral wording:</b> the chapters no longer say "this site" and "this page"; they say "this book", "this chapter", or nothing, and cross-references use chapter titles, so the same text reads correctly on paper and on the web. <b>(2) Every shorthand expands at first use, per chapter:</b> gap numbers (G3 is a gap-catalogue entry, not a concept, and now says so), task and ask numbers, and the acronyms (2FA, MFA, IAM, DAG, SBOM, RDF, OWL, WAF, NHI, PKI, REPL, MITRE ATT&amp;CK, BaFin and the rest). <b>(3) The authorship statement:</b> the closing chapter and the print colophon now state plainly that the book was written by Dinis Cruz together with a team of AI agents, from voice memos recorded almost daily across six and a half months on thinking going back years, developed into <b>1,302 founder briefs</b> inside a corpus of <b>3,317 markdown documents</b> (956 catalogued, 4,335 commits), with <b>~135,000 words</b> in the ~55 core conceptual documents alone; all figures measured at v0.33.62 and sourced in the published brief pack.<br><br>And the quiet one: <b>the em-dash pass.</b> Around three hundred of them removed from our own prose in favour of commas, colons, full stops and parentheses; verbatim quotes keep their original punctuation, always, and quote attributions keep the typographic dash. The policy and its two exceptions are in <code>content/STYLE.md</code>, where editors will find them.</td>
+      </tr>
+      <tr>
         <td class="vnum">v0.3.1</td>
         <td>21 August 2026</td>
         <td><b>The cover — generated, in SVG, from the book's own vocabulary.</b> Closes <a href="comms.html">T12</a>. A new <code>admin/build/gen_cover.py</code> produces <a href="../book/cover/front.svg">the front cover as SVG</a> — reusable anywhere on the site, and now shown on <a href="../book/index.html">the book page</a> — and the full KDP print wrap as a vector PDF: back cover, spine and front with 0.125″ bleed, <b>the spine width computed from the interior's page count</b> (119 pages → 0.268″) and enforced by the gate: if the book grows and the cover is not regenerated, the build fails. Palette is the site's family at night — deep teal ground, cream serif, amber accents.<br><br><b>The cover graph is a true subgraph, not decoration</b> — the correction this cover exists to make over the AI-generated draft: seven nodes and six edges in the book's published vocabulary (<code>backed_by</code>, <code>gives_rise_to</code> ×2, <code>impairs</code>, <code>protected_by</code>, <code>accepted_by</code>), every arrow reading as its sentence, the Risk ring in exposure amber, and one ghosted, dashed edge to an <em>unanswered</em> node — the palette rule the book teaches, applied to its own cover. Back cover carries the epigraph, the claim/grammar/proof, the projection note and a barcode clear zone at KDP's position; the spine reads top-to-bottom. Wrap geometry verified from the printed PDF's MediaBox (12.51″×9.25″, within 0.005″ of spec — Chromium pixel rounding, inside KDP tolerance).</td>
@@ -166,7 +171,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.1</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.2</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

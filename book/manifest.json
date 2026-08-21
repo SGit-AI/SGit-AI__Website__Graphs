@@ -1,5 +1,5 @@
 {
-  "version": "v0.3.1",
+  "version": "v0.3.2",
   "title": "Meaning Through Connectivity",
   "chapters": [
     {
@@ -8,7 +8,7 @@
       "title": "Why graphs at all",
       "file": "ch-01-why-graphs-at-all.html",
       "source": "why-graphs/index.html",
-      "source_sha256": "d358159e7a8e5c92b73ef529e61babcb2143e722580d3de6d805e4ad7c08107c"
+      "source_sha256": "b120f4be599abde8360578e9892734543ca754c529ef6cb71368a3c6b1792bb9"
     },
     {
       "n": 2,
@@ -16,7 +16,7 @@
       "title": "The five ideas",
       "file": "ch-02-the-five-ideas.html",
       "source": "start/index.html",
-      "source_sha256": "e195ed221f2b940f6e36b51535bdb72d40fba29453d59fa9461763d643993387"
+      "source_sha256": "3d1cfe14d72bd40c23336b014722f33c2910b5f892f25817def93321d45a1333"
     },
     {
       "n": 3,
@@ -24,7 +24,7 @@
       "title": "The rules you can apply tomorrow",
       "file": "ch-03-the-rules-you-can-apply-tomorrow.html",
       "source": "grammar/index.html",
-      "source_sha256": "d57145dfaf1d15560dd15e6166f64fb63e0e3b07263f6ad3ceb26d9b2e0ee032"
+      "source_sha256": "55a53a30e2e9eaa6211382ee4758c6a2820faf356e8054325f07b1439b842524"
     },
     {
       "n": 4,
@@ -32,7 +32,7 @@
       "title": "The edge set",
       "file": "ch-04-the-edge-set.html",
       "source": "grammar/edge-set.html",
-      "source_sha256": "2fa6680d7fb78b9ccfb5adf9ca4501726359cfe49780f9ae014900c3cc63db63"
+      "source_sha256": "58c3957d52a234c26e978aeaa625d24c27bccb0fd63ee62961494de0e07eaeac"
     },
     {
       "n": 5,
@@ -40,7 +40,7 @@
       "title": "Against schema-first",
       "file": "ch-05-against-schema-first.html",
       "source": "depth/index.html",
-      "source_sha256": "3b37bfbbf164f0abf3ee4177f62f0576bf99705e03bbd81bc63591167b741851"
+      "source_sha256": "b8494143a136722d3288d2ae93e9e68fc4ccfebabdb3c1d91df8f9056e389d6e"
     },
     {
       "n": 6,
@@ -48,7 +48,7 @@
       "title": "A graph at every boundary",
       "file": "ch-06-a-graph-at-every-boundary.html",
       "source": "depth/boundaries.html",
-      "source_sha256": "3cbc385e7cfe653d7ba9cbd6e5526abbf8b63d08750e803b99ce167860d0790b"
+      "source_sha256": "3271bee7b1eea0c86d18e04ba0128bd0b8310cda1a56b607399ba264364ab254"
     },
     {
       "n": 7,
@@ -56,7 +56,7 @@
       "title": "Worked graphs, with real numbers",
       "file": "ch-07-worked-graphs-with-real-numbers.html",
       "source": "examples/index.html",
-      "source_sha256": "e0e17ccbb9a0b9ac257db3d60790cff07bb5337f7e5e63ce9c4d0a53552c8156"
+      "source_sha256": "276f276feaf9e0100362313c47e0b70acba6eccf0fc40c2c34567e49069ae934"
     },
     {
       "n": 8,
@@ -64,7 +64,7 @@
       "title": "Whose session is the agent using?",
       "file": "ch-08-whose-session-is-the-agent-using.html",
       "source": "examples/browser-isolation.html",
-      "source_sha256": "93d0a809d8ccc63109a5fdcfab085c77a7f17c300097d15a7adcf0295def0380"
+      "source_sha256": "91e6c36fcf4547ef5978e4f9aa3f7e6759c12b898b62811565a2bc0de0f7831c"
     },
     {
       "n": 9,
@@ -72,7 +72,7 @@
       "title": "The 2FA instance graph",
       "file": "ch-09-the-2fa-instance-graph.html",
       "source": "examples/2fa.html",
-      "source_sha256": "77efa56ff1ef9192f29c3c2ef0adbf0382898889f92a386483031dd3be50bc33"
+      "source_sha256": "d27195df3e9ae913a308948e110d1009ee27f94f75deeec11929be605fd9d550"
     },
     {
       "n": 10,
@@ -80,7 +80,7 @@
       "title": "Article 26(5), fact to board and back",
       "file": "ch-10-article-26-5-fact-to-board-and-back.html",
       "source": "examples/article-26-5.html",
-      "source_sha256": "0f87febbd367bb60baa8e33ea7c5ddecd72a2b6e1d200481b92761aa333f9b32"
+      "source_sha256": "2138fea998f3cca511c85e87a20b7b5b1f339a69bbcf2fedf9a7df03a3727b65"
     },
     {
       "n": 11,
@@ -88,7 +88,7 @@
       "title": "Wardley maps as graphs",
       "file": "ch-11-wardley-maps-as-graphs.html",
       "source": "maps/index.html",
-      "source_sha256": "b168376d79b5ba2728393704cc1573532c9f7dc63aea31cdb43da2737fdce341"
+      "source_sha256": "749633b640dc0c98148d968db4d888a5ca3578ca3c631cb3e0f5a21252e3ef18"
     },
     {
       "n": 12,
@@ -96,7 +96,7 @@
       "title": "What ships, what is argued",
       "file": "ch-12-what-ships-what-is-argued.html",
       "source": "shipped/index.html",
-      "source_sha256": "0145a03619ca79ece711da2cedd5399637f12ac09a719b0603477921eefd563a"
+      "source_sha256": "577b2e724f0764763d4fdb7d9c3c97546921e1d8489ca9659ce8347e728f85c2"
     },
     {
       "n": 13,
@@ -104,7 +104,7 @@
       "title": "Origins: 2026",
       "file": "ch-13-origins-2026.html",
       "source": "origins/index.html",
-      "source_sha256": "148726aea44fe2b15afa16bf463c17c5a3f308efbdf4e996b6166bfe4c9d06e8"
+      "source_sha256": "fd9d33246fbc8552ed63bc1f9f2156d63f4e97a4076a46f9e68165d33bce6c34"
     },
     {
       "n": 14,
@@ -112,7 +112,7 @@
       "title": "The network",
       "file": "ch-14-the-network.html",
       "source": "network/index.html",
-      "source_sha256": "2bb059c2ed4637ff7e6b3213c12636466797a1eb553e85557c9c7df5e906e235"
+      "source_sha256": "a884a67223883704b5863e7504fe9a6b83803d87480c2489cf90f7b21aea3f14"
     },
     {
       "n": 15,
@@ -120,35 +120,35 @@
       "title": "Glossary",
       "file": "ch-15-glossary.html",
       "source": "glossary/index.html",
-      "source_sha256": "8eabf377805a9ef3e357bcd097ec85b0d3aa46365896bc5117372c919b55bb45"
+      "source_sha256": "f40b9be5a65fb2efd091dc815fb5984a510e49ec80fd9126f1cf5914f96fb061"
     },
     {
       "n": 16,
       "part": "Part VI \u00b7 Appendices",
-      "title": "The author's interest \u2014 and where this loses",
+      "title": "The author's interest, and where this loses",
       "file": "ch-16-the-author-s-interest-and-where-this-loses.html",
       "source": "about/participant.html",
-      "source_sha256": "6fdef0f2dfb7e0e0f2badbf807c9c75d07d00a483ad0e2da159527cdf5100d07"
+      "source_sha256": "164f1e43e6a5964ef1c684792b2dfdbcb01d1c636bc72aeb3695eef23eb40613"
     }
   ],
   "pdfs": [
     {
       "file": "meaning-through-connectivity.pdf",
       "edition": "print interior 6x9",
-      "version": "v0.3.1",
+      "version": "v0.3.2",
       "pages": 119,
       "typesetter": "weasyprint 69.0"
     },
     {
       "file": "meaning-through-connectivity-screen.pdf",
       "edition": "screen (US Letter)",
-      "version": "v0.3.1",
-      "pages": 82,
+      "version": "v0.3.2",
+      "pages": 85,
       "typesetter": "chromium"
     }
   ],
   "cover": {
-    "version": "v0.3.1",
+    "version": "v0.3.2",
     "pages_basis": 119,
     "spine_in": 0.268,
     "wrap_in": [

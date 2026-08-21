@@ -251,11 +251,11 @@ def back_content():
     y += 52
     blocks = [
         ("THE CLAIM", "A node is just a node. The same value, differently connected, "
-         "means different things — the difference is not in the value, it is in "
+         "means different things: the difference is not in the value, it is in "
          "the connectivity."),
         ("THE GRAMMAR", "Every edge is a verb with a distinct inverse. Paths read as "
-         "sentences. And never render the whole graph — render the result of a query."),
-        ("THE PROOF", "Real worked graphs with real numbers — including three live "
+         "sentences. And never render the whole graph: render the result of a query."),
+        ("THE PROOF", "Real worked graphs with real numbers, including three live "
          "vaults you can open and count."),
     ]
     for head, body in blocks:
@@ -268,9 +268,10 @@ def back_content():
             y += 23
         y += 18
     y += 4
-    for ln in wrap("The living version of this book is graphs.sgit.ai — the book "
-                   "is generated from the site’s own pages, and cannot drift from "
-                   "them.", 50):
+    for ln in wrap("Written by Dinis Cruz with a team of AI agents, from voice "
+                   "memos developed into 1,300+ briefs across a 3,300-document "
+                   "corpus. The living version is graphs.sgit.ai; this book is "
+                   "generated from it, and cannot drift from it.", 50):
         t.append(f'<text x="60" y="{y}" font-family="{SERIF}" font-style="italic" '
                  f'font-size="14.5" fill="{cream(.6)}">{ln}</text>')
         y += 21

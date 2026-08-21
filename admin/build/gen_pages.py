@@ -273,7 +273,8 @@ def render_page(md_file):
 
 
 def main():
-    entries = [render_page(f) for f in sorted(SRC.glob("*.md"))]
+    entries = [render_page(f) for f in sorted(SRC.glob("*.md"))
+               if f.read_text().startswith("---")]  # STYLE.md etc. are not chapters
     (SRC / "manifest.json").write_text(json.dumps(
         {"pages": entries}, indent=2) + "\n")
     print(f"gen_pages: {len(entries)} page(s) rendered from content/")
