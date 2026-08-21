@@ -27,9 +27,11 @@ Live site: https://graphs.sgit.ai (GitHub Pages, deployed from `dev`).
 - `maps/` — Wardley maps as graphs, and the `[visibility, evolution]` coordinate trap
 - `book/` — **the site as a book**, *Meaning Through Connectivity*: sixteen chapters in six
   parts, generated from the site's own pages by `gen_book.py`, in three reading modes —
-  chapter pages with a left table of contents, one single page, and a PDF that is a real
-  print interior (6″×9″, mirrored gutters, folios, paginated contents — typeset by
-  WeasyPrint from `book/print.html`; KDP-ready, cover excluded).
+  chapter pages with a left table of contents, one single page, and two PDF editions
+  regenerated together from the same chapters: a print interior (6″×9″, mirrored gutters,
+  folios, paginated contents — typeset by WeasyPrint from `book/print.html`; KDP-ready,
+  cover excluded) and a screen edition (Chromium's print of `single.html` at US Letter,
+  in the site's own design). Each carries the site version on its cover.
   `book/manifest.json` records source hashes; the gate fails if the book goes stale
 - `glossary/` — every technical term with a plain-English alternative beside it
 - `shipped/` — what is built, what is argued, and what does not exist anywhere

@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.1</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.2</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -36,7 +36,8 @@
       <div class="sub">
       <a class="sl" href="../book/index.html">Table of contents</a>
       <a class="sl" href="../book/single.html">Read it in one page</a>
-      <a class="sl" href="../book/meaning-through-connectivity.pdf">Download the PDF</a>
+      <a class="sl" href="../book/meaning-through-connectivity.pdf">The print PDF (6&times;9)</a>
+      <a class="sl" href="../book/meaning-through-connectivity-screen.pdf">The screen PDF (tablet)</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -96,6 +97,11 @@
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
       <tr>
+        <td class="vnum">v0.2.2</td>
+        <td>21 August 2026</td>
+        <td><b>Two PDF editions, one source.</b> The screen-styled PDF returns alongside the print interior — founder request: the site-design edition reads well on a tablet, so both now ship. <a href="../book/meaning-through-connectivity.pdf">The print PDF</a> stays the 6″×9″ technical-book interior; <a href="../book/meaning-through-connectivity-screen.pdf">the screen PDF</a> is Chromium's print of the single page at US Letter in the site's own design. <b>Both regenerate together from the same extracted chapters on every release</b> — <code>gen_book.py</code> emits them in one run, each cover carries the site version it was generated from, <code>book/manifest.json</code> records file, edition, page count, typesetter and version for each, and the gate's book-projection check now requires <b>both</b> editions to be present and current: a release cannot ship with either PDF lagging the content. Nav, footer, front page, <code>index.md</code> and <code>llms.txt</code> now offer the pair.</td>
+      </tr>
+      <tr>
         <td class="vnum">v0.2.1</td>
         <td>21 August 2026</td>
         <td><b>The print edition.</b> The book's PDF is no longer a printout of the web pages — it is a <b>print interior in the standard technical-book format</b>, following a format review against print-on-demand (KDP) requirements: <b>6″×9″ trim</b> (the PDF page size must equal the trim size, and 8.5″×11″ Letter — the previous format — is a workbook size, not a trade size); <b>mirrored margins</b>, 0.75″ gutter / 0.5″ outside, above KDP's minimums for a no-bleed interior of this length; <b>folios</b> bottom-outside and <b>running heads</b> (book title verso, chapter title recto), absent from front matter and part pages; chapters opening on the recto; a <b>contents whose page numbers are computed by the typesetter</b>, so they cannot disagree with the pagination; justified, hyphenated, monochrome, no bleed, fonts embedded. <b>117 pages</b>, typeset by WeasyPrint from a new generated <code>book/print.html</code>; Chromium remains as a stated-degraded fallback. Verified from the rendered pages, not assumed: folio and running-head margin boxes checked on real versos and rectos, contents leaders checked on the contents page.<br><br>Deliberately deferred, and recorded rather than half-done: <b>the cover</b> (a separate artefact sized to trim + spine + bleed, spine width dependent on final page count — comms <b>T12</b>) and <b>the Kindle edition</b> (a fixed-layout PDF is the wrong upload for Kindle; the right artefact is a reflowable EPUB from these same chapters — comms <b>T13</b>). The format review itself is captured on <a href="../book/index.html#print">the book's about page</a>.</td>
@@ -135,7 +141,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.1</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.2</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
@@ -144,7 +150,8 @@
     <a href="../glossary/index.html">Glossary</a>
     <a href="../book/index.html">The book</a>
     <a href="../book/single.html">&nbsp;&nbsp;&hellip; in one page</a>
-    <a href="../book/meaning-through-connectivity.pdf">&nbsp;&nbsp;&hellip; as a PDF</a>
+    <a href="../book/meaning-through-connectivity.pdf">&nbsp;&nbsp;&hellip; as a print PDF</a>
+    <a href="../book/meaning-through-connectivity-screen.pdf">&nbsp;&nbsp;&hellip; as a screen PDF</a>
   </div>
   <div>
     <h4>The grammar</h4>

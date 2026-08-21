@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.2.1 (21 August 2026). Published by the sgit project — participant
+Site version: v0.2.2 (21 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /briefs/ is the source of truth and carries the same licence.
 
@@ -193,8 +193,12 @@ chapters in six parts, **generated from the site's own pages** so the two cannot
 - https://graphs.sgit.ai/book/single.html — **all sixteen chapters in one HTML page.**
   For an agent this is the one-fetch version of the site's rendered prose, the way
   /llms-full.txt is the one-fetch version of the source documents.
+- https://graphs.sgit.ai/book/meaning-through-connectivity-screen.pdf — the screen
+  PDF: the single page printed at US Letter in the site's own design, made for tablet
+  reading. Both PDF editions regenerate together from the same chapters on every
+  release and carry the site version on their cover; the build fails if either lags.
 - https://graphs.sgit.ai/book/meaning-through-connectivity.pdf — the print-edition
-  PDF: **a 117-page, 6"x9" print interior in the standard technical-book format** —
+  PDF: **a 6"x9" print interior in the standard technical-book format** —
   mirrored gutter margins, folios bottom-outside, running heads, a paginated contents
   computed by the typesetter, justified and hyphenated, monochrome, no bleed, fonts
   embedded. Ready for print-on-demand (KDP); the cover is a separate artefact and is

@@ -21,6 +21,10 @@ Three modes, one source:
   book/print.html      the print-interior source: front matter (half-title,
                        title page, edition page, a contents whose page numbers
                        are computed by the renderer), part dividers, chapters
+  book/meaning-through-connectivity-screen.pdf
+                       the screen edition: Chromium's print of single.html at
+                       US Letter, in the site's own design — the one that reads
+                       well on a tablet. Colour, one column, no folios.
   book/meaning-through-connectivity.pdf
                        the print interior, typeset by WeasyPrint from
                        print.html: 6in x 9in trim, mirrored 0.75/0.5in margins,
@@ -52,7 +56,12 @@ ROOT = Path(__file__).resolve().parents[2]
 VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
 HOST = "https://graphs.sgit.ai"
 OUT = ROOT / "book"
-PDF_NAME = "meaning-through-connectivity.pdf"
+# Two PDF editions, one source. Both are regenerated on every release — the
+# gate's freshness check makes that non-optional — and both carry the site
+# version on their cover/edition page, so a reader can always tell which
+# release of the content they are holding.
+PDF_NAME = "meaning-through-connectivity.pdf"          # print interior, 6x9
+SCREEN_PDF_NAME = "meaning-through-connectivity-screen.pdf"  # screen/tablet, Letter
 DATE = "21 August 2026"
 
 TITLE = "Meaning Through Connectivity"
@@ -116,19 +125,25 @@ ABOUT = f"""
   <p>The chapters therefore speak as the site speaks: where a page says “this site”,
   it means graphs.sgit.ai, of which this book is a view. The site is the living version;
   the book is the version you can read on a train.</p>
-  <p>Three ways to read it, same content in all three:</p>
+  <p>Four ways to read it, same content in all four — the two PDFs are regenerated together from the same chapters on every release, and each carries the site version it was generated from on its cover:</p>
   <ul>
     <li><b><a href="index.html#toc">Chapter pages</a></b> — one chapter per page, with the
     table of contents beside you.</li>
     <li><b><a href="single.html">One single page</a></b> — the whole book in one HTML file,
     for reading straight through, searching with ctrl-F, or fetching once.</li>
-    <li><b><a href="{PDF_NAME}">The PDF</a></b> — printed from the single page, for offline
-    reading and for handing to someone.</li>
+    <li><b><a href="{SCREEN_PDF_NAME}">The screen PDF</a></b> — the single page printed at
+    US Letter in the site's own design: colour, one column, comfortable on a tablet.</li>
+    <li><b><a href="{PDF_NAME}">The print PDF</a></b> — a real 6&Prime;&nbsp;×&nbsp;9&Prime;
+    print interior with gutters, folios and a paginated contents; the edition a
+    print-on-demand service takes.</li>
   </ul>
   <h2 id="print">The print edition, and the formats deliberately not offered</h2>
-  <p>The PDF is not a printout of the web pages — it is a <b>print interior</b> in the
-  standard technical-book format, ready for print-on-demand (KDP and equivalents),
-  cover excluded:</p>
+  <p>There are two PDF editions, generated together from the same chapters.
+  <b><a href="{SCREEN_PDF_NAME}">The screen edition</a></b> is the site's own design at
+  US Letter — the one to read on a tablet. <b><a href="{PDF_NAME}">The print edition</a></b>
+  is not a printout of the web pages — it is a <b>print interior</b> in the standard
+  technical-book format, ready for print-on-demand (KDP and equivalents), cover
+  excluded:</p>
   <ul>
     <li><b>6&Prime; × 9&Prime; trim</b>, the standard trade size, with <b>no bleed</b> —
     nothing runs to the page edge.</li>
@@ -248,7 +263,8 @@ def toc_html(current=None):
     out.append('  <div class="tocmodes">')
     out.append('    <a href="index.html">☰ Cover &amp; contents</a>')
     out.append('    <a href="single.html">Read it in one page</a>')
-    out.append(f'    <a href="{PDF_NAME}">Download the PDF</a>')
+    out.append(f'    <a href="{PDF_NAME}">The print PDF (6×9)</a>')
+    out.append(f'    <a href="{SCREEN_PDF_NAME}">The screen PDF (tablet)</a>')
     out.append('  </div>')
     out.append('</aside>')
     return '\n'.join(out)
@@ -257,7 +273,8 @@ def toc_html(current=None):
 def bookbar():
     return (f'<div class="bookbar"><a href="index.html">☰ Contents</a> · '
             f'<a href="single.html">single page</a> · '
-            f'<a href="{PDF_NAME}">PDF</a> · '
+            f'<a href="{PDF_NAME}">print PDF</a> · '
+            f'<a href="{SCREEN_PDF_NAME}">screen PDF</a> · '
             f'<span>{TITLE} · site {VERSION}</span></div>')
 
 
@@ -281,7 +298,7 @@ for old in glob(str(OUT / "ch-*.html")):
 CH_FILES = {n: f"ch-{n:02d}-{slugify(t)}.html" for n, (_, _, t) in enumerate(CHAPTERS, 1)}
 PAGE_TO_CH = {source: n for n, (_, source, _) in enumerate(CHAPTERS, 1)}
 
-manifest = {"version": VERSION, "title": TITLE, "pdf": PDF_NAME, "chapters": []}
+manifest = {"version": VERSION, "title": TITLE, "chapters": []}
 singles = []
 
 for n, (pi, source, title) in enumerate(CHAPTERS, 1):
@@ -345,7 +362,8 @@ idx += cover()
 idx += f'''<div class="ctas noprint" style="margin:-.6rem 0 2.4rem">
   <a class="cta1" href="{CH_FILES[1]}">Start reading →</a>
   <a class="cta2" href="single.html">The whole book in one page →</a>
-  <a class="cta2" href="{PDF_NAME}">Download the PDF →</a>
+  <a class="cta2" href="{SCREEN_PDF_NAME}">The screen PDF →</a>
+  <a class="cta2" href="{PDF_NAME}">The print PDF →</a>
 </div>
 '''
 idx += ABOUT
@@ -361,7 +379,8 @@ sp = head("single.html", f"{TITLE} — the whole book in one page",
 sp += cover()
 sp += f'''<div class="ctas noprint" style="margin:-.6rem 0 1rem">
   <a class="cta2" href="index.html">☰ Chapter pages →</a>
-  <a class="cta2" href="{PDF_NAME}">Download the PDF →</a>
+  <a class="cta2" href="{SCREEN_PDF_NAME}">The screen PDF →</a>
+  <a class="cta2" href="{PDF_NAME}">The print PDF →</a>
 </div>
 <div class="singletoc noprint">
 '''
@@ -455,17 +474,21 @@ pp += "</body>\n</html>\n"
 print(f"gen_book: {len(CHAPTERS)} chapters, index.html, single.html, manifest.json")
 
 # ------------------------------------------------------------------ PDF ----
-# The print interior. WeasyPrint gives the full book apparatus (folios, running
-# heads, contents page numbers via target-counter); Chromium honours the 6x9
-# @page geometry but none of the margin-box content, so it is a degraded
-# fallback, clearly reported as such.
-pdf = OUT / PDF_NAME
+# Two editions from the same chapters, both stamped with the site version:
+#   print  — WeasyPrint typesets print.html: 6x9 trim, folios, running heads,
+#            paginated contents. Chromium fallback keeps the trim, loses the
+#            margin-box apparatus, and says so.
+#   screen — Chromium prints single.html at US Letter in the site's own
+#            design: colour, one column, comfortable on a tablet.
+# Both are committed (CI has neither WeasyPrint nor a browser), and the
+# gate's freshness check forces this script to rerun on every release, so
+# neither edition can lag the content or the version.
 
-def pdf_pages():
+def pdf_pages(path):
     """Count pages in either PDF flavour: Chromium writes plain object headers,
     WeasyPrint (pydyf) packs the object tree into compressed object streams."""
     import zlib
-    d = pdf.read_bytes()
+    d = path.read_bytes()
     n = len(re.findall(rb"/Type\s*/Page[^s]", d))
     for s in re.findall(rb"stream\r?\n(.*?)endstream", d, re.S):
         try:
@@ -474,37 +497,52 @@ def pdf_pages():
             continue
     return n
 
+manifest["pdfs"] = []
+
+def record(path, edition, typesetter):
+    manifest["pdfs"].append({
+        "file": path.name, "edition": edition, "version": VERSION,
+        "pages": pdf_pages(path), "typesetter": typesetter,
+    })
+    (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    print(f"gen_book: {path.name} — {manifest['pdfs'][-1]['pages']} pages, "
+          f"{path.stat().st_size:,} bytes ({edition}, {typesetter})")
+
+chromium = next((c for c in
+                 sorted(glob("/opt/pw-browsers/chromium-*/chrome-linux/chrome")) +
+                 [shutil.which("chromium") or "", shutil.which("google-chrome") or ""]
+                 if c and Path(c).exists()), None)
+
+def chromium_print(src, dest):
+    for flags in (["--no-pdf-header-footer"], ["--print-to-pdf-no-header"]):
+        r = subprocess.run(
+            [chromium, "--headless", "--no-sandbox", "--disable-gpu",
+             "--virtual-time-budget=10000", *flags,
+             f"--print-to-pdf={dest}", f"file://{src}"],
+            capture_output=True)
+        if dest.exists() and dest.stat().st_size > 50_000:
+            return True
+    print(f"gen_book: Chromium print failed for {src.name}: "
+          f"{r.stderr.decode()[-300:]}", file=sys.stderr)
+    return False
+
+# --- the print interior ---
+pdf = OUT / PDF_NAME
 try:
     import weasyprint
     weasyprint.HTML(filename=str(OUT / "print.html")).write_pdf(str(pdf))
-    manifest["pdf_pages"] = pdf_pages()
-    manifest["pdf_typesetter"] = f"weasyprint {weasyprint.__version__}"
-    (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    print(f"gen_book: {PDF_NAME} — {manifest['pdf_pages']} pages, "
-          f"{pdf.stat().st_size:,} bytes (WeasyPrint, 6x9 print interior)")
-    sys.exit(0)
+    record(pdf, "print interior 6x9", f"weasyprint {weasyprint.__version__}")
 except ImportError:
-    print("gen_book: WeasyPrint not available — falling back to Chromium "
-          "(6x9, but no folios and no contents page numbers)")
+    print("gen_book: WeasyPrint not available — Chromium fallback for the print "
+          "interior (6x9, but no folios and no contents page numbers)")
+    if chromium and chromium_print(OUT / "print.html", pdf):
+        record(pdf, "print interior 6x9", "chromium fallback (no folios)")
+    else:
+        print("gen_book: print PDF NOT regenerated (the gate blocks a stale book)")
 
-PDF_CANDIDATES = sorted(glob("/opt/pw-browsers/chromium-*/chrome-linux/chrome")) + [
-    shutil.which("chromium") or "", shutil.which("google-chrome") or ""]
-chrome = next((c for c in PDF_CANDIDATES if c and Path(c).exists()), None)
-if not chrome:
-    print("gen_book: no Chromium either — PDF NOT regenerated (commit blocks if stale)")
-    sys.exit(0)
-for flags in (["--no-pdf-header-footer"], ["--print-to-pdf-no-header"]):
-    r = subprocess.run(
-        [chrome, "--headless", "--no-sandbox", "--disable-gpu",
-         "--virtual-time-budget=10000", *flags,
-         f"--print-to-pdf={pdf}", f"file://{OUT / 'print.html'}"],
-        capture_output=True)
-    if pdf.exists() and pdf.stat().st_size > 50_000:
-        manifest["pdf_pages"] = pdf_pages()
-        manifest["pdf_typesetter"] = "chromium fallback (no folios)"
-        (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-        print(f"gen_book: {PDF_NAME} — {manifest['pdf_pages']} pages, "
-              f"{pdf.stat().st_size:,} bytes (Chromium fallback)")
-        break
+# --- the screen edition ---
+spdf = OUT / SCREEN_PDF_NAME
+if chromium and chromium_print(OUT / "single.html", spdf):
+    record(spdf, "screen (US Letter)", "chromium")
 else:
-    sys.exit(f"gen_book: PDF generation failed: {r.stderr.decode()[-400:]}")
+    print("gen_book: screen PDF NOT regenerated (no Chromium; the gate blocks a stale book)")

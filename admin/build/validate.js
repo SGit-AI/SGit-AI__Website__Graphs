@@ -176,9 +176,23 @@ if (!fs.existsSync(bookManifestPath)) {
       errors.push(`book chapter file missing: book/${ch.file}`);
     }
   }
-  const pdf = path.join(ROOT, 'book', book.pdf);
-  if (!fs.existsSync(pdf) || fs.statSync(pdf).size < 50000) {
-    errors.push(`book/${book.pdf} is missing or truncated — gen_book.py retypesets it (WeasyPrint, or Chromium as fallback)`);
+  // both editions ship on every release: the print interior and the screen PDF
+  const REQUIRED_PDFS = ['meaning-through-connectivity.pdf',
+                         'meaning-through-connectivity-screen.pdf'];
+  const listed = (book.pdfs || []).map(e => e.file);
+  for (const name of REQUIRED_PDFS) {
+    if (!listed.includes(name)) {
+      errors.push(`book/manifest.json has no entry for ${name} — gen_book.py generates both editions`);
+      continue;
+    }
+    const entry = book.pdfs.find(e => e.file === name);
+    if (entry.version !== VERSION) {
+      errors.push(`book/${name} was generated at ${entry.version}, site is ${VERSION} — run gen_book.py`);
+    }
+    const f = path.join(ROOT, 'book', name);
+    if (!fs.existsSync(f) || fs.statSync(f).size < 50000) {
+      errors.push(`book/${name} is missing or truncated — gen_book.py regenerates it (WeasyPrint / Chromium)`);
+    }
   }
 }
 

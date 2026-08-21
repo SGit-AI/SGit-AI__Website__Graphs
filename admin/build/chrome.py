@@ -44,7 +44,8 @@ NAV = [
     ("The book", "book/index.html", [
         ("Table of contents", "book/index.html"),
         ("Read it in one page", "book/single.html"),
-        ("Download the PDF", "book/meaning-through-connectivity.pdf"),
+        ("The print PDF (6&times;9)", "book/meaning-through-connectivity.pdf"),
+        ("The screen PDF (tablet)", "book/meaning-through-connectivity-screen.pdf"),
     ], ("book/",)),
     ("The grammar", "grammar/index.html", [
         ("The rules you can apply tomorrow", "grammar/index.html"),
@@ -82,7 +83,8 @@ FOOTER = [
         ("Glossary", "glossary/index.html"),
         ("The book", "book/index.html"),
         ("&nbsp;&nbsp;&hellip; in one page", "book/single.html"),
-        ("&nbsp;&nbsp;&hellip; as a PDF", "book/meaning-through-connectivity.pdf"),
+        ("&nbsp;&nbsp;&hellip; as a print PDF", "book/meaning-through-connectivity.pdf"),
+        ("&nbsp;&nbsp;&hellip; as a screen PDF", "book/meaning-through-connectivity-screen.pdf"),
     ]),
     ("The grammar", [
         ("The rules", "grammar/index.html"),

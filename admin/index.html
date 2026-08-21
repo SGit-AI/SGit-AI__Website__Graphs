@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.1</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.2</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -36,7 +36,8 @@
       <div class="sub">
       <a class="sl" href="../book/index.html">Table of contents</a>
       <a class="sl" href="../book/single.html">Read it in one page</a>
-      <a class="sl" href="../book/meaning-through-connectivity.pdf">Download the PDF</a>
+      <a class="sl" href="../book/meaning-through-connectivity.pdf">The print PDF (6&times;9)</a>
+      <a class="sl" href="../book/meaning-through-connectivity-screen.pdf">The screen PDF (tablet)</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -129,7 +130,7 @@
       <tr><td><code>admin/build/version.txt</code></td><td>The version. One file, one line, bumped exactly once per release.</td></tr>
       <tr><td><code>admin/build/chrome.py</code></td><td><b>The single definition of the nav and the footer</b>, and the tool that rewrites them in place across every page. Every page is hand-written static HTML — a human can open any file and edit it — but the chrome is not hand-maintained, which is what stops a thirty-page site from drifting. It also stamps the version into <code>llms.txt</code>, <code>llms-full.txt</code> and <code>index.md</code>, because hand-editing it there silently missed twice on a sibling site.</td></tr>
       <tr><td><code>admin/build/gen_documents.py</code></td><td>Generates the <a href="../documents/index.html">reader pages</a> from the raw markdown under <code>/briefs/</code>. Each page renders its own source file client-side, so it cannot drift from the document it claims to render.</td></tr>
-      <tr><td><code>admin/build/gen_book.py</code></td><td>Generates <a href="../book/index.html">the book</a> — chapter pages with a persistent table of contents, the single page, <code>book/print.html</code> (the print-interior source with its front matter and paginated contents), the manifest the gate checks, and the PDF, typeset by WeasyPrint at 6″×9″ with mirrored gutters, folios and running heads. Committed, because CI has neither WeasyPrint nor a browser. Falls back to Chromium at the same trim size, minus the folios and contents page numbers, and says so.</td></tr>
+      <tr><td><code>admin/build/gen_book.py</code></td><td>Generates <a href="../book/index.html">the book</a> — chapter pages with a persistent table of contents, the single page, <code>book/print.html</code> (the print-interior source with its front matter and paginated contents), the manifest the gate checks, and <b>both PDF editions</b> — the print interior (WeasyPrint, 6″×9″, mirrored gutters, folios, running heads; Chromium fallback at the same trim, minus the apparatus, and it says so) and the screen edition (Chromium's print of <code>single.html</code> at US Letter, in the site's own design). Both are committed, because CI has neither WeasyPrint nor a browser; both are stamped with the site version, and the gate refuses a release if either lags.</td></tr>
       <tr><td><code>admin/build/validate.js</code></td><td>The gate. Node, no dependencies.</td></tr>
       <tr><td><code>assets/site.css</code></td><td>The shared stylesheet, in the sgit.ai design language, plus this site's components: the altitude doors, the proof strip, the agent block, and the semantic edge palette — amber is exposure, green is assurance, ghosted is unanswered.</td></tr>
       <tr><td><code>assets/nav.js</code>, <code>assets/mdreader.js</code></td><td>The phone menu, and the in-page markdown reader. Both degrade: if neither loads, every nav group label is still a link to a real page and every document is still reachable as raw markdown.</td></tr>
@@ -174,7 +175,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.1</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.2</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
@@ -183,7 +184,8 @@
     <a href="../glossary/index.html">Glossary</a>
     <a href="../book/index.html">The book</a>
     <a href="../book/single.html">&nbsp;&nbsp;&hellip; in one page</a>
-    <a href="../book/meaning-through-connectivity.pdf">&nbsp;&nbsp;&hellip; as a PDF</a>
+    <a href="../book/meaning-through-connectivity.pdf">&nbsp;&nbsp;&hellip; as a print PDF</a>
+    <a href="../book/meaning-through-connectivity-screen.pdf">&nbsp;&nbsp;&hellip; as a screen PDF</a>
   </div>
   <div>
     <h4>The grammar</h4>
