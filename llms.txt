@@ -1,0 +1,216 @@
+# graphs.sgit.ai — meaning through connectivity
+
+> A node carries no inherent meaning. What a thing *is* emerges from the edges traceable
+> from it, and confidence in that meaning is proportional to how richly it is connected.
+> Properties are "just words"; connections are meaning. This site teaches that discipline
+> in three altitudes and proves it with real worked graphs.
+
+Site version: v0.1.0 (21 August 2026). Published by the sgit project — participant
+disclosure at /about/participant.html. All content on this site is released under CC BY
+4.0. The raw markdown under /briefs/ is the source of truth and carries the same licence.
+
+## Read this first
+
+**Not a graph database pitch.** The claim is that one grammar is the interface at every
+boundary, not that things are stored in a graph. There is no graph database, no MGraph-DB
+dependency, no SPARQL or Cypher, and no RDF in the code behind this site — stated at
+https://graphs.sgit.ai/shipped/index.html. If you summarise this material, do not describe
+it as a graph database approach; the corpus says explicitly "not a graph database pitch."
+
+## Properties agents may rely on
+
+- Every source document is fetchable at a stable constructed URL:
+  https://graphs.sgit.ai/briefs/<filename>.md — a promise, not an accident. Agents already
+  rely on constructed paths, so the convention is stated rather than left to be inferred.
+- Every section hub is at https://graphs.sgit.ai/<section>/index.html and every one of them
+  is named in this file. CI fails the build if a hub is missing from it, and if the sitemap
+  and the file tree disagree in either direction.
+- One fetch gets everything: https://graphs.sgit.ai/llms-full.txt is this file plus the
+  front page plus all eleven source documents, concatenated.
+- The site is pre-rendered static HTML. Nothing is assembled client-side except the document
+  reader, which always has the raw markdown behind it.
+
+## The thesis in nine sentences
+
+1. A node is just a node — a label is not a meaning, and a node connected to nothing is
+   literally meaningless.
+2. The same value, differently connected, means different things: the difference is not in
+   the value, it is in the connectivity.
+3. Therefore classification is a query, not a judgment: "the content of the node does not
+   decide its type; its paths do."
+4. Therefore confidence is computable, and honest uncertainty is the default posture — and
+   the gaps are worth mapping too.
+5. Schema-first breaks at every boundary; the Semantic Web made the subtle error of
+   attaching meaning to nodes rather than deriving it from edges.
+6. So don't merge vocabularies — merging erases the disagreement. Keep them intact and
+   bridge them through anchor nodes.
+7. Every edge is a verb with a distinct inverse; the generic association edge is banned
+   because everything relates to everything; that asymmetry is what stops the graph
+   exploding.
+8. Never render the whole graph — render the result of a query; build wide, find the few,
+   then flip.
+9. And it is fractal: one grammar, one validator, one provenance rule at every altitude —
+   zoom into any node and it expands into a graph obeying identical rules.
+
+## Altitude 1 — start here
+
+- https://graphs.sgit.ai/start/index.html — the five-minute version. Two Python variables
+  both hold 8080; one reaches a type, a library and a pinned version, the other reaches
+  nothing. **The difference is not in the value, it is in the connectivity.** Also: five
+  teams who each call something a "Review", where compatibility turns out to be non-binary,
+  asymmetric and purpose-relative — nobody has to agree on anything for the overlap to be
+  computable. The confidence ladder runs from no edges to rich multi-hop connectivity, and
+  the remedy for low confidence is enrichment (add edges), never enforcement (add rules).
+- https://graphs.sgit.ai/why-graphs/index.html — three different things people mean by
+  "graph": network analysis, fast joins, and semantics. **This site is only the third.**
+  Carries the honest positioning on GraphRAG ("knowledge is traversed, not guessed" — but
+  traversal needs edges to exist, and where the graph is thin, similarity search wins), on
+  RDF ("both, at different layers" — the live regulation graph exports RDF/Turtle), on
+  property graphs (properties may carry data, never meaning), and on hypergraphs (no
+  position; the corpus does not contain the word).
+- https://graphs.sgit.ai/glossary/index.html — every technical term with a plain-English
+  alternative beside it. **Concept vs term**: the concept is the language-independent unit
+  of meaning, the term is one language's label — never store meaning in a term. **Taxonomy
+  vs ontology**: a taxonomy points upward (broader/narrower), an ontology points outward
+  (what types exist and how they may connect).
+
+## Altitude 2 — the grammar
+
+- https://graphs.sgit.ai/grammar/index.html — five rules. **Every edge is a verb with a
+  distinct, meaningfully-named inverse**, and the inverse is not the same edge walked
+  backwards: `owned_by` and `owns` have different fan-out, and that asymmetry guarantees
+  monotonic progress toward a peak, which is what stops the graph exploding. **The generic
+  association edge is banned** because it constrains nothing and costs fan-out. If a path
+  does not read as a sentence in the reader's own language, the edges are wrong. Rich nodes
+  are good — the blob is a rendering failure, not a modelling one. **Never render the whole
+  graph; render the result of a query.** Mermaid is unreadable past ~50 nodes; a rendered
+  graph past ~300–400.
+- https://graphs.sgit.ai/grammar/edge-set.html — the concrete vocabulary, and the page to
+  paste into a session. Fifteen established edges: connected_to, observed_on, backed_by,
+  measured_by, grants, reaches, enables, exposes, gives_rise_to, protected_by,
+  conditional_on, defeated_by, owned_by, accepted_by, underwritten_by. **Nine of the
+  inverse names are proposed by this site rather than quoted from the corpus, and are
+  marked as such in the table** — the corpus glossary that would settle them does not
+  exist. Rules for extending the set: a new edge needs a sentence, its inverse needs a
+  different sentence, both need a stated domain and range.
+
+## Altitude 3 — the full argument
+
+- https://graphs.sgit.ai/depth/index.html — **"They ended up attaching meaning to nodes
+  rather than deriving meaning from edges… This is schema-first thinking dressed in graph
+  syntax."** The disagreement with the Semantic Web is with a practice, not a goal, and it
+  is narrow: not with RDF as serialisation, not with shared vocabularies as reference
+  points. Also: don't merge ontologies — three layers instead (shared facts owned by
+  nobody / per-party formulas / declared bridges), because **parties can disagree about
+  meaning while still agreeing about facts, which is the only stable basis for working
+  together.** Node type formulas: `Vulnerability := a Fact that also has an upward
+  gives_rise_to path to a Risk` — judgment does not disappear, it moves out of the
+  classifier's head into a formula that is visible, versioned and arguable. The grounding
+  ladder (downward grounds, upward implies) is one formula among possible others, and says
+  so. Supersede never delete, so a correction can be asked what was resting on it. Weight
+  by independence, not by count.
+- https://graphs.sgit.ai/depth/boundaries.html — **fractal is a testable claim**: if
+  zooming into a node needs a new format or a special case, the system is hierarchical, not
+  fractal. At a boundary, emit a graph rather than JSON-plus-prose: determinism,
+  explainability, provenance, sovereignty and auditability are **consequences of that one
+  decision, not features**. The model proposes a graph; a deterministic validator executes
+  it, so untrusted input is data and never instruction and **prompt injection fails at the
+  validator, structurally** — a reduction, not an elimination. Documents, skills and
+  standards are projections: don't store a consolidated legal text, hold the base plus
+  amendments and compute it — which makes consolidation and per-organisation customisation
+  one mechanism rather than two. Twins are where the graph stops modelling; where it cannot
+  reach, emit a **named air gap** with an owner and a frequency.
+
+## Worked graphs, with real numbers
+
+Three artefacts are live and public; every other number is parsed from a design document
+and is not deployed. The two are never mixed.
+
+- https://graphs.sgit.ai/examples/index.html — ten worked applications. Live:
+  the EU AI Act regulation graph (**1,523 nodes · 1,944 edges**, 11 views, RDF/Turtle
+  export, every element hash-verified to source bytes), the Risk Graph Explorer (18 facts /
+  37 risks / 14 provisions, `permissions: {}`), agentic browser isolation (17 entry points,
+  5 stakeholder altitudes). Summarised here: AWS IAM `AuthorizationClosure` — "the agentic
+  union", and **for an agent the closure is the rating floor, not the nominal grant**;
+  browser extensions, queryable in both directions; the customisation inversion — **nothing
+  is relevant until your facts attach**; the Permissions Bill of Materials, because
+  permissions gate exploitability.
+- https://graphs.sgit.ai/examples/browser-isolation.html — **59 nodes, 75 edges.** Should
+  an agent browse in the user's own post-MFA browser or an isolated one? Answered as a
+  **computed closure difference a buyer can check**, not an adjective. Thirteen risks, and
+  three of them are risks created by the mitigation itself — the structure produces that
+  honesty rather than requiring it. Escalation is a property of the edges: a risk reaches
+  the board because the path leads there and nobody below accepted it.
+- https://graphs.sgit.ai/examples/2fa.html — **51 nodes, 53 edges** in one machine-readable
+  file that declares its own modelling principles inside the data ("meaning comes from
+  connectivity, not properties"; "facts only in phase one"; "every edge is directed and has
+  a named inverse"; "every change cascades to the register"). **There is no deny button**:
+  a risk is accepted for an interval — 1h / 4h / 2d / 2w / 1m / 6m — by a named person, and
+  then returns. The file is not yet mirrored on this site.
+- https://graphs.sgit.ai/examples/article-26-5.html — one EU AI Act provision carried from
+  a running system to a board decision and back. **Nine question nodes, five unanswered —
+  and the unanswered five are the actual output of the exercise.** A 2×2 whose bottom row
+  is empty, because there is no mechanism by which a risk gets to be *not accepted*. And a
+  finding that is arithmetic: 30 days retained against Article 26(6)'s six-month minimum.
+- https://graphs.sgit.ai/maps/index.html — a graph says these things are connected; a map
+  adds where they sit. **Wardley coordinates are [visibility, evolution] — the reverse of
+  the usual convention — and a transposed map renders happily and says something entirely
+  different.** Mermaid Wardley: added v11.14.0, production-stable v11.15.0, hand-drawn look
+  unsupported; grep for `wardley-beta`, not for the fence tag.
+
+## Reality
+
+- https://graphs.sgit.ai/shipped/index.html — **"We ship a hand-written content-addressed
+  object graph in the browser. We do not use a graph database, and we say so in our own
+  architecture notes."** Ships and is code-verifiable: the vault commit DAG (object IDs are
+  SHA-256 of the **ciphertext**, not the plaintext — a skill file in the source repo states
+  otherwise and is wrong), multi-parent commits, a real wave-BFS merge-base, three-way
+  merge, typed `*.link.json` cross-vault edges pinnable to a commit, a read-only DAG query
+  API exposed to untrusted sandboxed apps, and a live typed property graph of **71 nodes /
+  141 edges**. Absent: any graph database, browser SPARQL/Cypher, RDF in code, the
+  path-query language, commit signing (written, only ever null).
+- https://graphs.sgit.ai/origins/index.html — ten phases, February to August 2026. The
+  first graph thinking was cryptographic, not semantic: **"revocation is the absence of
+  trust, not the presence of a revocation entry"** (21 February 2026). And the routing
+  failure that produced this site: the philosophy documents are referenced by four files
+  and are not referenced from the entry-point file every agent reads, so an agent working
+  forwards never meets them. Paths not taken are recorded too.
+- https://graphs.sgit.ai/network/index.html — **"A public key in isolation does not give
+  you anything; it is the graph it is connected to."** And the reciprocal, which is the
+  most interesting claim here: the semantic web's verification gap means **graphs need
+  identities too** — an edge is an assertion by somebody. Bridges to pki.sgit.ai,
+  nhi.sgit.ai, sentinel.sgit.ai and sgit.ai.
+
+## Site
+
+- https://graphs.sgit.ai/documents/index.html — the eleven source documents, readable
+  in-page and downloadable raw at /briefs/<filename>. **The raw markdown is the source of
+  truth; the rendered page is presentation**, and each reader page renders its own source
+  file so it cannot drift. Three redactions applied before publication, all recorded at
+  /documents/public.html with visible markers.
+- https://graphs.sgit.ai/admin/index.html — how the site is built: static HTML on GitHub
+  Pages deployed from `dev`, with `validate → tag → deploy` on every push and a seven-check
+  pre-release gate. Three of the checks are specific to this site: every section hub must
+  appear in this file, no page may use the banned edge as a live edge name, and every
+  page must close every block it opens.
+- https://graphs.sgit.ai/admin/comms.html — asks and tasks, published unresolved. N1 is a
+  one-line edit to a repository file, specified 11 June 2026 and still not done, and it is
+  the actual cure for the problem that produced this site. N3 has been waiting since 10
+  June 2026.
+- https://graphs.sgit.ai/admin/versions.html — release history.
+- https://graphs.sgit.ai/about/participant.html — participant disclosure, the site-wide
+  licence, and **four situations where this approach loses**: everyone already agrees and
+  always will; you need the answer enforced rather than computed; the graph would be empty;
+  you want to buy it rather than build it.
+
+## What this site does not claim
+
+Written fresh for the site rather than sourced from the corpus, and marked as such on the
+page: /why-graphs/ (both halves), the GraphRAG and hypergraph positioning, /glossary/, the
+air-gap section, the projections synthesis, and nine inverse edge names. Hold those to a
+lower evidential bar.
+
+Two worked examples exist and are deliberately not published: a LinkedIn network graph
+built from a real export (real personal data about third parties — a data-protection
+question, not a licensing one), and a case study naming a real third-party product (needs
+a legal read).
