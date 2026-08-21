@@ -1,5 +1,5 @@
 {
-  "version": "v0.2.4",
+  "version": "v0.2.5",
   "title": "Meaning Through Connectivity",
   "chapters": [
     {
@@ -8,7 +8,7 @@
       "title": "Why graphs at all",
       "file": "ch-01-why-graphs-at-all.html",
       "source": "why-graphs/index.html",
-      "source_sha256": "07dfdf88d9819caf350d65554e3c59db56b031a40b89ecd43b32a9b37b240825"
+      "source_sha256": "4d811e610522ada68ae0ba827a4b57f64f93d6e7d23e2263aac0ee094df13a64"
     },
     {
       "n": 2,
@@ -24,7 +24,7 @@
       "title": "The rules you can apply tomorrow",
       "file": "ch-03-the-rules-you-can-apply-tomorrow.html",
       "source": "grammar/index.html",
-      "source_sha256": "3af643ce34c60e762cc1acbce9bb65769ee81e36c7e0e5558745c81385b91244"
+      "source_sha256": "00268aaa79c4b4c7019e4d07ea2879cb174eaf13044c49f2480c7848985ba9ab"
     },
     {
       "n": 4,
@@ -32,7 +32,7 @@
       "title": "The edge set",
       "file": "ch-04-the-edge-set.html",
       "source": "grammar/edge-set.html",
-      "source_sha256": "fe775a964d37a7bf196aac98709c30d15a3faed5bc1e93894b5b01572effbfbd"
+      "source_sha256": "aa1943ca5b27b6af559ced29d960982158190f009c27eea1e2076ee2f115a6fa"
     },
     {
       "n": 5,
@@ -135,14 +135,14 @@
     {
       "file": "meaning-through-connectivity.pdf",
       "edition": "print interior 6x9",
-      "version": "v0.2.4",
+      "version": "v0.2.5",
       "pages": 119,
       "typesetter": "weasyprint 69.0"
     },
     {
       "file": "meaning-through-connectivity-screen.pdf",
       "edition": "screen (US Letter)",
-      "version": "v0.2.4",
+      "version": "v0.2.5",
       "pages": 79,
       "typesetter": "chromium"
     }

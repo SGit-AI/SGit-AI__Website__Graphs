@@ -123,8 +123,10 @@ ABOUT = f"""
   the book's own argument — <em>documents are projections of graphs</em> — applied to the
   book itself.</p>
   <p>The chapters therefore speak as the site speaks: where a page says “this site”,
-  it means graphs.sgit.ai, of which this book is a view. The site is the living version;
-  the book is the version you can read on a train.</p>
+  it means graphs.sgit.ai, of which this book is a view — and where a page says “this
+  page”, the book says “this chapter”, because the projection rewrites self-references
+  the same way it rewrites links. The site is the living version; the book is the
+  version you can read on a train.</p>
   <p>Four ways to read it, same content in all four — the two PDFs are regenerated together from the same chapters on every release, and each carries the site version it was generated from on its cover:</p>
   <ul>
     <li><b><a href="index.html#toc">Chapter pages</a></b> — one chapter per page, with the
@@ -218,6 +220,17 @@ def extract(source):
     c = re.sub(r'<div class="crumb">.*?</div>\s*', '', raw, count=1, flags=re.S)
     c = re.sub(r'<div class="pagenav">.*?</div>\s*', '', c, flags=re.S)
     c = re.sub(r'<h1>.*?</h1>\s*', '', c, count=1, flags=re.S)
+    # The projection rewrites self-references along with the links: on the site a
+    # chapter's source IS a page, in the book it is a chapter. Audited: every
+    # "this page" in the sources is a self-reference, so the phrase-level swap is
+    # safe; anything narrower ("the page to…") is neutralised in the sources
+    # instead, because a blind word swap would hit "GitHub Pages", "the pages
+    # you visit" and the front page.
+    for a, b in (("on this page", "in this chapter"),
+                 ("On this page", "In this chapter"),
+                 ("this page", "this chapter"),
+                 ("This page", "This chapter")):
+        c = c.replace(a, b)
     return raw, c, hashlib.sha256(raw.encode()).hexdigest()
 
 

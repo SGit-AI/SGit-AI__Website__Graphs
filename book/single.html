@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.4</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.5</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -92,7 +92,7 @@
   <p class="bsub">A discipline of graphs in which the edges carry the meaning — the claim, the grammar, the full argument, and the worked proof.</p>
   <blockquote>“in our graph we do not use properties, because properties do not have meaning, they are just words; we capture meaning through connectivity.”</blockquote>
   <p class="byline">Dinis Cruz, with the SG/Send agentic team</p>
-  <p class="ed">First edition · site v0.2.4 · 21 August 2026 · CC BY 4.0</p>
+  <p class="ed">First edition · site v0.2.5 · 21 August 2026 · CC BY 4.0</p>
 </header>
 <div class="ctas noprint" style="margin:-.6rem 0 1rem">
   <a class="cta2" href="index.html">☰ Chapter pages →</a>
@@ -129,9 +129,11 @@
 <div class="chnum">Chapter 1</div>
 <h1>Why graphs at all</h1>
 
-  <p class="lead">Written for the reader who is not yet convinced, and for the one who is convinced of something else. If you have used graphs before, the useful part of this page is the second half: this is a third use of graphs, and it is not the one you are thinking of.</p>
+  <p class="lead">One word first: on this site a <b>graph</b> is a network — <b>nodes, and the edges that connect them</b> — never a chart or a figure. Nothing here plots values on axes; everything here is about things and the stated relationships between them.</p>
 
-  <div class="warnbox"><b>This page is written fresh.</b> Every document behind this site assumes the reader already accepts that graphs are the right substrate. None of them argues it to a sceptic, and none distinguishes this use of graphs from the common ones. That absence is recorded as gap <b>G3</b> in <a href="https://graphs.sgit.ai/documents/gaps.html">the gaps document</a>. This page is the answer, written for the site rather than lifted from the corpus — so hold it to a lower evidential bar than the sourced pages, and tell us where it is wrong.</div>
+  <p>And a suspicion to start from: <b>you may already think in graphs without ever having called it that.</b> Working out what an unfamiliar system is by tracing what it connects to; trusting a claim because of where it comes from rather than how it is worded; asking “what else breaks if this fails?” — that is graph-thinking, and it is common. What is rare is doing it <em>deliberately, with rules</em>, and that is what this site teaches. So this chapter is written for three readers: the one who already thinks this way and never named it, the one who is not yet convinced, and the one who is convinced of something else — if you have used graphs professionally, the useful part is the second half, because this is a third use of graphs and probably not the one you are thinking of.</p>
+
+  <div class="warnbox"><b>Written fresh.</b> The documents behind this site do not argue this case — they assume graph-thinking and get on with it, and none of them distinguishes this use of graphs from the common ones. That absence is recorded as gap <b>G3</b> in <a href="https://graphs.sgit.ai/documents/gaps.html">the gaps document</a>, and this chapter fills it, written for the site rather than lifted from the corpus — so hold it to a lower evidential bar than the sourced pages, and tell us where it is wrong.</div>
 
   <h2 id="ch01-three-uses">Three different things people mean by “graph”</h2>
   <div class="tablewrap">
@@ -200,9 +202,9 @@
 <div class="chnum">Chapter 2</div>
 <h1>The five ideas</h1>
 
-  <p class="lead">Five ideas, in the order that makes each one necessary. No jargon before it is earned — you will not meet the words <em>ontology</em> or <em>semantic</em> on this page, because you do not need them yet. About fifteen minutes if you read it properly.</p>
+  <p class="lead">Five ideas, in the order that makes each one necessary. No jargon before it is earned — you will not meet the words <em>ontology</em> or <em>semantic</em> in this chapter, because you do not need them yet. About fifteen minutes if you read it properly.</p>
 
-  <div class="note"><b>Where these come from.</b> The examples on this page are not invented for the website. The port example is real shipped Python; the five Reviews are the worked example from the project's foundational essay, <code>library/concepts/v0_4_0__thinking-in-graphs.md</code> (5 February 2026). <a href="https://graphs.sgit.ai/documents/index.html">The source documents are published here</a>.</div>
+  <div class="note"><b>Where these come from.</b> The examples in this chapter are not invented for the website. The port example is real shipped Python; the five Reviews are the worked example from the project's foundational essay, <code>library/concepts/v0_4_0__thinking-in-graphs.md</code> (5 February 2026). <a href="https://graphs.sgit.ai/documents/index.html">The source documents are published here</a>.</div>
 
   <h2 id="ch02-node">1 · A node is just a node</h2>
   <p>Draw a box. Write <b>Review</b> in it. What have you got?</p>
@@ -297,7 +299,7 @@
 <div class="chnum">Chapter 3</div>
 <h1>The rules you can apply tomorrow</h1>
 
-  <p class="lead">Five rules about edges. They are short on purpose: this is the page to keep open while you are actually drawing a graph, and the page an agent should be given before it starts emitting one. If a rule here contradicts something you were taught about graph modelling, that is deliberate — <a href="#ch03-blob">rule 4</a> in particular.</p>
+  <p class="lead">Five rules about edges. They are short on purpose: this is the one to keep open while you are actually drawing a graph, and the one an agent should be given before it starts emitting one. If a rule here contradicts something you were taught about graph modelling, that is deliberate — <a href="#ch03-blob">rule 4</a> in particular.</p>
 
   <div class="note"><b>The one-screen version.</b> Every edge is a verb. Every verb has a distinct inverse. <code data-banned-verb>relates-to</code> is banned. If the path does not read as a sentence, the edges are wrong. Rich nodes are good — solve the picture at query time, never by removing relationships. And never render the whole graph: render the result of a query.</div>
 
@@ -372,7 +374,7 @@
 
   <h2 id="ch03-next">Where to go next</h2>
   <ul>
-    <li><a href="#ch04"><b>The edge set</b></a> — the concrete vocabulary: fifteen established edges with their inverses, and a worked node-type list. This is the page to paste into an agent session.</li>
+    <li><a href="#ch04"><b>The edge set</b></a> — the concrete vocabulary: fifteen established edges with their inverses, and a worked node-type list. This is the reference to paste into an agent session.</li>
     <li><a href="#ch05"><b>Altitude 3</b></a> — why schema-first fails, ontologies of ontologies, and classification as a computed path-pattern.</li>
     <li><a href="#ch07"><b>The worked examples</b></a> — these rules applied to real problems, with node and edge counts.</li>
   </ul>
@@ -389,12 +391,12 @@
 <div class="chnum">Chapter 4</div>
 <h1>The edge set</h1>
 
-  <p class="lead">A concrete, versioned, public vocabulary. This is the page to paste into an agent session before asking it to build a graph, and the page to argue with if you think an edge is missing or wrongly named.</p>
+  <p class="lead">A concrete, versioned, public vocabulary. This is the reference to paste into an agent session before asking it to build a graph, and the place to argue with if you think an edge is missing or wrongly named.</p>
 
   <div class="evbox ev-warn">
     <span class="evtag">Provenance</span>
     <p>Appendix A of the 28 July 2026 brief cites “the concepts glossary” as the authority on edge-grammar discipline and lists the established edge set. <b>No such file exists in the source repository</b> — it lives in another project. That absence is gap <b>G5</b>, and the recommendation in the brief pack was that this website should either import it or <em>become</em> it.</p>
-    <p><b>This page becomes it.</b> Which means: the fifteen edge names below are quoted from the corpus and are load-bearing. Several of the <em>inverse</em> names are not — where the corpus does not supply one, this site proposes it, and says so in the table. Proposed names are a starting point for disagreement, not a standard.</p>
+    <p><b>This chapter becomes it.</b> Which means: the fifteen edge names below are quoted from the corpus and are load-bearing. Several of the <em>inverse</em> names are not — where the corpus does not supply one, this site proposes it, and says so in the table. Proposed names are a starting point for disagreement, not a standard.</p>
   </div>
 
   <h2 id="ch04-edges">The fifteen established edges</h2>
@@ -449,7 +451,7 @@
 
   <h2 id="ch04-shipped">The one that is actually running</h2>
   <p>Everything above is designed. One typed property graph in this project is <b>live repository data</b>: the issue tracker's own configuration — <b>12 node types, 10 verb/inverse edge types with domain and range constraints, 71 nodes and 141 edges</b> across 107 issue files, with edges stored bidirectionally.</p>
-  <p>It is the cheapest credibility on this site and the most instructive artefact on this page, for two reasons. It demonstrates that domain and range constraints on a verb pair are enough structure to be useful. And it ships the banned edge — which is what the rule looks like when nothing enforces it. <a href="#ch12">What ships, in full →</a></p>
+  <p>It is the cheapest credibility on this site and the most instructive artefact in this chapter, for two reasons. It demonstrates that domain and range constraints on a verb pair are enough structure to be useful. And it ships the banned edge — which is what the rule looks like when nothing enforces it. <a href="#ch12">What ships, in full →</a></p>
 
   <h2 id="ch04-rules">Rules for extending this set</h2>
   <ol>
@@ -526,7 +528,7 @@
   <p>The worked instance runs six layers, roughly thirty-one node types, twenty edge types with named inverses — forty readings — and seven formulas. <a href="#ch07-aws-iam">The AWS IAM example →</a></p>
 
   <h2 id="ch05-ladder">4 · The grounding ladder</h2>
-  <p>One worked formula set, and the most reusable thing on this page.</p>
+  <p>One worked formula set, and the most reusable thing in this chapter.</p>
   <div class="pathline">
     <span class="nd">Fact</span><span class="ed">backed_by</span><span class="nd">Evidence</span><span class="ed">measured_by</span><span class="nd">Measure</span>
     <span class="say"><b>Downward grounds.</b> Is it real? Each step down asks for something more checkable than the last.</span>
@@ -555,11 +557,11 @@
   <p>The unit of meaning is a <b>concept</b>, not a word. A concept is language-independent; it carries one preferred label per language plus alternates, and relates to other concepts as broader, narrower or related. A <em>term</em> is how one language happens to express it.</p>
   <p>Once meaning lives in the concept rather than the term, a whole class of failure disappears by construction — you are no longer translating word to word and hoping the connotation survives.</p>
   <p>The unexpected result is the better story. Rendering a set of concepts into Portuguese produced a bad Portuguese label — and the diagnosis was that <b>the English word was wrong</b>. Naming a concept in a second language forces a decision the source language let you avoid. Where two languages' induced graphs diverge, that divergence is either an error or a genuine lexical gap, and either way <b>it is a finding</b>, not noise to be smoothed away.</p>
-  <p>This is the same shape as everything else on this page: the disagreement is the data.</p>
+  <p>This is the same shape as everything else in this chapter: the disagreement is the data.</p>
 
   <div class="agent">
     <h4>For an agent</h4>
-    <p>Four rules from this page, in order of how often they will bite you: <b>(1)</b> do not attach meaning to a node — derive it from edges; a self-describing node is a schema in disguise. <b>(2)</b> Do not merge two vocabularies; keep both and declare bridges, because the disagreement is data. <b>(3)</b> Express a classification as a required path-pattern, not as a label you applied. <b>(4)</b> Never delete a superseded claim — mark it, and re-query what depended on it.</p>
+    <p>Four rules from this chapter, in order of how often they will bite you: <b>(1)</b> do not attach meaning to a node — derive it from edges; a self-describing node is a schema in disguise. <b>(2)</b> Do not merge two vocabularies; keep both and declare bridges, because the disagreement is data. <b>(3)</b> Express a classification as a required path-pattern, not as a label you applied. <b>(4)</b> Never delete a superseded claim — mark it, and re-query what depended on it.</p>
   </div>
 
   
@@ -752,7 +754,7 @@
 
   <div class="agent">
     <h4>For an agent</h4>
-    <p>The three published artefacts are at <code>sgit.ai/demos/vaults/{regulation-graph, risk-graph-explorer, agentic-browser-isolation}/</code> and their counts are verifiable by fetching them. Every other number on this page is parsed from a design document and is not deployed — when summarising this material, carry that distinction, because the corpus itself does.</p>
+    <p>The three published artefacts are at <code>sgit.ai/demos/vaults/{regulation-graph, risk-graph-explorer, agentic-browser-isolation}/</code> and their counts are verifiable by fetching them. Every other number in this chapter is parsed from a design document and is not deployed — when summarising this material, carry that distinction, because the corpus itself does.</p>
   </div>
 
   
@@ -831,7 +833,7 @@
     <div class="k">Licence</div><div class="v">The file carries <code>"license": "CC BY 4.0"</code> as a top-level field — the pattern this project uses for JSON artefacts</div>
   </div>
 
-  <div class="warnbox"><b>The file is not mirrored here yet.</b> The JSON lives in the source repository, which is not public. Publishing it as a download from this site — with its ontology brief beside it — is <a href="https://graphs.sgit.ai/admin/comms.html">task T1 on the comms board</a> and the single highest-value thing this site could add. Until it is here, this page describes it rather than pretending to serve it.</div>
+  <div class="warnbox"><b>The file is not mirrored here yet.</b> The JSON lives in the source repository, which is not public. Publishing it as a download from this site — with its ontology brief beside it — is <a href="https://graphs.sgit.ai/admin/comms.html">task T1 on the comms board</a> and the single highest-value thing this site could add. Until it is here, this chapter describes it rather than pretending to serve it.</div>
 
   <h2 id="ch09-principles">It declares its own principles, inside the data</h2>
   <p>This is the detail that makes the file worth studying even before you can download it. The JSON carries its modelling rules as data, next to the nodes they govern:</p>
@@ -955,7 +957,7 @@
   <h2 id="ch11-trap">The coordinate trap</h2>
   <div class="warnbox">
     <p><b>Wardley coordinates are <code>[visibility, evolution]</code> — the reverse of the convention you will assume.</b> Everything else you have ever plotted takes <code>[x, y]</code>. This does not.</p>
-    <p>The failure mode is the bad one: <b>a map with its axes transposed renders happily and says something entirely different.</b> No error, no warning, a perfectly good-looking picture making a claim you did not make. If you take one thing from this page, take this one.</p>
+    <p>The failure mode is the bad one: <b>a map with its axes transposed renders happily and says something entirely different.</b> No error, no warning, a perfectly good-looking picture making a claim you did not make. If you take one thing from this chapter, take this one.</p>
   </div>
   <div class="tablewrap">
   <table>
@@ -1006,7 +1008,7 @@
 <div class="chnum">Chapter 12</div>
 <h1>What ships, what is argued</h1>
 
-  <p class="lead">This page is non-negotiable, and it is the first one to read if you are deciding whether to trust the rest. The sibling sites' credibility rests on separating design from delivery, and <b>this site's subject matter is almost entirely design</b>.</p>
+  <p class="lead">This chapter is non-negotiable, and it is the first one to read if you are deciding whether to trust the rest. The sibling sites' credibility rests on separating design from delivery, and <b>this site's subject matter is almost entirely design</b>.</p>
 
   <p class="claim">We ship a hand-written content-addressed object graph in the browser. We do not use a graph database, and we say so in our own architecture notes.</p>
 
@@ -1054,7 +1056,7 @@
   </div>
   <div class="note"><b>A third, on this site's own account.</b> Several inverse edge names in <a href="#ch04">the edge set</a> are proposed by this site rather than quoted from the corpus. They are marked as such in the table. If this site becomes the place people cite for that vocabulary, the distinction between “quoted” and “proposed here” has to survive, or we will have done the thing we are warning about.</div>
 
-  <h2 id="ch12-why">Why this page exists at all</h2>
+  <h2 id="ch12-why">Why this chapter exists at all</h2>
   <p>Because without it the site over-claims, and an over-claiming site about provenance discipline is self-refuting. The graph work described here is mostly a design published in advance so that it can be checked against whatever eventually ships. That is a weaker claim than most sites make, and it is the one that is true.</p>
 
   <div class="agent">
@@ -1185,7 +1187,7 @@
   <blockquote class="challenge">“<b>a lot of the people that will use this don't know about semantic graphs, don't know about ontologies, don't know about a lot of the other terms</b>, so we also need to explore different UIs, and different ways to name this.”
     <span class="small dim" style="display:block;font-style:normal;margin-top:.7rem">— 9 August 2026. The document's own gloss: this makes <b>naming a design problem rather than a documentation one.</b></span></blockquote>
 
-  <div class="note"><b>Written fresh, and asked for by name.</b> The corpus contains exactly one terminology table, buried inside a brief about translation. This page starts there and expands it. Gap <b>G4</b>. If a definition here is wrong or a term is missing, <a href="https://graphs.sgit.ai/admin/comms.html">the comms board</a> — this page is expected to change more than any other.</div>
+  <div class="note"><b>Written fresh, and asked for by name.</b> The corpus contains exactly one terminology table, buried inside a brief about translation. This chapter starts there and expands it. Gap <b>G4</b>. If a definition here is wrong or a term is missing, <a href="https://graphs.sgit.ai/admin/comms.html">the comms board</a> — this chapter is expected to change more than any other.</div>
 
   <h2 id="ch15-meaning">Words about meaning</h2>
   <div class="tablewrap">
@@ -1312,7 +1314,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.4</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.5</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
