@@ -46,10 +46,27 @@ p, li { font-size: 11pt; color: #000; }
 code, kbd { font: 8.5pt 'Liberation Mono', monospace; }
 p code, li code, td code { background: none; border: none; padding: 0; color: #000; }
 pre { font-size: 8.5pt; background: #f4f4f4; color: #000; border: .5pt solid #bbb; }
-table { font-size: 8.5pt; box-shadow: none; }
-th { background: #eee; color: #000; }
-td { color: #000; }
+
+/* Tables, restated in full. Two reasons: the site's table styling is scoped to
+   main.doc and print.html's chapters are sections, so none of it reaches print
+   — the cells were rendering on browser defaults. And a book has its own rules:
+   cells are set ragged-right with hyphenation off, because justified text in a
+   narrow measure produces rivers and mid-word breaks ("cent-rally"). */
+table { width: 100%; border-collapse: collapse; font-size: 9pt; margin: .9em 0;
+  box-shadow: none; border: none; }
+th { background: #eee; color: #000; font: bold 7.5pt 'Liberation Sans', sans-serif;
+  letter-spacing: .06em; text-transform: uppercase; text-align: left;
+  vertical-align: bottom; padding: .5em .6em; hyphens: manual;
+  border-top: 1pt solid #000; border-bottom: .75pt solid #000; }
+td { color: #000; text-align: left; vertical-align: top; padding: .5em .6em;
+  line-height: 1.45; hyphens: manual; border-bottom: .5pt solid #bbb; }
+table .small, table .dim { font-size: 8pt; }
+table code { font-size: 8pt; }
+/* the glossary pins its first column nowrap for the screen; at a 4.75in
+   measure that starves the other columns — let it wrap in print */
+table.gloss td:first-child { white-space: normal; }
 ul, ol { padding-left: 1.5em; }
+li { margin: .3em 0; }
 
 /* ---------- chapter furniture ---------- */
 .chapter { }
