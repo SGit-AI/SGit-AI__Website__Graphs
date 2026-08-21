@@ -1,0 +1,135 @@
+{
+  "version": "v0.2.0",
+  "title": "Meaning Through Connectivity",
+  "pdf": "meaning-through-connectivity.pdf",
+  "chapters": [
+    {
+      "n": 1,
+      "part": "Part I \u00b7 The claim",
+      "title": "Why graphs at all",
+      "file": "ch-01-why-graphs-at-all.html",
+      "source": "why-graphs/index.html",
+      "source_sha256": "07dfdf88d9819caf350d65554e3c59db56b031a40b89ecd43b32a9b37b240825"
+    },
+    {
+      "n": 2,
+      "part": "Part I \u00b7 The claim",
+      "title": "The five ideas",
+      "file": "ch-02-the-five-ideas.html",
+      "source": "start/index.html",
+      "source_sha256": "96de9ec55d4d514c32d0e1ad5ed9c06815c1d1ea309547bc329f263a7499da0e"
+    },
+    {
+      "n": 3,
+      "part": "Part II \u00b7 The grammar",
+      "title": "The rules you can apply tomorrow",
+      "file": "ch-03-the-rules-you-can-apply-tomorrow.html",
+      "source": "grammar/index.html",
+      "source_sha256": "3af643ce34c60e762cc1acbce9bb65769ee81e36c7e0e5558745c81385b91244"
+    },
+    {
+      "n": 4,
+      "part": "Part II \u00b7 The grammar",
+      "title": "The edge set",
+      "file": "ch-04-the-edge-set.html",
+      "source": "grammar/edge-set.html",
+      "source_sha256": "fe775a964d37a7bf196aac98709c30d15a3faed5bc1e93894b5b01572effbfbd"
+    },
+    {
+      "n": 5,
+      "part": "Part III \u00b7 The full argument",
+      "title": "Against schema-first",
+      "file": "ch-05-against-schema-first.html",
+      "source": "depth/index.html",
+      "source_sha256": "d2cabb42cb7a0f90967d8cb345a32a824ac4029b2c17d1c06869201be5261f69"
+    },
+    {
+      "n": 6,
+      "part": "Part III \u00b7 The full argument",
+      "title": "A graph at every boundary",
+      "file": "ch-06-a-graph-at-every-boundary.html",
+      "source": "depth/boundaries.html",
+      "source_sha256": "ea30dc6003d35dde32c27af3760ed11e0848e1ef70196d488d807ff5b5eecd72"
+    },
+    {
+      "n": 7,
+      "part": "Part IV \u00b7 The proof",
+      "title": "Worked graphs, with real numbers",
+      "file": "ch-07-worked-graphs-with-real-numbers.html",
+      "source": "examples/index.html",
+      "source_sha256": "9e1d7ae55a305fa2e595a2d6345e06defe648e768515a8797268e3ad0c2c8ad9"
+    },
+    {
+      "n": 8,
+      "part": "Part IV \u00b7 The proof",
+      "title": "Whose session is the agent using?",
+      "file": "ch-08-whose-session-is-the-agent-using.html",
+      "source": "examples/browser-isolation.html",
+      "source_sha256": "ae54e2e28fbbba887c91ee909de3f647f74edb647b4319e275b35b4db62b5af8"
+    },
+    {
+      "n": 9,
+      "part": "Part IV \u00b7 The proof",
+      "title": "The 2FA instance graph",
+      "file": "ch-09-the-2fa-instance-graph.html",
+      "source": "examples/2fa.html",
+      "source_sha256": "4ccf18888c764ed07d9762c8bcd64ff4c3838be24a9f208977fe13cfaafb177e"
+    },
+    {
+      "n": 10,
+      "part": "Part IV \u00b7 The proof",
+      "title": "Article 26(5), fact to board and back",
+      "file": "ch-10-article-26-5-fact-to-board-and-back.html",
+      "source": "examples/article-26-5.html",
+      "source_sha256": "0300041f779e79a2f6670e57a2cf540a94fa106bc1dc2d671c6d3570265016e8"
+    },
+    {
+      "n": 11,
+      "part": "Part IV \u00b7 The proof",
+      "title": "Wardley maps as graphs",
+      "file": "ch-11-wardley-maps-as-graphs.html",
+      "source": "maps/index.html",
+      "source_sha256": "7c70c631012361286fc85aba6d9d0a1e4cbf5ed69e34bf9725b81561e910c250"
+    },
+    {
+      "n": 12,
+      "part": "Part V \u00b7 Reality",
+      "title": "What ships, what is argued",
+      "file": "ch-12-what-ships-what-is-argued.html",
+      "source": "shipped/index.html",
+      "source_sha256": "0914b62ed744a73398d3e5d018f52882c16f97a7aad91378ff5f7496baf6d6b0"
+    },
+    {
+      "n": 13,
+      "part": "Part V \u00b7 Reality",
+      "title": "Origins: 2026",
+      "file": "ch-13-origins-2026.html",
+      "source": "origins/index.html",
+      "source_sha256": "dc0c356e7bb01e4891a6741709b3221eb48c5c5ca7cb989fba46aa612ad33b87"
+    },
+    {
+      "n": 14,
+      "part": "Part V \u00b7 Reality",
+      "title": "The network",
+      "file": "ch-14-the-network.html",
+      "source": "network/index.html",
+      "source_sha256": "c3201d51d14887b5bce6dc1d83d47b84386e50ad1c08f234b2d390bb6368ac4d"
+    },
+    {
+      "n": 15,
+      "part": "Part VI \u00b7 Appendices",
+      "title": "Glossary",
+      "file": "ch-15-glossary.html",
+      "source": "glossary/index.html",
+      "source_sha256": "ea8dd4a4e9a88e19b537f129156c867c960252433af17c38c2912323668b750f"
+    },
+    {
+      "n": 16,
+      "part": "Part VI \u00b7 Appendices",
+      "title": "The author's interest \u2014 and where this loses",
+      "file": "ch-16-the-author-s-interest-and-where-this-loses.html",
+      "source": "about/participant.html",
+      "source_sha256": "dfe2dcad12414f0399c570367034c00147ce6862a6e663552741dd7476d13dc1"
+    }
+  ]
+}

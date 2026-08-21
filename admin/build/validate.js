@@ -20,6 +20,11 @@
 //   7. div balance — every page opens and closes the same number of <div>s. Added
 //      after four pages shipped a <div class="note"> closed with </p>, which browsers
 //      accept silently and which ran the note's left border down the whole page.
+//   8. the book is a projection — book/manifest.json must carry this release's
+//      version, every chapter's source page must hash to what the manifest recorded
+//      when the book was generated, and the PDF must exist. The book is generated
+//      from the site's pages (gen_book.py); a source page edited without the book
+//      regenerating is exactly the drift the site argues against, so it fails here.
 // Any failure exits 1: no tag, no publish.
 'use strict';
 const fs = require('fs');
@@ -148,6 +153,35 @@ for (const f of files) {
   if (KEY_SHAPE.test(t)) errors.push(`${rel(f)}: contains a vault-key-shaped string`);
 }
 
+// --- 8. the book is a projection ------------------------------------------
+const crypto = require('crypto');
+const bookManifestPath = path.join(ROOT, 'book/manifest.json');
+if (!fs.existsSync(bookManifestPath)) {
+  errors.push('book/manifest.json is missing — run admin/build/gen_book.py');
+} else {
+  const book = JSON.parse(fs.readFileSync(bookManifestPath, 'utf8'));
+  if (book.version !== VERSION) {
+    errors.push(`book was generated at ${book.version}, site is ${VERSION} — run gen_book.py (and regenerate the PDF)`);
+  }
+  for (const ch of book.chapters) {
+    const src = path.join(ROOT, ch.source);
+    if (!fs.existsSync(src)) { errors.push(`book chapter ${ch.n} source is gone: ${ch.source}`); continue; }
+    const m = fs.readFileSync(src, 'utf8').match(/<main class="doc">([\s\S]*?)<\/main>/);
+    if (!m) { errors.push(`${ch.source}: no <main class="doc"> block for the book to project`); continue; }
+    const h = crypto.createHash('sha256').update(m[1]).digest('hex');
+    if (h !== ch.source_sha256) {
+      errors.push(`book is stale: ${ch.source} changed since the book was generated — run gen_book.py (and regenerate the PDF)`);
+    }
+    if (!fs.existsSync(path.join(ROOT, 'book', ch.file))) {
+      errors.push(`book chapter file missing: book/${ch.file}`);
+    }
+  }
+  const pdf = path.join(ROOT, 'book', book.pdf);
+  if (!fs.existsSync(pdf) || fs.statSync(pdf).size < 50000) {
+    errors.push(`book/${book.pdf} is missing or truncated — gen_book.py regenerates it when a local Chromium is available`);
+  }
+}
+
 // --- report ---------------------------------------------------------------
 if (errors.length) {
   console.error(`validate: ${errors.length} error(s)`);
@@ -156,4 +190,4 @@ if (errors.length) {
 }
 console.log(`validate: OK — ${VERSION} on ${HOST}, ${htmlFiles.length} pages, ` +
             `${hubs.length} hubs in llms.txt, sitemap agrees, links resolve, ` +
-            `blocks balanced, no relates-to, no key-shaped strings`);
+            `blocks balanced, book fresh, no relates-to, no key-shaped strings`);

@@ -4,7 +4,7 @@
 > just words; **we capture meaning through connectivity.**"
 > — Dinis Cruz, 26 June 2026
 
-*Source: <https://graphs.sgit.ai/index.html> · site v0.1.0 · markdown twin of the front page.*
+*Source: <https://graphs.sgit.ai/index.html> · site v0.2.0 · markdown twin of the front page.*
 
 **Not a graph database pitch.** The claim is that one grammar is the interface at every
 boundary — not that we store things in a graph. There is no graph database anywhere in the
@@ -83,6 +83,15 @@ The three canonical philosophy documents sit in `library/concepts/`, are referen
 files, and are **not referenced from the file every agent starts from**. An agent reading it and
 working forwards never encounters the philosophy. That is a routing failure, not a comprehension
 failure — so the fix is an address. [Origins, and the ten-phase arc](origins/index.html).
+
+## Read it as a book
+
+The site's content is also a book — **Meaning Through Connectivity**, sixteen chapters in
+six parts, generated from the site's own pages so the two cannot drift:
+
+- [Chapter pages, with the table of contents beside you](book/index.html)
+- [The whole book in one page](book/single.html)
+- [The 79-page PDF](book/meaning-through-connectivity.pdf)
 
 ## For agents
 

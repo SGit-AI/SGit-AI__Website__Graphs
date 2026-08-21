@@ -41,6 +41,11 @@ NAV = [
         ("Why graphs at all", "why-graphs/index.html"),
         ("Glossary", "glossary/index.html"),
     ], ("start/", "why-graphs/", "glossary/")),
+    ("The book", "book/index.html", [
+        ("Table of contents", "book/index.html"),
+        ("Read it in one page", "book/single.html"),
+        ("Download the PDF", "book/meaning-through-connectivity.pdf"),
+    ], ("book/",)),
     ("The grammar", "grammar/index.html", [
         ("The rules you can apply tomorrow", "grammar/index.html"),
         ("The edge set", "grammar/edge-set.html"),
@@ -75,6 +80,9 @@ FOOTER = [
         ("&#8594; The five-minute version", "start/index.html"),
         ("Why graphs at all", "why-graphs/index.html"),
         ("Glossary", "glossary/index.html"),
+        ("The book", "book/index.html"),
+        ("&nbsp;&nbsp;&hellip; in one page", "book/single.html"),
+        ("&nbsp;&nbsp;&hellip; as a PDF", "book/meaning-through-connectivity.pdf"),
     ]),
     ("The grammar", [
         ("The rules", "grammar/index.html"),

@@ -384,3 +384,70 @@ table.gloss td.plain{color:var(--accent-dk)}
 .p-argued{color:#b45309;border:1px solid rgba(180,83,9,.35);background:rgba(180,83,9,.08)}
 .p-absent{color:#b91c1c;border:1px solid rgba(185,28,28,.35);background:rgba(185,28,28,.08)}
 .p-live{color:#1d4ed8;border:1px solid rgba(29,78,216,.3);background:rgba(29,78,216,.07)}
+
+/* ---------- the book ----------
+   Three reading modes of one artefact: chapter pages with a persistent left TOC,
+   a single page holding everything, and a PDF printed from that single page.
+   The book is generated from the site's own pages (admin/build/gen_book.py) — a
+   projection, in the site's own sense — so nothing here styles new content, only
+   new arrangement. */
+.bookwrap{max-width:1360px;margin:0 auto;padding:0 1.1rem;display:grid;
+  grid-template-columns:280px minmax(0,1fr);gap:2.2rem;align-items:start}
+aside.booktoc{position:sticky;top:74px;max-height:calc(100vh - 95px);overflow-y:auto;
+  margin-top:1.7rem;padding:1.1rem 1rem;background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;box-shadow:var(--shadow);font-size:.82rem}
+.booktoc .tocpart{font-size:.63rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--warm);margin:1rem 0 .25rem}
+.booktoc .tocpart:first-child{margin-top:0}
+.booktoc a{display:block;padding:.24rem .5rem;border-radius:6px;color:var(--dim);line-height:1.45}
+.booktoc a:hover{background:var(--panel2);color:var(--fg);text-decoration:none}
+.booktoc a.here{color:var(--accent-dk);font-weight:600;background:rgba(15,118,110,.07)}
+.booktoc .tocmodes{border-top:1px dashed var(--line);margin-top:.9rem;padding-top:.7rem}
+.booktoc .tocmodes a{color:var(--accent-dk);font-size:.76rem}
+.bookmain{min-width:0}
+.bookbar{display:flex;gap:.55rem;align-items:center;flex-wrap:wrap;font-size:.78rem;color:var(--dim2);
+  border:1px solid var(--line);background:var(--panel2);border-radius:99px;padding:.35rem 1.05rem;
+  margin:1.7rem 0 0;width:max-content;max-width:100%}
+.bookbar a{color:var(--accent-dk);white-space:nowrap}
+.chkick{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--warm)}
+.chnum{font-family:var(--serif);font-size:.95rem;color:var(--dim2);margin:.4rem 0 0}
+main.doc.bookch{padding-top:1.5rem}
+main.doc.bookch h1{margin-top:.25rem}
+@media (max-width:960px){.bookwrap{display:block}aside.booktoc{display:none}}
+
+/* cover, and the part divider pages */
+.bookcover{text-align:center;max-width:780px;margin:0 auto;padding:4.6rem 1.2rem 2.6rem}
+.bookcover .eyebrow{margin-bottom:.4rem}
+.bookcover h1{font-family:var(--serif);font-size:clamp(2.4rem,6vw,3.7rem);letter-spacing:-.02em;
+  margin:.7rem 0 .8rem;color:#101114}
+.bookcover .bsub{color:var(--dim);font-size:1.06rem;line-height:1.65;max-width:600px;margin:0 auto 1.9rem}
+.bookcover blockquote{margin:0 auto 1.9rem;max-width:560px;font-family:var(--serif);font-style:italic;
+  font-size:1.02rem;line-height:1.7;color:#34363c;border:none;padding:0}
+.bookcover .byline{font-size:1.02rem;color:#101114;font-weight:600;margin:0 0 .25rem}
+.bookcover .ed{font-family:var(--mono);font-size:.72rem;color:var(--dim2);margin:0}
+.parthead{text-align:center;max-width:720px;margin:0 auto;padding:4.2rem 1.2rem .6rem}
+.parthead .pk{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--warm)}
+.parthead h2{font-family:var(--serif);font-size:2rem;color:#101114;margin:.7rem 0 .5rem}
+.parthead p{color:var(--dim);font-size:.98rem;line-height:1.65;max-width:560px;margin:0 auto}
+
+/* the single page's table of contents */
+.singletoc{max-width:var(--measure);margin:0 auto;padding:0 1.4rem 1rem}
+.singletoc .tocpart{font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--warm);margin:1.2rem 0 .25rem}
+.singletoc a{display:block;padding:.14rem 0;color:var(--dim);font-size:.92rem}
+.singletoc a:hover{color:var(--fg)}
+
+/* print: the PDF is Chromium's print of single.html */
+@media print{
+  body.bookpage nav.site,body.bookpage footer.site,.bookbar,aside.booktoc,.singletoc,
+  body.bookpage .noprint{display:none!important}
+  .bookwrap{display:block}
+  body.bookpage a{color:inherit;text-decoration:none}
+  /* shadows rasterise to embedded JPEGs in Chromium's print pipeline and quintuple
+     the PDF size for zero benefit on paper */
+  body.bookpage *{box-shadow:none!important;backdrop-filter:none!important}
+  .bookcover{padding-top:34vh;page-break-after:always}
+  .parthead{padding-top:32vh;page-break-after:always}
+  main.doc.chap{page-break-before:always;padding-top:0}
+  .agent,.docmeta,.pathline{break-inside:avoid}
+}

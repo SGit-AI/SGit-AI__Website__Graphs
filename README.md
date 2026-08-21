@@ -25,6 +25,10 @@ Live site: https://graphs.sgit.ai (GitHub Pages, deployed from `dev`).
 - `why-graphs/` — the page for a sceptic, and the GraphRAG / RDF / property-graph positioning
 - `examples/` — worked graphs with real numbers; three have their own pages
 - `maps/` — Wardley maps as graphs, and the `[visibility, evolution]` coordinate trap
+- `book/` — **the site as a book**, *Meaning Through Connectivity*: sixteen chapters in six
+  parts, generated from the site's own pages by `gen_book.py`, in three reading modes —
+  chapter pages with a left table of contents, one single page, and a PDF printed from it.
+  `book/manifest.json` records source hashes; the gate fails if the book goes stale
 - `glossary/` — every technical term with a plain-English alternative beside it
 - `shipped/` — what is built, what is argued, and what does not exist anywhere
 - `origins/` — ten phases, February to August 2026, and the paths not taken
@@ -37,6 +41,7 @@ Live site: https://graphs.sgit.ai (GitHub Pages, deployed from `dev`).
 - `admin/build/chrome.py` — the single definition of nav and footer, applied across every page
 - `admin/build/gen_documents.py` — generates the `documents/` reader pages from `briefs/`
 - `admin/build/gen_llms_full.py` — generates `llms-full.txt`
+- `admin/build/gen_book.py` — generates `book/` and its PDF
 - `admin/build/validate.js` — the pre-release gate
 - `assets/site.css` — shared stylesheet (sgit.ai design language)
 
@@ -50,10 +55,12 @@ under `briefs/`.
    `admin/versions.html`, update `admin/comms.html`.
 2. `python3 admin/build/gen_documents.py` — if a document was added.
 3. `python3 admin/build/gen_llms_full.py` — if a document or `llms.txt` changed.
-4. `python3 admin/build/chrome.py` — propagates the version badge and any nav/footer change to
+4. `python3 admin/build/gen_book.py` — always: the gate fails on a stale book. Regenerates
+   the PDF too when a local Chromium is available.
+5. `python3 admin/build/chrome.py` — propagates the version badge and any nav/footer change to
    every page, and stamps the version into `llms.txt`, `llms-full.txt` and `index.md`.
-5. `node admin/build/validate.js`
-6. `git commit -am "site vX.Y.Z: ..." && git push origin dev`
+6. `node admin/build/validate.js`
+7. `git commit -am "site vX.Y.Z: ..." && git push origin dev`
 
 Every push to `dev` runs `.github/workflows/deploy-pages.yml`: validate → auto-tag (`vX.Y.Z`,
 verified against `version.txt` and the commit subject, next-minor enforced) → deploy to GitHub
@@ -76,7 +83,10 @@ Pages. Pull requests run validation only. Same pipeline as
    name; quoting the ban requires a `data-banned-verb` attribute.
 6. **Block balance** — every page closes every `<div>` it opens. Added after four pages
    shipped a note box closed with `</p>`, which browsers accept silently.
-7. **Key-leak tripwire** — nothing in the tree may look like a vault key.
+7. **The book is a projection** — `book/manifest.json` must carry this release's version
+   and every chapter's source page must hash to what it recorded at generation. A source
+   edited without regenerating the book fails the build.
+8. **Key-leak tripwire** — nothing in the tree may look like a vault key.
 
 ## Licence
 

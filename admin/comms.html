@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.1.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -29,6 +29,14 @@
       <a class="sl" href="../start/index.html">The five-minute version</a>
       <a class="sl" href="../why-graphs/index.html">Why graphs at all</a>
       <a class="sl" href="../glossary/index.html">Glossary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../book/index.html">The book<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../book/index.html">Table of contents</a>
+      <a class="sl" href="../book/single.html">Read it in one page</a>
+      <a class="sl" href="../book/meaning-through-connectivity.pdf">Download the PDF</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -165,9 +173,9 @@
       </tr>
       <tr>
         <td><b>T6</b></td>
-        <td>Include the rendered pages' prose in <code>llms-full.txt</code>, not just the source documents.</td>
-        <td><code>gen_llms_full.py</code> concatenates <code>llms.txt</code>, the front page and all eleven source documents — 214 KB in one fetch. It does <b>not</b> include the prose of the rendered HTML pages, which is where most of the site's own writing lives. That is the remaining half.</td>
-        <td><span class="tstat t-doing">Half done</span></td>
+        <td>Make the rendered pages' prose fetchable in one request, not just the source documents.</td>
+        <td>Answered by the book: <a href="../book/single.html">/book/single.html</a> is all sixteen content pages in one HTML file, generated from the pages themselves. <code>llms-full.txt</code> still carries the source documents; the front page's prose is in <code>index.md</code>. Between the three, one-fetch coverage is complete.</td>
+        <td><span class="tstat t-done">Done · v0.2.0</span></td>
       </tr>
       <tr>
         <td><b>T7</b></td>
@@ -180,6 +188,12 @@
         <td>Write <code>/depth/time/</code>.</td>
         <td>Time as a first-class dimension is asserted across the corpus and never developed — <a href="../documents/gaps.html">gap G10</a>. The vault commit DAG is a working answer to “how does a graph change over time” and should be the proof.</td>
         <td><span class="tstat t-open">Queued</span></td>
+      </tr>
+      <tr>
+        <td><b>T10</b></td>
+        <td>Build <code>/book/</code> — the site as a book, in three reading modes.</td>
+        <td>Founder request, 21 August 2026: a book-like reading sequence over the existing content. Built as a <b>generated projection</b> of the site's pages — chapter pages with a left table of contents, a single page, and a PDF — with a CI check that fails the build if a source page changes without the book regenerating. <a href="versions.html">The v0.2.0 row</a> has the details.</td>
+        <td><span class="tstat t-done">Done · v0.2.0</span></td>
       </tr>
       <tr>
         <td><b>T9</b></td>
@@ -210,13 +224,16 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.1.0</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.0</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
     <a href="../start/index.html">&#8594; The five-minute version</a>
     <a href="../why-graphs/index.html">Why graphs at all</a>
     <a href="../glossary/index.html">Glossary</a>
+    <a href="../book/index.html">The book</a>
+    <a href="../book/single.html">&nbsp;&nbsp;&hellip; in one page</a>
+    <a href="../book/meaning-through-connectivity.pdf">&nbsp;&nbsp;&hellip; as a PDF</a>
   </div>
   <div>
     <h4>The grammar</h4>
