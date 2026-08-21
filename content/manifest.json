@@ -38,9 +38,9 @@
     },
     {
       "md": "content/examples.md",
-      "md_sha256": "162b02092097b3a5e5560e24bc0f71d714111fa28fcedc1fa58d8ea280ef5bd6",
+      "md_sha256": "972b3044de7a9f20aaff4d913a17d832fcd5a7e336e1d33095225e9a6c36540a",
       "path": "examples/index.html",
-      "main_sha256": "276f276feaf9e0100362313c47e0b70acba6eccf0fc40c2c34567e49069ae934"
+      "main_sha256": "a96dfa8b6e2eb28efc2a8eac6c57b17bbec2df2153d53584fde37e41c6cd9063"
     },
     {
       "md": "content/glossary.md",

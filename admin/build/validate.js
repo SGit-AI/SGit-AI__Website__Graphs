@@ -204,6 +204,26 @@ if (!fs.existsSync(bookManifestPath)) {
       errors.push(`book chapter file missing: book/${ch.file}`);
     }
   }
+  // the introduction is projected from the front page's hero..footer region,
+  // the same no-drift rule as the chapters — the front page IS a book source
+  if (!book.intro) {
+    errors.push('book/manifest.json has no intro entry — run gen_book.py');
+  } else {
+    const src = path.join(ROOT, book.intro.source);
+    if (!fs.existsSync(src)) {
+      errors.push(`book introduction source is gone: ${book.intro.source}`);
+    } else {
+      const m = fs.readFileSync(src, 'utf8').match(/<header class="hero">[\s\S]*?(?=<footer class="site">)/);
+      if (!m) {
+        errors.push(`${book.intro.source}: no hero region for the introduction to project`);
+      } else if (sha(m[0]) !== book.intro.source_sha256) {
+        errors.push(`book is stale: ${book.intro.source} changed since the book was generated — run gen_book.py (and regenerate the PDF)`);
+      }
+    }
+    if (!fs.existsSync(path.join(ROOT, 'book', book.intro.file))) {
+      errors.push(`book introduction file missing: book/${book.intro.file}`);
+    }
+  }
   // both editions ship on every release: the print interior and the screen PDF
   // the cover is generated from the interior: same version, spine from its pages
   if (!book.cover) {

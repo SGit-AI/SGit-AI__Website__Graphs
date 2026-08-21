@@ -1,5 +1,5 @@
 {
-  "version": "v0.3.3",
+  "version": "v0.3.4",
   "title": "Meaning Through Connectivity",
   "chapters": [
     {
@@ -56,7 +56,7 @@
       "title": "Worked graphs, with real numbers",
       "file": "ch-07-worked-graphs-with-real-numbers.html",
       "source": "examples/index.html",
-      "source_sha256": "276f276feaf9e0100362313c47e0b70acba6eccf0fc40c2c34567e49069ae934"
+      "source_sha256": "a96dfa8b6e2eb28efc2a8eac6c57b17bbec2df2153d53584fde37e41c6cd9063"
     },
     {
       "n": 8,
@@ -131,28 +131,34 @@
       "source_sha256": "164f1e43e6a5964ef1c684792b2dfdbcb01d1c636bc72aeb3695eef23eb40613"
     }
   ],
+  "intro": {
+    "file": "introduction.html",
+    "title": "Introduction",
+    "source": "index.html",
+    "source_sha256": "4c72fa82ba7894809088b33b210eef539563302e630fe5b750d00e9762c12c87"
+  },
   "pdfs": [
     {
       "file": "meaning-through-connectivity.pdf",
       "edition": "print interior 6x9",
-      "version": "v0.3.3",
-      "pages": 119,
+      "version": "v0.3.4",
+      "pages": 125,
       "typesetter": "weasyprint 69.0"
     },
     {
       "file": "meaning-through-connectivity-screen.pdf",
       "edition": "screen (US Letter)",
-      "version": "v0.3.3",
-      "pages": 85,
+      "version": "v0.3.4",
+      "pages": 89,
       "typesetter": "chromium"
     }
   ],
   "cover": {
-    "version": "v0.3.3",
-    "pages_basis": 119,
-    "spine_in": 0.268,
+    "version": "v0.3.4",
+    "pages_basis": 125,
+    "spine_in": 0.2815,
     "wrap_in": [
-      12.518,
+      12.5315,
       9.25
     ],
     "files": [

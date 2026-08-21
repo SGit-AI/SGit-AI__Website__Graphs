@@ -22,7 +22,7 @@
 
 <section class="fm colophon">
   <p><b>Meaning Through Connectivity</b>, first edition, 21 August 2026, generated from graphs.sgit.ai at site
-  v0.3.3 by <code>admin/build/gen_book.py</code>. The first of many: the site is the
+  v0.3.4 by <code>admin/build/gen_book.py</code>. The first of many: the site is the
   living version of this text, and a new edition of this book is published each time
   the content, its examples and its evidence make a major step.</p>
   <p>Written by Dinis Cruz together with a team of AI agents. The text was developed
@@ -45,6 +45,7 @@
 <section class="fm toc">
   <h1>Contents</h1>
   <div class="toc">
+    <div class="t-ch"><a href="#intro">Introduction</a></div>
     <div class="t-part">Part I · The claim</div>
     <div class="t-ch"><a href="#ch01">1 · Why graphs at all</a></div>
     <div class="t-ch"><a href="#ch02">2 · The five ideas</a></div>
@@ -68,6 +69,77 @@
     <div class="t-ch"><a href="#ch15">15 · Glossary</a></div>
     <div class="t-ch"><a href="#ch16">16 · The author's interest, and where this loses</a></div>
   </div>
+</section>
+<section class="chapter" id="intro">
+<div class="chkick">The front door</div>
+<div class="chnum">Introduction</div>
+<h1>A node is just a node. Meaning lives in the edges.</h1>
+<p class="lead">Two nodes both hold the value <code>8080</code>. One is connected to a type, which is connected to a library, which is connected to a version. The other is connected to nothing. <b>The difference is not in the value. The difference is in the connectivity.</b> This book teaches that discipline, in increasing depth, and proves it with real worked graphs.</p>
+<blockquote class="challenge" style="margin-top:0">“in our graph we do not use properties, because properties do not have meaning, they are just words; <b>we capture meaning through connectivity.</b>”
+      <span class="small dim" style="display:block;font-style:normal;margin-top:.7rem">— Dinis Cruz, 26 June 2026, in an architecture brief about digital twins. The tightest formulation in the corpus; <a href="https://graphs.sgit.ai/documents/the-thesis.html">the other thirty-four are here</a>.</span>
+    </blockquote>
+<div class="note" style="margin-bottom:0"><b>Read this before you read anything else: this is not a graph database pitch.</b> The claim is that one grammar is the interface at every boundary, <em>not</em> that we store things in a graph. There is no graph database anywhere in the work behind this book, and <a href="#ch12">we say so in its own chapter</a>. If you came here expecting Neo4j-versus-RDF, <a href="#ch01-positioning">the positioning section</a> is the honest answer.</div>
+<h2 id="intro-hook">The story that needs no security or legal background</h2>
+<p class="blurb">If you only read one thing here, read this. It is what a graph does that a document cannot.</p>
+
+    <p>Everyone has heard that expertise takes <b>10,000 hours</b>. The number comes from a 1993 study of violinists. In that study it was an <em>average</em>, not a threshold, and half the top group had not reached it. The original author spent much of his career correcting the popularisation.</p>
+    <p><b>None of the corrections ever attached to the claim.</b> The claim had by then been carried through a citation network of <b>242 papers</b> and more than <b>200,000 supporting citation paths</b>: paths which, followed to the bottom, lead back to nothing.</p>
+    <p>A document cannot fix this. You can publish a correction, and the correction sits somewhere else, unread. A graph can: mark the claim superseded from a date, and then <b>ask the graph which conclusions were resting on it</b>. That query has an answer. It is the same query, whether the claim is a study about violinists, a risk someone accepted last quarter, or a fact your compliance report depends on.</p>
+    <p class="small dim">Source: <code>briefs/08/09/graphing-text/v0.33.57__arch-brief__…fact-does-not-exist-in-a-vacuum…</code>, 9 August 2026. Discussed at <a href="#ch05-supersede">supersede, never delete</a>.</p>
+  
+<h2 id="intro-altitudes">Three altitudes</h2>
+<p class="blurb">“this is just a question of <b>altitude</b>, like if you see something from a very high altitude you just see the city walls, and as you zoom in you start to see roads and buildings, and eventually people and cars.” This book is built that way on purpose: the reading order is a demonstration of the argument, not just a way through it.</p>
+<div class="altitudes">
+    <a class="alt" href="#ch02">
+      <div class="num">Altitude 1 · the city walls</div>
+      <h3>Start here</h3>
+      <p>Five ideas, no jargon, about fifteen minutes. A port number, five teams who all say “Review” and mean five different things, and why “we cannot confirm Z” is a better answer than a guess.</p>
+      <span class="go">The five-minute version →</span>
+    </a>
+    <a class="alt a2" href="#ch03">
+      <div class="num">Altitude 2 · roads and buildings</div>
+      <h3>The grammar</h3>
+      <p>Rules you can apply to your own graph tomorrow. Every edge is a verb with a distinct inverse. <code data-banned-verb>relates-to</code> is banned. Never render the whole graph: render the result of a query.</p>
+      <span class="go">The rules →</span>
+    </a>
+    <a class="alt a3" href="#ch05">
+      <div class="num">Altitude 3 · people and cars</div>
+      <h3>Depth</h3>
+      <p>The full argument: against schema-first, ontologies of ontologies, classification as a computed path-pattern, and why determinism and provenance are <em>consequences</em> of fixing the seams rather than features.</p>
+      <span class="go">The full argument →</span>
+    </a>
+  </div>
+<p>In this book, the altitudes are the parts: Part I stays at the city walls, Part II walks the roads and buildings of the grammar, and Part III gets down to people and cars. Part IV is the worked proof, Part V is what exists in reality, and the appendices close with the vocabulary in plain English and the disclosure of who wrote this and how.</p>
+<h2 id="intro-proof">Real graphs, real numbers</h2>
+<p class="blurb">Three of these are live and public right now: you can open them and count. The rest are parsed from the design documents behind them. We never mix the two: a live number is labelled live.</p>
+<div class="proof">
+    <div class="n"><b>1,523 · 1,944</b><span>nodes · edges in the EU AI Act regulation graph</span><em>live vault</em></div>
+    <div class="n"><b>18 · 37 · 14</b><span>facts · risks · provisions in the Risk Graph Explorer “Exposed” preset</span><em>live vault</em></div>
+    <div class="n"><b>17</b><span>entry points in the agentic browser isolation graph, across 5 stakeholder altitudes</span><em>live vault</em></div>
+    <div class="n"><b>59 · 75</b><span>nodes · edges in the browser-isolation risk graph, including 3 risks <em style="font-style:italic">of the mitigation</em></span><em>parsed from the brief</em></div>
+    <div class="n"><b>51 · 53</b><span>nodes · edges in the 2FA (two-factor authentication) instance graph, in one machine-readable file</span><em>parsed from the brief</em></div>
+    <div class="n"><b>71 · 141</b><span>nodes · edges in a typed property graph that is live repo data, not a design</span><em>measured</em></div>
+  </div>
+<p class="blurb" style="margin-top:1.6rem;margin-bottom:0"><a href="#ch07">All the worked examples, with what each one teaches →</a></p>
+<h2 id="intro-honesty">What is built, and what is argued</h2>
+<p class="blurb">This book's subject matter is almost entirely design. Saying so is not a caveat bolted on at the end; it is the reason the rest of it is worth reading.</p>
+<div class="tablewrap"><table>
+      <thead><tr><th>Ships, and you can check it by reading code</th><th>Argued, and published as argument</th><th>Absent, and we will not imply otherwise</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>A content-addressed commit DAG (directed acyclic graph) with multi-parent commits, a real wave-BFS (breadth-first search) merge-base and three-way merge · a graph of graphs via typed <code>*.link.json</code> edges · a read-only DAG query API exposed to untrusted sandboxed apps · a live typed property graph of <b>71 nodes / 141 edges</b> · three published vaults</td>
+          <td>The semantic risk ontology · node type formulas · ontologies of ontologies · the grounding ladder · a graph at every boundary · almost everything else in this book</td>
+          <td><b>No graph database.</b> No MGraph-DB dependency. No SPARQL or Cypher (the graph query languages) in the browser. No RDF or JSON-LD (the Semantic Web's formats) in the code. No path-query language. Commit signing is written and only ever set to <code>null</code></td>
+        </tr>
+      </tbody>
+    </table></div>
+<p class="cap">The honest sentence, which belongs up front rather than buried: <b>“We ship a hand-written content-addressed object graph in the browser. We do not use a graph database, and we say so in our own architecture notes.”</b> <a href="#ch12">The full separation →</a></p>
+<h2 id="intro-agents">If you are an agent</h2>
+<p>This book exists partly because agents under-weight this material, and the cause is known and mechanical: the three canonical philosophy documents were imported from another project, are referenced by four files, and are not referenced from the repository's <code>CLAUDE.md</code> at all. An agent reading that file and working forwards <b>never encounters the philosophy</b>. That is a routing failure, not a comprehension failure, so the fix is an address.</p>
+<div class="agent">
+      <h4>For an agent</h4>
+      <p>Fetch <a href="https://graphs.sgit.ai/llms.txt">/llms.txt</a> first: every entry carries the page's single most important fact, not just its topic, because for some fetch tools those descriptions are the only content they will ever see. If you can only make one request, fetch <a href="https://graphs.sgit.ai/llms-full.txt">/llms-full.txt</a> instead: it is the whole document set concatenated into one file. The raw markdown under <a href="https://graphs.sgit.ai/documents/index.html">/briefs/</a> is the source of truth; the rendered pages are presentation. All of it is CC BY 4.0.</p>
+    </div>
 </section>
 <section class="part"><div class="pk">Part I</div><h2>The claim</h2><p>The altitude of the city walls: five ideas that need no vocabulary, and the reason a sceptic should care before learning any of it.</p></section>
 <section class="chapter" id="ch01">
@@ -106,7 +178,7 @@
 <ul>
 <li><strong>Reach.</strong> A table lists the permissions an account has. Only a transitive closure over assume-role, pass-role and wildcard edges tells you what those permissions actually <em>reach</em>. <a href="#ch07-aws-iam">The AWS IAM example</a> (IAM: identity and access management) names that closure and computes it.</li>
 <li><strong>Bidirectionality.</strong> “What does this browser extension reach?” and “how could my email be attacked?” are two different tables. They are one graph, walked in two directions. <a href="#ch07-extensions">The browser-extension example</a>.</li>
-<li><strong>Propagation of a correction.</strong> Mark a claim superseded and ask which conclusions were resting on it. There is no table shape that answers that; it is the <a href="https://graphs.sgit.ai/index.html#hook">10,000-hours story</a>.</li>
+<li><strong>Propagation of a correction.</strong> Mark a claim superseded and ask which conclusions were resting on it. There is no table shape that answers that; it is the <a href="#intro-hook">10,000-hours story</a>.</li>
 </ul>
 <h2 id="ch01-positioning">Where this sits next to GraphRAG, RDF and property graphs</h2>
 <div class="warnbox"><p><strong>Also written fresh, and more contested than the rest of the book.</strong> The corpus behind it has zero occurrences of “GraphRAG” or “hypergraph”. It holds a strong implicit position and never engages the named field; that silence is recorded as gap <strong>G11</strong> in the same gaps catalogue. What follows is our position, stated so it can be argued with, not a claim that the position was already worked out elsewhere.</p>
@@ -626,7 +698,7 @@
 </ul>
 <h2 id="ch05-supersede">5 · Supersede, never delete: corrections must propagate</h2>
 <p>A superseded claim is marked from a date. It is not removed. Removing it destroys the thing you most need: the record that something once rested on it.</p>
-<p>Because the claim is still there and still connected, the graph can answer the question a document cannot: <strong>which conclusions were resting on this?</strong> <a href="https://graphs.sgit.ai/index.html#hook">The 10,000-hours story</a> is the case: 242 papers, more than 200,000 supporting citation paths, and corrections that never attached to any of them because there was nothing for them to attach to.</p>
+<p>Because the claim is still there and still connected, the graph can answer the question a document cannot: <strong>which conclusions were resting on this?</strong> <a href="#intro-hook">The 10,000-hours story</a> is the case: 242 papers, more than 200,000 supporting citation paths, and corrections that never attached to any of them because there was nothing for them to attach to.</p>
 <p>Two companions to the rule, both from the same August 2026 briefs:</p>
 <ul>
 <li><strong>Attach, never mutate.</strong> Contributions arrive as subgraphs attached to an author-confirmed spine. A bad contribution is discarded rather than repaired, which is what makes <em>abundance</em> a feature instead of a risk. You can accept a hundred evidence packs because accepting one costs nothing you cannot undo.</li>
@@ -819,7 +891,7 @@
 <p>One register per accepting role, in that role's own language, with relevance fading as you move away from the reader's altitude. Both graphs in this pair validate clean: zero dangling edges, zero orphan nodes.</p>
 <p>The interesting part is a defect its own authors declared: <em>“Neither grounds to a Reality node through a Twin. Both are structural topology graphs rather than evidence-grounded risk graphs… a departure from the standing convention.”</em> A graph about graph discipline that admits where it broke discipline is a better teaching artefact than a clean one.</p>
 <h3 id="ch07-ten-thousand">The 10,000-hours citation network <span class="pill p-argued">external case</span></h3>
-<p><strong>242 papers, more than 200,000 supporting citation paths, traced back to nothing.</strong> The best non-technical story here and the clearest case for corrections propagating through a graph. <a href="https://graphs.sgit.ai/index.html#hook">On the front page</a>, and <a href="#ch05-supersede">the rule it produces</a>.</p>
+<p><strong>242 papers, more than 200,000 supporting citation paths, traced back to nothing.</strong> The best non-technical story here and the clearest case for corrections propagating through a graph. <a href="#intro-hook">The story in full</a>, and <a href="#ch05-supersede">the rule it produces</a>.</p>
 <h2 id="ch07-not-here">What is deliberately not here</h2>
 <div class="warnbox"><p>Two worked examples exist and are not published, for reasons that have nothing to do with the licence:</p>
 <ul>

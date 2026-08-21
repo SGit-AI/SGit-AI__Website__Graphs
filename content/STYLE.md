@@ -52,3 +52,15 @@ directives, ` ```path ` fences ([Fact] -backed_by-> [Evidence]), ` ```mermaid `,
 hatch. See admin/build/gen_pages.py for the full grammar.
 
 Edit these files, never the rendered pages: the build fails if the two disagree.
+
+## 5. The front page is a book source too
+
+The book's Introduction is projected from the site's front page (`index.html`,
+the hero and its bands) by `admin/build/gen_book.py`, the same no-drift rule as
+the chapters: the gate hashes the front page and fails the build if it changes
+without the book regenerating. Two consequences for editors. First, the front
+page's prose is book prose: everything in sections 1-3 above applies to it.
+Second, wording that only makes sense on a website ("this site", "the
+positioning page") is rewritten at the projection by the `FRONT_TO_BOOK` table
+in gen_book.py; if you reword one of those sentences, update the matching pair,
+or the build will stop and say so.

@@ -4,10 +4,10 @@
 > just words; **we capture meaning through connectivity.**"
 > — Dinis Cruz, 26 June 2026
 
-*Source: <https://graphs.sgit.ai/index.html> · site v0.3.3 · markdown twin of the front page.*
+*Source: <https://graphs.sgit.ai/index.html> · site v0.3.4 · markdown twin of the front page.*
 
 **Not a graph database pitch.** The claim is that one grammar is the interface at every
-boundary — not that we store things in a graph. There is no graph database anywhere in the
+boundary, not that we store things in a graph. There is no graph database anywhere in the
 work behind this site, and [we say so on its own page](shipped/index.html).
 
 ---
@@ -86,7 +86,7 @@ failure — so the fix is an address. [Origins, and the ten-phase arc](origins/i
 
 ## Read it as a book
 
-The site's content is also a book — **Meaning Through Connectivity**, sixteen chapters in
+The site's content is also a book — **Meaning Through Connectivity**, an introduction and sixteen chapters in
 six parts, generated from the site's own pages so the two cannot drift:
 
 - [Chapter pages, with the table of contents beside you](book/index.html)

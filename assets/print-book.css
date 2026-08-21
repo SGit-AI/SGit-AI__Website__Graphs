@@ -97,6 +97,30 @@ li { margin: .3em 0; }
 .card { border: .5pt solid #999; box-shadow: none; margin: .5em 0; break-inside: avoid; }
 .card .tag, .card .go { color: #333; }
 .pill, .tstat, .evtag, .opt-verdict { color: #333; border-color: #999; background: #fff; }
+
+/* ---------- the introduction, projected from the front page ---------- */
+/* Its h1 is the hero line; the running head wants one word, not a sentence. */
+#intro h1 { string-set: ctitle "Introduction"; }
+.altitudes { display: block; margin: 1em 0; }
+.alt, .alt.a2, .alt.a3 { display: block; border: .5pt solid #999;
+  border-top: 1.5pt solid #000; padding: .5em .75em .6em; margin: 0 0 .55em;
+  break-inside: avoid; color: #000; }
+.alt .num, .alt.a2 .num, .alt.a3 .num { font: bold 7.5pt 'Liberation Sans', sans-serif;
+  letter-spacing: .12em; text-transform: uppercase; color: #444; }
+.alt h3 { font: bold 11pt 'Liberation Sans', sans-serif; margin: .25em 0 .3em; color: #000; }
+.alt p { font-size: 9.5pt; margin: 0; text-align: left; hyphens: manual; color: #000; }
+.alt .go, .alt.a2 .go, .alt.a3 .go { display: inline-block; margin-top: .3em;
+  font-size: 8pt; color: #333; }
+.proof { display: block; margin: 1em 0; }
+.proof .n { display: inline-block; vertical-align: top; width: 47%;
+  margin: 0 1.5% .55em 0; border: .5pt solid #999; padding: .45em .6em;
+  break-inside: avoid; }
+.proof .n b { display: block; font-size: 12pt; color: #000; }
+.proof .n span { display: block; font-size: 8.5pt; line-height: 1.4;
+  text-align: left; hyphens: manual; margin-top: .15em; }
+.proof .n em { display: block; font-style: normal; margin-top: .3em;
+  font: bold 7pt 'Liberation Mono', monospace; letter-spacing: .08em;
+  text-transform: uppercase; color: #444; }
 .evtag { color: #000; font-weight: bold; }
 .epal { color: #333; }
 .epal i.assurance { border-color: #000; }

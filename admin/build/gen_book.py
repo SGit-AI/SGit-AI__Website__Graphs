@@ -120,8 +120,9 @@ ABOUT = f"""
   source of truth: the chapter text is <b>authored in markdown</b> (each chapter is
   fetchable at <code>{HOST}/content/&lt;chapter&gt;.md</code>), the site pages are rendered
   from it, and this book is generated from those pages by
-  <code>admin/build/gen_book.py</code>. Nothing can drift: the build fails if a page lags
-  its markdown or the book lags a page. That is the book's own argument — <em>documents
+  <code>admin/build/gen_book.py</code>. The introduction is projected the same way from
+  the site's front page, so the book opens exactly where the site does. Nothing can
+  drift: the build fails if a page lags its markdown or the book lags a page. That is the book's own argument — <em>documents
   are projections of graphs</em> — applied to the book itself.</p>
   <p>It was written by Dinis Cruz together with a team of AI agents, from voice memos
   developed into more than 1,300 structured briefs inside a corpus of some 3,300
@@ -182,6 +183,130 @@ ABOUT = f"""
   <a href="{HOST}/documents/index.html">{HOST.replace('https://','')}/documents/</a>.</p>
 </main>
 """
+
+
+INTRO_FILE = "introduction.html"
+INTRO_TITLE = "A node is just a node. Meaning lives in the edges."
+
+# The introduction's site→book wording map. Each pair must keep matching the
+# front page's current prose: if the page is reworded and a pair stops firing,
+# the guard in extract_front() refuses to ship an introduction that still says
+# "this site", so the projection cannot silently drift into web-speak.
+FRONT_TO_BOOK = [
+    ("This site teaches that discipline", "This book teaches that discipline"),
+    ("the work behind this site", "the work behind this book"),
+    ("we say so on its own page", "we say so in its own chapter"),
+    (">the positioning page</a> is the honest answer",
+     ">the positioning section</a> is the honest answer"),
+    ("The site is built that way on purpose: the navigation is a demonstration "
+     "of the argument, not just a way around it.",
+     "This book is built that way on purpose: the reading order is a "
+     "demonstration of the argument, not just a way through it."),
+    ("This site's subject matter", "This book's subject matter"),
+    ("almost everything else on this site", "almost everything else in this book"),
+    ("which belongs on the front page rather than buried",
+     "which belongs up front rather than buried"),
+    ("This site exists partly because", "This book exists partly because"),
+]
+
+
+def extract_front():
+    """The introduction, projected from the site's front page. The front page
+    is hero-and-bands rather than a <main class="doc">, so it gets its own
+    extraction: the hero lead, the epigraph and the not-a-pitch note, the
+    10,000-hours story, the three altitudes, the proof numbers, the
+    ships/argued/absent table and the agent note, in reading order — minus the
+    purely navigational bands (the CTAs and the read-it-as-a-book cards, which
+    point at the thing a book reader is already holding). validate.js hashes
+    the same hero..footer region and fails the build if the front page changes
+    without the book regenerating."""
+    t = (ROOT / "index.html").read_text()
+    m = re.search(r'<header class="hero">.*?(?=<footer class="site">)', t, re.S)
+    if not m:
+        sys.exit("gen_book: index.html has no hero..footer region to project")
+    raw = m.group(0)
+
+    def grab(pattern, what, src=None):
+        mm = re.search(pattern, src if src is not None else raw, re.S)
+        if not mm:
+            sys.exit(f"gen_book: front-page piece not found: {what}")
+        return mm.group(1)
+
+    def band(bid):
+        return grab(rf'<section class="band[^"]*" id="{bid}">(.*?)</section>',
+                    f"band #{bid}")
+
+    lead = grab(r'<p class="sub">(.*?)</p>', "hero lead")
+    b_claim, b_hook = band("claim"), band("hook")
+    b_alt, b_proof = band("altitudes"), band("proof")
+    b_hon, b_ag = band("honesty"), band("agents")
+
+    quote = grab(r'(<blockquote class="challenge".*?</blockquote>)', "epigraph", b_claim)
+    pitch = grab(r'(<div class="note".*?</div>)', "not-a-pitch note", b_claim)
+    hook_h2 = grab(r'<h2>(.*?)</h2>', "hook heading", b_hook)
+    hook_blurb = grab(r'<p class="blurb">(.*?)</p>', "hook blurb", b_hook)
+    hook_body = grab(r'<div class="split">(.*?)</div>\s*$', "hook body", b_hook)
+    alt_h2 = grab(r'<h2>(.*?)</h2>', "altitudes heading", b_alt)
+    alt_blurb = grab(r'<p class="blurb">(.*?)</p>', "altitudes blurb", b_alt)
+    alt_div = grab(r'(<div class="altitudes">.*</div>)\s*$', "altitude doors", b_alt)
+    proof_h2 = grab(r'<h2>(.*?)</h2>', "proof heading", b_proof)
+    proof_blurb = grab(r'<p class="blurb">(.*?)</p>', "proof blurb", b_proof)
+    proof_div = grab(r'(<div class="proof">.*</div>)\s*<p class="blurb"',
+                     "proof numbers", b_proof)
+    proof_more = grab(r'(<p class="blurb"[^>]*>\s*<a.*?</p>)\s*$',
+                      "proof link-out", b_proof)
+    hon_h2 = grab(r'<h2>(.*?)</h2>', "honesty heading", b_hon)
+    hon_blurb = grab(r'<p class="blurb">(.*?)</p>', "honesty blurb", b_hon)
+    hon_table = grab(r'(<table>.*?</table>)', "honesty table", b_hon)
+    hon_cap = grab(r'<p class="cap">(.*?)</p>', "honesty cap", b_hon)
+    ag_h2 = grab(r'<h2>(.*?)</h2>', "agents heading", b_ag)
+    ag_p = grab(r'<div class="split">\s*(<p>.*?</p>)', "agents paragraph", b_ag)
+    ag_box = grab(r'(<div class="agent">.*?</div>)', "agent box", b_ag)
+
+    # Book-only glue, same standing as the part blurbs above: on the site the
+    # three doors are links; in the book they are the parts, and saying so is
+    # the introduction doing its job.
+    parts_map = (
+        '<p>In this book, the altitudes are the parts: Part I stays at the city '
+        'walls, Part II walks the roads and buildings of the grammar, and Part III '
+        'gets down to people and cars. Part IV is the worked proof, Part V is what '
+        'exists in reality, and the appendices close with the vocabulary in plain '
+        'English and the disclosure of who wrote this and how.</p>')
+
+    content = "\n".join([
+        f'<p class="lead">{lead}</p>',
+        quote,
+        pitch,
+        f'<h2 id="hook">{hook_h2}</h2>',
+        f'<p class="blurb">{hook_blurb}</p>',
+        hook_body,
+        f'<h2 id="altitudes">{alt_h2}</h2>',
+        f'<p class="blurb">{alt_blurb}</p>',
+        alt_div,
+        parts_map,
+        f'<h2 id="proof">{proof_h2}</h2>',
+        f'<p class="blurb">{proof_blurb}</p>',
+        proof_div,
+        proof_more,
+        f'<h2 id="honesty">{hon_h2}</h2>',
+        f'<p class="blurb">{hon_blurb}</p>',
+        f'<div class="tablewrap">{hon_table}</div>',
+        f'<p class="cap">{hon_cap}</p>',
+        f'<h2 id="agents">{ag_h2}</h2>',
+        ag_p,
+        ag_box,
+    ])
+    for a, b in FRONT_TO_BOOK:
+        content = content.replace(a, b)
+    if re.search(r'\bthis site\b', content, re.I):
+        sys.exit("gen_book: the projected introduction still says 'this site' — "
+                 "extend FRONT_TO_BOOK to match the front page's current wording")
+    return content, hashlib.sha256(raw.encode()).hexdigest()
+
+
+def aid(n):
+    """Anchor id for a book unit: chNN for chapters, intro for the introduction."""
+    return "intro" if n == 0 else f"ch{n:02d}"
 
 
 def slugify(title):
@@ -255,14 +380,14 @@ def rewrite_links(content, source, mode, chnum, page_to_ch, ch_files):
             return m.group(0)
         if href.startswith('#'):
             if mode == 'single':
-                return f'href="#ch{chnum:02d}-{href[1:]}"'
+                return f'href="#{aid(chnum)}-{href[1:]}"'
             return m.group(0)
         path, frag = (href.split('#', 1) + [''])[:2]
         site_path = normpath(pjoin(src_dir, path)) if src_dir else normpath(path)
         if site_path in page_to_ch:
             n = page_to_ch[site_path]
             if mode == 'single':
-                return f'href="#ch{n:02d}-{frag}"' if frag else f'href="#ch{n:02d}"'
+                return f'href="#{aid(n)}-{frag}"' if frag else f'href="#{aid(n)}"'
             tgt = ch_files[n]
             return f'href="{tgt}#{frag}"' if frag else f'href="{tgt}"'
         url = f'{HOST}/{site_path}'
@@ -274,6 +399,8 @@ def rewrite_links(content, source, mode, chnum, page_to_ch, ch_files):
 def toc_html(current=None):
     """The persistent left TOC for reader pages."""
     out = ['<aside class="booktoc">']
+    out.append(f'  <a class="tocch{" here" if current == 0 else ""}" '
+               f'href="{INTRO_FILE}">Introduction</a>')
     last_part = None
     for n, (pi, source, title) in enumerate(CHAPTERS, 1):
         if pi != last_part:
@@ -318,10 +445,46 @@ for old in glob(str(OUT / "ch-*.html")):
     Path(old).unlink()
 
 CH_FILES = {n: f"ch-{n:02d}-{slugify(t)}.html" for n, (_, _, t) in enumerate(CHAPTERS, 1)}
+CH_FILES[0] = INTRO_FILE
 PAGE_TO_CH = {source: n for n, (_, source, _) in enumerate(CHAPTERS, 1)}
+PAGE_TO_CH["index.html"] = 0
 
 manifest = {"version": VERSION, "title": TITLE, "chapters": []}
 singles = []
+
+# ------------------------------------------------------- the introduction ----
+intro_content, intro_digest = extract_front()
+intro_header = ('<div class="chkick">The front door</div>\n'
+                '<div class="chnum">Introduction</div>\n'
+                f'<h1>{INTRO_TITLE}</h1>\n')
+
+intro_reader = rewrite_links(intro_content, "index.html", 'reader', 0, PAGE_TO_CH, CH_FILES)
+intro_page = head(INTRO_FILE, f"Introduction — {TITLE}",
+                  "The introduction to the graphs.sgit.ai book, projected from the "
+                  "site's front page: the claim, the story that needs no background, "
+                  "the three altitudes, the real numbers, and what is built versus "
+                  "what is argued.")
+intro_page += f'''
+<div class="bookwrap">
+{toc_html(0)}
+  <div class="bookmain">
+    {bookbar()}
+    <main class="doc bookch">
+{intro_header}{intro_reader}
+      <div class="pagenav"><span><a href="index.html">← Cover &amp; contents</a></span><span><a href="{CH_FILES[1]}">1 · {CHAPTERS[0][2]} →</a></span></div>
+    </main>
+  </div>
+</div>
+'''
+intro_page += FOOT
+(OUT / INTRO_FILE).write_text(intro_page)
+
+intro_frag = rewrite_links(intro_content, "index.html", 'single', 0, PAGE_TO_CH, CH_FILES)
+intro_frag = re.sub(r'id="([^"]+)"', lambda m: f'id="intro-{m.group(1)}"', intro_frag)
+singles.append((0, None, "Introduction", intro_header, intro_frag))
+
+manifest["intro"] = {"file": INTRO_FILE, "title": "Introduction",
+                     "source": "index.html", "source_sha256": intro_digest}
 
 for n, (pi, source, title) in enumerate(CHAPTERS, 1):
     raw, content, digest = extract(source)
@@ -332,7 +495,7 @@ for n, (pi, source, title) in enumerate(CHAPTERS, 1):
     # reader page
     reader = rewrite_links(content, source, 'reader', n, PAGE_TO_CH, CH_FILES)
     prev_a = (f'<a href="{CH_FILES[n-1]}">← {n-1} · {CHAPTERS[n-2][2]}</a>'
-              if n > 1 else '<a href="index.html">← Cover &amp; contents</a>')
+              if n > 1 else f'<a href="{INTRO_FILE}">← Introduction</a>')
     next_a = (f'<a href="{CH_FILES[n+1]}">{n+1} · {CHAPTERS[n][2]} →</a>'
               if n < len(CHAPTERS) else '<a href="index.html">Back to the contents →</a>')
     desc = (f"Chapter {n} of {TITLE}, the graphs.sgit.ai book. Also readable as a "
@@ -365,6 +528,7 @@ for n, (pi, source, title) in enumerate(CHAPTERS, 1):
 
 # ------------------------------------------------------------ index.html ----
 toc_index = ['<main class="doc" id="toc">', '<h2>Table of contents</h2>']
+toc_index.append(f'<p style="margin:.25rem 0"><a href="{INTRO_FILE}"><b>Introduction</b> · {INTRO_TITLE}</a></p>')
 last = None
 for n, (pi, source, title) in enumerate(CHAPTERS, 1):
     if pi != last:
@@ -376,9 +540,10 @@ for n, (pi, source, title) in enumerate(CHAPTERS, 1):
 toc_index.append('</main>')
 
 idx = head("index.html", f"{TITLE} — the graphs.sgit.ai book",
-           "The site's content as a book: sixteen chapters in six parts, readable as "
-           "chapter pages, as one single page, or as a PDF. Generated from the site's "
-           "own pages; the book is a projection, and CI fails if they drift.",
+           "The site's content as a book: an introduction and sixteen chapters in six "
+           "parts, readable as chapter pages, as one single page, or as a PDF. "
+           "Generated from the site's own pages; the book is a projection, and CI "
+           "fails if they drift.",
            og_type="book")
 idx += cover()
 idx += '''<div class="noprint" style="text-align:center;margin:-.4rem 0 1.6rem">
@@ -386,7 +551,7 @@ idx += '''<div class="noprint" style="text-align:center;margin:-.4rem 0 1.6rem">
 </div>
 '''
 idx += f'''<div class="ctas noprint" style="margin:-.6rem 0 2.4rem">
-  <a class="cta1" href="{CH_FILES[1]}">Start reading →</a>
+  <a class="cta1" href="{INTRO_FILE}">Start reading →</a>
   <a class="cta2" href="single.html">The whole book in one page →</a>
   <a class="cta2" href="{SCREEN_PDF_NAME}">The screen PDF →</a>
   <a class="cta2" href="{PDF_NAME}">The print PDF →</a>
@@ -399,9 +564,9 @@ idx += FOOT
 
 # ----------------------------------------------------------- single.html ----
 sp = head("single.html", f"{TITLE} — the whole book in one page",
-          "All sixteen chapters of the graphs.sgit.ai book in a single HTML page: the "
-          "claim, the grammar, the full argument, the worked proof, and reality. "
-          "This page is also the print source for the PDF edition.")
+          "The introduction and all sixteen chapters of the graphs.sgit.ai book in a "
+          "single HTML page: the claim, the grammar, the full argument, the worked "
+          "proof, and reality. This page is also the print source for the PDF edition.")
 sp += cover()
 sp += f'''<div class="ctas noprint" style="margin:-.6rem 0 1rem">
   <a class="cta2" href="index.html">☰ Chapter pages →</a>
@@ -409,6 +574,7 @@ sp += f'''<div class="ctas noprint" style="margin:-.6rem 0 1rem">
   <a class="cta2" href="{PDF_NAME}">The print PDF →</a>
 </div>
 <div class="singletoc noprint">
+  <a href="#intro">Introduction</a>
 '''
 last = None
 for n, (pi, source, title) in enumerate(CHAPTERS, 1):
@@ -427,7 +593,7 @@ for n, pi, title, header, frag in singles:
                f'<h2>{ptitle}</h2><p>{pintro}</p></section>\n')
         last = pi
     # multiple <main> blocks by design — see the module docstring
-    sp += f'<main class="doc chap" id="ch{n:02d}">\n{header}{frag}\n</main>\n'
+    sp += f'<main class="doc chap" id="{aid(n)}">\n{header}{frag}\n</main>\n'
 sp += FOOT
 (OUT / "single.html").write_text(sp)
 
@@ -482,6 +648,7 @@ pp = f"""<!doctype html>
 <section class="fm toc">
   <h1>Contents</h1>
   <div class="toc">
+    <div class="t-ch"><a href="#intro">Introduction</a></div>
 """
 last = None
 for n, (pi, source, title) in enumerate(CHAPTERS, 1):
@@ -499,7 +666,7 @@ for n, pi, title, header, frag in singles:
         pp += (f'<section class="part"><div class="pk">Part {roman}</div>'
                f'<h2>{ptitle}</h2><p>{pintro}</p></section>\n')
         last = pi
-    pp += f'<section class="chapter" id="ch{n:02d}">\n{header}{frag}\n</section>\n'
+    pp += f'<section class="chapter" id="{aid(n)}">\n{header}{frag}\n</section>\n'
 pp += "</body>\n</html>\n"
 (OUT / "print.html").write_text(pp)
 

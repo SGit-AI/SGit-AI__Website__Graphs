@@ -106,7 +106,7 @@ The interesting part is a defect its own authors declared: *“Neither grounds t
 
 ### The 10,000-hours citation network <span class="pill p-argued">external case</span> {#ten-thousand}
 
-**242 papers, more than 200,000 supporting citation paths, traced back to nothing.** The best non-technical story here and the clearest case for corrections propagating through a graph. [On the front page](../index.html#hook), and [the rule it produces](../depth/index.html#supersede).
+**242 papers, more than 200,000 supporting citation paths, traced back to nothing.** The best non-technical story here and the clearest case for corrections propagating through a graph. [The story in full](../index.html#hook), and [the rule it produces](../depth/index.html#supersede).
 
 ## What is deliberately not here {#not-here}
 

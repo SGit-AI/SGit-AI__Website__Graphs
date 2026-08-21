@@ -10,7 +10,7 @@
 <meta property="og:site_name" content="graphs.sgit.ai">
 <meta property="og:url" content="https://graphs.sgit.ai/index.html">
 <meta property="og:title" content="graphs.sgit.ai — a node is just a node; meaning lives in the edges">
-<meta property="og:description" content="Two nodes both hold 8080. One is connected to a type, a library and a version; the other to nothing. The difference is not in the value — it is in the connectivity. Not a graph database pitch.">
+<meta property="og:description" content="Two nodes both hold 8080. One is connected to a type, a library and a version; the other to nothing. The difference is not in the value; it is in the connectivity. Not a graph database pitch.">
 <meta name="twitter:card" content="summary">
 <link rel="alternate" type="text/markdown" href="index.md" title="This page as markdown">
 <link rel="stylesheet" href="assets/site.css">
@@ -21,7 +21,7 @@
   <a class="brand" href="index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="admin/versions.html" title="Site release history">v0.3.3</a>
+  <a class="ver" href="admin/versions.html" title="Site release history">v0.3.4</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -104,7 +104,7 @@
     <blockquote class="challenge" style="margin-top:0">“in our graph we do not use properties, because properties do not have meaning, they are just words; <b>we capture meaning through connectivity.</b>”
       <span class="small dim" style="display:block;font-style:normal;margin-top:.7rem">— Dinis Cruz, 26 June 2026, in an architecture brief about digital twins. The tightest formulation in the corpus; <a href="documents/the-thesis.html">the other thirty-four are here</a>.</span>
     </blockquote>
-    <div class="note" style="margin-bottom:0"><b>Read this before you read anything else: this is not a graph database pitch.</b> The claim is that one grammar is the interface at every boundary — <em>not</em> that we store things in a graph. There is no graph database anywhere in the work behind this site, and <a href="shipped/index.html">we say so on its own page</a>. If you came here expecting Neo4j-versus-RDF, <a href="why-graphs/index.html#positioning">the positioning page</a> is the honest answer.</div>
+    <div class="note" style="margin-bottom:0"><b>Read this before you read anything else: this is not a graph database pitch.</b> The claim is that one grammar is the interface at every boundary, <em>not</em> that we store things in a graph. There is no graph database anywhere in the work behind this site, and <a href="shipped/index.html">we say so on its own page</a>. If you came here expecting Neo4j-versus-RDF, <a href="why-graphs/index.html#positioning">the positioning page</a> is the honest answer.</div>
   </div>
 </section>
 
@@ -112,8 +112,8 @@
   <h2>The story that needs no security or legal background</h2>
   <p class="blurb">If you only read one thing here, read this. It is what a graph does that a document cannot.</p>
   <div class="split">
-    <p>Everyone has heard that expertise takes <b>10,000 hours</b>. The number comes from a 1993 study of violinists. In that study it was an <em>average</em>, not a threshold — and half the top group had not reached it. The original author spent much of his career correcting the popularisation.</p>
-    <p><b>None of the corrections ever attached to the claim.</b> The claim had by then been carried through a citation network of <b>242 papers</b> and more than <b>200,000 supporting citation paths</b> — paths which, followed to the bottom, lead back to nothing.</p>
+    <p>Everyone has heard that expertise takes <b>10,000 hours</b>. The number comes from a 1993 study of violinists. In that study it was an <em>average</em>, not a threshold, and half the top group had not reached it. The original author spent much of his career correcting the popularisation.</p>
+    <p><b>None of the corrections ever attached to the claim.</b> The claim had by then been carried through a citation network of <b>242 papers</b> and more than <b>200,000 supporting citation paths</b>: paths which, followed to the bottom, lead back to nothing.</p>
     <p>A document cannot fix this. You can publish a correction, and the correction sits somewhere else, unread. A graph can: mark the claim superseded from a date, and then <b>ask the graph which conclusions were resting on it</b>. That query has an answer. It is the same query, whether the claim is a study about violinists, a risk someone accepted last quarter, or a fact your compliance report depends on.</p>
     <p class="small dim">Source: <code>briefs/08/09/graphing-text/v0.33.57__arch-brief__…fact-does-not-exist-in-a-vacuum…</code>, 9 August 2026. Discussed at <a href="depth/index.html#supersede">supersede, never delete</a>.</p>
   </div>
@@ -132,7 +132,7 @@
     <a class="alt a2" href="grammar/index.html">
       <div class="num">Altitude 2 · roads and buildings</div>
       <h3>The grammar</h3>
-      <p>Rules you can apply to your own graph tomorrow. Every edge is a verb with a distinct inverse. <code data-banned-verb>relates-to</code> is banned. Never render the whole graph — render the result of a query.</p>
+      <p>Rules you can apply to your own graph tomorrow. Every edge is a verb with a distinct inverse. <code data-banned-verb>relates-to</code> is banned. Never render the whole graph: render the result of a query.</p>
       <span class="go">The rules →</span>
     </a>
     <a class="alt a3" href="depth/index.html">
@@ -146,7 +146,7 @@
 
 <section class="band" id="book">
   <h2>Or read it as a book</h2>
-  <p class="blurb">The same content, in a reading order — <b>Meaning Through Connectivity</b>, sixteen chapters in six parts. The book is generated from these pages, so the two cannot drift: the build fails if a page changes without the book regenerating. Documents are projections; this is that argument, applied to this site.</p>
+  <p class="blurb">The same content, in a reading order: <b>Meaning Through Connectivity</b>, an introduction and sixteen chapters in six parts. The book is generated from these pages, so the two cannot drift: the build fails if a page changes without the book regenerating. Documents are projections; this is that argument, applied to this site.</p>
   <div class="cards" style="max-width:900px">
     <a class="card" href="book/index.html">
       <div class="tag">chapters</div>
@@ -157,13 +157,13 @@
     <a class="card" href="book/single.html">
       <div class="tag">one page</div>
       <h3>The whole book, one page</h3>
-      <p>All sixteen chapters in a single HTML file — read it straight through, search it with ctrl-F, or fetch it once.</p>
+      <p>The introduction and all sixteen chapters in a single HTML file: read it straight through, search it with ctrl-F, or fetch it once.</p>
       <span class="go">Read it in one page →</span>
     </a>
     <a class="card" href="book/meaning-through-connectivity.pdf">
       <div class="tag">two pdfs</div>
       <h3>The PDF, in two editions</h3>
-      <p>A <b>print interior</b> at 6″×9″ — gutters, folios, a paginated contents, print-on-demand ready — and a <b>screen edition</b> in the site's own design, made for reading on a tablet. Both regenerate together from the same chapters, stamped with the site version.</p>
+      <p>A <b>print interior</b> at 6″×9″ (gutters, folios, a paginated contents, print-on-demand ready) and a <b>screen edition</b> in the site's own design, made for reading on a tablet. Both regenerate together from the same chapters, stamped with the site version.</p>
       <span class="go">Print →&nbsp;&nbsp;·&nbsp;&nbsp;<span style="white-space:nowrap"><a href="book/meaning-through-connectivity-screen.pdf" style="display:inline;padding:0">Screen →</a></span></span>
     </a>
   </div>
@@ -171,13 +171,13 @@
 
 <section class="band alt" id="proof">
   <h2>Real graphs, real numbers</h2>
-  <p class="blurb">Three of these are live and public right now — you can open them and count. The rest are parsed from the design documents behind them. We never mix the two: a live number is labelled live.</p>
+  <p class="blurb">Three of these are live and public right now: you can open them and count. The rest are parsed from the design documents behind them. We never mix the two: a live number is labelled live.</p>
   <div class="proof">
     <div class="n"><b>1,523 · 1,944</b><span>nodes · edges in the EU AI Act regulation graph</span><em>live vault</em></div>
     <div class="n"><b>18 · 37 · 14</b><span>facts · risks · provisions in the Risk Graph Explorer “Exposed” preset</span><em>live vault</em></div>
     <div class="n"><b>17</b><span>entry points in the agentic browser isolation graph, across 5 stakeholder altitudes</span><em>live vault</em></div>
-    <div class="n"><b>59 · 75</b><span>nodes · edges in the browser-isolation risk graph — including 3 risks <em style="font-style:italic">of the mitigation</em></span><em>parsed from the brief</em></div>
-    <div class="n"><b>51 · 53</b><span>nodes · edges in the 2FA instance graph, in one machine-readable file</span><em>parsed from the brief</em></div>
+    <div class="n"><b>59 · 75</b><span>nodes · edges in the browser-isolation risk graph, including 3 risks <em style="font-style:italic">of the mitigation</em></span><em>parsed from the brief</em></div>
+    <div class="n"><b>51 · 53</b><span>nodes · edges in the 2FA (two-factor authentication) instance graph, in one machine-readable file</span><em>parsed from the brief</em></div>
     <div class="n"><b>71 · 141</b><span>nodes · edges in a typed property graph that is live repo data, not a design</span><em>measured</em></div>
   </div>
   <p class="blurb" style="margin-top:1.6rem;margin-bottom:0"><a href="examples/index.html">All the worked examples, with what each one teaches →</a></p>
@@ -185,15 +185,15 @@
 
 <section class="band" id="honesty">
   <h2>What is built, and what is argued</h2>
-  <p class="blurb">This site's subject matter is almost entirely design. Saying so is not a caveat bolted on at the end — it is the reason the rest of it is worth reading.</p>
+  <p class="blurb">This site's subject matter is almost entirely design. Saying so is not a caveat bolted on at the end; it is the reason the rest of it is worth reading.</p>
   <div class="split">
     <table>
       <thead><tr><th>Ships, and you can check it by reading code</th><th>Argued, and published as argument</th><th>Absent, and we will not imply otherwise</th></tr></thead>
       <tbody>
         <tr>
-          <td>A content-addressed commit DAG with multi-parent commits, a real wave-BFS merge-base and three-way merge · a graph of graphs via typed <code>*.link.json</code> edges · a read-only DAG query API exposed to untrusted sandboxed apps · a live typed property graph of <b>71 nodes / 141 edges</b> · three published vaults</td>
+          <td>A content-addressed commit DAG (directed acyclic graph) with multi-parent commits, a real wave-BFS (breadth-first search) merge-base and three-way merge · a graph of graphs via typed <code>*.link.json</code> edges · a read-only DAG query API exposed to untrusted sandboxed apps · a live typed property graph of <b>71 nodes / 141 edges</b> · three published vaults</td>
           <td>The semantic risk ontology · node type formulas · ontologies of ontologies · the grounding ladder · a graph at every boundary · almost everything else on this site</td>
-          <td><b>No graph database.</b> No MGraph-DB dependency. No browser SPARQL or Cypher. No RDF/JSON-LD in the code. No path-query language. Commit signing is written and only ever set to <code>null</code></td>
+          <td><b>No graph database.</b> No MGraph-DB dependency. No SPARQL or Cypher (the graph query languages) in the browser. No RDF or JSON-LD (the Semantic Web's formats) in the code. No path-query language. Commit signing is written and only ever set to <code>null</code></td>
         </tr>
       </tbody>
     </table>
@@ -204,10 +204,10 @@
 <section class="band alt" id="agents">
   <h2>If you are an agent</h2>
   <div class="split">
-    <p>This site exists partly because agents under-weight this material, and the cause is known and mechanical: the three canonical philosophy documents were imported from another project, are referenced by four files, and are not referenced from the repository's <code>CLAUDE.md</code> at all. An agent reading that file and working forwards <b>never encounters the philosophy</b>. That is a routing failure, not a comprehension failure — so the fix is an address.</p>
+    <p>This site exists partly because agents under-weight this material, and the cause is known and mechanical: the three canonical philosophy documents were imported from another project, are referenced by four files, and are not referenced from the repository's <code>CLAUDE.md</code> at all. An agent reading that file and working forwards <b>never encounters the philosophy</b>. That is a routing failure, not a comprehension failure, so the fix is an address.</p>
     <div class="agent">
       <h4>For an agent</h4>
-      <p>Fetch <a href="llms.txt">/llms.txt</a> first — every entry carries the page's single most important fact, not just its topic, because for some fetch tools those descriptions are the only content they will ever see. If you can only make one request, fetch <a href="llms-full.txt">/llms-full.txt</a> instead: it is the whole document set concatenated into one file. The raw markdown under <a href="documents/index.html">/briefs/</a> is the source of truth; the rendered pages are presentation. All of it is CC BY 4.0.</p>
+      <p>Fetch <a href="llms.txt">/llms.txt</a> first: every entry carries the page's single most important fact, not just its topic, because for some fetch tools those descriptions are the only content they will ever see. If you can only make one request, fetch <a href="llms-full.txt">/llms-full.txt</a> instead: it is the whole document set concatenated into one file. The raw markdown under <a href="documents/index.html">/briefs/</a> is the source of truth; the rendered pages are presentation. All of it is CC BY 4.0.</p>
     </div>
   </div>
 </section>
@@ -218,7 +218,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="admin/versions.html">v0.3.3</a> · <a href="admin/index.html">engineering</a> · <a href="index.md">this page as markdown</a></p>
+    <p class="verline">site <a href="admin/versions.html">v0.3.4</a> · <a href="admin/index.html">engineering</a> · <a href="index.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>Start here</h4>
