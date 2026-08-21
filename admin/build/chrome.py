@@ -195,6 +195,9 @@ def main():
     for path in sorted(ROOT.rglob("*.html")):
         if ".git" in path.parts:
             continue
+        if path.relative_to(ROOT).as_posix() == "book/print.html":
+            # the print-interior source carries no site chrome by design
+            continue
         rel = path.relative_to(ROOT).as_posix()
         up = "../" * (len(path.relative_to(ROOT).parts) - 1)
         text = path.read_text()

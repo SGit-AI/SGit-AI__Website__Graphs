@@ -178,7 +178,7 @@ if (!fs.existsSync(bookManifestPath)) {
   }
   const pdf = path.join(ROOT, 'book', book.pdf);
   if (!fs.existsSync(pdf) || fs.statSync(pdf).size < 50000) {
-    errors.push(`book/${book.pdf} is missing or truncated — gen_book.py regenerates it when a local Chromium is available`);
+    errors.push(`book/${book.pdf} is missing or truncated — gen_book.py retypesets it (WeasyPrint, or Chromium as fallback)`);
   }
 }
 

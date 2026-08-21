@@ -1,5 +1,5 @@
 {
-  "version": "v0.2.0",
+  "version": "v0.2.1",
   "title": "Meaning Through Connectivity",
   "pdf": "meaning-through-connectivity.pdf",
   "chapters": [
@@ -131,5 +131,7 @@
       "source": "about/participant.html",
       "source_sha256": "dfe2dcad12414f0399c570367034c00147ce6862a6e663552741dd7476d13dc1"
     }
-  ]
+  ],
+  "pdf_pages": 117,
+  "pdf_typesetter": "weasyprint 69.0"
 }

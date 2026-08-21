@@ -1,0 +1,126 @@
+/* graphs.sgit.ai — the print interior for Meaning Through Connectivity.
+   Loaded by book/print.html AFTER site.css, and only there.
+
+   Format: 6in x 9in trim (KDP's standard trade size), no bleed, monochrome.
+   Mirrored margins: 0.75in inside (gutter), 0.5in outside — comfortably above
+   KDP's minimums for a sub-150-page no-bleed interior (0.375in / 0.25in).
+   Folios sit bottom-outside; running heads carry the book title on the verso
+   and the chapter title on the recto. Front matter and part pages carry
+   neither. The contents page numbers are computed by the renderer
+   (target-counter), so they can never disagree with the pagination. */
+
+@page {
+  size: 6in 9in;
+  margin: 0.6in 0.5in 0.7in 0.75in;
+}
+@page :left {
+  margin-left: 0.5in; margin-right: 0.75in;
+  @bottom-left { content: counter(page); font: 8.5pt 'Liberation Sans', sans-serif; color: #000; }
+  @top-left { content: string(btitle); font: italic 8pt 'Liberation Serif', serif; color: #444; }
+}
+@page :right {
+  margin-left: 0.75in; margin-right: 0.5in;
+  @bottom-right { content: counter(page); font: 8.5pt 'Liberation Sans', sans-serif; color: #000; }
+  @top-right { content: string(ctitle); font: italic 8pt 'Liberation Serif', serif; color: #444; }
+}
+/* front matter and part dividers: no folio, no running head */
+@page front:left  { @bottom-left { content: none } @top-left { content: none } }
+@page front:right { @bottom-right { content: none } @top-right { content: none } }
+
+html { string-set: btitle "Meaning Through Connectivity"; }
+.fm, .part { page: front; }
+.part { break-before: right; }
+.chapter { break-before: right; }
+.chapter h1 { string-set: ctitle content(); }
+
+/* ---------- base typography: monochrome, justified, hyphenated ---------- */
+body { color: #000; background: #fff; font: 11pt/1.6 'Liberation Serif', Georgia, serif;
+  text-align: justify; hyphens: auto; }
+a { color: #000; text-decoration: none; }
+h1, h2, h3, h4 { color: #000; text-align: left; hyphens: manual; break-after: avoid; }
+h2 { font: bold 13pt/1.25 'Liberation Serif', serif; margin: 1.5em 0 .5em; }
+h3 { font: bold 11pt/1.3 'Liberation Serif', serif; margin: 1.3em 0 .4em; }
+p, li { font-size: 11pt; color: #000; }
+.lead { font-size: 11.5pt; font-style: italic; color: #000; }
+.dim, .small { color: #444; }
+code, kbd { font: 8.5pt 'Liberation Mono', monospace; }
+p code, li code, td code { background: none; border: none; padding: 0; color: #000; }
+pre { font-size: 8.5pt; background: #f4f4f4; color: #000; border: .5pt solid #bbb; }
+table { font-size: 8.5pt; box-shadow: none; }
+th { background: #eee; color: #000; }
+td { color: #000; }
+ul, ol { padding-left: 1.5em; }
+
+/* ---------- chapter furniture ---------- */
+.chapter { }
+.chkick { font: bold 8pt 'Liberation Sans', sans-serif; letter-spacing: .14em;
+  text-transform: uppercase; color: #000; margin-top: .4in; }
+.chnum { font: 11pt 'Liberation Serif', serif; color: #444; margin: .35em 0 0; }
+.chapter h1 { font: bold 21pt/1.15 'Liberation Serif', serif; margin: .25em 0 .8em; }
+
+/* ---------- components, in ink ---------- */
+.note, .warnbox, .agent, .evbox { background: #fff; border: .5pt solid #999;
+  border-left: 2.5pt solid #000; box-shadow: none; font-size: 9.5pt; break-inside: avoid; }
+.warnbox { border-left-color: #777; }
+.agent { background: #f4f4f4; }
+.agent h4 { font: bold 7.5pt 'Liberation Sans', sans-serif; letter-spacing: .14em; color: #000; }
+.claim, blockquote.challenge { background: #fff; border: none; border-left: 2.5pt solid #000;
+  box-shadow: none; color: #000; break-inside: avoid; }
+.pathline { background: #f7f7f7; border: .5pt solid #bbb; box-shadow: none;
+  font-size: 8.5pt; break-inside: avoid; text-align: left; }
+.pathline .nd { background: #fff; border: .5pt solid #888; color: #000; }
+.pathline .ed { color: #000; font-style: italic; }
+.pathline .say { color: #333; }
+.ladder .cap { border: .5pt solid #999; border-left: 2.5pt solid #000; box-shadow: none;
+  break-inside: avoid; }
+.ladder .capnum, .hopeladder .capnum { color: #000; }
+.docmeta { border: .5pt solid #999; box-shadow: none; font-size: 9pt; break-inside: avoid; }
+.docmeta .k { color: #444; }
+.cards { display: block; max-width: none; padding: 0; }
+.card { border: .5pt solid #999; box-shadow: none; margin: .5em 0; break-inside: avoid; }
+.card .tag, .card .go { color: #333; }
+.pill, .tstat, .evtag, .opt-verdict { color: #333; border-color: #999; background: #fff; }
+.evtag { color: #000; font-weight: bold; }
+.epal { color: #333; }
+.epal i.assurance { border-color: #000; }
+.epal i.exposure { border-color: #999; }
+.epal i.unanswered { border-color: #999; opacity: 1; }
+.g-exposure, .g-assurance { color: #000; }
+.g-unanswered { color: #555; }
+.timeline { border-left-color: #999; }
+.timeline li::before { border-color: #000; background: #fff; }
+.timeline li.bad::before { border-color: #666; }
+.timeline .when { color: #444; }
+table, .tablewrap { break-inside: auto; }
+tr { break-inside: avoid; }
+
+/* ---------- front matter ---------- */
+.fm { text-align: center; }
+.fm.halftitle { padding-top: 3in; }
+.fm.halftitle h1 { font: bold 16pt 'Liberation Serif', serif; }
+.fm.titlepage { break-before: right; padding-top: 1.9in; }
+.fm.titlepage .over { font: bold 8pt 'Liberation Sans', sans-serif; letter-spacing: .2em;
+  text-transform: uppercase; color: #000; }
+.fm.titlepage h1 { font: bold 27pt/1.15 'Liberation Serif', serif; margin: .5em 0 .6em; }
+.fm.titlepage .sub { font-size: 11pt; font-style: italic; color: #000; max-width: 3.9in;
+  margin: 0 auto 1.4in; text-align: center; }
+.fm.titlepage .by { font: bold 12pt 'Liberation Serif', serif; }
+.fm.titlepage .pub { font: 9pt 'Liberation Sans', sans-serif; color: #444; margin-top: 1.1in; }
+.fm.colophon { break-before: page; text-align: left; font-size: 8.5pt; color: #000;
+  padding-top: 5.6in; }
+.fm.colophon p { font-size: 8.5pt; margin: .45em 0; text-align: left; }
+.fm.toc { break-before: right; text-align: left; }
+.fm.toc h1 { font: bold 16pt 'Liberation Serif', serif; margin: .5in 0 .35in; }
+.toc .t-part { font: bold 8.5pt 'Liberation Sans', sans-serif; letter-spacing: .12em;
+  text-transform: uppercase; margin: 1.1em 0 .3em; }
+.toc .t-ch { margin: .22em 0; font-size: 10pt; text-align: left; }
+.toc .t-ch a { display: block; }
+.toc .t-ch a::after { content: leader('.') ' ' target-counter(attr(href), page); }
+
+/* ---------- part dividers ---------- */
+.part { text-align: center; padding-top: 2.7in; }
+.part .pk { font: bold 9pt 'Liberation Sans', sans-serif; letter-spacing: .22em;
+  text-transform: uppercase; color: #000; }
+.part h2 { font: bold 22pt 'Liberation Serif', serif; text-align: center; margin: .5em 0 .5em; }
+.part p { font-size: 10.5pt; font-style: italic; color: #333; max-width: 3.7in;
+  margin: 0 auto; text-align: center; }

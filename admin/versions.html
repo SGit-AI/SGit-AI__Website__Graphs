@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.1</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -96,6 +96,11 @@
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
       <tr>
+        <td class="vnum">v0.2.1</td>
+        <td>21 August 2026</td>
+        <td><b>The print edition.</b> The book's PDF is no longer a printout of the web pages — it is a <b>print interior in the standard technical-book format</b>, following a format review against print-on-demand (KDP) requirements: <b>6″×9″ trim</b> (the PDF page size must equal the trim size, and 8.5″×11″ Letter — the previous format — is a workbook size, not a trade size); <b>mirrored margins</b>, 0.75″ gutter / 0.5″ outside, above KDP's minimums for a no-bleed interior of this length; <b>folios</b> bottom-outside and <b>running heads</b> (book title verso, chapter title recto), absent from front matter and part pages; chapters opening on the recto; a <b>contents whose page numbers are computed by the typesetter</b>, so they cannot disagree with the pagination; justified, hyphenated, monochrome, no bleed, fonts embedded. <b>117 pages</b>, typeset by WeasyPrint from a new generated <code>book/print.html</code>; Chromium remains as a stated-degraded fallback. Verified from the rendered pages, not assumed: folio and running-head margin boxes checked on real versos and rectos, contents leaders checked on the contents page.<br><br>Deliberately deferred, and recorded rather than half-done: <b>the cover</b> (a separate artefact sized to trim + spine + bleed, spine width dependent on final page count — comms <b>T12</b>) and <b>the Kindle edition</b> (a fixed-layout PDF is the wrong upload for Kindle; the right artefact is a reflowable EPUB from these same chapters — comms <b>T13</b>). The format review itself is captured on <a href="../book/index.html#print">the book's about page</a>.</td>
+      </tr>
+      <tr>
         <td class="vnum">v0.2.0</td>
         <td>21 August 2026</td>
         <td><b>The book.</b> A new <a href="../book/index.html">/book/</a> section — the site's content as a book, <em>Meaning Through Connectivity</em>: sixteen chapters in six parts, in three reading modes — <a href="../book/index.html">chapter pages with a persistent table of contents</a>, <a href="../book/single.html">the whole book in one page</a>, and <a href="../book/meaning-through-connectivity.pdf">a 79-page PDF</a> printed from that page. The book is <b>generated from the site's own pages</b> by <code>admin/build/gen_book.py</code> — a projection in the site's own sense — and the gate gains a check for it: the build fails if a source page changes without the book regenerating, so the two cannot drift. Requested by the founder, 21 August 2026.<br><br><b>Consistency corrections made while building it</b> (per the site's own rule, corrections get a row, not a silent edit): the v0.1.0 row below said the release shipped with a <em>five</em>-check gate — it shipped with seven, and the row now says so; <a href="../maps/index.html#trap">/maps/</a> said grepping for <code>wardley-beta</code> would otherwise "miss all thirteen" maps when the corpus holds twelve mermaid blocks plus one drawn map — it now says "find none of them"; and <a href="../admin/index.html#validate">the admin page</a> claimed three of the gate's checks were inherited from the sibling sites when the count was four. The gate is now eight checks: four inherited, four specific to this site.</td>
@@ -130,7 +135,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.0</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.1</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

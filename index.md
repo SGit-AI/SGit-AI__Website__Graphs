@@ -4,7 +4,7 @@
 > just words; **we capture meaning through connectivity.**"
 > — Dinis Cruz, 26 June 2026
 
-*Source: <https://graphs.sgit.ai/index.html> · site v0.2.0 · markdown twin of the front page.*
+*Source: <https://graphs.sgit.ai/index.html> · site v0.2.1 · markdown twin of the front page.*
 
 **Not a graph database pitch.** The claim is that one grammar is the interface at every
 boundary — not that we store things in a graph. There is no graph database anywhere in the
@@ -91,7 +91,7 @@ six parts, generated from the site's own pages so the two cannot drift:
 
 - [Chapter pages, with the table of contents beside you](book/index.html)
 - [The whole book in one page](book/single.html)
-- [The 79-page PDF](book/meaning-through-connectivity.pdf)
+- [The print-edition PDF](book/meaning-through-connectivity.pdf) — 117 pages at 6″×9″, the standard technical-book interior, print-on-demand ready (cover to follow)
 
 ## For agents
 

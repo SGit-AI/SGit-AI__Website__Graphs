@@ -18,10 +18,19 @@ Three modes, one source:
   book/index.html      cover, about-this-book, table of contents
   book/ch-NN-*.html    one chapter per page, persistent left TOC
   book/single.html     everything in one page (also the print source)
+  book/print.html      the print-interior source: front matter (half-title,
+                       title page, edition page, a contents whose page numbers
+                       are computed by the renderer), part dividers, chapters
   book/meaning-through-connectivity.pdf
-                       Chromium's print of single.html. Regenerated here when a
-                       Chromium binary is found (see PDF_CANDIDATES); committed,
-                       because CI has no browser and the site is static.
+                       the print interior, typeset by WeasyPrint from
+                       print.html: 6in x 9in trim, mirrored 0.75/0.5in margins,
+                       folios bottom-outside, running heads (book title verso,
+                       chapter title recto), justified and hyphenated,
+                       monochrome, no bleed — the standard technical-book /
+                       KDP paperback format, cover excluded (a cover is a
+                       separate artefact). Falls back to Chromium (same trim,
+                       no folios or contents page numbers) when WeasyPrint is
+                       unavailable; committed, because CI has neither.
 
 A structural note on single.html: each chapter sits in its own
 <main class="doc chap"> block. Multiple <main> elements in one document is
@@ -116,6 +125,31 @@ ABOUT = f"""
     <li><b><a href="{PDF_NAME}">The PDF</a></b> — printed from the single page, for offline
     reading and for handing to someone.</li>
   </ul>
+  <h2 id="print">The print edition, and the formats deliberately not offered</h2>
+  <p>The PDF is not a printout of the web pages — it is a <b>print interior</b> in the
+  standard technical-book format, ready for print-on-demand (KDP and equivalents),
+  cover excluded:</p>
+  <ul>
+    <li><b>6&Prime; × 9&Prime; trim</b>, the standard trade size, with <b>no bleed</b> —
+    nothing runs to the page edge.</li>
+    <li><b>Mirrored margins</b>: 0.75&Prime; inside (the gutter), 0.5&Prime; outside —
+    above KDP's minimums for a no-bleed interior of this length (0.375&Prime; / 0.25&Prime;).</li>
+    <li><b>Folios and running heads</b>: page numbers sit bottom-outside; the verso head
+    carries the book title, the recto head the chapter title; front matter and part
+    pages carry neither.</li>
+    <li><b>A paginated contents</b> — the page numbers in it are computed by the
+    typesetter at render time, so they cannot disagree with the pagination. The same
+    no-drift rule as everything else here.</li>
+    <li><b>Justified, hyphenated, monochrome</b>, with every font embedded. Colour
+    exists only in the screen editions; ink is black.</li>
+  </ul>
+  <p>Two things are deliberately <em>not</em> here. <b>A cover</b> — a print cover is a
+  separate artefact sized to trim plus spine plus bleed, where the spine width depends
+  on the final page count; it is tracked on <a href="{HOST}/admin/comms.html">the comms
+  board</a> rather than half-done here. And <b>a Kindle edition</b> — a fixed-layout PDF
+  is the wrong upload for Kindle in every case; the right artefact is a reflowable EPUB,
+  which this pipeline could generate from the same chapters, and which is queued rather
+  than pretended to.</p>
   <p class="small dim">Edition: site {VERSION}, {DATE}. All content is released under the
   Creative Commons Attribution 4.0 International licence (CC BY 4.0). The raw source
   documents behind every chapter are published at
@@ -352,25 +386,125 @@ for n, pi, title, header, frag in singles:
 sp += FOOT
 (OUT / "single.html").write_text(sp)
 
+# ------------------------------------------------------------ print.html ----
+# The print-interior source. Front matter, part dividers, chapters — no site
+# chrome at all. assets/print-book.css (loaded after site.css) carries the
+# 6x9 page geometry, folios, running heads and the monochrome palette.
+pp = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{TITLE} — print interior</title>
+<meta name="description" content="The print-interior edition of {TITLE}: 6in x 9in trim, mirrored margins, folios, a paginated contents. Typeset from this file by WeasyPrint.">
+<link rel="canonical" href="{HOST}/book/print.html">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/print-book.css">
+</head>
+<body class="bookpage">
+
+<section class="fm halftitle"><h1>{TITLE}</h1></section>
+
+<section class="fm titlepage">
+  <div class="over">graphs.sgit.ai</div>
+  <h1>Meaning Through<br>Connectivity</h1>
+  <p class="sub">{SUBTITLE}</p>
+  <p class="by">{BYLINE}</p>
+  <p class="pub">the sgit project</p>
+</section>
+
+<section class="fm colophon">
+  <p><b>{TITLE}</b> — first edition, {DATE}. Generated from graphs.sgit.ai at site
+  {VERSION} by <code>admin/build/gen_book.py</code>; the site is the living version of
+  this text, and this book is a projection of it.</p>
+  <p>This work is released under the Creative Commons Attribution 4.0 International
+  licence (CC BY 4.0). You are free to share and adapt this material for any purpose,
+  including commercially, as long as you give appropriate credit. Third-party material
+  quoted within it stays under its own terms.</p>
+  <p>The raw source documents behind every chapter are published at
+  {HOST}/documents/ — the markdown is the source of truth, and this rendering is
+  presentation. Hyperlinks are live in the digital editions at {HOST}/book/.</p>
+  <p>Interior: 6&Prime; × 9&Prime;, no bleed, typeset with WeasyPrint. Set in Liberation
+  Serif, Liberation Sans and Liberation Mono.</p>
+</section>
+
+<section class="fm toc">
+  <h1>Contents</h1>
+  <div class="toc">
+"""
+last = None
+for n, (pi, source, title) in enumerate(CHAPTERS, 1):
+    if pi != last:
+        roman, ptitle, _ = PARTS[pi]
+        pp += f'    <div class="t-part">Part {roman} · {ptitle}</div>\n'
+        last = pi
+    pp += f'    <div class="t-ch"><a href="#ch{n:02d}">{n} · {title}</a></div>\n'
+pp += "  </div>\n</section>\n"
+
+last = None
+for n, pi, title, header, frag in singles:
+    if pi != last:
+        roman, ptitle, pintro = PARTS[pi]
+        pp += (f'<section class="part"><div class="pk">Part {roman}</div>'
+               f'<h2>{ptitle}</h2><p>{pintro}</p></section>\n')
+        last = pi
+    pp += f'<section class="chapter" id="ch{n:02d}">\n{header}{frag}\n</section>\n'
+pp += "</body>\n</html>\n"
+(OUT / "print.html").write_text(pp)
+
 (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
 print(f"gen_book: {len(CHAPTERS)} chapters, index.html, single.html, manifest.json")
 
 # ------------------------------------------------------------------ PDF ----
+# The print interior. WeasyPrint gives the full book apparatus (folios, running
+# heads, contents page numbers via target-counter); Chromium honours the 6x9
+# @page geometry but none of the margin-box content, so it is a degraded
+# fallback, clearly reported as such.
+pdf = OUT / PDF_NAME
+
+def pdf_pages():
+    """Count pages in either PDF flavour: Chromium writes plain object headers,
+    WeasyPrint (pydyf) packs the object tree into compressed object streams."""
+    import zlib
+    d = pdf.read_bytes()
+    n = len(re.findall(rb"/Type\s*/Page[^s]", d))
+    for s in re.findall(rb"stream\r?\n(.*?)endstream", d, re.S):
+        try:
+            n += len(re.findall(rb"/Type\s*/Page[^s]", zlib.decompress(s)))
+        except Exception:
+            continue
+    return n
+
+try:
+    import weasyprint
+    weasyprint.HTML(filename=str(OUT / "print.html")).write_pdf(str(pdf))
+    manifest["pdf_pages"] = pdf_pages()
+    manifest["pdf_typesetter"] = f"weasyprint {weasyprint.__version__}"
+    (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    print(f"gen_book: {PDF_NAME} — {manifest['pdf_pages']} pages, "
+          f"{pdf.stat().st_size:,} bytes (WeasyPrint, 6x9 print interior)")
+    sys.exit(0)
+except ImportError:
+    print("gen_book: WeasyPrint not available — falling back to Chromium "
+          "(6x9, but no folios and no contents page numbers)")
+
 PDF_CANDIDATES = sorted(glob("/opt/pw-browsers/chromium-*/chrome-linux/chrome")) + [
     shutil.which("chromium") or "", shutil.which("google-chrome") or ""]
 chrome = next((c for c in PDF_CANDIDATES if c and Path(c).exists()), None)
 if not chrome:
-    print("gen_book: no Chromium found — PDF NOT regenerated (commit blocks if stale)")
+    print("gen_book: no Chromium either — PDF NOT regenerated (commit blocks if stale)")
     sys.exit(0)
-pdf = OUT / PDF_NAME
 for flags in (["--no-pdf-header-footer"], ["--print-to-pdf-no-header"]):
     r = subprocess.run(
         [chrome, "--headless", "--no-sandbox", "--disable-gpu",
          "--virtual-time-budget=10000", *flags,
-         f"--print-to-pdf={pdf}", f"file://{OUT / 'single.html'}"],
+         f"--print-to-pdf={pdf}", f"file://{OUT / 'print.html'}"],
         capture_output=True)
     if pdf.exists() and pdf.stat().st_size > 50_000:
-        print(f"gen_book: {PDF_NAME} — {pdf.stat().st_size:,} bytes")
+        manifest["pdf_pages"] = pdf_pages()
+        manifest["pdf_typesetter"] = "chromium fallback (no folios)"
+        (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+        print(f"gen_book: {PDF_NAME} — {manifest['pdf_pages']} pages, "
+              f"{pdf.stat().st_size:,} bytes (Chromium fallback)")
         break
 else:
     sys.exit(f"gen_book: PDF generation failed: {r.stderr.decode()[-400:]}")
