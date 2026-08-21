@@ -273,7 +273,7 @@ def back_content():
         y += 34
     t.append(f'<text x="60" y="{y+8}" font-family="{SANS}" font-size="11.5" '
              f'letter-spacing="2" fill="{cream(.55)}">&#8212; DINIS CRUZ, 26 JUNE 2026</text>')
-    y += 46
+    y += 52
     blocks = [
         ("THE CLAIM", "A node is just a node. The same value, differently connected, "
          "means different things: the difference is not in the value, it is in "
@@ -291,7 +291,7 @@ def back_content():
             t.append(f'<text x="60" y="{y}" font-family="{SERIF}" font-size="15.5" '
                      f'fill="{cream(.88)}">{ln}</text>')
             y += 23
-        y += 14
+        y += 18
     for ln in wrap("Written by Dinis Cruz with a team of AI agents, from voice "
                    "memos developed into 1,300+ briefs across a 3,300-document "
                    "corpus. The living version is graphs.sgit.ai; this book is "
@@ -299,18 +299,15 @@ def back_content():
         t.append(f'<text x="60" y="{y}" font-family="{SERIF}" font-style="italic" '
                  f'font-size="14.5" fill="{cream(.6)}">{ln}</text>')
         y += 21
-    # the edition, stated as a promise: first of many, one per major step.
-    # Anchored to the running y so the authorship block above can never
-    # collide with it; the badge below starts at 798, which caps the stack.
-    ey = y
+    # the edition line. "First edition" already implies more will follow, so it
+    # stands alone (founder call, v0.3.5 — the fuller of-many statement lives in
+    # the print colophon, where it has room). Anchored below the running y so
+    # the authorship block can never collide with it, and kept above 755: the
+    # line runs long enough to cross x=375, where the barcode zone begins.
+    ey = y + 10
     t.append(f'<text x="60" y="{ey}" font-family="{SANS}" font-size="11.5" '
              f'font-weight="700" letter-spacing="2" fill="{AMBER}">'
              f'FIRST EDITION &#183; SITE {VERSION.upper()} &#183; {DATE.upper()}</text>')
-    for ln in wrap("The first of many: a new edition is published each time the "
-                   "content, its examples and its evidence make a major step.", 46):
-        ey += 19
-        t.append(f'<text x="60" y="{ey}" font-family="{SERIF}" font-style="italic" '
-                 f'font-size="13" fill="{cream(.7)}">{ln}</text>')
     # the licence, made unmissable: the CC BY mark plus its plain meaning.
     # Caption lines stay short so nothing enters the barcode zone (x >= 350),
     # and the last baseline stays inside the 0.25in trim-safe margin.
