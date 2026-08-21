@@ -12,6 +12,7 @@
 <meta property="og:title" content="Participant disclosure — including where our approach loses">
 <meta property="og:description" content="We are not a neutral observer. Here is what we build, what we would gain if you agreed with us, and four situations where this approach is the wrong choice.">
 <meta name="twitter:card" content="summary">
+<link rel="alternate" type="text/markdown" href="../content/about-participant.md" title="This chapter as markdown — the source of truth">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
@@ -20,7 +21,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.5</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -89,48 +90,35 @@
 
 <main class="doc">
   <div class="crumb"><a href="../index.html">graphs.sgit.ai</a> → <b>Participant disclosure</b></div>
-  <h1>Participant disclosure</h1>
-  <p class="lead">This site argues that provenance should be traversable and that the interested party should be a visible node. That applies to us.</p>
+<h1>Participant disclosure</h1>
+<p class="lead">This site argues that provenance should be traversable and that the interested party should be a visible node. That applies to us.</p>
+<h2 id="who">Who publishes this</h2>
+<p>graphs.sgit.ai is published by <strong>the sgit project</strong>, which builds the vault layer, the <code>sgit</code> CLI, and the graph products described across this network. It is written primarily from six and a half months of applied work by <strong>Dinis Cruz</strong> and the agentic team working with him, February to August 2026.</p>
+<p><strong>We are not a neutral observer.</strong> If the argument on this site is right, the products we build are more valuable. That is a real interest and it is worth holding in mind on every page — particularly the pages where the argument is elegant and the evidence is a design document rather than a running system.</p>
+<h2 id="mitigations">What we do about it</h2>
+<ul>
+<li><strong><a href="../shipped/index.html">A page that separates what ships from what is argued</a></strong>, listing what does not exist anywhere — including the absence of any graph database, which is the thing a vendor would most want to imply.</li>
+<li><strong>Every number is labelled</strong> live or parsed-from-a-design-document, and the two are never mixed.</li>
+<li><strong>Every page written fresh says so</strong>, and names which gap it fills. The bar for those is lower and you should hold them to it.</li>
+<li><strong><a href="../documents/index.html">The source documents are published in full</a></strong>, raw, with the three redactions <a href="../documents/public.html">recorded</a>. You can check any quotation against its source.</li>
+<li><strong>Our own errors are on the site</strong>, not in a changelog. <a href="../shipped/index.html#corrections">Two corrections</a>, including a rule the project's own shipped configuration breaks.</li>
+</ul>
+<h2 id="loses">Where this approach loses</h2>
+<p>Four situations where the argument on this site is the wrong one. If you are in one of them, do something else.</p>
+<div class="ladder">
+<div class="cap"><div class="capnum">1</div><h3>Everyone already agrees, and always will</h3><p>Inside one team, one codebase, one jurisdiction, with a stable vocabulary and no external party — a schema is simpler, faster, and it will catch mistakes this approach lets through. The whole argument here is about what happens at a boundary. No boundary, no benefit.</p></div>
+<div class="cap"><div class="capnum">2</div><h3>You need the answer to be enforced, not computed</h3><p>Enrichment rather than enforcement is a real cost. If your requirement is “this field must never be null”, a validator does that and a graph does not. Some systems need a gate, and a gate is a schema.</p></div>
+<div class="cap"><div class="capnum">3</div><h3>The graph would be empty</h3><p>This approach needs edges, and edges are work somebody has to do. Where nobody has done that work, traversal has nothing to say and similarity search will beat it outright. <a href="../why-graphs/index.html#positioning">Stated on the positioning page too.</a></p></div>
+<div class="cap"><div class="capnum">4</div><h3>You want to buy it rather than build it</h3><p>The honest state of the semantic layer is <strong>designed, not shipped</strong>. If you need something running next quarter, this site is a set of arguments you can use, not a product you can procure. <a href="../shipped/index.html">What actually ships →</a></p></div>
+</div><h2 id="licence">Licence</h2>
+<p class="claim">All content on this site is released under <strong>CC BY 4.0</strong>. The raw markdown under <code>/briefs/</code> is the source of truth and carries the same licence.</p>
+<p>That follows a decision of 21 August 2026: unless a document explicitly says otherwise, every markdown file in the corpus was authored by Dinis Cruz and is released under CC BY 4.0, and the same applies to the entire content of every <code>*.sgit.ai</code> website. <a href="../documents/licensing.html">The decision, in full →</a></p>
+<p>Irrevocability is the point rather than a risk being managed: the licence is what guarantees the material stays readable — by its author, by future collaborators, and by agents — regardless of what happens to any company, platform or vault that currently hosts it. A grant that could be withdrawn would not provide that guarantee.</p>
+<p><strong>Two limits.</strong> Third-party material quoted inside these documents stays under its own terms — vendor system cards, arXiv papers, EU AI Act text and external URLs are quoted, not relicensed. And code in the repository behind this site is under its own repository licence; <a href="https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/LICENSES.md">LICENSES.md</a> states the split.</p>
+<h2 id="contact">Corrections</h2>
+<p>If something here is wrong, the fastest route is <a href="../admin/comms.html">the comms board</a> or an issue on <a href="https://github.com/SGit-AI/SGit-AI__Website__Graphs">the repository</a>. Corrections that change a claim get a row in <a href="../admin/versions.html">the release history</a>, not a silent edit — <a href="../depth/index.html#supersede">the site's own rule</a>.</p>
 
-  <h2 id="who">Who publishes this</h2>
-  <p>graphs.sgit.ai is published by <b>the sgit project</b>, which builds the vault layer, the <code>sgit</code> CLI, and the graph products described across this network. It is written primarily from six and a half months of applied work by <b>Dinis Cruz</b> and the agentic team working with him, February to August 2026.</p>
-  <p><b>We are not a neutral observer.</b> If the argument on this site is right, the products we build are more valuable. That is a real interest and it is worth holding in mind on every page — particularly the pages where the argument is elegant and the evidence is a design document rather than a running system.</p>
-
-  <h2 id="mitigations">What we do about it</h2>
-  <ul>
-    <li><b><a href="../shipped/index.html">A page that separates what ships from what is argued</a></b>, listing what does not exist anywhere — including the absence of any graph database, which is the thing a vendor would most want to imply.</li>
-    <li><b>Every number is labelled</b> live or parsed-from-a-design-document, and the two are never mixed.</li>
-    <li><b>Every page written fresh says so</b>, and names which gap it fills. The bar for those is lower and you should hold them to it.</li>
-    <li><b><a href="../documents/index.html">The source documents are published in full</a></b>, raw, with the three redactions <a href="../documents/public.html">recorded</a>. You can check any quotation against its source.</li>
-    <li><b>Our own errors are on the site</b>, not in a changelog. <a href="../shipped/index.html#corrections">Two corrections</a>, including a rule the project's own shipped configuration breaks.</li>
-  </ul>
-
-  <h2 id="loses">Where this approach loses</h2>
-  <p>Four situations where the argument on this site is the wrong one. If you are in one of them, do something else.</p>
-  <div class="ladder">
-    <div class="cap"><div class="capnum">1</div><h3>Everyone already agrees, and always will</h3>
-      <p>Inside one team, one codebase, one jurisdiction, with a stable vocabulary and no external party — a schema is simpler, faster, and it will catch mistakes this approach lets through. The whole argument here is about what happens at a boundary. No boundary, no benefit.</p></div>
-    <div class="cap"><div class="capnum">2</div><h3>You need the answer to be enforced, not computed</h3>
-      <p>Enrichment rather than enforcement is a real cost. If your requirement is “this field must never be null”, a validator does that and a graph does not. Some systems need a gate, and a gate is a schema.</p></div>
-    <div class="cap"><div class="capnum">3</div><h3>The graph would be empty</h3>
-      <p>This approach needs edges, and edges are work somebody has to do. Where nobody has done that work, traversal has nothing to say and similarity search will beat it outright. <a href="../why-graphs/index.html#positioning">Stated on the positioning page too.</a></p></div>
-    <div class="cap"><div class="capnum">4</div><h3>You want to buy it rather than build it</h3>
-      <p>The honest state of the semantic layer is <b>designed, not shipped</b>. If you need something running next quarter, this site is a set of arguments you can use, not a product you can procure. <a href="../shipped/index.html">What actually ships →</a></p></div>
-  </div>
-
-  <h2 id="licence">Licence</h2>
-  <p class="claim">All content on this site is released under <b>CC BY 4.0</b>. The raw markdown under <code>/briefs/</code> is the source of truth and carries the same licence.</p>
-  <p>That follows a decision of 21 August 2026: unless a document explicitly says otherwise, every markdown file in the corpus was authored by Dinis Cruz and is released under CC BY 4.0, and the same applies to the entire content of every <code>*.sgit.ai</code> website. <a href="../documents/licensing.html">The decision, in full →</a></p>
-  <p>Irrevocability is the point rather than a risk being managed: the licence is what guarantees the material stays readable — by its author, by future collaborators, and by agents — regardless of what happens to any company, platform or vault that currently hosts it. A grant that could be withdrawn would not provide that guarantee.</p>
-  <p><b>Two limits.</b> Third-party material quoted inside these documents stays under its own terms — vendor system cards, arXiv papers, EU AI Act text and external URLs are quoted, not relicensed. And code in the repository behind this site is under its own repository licence; <a href="https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/LICENSES.md">LICENSES.md</a> states the split.</p>
-
-  <h2 id="contact">Corrections</h2>
-  <p>If something here is wrong, the fastest route is <a href="../admin/comms.html">the comms board</a> or an issue on <a href="https://github.com/SGit-AI/SGit-AI__Website__Graphs">the repository</a>. Corrections that change a claim get a row in <a href="../admin/versions.html">the release history</a>, not a silent edit — <a href="../depth/index.html#supersede">the site's own rule</a>.</p>
-
-  <div class="pagenav">
-    <span><a href="../admin/index.html">← How this site is built</a></span>
-    <span><a href="../index.html">Front page →</a></span>
-  </div>
+  <div class="pagenav"><span><a href="../admin/index.html">← How this site is built</a></span><span><a href="../index.html">Front page →</a></span></div>
 </main>
 
 <footer class="site"><div class="cols">
@@ -139,7 +127,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project. You are on the disclosure page.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.5</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.0</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

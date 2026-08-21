@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.5</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -119,94 +119,105 @@
   </div>
 </aside>
   <div class="bookmain">
-    <div class="bookbar"><a href="index.html">☰ Contents</a> · <a href="single.html">single page</a> · <a href="meaning-through-connectivity.pdf">print PDF</a> · <a href="meaning-through-connectivity-screen.pdf">screen PDF</a> · <span>Meaning Through Connectivity · site v0.2.5</span></div>
+    <div class="bookbar"><a href="index.html">☰ Contents</a> · <a href="single.html">single page</a> · <a href="meaning-through-connectivity.pdf">print PDF</a> · <a href="meaning-through-connectivity-screen.pdf">screen PDF</a> · <span>Meaning Through Connectivity · site v0.3.0</span></div>
     <main class="doc bookch">
 <div class="chkick">Part III · The full argument</div>
 <div class="chnum">Chapter 6</div>
 <h1>A graph at every boundary</h1>
 
   <p class="lead">Four arguments that only make sense once you accept the first three at <a href="ch-05-against-schema-first.html">altitude 3</a>: what fractal actually claims, what happens at the seams of an AI system, why documents are projections rather than sources, and where the graph stops modelling and touches something real.</p>
-
-  <div class="evbox ev-warn">
-    <span class="evtag">Rewritten</span>
-    <p>Two of the four sections below are the highest-value rewrites identified in the brief pack (gaps <b>G7</b> and <b>G2</b>). The source briefs open with a single bolded sentence of four to five hundred words — the ideas are highly accessible; the documents are not readable cold. The <em>argument</em> here is the corpus's; the <em>prose</em> is this site's. <a href="https://graphs.sgit.ai/documents/gaps.html">The gaps document lists all twelve.</a></p>
-  </div>
-
-  <h2 id="fractal">1 · Fractal is a precise claim, not a decoration</h2>
-  <p>“Graphs of graphs of graphs” sounds like a flourish. It is meant literally, and it means four specific things:</p>
-  <div class="tablewrap">
-  <table>
-    <thead><tr><th>Claim</th><th>What it commits you to</th></tr></thead>
-    <tbody>
-      <tr><td><b>Self-similarity</b></td><td>The same node-and-edge grammar at every altitude. A property, a paragraph, a person, a national estate — same rules.</td></tr>
-      <tr><td><b>Scale invariance</b></td><td>One validator, one query engine, one provenance rule. Not a family of them per level.</td></tr>
-      <tr><td><b>Composition</b></td><td>Graphs combine into graphs without an adapter layer. Risk registers of risk registers.</td></tr>
-      <tr><td><b>Recursion</b></td><td>Zoom into any node and it expands into a graph obeying identical rules — <b>with no new format and no special case</b>.</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p>That last clause is the falsifiable part, and it is how you check whether a system is fractal or merely hierarchical. If zooming in requires a different file format, a different validator, or a special case, the claim is false. It is a testable property, not a description of a feeling.</p>
-  <p>What it buys you is that the system has no natural stopping point and no integration tax. <em>“there might be an article that is so meaty that it requires its own ontology and taxonomy, and that's the power of the fractal element.”</em> The graph starts wherever the work is — <em>“it is kind of like a Lego structure where one feeds to the other”</em> — and grows outward from there. Which is also why <a href="#anywhere">it does not matter where you start</a>.</p>
-
-  <h2 id="boundaries">2 · Meaning is lost and re-guessed at every seam</h2>
-  <p>Here is the AI-native argument, stated plainly rather than in one sentence.</p>
-  <p>A conventional agentic stack is a pile of layers: a retriever, a model, a tool router, a policy check, an executor, a log. They are glued together with <b>JSON payloads and prompt text</b>. At every one of those seams, the structure of what was known — what grounded it, where it came from, how confident anyone was — is flattened into a string and then <b>re-guessed by the next layer</b>.</p>
-  <p>That flattening is not a detail of the implementation. It is precisely where determinism, explainability, provenance, sovereignty and auditability die. Not one of the five is lost inside a layer; all five are lost <em>between</em> them.</p>
-  <blockquote class="challenge">“at every boundary meaning is lost and re-guessed; the alternative is to make a semantic graph the interface at every boundary, so each layer emits a graph and consumes a graph and <b>nothing crosses a layer as an opaque blob or a sentence.</b>”</blockquote>
-  <h3>What falls out</h3>
-  <p>The point of the design is that these are <b>consequences, not features</b>. Nobody built a provenance subsystem:</p>
-  <ul>
-    <li><b>Determinism</b> — the model proposes a graph; a deterministic validator executes it. The same proposal produces the same result.</li>
-    <li><b>Explainability</b> — the explanation is the path. It was already there; you just have to render it.</li>
-    <li><b>Provenance</b> — every node carries where it came from, because it crossed the boundary as a node rather than as prose about a node.</li>
-    <li><b>Sovereignty</b> — computed, not claimed. You can point at which parts of the graph left your jurisdiction, because parts of a graph have addresses.</li>
-    <li><b>Auditability</b> — the transaction log is a by-product. Every mutation is an ordered message, and a message <em>is</em> the change rather than a notification about it.</li>
-  </ul>
-  <h3>And the security property, which is the sharpest one</h3>
-  <p class="claim">The model sits at the edge and only <em>proposes</em> a graph. A deterministic validator decides what is admissible. Untrusted input is therefore data and can never become instruction — so prompt injection fails at the validator, <b>structurally</b>.</p>
-  <p>Be careful with that claim, in both directions. It does not say a model cannot be manipulated — of course it can, and it will propose something wrong. It says the manipulated proposal <b>has to pass a validator that does not read prose</b>, so the class of attack that works by talking the system into doing something never reaches the executor. What remains is a proposal that is structurally valid and semantically wrong, which is a much smaller and much more detectable problem. That is a real reduction, not an elimination, and the source brief carries its own honest-tensions table saying so.</p>
-  <p>Finally, the retrieval consequence: <b>knowledge is traversed, not guessed.</b> Retrieval becomes a traversal from an intent node to grounded facts with provenance attached, rather than a similarity search that returns plausible chunks. <a href="ch-01-why-graphs-at-all.html#positioning">How that sits next to GraphRAG →</a></p>
-
-  <h2 id="projections">3 · Documents are projections of graphs</h2>
-  <div class="warnbox"><b>This one has no home document, and that is worth knowing before you read it.</b> The principle is invoked across the corpus as <em>already established</em> — “the same way I talk about documents being projections of graphs” — and then applied to skills, compliance standards and legal texts. It is never argued anywhere. Gap <b>G2</b>. This section is the synthesis, written for the site.</div>
-  <p>The claim: the graph is the truth; the document is a <b>view</b> of it, generated in the context of use.</p>
-  <blockquote class="challenge">“The same way I talk about documents being projections of graphs, <b>the skill is a projection of a graph</b>… The skills we have today are just <b>a photograph of what it should be</b>, because it is static.”</blockquote>
-  <p>Three things that look like separate problems turn out to be the same one:</p>
-  <div class="ladder">
-    <div class="cap"><div class="capnum">1</div><h3>A skill file</h3><p>A static description of how to do something, which drifts from how it is actually done. As a projection: the graph of how the work is done is the truth, and the file is rendered from it when needed.</p></div>
-    <div class="cap"><div class="capnum">2</div><h3>A compliance standard</h3><p>A document handed to you whole, from which you strike out what does not apply. As a projection: nothing is relevant until your facts attach — the standard starts <em>empty</em> and accretes. <a href="ch-07-worked-graphs-with-real-numbers.html#regulation">The customisation inversion →</a></p></div>
-    <div class="cap"><div class="capnum">3</div><h3>A consolidated legal text</h3><p>The sharpest version. Do not <b>store</b> the consolidated text at all. Hold the base text plus the amendment instructions as data, and <b>compute</b> the consolidated version as a projection.</p></div>
-  </div>
-  <p>And then the result that makes the whole idea pay for itself: <b>consolidation and per-organisation customisation turn out to be one mechanism, not two.</b> The maintenance burden and the flagship feature share an engine. That is the kind of thing that only shows up if you take the projection claim seriously enough to build on it.</p>
-  <p>The same shape appears in the document-to-graph direction: a document is not one blob but a hierarchy of paragraphs, points and definitions, each written for a reason and therefore yielding something extractable. <b>Every paragraph is a graph.</b> A document's own definitions are the first and most valuable node layer — and three kinds of work follow: how they relate, <b>where they contradict</b>, and what the text uses but never defines. The second is the highest-value output and the one nobody produces. The third is where interpretive risk concentrates.</p>
-  <h3>Which means lifting text into a graph is decompilation</h3>
-  <p>Going from concrete text to abstract structure runs the same direction a decompiler runs, and it inherits the same property: <b>it is ambiguous, and it cannot be done reliably without help.</b> The help is the author. The goal is not absolute truth but <em>the author's own meaning, confirmed by the author</em> — so a reader saying <b>“that is not what I meant”</b> is not a failure of extraction. It is the elicitation working. Every node at every altitude carries a source map back to the span it came from, which is what makes that correction cheap.</p>
-
-  <h2 id="twins">4 · Twins, and the air gap</h2>
-  <p>A graph that only ever refers to itself is a very well-organised opinion. A <b>twin</b> is where it stops modelling and continues into a real system.</p>
-  <blockquote class="challenge">“the power of the twin is that we always arrive at the twin, so the edges and the peaks and the endpoints of the graph continue into the twin, and then ideally into reality.”</blockquote>
-  <p>A twin can be made of almost anything — an organisation, an inbox, a person, a behaviour, the weather — because a twin is just a system with properties, behaviours, functions, inputs and outputs. Two disciplines come with it:</p>
-  <ul>
-    <li><b>Whether an endpoint actually reaches reality is itself a measurable fact.</b> Not an assumption about the diagram; a property of it you can query.</li>
-    <li><b>Everything modelled must be real</b>, so the graph never fills up with hypothetical risks. This is the rule that keeps a risk graph from becoming a brainstorm.</li>
-  </ul>
-  <h3 id="air-gap">And where it cannot reach, name the gap</h3>
-  <div class="note"><b>Written fresh.</b> The air gap is a load-bearing idea that appears only as paragraphs inside two longer briefs — gap <b>G9</b>. This is its first page.</div>
-  <p>Sometimes the graph cannot reach the real system. There is no API, the data arrives by email, someone re-keys it on a Thursday. The instinct is to leave that part of the diagram blank, or to draw it as though it connects.</p>
-  <p>Neither. The twin holds an <b>explicit, tracked gap</b>: <em>“this needs to be manually updated once a week, but the point is we now know where that gap is.”</em></p>
-  <p>The air gap is the operational sibling of <a href="ch-02-the-five-ideas.html#gaps">map the gaps</a>. Any risk not connected to the register is an air gap. Any provision whose hooks reach no twin is a provision not actually mapped — which turns hook coverage into a real coverage measure over an instrument rather than an assertion that it was reviewed.</p>
-  <p class="claim">A named absence beats a hidden one. In the graph an air gap is a node with a name, an owner and a frequency — which means it can be counted, argued about, and funded.</p>
-  <p>There is a Wardley map for this, and it is the sharpest single map in the material: the ends are solved and the middle is people. <a href="ch-11-wardley-maps-as-graphs.html">The maps →</a></p>
-
-  <h2 id="anywhere">Two smaller notes, and one open question</h2>
-  <p><b>It does not matter where you start.</b> The graph will be deep where the work is and absent everywhere else. That is not a defect to apologise for — it is the property that makes the project finite. A graph that had to be complete before it was useful would never be either.</p>
-  <p><b>A bug is a divergence, not a breakage.</b> <em>“A bug is something that we have mapped in the graph that is not happening in reality.”</em> Which reframes it from “something is broken” to “the reality diverges from the model” — and leaves open which of the two is wrong.</p>
-  <div class="warnbox"><b>Open: time is asserted and never developed.</b> “Time is an event, things change” is close to the whole treatment. The corpus repeatedly says the graph moves and never explains how. Adjacent material circles it — the acceptance-interval ladder (1h / 4h / 2d / 2w / 1m / 6m), <code>repealed_from</code> in the regulation graph, supersede-never-delete, temporal permissions, and the vault's own commit DAG, which is after all a working answer to “how does a graph change over time”. Gap <b>G10</b>, and the page is not written. If you have a view, <a href="https://graphs.sgit.ai/admin/comms.html">the comms board</a>.</div>
-
-  <div class="agent">
-    <h4>For an agent</h4>
-    <p><b>Fractal</b> is a testable claim: if zooming into a node needs a new format or a special case, the system is hierarchical, not fractal. <b>At a boundary</b>, emit a graph rather than JSON-plus-prose — determinism, explainability and provenance are consequences of that one decision, not separate features. <b>A document is a projection</b> of a graph, so compute it rather than storing it. <b>Where you cannot reach a real system</b>, emit a named air-gap node with an owner and a refresh frequency; do not draw the connection you do not have.</p>
-  </div>
+<div class="evbox ev-warn">
+<span class="evtag">Rewritten</span>
+<p>Two of the four sections below are the highest-value rewrites identified in the brief pack (gaps <b>G7</b> and <b>G2</b>). The source briefs open with a single bolded sentence of four to five hundred words — the ideas are highly accessible; the documents are not readable cold. The <em>argument</em> here is the corpus's; the <em>prose</em> is this site's. <a href="https://graphs.sgit.ai/documents/gaps.html">The gaps document lists all twelve.</a></p>
+</div>
+<h2 id="fractal">1 · Fractal is a precise claim, not a decoration</h2>
+<p>“Graphs of graphs of graphs” sounds like a flourish. It is meant literally, and it means four specific things:</p>
+<div class="tablewrap">
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>What it commits you to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Self-similarity</strong></td>
+<td>The same node-and-edge grammar at every altitude. A property, a paragraph, a person, a national estate — same rules.</td>
+</tr>
+<tr>
+<td><strong>Scale invariance</strong></td>
+<td>One validator, one query engine, one provenance rule. Not a family of them per level.</td>
+</tr>
+<tr>
+<td><strong>Composition</strong></td>
+<td>Graphs combine into graphs without an adapter layer. Risk registers of risk registers.</td>
+</tr>
+<tr>
+<td><strong>Recursion</strong></td>
+<td>Zoom into any node and it expands into a graph obeying identical rules — <strong>with no new format and no special case</strong>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>That last clause is the falsifiable part, and it is how you check whether a system is fractal or merely hierarchical. If zooming in requires a different file format, a different validator, or a special case, the claim is false. It is a testable property, not a description of a feeling.</p>
+<p>What it buys you is that the system has no natural stopping point and no integration tax. <em>“there might be an article that is so meaty that it requires its own ontology and taxonomy, and that's the power of the fractal element.”</em> The graph starts wherever the work is — <em>“it is kind of like a Lego structure where one feeds to the other”</em> — and grows outward from there. Which is also why <a href="#anywhere">it does not matter where you start</a>.</p>
+<h2 id="boundaries">2 · Meaning is lost and re-guessed at every seam</h2>
+<p>Here is the AI-native argument, stated plainly rather than in one sentence.</p>
+<p>A conventional agentic stack is a pile of layers: a retriever, a model, a tool router, a policy check, an executor, a log. They are glued together with <strong>JSON payloads and prompt text</strong>. At every one of those seams, the structure of what was known — what grounded it, where it came from, how confident anyone was — is flattened into a string and then <strong>re-guessed by the next layer</strong>.</p>
+<p>That flattening is not a detail of the implementation. It is precisely where determinism, explainability, provenance, sovereignty and auditability die. Not one of the five is lost inside a layer; all five are lost <em>between</em> them.</p>
+<blockquote class="challenge">“at every boundary meaning is lost and re-guessed; the alternative is to make a semantic graph the interface at every boundary, so each layer emits a graph and consumes a graph and <strong>nothing crosses a layer as an opaque blob or a sentence.</strong>”</blockquote>
+<h3>What falls out</h3>
+<p>The point of the design is that these are <strong>consequences, not features</strong>. Nobody built a provenance subsystem:</p>
+<ul>
+<li><strong>Determinism</strong> — the model proposes a graph; a deterministic validator executes it. The same proposal produces the same result.</li>
+<li><strong>Explainability</strong> — the explanation is the path. It was already there; you just have to render it.</li>
+<li><strong>Provenance</strong> — every node carries where it came from, because it crossed the boundary as a node rather than as prose about a node.</li>
+<li><strong>Sovereignty</strong> — computed, not claimed. You can point at which parts of the graph left your jurisdiction, because parts of a graph have addresses.</li>
+<li><strong>Auditability</strong> — the transaction log is a by-product. Every mutation is an ordered message, and a message <em>is</em> the change rather than a notification about it.</li>
+</ul>
+<h3>And the security property, which is the sharpest one</h3>
+<p class="claim">The model sits at the edge and only <em>proposes</em> a graph. A deterministic validator decides what is admissible. Untrusted input is therefore data and can never become instruction — so prompt injection fails at the validator, <strong>structurally</strong>.</p>
+<p>Be careful with that claim, in both directions. It does not say a model cannot be manipulated — of course it can, and it will propose something wrong. It says the manipulated proposal <strong>has to pass a validator that does not read prose</strong>, so the class of attack that works by talking the system into doing something never reaches the executor. What remains is a proposal that is structurally valid and semantically wrong, which is a much smaller and much more detectable problem. That is a real reduction, not an elimination, and the source brief carries its own honest-tensions table saying so.</p>
+<p>Finally, the retrieval consequence: <strong>knowledge is traversed, not guessed.</strong> Retrieval becomes a traversal from an intent node to grounded facts with provenance attached, rather than a similarity search that returns plausible chunks. <a href="ch-01-why-graphs-at-all.html#positioning">How that sits next to GraphRAG →</a></p>
+<h2 id="projections">3 · Documents are projections of graphs</h2>
+<div class="warnbox"><p><strong>This one has no home document, and that is worth knowing before you read it.</strong> The principle is invoked across the corpus as <em>already established</em> — “the same way I talk about documents being projections of graphs” — and then applied to skills, compliance standards and legal texts. It is never argued anywhere. Gap <strong>G2</strong>. This section is the synthesis, written for the site.</p>
+</div>
+<p>The claim: the graph is the truth; the document is a <strong>view</strong> of it, generated in the context of use.</p>
+<blockquote class="challenge">“The same way I talk about documents being projections of graphs, <strong>the skill is a projection of a graph</strong>… The skills we have today are just <strong>a photograph of what it should be</strong>, because it is static.”</blockquote>
+<p>Three things that look like separate problems turn out to be the same one:</p>
+<div class="ladder">
+<div class="cap"><div class="capnum">1</div><h3>A skill file</h3><p>A static description of how to do something, which drifts from how it is actually done. As a projection: the graph of how the work is done is the truth, and the file is rendered from it when needed.</p></div>
+<div class="cap"><div class="capnum">2</div><h3>A compliance standard</h3><p>A document handed to you whole, from which you strike out what does not apply. As a projection: nothing is relevant until your facts attach — the standard starts <em>empty</em> and accretes. <a href="ch-07-worked-graphs-with-real-numbers.html#regulation">The customisation inversion →</a></p></div>
+<div class="cap"><div class="capnum">3</div><h3>A consolidated legal text</h3><p>The sharpest version. Do not <strong>store</strong> the consolidated text at all. Hold the base text plus the amendment instructions as data, and <strong>compute</strong> the consolidated version as a projection.</p></div>
+</div><p>And then the result that makes the whole idea pay for itself: <strong>consolidation and per-organisation customisation turn out to be one mechanism, not two.</strong> The maintenance burden and the flagship feature share an engine. That is the kind of thing that only shows up if you take the projection claim seriously enough to build on it.</p>
+<p>The same shape appears in the document-to-graph direction: a document is not one blob but a hierarchy of paragraphs, points and definitions, each written for a reason and therefore yielding something extractable. <strong>Every paragraph is a graph.</strong> A document's own definitions are the first and most valuable node layer — and three kinds of work follow: how they relate, <strong>where they contradict</strong>, and what the text uses but never defines. The second is the highest-value output and the one nobody produces. The third is where interpretive risk concentrates.</p>
+<h3>Which means lifting text into a graph is decompilation</h3>
+<p>Going from concrete text to abstract structure runs the same direction a decompiler runs, and it inherits the same property: <strong>it is ambiguous, and it cannot be done reliably without help.</strong> The help is the author. The goal is not absolute truth but <em>the author's own meaning, confirmed by the author</em> — so a reader saying <strong>“that is not what I meant”</strong> is not a failure of extraction. It is the elicitation working. Every node at every altitude carries a source map back to the span it came from, which is what makes that correction cheap.</p>
+<h2 id="twins">4 · Twins, and the air gap</h2>
+<p>A graph that only ever refers to itself is a very well-organised opinion. A <strong>twin</strong> is where it stops modelling and continues into a real system.</p>
+<blockquote class="challenge">“the power of the twin is that we always arrive at the twin, so the edges and the peaks and the endpoints of the graph continue into the twin, and then ideally into reality.”</blockquote>
+<p>A twin can be made of almost anything — an organisation, an inbox, a person, a behaviour, the weather — because a twin is just a system with properties, behaviours, functions, inputs and outputs. Two disciplines come with it:</p>
+<ul>
+<li><strong>Whether an endpoint actually reaches reality is itself a measurable fact.</strong> Not an assumption about the diagram; a property of it you can query.</li>
+<li><strong>Everything modelled must be real</strong>, so the graph never fills up with hypothetical risks. This is the rule that keeps a risk graph from becoming a brainstorm.</li>
+</ul>
+<h3 id="air-gap">And where it cannot reach, name the gap</h3>
+<div class="note"><p><strong>Written fresh.</strong> The air gap is a load-bearing idea that appears only as paragraphs inside two longer briefs — gap <strong>G9</strong>. This is its first page.</p>
+</div>
+<p>Sometimes the graph cannot reach the real system. There is no API, the data arrives by email, someone re-keys it on a Thursday. The instinct is to leave that part of the diagram blank, or to draw it as though it connects.</p>
+<p>Neither. The twin holds an <strong>explicit, tracked gap</strong>: <em>“this needs to be manually updated once a week, but the point is we now know where that gap is.”</em></p>
+<p>The air gap is the operational sibling of <a href="ch-02-the-five-ideas.html#gaps">map the gaps</a>. Any risk not connected to the register is an air gap. Any provision whose hooks reach no twin is a provision not actually mapped — which turns hook coverage into a real coverage measure over an instrument rather than an assertion that it was reviewed.</p>
+<p class="claim">A named absence beats a hidden one. In the graph an air gap is a node with a name, an owner and a frequency — which means it can be counted, argued about, and funded.</p>
+<p>There is a Wardley map for this, and it is the sharpest single map in the material: the ends are solved and the middle is people. <a href="ch-11-wardley-maps-as-graphs.html">The maps →</a></p>
+<h2 id="anywhere">Two smaller notes, and one open question</h2>
+<p><strong>It does not matter where you start.</strong> The graph will be deep where the work is and absent everywhere else. That is not a defect to apologise for — it is the property that makes the project finite. A graph that had to be complete before it was useful would never be either.</p>
+<p><strong>A bug is a divergence, not a breakage.</strong> <em>“A bug is something that we have mapped in the graph that is not happening in reality.”</em> Which reframes it from “something is broken” to “the reality diverges from the model” — and leaves open which of the two is wrong.</p>
+<div class="warnbox"><p><strong>Open: time is asserted and never developed.</strong> “Time is an event, things change” is close to the whole treatment. The corpus repeatedly says the graph moves and never explains how. Adjacent material circles it — the acceptance-interval ladder (1h / 4h / 2d / 2w / 1m / 6m), <code>repealed_from</code> in the regulation graph, supersede-never-delete, temporal permissions, and the vault's own commit DAG, which is after all a working answer to “how does a graph change over time”. Gap <strong>G10</strong>, and the page is not written. If you have a view, <a href="https://graphs.sgit.ai/admin/comms.html">the comms board</a>.</p>
+</div>
+<div class="agent">
+<h4>For an agent</h4><p><strong>Fractal</strong> is a testable claim: if zooming into a node needs a new format or a special case, the system is hierarchical, not fractal. <strong>At a boundary</strong>, emit a graph rather than JSON-plus-prose — determinism, explainability and provenance are consequences of that one decision, not separate features. <strong>A document is a projection</strong> of a graph, so compute it rather than storing it. <strong>Where you cannot reach a real system</strong>, emit a named air-gap node with an owner and a refresh frequency; do not draw the connection you do not have.</p>
+</div>
 
   
       <div class="pagenav"><span><a href="ch-05-against-schema-first.html">← 5 · Against schema-first</a></span><span><a href="ch-07-worked-graphs-with-real-numbers.html">7 · Worked graphs, with real numbers →</a></span></div>
@@ -220,7 +231,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.5</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.0</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

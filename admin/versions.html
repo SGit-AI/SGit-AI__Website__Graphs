@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.5</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -97,6 +97,11 @@
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
       <tr>
+        <td class="vnum">v0.3.0</td>
+        <td>21 August 2026</td>
+        <td><b>The chapter text moves to markdown — a major, because the authoring model changed.</b> Founder direction: with editors joining, the book's text needs to live in markdown, where changes are written and tracked cleanly. All sixteen chapters are now authored in <code>content/*.md</code> and rendered into the site pages by a new <code>admin/build/gen_pages.py</code> — CommonMark plus a house grammar: <code>::: note / warn / claim / quote / agent / ladder / meta</code> directives, a <code>```path</code> fence whose syntax is the corpus's own arrow notation (<code>[Fact] -backed_by-&gt; [Evidence]</code>), <code>```mermaid</code> for rendered diagrams, explicit heading anchors, and embedded HTML as the escape hatch for the components the grammar does not cover yet (tracked as <b>T16</b>, alongside cytoscape / d3 / viz.js rendering for in-chapter graphs). Each chapter page links its markdown twin, and the markdown is public at <code>/content/&lt;chapter&gt;.md</code>.<br><br><b>The chain is now three links with one source of truth — markdown → pages → book — and the gate checks both links</b>: new check 7 fails the build if a page lags its markdown <em>or</em> a page is edited behind its markdown's back; the existing book check fails if the book lags the pages. <b>Migration verified, not assumed</b>: every chapter round-tripped text-identical (16/16, whitespace-normalised), and a component census confirmed every note, claim, quote, pathline, ladder, table and anchor survived — the one delta being a comparison table that gained a scroll container it should have had. The migration script (<code>html2md.py</code>) stays in the repository as provenance, marked never-run-again.</td>
+      </tr>
+      <tr>
         <td class="vnum">v0.2.5</td>
         <td>21 August 2026</td>
         <td><b>Chapter 1 editorial fix, and self-references made projection-aware.</b> Founder feedback on <a href="../why-graphs/index.html">Why graphs at all</a>: the lead ("written for the reader who is not yet convinced") and the provenance box ("assumes the reader already accepts") read as contradictory. Rewritten around the founder's sharper framing: <b>many readers already think in graphs — tracing what connects to what, trusting a claim by its source — without ever having called it that</b>; the rare thing is doing it deliberately, with rules. The intro now also settles the word itself up front: on this site a <b>graph is a network — nodes and the edges that connect them — never a chart or a figure</b>; nothing here plots values on axes. The provenance box keeps its honesty (written fresh, gap G3, lower evidential bar) without re-litigating the audience.<br><br>And the "page" problem, fixed at the projection rather than in the prose: a chapter's source <em>is</em> a page on the site and <em>is</em> a chapter in the book, so <code>gen_book.py</code> now rewrites self-references the same way it rewrites links — "this page" renders as "this chapter" in every book mode (audited first: all sixteen sources use the phrase only self-referentially). The three narrower constructions ("the page to paste…") were neutralised in the sources to read naturally in both projections. One source of truth throughout: these edits were made once, on the site pages, and the book, single page and both PDFs inherited them in one regeneration — which the gate requires before anything ships.</td>
@@ -156,7 +161,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.5</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.0</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

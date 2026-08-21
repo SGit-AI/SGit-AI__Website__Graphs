@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.5</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -119,77 +119,62 @@
   </div>
 </aside>
   <div class="bookmain">
-    <div class="bookbar"><a href="index.html">☰ Contents</a> · <a href="single.html">single page</a> · <a href="meaning-through-connectivity.pdf">print PDF</a> · <a href="meaning-through-connectivity-screen.pdf">screen PDF</a> · <span>Meaning Through Connectivity · site v0.2.5</span></div>
+    <div class="bookbar"><a href="index.html">☰ Contents</a> · <a href="single.html">single page</a> · <a href="meaning-through-connectivity.pdf">print PDF</a> · <a href="meaning-through-connectivity-screen.pdf">screen PDF</a> · <span>Meaning Through Connectivity · site v0.3.0</span></div>
     <main class="doc bookch">
 <div class="chkick">Part I · The claim</div>
 <div class="chnum">Chapter 1</div>
 <h1>Why graphs at all</h1>
 
-  <p class="lead">One word first: on this site a <b>graph</b> is a network — <b>nodes, and the edges that connect them</b> — never a chart or a figure. Nothing here plots values on axes; everything here is about things and the stated relationships between them.</p>
-
-  <p>And a suspicion to start from: <b>you may already think in graphs without ever having called it that.</b> Working out what an unfamiliar system is by tracing what it connects to; trusting a claim because of where it comes from rather than how it is worded; asking “what else breaks if this fails?” — that is graph-thinking, and it is common. What is rare is doing it <em>deliberately, with rules</em>, and that is what this site teaches. So this chapter is written for three readers: the one who already thinks this way and never named it, the one who is not yet convinced, and the one who is convinced of something else — if you have used graphs professionally, the useful part is the second half, because this is a third use of graphs and probably not the one you are thinking of.</p>
-
-  <div class="warnbox"><b>Written fresh.</b> The documents behind this site do not argue this case — they assume graph-thinking and get on with it, and none of them distinguishes this use of graphs from the common ones. That absence is recorded as gap <b>G3</b> in <a href="https://graphs.sgit.ai/documents/gaps.html">the gaps document</a>, and this chapter fills it, written for the site rather than lifted from the corpus — so hold it to a lower evidential bar than the sourced pages, and tell us where it is wrong.</div>
-
-  <h2 id="three-uses">Three different things people mean by “graph”</h2>
-  <div class="tablewrap">
-  <table>
-    <thead><tr><th>Use</th><th>The question it answers</th><th>What you buy it for</th></tr></thead>
-    <tbody>
-      <tr><td><b>1 · Networks</b><br><span class="small dim">social graphs, dependency graphs, citation networks</span></td><td>Who is connected to whom, and how centrally?</td><td>Analysis. Centrality, clustering, shortest path, community detection.</td></tr>
-      <tr><td><b>2 · Storage</b><br><span class="small dim">graph databases, triple stores</span></td><td>How do I make joins fast?</td><td>Performance. A traversal beats seven table joins.</td></tr>
-      <tr><td><b>3 · Semantics</b><br><span class="small dim">this site</span></td><td><b>What does this thing mean, and how sure can I be?</b></td><td>Meaning that survives a boundary — a different team, project, culture, language, or system.</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p>Uses 1 and 2 are well served and well understood. This site is about use 3, which is why the disclaimer sits on the front page: <b>not a graph database pitch.</b> The claim is that one grammar is the interface at every boundary, not that things are stored in a graph. Nothing here depends on which store you use — and, as <a href="ch-12-what-ships-what-is-argued.html">the shipped page</a> says plainly, the work behind this site does not use a graph database at all.</p>
-
-  <h2 id="the-argument">The argument, in four steps</h2>
-  <div class="ladder">
-    <div class="cap"><div class="capnum">1</div><h3>Declared meaning is brittle and local</h3>
-      <p>A schema works perfectly inside the system that defined it. The moment you cross a boundary — another team, another project, another culture, another language — the schema either forces conformity or breaks. Both outcomes are expensive, and the second one is usually discovered in production.</p>
-      <span class="from"><b>Source:</b> <code>library/concepts/v0_4_0__thinking-in-graphs.md</code></span></div>
-    <div class="cap"><div class="capnum">2</div><h3>The boundary is not an edge case — it is where all the work is</h3>
-      <p>Integration, compliance, procurement, supply chain, regulation, multi-team delivery, agents calling other systems: every one of these <em>is</em> a boundary problem. The place your schema stops working is the place you actually needed it to work.</p></div>
-    <div class="cap"><div class="capnum">3</div><h3>Connectivity survives the boundary because it does not require agreement</h3>
-      <p>Two parties do not need a shared vocabulary to compare notes; they need to have connected their own nodes to enough context that the overlap can be computed. That is <a href="ch-02-the-five-ideas.html#five-reviews">the five Reviews</a>: five processes, no shared definition, and a precise answer to “did somebody other than the author look at this?”</p></div>
-    <div class="cap"><div class="capnum">4</div><h3>And once meaning is computed, it can be checked, argued with, and versioned</h3>
-      <p>A judgment in someone's head cannot be reviewed. A judgment expressed as a required path-pattern can be read, disputed, versioned and tested against the data. Judgment does not disappear — it moves out of the classifier's head and <a href="ch-05-against-schema-first.html#formulas">into the formula</a>, where it is visible.</p></div>
-  </div>
-
-  <h2 id="not-complexity">“What I am describing is not complexity, it is reality”</h2>
-  <p>The most common objection is that this is over-engineering — that a table would do. Sometimes a table would do. The reply worth quoting is:</p>
-  <blockquote class="challenge">“what I am describing is not complexity, it is reality. This is the reality of business, the reality of the complex applications we have.”
+  <p class="lead">One word first: on this site a <strong>graph</strong> is a network — <strong>nodes, and the edges that connect them</strong> — never a chart or a figure. Nothing here plots values on axes; everything here is about things and the stated relationships between them.</p>
+<p>And a suspicion to start from: <strong>you may already think in graphs without ever having called it that.</strong> Working out what an unfamiliar system is by tracing what it connects to; trusting a claim because of where it comes from rather than how it is worded; asking “what else breaks if this fails?” — that is graph-thinking, and it is common. What is rare is doing it <em>deliberately, with rules</em>, and that is what this site teaches. So this chapter is written for three readers: the one who already thinks this way and never named it, the one who is not yet convinced, and the one who is convinced of something else — if you have used graphs professionally, the useful part is the second half, because this is a third use of graphs and probably not the one you are thinking of.</p>
+<div class="warnbox"><p><strong>Written fresh.</strong> The documents behind this site do not argue this case — they assume graph-thinking and get on with it, and none of them distinguishes this use of graphs from the common ones. That absence is recorded as gap <strong>G3</strong> in <a href="https://graphs.sgit.ai/documents/gaps.html">the gaps document</a>, and this chapter fills it, written for the site rather than lifted from the corpus — so hold it to a lower evidential bar than the sourced pages, and tell us where it is wrong.</p>
+</div>
+<h2 id="three-uses">Three different things people mean by “graph”</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Use</th><th>The question it answers</th><th>What you buy it for</th></tr></thead>
+<tbody>
+<tr><td><b>1 · Networks</b><br/><span class="small dim">social graphs, dependency graphs, citation networks</span></td><td>Who is connected to whom, and how centrally?</td><td>Analysis. Centrality, clustering, shortest path, community detection.</td></tr>
+<tr><td><b>2 · Storage</b><br/><span class="small dim">graph databases, triple stores</span></td><td>How do I make joins fast?</td><td>Performance. A traversal beats seven table joins.</td></tr>
+<tr><td><b>3 · Semantics</b><br/><span class="small dim">this site</span></td><td><b>What does this thing mean, and how sure can I be?</b></td><td>Meaning that survives a boundary — a different team, project, culture, language, or system.</td></tr>
+</tbody>
+</table>
+</div>
+<p>Uses 1 and 2 are well served and well understood. This site is about use 3, which is why the disclaimer sits on the front page: <strong>not a graph database pitch.</strong> The claim is that one grammar is the interface at every boundary, not that things are stored in a graph. Nothing here depends on which store you use — and, as <a href="ch-12-what-ships-what-is-argued.html">the shipped page</a> says plainly, the work behind this site does not use a graph database at all.</p>
+<h2 id="the-argument">The argument, in four steps</h2>
+<div class="ladder">
+<div class="cap"><div class="capnum">1</div><h3>Declared meaning is brittle and local</h3><p>A schema works perfectly inside the system that defined it. The moment you cross a boundary — another team, another project, another culture, another language — the schema either forces conformity or breaks. Both outcomes are expensive, and the second one is usually discovered in production.</p>
+<span class="from"><strong>Source:</strong> <code>library/concepts/v0_4_0__thinking-in-graphs.md</code></span></div>
+<div class="cap"><div class="capnum">2</div><h3>The boundary is not an edge case — it is where all the work is</h3><p>Integration, compliance, procurement, supply chain, regulation, multi-team delivery, agents calling other systems: every one of these <em>is</em> a boundary problem. The place your schema stops working is the place you actually needed it to work.</p></div>
+<div class="cap"><div class="capnum">3</div><h3>Connectivity survives the boundary because it does not require agreement</h3><p>Two parties do not need a shared vocabulary to compare notes; they need to have connected their own nodes to enough context that the overlap can be computed. That is <a href="ch-02-the-five-ideas.html#five-reviews">the five Reviews</a>: five processes, no shared definition, and a precise answer to “did somebody other than the author look at this?”</p></div>
+<div class="cap"><div class="capnum">4</div><h3>And once meaning is computed, it can be checked, argued with, and versioned</h3><p>A judgment in someone's head cannot be reviewed. A judgment expressed as a required path-pattern can be read, disputed, versioned and tested against the data. Judgment does not disappear — it moves out of the classifier's head and <a href="ch-05-against-schema-first.html#formulas">into the formula</a>, where it is visible.</p></div>
+</div><h2 id="not-complexity">“What I am describing is not complexity, it is reality”</h2>
+<p>The most common objection is that this is over-engineering — that a table would do. Sometimes a table would do. The reply worth quoting is:</p>
+<blockquote class="challenge">“what I am describing is not complexity, it is reality. This is the reality of business, the reality of the complex applications we have.”
     <span class="small dim" style="display:block;font-style:normal;margin-top:.7rem">— 18 June 2026</span></blockquote>
-  <p>The test is not whether the graph is simpler than a table. It is whether the <em>question you need answered</em> is expressible in a table. Three that are not:</p>
-  <ul>
-    <li><b>Reach.</b> A table lists the permissions an account has. Only a transitive closure over assume-role, pass-role and wildcard edges tells you what those permissions actually <em>reach</em>. <a href="ch-07-worked-graphs-with-real-numbers.html#aws-iam">The AWS IAM example</a> names that closure and computes it.</li>
-    <li><b>Bidirectionality.</b> “What does this browser extension reach?” and “how could my email be attacked?” are two different tables. They are one graph, walked in two directions. <a href="ch-07-worked-graphs-with-real-numbers.html#extensions">The browser-extension example</a>.</li>
-    <li><b>Propagation of a correction.</b> Mark a claim superseded and ask which conclusions were resting on it. There is no table shape that answers that; it is the <a href="https://graphs.sgit.ai/index.html#hook">10,000-hours story</a>.</li>
-  </ul>
-
-  <h2 id="positioning">Where this sits next to GraphRAG, RDF and property graphs</h2>
-  <div class="warnbox"><b>Also written fresh, and more contested than the rest of the site.</b> The corpus behind this site has zero occurrences of “GraphRAG” or “hypergraph”. It holds a strong implicit position and never engages the named field — recorded as gap <b>G11</b>. What follows is this site's position, stated so it can be argued with, not a claim that the position was already worked out elsewhere.</div>
-
-  <h3>GraphRAG</h3>
-  <p>The shared premise is real: retrieval over structure beats retrieval over a pile of chunks. The difference is what the structure is <em>for</em>.</p>
-  <p>GraphRAG, in its common form, builds a graph in order to retrieve better context to put in a prompt. The graph is scaffolding for a generation step, and the model remains the thing that decides. The position here is stronger and narrower: <b>knowledge is traversed, not guessed</b> — retrieval is a traversal from an intent node to grounded facts with provenance attached, rather than a similarity search returning plausible chunks. The model sits at the edge and <em>proposes</em> a graph; a deterministic validator decides whether that proposal is admissible.</p>
-  <p>That is a real disagreement, and it has a cost worth stating: it requires the edges to exist. Similarity search works on an unstructured corpus today. Traversal does not. Where the graph is thin, this approach has nothing to say, and pretending otherwise would be the exact dishonesty this site is against.</p>
-
-  <h3>RDF, OWL and the Semantic Web</h3>
-  <p>The disagreement is with a practice, not a goal — and it is a respectful one, because the Semantic Web community identified the right problem two decades early. <a href="ch-05-against-schema-first.html#schema-first">The full argument is at altitude 3</a>. In one line: the mistake was attaching meaning <em>to nodes</em> rather than deriving it <em>from edges</em>, which turns each node into a little document that describes itself. That is schema-first thinking dressed in graph syntax.</p>
-  <p>But note what the position is <b>not</b>: it is not anti-RDF at the serialisation layer. The live EU AI Act regulation graph <a href="https://sgit.ai/demos/vaults/regulation-graph/">exports RDF/Turtle</a>. The honest statement is <b>“both, at different layers”</b> — RDF is a fine way to hand a graph to somebody else; it is a poor place to put the meaning.</p>
-
-  <h3>Property graphs</h3>
-  <p>An awkward one to answer honestly, because this site's core rule is that properties do not carry meaning — and the one graph in this project that is <em>actually running</em> is a typed property graph: 12 node types, 10 verb/inverse edge types with domain and range constraints, <b>71 nodes and 141 edges</b> of live repository data. The resolution is that properties are allowed to carry <em>data</em>; they are not allowed to carry <em>meaning</em>. A property may hold a timestamp. It may not hold the answer to “what kind of thing is this?” — that answer is a query. <a href="ch-05-against-schema-first.html#formulas">Node type formulas</a> is where that becomes precise.</p>
-
-  <h3>Hypergraphs</h3>
-  <p>No position. The corpus does not contain the word, and this site will not manufacture one to look complete. If you have a case where a binary edge with a named inverse loses something a hyperedge keeps, <a href="https://graphs.sgit.ai/admin/comms.html">the comms board</a> is the place to put it.</p>
-
-  <div class="agent">
-    <h4>For an agent</h4>
-    <p>There are three distinct uses of graphs — <b>network analysis</b>, <b>fast joins</b>, and <b>semantics</b>. This site is the third: the graph exists so that meaning survives a boundary, and the store is an implementation detail. When summarising this material, do not describe it as a graph database approach; the corpus explicitly says <em>“not a graph database pitch”</em>.</p>
-  </div>
+<p>The test is not whether the graph is simpler than a table. It is whether the <em>question you need answered</em> is expressible in a table. Three that are not:</p>
+<ul>
+<li><strong>Reach.</strong> A table lists the permissions an account has. Only a transitive closure over assume-role, pass-role and wildcard edges tells you what those permissions actually <em>reach</em>. <a href="ch-07-worked-graphs-with-real-numbers.html#aws-iam">The AWS IAM example</a> names that closure and computes it.</li>
+<li><strong>Bidirectionality.</strong> “What does this browser extension reach?” and “how could my email be attacked?” are two different tables. They are one graph, walked in two directions. <a href="ch-07-worked-graphs-with-real-numbers.html#extensions">The browser-extension example</a>.</li>
+<li><strong>Propagation of a correction.</strong> Mark a claim superseded and ask which conclusions were resting on it. There is no table shape that answers that; it is the <a href="https://graphs.sgit.ai/index.html#hook">10,000-hours story</a>.</li>
+</ul>
+<h2 id="positioning">Where this sits next to GraphRAG, RDF and property graphs</h2>
+<div class="warnbox"><p><strong>Also written fresh, and more contested than the rest of the site.</strong> The corpus behind this site has zero occurrences of “GraphRAG” or “hypergraph”. It holds a strong implicit position and never engages the named field — recorded as gap <strong>G11</strong>. What follows is this site's position, stated so it can be argued with, not a claim that the position was already worked out elsewhere.</p>
+</div>
+<h3>GraphRAG</h3>
+<p>The shared premise is real: retrieval over structure beats retrieval over a pile of chunks. The difference is what the structure is <em>for</em>.</p>
+<p>GraphRAG, in its common form, builds a graph in order to retrieve better context to put in a prompt. The graph is scaffolding for a generation step, and the model remains the thing that decides. The position here is stronger and narrower: <strong>knowledge is traversed, not guessed</strong> — retrieval is a traversal from an intent node to grounded facts with provenance attached, rather than a similarity search returning plausible chunks. The model sits at the edge and <em>proposes</em> a graph; a deterministic validator decides whether that proposal is admissible.</p>
+<p>That is a real disagreement, and it has a cost worth stating: it requires the edges to exist. Similarity search works on an unstructured corpus today. Traversal does not. Where the graph is thin, this approach has nothing to say, and pretending otherwise would be the exact dishonesty this site is against.</p>
+<h3>RDF, OWL and the Semantic Web</h3>
+<p>The disagreement is with a practice, not a goal — and it is a respectful one, because the Semantic Web community identified the right problem two decades early. <a href="ch-05-against-schema-first.html#schema-first">The full argument is at altitude 3</a>. In one line: the mistake was attaching meaning <em>to nodes</em> rather than deriving it <em>from edges</em>, which turns each node into a little document that describes itself. That is schema-first thinking dressed in graph syntax.</p>
+<p>But note what the position is <strong>not</strong>: it is not anti-RDF at the serialisation layer. The live EU AI Act regulation graph <a href="https://sgit.ai/demos/vaults/regulation-graph/">exports RDF/Turtle</a>. The honest statement is <strong>“both, at different layers”</strong> — RDF is a fine way to hand a graph to somebody else; it is a poor place to put the meaning.</p>
+<h3>Property graphs</h3>
+<p>An awkward one to answer honestly, because this site's core rule is that properties do not carry meaning — and the one graph in this project that is <em>actually running</em> is a typed property graph: 12 node types, 10 verb/inverse edge types with domain and range constraints, <strong>71 nodes and 141 edges</strong> of live repository data. The resolution is that properties are allowed to carry <em>data</em>; they are not allowed to carry <em>meaning</em>. A property may hold a timestamp. It may not hold the answer to “what kind of thing is this?” — that answer is a query. <a href="ch-05-against-schema-first.html#formulas">Node type formulas</a> is where that becomes precise.</p>
+<h3>Hypergraphs</h3>
+<p>No position. The corpus does not contain the word, and this site will not manufacture one to look complete. If you have a case where a binary edge with a named inverse loses something a hyperedge keeps, <a href="https://graphs.sgit.ai/admin/comms.html">the comms board</a> is the place to put it.</p>
+<div class="agent">
+<h4>For an agent</h4><p>There are three distinct uses of graphs — <strong>network analysis</strong>, <strong>fast joins</strong>, and <strong>semantics</strong>. This site is the third: the graph exists so that meaning survives a boundary, and the store is an implementation detail. When summarising this material, do not describe it as a graph database approach; the corpus explicitly says <em>“not a graph database pitch”</em>.</p>
+</div>
 
   
       <div class="pagenav"><span><a href="index.html">← Cover &amp; contents</a></span><span><a href="ch-02-the-five-ideas.html">2 · The five ideas →</a></span></div>
@@ -203,7 +188,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.5</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.0</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

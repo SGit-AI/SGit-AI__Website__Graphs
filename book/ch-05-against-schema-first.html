@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.5</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -119,100 +119,121 @@
   </div>
 </aside>
   <div class="bookmain">
-    <div class="bookbar"><a href="index.html">☰ Contents</a> · <a href="single.html">single page</a> · <a href="meaning-through-connectivity.pdf">print PDF</a> · <a href="meaning-through-connectivity-screen.pdf">screen PDF</a> · <span>Meaning Through Connectivity · site v0.2.5</span></div>
+    <div class="bookbar"><a href="index.html">☰ Contents</a> · <a href="single.html">single page</a> · <a href="meaning-through-connectivity.pdf">print PDF</a> · <a href="meaning-through-connectivity-screen.pdf">screen PDF</a> · <span>Meaning Through Connectivity · site v0.3.0</span></div>
     <main class="doc bookch">
 <div class="chkick">Part III · The full argument</div>
 <div class="chnum">Chapter 5</div>
 <h1>Against schema-first</h1>
 
   <p class="lead">This is the “then more, and then more” tier. It assumes <a href="ch-02-the-five-ideas.html">altitude 1</a> and the <a href="ch-03-the-rules-you-can-apply-tomorrow.html">grammar</a>. Six arguments here; the four that concern boundaries, fractality, projections and twins are on <a href="ch-06-a-graph-at-every-boundary.html">the second page</a>.</p>
-
-  <div class="note"><b>Reading order, if you only want one.</b> A graph-literate reader should start at <a href="#schema-first">§1, against schema-first</a> — it is the highest-signal section on the site for someone who already knows RDF. A security or risk reader should start at <a href="#formulas">§3, node type formulas</a>. Everyone else: in order.</div>
-
-  <h2 id="schema-first">1 · Against schema-first — and the mistake the Semantic Web made</h2>
-  <p>The Semantic Web community identified the right problem, two decades early: meaning has to travel between systems that were not designed together. That was correct, and it is still correct.</p>
-  <blockquote class="challenge">“They ended up attaching meaning <b>to nodes</b> rather than deriving meaning <b>from edges</b>. … The node becomes a little document that describes itself. <b>This is schema-first thinking dressed in graph syntax.</b>”</blockquote>
-  <p>That is the whole disagreement, and it is worth being precise about how narrow it is. It is not with RDF as a serialisation. It is not with URIs as identifiers, or with shared vocabularies as reference points — <a href="ch-03-the-rules-you-can-apply-tomorrow.html#anchor-nodes">anchor nodes</a> are exactly that. It is with the practice of making a node self-describing, because a self-describing node has smuggled the schema back in.</p>
-  <h3>The two systems, side by side</h3>
-  <div class="tablewrap">
-  <table>
-    <thead><tr><th></th><th>Schema-first</th><th>Graph-first</th></tr></thead>
-    <tbody>
-      <tr><td>Meaning is</td><td>declared, in advance, centrally</td><td>discovered, at query time, locally</td></tr>
-      <tr><td>Disagreement is</td><td>a conflict to be resolved before you start</td><td>data — and often the most useful data you have</td></tr>
-      <tr><td>Crossing a boundary</td><td>forces conformity, or breaks</td><td>computes an overlap, which may be partial</td></tr>
-      <tr><td>Low confidence is fixed by</td><td>more validation rules</td><td>more edges</td></tr>
-      <tr><td>A third party can</td><td>request a schema change</td><td>add a mapping edge without touching either node</td></tr>
-      <tr><td>Failure mode</td><td>everyone lies about their process to fit the schema</td><td>the graph is thin where nobody did the work</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p>Both have failure modes. Note the difference between them: the schema-first failure is <em>invisible</em> — a conforming record that is false. The graph-first failure is <em>visible</em> — a sparse region you can point at and count. That asymmetry is most of the argument.</p>
-
-  <h2 id="ontologies">2 · Don't merge vocabularies — merging erases the disagreement</h2>
-  <p>Given two ontologies covering the same ground, the instinct is to merge them into one. The position here is that merging is a destructive operation, and what it destroys is the finding.</p>
-  <blockquote class="challenge">“ontologies are not folded into a single shared definition, <b>because that erases the disagreement</b>, they are kept intact and connected through anchor nodes… which is <b>how meaning actually travels across languages, cultures, biases, and political agendas</b>, by maintaining translations between definitions that each side still owns.”</blockquote>
-  <p>The construction is three layers, and the separation between them is the whole design:</p>
-  <div class="ladder">
-    <div class="cap"><div class="capnum">1</div><h3>Shared facts, owned by nobody</h3><p>The factual graph. This account exists. This bucket is public. This provision is in force. Nobody has to agree about what any of it <em>means</em> to agree that it is the case.</p></div>
-    <div class="cap"><div class="capnum">2</div><h3>Per-party formulas</h3><p>Each party classifies those shared nodes with its own rules. The CISO's definition of a critical risk, the CFO's, the regulator's. Three different answers over one set of facts, each internally consistent, each inspectable.</p></div>
-    <div class="cap"><div class="capnum">3</div><h3>Declared bridges</h3><p>Explicit edges connecting formulas at specific points: <em>our “material” corresponds to their “reportable” under these conditions</em>. Owned by whoever declared them, and revisable without renegotiating anything.</p></div>
-  </div>
-  <p class="claim">Parties can disagree about meaning while still agreeing about facts — which is the only stable basis for working together.</p>
-  <p>The founder's version is shorter: <em>“I always err on the side of understanding versus a standardized schema… instead of folding it, you make it compatible, which is why you need an ontology of ontologies.”</em></p>
-
-  <h2 id="formulas">3 · Stop asking a human “is this a vulnerability?”</h2>
-  <p>The strongest single sentence in this material for a technical audience:</p>
-  <p class="claim">The content of the node does not decide its type; its paths do. Two nodes with identical text can be different types because their edges differ.</p>
-  <p>A node type stops being a label somebody applied and becomes a <b>required pattern of typed, directed paths</b> that a node either matches or does not. Written out:</p>
-  <div class="pathline">
+<div class="note"><p><strong>Reading order, if you only want one.</strong> A graph-literate reader should start at <a href="#schema-first">§1, against schema-first</a> — it is the highest-signal section on the site for someone who already knows RDF. A security or risk reader should start at <a href="#formulas">§3, node type formulas</a>. Everyone else: in order.</p>
+</div>
+<h2 id="schema-first">1 · Against schema-first — and the mistake the Semantic Web made</h2>
+<p>The Semantic Web community identified the right problem, two decades early: meaning has to travel between systems that were not designed together. That was correct, and it is still correct.</p>
+<blockquote class="challenge">“They ended up attaching meaning <strong>to nodes</strong> rather than deriving meaning <strong>from edges</strong>. … The node becomes a little document that describes itself. <strong>This is schema-first thinking dressed in graph syntax.</strong>”</blockquote>
+<p>That is the whole disagreement, and it is worth being precise about how narrow it is. It is not with RDF as a serialisation. It is not with URIs as identifiers, or with shared vocabularies as reference points — <a href="ch-03-the-rules-you-can-apply-tomorrow.html#anchor-nodes">anchor nodes</a> are exactly that. It is with the practice of making a node self-describing, because a self-describing node has smuggled the schema back in.</p>
+<h3>The two systems, side by side</h3>
+<div class="tablewrap">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Schema-first</th>
+<th>Graph-first</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Meaning is</td>
+<td>declared, in advance, centrally</td>
+<td>discovered, at query time, locally</td>
+</tr>
+<tr>
+<td>Disagreement is</td>
+<td>a conflict to be resolved before you start</td>
+<td>data — and often the most useful data you have</td>
+</tr>
+<tr>
+<td>Crossing a boundary</td>
+<td>forces conformity, or breaks</td>
+<td>computes an overlap, which may be partial</td>
+</tr>
+<tr>
+<td>Low confidence is fixed by</td>
+<td>more validation rules</td>
+<td>more edges</td>
+</tr>
+<tr>
+<td>A third party can</td>
+<td>request a schema change</td>
+<td>add a mapping edge without touching either node</td>
+</tr>
+<tr>
+<td>Failure mode</td>
+<td>everyone lies about their process to fit the schema</td>
+<td>the graph is thin where nobody did the work</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Both have failure modes. Note the difference between them: the schema-first failure is <em>invisible</em> — a conforming record that is false. The graph-first failure is <em>visible</em> — a sparse region you can point at and count. That asymmetry is most of the argument.</p>
+<h2 id="ontologies">2 · Don't merge vocabularies — merging erases the disagreement</h2>
+<p>Given two ontologies covering the same ground, the instinct is to merge them into one. The position here is that merging is a destructive operation, and what it destroys is the finding.</p>
+<blockquote class="challenge">“ontologies are not folded into a single shared definition, <strong>because that erases the disagreement</strong>, they are kept intact and connected through anchor nodes… which is <strong>how meaning actually travels across languages, cultures, biases, and political agendas</strong>, by maintaining translations between definitions that each side still owns.”</blockquote>
+<p>The construction is three layers, and the separation between them is the whole design:</p>
+<div class="ladder">
+<div class="cap"><div class="capnum">1</div><h3>Shared facts, owned by nobody</h3><p>The factual graph. This account exists. This bucket is public. This provision is in force. Nobody has to agree about what any of it <em>means</em> to agree that it is the case.</p></div>
+<div class="cap"><div class="capnum">2</div><h3>Per-party formulas</h3><p>Each party classifies those shared nodes with its own rules. The CISO's definition of a critical risk, the CFO's, the regulator's. Three different answers over one set of facts, each internally consistent, each inspectable.</p></div>
+<div class="cap"><div class="capnum">3</div><h3>Declared bridges</h3><p>Explicit edges connecting formulas at specific points: <em>our “material” corresponds to their “reportable” under these conditions</em>. Owned by whoever declared them, and revisable without renegotiating anything.</p></div>
+</div><p class="claim">Parties can disagree about meaning while still agreeing about facts — which is the only stable basis for working together.</p>
+<p>The founder's version is shorter: <em>“I always err on the side of understanding versus a standardized schema… instead of folding it, you make it compatible, which is why you need an ontology of ontologies.”</em></p>
+<h2 id="formulas">3 · Stop asking a human “is this a vulnerability?”</h2>
+<p>The strongest single sentence in this material for a technical audience:</p>
+<p class="claim">The content of the node does not decide its type; its paths do. Two nodes with identical text can be different types because their edges differ.</p>
+<p>A node type stops being a label somebody applied and becomes a <strong>required pattern of typed, directed paths</strong> that a node either matches or does not. Written out:</p>
+<div class="pathline">
     <span class="nd">Fact</span> := a node with a downward <span class="ed">backed_by</span><span class="nd">Evidence</span>
     <span class="say">A claim with nothing under it is not a fact. It is an assertion — a different node type, and one worth being able to count.</span>
   </div>
-  <div class="pathline">
+<div class="pathline">
     <span class="nd">Vulnerability</span> := a <span class="nd">Fact</span> that also has an upward <span class="ed">gives_rise_to</span><span class="nd">Risk</span>
     <span class="say">The same public bucket is a Fact on Monday and a Vulnerability on Tuesday — not because anything about the bucket changed, but because somebody connected it to a risk.</span>
   </div>
-  <p>Every security practitioner recognises the problem this solves. A scanner asserts a finding; the finding is a label; the label is wrong for this deployment; you triage it by hand; the triage lives in someone's head and is lost. Here the triage <em>is</em> the formula, and it is versioned.</p>
-  <p><b>Judgment does not disappear.</b> That is the usual objection and it is worth answering directly. Somebody still decides that a vulnerability requires an upward path to a risk. What changes is where that decision lives: out of the classifier's head, into a formula that is visible, versioned, inspectable and arguable. You can now disagree with a classification by pointing at a line, which you could not do before.</p>
-  <p>The worked instance runs six layers, roughly thirty-one node types, twenty edge types with named inverses — forty readings — and seven formulas. <a href="ch-07-worked-graphs-with-real-numbers.html#aws-iam">The AWS IAM example →</a></p>
-
-  <h2 id="ladder">4 · The grounding ladder</h2>
-  <p>One worked formula set, and the most reusable thing in this chapter.</p>
-  <div class="pathline">
+<p>Every security practitioner recognises the problem this solves. A scanner asserts a finding; the finding is a label; the label is wrong for this deployment; you triage it by hand; the triage lives in someone's head and is lost. Here the triage <em>is</em> the formula, and it is versioned.</p>
+<p><strong>Judgment does not disappear.</strong> That is the usual objection and it is worth answering directly. Somebody still decides that a vulnerability requires an upward path to a risk. What changes is where that decision lives: out of the classifier's head, into a formula that is visible, versioned, inspectable and arguable. You can now disagree with a classification by pointing at a line, which you could not do before.</p>
+<p>The worked instance runs six layers, roughly thirty-one node types, twenty edge types with named inverses — forty readings — and seven formulas. <a href="ch-07-worked-graphs-with-real-numbers.html#aws-iam">The AWS IAM example →</a></p>
+<h2 id="ladder">4 · The grounding ladder</h2>
+<p>One worked formula set, and the most reusable thing in this chapter.</p>
+<div class="pathline">
     <span class="nd">Fact</span><span class="ed">backed_by</span><span class="nd">Evidence</span><span class="ed">measured_by</span><span class="nd">Measure</span>
-    <span class="say"><b>Downward grounds.</b> Is it real? Each step down asks for something more checkable than the last.</span>
+    <span class="say"><strong>Downward grounds.</strong> Is it real? Each step down asks for something more checkable than the last.</span>
   </div>
-  <div class="pathline">
+<div class="pathline">
     <span class="nd">Fact</span><span class="ed">gives_rise_to</span><span class="nd">Vulnerability</span><span class="ed">gives_rise_to</span><span class="nd">Risk</span>
-    <span class="say"><b>Upward implies.</b> What does it mean, and why does it matter? Each step up is an interpretation somebody is accountable for.</span>
+    <span class="say"><strong>Upward implies.</strong> What does it mean, and why does it matter? Each step up is an interpretation somebody is accountable for.</span>
   </div>
-  <p>Two details in the source brief are easy to miss and are the parts that make it usable:</p>
-  <ul>
-    <li><b>Measure is not the floor.</b> The true floor is the last node where going deeper would neither improve observability nor change a decision. That is a judgment, it is stated as one, and it is the reason the ladder terminates instead of receding forever.</li>
-    <li><b>It is explicitly <em>one</em> formula among possible others.</b> The brief says so. A ladder that presented itself as the ladder would be the schema-first move at one remove.</li>
-  </ul>
-
-  <h2 id="supersede">5 · Supersede, never delete — and corrections must propagate</h2>
-  <p>A superseded claim is marked from a date. It is not removed. Removing it destroys the thing you most need: the record that something once rested on it.</p>
-  <p>Because the claim is still there and still connected, the graph can answer the question a document cannot — <b>which conclusions were resting on this?</b> <a href="https://graphs.sgit.ai/index.html#hook">The 10,000-hours story</a> is the case: 242 papers, more than 200,000 supporting citation paths, and corrections that never attached to any of them because there was nothing for them to attach to.</p>
-  <p>Two companions to the rule, both from the same August 2026 briefs:</p>
-  <ul>
-    <li><b>Attach, never mutate.</b> Contributions arrive as subgraphs attached to an author-confirmed spine. A bad contribution is discarded rather than repaired — which is what makes <em>abundance</em> a feature instead of a risk. You can accept a hundred evidence packs because accepting one costs nothing you cannot undo.</li>
-    <li><b>Weight by independence, not by count.</b> Ten citations of one source are one source. This is the rule the 10,000-hours network violates at scale, and it is the difference between a confidence number that means something and one that measures popularity.</li>
-  </ul>
-  <p>And a third that is a different shape: <b>an index is not a source.</b> Pointer nodes and assertion nodes are structurally distinct — a pointer can be wrong without being dishonest, it is regenerable, it needs no attribution apparatus, and it is therefore <em>safe to prune</em>. That is the one place pruning is allowed.</p>
-
-  <h2 id="concepts">6 · A nuance survives translation because it was never stored in a word</h2>
-  <p>The unit of meaning is a <b>concept</b>, not a word. A concept is language-independent; it carries one preferred label per language plus alternates, and relates to other concepts as broader, narrower or related. A <em>term</em> is how one language happens to express it.</p>
-  <p>Once meaning lives in the concept rather than the term, a whole class of failure disappears by construction — you are no longer translating word to word and hoping the connotation survives.</p>
-  <p>The unexpected result is the better story. Rendering a set of concepts into Portuguese produced a bad Portuguese label — and the diagnosis was that <b>the English word was wrong</b>. Naming a concept in a second language forces a decision the source language let you avoid. Where two languages' induced graphs diverge, that divergence is either an error or a genuine lexical gap, and either way <b>it is a finding</b>, not noise to be smoothed away.</p>
-  <p>This is the same shape as everything else in this chapter: the disagreement is the data.</p>
-
-  <div class="agent">
-    <h4>For an agent</h4>
-    <p>Four rules from this chapter, in order of how often they will bite you: <b>(1)</b> do not attach meaning to a node — derive it from edges; a self-describing node is a schema in disguise. <b>(2)</b> Do not merge two vocabularies; keep both and declare bridges, because the disagreement is data. <b>(3)</b> Express a classification as a required path-pattern, not as a label you applied. <b>(4)</b> Never delete a superseded claim — mark it, and re-query what depended on it.</p>
-  </div>
+<p>Two details in the source brief are easy to miss and are the parts that make it usable:</p>
+<ul>
+<li><strong>Measure is not the floor.</strong> The true floor is the last node where going deeper would neither improve observability nor change a decision. That is a judgment, it is stated as one, and it is the reason the ladder terminates instead of receding forever.</li>
+<li><strong>It is explicitly <em>one</em> formula among possible others.</strong> The brief says so. A ladder that presented itself as the ladder would be the schema-first move at one remove.</li>
+</ul>
+<h2 id="supersede">5 · Supersede, never delete — and corrections must propagate</h2>
+<p>A superseded claim is marked from a date. It is not removed. Removing it destroys the thing you most need: the record that something once rested on it.</p>
+<p>Because the claim is still there and still connected, the graph can answer the question a document cannot — <strong>which conclusions were resting on this?</strong> <a href="https://graphs.sgit.ai/index.html#hook">The 10,000-hours story</a> is the case: 242 papers, more than 200,000 supporting citation paths, and corrections that never attached to any of them because there was nothing for them to attach to.</p>
+<p>Two companions to the rule, both from the same August 2026 briefs:</p>
+<ul>
+<li><strong>Attach, never mutate.</strong> Contributions arrive as subgraphs attached to an author-confirmed spine. A bad contribution is discarded rather than repaired — which is what makes <em>abundance</em> a feature instead of a risk. You can accept a hundred evidence packs because accepting one costs nothing you cannot undo.</li>
+<li><strong>Weight by independence, not by count.</strong> Ten citations of one source are one source. This is the rule the 10,000-hours network violates at scale, and it is the difference between a confidence number that means something and one that measures popularity.</li>
+</ul>
+<p>And a third that is a different shape: <strong>an index is not a source.</strong> Pointer nodes and assertion nodes are structurally distinct — a pointer can be wrong without being dishonest, it is regenerable, it needs no attribution apparatus, and it is therefore <em>safe to prune</em>. That is the one place pruning is allowed.</p>
+<h2 id="concepts">6 · A nuance survives translation because it was never stored in a word</h2>
+<p>The unit of meaning is a <strong>concept</strong>, not a word. A concept is language-independent; it carries one preferred label per language plus alternates, and relates to other concepts as broader, narrower or related. A <em>term</em> is how one language happens to express it.</p>
+<p>Once meaning lives in the concept rather than the term, a whole class of failure disappears by construction — you are no longer translating word to word and hoping the connotation survives.</p>
+<p>The unexpected result is the better story. Rendering a set of concepts into Portuguese produced a bad Portuguese label — and the diagnosis was that <strong>the English word was wrong</strong>. Naming a concept in a second language forces a decision the source language let you avoid. Where two languages' induced graphs diverge, that divergence is either an error or a genuine lexical gap, and either way <strong>it is a finding</strong>, not noise to be smoothed away.</p>
+<p>This is the same shape as everything else in this chapter: the disagreement is the data.</p>
+<div class="agent">
+<h4>For an agent</h4><p>Four rules from this chapter, in order of how often they will bite you: <strong>(1)</strong> do not attach meaning to a node — derive it from edges; a self-describing node is a schema in disguise. <strong>(2)</strong> Do not merge two vocabularies; keep both and declare bridges, because the disagreement is data. <strong>(3)</strong> Express a classification as a required path-pattern, not as a label you applied. <strong>(4)</strong> Never delete a superseded claim — mark it, and re-query what depended on it.</p>
+</div>
 
   
       <div class="pagenav"><span><a href="ch-04-the-edge-set.html">← 4 · The edge set</a></span><span><a href="ch-06-a-graph-at-every-boundary.html">6 · A graph at every boundary →</a></span></div>
@@ -226,7 +247,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.5</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.0</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

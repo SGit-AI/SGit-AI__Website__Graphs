@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.5</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -119,63 +119,89 @@
   </div>
 </aside>
   <div class="bookmain">
-    <div class="bookbar"><a href="index.html">☰ Contents</a> · <a href="single.html">single page</a> · <a href="meaning-through-connectivity.pdf">print PDF</a> · <a href="meaning-through-connectivity-screen.pdf">screen PDF</a> · <span>Meaning Through Connectivity · site v0.2.5</span></div>
+    <div class="bookbar"><a href="index.html">☰ Contents</a> · <a href="single.html">single page</a> · <a href="meaning-through-connectivity.pdf">print PDF</a> · <a href="meaning-through-connectivity-screen.pdf">screen PDF</a> · <span>Meaning Through Connectivity · site v0.3.0</span></div>
     <main class="doc bookch">
 <div class="chkick">Part IV · The proof</div>
 <div class="chnum">Chapter 11</div>
 <h1>Wardley maps as graphs</h1>
 
   <p class="lead">A map belongs on a graph site for a specific reason, and it is not that both have boxes and lines.</p>
-
-  <p class="claim">A graph says these things are connected. A map adds <b>where they sit</b>. Connectivity says what relates; position says what to do.</p>
-  <p>Everything else on this site is about the first half. A Wardley map is the same node-and-edge structure with two coordinates attached — how visible a component is to the user, and how evolved it is — and those coordinates turn a description into a decision. It is the natural next thing to do to a graph once you have one, which is why it lives here rather than on a separate strategy site.</p>
-  <p>And a map has the property this site keeps asking for elsewhere: <b>a map is a falsifiable claim, not a picture.</b> Someone can point at a component and say “that is not where that sits”, and they are making a checkable statement. That is the same move as <a href="ch-05-against-schema-first.html#formulas">turning a classification into a path-pattern</a>.</p>
-
-  <h2 id="trap">The coordinate trap</h2>
-  <div class="warnbox">
-    <p><b>Wardley coordinates are <code>[visibility, evolution]</code> — the reverse of the convention you will assume.</b> Everything else you have ever plotted takes <code>[x, y]</code>. This does not.</p>
-    <p>The failure mode is the bad one: <b>a map with its axes transposed renders happily and says something entirely different.</b> No error, no warning, a perfectly good-looking picture making a claim you did not make. If you take one thing from this chapter, take this one.</p>
-  </div>
-  <div class="tablewrap">
-  <table>
-    <thead><tr><th>Detail</th><th>Value</th></tr></thead>
-    <tbody>
-      <tr><td>Mermaid Wardley support</td><td>Added in <b>v11.14.0</b>; production-stable at <b>v11.15.0</b></td></tr>
-      <tr><td>Coordinate order</td><td><code>[visibility, evolution]</code> — <b>not</b> <code>[x, y]</code></td></tr>
-      <tr><td>Hand-drawn look</td><td>Not supported</td></tr>
-      <tr><td>Fence marker</td><td>The maps in the corpus use a bare fence with <code>wardley-beta</code> on the first line — so <b>grep for <code>wardley-beta</code></b>, not for the fence tag, or you will find none of them</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p>That last row is the kind of hard-won detail that has nowhere to live. It is here because the founder said he had nowhere to point people at for exactly this.</p>
-
-  <h2 id="text">Maps as text are maps that survive the meeting</h2>
-  <p>The strongest practical argument for the Mermaid toolchain is not that it is convenient. It is that a map written as text is diffable, committable, reviewable in a pull request, and can be regenerated. A map drawn in a whiteboard tool is a screenshot within a week and a lie within a month.</p>
-  <p>Same argument as everywhere else here: <b>the artefact and the reasoning behind it should live together, in a form that a change can be argued with.</b></p>
-
-  <h2 id="backlog">What exists, and what is still to render</h2>
-  <div class="tablewrap">
-  <table>
-    <thead><tr><th>Set</th><th>State</th></tr></thead>
-    <tbody>
-      <tr><td><b>The strategy maps</b> — eight rendered images, the only rendered graph visuals in the corpus</td><td><span class="pill p-ships">rendered</span> Some exist as inline SVG on the parent site: <a href="https://sgit.ai/demos/strategy-maps.md">sgit.ai/demos/strategy-maps.md</a></td></tr>
-      <tr><td><b>Mermaid <code>wardley-beta</code> source blocks</b> — twelve in the corpus</td><td><span class="pill p-ships">source exists</span></td></tr>
-      <tr><td><b>The permissions set</b> — four maps, including one called “Hope Driven Development”</td><td><span class="pill p-argued">unrendered</span> One render command away</td></tr>
-      <tr><td><b>The air-gap map</b> — the sharpest single map here</td><td><span class="pill p-argued">unrendered</span> <a href="https://graphs.sgit.ai/admin/comms.html">Task T4</a></td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <h2 id="airgap">The air-gap map: the ends are solved, the middle is people</h2>
-  <p>The map worth rendering first, and the best single map for a public site. It shows both ends of a process sitting at high evolution — commodity, automated, solved — with a gap in the middle that is filled by human labour.</p>
-  <p>The reason it works as a map rather than as a sentence is structural: <b>a gap has no evolution</b>. There is nothing to plot, because nothing is there. So what you plot is <em>the labour that fills it</em> — and once that labour is on the map, at a position, it is something a strategy can act on rather than something everyone works around.</p>
-  <p>It is the same argument as <a href="ch-06-a-graph-at-every-boundary.html#air-gap">the air gap in the graph</a>, drawn: a named absence beats a hidden one.</p>
-  <p class="small dim">One adjudication rule that comes with it, and is worth knowing before your first argument about a custom axis: if you replace the evolution axis with your own, you must say what the new axis means and who decides where something sits on it. Otherwise the map becomes unfalsifiable, which is the one thing a map must not be.</p>
-
-  <div class="agent">
-    <h4>For an agent</h4>
-    <p>When generating a Mermaid Wardley map, coordinates are <code>[visibility, evolution]</code> — <b>the reverse of <code>[x, y]</code></b>. A transposed map renders without error and asserts something different, so verify the order before you emit. Mermaid Wardley requires v11.14.0 or later (stable at v11.15.0) and does not support the hand-drawn look. To find existing maps in a corpus, grep for <code>wardley-beta</code>, not for the fence tag.</p>
-  </div>
+<p class="claim">A graph says these things are connected. A map adds <strong>where they sit</strong>. Connectivity says what relates; position says what to do.</p>
+<p>Everything else on this site is about the first half. A Wardley map is the same node-and-edge structure with two coordinates attached — how visible a component is to the user, and how evolved it is — and those coordinates turn a description into a decision. It is the natural next thing to do to a graph once you have one, which is why it lives here rather than on a separate strategy site.</p>
+<p>And a map has the property this site keeps asking for elsewhere: <strong>a map is a falsifiable claim, not a picture.</strong> Someone can point at a component and say “that is not where that sits”, and they are making a checkable statement. That is the same move as <a href="ch-05-against-schema-first.html#formulas">turning a classification into a path-pattern</a>.</p>
+<h2 id="trap">The coordinate trap</h2>
+<div class="warnbox"><p><strong>Wardley coordinates are <code>[visibility, evolution]</code> — the reverse of the convention you will assume.</strong> Everything else you have ever plotted takes <code>[x, y]</code>. This does not.</p>
+<p>The failure mode is the bad one: <strong>a map with its axes transposed renders happily and says something entirely different.</strong> No error, no warning, a perfectly good-looking picture making a claim you did not make. If you take one thing from this chapter, take this one.</p>
+</div>
+<div class="tablewrap">
+<table>
+<thead>
+<tr>
+<th>Detail</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mermaid Wardley support</td>
+<td>Added in <strong>v11.14.0</strong>; production-stable at <strong>v11.15.0</strong></td>
+</tr>
+<tr>
+<td>Coordinate order</td>
+<td><code>[visibility, evolution]</code> — <strong>not</strong> <code>[x, y]</code></td>
+</tr>
+<tr>
+<td>Hand-drawn look</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>Fence marker</td>
+<td>The maps in the corpus use a bare fence with <code>wardley-beta</code> on the first line — so <strong>grep for <code>wardley-beta</code></strong>, not for the fence tag, or you will find none of them</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>That last row is the kind of hard-won detail that has nowhere to live. It is here because the founder said he had nowhere to point people at for exactly this.</p>
+<h2 id="text">Maps as text are maps that survive the meeting</h2>
+<p>The strongest practical argument for the Mermaid toolchain is not that it is convenient. It is that a map written as text is diffable, committable, reviewable in a pull request, and can be regenerated. A map drawn in a whiteboard tool is a screenshot within a week and a lie within a month.</p>
+<p>Same argument as everywhere else here: <strong>the artefact and the reasoning behind it should live together, in a form that a change can be argued with.</strong></p>
+<h2 id="backlog">What exists, and what is still to render</h2>
+<div class="tablewrap">
+<table>
+<thead>
+<tr>
+<th>Set</th>
+<th>State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>The strategy maps</strong> — eight rendered images, the only rendered graph visuals in the corpus</td>
+<td><span class="pill p-ships">rendered</span> Some exist as inline SVG on the parent site: <a href="https://sgit.ai/demos/strategy-maps.md">sgit.ai/demos/strategy-maps.md</a></td>
+</tr>
+<tr>
+<td><strong>Mermaid <code>wardley-beta</code> source blocks</strong> — twelve in the corpus</td>
+<td><span class="pill p-ships">source exists</span></td>
+</tr>
+<tr>
+<td><strong>The permissions set</strong> — four maps, including one called “Hope Driven Development”</td>
+<td><span class="pill p-argued">unrendered</span> One render command away</td>
+</tr>
+<tr>
+<td><strong>The air-gap map</strong> — the sharpest single map here</td>
+<td><span class="pill p-argued">unrendered</span> <a href="https://graphs.sgit.ai/admin/comms.html">Task T4</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="airgap">The air-gap map: the ends are solved, the middle is people</h2>
+<p>The map worth rendering first, and the best single map for a public site. It shows both ends of a process sitting at high evolution — commodity, automated, solved — with a gap in the middle that is filled by human labour.</p>
+<p>The reason it works as a map rather than as a sentence is structural: <strong>a gap has no evolution</strong>. There is nothing to plot, because nothing is there. So what you plot is <em>the labour that fills it</em> — and once that labour is on the map, at a position, it is something a strategy can act on rather than something everyone works around.</p>
+<p>It is the same argument as <a href="ch-06-a-graph-at-every-boundary.html#air-gap">the air gap in the graph</a>, drawn: a named absence beats a hidden one.</p>
+<p class="small dim">One adjudication rule that comes with it, and is worth knowing before your first argument about a custom axis: if you replace the evolution axis with your own, you must say what the new axis means and who decides where something sits on it. Otherwise the map becomes unfalsifiable, which is the one thing a map must not be.</p>
+<div class="agent">
+<h4>For an agent</h4><p>When generating a Mermaid Wardley map, coordinates are <code>[visibility, evolution]</code> — <strong>the reverse of <code>[x, y]</code></strong>. A transposed map renders without error and asserts something different, so verify the order before you emit. Mermaid Wardley requires v11.14.0 or later (stable at v11.15.0) and does not support the hand-drawn look. To find existing maps in a corpus, grep for <code>wardley-beta</code>, not for the fence tag.</p>
+</div>
 
   
       <div class="pagenav"><span><a href="ch-10-article-26-5-fact-to-board-and-back.html">← 10 · Article 26(5), fact to board and back</a></span><span><a href="ch-12-what-ships-what-is-argued.html">12 · What ships, what is argued →</a></span></div>
@@ -189,7 +215,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.5</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.0</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

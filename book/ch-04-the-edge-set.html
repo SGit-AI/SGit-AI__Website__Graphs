@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.5</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -119,87 +119,175 @@
   </div>
 </aside>
   <div class="bookmain">
-    <div class="bookbar"><a href="index.html">☰ Contents</a> · <a href="single.html">single page</a> · <a href="meaning-through-connectivity.pdf">print PDF</a> · <a href="meaning-through-connectivity-screen.pdf">screen PDF</a> · <span>Meaning Through Connectivity · site v0.2.5</span></div>
+    <div class="bookbar"><a href="index.html">☰ Contents</a> · <a href="single.html">single page</a> · <a href="meaning-through-connectivity.pdf">print PDF</a> · <a href="meaning-through-connectivity-screen.pdf">screen PDF</a> · <span>Meaning Through Connectivity · site v0.3.0</span></div>
     <main class="doc bookch">
 <div class="chkick">Part II · The grammar</div>
 <div class="chnum">Chapter 4</div>
 <h1>The edge set</h1>
 
   <p class="lead">A concrete, versioned, public vocabulary. This is the reference to paste into an agent session before asking it to build a graph, and the place to argue with if you think an edge is missing or wrongly named.</p>
-
-  <div class="evbox ev-warn">
-    <span class="evtag">Provenance</span>
-    <p>Appendix A of the 28 July 2026 brief cites “the concepts glossary” as the authority on edge-grammar discipline and lists the established edge set. <b>No such file exists in the source repository</b> — it lives in another project. That absence is gap <b>G5</b>, and the recommendation in the brief pack was that this website should either import it or <em>become</em> it.</p>
-    <p><b>This chapter becomes it.</b> Which means: the fifteen edge names below are quoted from the corpus and are load-bearing. Several of the <em>inverse</em> names are not — where the corpus does not supply one, this site proposes it, and says so in the table. Proposed names are a starting point for disagreement, not a standard.</p>
-  </div>
-
-  <h2 id="edges">The fifteen established edges</h2>
-  <p>Cited in Appendix A of <code>briefs/07/28/regulation-graph-and-acceptability/v0.33.53__arch-brief__…every-paragraph-is-a-graph…</code> as the established set. Every one of them is a verb; every one is directed.</p>
-  <div class="tablewrap">
-  <table>
-    <thead><tr><th>Edge</th><th>Inverse</th><th>Reads as</th><th>Where the inverse comes from</th></tr></thead>
-    <tbody>
-      <tr><td><code>connected_to</code></td><td><code>connected_to</code></td><td>A is connected to B</td><td><span class="pill p-argued">symmetric</span></td></tr>
-      <tr><td><code>observed_on</code></td><td><code>bears_observation</code></td><td>this evidence was observed on this system</td><td><span class="pill p-argued">proposed here</span></td></tr>
-      <tr><td><code>backed_by</code></td><td><code>evidences</code></td><td>this fact is backed by this evidence</td><td><span class="pill p-argued">proposed here</span></td></tr>
-      <tr><td><code>measured_by</code></td><td><code>measures</code></td><td>this fact is measured by this measure</td><td><span class="pill p-argued">proposed here</span></td></tr>
-      <tr><td><code>grants</code></td><td><code>granted_by</code></td><td>this role grants this capability</td><td><span class="pill p-argued">proposed here</span></td></tr>
-      <tr><td><code>reaches</code></td><td><code>reachable_from</code></td><td>this grant reaches this asset</td><td><span class="pill p-argued">proposed here</span></td></tr>
-      <tr><td><code>enables</code></td><td><code>enabled_by</code></td><td>this capability enables this action</td><td><span class="pill p-argued">proposed here</span></td></tr>
-      <tr><td><code>exposes</code></td><td><code>exposed_by</code></td><td>this fact exposes this blast radius</td><td><span class="pill p-argued">proposed here</span></td></tr>
-      <tr><td><code>gives_rise_to</code></td><td><code>arises_from</code></td><td>this vulnerability gives rise to this risk</td><td><span class="pill p-ships">in the corpus</span></td></tr>
-      <tr><td><code>protected_by</code></td><td><code>protects</code></td><td>this asset is protected by this control</td><td><span class="pill p-argued">proposed here</span></td></tr>
-      <tr><td><code>conditional_on</code></td><td><code>conditions</code></td><td>this control is conditional on this fact</td><td><span class="pill p-argued">proposed here</span></td></tr>
-      <tr><td><code>defeated_by</code></td><td><code>defeats</code></td><td>this control is defeated by this attack</td><td><span class="pill p-argued">proposed here</span></td></tr>
-      <tr><td><code>owned_by</code></td><td><code>owns</code></td><td>this system is owned by this role</td><td><span class="pill p-ships">in the corpus</span></td></tr>
-      <tr><td><code>accepted_by</code></td><td><code>accepted</code></td><td>this risk is accepted by this role</td><td><span class="pill p-argued">proposed here</span></td></tr>
-      <tr><td><code>underwritten_by</code></td><td><code>underwrites</code></td><td>this acceptance is underwritten by this role</td><td><span class="pill p-argued">proposed here</span></td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <div class="warnbox"><b>One row is in tension with the site's own rule.</b> <code>connected_to</code> is the only symmetric edge in the set, and a symmetric edge with a broad verb sits uncomfortably close to <a href="ch-03-the-rules-you-can-apply-tomorrow.html#banned">the one that is banned</a>. It survives because in the graphs that use it it means something specific — physically or logically attached — rather than “associated somehow”. Treat it as a last resort: wherever you can name what kind of connection it is, name it, and the query gets better. If you think it should be dropped from the set, <a href="https://graphs.sgit.ai/admin/comms.html">say so</a>.</div>
-
-  <h3 id="also-used">Also used in the worked graphs</h3>
-  <p>These appear in the browser-isolation graph and the 2FA graph but are not in the fifteen. They are listed separately rather than folded in, because folding them in would quietly enlarge a set somebody else cited.</p>
-  <div class="tablewrap">
-  <table>
-    <thead><tr><th>Edge</th><th>Inverse</th><th>Reads as</th></tr></thead>
-    <tbody>
-      <tr><td><code>impairs</code></td><td><code>impaired_by</code></td><td>this risk impairs this asset</td></tr>
-      <tr><td><code>emits</code></td><td><code>emitted_by</code></td><td>this control emits this detection signal</td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <div class="warnbox"><b>One name is deliberately absent, and its absence is a rule.</b> There is no generic association edge in this set. If you find yourself wanting one, the graph is telling you that you have not yet decided what the relationship is — <a href="ch-03-the-rules-you-can-apply-tomorrow.html#banned">rule 1</a>.</div>
-
-  <h2 id="node-types">Node types, from the worked graphs</h2>
-  <p>Node types are more domain-specific than edges, so this is a worked example rather than a standard. These are the types in the two most complete graphs in the corpus.</p>
-  <h3>The risk / assurance chain <span class="small dim">— browser isolation, 59 nodes / 75 edges</span></h3>
-  <p><code>Reality</code> · <code>Twin</code> · <code>Asset</code> · <code>Evidence</code> · <code>Measure</code> · <code>Fact</code> · <code>Grant</code> · <code>AuthorizationClosure</code> · <code>BlastRadius</code> · <code>Vulnerability</code> · <code>Risk</code> · <code>PreventiveControl</code> · <code>DetectiveControl</code> · <code>Owner</code> · <code>AcceptanceDecision</code></p>
-  <p><code>AuthorizationClosure</code> is the one to notice: the transitive union of every grant reachable over assume-role, pass-role and wildcard edges. It is called <em>the agentic union</em> — and for an agent, the closure is the rating floor, not the nominal grant. It is a node type that only exists because the graph can compute it.</p>
-  <h3>The instance graph <span class="small dim">— 2FA, 51 nodes / 53 edges</span></h3>
-  <p><code>Risk</code>&nbsp;(9) · <code>Actor</code>&nbsp;(9) · <code>Evidence</code>&nbsp;(6) · <code>Interval</code>&nbsp;(6) · <code>Fact</code>&nbsp;(5) · <code>Impact</code>&nbsp;(3) · <code>System</code>&nbsp;(2) · <code>Vulnerability</code>&nbsp;(2) · <code>DataClass</code>&nbsp;(2) · <code>Asset</code> · <code>ThreatAgent</code> · <code>Attack</code> · <code>Obligation</code> · <code>Register</code> · <code>Twin</code> · <code>Agent</code></p>
-  <p><a href="ch-09-the-2fa-instance-graph.html">The 2FA graph in full →</a></p>
-
-  <h2 id="shipped">The one that is actually running</h2>
-  <p>Everything above is designed. One typed property graph in this project is <b>live repository data</b>: the issue tracker's own configuration — <b>12 node types, 10 verb/inverse edge types with domain and range constraints, 71 nodes and 141 edges</b> across 107 issue files, with edges stored bidirectionally.</p>
-  <p>It is the cheapest credibility on this site and the most instructive artefact in this chapter, for two reasons. It demonstrates that domain and range constraints on a verb pair are enough structure to be useful. And it ships the banned edge — which is what the rule looks like when nothing enforces it. <a href="ch-12-what-ships-what-is-argued.html">What ships, in full →</a></p>
-
-  <h2 id="rules">Rules for extending this set</h2>
-  <ol>
-    <li><b>A new edge needs a sentence.</b> If you cannot write “A ⟨verb⟩ B” and have a person in that business say it out loud, it is not an edge yet.</li>
-    <li><b>And its inverse needs a different sentence.</b> If the inverse is just the same sentence read backwards, you have one relationship where you thought you had two — check whether the direction you chose is the one with lower fan-out.</li>
-    <li><b>Domain and range, stated.</b> Which node types may sit at each end. This is what makes a malformed graph detectable rather than merely wrong.</li>
-    <li><b>No generic association edge, ever.</b> Not even temporarily. Temporarily is how the one in <code>link-types.json</code> got there.</li>
-    <li><b>Prefer adding an edge to adding a validation rule.</b> Enrichment, not enforcement. The graph grows; it does not constrain.</li>
-  </ol>
-
-  <div class="agent">
-    <h4>For an agent</h4>
-    <p>Use these fifteen verbs where they fit: <code>connected_to</code>, <code>observed_on</code>, <code>backed_by</code>, <code>measured_by</code>, <code>grants</code>, <code>reaches</code>, <code>enables</code>, <code>exposes</code>, <code>gives_rise_to</code>, <code>protected_by</code>, <code>conditional_on</code>, <code>defeated_by</code>, <code>owned_by</code>, <code>accepted_by</code>, <code>underwritten_by</code>. Each is directed and takes a distinct inverse. Do not invent a generic association edge. When you need a verb that is not here, name it as a sentence, state its inverse, state its domain and range, and mark it as an extension rather than folding it into this set.</p>
-  </div>
+<div class="evbox ev-warn">
+<span class="evtag">Provenance</span>
+<p>Appendix A of the 28 July 2026 brief cites “the concepts glossary” as the authority on edge-grammar discipline and lists the established edge set. <b>No such file exists in the source repository</b> — it lives in another project. That absence is gap <b>G5</b>, and the recommendation in the brief pack was that this website should either import it or <em>become</em> it.</p>
+<p><b>This chapter becomes it.</b> Which means: the fifteen edge names below are quoted from the corpus and are load-bearing. Several of the <em>inverse</em> names are not — where the corpus does not supply one, this site proposes it, and says so in the table. Proposed names are a starting point for disagreement, not a standard.</p>
+</div>
+<h2 id="edges">The fifteen established edges</h2>
+<p>Cited in Appendix A of <code>briefs/07/28/regulation-graph-and-acceptability/v0.33.53__arch-brief__…every-paragraph-is-a-graph…</code> as the established set. Every one of them is a verb; every one is directed.</p>
+<div class="tablewrap">
+<table>
+<thead>
+<tr>
+<th>Edge</th>
+<th>Inverse</th>
+<th>Reads as</th>
+<th>Where the inverse comes from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>connected_to</code></td>
+<td><code>connected_to</code></td>
+<td>A is connected to B</td>
+<td><span class="pill p-argued">symmetric</span></td>
+</tr>
+<tr>
+<td><code>observed_on</code></td>
+<td><code>bears_observation</code></td>
+<td>this evidence was observed on this system</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>backed_by</code></td>
+<td><code>evidences</code></td>
+<td>this fact is backed by this evidence</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>measured_by</code></td>
+<td><code>measures</code></td>
+<td>this fact is measured by this measure</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>grants</code></td>
+<td><code>granted_by</code></td>
+<td>this role grants this capability</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>reaches</code></td>
+<td><code>reachable_from</code></td>
+<td>this grant reaches this asset</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>enables</code></td>
+<td><code>enabled_by</code></td>
+<td>this capability enables this action</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>exposes</code></td>
+<td><code>exposed_by</code></td>
+<td>this fact exposes this blast radius</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>gives_rise_to</code></td>
+<td><code>arises_from</code></td>
+<td>this vulnerability gives rise to this risk</td>
+<td><span class="pill p-ships">in the corpus</span></td>
+</tr>
+<tr>
+<td><code>protected_by</code></td>
+<td><code>protects</code></td>
+<td>this asset is protected by this control</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>conditional_on</code></td>
+<td><code>conditions</code></td>
+<td>this control is conditional on this fact</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>defeated_by</code></td>
+<td><code>defeats</code></td>
+<td>this control is defeated by this attack</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>owned_by</code></td>
+<td><code>owns</code></td>
+<td>this system is owned by this role</td>
+<td><span class="pill p-ships">in the corpus</span></td>
+</tr>
+<tr>
+<td><code>accepted_by</code></td>
+<td><code>accepted</code></td>
+<td>this risk is accepted by this role</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>underwritten_by</code></td>
+<td><code>underwrites</code></td>
+<td>this acceptance is underwritten by this role</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="warnbox"><p><strong>One row is in tension with the site's own rule.</strong> <code>connected_to</code> is the only symmetric edge in the set, and a symmetric edge with a broad verb sits uncomfortably close to <a href="ch-03-the-rules-you-can-apply-tomorrow.html#banned">the one that is banned</a>. It survives because in the graphs that use it it means something specific — physically or logically attached — rather than “associated somehow”. Treat it as a last resort: wherever you can name what kind of connection it is, name it, and the query gets better. If you think it should be dropped from the set, <a href="https://graphs.sgit.ai/admin/comms.html">say so</a>.</p>
+</div>
+<h3 id="also-used">Also used in the worked graphs</h3>
+<p>These appear in the browser-isolation graph and the 2FA graph but are not in the fifteen. They are listed separately rather than folded in, because folding them in would quietly enlarge a set somebody else cited.</p>
+<div class="tablewrap">
+<table>
+<thead>
+<tr>
+<th>Edge</th>
+<th>Inverse</th>
+<th>Reads as</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>impairs</code></td>
+<td><code>impaired_by</code></td>
+<td>this risk impairs this asset</td>
+</tr>
+<tr>
+<td><code>emits</code></td>
+<td><code>emitted_by</code></td>
+<td>this control emits this detection signal</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="warnbox"><p><strong>One name is deliberately absent, and its absence is a rule.</strong> There is no generic association edge in this set. If you find yourself wanting one, the graph is telling you that you have not yet decided what the relationship is — <a href="ch-03-the-rules-you-can-apply-tomorrow.html#banned">rule 1</a>.</p>
+</div>
+<h2 id="node-types">Node types, from the worked graphs</h2>
+<p>Node types are more domain-specific than edges, so this is a worked example rather than a standard. These are the types in the two most complete graphs in the corpus.</p>
+<h3>The risk / assurance chain <span class="small dim">— browser isolation, 59 nodes / 75 edges</span></h3>
+<p><code>Reality</code> · <code>Twin</code> · <code>Asset</code> · <code>Evidence</code> · <code>Measure</code> · <code>Fact</code> · <code>Grant</code> · <code>AuthorizationClosure</code> · <code>BlastRadius</code> · <code>Vulnerability</code> · <code>Risk</code> · <code>PreventiveControl</code> · <code>DetectiveControl</code> · <code>Owner</code> · <code>AcceptanceDecision</code></p>
+<p><code>AuthorizationClosure</code> is the one to notice: the transitive union of every grant reachable over assume-role, pass-role and wildcard edges. It is called <em>the agentic union</em> — and for an agent, the closure is the rating floor, not the nominal grant. It is a node type that only exists because the graph can compute it.</p>
+<h3>The instance graph <span class="small dim">— 2FA, 51 nodes / 53 edges</span></h3>
+<p><code>Risk</code> (9) · <code>Actor</code> (9) · <code>Evidence</code> (6) · <code>Interval</code> (6) · <code>Fact</code> (5) · <code>Impact</code> (3) · <code>System</code> (2) · <code>Vulnerability</code> (2) · <code>DataClass</code> (2) · <code>Asset</code> · <code>ThreatAgent</code> · <code>Attack</code> · <code>Obligation</code> · <code>Register</code> · <code>Twin</code> · <code>Agent</code></p>
+<p><a href="ch-09-the-2fa-instance-graph.html">The 2FA graph in full →</a></p>
+<h2 id="shipped">The one that is actually running</h2>
+<p>Everything above is designed. One typed property graph in this project is <strong>live repository data</strong>: the issue tracker's own configuration — <strong>12 node types, 10 verb/inverse edge types with domain and range constraints, 71 nodes and 141 edges</strong> across 107 issue files, with edges stored bidirectionally.</p>
+<p>It is the cheapest credibility on this site and the most instructive artefact in this chapter, for two reasons. It demonstrates that domain and range constraints on a verb pair are enough structure to be useful. And it ships the banned edge — which is what the rule looks like when nothing enforces it. <a href="ch-12-what-ships-what-is-argued.html">What ships, in full →</a></p>
+<h2 id="rules">Rules for extending this set</h2>
+<ol>
+<li><strong>A new edge needs a sentence.</strong> If you cannot write “A ⟨verb⟩ B” and have a person in that business say it out loud, it is not an edge yet.</li>
+<li><strong>And its inverse needs a different sentence.</strong> If the inverse is just the same sentence read backwards, you have one relationship where you thought you had two — check whether the direction you chose is the one with lower fan-out.</li>
+<li><strong>Domain and range, stated.</strong> Which node types may sit at each end. This is what makes a malformed graph detectable rather than merely wrong.</li>
+<li><strong>No generic association edge, ever.</strong> Not even temporarily. Temporarily is how the one in <code>link-types.json</code> got there.</li>
+<li><strong>Prefer adding an edge to adding a validation rule.</strong> Enrichment, not enforcement. The graph grows; it does not constrain.</li>
+</ol>
+<div class="agent">
+<h4>For an agent</h4><p>Use these fifteen verbs where they fit: <code>connected_to</code>, <code>observed_on</code>, <code>backed_by</code>, <code>measured_by</code>, <code>grants</code>, <code>reaches</code>, <code>enables</code>, <code>exposes</code>, <code>gives_rise_to</code>, <code>protected_by</code>, <code>conditional_on</code>, <code>defeated_by</code>, <code>owned_by</code>, <code>accepted_by</code>, <code>underwritten_by</code>. Each is directed and takes a distinct inverse. Do not invent a generic association edge. When you need a verb that is not here, name it as a sentence, state its inverse, state its domain and range, and mark it as an extension rather than folding it into this set.</p>
+</div>
 
   
       <div class="pagenav"><span><a href="ch-03-the-rules-you-can-apply-tomorrow.html">← 3 · The rules you can apply tomorrow</a></span><span><a href="ch-05-against-schema-first.html">5 · Against schema-first →</a></span></div>
@@ -213,7 +301,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.5</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.0</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

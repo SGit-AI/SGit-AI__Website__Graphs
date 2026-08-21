@@ -20,7 +20,13 @@
 //   7. div balance — every page opens and closes the same number of <div>s. Added
 //      after four pages shipped a <div class="note"> closed with </p>, which browsers
 //      accept silently and which ran the note's left border down the whole page.
-//   8. the book is a projection — book/manifest.json must carry this release's
+//   8. the pages are projections of markdown — content/*.md is the source of
+//      truth for every chapter page. content/manifest.json records the hash of
+//      each markdown file and of the page main it rendered; a markdown file
+//      edited without gen_pages.py rerunning, or a page main hand-edited
+//      behind the markdown's back, fails here. Together with check 9 this
+//      closes the chain: markdown -> pages -> book, no drift at either link.
+//   9. the book is a projection — book/manifest.json must carry this release's
 //      version, every chapter's source page must hash to what the manifest recorded
 //      when the book was generated, and the PDF must exist. The book is generated
 //      from the site's pages (gen_book.py); a source page edited without the book
@@ -153,8 +159,30 @@ for (const f of files) {
   if (KEY_SHAPE.test(t)) errors.push(`${rel(f)}: contains a vault-key-shaped string`);
 }
 
-// --- 8. the book is a projection ------------------------------------------
+// --- 8. the pages are projections of markdown ------------------------------
 const crypto = require('crypto');
+const sha = s => crypto.createHash('sha256').update(s).digest('hex');
+const pagesManifestPath = path.join(ROOT, 'content/manifest.json');
+if (!fs.existsSync(pagesManifestPath)) {
+  errors.push('content/manifest.json is missing — run admin/build/gen_pages.py');
+} else {
+  for (const pg of JSON.parse(fs.readFileSync(pagesManifestPath, 'utf8')).pages) {
+    const mdf = path.join(ROOT, pg.md);
+    if (!fs.existsSync(mdf)) { errors.push(`chapter source is gone: ${pg.md}`); continue; }
+    if (sha(fs.readFileSync(mdf)) !== pg.md_sha256) {
+      errors.push(`page is stale: ${pg.md} changed since ${pg.path} was rendered — run gen_pages.py (then gen_book.py)`);
+      continue;
+    }
+    const pf = path.join(ROOT, pg.path);
+    if (!fs.existsSync(pf)) { errors.push(`rendered page missing: ${pg.path}`); continue; }
+    const m = fs.readFileSync(pf, 'utf8').match(/<main class="doc">([\s\S]*?)<\/main>/);
+    if (!m || sha(m[1]) !== pg.main_sha256) {
+      errors.push(`${pg.path} was edited behind its markdown's back — the text lives in ${pg.md}; edit there and run gen_pages.py`);
+    }
+  }
+}
+
+// --- 9. the book is a projection ------------------------------------------
 const bookManifestPath = path.join(ROOT, 'book/manifest.json');
 if (!fs.existsSync(bookManifestPath)) {
   errors.push('book/manifest.json is missing — run admin/build/gen_book.py');
@@ -168,7 +196,7 @@ if (!fs.existsSync(bookManifestPath)) {
     if (!fs.existsSync(src)) { errors.push(`book chapter ${ch.n} source is gone: ${ch.source}`); continue; }
     const m = fs.readFileSync(src, 'utf8').match(/<main class="doc">([\s\S]*?)<\/main>/);
     if (!m) { errors.push(`${ch.source}: no <main class="doc"> block for the book to project`); continue; }
-    const h = crypto.createHash('sha256').update(m[1]).digest('hex');
+    const h = sha(m[1]);
     if (h !== ch.source_sha256) {
       errors.push(`book is stale: ${ch.source} changed since the book was generated — run gen_book.py (and regenerate the PDF)`);
     }
@@ -204,4 +232,4 @@ if (errors.length) {
 }
 console.log(`validate: OK — ${VERSION} on ${HOST}, ${htmlFiles.length} pages, ` +
             `${hubs.length} hubs in llms.txt, sitemap agrees, links resolve, ` +
-            `blocks balanced, book fresh, no relates-to, no key-shaped strings`);
+            `blocks balanced, pages match their markdown, book fresh, no relates-to, no key-shaped strings`);

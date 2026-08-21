@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.5</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -96,7 +96,7 @@
   <p>Every push to <code>dev</code> runs <a href="https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/.github/workflows/deploy-pages.yml"><code>.github/workflows/deploy-pages.yml</code></a>. Same order and the same tagging rules as the sibling repositories.</p>
   <div class="ladder">
     <div class="cap"><div class="capnum">1</div><h3>validate</h3>
-      <p>The pre-release gate — <code>node admin/build/validate.js</code>. <b>A failure stops the release: no tag, no publish.</b> It also runs on pull requests, so branch work is gated before it reaches the release branch. The eight checks are below.</p></div>
+      <p>The pre-release gate — <code>node admin/build/validate.js</code>. <b>A failure stops the release: no tag, no publish.</b> It also runs on pull requests, so branch work is gated before it reaches the release branch. The nine checks are below.</p></div>
     <div class="cap"><div class="capnum">2</div><h3>tag-release</h3>
       <p>Every push to <code>dev</code> is a minor release, tagged <code>vR.M.N</code>. The version is owned by <code>admin/build/version.txt</code> and must also appear in the release commit's subject — <code>site vX.Y.Z: …</code>. CI verifies the two agree, that the bump is the next minor (or a deliberate major), and then tags the release commit: HEAD on a direct push, HEAD's parent when a pull request lands as a merge. The first run backfills tags for any historical release from the commit subjects.</p></div>
     <div class="cap"><div class="capnum">3</div><h3>deploy</h3>
@@ -105,7 +105,7 @@
   <p class="small dim">A push to <code>main</code> is deploy-only — tagging skips — so <code>main</code> can serve as a deploy test or fallback while the <code>github-pages</code> environment still restricts <code>dev</code>.</p>
 
   <h2 id="validate">What the gate checks, and why each check exists</h2>
-  <p>Checks are added when something goes wrong, not in advance. Four of these eight are inherited from the sibling sites, where they each caught a real mistake; four are specific to this site.</p>
+  <p>Checks are added when something goes wrong, not in advance. Four of these nine are inherited from the sibling sites, where they each caught a real mistake; five are specific to this site.</p>
   <div class="tablewrap">
   <table>
     <thead><tr><th>Check</th><th>Why it is there</th></tr></thead>
@@ -116,8 +116,9 @@
       <tr><td><b>4 · The agent surface</b> <span class="pill p-live">this site</span></td><td>Every section hub is named in <code>llms.txt</code>, and the sitemap and the tree agree <em>in both directions</em>. This site exists because agents under-weight this material, and for an agent a page missing from <code>llms.txt</code> is a page that does not exist. CI keeps that honest rather than trusting anyone to remember.</td></tr>
       <tr><td><b>5 · Edge-grammar tripwire</b> <span class="pill p-live">this site</span></td><td>No page may use the banned generic association edge as a live edge name. It is permitted only where a page is quoting the ban, marked with a <code>data-banned-verb</code> attribute. The site's own rule, enforced against the site. <a href="../grammar/index.html#banned">The rule →</a></td></tr>
       <tr><td><b>6 · Block balance</b> <span class="pill p-live">this site</span></td><td>Every page opens and closes the same number of <code>&lt;div&gt;</code>s. Added because four pages shipped a note box closed with <code>&lt;/p&gt;</code> instead of <code>&lt;/div&gt;</code> — which browsers accept silently, and which wraps the note's left border around the rest of the page. Checks are added when something goes wrong, not in advance.</td></tr>
-      <tr><td><b>7 · The book is a projection</b> <span class="pill p-live">this site</span></td><td><a href="../book/index.html">The book</a> is generated from the site's pages, and <code>book/manifest.json</code> records a hash of every source page's content and the version it was generated at. A source page edited without the book regenerating — or a version bump without a fresh book — fails the build. The site argues that projections must not drift from their source; this is that argument, enforced against the site's own book.</td></tr>
-      <tr><td><b>8 · Key-leak tripwire</b></td><td>Nothing in the tree may look like a vault key — a long passphrase joined by a colon to a UUID-shaped identifier. The network's sites discuss keys constantly; none of them may ever contain one.</td></tr>
+      <tr><td><b>7 · The pages are projections of markdown</b> <span class="pill p-live">this site</span></td><td>The chapter text is authored in markdown under <code>content/</code> — the layer an editor edits and git diffs cleanly — and rendered into the site pages by <code>gen_pages.py</code>. <code>content/manifest.json</code> records the hash of each markdown file and of the page it rendered: markdown edited without re-rendering fails, and so does a page edited behind its markdown's back. With the next check this closes the chain — <b>markdown → pages → book</b> — with no drift possible at either link.</td></tr>
+      <tr><td><b>8 · The book is a projection</b> <span class="pill p-live">this site</span></td><td><a href="../book/index.html">The book</a> is generated from the site's pages, and <code>book/manifest.json</code> records a hash of every source page's content and the version it was generated at. A source page edited without the book regenerating — or a version bump without a fresh book — fails the build. The site argues that projections must not drift from their source; this is that argument, enforced against the site's own book.</td></tr>
+      <tr><td><b>9 · Key-leak tripwire</b></td><td>Nothing in the tree may look like a vault key — a long passphrase joined by a colon to a UUID-shaped identifier. The network's sites discuss keys constantly; none of them may ever contain one.</td></tr>
     </tbody>
   </table>
   </div>
@@ -130,6 +131,8 @@
       <tr><td><code>admin/build/version.txt</code></td><td>The version. One file, one line, bumped exactly once per release.</td></tr>
       <tr><td><code>admin/build/chrome.py</code></td><td><b>The single definition of the nav and the footer</b>, and the tool that rewrites them in place across every page. Every page is hand-written static HTML — a human can open any file and edit it — but the chrome is not hand-maintained, which is what stops a thirty-page site from drifting. It also stamps the version into <code>llms.txt</code>, <code>llms-full.txt</code> and <code>index.md</code>, because hand-editing it there silently missed twice on a sibling site.</td></tr>
       <tr><td><code>admin/build/gen_documents.py</code></td><td>Generates the <a href="../documents/index.html">reader pages</a> from the raw markdown under <code>/briefs/</code>. Each page renders its own source file client-side, so it cannot drift from the document it claims to render.</td></tr>
+      <tr><td><code>admin/build/gen_pages.py</code></td><td>Renders <code>content/*.md</code> — the chapter text, and <b>the source of truth for the book</b> — into the site pages. CommonMark plus the house grammar: <code>::: note / warn / claim / quote / agent / ladder / meta</code> directives, a <code>```path</code> fence that reads in the corpus's own arrow notation, <code>```mermaid</code> for rendered diagrams, explicit heading anchors, and embedded HTML as the escape hatch for anything the grammar does not cover yet. Each page links its markdown twin; agents and editors can fetch <code>/content/&lt;chapter&gt;.md</code> directly.</td></tr>
+      <tr><td><code>admin/build/html2md.py</code></td><td>The one-shot migration that lifted the hand-written chapter HTML into <code>content/</code>, kept as provenance. <b>Never run it again</b> — it would overwrite editorial work with a lift of the generated pages.</td></tr>
       <tr><td><code>admin/build/gen_book.py</code></td><td>Generates <a href="../book/index.html">the book</a> — chapter pages with a persistent table of contents, the single page, <code>book/print.html</code> (the print-interior source with its front matter and paginated contents), the manifest the gate checks, and <b>both PDF editions</b> — the print interior (WeasyPrint, 6″×9″, mirrored gutters, folios, running heads; Chromium fallback at the same trim, minus the apparatus, and it says so) and the screen edition (Chromium's print of <code>single.html</code> at US Letter, in the site's own design). Both are committed, because CI has neither WeasyPrint nor a browser; both are stamped with the site version, and the gate refuses a release if either lags.</td></tr>
       <tr><td><code>admin/build/validate.js</code></td><td>The gate. Node, no dependencies.</td></tr>
       <tr><td><code>assets/site.css</code></td><td>The shared stylesheet, in the sgit.ai design language, plus this site's components: the altitude doors, the proof strip, the agent block, and the semantic edge palette — amber is exposure, green is assurance, ghosted is unanswered.</td></tr>
@@ -140,6 +143,7 @@
 
   <h3>Release process</h3>
   <ol>
+    <li>Edit the chapter text in <code>content/*.md</code> — never in the rendered pages — then <code>python3 admin/build/gen_pages.py</code>.</li>
     <li>Bump <code>admin/build/version.txt</code> (once), add a row to <a href="versions.html">the release history</a>, update <a href="comms.html">comms</a>.</li>
     <li><code>python3 admin/build/gen_documents.py</code> — if a document was added.</li>
     <li><code>python3 admin/build/gen_book.py</code> — always: the gate fails on a stale book. Regenerates the PDF too.</li>
@@ -175,7 +179,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.5</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.0</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

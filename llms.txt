@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.2.5 (21 August 2026). Published by the sgit project — participant
+Site version: v0.3.0 (21 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /briefs/ is the source of truth and carries the same licence.
 
@@ -19,6 +19,11 @@ it as a graph database approach; the corpus says explicitly "not a graph databas
 
 ## Properties agents may rely on
 
+- Every chapter's text is authored in markdown and fetchable at
+  https://graphs.sgit.ai/content/<chapter>.md — the source of truth for that chapter;
+  the rendered page and the book are projections of it, and each chapter page carries a
+  rel="alternate" link to its markdown twin. CI fails the build if a page or the book
+  lags its markdown.
 - Every source document is fetchable at a stable constructed URL:
   https://graphs.sgit.ai/briefs/<filename>.md — a promise, not an accident. Agents already
   rely on constructed paths, so the convention is stated rather than left to be inferred.
@@ -213,11 +218,12 @@ chapters in six parts, **generated from the site's own pages** so the two cannot
   file so it cannot drift. Three redactions applied before publication, all recorded at
   /documents/public.html with visible markers.
 - https://graphs.sgit.ai/admin/index.html — how the site is built: static HTML on GitHub
-  Pages deployed from `dev`, with `validate → tag → deploy` on every push and an eight-check
-  pre-release gate. Four of the checks are specific to this site: every section hub must
+  Pages deployed from `dev`, with `validate → tag → deploy` on every push and a nine-check
+  pre-release gate. Five of the checks are specific to this site: every section hub must
   appear in this file, no page may use the banned edge as a live edge name, every page
-  must close every block it opens, and the book must be regenerated whenever a source
-  page changes — the book is a projection, and projections must not drift.
+  must close every block it opens, every chapter page must match its markdown source,
+  and the book must match the pages — one chain, markdown to pages to book, and
+  projections must not drift at either link.
 - https://graphs.sgit.ai/admin/comms.html — asks and tasks, published unresolved. N1 is a
   one-line edit to a repository file, specified 11 June 2026 and still not done, and it is
   the actual cure for the problem that produced this site. N3 has been waiting since 10

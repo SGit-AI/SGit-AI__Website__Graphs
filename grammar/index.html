@@ -12,6 +12,7 @@
 <meta property="og:title" content="The grammar — five rules you can apply to your own graph tomorrow">
 <meta property="og:description" content="Every edge is a verb with a distinct inverse. The generic association edge is banned because it costs fan-out and buys nothing. Build wide, find the few, flip.">
 <meta name="twitter:card" content="summary">
+<link rel="alternate" type="text/markdown" href="../content/grammar.md" title="This chapter as markdown — the source of truth">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
@@ -20,7 +21,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.5</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -89,96 +90,120 @@
 
 <main class="doc">
   <div class="crumb"><a href="../index.html">graphs.sgit.ai</a> → <b>Altitude 2 — the rules</b></div>
-  <h1>The rules you can apply tomorrow</h1>
-  <p class="lead">Five rules about edges. They are short on purpose: this is the one to keep open while you are actually drawing a graph, and the one an agent should be given before it starts emitting one. If a rule here contradicts something you were taught about graph modelling, that is deliberate — <a href="#blob">rule 4</a> in particular.</p>
-
-  <div class="note"><b>The one-screen version.</b> Every edge is a verb. Every verb has a distinct inverse. <code data-banned-verb>relates-to</code> is banned. If the path does not read as a sentence, the edges are wrong. Rich nodes are good — solve the picture at query time, never by removing relationships. And never render the whole graph: render the result of a query.</div>
-
-  <h2 id="verbs">1 · Every edge is a verb, stated in both directions</h2>
-  <p>An edge is not a line. It is a claim, and a claim needs a verb.</p>
-  <div class="tablewrap">
-  <table>
-    <thead><tr><th>Edge</th><th>Its inverse</th><th>Reads as</th></tr></thead>
-    <tbody>
-      <tr><td><code>owned_by</code></td><td><code>owns</code></td><td>this system is owned by this team · this team owns this system</td></tr>
-      <tr><td><code>gives_rise_to</code></td><td><code>arises_from</code></td><td>this vulnerability gives rise to this risk · this risk arises from this vulnerability</td></tr>
-      <tr><td><code>backed_by</code></td><td><code>evidences</code></td><td>this fact is backed by this evidence · this evidence evidences this fact</td></tr>
-      <tr><td><code>grants</code></td><td><code>granted_by</code></td><td>this role grants this permission · this permission is granted by this role</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p>Both directions get written down, and both get a name that is worth saying out loud. The test is not “is this technically the reverse?” — it is “would a person in this business say this sentence?”</p>
-
-  <h3 id="banned">And <code data-banned-verb>relates-to</code> is banned</h3>
-  <blockquote class="challenge">“the way I create graphs, they are always a two-way relationship and always to do with verbs. … <b>You can never have relates-to, because relates-to is meaningless, two things always relate to each other. The more granular the edge, the better the query you can write.</b>”
+<h1>The rules you can apply tomorrow</h1>
+<p class="lead">Five rules about edges. They are short on purpose: this is the one to keep open while you are actually drawing a graph, and the one an agent should be given before it starts emitting one. If a rule here contradicts something you were taught about graph modelling, that is deliberate — <a href="#blob">rule 4</a> in particular.</p>
+<div class="note"><p><strong>The one-screen version.</strong> Every edge is a verb. Every verb has a distinct inverse. <code data-banned-verb="">relates-to</code> is banned. If the path does not read as a sentence, the edges are wrong. Rich nodes are good — solve the picture at query time, never by removing relationships. And never render the whole graph: render the result of a query.</p>
+</div>
+<h2 id="verbs">1 · Every edge is a verb, stated in both directions</h2>
+<p>An edge is not a line. It is a claim, and a claim needs a verb.</p>
+<div class="tablewrap">
+<table>
+<thead>
+<tr>
+<th>Edge</th>
+<th>Its inverse</th>
+<th>Reads as</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>owned_by</code></td>
+<td><code>owns</code></td>
+<td>this system is owned by this team · this team owns this system</td>
+</tr>
+<tr>
+<td><code>gives_rise_to</code></td>
+<td><code>arises_from</code></td>
+<td>this vulnerability gives rise to this risk · this risk arises from this vulnerability</td>
+</tr>
+<tr>
+<td><code>backed_by</code></td>
+<td><code>evidences</code></td>
+<td>this fact is backed by this evidence · this evidence evidences this fact</td>
+</tr>
+<tr>
+<td><code>grants</code></td>
+<td><code>granted_by</code></td>
+<td>this role grants this permission · this permission is granted by this role</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Both directions get written down, and both get a name that is worth saying out loud. The test is not “is this technically the reverse?” — it is “would a person in this business say this sentence?”</p>
+<h3 id="banned">And <code data-banned-verb="">relates-to</code> is banned</h3>
+<blockquote class="challenge">“the way I create graphs, they are always a two-way relationship and always to do with verbs. … <strong>You can never have relates-to, because relates-to is meaningless, two things always relate to each other. The more granular the edge, the better the query you can write.</strong>”
     <span class="small dim" style="display:block;font-style:normal;margin-top:.7rem">— 10 June 2026</span></blockquote>
-  <p>The reason is not aesthetic. An edge with no verb carries no constraint, so it cannot narrow a traversal — which means it costs you fan-out and buys you nothing. Every generic edge you add makes every query worse. <b>The granularity of the verb is the precision of the query.</b></p>
-  <div class="warnbox"><b>And the project breaks its own rule.</b> The live <code>.issues/</code> configuration in the source repository ships a <code data-banned-verb>relates-to</code> / <code data-banned-verb>relates-to</code> pair in <code>link-types.json</code>, and one edge instance uses it. It is named here rather than quietly fixed, because it is a better teaching moment than the rule is: the generic edge is what you reach for when you have not yet decided what you mean, and it survives because nothing forces the decision. <a href="../shipped/index.html#corrections">Also listed under corrections</a>.</div>
-
-  <h2 id="direction">2 · The inverse is not the same edge walked backwards</h2>
-  <p>This is the rule that surprises people, and it is the one that makes traversal tractable.</p>
-  <p><code>owned_by</code> and <code>owns</code> describe the same fact, but they are <b>different relationships with different fan-out</b>. A system has one owner. An owner has forty systems. Walking outward from the system is a step; walking outward from the owner is an explosion.</p>
-  <p class="claim">The inverse of an edge is not the same edge walked backwards; it is a different, meaningful relationship — and that asymmetry is what guarantees monotonic progress toward a peak.</p>
-  <p>Because each hop filters on edge type <em>and</em> direction, fan-out collapses at every step rather than compounding. Traversals converge on natural peaks — a board, an owner, a regulation, a register. The practical consequence is the one that matters when your graph gets big: <b>seed a query in a thousand places and the paths converge on a handful of peaks. Result size is bounded by the number of peaks, not by the fan-out.</b></p>
-  <p>The source brief for this rule carries a full path language: five tiers, seventeen queries, with real notation — <code>-edge-&gt;</code> for outward, <code>&lt;-edge-</code> for inward, <code>*</code> for transitive closure.</p>
-
-  <h2 id="paths">3 · If the path does not read as a sentence, the edges are wrong</h2>
-  <p>A well-built path is legible without a key:</p>
-  <div class="pathline">
+<p>The reason is not aesthetic. An edge with no verb carries no constraint, so it cannot narrow a traversal — which means it costs you fan-out and buys you nothing. Every generic edge you add makes every query worse. <strong>The granularity of the verb is the precision of the query.</strong></p>
+<div class="warnbox"><p><strong>And the project breaks its own rule.</strong> The live <code>.issues/</code> configuration in the source repository ships a <code data-banned-verb="">relates-to</code> / <code data-banned-verb="">relates-to</code> pair in <code>link-types.json</code>, and one edge instance uses it. It is named here rather than quietly fixed, because it is a better teaching moment than the rule is: the generic edge is what you reach for when you have not yet decided what you mean, and it survives because nothing forces the decision. <a href="../shipped/index.html#corrections">Also listed under corrections</a>.</p>
+</div>
+<h2 id="direction">2 · The inverse is not the same edge walked backwards</h2>
+<p>This is the rule that surprises people, and it is the one that makes traversal tractable.</p>
+<p><code>owned_by</code> and <code>owns</code> describe the same fact, but they are <strong>different relationships with different fan-out</strong>. A system has one owner. An owner has forty systems. Walking outward from the system is a step; walking outward from the owner is an explosion.</p>
+<p class="claim">The inverse of an edge is not the same edge walked backwards; it is a different, meaningful relationship — and that asymmetry is what guarantees monotonic progress toward a peak.</p>
+<p>Because each hop filters on edge type <em>and</em> direction, fan-out collapses at every step rather than compounding. Traversals converge on natural peaks — a board, an owner, a regulation, a register. The practical consequence is the one that matters when your graph gets big: <strong>seed a query in a thousand places and the paths converge on a handful of peaks. Result size is bounded by the number of peaks, not by the fan-out.</strong></p>
+<p>The source brief for this rule carries a full path language: five tiers, seventeen queries, with real notation — <code>-edge-&gt;</code> for outward, <code>&lt;-edge-</code> for inward, <code>*</code> for transitive closure.</p>
+<h2 id="paths">3 · If the path does not read as a sentence, the edges are wrong</h2>
+<p>A well-built path is legible without a key:</p>
+<div class="pathline">
     <span class="nd">Risk</span><span class="ed back">arises_from</span><span class="nd">Vulnerability</span><span class="ed">impacts</span><span class="nd">System</span><span class="ed">owned_by</span><span class="nd">Entity</span><span class="ed">has_stakeholder</span><span class="nd">Role</span><span class="ed">reports_to</span><span class="nd">Board</span>
-    <span class="say">“This risk arises from this vulnerability, which impacts this system, which belongs to this entity, which has this stakeholder, who reports to the board.” Nobody needs the legend. <b>The query is almost like a story.</b></span>
+    <span class="say">“This risk arises from this vulnerability, which impacts this system, which belongs to this entity, which has this stakeholder, who reports to the board.” Nobody needs the legend. <strong>The query is almost like a story.</strong></span>
   </div>
-  <p>And the rule has a second half that is easy to skip: the sentence should read <b>in the reader's own language and business context</b>, not in yours. A path that reads beautifully to an architect and means nothing to a regulator is a path with the wrong verbs on it for that reader. The remedy is not to rename the edges — it is to add the ones that reader's question needs.</p>
-  <blockquote class="challenge">“the path should read in English, or not even in English, it should read in the language and the culture and the business context we are talking about” — so that <b>“the graph explains itself to whoever is reading it, in their own terms.”</b></blockquote>
-  <p>This is also the cheapest quality check you have. Read your paths aloud. The bad edges announce themselves.</p>
-
-  <h2 id="blob">4 · Rich nodes are good. Build wide, find the few, then flip</h2>
-  <p>Everyone who has done this has produced the blob: the hairball diagram that shows everything and therefore nothing. The usual response is to prune — fewer relationships, cleaner picture.</p>
-  <blockquote class="challenge">“I see a lot of people get into semantic graphs, get excited, and <b>arrive at the big blob</b>… The weird problem is <b>a race to the bottom, where you start not wanting a lot of relationships because they make the graph more complicated.</b>” — countered by: “<b>the more rich a node is, the more connections it has, the better.</b>”</blockquote>
-  <p>The blob is a <b>rendering</b> failure being mistaken for a <b>modelling</b> failure, and pruning solves the picture by destroying the asset. Solve it at query time instead:</p>
-  <div class="ladder">
-    <div class="cap"><div class="capnum">1</div><h3>Go wide</h3><p>A first pass captures the universe around your subject. Do not economise here. Nodes and edges are close to free, and some nodes exist only to give a later query something to anchor on.</p></div>
-    <div class="cap"><div class="capnum">2</div><h3>Find the few</h3><p>Run the question. Out of the universe, a handful of nodes are relevant to it.</p></div>
-    <div class="cap"><div class="capnum">3</div><h3>Flip</h3><p>Re-root the query at those few and walk out again. This is the move that makes big graphs usable — and it is why the graph being large is not a problem to be managed but the condition that makes the flip worth doing.</p></div>
-  </div>
-  <p class="claim">Never render the whole graph. Render the result of a query.</p>
-  <div class="tablewrap">
-  <table>
-    <thead><tr><th>Ceiling</th><th>Number</th><th>What it means in practice</th></tr></thead>
-    <tbody>
-      <tr><td>Mermaid readability</td><td><b>~50 nodes</b></td><td>Mermaid is the <em>print</em> step: text, diffable, committable, reviewable in a pull request. Past fifty it is unreadable.</td></tr>
-      <tr><td>Visualisation legibility</td><td><b>~300–400 nodes</b></td><td>An interactive canvas is the <em>exploration</em> step. Past this, a human is looking at texture, not information.</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p>“A diagram of everything is rarely useful; one node with its neighbours is always readable.” That rule governs this site's own rendering choices — which is why you will not find a hairball anywhere on it.</p>
-
-  <h2 id="anchor-nodes">5 · Link to schema.org; do not become schema.org</h2>
-  <p>An <b>anchor node</b> is well-connected, well-maintained, well-known — and has <b>no special authority</b>. It is a meeting point, not a standard.</p>
-  <p>The wrong move is to declare <code>I am a schema:Review</code>. That is a conformance claim, it is all-or-nothing, and it is usually a lie by the second field. The right move is a granular, honest, disputable edge:</p>
-  <div class="pathline">
+<p>And the rule has a second half that is easy to skip: the sentence should read <strong>in the reader's own language and business context</strong>, not in yours. A path that reads beautifully to an architect and means nothing to a regulator is a path with the wrong verbs on it for that reader. The remedy is not to rename the edges — it is to add the ones that reader's question needs.</p>
+<blockquote class="challenge">“the path should read in English, or not even in English, it should read in the language and the culture and the business context we are talking about” — so that <strong>“the graph explains itself to whoever is reading it, in their own terms.”</strong></blockquote>
+<p>This is also the cheapest quality check you have. Read your paths aloud. The bad edges announce themselves.</p>
+<h2 id="blob">4 · Rich nodes are good. Build wide, find the few, then flip</h2>
+<p>Everyone who has done this has produced the blob: the hairball diagram that shows everything and therefore nothing. The usual response is to prune — fewer relationships, cleaner picture.</p>
+<blockquote class="challenge">“I see a lot of people get into semantic graphs, get excited, and <strong>arrive at the big blob</strong>… The weird problem is <strong>a race to the bottom, where you start not wanting a lot of relationships because they make the graph more complicated.</strong>” — countered by: “<strong>the more rich a node is, the more connections it has, the better.</strong>”</blockquote>
+<p>The blob is a <strong>rendering</strong> failure being mistaken for a <strong>modelling</strong> failure, and pruning solves the picture by destroying the asset. Solve it at query time instead:</p>
+<div class="ladder">
+<div class="cap"><div class="capnum">1</div><h3>Go wide</h3><p>A first pass captures the universe around your subject. Do not economise here. Nodes and edges are close to free, and some nodes exist only to give a later query something to anchor on.</p></div>
+<div class="cap"><div class="capnum">2</div><h3>Find the few</h3><p>Run the question. Out of the universe, a handful of nodes are relevant to it.</p></div>
+<div class="cap"><div class="capnum">3</div><h3>Flip</h3><p>Re-root the query at those few and walk out again. This is the move that makes big graphs usable — and it is why the graph being large is not a problem to be managed but the condition that makes the flip worth doing.</p></div>
+</div><p class="claim">Never render the whole graph. Render the result of a query.</p>
+<div class="tablewrap">
+<table>
+<thead>
+<tr>
+<th>Ceiling</th>
+<th>Number</th>
+<th>What it means in practice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mermaid readability</td>
+<td><strong>~50 nodes</strong></td>
+<td>Mermaid is the <em>print</em> step: text, diffable, committable, reviewable in a pull request. Past fifty it is unreadable.</td>
+</tr>
+<tr>
+<td>Visualisation legibility</td>
+<td><strong>~300–400 nodes</strong></td>
+<td>An interactive canvas is the <em>exploration</em> step. Past this, a human is looking at texture, not information.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>“A diagram of everything is rarely useful; one node with its neighbours is always readable.” That rule governs this site's own rendering choices — which is why you will not find a hairball anywhere on it.</p>
+<h2 id="anchor-nodes">5 · Link to schema.org; do not become schema.org</h2>
+<p>An <strong>anchor node</strong> is well-connected, well-maintained, well-known — and has <strong>no special authority</strong>. It is a meeting point, not a standard.</p>
+<p>The wrong move is to declare <code>I am a schema:Review</code>. That is a conformance claim, it is all-or-nothing, and it is usually a lie by the second field. The right move is a granular, honest, disputable edge:</p>
+<div class="pathline">
     <span class="nd">our document_findings step</span><span class="ed">similar_to</span><span class="nd">schema:reviewBody</span>
     <span class="say">“Our <em>document_findings</em> step is similar to what schema.org calls <em>reviewBody</em>.” Partial. Traversable. Arguable. And crucially: a third party can add this edge without touching either node.</span>
   </div>
-  <p>Four properties fall out, and the fourth is the one that matters organisationally: <b>the mapping is a first-class object that someone else can own.</b> You do not need the vocabulary's permission, and the vocabulary does not need yours.</p>
-  <p>Partial mapping is the normal case, not a defect. And because nodes cost almost nothing, some exist purely to anchor a query — which matters as soon as you are working across languages and cultures, where the anchor is often the only thing two sides share.</p>
+<p>Four properties fall out, and the fourth is the one that matters organisationally: <strong>the mapping is a first-class object that someone else can own.</strong> You do not need the vocabulary's permission, and the vocabulary does not need yours.</p>
+<p>Partial mapping is the normal case, not a defect. And because nodes cost almost nothing, some exist purely to anchor a query — which matters as soon as you are working across languages and cultures, where the anchor is often the only thing two sides share.</p>
+<h2 id="next">Where to go next</h2>
+<ul>
+<li><a href="edge-set.html"><strong>The edge set</strong></a> — the concrete vocabulary: fifteen established edges with their inverses, and a worked node-type list. This is the reference to paste into an agent session.</li>
+<li><a href="../depth/index.html"><strong>Altitude 3</strong></a> — why schema-first fails, ontologies of ontologies, and classification as a computed path-pattern.</li>
+<li><a href="../examples/index.html"><strong>The worked examples</strong></a> — these rules applied to real problems, with node and edge counts.</li>
+</ul>
+<div class="agent">
+<h4>For an agent</h4><p>When emitting a graph: <strong>every edge is a directed verb with a distinct, meaningfully-named inverse; never emit a generic association edge; check that each path reads as a natural sentence; enrich rather than prune; and render the result of a query, never the whole graph.</strong> Fan-out is controlled by the verb, so a vague edge type is a correctness problem, not a style problem. The concrete vocabulary is at <a href="edge-set.html">/grammar/edge-set.html</a>.</p>
+</div>
 
-  <h2 id="next">Where to go next</h2>
-  <ul>
-    <li><a href="edge-set.html"><b>The edge set</b></a> — the concrete vocabulary: fifteen established edges with their inverses, and a worked node-type list. This is the reference to paste into an agent session.</li>
-    <li><a href="../depth/index.html"><b>Altitude 3</b></a> — why schema-first fails, ontologies of ontologies, and classification as a computed path-pattern.</li>
-    <li><a href="../examples/index.html"><b>The worked examples</b></a> — these rules applied to real problems, with node and edge counts.</li>
-  </ul>
-
-  <div class="agent">
-    <h4>For an agent</h4>
-    <p>When emitting a graph: <b>every edge is a directed verb with a distinct, meaningfully-named inverse; never emit a generic association edge; check that each path reads as a natural sentence; enrich rather than prune; and render the result of a query, never the whole graph.</b> Fan-out is controlled by the verb, so a vague edge type is a correctness problem, not a style problem. The concrete vocabulary is at <a href="edge-set.html">/grammar/edge-set.html</a>.</p>
-  </div>
-
-  <div class="pagenav">
-    <span><a href="../start/index.html">← Altitude 1</a></span>
-    <span><a href="../depth/index.html">Altitude 3 — the full argument →</a></span>
-  </div>
+  <div class="pagenav"><span><a href="../start/index.html">← Altitude 1</a></span><span><a href="../depth/index.html">Altitude 3 — the full argument →</a></span></div>
 </main>
 
 <footer class="site"><div class="cols">
@@ -187,7 +212,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.5</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.0</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

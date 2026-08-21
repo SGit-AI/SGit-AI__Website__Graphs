@@ -117,11 +117,13 @@ ABOUT = f"""
 <main class="doc">
   <h2 id="about">About this book</h2>
   <p>This book is <b>a projection of <a href="{HOST}/index.html">graphs.sgit.ai</a></b> — the
-  same content, in a reading order, in three formats. It is generated from the site's own
-  pages by <code>admin/build/gen_book.py</code>: the chapters cannot drift from the site,
-  because the build fails if a source page changes without the book regenerating. That is
-  the book's own argument — <em>documents are projections of graphs</em> — applied to the
-  book itself.</p>
+  same content, in a reading order, in three formats. The chain has three links and one
+  source of truth: the chapter text is <b>authored in markdown</b> (each chapter is
+  fetchable at <code>{HOST}/content/&lt;chapter&gt;.md</code>), the site pages are rendered
+  from it, and this book is generated from those pages by
+  <code>admin/build/gen_book.py</code>. Nothing can drift: the build fails if a page lags
+  its markdown or the book lags a page. That is the book's own argument — <em>documents
+  are projections of graphs</em> — applied to the book itself.</p>
   <p>The chapters therefore speak as the site speaks: where a page says “this site”,
   it means graphs.sgit.ai, of which this book is a view — and where a page says “this
   page”, the book says “this chapter”, because the projection rewrites self-references

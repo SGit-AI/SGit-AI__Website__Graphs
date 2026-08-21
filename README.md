@@ -25,6 +25,11 @@ Live site: https://graphs.sgit.ai (GitHub Pages, deployed from `dev`).
 - `why-graphs/` — the page for a sceptic, and the GraphRAG / RDF / property-graph positioning
 - `examples/` — worked graphs with real numbers; three have their own pages
 - `maps/` — Wardley maps as graphs, and the `[visibility, evolution]` coordinate trap
+- `content/` — **the chapter text, in markdown — the source of truth.** One file per
+  chapter; edited here, never in the rendered pages. `gen_pages.py` renders them into the
+  site pages (CommonMark + `:::` directives for the house components, a ` ```path ` fence
+  for pathlines, ` ```mermaid ` for diagrams, embedded HTML as the escape hatch); the book
+  is then generated from those pages. One chain, gate-checked at both links
 - `book/` — **the site as a book**, *Meaning Through Connectivity*: sixteen chapters in six
   parts, generated from the site's own pages by `gen_book.py`, in three reading modes —
   chapter pages with a left table of contents, one single page, and two PDF editions
@@ -55,17 +60,19 @@ under `briefs/`.
 
 ## Release process
 
-1. Bump `admin/build/version.txt` (vX.Y.Z, exactly once per release), add a row to
+1. Edit chapter text in `content/*.md` (never in the rendered pages), then
+   `python3 admin/build/gen_pages.py`.
+2. Bump `admin/build/version.txt` (vX.Y.Z, exactly once per release), add a row to
    `admin/versions.html`, update `admin/comms.html`.
-2. `python3 admin/build/gen_documents.py` — if a document was added.
-3. `python3 admin/build/gen_llms_full.py` — if a document or `llms.txt` changed.
-4. `python3 admin/build/gen_book.py` — always: the gate fails on a stale book. Also
+3. `python3 admin/build/gen_documents.py` — if a document was added.
+4. `python3 admin/build/gen_llms_full.py` — if a document or `llms.txt` changed.
+5. `python3 admin/build/gen_book.py` — always: the gate fails on a stale book. Also
    retypesets the PDF (`pip install weasyprint`; falls back to Chromium at the same trim
    size, minus folios and contents page numbers).
-5. `python3 admin/build/chrome.py` — propagates the version badge and any nav/footer change to
+6. `python3 admin/build/chrome.py` — propagates the version badge and any nav/footer change to
    every page, and stamps the version into `llms.txt`, `llms-full.txt` and `index.md`.
-6. `node admin/build/validate.js`
-7. `git commit -am "site vX.Y.Z: ..." && git push origin dev`
+7. `node admin/build/validate.js`
+8. `git commit -am "site vX.Y.Z: ..." && git push origin dev`
 
 Every push to `dev` runs `.github/workflows/deploy-pages.yml`: validate → auto-tag (`vX.Y.Z`,
 verified against `version.txt` and the commit subject, next-minor enforced) → deploy to GitHub
@@ -88,10 +95,13 @@ Pages. Pull requests run validation only. Same pipeline as
    name; quoting the ban requires a `data-banned-verb` attribute.
 6. **Block balance** — every page closes every `<div>` it opens. Added after four pages
    shipped a note box closed with `</p>`, which browsers accept silently.
-7. **The book is a projection** — `book/manifest.json` must carry this release's version
+7. **The pages are projections of markdown** — `content/manifest.json` records the hash
+   of each markdown chapter and of the page it rendered; either side drifting fails the
+   build.
+8. **The book is a projection** — `book/manifest.json` must carry this release's version
    and every chapter's source page must hash to what it recorded at generation. A source
    edited without regenerating the book fails the build.
-8. **Key-leak tripwire** — nothing in the tree may look like a vault key.
+9. **Key-leak tripwire** — nothing in the tree may look like a vault key.
 
 ## Licence
 
