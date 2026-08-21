@@ -96,6 +96,9 @@ tr { break-inside: avoid; }
 
 /* ---------- front matter ---------- */
 .fm { text-align: center; }
+/* the base h1{text-align:left} (correct for chapter openings) is applied to the
+   element itself, so it beats the centering these pages only inherit — state it */
+.fm.halftitle h1, .fm.titlepage h1 { text-align: center; }
 .fm.halftitle { padding-top: 3in; }
 .fm.halftitle h1 { font: bold 16pt 'Liberation Serif', serif; }
 .fm.titlepage { break-before: right; padding-top: 1.9in; }

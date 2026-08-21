@@ -1,5 +1,5 @@
 {
-  "version": "v0.2.2",
+  "version": "v0.2.3",
   "title": "Meaning Through Connectivity",
   "chapters": [
     {
@@ -135,14 +135,14 @@
     {
       "file": "meaning-through-connectivity.pdf",
       "edition": "print interior 6x9",
-      "version": "v0.2.2",
+      "version": "v0.2.3",
       "pages": 117,
       "typesetter": "weasyprint 69.0"
     },
     {
       "file": "meaning-through-connectivity-screen.pdf",
       "edition": "screen (US Letter)",
-      "version": "v0.2.2",
+      "version": "v0.2.3",
       "pages": 79,
       "typesetter": "chromium"
     }

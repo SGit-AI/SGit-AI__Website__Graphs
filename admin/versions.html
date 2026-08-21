@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.2</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.2.3</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -97,6 +97,11 @@
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
       <tr>
+        <td class="vnum">v0.2.3</td>
+        <td>21 August 2026</td>
+        <td><b>Print-edition fix: the title pages are now centred.</b> Founder-reported from reading the print PDF on a phone: the half-title and title-page headings sat flush-left while everything around them centred. Cause, in the print template (<code>assets/print-book.css</code>): the base <code>h1 { text-align: left }</code> — correct for chapter openings — applies to the element itself, so it beat the centring the front-matter pages only <em>inherit</em>. Fixed with an explicit rule for the two title headings, and verified from the rendered boxes: all three title lines now sit at the exact centre of the text block, per line, while chapter headings stay flush-left. Both PDFs re-typeset at this version, as the gate requires.</td>
+      </tr>
+      <tr>
         <td class="vnum">v0.2.2</td>
         <td>21 August 2026</td>
         <td><b>Two PDF editions, one source.</b> The screen-styled PDF returns alongside the print interior — founder request: the site-design edition reads well on a tablet, so both now ship. <a href="../book/meaning-through-connectivity.pdf">The print PDF</a> stays the 6″×9″ technical-book interior; <a href="../book/meaning-through-connectivity-screen.pdf">the screen PDF</a> is Chromium's print of the single page at US Letter in the site's own design. <b>Both regenerate together from the same extracted chapters on every release</b> — <code>gen_book.py</code> emits them in one run, each cover carries the site version it was generated from, <code>book/manifest.json</code> records file, edition, page count, typesetter and version for each, and the gate's book-projection check now requires <b>both</b> editions to be present and current: a release cannot ship with either PDF lagging the content. Nav, footer, front page, <code>index.md</code> and <code>llms.txt</code> now offer the pair.</td>
@@ -141,7 +146,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.2.2</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.2.3</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
