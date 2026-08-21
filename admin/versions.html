@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.1</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -97,6 +97,11 @@
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
       <tr>
+        <td class="vnum">v0.3.1</td>
+        <td>21 August 2026</td>
+        <td><b>The cover — generated, in SVG, from the book's own vocabulary.</b> Closes <a href="comms.html">T12</a>. A new <code>admin/build/gen_cover.py</code> produces <a href="../book/cover/front.svg">the front cover as SVG</a> — reusable anywhere on the site, and now shown on <a href="../book/index.html">the book page</a> — and the full KDP print wrap as a vector PDF: back cover, spine and front with 0.125″ bleed, <b>the spine width computed from the interior's page count</b> (119 pages → 0.268″) and enforced by the gate: if the book grows and the cover is not regenerated, the build fails. Palette is the site's family at night — deep teal ground, cream serif, amber accents.<br><br><b>The cover graph is a true subgraph, not decoration</b> — the correction this cover exists to make over the AI-generated draft: seven nodes and six edges in the book's published vocabulary (<code>backed_by</code>, <code>gives_rise_to</code> ×2, <code>impairs</code>, <code>protected_by</code>, <code>accepted_by</code>), every arrow reading as its sentence, the Risk ring in exposure amber, and one ghosted, dashed edge to an <em>unanswered</em> node — the palette rule the book teaches, applied to its own cover. Back cover carries the epigraph, the claim/grammar/proof, the projection note and a barcode clear zone at KDP's position; the spine reads top-to-bottom. Wrap geometry verified from the printed PDF's MediaBox (12.51″×9.25″, within 0.005″ of spec — Chromium pixel rounding, inside KDP tolerance).</td>
+      </tr>
+      <tr>
         <td class="vnum">v0.3.0</td>
         <td>21 August 2026</td>
         <td><b>The chapter text moves to markdown — a major, because the authoring model changed.</b> Founder direction: with editors joining, the book's text needs to live in markdown, where changes are written and tracked cleanly. All sixteen chapters are now authored in <code>content/*.md</code> and rendered into the site pages by a new <code>admin/build/gen_pages.py</code> — CommonMark plus a house grammar: <code>::: note / warn / claim / quote / agent / ladder / meta</code> directives, a <code>```path</code> fence whose syntax is the corpus's own arrow notation (<code>[Fact] -backed_by-&gt; [Evidence]</code>), <code>```mermaid</code> for rendered diagrams, explicit heading anchors, and embedded HTML as the escape hatch for the components the grammar does not cover yet (tracked as <b>T16</b>, alongside cytoscape / d3 / viz.js rendering for in-chapter graphs). Each chapter page links its markdown twin, and the markdown is public at <code>/content/&lt;chapter&gt;.md</code>.<br><br><b>The chain is now three links with one source of truth — markdown → pages → book — and the gate checks both links</b>: new check 7 fails the build if a page lags its markdown <em>or</em> a page is edited behind its markdown's back; the existing book check fails if the book lags the pages. <b>Migration verified, not assumed</b>: every chapter round-tripped text-identical (16/16, whitespace-normalised), and a component census confirmed every note, claim, quote, pathline, ladder, table and anchor survived — the one delta being a comparison table that gained a scroll container it should have had. The migration script (<code>html2md.py</code>) stays in the repository as provenance, marked never-run-again.</td>
@@ -161,7 +166,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.0</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.1</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

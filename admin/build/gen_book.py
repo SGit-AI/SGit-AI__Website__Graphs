@@ -31,8 +31,7 @@ Three modes, one source:
                        folios bottom-outside, running heads (book title verso,
                        chapter title recto), justified and hyphenated,
                        monochrome, no bleed — the standard technical-book /
-                       KDP paperback format, cover excluded (a cover is a
-                       separate artefact). Falls back to Chromium (same trim,
+                       KDP paperback format. Falls back to Chromium (same trim,
                        no folios or contents page numbers) when WeasyPrint is
                        unavailable; committed, because CI has neither.
 
@@ -146,8 +145,7 @@ ABOUT = f"""
   <b><a href="{SCREEN_PDF_NAME}">The screen edition</a></b> is the site's own design at
   US Letter — the one to read on a tablet. <b><a href="{PDF_NAME}">The print edition</a></b>
   is not a printout of the web pages — it is a <b>print interior</b> in the standard
-  technical-book format, ready for print-on-demand (KDP and equivalents), cover
-  excluded:</p>
+  technical-book format, ready for print-on-demand (KDP and equivalents):</p>
   <ul>
     <li><b>6&Prime; × 9&Prime; trim</b>, the standard trade size, with <b>no bleed</b> —
     nothing runs to the page edge.</li>
@@ -162,13 +160,18 @@ ABOUT = f"""
     <li><b>Justified, hyphenated, monochrome</b>, with every font embedded. Colour
     exists only in the screen editions; ink is black.</li>
   </ul>
-  <p>Two things are deliberately <em>not</em> here. <b>A cover</b> — a print cover is a
-  separate artefact sized to trim plus spine plus bleed, where the spine width depends
-  on the final page count; it is tracked on <a href="{HOST}/admin/comms.html">the comms
-  board</a> rather than half-done here. And <b>a Kindle edition</b> — a fixed-layout PDF
-  is the wrong upload for Kindle in every case; the right artefact is a reflowable EPUB,
-  which this pipeline could generate from the same chapters, and which is queued rather
-  than pretended to.</p>
+  <p><b>The cover is generated alongside the interior</b> — as SVG, by
+  <code>gen_cover.py</code>: <a href="cover/front.svg">the front cover</a> (the artwork on
+  this page), and <a href="cover/meaning-through-connectivity-cover.pdf">the full print
+  wrap</a> — back, spine and front with bleed — whose spine width is computed from the
+  interior's page count, so when the book grows the spine follows and the build fails if
+  it does not. The graph on the cover is not decoration: it is a true subgraph in the
+  book's own edge vocabulary, six edges reading as sentences and one ghosted, unanswered
+  edge — the palette rule the book teaches, applied to its own cover.</p>
+  <p>One thing is deliberately <em>not</em> here: <b>a Kindle edition</b> — a fixed-layout
+  PDF is the wrong upload for Kindle in every case; the right artefact is a reflowable
+  EPUB, which this pipeline could generate from the same chapters, and which is queued
+  rather than pretended to.</p>
   <p class="small dim">Edition: site {VERSION}, {DATE}. All content is released under the
   Creative Commons Attribution 4.0 International licence (CC BY 4.0). The raw source
   documents behind every chapter are published at
@@ -374,6 +377,10 @@ idx = head("index.html", f"{TITLE} — the graphs.sgit.ai book",
            "own pages — the book is a projection, and CI fails if they drift.",
            og_type="book")
 idx += cover()
+idx += '''<div class="noprint" style="text-align:center;margin:-.4rem 0 1.6rem">
+  <img class="coverimg" src="cover/front.svg" alt="Meaning Through Connectivity — the book cover: a graph whose labelled edges read as sentences">
+</div>
+'''
 idx += f'''<div class="ctas noprint" style="margin:-.6rem 0 2.4rem">
   <a class="cta1" href="{CH_FILES[1]}">Start reading →</a>
   <a class="cta2" href="single.html">The whole book in one page →</a>

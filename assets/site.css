@@ -451,3 +451,7 @@ main.doc.bookch h1{margin-top:.25rem}
   main.doc.chap{page-break-before:always;padding-top:0}
   .agent,.docmeta,.pathline{break-inside:avoid}
 }
+
+/* the book cover, shown on /book/ and reusable anywhere on the site */
+img.coverimg{width:300px;max-width:86%;border-radius:8px;border:1px solid var(--line);
+  box-shadow:0 16px 44px rgba(16,17,20,.28)}

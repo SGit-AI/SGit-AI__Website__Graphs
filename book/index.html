@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.1</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -92,8 +92,11 @@
   <p class="bsub">A discipline of graphs in which the edges carry the meaning — the claim, the grammar, the full argument, and the worked proof.</p>
   <blockquote>“in our graph we do not use properties, because properties do not have meaning, they are just words; we capture meaning through connectivity.”</blockquote>
   <p class="byline">Dinis Cruz, with the SG/Send agentic team</p>
-  <p class="ed">First edition · site v0.3.0 · 21 August 2026 · CC BY 4.0</p>
+  <p class="ed">First edition · site v0.3.1 · 21 August 2026 · CC BY 4.0</p>
 </header>
+<div class="noprint" style="text-align:center;margin:-.4rem 0 1.6rem">
+  <img class="coverimg" src="cover/front.svg" alt="Meaning Through Connectivity — the book cover: a graph whose labelled edges read as sentences">
+</div>
 <div class="ctas noprint" style="margin:-.6rem 0 2.4rem">
   <a class="cta1" href="ch-01-why-graphs-at-all.html">Start reading →</a>
   <a class="cta2" href="single.html">The whole book in one page →</a>
@@ -133,8 +136,7 @@
   <b><a href="meaning-through-connectivity-screen.pdf">The screen edition</a></b> is the site's own design at
   US Letter — the one to read on a tablet. <b><a href="meaning-through-connectivity.pdf">The print edition</a></b>
   is not a printout of the web pages — it is a <b>print interior</b> in the standard
-  technical-book format, ready for print-on-demand (KDP and equivalents), cover
-  excluded:</p>
+  technical-book format, ready for print-on-demand (KDP and equivalents):</p>
   <ul>
     <li><b>6&Prime; × 9&Prime; trim</b>, the standard trade size, with <b>no bleed</b> —
     nothing runs to the page edge.</li>
@@ -149,14 +151,19 @@
     <li><b>Justified, hyphenated, monochrome</b>, with every font embedded. Colour
     exists only in the screen editions; ink is black.</li>
   </ul>
-  <p>Two things are deliberately <em>not</em> here. <b>A cover</b> — a print cover is a
-  separate artefact sized to trim plus spine plus bleed, where the spine width depends
-  on the final page count; it is tracked on <a href="https://graphs.sgit.ai/admin/comms.html">the comms
-  board</a> rather than half-done here. And <b>a Kindle edition</b> — a fixed-layout PDF
-  is the wrong upload for Kindle in every case; the right artefact is a reflowable EPUB,
-  which this pipeline could generate from the same chapters, and which is queued rather
-  than pretended to.</p>
-  <p class="small dim">Edition: site v0.3.0, 21 August 2026. All content is released under the
+  <p><b>The cover is generated alongside the interior</b> — as SVG, by
+  <code>gen_cover.py</code>: <a href="cover/front.svg">the front cover</a> (the artwork on
+  this page), and <a href="cover/meaning-through-connectivity-cover.pdf">the full print
+  wrap</a> — back, spine and front with bleed — whose spine width is computed from the
+  interior's page count, so when the book grows the spine follows and the build fails if
+  it does not. The graph on the cover is not decoration: it is a true subgraph in the
+  book's own edge vocabulary, six edges reading as sentences and one ghosted, unanswered
+  edge — the palette rule the book teaches, applied to its own cover.</p>
+  <p>One thing is deliberately <em>not</em> here: <b>a Kindle edition</b> — a fixed-layout
+  PDF is the wrong upload for Kindle in every case; the right artefact is a reflowable
+  EPUB, which this pipeline could generate from the same chapters, and which is queued
+  rather than pretended to.</p>
+  <p class="small dim">Edition: site v0.3.1, 21 August 2026. All content is released under the
   Creative Commons Attribution 4.0 International licence (CC BY 4.0). The raw source
   documents behind every chapter are published at
   <a href="https://graphs.sgit.ai/documents/index.html">graphs.sgit.ai/documents/</a>.</p>
@@ -198,7 +205,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.0</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.1</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

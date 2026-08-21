@@ -35,7 +35,7 @@ Live site: https://graphs.sgit.ai (GitHub Pages, deployed from `dev`).
   chapter pages with a left table of contents, one single page, and two PDF editions
   regenerated together from the same chapters: a print interior (6″×9″, mirrored gutters,
   folios, paginated contents — typeset by WeasyPrint from `book/print.html`; KDP-ready,
-  cover excluded) and a screen edition (Chromium's print of `single.html` at US Letter,
+  cover included) and a screen edition (Chromium's print of `single.html` at US Letter,
   in the site's own design). Each carries the site version on its cover.
   `book/manifest.json` records source hashes; the gate fails if the book goes stale
 - `glossary/` — every technical term with a plain-English alternative beside it
@@ -50,7 +50,9 @@ Live site: https://graphs.sgit.ai (GitHub Pages, deployed from `dev`).
 - `admin/build/chrome.py` — the single definition of nav and footer, applied across every page
 - `admin/build/gen_documents.py` — generates the `documents/` reader pages from `briefs/`
 - `admin/build/gen_llms_full.py` — generates `llms-full.txt`
-- `admin/build/gen_book.py` — generates `book/` and its PDF
+- `admin/build/gen_book.py` — generates `book/` and its PDFs
+- `admin/build/gen_cover.py` — generates the cover: `book/cover/front.svg` (web-reusable)
+  and the full KDP wrap PDF, spine width computed from the interior's page count
 - `admin/build/validate.js` — the pre-release gate
 - `assets/site.css` — shared stylesheet (sgit.ai design language)
 
@@ -67,12 +69,14 @@ under `briefs/`.
 3. `python3 admin/build/gen_documents.py` — if a document was added.
 4. `python3 admin/build/gen_llms_full.py` — if a document or `llms.txt` changed.
 5. `python3 admin/build/gen_book.py` — always: the gate fails on a stale book. Also
-   retypesets the PDF (`pip install weasyprint`; falls back to Chromium at the same trim
+   retypesets both PDFs (`pip install weasyprint`; falls back to Chromium at the same trim
    size, minus folios and contents page numbers).
-6. `python3 admin/build/chrome.py` — propagates the version badge and any nav/footer change to
+6. `python3 admin/build/gen_cover.py` — after gen_book: recomputes the spine from the
+   interior's page count and re-prints the cover wrap. The gate fails if they disagree.
+7. `python3 admin/build/chrome.py` — propagates the version badge and any nav/footer change to
    every page, and stamps the version into `llms.txt`, `llms-full.txt` and `index.md`.
-7. `node admin/build/validate.js`
-8. `git commit -am "site vX.Y.Z: ..." && git push origin dev`
+8. `node admin/build/validate.js`
+9. `git commit -am "site vX.Y.Z: ..." && git push origin dev`
 
 Every push to `dev` runs `.github/workflows/deploy-pages.yml`: validate → auto-tag (`vX.Y.Z`,
 verified against `version.txt` and the commit subject, next-minor enforced) → deploy to GitHub

@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.1</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -134,6 +134,7 @@
       <tr><td><code>admin/build/gen_pages.py</code></td><td>Renders <code>content/*.md</code> — the chapter text, and <b>the source of truth for the book</b> — into the site pages. CommonMark plus the house grammar: <code>::: note / warn / claim / quote / agent / ladder / meta</code> directives, a <code>```path</code> fence that reads in the corpus's own arrow notation, <code>```mermaid</code> for rendered diagrams, explicit heading anchors, and embedded HTML as the escape hatch for anything the grammar does not cover yet. Each page links its markdown twin; agents and editors can fetch <code>/content/&lt;chapter&gt;.md</code> directly.</td></tr>
       <tr><td><code>admin/build/html2md.py</code></td><td>The one-shot migration that lifted the hand-written chapter HTML into <code>content/</code>, kept as provenance. <b>Never run it again</b> — it would overwrite editorial work with a lift of the generated pages.</td></tr>
       <tr><td><code>admin/build/gen_book.py</code></td><td>Generates <a href="../book/index.html">the book</a> — chapter pages with a persistent table of contents, the single page, <code>book/print.html</code> (the print-interior source with its front matter and paginated contents), the manifest the gate checks, and <b>both PDF editions</b> — the print interior (WeasyPrint, 6″×9″, mirrored gutters, folios, running heads; Chromium fallback at the same trim, minus the apparatus, and it says so) and the screen edition (Chromium's print of <code>single.html</code> at US Letter, in the site's own design). Both are committed, because CI has neither WeasyPrint nor a browser; both are stamped with the site version, and the gate refuses a release if either lags.</td></tr>
+      <tr><td><code>admin/build/gen_cover.py</code></td><td>Generates <a href="../book/cover/front.svg">the cover</a> as SVG — the front for the web, and the full KDP wrap (back + spine + front, with bleed) printed to <a href="../book/cover/meaning-through-connectivity-cover.pdf">a vector PDF</a>. The spine width is computed from the interior's page count, and the gate fails a release where the two disagree — a book that grows recomputes its own spine. The cover graph is a true subgraph in the book's edge vocabulary, arrows reading as sentences, one ghosted edge for the unanswered.</td></tr>
       <tr><td><code>admin/build/validate.js</code></td><td>The gate. Node, no dependencies.</td></tr>
       <tr><td><code>assets/site.css</code></td><td>The shared stylesheet, in the sgit.ai design language, plus this site's components: the altitude doors, the proof strip, the agent block, and the semantic edge palette — amber is exposure, green is assurance, ghosted is unanswered.</td></tr>
       <tr><td><code>assets/nav.js</code>, <code>assets/mdreader.js</code></td><td>The phone menu, and the in-page markdown reader. Both degrade: if neither loads, every nav group label is still a link to a real page and every document is still reachable as raw markdown.</td></tr>
@@ -147,6 +148,7 @@
     <li>Bump <code>admin/build/version.txt</code> (once), add a row to <a href="versions.html">the release history</a>, update <a href="comms.html">comms</a>.</li>
     <li><code>python3 admin/build/gen_documents.py</code> — if a document was added.</li>
     <li><code>python3 admin/build/gen_book.py</code> — always: the gate fails on a stale book. Regenerates the PDF too.</li>
+    <li><code>python3 admin/build/gen_cover.py</code> — after gen_book: recomputes the spine from the page count and re-prints the wrap.</li>
     <li><code>python3 admin/build/chrome.py</code> — propagates the badge and any nav or footer change everywhere.</li>
     <li><code>node admin/build/validate.js</code> — must pass.</li>
     <li><code>git commit -am "site vX.Y.Z: …" &amp;&amp; git push origin dev</code>.</li>
@@ -179,7 +181,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.0</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.1</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

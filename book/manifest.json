@@ -1,5 +1,5 @@
 {
-  "version": "v0.3.0",
+  "version": "v0.3.1",
   "title": "Meaning Through Connectivity",
   "chapters": [
     {
@@ -135,16 +135,30 @@
     {
       "file": "meaning-through-connectivity.pdf",
       "edition": "print interior 6x9",
-      "version": "v0.3.0",
+      "version": "v0.3.1",
       "pages": 119,
       "typesetter": "weasyprint 69.0"
     },
     {
       "file": "meaning-through-connectivity-screen.pdf",
       "edition": "screen (US Letter)",
-      "version": "v0.3.0",
+      "version": "v0.3.1",
       "pages": 82,
       "typesetter": "chromium"
     }
-  ]
+  ],
+  "cover": {
+    "version": "v0.3.1",
+    "pages_basis": 119,
+    "spine_in": 0.268,
+    "wrap_in": [
+      12.518,
+      9.25
+    ],
+    "files": [
+      "cover/front.svg",
+      "cover/wrap.svg",
+      "cover/meaning-through-connectivity-cover.pdf"
+    ]
+  }
 }

@@ -205,6 +205,21 @@ if (!fs.existsSync(bookManifestPath)) {
     }
   }
   // both editions ship on every release: the print interior and the screen PDF
+  // the cover is generated from the interior: same version, spine from its pages
+  if (!book.cover) {
+    errors.push('book/manifest.json has no cover entry — run gen_cover.py after gen_book.py');
+  } else {
+    if (book.cover.version !== VERSION) {
+      errors.push(`cover was generated at ${book.cover.version}, site is ${VERSION} — run gen_cover.py`);
+    }
+    const interior = (book.pdfs || []).find(e => e.file === 'meaning-through-connectivity.pdf');
+    if (interior && book.cover.pages_basis !== interior.pages) {
+      errors.push(`cover spine was computed from ${book.cover.pages_basis} pages but the interior is ${interior.pages} — run gen_cover.py`);
+    }
+    for (const f of book.cover.files || []) {
+      if (!fs.existsSync(path.join(ROOT, 'book', f))) errors.push(`cover file missing: book/${f}`);
+    }
+  }
   const REQUIRED_PDFS = ['meaning-through-connectivity.pdf',
                          'meaning-through-connectivity-screen.pdf'];
   const listed = (book.pdfs || []).map(e => e.file);
