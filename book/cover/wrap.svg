@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1251.8 925.0">
+<!-- full KDP wrap at site v0.3.3: bleed 0.125in, spine 0.2680in -->
+<defs>
+  <linearGradient id="bgw" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#0d3a34"/><stop offset="1" stop-color="#071f1c"/>
+  </linearGradient>
+  <marker id="arrw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7"
+          markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="rgba(247,244,236,0.75)"/>
+  </marker>
+  <marker id="arrgw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7"
+          markerHeight="7" orient="auto-start-reverse">
+    <path d="M0,0 L10,5 L0,10 z" fill="rgba(247,244,236,0.28)"/>
+  </marker>
+  <filter id="gloww" x="-80%" y="-80%" width="260%" height="260%">
+    <feGaussianBlur stdDeviation="3.2"/>
+  </filter>
+</defs>
+<rect width="1251.8" height="925.0" fill="url(#bgw)"/>
+<g transform="translate(12.5,12.5)"><g transform="translate(0,0)" opacity="0.55">
+<line x1="40" y1="120" x2="250" y2="60" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="250" y1="60" x2="520" y2="130" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="520" y1="130" x2="570" y2="320" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="40" y1="120" x2="30" y2="380" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="30" y1="380" x2="300" y2="300" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="300" y1="300" x2="570" y2="320" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="570" y1="320" x2="560" y2="560" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="560" y1="560" x2="580" y2="840" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="30" y1="380" x2="40" y2="620" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="40" y1="620" x2="200" y2="880" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="200" y1="880" x2="580" y2="840" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="250" y1="60" x2="420" y2="40" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="420" y1="40" x2="520" y2="130" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="40" y1="620" x2="90" y2="850" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="90" y1="850" x2="200" y2="880" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="300" y1="300" x2="560" y2="560" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<circle cx="40" cy="120" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="250" cy="60" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="520" cy="130" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="570" cy="320" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="30" cy="380" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="300" cy="300" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="560" cy="560" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="40" cy="620" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="580" cy="840" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="200" cy="880" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="420" cy="40" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="90" cy="850" r="2.2" fill="rgba(247,244,236,0.09)"/>
+</g>
+<text x="60" y="128" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="22" fill="#f7f4ec">“in our graph we do not use properties,</text>
+<text x="60" y="162" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="22" fill="#f7f4ec">because properties do not have meaning,</text>
+<text x="60" y="196" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="22" fill="#f7f4ec">they are just words; we capture</text>
+<text x="60" y="230" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="22" fill="#f7f4ec">meaning through connectivity.”</text>
+<text x="60" y="272" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="11.5" letter-spacing="2" fill="rgba(247,244,236,0.55)">&#8212; DINIS CRUZ, 26 JUNE 2026</text>
+<text x="60" y="310" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="2.5" fill="#e2a24f">THE CLAIM</text>
+<text x="60" y="336" font-family="Georgia, 'Liberation Serif', serif" font-size="15.5" fill="rgba(247,244,236,0.88)">A node is just a node. The same value, differently</text>
+<text x="60" y="359" font-family="Georgia, 'Liberation Serif', serif" font-size="15.5" fill="rgba(247,244,236,0.88)">connected, means different things: the difference is</text>
+<text x="60" y="382" font-family="Georgia, 'Liberation Serif', serif" font-size="15.5" fill="rgba(247,244,236,0.88)">not in the value, it is in the connectivity.</text>
+<text x="60" y="419" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="2.5" fill="#e2a24f">THE GRAMMAR</text>
+<text x="60" y="445" font-family="Georgia, 'Liberation Serif', serif" font-size="15.5" fill="rgba(247,244,236,0.88)">Every edge is a verb with a distinct inverse. Paths</text>
+<text x="60" y="468" font-family="Georgia, 'Liberation Serif', serif" font-size="15.5" fill="rgba(247,244,236,0.88)">read as sentences. And never render the whole graph:</text>
+<text x="60" y="491" font-family="Georgia, 'Liberation Serif', serif" font-size="15.5" fill="rgba(247,244,236,0.88)">render the result of a query.</text>
+<text x="60" y="528" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="12.5" font-weight="700" letter-spacing="2.5" fill="#e2a24f">THE PROOF</text>
+<text x="60" y="554" font-family="Georgia, 'Liberation Serif', serif" font-size="15.5" fill="rgba(247,244,236,0.88)">Real worked graphs with real numbers, including</text>
+<text x="60" y="577" font-family="Georgia, 'Liberation Serif', serif" font-size="15.5" fill="rgba(247,244,236,0.88)">three live vaults you can open and count.</text>
+<text x="60" y="614" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="14.5" fill="rgba(247,244,236,0.6)">Written by Dinis Cruz with a team of AI agents,</text>
+<text x="60" y="635" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="14.5" fill="rgba(247,244,236,0.6)">from voice memos developed into 1,300+ briefs</text>
+<text x="60" y="656" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="14.5" fill="rgba(247,244,236,0.6)">across a 3,300-document corpus. The living version</text>
+<text x="60" y="677" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="14.5" fill="rgba(247,244,236,0.6)">is graphs.sgit.ai; this book is generated from it,</text>
+<text x="60" y="698" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="14.5" fill="rgba(247,244,236,0.6)">and cannot drift from it.</text>
+<text x="60" y="719" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="11.5" font-weight="700" letter-spacing="2" fill="#e2a24f">FIRST EDITION &#183; SITE V0.3.3 &#183; 21 AUGUST 2026</text>
+<text x="60" y="738" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="13" fill="rgba(247,244,236,0.7)">The first of many: a new edition is published</text>
+<text x="60" y="757" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="13" fill="rgba(247,244,236,0.7)">each time the content, its examples and its</text>
+<text x="60" y="776" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="13" fill="rgba(247,244,236,0.7)">evidence make a major step.</text>
+<g transform="translate(60,798)"><circle cx="16.0" cy="16.0" r="16.0" fill="none" stroke="#f7f4ec" stroke-width="2.2"/><text x="16.0" y="21.5" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-weight="800" font-size="15.0" fill="#f7f4ec">CC</text><circle cx="55.0" cy="16.0" r="16.0" fill="none" stroke="#f7f4ec" stroke-width="2.2"/><circle cx="55.0" cy="10.5" r="3.6" fill="#f7f4ec"/><path d="M 49.5 25.0 v-6.5 a 5.5 5.5 0 0 1 11.0 0 v6.5 z" fill="#f7f4ec"/></g>
+<text x="140" y="810" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1" fill="#f7f4ec">CC BY 4.0</text>
+<text x="140" y="827" font-family="Georgia, 'Liberation Serif', serif" font-size="11.5" fill="rgba(247,244,236,0.75)">Creative Commons Attribution 4.0</text>
+<text x="140" y="843" font-family="Georgia, 'Liberation Serif', serif" font-size="11.5" fill="rgba(247,244,236,0.75)">International licence. Share and adapt</text>
+<text x="140" y="859" font-family="Georgia, 'Liberation Serif', serif" font-size="11.5" fill="rgba(247,244,236,0.75)">freely, for any purpose, with credit.</text>
+<text x="60" y="871" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="10.5" letter-spacing="2.5" fill="rgba(247,244,236,0.5)">THE SGIT PROJECT &#183; GRAPHS.SGIT.AI</text>
+<rect x="375" y="755" width="200" height="120" rx="6" fill="#ffffff"/></g>
+<g transform="rotate(90 625.9 462.5)"><text x="625.9" y="467.5" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="14.3" font-weight="600" letter-spacing="2.5" fill="#f7f4ec">MEANING THROUGH CONNECTIVITY<tspan fill="rgba(247,244,236,0.6)">&#160;&#160;&#183;&#160;&#160;</tspan><tspan fill="#e2a24f">DINIS CRUZ</tspan></text></g>
+<g transform="translate(639.2988,12.5)"><g transform="translate(0,0)" opacity="0.55">
+<line x1="40" y1="120" x2="250" y2="60" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="250" y1="60" x2="520" y2="130" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="520" y1="130" x2="570" y2="320" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="40" y1="120" x2="30" y2="380" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="30" y1="380" x2="300" y2="300" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="300" y1="300" x2="570" y2="320" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="570" y1="320" x2="560" y2="560" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="560" y1="560" x2="580" y2="840" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="30" y1="380" x2="40" y2="620" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="40" y1="620" x2="200" y2="880" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="200" y1="880" x2="580" y2="840" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="250" y1="60" x2="420" y2="40" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="420" y1="40" x2="520" y2="130" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="40" y1="620" x2="90" y2="850" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="90" y1="850" x2="200" y2="880" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<line x1="300" y1="300" x2="560" y2="560" stroke="rgba(247,244,236,0.05)" stroke-width="1"/>
+<circle cx="40" cy="120" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="250" cy="60" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="520" cy="130" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="570" cy="320" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="30" cy="380" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="300" cy="300" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="560" cy="560" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="40" cy="620" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="580" cy="840" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="200" cy="880" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="420" cy="40" r="2.2" fill="rgba(247,244,236,0.09)"/>
+<circle cx="90" cy="850" r="2.2" fill="rgba(247,244,236,0.09)"/>
+</g>
+<text x="300.0" y="82" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="5.5" fill="rgba(247,244,236,0.85)">GRAPHS<tspan fill="#e2a24f">.SGIT.AI</tspan></text>
+<text x="300.0" y="192" text-anchor="middle" font-family="Georgia, 'Liberation Serif', serif" font-size="80" fill="#f7f4ec">Meaning</text>
+<text x="300.0" y="272" text-anchor="middle" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="80" fill="#e2a24f">Through</text>
+<text x="300.0" y="352" text-anchor="middle" font-family="Georgia, 'Liberation Serif', serif" font-size="76" fill="#f7f4ec">Connectivity</text>
+<line x1="150" y1="388" x2="286.0" y2="388" stroke="rgba(247,244,236,0.35)" stroke-width="1"/>
+<line x1="314.0" y1="388" x2="450" y2="388" stroke="rgba(247,244,236,0.35)" stroke-width="1"/>
+<rect x="296.0" y="384" width="8" height="8" transform="rotate(45 300.0 388)" fill="#e2a24f"/>
+<text x="300.0" y="424" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="14.5" letter-spacing="2" fill="rgba(247,244,236,0.85)">A DISCIPLINE OF GRAPHS IN WHICH</text>
+<text x="300.0" y="448" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="14.5" letter-spacing="2" fill="rgba(247,244,236,0.85)">THE EDGES CARRY THE MEANING</text>
+<text x="300.0" y="478" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="12.5" letter-spacing="1.5" fill="rgba(247,244,236,0.55)">THE CLAIM &#183; THE GRAMMAR &#183; THE ARGUMENT &#183; THE PROOF</text>
+<text x="300.0" y="526" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4" fill="#f7f4ec">DINIS CRUZ</text>
+<text x="300.0" y="550" text-anchor="middle" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="15" fill="rgba(247,244,236,0.65)">with the SG/Send agentic team</text>
+<line x1="160.3" y1="602.9" x2="103.7" y2="697.4" stroke="rgba(247,244,236,0.55)" stroke-width="1.4" marker-end="url(#arrw)"/><text x="143.2" y="656.8" transform="rotate(300.9 143.2 656.8)" text-anchor="middle" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="14.5" fill="#e2a24f">backed_by</text>
+<line x1="182.3" y1="594.6" x2="313.8" y2="636.8" stroke="rgba(247,244,236,0.55)" stroke-width="1.4" marker-end="url(#arrw)"/><text x="244.1" y="600.8" transform="rotate(17.8 244.1 600.8)" text-anchor="middle" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="14.5" fill="#e2a24f">gives_rise_to</text>
+<line x1="343.7" y1="635.9" x2="458.5" y2="584.9" stroke="rgba(247,244,236,0.55)" stroke-width="1.4" marker-end="url(#arrw)"/><text x="407.8" y="619.4" transform="rotate(-24.0 407.8 619.4)" text-anchor="middle" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="14.5" fill="#e2a24f">gives_rise_to</text>
+<line x1="464.4" y1="589.5" x2="308.9" y2="776.9" stroke="rgba(247,244,236,0.55)" stroke-width="1.4" marker-end="url(#arrw)"/><text x="388.9" y="700.9" transform="rotate(309.7 388.9 700.9)" text-anchor="middle" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="14.5" fill="#e2a24f">impairs</text>
+<line x1="283.2" y1="792.5" x2="134.8" y2="817.2" stroke="rgba(247,244,236,0.55)" stroke-width="1.4" marker-end="url(#arrw)"/><text x="211.1" y="817.7" transform="rotate(350.5 211.1 817.7)" text-anchor="middle" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="14.5" fill="#e2a24f">protected_by</text>
+<line x1="478.9" y1="592.2" x2="518.5" y2="707.9" stroke="rgba(247,244,236,0.55)" stroke-width="1.4" marker-end="url(#arrw)"/><text x="510.7" y="655.1" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="14.5" fill="#e2a24f">accepted_by</text>
+<line x1="311.9" y1="795.6" x2="432.2" y2="843.7" stroke="rgba(247,244,236,0.28)" stroke-width="1.3" stroke-dasharray="4 5" marker-end="url(#arrgw)"/>
+<circle cx="448" cy="850" r="9" fill="none" stroke="rgba(247,244,236,0.3)" stroke-width="2" stroke-dasharray="3 4"/>
+<text x="468" y="855" font-family="Georgia, 'Liberation Serif', serif" font-style="italic" font-size="13.5" fill="rgba(247,244,236,0.45)">unanswered</text>
+<circle cx="168" cy="590" r="11" fill="none" stroke="rgba(247,244,236,0.9)" stroke-width="2.6" filter="url(#gloww)" opacity=".9"/>
+<circle cx="168" cy="590" r="11" fill="#071f1c" stroke="rgba(247,244,236,0.9)" stroke-width="2.6"/>
+<text x="148" y="595" text-anchor="end" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="15.5" font-weight="600" fill="rgba(247,244,236,0.92)">Fact</text>
+<circle cx="95" cy="712" r="11" fill="none" stroke="rgba(247,244,236,0.9)" stroke-width="2.6" filter="url(#gloww)" opacity=".9"/>
+<circle cx="95" cy="712" r="11" fill="#071f1c" stroke="rgba(247,244,236,0.9)" stroke-width="2.6"/>
+<text x="95" y="744" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="15.5" font-weight="600" fill="rgba(247,244,236,0.92)">Evidence</text>
+<circle cx="330" cy="642" r="11" fill="none" stroke="rgba(247,244,236,0.9)" stroke-width="2.6" filter="url(#gloww)" opacity=".9"/>
+<circle cx="330" cy="642" r="11" fill="#071f1c" stroke="rgba(247,244,236,0.9)" stroke-width="2.6"/>
+<text x="330" y="674" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="15.5" font-weight="600" fill="rgba(247,244,236,0.92)">Vulnerability</text>
+<circle cx="474" cy="578" r="11" fill="none" stroke="#e2a24f" stroke-width="2.6" filter="url(#gloww)" opacity=".9"/>
+<circle cx="474" cy="578" r="11" fill="#071f1c" stroke="#e2a24f" stroke-width="2.6"/>
+<text x="474" y="556" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="15.5" font-weight="600" fill="rgba(247,244,236,0.92)">Risk</text>
+<circle cx="298" cy="790" r="11" fill="none" stroke="rgba(247,244,236,0.9)" stroke-width="2.6" filter="url(#gloww)" opacity=".9"/>
+<circle cx="298" cy="790" r="11" fill="#071f1c" stroke="rgba(247,244,236,0.9)" stroke-width="2.6"/>
+<text x="278" y="795" text-anchor="end" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="15.5" font-weight="600" fill="rgba(247,244,236,0.92)">Asset</text>
+<circle cx="118" cy="820" r="11" fill="none" stroke="rgba(247,244,236,0.9)" stroke-width="2.6" filter="url(#gloww)" opacity=".9"/>
+<circle cx="118" cy="820" r="11" fill="#071f1c" stroke="rgba(247,244,236,0.9)" stroke-width="2.6"/>
+<text x="118" y="852" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="15.5" font-weight="600" fill="rgba(247,244,236,0.92)">Control</text>
+<circle cx="524" cy="724" r="11" fill="none" stroke="rgba(247,244,236,0.9)" stroke-width="2.6" filter="url(#gloww)" opacity=".9"/>
+<circle cx="524" cy="724" r="11" fill="#071f1c" stroke="rgba(247,244,236,0.9)" stroke-width="2.6"/>
+<text x="524" y="756" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="15.5" font-weight="600" fill="rgba(247,244,236,0.92)">Owner</text>
+<text x="300.0" y="849" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="11" font-weight="600" letter-spacing="2.2" fill="#e2a24f">FIRST EDITION &#183; 21 AUGUST 2026</text>
+<text x="300.0" y="870" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="11.5" letter-spacing="3.5" fill="rgba(247,244,236,0.5)">THE SGIT PROJECT &#183; SITE V0.3.3</text></g>
+</svg>

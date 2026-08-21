@@ -52,6 +52,8 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
+# ...but the book's generated cover is content, not a coverage report
+!book/cover/
 
 # Translations
 *.mo

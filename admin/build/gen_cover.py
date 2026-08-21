@@ -36,6 +36,7 @@ ROOT = Path(__file__).resolve().parents[2]
 VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
 OUT = ROOT / "book" / "cover"
 PDF_NAME = "meaning-through-connectivity-cover.pdf"
+DATE = "21 August 2026"
 
 # --- geometry (1 unit = 1/100 in) ------------------------------------------
 PW, PH = 600, 900          # one 6x9 panel
@@ -177,6 +178,25 @@ def graph_svg(idp):
     return "\n".join(out)
 
 
+def cc_badge(x, y, scale=1.0):
+    """The CC BY mark, drawn: the CC circle and the attribution (person) circle,
+    used as Creative Commons intends — to state this work's licence."""
+    r = 16 * scale
+    s = f'<g transform="translate({x},{y})">'
+    # CC circle
+    s += (f'<circle cx="{r}" cy="{r}" r="{r}" fill="none" stroke="{CREAM}" stroke-width="{2.2*scale}"/>'
+          f'<text x="{r}" y="{r + 5.5*scale}" text-anchor="middle" font-family="{SANS}" '
+          f'font-weight="800" font-size="{15*scale}" fill="{CREAM}">CC</text>')
+    # BY (person) circle
+    ox = 2 * r + 7 * scale
+    cx = ox + r
+    s += f'<circle cx="{cx}" cy="{r}" r="{r}" fill="none" stroke="{CREAM}" stroke-width="{2.2*scale}"/>'
+    s += f'<circle cx="{cx}" cy="{r - 5.5*scale}" r="{3.6*scale}" fill="{CREAM}"/>'
+    s += (f'<path d="M {cx - 5.5*scale} {r + 9*scale} v-{6.5*scale} '
+          f'a {5.5*scale} {5.5*scale} 0 0 1 {11*scale} 0 v{6.5*scale} z" fill="{CREAM}"/>')
+    return s + '</g>'
+
+
 def front_content(idp):
     t = []
     t.append(mesh())
@@ -210,9 +230,14 @@ def front_content(idp):
              f'font-style="italic" font-size="15" fill="{cream(.65)}">with the SG/Send agentic team</text>')
     # the graph
     t.append(graph_svg(idp))
-    # publisher
-    t.append(f'<text x="{PW/2}" y="876" text-anchor="middle" font-family="{SANS}" '
-             f'font-size="12" letter-spacing="3.5" fill="{cream(.5)}">THE SGIT PROJECT</text>')
+    # edition + publisher: the version and date are stamped at generation, so
+    # every release that touches the content republishes as a dated edition
+    t.append(f'<text x="{PW/2}" y="849" text-anchor="middle" font-family="{SANS}" '
+             f'font-size="11" font-weight="600" letter-spacing="2.2" fill="{AMBER}">'
+             f'FIRST EDITION &#183; {DATE.upper()}</text>')
+    t.append(f'<text x="{PW/2}" y="870" text-anchor="middle" font-family="{SANS}" '
+             f'font-size="11.5" letter-spacing="3.5" fill="{cream(.5)}">'
+             f'THE SGIT PROJECT &#183; SITE {VERSION.upper()}</text>')
     return "\n".join(t)
 
 
@@ -248,7 +273,7 @@ def back_content():
         y += 34
     t.append(f'<text x="60" y="{y+8}" font-family="{SANS}" font-size="11.5" '
              f'letter-spacing="2" fill="{cream(.55)}">&#8212; DINIS CRUZ, 26 JUNE 2026</text>')
-    y += 52
+    y += 46
     blocks = [
         ("THE CLAIM", "A node is just a node. The same value, differently connected, "
          "means different things: the difference is not in the value, it is in "
@@ -266,8 +291,7 @@ def back_content():
             t.append(f'<text x="60" y="{y}" font-family="{SERIF}" font-size="15.5" '
                      f'fill="{cream(.88)}">{ln}</text>')
             y += 23
-        y += 18
-    y += 4
+        y += 14
     for ln in wrap("Written by Dinis Cruz with a team of AI agents, from voice "
                    "memos developed into 1,300+ briefs across a 3,300-document "
                    "corpus. The living version is graphs.sgit.ai; this book is "
@@ -275,8 +299,32 @@ def back_content():
         t.append(f'<text x="60" y="{y}" font-family="{SERIF}" font-style="italic" '
                  f'font-size="14.5" fill="{cream(.6)}">{ln}</text>')
         y += 21
-    t.append(f'<text x="60" y="856" font-family="{SANS}" font-size="11" '
-             f'letter-spacing="2.5" fill="{cream(.5)}">THE SGIT PROJECT &#183; CC BY 4.0</text>')
+    # the edition, stated as a promise: first of many, one per major step.
+    # Anchored to the running y so the authorship block above can never
+    # collide with it; the badge below starts at 798, which caps the stack.
+    ey = y
+    t.append(f'<text x="60" y="{ey}" font-family="{SANS}" font-size="11.5" '
+             f'font-weight="700" letter-spacing="2" fill="{AMBER}">'
+             f'FIRST EDITION &#183; SITE {VERSION.upper()} &#183; {DATE.upper()}</text>')
+    for ln in wrap("The first of many: a new edition is published each time the "
+                   "content, its examples and its evidence make a major step.", 46):
+        ey += 19
+        t.append(f'<text x="60" y="{ey}" font-family="{SERIF}" font-style="italic" '
+                 f'font-size="13" fill="{cream(.7)}">{ln}</text>')
+    # the licence, made unmissable: the CC BY mark plus its plain meaning.
+    # Caption lines stay short so nothing enters the barcode zone (x >= 350),
+    # and the last baseline stays inside the 0.25in trim-safe margin.
+    t.append(cc_badge(60, 798, scale=1.0))
+    t.append(f'<text x="140" y="810" font-family="{SANS}" font-size="13" '
+             f'font-weight="700" letter-spacing="1" fill="{CREAM}">CC BY 4.0</text>')
+    t.append(f'<text x="140" y="827" font-family="{SERIF}" font-size="11.5" '
+             f'fill="{cream(.75)}">Creative Commons Attribution 4.0</text>')
+    t.append(f'<text x="140" y="843" font-family="{SERIF}" font-size="11.5" '
+             f'fill="{cream(.75)}">International licence. Share and adapt</text>')
+    t.append(f'<text x="140" y="859" font-family="{SERIF}" font-size="11.5" '
+             f'fill="{cream(.75)}">freely, for any purpose, with credit.</text>')
+    t.append(f'<text x="60" y="871" font-family="{SANS}" font-size="10.5" '
+             f'letter-spacing="2.5" fill="{cream(.5)}">THE SGIT PROJECT &#183; GRAPHS.SGIT.AI</text>')
     # barcode clear zone: 2 x 1.2 in, 0.25 in from the trim corner — where KDP
     # actually prints its barcode; a zone placed further in gets overhung
     t.append(f'<rect x="{PW-25-200}" y="{PH-25-120}" width="200" height="120" rx="6" fill="#ffffff"/>')

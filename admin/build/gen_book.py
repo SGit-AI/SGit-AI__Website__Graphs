@@ -458,9 +458,10 @@ pp = f"""<!doctype html>
 </section>
 
 <section class="fm colophon">
-  <p><b>{TITLE}</b>, first edition, {DATE}. Generated from graphs.sgit.ai at site
-  {VERSION} by <code>admin/build/gen_book.py</code>; the site is the living version of
-  this text, and this book is a projection of it.</p>
+  <p><b>{TITLE}</b>, first edition, {DATE}, generated from graphs.sgit.ai at site
+  {VERSION} by <code>admin/build/gen_book.py</code>. The first of many: the site is the
+  living version of this text, and a new edition of this book is published each time
+  the content, its examples and its evidence make a major step.</p>
   <p>Written by Dinis Cruz together with a team of AI agents. The text was developed
   from the author's voice memos, recorded almost daily across six and a half months
   (February to August 2026) on thinking that goes back many years, into more than
