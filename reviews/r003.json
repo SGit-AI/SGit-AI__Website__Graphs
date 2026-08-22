@@ -6,8 +6,8 @@
   "source_kind": "voice memo (transcript preserved verbatim)",
   "source": "briefs/14__founder-review__decouple-evidence-decisions.md",
   "version_reviewed": "v0.3.12",
-  "state": "commented",
-  "state_note": "Commented: the agent has responded to every item. Two items landed in the same release that published this review, because they are review tooling rather than book content: the decisions register (item 4) and the enrichment threads on r001 and r002 (item 6). The three decisions this review opens are in the register above; the decoupling refactor and the case-study programme wait on them.",
+  "state": "discussing",
+  "state_note": "Commented: the agent has responded to every item. Two items landed in the same release that published this review, because they are review tooling rather than book content: the decisions register (item 4) and the enrichment threads on r001 and r002 (item 6). The three decisions this review opens are in the register above; the decoupling refactor and the case-study programme wait on them. The launch of issues-fs.sgit.ai on 22 August is external evidence for item 1 and splits item 3's programme into written case studies and distillations from sibling estates; decision D3 is revised accordingly.",
   "decisions": [
     {
       "n": 1,
@@ -34,9 +34,10 @@
     {
       "n": 3,
       "item": 3,
-      "question": "The case-study order: confirm or reorder the proposed sequence (the regulation graph vault, then Risk Graph Explorer, then browser isolation, then the sgraph.ai library-as-a-vault, then SGit, IssuesFS and EmailFS from the resolved sources), and supply the per-vault guidance the memo promises: which areas to go deeper on, what to screenshot, what evidence to capture. That guidance is ask N13 on the comms board.",
+      "question": "The case-study order: confirm or reorder the proposed sequence (the regulation graph vault, then Risk Graph Explorer, then browser isolation, then the sgraph.ai library-as-a-vault, then SGit, IssuesFS and EmailFS from the resolved sources), and supply the per-vault guidance the memo promises: which areas to go deeper on, what to screenshot, what evidence to capture. That guidance is ask N13 on the comms board. **Revised by the launch of issues-fs.sgit.ai:** the programme now has two kinds of entry, written case studies and distillations from sibling estates that already hold the depth (IssuesFS, EmailFS). The agent recommends taking the distillations first, since they are ready now and they test the provenance mechanism against sites that keep moving.",
       "options": [
-        "Confirm the order and supply guidance vault by vault",
+        "Distillations first (IssuesFS, EmailFS), then the written vault studies (recommended)",
+        "Confirm the original order and supply guidance vault by vault",
         "Reorder (say which first)"
       ],
       "state": "open"
@@ -56,7 +57,17 @@
         "book source of truth",
         "STYLE.md"
       ],
-      "state": "proposed"
+      "state": "discussing",
+      "thread": [
+        {
+          "date": "22 August 2026",
+          "from": "the agent, on the launch of issues-fs.sgit.ai",
+          "note": "External evidence for the decoupling, arriving the same day as the memo. Issues-FS published its own site on 22 August: a research estate at full granularity (a data model page, a DSL page, a CLI page, a shipped page with corrections, seven open questions) for a system this book covers in a handful of sentences. That is the split this item proposes, already happening across the network — and it makes the decoupling urgent rather than tidy. Without it, this book must either duplicate a sibling estate or stay thin about it; with it, the book distils and cites, and the estate carries the depth. The provenance edges of item 2 are what make the citation durable, since the sibling will keep moving.",
+          "sources": [
+            "[issues-fs.sgit.ai](https://issues-fs.sgit.ai/), published 22 August 2026, site v0.1.1"
+          ]
+        }
+      ]
     },
     {
       "n": 2,
@@ -88,7 +99,18 @@
         "site navigation",
         "the book's future evidence citations"
       ],
-      "state": "proposed"
+      "state": "discussing",
+      "thread": [
+        {
+          "date": "22 August 2026",
+          "from": "the agent, on the launch of issues-fs.sgit.ai",
+          "note": "The case-study programme now has **two kinds of entry**, and the distinction should be made before the order is confirmed. Some case studies must be **written** from repository sources (the three sgit.ai demo vaults, the team-as-a-graph). Others are now **distillations** from a sibling estate that already holds the granularity and will keep moving: EmailFS from sgraph.ai's protocol section, and now IssuesFS from issues-fs.sgit.ai. The second kind is cheaper, better sourced and more durable, but only if provenance is recorded, since a distillation of a live site drifts the moment the site ships. Recommendation for decision D3: take the distillations first (they are ready now and they prove the provenance mechanism on real, moving targets), then the written ones as the founder's per-vault guidance arrives.",
+          "sources": [
+            "[issues-fs.sgit.ai](https://issues-fs.sgit.ai/) — the IssuesFS entry becomes a distillation, not a write-up",
+            "[sgraph.ai's Email-FS-lite protocol section](https://sgraph.ai/en-gb/library/how-it-works/email-fs-lite.md)"
+          ]
+        }
+      ]
     },
     {
       "n": 4,

@@ -7,7 +7,7 @@
   "source": "briefs/12__founder-review__humans-and-agents.md",
   "version_reviewed": "v0.3.8",
   "state": "discussing",
-  "state_note": "In discussion: the librarian's resolution pack (brief 13) resolved item 4 outright, with the citation-network study identified (Greenberg, BMJ 2009) and the 10,000-hours sources named. The founder decisions (title allocation, pilot chapter, sequencing) remain open. A founder pointer added sgraph.ai's machine-readable layer as prior art for the agent toolbox (item 7). Review r003 (22 August) then reordered the combined sequencing: the evidence programme (vault case studies at full site granularity) precedes the identity release, and the decoupling of book from website is proposed as the enabling refactor. This review's open decisions are explicit in the register above. Addendum 01 (brief 15) then connected three items the original pack missed entirely: the book-as-graph pilot has foundational prior art (Compatibility Through Connectivity, 5 February 2026), the verification dogfood was designed as a practice sixteen months before this review proposed applying it (LLM as Execution Engine), and the chapter graphs gain an exploratory testing DSL.",
+  "state_note": "In discussion: the librarian's resolution pack (brief 13) resolved item 4 outright, with the citation-network study identified (Greenberg, BMJ 2009) and the 10,000-hours sources named. The founder decisions (title allocation, pilot chapter, sequencing) remain open. A founder pointer added sgraph.ai's machine-readable layer as prior art for the agent toolbox (item 7). Review r003 (22 August) then reordered the combined sequencing: the evidence programme (vault case studies at full site granularity) precedes the identity release, and the decoupling of book from website is proposed as the enabling refactor. This review's open decisions are explicit in the register above. Addendum 01 (brief 15) then connected three items the original pack missed entirely: the book-as-graph pilot has foundational prior art (Compatibility Through Connectivity, 5 February 2026), the verification dogfood was designed as a practice sixteen months before this review proposed applying it (LLM as Execution Engine), and the chapter graphs gain an exploratory testing DSL. The Issues-FS site (22 August) then supplied working sibling implementations of three items: the agent toolbox (item 7), the evidence layer's calibration (item 4) and the missing-pieces map (item 9).",
   "decisions": [
     {
       "n": 1,
@@ -124,6 +124,14 @@
             "[Greenberg, BMJ 2009, on PubMed](https://pubmed.ncbi.nlm.nih.gov/19622839/)",
             "Paying the fact creator: `briefs/07/31/projects-budgets-and-evidence/v0.33.54__strategy-brief__sg-send-paying-the-fact-creator-contextual-validation-not-truth-micropayments-for-correct-use.md` in the source repository"
           ]
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the agent, on the launch of issues-fs.sgit.ai",
+          "note": "A working model of the evidence layer, running on a sibling. The Issues-FS site separates what is installable from what is published-but-empty from what is unpublished, states test counts as measured (604 core, 94 CLI) against the \"475+\" and \"552+\" its own READMEs claim, and notes that the discrepancy runs the *helpful* way: \"the test count is higher than claimed, not lower\", and \"the code is in better shape than its documentation\". The lesson for this book's facts register is the direction of the correction: an evidence layer that only ever deflates claims is not calibrated, it is defensive.",
+          "sources": [
+            "[What ships](https://issues-fs.sgit.ai/shipped/index.html): 604 core tests in 45 files, 94 CLI tests in 7"
+          ]
         }
       ]
     },
@@ -200,6 +208,15 @@
             "[Machine-Readable Content](https://sgraph.ai/en-gb/library/how-it-works/machine-readable-content.md)",
             "[Agent and API Access Guide](https://sgraph.ai/en-gb/library/how-it-works/machine-readable-content/agent-access.md)"
           ]
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the agent, on the launch of issues-fs.sgit.ai",
+          "note": "The strongest prior art yet for the agent toolbox, and it is inside the family. Issues-FS ships **three agent-operable surfaces** and puts machine access in the tool rather than in a document: **all fourteen CLI commands take `--for-agent`** and return JSON. Its agent instruction is the toolbox's own design principle stated as policy: \"No HTTP endpoint exists in any published package. Before repeating any capability claim from an Issues-FS README, check it against /shipped/corrections.html.\" That is a toolbox entry that tells an agent what not to trust and where to verify, which is more useful than an index of what exists. Two lessons to carry: make the agent surface a flag on the thing itself rather than a parallel document, and give every claim a corrections address.",
+          "sources": [
+            "[The CLI](https://issues-fs.sgit.ai/cli/index.html) — fourteen commands, every one with `--for-agent`",
+            "[What ships](https://issues-fs.sgit.ai/shipped/index.html) and its corrections page"
+          ]
         }
       ]
     },
@@ -244,6 +261,14 @@
           "note": "[Review r003](r003.html) reshapes this sequencing at one point: after the standalone wins, the **evidence programme** runs before the identity release, not after it. The vault case studies land on the website at full granularity (enabled by the decoupling r003 item 1 proposes), and they are what feeds this review's evidence layer (item 4) and chapter graphs (item 6) with real bodies of evidence instead of placeholders. The identity release then distils from an estate that already holds the proof. The reshaped order is decision D3 in the register above, settled jointly with r001's D2.",
           "sources": [
             "[Review r003, items 1 and 3](r003.html)"
+          ]
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the agent, on the launch of issues-fs.sgit.ai",
+          "note": "The missing-pieces map has a working sibling implementation to copy rather than invent: Issues-FS publishes **seven open questions, unresolved**, alongside a corrections page for four false claims in its own upstream documentation. It is the same instinct as this site's comms board, applied to a codebase, and it settles a question this item left open — whether the map is a page or a state on the facts register. On the evidence of the sibling, a named page that a reader can be sent to does more work than a state buried in a register.",
+          "sources": [
+            "[The open questions](https://issues-fs.sgit.ai/network/index.html) — seven, published unresolved"
           ]
         }
       ]

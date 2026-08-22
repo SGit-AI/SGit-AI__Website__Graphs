@@ -1,5 +1,5 @@
 {
- "version": "v0.3.15",
+ "version": "v0.3.16",
  "root": "L1",
  "levels": [
   {
@@ -1228,6 +1228,16 @@
     "L3-6"
    ],
    "verdict": "Evidence for an open decision. Review r001 item 2 warns that retitling to Fractal Semantic Graphs without growing the fractal treatment puts a promise on the cover the interior underdelivers. The ladder turns that warning into a test: the title is right when the one-paragraph version of the book cannot be written without the word."
+  },
+  {
+   "kind": "cross-estate",
+   "title": "Two sibling sites publish the same graph with different numbers",
+   "detail": "This book reports the issue tracker's own graph as **71 nodes and 141 edges** in four places, adding \"edges stored bidirectionally\" in two of them. The Issues-FS site, published 22 August 2026, reports the same graph as **141 link entries across 71 nodes, for roughly 70 logical relationships**, because a link is written to both endpoints by design: one `link` command produces two entries. Both estates measured the same repository and neither is careless. The gap is a convention: this book counts a directed verb as an edge, which is its own grammar's rule that an inverse is not the same edge walked backwards, while the sibling counts relationships and says so. A reader who counts relationships and a reader who counts entries will disagree by a factor of two.",
+   "where": [
+    "L3-7",
+    "L3-12"
+   ],
+   "verdict": "Open, and the first finding to arrive from outside the book rather than from the climb. Proposed fix, for review r001 item 8: report both, as \"71 nodes, 141 link entries, roughly 70 relationships (each link is stored on both endpoints)\", which is truthful under either convention and teaches the denormalisation in passing. One reconciliation is still open and is ask N15: 141 is odd, so it does not divide cleanly into two-entry relationships, and only the sibling estate can say why."
   },
   {
    "kind": "control",

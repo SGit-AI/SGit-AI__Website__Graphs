@@ -568,3 +568,5 @@ a.altseg:hover{border-bottom-color:#0d5c50;background:linear-gradient(transparen
 .af-weight .rstate{color:#0d5c50;border-color:#9cc5be;background:#e9f3f1}
 .af-control{border-left:3px solid #cfcabc}
 .altverdict{margin:.5rem 0 .2rem;padding:.5rem .7rem;background:#f9f7f1;border-radius:8px}
+.af-cross-estate{border-left:3px solid #b45309}
+.af-cross-estate .rstate{color:#a06a14;border-color:#dfc394;background:#faf3e3}

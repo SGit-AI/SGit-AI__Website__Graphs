@@ -21,9 +21,8 @@
     if (!D.nodes[id]) { return; }
     cur = id;
     render();
-    if (push !== false) {
-      history.replaceState(null, '', '?n=' + encodeURIComponent(id));
-    }
+    if (push === false) { return; }   // initial load: leave any #hash anchor alone
+    history.replaceState(null, '', '?n=' + encodeURIComponent(id));
     host.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
