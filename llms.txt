@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.3.5 (21 August 2026). Published by the sgit project — participant
+Site version: v0.3.6 (21 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /briefs/ is the source of truth and carries the same licence.
 
@@ -236,6 +236,14 @@ pages** so the two cannot drift
   the actual cure for the problem that produced this site. N3 has been waiting since 10
   June 2026.
 - https://graphs.sgit.ai/admin/versions.html — release history.
+- https://graphs.sgit.ai/admin/publishing.html — the runbook for publishing the book:
+  KDP paperback step by step (our interior and wrap already match the spec), Leanpub
+  with our own files, Zenodo for a per-edition DOI, and the platforms deferred until
+  the EPUB exists. Platform numbers checked August 2026.
+- https://graphs.sgit.ai/admin/metadata.html — the book's metadata sheet: one source
+  for title, description, keywords, categories, physical spec (6"x9", white paper,
+  spine computed from the page count), pricing floors and rights (CC BY 4.0). Store
+  listings are projections of this page.
 - https://graphs.sgit.ai/about/participant.html — participant disclosure, the site-wide
   licence, and **four situations where this approach loses**: everyone already agrees and
   always will; you need the answer enforced rather than computed; the graph would be empty;

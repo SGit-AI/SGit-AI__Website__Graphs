@@ -71,6 +71,7 @@ NAV = [
         ("The documents", "documents/index.html"),
         ("Comms: tasks &amp; requests", "admin/comms.html"),
         ("Release history", "admin/versions.html"),
+        ("Publishing the book", "admin/publishing.html"),
         ("Admin &amp; engineering", "admin/index.html"),
         ("Where we lose", "about/participant.html"),
     ], ("documents/", "briefs/", "admin/", "about/")),
