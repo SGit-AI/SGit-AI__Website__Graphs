@@ -10,7 +10,10 @@
     return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
   function fmt(t) {
-    return esc(t).replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');
+    return esc(t)
+      .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>');
   }
 
   var STATES = {
@@ -48,6 +51,19 @@
           h.push('<div class="revn"><span class="revlbl">Needed before this lands</span><ul>' +
                  it.needs.map(function (n) { return '<li>' + fmt(n) + '</li>'; }).join('') +
                  '</ul></div>');
+        }
+        if (it.thread && it.thread.length) {
+          h.push('<div class="revth"><span class="revlbl">Thread</span>' +
+            it.thread.map(function (e) {
+              var s = '<div class="revte"><p class="revwho">' + esc(e.from) +
+                      ' · ' + esc(e.date) + '</p><p>' + fmt(e.note) + '</p>';
+              if (e.sources && e.sources.length) {
+                s += '<ul>' + e.sources.map(function (x) {
+                  return '<li>' + fmt(x) + '</li>';
+                }).join('') + '</ul>';
+              }
+              return s + '</div>';
+            }).join('') + '</div>');
         }
         if (it.impact && it.impact.length) {
           h.push('<p class="small dim">Touches: ' + it.impact.map(esc).join(' · ') + '</p>');

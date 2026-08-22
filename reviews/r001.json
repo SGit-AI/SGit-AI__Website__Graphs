@@ -6,8 +6,8 @@
   "source_kind": "voice memo (transcript preserved verbatim)",
   "source": "briefs/11__founder-review__first-reading.md",
   "version_reviewed": "v0.3.7",
-  "state": "commented",
-  "state_note": "The agent has commented on every item and changed nothing, per the workflow: changes land only after agreement, item by item. Screenshots taken during the reading are expected as attachments and will join the items they support.",
+  "state": "discussing",
+  "state_note": "In discussion: on 22 August the librarian of the source repository answered this review's needs (brief 13). Eleven of the twelve needs across r001 and r002 are met; only the reviewer's reading screenshots remain outstanding. The founder decisions are unchanged and open, with one reframed: the title choice is now three-way, because the concept already carries the published name G3.",
   "items": [
     {
       "n": 1,
@@ -26,8 +26,24 @@
       "comment": "Agree, and the reviewer has spotted a real imbalance: the fractal claim is currently one section (chapter 6, where it is called a precise, falsifiable claim) in a book whose organising metaphor it should be. The title fix and the weight fix belong together: retitling without expanding the fractal treatment would put a promise on the cover the interior underdelivers.",
       "proposal": "A major release (v0.4.0, because the identity changes): title **Fractal Semantic Graphs**, subtitle **Meaning Through Connectivity**, with the current discipline line kept as the cover's descriptor strip. Propagates to the front cover, spine, wrap, half-title, title page, colophon, running heads, the metadata sheet, and every self-reference. Alongside it, grow the fractal treatment: the chapter 6 section becomes a full early chapter (paired with the lineage chapter of item 4), and 'graphs of graphs of graphs, ontologies of ontologies, taxonomies of taxonomies' gets stated as the spine of the argument rather than mentioned in passing. Three questions before it lands: (a) confirm exact casing and order; (b) does the site's own identity follow (the hero eyebrow currently reads 'Semantic graphs · meaning through connectivity'); (c) the PDF filenames carry the old title in their URLs, so either they are renamed with the old files kept for one release as forwards, or the URLs stay stable and only the content retitles. Recommendation: rename, keep forwards.",
       "needs": [],
-      "impact": ["cover", "print interior", "metadata sheet", "site identity", "store listings"],
-      "state": "proposed"
+      "impact": [
+        "cover",
+        "print interior",
+        "metadata sheet",
+        "site identity",
+        "store listings"
+      ],
+      "state": "discussing",
+      "thread": [
+        {
+          "date": "22 August 2026",
+          "from": "the librarian, SGraph-AI__App__Send",
+          "note": "The search reframes this decision: the concept already has a published name with a two-year track record. **Graphs of Graphs of Graphs (G3)** was defined in a May 2025 white paper on docs.diniscruz.ai and carried through the Luhmann, FIST and regulatory follow-ups; the corpus says the phrase in prose sixteen times but never uses the G3 name, because the naming happened on a site the corpus does not reference. The choice is now three-way: keep Meaning Through Connectivity, adopt Fractal Semantic Graphs, or adopt the name that is already public and citable (or combine them: Fractal Semantic Graphs with G3 carried as the established shorthand). Whichever wins, the lineage chapter records that the concept was named G3 in May 2025. See [brief 13](../briefs/13__librarian__source-resolution.md), the librarian's resolution pack, with machine-readable indexes [13__sources__graph-articles.json](../briefs/13__sources__graph-articles.json) and [13__send-repo-sources.csv](../briefs/13__send-repo-sources.csv).",
+          "sources": [
+            "[Graphs of Graphs of Graphs (G3) in Threat Modeling, May 2025](https://docs.diniscruz.ai/2025/05/30/graphs-of-graphs-of-graphs-g3-in-threat-modeling.html)"
+          ]
+        }
+      ]
     },
     {
       "n": 3,
@@ -35,9 +51,26 @@
       "reviewer_says": "Every chapter, every page should have an interesting idea, should challenge the reader. A lot of documents I've created have been distilled and diluted a little bit. Let's go back to them to make sure these concepts really shine through.",
       "comment": "Agree, and this is the highest-effort item because it is editorial judgment chapter by chapter, not a mechanical pass. The honest starting point is an audit, not a rewrite: some chapters already lead with a sharp challenge (the 10,000 hours story, the banned edge, node type formulas); others summarise more than they provoke.",
       "proposal": "A chapter-by-chapter audit table delivered as this review's first follow-up: for each of the seventeen units, the one interesting idea, the sentence that challenges the reader, the source document behind it, and a verdict (sharp, or diluted relative to its source). Rewrites then target the diluted rows only, each traced to its source brief so the sharpness comes from the corpus, not from invention. The version diff view shows each rewrite as its own delta.",
-      "needs": ["The source documents behind the diluted concepts, where they are not already in the published brief pack: the reviewer's own originals, exported the way the pack was."],
-      "impact": ["all chapters, selectively"],
-      "state": "proposed"
+      "needs": [
+        "The source documents behind the diluted concepts, where they are not already in the published brief pack: the reviewer's own originals, exported the way the pack was."
+      ],
+      "impact": [
+        "all chapters, selectively"
+      ],
+      "state": "discussing",
+      "thread": [
+        {
+          "date": "22 August 2026",
+          "from": "the librarian, SGraph-AI__App__Send",
+          "note": "The undiluted originals are public on docs.diniscruz.ai and can now anchor the audit: top-down versus organic ontologies (March 2025), the customised-standard originals (Semantic OWASP and Scaling Europe's Regulatory Superpower), LETS (used in the corpus, never defined), and Time as a Calibrator of Credibility (October 2025, which also supplies the source for queued task T8). See [brief 13](../briefs/13__librarian__source-resolution.md), the librarian's resolution pack, with machine-readable indexes [13__sources__graph-articles.json](../briefs/13__sources__graph-articles.json) and [13__send-repo-sources.csv](../briefs/13__send-repo-sources.csv).",
+          "sources": [
+            "[From Top-Down to Organic Evolving Graphs, Ontologies, and Taxonomies](https://docs.diniscruz.ai/2025/03/29/from-top-down-to-organic-evolving-graphs-ontologies-and-taxonomies.html)",
+            "[Semantic OWASP](https://docs.diniscruz.ai/2025/04/02/semantic-owasp__leveraging-genai-and-graphs-to-customise-and-scale-security-knowledge.html) and [Scaling Europe's Regulatory Superpower](https://docs.diniscruz.ai/2025/03/31/scaling-europe-regulatory-superpower.html)",
+            "[LETS: Load, Extract, Transform, Save](https://docs.diniscruz.ai/2025/05/27/lets__load-extract-transform-save__a-deterministic-and-debuggable-data-pipeline_architecture.html)",
+            "[Time as a Calibrator of Credibility and Trust](https://docs.diniscruz.ai/2025/10/02/time-as-a-calibrator-of-credibility-and-trust-in-information-systems.html)"
+          ]
+        }
+      ]
     },
     {
       "n": 4,
@@ -45,9 +78,28 @@
       "reviewer_says": "It's important that we pay homage and acknowledgement to the amazing work that was done before. I was massively inspired by semantic graphs. We should acknowledge graph theory. Graph databases are amazing. I just build our serverless approach on top.",
       "comment": "Agree, and it corrects a tonal imbalance: chapter 5 credits the Semantic Web with identifying the right problem in one paragraph, then argues against schema-first for six sections. The disagreement is real and stays; the debt deserves equal ink. It also sharpens the book's own position: you can only claim a delta against work you have honoured accurately.",
       "proposal": "A new chapter, 'On the shoulders': graph theory from Euler forward; the Semantic Web's correct problem and its real achievements (RDF, URIs, shared vocabularies, the vision); graph databases as excellent tools this work deliberately does not run live (connecting to item 5); knowledge graphs; then the stated delta: fractal, serverless, edges over properties, ontologies of ontologies rather than one ontology. Placed early (Part I or opening Part III) so the argument chapters read as a position within a tradition, not a rejection of it.",
-      "needs": ["The reviewer's earlier document about being inspired by semantic graphs ('I think I wrote about it, there's a document'): identify and export it.", "Ask N3, the LinkedIn series, remains open and is the canonical statement of several of these acknowledgements in the reviewer's own voice."],
-      "impact": ["new chapter", "chapter 5 framing", "table of contents"],
-      "state": "proposed"
+      "needs": [
+        "The reviewer's earlier document about being inspired by semantic graphs ('I think I wrote about it, there's a document'): identify and export it.",
+        "Ask N3, the LinkedIn series, remains open and is the canonical statement of several of these acknowledgements in the reviewer's own voice."
+      ],
+      "impact": [
+        "new chapter",
+        "chapter 5 framing",
+        "table of contents"
+      ],
+      "state": "discussing",
+      "thread": [
+        {
+          "date": "22 August 2026",
+          "from": "the librarian, SGraph-AI__App__Send",
+          "note": "All three needs met. The Semantic Web inspiration document is the Solid protocol integration brief (24 February 2026, 3,278 words, four Turtle/RDF blocks, engaging Solid, RDF and Berners-Lee directly). The disagreement half is Part 4 of the thinking-in-graphs concept document, which must be attributed to Issues-FS explicitly, since the file carries no CC BY footer. The wider lineage is already public: the Luhmann/Zettelkasten bridge is the single best homage source, and the FIST article positions the approach against an existing tradition. And ask N3 itself, open since 10 June, is answered: the series is docs.diniscruz.ai, sixteen articles, 122,741 words, ten with their LinkedIn post URLs recorded in front matter. See [brief 13](../briefs/13__librarian__source-resolution.md), the librarian's resolution pack, with machine-readable indexes [13__sources__graph-articles.json](../briefs/13__sources__graph-articles.json) and [13__send-repo-sources.csv](../briefs/13__send-repo-sources.csv).",
+          "sources": [
+            "Solid protocol integration brief: `briefs/02/24/v0.6.17__architecture__solid-protocol-integration-complementary-architectures.md` in the source repository",
+            "[Bridging Niklas Luhmann's Ideas with Semantic Knowledge Graphs and G3](https://docs.diniscruz.ai/2025/06/18/bridging-niklas-luhmanns-ideas-with-semantic-knowledge-graphs-and-g3.html)",
+            "[FIST Meets the Semantic Knowledge Graph](https://docs.diniscruz.ai/2025/06/22/fist-meets-the-semantic-knowledge-graph-aligning-fast-inexpensive-simple-tiny-with-dinis-cruzs-g3-approach.html)"
+          ]
+        }
+      ]
     },
     {
       "n": 5,
@@ -55,9 +107,29 @@
       "reviewer_says": "A mistake in some of the comments is when we say we don't use databases. I have used graph databases. What I mean is that I don't have live graph databases. One of the vaults has a full-blown SPARQL and RDF sort of query, one even has SQLite in the browser: we load stuff, we delete stuff, we load on demand. It's about serverless and ephemeral infrastructure.",
       "comment": "Agree, and the book already half-knows it: chapter 7 describes the regulation vault's SQLite interface and RDF/Turtle export while the honesty table says 'No SPARQL or Cypher in the browser. No RDF or JSON-LD in the code.' Both sentences are true of the source repository's code and false as a description of the work as experienced, which is exactly the kind of reading a correction exists for. The accurate claim is stronger, not weaker: databases and query languages are used deliberately as ephemeral, in-browser, serverless instruments, spun up on demand and thrown away, and that ephemerality is the argument.",
       "proposal": "Reword at the sources and let every projection inherit: the front page honesty cell and chapter 12's absent-list change from absolute abstinence to the precise claim ('no live, persistent graph database anywhere; ephemeral in-browser engines, including SQLite and RDF querying in the vaults, are used and demonstrated, loaded on demand and discarded'). The 'not a graph database pitch' note stays, because it is about the thesis, and it remains true. Before landing: open the vaults and record exactly which one carries the SPARQL/RDF querying and which the in-browser SQLite, so the correction cites what it names.",
-      "needs": ["Verification pass over the three public vaults to attribute the query capabilities precisely (agent can do this; no access blockers)."],
-      "impact": ["front page", "chapter 12", "honesty table", "possibly chapter 1 positioning"],
-      "state": "proposed"
+      "needs": [
+        "Verification pass over the three public vaults to attribute the query capabilities precisely (agent can do this; no access blockers)."
+      ],
+      "impact": [
+        "front page",
+        "chapter 12",
+        "honesty table",
+        "possibly chapter 1 positioning"
+      ],
+      "state": "discussing",
+      "thread": [
+        {
+          "date": "22 August 2026",
+          "from": "the librarian, SGraph-AI__App__Send",
+          "note": "The exact correction exists in the founder's own words, in The Browser Is The Database (12 July 2026): 'when I say we do not use databases, we use a file system as a database, it does not mean the system has no databases, it just means the source of data is the file system that gets loaded.' Supporting: the browser query layer brief cites Oxigraph (SPARQL compiled to WebAssembly) and Kuzu-WASM; the MGraph-DB deferral quote; and four public articles on ephemeral Neo4j instances and MGraph-DB. One precision to keep: mgraph-db is NOT a dependency of the source repository (the only import is a vendored benchmark CI never runs), so the honesty table's 'No MGraph-DB dependency' line stays true as written. The correction can now land fully cited; the remaining step is opening the regulation vault to attribute the SQLite interface and RDF/Turtle export precisely. See [brief 13](../briefs/13__librarian__source-resolution.md), the librarian's resolution pack, with machine-readable indexes [13__sources__graph-articles.json](../briefs/13__sources__graph-articles.json) and [13__send-repo-sources.csv](../briefs/13__send-repo-sources.csv).",
+          "sources": [
+            "The Browser Is The Database: `briefs/07/12/architecture/v0.33.48__arch-brief__sg-send-browser-local-databases-query-engine-vault-source-of-truth-incremental-sync-no-backend.md` in the source repository",
+            "[Using LLMs as Ephemeral Graph Databases](https://docs.diniscruz.ai/2025/06/19/using-llms-as-ephemeral-graph-databases--empowering-the-graph-thinkers-in-the-age-of-generative-ai.html)",
+            "[Ephemeral Neo4j Instances for On-Demand Graph Analytics](https://docs.diniscruz.ai/2025/06/25/ephemeral-neo4j-instances-for-on-demand-graph-analytics.html)",
+            "[FAQ: Evolving Semantic Graphs and Ontologies with LLMs and MGraph-DB](https://docs.diniscruz.ai/2025/07/04/faq-evolving-semantic-graphs-and-ontologies-with-llms-and-mgraph-db.html)"
+          ]
+        }
+      ]
     },
     {
       "n": 6,
@@ -65,8 +137,16 @@
       "reviewer_says": "Really missing from here is screenshots. A screenshot is worth a thousand words, and there are concepts that won't make sense to people unless you slap a screenshot in there. Every time we talk about a vault, we should have a screenshot of it.",
       "comment": "Strongly agree, and it fits the house discipline as screenshots-as-code: captured by the pipeline from the live artefacts, not pasted by hand, so they regenerate and cannot rot. Print consequences are manageable: the interior is monochrome, so screenshots print as greyscale halftones (to be proofed for density), the screen edition keeps colour, and the page count and spine follow automatically as always.",
       "proposal": "A capture manifest plus a generator (gen_shots.py): each entry names a URL, viewport and crop; captures land in the repo with captions carrying the source, capture date and the vault's own version; markdown references them like any image; the gate fails on a referenced image that does not exist. Start with a proposed shot list covering the three vaults' signature views plus the site's own diff view, for the reviewer to confirm and extend. The reviewer's own reading screenshots join this review as attachments and can seed the list.",
-      "needs": ["The reviewer's screenshots from the reading, as review attachments.", "Confirmation or extension of the starter shot list once drafted."],
-      "impact": ["pipeline", "print interior", "screen edition", "page count and spine"],
+      "needs": [
+        "The reviewer's screenshots from the reading, as review attachments.",
+        "Confirmation or extension of the starter shot list once drafted."
+      ],
+      "impact": [
+        "pipeline",
+        "print interior",
+        "screen edition",
+        "page count and spine"
+      ],
       "state": "proposed"
     },
     {
@@ -75,9 +155,25 @@
       "reviewer_says": "If you look at the great work in the vaults, there's a section there that describes what the vaults do, and we should be showing that. We should have a whole section just on the vaults, because they are real-life examples of a lot of these graphs.",
       "comment": "Agree. The book currently lists the three vaults as cards with numbers (chapter 7) and never shows one working, which is backwards for the strongest evidence the material has: they are the live proof, and they are public.",
       "proposal": "A new chapter in Part IV, 'The vaults, opened': one section per vault with screenshots (item 6), what each demonstrates about the discipline (the regulation graph's customisation inversion and its ephemeral query engines; the Risk Graph Explorer's seven simultaneous views and ghosted unanswered edges; browser isolation's acceptance-gated escalation), the verifiable numbers, and the vault descriptions from the parent site read for alignment. Chapter 7's cards then point into it.",
-      "needs": ["Read sgit.ai's own vault-section text for alignment (public; no blockers)."],
-      "impact": ["new chapter", "chapter 7", "table of contents"],
-      "state": "proposed"
+      "needs": [
+        "Read sgit.ai's own vault-section text for alignment (public; no blockers)."
+      ],
+      "impact": [
+        "new chapter",
+        "chapter 7",
+        "table of contents"
+      ],
+      "state": "discussing",
+      "thread": [
+        {
+          "date": "22 August 2026",
+          "from": "the librarian, SGraph-AI__App__Send",
+          "note": "The vault-section text is live and fetchable as markdown: sgit.ai/vault/ (index, vault-apps, sub-vaults, content-authoring, sg-bridge, git-and-vaults, static-hosting) and the demos index. Nothing blocks this chapter except the screenshots of item 6. See [brief 13](../briefs/13__librarian__source-resolution.md), the librarian's resolution pack, with machine-readable indexes [13__sources__graph-articles.json](../briefs/13__sources__graph-articles.json) and [13__send-repo-sources.csv](../briefs/13__send-repo-sources.csv).",
+          "sources": [
+            "[sgit.ai/vault/](https://sgit.ai/vault/) and [the demo vaults index](https://sgit.ai/demos/vaults/)"
+          ]
+        }
+      ]
     },
     {
       "n": 8,
@@ -85,9 +181,29 @@
       "reviewer_says": "SGit is an encrypted version control, graph-based structure, and a really nice way to explain how to think about a graph. IssuesFS was one of the first to really connect the fractal element: issues of issues, ontologies defined at a top level, overridden at lower levels, arriving at consensus; it deserves a whole section, works off a CLI and a file system. EmailFS, especially EmailFS Lite, shows the power of graph-like structures that let things communicate and be linked. And the way the main project is organised, the librarian's research that found the first documents, the way we keep the web pages and the print PDFs in synchronisation: that's a graph in itself.",
       "comment": "Agree on all four, with one honesty condition inherited from the house rules: each case study needs its sources in hand before it is written, so every number and mechanism is parsed from a real document rather than remembered. SGit is partly covered (the commit DAG is already the book's strongest shipped evidence) and can grow; IssuesFS is the purest fractal-in-action story and, per the memo, may also become its own site, with this book carrying the case study either way; EmailFS and the team-as-a-graph are new ground. The making-of angle also feeds the how-we-publish section the previous memo asked for.",
       "proposal": "Four case-study additions, sequenced by source availability rather than all at once: (a) SGit deepened in chapter 12 or split out, using architecture briefs; (b) IssuesFS as its own section or chapter, centred on the ontology-consensus model (top level defines, lower levels override, consensus emerges), with the CLI and file-system operation shown, screenshots included; (c) EmailFS and EmailFS Lite as a section on graph-structured communication; (d) the making-of: the librarian's research, the brief pack, and the site-book-PDF synchronisation described as the graph it is. Each lands as its own release with its own diff.",
-      "needs": ["IssuesFS: the ontologies-of-ontologies documents and repository access, or a brief-pack style export.", "EmailFS and EmailFS Lite: the design documents and, if live anywhere, access to see them.", "SGit: the architecture briefs beyond what the published pack carries.", "The making-of: the librarian's original research task and its outputs, to cite rather than paraphrase."],
-      "impact": ["new chapters or sections", "Part IV or a new part", "table of contents"],
-      "state": "proposed"
+      "needs": [
+        "IssuesFS: the ontologies-of-ontologies documents and repository access, or a brief-pack style export.",
+        "EmailFS and EmailFS Lite: the design documents and, if live anywhere, access to see them.",
+        "SGit: the architecture briefs beyond what the published pack carries.",
+        "The making-of: the librarian's original research task and its outputs, to cite rather than paraphrase."
+      ],
+      "impact": [
+        "new chapters or sections",
+        "Part IV or a new part",
+        "table of contents"
+      ],
+      "state": "discussing",
+      "thread": [
+        {
+          "date": "22 August 2026",
+          "from": "the librarian, SGraph-AI__App__Send",
+          "note": "All four case studies now have their sources, mapped path by path in the resolution pack. SGit: fourteen briefs, about 22,600 words, led by the four-layer model ('what we've built is not fundamentally an encryption system. It is a content-addressed, portable, storage-agnostic version control protocol'), with the shipped vault DAG code as the evidence. IssuesFS: the ontology is live in the source repository (12 node types, 10 verb/inverse edge types with domain-range constraints, 71 nodes and 141 edges, plus the Lexicon's 97-row anchor-node tree out to schema.org, SKOS and W3C PROV-O, flagged as the book's signature diagram once redrawn as SVG, with the relates-to violation narrated rather than hidden). EmailFS: six documents, about 26,100 words, plus the origin response. The team as a graph is instantiated, not just documented: 17 role directories, 59 reality files, 213 librarian reviews, 956 documents catalogued, and the public Explorers, Villagers and Town Planners essay as the year-early statement. Each case study starts when its export lands in this repository or access is granted. See [brief 13](../briefs/13__librarian__source-resolution.md), the librarian's resolution pack, with machine-readable indexes [13__sources__graph-articles.json](../briefs/13__sources__graph-articles.json) and [13__send-repo-sources.csv](../briefs/13__send-repo-sources.csv).",
+          "sources": [
+            "[Explorers, Villagers, and Town Planners](https://docs.diniscruz.ai/2025/06/10/explorers-villagers-and-town-planners-understanding-the-generative-ai-divide.html)",
+            "Full path map: [13__send-repo-sources.csv](../briefs/13__send-repo-sources.csv), 24 paths verified at v0.33.62"
+          ]
+        }
+      ]
     },
     {
       "n": 9,
@@ -95,8 +211,14 @@
       "reviewer_says": "You should write a review of this, then write the approach you would take, including what else you need, so we can have a conversation and create the brief for you to make the changes. We should be setting up the agentic team on this project, which would include the researcher. Let's do a review, and then let's do the next version.",
       "comment": "This page is that review, and its existence is the workflow's first full turn: memo preserved verbatim, items normalised, comments and proposals written, needs listed, nothing changed. The conversation happens next, in chat or by memo, item by item; agreed items land in releases and each one links the exact delta it produced in the version diff view.",
       "proposal": "The approach, sequenced: first the correction (item 5) plus any quick agreements, as the next minor release; then the retitle plus the lineage and fractal chapters (items 2 and 4) as v0.4.0 once the three title questions are answered; then screenshots and the vaults chapter (items 6 and 7); then case studies as their sources arrive (item 8); with the chapter audit (item 3) running through all of it. On the team: the needs lists above are the researcher's first task queue, and research agents fire as soon as the sources are reachable.",
-      "needs": ["Answers to the three title questions in item 2.", "The source materials listed in items 3, 4 and 8.", "The reading screenshots for item 6."],
-      "impact": ["process"],
+      "needs": [
+        "Answers to the three title questions in item 2.",
+        "The source materials listed in items 3, 4 and 8.",
+        "The reading screenshots for item 6."
+      ],
+      "impact": [
+        "process"
+      ],
       "state": "proposed"
     }
   ]

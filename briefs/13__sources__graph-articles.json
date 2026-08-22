@@ -1,0 +1,248 @@
+{
+  "generated": "2026-08-22",
+  "purpose": "Sources resolving open requests in graphs.sgit.ai reviews r001/r002 and ask N3",
+  "source_site": "https://docs.diniscruz.ai/",
+  "articles": [
+    {
+      "resolves": "r001-3 \u00b7 r001-4",
+      "why": "Top-down vs organic ontologies - the undiluted original of a core book concept",
+      "title": "From Top-Down to Organic Evolving Graphs, Ontologies, and Taxonomies",
+      "first_published": "2025-03-29",
+      "authors": [
+        "Dinis Cruz",
+        "ChatGPT Deep Research"
+      ],
+      "canonical_url": "https://docs.diniscruz.ai/2025/03/29/from-top-down-to-organic-evolving-graphs-ontologies-and-taxonomies.html",
+      "pdf_url": "https://files.diniscruz.ai/github/pdf/2025/03/29/from-top-down-to-organic-evolving-graphs-ontologies-taxonomies.pdf",
+      "linkedin_url": null,
+      "words": 4452,
+      "source_repo_path": "docs/2025/03/29/from-top-down-to-organic-evolving-graphs-ontologies-and-taxonomies.md"
+    },
+    {
+      "resolves": "r001-3",
+      "why": "The regulation-graph thesis, 16 months before the EU AI Act build",
+      "title": "Scaling Europe\u2019s Regulatory Superpower: From Static Cybersecurity Standards to Semantic Graphs",
+      "first_published": "2025-03-31",
+      "authors": [
+        "Dinis Cruz",
+        "ChatGPT Deep Research"
+      ],
+      "canonical_url": "https://docs.diniscruz.ai/2025/03/31/scaling-europe-regulatory-superpower.html",
+      "pdf_url": "https://files.diniscruz.ai/github/pdf/2025/03/31/scaling-europe-regulatory-superpower.pdf",
+      "linkedin_url": null,
+      "words": 10899,
+      "source_repo_path": "docs/2025/03/31/scaling-europe-regulatory-superpower.md"
+    },
+    {
+      "resolves": "r001-3",
+      "why": "Semantic OWASP - customised standards, the undiluted original",
+      "title": "Semantic OWASP: Leveraging GenAI and Graphs to Customise and Scale Security Knowledge",
+      "first_published": "2025-04-02",
+      "authors": [
+        "Dinis Cruz",
+        "ChatGPT Deep Research"
+      ],
+      "canonical_url": "https://docs.diniscruz.ai/2025/04/02/semantic-owasp__leveraging-genai-and-graphs-to-customise-and-scale-security-knowledge.html",
+      "pdf_url": "https://files.diniscruz.ai/github/pdf/2025/04/02/semantic-owasp__leveraging-genai-and-graphs-to-customise-and-scale-security-knowledge.pdf",
+      "linkedin_url": null,
+      "words": 8958,
+      "source_repo_path": "docs/2025/04/02/semantic-owasp__leveraging-genai-and-graphs-to-customise-and-scale-security-knowledge.md"
+    },
+    {
+      "resolves": "r001-3",
+      "why": "LETS defined - referenced but never defined in the __Send corpus",
+      "title": "LETS (Load, Extract, Transform, Save): A Deterministic and Debuggable Data Pipeline Architecture",
+      "first_published": "2025-05-27",
+      "authors": [
+        "Dinis Cruz",
+        "ChatGPT Deep Research"
+      ],
+      "canonical_url": "https://docs.diniscruz.ai/2025/05/27/lets__load-extract-transform-save__a-deterministic-and-debuggable-data-pipeline_architecture.html",
+      "pdf_url": "https://files.diniscruz.ai/github/pdf/2025/05/27/lets__load-extract-transform-save__a-deterministic-and-debuggable-data-pipeline_architecture.pdf",
+      "linkedin_url": "https://www.linkedin.com/posts/diniscruz_lets-load-extract-transform-save-activity-7333166696649621505-ZjqA",
+      "words": 9362,
+      "source_repo_path": "docs/2025/05/27/lets__load-extract-transform-save__a-deterministic-and-debuggable-data-pipeline_architecture.md"
+    },
+    {
+      "resolves": "N3 \u00b7 r001-2",
+      "why": "G3 named and defined - the published name for the book's central concept",
+      "title": "Graphs of Graphs of Graphs (G3) in Threat Modeling",
+      "first_published": "2025-05-30",
+      "authors": [
+        "Dinis Cruz",
+        "ChatGPT Deep Research"
+      ],
+      "canonical_url": "https://docs.diniscruz.ai/2025/05/30/graphs-of-graphs-of-graphs-g3-in-threat-modeling.html",
+      "pdf_url": "https://files.diniscruz.ai/github/pdf/2025/05/30/graphs-of-graphs-of-graphs-g3-in-threat-modeling.pdf",
+      "linkedin_url": null,
+      "words": 3855,
+      "source_repo_path": "docs/2025/05/30/graphs-of-graphs-of-graphs-g3-in-threat-modeling.md"
+    },
+    {
+      "resolves": "r001-8",
+      "why": "Explorers/Villagers/Town Planners - the team-as-graph structure, explained publicly",
+      "title": "Explorers, Villagers, and Town Planners: Understanding the Generative AI Divide",
+      "first_published": "2025-06-10",
+      "authors": [
+        "Dinis Cruz",
+        "ChatGPT Deep Research"
+      ],
+      "canonical_url": "https://docs.diniscruz.ai/2025/06/10/explorers-villagers-and-town-planners-understanding-the-generative-ai-divide.html",
+      "pdf_url": "https://files.diniscruz.ai/github/pdf/2025/06/10/explorers-villagers-and-town-planners-understanding-the-generative-ai-divide.pdf",
+      "linkedin_url": "https://www.linkedin.com/posts/diniscruz_explorers-and-town-planners-understanding-the-genai-divide-activity-7338325660324544512-NOAw",
+      "words": 6595,
+      "source_repo_path": "docs/2025/06/10/explorers-villagers-and-town-planners-understanding-the-generative-ai-divide.md"
+    },
+    {
+      "resolves": "N3 \u00b7 r001-4",
+      "why": "the lineage / graph-thinkers argument",
+      "title": "Empowering the Graph Thinkers in the Age of Generative AI",
+      "first_published": "2025-06-18",
+      "authors": [
+        "Dinis Cruz",
+        "ChatGPT Deep Research"
+      ],
+      "canonical_url": "https://docs.diniscruz.ai/2025/06/18/empowering-the-graph-thinkers-in-the-age-of-generative-ai.html",
+      "pdf_url": "https://files.diniscruz.ai/github/pdf/2025/06/18/empowering-the-graph-thinkers-in-the-age-of-generative-ai.pdf",
+      "linkedin_url": "https://www.linkedin.com/posts/diniscruz_empowering-the-graph-thinkers-in-the-age-activity-7341128446976139265-iHH8",
+      "words": 8294,
+      "source_repo_path": "docs/2025/06/18/empowering-the-graph-thinkers-in-the-age-of-generative-ai.md"
+    },
+    {
+      "resolves": "r001-4",
+      "why": "Luhmann / Zettelkasten lineage - direct homage material",
+      "title": "Bridging Niklas Luhmann's Ideas with Semantic Knowledge Graphs and G\u00b3",
+      "first_published": "2025-06-18",
+      "authors": [
+        "Dinis Cruz",
+        "ChatGPT Deep Research"
+      ],
+      "canonical_url": "https://docs.diniscruz.ai/2025/06/18/bridging-niklas-luhmanns-ideas-with-semantic-knowledge-graphs-and-g3.html",
+      "pdf_url": "https://files.diniscruz.ai/github/pdf/2025/06/18/bridging-niklas-luhmanns-ideas-with-semantic-knowledge-graphs-and-g3.pdf",
+      "linkedin_url": "https://www.linkedin.com/posts/diniscruz_bridging-niklas-luhmanns-ideas-with-semantic-activity-7341126921713319938-HIbR",
+      "words": 4727,
+      "source_repo_path": "docs/2025/06/18/bridging-niklas-luhmanns-ideas-with-semantic-knowledge-graphs-and-g3.md"
+    },
+    {
+      "resolves": "N3 \u00b7 r001-5",
+      "why": "LLMs as ephemeral graph databases",
+      "title": "Using LLMs as Ephemeral Graph Databases: Empowering the Graph Thinkers in the Age of Generative AI",
+      "first_published": "2025-06-19",
+      "authors": [
+        "Dinis Cruz",
+        "ChatGPT Deep Research"
+      ],
+      "canonical_url": "https://docs.diniscruz.ai/2025/06/19/using-llms-as-ephemeral-graph-databases--empowering-the-graph-thinkers-in-the-age-of-generative-ai.html",
+      "pdf_url": "https://files.diniscruz.ai/github/pdf/2025/06/19/using-llms-as-ephemeral-graph-databases--empowering-the-graph-thinkers-in-the-age-of-generative-ai.pdf",
+      "linkedin_url": "https://www.linkedin.com/posts/diniscruz_using-llms-as-ephemeral-graph-databases-activity-7341424915931131904-xo_W",
+      "words": 7334,
+      "source_repo_path": "docs/2025/06/19/using-llms-as-ephemeral-graph-databases--empowering-the-graph-thinkers-in-the-age-of-generative-ai.md"
+    },
+    {
+      "resolves": "r001-4",
+      "why": "FIST lineage; G3 positioned against an existing tradition",
+      "title": "FIST Meets the Semantic Knowledge Graph: Aligning Fast, Inexpensive, Simple, Tiny with Dinis Cruz's G\u00b3 Approach",
+      "first_published": "2025-06-22",
+      "authors": [
+        "Dinis Cruz",
+        "ChatGPT Deep Research"
+      ],
+      "canonical_url": "https://docs.diniscruz.ai/2025/06/22/fist-meets-the-semantic-knowledge-graph-aligning-fast-inexpensive-simple-tiny-with-dinis-cruzs-g3-approach.html",
+      "pdf_url": "https://files.diniscruz.ai/github/pdf/2025/06/22/fist-meets-the-semantic-knowledge-graph-aligning-fast-inexpensive-simple-tiny-with-dinis-cruzs-g3-approach.pdf",
+      "linkedin_url": null,
+      "words": 6278,
+      "source_repo_path": "docs/2025/06/22/fist-meets-the-semantic-knowledge-graph-aligning-fast-inexpensive-simple-tiny-with-dinis-cruzs-g3-approach.md"
+    },
+    {
+      "resolves": "r001-5",
+      "why": "Ephemeral Neo4j - the precise 'we do use databases, ephemerally' evidence",
+      "title": "Ephemeral Neo4j Instances for On-Demand Graph Analytics",
+      "first_published": "2025-06-25",
+      "authors": [
+        "Dinis Cruz",
+        "ChatGPT Deep Research"
+      ],
+      "canonical_url": "https://docs.diniscruz.ai/2025/06/25/ephemeral-neo4j-instances-for-on-demand-graph-analytics.html",
+      "pdf_url": "https://files.diniscruz.ai/github/pdf/2025/06/25/ephemeral-neo4j-instances-for-on-demand-graph-analytics.pdf",
+      "linkedin_url": "https://www.linkedin.com/posts/diniscruz_ephemeral-neo4j-instances-for-on-demand-graph-activity-7343599306169352193-Tzfo",
+      "words": 8272,
+      "source_repo_path": "docs/2025/06/25/ephemeral-neo4j-instances-for-on-demand-graph-analytics.md"
+    },
+    {
+      "resolves": "r001-5",
+      "why": "Worked ephemeral-Neo4j risk graph",
+      "title": "Using Ephemeral Neo4j Instances for a Cybersecurity Risk Graph Scenario",
+      "first_published": "2025-06-25",
+      "authors": [
+        "Dinis Cruz",
+        "ChatGPT Deep Research"
+      ],
+      "canonical_url": "https://docs.diniscruz.ai/2025/06/25/using-ephemeral-neo4j-instances-for-a-cybersecurity-risk-graph-scenario.html",
+      "pdf_url": "https://files.diniscruz.ai/github/pdf/2025/06/25/using-ephemeral-neo4j-instances-for-a-cybersecurity-risk-graph-scenario.pdf",
+      "linkedin_url": "https://www.linkedin.com/posts/diniscruz_using-ephemeral-neo4j-instances-for-cybersecurity-activity-7343969750667976705-OLJF",
+      "words": 5946,
+      "source_repo_path": "docs/2025/06/25/using-ephemeral-neo4j-instances-for-a-cybersecurity-risk-graph-scenario.md"
+    },
+    {
+      "resolves": "r001-5",
+      "why": "Testing graph databases",
+      "title": "Data Tests for Neo4j: Bringing Automated Testing to Graph Databases",
+      "first_published": "2025-06-25",
+      "authors": [
+        "Dinis Cruz",
+        "ChatGPT Deep Research"
+      ],
+      "canonical_url": "https://docs.diniscruz.ai/2025/06/25/data-tests-for-neo4j-bringing-automated-testing-to-graph-databases.html",
+      "pdf_url": "https://files.diniscruz.ai/github/pdf/2025/06/25/data-tests-for-neo4j-bringing-automated-testing-to-graph-databases.pdf",
+      "linkedin_url": "https://www.linkedin.com/posts/diniscruz_data-tests-for-neo4j-bringing-automated-activity-7344003512218902530-zuvs",
+      "words": 9623,
+      "source_repo_path": "docs/2025/06/25/data-tests-for-neo4j-bringing-automated-testing-to-graph-databases.md"
+    },
+    {
+      "resolves": "r001-5",
+      "why": "MGraph-DB in the founder's own public voice",
+      "title": "FAQ - Evolving Semantic Graphs and Ontologies with LLMs and MGraph-DB",
+      "first_published": "2025-07-04",
+      "authors": [
+        "Dinis Cruz",
+        "ChatGPT Deep Research"
+      ],
+      "canonical_url": "https://docs.diniscruz.ai/2025/07/04/faq-evolving-semantic-graphs-and-ontologies-with-llms-and-mgraph-db.html",
+      "pdf_url": "https://files.diniscruz.ai/github/pdf/2025/07/04/faq-evolving-semantic-graphs-and-ontologies-with-llms-and-mgraph-db.pdf",
+      "linkedin_url": "https://www.linkedin.com/posts/diniscruz_faq-evolving-semantic-graphs-and-ontologies-activity-7346838389465210880-AZhA",
+      "words": 5533,
+      "source_repo_path": "docs/2025/07/04/faq-evolving-semantic-graphs-and-ontologies-with-llms-and-mgraph-db.md"
+    },
+    {
+      "resolves": "r001-8",
+      "why": "IFD methodology - the versioning discipline used across the estate",
+      "title": "Iterative Flow Development (IFD) Methodology: JavaScript Web Application Implementation",
+      "first_published": "2025-08-22",
+      "authors": [
+        "Dinis Cruz",
+        "ChatGPT Deep Research",
+        "Claude Opus 4.1"
+      ],
+      "canonical_url": "https://docs.diniscruz.ai/2025/08/22/iterative-flow-development-ifd-methodology__javascript-web-application-implementation.html",
+      "pdf_url": "https://files.diniscruz.ai/github/pdf/2025/08/22/iterative-flow-development-ifd-methodology__javascript-web-application-implementation.pdf",
+      "linkedin_url": "https://www.linkedin.com/posts/https://www.linkedin.com/pulse/introducing-iterative-flow-development-ifd-how-i-built-dinis-cruz-ciice/",
+      "words": 9127,
+      "source_repo_path": "docs/2025/08/22/iterative-flow-development-ifd-methodology__javascript-web-application-implementation.md"
+    },
+    {
+      "resolves": "r002-4 \u00b7 T8",
+      "why": "Time as first-class - answers queued task T8 and the evidence layer",
+      "title": "Time as a Calibrator of Credibility and Trust in Information Systems",
+      "first_published": "2025-10-02",
+      "authors": [
+        "Dinis Cruz",
+        "ChatGPT Deep Research"
+      ],
+      "canonical_url": "https://docs.diniscruz.ai/2025/10/02/time-as-a-calibrator-of-credibility-and-trust-in-information-systems.html",
+      "pdf_url": "https://files.diniscruz.ai/github/pdf/2025/10/02/time-as-a-calibrator-of-credibility-and-trust-in-information-systems.pdf",
+      "linkedin_url": null,
+      "words": 13486,
+      "source_repo_path": "docs/2025/10/02/time-as-a-calibrator-of-credibility-and-trust-in-information-systems.md"
+    }
+  ]
+}

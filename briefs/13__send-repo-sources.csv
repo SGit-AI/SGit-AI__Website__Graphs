@@ -1,0 +1,36 @@
+resolves,what_it_is,repo_path,words,why
+r001-4,Semantic Web inspiration,team/humans/dinis_cruz/briefs/02/24/v0.6.17__architecture__solid-protocol-integration-complementary-architectures.md,3278,"THE document the review reaches for. Solid, RDF, Berners-Lee. 4 Turtle/RDF blocks."
+r001-4,lineage - the disagreement half,library/concepts/v0_4_0__thinking-in-graphs.md,5013,Part 4: Semantic Web attached meaning to nodes rather than deriving it from edges. NO CC BY footer - attribute to Issues-FS.
+r001-4,lineage - self-challenge,team/humans/dinis_cruz/briefs/02/23/part-3/v0.6.14__research__pki-historical-analysis-and-market-viability.md,1439,Is this the right primitive? Compares FIDO2/WebAuthn and PQC.
+r001-5,THE database correction,team/humans/dinis_cruz/briefs/07/12/architecture/v0.33.48__arch-brief__sg-send-browser-local-databases-query-engine-vault-source-of-truth-incremental-sync-no-backend.md,2229,The Browser Is The Database. Contains the exact founder quote that resolves item 5. IndexedDB + SQLite via WASM.
+r001-5,browser query layer,team/humans/dinis_cruz/briefs/07/28/regulation-graph-and-acceptability/v0.33.53__arch-brief__sg-send-customised-standard-eu-ai-act-graph-nothing-relevant-until-facts-attach-browser-query-layer.md,3371,SPARQL or Cypher in the browser. Cites Oxigraph (WASM SPARQL) and Kuzu-WASM.
+r001-5,Cypher + graph-DB mapping,team/humans/dinis_cruz/briefs/03/17/vault-redesign/v0.16.3__arch-note__storage-backend-mapping.md,3019,4 Cypher blocks; Neo4j/Neptune mapping. Already carries its own future-vision banner at line 12.
+r001-5,the MGraph-DB deferral,team/humans/dinis_cruz/briefs/06/10/network-intelligence/v0.33.16__arch-brief__sg-send-semantic-graph-visualisation-subgraph-flip-verb-edges.md,3143,"There is even a graph database, MGraph-DB, we could use, but for now let's keep it simple."
+r001-8 cs1,SGit - the best one,team/humans/dinis_cruz/briefs/03/17/vault-redesign/v0.16.3__arch-note__four-layer-model.md,1791,Not fundamentally an encryption system - a content-addressed portable storage-agnostic version control protocol.
+r001-8 cs1,SGit - addressing,team/humans/dinis_cruz/briefs/03/17/vault-redesign/v0.16.3__arch-addendum__deterministic-addressing-and-sub-tree-model.md,1683,The {type}-{derivation}-{mutability}-{id} scheme. Matches shipping code.
+r001-8 cs1,SGit - traversal walkthrough,team/humans/dinis_cruz/briefs/03/17/vault-redesign/v0.16.3__arch-simulation__deterministic-ids-and-indexes.md,4697,Request-by-request traversal with real budgets. Section F (deterministic indexes) must be marked future.
+r001-8 cs1,SGit - CLI guide,team/humans/dinis_cruz/briefs/03/17/vault-redesign/v0.16.3__impl-guide__cli-detailed.md,3235,CLI detail for the vault redesign.
+r001-8 cs1,SGit - session index,team/humans/dinis_cruz/briefs/03/17/vault-redesign/v0.16.3__master-index__vault-architecture-session.md,1512,Read-first index for the whole vault-architecture session.
+r001-8 cs1,SGit - branch model,team/humans/dinis_cruz/briefs/03/13/v0.13.30__arch-spec__branch-model-unified-storage.md,4793,Branch model and unified storage; makes branch-level commit signing mandatory in spec.
+r001-8 cs1,SGit - wire protocol,team/humans/dinis_cruz/claude-code-web/05/08/v0.2.2__design__real-time-vault-viewer.md,3230,"The clearest here-is-how-you-traverse-it doc, with literal URLs. Verify no live vault ids before publishing."
+r001-8 cs1,SGit - visualiser,team/humans/dinis_cruz/briefs/03/30/v0.19.7__dev-brief__sgit-visualisation.md,886,sg-git-graph renders real vaults AND LLM conversation structures: each commit is an LLM interaction.
+r001-8 cs2,IssuesFS - node schema,.issues/config/node-types.json,0,12 node types with statuses and properties. LIVE DATA. Also open task T2.
+r001-8 cs2,IssuesFS - edge schema,.issues/config/link-types.json,0,10 verb/inverse edge types with domain-range constraints. Ships a relates-to pair the ontology forbids - narrate it.
+r001-8 cs2,IssuesFS - architecture,library/dependencies/issues-fs/v0.4.0__issues-fs__architecture-overview.md,0,13KB ecosystem architecture incl. a dependency-graph section.
+r001-8 cs2,IssuesFS - the Lexicon,library/concepts/v0_4_0__lexicon-architecture.md,4485,"Lines 91-189 are a 97-row ASCII anchor-node ontology tree with edges to schema.org, SKOS, W3C PROV-O. Redraw as SVG."
+r001-8 cs3,EmailFS Lite,team/humans/dinis_cruz/briefs/05/06/email-fs-lite-v0.6.md,8229,The largest EmailFS document.
+r001-8 cs3,EmailFS specification,team/humans/dinis_cruz/briefs/04/29/v0.22.23__architect__email-fs-specification-v0.6.md,6122,The spec.
+r001-8 cs3,EmailFS simulation,team/humans/dinis_cruz/briefs/04/29/v0.22.23__architect__email-fs-simulation-v0.6.md,6420,Simulation-driven validation of the design.
+r001-8 cs3,EmailFS skill,team/humans/dinis_cruz/briefs/04/29/v0.22.23__architect__email-fs-skill-v0.6.md,5393,Agent-facing operating instructions.
+r001-8 cs3,EmailFS comparison,team/humans/dinis_cruz/briefs/05/06/email-fs-comparison.md,2927,Comparison against alternatives.
+r001-8 cs3,SG/Mail on vaults,team/humans/dinis_cruz/briefs/05/16/v0.27.45__dev-brief__sg-mail-email-client-on-vaults.md,4027,The email client built on vaults.
+r001-8 cs4,team-as-graph - role ecosystem,library/guides/agentic-setup/v0_4_0__role-ecosystem-guide.md,4567,How the roles compose. Issues-FS origin - licence/attribution check.
+r001-8 cs4,team-as-graph - workflow,library/guides/agentic-setup/v0.1.0__guide__agentic-role-based-workflow.md,5814,The agentic role-based workflow in practice.
+r001-8 cs4,team-as-graph - coordination,library/guides/agentic-setup/v0.1.0__role-based-coordination.md,3980,How roles coordinate.
+r001-8 cs4,team-as-graph - framework,library/guides/agentic-setup/v0.1.0__role-architecture-framework.md,3743,The role architecture framework.
+r001-8 cs4,team-as-graph - cartographer,team/roles/cartographer/REFERENCE__from-issues-fs.md,4537,A graph says these things are connected; a map adds where they sit.
+r001-8 cs4,team-as-graph - master rules,.claude/CLAUDE.md,0,The role roster and master rules. Also the file ask N1 wants the concepts cross-reference added to.
+r001-8 cs4,team-as-graph - the ledger,team/roles/librarian/reality/index.md,1733,The EXISTS/PROPOSED ledger. 956 documents catalogued; 59 reality files; 213 librarian reviews; 36 role issue.json nodes.
+r002-4,THE evidence-layer source,team/humans/dinis_cruz/briefs/07/31/projects-budgets-and-evidence/v0.33.54__strategy-brief__sg-send-paying-the-fact-creator-contextual-validation-not-truth-micropayments-for-correct-use.md,3382,"RESOLVES r002-4 OUTRIGHT. 242 papers cited to pubmed 19622839 (Greenberg BMJ 2009) + semanticscholar. 10,000 hours: 1993 Berlin violin study, Gladwell/Ericsson named, 3 source URLs. Note: source says 242 papers, 675 citations, 220,000+ paths."
+r002-4,correction propagation,team/humans/dinis_cruz/briefs/08/09/graphing-text/v0.33.57__arch-brief__sg-send-fact-does-not-exist-in-a-vacuum-agenda-is-context-corrections-must-propagate.md,3352,Where the same case becomes the argument. Includes the self-critique: the graph has an agenda too.
+LICENCE,,This file is released under the Creative Commons Attribution 4.0 International licence (CC BY 4.0).,,
