@@ -1,5 +1,5 @@
 {
- "version": "v0.3.20",
+ "version": "v0.3.21",
  "root": "L1",
  "levels": [
   {
@@ -1642,6 +1642,8 @@
   {
    "kind": "contradiction",
    "title": "The book says both that there is no query engine and that there is one",
+   "state": "open",
+   "because": "A correction is proposed and awaits agreement; until the wording lands, a reader can still meet both sentences and believe the book contradicts itself.",
    "detail": "At level 3 the paragraph for chapter 12 (\"no graph database, no browser SPARQL or Cypher, no RDF in the code\") sits four units from the paragraph for chapter 7 (\"eleven views including a SQLite interface, an RDF/Turtle export and a graph REPL\"). Both sentences are true — one describes the codebase, the other describes a published vault — but compressed onto one page they read as a contradiction, and a reader of the full book meets them forty pages apart.",
    "where": [
     "L3-12",
@@ -1652,6 +1654,8 @@
   {
    "kind": "repeat",
    "title": "The Semantic Web's mistake is stated twice, in two parts",
+   "state": "accepted",
+   "because": "Deliberate altitude repetition, signposted in the text: chapter 1 states it and points at chapter 5 for the argument. Repetition across altitudes is the book's design, not a defect, and removing it would make chapter 1 incomplete for a reader who stops there.",
    "detail": "Chapter 1 carries the mistake in one paragraph with a pointer to the full treatment; chapter 5's first section is the full treatment. At level 3 the two paragraphs say nearly the same sentence. Climbing to level 2 forced a choice, and Part III took it — which means Part I's own summary leans on a claim that Part III owns.",
    "where": [
     "L3-1",
@@ -1663,6 +1667,8 @@
   {
    "kind": "compression-loss",
    "title": "Five ideas, from a source that lists ten principles",
+   "state": "open",
+   "because": "The chapter audit has not run yet. Three of the missing five are present in the prose without being named as principles, which is a fixable gap rather than a disagreement.",
    "detail": "Climbing from level 4 to level 3 in chapter 2 loses nothing, because the chapter only ever had five. The loss happened below level 5, between the foundational source document and the book: the source's summary lists ten core principles. Three of the missing five are still present in this chapter's prose without being named as principles (compatibility computed not declared, honest uncertainty, enrichment not enforcement); two are absent (cross-graph edges as first-class, no node aware of how it is used).",
    "where": [
     "L3-2",
@@ -1675,6 +1681,8 @@
   {
    "kind": "weight",
    "title": "Compressed honestly, the book's top paragraph has no room for \"fractal\"",
+   "state": "accepted",
+   "because": "Accepted with a condition rather than closed: the title decision was taken knowing this, and the fractal treatment grows in the v0.4.0 identity release. If v0.4.0 ships without the interior growing, this returns to open, because then the cover would promise what the text does not carry.",
    "detail": "Level 1 was built bottom-up from level 2, and fractal did not survive the climb: it holds six mentions in one chapter and one elsewhere, so it entered level 2 as a single clause inside Part III and was squeezed out at level 1. It appears in the level 1 graph as a claim, but not in the level 1 text.",
    "where": [
     "L1",
@@ -1686,6 +1694,8 @@
   {
    "kind": "concept",
    "title": "The position the book argues against is one of its strongest nodes",
+   "state": "accepted",
+   "because": "The metric is measuring connectivity, which is what it claims to measure. A book of arguments has its antagonist as a centre of gravity, and a strength score that hid that would be measuring agreement instead.",
    "detail": "Adding the concept layer produced a ranking nobody chose: strength is a stated formula over the edges, and **schema-first thinking** — the thing this book exists to argue against — comes out among the peaks, level with confidence-is-a-function-of-connectivity. It earns that place honestly: five separate concepts define themselves partly by opposing it, so the edges genuinely converge there.",
    "where": [
     "L2-3",
@@ -1697,6 +1707,8 @@
   {
    "kind": "classification",
    "title": "Compression does not just shorten, it re-classifies",
+   "state": "accepted",
+   "because": "A result rather than a defect. The classes are level-dependent by nature, and forcing one vocabulary across all levels would be the schema-first move this book argues against.",
    "detail": "Giving each level its own taxonomy was meant to be bookkeeping. It produced a result instead. The classes do not survive the climb: a section classed **Rule** at level 4 sits inside a chapter classed **Prescription** at level 3, inside a part classed **Argument** at level 2. Nothing inherits. And the vocabulary changes kind, not just granularity: at level 4 a unit is best described by what it does to the reader (definition, demonstration, rule, correction, signpost), while at level 2 it is best described by what kind of matter it is (argument, evidence, disclosure, apparatus). At level 1 the taxonomy collapses entirely, because a taxonomy of one unit is not a taxonomy.",
    "where": [
     "L1",
@@ -1709,6 +1721,8 @@
   {
    "kind": "cross-estate",
    "title": "Two sibling sites publish the same graph with different numbers",
+   "state": "open",
+   "because": "Ask N15 is unanswered, and 141 does not divide cleanly into two-entry relationships, so neither convention can be adopted until the sibling estate explains the remainder.",
    "detail": "This book reports the issue tracker's own graph as **71 nodes and 141 edges** in four places, adding \"edges stored bidirectionally\" in two of them. The Issues-FS site, published 22 August 2026, reports the same graph as **141 link entries across 71 nodes, for roughly 70 logical relationships**, because a link is written to both endpoints by design: one `link` command produces two entries. Both estates measured the same repository and neither is careless. The gap is a convention: this book counts a directed verb as an edge, which is its own grammar's rule that an inverse is not the same edge walked backwards, while the sibling counts relationships and says so. A reader who counts relationships and a reader who counts entries will disagree by a factor of two.",
    "where": [
     "L3-7",
@@ -1719,6 +1733,8 @@
   {
    "kind": "control",
    "title": "A contradiction the book already narrates, which the method correctly does not flag as new",
+   "state": "accepted",
+   "because": "Disclosed in the text where it occurs, with the reasoning. It is kept as the control case that shows the method distinguishes a hidden contradiction from a stated one.",
    "detail": "Chapter 3 bans the generic association edge, then names the project's own live configuration shipping a relates-to pair with one edge instance using it. The ladder surfaces the tension; the book had already disclosed it deliberately, in the same chapter, with the reasoning.",
    "where": [
     "L3-3"
@@ -1936,6 +1952,75 @@
    "source": "L3-9",
    "target": "L3-6",
    "weight": 1
+  }
+ ],
+ "checks": [
+  {
+   "id": "strong-but-unshown",
+   "severity": "watch",
+   "rule": "concept where strength >= 10 AND demonstrated_by is empty",
+   "asks": "Which ideas is the book leaning on hardest without a published artefact behind them?",
+   "hits": [
+    "Confidence is a function of connectivity",
+    "Schema-first thinking"
+   ],
+   "reading": "Connectivity and evidence are independent axes. A concept can be central to the argument and carry nothing but argument, which is not a fault in the concept — it is a fact about where the evidence programme should go next."
+  },
+  {
+   "id": "units-under-two-findings",
+   "severity": "watch",
+   "rule": "unit referenced by more than one finding",
+   "asks": "Where do independent problems land on the same piece of text?",
+   "hits": [
+    "Meaning Through Connectivity, in one paragraph — 2 findings",
+    "Part III · The full argument — 4 findings",
+    "12 · What ships, what is argued — 2 findings",
+    "3 · The rules you can apply tomorrow — 2 findings",
+    "5 · Against schema-first — 2 findings",
+    "7 · Worked graphs, with real numbers — 2 findings"
+   ],
+   "reading": "Two findings on one unit is the signal a list of findings cannot give you. It usually means the unit is doing too many jobs at once."
+  },
+  {
+   "id": "nothing-rests-on-it",
+   "severity": "note",
+   "rule": "concept with zero inward edges",
+   "asks": "Which ideas does nothing else in the book depend on?",
+   "hits": [
+    "A node alone means nothing",
+    "The same grammar at every altitude",
+    "Two identities for one thing"
+   ],
+   "reading": "A leaf idea is not a weak one: some concepts are terminal by nature. But a leaf that the book treats as foundational is either mis-modelled or under-connected, and this is the list to read with that question in mind."
+  },
+  {
+   "id": "text-with-no-concept",
+   "severity": "note",
+   "rule": "level 3 or 4 unit carried by no concept",
+   "asks": "Which parts of the book are not yet connected to the idea layer?",
+   "hits": [
+    "8 · Whose session is the agent using?",
+    "9 · The 2FA instance graph",
+    "11 · Wardley maps as graphs",
+    "13 · Origins: 2026",
+    "14 · The network",
+    "16 · The author's interest, and where this loses",
+    "That is altitude one",
+    "The grounding ladder",
+    "A nuance survives translation"
+   ],
+   "reading": "Not a defect in the text: it means the concept layer has not reached there yet. It is the honest to-do list for extending the concept map, and it shrinks as the map grows."
+  },
+  {
+   "id": "opposition-in-one-place",
+   "severity": "watch",
+   "rule": "two concepts joined by an opposes edge that both appear in the same unit",
+   "asks": "Where does the book put a position and its antagonist in the same passage?",
+   "hits": [
+    "Schema-first thinking vs Reference without authority — both in 5 · Against schema-first",
+    "Merging erases the disagreement vs Schema-first thinking — both in Part III · The full argument, 5 · Against schema-first"
+   ],
+   "reading": "Usually deliberate and usually good: that is where an argument is made. Worth watching because it is also where a reader is most likely to leave with the wrong half."
   }
  ],
  "concepts": [

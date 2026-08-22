@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.20</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.21</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -194,6 +194,88 @@
   <p class="small dim" id="gnote"></p>
   <p class="small dim" id="ginventory"></p>
 
+  <h2 id="query">Query the paths</h2>
+  <p>Tracing answers <em>how do these two connect?</em> This answers the other question: <b>show me every route shaped like this</b>. A pattern is a starting filter and then alternating edge and node steps, and the matches print as sentences using each edge's verb or its inverse depending on which way the route walks it. Cycles cannot spin (each path keeps its own visited set) and the result is capped at 300 — <b>and it says when it hit the cap</b>, because a query that silently truncates is worse than one that refuses.</p>
+  <form id="gq" class="gq">
+    <div class="gqrow">
+      <label>Start at
+        <select name="q-start">
+          <option value="kind:concept">a concept</option>
+          <option value="peak">a peak</option>
+          <option value="unevidenced-concept">a concept with no demonstration</option>
+          <option value="kind:unit">a unit</option>
+          <option value="kind:finding">a finding</option>
+          <option value="any">anything</option>
+        </select>
+      </label>
+    </div>
+    <div class="gqrow"><span class="gqn">1</span>
+      <select name="q-verb1">
+        <option value="any">any edge</option>
+        <option value="grounds">grounds</option><option value="specialises">specialises</option>
+        <option value="constrains">constrains</option><option value="enables">enables</option>
+        <option value="opposes">opposes</option><option value="appears_in">appears_in</option>
+        <option value="compresses">compresses</option><option value="cites">cites</option>
+        <option value="flags">flags</option><option value="carries">carries</option>
+        <option value="stop">— stop here —</option>
+      </select>
+      <select name="q-dir1"><option value="out">forwards</option><option value="in">backwards</option><option value="any">either way</option></select>
+      <select name="q-node1">
+        <option value="any">anything</option><option value="kind:concept">a concept</option>
+        <option value="kind:unit">a unit</option><option value="kind:finding">a finding</option>
+        <option value="peak">a peak</option><option value="ev:evidenced">an evidenced unit</option>
+        <option value="ev:unlifted">a unit with no graph lifted</option>
+      </select>
+    </div>
+    <div class="gqrow"><span class="gqn">2</span>
+      <select name="q-verb2">
+        <option value="stop">— stop here —</option><option value="any">any edge</option>
+        <option value="grounds">grounds</option><option value="specialises">specialises</option>
+        <option value="constrains">constrains</option><option value="enables">enables</option>
+        <option value="opposes">opposes</option><option value="appears_in">appears_in</option>
+        <option value="compresses">compresses</option><option value="cites">cites</option>
+        <option value="flags">flags</option><option value="carries">carries</option>
+      </select>
+      <select name="q-dir2"><option value="out">forwards</option><option value="in">backwards</option><option value="any">either way</option></select>
+      <select name="q-node2">
+        <option value="any">anything</option><option value="kind:concept">a concept</option>
+        <option value="kind:unit">a unit</option><option value="kind:finding">a finding</option>
+        <option value="peak">a peak</option><option value="ev:evidenced">an evidenced unit</option>
+        <option value="ev:unlifted">a unit with no graph lifted</option>
+      </select>
+    </div>
+    <div class="gqrow"><span class="gqn">3</span>
+      <select name="q-verb3">
+        <option value="stop">— stop here —</option><option value="any">any edge</option>
+        <option value="grounds">grounds</option><option value="appears_in">appears_in</option>
+        <option value="compresses">compresses</option><option value="cites">cites</option>
+        <option value="flags">flags</option><option value="carries">carries</option>
+      </select>
+      <select name="q-dir3"><option value="out">forwards</option><option value="in">backwards</option><option value="any">either way</option></select>
+      <select name="q-node3">
+        <option value="any">anything</option><option value="kind:concept">a concept</option>
+        <option value="kind:unit">a unit</option><option value="kind:finding">a finding</option>
+      </select>
+    </div>
+    <div class="gqrow gqrun">
+      <button type="button" id="gqrun">Run the query</button>
+      <span class="small dim">or start from one of these:</span>
+    </div>
+    <div class="gqpresets">
+      <a href="#" data-preset='{"start":"peak","steps":[{"verb":"appears_in","dir":"out","node":"kind:unit"}]}'>where the peaks appear</a>
+      <a href="#" data-preset='{"start":"unevidenced-concept","steps":[{"verb":"appears_in","dir":"out","node":"kind:unit"},{"verb":"flags","dir":"in","node":"kind:finding"}]}'>unevidenced concepts in units a finding touches</a>
+      <a href="#" data-preset='{"start":"kind:concept","steps":[{"verb":"opposes","dir":"out","node":"kind:concept"},{"verb":"appears_in","dir":"out","node":"kind:unit"}]}'>where an opposition lands in the text</a>
+      <a href="#" data-preset='{"start":"kind:finding","steps":[{"verb":"flags","dir":"out","node":"kind:unit"},{"verb":"cites","dir":"any","node":"kind:unit"}]}'>chapters a flagged chapter links to</a>
+      <a href="#" data-preset='{"start":"kind:concept","steps":[{"verb":"grounds","dir":"out","node":"kind:concept"},{"verb":"grounds","dir":"out","node":"kind:concept"}]}'>two-step grounding chains</a>
+    </div>
+  </form>
+  <div id="gqout" class="gqout"><p class="small dim">Build a pattern, or pick one above.</p></div>
+
+  <div class="note" id="honesty"><b>This page falsifies a sentence in the book, and here is the exact damage.</b>
+  <a href="../book/ch-12-what-ships-what-is-argued.html">Chapter 12</a> lists <em>the path-query language</em> under what does not exist, and its agent note says plainly: "no executing path-query language". <b>Something now executes path patterns</b> — this page. So the sentence is not false, but it is no longer safe to read plainly, which is the more dangerous condition of the two.
+  <br><br><b>What is true, precisely.</b> The corpus's path-query language is seventeen specific queries across five tiers over the <em>semantic graph</em> — risks, facts, provisions, obligations. Nothing executes those, and this page does not: it is a generic pattern matcher over <em>this book's own ladder and concept graph</em>, which is a much smaller and much easier problem. A demonstrator over a meta-graph is not the language the book proposes, and calling it one would be the overclaim the honesty table exists to prevent.
+  <br><br><b>The wording this supports</b>, offered for agreement rather than applied, since the book changes only by agreement: <em>"No executing path-query language over the semantic graph: the seventeen queries across five tiers are written and nothing runs them. A generic path-pattern matcher does run on this site, over the book's own ladder and concept graph, and it is a demonstrator rather than that language."</em> Recorded as review <a href="../reviews/r004.html">r004</a> decision D6.</div>
+
   <div class="gkey">
     <span><i class="ge-tree"></i> compresses <em>(the tree, level to level)</em></span>
     <span><i class="ge-cites"></i> cites <em>(a real link in the book's text; thicker means more links)</em></span>
@@ -221,7 +303,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.20</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.21</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

@@ -761,3 +761,36 @@ blockquote.pull p{margin:0}
 .af-concept{border-left:3px solid #5b4d8f}
 .af-concept .rstate{color:#5b4d8f;border-color:#c4bbe0;background:#efecf8}
 main.doc.bleed{max-width:min(1900px,97vw)}
+/* the path query builder */
+.gq{margin:.8rem 0;padding:.8rem 1rem;border:1px solid #e4e0d6;border-left:3px solid #5b4d8f;
+  border-radius:10px;background:#fbfaff}
+.gqrow{display:flex;align-items:center;gap:.45rem;margin:.35rem 0;flex-wrap:wrap}
+.gqrow label{font-size:.85rem;display:flex;align-items:center;gap:.4rem}
+.gqn{display:inline-flex;width:20px;height:20px;align-items:center;justify-content:center;
+  border-radius:999px;background:#efecf8;color:#5b4d8f;font-size:.72rem;font-weight:700}
+.gq select{font:inherit;font-size:.83rem;padding:.2rem .4rem;border:1px solid #e4e0d6;
+  border-radius:7px;background:#fff}
+.gq button{font:inherit;font-size:.85rem;padding:.3rem .9rem;border:1px solid #0d5c50;
+  border-radius:8px;background:#0d5c50;color:#fff;cursor:pointer;font-weight:600}
+.gq button:hover{background:#0a4a40}
+.gqpresets{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.3rem}
+.gqpresets a{font-size:.78rem;border:1px solid #cfcabc;border-radius:999px;padding:.15rem .6rem;
+  background:#fff;color:#5c5f66}
+.gqpresets a:hover{border-color:#5b4d8f;color:#5b4d8f;text-decoration:none}
+.gqout{margin:.4rem 0 1.4rem;padding:.7rem .9rem;border:1px solid #e4e0d6;border-radius:10px;background:#fff;
+  max-height:420px;overflow-y:auto}
+.gqout .gpath a{color:inherit}
+.gqout .gpath a:hover{text-decoration:none;background:#f4f8f7}
+/* finding states and computed checks */
+.altbecause{margin:.4rem 0 .2rem;padding:.5rem .7rem;background:#f4f8f7;border-radius:8px;font-size:.9rem}
+.altfind.fs-accepted{opacity:.92}
+.altfind.fs-accepted h3 .rs-agreed{margin-left:auto}
+.altchk{border:1px solid #e4e0d6;border-radius:10px;padding:.85rem 1.05rem;margin:.8rem 0;background:#fff}
+.altchk.sv-watch{border-left:3px solid #a06a14}
+.altchk.sv-note{border-left:3px solid #4a5b6a}
+.altchk h3{margin:0 0 .4rem;font-size:1rem;display:flex;gap:.6rem;align-items:baseline;flex-wrap:wrap}
+.altchk .rstate{color:#5c5f66;border-color:#cfcabc;background:#f6f3ea}
+.chkrule{margin:.2rem 0 .5rem}
+.chkrule code{font-size:.82rem;background:#f2f0e9;border:1px solid #e4e0d6;border-radius:5px;padding:.1em .4em}
+.altchk ul{margin:.3rem 0 .5rem;padding-left:1.2rem;font-size:.9rem}
+.altchk li{margin:.2rem 0}

@@ -387,6 +387,7 @@ l4("L4-5-6", "A nuance survives translation",
 # ---------------------------------------------------------------- findings
 FINDINGS = [
  dict(kind="contradiction", title="The book says both that there is no query engine and that there is one",
+  state="open", because="A correction is proposed and awaits agreement; until the wording lands, a reader can still meet both sentences and believe the book contradicts itself.",
   detail="At level 3 the paragraph for chapter 12 (\"no graph database, no browser SPARQL or Cypher, no RDF in the code\") "
          "sits four units from the paragraph for chapter 7 (\"eleven views including a SQLite interface, an RDF/Turtle export "
          "and a graph REPL\"). Both sentences are true — one describes the codebase, the other describes a published vault — "
@@ -395,6 +396,7 @@ FINDINGS = [
   verdict="Open. This is exactly the correction the reviewer asked for in review r001 item 5, reached independently by climbing "
           "the ladder rather than by being told. The compression is what made it visible."),
  dict(kind="repeat", title="The Semantic Web's mistake is stated twice, in two parts",
+  state="accepted", because="Deliberate altitude repetition, signposted in the text: chapter 1 states it and points at chapter 5 for the argument. Repetition across altitudes is the book's design, not a defect, and removing it would make chapter 1 incomplete for a reader who stops there.",
   detail="Chapter 1 carries the mistake in one paragraph with a pointer to the full treatment; chapter 5's first section is the "
          "full treatment. At level 3 the two paragraphs say nearly the same sentence. Climbing to level 2 forced a choice, and "
          "Part III took it — which means Part I's own summary leans on a claim that Part III owns.",
@@ -402,6 +404,7 @@ FINDINGS = [
   verdict="Legitimate as written: deliberate altitude repetition, signposted in the text. Worth noting that compression makes "
           "the ownership question decidable, where prose leaves it ambiguous."),
  dict(kind="compression-loss", title="Five ideas, from a source that lists ten principles",
+  state="open", because="The chapter audit has not run yet. Three of the missing five are present in the prose without being named as principles, which is a fixable gap rather than a disagreement.",
   detail="Climbing from level 4 to level 3 in chapter 2 loses nothing, because the chapter only ever had five. The loss happened "
          "below level 5, between the foundational source document and the book: the source's summary lists ten core principles. "
          "Three of the missing five are still present in this chapter's prose without being named as principles (compatibility "
@@ -411,6 +414,7 @@ FINDINGS = [
   verdict="Open, and now localised. Review r001 item 3 asked which chapters were diluted relative to their sources; the ladder "
           "says where on the ladder the dilution happened, which is a more useful answer than which chapter."),
  dict(kind="weight", title="Compressed honestly, the book's top paragraph has no room for \"fractal\"",
+  state="accepted", because="Accepted with a condition rather than closed: the title decision was taken knowing this, and the fractal treatment grows in the v0.4.0 identity release. If v0.4.0 ships without the interior growing, this returns to open, because then the cover would promise what the text does not carry.",
   detail="Level 1 was built bottom-up from level 2, and fractal did not survive the climb: it holds six mentions in one chapter "
          "and one elsewhere, so it entered level 2 as a single clause inside Part III and was squeezed out at level 1. It appears "
          "in the level 1 graph as a claim, but not in the level 1 text.",
@@ -419,6 +423,7 @@ FINDINGS = [
           "fractal treatment puts a promise on the cover the interior underdelivers. The ladder turns that warning into a test: "
           "the title is right when the one-paragraph version of the book cannot be written without the word."),
  dict(kind="concept", title="The position the book argues against is one of its strongest nodes",
+  state="accepted", because="The metric is measuring connectivity, which is what it claims to measure. A book of arguments has its antagonist as a centre of gravity, and a strength score that hid that would be measuring agreement instead.",
   detail="Adding the concept layer produced a ranking nobody chose: strength is a stated formula over the "
          "edges, and **schema-first thinking** — the thing this book exists to argue against — comes out among "
          "the peaks, level with confidence-is-a-function-of-connectivity. It earns that place honestly: five "
@@ -431,6 +436,7 @@ FINDINGS = [
           "independent, and any future ranking that conflates them will overstate whatever the book repeats "
           "most often."),
  dict(kind="classification", title="Compression does not just shorten, it re-classifies",
+  state="accepted", because="A result rather than a defect. The classes are level-dependent by nature, and forcing one vocabulary across all levels would be the schema-first move this book argues against.",
   detail="Giving each level its own taxonomy was meant to be bookkeeping. It produced a result instead. The "
          "classes do not survive the climb: a section classed **Rule** at level 4 sits inside a chapter classed "
          "**Prescription** at level 3, inside a part classed **Argument** at level 2. Nothing inherits. And the "
@@ -446,6 +452,7 @@ FINDINGS = [
           "gives review r002 item 3 a warning it did not have: the book-as-a-graph pilot should expect its node "
           "types to be level-dependent rather than universal."),
  dict(kind="cross-estate", title="Two sibling sites publish the same graph with different numbers",
+  state="open", because="Ask N15 is unanswered, and 141 does not divide cleanly into two-entry relationships, so neither convention can be adopted until the sibling estate explains the remainder.",
   detail="This book reports the issue tracker's own graph as **71 nodes and 141 edges** in four places, adding "
          "\"edges stored bidirectionally\" in two of them. The Issues-FS site, published 22 August 2026, reports the "
          "same graph as **141 link entries across 71 nodes, for roughly 70 logical relationships**, because a link is "
@@ -461,6 +468,7 @@ FINDINGS = [
           "passing. One reconciliation is still open and is ask N15: 141 is odd, so it does not divide cleanly into "
           "two-entry relationships, and only the sibling estate can say why."),
  dict(kind="control", title="A contradiction the book already narrates, which the method correctly does not flag as new",
+  state="accepted", because="Disclosed in the text where it occurs, with the reasoning. It is kept as the control case that shows the method distinguishes a hidden contradiction from a stated one.",
   detail="Chapter 3 bans the generic association edge, then names the project's own live configuration shipping a relates-to pair "
          "with one edge instance using it. The ladder surfaces the tension; the book had already disclosed it deliberately, in the "
          "same chapter, with the reasoning.",
@@ -741,6 +749,73 @@ L[5]["units"], L[5]["words"] = 17, 20000      # the book itself, measured by the
 
 CITES = cross_references()
 
+# ---- deterministic checks
+# The founder's point, made executable: a contradiction that only a careful reader spots
+# is an opinion; one a rule finds every time is a measurement. Each check states the rule
+# it ran, so a reader can disagree by recomputing rather than by arguing — and a check
+# that finds nothing today is kept, because a rule with zero hits is still a rule.
+def checks_over(concepts, nodes, findings):
+    out = []
+
+    strong = [c for c in concepts if c["strength"]["score"] >= 10 and not c["demonstrated_by"]]
+    out.append(dict(id="strong-but-unshown", severity="watch",
+        rule="concept where strength >= 10 AND demonstrated_by is empty",
+        asks="Which ideas is the book leaning on hardest without a published artefact behind them?",
+        hits=[c["label"] for c in strong],
+        reading="Connectivity and evidence are independent axes. A concept can be central to "
+                "the argument and carry nothing but argument, which is not a fault in the "
+                "concept — it is a fact about where the evidence programme should go next."))
+
+    touched = {}
+    for i, f in enumerate(findings):
+        for w in f["where"]:
+            touched.setdefault(w, []).append(f["title"])
+    multi = {k: v for k, v in touched.items() if len(v) > 1}
+    out.append(dict(id="units-under-two-findings", severity="watch",
+        rule="unit referenced by more than one finding",
+        asks="Where do independent problems land on the same piece of text?",
+        hits=[f'{nodes[k]["title"]} — {len(v)} findings' for k, v in sorted(multi.items())],
+        reading="Two findings on one unit is the signal a list of findings cannot give you. "
+                "It usually means the unit is doing too many jobs at once."))
+
+    lonely = [c["label"] for c in concepts if not c["in_edges"]]
+    out.append(dict(id="nothing-rests-on-it", severity="note",
+        rule="concept with zero inward edges",
+        asks="Which ideas does nothing else in the book depend on?",
+        hits=lonely,
+        reading="A leaf idea is not a weak one: some concepts are terminal by nature. But a "
+                "leaf that the book treats as foundational is either mis-modelled or "
+                "under-connected, and this is the list to read with that question in mind."))
+
+    unlinked = [n["title"] for nid, n in nodes.items()
+                if n["level"] in (3, 4)
+                and not any(nid in c["units"] for c in concepts)]
+    out.append(dict(id="text-with-no-concept", severity="note",
+        rule="level 3 or 4 unit carried by no concept",
+        asks="Which parts of the book are not yet connected to the idea layer?",
+        hits=unlinked,
+        reading="Not a defect in the text: it means the concept layer has not reached there "
+                "yet. It is the honest to-do list for extending the concept map, and it "
+                "shrinks as the map grows."))
+
+    opposed = []
+    for c in concepts:
+        for verb, tgt in c["edges"]:
+            if verb == "opposes":
+                other = [x for x in concepts if x["id"] == tgt][0]
+                shared = sorted(set(c["units"]) & set(other["units"]))
+                if shared:
+                    opposed.append(f'{c["label"]} vs {other["label"]} — both in ' +
+                                   ", ".join(nodes[u]["title"] for u in shared))
+    out.append(dict(id="opposition-in-one-place", severity="watch",
+        rule="two concepts joined by an opposes edge that both appear in the same unit",
+        asks="Where does the book put a position and its antagonist in the same passage?",
+        hits=opposed,
+        reading="Usually deliberate and usually good: that is where an argument is made. "
+                "Worth watching because it is also where a reader is most likely to leave "
+                "with the wrong half."))
+    return out
+
 # ---- concept layer: validate, mirror the inverses, and compute strength
 INV = {}
 for e in CONCEPT_EDGES:
@@ -807,8 +882,10 @@ EDGE_REGISTRY = ([et("compresses", "compressed_by", "Unit", "Unit", "The descent
                   et("carries", "carried_by", "Unit", "Claim", "A unit carries a claim.")]
                  + CONCEPT_EDGES)
 
+CHECKS = checks_over(CONCEPTS, N, FINDINGS)
+
 out = dict(version=VERSION, root="L1", levels=LEVELS,
-           nodes=N, findings=FINDINGS, cites=CITES,
+           nodes=N, findings=FINDINGS, cites=CITES, checks=CHECKS,
            concepts=CONCEPTS, peaks=[x["id"] for x in PEAKS],
            edge_registry=EDGE_REGISTRY, inventory=INVENTORY,
            coverage=dict(
@@ -830,6 +907,11 @@ print(f"gen_altitudes: {len(CITES)} measured cites edges between chapters")
 print("gen_altitudes: %d concepts, %d concept edges (each mirrored), peaks: %s"
       % (len(CONCEPTS), sum(len(x["edges"]) for x in CONCEPTS),
          ", ".join(x["label"] for x in PEAKS[:3])))
+print("gen_altitudes: checks — " + "; ".join(
+      "%s %d" % (c["id"], len(c["hits"])) for c in CHECKS))
+print("gen_altitudes: findings — %d open, %d accepted" % (
+      sum(1 for f in FINDINGS if f.get("state") == "open"),
+      sum(1 for f in FINDINGS if f.get("state") == "accepted")))
 print("gen_altitudes: inventory — %d facts, %d assertions, %d opinions"
       % (INVENTORY["fact"], INVENTORY["assertion"], INVENTORY["opinion"]))
 print(f"gen_altitudes: {len(N)} nodes across levels 1-4 "

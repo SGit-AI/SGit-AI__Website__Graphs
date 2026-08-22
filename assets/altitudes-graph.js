@@ -401,6 +401,120 @@
       }).join('') + '</ol>';
   }
 
+  /* ------------------------------------------------------- the path query
+     Trace-and-read answers "how do these two connect?". This answers the other
+     question: "show me EVERY route shaped like this". A pattern is a start filter
+     then alternating edge and node steps, walked breadth-first with a visited set
+     per path so a cycle cannot spin. Bounded, and it says when it hit the bound —
+     a query that silently truncates is worse than one that refuses. */
+  var QCAP = 300;
+
+  function pattern() {
+    var f = document.getElementById('gq');
+    if (!f) { return null; }
+    var p = { start: f.querySelector('[name="q-start"]').value, steps: [] };
+    for (var i = 1; i <= 3; i++) {
+      var v = f.querySelector('[name="q-verb' + i + '"]'),
+          d = f.querySelector('[name="q-dir' + i + '"]'),
+          n = f.querySelector('[name="q-node' + i + '"]');
+      if (!v || v.value === 'stop') { break; }
+      p.steps.push({ verb: v.value, dir: d.value, node: n.value });
+    }
+    return p;
+  }
+
+  function matchNode(n, filter) {
+    if (filter === 'any') { return true; }
+    if (filter.indexOf('kind:') === 0) { return n.data('kind') === filter.slice(5); }
+    if (filter.indexOf('ev:') === 0) {
+      var d = D.nodes[n.id()];
+      return d ? evOf(d) === filter.slice(3) : false;
+    }
+    if (filter === 'peak') { return D.peaks.indexOf(n.id()) > -1; }
+    if (filter === 'unevidenced-concept') {
+      var c = conceptById(n.id());
+      return !!c && !c.demonstrated_by.length;
+    }
+    return n.id() === filter;
+  }
+
+  function runQuery() {
+    var p = pattern();
+    if (!p || !p.steps.length) { qresult('<p class="small dim">Add at least one step.</p>'); return; }
+    var starts = cy.nodes().filter(function (n) { return matchNode(n, p.start); });
+    var paths = [], capped = false;
+
+    function walk(node, i, trail, seen) {
+      if (paths.length >= QCAP) { capped = true; return; }
+      if (i >= p.steps.length) { paths.push(trail.slice()); return; }
+      var st = p.steps[i];
+      var edges = st.dir === 'in' ? node.incomers('edge')
+                : st.dir === 'out' ? node.outgoers('edge')
+                : node.connectedEdges();
+      edges.forEach(function (e) {
+        if (st.verb !== 'any' && e.data('label') !== st.verb) { return; }
+        var other = e.source().id() === node.id() ? e.target() : e.source();
+        if (st.dir === 'in' && e.target().id() !== node.id()) { return; }
+        if (st.dir === 'out' && e.source().id() !== node.id()) { return; }
+        if (seen[other.id()]) { return; }
+        if (!matchNode(other, st.node)) { return; }
+        seen[other.id()] = 1;
+        trail.push({ e: e, from: node, to: other, back: e.source().id() !== node.id() });
+        walk(other, i + 1, trail, seen);
+        trail.pop();
+        delete seen[other.id()];
+      });
+    }
+    starts.forEach(function (n) { var seen = {}; seen[n.id()] = 1; walk(n, 0, [], seen); });
+
+    if (!paths.length) {
+      qresult('<p class="small dim">No paths match that pattern under the current filters. ' +
+              'That is a result, not a failure: it is the difference between "we did not look" ' +
+              'and "we looked and there is nothing there".</p>');
+      return;
+    }
+    var h = ['<p class="small dim"><b>' + paths.length + (capped ? '+' : '') + ' path' +
+             (paths.length === 1 ? '' : 's') + '</b> match ' + esc(patternText(p)) +
+             (capped ? ' &mdash; <b>capped at ' + QCAP + '</b>, so the list is incomplete and says so.' : '') +
+             ' Click one to trace it in the graph.</p><ol class="gpath">'];
+    paths.forEach(function (t, i) {
+      h.push('<li><a href="#" data-qpath="' + i + '">' + t.map(function (hop) {
+        var v = hop.back ? (INV[hop.e.data('label')] || hop.e.data('label') + ' (reversed)') : hop.e.data('label');
+        return '<b>' + esc(hop.from.data('label')) + '</b> <code>' + esc(v) + '</code> <b>' +
+               esc(hop.to.data('label')) + '</b>';
+      }).join(' &rarr; ') + '</a></li>');
+    });
+    h.push('</ol>');
+    qresult(h.join(''));
+    window.__qpaths = paths;
+  }
+  function patternText(p) {
+    return nodeLabel(p.start) + p.steps.map(function (s) {
+      return ' ' + (s.dir === 'in' ? '<' : '') + '-' + (s.verb === 'any' ? '*' : s.verb) + '-' +
+             (s.dir === 'in' ? '' : '>') + ' ' + nodeLabel(s.node);
+    }).join('');
+  }
+  function nodeLabel(f) {
+    if (f === 'any') { return '*'; }
+    if (f.indexOf('kind:') === 0) { return f.slice(5); }
+    if (f.indexOf('ev:') === 0) { return f.slice(3) + ' unit'; }
+    if (f === 'peak') { return 'a peak'; }
+    if (f === 'unevidenced-concept') { return 'concept with no demonstration'; }
+    return f;
+  }
+  function qresult(h) {
+    var d = document.getElementById('gqout');
+    if (d) { d.innerHTML = h; }
+  }
+  function showQPath(i) {
+    var t = (window.__qpaths || [])[i];
+    if (!t) { return; }
+    var els = cy.collection();
+    t.forEach(function (hop) { els = els.union(hop.e).union(hop.from).union(hop.to); });
+    cy.elements().removeClass('onpath').addClass('dim');
+    els.removeClass('dim').addClass('onpath');
+  }
+
   function note(t) {
     var d = document.getElementById('gnote');
     if (d) { d.textContent = t; setTimeout(function () { if (d.textContent === t) { d.textContent = ''; } }, 6000); }
@@ -570,6 +684,22 @@
   document.addEventListener('click', function (e) {
     var t = e.target;
     if (t.hasAttribute && t.hasAttribute('data-focus')) { focusOn(t.getAttribute('data-focus'), Math.max(1, cfg.radius || 2)); return; }
+    var qp = t.closest && t.closest('[data-qpath]');
+    if (qp) { e.preventDefault(); showQPath(+qp.getAttribute('data-qpath')); return; }
+    if (t.id === 'gqrun') { runQuery(); return; }
+    if (t.hasAttribute && t.hasAttribute('data-preset')) {
+      e.preventDefault();
+      var pre = JSON.parse(t.getAttribute('data-preset')), f = document.getElementById('gq');
+      f.querySelector('[name="q-start"]').value = pre.start;
+      [1, 2, 3].forEach(function (i) {
+        var st = pre.steps[i - 1] || { verb: 'stop', dir: 'out', node: 'any' };
+        f.querySelector('[name="q-verb' + i + '"]').value = st.verb;
+        f.querySelector('[name="q-dir' + i + '"]').value = st.dir;
+        f.querySelector('[name="q-node' + i + '"]').value = st.node;
+      });
+      runQuery();
+      return;
+    }
     switch (t.id) {
       case 'gfit': cy.fit(undefined, 30); break;
       case 'greset':

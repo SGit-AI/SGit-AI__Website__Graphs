@@ -7,7 +7,7 @@
   "source": "briefs/16__founder-review__altitude-ladder.md",
   "version_reviewed": "v0.3.14",
   "state": "commented",
-  "state_note": "Commented, and the central item is built rather than proposed: this memo asks for an experiment, and an experiment that is only described has not been run. The ladder is live at /altitudes/ with levels 1 to 3 complete, level 4 for two chapters, the graph layer lifted on those paths, and five findings from the climb. No book content changed: the ladder is a new artefact beside the book, not an edit to it. Three decisions are open, and the first of them is whether the experiment earned a place in the pipeline at all. A second round on 22 August acted on the reviewer's UX feedback: the ladder is now resizable columns with per-level indexes (item 1's thread), the descent links carry a switchable colour meaning (item 7), and every level has its own ontology and taxonomy (item 8), which produced finding 7 — the classes do not survive the climb. Four decisions now open. A third round on the same day fixed the column flicker (item 1's thread) and added the graph view (item 9), which brought the site its first vendored dependency and decision D5 with it. A third round (brief 17) added the concept layer — a dictionary crossed with a thesaurus, with computed peaks — and rebuilt the graph explorer around exploring from any node and keeping the view you made. Six decisions now open, the newest being whether to build the path-query language the book says does not exist.",
+  "state_note": "Commented, and the central item is built rather than proposed: this memo asks for an experiment, and an experiment that is only described has not been run. The ladder is live at /altitudes/ with levels 1 to 3 complete, level 4 for two chapters, the graph layer lifted on those paths, and five findings from the climb. No book content changed: the ladder is a new artefact beside the book, not an edit to it. Three decisions are open, and the first of them is whether the experiment earned a place in the pipeline at all. A second round on 22 August acted on the reviewer's UX feedback: the ladder is now resizable columns with per-level indexes (item 1's thread), the descent links carry a switchable colour meaning (item 7), and every level has its own ontology and taxonomy (item 8), which produced finding 7 — the classes do not survive the climb. Four decisions now open. A third round on the same day fixed the column flicker (item 1's thread) and added the graph view (item 9), which brought the site its first vendored dependency and decision D5 with it. A third round (brief 17) added the concept layer — a dictionary crossed with a thesaurus, with computed peaks — and rebuilt the graph explorer around exploring from any node and keeping the view you made. Six decisions now open, the newest being whether to build the path-query language the book says does not exist. A fourth round built the path query the previous round declined to build, and reframed the findings register: contradictions are now states rather than accusations, with five deterministic checks running every build.",
   "decisions": [
     {
       "n": 1,
@@ -73,7 +73,9 @@
         "Build a demonstrator here and amend chapter 12",
         "Make it the next experiment"
       ],
-      "state": "open"
+      "state": "answered",
+      "date": "22 August 2026",
+      "answer": "Build it. The founder's answer was a question — *\"why can't you create that path-query UI?\"* — and the honest reply is that nothing technical stopped it: the caution was about a **content** claim, not a capability. Built at [the graph page](../altitudes/graph.html): a pattern is a start filter and up to three edge-and-node steps, matches print as sentences using each edge's verb or inverse depending on direction, cycles cannot spin, and the result is capped at 300 **and says when it hit the cap**. What follows for the honesty table is option (b) in spirit but not in sequence: the page **states its own falsification in full** and proposes the precise wording, and chapter 12 changes only when you agree it, because book content still changes by agreement. No reader is misled in the meantime, because the correction sits beside the thing that caused it."
     }
   ],
   "items": [
@@ -264,7 +266,30 @@
         "/altitudes/graph.html"
       ],
       "state": "applied",
-      "applied_in": "v0.3.20"
+      "applied_in": "v0.3.20",
+      "thread": [
+        {
+          "date": "22 August 2026",
+          "from": "Dinis Cruz, the reviewer",
+          "note": "\"Why can't you create that path-query UI?\" Answered by building it: decision D6 is settled, and the page states its own falsification of chapter 12 rather than leaving the sentence quietly misleading.",
+          "sources": []
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "topic": "Detectable, and acceptable: contradictions as measurements",
+      "reviewer_says": "What is really powerful about the approach we're taking is that a number of observations and conflicts and contradictions and errors will become deterministic and detectable via the visualisations or via the graphs. It doesn't mean that we shouldn't have them. Sometimes it's okay to contradict certain things because the context might mean it. The key is that we now can visualise it, and we can start to apply science to this.",
+      "comment": "This is the sharpest framing anyone has put on the findings work, and it exposes something the register was getting wrong. Every finding so far read as an accusation, which quietly implied that the correct number of contradictions is zero. That is false and it is also a bad incentive: a book with no detectable tensions is usually a book that has stopped saying anything.",
+      "proposal": "Two changes, both landed. **Findings now carry a state**: `open` or `accepted`, and an accepted one records **why** it was accepted, so the acceptance is itself arguable rather than assumed. Three are open, five accepted &mdash; and one is accepted *with a condition* rather than closed: the fractal weight mismatch is accepted because the v0.4.0 identity release will grow the interior, and it **returns to open** if v0.4.0 ships without that growth. That is risk acceptance in the form this estate already uses elsewhere. **And five checks now run on every build**, each stating the rule it ran: concepts strong in connectivity but with no published demonstration; units that two independent findings both touch; concepts nothing rests on; level 3 and 4 text the concept layer has not reached; and oppositions where a position and its antagonist appear in the same passage. A check with zero hits is kept, because a rule with no hits is still a rule. That is the difference the memo names: an observation somebody noticed is an opinion, and a rule that fires every time is a measurement.",
+      "needs": [],
+      "impact": [
+        "/altitudes/#checks",
+        "the findings register",
+        "r002 item 4's evidence layer"
+      ],
+      "state": "applied",
+      "applied_in": "v0.3.21"
     }
   ]
 }

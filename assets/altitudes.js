@@ -349,6 +349,20 @@
   });
 
   /* -------------------------------------------------------------- findings */
+  function checks() {
+    var el = document.getElementById('checks-list');
+    if (!el || !D.checks) { return; }
+    el.innerHTML = D.checks.map(function (c) {
+      return '<div class="altchk sv-' + esc(c.severity) + '">' +
+        '<h3>' + esc(c.asks) + ' <span class="rstate">' + c.hits.length + ' ' +
+        (c.hits.length === 1 ? 'hit' : 'hits') + '</span></h3>' +
+        '<p class="chkrule"><span class="revlbl">The rule that ran</span><code>' + esc(c.rule) + '</code></p>' +
+        (c.hits.length ? '<ul>' + c.hits.map(function (h) { return '<li>' + fmt(h) + '</li>'; }).join('') + '</ul>'
+                       : '<p class="small dim">Nothing matched today. The rule is kept anyway: a check with zero hits is still a check, and it will fire the moment the data changes.</p>') +
+        '<p class="small dim">' + fmt(c.reading) + '</p></div>';
+    }).join('');
+  }
+
   function findings() {
     var el = document.getElementById('findings-list');
     if (!el) { return; }
@@ -356,11 +370,21 @@
                  'compression-loss': 'compression loss', weight: 'weight mismatch',
                  'cross-estate': 'cross-estate', classification: 'classification', concept: 'the concept layer',
                  control: 'control case' };
-    el.innerHTML = D.findings.map(function (f) {
-      return '<div class="altfind af-' + esc(f.kind) + '">' +
-        '<h3>' + esc(f.title) + ' <span class="rstate">' + esc(KIND[f.kind] || f.kind) + '</span></h3>' +
+    var open = D.findings.filter(function (f) { return f.state === 'open'; }).length;
+    el.innerHTML = '<p class="small dim"><b>' + open + ' open</b>, <b>' +
+      (D.findings.length - open) + ' accepted</b>. A finding is not automatically a defect: ' +
+      'some contradictions are correct in context, and an accepted one carries the reason it ' +
+      'was accepted, so the acceptance can be argued with rather than assumed.</p>' +
+      D.findings.map(function (f) {
+      return '<div class="altfind af-' + esc(f.kind) + ' fs-' + esc(f.state || 'open') + '">' +
+        '<h3>' + esc(f.title) + ' <span class="rstate">' + esc(KIND[f.kind] || f.kind) + '</span>' +
+        '<span class="rstate ' + (f.state === 'accepted' ? 'rs-agreed' : 'rs-open') + '">' +
+        esc(f.state || 'open') + '</span></h3>' +
         '<p>' + fmt(f.detail) + '</p>' +
         '<p class="altverdict"><span class="revlbl">Verdict</span>' + fmt(f.verdict) + '</p>' +
+        (f.because ? '<p class="altbecause"><span class="revlbl">' +
+          (f.state === 'accepted' ? 'Accepted because' : 'Open because') + '</span>' +
+          fmt(f.because) + '</p>' : '') +
         '<p class="small dim">Where: ' + f.where.map(function (w) {
           return '<a href="#" data-go="' + w + '">' + esc(D.nodes[w] ? D.nodes[w].title : w) + '</a>';
         }).join(' · ') + '</p></div>';
@@ -370,6 +394,7 @@
   fetch('data/altitudes.json').then(function (r) { return r.json(); }).then(function (d) {
     D = d;
     findings();
+    checks();
     var q = new URLSearchParams(location.search);
     if (MODES[q.get('c')]) { mode = q.get('c'); }
     var t = (q.get('t') || '').split(',').filter(function (x) { return D.nodes[x]; });

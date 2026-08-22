@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.20</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.21</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -118,8 +118,13 @@
   <div id="ladder"><p class="small dim">Loading the ladder…</p></div>
 
   <h2 id="findings">What the climb found</h2>
-  <p>The reviewer predicted this: <em>"I think with this we actually will find some repeated content and some contradictions in the content, which would be quite interesting."</em> Seven findings now, and the prediction holds. Five came from the climb itself, one arrived from outside the book when a sibling estate published the same graph with different numbers, and one came from classifying each level — the discovery that the classes do not survive the climb. One of the seven is a contradiction the book already knew about, kept here as the control case that shows the method can tell a hidden contradiction from a disclosed one.</p>
+  <p>The reviewer predicted this: <em>"I think with this we actually will find some repeated content and some contradictions in the content, which would be quite interesting."</em> Seven findings now, and the prediction holds. Five came from the climb itself, one arrived from outside the book when a sibling estate published the same graph with different numbers, and one came from classifying each level — the discovery that the classes do not survive the climb. One is a contradiction the book already knew about, kept as the control case that shows the method can tell a hidden contradiction from a disclosed one. <b>Each finding now carries a state.</b> A finding is not automatically a defect: some contradictions are right in context, and an <em>accepted</em> one records the reason it was accepted, so the acceptance itself can be argued with instead of assumed. Three are open; five are accepted.</p>
   <div id="findings-list"><p class="small dim">Loading the findings…</p></div>
+
+  <h2 id="checks">Checks that run every build</h2>
+  <p>The findings above were noticed. These are <b>computed</b>: five rules run over the graph on every build, each stating the rule it ran so a reader can disagree by recomputing rather than by arguing. That is the difference between an observation and a measurement, and it is what makes a contradiction <em>detectable</em> rather than merely arguable.</p>
+  <p>A check that finds nothing is kept, because a rule with zero hits is still a rule and will fire the moment the data changes. And a hit is not automatically a fault: the reading beside each one says what it usually means.</p>
+  <div id="checks-list"><p class="small dim">Loading the checks…</p></div>
 
   <h2 id="onttax">An ontology and a taxonomy for every level</h2>
   <p>Each level carries two things that are easy to confuse and are kept apart here for the reason the <a href="../book/ch-15-glossary.html">glossary</a> gives: a <b>taxonomy points upward</b> (broader and narrower — what kind of unit is this?) while an <b>ontology points outward</b> (what types exist here, and how may they connect?). Open any column's <b>⊞ ontology and taxonomy</b> panel to see that level's. Every edge type is a verb with a distinct inverse and a stated domain and range, because the <a href="../book/ch-03-the-rules-you-can-apply-tomorrow.html">grammar chapter</a> requires that of any graph this project publishes, including this one.</p>
@@ -141,7 +146,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.20</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.21</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
