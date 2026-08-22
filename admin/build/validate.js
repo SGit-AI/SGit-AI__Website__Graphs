@@ -240,6 +240,22 @@ if (!fs.existsSync(bookManifestPath)) {
       if (!fs.existsSync(path.join(ROOT, 'book', f))) errors.push(`cover file missing: book/${f}`);
     }
   }
+  // the version-diff data must include this release: every version of the
+  // book is comparable with every other, including the one shipping now
+  const chIdxPath = path.join(ROOT, 'book/changes/data/index.json');
+  if (!fs.existsSync(chIdxPath)) {
+    errors.push('book/changes/data/index.json is missing — run gen_changes.py');
+  } else {
+    const chIdx = JSON.parse(fs.readFileSync(chIdxPath, 'utf8'));
+    if (!(chIdx.versions || []).some(e => e.v === VERSION)) {
+      errors.push(`book/changes data has no snapshot for ${VERSION} — run gen_changes.py`);
+    }
+    for (const e of chIdx.versions || []) {
+      if (!fs.existsSync(path.join(ROOT, 'book/changes/data', `${e.v}.json`))) {
+        errors.push(`book/changes data lists ${e.v} but ${e.v}.json is missing — run gen_changes.py`);
+      }
+    }
+  }
   const REQUIRED_PDFS = ['meaning-through-connectivity.pdf',
                          'meaning-through-connectivity-screen.pdf'];
   const listed = (book.pdfs || []).map(e => e.file);

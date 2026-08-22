@@ -44,6 +44,7 @@ NAV = [
     ("The book", "book/index.html", [
         ("Table of contents", "book/index.html"),
         ("Read it in one page", "book/single.html"),
+        ("What changed between versions", "book/changes.html"),
         ("The print PDF (6&times;9)", "book/meaning-through-connectivity.pdf"),
         ("The screen PDF (tablet)", "book/meaning-through-connectivity-screen.pdf"),
     ], ("book/",)),
