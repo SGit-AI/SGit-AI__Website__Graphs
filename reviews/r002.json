@@ -7,7 +7,7 @@
   "source": "briefs/12__founder-review__humans-and-agents.md",
   "version_reviewed": "v0.3.8",
   "state": "discussing",
-  "state_note": "In discussion: the librarian's resolution pack (brief 13) resolved item 4 outright, with the citation-network study identified (Greenberg, BMJ 2009) and the 10,000-hours sources named. The founder decisions (title allocation, pilot chapter, sequencing) remain open.",
+  "state_note": "In discussion: the librarian's resolution pack (brief 13) resolved item 4 outright, with the citation-network study identified (Greenberg, BMJ 2009) and the 10,000-hours sources named. The founder decisions (title allocation, pilot chapter, sequencing) remain open. A founder pointer added sgraph.ai's machine-readable layer as prior art for the agent toolbox (item 7).",
   "items": [
     {
       "n": 1,
@@ -126,7 +126,18 @@
         "new page",
         "llms.txt"
       ],
-      "state": "proposed"
+      "state": "discussing",
+      "thread": [
+        {
+          "date": "22 August 2026",
+          "from": "the agent, on a founder pointer to sgraph.ai",
+          "note": "Prior art inside the family, found on a founder pointer: sgraph.ai already runs the pattern this item proposes. Every library page there is machine-readable (.md and .llm.json views, a documented three-layer design, and an agent and API access guide), served from a public vault and stated in its llms.txt. The toolbox page here should align with that pattern rather than invent a new one, and can cite it as the worked example. Fetched and verified today.",
+          "sources": [
+            "[Machine-Readable Content](https://sgraph.ai/en-gb/library/how-it-works/machine-readable-content.md)",
+            "[Agent and API Access Guide](https://sgraph.ai/en-gb/library/how-it-works/machine-readable-content/agent-access.md)"
+          ]
+        }
+      ]
     },
     {
       "n": 8,

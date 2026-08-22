@@ -7,7 +7,7 @@
   "source": "briefs/11__founder-review__first-reading.md",
   "version_reviewed": "v0.3.7",
   "state": "discussing",
-  "state_note": "In discussion: on 22 August the librarian of the source repository answered this review's needs (brief 13). Eleven of the twelve needs across r001 and r002 are met; only the reviewer's reading screenshots remain outstanding. The founder decisions are unchanged and open, with one reframed: the title choice is now three-way, because the concept already carries the published name G3.",
+  "state_note": "In discussion: on 22 August the librarian of the source repository answered this review's needs (brief 13). Eleven of the twelve needs across r001 and r002 are met; only the reviewer's reading screenshots remain outstanding. The founder decisions are unchanged and open, with one reframed: the title choice is now three-way, because the concept already carries the published name G3. A founder pointer then added a third estate: sgraph.ai's library (served from a public vault, every page machine-readable), which upgrades the EmailFS case study to a live deployment and adds four more public vaults.",
   "items": [
     {
       "n": 1,
@@ -172,6 +172,15 @@
           "sources": [
             "[sgit.ai/vault/](https://sgit.ai/vault/) and [the demo vaults index](https://sgit.ai/demos/vaults/)"
           ]
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the agent, on a founder pointer to sgraph.ai",
+          "note": "A second estate widens this chapter: sgraph.ai's own library is served live from a public vault, and its registry pattern is itself vault evidence. The site publishes /core/public-vaults.json, four vaults with read keys published by design (the server holds only ciphertext; the browser decrypts), including the Library Content vault the site's articles are served from, with per-vault _vault-meta.json enrichment. That is four more live vaults beyond the three sgit.ai demos, and a different demonstration: not a vault as an exhibit, but a production website whose content IS a vault. The Building on sgraph.ai section documents the vault content model and edge rendering that make it work. Fetched and verified today.",
+          "sources": [
+            "[The open vaults page](https://sgraph.ai/en-gb/dev/vaults/) and the registry at sgraph.ai/core/public-vaults.json",
+            "[Building on sgraph.ai](https://sgraph.ai/en-gb/library/building-on-sgraph.md)"
+          ]
         }
       ]
     },
@@ -201,6 +210,16 @@
           "sources": [
             "[Explorers, Villagers, and Town Planners](https://docs.diniscruz.ai/2025/06/10/explorers-villagers-and-town-planners-understanding-the-generative-ai-divide.html)",
             "Full path map: [13__send-repo-sources.csv](../briefs/13__send-repo-sources.csv), 24 paths verified at v0.33.62"
+          ]
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the agent, on a founder pointer to sgraph.ai",
+          "note": "The EmailFS case study upgrades from design documents to a live, publicly documented deployment: sgraph.ai's library carries Email-FS-lite as a full protocol section (overview plus seven pages: big picture, message lifecycle, check-in cycle, vault ownership and write boundaries, issues workflow, audit and recovery, identity and addressing), and the protocol runs the site's own agent team in production. Core design: agents coordinate by exchanging RFC 2822 messages through shared filesystem vaults, no broker, a single-writer rule, SEND to DELIVER to DONE lifecycle, sgit commits as the audit trail, 'everything is a filesystem operation'. One calibration for the writing: the sgraph.ai docs present it in filesystem and message-flow terms; the graph reading (linked structures that let things communicate) comes from the design briefs, so the case study should bridge both framings rather than assume one. The team-as-a-graph case study also gains a second public instantiation: the sgraph.ai roster of seven agents (@Content, @Dev, @Comms, @Ontologist, @Observer, @AppSec, @Journalist) with coordination, roles and bootstrap guides. Every library page is fetchable as .md, so all of this is citable directly. Fetched and verified today.",
+          "sources": [
+            "[Email-FS-lite, the protocol section](https://sgraph.ai/en-gb/library/how-it-works/email-fs-lite.md)",
+            "[SG Teams](https://sgraph.ai/en-gb/library/sg-teams.md) and [the agentic team roster](https://sgraph.ai/en-gb/library/agentic-teams/sgraph-ai-team.md)",
+            "[Adding Email-FS-lite to your team](https://sgraph.ai/en-gb/library/guides/adopt-email-fs-lite.md)"
           ]
         }
       ]
