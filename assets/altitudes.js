@@ -354,7 +354,7 @@
     if (!el) { return; }
     var KIND = { contradiction: 'contradiction', repeat: 'repeated content',
                  'compression-loss': 'compression loss', weight: 'weight mismatch',
-                 'cross-estate': 'cross-estate', classification: 'classification',
+                 'cross-estate': 'cross-estate', classification: 'classification', concept: 'the concept layer',
                  control: 'control case' };
     el.innerHTML = D.findings.map(function (f) {
       return '<div class="altfind af-' + esc(f.kind) + '">' +

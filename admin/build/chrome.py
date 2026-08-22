@@ -48,6 +48,7 @@ NAV = [
         ("The reviews", "reviews/index.html"),
         ("The altitude ladder", "altitudes/index.html"),
         ("&hellip; as one graph", "altitudes/graph.html"),
+        ("&hellip; the concept map", "altitudes/concepts.html"),
         ("The print PDF (6&times;9)", "book/meaning-through-connectivity.pdf"),
         ("The screen PDF (tablet)", "book/meaning-through-connectivity-screen.pdf"),
     ], ("book/", "altitudes/")),

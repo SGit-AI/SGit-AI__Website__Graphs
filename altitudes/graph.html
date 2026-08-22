@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.19</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.20</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -40,6 +40,7 @@
       <a class="sl" href="../reviews/index.html">The reviews</a>
       <a class="sl" href="../altitudes/index.html">The altitude ladder</a>
       <a class="sl here" href="../altitudes/graph.html">&hellip; as one graph</a>
+      <a class="sl" href="../altitudes/concepts.html">&hellip; the concept map</a>
       <a class="sl" href="../book/meaning-through-connectivity.pdf">The print PDF (6&times;9)</a>
       <a class="sl" href="../book/meaning-through-connectivity-screen.pdf">The screen PDF (tablet)</a>
       </div>
@@ -104,7 +105,7 @@
   <script src="../assets/nav.js" defer></script>
 </div></nav>
 
-<main class="doc wide">
+<main class="doc wide bleed">
   <div class="crumb"><a href="../index.html">graphs.sgit.ai</a> → <a href="index.html">the altitude ladder</a> → <b>As one graph</b></div>
   <h1>The ladder as one graph</h1>
   <p class="lead">The <a href="index.html">column view</a> is good at one path and bad at everything else: it shows you the chain you are on and hides every other relationship in the structure. This page draws the whole thing at once, so the parts that are <b>not</b> a tree become visible — the cross-references that jump between chapters, and the units that two different findings both touch. Drawn with <a href="https://js.cytoscape.org/">Cytoscape.js</a>, vendored into this site rather than loaded from a CDN, because a page about traceable structure should not depend on somebody else's uptime.</p>
@@ -114,44 +115,84 @@
   <div class="gwrap">
     <form id="gcfg" class="gcfg">
       <fieldset><legend>Levels</legend>
-        <label><input type="checkbox" name="lv1" value="1" checked> L1 · the paragraph</label>
-        <label><input type="checkbox" name="lv2" value="2" checked> L2 · the parts</label>
-        <label><input type="checkbox" name="lv3" value="3" checked> L3 · the units</label>
-        <label><input type="checkbox" name="lv4" value="4" checked> L4 · the sections</label>
+        <label><input type="checkbox" name="lv1" checked> L1 · the paragraph</label>
+        <label><input type="checkbox" name="lv2" checked> L2 · the parts</label>
+        <label><input type="checkbox" name="lv3" checked> L3 · the units</label>
+        <label><input type="checkbox" name="lv4" checked> L4 · the sections</label>
       </fieldset>
       <fieldset><legend>Show</legend>
+        <label><input type="checkbox" name="concepts" checked> <b>concepts</b></label>
+        <label><input type="checkbox" name="cedges" checked> &hellip; concept edges</label>
+        <label><input type="checkbox" name="crossing" checked> &hellip; where they appear</label>
         <label><input type="checkbox" name="tree" checked> the compression tree</label>
-        <label><input type="checkbox" name="cites" checked> cross-references <span class="small dim">(measured)</span></label>
+        <label><input type="checkbox" name="cites" checked> cross-references</label>
         <label><input type="checkbox" name="findings" checked> findings, as nodes</label>
-        <label><input type="checkbox" name="claims"> claims <span class="small dim">(adds ~40 nodes)</span></label>
+        <label><input type="checkbox" name="claims"> claims <span class="small dim">(~40)</span></label>
       </fieldset>
       <fieldset><legend>Colour by</legend>
-        <label><input type="radio" name="colour" value="level" checked> altitude</label>
+        <label><input type="radio" name="colour" value="kind" checked> what kind of node</label>
+        <label><input type="radio" name="colour" value="level"> altitude</label>
         <label><input type="radio" name="colour" value="class"> taxonomy class</label>
         <label><input type="radio" name="colour" value="evidence"> evidence behind it</label>
       </fieldset>
+      <fieldset><legend>Labels</legend>
+        <label><input type="radio" name="labels" value="inside" checked> inside the node</label>
+        <label><input type="radio" name="labels" value="below"> below the node</label>
+        <label><input type="radio" name="labels" value="none"> none</label>
+        <label class="grange">wrap at <output id="out-wrap">18</output> chars
+          <input type="range" name="wrap" min="10" max="46" step="2" value="18"></label>
+        <label class="grange">cut at <output id="out-maxlen">28</output> chars
+          <input type="range" name="maxlen" min="12" max="90" step="2" value="28"></label>
+        <label><input type="radio" name="edgeLabels" value="none" checked> no edge labels</label>
+        <label><input type="radio" name="edgeLabels" value="verb"> name the edges</label>
+      </fieldset>
+      <fieldset><legend>Size by</legend>
+        <label><input type="radio" name="size" value="strength" checked> strength / words</label>
+        <label><input type="radio" name="size" value="words"> words only</label>
+        <label><input type="radio" name="size" value="fixed"> uniform</label>
+      </fieldset>
       <fieldset><legend>Layout</legend>
-        <label><input type="radio" name="layout" value="breadthfirst" checked> layered <span class="small dim">(one band per altitude)</span></label>
-        <label><input type="radio" name="layout" value="cose"> force</label>
+        <label><input type="radio" name="layout" value="force" checked> force</label>
+        <label><input type="radio" name="layout" value="layered"> layered bands</label>
         <label><input type="radio" name="layout" value="concentric"> concentric</label>
         <label><input type="radio" name="layout" value="grid"> grid</label>
+        <label class="grange">iterations <output id="out-iterations">2000</output>
+          <input type="range" name="iterations" min="300" max="12000" step="300" value="2000"></label>
+        <label><input type="checkbox" name="stabilise"> cool slowly (settles further)</label>
+        <button type="button" id="grelayout">Re-run layout</button>
+        <button type="button" id="gstable">Run until settled</button>
       </fieldset>
-      <fieldset><legend>Labels &amp; size</legend>
-        <label><input type="radio" name="labels" value="units" checked> units and findings</label>
-        <label><input type="radio" name="labels" value="all"> everything</label>
-        <label><input type="radio" name="labels" value="none"> none</label>
-        <label><input type="radio" name="size" value="words" checked> size by words</label>
-        <label><input type="radio" name="size" value="fixed"> uniform size</label>
+      <fieldset><legend>Explore from one place</legend>
+        <label class="grange">radius <output id="out-radius">0</output> hops
+          <input type="range" name="radius" min="0" max="4" step="1" value="0"></label>
+        <p class="small dim">0 shows everything. Above 0, the graph shows only what is within that many hops of the node you centred &mdash; double-click any node to centre it.</p>
+        <button type="button" id="gcollapse">Collapse selection</button>
+        <button type="button" id="gexpandall">Expand all groups</button>
       </fieldset>
-      <fieldset><legend>View</legend>
+      <fieldset><legend>Keep this view</legend>
+        <button type="button" id="gpng">Save PNG</button>
+        <button type="button" id="gsave">Save view (.json)</button>
+        <button type="button" id="gload">Load view</button>
+        <input type="file" id="gfile" accept="application/json" hidden>
+        <p class="small dim">The view file carries the settings, the zoom, the pan, what you collapsed and every node position &mdash; so a picture can be recreated, not just kept.</p>
+      </fieldset>
+      <fieldset><legend>Screen</legend>
+        <button type="button" id="gwide">Hide the panels</button>
+        <button type="button" id="gfull">Full screen</button>
         <button type="button" id="gfit">Fit to screen</button>
         <button type="button" id="greset">Clear selection</button>
         <p class="small dim" id="gstats"></p>
       </fieldset>
     </form>
-    <div id="cy"></div>
+    <div class="gmid">
+      <div id="cy"></div>
+      <div class="gresize-v" data-gresize="v" title="Drag to make the graph taller"></div>
+    </div>
+    <div class="gresize-h" data-gresize="h" title="Drag to resize the panel"></div>
     <aside id="gdetail" class="gdetail"></aside>
   </div>
+  <p class="small dim" id="gnote"></p>
+  <p class="small dim" id="ginventory"></p>
 
   <div class="gkey">
     <span><i class="ge-tree"></i> compresses <em>(the tree, level to level)</em></span>
@@ -180,7 +221,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.19</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.20</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

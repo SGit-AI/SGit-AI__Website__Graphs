@@ -1,5 +1,5 @@
 {
- "version": "v0.3.19",
+ "version": "v0.3.20",
  "root": "L1",
  "levels": [
   {
@@ -390,26 +390,30 @@
     {
      "text": "Meaning is derived from edges, not carried by nodes.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     },
     {
      "text": "Confidence is a function of connectivity.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     },
     {
      "text": "The same grammar holds at every altitude (fractal).",
      "state": "argued",
      "evidence": [
       "Stated as falsifiable in chapter 6; not tested in this book"
-     ]
+     ],
+     "kind": "assertion"
     },
     {
      "text": "Most of the semantic layer is designed, not shipped.",
      "state": "evidenced",
      "evidence": [
       "Chapter 12's separation, verifiable by reading the source repository"
-     ]
+     ],
+     "kind": "fact"
     }
    ],
    "note": null,
@@ -478,12 +482,14 @@
      "state": "evidenced",
      "evidence": [
       "Both are real Python; Safe_UInt__Port is shipped code, not a metaphor"
-     ]
+     ],
+     "kind": "fact"
     },
     {
      "text": "Nobody has to agree on a definition for compatibility to be computed.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     }
    ],
    "note": null,
@@ -528,14 +534,16 @@
     {
      "text": "Inverse asymmetry (owned_by vs owns) is what bounds fan-out.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     },
     {
      "text": "Nine of the fifteen inverse names are this book's proposals, not the corpus's.",
      "state": "evidenced",
      "evidence": [
       "Marked row by row in the edge-set table"
-     ]
+     ],
+     "kind": "fact"
     }
    ],
    "note": null,
@@ -572,19 +580,22 @@
     {
      "text": "Merging vocabularies erases the disagreement, which is the valuable part.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     },
     {
      "text": "Classification can be moved from a human judgment to a visible formula.",
      "state": "argued",
      "evidence": [
       "Node type formulas are written; no executing implementation exists"
-     ]
+     ],
+     "kind": "assertion"
     },
     {
      "text": "The fractal claim is falsifiable and the book states how.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     }
    ],
    "note": null,
@@ -623,19 +634,22 @@
      "state": "evidenced",
      "evidence": [
       "Live vault, published"
-     ]
+     ],
+     "kind": "fact"
     },
     {
      "text": "The browser-isolation graph holds 59 nodes and 75 edges, three of them risks of the mitigation.",
      "state": "evidenced",
      "evidence": [
       "Parsed from the brief; the file is published"
-     ]
+     ],
+     "kind": "fact"
     },
     {
      "text": "The unanswered questions are the output, not a shortfall.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     }
    ],
    "note": null,
@@ -698,21 +712,24 @@
      "state": "evidenced",
      "evidence": [
       "Verifiable by reading the source repository"
-     ]
+     ],
+     "kind": "fact"
     },
     {
      "text": "No graph database exists anywhere in the work.",
      "state": "evidenced",
      "evidence": [
       "Stated in chapter 12; MGraph-DB is not a dependency"
-     ]
+     ],
+     "kind": "fact"
     },
     {
      "text": "The philosophy documents are not routed from the file agents start at.",
      "state": "evidenced",
      "evidence": [
       "Ask N1, open since 11 June 2026"
-     ]
+     ],
+     "kind": "fact"
     }
    ],
    "note": null,
@@ -757,14 +774,16 @@
     {
      "text": "Concept and term are different objects; meaning is never stored in a term.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     },
     {
      "text": "The participant disclosure names where the approach loses.",
      "state": "evidenced",
      "evidence": [
       "Chapter 16"
-     ]
+     ],
+     "kind": "fact"
     }
    ],
    "note": null,
@@ -803,19 +822,22 @@
      "state": "evidenced",
      "evidence": [
       "1993 Berlin violin study; Greenberg, BMJ 2009 for the citation network (PubMed 19622839)"
-     ]
+     ],
+     "kind": "fact"
     },
     {
      "text": "242 papers and 200,000+ citation paths carried it.",
      "state": "evidenced",
      "evidence": [
       "Greenberg, BMJ 2009"
-     ]
+     ],
+     "kind": "fact"
     },
     {
      "text": "A graph can propagate the correction where a document cannot.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     }
    ],
    "note": null,
@@ -861,19 +883,22 @@
     {
      "text": "A node with no edges carries no meaning.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     },
     {
      "text": "Compatibility is a spectrum, asymmetric and purpose-relative.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     },
     {
      "text": "The chapter carries five ideas; the foundational source lists ten principles.",
      "state": "evidenced",
      "evidence": [
       "Thinking in Graphs (5 February 2026), Summary: Core Principles; addendum 01"
-     ]
+     ],
+     "kind": "fact"
     }
    ],
    "note": null,
@@ -984,17 +1009,20 @@
      "state": "argued",
      "evidence": [
       "Part 4 of Thinking in Graphs names schema.org, SKOS, Dublin Core and PROV-O"
-     ]
+     ],
+     "kind": "assertion"
     },
     {
      "text": "Parties can disagree about meaning while agreeing about facts.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     },
     {
      "text": "Judgment moves into a visible, versioned formula rather than disappearing.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     }
    ],
    "note": null,
@@ -1283,7 +1311,8 @@
     {
      "text": "A label is not a meaning.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     }
    ],
    "note": null,
@@ -1311,7 +1340,8 @@
      "state": "evidenced",
      "evidence": [
       "The type exists in the source library"
-     ]
+     ],
+     "kind": "fact"
     }
    ],
    "note": null,
@@ -1339,7 +1369,8 @@
      "state": "argued",
      "evidence": [
       "Principle 6 of the foundational source, absent from this chapter"
-     ]
+     ],
+     "kind": "assertion"
     }
    ],
    "note": null,
@@ -1367,7 +1398,8 @@
      "state": "argued",
      "evidence": [
       "Principle 8 of the foundational source, stated here but not named as a principle"
-     ]
+     ],
+     "kind": "assertion"
     }
    ],
    "note": null,
@@ -1395,7 +1427,8 @@
      "state": "argued",
      "evidence": [
       "Principle 7 of the foundational source"
-     ]
+     ],
+     "kind": "assertion"
     }
    ],
    "note": null,
@@ -1441,14 +1474,16 @@
     {
      "text": "The Semantic Web identified the right problem.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     },
     {
      "text": "schema.org, SKOS, Dublin Core and PROV-O are the useful outputs.",
      "state": "evidenced",
      "evidence": [
       "Named in Part 4 of the foundational source"
-     ]
+     ],
+     "kind": "fact"
     }
    ],
    "note": null,
@@ -1474,7 +1509,8 @@
     {
      "text": "Merging erases the disagreement.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     }
    ],
    "note": null,
@@ -1502,7 +1538,8 @@
      "state": "argued",
      "evidence": [
       "Written as design; no executing implementation exists"
-     ]
+     ],
+     "kind": "assertion"
     }
    ],
    "note": null,
@@ -1528,7 +1565,8 @@
     {
      "text": "The ladder is one formula among others.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     }
    ],
    "note": null,
@@ -1554,7 +1592,8 @@
     {
      "text": "Deleting a claim destroys the record of what rested on it.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     }
    ],
    "note": null,
@@ -1580,7 +1619,8 @@
     {
      "text": "Meaning must never be stored in a term.",
      "state": "argued",
-     "evidence": []
+     "evidence": [],
+     "kind": "assertion"
     }
    ],
    "note": null,
@@ -1642,6 +1682,17 @@
     "L3-6"
    ],
    "verdict": "Evidence for an open decision. Review r001 item 2 warns that retitling to Fractal Semantic Graphs without growing the fractal treatment puts a promise on the cover the interior underdelivers. The ladder turns that warning into a test: the title is right when the one-paragraph version of the book cannot be written without the word."
+  },
+  {
+   "kind": "concept",
+   "title": "The position the book argues against is one of its strongest nodes",
+   "detail": "Adding the concept layer produced a ranking nobody chose: strength is a stated formula over the edges, and **schema-first thinking** — the thing this book exists to argue against — comes out among the peaks, level with confidence-is-a-function-of-connectivity. It earns that place honestly: five separate concepts define themselves partly by opposing it, so the edges genuinely converge there.",
+   "where": [
+    "L2-3",
+    "L3-5",
+    "L4-5-1"
+   ],
+   "verdict": "Worth keeping rather than tuning away. A book of arguments will always have its antagonist as a centre of gravity, and a strength metric that hid that would be measuring agreement rather than connectivity. It does carry one caution for the evidence layer: **a strong node is not a supported one.** Schema-first has high connectivity and, by design, no evidence attached — the two axes are independent, and any future ranking that conflates them will overstate whatever the book repeats most often."
   },
   {
    "kind": "classification",
@@ -1887,6 +1938,1110 @@
    "weight": 1
   }
  ],
+ "concepts": [
+  {
+   "id": "meaning-through-connectivity",
+   "label": "Meaning through connectivity",
+   "definition": "What a thing **is** emerges from the edges traceable from it, not from anything stored inside it. The node is the address; the edges are the meaning.",
+   "also_called": [
+    "the thesis",
+    "the title after the colon"
+   ],
+   "near_but_not": [
+    "semantic search — which infers meaning from similarity rather than deriving it from structure"
+   ],
+   "edges": [
+    [
+     "constrains",
+     "properties-carry-data-not-meaning"
+    ],
+    [
+     "enables",
+     "classification-as-query"
+    ],
+    [
+     "enables",
+     "projection"
+    ],
+    [
+     "grounds",
+     "compatibility-computed"
+    ],
+    [
+     "opposes",
+     "schema-first"
+    ]
+   ],
+   "units": [
+    "L1",
+    "L2-1",
+    "L3-intro",
+    "L3-2",
+    "L4-2-1",
+    "L4-2-2"
+   ],
+   "demonstrated_by": [
+    "../vaults/voice-debrief/junction.html"
+   ],
+   "in_edges": [
+    [
+     "grounded_by",
+     "confidence-from-connectivity"
+    ],
+    [
+     "constrained_by",
+     "fractal"
+    ],
+    [
+     "grounded_by",
+     "node-alone-means-nothing"
+    ]
+   ],
+   "strength": {
+    "out": 5,
+    "incoming": 3,
+    "units": 6,
+    "shown": 1,
+    "score": 19,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "node-alone-means-nothing",
+   "label": "A node alone means nothing",
+   "definition": "A label is not a meaning. A node with no edges cannot be distinguished from any other node carrying the same label, so it carries no information at all.",
+   "also_called": [
+    "a node is just a node"
+   ],
+   "near_but_not": [
+    "an empty node — which has a type and a place, and is therefore not the same thing"
+   ],
+   "edges": [
+    [
+     "grounds",
+     "confidence-from-connectivity"
+    ],
+    [
+     "grounds",
+     "meaning-through-connectivity"
+    ]
+   ],
+   "units": [
+    "L1",
+    "L2-1",
+    "L3-2",
+    "L4-2-1"
+   ],
+   "demonstrated_by": [],
+   "in_edges": [],
+   "strength": {
+    "out": 2,
+    "incoming": 0,
+    "units": 4,
+    "shown": 0,
+    "score": 6,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "confidence-from-connectivity",
+   "label": "Confidence is a function of connectivity",
+   "definition": "How much a claim can be trusted is computable from how richly it is connected: no edges, local edges, typed definitions, anchor nodes, external references, rich multi-hop paths.",
+   "also_called": [
+    "the confidence ladder"
+   ],
+   "near_but_not": [
+    "probability — the ladder is not a likelihood, it is a reachability measure"
+   ],
+   "edges": [
+    [
+     "enables",
+     "enrichment-not-enforcement"
+    ],
+    [
+     "grounds",
+     "enrichment-not-enforcement"
+    ],
+    [
+     "grounds",
+     "meaning-through-connectivity"
+    ],
+    [
+     "grounds",
+     "named-absence"
+    ]
+   ],
+   "units": [
+    "L1",
+    "L2-1",
+    "L3-2",
+    "L4-2-4"
+   ],
+   "demonstrated_by": [],
+   "in_edges": [
+    [
+     "grounded_by",
+     "node-alone-means-nothing"
+    ],
+    [
+     "enabled_by",
+     "provenance-chain"
+    ]
+   ],
+   "strength": {
+    "out": 4,
+    "incoming": 2,
+    "units": 4,
+    "shown": 0,
+    "score": 12,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "enrichment-not-enforcement",
+   "label": "Enrichment, not enforcement",
+   "definition": "When confidence is low the remedy is adding edges, never adding rules. The graph grows; it does not constrain.",
+   "also_called": [
+    "the graph grows, it doesn't constrain"
+   ],
+   "near_but_not": [
+    "validation — which is enforcement wearing a helpful name"
+   ],
+   "edges": [
+    [
+     "opposes",
+     "schema-first"
+    ]
+   ],
+   "units": [
+    "L3-2",
+    "L4-2-4"
+   ],
+   "demonstrated_by": [],
+   "in_edges": [
+    [
+     "enabled_by",
+     "confidence-from-connectivity"
+    ],
+    [
+     "grounded_by",
+     "confidence-from-connectivity"
+    ]
+   ],
+   "strength": {
+    "out": 1,
+    "incoming": 2,
+    "units": 2,
+    "shown": 0,
+    "score": 7,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "named-absence",
+   "label": "A named absence beats a hidden one",
+   "definition": "Three of ten pieces of evidence is information. An absence that is stated can be queried, assigned and closed; an absence that is hidden silently supports whatever rests on it.",
+   "also_called": [
+    "honest uncertainty",
+    "the ghosted node"
+   ],
+   "near_but_not": [
+    "a missing value — which is the absence of a record, not a recorded absence"
+   ],
+   "edges": [
+    [
+     "enables",
+     "provenance-chain"
+    ]
+   ],
+   "units": [
+    "L1",
+    "L2-1",
+    "L3-2",
+    "L4-2-5"
+   ],
+   "demonstrated_by": [
+    "../vaults/voice-debrief/absence.html"
+   ],
+   "in_edges": [
+    [
+     "grounded_by",
+     "confidence-from-connectivity"
+    ]
+   ],
+   "strength": {
+    "out": 1,
+    "incoming": 1,
+    "units": 4,
+    "shown": 1,
+    "score": 9,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "edge-is-a-verb",
+   "label": "Every edge is a verb with a distinct inverse",
+   "definition": "An edge is named as a verb, and its inverse is a **different** verb rather than the same edge walked backwards: `owned_by` and `owns` have different fan-out, and that asymmetry is what bounds traversal.",
+   "also_called": [
+    "the grammar rule",
+    "verb edges"
+   ],
+   "near_but_not": [
+    "a labelled edge — a label is not yet a verb, and a verb without a distinct inverse is half an edge"
+   ],
+   "edges": [
+    [
+     "constrains",
+     "banned-generic-edge"
+    ],
+    [
+     "enables",
+     "render-the-query"
+    ],
+    [
+     "grounds",
+     "path-reads-as-a-sentence"
+    ]
+   ],
+   "units": [
+    "L1",
+    "L2-2",
+    "L3-3",
+    "L3-4"
+   ],
+   "demonstrated_by": [],
+   "in_edges": [
+    [
+     "generalises",
+     "banned-generic-edge"
+    ]
+   ],
+   "strength": {
+    "out": 3,
+    "incoming": 1,
+    "units": 4,
+    "shown": 0,
+    "score": 9,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "banned-generic-edge",
+   "label": "The generic association edge is banned",
+   "definition": "`relates-to` is refused because everything relates to everything: it constrains nothing, costs fan-out, and is what you reach for when you have not yet decided what you mean.",
+   "also_called": [
+    "no relates-to"
+   ],
+   "near_but_not": [
+    "a weak edge — which still says something, where a generic edge says nothing"
+   ],
+   "edges": [
+    [
+     "specialises",
+     "edge-is-a-verb"
+    ]
+   ],
+   "units": [
+    "L1",
+    "L2-2",
+    "L3-3"
+   ],
+   "demonstrated_by": [],
+   "in_edges": [
+    [
+     "constrained_by",
+     "edge-is-a-verb"
+    ]
+   ],
+   "strength": {
+    "out": 1,
+    "incoming": 1,
+    "units": 3,
+    "shown": 0,
+    "score": 6,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "path-reads-as-a-sentence",
+   "label": "A path must read as a sentence",
+   "definition": "If a traversal does not read as natural language in the reader's own tongue, the edges are wrong. The test is linguistic because the failure is semantic.",
+   "also_called": [
+    "the sentence test"
+   ],
+   "near_but_not": [
+    "a readable label — the test is over a whole path, not one edge"
+   ],
+   "edges": [
+    [
+     "enables",
+     "bidirectional-paths"
+    ],
+    [
+     "grounds",
+     "bidirectional-paths"
+    ]
+   ],
+   "units": [
+    "L2-2",
+    "L3-3"
+   ],
+   "demonstrated_by": [],
+   "in_edges": [
+    [
+     "grounded_by",
+     "edge-is-a-verb"
+    ]
+   ],
+   "strength": {
+    "out": 2,
+    "incoming": 1,
+    "units": 2,
+    "shown": 0,
+    "score": 6,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "bidirectional-paths",
+   "label": "Both directions carry a name",
+   "definition": "Because every edge names its inverse, a path can be walked and read in either direction, and the reading changes: down a grounds chain reaches assumptions, up it reaches consequences.",
+   "also_called": [
+    "walk it both ways"
+   ],
+   "near_but_not": [
+    "an undirected edge — which has no reading at all"
+   ],
+   "edges": [
+    [
+     "enables",
+     "classification-as-query"
+    ]
+   ],
+   "units": [
+    "L2-2",
+    "L3-3",
+    "L3-4"
+   ],
+   "demonstrated_by": [],
+   "in_edges": [
+    [
+     "enabled_by",
+     "path-reads-as-a-sentence"
+    ],
+    [
+     "grounded_by",
+     "path-reads-as-a-sentence"
+    ]
+   ],
+   "strength": {
+    "out": 1,
+    "incoming": 2,
+    "units": 3,
+    "shown": 0,
+    "score": 8,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "render-the-query",
+   "label": "Never render the whole graph",
+   "definition": "You render the **result of a query**, never the graph itself. Build wide, find the few, then flip. A rendered graph past a few hundred nodes is a picture of nothing.",
+   "also_called": [
+    "build wide, find the few, flip"
+   ],
+   "near_but_not": [
+    "filtering — which hides what it does not show; a query states what it asked"
+   ],
+   "edges": [
+    [
+     "constrains",
+     "projection"
+    ]
+   ],
+   "units": [
+    "L1",
+    "L2-2",
+    "L3-3"
+   ],
+   "demonstrated_by": [],
+   "in_edges": [
+    [
+     "enabled_by",
+     "edge-is-a-verb"
+    ]
+   ],
+   "strength": {
+    "out": 1,
+    "incoming": 1,
+    "units": 3,
+    "shown": 0,
+    "score": 6,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "fractal",
+   "label": "The same grammar at every altitude",
+   "definition": "One grammar, one validator, one provenance rule at every level of zoom: expand any node and the thing inside obeys identical rules. Stated as falsifiable, not as a metaphor.",
+   "also_called": [
+    "fractal semantic graphs",
+    "graphs of graphs of graphs",
+    "G3"
+   ],
+   "near_but_not": [
+    "self-similar visuals — the claim is about rules, not about how the picture looks"
+   ],
+   "edges": [
+    [
+     "constrains",
+     "meaning-through-connectivity"
+    ],
+    [
+     "grounds",
+     "junction-rule"
+    ]
+   ],
+   "units": [
+    "L2-3",
+    "L3-6"
+   ],
+   "demonstrated_by": [
+    "../vaults/voice-debrief/junction.html"
+   ],
+   "in_edges": [],
+   "strength": {
+    "out": 2,
+    "incoming": 0,
+    "units": 2,
+    "shown": 1,
+    "score": 6,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "junction-rule",
+   "label": "Join at the node layer, never document to document",
+   "definition": "To connect two bodies of text, lift **both** into typed nodes first and join at an intermediate layer. A document-to-document link is only as good as the sentence somebody wrote around it.",
+   "also_called": [
+    "node-to-node",
+    "the junction"
+   ],
+   "near_but_not": [
+    "a citation — which points at a document and stops"
+   ],
+   "edges": [
+    [
+     "enables",
+     "twin-attachment"
+    ],
+    [
+     "opposes",
+     "schema-first"
+    ]
+   ],
+   "units": [
+    "L3-6"
+   ],
+   "demonstrated_by": [
+    "../vaults/voice-debrief/junction.html"
+   ],
+   "in_edges": [
+    [
+     "grounded_by",
+     "fractal"
+    ]
+   ],
+   "strength": {
+    "out": 2,
+    "incoming": 1,
+    "units": 1,
+    "shown": 1,
+    "score": 7,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "twin-attachment",
+   "label": "Obligations attach at the twin",
+   "definition": "A duty binds the running instance and its telemetry, not the paragraph in the register beside it. The graph attaches the obligation where it actually bites.",
+   "also_called": [
+    "attach at the instance"
+   ],
+   "near_but_not": [
+    "a control mapping — which attaches to a document about the thing"
+   ],
+   "edges": [],
+   "units": [
+    "L3-6",
+    "L3-10"
+   ],
+   "demonstrated_by": [
+    "../vaults/voice-debrief/junction.html"
+   ],
+   "in_edges": [
+    [
+     "enabled_by",
+     "junction-rule"
+    ]
+   ],
+   "strength": {
+    "out": 0,
+    "incoming": 1,
+    "units": 2,
+    "shown": 1,
+    "score": 6,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "schema-first",
+   "label": "Schema-first thinking",
+   "definition": "Deciding in advance what types exist and requiring everything to conform, so that meaning is attached **to nodes** rather than derived from edges. The position this book takes a stand against.",
+   "also_called": [
+    "conform-first",
+    "the Semantic Web's practical mistake"
+   ],
+   "near_but_not": [
+    "having a schema at all — the objection is to the direction of authority, not to structure"
+   ],
+   "edges": [
+    [
+     "opposes",
+     "anchor-nodes"
+    ]
+   ],
+   "units": [
+    "L2-3",
+    "L3-5",
+    "L4-5-1"
+   ],
+   "demonstrated_by": [],
+   "in_edges": [
+    [
+     "opposed_by",
+     "dont-merge-vocabularies"
+    ],
+    [
+     "opposed_by",
+     "enrichment-not-enforcement"
+    ],
+    [
+     "opposed_by",
+     "junction-rule"
+    ],
+    [
+     "opposed_by",
+     "meaning-through-connectivity"
+    ]
+   ],
+   "strength": {
+    "out": 1,
+    "incoming": 4,
+    "units": 3,
+    "shown": 0,
+    "score": 12,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "dont-merge-vocabularies",
+   "label": "Merging erases the disagreement",
+   "definition": "Two parties' vocabularies are kept intact and bridged, because the disagreement between them is usually the most valuable thing present. Three layers: shared facts owned by nobody, per-party formulas, declared bridges.",
+   "also_called": [
+    "keep both senses",
+    "divergence as output"
+   ],
+   "near_but_not": [
+    "translation — which produces one text where there were two positions"
+   ],
+   "edges": [
+    [
+     "grounds",
+     "compatibility-computed"
+    ],
+    [
+     "opposes",
+     "schema-first"
+    ]
+   ],
+   "units": [
+    "L1",
+    "L2-3",
+    "L3-5",
+    "L4-5-2"
+   ],
+   "demonstrated_by": [
+    "../vaults/voice-debrief/absence.html"
+   ],
+   "in_edges": [
+    [
+     "enabled_by",
+     "anchor-nodes"
+    ]
+   ],
+   "strength": {
+    "out": 2,
+    "incoming": 1,
+    "units": 4,
+    "shown": 1,
+    "score": 10,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "anchor-nodes",
+   "label": "Reference without authority",
+   "definition": "A shared vocabulary node others **may** link to, rather than a definition they **must** conform to. Interoperability without conformity; partial mapping is normal.",
+   "also_called": [
+    "the lexicon",
+    "bridge nodes"
+   ],
+   "near_but_not": [
+    "a canonical model — which is an anchor that acquired authority"
+   ],
+   "edges": [
+    [
+     "enables",
+     "dont-merge-vocabularies"
+    ]
+   ],
+   "units": [
+    "L3-5",
+    "L3-15"
+   ],
+   "demonstrated_by": [],
+   "in_edges": [
+    [
+     "opposed_by",
+     "schema-first"
+    ]
+   ],
+   "strength": {
+    "out": 1,
+    "incoming": 1,
+    "units": 2,
+    "shown": 0,
+    "score": 5,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "compatibility-computed",
+   "label": "Compatibility is computed, not declared",
+   "definition": "Whether two things can work together is a spectrum, asymmetric and purpose-relative, computed from the edges — not a boolean somebody asserts in a standard.",
+   "also_called": [
+    "a spectrum, not a boolean"
+   ],
+   "near_but_not": [
+    "conformance testing — which asks whether one thing matches a fixed target"
+   ],
+   "edges": [],
+   "units": [
+    "L2-1",
+    "L3-2",
+    "L4-2-3"
+   ],
+   "demonstrated_by": [],
+   "in_edges": [
+    [
+     "grounded_by",
+     "dont-merge-vocabularies"
+    ],
+    [
+     "grounded_by",
+     "meaning-through-connectivity"
+    ]
+   ],
+   "strength": {
+    "out": 0,
+    "incoming": 2,
+    "units": 3,
+    "shown": 0,
+    "score": 7,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "classification-as-query",
+   "label": "Classification is a query, not a judgment",
+   "definition": "A node type is a **formula over paths**: a Vulnerability is a Fact with an upward `gives_rise_to` path to a Risk. Judgment does not disappear; it moves out of a head and into something visible, versioned and arguable.",
+   "also_called": [
+    "node type formulas",
+    "the content does not decide the type, the paths do"
+   ],
+   "near_but_not": [
+    "tagging — which records a judgment instead of computing one"
+   ],
+   "edges": [],
+   "units": [
+    "L2-3",
+    "L3-5",
+    "L4-5-3"
+   ],
+   "demonstrated_by": [],
+   "in_edges": [
+    [
+     "enabled_by",
+     "bidirectional-paths"
+    ],
+    [
+     "enabled_by",
+     "meaning-through-connectivity"
+    ],
+    [
+     "grounded_by",
+     "properties-carry-data-not-meaning"
+    ]
+   ],
+   "strength": {
+    "out": 0,
+    "incoming": 3,
+    "units": 3,
+    "shown": 0,
+    "score": 9,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "supersede-never-delete",
+   "label": "Supersede, never delete",
+   "definition": "A corrected claim is marked from a date and kept, because removing it destroys the record of what was resting on it. The question a correction must be able to ask is: what rested on this?",
+   "also_called": [
+    "mark it, keep it"
+   ],
+   "near_but_not": [
+    "versioning — which keeps the old text without keeping what depended on it"
+   ],
+   "edges": [
+    [
+     "grounds",
+     "provenance-chain"
+    ]
+   ],
+   "units": [
+    "L2-3",
+    "L3-5",
+    "L4-5-5"
+   ],
+   "demonstrated_by": [
+    "../vaults/regulation-graph/provenance.html"
+   ],
+   "in_edges": [
+    [
+     "enabled_by",
+     "two-identities"
+    ]
+   ],
+   "strength": {
+    "out": 1,
+    "incoming": 1,
+    "units": 3,
+    "shown": 1,
+    "score": 8,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "two-identities",
+   "label": "Two identities for one thing",
+   "definition": "A positional identity that survives renumbering and a content identity that moves with the wording, so a citation can outlive an amendment without pretending the text is unchanged.",
+   "also_called": [
+    "positional hash and content hash"
+   ],
+   "near_but_not": [
+    "a version number — one identity trying to do two jobs"
+   ],
+   "edges": [
+    [
+     "enables",
+     "provenance-chain"
+    ],
+    [
+     "enables",
+     "supersede-never-delete"
+    ]
+   ],
+   "units": [
+    "L3-6"
+   ],
+   "demonstrated_by": [
+    "../vaults/voice-debrief/junction.html"
+   ],
+   "in_edges": [],
+   "strength": {
+    "out": 2,
+    "incoming": 0,
+    "units": 1,
+    "shown": 1,
+    "score": 5,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "provenance-chain",
+   "label": "A claim is worth its chain of custody",
+   "definition": "Claim, graph node, file, commit, official source with the hash of the retrieved bytes. Every link walkable by a reader who holds nothing privileged.",
+   "also_called": [
+    "chain of custody",
+    "end-to-end provenance"
+   ],
+   "near_but_not": [
+    "a citation list — which names sources without making them checkable"
+   ],
+   "edges": [
+    [
+     "enables",
+     "confidence-from-connectivity"
+    ],
+    [
+     "enables",
+     "ephemeral-engines"
+    ]
+   ],
+   "units": [
+    "L3-intro",
+    "L3-7",
+    "L3-12"
+   ],
+   "demonstrated_by": [
+    "../vaults/regulation-graph/provenance.html"
+   ],
+   "in_edges": [
+    [
+     "enabled_by",
+     "named-absence"
+    ],
+    [
+     "grounded_by",
+     "supersede-never-delete"
+    ],
+    [
+     "enabled_by",
+     "two-identities"
+    ]
+   ],
+   "strength": {
+    "out": 2,
+    "incoming": 3,
+    "units": 3,
+    "shown": 1,
+    "score": 13,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "ephemeral-engines",
+   "label": "The file system is the source of truth",
+   "definition": "Query engines are loaded on demand over files and thrown away. There is no live database anywhere, and that is an architectural position rather than a purity claim: an engine with no state of its own cannot drift.",
+   "also_called": [
+    "no live databases",
+    "the browser is the database"
+   ],
+   "near_but_not": [
+    "no databases at all — the corrected claim is narrower and stronger"
+   ],
+   "edges": [
+    [
+     "constrains",
+     "projection"
+    ]
+   ],
+   "units": [
+    "L2-5",
+    "L3-7",
+    "L3-12"
+   ],
+   "demonstrated_by": [
+    "../vaults/regulation-graph/engines.html"
+   ],
+   "in_edges": [
+    [
+     "enabled_by",
+     "provenance-chain"
+    ]
+   ],
+   "strength": {
+    "out": 1,
+    "incoming": 1,
+    "units": 3,
+    "shown": 1,
+    "score": 8,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "projection",
+   "label": "Documents are projections of graphs",
+   "definition": "A page, a chapter, a PDF and a slide are renderings of one underlying structure. Change the structure and every projection follows; change a projection and you have created a fork.",
+   "also_called": [
+    "render, do not author twice"
+   ],
+   "near_but_not": [
+    "export — which copies a document rather than deriving it"
+   ],
+   "edges": [],
+   "units": [
+    "L3-6",
+    "L3-12"
+   ],
+   "demonstrated_by": [],
+   "in_edges": [
+    [
+     "constrained_by",
+     "ephemeral-engines"
+    ],
+    [
+     "enabled_by",
+     "meaning-through-connectivity"
+    ],
+    [
+     "constrained_by",
+     "render-the-query"
+    ]
+   ],
+   "strength": {
+    "out": 0,
+    "incoming": 3,
+    "units": 2,
+    "shown": 0,
+    "score": 8,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  },
+  {
+   "id": "properties-carry-data-not-meaning",
+   "label": "Properties may carry data, never meaning",
+   "definition": "A property may hold a timestamp. It may not hold the answer to *what kind of thing is this?*, because that answer is a query over edges.",
+   "also_called": [
+    "properties are just words"
+   ],
+   "near_but_not": [
+    "property graphs — which are a storage model, not the objection"
+   ],
+   "edges": [
+    [
+     "grounds",
+     "classification-as-query"
+    ]
+   ],
+   "units": [
+    "L3-1",
+    "L2-1"
+   ],
+   "demonstrated_by": [],
+   "in_edges": [
+    [
+     "constrained_by",
+     "meaning-through-connectivity"
+    ]
+   ],
+   "strength": {
+    "out": 1,
+    "incoming": 1,
+    "units": 2,
+    "shown": 0,
+    "score": 5,
+    "formula": "out + 2*incoming + units + 2*demonstrations"
+   }
+  }
+ ],
+ "peaks": [
+  "meaning-through-connectivity",
+  "provenance-chain",
+  "confidence-from-connectivity",
+  "schema-first",
+  "dont-merge-vocabularies"
+ ],
+ "edge_registry": [
+  {
+   "verb": "compresses",
+   "inverse": "compressed_by",
+   "domain": "Unit",
+   "range": "Unit",
+   "note": "The descent edge of the ladder."
+  },
+  {
+   "verb": "cites",
+   "inverse": "cited_by",
+   "domain": "Chapter",
+   "range": "Chapter",
+   "note": "A real cross-reference in the book's text."
+  },
+  {
+   "verb": "flags",
+   "inverse": "flagged_by",
+   "domain": "Finding",
+   "range": "Unit",
+   "note": "A finding reaches every unit it involves."
+  },
+  {
+   "verb": "carries",
+   "inverse": "carried_by",
+   "domain": "Unit",
+   "range": "Claim",
+   "note": "A unit carries a claim."
+  },
+  {
+   "verb": "grounds",
+   "inverse": "grounded_by",
+   "domain": "Concept",
+   "range": "Concept",
+   "note": "A is what B rests on. Reading down a grounds chain reaches the assumptions."
+  },
+  {
+   "verb": "specialises",
+   "inverse": "generalises",
+   "domain": "Concept",
+   "range": "Concept",
+   "note": "A is the narrower case of B. This is the taxonomy axis of the concept layer."
+  },
+  {
+   "verb": "constrains",
+   "inverse": "constrained_by",
+   "domain": "Concept",
+   "range": "Concept",
+   "note": "A limits how B may be used. Not the same as grounding: a constraint can be dropped and leave B standing."
+  },
+  {
+   "verb": "enables",
+   "inverse": "enabled_by",
+   "domain": "Concept",
+   "range": "Concept",
+   "note": "A is what makes B possible in practice."
+  },
+  {
+   "verb": "opposes",
+   "inverse": "opposed_by",
+   "domain": "Concept",
+   "range": "Concept",
+   "note": "A is the position this work takes against B. Named rather than merged, per the book's own rule."
+  },
+  {
+   "verb": "appears_in",
+   "inverse": "carries",
+   "domain": "Concept",
+   "range": "Unit",
+   "note": "The crossing edge: a concept appears in a unit of the ladder; that unit carries it."
+  },
+  {
+   "verb": "demonstrated_by",
+   "inverse": "demonstrates",
+   "domain": "Concept",
+   "range": "Evidence",
+   "note": "A published artefact that shows the concept working, rather than an argument that it would."
+  }
+ ],
+ "inventory": {
+  "concepts": 24,
+  "units": 36,
+  "findings": 8,
+  "cites": 42,
+  "fact": 14,
+  "assertion": 26,
+  "opinion": 0,
+  "note": "Derived, not hand-typed: an evidenced claim is counted as a **fact**, an argued one as an **assertion**, an unevidenced one as an **opinion**. A hand-typed register that separates a claim from an assertion properly is review r002 item 4's job, and this is the honest placeholder for it."
+ },
  "coverage": {
   "full_levels": [
    1,

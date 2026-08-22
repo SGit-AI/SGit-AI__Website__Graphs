@@ -7,7 +7,7 @@
   "source": "briefs/16__founder-review__altitude-ladder.md",
   "version_reviewed": "v0.3.14",
   "state": "commented",
-  "state_note": "Commented, and the central item is built rather than proposed: this memo asks for an experiment, and an experiment that is only described has not been run. The ladder is live at /altitudes/ with levels 1 to 3 complete, level 4 for two chapters, the graph layer lifted on those paths, and five findings from the climb. No book content changed: the ladder is a new artefact beside the book, not an edit to it. Three decisions are open, and the first of them is whether the experiment earned a place in the pipeline at all. A second round on 22 August acted on the reviewer's UX feedback: the ladder is now resizable columns with per-level indexes (item 1's thread), the descent links carry a switchable colour meaning (item 7), and every level has its own ontology and taxonomy (item 8), which produced finding 7 — the classes do not survive the climb. Four decisions now open. A third round on the same day fixed the column flicker (item 1's thread) and added the graph view (item 9), which brought the site its first vendored dependency and decision D5 with it.",
+  "state_note": "Commented, and the central item is built rather than proposed: this memo asks for an experiment, and an experiment that is only described has not been run. The ladder is live at /altitudes/ with levels 1 to 3 complete, level 4 for two chapters, the graph layer lifted on those paths, and five findings from the climb. No book content changed: the ladder is a new artefact beside the book, not an edit to it. Three decisions are open, and the first of them is whether the experiment earned a place in the pipeline at all. A second round on 22 August acted on the reviewer's UX feedback: the ladder is now resizable columns with per-level indexes (item 1's thread), the descent links carry a switchable colour meaning (item 7), and every level has its own ontology and taxonomy (item 8), which produced finding 7 — the classes do not survive the climb. Four decisions now open. A third round on the same day fixed the column flicker (item 1's thread) and added the graph view (item 9), which brought the site its first vendored dependency and decision D5 with it. A third round (brief 17) added the concept layer — a dictionary crossed with a thesaurus, with computed peaks — and rebuilt the graph explorer around exploring from any node and keeping the view you made. Six decisions now open, the newest being whether to build the path-query language the book says does not exist.",
   "decisions": [
     {
       "n": 1,
@@ -61,6 +61,17 @@
         "Keep it, and state the exception in the honesty table (recommended)",
         "Keep it, no further statement",
         "Replace with a hand-written layout"
+      ],
+      "state": "open"
+    },
+    {
+      "n": 6,
+      "item": 11,
+      "question": "One part of the memo is deliberately **not** built, and it is the interesting part. Paths can now be traced and read, but they cannot be **queried**: there is no way to say \"find every path from a concept to a piece of evidence that goes grounds → appears_in → backed_by\". That is a path-query language, and [chapter 12](../book/ch-12-what-ships-what-is-argued.html) currently lists exactly that under what does not exist anywhere. Building one here would make the honesty table wrong in an interesting way. Do we (a) leave it unbuilt and let the honesty table stand, (b) build a small pattern matcher over this graph only and amend chapter 12 to say a demonstrator exists here, or (c) treat it as the next experiment in its own right?",
+      "options": [
+        "Leave it unbuilt; the honesty table stands (recommended for now)",
+        "Build a demonstrator here and amend chapter 12",
+        "Make it the next experiment"
       ],
       "state": "open"
     }
@@ -226,6 +237,34 @@
       ],
       "state": "applied",
       "applied_in": "v0.3.18"
+    },
+    {
+      "n": 10,
+      "topic": "The concept layer: a dictionary and a thesaurus, in three dimensions",
+      "reviewer_says": "One of the things I don't think you fully capture is when I talk about ontology and taxonomy. There's the one you capture, which is kind of like structure. But there's also the concepts that we're talking about, because ultimately this is where you start to have the definition. It's kind of like a dictionary and a thesaurus at a three-dimensional level. Each concept has sideways concepts that it relates to, downward levels where this is expanded, and upward levels where this is consolidated. And there isn't just one centre of gravity — there are peaks that concepts flow into, and the stronger concepts have more connectivity.",
+      "comment": "Correct, and the gap was real: the per-level ontologies type the **units** (what kind of chunk of book is this?) and say nothing about the **ideas** the units carry. A concept is a different object with a different shape, and it crosses the ladder sideways rather than living at one altitude.",
+      "proposal": "Built at [/altitudes/concepts.html](../altitudes/concepts.html): **24 concepts**, each with a definition (the dictionary), what it is **also called** and what it is **near but importantly not** (the thesaurus, and the second half is the useful one — a near-miss named is a misreading prevented), typed edges to other concepts, the ladder units at several altitudes that carry it, and any published artefact that demonstrates it. Every relation is a verb with a distinct inverse — `grounds`/`grounded_by`, `specialises`/`generalises`, `constrains`/`constrained_by`, `enables`/`enabled_by`, `opposes`/`opposed_by` — because a concept map is precisely where the banned generic edge tempts you, and both directions are written into the data rather than inferred at read time. A relation stated from either end normalises to one canonical triple, so declaring it twice does not inflate anything. **Peaks are computed**: strength is a stated formula (`out + 2×incoming + units + 2×demonstrations`), which means the ranking can be disagreed with by recomputing rather than by arguing about taste.",
+      "needs": [],
+      "impact": [
+        "/altitudes/concepts.html",
+        "the ladder data",
+        "r002 item 4's facts register"
+      ],
+      "state": "applied",
+      "applied_in": "v0.3.20"
+    },
+    {
+      "n": 11,
+      "topic": "Explore the graph from anywhere, and keep the view you made",
+      "reviewer_says": "The power here is to be able to start to explore things from one area… allow me to double click to expand, allow me to select a couple and consolidate, allow me to have the radius… add the ability to take screenshots and the ability to capture the configuration that I took to get that screenshot… that view should almost be a combination of the settings that I chose, the zoom level, the bits that I ignored, the nodes that I consolidated or expanded… maximisation so I can leverage the screen… each edge in that graph should have a to and a from, so we can create a path based on those edge labels.",
+      "comment": "All of it built, and one part of it is the most useful thing on the page: **a path read as sentences**. Shift-click two nodes and the shortest path between them prints hop by hop, each edge named with its verb or its inverse depending on which way the path walks it. That is the book's own rule about paths reading as sentences, turned into a tool that checks itself: an edge whose inverse was named lazily produces a sentence that does not read, and you notice immediately.",
+      "proposal": "On the [graph page](../altitudes/graph.html): labels **inside** rounded rectangles with a wrap control and a cut control, or below, or off; edge labels on or off; force layout with an **iterations slider** and a run-until-settled pass that cools slowly; **radius exploration** from any node, with double-click to centre; **collapse a selection** into a group node and expand it again; **full screen**, **hide the panels**, and drag-resizable panes in both directions; **Save PNG**; and a **view file** carrying the settings, the zoom, the pan, the collapsed groups and every hand-moved node position, so a picture can be recreated rather than only kept. One layout fix worth recording because it is a general lesson: a force layout with no bounding box lays out into a square, so a wide pane wasted its sides — handing it the pane's real shape is what made the width usable.",
+      "needs": [],
+      "impact": [
+        "/altitudes/graph.html"
+      ],
+      "state": "applied",
+      "applied_in": "v0.3.20"
     }
   ]
 }

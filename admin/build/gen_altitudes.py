@@ -418,6 +418,18 @@ FINDINGS = [
   verdict="Evidence for an open decision. Review r001 item 2 warns that retitling to Fractal Semantic Graphs without growing the "
           "fractal treatment puts a promise on the cover the interior underdelivers. The ladder turns that warning into a test: "
           "the title is right when the one-paragraph version of the book cannot be written without the word."),
+ dict(kind="concept", title="The position the book argues against is one of its strongest nodes",
+  detail="Adding the concept layer produced a ranking nobody chose: strength is a stated formula over the "
+         "edges, and **schema-first thinking** — the thing this book exists to argue against — comes out among "
+         "the peaks, level with confidence-is-a-function-of-connectivity. It earns that place honestly: five "
+         "separate concepts define themselves partly by opposing it, so the edges genuinely converge there.",
+  where=["L2-3", "L3-5", "L4-5-1"],
+  verdict="Worth keeping rather than tuning away. A book of arguments will always have its antagonist as a "
+          "centre of gravity, and a strength metric that hid that would be measuring agreement rather than "
+          "connectivity. It does carry one caution for the evidence layer: **a strong node is not a supported "
+          "one.** Schema-first has high connectivity and, by design, no evidence attached — the two axes are "
+          "independent, and any future ranking that conflates them will overstate whatever the book repeats "
+          "most often."),
  dict(kind="classification", title="Compression does not just shorten, it re-classifies",
   detail="Giving each level its own taxonomy was meant to be bookkeeping. It produced a result instead. The "
          "classes do not survive the climb: a section classed **Rule** at level 4 sits inside a chapter classed "
@@ -455,6 +467,199 @@ FINDINGS = [
   where=["L3-3"],
   verdict="No action, and kept here on purpose: it is the control case showing that the method distinguishes a hidden "
           "contradiction from a disclosed one. A finding process that flagged this as a discovery would be over-reporting."),
+]
+
+# ---------------------------------------------------------------- the concepts
+# The ontology above types the UNITS (what kind of chunk of book is this?). It says
+# nothing about the ideas the units carry, which is the layer review r004's second
+# round asked for: a dictionary (what does this concept mean?) crossed with a
+# thesaurus (what is it called, and what is it near but not the same as?), and edges
+# between concepts that are verbs with distinct inverses rather than a bag of
+# "related" links. A concept also crosses the altitude ladder sideways: it appears in
+# units at several levels at once, which is the intersection the ladder alone cannot
+# show.
+
+CONCEPT_EDGES = [
+ et("grounds", "grounded_by", "Concept", "Concept",
+    "A is what B rests on. Reading down a grounds chain reaches the assumptions."),
+ et("specialises", "generalises", "Concept", "Concept",
+    "A is the narrower case of B. This is the taxonomy axis of the concept layer."),
+ et("constrains", "constrained_by", "Concept", "Concept",
+    "A limits how B may be used. Not the same as grounding: a constraint can be dropped and leave B standing."),
+ et("enables", "enabled_by", "Concept", "Concept",
+    "A is what makes B possible in practice."),
+ et("opposes", "opposed_by", "Concept", "Concept",
+    "A is the position this work takes against B. Named rather than merged, per the book's own rule."),
+ et("appears_in", "carries", "Concept", "Unit",
+    "The crossing edge: a concept appears in a unit of the ladder; that unit carries it."),
+ et("demonstrated_by", "demonstrates", "Concept", "Evidence",
+    "A published artefact that shows the concept working, rather than an argument that it would."),
+]
+
+def c(cid, label, definition, also=None, near=None, edges=None, units=None, shown=None):
+    return dict(id=cid, label=label, definition=definition, also_called=also or [],
+                near_but_not=near or [], edges=edges or [], units=units or [],
+                demonstrated_by=shown or [])
+
+V = "../vaults/"
+CONCEPTS = [
+ c("meaning-through-connectivity", "Meaning through connectivity",
+   "What a thing **is** emerges from the edges traceable from it, not from anything stored inside it. The node is the address; the edges are the meaning.",
+   ["the thesis", "the title after the colon"],
+   ["semantic search — which infers meaning from similarity rather than deriving it from structure"],
+   [("grounded_by", "node-alone-means-nothing"), ("grounded_by", "confidence-from-connectivity"),
+    ("enables", "classification-as-query"), ("constrains", "properties-carry-data-not-meaning")],
+   ["L1", "L2-1", "L3-intro", "L3-2", "L4-2-1", "L4-2-2"],
+   [V + "voice-debrief/junction.html"]),
+ c("node-alone-means-nothing", "A node alone means nothing",
+   "A label is not a meaning. A node with no edges cannot be distinguished from any other node carrying the same label, so it carries no information at all.",
+   ["a node is just a node"],
+   ["an empty node — which has a type and a place, and is therefore not the same thing"],
+   [("grounds", "meaning-through-connectivity"), ("grounds", "confidence-from-connectivity")],
+   ["L1", "L2-1", "L3-2", "L4-2-1"], []),
+ c("confidence-from-connectivity", "Confidence is a function of connectivity",
+   "How much a claim can be trusted is computable from how richly it is connected: no edges, local edges, typed definitions, anchor nodes, external references, rich multi-hop paths.",
+   ["the confidence ladder"],
+   ["probability — the ladder is not a likelihood, it is a reachability measure"],
+   [("grounds", "meaning-through-connectivity"), ("enables", "enrichment-not-enforcement"),
+    ("enabled_by", "provenance-chain")],
+   ["L1", "L2-1", "L3-2", "L4-2-4"], []),
+ c("enrichment-not-enforcement", "Enrichment, not enforcement",
+   "When confidence is low the remedy is adding edges, never adding rules. The graph grows; it does not constrain.",
+   ["the graph grows, it doesn't constrain"],
+   ["validation — which is enforcement wearing a helpful name"],
+   [("grounded_by", "confidence-from-connectivity"), ("opposes", "schema-first")],
+   ["L3-2", "L4-2-4"], []),
+ c("named-absence", "A named absence beats a hidden one",
+   "Three of ten pieces of evidence is information. An absence that is stated can be queried, assigned and closed; an absence that is hidden silently supports whatever rests on it.",
+   ["honest uncertainty", "the ghosted node"],
+   ["a missing value — which is the absence of a record, not a recorded absence"],
+   [("grounded_by", "confidence-from-connectivity"), ("enables", "provenance-chain")],
+   ["L1", "L2-1", "L3-2", "L4-2-5"],
+   [V + "voice-debrief/absence.html"]),
+ c("edge-is-a-verb", "Every edge is a verb with a distinct inverse",
+   "An edge is named as a verb, and its inverse is a **different** verb rather than the same edge walked backwards: `owned_by` and `owns` have different fan-out, and that asymmetry is what bounds traversal.",
+   ["the grammar rule", "verb edges"],
+   ["a labelled edge — a label is not yet a verb, and a verb without a distinct inverse is half an edge"],
+   [("grounds", "path-reads-as-a-sentence"), ("constrains", "banned-generic-edge"),
+    ("enables", "render-the-query")],
+   ["L1", "L2-2", "L3-3", "L3-4"], []),
+ c("banned-generic-edge", "The generic association edge is banned",
+   "`relates-to` is refused because everything relates to everything: it constrains nothing, costs fan-out, and is what you reach for when you have not yet decided what you mean.",
+   ["no relates-to"],
+   ["a weak edge — which still says something, where a generic edge says nothing"],
+   [("constrained_by", "edge-is-a-verb"), ("specialises", "edge-is-a-verb")],
+   ["L1", "L2-2", "L3-3"], []),
+ c("path-reads-as-a-sentence", "A path must read as a sentence",
+   "If a traversal does not read as natural language in the reader's own tongue, the edges are wrong. The test is linguistic because the failure is semantic.",
+   ["the sentence test"],
+   ["a readable label — the test is over a whole path, not one edge"],
+   [("grounded_by", "edge-is-a-verb"), ("enables", "bidirectional-paths")],
+   ["L2-2", "L3-3"], []),
+ c("bidirectional-paths", "Both directions carry a name",
+   "Because every edge names its inverse, a path can be walked and read in either direction, and the reading changes: down a grounds chain reaches assumptions, up it reaches consequences.",
+   ["walk it both ways"],
+   ["an undirected edge — which has no reading at all"],
+   [("grounded_by", "path-reads-as-a-sentence"), ("enables", "classification-as-query")],
+   ["L2-2", "L3-3", "L3-4"], []),
+ c("render-the-query", "Never render the whole graph",
+   "You render the **result of a query**, never the graph itself. Build wide, find the few, then flip. A rendered graph past a few hundred nodes is a picture of nothing.",
+   ["build wide, find the few, flip"],
+   ["filtering — which hides what it does not show; a query states what it asked"],
+   [("enabled_by", "edge-is-a-verb"), ("constrains", "projection")],
+   ["L1", "L2-2", "L3-3"], []),
+ c("fractal", "The same grammar at every altitude",
+   "One grammar, one validator, one provenance rule at every level of zoom: expand any node and the thing inside obeys identical rules. Stated as falsifiable, not as a metaphor.",
+   ["fractal semantic graphs", "graphs of graphs of graphs", "G3"],
+   ["self-similar visuals — the claim is about rules, not about how the picture looks"],
+   [("grounds", "junction-rule"), ("constrains", "meaning-through-connectivity")],
+   ["L2-3", "L3-6"],
+   [V + "voice-debrief/junction.html"]),
+ c("junction-rule", "Join at the node layer, never document to document",
+   "To connect two bodies of text, lift **both** into typed nodes first and join at an intermediate layer. A document-to-document link is only as good as the sentence somebody wrote around it.",
+   ["node-to-node", "the junction"],
+   ["a citation — which points at a document and stops"],
+   [("grounded_by", "fractal"), ("enables", "twin-attachment"), ("opposes", "schema-first")],
+   ["L3-6"],
+   [V + "voice-debrief/junction.html"]),
+ c("twin-attachment", "Obligations attach at the twin",
+   "A duty binds the running instance and its telemetry, not the paragraph in the register beside it. The graph attaches the obligation where it actually bites.",
+   ["attach at the instance"],
+   ["a control mapping — which attaches to a document about the thing"],
+   [("enabled_by", "junction-rule")],
+   ["L3-6", "L3-10"],
+   [V + "voice-debrief/junction.html"]),
+ c("schema-first", "Schema-first thinking",
+   "Deciding in advance what types exist and requiring everything to conform, so that meaning is attached **to nodes** rather than derived from edges. The position this book takes a stand against.",
+   ["conform-first", "the Semantic Web's practical mistake"],
+   ["having a schema at all — the objection is to the direction of authority, not to structure"],
+   [("opposed_by", "meaning-through-connectivity"), ("opposed_by", "dont-merge-vocabularies")],
+   ["L2-3", "L3-5", "L4-5-1"], []),
+ c("dont-merge-vocabularies", "Merging erases the disagreement",
+   "Two parties' vocabularies are kept intact and bridged, because the disagreement between them is usually the most valuable thing present. Three layers: shared facts owned by nobody, per-party formulas, declared bridges.",
+   ["keep both senses", "divergence as output"],
+   ["translation — which produces one text where there were two positions"],
+   [("opposes", "schema-first"), ("enabled_by", "anchor-nodes"), ("grounds", "compatibility-computed")],
+   ["L1", "L2-3", "L3-5", "L4-5-2"],
+   [V + "voice-debrief/absence.html"]),
+ c("anchor-nodes", "Reference without authority",
+   "A shared vocabulary node others **may** link to, rather than a definition they **must** conform to. Interoperability without conformity; partial mapping is normal.",
+   ["the lexicon", "bridge nodes"],
+   ["a canonical model — which is an anchor that acquired authority"],
+   [("enables", "dont-merge-vocabularies"), ("opposed_by", "schema-first")],
+   ["L3-5", "L3-15"], []),
+ c("compatibility-computed", "Compatibility is computed, not declared",
+   "Whether two things can work together is a spectrum, asymmetric and purpose-relative, computed from the edges — not a boolean somebody asserts in a standard.",
+   ["a spectrum, not a boolean"],
+   ["conformance testing — which asks whether one thing matches a fixed target"],
+   [("grounded_by", "dont-merge-vocabularies"), ("grounded_by", "meaning-through-connectivity")],
+   ["L2-1", "L3-2", "L4-2-3"], []),
+ c("classification-as-query", "Classification is a query, not a judgment",
+   "A node type is a **formula over paths**: a Vulnerability is a Fact with an upward `gives_rise_to` path to a Risk. Judgment does not disappear; it moves out of a head and into something visible, versioned and arguable.",
+   ["node type formulas", "the content does not decide the type, the paths do"],
+   ["tagging — which records a judgment instead of computing one"],
+   [("enabled_by", "meaning-through-connectivity"), ("enabled_by", "bidirectional-paths")],
+   ["L2-3", "L3-5", "L4-5-3"], []),
+ c("supersede-never-delete", "Supersede, never delete",
+   "A corrected claim is marked from a date and kept, because removing it destroys the record of what was resting on it. The question a correction must be able to ask is: what rested on this?",
+   ["mark it, keep it"],
+   ["versioning — which keeps the old text without keeping what depended on it"],
+   [("grounds", "provenance-chain"), ("enabled_by", "two-identities")],
+   ["L2-3", "L3-5", "L4-5-5"],
+   [V + "regulation-graph/provenance.html"]),
+ c("two-identities", "Two identities for one thing",
+   "A positional identity that survives renumbering and a content identity that moves with the wording, so a citation can outlive an amendment without pretending the text is unchanged.",
+   ["positional hash and content hash"],
+   ["a version number — one identity trying to do two jobs"],
+   [("enables", "supersede-never-delete"), ("enables", "provenance-chain")],
+   ["L3-6"],
+   [V + "voice-debrief/junction.html"]),
+ c("provenance-chain", "A claim is worth its chain of custody",
+   "Claim, graph node, file, commit, official source with the hash of the retrieved bytes. Every link walkable by a reader who holds nothing privileged.",
+   ["chain of custody", "end-to-end provenance"],
+   ["a citation list — which names sources without making them checkable"],
+   [("grounded_by", "supersede-never-delete"), ("enables", "confidence-from-connectivity")],
+   ["L3-intro", "L3-7", "L3-12"],
+   [V + "regulation-graph/provenance.html"]),
+ c("ephemeral-engines", "The file system is the source of truth",
+   "Query engines are loaded on demand over files and thrown away. There is no live database anywhere, and that is an architectural position rather than a purity claim: an engine with no state of its own cannot drift.",
+   ["no live databases", "the browser is the database"],
+   ["no databases at all — the corrected claim is narrower and stronger"],
+   [("constrains", "projection"), ("enabled_by", "provenance-chain")],
+   ["L2-5", "L3-7", "L3-12"],
+   [V + "regulation-graph/engines.html"]),
+ c("projection", "Documents are projections of graphs",
+   "A page, a chapter, a PDF and a slide are renderings of one underlying structure. Change the structure and every projection follows; change a projection and you have created a fork.",
+   ["render, do not author twice"],
+   ["export — which copies a document rather than deriving it"],
+   [("constrained_by", "render-the-query"), ("enabled_by", "meaning-through-connectivity")],
+   ["L3-6", "L3-12"], []),
+ c("properties-carry-data-not-meaning", "Properties may carry data, never meaning",
+   "A property may hold a timestamp. It may not hold the answer to *what kind of thing is this?*, because that answer is a query over edges.",
+   ["properties are just words"],
+   ["property graphs — which are a storage model, not the objection"],
+   [("constrained_by", "meaning-through-connectivity"), ("grounds", "classification-as-query")],
+   ["L3-1", "L2-1"], []),
 ]
 
 # ---------------------------------------------------------------- cross-references
@@ -536,8 +741,76 @@ L[5]["units"], L[5]["words"] = 17, 20000      # the book itself, measured by the
 
 CITES = cross_references()
 
+# ---- concept layer: validate, mirror the inverses, and compute strength
+INV = {}
+for e in CONCEPT_EDGES:
+    INV[e["verb"]] = e["inverse"]; INV[e["inverse"]] = e["verb"]
+
+CBY = {c["id"]: c for c in CONCEPTS}
+for c_ in CONCEPTS:
+    for verb, tgt in c_["edges"]:
+        if verb not in INV:
+            raise SystemExit(f"gen_altitudes: {c_['id']} uses unknown verb {verb}")
+        if tgt not in CBY:
+            raise SystemExit(f"gen_altitudes: {c_['id']} {verb} unknown concept {tgt}")
+    for u in c_["units"]:
+        if u not in N:
+            raise SystemExit(f"gen_altitudes: {c_['id']} appears_in unknown unit {u}")
+
+# A relation stated from either end is the SAME relation, so it is normalised to one
+# canonical triple before anything is counted. Without this, declaring "A grounded_by B"
+# on one concept and "B grounds A" on the other produces two edges that are really one,
+# and the strength ranking quietly rewards whoever wrote the data twice.
+PRIMARY = set(e["verb"] for e in CONCEPT_EDGES)
+triples = set()
+for c_ in CONCEPTS:
+    for verb, tgt in c_["edges"]:
+        if verb in PRIMARY:
+            triples.add((c_["id"], verb, tgt))
+        else:
+            triples.add((tgt, INV[verb], c_["id"]))     # flip to the primary direction
+
+for c_ in CONCEPTS:
+    c_["edges"], c_["in_edges"] = [], []
+for src, verb, tgt in sorted(triples):
+    CBY[src]["edges"].append([verb, tgt])               # outward, in the primary verb
+    CBY[tgt]["in_edges"].append([INV[verb], src])       # inward, named with the inverse
+
+# Strength: how much of the estate arrives at this concept. Degree in the concept graph
+# plus the units that carry it plus the artefacts that demonstrate it — stated as a
+# formula rather than a mystery number, because a ranking nobody can recompute is an
+# opinion wearing a metric's clothes.
+for c_ in CONCEPTS:
+    out_, in_ = len(c_["edges"]), len(c_["in_edges"])
+    c_["strength"] = dict(out=out_, incoming=in_, units=len(c_["units"]),
+                          shown=len(c_["demonstrated_by"]),
+                          score=out_ + 2 * in_ + len(c_["units"]) + 2 * len(c_["demonstrated_by"]),
+                          formula="out + 2*incoming + units + 2*demonstrations")
+PEAKS = sorted(CONCEPTS, key=lambda x: -x["strength"]["score"])[:5]
+
+# ---- the inventory: what the book reduces to, derived rather than hand-typed
+KIND_OF = {"evidenced": "fact", "argued": "assertion", "unevidenced": "opinion"}
+INVENTORY = dict(concepts=len(CONCEPTS), units=len(N), findings=len(FINDINGS),
+                 cites=len(CITES), fact=0, assertion=0, opinion=0)
+for n in N.values():
+    for cl in n["claims"]:
+        cl["kind"] = KIND_OF.get(cl["state"], "assertion")
+        INVENTORY[cl["kind"]] += 1
+INVENTORY["note"] = ("Derived, not hand-typed: an evidenced claim is counted as a **fact**, "
+                     "an argued one as an **assertion**, an unevidenced one as an **opinion**. "
+                     "A hand-typed register that separates a claim from an assertion properly "
+                     "is review r002 item 4's job, and this is the honest placeholder for it.")
+
+EDGE_REGISTRY = ([et("compresses", "compressed_by", "Unit", "Unit", "The descent edge of the ladder."),
+                  et("cites", "cited_by", "Chapter", "Chapter", "A real cross-reference in the book's text."),
+                  et("flags", "flagged_by", "Finding", "Unit", "A finding reaches every unit it involves."),
+                  et("carries", "carried_by", "Unit", "Claim", "A unit carries a claim.")]
+                 + CONCEPT_EDGES)
+
 out = dict(version=VERSION, root="L1", levels=LEVELS,
            nodes=N, findings=FINDINGS, cites=CITES,
+           concepts=CONCEPTS, peaks=[x["id"] for x in PEAKS],
+           edge_registry=EDGE_REGISTRY, inventory=INVENTORY,
            coverage=dict(
              full_levels=[1, 2, 3],
              pilot_levels={"4": ["chapter 2", "chapter 5"]},
@@ -554,6 +827,11 @@ out = dict(version=VERSION, root="L1", levels=LEVELS,
 p = ROOT / "altitudes/data/altitudes.json"
 p.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
 print(f"gen_altitudes: {len(CITES)} measured cites edges between chapters")
+print("gen_altitudes: %d concepts, %d concept edges (each mirrored), peaks: %s"
+      % (len(CONCEPTS), sum(len(x["edges"]) for x in CONCEPTS),
+         ", ".join(x["label"] for x in PEAKS[:3])))
+print("gen_altitudes: inventory — %d facts, %d assertions, %d opinions"
+      % (INVENTORY["fact"], INVENTORY["assertion"], INVENTORY["opinion"]))
 print(f"gen_altitudes: {len(N)} nodes across levels 1-4 "
       f"({', '.join(str(x['units']) + '@L' + str(x['n']) for x in LEVELS)}), "
       f"{len(FINDINGS)} findings, {p.stat().st_size:,} bytes")
