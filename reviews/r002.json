@@ -7,7 +7,7 @@
   "source": "briefs/12__founder-review__humans-and-agents.md",
   "version_reviewed": "v0.3.8",
   "state": "discussing",
-  "state_note": "In discussion: the librarian's resolution pack (brief 13) resolved item 4 outright, with the citation-network study identified (Greenberg, BMJ 2009) and the 10,000-hours sources named. The founder decisions (title allocation, pilot chapter, sequencing) remain open. A founder pointer added sgraph.ai's machine-readable layer as prior art for the agent toolbox (item 7). Review r003 (22 August) then reordered the combined sequencing: the evidence programme (vault case studies at full site granularity) precedes the identity release, and the decoupling of book from website is proposed as the enabling refactor. This review's open decisions are explicit in the register above.",
+  "state_note": "In discussion: the librarian's resolution pack (brief 13) resolved item 4 outright, with the citation-network study identified (Greenberg, BMJ 2009) and the 10,000-hours sources named. The founder decisions (title allocation, pilot chapter, sequencing) remain open. A founder pointer added sgraph.ai's machine-readable layer as prior art for the agent toolbox (item 7). Review r003 (22 August) then reordered the combined sequencing: the evidence programme (vault case studies at full site granularity) precedes the identity release, and the decoupling of book from website is proposed as the enabling refactor. This review's open decisions are explicit in the register above. Addendum 01 (brief 15) then connected three items the original pack missed entirely: the book-as-graph pilot has foundational prior art (Compatibility Through Connectivity, 5 February 2026), the verification dogfood was designed as a practice sixteen months before this review proposed applying it (LLM as Execution Engine), and the chapter graphs gain an exploratory testing DSL.",
   "decisions": [
     {
       "n": 1,
@@ -86,7 +86,18 @@
         "pipeline",
         "eventually every chapter"
       ],
-      "state": "proposed"
+      "state": "proposed",
+      "thread": [
+        {
+          "date": "22 August 2026",
+          "from": "the librarian, SGraph-AI__App__Send (addendum 01)",
+          "note": "Two foundational connections the original pack missed, both dated 5 February 2026. *Compatibility Through Connectivity* (3,847 words, Status: Foundational) argues that architecture documents, diagrams, code, tests and runtime traces are different languages describing what should be the same truth, and that extracting a graph from each makes compatibility measurable: a book and its graph are two representations of one truth, which is this item's proposal stated as that document's thesis applied to itself. And *Semantic graph code representation* (2,868 words) supplies the mechanism the pilot needs: assertions target structure rather than text, so rewording a paragraph does not break a check, which is exactly how the chapter graph survives editorial passes. See [brief 15](../briefs/15__librarian__source-resolution-addendum-01.md), the librarian's addendum, with the machine-readable index [15__addendum-01-sources.csv](../briefs/15__addendum-01-sources.csv).",
+          "sources": [
+            "Compatibility Through Connectivity: `Issues-FS__Docs/docs/to_classify/6-feb-other/v0_4_0__issues-fs__compatibility-through-connectivity.md`",
+            "Semantic graph code representation: `Issues-FS__Docs/docs/to_classify/6-feb/v0_4_0__issues-fs__semantic-graph-code-representation.md`"
+          ]
+        }
+      ]
     },
     {
       "n": 4,
@@ -130,7 +141,17 @@
         "new verification report page",
         "reviews section"
       ],
-      "state": "proposed"
+      "state": "proposed",
+      "thread": [
+        {
+          "date": "22 August 2026",
+          "from": "the librarian, SGraph-AI__App__Send (addendum 01)",
+          "note": "The designed use was designed earlier than this review knew: *LLM as Execution Engine* (3,884 words, 5 February 2026, Status: Practical Guide) argues that 'an LLM can act as the execution engine for code that doesn't exist yet': specify the function and the LLM performs it, same inputs, same logic, same outputs. The prompt is the specification; the LLM is the implementation. That is precisely this item's 'publish the checking prompt and run the first verification report', argued sixteen months before it was used on the book itself, and the first verification report should say so. See [brief 15](../briefs/15__librarian__source-resolution-addendum-01.md), the librarian's addendum, with the machine-readable index [15__addendum-01-sources.csv](../briefs/15__addendum-01-sources.csv).",
+          "sources": [
+            "LLM as Execution Engine: `Issues-FS__Docs/docs/to_classify/6-feb-other/v0_4_0__issues-fs__llm-as-execution-engine.md`"
+          ]
+        }
+      ]
     },
     {
       "n": 6,
@@ -146,7 +167,17 @@
         "book editions",
         "T16 (visualisation) moves closer"
       ],
-      "state": "proposed"
+      "state": "proposed",
+      "thread": [
+        {
+          "date": "22 August 2026",
+          "from": "the librarian, SGraph-AI__App__Send (addendum 01)",
+          "note": "Prior art for the evidence-depth checks these visualisations would render: *Semantic testing DSL* (3,461 words) sketches assertions over a document's graph ('for each Risk in document / assert Risk.remediation exists'). One caution travels with it: the document self-flags NEEDS EXPLORATION, so it enters as exploratory prior art, labelled as such, not as settled design. See [brief 15](../briefs/15__librarian__source-resolution-addendum-01.md), the librarian's addendum, with the machine-readable index [15__addendum-01-sources.csv](../briefs/15__addendum-01-sources.csv).",
+          "sources": [
+            "Semantic testing DSL: `Issues-FS__Docs/docs/to_classify/6-feb/v0_4_0__issues-fs__semantic-testing-dsl.md`"
+          ]
+        }
+      ]
     },
     {
       "n": 7,

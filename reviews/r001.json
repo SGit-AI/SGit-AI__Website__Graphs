@@ -7,16 +7,16 @@
   "source": "briefs/11__founder-review__first-reading.md",
   "version_reviewed": "v0.3.7",
   "state": "discussing",
-  "state_note": "In discussion: on 22 August the librarian of the source repository answered this review's needs (brief 13). Eleven of the twelve needs across r001 and r002 are met; only the reviewer's reading screenshots remain outstanding. The founder decisions are unchanged and open, with one reframed: the title choice is now three-way, because the concept already carries the published name G3. A founder pointer then added a third estate: sgraph.ai's library (served from a public vault, every page machine-readable), which upgrades the EmailFS case study to a live deployment and adds four more public vaults. The reviewer then calibrated the librarian's finding: docs.diniscruz.ai predates the workflow that produced the newer corpus, where the meaning-through-connectivity documents were written, so the title decision weighs recency of thinking alongside publication history (item 2's thread). Review r003 (22 August) then reordered the sequencing: the evidence programme precedes the next book version, and the decoupling of book from website is proposed as the enabling refactor. This review's open decisions are explicit in the register above.",
+  "state_note": "In discussion: on 22 August the librarian of the source repository answered this review's needs (brief 13). Eleven of the twelve needs across r001 and r002 are met; only the reviewer's reading screenshots remain outstanding. The founder decisions are unchanged and open, with one reframed: the title choice is now three-way, because the concept already carries the published name G3. A founder pointer then added a third estate: sgraph.ai's library (served from a public vault, every page machine-readable), which upgrades the EmailFS case study to a live deployment and adds four more public vaults. The reviewer then calibrated the librarian's finding: docs.diniscruz.ai predates the workflow that produced the newer corpus, where the meaning-through-connectivity documents were written, so the title decision weighs recency of thinking alongside publication history (item 2's thread). Review r003 (22 August) then reordered the sequencing: the evidence programme precedes the next book version, and the decoupling of book from website is proposed as the enabling refactor. Nudged by the calibration, the librarian then issued addendum 01 (brief 15), correcting its own pack: the title phrase has a dated single origin (the foundational Issues-FS document of 5 February 2026, whose Part 3 also carries the fractal principle, so both candidate titles come from one file), the chapter audit gains a measurable dilution (ten principles at source, five in chapter 2), the lineage chapter's primary source moves to that document's Part 4, the database correction gains four shipped backends, and the IssuesFS case study is fully resourced. Decision D1 is reframed accordingly. This review's open decisions are explicit in the register above.",
   "decisions": [
     {
       "n": 1,
       "item": 2,
-      "question": "The title, three-way: keep **Meaning Through Connectivity** standing; adopt **Fractal Semantic Graphs: Meaning Through Connectivity**; or elevate the already-published name **G3**. With it, the three sub-questions from the proposal: exact casing and order; whether the site's own identity follows the book's; and whether the PDF files rename with forwards kept, or keep their URLs and retitle content only. The weighing so far, from item 2's thread: the librarian found G3 published and citable since May 2025; the reviewer then calibrated that the corpus naming meaning-through-connectivity is the later stage of the thinking, so recency of thinking counts alongside publication history. Whichever wins, the lineage chapter records G3's May 2025 naming.",
+      "question": "The title, reframed twice since the review (item 2's thread has the full history). The phrase 'meaning through connectivity' has a dated, single origin: it is the subtitle of the foundational Issues-FS document **Thinking in Graphs: Meaning Through Connectivity** (5 February 2026), and the fractal candidate traces to Part 3 of the **same document**, The Fractal Principle. So the choice is which half of the foundational document's own vocabulary leads the cover, with **G3** (the published name, May 2025) as the outsider third option. With it, the three sub-questions from the proposal: exact casing and order; whether the site's own identity follows the book's; and whether the PDF files rename with forwards kept, or keep their URLs and retitle content only. Whichever wins, the lineage chapter records both terms coined in one Issues-FS document on 5 February 2026, and G3's May 2025 naming before them.",
       "options": [
-        "Meaning Through Connectivity (as is)",
-        "Fractal Semantic Graphs: Meaning Through Connectivity",
-        "Elevate G3 (alone or combined)"
+        "Meaning Through Connectivity (the document's subtitle, as is)",
+        "Fractal Semantic Graphs: Meaning Through Connectivity (leading with Part 3)",
+        "Elevate G3 (the published name, alone or combined)"
       ],
       "state": "open"
     },
@@ -77,6 +77,14 @@
           "from": "the agent",
           "note": "What the calibration changes: the two corpora are not equal witnesses, they are two stages of the same thinking. docs.diniscruz.ai, where G3 was named in May 2025, predates the workflow that later produced the source repository's corpus, and that newer corpus is where the meaning-through-connectivity documents were written. So the librarian's observation that the corpus says the phrase in prose sixteen times but never uses the G3 name reads differently now: not a failure to adopt an established name, but the evolved vocabulary of the later stage. Publication history and current position point at different names. The reweighing, for the reviewer to accept or reject: G3's May 2025 naming is settled history and belongs in the lineage chapter whatever the cover says; the title itself should be judged on where the thinking is now, which favours the two newer candidates (**Meaning Through Connectivity** standing, or **Fractal Semantic Graphs** with it as subtitle) over elevating G3 to the cover. The choice stays three-way and stays the reviewer's; only the weights moved.",
           "sources": []
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the librarian, SGraph-AI__App__Send (addendum 01)",
+          "note": "Nudged by the calibration above, the librarian re-ran the search with the __Send and Issues-FS corpora restored, and opens with the admission: the original resolution was biased toward docs.diniscruz.ai, 'the same class of error the site itself is about'. The discovery that reframes this decision again: **the phrase has a precise, dated, single origin**. 'Meaning Through Connectivity' is the subtitle of the foundational Issues-FS document *Thinking in Graphs: Meaning Through Connectivity* (commit 70916cf, **5 February 2026**, 5,013 words), a byte-identical copy of which has sat in the source repository's `library/concepts/` since 11 June 2026. And the fractal candidate traces to **the same file**: Part 3 is *The Fractal Principle* ('the same structural pattern — nodes with edges, meaning through connectivity — repeats at every level of zoom'). Both candidate titles come from one document, so the question is no longer 'should we rename to something better' but 'which half of the foundational document's own vocabulary do we lead with'. G3 remains the third option as the published name (May 2025), now the outsider rather than the incumbent's rival. Recommendation: put the document's colophon in front of the founder before v0.4.0. Decision D1's framing is updated accordingly. See [brief 15](../briefs/15__librarian__source-resolution-addendum-01.md), the addendum, with the machine-readable index [15__addendum-01-sources.csv](../briefs/15__addendum-01-sources.csv).",
+          "sources": [
+            "Thinking in Graphs: Meaning Through Connectivity: `Issues-FS__Docs/docs/to_classify/v0_4_0__issues-fs__thinking-in-graphs.md`, commit 70916cf, 5 February 2026; byte-identical (md5 51b67d93) at `SGraph-AI__App__Send/library/concepts/v0_4_0__thinking-in-graphs.md`"
+          ]
         }
       ]
     },
@@ -103,6 +111,16 @@
             "[Semantic OWASP](https://docs.diniscruz.ai/2025/04/02/semantic-owasp__leveraging-genai-and-graphs-to-customise-and-scale-security-knowledge.html) and [Scaling Europe's Regulatory Superpower](https://docs.diniscruz.ai/2025/03/31/scaling-europe-regulatory-superpower.html)",
             "[LETS: Load, Extract, Transform, Save](https://docs.diniscruz.ai/2025/05/27/lets__load-extract-transform-save__a-deterministic-and-debuggable-data-pipeline_architecture.html)",
             "[Time as a Calibrator of Credibility and Trust](https://docs.diniscruz.ai/2025/10/02/time-as-a-calibrator-of-credibility-and-trust-in-information-systems.html)"
+          ]
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the librarian, SGraph-AI__App__Send (addendum 01)",
+          "note": "Corrected: the entry above answered this item entirely with docs.diniscruz.ai articles, and the addendum restores the actual chapter-by-chapter mapping from the __Send and Issues-FS corpora. The sharpest instrument in it: **chapter 2 is 'The five ideas', and the source document's summary lists TEN core principles.** The five that did not make it, verbatim from the source: compatibility is computed, not declared; honest uncertainty is the default; enrichment, not enforcement; cross-graph edges are first-class; no node is aware of how it's used. That turns this item from 'some concepts feel diluted' into a checkable measurement, with the missing five quoted and ready. Also from the corrected mapping: chapter 13's origins chapter is pre-written (*The Journey: From Voice Memos to Compatibility Testing*, 5 February 2026, Status: Historical Record) and starts four months earlier than the book currently does; chapter 4's edge grammar is shipped, typed and domain/range-constrained in code (`Schema__Link__Type.py`: verb, inverse_verb, source_types, target_types); and chapter 12 can name a second, independently shipped implementation (issues-fs 0.7.0 and issues-fs-cli 0.3.0 on PyPI, 604 + 94 tests). See [brief 15](../briefs/15__librarian__source-resolution-addendum-01.md).",
+          "sources": [
+            "The ten principles: `Issues-FS__Docs/docs/to_classify/v0_4_0__issues-fs__thinking-in-graphs.md`, Summary: Core Principles",
+            "The origins chapter: `Issues-FS__Docs/docs/to_classify/6-feb-other/v0_4_0__issues-fs__the-journey.md` (3,483 words)",
+            "The shipped edge grammar: `Issues-FS/issues_fs/schemas/graph/Schema__Link__Type.py`"
           ]
         }
       ]
@@ -133,6 +151,15 @@
             "[Bridging Niklas Luhmann's Ideas with Semantic Knowledge Graphs and G3](https://docs.diniscruz.ai/2025/06/18/bridging-niklas-luhmanns-ideas-with-semantic-knowledge-graphs-and-g3.html)",
             "[FIST Meets the Semantic Knowledge Graph](https://docs.diniscruz.ai/2025/06/22/fist-meets-the-semantic-knowledge-graph-aligning-fast-inexpensive-simple-tiny-with-dinis-cruzs-g3-approach.html)"
           ]
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the librarian, SGraph-AI__App__Send (addendum 01)",
+          "note": "Corrected: the primary lineage source is not the Solid brief but **Part 4 of the foundational document itself**, which carries the homage and the disagreement in one passage and names four predecessors by name: schema.org, SKOS, Dublin Core and PROV-O. Verbatim: 'The Semantic Web community identified the right problem... Their answer — shared ontologies, RDF triples, linked data — was architecturally sound. The implementations produced genuinely useful reference vocabularies. But the community made a subtle mistake in practice. They ended up attaching meaning to nodes rather than deriving meaning from edges.' The ordered source list for the chapter: Part 4 first; the Solid brief second (its four Turtle/RDF blocks as the code exhibits); the Lexicon architecture third (anchor nodes as reference without authority, the positive form of the argument); the Luhmann article fourth (the Zettelkasten lineage, the non-computing ancestor, and its only source); the PKI historical analysis fifth (the 'is this the right primitive?' self-challenge). The docs.diniscruz.ai articles stay in the chapter as positioning against contemporaries, not as the lineage source. See [brief 15](../briefs/15__librarian__source-resolution-addendum-01.md).",
+          "sources": [
+            "Part 4, The Semantic Web's Insight (and Mistake): `Issues-FS__Docs/docs/to_classify/v0_4_0__issues-fs__thinking-in-graphs.md`, lines 266 to 316",
+            "Lexicon Architecture v2: `Issues-FS__Docs/docs/to_classify/v0_4_0__issues-fs__lexicon-architecture-v2.md` (4,485 words)"
+          ]
         }
       ]
     },
@@ -162,6 +189,14 @@
             "[Using LLMs as Ephemeral Graph Databases](https://docs.diniscruz.ai/2025/06/19/using-llms-as-ephemeral-graph-databases--empowering-the-graph-thinkers-in-the-age-of-generative-ai.html)",
             "[Ephemeral Neo4j Instances for On-Demand Graph Analytics](https://docs.diniscruz.ai/2025/06/25/ephemeral-neo4j-instances-for-on-demand-graph-analytics.html)",
             "[FAQ: Evolving Semantic Graphs and Ontologies with LLMs and MGraph-DB](https://docs.diniscruz.ai/2025/07/04/faq-evolving-semantic-graphs-and-ontologies-with-llms-and-mgraph-db.html)"
+          ]
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the librarian, SGraph-AI__App__Send (addendum 01)",
+          "note": "Extended: beyond the browser evidence above, **Issues-FS ships four storage backends in code today** (memory, local disk, SQLite, ZIP: `Enum__Graph__Storage__Backend.py`, constructed via a repository factory over the memory-fs abstraction, 604 tests). That sharpens the corrected claim to its strongest form, the librarian's wording: 'We use databases, SQLite among them, as ephemeral engines loaded from a durable file-system source of truth. What we do not have is a database as the source of truth.' Two warnings the book must not inherit: three Issues-FS documents claim an MGraph-DB integration that does not exist in code (mgraph-db appears in zero pyproject.toml files and zero imports; the mgraph module is a hand-rolled in-memory graph borrowing the four-layer naming convention only), and S3 is claimed in four documents and does not exist. If the chapter cites Issues-FS as evidence, cite the enum and the factory, not the READMEs. The honesty table's 'No MGraph-DB dependency' line stays true, and now has a second corpus making the same point. See [brief 15](../briefs/15__librarian__source-resolution-addendum-01.md).",
+          "sources": [
+            "The four backends: `Issues-FS/issues_fs/schemas/enums/Enum__Graph__Storage__Backend.py` and `Graph__Repository__Factory`"
           ]
         }
       ]
@@ -263,6 +298,16 @@
           "note": "[Review r003](r003.html) settles where these case studies live: on the website, at full granularity, as the evidence estate, with the book carrying the distilled best-of and provenance links back. In the reviewer's words there: 'that will provide the body of work, will provide the evidence, will provide the examples... so that when you want to make a statement in a book, you are supported by the evidence.' The sources mapped above stay the inputs; the output surface changed, and the programme now runs **before** the next book version rather than after the identity release.",
           "sources": [
             "[Review r003, items 1 and 3](r003.html)"
+          ]
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the librarian, SGraph-AI__App__Send (addendum 01)",
+          "note": "The IssuesFS case study is properly resourced, and it becomes the strongest of the four: the only one with a shipped, installable, independently testable implementation. **issues-fs 0.7.0 and issues-fs-cli 0.3.0 are on PyPI**: 5,401 lines, 604 + 94 tests, 14 CLI commands, every one carrying `--for-agent`. The ontology is in code: `Schema__Node` (13 fields, two identities per node, machine node_id plus human label), `Schema__Node__Link` (bidirectional and denormalised, **which is why 71 nodes report 141 link entries**, a fact the case study should state before readers count), `Schema__Link__Type` (verb, inverse_verb, source_types, target_types), and `Safe_Str__Graph_Types`' five regex-validated ID primitives, which the addendum calls the single best teaching artefact in the codebase. Two undocumented surfaces worth surfacing: the .issues flat-file DSL (built, around 55 tests, three live examples, zero prose documentation) and Issues-FS-lite (agent mode, no binary, specified inside an email manual in a different repo). And one honest tension to narrate, not hide: the live link-types.json ships a relates-to self-inverse pair, and one edge instance uses it, while the book's own grammar chapter bans relates-to as meaningless. Doctrine versus shipped data, on the record. See [brief 15](../briefs/15__librarian__source-resolution-addendum-01.md).",
+          "sources": [
+            "The shipped surface: issues-fs 0.7.0 and issues-fs-cli 0.3.0 on PyPI; `owasp-sbot/Issues-FS__Docs` and `owasp-sbot/Issues-FS__Dev`",
+            "The live graph: `SGraph-AI__App__Send/.issues/` (71 nodes, 141 link entries, 12 node types, 10 verb pairs, depth 8)",
+            "Machine-readable path map: [15__addendum-01-sources.csv](../briefs/15__addendum-01-sources.csv)"
           ]
         }
       ]
