@@ -31,6 +31,110 @@ LEVELS = [
          note="The written text, ~20,000 words. Not duplicated here: every level 4 and level 3 unit links into it."),
 ]
 
+# ---------------------------------------------------------------- ontology & taxonomy
+# Per level, two different objects, kept apart because the book's own glossary keeps
+# them apart: a TAXONOMY points upward (broader/narrower — what kind of unit is this?)
+# and an ONTOLOGY points outward (what types exist here and how may they connect?).
+# Every edge below is a verb with a distinct inverse and a stated domain and range,
+# because the grammar chapter requires it of any graph this project publishes.
+
+def ont(types, edges):
+    return dict(node_types=types, edge_types=edges)
+
+def et(verb, inverse, domain, rng, note):
+    return dict(verb=verb, inverse=inverse, domain=domain, range=rng, note=note)
+
+ONTOLOGY = {
+ 1: ont(
+   [dict(name="Work", definition="The book as a single node. There is exactly one, and that is the level's whole population."),
+    dict(name="Thesis", definition="The claim the work stands or falls on, carried in the level's graph rather than its text.")],
+   [et("asserts", "asserted_by", "Work", "Thesis", "The work asserts the thesis; the thesis is asserted by the work."),
+    et("compresses", "compressed_by", "Work", "Part", "The descent edge. One sentence here stands for a part below.")]),
+ 2: ont(
+   [dict(name="Part", definition="A division of the argument. Six of them, each holding two to five units."),
+    dict(name="Claim", definition="An assertion a part makes, with an evidence state attached.")],
+   [et("compresses", "compressed_by", "Part", "Chapter", "The descent edge."),
+    et("precedes", "follows", "Part", "Part", "Reading order. Distinct inverse, and not symmetric: Part I precedes Part II, which follows it."),
+    et("carries", "carried_by", "Part", "Claim", "A part carries a claim; the claim is carried by that part.")]),
+ 3: ont(
+   [dict(name="Chapter", definition="A written unit of the book. Sixteen, plus one Introduction, which is a Chapter that opens rather than continues."),
+    dict(name="Claim", definition="An assertion a chapter makes."),
+    dict(name="Evidence", definition="A number, source or artefact a claim rests on.")],
+   [et("compresses", "compressed_by", "Chapter", "Section", "The descent edge, live for chapters 2 and 5 in this pilot."),
+    et("precedes", "follows", "Chapter", "Chapter", "Reading order."),
+    et("cites", "cited_by", "Chapter", "Chapter", "A cross-reference inside the book. Chapter 1 cites chapter 5 for the full argument; chapter 5 is cited by it."),
+    et("backed_by", "backs", "Claim", "Evidence", "Taken from the book's own published edge set rather than invented here.")]),
+ 4: ont(
+   [dict(name="Section", definition="A numbered division of a chapter. Twelve exist in this pilot, across two chapters."),
+    dict(name="Claim", definition="An assertion a section makes."),
+    dict(name="Evidence", definition="What a claim rests on.")],
+   [et("compresses", "compressed_by", "Section", "Passage", "The descent edge into level 5. Passage is the level-5 type and is not lifted here."),
+    et("precedes", "follows", "Section", "Section", "Reading order within a chapter."),
+    et("backed_by", "backs", "Claim", "Evidence", "As above.")]),
+ 5: ont(
+   [dict(name="Passage", definition="The written text itself. Not lifted: level 5 is the book, and giving it an ontology here would duplicate the book-as-a-graph work proposed in review r002 item 3.")],
+   []),
+}
+
+def tx(root, classes, note):
+    return dict(root=root, classes=classes, note=note)
+
+TAXONOMY = {
+ 1: tx("Work",
+   [dict(id="work", name="Work", parent=None,
+         note="The only class, holding the only unit.")],
+   "**A taxonomy of one is not a taxonomy.** At the top of the ladder the classification collapses: "
+   "there is nothing to distinguish from anything else. Recorded rather than padded out, because an "
+   "invented second class here would be schema-first — a category created to make the shape look right."),
+ 2: tx("Matter",
+   [dict(id="argument", name="Argument", parent="Matter", note="Parts that make the case."),
+    dict(id="evidence", name="Evidence", parent="Matter", note="Parts that test the case against real graphs."),
+    dict(id="disclosure", name="Disclosure", parent="Matter", note="Parts that say what is real and what is designed."),
+    dict(id="apparatus", name="Apparatus", parent="Matter", note="Parts that serve the reader rather than the argument.")],
+   "Four classes over six units. This is the level where the taxonomy is most useful: enough units to "
+   "separate, few enough that every class earns its place."),
+ 3: tx("Unit",
+   [dict(id="argument", name="Argument", parent="Unit", note="Units that advance the thesis."),
+    dict(id="prescription", name="Prescription", parent="Unit", note="Units that tell the reader what to do."),
+    dict(id="evidence", name="Evidence", parent="Unit", note="Units that show a real graph with real numbers."),
+    dict(id="record", name="Record", parent="Unit", note="Units that state what exists, what happened, and what surrounds the work."),
+    dict(id="apparatus", name="Apparatus", parent="Unit", note="Units that serve the reader: vocabulary and disclosure.")],
+   "Five classes over seventeen units. Note that these are **not** the level-2 classes with more members: "
+   "Prescription appears here and has no parent class above it, because at level 2 the rules were absorbed "
+   "into Argument. Compression does not just shorten, it re-classifies."),
+ 4: tx("Move",
+   [dict(id="definition", name="Definition", parent="Move", note="Sections that fix what a term means."),
+    dict(id="demonstration", name="Demonstration", parent="Move", note="Sections that show the idea working on a concrete case."),
+    dict(id="rule", name="Rule", parent="Move", note="Sections that state what to do or not do."),
+    dict(id="correction", name="Correction", parent="Move", note="Sections that say where an existing practice goes wrong."),
+    dict(id="signpost", name="Signpost", parent="Move", note="Sections that position the reader rather than argue.")],
+   "Five classes over twelve sections, and the classes have changed kind entirely: at this altitude a unit "
+   "is best described by **what it does to the reader**, not by what kind of matter it is. The taxonomy's "
+   "vocabulary is level-dependent, which is the strongest argument in this experiment for keeping one per level "
+   "rather than one for the book."),
+ 5: tx("Passage", [], "Not lifted: level 5 is the book."),
+}
+
+# node type and taxonomy class per node
+CLASSOF = {
+ "L1": ("Work", "work"),
+ "L2-1": ("Part", "argument"), "L2-2": ("Part", "argument"), "L2-3": ("Part", "argument"),
+ "L2-4": ("Part", "evidence"), "L2-5": ("Part", "disclosure"), "L2-6": ("Part", "apparatus"),
+ "L3-intro": ("Chapter", "argument"), "L3-1": ("Chapter", "argument"), "L3-2": ("Chapter", "argument"),
+ "L3-3": ("Chapter", "prescription"), "L3-4": ("Chapter", "prescription"),
+ "L3-5": ("Chapter", "argument"), "L3-6": ("Chapter", "argument"),
+ "L3-7": ("Chapter", "evidence"), "L3-8": ("Chapter", "evidence"), "L3-9": ("Chapter", "evidence"),
+ "L3-10": ("Chapter", "evidence"), "L3-11": ("Chapter", "evidence"),
+ "L3-12": ("Chapter", "record"), "L3-13": ("Chapter", "record"), "L3-14": ("Chapter", "record"),
+ "L3-15": ("Chapter", "apparatus"), "L3-16": ("Chapter", "apparatus"),
+ "L4-2-1": ("Section", "definition"), "L4-2-2": ("Section", "demonstration"),
+ "L4-2-3": ("Section", "demonstration"), "L4-2-4": ("Section", "rule"),
+ "L4-2-5": ("Section", "rule"), "L4-2-6": ("Section", "signpost"),
+ "L4-5-1": ("Section", "correction"), "L4-5-2": ("Section", "rule"),
+ "L4-5-3": ("Section", "rule"), "L4-5-4": ("Section", "definition"),
+ "L4-5-5": ("Section", "rule"), "L4-5-6": ("Section", "definition"),
+}
+
 # ---------------------------------------------------------------- level 1
 N = {}
 
@@ -314,6 +418,21 @@ FINDINGS = [
   verdict="Evidence for an open decision. Review r001 item 2 warns that retitling to Fractal Semantic Graphs without growing the "
           "fractal treatment puts a promise on the cover the interior underdelivers. The ladder turns that warning into a test: "
           "the title is right when the one-paragraph version of the book cannot be written without the word."),
+ dict(kind="classification", title="Compression does not just shorten, it re-classifies",
+  detail="Giving each level its own taxonomy was meant to be bookkeeping. It produced a result instead. The "
+         "classes do not survive the climb: a section classed **Rule** at level 4 sits inside a chapter classed "
+         "**Prescription** at level 3, inside a part classed **Argument** at level 2. Nothing inherits. And the "
+         "vocabulary changes kind, not just granularity: at level 4 a unit is best described by what it does to the "
+         "reader (definition, demonstration, rule, correction, signpost), while at level 2 it is best described by "
+         "what kind of matter it is (argument, evidence, disclosure, apparatus). At level 1 the taxonomy collapses "
+         "entirely, because a taxonomy of one unit is not a taxonomy.",
+  where=["L1", "L2-3", "L3-3", "L4-5-2"],
+  verdict="A result, not a defect, and it argues against a single book-wide ontology. One taxonomy imposed across "
+          "all levels would have to be either too coarse to classify sections or too fine to classify parts. Each "
+          "level earning its own vocabulary is the fractal claim behaving as advertised: the same grammar (verbs "
+          "with inverses, stated domain and range) at every altitude, with different vocabularies inside it. It also "
+          "gives review r002 item 3 a warning it did not have: the book-as-a-graph pilot should expect its node "
+          "types to be level-dependent rather than universal."),
  dict(kind="cross-estate", title="Two sibling sites publish the same graph with different numbers",
   detail="This book reports the issue tracker's own graph as **71 nodes and 141 edges** in four places, adding "
          "\"edges stored bidirectionally\" in two of them. The Issues-FS site, published 22 August 2026, reports the "
@@ -364,7 +483,16 @@ for nid, n in N.items():                      # parents, from the children edges
 for n in N.values():
     n.setdefault("parents", [])
 
+for nid, n in N.items():
+    t, c = CLASSOF.get(nid, (None, None))
+    n["type"], n["class"] = t, c
+
 for L in LEVELS:
+    L["ontology"] = ONTOLOGY[L["n"]]
+    L["taxonomy"] = TAXONOMY[L["n"]]
+    for cl in L["taxonomy"]["classes"]:
+        cl["members"] = [nid for nid, n in N.items()
+                         if n["level"] == L["n"] and n["class"] == cl["id"]]
     units = [n for n in N.values() if n["level"] == L["n"]]
     L["units"] = len(units)
     L["words"] = sum(n["words"] for n in units)
@@ -377,6 +505,10 @@ out = dict(version=VERSION, root="L1", levels=LEVELS,
              full_levels=[1, 2, 3],
              pilot_levels={"4": ["chapter 2", "chapter 5"]},
              graph_lifted=[nid for nid, n in N.items() if n["claims"]],
+             ontology_taxonomy="Every level carries its own ontology (node types, and edge types with "
+                  "verb, inverse, domain and range) and its own taxonomy (broader/narrower classes with "
+                  "members). Level 5's are deliberately empty: that is the book, and lifting it here would "
+                  "duplicate the book-as-a-graph work proposed in review r002 item 3.",
              note="Levels 1 to 3 are complete. Level 4 exists for two chapters only, and the "
                   "graph layer is lifted for the nodes on those two paths plus every node at "
                   "levels 1 and 2. Everything not lifted is stated as not lifted rather than "

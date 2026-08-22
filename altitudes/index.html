@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.16</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.17</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -99,12 +99,17 @@
   <div class="note"><b>What was built, and what was not.</b> Levels 1 to 3 are complete: the whole book in one paragraph, the six parts, and all seventeen units. Level 4 exists for <b>two chapters only</b> (chapter 2, <em>The five ideas</em>, and chapter 5, <em>Against schema-first</em>), which is the pilot the memo asked for. Level 5 is the book itself and is not duplicated here: every unit above links down into it. The graph layer is lifted for levels 1 and 2 and for the two drilled chapters; where it was not lifted, the node says so rather than showing an empty panel.</div>
 
   <h2 id="ladder-hd">Climb it</h2>
-  <p>Start at the top and descend, or jump to a level and read across it. The browser's address bar carries the unit, so any node is linkable.</p>
+  <p><b>Opening a unit does not replace what you were reading.</b> Click a highlighted phrase and the unit it compresses opens in a <b>new column beside it</b>, so the chain from the one-paragraph book down to a section stays on screen as a tree you can read across. Drag the bar between two columns to resize them. Any column's <b>☰ button lists every unit at that level</b>, grouped by that level's taxonomy, so you can enter at level 3 directly instead of climbing down to it — and picking one keeps its ancestors in the columns to its left. The address bar carries the whole trail, so a path is linkable, not just a node.</p>
+  <p>The descending links are coloured, and <b>what the colour means is switchable</b>: the evidence behind the unit below, how much further it descends, or which taxonomy class it belongs to. Same text, three different graphs over it — which is the book's own argument about projections, applied to its own navigation.</p>
   <div id="ladder"><p class="small dim">Loading the ladder…</p></div>
 
   <h2 id="findings">What the climb found</h2>
-  <p>The reviewer predicted this: <em>"I think with this we actually will find some repeated content and some contradictions in the content, which would be quite interesting."</em> Five findings, and the prediction holds — including one contradiction the book already knew about, kept here as the control case that shows the method can tell a hidden contradiction from a disclosed one.</p>
+  <p>The reviewer predicted this: <em>"I think with this we actually will find some repeated content and some contradictions in the content, which would be quite interesting."</em> Seven findings now, and the prediction holds. Five came from the climb itself, one arrived from outside the book when a sibling estate published the same graph with different numbers, and one came from classifying each level — the discovery that the classes do not survive the climb. One of the seven is a contradiction the book already knew about, kept here as the control case that shows the method can tell a hidden contradiction from a disclosed one.</p>
   <div id="findings-list"><p class="small dim">Loading the findings…</p></div>
+
+  <h2 id="onttax">An ontology and a taxonomy for every level</h2>
+  <p>Each level carries two things that are easy to confuse and are kept apart here for the reason the <a href="../book/ch-15-glossary.html">glossary</a> gives: a <b>taxonomy points upward</b> (broader and narrower — what kind of unit is this?) while an <b>ontology points outward</b> (what types exist here, and how may they connect?). Open any column's <b>⊞ ontology and taxonomy</b> panel to see that level's. Every edge type is a verb with a distinct inverse and a stated domain and range, because the <a href="../book/ch-03-the-rules-you-can-apply-tomorrow.html">grammar chapter</a> requires that of any graph this project publishes, including this one.</p>
+  <p>Doing this per level rather than once for the book was bookkeeping that turned into a result, recorded as <a href="#findings">finding 7</a>: <b>the classes do not survive the climb</b>. A section classed <em>Rule</em> at level 4 sits inside a chapter classed <em>Prescription</em> at level 3, inside a part classed <em>Argument</em> at level 2 — nothing inherits. And the vocabulary changes kind rather than granularity: at level 4 a unit is best described by what it does to the reader, at level 2 by what kind of matter it is, and at level 1 the taxonomy collapses altogether, because a taxonomy of one unit is not a taxonomy. That is an argument against a single book-wide ontology, and it is the fractal claim behaving as advertised: one grammar at every altitude, different vocabularies inside it.</p>
 
   <h2 id="shape">The shape of the pyramid</h2>
   <p>Words per level, which is the experiment's simplest result: <b>~20,000 → 546 (two chapters, twelve sections) → 1,333 → 406 → 135</b>. Level 3 is where the book becomes readable in one sitting, level 2 is where it becomes quotable, and level 1 is where it becomes a claim you either accept or reject. Level 4 is the only level that grew per unit rather than shrank, because a section digest is longer than its share of a chapter digest — a compression ladder is not monotonic per unit, only in total.</p>
@@ -112,7 +117,7 @@
 
   <div class="agent">
     <h4>For an agent</h4>
-    <p>The ladder is the JSON at <a href="data/altitudes.json">/altitudes/data/altitudes.json</a>; this page is one projection of it. Each node carries <code>level</code>, <code>segments</code> (the projection, where a segment with a <code>to</code> field is a descent edge), <code>children</code> and <code>parents</code> (many-to-many, so a phrase may compress several units and a unit may be compressed by several phrases), <code>claims</code> with an evidence <code>state</code> of evidenced, argued or unevidenced, and <code>book</code>, the link down to level 5. The <code>coverage</code> block states exactly what was and was not lifted. If you are asked to summarise this book, prefer the level whose granularity matches the question rather than compressing the full text yourself: that is what these levels are for. If you are asked to check the book, start from <code>findings</code>.</p>
+    <p>The ladder is the JSON at <a href="data/altitudes.json">/altitudes/data/altitudes.json</a>; this page is one projection of it. Each node carries <code>level</code>, <code>segments</code> (the projection, where a segment with a <code>to</code> field is a descent edge), <code>children</code> and <code>parents</code> (many-to-many, so a phrase may compress several units and a unit may be compressed by several phrases), <code>claims</code> with an evidence <code>state</code> of evidenced, argued or unevidenced, <code>type</code> (its ontology node type) and <code>class</code> (its taxonomy class), and <code>book</code>, the link down to level 5. Each entry in <code>levels</code> carries that level's own <code>ontology</code> (node types, and edge types with verb, inverse, domain and range) and <code>taxonomy</code> (classes with their members) — they differ level to level, so do not assume a class name means the same thing two levels up. The <code>coverage</code> block states exactly what was and was not lifted. If you are asked to summarise this book, prefer the level whose granularity matches the question rather than compressing the full text yourself: that is what these levels are for. If you are asked to check the book, start from <code>findings</code>.</p>
   </div>
 </main>
 
@@ -122,7 +127,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.16</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.17</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

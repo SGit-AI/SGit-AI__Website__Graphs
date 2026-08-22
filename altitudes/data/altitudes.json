@@ -1,11 +1,54 @@
 {
- "version": "v0.3.16",
+ "version": "v0.3.17",
  "root": "L1",
  "levels": [
   {
    "n": 1,
    "name": "The book in a paragraph",
    "note": "One paragraph. Every sentence descends into a part.",
+   "ontology": {
+    "node_types": [
+     {
+      "name": "Work",
+      "definition": "The book as a single node. There is exactly one, and that is the level's whole population."
+     },
+     {
+      "name": "Thesis",
+      "definition": "The claim the work stands or falls on, carried in the level's graph rather than its text."
+     }
+    ],
+    "edge_types": [
+     {
+      "verb": "asserts",
+      "inverse": "asserted_by",
+      "domain": "Work",
+      "range": "Thesis",
+      "note": "The work asserts the thesis; the thesis is asserted by the work."
+     },
+     {
+      "verb": "compresses",
+      "inverse": "compressed_by",
+      "domain": "Work",
+      "range": "Part",
+      "note": "The descent edge. One sentence here stands for a part below."
+     }
+    ]
+   },
+   "taxonomy": {
+    "root": "Work",
+    "classes": [
+     {
+      "id": "work",
+      "name": "Work",
+      "parent": null,
+      "note": "The only class, holding the only unit.",
+      "members": [
+       "L1"
+      ]
+     }
+    ],
+    "note": "**A taxonomy of one is not a taxonomy.** At the top of the ladder the classification collapses: there is nothing to distinguish from anything else. Recorded rather than padded out, because an invented second class here would be schema-first — a category created to make the shape look right."
+   },
    "units": 1,
    "words": 135
   },
@@ -13,6 +56,85 @@
    "n": 2,
    "name": "The six parts",
    "note": "One or two sentences per part. Phrases descend into chapters.",
+   "ontology": {
+    "node_types": [
+     {
+      "name": "Part",
+      "definition": "A division of the argument. Six of them, each holding two to five units."
+     },
+     {
+      "name": "Claim",
+      "definition": "An assertion a part makes, with an evidence state attached."
+     }
+    ],
+    "edge_types": [
+     {
+      "verb": "compresses",
+      "inverse": "compressed_by",
+      "domain": "Part",
+      "range": "Chapter",
+      "note": "The descent edge."
+     },
+     {
+      "verb": "precedes",
+      "inverse": "follows",
+      "domain": "Part",
+      "range": "Part",
+      "note": "Reading order. Distinct inverse, and not symmetric: Part I precedes Part II, which follows it."
+     },
+     {
+      "verb": "carries",
+      "inverse": "carried_by",
+      "domain": "Part",
+      "range": "Claim",
+      "note": "A part carries a claim; the claim is carried by that part."
+     }
+    ]
+   },
+   "taxonomy": {
+    "root": "Matter",
+    "classes": [
+     {
+      "id": "argument",
+      "name": "Argument",
+      "parent": "Matter",
+      "note": "Parts that make the case.",
+      "members": [
+       "L2-1",
+       "L2-2",
+       "L2-3"
+      ]
+     },
+     {
+      "id": "evidence",
+      "name": "Evidence",
+      "parent": "Matter",
+      "note": "Parts that test the case against real graphs.",
+      "members": [
+       "L2-4"
+      ]
+     },
+     {
+      "id": "disclosure",
+      "name": "Disclosure",
+      "parent": "Matter",
+      "note": "Parts that say what is real and what is designed.",
+      "members": [
+       "L2-5"
+      ]
+     },
+     {
+      "id": "apparatus",
+      "name": "Apparatus",
+      "parent": "Matter",
+      "note": "Parts that serve the reader rather than the argument.",
+      "members": [
+       "L2-6"
+      ]
+     }
+    ],
+    "note": "Four classes over six units. This is the level where the taxonomy is most useful: enough units to separate, few enough that every class earns its place."
+   },
    "units": 6,
    "words": 406
   },
@@ -20,6 +142,115 @@
    "n": 3,
    "name": "The seventeen units",
    "note": "One paragraph per chapter, plus the introduction.",
+   "ontology": {
+    "node_types": [
+     {
+      "name": "Chapter",
+      "definition": "A written unit of the book. Sixteen, plus one Introduction, which is a Chapter that opens rather than continues."
+     },
+     {
+      "name": "Claim",
+      "definition": "An assertion a chapter makes."
+     },
+     {
+      "name": "Evidence",
+      "definition": "A number, source or artefact a claim rests on."
+     }
+    ],
+    "edge_types": [
+     {
+      "verb": "compresses",
+      "inverse": "compressed_by",
+      "domain": "Chapter",
+      "range": "Section",
+      "note": "The descent edge, live for chapters 2 and 5 in this pilot."
+     },
+     {
+      "verb": "precedes",
+      "inverse": "follows",
+      "domain": "Chapter",
+      "range": "Chapter",
+      "note": "Reading order."
+     },
+     {
+      "verb": "cites",
+      "inverse": "cited_by",
+      "domain": "Chapter",
+      "range": "Chapter",
+      "note": "A cross-reference inside the book. Chapter 1 cites chapter 5 for the full argument; chapter 5 is cited by it."
+     },
+     {
+      "verb": "backed_by",
+      "inverse": "backs",
+      "domain": "Claim",
+      "range": "Evidence",
+      "note": "Taken from the book's own published edge set rather than invented here."
+     }
+    ]
+   },
+   "taxonomy": {
+    "root": "Unit",
+    "classes": [
+     {
+      "id": "argument",
+      "name": "Argument",
+      "parent": "Unit",
+      "note": "Units that advance the thesis.",
+      "members": [
+       "L3-intro",
+       "L3-1",
+       "L3-2",
+       "L3-5",
+       "L3-6"
+      ]
+     },
+     {
+      "id": "prescription",
+      "name": "Prescription",
+      "parent": "Unit",
+      "note": "Units that tell the reader what to do.",
+      "members": [
+       "L3-3",
+       "L3-4"
+      ]
+     },
+     {
+      "id": "evidence",
+      "name": "Evidence",
+      "parent": "Unit",
+      "note": "Units that show a real graph with real numbers.",
+      "members": [
+       "L3-7",
+       "L3-8",
+       "L3-9",
+       "L3-10",
+       "L3-11"
+      ]
+     },
+     {
+      "id": "record",
+      "name": "Record",
+      "parent": "Unit",
+      "note": "Units that state what exists, what happened, and what surrounds the work.",
+      "members": [
+       "L3-12",
+       "L3-13",
+       "L3-14"
+      ]
+     },
+     {
+      "id": "apparatus",
+      "name": "Apparatus",
+      "parent": "Unit",
+      "note": "Units that serve the reader: vocabulary and disclosure.",
+      "members": [
+       "L3-15",
+       "L3-16"
+      ]
+     }
+    ],
+    "note": "Five classes over seventeen units. Note that these are **not** the level-2 classes with more members: Prescription appears here and has no parent class above it, because at level 2 the rules were absorbed into Argument. Compression does not just shorten, it re-classifies."
+   },
    "units": 17,
    "words": 1333
   },
@@ -27,6 +258,103 @@
    "n": 4,
    "name": "The sections",
    "note": "Two or three sentences per section. Pilot coverage: chapters 2 and 5 only.",
+   "ontology": {
+    "node_types": [
+     {
+      "name": "Section",
+      "definition": "A numbered division of a chapter. Twelve exist in this pilot, across two chapters."
+     },
+     {
+      "name": "Claim",
+      "definition": "An assertion a section makes."
+     },
+     {
+      "name": "Evidence",
+      "definition": "What a claim rests on."
+     }
+    ],
+    "edge_types": [
+     {
+      "verb": "compresses",
+      "inverse": "compressed_by",
+      "domain": "Section",
+      "range": "Passage",
+      "note": "The descent edge into level 5. Passage is the level-5 type and is not lifted here."
+     },
+     {
+      "verb": "precedes",
+      "inverse": "follows",
+      "domain": "Section",
+      "range": "Section",
+      "note": "Reading order within a chapter."
+     },
+     {
+      "verb": "backed_by",
+      "inverse": "backs",
+      "domain": "Claim",
+      "range": "Evidence",
+      "note": "As above."
+     }
+    ]
+   },
+   "taxonomy": {
+    "root": "Move",
+    "classes": [
+     {
+      "id": "definition",
+      "name": "Definition",
+      "parent": "Move",
+      "note": "Sections that fix what a term means.",
+      "members": [
+       "L4-2-1",
+       "L4-5-4",
+       "L4-5-6"
+      ]
+     },
+     {
+      "id": "demonstration",
+      "name": "Demonstration",
+      "parent": "Move",
+      "note": "Sections that show the idea working on a concrete case.",
+      "members": [
+       "L4-2-2",
+       "L4-2-3"
+      ]
+     },
+     {
+      "id": "rule",
+      "name": "Rule",
+      "parent": "Move",
+      "note": "Sections that state what to do or not do.",
+      "members": [
+       "L4-2-4",
+       "L4-2-5",
+       "L4-5-2",
+       "L4-5-3",
+       "L4-5-5"
+      ]
+     },
+     {
+      "id": "correction",
+      "name": "Correction",
+      "parent": "Move",
+      "note": "Sections that say where an existing practice goes wrong.",
+      "members": [
+       "L4-5-1"
+      ]
+     },
+     {
+      "id": "signpost",
+      "name": "Signpost",
+      "parent": "Move",
+      "note": "Sections that position the reader rather than argue.",
+      "members": [
+       "L4-2-6"
+      ]
+     }
+    ],
+    "note": "Five classes over twelve sections, and the classes have changed kind entirely: at this altitude a unit is best described by **what it does to the reader**, not by what kind of matter it is. The taxonomy's vocabulary is level-dependent, which is the strongest argument in this experiment for keeping one per level rather than one for the book."
+   },
    "units": 12,
    "words": 546
   },
@@ -34,6 +362,20 @@
    "n": 5,
    "name": "The book itself",
    "note": "The written text, ~20,000 words. Not duplicated here: every level 4 and level 3 unit links into it.",
+   "ontology": {
+    "node_types": [
+     {
+      "name": "Passage",
+      "definition": "The written text itself. Not lifted: level 5 is the book, and giving it an ontology here would duplicate the book-as-a-graph work proposed in review r002 item 3."
+     }
+    ],
+    "edge_types": []
+   },
+   "taxonomy": {
+    "root": "Passage",
+    "classes": [],
+    "note": "Not lifted: level 5 is the book."
+   },
    "units": 17,
    "words": 20000
   }
@@ -121,7 +463,9 @@
     "L2-6"
    ],
    "words": 135,
-   "parents": []
+   "parents": [],
+   "type": "Work",
+   "class": "work"
   },
   "L2-1": {
    "id": "L2-1",
@@ -171,7 +515,9 @@
    "words": 89,
    "parents": [
     "L1"
-   ]
+   ],
+   "type": "Part",
+   "class": "argument"
   },
   "L2-2": {
    "id": "L2-2",
@@ -213,7 +559,9 @@
    "words": 66,
    "parents": [
     "L1"
-   ]
+   ],
+   "type": "Part",
+   "class": "argument"
   },
   "L2-3": {
    "id": "L2-3",
@@ -260,7 +608,9 @@
    "words": 69,
    "parents": [
     "L1"
-   ]
+   ],
+   "type": "Part",
+   "class": "argument"
   },
   "L2-4": {
    "id": "L2-4",
@@ -333,7 +683,9 @@
    "words": 72,
    "parents": [
     "L1"
-   ]
+   ],
+   "type": "Part",
+   "class": "evidence"
   },
   "L2-5": {
    "id": "L2-5",
@@ -392,7 +744,9 @@
    "words": 74,
    "parents": [
     "L1"
-   ]
+   ],
+   "type": "Part",
+   "class": "disclosure"
   },
   "L2-6": {
    "id": "L2-6",
@@ -434,7 +788,9 @@
    "words": 36,
    "parents": [
     "L1"
-   ]
+   ],
+   "type": "Part",
+   "class": "apparatus"
   },
   "L3-intro": {
    "id": "L3-intro",
@@ -472,7 +828,9 @@
    "words": 129,
    "parents": [
     "L2-1"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "argument"
   },
   "L3-1": {
    "id": "L3-1",
@@ -490,7 +848,9 @@
    "words": 79,
    "parents": [
     "L2-1"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "argument"
   },
   "L3-2": {
    "id": "L3-2",
@@ -569,7 +929,9 @@
    "words": 107,
    "parents": [
     "L2-1"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "argument"
   },
   "L3-3": {
    "id": "L3-3",
@@ -587,7 +949,9 @@
    "words": 98,
    "parents": [
     "L2-2"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "prescription"
   },
   "L3-4": {
    "id": "L3-4",
@@ -605,7 +969,9 @@
    "words": 74,
    "parents": [
     "L2-2"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "prescription"
   },
   "L3-5": {
    "id": "L3-5",
@@ -684,7 +1050,9 @@
    "words": 121,
    "parents": [
     "L2-3"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "argument"
   },
   "L3-6": {
    "id": "L3-6",
@@ -702,7 +1070,9 @@
    "words": 81,
    "parents": [
     "L2-3"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "argument"
   },
   "L3-7": {
    "id": "L3-7",
@@ -720,7 +1090,9 @@
    "words": 79,
    "parents": [
     "L2-4"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "evidence"
   },
   "L3-8": {
    "id": "L3-8",
@@ -738,7 +1110,9 @@
    "words": 67,
    "parents": [
     "L2-4"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "evidence"
   },
   "L3-9": {
    "id": "L3-9",
@@ -756,7 +1130,9 @@
    "words": 60,
    "parents": [
     "L2-4"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "evidence"
   },
   "L3-10": {
    "id": "L3-10",
@@ -774,7 +1150,9 @@
    "words": 58,
    "parents": [
     "L2-4"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "evidence"
   },
   "L3-11": {
    "id": "L3-11",
@@ -792,7 +1170,9 @@
    "words": 45,
    "parents": [
     "L2-4"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "evidence"
   },
   "L3-12": {
    "id": "L3-12",
@@ -810,7 +1190,9 @@
    "words": 84,
    "parents": [
     "L2-5"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "record"
   },
   "L3-13": {
    "id": "L3-13",
@@ -828,7 +1210,9 @@
    "words": 71,
    "parents": [
     "L2-5"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "record"
   },
   "L3-14": {
    "id": "L3-14",
@@ -846,7 +1230,9 @@
    "words": 59,
    "parents": [
     "L2-5"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "record"
   },
   "L3-15": {
    "id": "L3-15",
@@ -864,7 +1250,9 @@
    "words": 61,
    "parents": [
     "L2-6"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "apparatus"
   },
   "L3-16": {
    "id": "L3-16",
@@ -882,7 +1270,9 @@
    "words": 60,
    "parents": [
     "L2-6"
-   ]
+   ],
+   "type": "Chapter",
+   "class": "apparatus"
   },
   "L4-2-1": {
    "id": "L4-2-1",
@@ -906,7 +1296,9 @@
    "words": 50,
    "parents": [
     "L3-2"
-   ]
+   ],
+   "type": "Section",
+   "class": "definition"
   },
   "L4-2-2": {
    "id": "L4-2-2",
@@ -932,7 +1324,9 @@
    "words": 46,
    "parents": [
     "L3-2"
-   ]
+   ],
+   "type": "Section",
+   "class": "demonstration"
   },
   "L4-2-3": {
    "id": "L4-2-3",
@@ -958,7 +1352,9 @@
    "words": 45,
    "parents": [
     "L3-2"
-   ]
+   ],
+   "type": "Section",
+   "class": "demonstration"
   },
   "L4-2-4": {
    "id": "L4-2-4",
@@ -984,7 +1380,9 @@
    "words": 40,
    "parents": [
     "L3-2"
-   ]
+   ],
+   "type": "Section",
+   "class": "rule"
   },
   "L4-2-5": {
    "id": "L4-2-5",
@@ -1010,7 +1408,9 @@
    "words": 39,
    "parents": [
     "L3-2"
-   ]
+   ],
+   "type": "Section",
+   "class": "rule"
   },
   "L4-2-6": {
    "id": "L4-2-6",
@@ -1028,7 +1428,9 @@
    "words": 37,
    "parents": [
     "L3-2"
-   ]
+   ],
+   "type": "Section",
+   "class": "signpost"
   },
   "L4-5-1": {
    "id": "L4-5-1",
@@ -1059,7 +1461,9 @@
    "words": 59,
    "parents": [
     "L3-5"
-   ]
+   ],
+   "type": "Section",
+   "class": "correction"
   },
   "L4-5-2": {
    "id": "L4-5-2",
@@ -1083,7 +1487,9 @@
    "words": 51,
    "parents": [
     "L3-5"
-   ]
+   ],
+   "type": "Section",
+   "class": "rule"
   },
   "L4-5-3": {
    "id": "L4-5-3",
@@ -1109,7 +1515,9 @@
    "words": 47,
    "parents": [
     "L3-5"
-   ]
+   ],
+   "type": "Section",
+   "class": "rule"
   },
   "L4-5-4": {
    "id": "L4-5-4",
@@ -1133,7 +1541,9 @@
    "words": 41,
    "parents": [
     "L3-5"
-   ]
+   ],
+   "type": "Section",
+   "class": "definition"
   },
   "L4-5-5": {
    "id": "L4-5-5",
@@ -1157,7 +1567,9 @@
    "words": 47,
    "parents": [
     "L3-5"
-   ]
+   ],
+   "type": "Section",
+   "class": "rule"
   },
   "L4-5-6": {
    "id": "L4-5-6",
@@ -1181,7 +1593,9 @@
    "words": 44,
    "parents": [
     "L3-5"
-   ]
+   ],
+   "type": "Section",
+   "class": "definition"
   }
  },
  "findings": [
@@ -1228,6 +1642,18 @@
     "L3-6"
    ],
    "verdict": "Evidence for an open decision. Review r001 item 2 warns that retitling to Fractal Semantic Graphs without growing the fractal treatment puts a promise on the cover the interior underdelivers. The ladder turns that warning into a test: the title is right when the one-paragraph version of the book cannot be written without the word."
+  },
+  {
+   "kind": "classification",
+   "title": "Compression does not just shorten, it re-classifies",
+   "detail": "Giving each level its own taxonomy was meant to be bookkeeping. It produced a result instead. The classes do not survive the climb: a section classed **Rule** at level 4 sits inside a chapter classed **Prescription** at level 3, inside a part classed **Argument** at level 2. Nothing inherits. And the vocabulary changes kind, not just granularity: at level 4 a unit is best described by what it does to the reader (definition, demonstration, rule, correction, signpost), while at level 2 it is best described by what kind of matter it is (argument, evidence, disclosure, apparatus). At level 1 the taxonomy collapses entirely, because a taxonomy of one unit is not a taxonomy.",
+   "where": [
+    "L1",
+    "L2-3",
+    "L3-3",
+    "L4-5-2"
+   ],
+   "verdict": "A result, not a defect, and it argues against a single book-wide ontology. One taxonomy imposed across all levels would have to be either too coarse to classify sections or too fine to classify parts. Each level earning its own vocabulary is the fractal claim behaving as advertised: the same grammar (verbs with inverses, stated domain and range) at every altitude, with different vocabularies inside it. It also gives review r002 item 3 a warning it did not have: the book-as-a-graph pilot should expect its node types to be level-dependent rather than universal."
   },
   {
    "kind": "cross-estate",
@@ -1284,6 +1710,7 @@
    "L4-5-5",
    "L4-5-6"
   ],
+  "ontology_taxonomy": "Every level carries its own ontology (node types, and edge types with verb, inverse, domain and range) and its own taxonomy (broader/narrower classes with members). Level 5's are deliberately empty: that is the book, and lifting it here would duplicate the book-as-a-graph work proposed in review r002 item 3.",
   "note": "Levels 1 to 3 are complete. Level 4 exists for two chapters only, and the graph layer is lifted for the nodes on those two paths plus every node at levels 1 and 2. Everything not lifted is stated as not lifted rather than left to look finished."
  }
 }

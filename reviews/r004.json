@@ -7,7 +7,7 @@
   "source": "briefs/16__founder-review__altitude-ladder.md",
   "version_reviewed": "v0.3.14",
   "state": "commented",
-  "state_note": "Commented, and the central item is built rather than proposed: this memo asks for an experiment, and an experiment that is only described has not been run. The ladder is live at /altitudes/ with levels 1 to 3 complete, level 4 for two chapters, the graph layer lifted on those paths, and five findings from the climb. No book content changed: the ladder is a new artefact beside the book, not an edit to it. Three decisions are open, and the first of them is whether the experiment earned a place in the pipeline at all.",
+  "state_note": "Commented, and the central item is built rather than proposed: this memo asks for an experiment, and an experiment that is only described has not been run. The ladder is live at /altitudes/ with levels 1 to 3 complete, level 4 for two chapters, the graph layer lifted on those paths, and five findings from the climb. No book content changed: the ladder is a new artefact beside the book, not an edit to it. Three decisions are open, and the first of them is whether the experiment earned a place in the pipeline at all. A second round on 22 August acted on the reviewer's UX feedback: the ladder is now resizable columns with per-level indexes (item 1's thread), the descent links carry a switchable colour meaning (item 7), and every level has its own ontology and taxonomy (item 8), which produced finding 7 — the classes do not survive the climb. Four decisions now open.",
   "decisions": [
     {
       "n": 1,
@@ -41,6 +41,17 @@
         "None yet: stabilise the ladder first"
       ],
       "state": "open"
+    },
+    {
+      "n": 4,
+      "item": 8,
+      "question": "The per-level ontologies and taxonomies are authored by the agent and are a first pass: the classes are defensible but not confirmed, and the author is the oracle for a classification of their own book. Confirm them, or correct the classes that are wrong? The most arguable calls: chapter 4 (the edge set) is classed **Prescription** rather than Apparatus; the Introduction is classed **Argument** rather than Signpost; and level 4's class vocabulary is about what a section does to the reader, which is a different kind of scheme from every level above it.",
+      "options": [
+        "Confirm as authored",
+        "Correct specific classes (say which)",
+        "Rework the class vocabulary at a level"
+      ],
+      "state": "open"
     }
   ],
   "items": [
@@ -57,7 +68,21 @@
         "no book content"
       ],
       "state": "applied",
-      "applied_in": "v0.3.15"
+      "applied_in": "v0.3.15",
+      "thread": [
+        {
+          "date": "22 August 2026",
+          "from": "Dinis Cruz, the reviewer",
+          "note": "\"At the moment there doesn't seem to be a way to see and navigate all items in a layer. For example at the moment I need to go to L1 to see a particular L2 entry. But at least between layers we shouldn't change the layer page/section when clicking on entries: if I'm in L1 and click on the link, in the same page/UI the L2 content should appear on a side panel (resizable) so that it becomes really obvious the tree like structure.\"",
+          "sources": []
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the agent",
+          "note": "Both fixed, and the second was the more serious of the two: replacing the view on every click made the ladder behave like a set of pages that happened to be numbered, which hid the very structure the experiment exists to show. The ladder is now **columns**: opening a unit appends a column beside the current one, the chain from level 1 down to a section stays on screen, columns are resizable by dragging the bar between them, and the columns container scrolls rather than the page. The address bar carries the whole trail (`?t=L1,L2-3,L3-5`), so a **path** is linkable, not just a node. For the first point, every column has an **index button listing all units at that level**, grouped by that level's taxonomy; picking one rebuilds the ancestor columns to its left, so entering at level 3 directly still shows what it sits inside. Level entry from the top rail opens that level's index in place.",
+          "sources": []
+        }
+      ]
     },
     {
       "n": 2,
@@ -83,7 +108,15 @@
       "impact": [
         "the ladder's data model"
       ],
-      "state": "noted"
+      "state": "noted",
+      "thread": [
+        {
+          "date": "22 August 2026",
+          "from": "the agent",
+          "note": "The column layout makes the many-to-many question visible rather than theoretical: a unit reached down two different paths now shows a different set of columns to its left, so the second parent this item predicted for the Semantic Web material (finding 2) would be observable as two trails ending at the same node. The trail currently reconstructs ancestors through the **first** parent only, which is honest for a pilot with one known case and would need a choice, not a default, once a second real case lands.",
+          "sources": []
+        }
+      ]
     },
     {
       "n": 4,
@@ -127,6 +160,34 @@
         "r003 item 2"
       ],
       "state": "noted"
+    },
+    {
+      "n": 7,
+      "topic": "Colour the descent links to mean something, switchably",
+      "reviewer_says": "I really like those links to the next layer, but can you experiment with different colours (to represent different things).",
+      "comment": "Worth doing, and the interesting part is that there is no single right answer: a descent link can usefully carry at least three different signals, and which one you want depends on why you are reading. Hard-coding one would have been a small act of schema-first.",
+      "proposal": "Built as a **switch**, not a scheme: the same links colour by **the evidence behind the unit below** (green evidenced, amber argued, red unevidenced, grey where the graph layer was not lifted), by **how far it descends** (teal descends further, slate is a leaf in this pilot), or by **taxonomy class** (one hue per class, with a legend naming the class and its level). Same text, three graphs over it, chosen by the reader — which is the book's own render-the-query rule applied to its own navigation. The mode is in the URL, so a coloured view is shareable. An observation worth recording: the evidence mode is the one that changes how the page reads, because it makes the unevidenced stretches of the argument visible at a glance rather than on inspection.",
+      "needs": [],
+      "impact": [
+        "/altitudes/",
+        "possibly the chapter graphs of r002 item 6"
+      ],
+      "state": "applied",
+      "applied_in": "v0.3.17"
+    },
+    {
+      "n": 8,
+      "topic": "An ontology and a taxonomy for every layer",
+      "reviewer_says": "Finally can you experiment with the creation of an Ontology and Taxonomy for each layer.",
+      "comment": "Done, and it stopped being bookkeeping about ten minutes in. Kept strictly apart in the way the book's own glossary keeps them apart: the taxonomy points upward (what kind of unit is this?), the ontology points outward (what types exist here and how may they connect?). Every edge type is a verb with a distinct inverse and a stated domain and range, because the grammar chapter demands that of any graph this project publishes, including this one.",
+      "proposal": "Each level now carries both, in the data and in a panel on every column. The result is [finding 7](../altitudes/index.html#findings), and it is the most interesting thing this experiment has produced after the database contradiction: **the classes do not survive the climb.** A section classed *Rule* at level 4 sits inside a chapter classed *Prescription* at level 3, inside a part classed *Argument* at level 2, and nothing inherits. The vocabulary changes kind rather than granularity: at level 4 a unit is best described by what it does to the reader (definition, demonstration, rule, correction, signpost); at level 2 by what kind of matter it is (argument, evidence, disclosure, apparatus). At level 1 the taxonomy collapses, because a taxonomy of one unit is not a taxonomy, and inventing a second class to fill the shape would have been exactly the schema-first move this book argues against. Two consequences: it is an argument against a single book-wide ontology, and it is a warning for r002 item 3, whose graph pilot should expect node types to be level-dependent rather than universal.",
+      "needs": [],
+      "impact": [
+        "/altitudes/",
+        "r002 item 3's node type design"
+      ],
+      "state": "applied",
+      "applied_in": "v0.3.17"
     }
   ]
 }

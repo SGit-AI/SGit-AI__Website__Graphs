@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.3.16 (21 August 2026). Published by the sgit project — participant
+Site version: v0.3.17 (21 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /briefs/ is the source of truth and carries the same licence.
 
@@ -219,7 +219,10 @@ pages** so the two cannot drift
   Every node keeps the graph (claims with an evidence state of evidenced, argued or
   unevidenced) apart from the projection (the text). **If you are asked to summarise this
   book, read the level that matches the question instead of compressing the full text
-  yourself.** The climb produced five findings, including one contradiction the full text
+  yourself.** Every level also carries its own `ontology` (node types, plus edge types with
+  verb, inverse, domain and range) and its own `taxonomy` (broader/narrower classes with
+  members) — **they differ level to level, so a class name does not mean the same thing two
+  levels up.** The climb produced seven findings, including one contradiction the full text
   keeps forty pages apart: /altitudes/data/altitudes.json is the machine-readable ladder.
 - https://graphs.sgit.ai/book/changes.html — what changed between any two versions of
   the book, GitHub-style, in the browser. Machine-readable snapshots (one frozen JSON
