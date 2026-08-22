@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.7</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.8</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -37,6 +37,7 @@
       <a class="sl" href="../book/index.html">Table of contents</a>
       <a class="sl" href="../book/single.html">Read it in one page</a>
       <a class="sl" href="../book/changes.html">What changed between versions</a>
+      <a class="sl" href="../reviews/index.html">The reviews</a>
       <a class="sl" href="../book/meaning-through-connectivity.pdf">The print PDF (6&times;9)</a>
       <a class="sl" href="../book/meaning-through-connectivity-screen.pdf">The screen PDF (tablet)</a>
       </div>
@@ -128,6 +129,12 @@
         <td>Resolve licence and attribution on the three foundational concept documents.</td>
         <td>Was the only hard blocker in the brief pack. Closed by the decision of 21 August 2026: CC BY 4.0 by default across the corpus and every <code>*.sgit.ai</code> site. <a href="../documents/licensing.html">The decision →</a></td>
         <td><span class="tstat t-done">Done · 21 Aug</span></td>
+      </tr>
+      <tr>
+        <td><b>N10</b></td>
+        <td>Review r001: the first reading, answered item by item.</td>
+        <td>Founder voice memo, 22 August 2026, preserved verbatim as <a href="../briefs/11__founder-review__first-reading.md">brief 11</a> and normalised into <a href="../reviews/r001.html">review r001</a>: nine items, each with the agent's comment, a proposal and what is needed before it lands. Headlines: the retitle to <em>Fractal Semantic Graphs: Meaning Through Connectivity</em>, the lineage homage chapter, the no-live-databases correction, screenshots as code, a chapter on the vaults, and case studies for SGit, IssuesFS and EmailFS. Nothing changed yet: per the workflow, changes land only after agreement, item by item.</td>
+        <td><span class="tstat t-doing">Commented · awaiting responses</span></td>
       </tr>
       <tr>
         <td><b>N9</b></td>
@@ -231,14 +238,14 @@
       <tr>
         <td><b>T22</b></td>
         <td>The review loop: comment first, propose, approve, then change.</td>
-        <td>From the N9 memo. The agent's first response to a review is <b>comments and proposed changes, never edits</b>; a thread runs until agreement; agreed changes land and <a href="../book/changes.html">the diff view</a> shows exactly the delta the review produced; approval, rejection and follow-up comments feed the same review or open a new one. The whole exchange is packed as JSON (the review, the text before and after, the thread, the outcome): a serverless pull request. Reviews stay linked to the version they reviewed, so when the content drifts we can ask "did later changes affect this review?"</td>
-        <td><span class="tstat t-open">Queued</span></td>
+        <td>From the N9 memo. The agent's first response to a review is <b>comments and proposed changes, never edits</b>; a thread runs until agreement; agreed changes land and <a href="../book/changes.html">the diff view</a> shows exactly the delta the review produced; approval, rejection and follow-up comments feed the same review or open a new one. The whole exchange is packed as JSON (the review, the text before and after, the thread, the outcome): a serverless pull request. Reviews stay linked to the version they reviewed, so when the content drifts we can ask "did later changes affect this review?" The comment stage ran for real at v0.3.8: <a href="../reviews/r001.json">r001.json</a> holds nine items in proposed state with nothing changed; the discussion and per-item landing come next.</td>
+        <td><span class="tstat t-doing">In progress · comment stage live</span></td>
       </tr>
       <tr>
         <td><b>T21</b></td>
         <td>Review intake: whatever a reviewer sends becomes a presentable review page.</td>
-        <td>From the N9 memo. A review can arrive as numbered screenshots with comments, a voice memo, a document or a PDF; intake normalises it onto a web page (numbered items, each tied to the passage it is about, against the version that was reviewed) so the loop in T22 has a clean object to work on. The founder's own screenshot-based review of the current book is the first test case.</td>
-        <td><span class="tstat t-open">Queued</span></td>
+        <td>From the N9 memo. A review can arrive as numbered screenshots with comments, a voice memo, a document or a PDF; intake normalises it onto a web page (numbered items, each tied to the passage it is about, against the version that was reviewed) so the loop in T22 has a clean object to work on. First exercised at v0.3.8: the founder's first-reading memo became <a href="../reviews/r001.html">review r001</a>, the <a href="../reviews/index.html">/reviews/</a> section is live, and the reading screenshots join as attachments when they arrive.</td>
+        <td><span class="tstat t-doing">In progress · r001 intaken</span></td>
       </tr>
       <tr>
         <td><b>T20</b></td>
@@ -329,7 +336,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.7</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.8</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

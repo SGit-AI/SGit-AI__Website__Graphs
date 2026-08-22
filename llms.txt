@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.3.7 (21 August 2026). Published by the sgit project — participant
+Site version: v0.3.8 (21 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /briefs/ is the source of truth and carries the same licence.
 
@@ -193,6 +193,14 @@ introduction and sixteen chapters in six parts, **generated from the site's own
 pages** so the two cannot drift
 (CI fails the build if a source page changes without the book regenerating).
 
+- https://graphs.sgit.ai/reviews/index.html — the reviews of the book, run as a
+  workflow: feedback in any form is normalised into numbered items, the agent comments
+  and proposes before changing anything, agreed items land per release, and each
+  review is kept as JSON at /reviews/rNNN.json — a pull request with no server.
+- https://graphs.sgit.ai/reviews/r001.html — review r001, the founder's first reading:
+  nine items including the retitle to Fractal Semantic Graphs, the lineage homage,
+  the no-live-databases correction, screenshots, the vaults chapter and new case
+  studies. State: commented; nothing changed yet.
 - https://graphs.sgit.ai/book/changes.html — what changed between any two versions of
   the book, GitHub-style, in the browser. Machine-readable snapshots (one frozen JSON
   per release, extracted from the release tags) at /book/changes/data/index.json.

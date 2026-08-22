@@ -3,16 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>House style, conventions and constraints — graphs.sgit.ai</title>
-<meta name="description" content="llms.txt is not a convenience for agents but the whole surface — because when an agent tried to consume the parent site, the index fetch worked and then link-following failed.">
-<link rel="canonical" href="https://graphs.sgit.ai/documents/house-style.html">
-<meta property="og:type" content="article">
+<title>The reviews — graphs.sgit.ai</title>
+<meta name="description" content="The book's reviews, run as a workflow: feedback arrives in any form, is normalised into numbered items, the agent comments and proposes before changing anything, and each agreed change ships as a release whose delta is readable in the version diff view.">
+<link rel="canonical" href="https://graphs.sgit.ai/reviews/index.html">
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="graphs.sgit.ai">
-<meta property="og:url" content="https://graphs.sgit.ai/documents/house-style.html">
-<meta property="og:title" content="House style, conventions and constraints">
-<meta property="og:description" content="llms.txt is not a convenience for agents but the whole surface — because when an agent tried to consume the parent site, the index fetch worked and then link-following failed.">
+<meta property="og:url" content="https://graphs.sgit.ai/reviews/index.html">
+<meta property="og:title" content="The reviews — a serverless pull request for a book">
+<meta property="og:description" content="Comment first, change after agreement, and keep the whole exchange as data. The review register for Meaning Through Connectivity.">
 <meta name="twitter:card" content="summary">
-<link rel="alternate" type="text/markdown" href="../briefs/06__house-style-and-conventions.md" title="The raw markdown, which is the source of truth">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
@@ -38,7 +37,7 @@
       <a class="sl" href="../book/index.html">Table of contents</a>
       <a class="sl" href="../book/single.html">Read it in one page</a>
       <a class="sl" href="../book/changes.html">What changed between versions</a>
-      <a class="sl" href="../reviews/index.html">The reviews</a>
+      <a class="sl here" href="../reviews/index.html">The reviews</a>
       <a class="sl" href="../book/meaning-through-connectivity.pdf">The print PDF (6&times;9)</a>
       <a class="sl" href="../book/meaning-through-connectivity-screen.pdf">The screen PDF (tablet)</a>
       </div>
@@ -76,7 +75,7 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl here" href="../documents/index.html">Site<span class="caret">&#9662;</span></a>
+      <a class="nl" href="../documents/index.html">Site<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../documents/index.html">The documents</a>
       <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
@@ -92,30 +91,35 @@
 </div></nav>
 
 <main class="doc">
-<div class="crumb"><a href="../index.html">graphs.sgit.ai</a> / <a href="index.html">documents</a> / house-style</div>
-<h1>House style, conventions and constraints</h1>
+  <div class="crumb"><a href="../index.html">graphs.sgit.ai</a> → <b>Reviews</b></div>
+  <h1>The reviews</h1>
+  <p class="lead">The book is reviewed the way code is reviewed, minus the server: feedback arrives in whatever form the reviewer has (a voice memo, numbered screenshots with comments, a document), is normalised into a review with numbered items, and the agent's first response is <b>comments and proposals, never edits</b>. The conversation agrees or declines items; each agreed item lands in a release; and <a href="../book/changes.html">the version diff view</a> shows the exact delta each review produced. The whole exchange is kept as JSON, one file per review: a pull request with no server, linked to the version it reviewed so that later drift is detectable.</p>
 
-<div class="docmeta">
-  <span class="k">Kind</span><span class="v">Conventions · v1.0 · 21 August 2026 · redacted</span>
-  <span class="k">Author</span><span class="v">Prepared by the SG/Send agentic team for graphs.sgit.ai</span>
-  <span class="k">Licence</span><span class="v">CC BY 4.0</span>
-  <span class="k">Source</span><span class="v"><a href="../briefs/06__house-style-and-conventions.md">raw markdown</a> · <a href="https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/briefs/06__house-style-and-conventions.md">view on GitHub</a></span>
-</div>
+  <div class="note"><b>The states.</b> A review is <em>received</em>, then <em>commented</em> (the agent has responded to every item, changing nothing), then <em>in discussion</em>, and closes when every item is <em>applied</em> or <em>declined</em>. Items carry the same states individually, so a review can be half-landed and honest about it.</div>
 
-<h2 id="fact">The single most important thing in it</h2>
-<p class="lead">llms.txt is not a convenience for agents but the whole surface — because when an agent tried to consume the parent site, the index fetch worked and then link-following failed.</p>
+  <h2 id="register">The register</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Review</th><th>Reviewer</th><th>Received</th><th>Reviewed at</th><th>Items</th><th>State</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><a href="r001.html"><b>r001</b> · First reading of the book</a></td>
+        <td>Dinis Cruz</td>
+        <td>22 August 2026</td>
+        <td>v0.3.7</td>
+        <td>9</td>
+        <td><span class="rstate rs-commented">commented</span></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
 
-<h2 id="on-site">Why it is on this site</h2>
-<p>The conventions this site inherits, and the hard constraints on publishing. Redacted before publication — see PUBLIC.md.</p>
+  <p>Anyone can review the book: the easiest routes are <a href="../admin/comms.html">the comms board</a> or an issue on <a href="https://github.com/SGit-AI/SGit-AI__Website__Graphs">the repository</a>, in any form. Screenshots with comments are welcome; so are voice memos. The workflow does the normalising.</p>
 
-<h2 id="read">Read the document</h2>
-<div class="mdread-label">📄 Rendered from the <a href="../briefs/06__house-style-and-conventions.md">raw markdown</a> — which is the source of truth. This page is presentation.</div>
-<div class="mdread" id="mdread" data-src="../briefs/06__house-style-and-conventions.md"><noscript><p class="dim">In-page rendering needs JavaScript — <a href="../briefs/06__house-style-and-conventions.md">open the raw markdown</a>.</p></noscript></div>
-
-<div class="pagenav">
-  <span><a href="index.html">← All documents</a></span>
-  <span><a href="../briefs/06__house-style-and-conventions.md">Raw markdown →</a></span>
-</div>
+  <div class="agent">
+    <h4>For an agent</h4>
+    <p>Each review lives at <code>/reviews/rNNN.json</code> with its rendered projection at <code>/reviews/rNNN.html</code>. Items carry states (noted, proposed, in discussion, agreed, applied, declined) and, once applied, reference the release that landed them; the delta of any release pair is machine-readable under <a href="../book/changes/data/index.json">/book/changes/data/</a>. Verbatim source memos are preserved in <a href="../documents/index.html">/briefs/</a>. When summarising a review, carry the item states: a review is not a to-do list, it is a negotiation with a record.</p>
+  </div>
 </main>
 
 <footer class="site"><div class="cols">
@@ -161,7 +165,5 @@
     <a href="../llms.txt">llms.txt</a>
   </div>
 </div></footer>
-<script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
-<script src="../assets/mdreader.js" defer></script>
 </body>
 </html>
