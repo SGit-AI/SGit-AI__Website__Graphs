@@ -641,3 +641,33 @@ body.altdragging{cursor:col-resize;user-select:none}
 .altverdict{margin:.5rem 0 .2rem;padding:.5rem .7rem;background:#f9f7f1;border-radius:8px}
 .af-cross-estate{border-left:3px solid #b45309}
 .af-cross-estate .rstate{color:#a06a14;border-color:#dfc394;background:#faf3e3}
+/* a column that just changed: feedback without moving the screen */
+@keyframes altpulse{from{box-shadow:0 0 0 2px #0d5c50 inset;background:#f4f8f7}
+  to{box-shadow:0 0 0 0 transparent inset;background:#fff}}
+.altcol.altnew{animation:altpulse .7s ease-out}
+@media (prefers-reduced-motion:reduce){.altcol.altnew{animation:none}}
+/* the ladder as one graph (/altitudes/graph.html) */
+main.doc.wide{max-width:var(--wide)}
+.gwrap{display:grid;grid-template-columns:230px minmax(0,1fr) 300px;gap:.8rem;margin:1.2rem 0 .8rem;
+  align-items:start}
+.gcfg{margin:0;display:flex;flex-direction:column;gap:.6rem}
+.gcfg fieldset{margin:0;border:1px solid #e4e0d6;border-radius:10px;padding:.5rem .7rem .6rem;background:#fff}
+.gcfg legend{font:700 .68rem/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;color:#8a8578;padding:0 .3rem}
+.gcfg label{display:block;font-size:.82rem;margin:.18rem 0;cursor:pointer}
+.gcfg input{margin-right:.35rem}
+.gcfg button{font:inherit;font-size:.8rem;padding:.25rem .6rem;margin:.15rem .3rem .15rem 0;
+  border:1px solid #e4e0d6;border-radius:7px;background:#fff;cursor:pointer}
+.gcfg button:hover{border-color:#0d5c50;color:#0d5c50}
+#cy{height:min(76vh,740px);border:1px solid #e4e0d6;border-radius:12px;background:#fdfcf9}
+.gdetail{border:1px solid #e4e0d6;border-radius:12px;padding:.8rem .95rem;background:#fff;
+  max-height:min(76vh,740px);overflow-y:auto}
+.gdetail h3{margin:.1rem 0 .3rem;font-size:.98rem}
+.gdetail p{margin:.35rem 0;font-size:.88rem}
+.gkey{display:flex;flex-wrap:wrap;gap:.9rem;font-size:.8rem;color:#5c5f66;margin:0 0 1.4rem}
+.gkey i{display:inline-block;width:26px;height:0;vertical-align:middle;margin-right:.3rem}
+.gkey em{font-style:normal;color:#8a8578}
+.ge-tree{border-top:2px solid #9cc5be}
+.ge-cites{border-top:2px dashed #c98a2b}
+.ge-flags{border-top:2px dotted #a33a31}
+.gn-find{width:10px;height:10px;background:#a33a31;transform:rotate(45deg);border-radius:2px}
+@media (max-width:1100px){.gwrap{grid-template-columns:1fr}#cy{height:60vh}.gdetail{max-height:none}}

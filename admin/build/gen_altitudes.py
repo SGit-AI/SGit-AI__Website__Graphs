@@ -457,6 +457,41 @@ FINDINGS = [
           "contradiction from a disclosed one. A finding process that flagged this as a discovery would be over-reporting."),
 ]
 
+# ---------------------------------------------------------------- cross-references
+# Chapter-to-chapter links, measured from the markdown rather than asserted, so the
+# cross-layer edges in the graph view stay true as the book changes. A cites edge is a
+# real anchor in the text: "the full argument is at altitude 3" is one.
+CHAPTER_FILE = {
+ "why-graphs": "L3-1", "start": "L3-2", "grammar": "L3-3", "grammar-edge-set": "L3-4",
+ "depth": "L3-5", "depth-boundaries": "L3-6", "examples": "L3-7",
+ "examples-browser-isolation": "L3-8", "examples-2fa": "L3-9",
+ "examples-article-26-5": "L3-10", "maps": "L3-11", "shipped": "L3-12",
+ "origins": "L3-13", "network": "L3-14", "glossary": "L3-15", "about-participant": "L3-16",
+}
+HREF_FILE = {
+ "why-graphs/index.html": "why-graphs", "start/index.html": "start",
+ "grammar/index.html": "grammar", "grammar/edge-set.html": "grammar-edge-set",
+ "depth/index.html": "depth", "depth/boundaries.html": "depth-boundaries",
+ "examples/index.html": "examples", "examples/browser-isolation.html": "examples-browser-isolation",
+ "examples/2fa.html": "examples-2fa", "examples/article-26-5.html": "examples-article-26-5",
+ "maps/index.html": "maps", "shipped/index.html": "shipped", "origins/index.html": "origins",
+ "network/index.html": "network", "glossary/index.html": "glossary",
+ "about/participant.html": "about-participant",
+}
+
+def cross_references():
+    out = {}
+    for stem, nid in CHAPTER_FILE.items():
+        f = ROOT / "content" / (stem + ".md")
+        if not f.exists():
+            continue
+        for href in re.findall(r"\]\(\.\./([a-z0-9\-/]+\.html)", f.read_text()):
+            tgt = HREF_FILE.get(href)
+            if tgt and tgt != stem:
+                k = (nid, CHAPTER_FILE[tgt])
+                out[k] = out.get(k, 0) + 1
+    return [dict(source=a, target=b, weight=w) for (a, b), w in sorted(out.items())]
+
 # ---------------------------------------------------------------- compile
 SPAN = re.compile(r"\[([^\]]+)\]\(([A-Za-z0-9\-]+)\)")
 
@@ -499,8 +534,10 @@ for L in LEVELS:
 L = {x["n"]: x for x in LEVELS}
 L[5]["units"], L[5]["words"] = 17, 20000      # the book itself, measured by the book build
 
+CITES = cross_references()
+
 out = dict(version=VERSION, root="L1", levels=LEVELS,
-           nodes=N, findings=FINDINGS,
+           nodes=N, findings=FINDINGS, cites=CITES,
            coverage=dict(
              full_levels=[1, 2, 3],
              pilot_levels={"4": ["chapter 2", "chapter 5"]},
@@ -516,6 +553,7 @@ out = dict(version=VERSION, root="L1", levels=LEVELS,
 
 p = ROOT / "altitudes/data/altitudes.json"
 p.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
+print(f"gen_altitudes: {len(CITES)} measured cites edges between chapters")
 print(f"gen_altitudes: {len(N)} nodes across levels 1-4 "
       f"({', '.join(str(x['units']) + '@L' + str(x['n']) for x in LEVELS)}), "
       f"{len(FINDINGS)} findings, {p.stat().st_size:,} bytes")

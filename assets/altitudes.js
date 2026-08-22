@@ -237,15 +237,17 @@
     return h.join('');
   }
 
+  function columnHTML(i) {
+    var id = trail[i], lv = levelOf(D.nodes[id].level),
+        w = widths[i] ? ' style="flex-basis:' + widths[i] + 'px"' : '';
+    return '<section class="altcol" data-col="' + i + '"' + w + '>' + columnHead(i, lv) +
+           '<div class="altcb">' + (idxOpen[i] ? indexBody(i, lv) : nodeBody(i, id)) + '</div></section>';
+  }
+
   function render() {
     var h = [rail(), '<div class="altcols" id="altcols">'];
     trail.forEach(function (id, i) {
-      var lv = levelOf(D.nodes[id].level);
-      var w = widths[i] ? ' style="flex-basis:' + widths[i] + 'px"' : '';
-      h.push('<section class="altcol" data-col="' + i + '"' + w + '>');
-      h.push(columnHead(i, lv));
-      h.push('<div class="altcb">' + (idxOpen[i] ? indexBody(i, lv) : nodeBody(i, id)) + '</div>');
-      h.push('</section>');
+      h.push(columnHTML(i));
       if (i < trail.length - 1) { h.push('<div class="altdrag" data-drag="' + i + '"></div>'); }
     });
     h.push('</div>');
@@ -253,14 +255,45 @@
     push();
   }
 
+  /* Rebuild only what changed, keep the scroll where it was, and scroll only far
+     enough to bring the new column into view. Re-rendering everything and then
+     smooth-scrolling to the end made every click flicker the whole strip. */
+  function repaintFrom(col) {
+    var cols = document.getElementById('altcols');
+    if (!cols) { render(); return; }
+    var keep = cols.scrollLeft;
+
+    var kids = Array.prototype.slice.call(cols.children), n = -1;
+    kids.forEach(function (el) {
+      if (el.classList.contains('altcol')) { n++; }
+      if (n > col) { el.remove(); }
+    });
+
+    for (var i = Math.max(0, col + 1); i < trail.length; i++) {
+      if (i > 0) {
+        cols.insertAdjacentHTML('beforeend', '<div class="altdrag" data-drag="' + (i - 1) + '"></div>');
+      }
+      cols.insertAdjacentHTML('beforeend', columnHTML(i));
+    }
+    cols.scrollLeft = keep;
+
+    var last = cols.querySelector('.altcol:last-of-type');
+    if (last) {
+      last.classList.add('altnew');
+      setTimeout(function () { last.classList.remove('altnew'); }, 700);
+      var over = last.offsetLeft + last.offsetWidth - (cols.scrollLeft + cols.clientWidth);
+      if (over > 0) { cols.scrollTo({ left: cols.scrollLeft + over + 12, behavior: 'smooth' }); }
+    }
+    push();
+  }
+
   /* ----------------------------------------------------------- interaction */
   function openFrom(col, id) {
     trail = trail.slice(0, col + 1);
     trail.push(id);
-    idxOpen = {}; ontOpen = {};
-    render();
-    var cols = document.getElementById('altcols');
-    if (cols) { cols.scrollTo({ left: cols.scrollWidth, behavior: 'smooth' }); }
+    for (var k in idxOpen) { if (+k > col) { delete idxOpen[k]; } }
+    for (var j in ontOpen) { if (+j > col) { delete ontOpen[j]; } }
+    repaintFrom(col);
   }
 
   document.addEventListener('click', function (e) {
@@ -277,11 +310,11 @@
     }
     if (t.hasAttribute('data-idx')) {
       var i = +t.getAttribute('data-idx');
-      idxOpen[i] = !idxOpen[i]; render(); return;
+      idxOpen[i] = !idxOpen[i]; repaintFrom(i - 1); return;
     }
     if (t.hasAttribute('data-ont')) {
       var j = +t.getAttribute('data-ont');
-      ontOpen[j] = !ontOpen[j]; render(); return;
+      ontOpen[j] = !ontOpen[j]; repaintFrom(j - 1); return;
     }
     if (t.hasAttribute('data-mode')) { mode = t.getAttribute('data-mode'); render(); return; }
     if (t.hasAttribute('data-level')) {

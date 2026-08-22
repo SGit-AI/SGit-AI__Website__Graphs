@@ -7,7 +7,7 @@
   "source": "briefs/16__founder-review__altitude-ladder.md",
   "version_reviewed": "v0.3.14",
   "state": "commented",
-  "state_note": "Commented, and the central item is built rather than proposed: this memo asks for an experiment, and an experiment that is only described has not been run. The ladder is live at /altitudes/ with levels 1 to 3 complete, level 4 for two chapters, the graph layer lifted on those paths, and five findings from the climb. No book content changed: the ladder is a new artefact beside the book, not an edit to it. Three decisions are open, and the first of them is whether the experiment earned a place in the pipeline at all. A second round on 22 August acted on the reviewer's UX feedback: the ladder is now resizable columns with per-level indexes (item 1's thread), the descent links carry a switchable colour meaning (item 7), and every level has its own ontology and taxonomy (item 8), which produced finding 7 — the classes do not survive the climb. Four decisions now open.",
+  "state_note": "Commented, and the central item is built rather than proposed: this memo asks for an experiment, and an experiment that is only described has not been run. The ladder is live at /altitudes/ with levels 1 to 3 complete, level 4 for two chapters, the graph layer lifted on those paths, and five findings from the climb. No book content changed: the ladder is a new artefact beside the book, not an edit to it. Three decisions are open, and the first of them is whether the experiment earned a place in the pipeline at all. A second round on 22 August acted on the reviewer's UX feedback: the ladder is now resizable columns with per-level indexes (item 1's thread), the descent links carry a switchable colour meaning (item 7), and every level has its own ontology and taxonomy (item 8), which produced finding 7 — the classes do not survive the climb. Four decisions now open. A third round on the same day fixed the column flicker (item 1's thread) and added the graph view (item 9), which brought the site its first vendored dependency and decision D5 with it.",
   "decisions": [
     {
       "n": 1,
@@ -52,6 +52,17 @@
         "Rework the class vocabulary at a level"
       ],
       "state": "open"
+    },
+    {
+      "n": 5,
+      "item": 9,
+      "question": "This site now carries its **first vendored third-party dependency** (Cytoscape.js 3.30.2, MIT, 373 KB, committed at /assets/vendor/). Everything else here is hand-written with no runtime dependencies, and that has been a stated property. Keep it (a real graph library earns its place for a real graph), replace it with a hand-written layout to preserve the no-dependency claim, or keep it and state the exception explicitly in the engineering page and chapter 12's honesty table?",
+      "options": [
+        "Keep it, and state the exception in the honesty table (recommended)",
+        "Keep it, no further statement",
+        "Replace with a hand-written layout"
+      ],
+      "state": "open"
     }
   ],
   "items": [
@@ -80,6 +91,18 @@
           "date": "22 August 2026",
           "from": "the agent",
           "note": "Both fixed, and the second was the more serious of the two: replacing the view on every click made the ladder behave like a set of pages that happened to be numbered, which hid the very structure the experiment exists to show. The ladder is now **columns**: opening a unit appends a column beside the current one, the chain from level 1 down to a section stays on screen, columns are resizable by dragging the bar between them, and the columns container scrolls rather than the page. The address bar carries the whole trail (`?t=L1,L2-3,L3-5`), so a **path** is linkable, not just a node. For the first point, every column has an **index button listing all units at that level**, grouped by that level's taxonomy; picking one rebuilds the ancestor columns to its left, so entering at level 3 directly still shows what it sits inside. Level entry from the top rail opens that level's index in place.",
+          "sources": []
+        },
+        {
+          "date": "22 August 2026",
+          "from": "Dinis Cruz, the reviewer",
+          "note": "\"Fix the UX bug that when I have L1 and L2 open and I click on an L2 link on L1 text the screen doesn't move… now I click on an L3 link and there is a small animation as L3 opens up. But if I now click on another L3 link in L2 section I see the same animation which flicks the content and makes it hard to use.\"",
+          "sources": []
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the agent",
+          "note": "Diagnosed and fixed. One cause, two symptoms: every click rebuilt the **entire** column strip and then smooth-scrolled it to the far end. Rebuilding threw away the scroll position, so the strip snapped to zero and animated back — which reads as a flicker when the column being opened was already on screen and nothing needed to move. Now only the columns to the right of the click are rebuilt (the ones to the left keep their DOM, their scroll and their open panels), the strip's scroll position is preserved across the rebuild, and it scrolls **only far enough** to bring a genuinely off-screen column into view. Where nothing needs to move, the changed column gives a short pulse instead: feedback without motion, which answers the first half of the report. The pulse respects `prefers-reduced-motion`.",
           "sources": []
         }
       ]
@@ -188,6 +211,21 @@
       ],
       "state": "applied",
       "applied_in": "v0.3.17"
+    },
+    {
+      "n": 9,
+      "topic": "The ladder as one graph",
+      "reviewer_says": "Can you also try in a different page a graph visualisation (using one of the JavaScript graph visualisation libraries) of these multiple layers (with more or less content based on config options). I think it will be very interesting to see the relationships between the nodes at the multiple layers (for example the concepts linked between multiple layers, or the contradictions, should become visible).",
+      "comment": "Built at [/altitudes/graph.html](../altitudes/graph.html), and the prediction was right: the columns are good at one path and blind to everything else, and drawing the whole structure at once makes the non-tree parts the subject. Cytoscape.js, **vendored into the site rather than loaded from a CDN**, because a page about traceable structure should not depend on somebody else's uptime, and because this site has never had a runtime dependency it does not hold.",
+      "proposal": "Configurable as asked: levels on and off, node kinds (units, findings as nodes, claims, which add about forty), colouring by altitude, taxonomy class or evidence, four layouts including a layered one that places each altitude in its own band, label density and node sizing. Three things it shows that the columns cannot. **First**, the book is far less of a tree than its contents page suggests: forty-two cross-references between chapters, **measured from the book's own markdown rather than asserted**, run sideways across a compression tree of thirty-five edges — and the busiest source is the glossary, which no table of contents would predict. **Second**, where two findings touch the same unit: chapter 12 is held by the database contradiction and by the cross-estate edge-count finding at once, which is invisible in a list and obvious in a picture. **Third**, colouring by evidence redraws the argument's shape — evidenced units cluster in the proof chapters while the argument chapters run amber. One design decision worth the founder's eye: **a contradiction is a node, not an edge.** An edge meaning 'contradicts' would have to be its own inverse, which this book's grammar bans, so each finding is reified and `flags` the units it involves, with `flagged_by` as the inverse. The grammar chapter applied to a picture of the book itself.",
+      "needs": [],
+      "impact": [
+        "new page",
+        "vendored dependency (a first for this site)",
+        "r002 item 6's chapter graphs"
+      ],
+      "state": "applied",
+      "applied_in": "v0.3.18"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
- "version": "v0.3.17",
+ "version": "v0.3.18",
  "root": "L1",
  "levels": [
   {
@@ -1673,6 +1673,218 @@
     "L3-3"
    ],
    "verdict": "No action, and kept here on purpose: it is the control case showing that the method distinguishes a hidden contradiction from a disclosed one. A finding process that flagged this as a discovery would be over-reporting."
+  }
+ ],
+ "cites": [
+  {
+   "source": "L3-1",
+   "target": "L3-12",
+   "weight": 1
+  },
+  {
+   "source": "L3-1",
+   "target": "L3-2",
+   "weight": 1
+  },
+  {
+   "source": "L3-1",
+   "target": "L3-5",
+   "weight": 3
+  },
+  {
+   "source": "L3-1",
+   "target": "L3-7",
+   "weight": 2
+  },
+  {
+   "source": "L3-10",
+   "target": "L3-6",
+   "weight": 1
+  },
+  {
+   "source": "L3-11",
+   "target": "L3-5",
+   "weight": 1
+  },
+  {
+   "source": "L3-11",
+   "target": "L3-6",
+   "weight": 1
+  },
+  {
+   "source": "L3-12",
+   "target": "L3-3",
+   "weight": 1
+  },
+  {
+   "source": "L3-12",
+   "target": "L3-4",
+   "weight": 1
+  },
+  {
+   "source": "L3-12",
+   "target": "L3-7",
+   "weight": 2
+  },
+  {
+   "source": "L3-13",
+   "target": "L3-12",
+   "weight": 1
+  },
+  {
+   "source": "L3-13",
+   "target": "L3-2",
+   "weight": 1
+  },
+  {
+   "source": "L3-13",
+   "target": "L3-3",
+   "weight": 1
+  },
+  {
+   "source": "L3-14",
+   "target": "L3-12",
+   "weight": 1
+  },
+  {
+   "source": "L3-14",
+   "target": "L3-13",
+   "weight": 1
+  },
+  {
+   "source": "L3-14",
+   "target": "L3-2",
+   "weight": 2
+  },
+  {
+   "source": "L3-14",
+   "target": "L3-7",
+   "weight": 1
+  },
+  {
+   "source": "L3-15",
+   "target": "L3-12",
+   "weight": 1
+  },
+  {
+   "source": "L3-15",
+   "target": "L3-2",
+   "weight": 1
+  },
+  {
+   "source": "L3-15",
+   "target": "L3-3",
+   "weight": 4
+  },
+  {
+   "source": "L3-15",
+   "target": "L3-5",
+   "weight": 2
+  },
+  {
+   "source": "L3-15",
+   "target": "L3-6",
+   "weight": 2
+  },
+  {
+   "source": "L3-16",
+   "target": "L3-1",
+   "weight": 1
+  },
+  {
+   "source": "L3-16",
+   "target": "L3-12",
+   "weight": 3
+  },
+  {
+   "source": "L3-16",
+   "target": "L3-5",
+   "weight": 1
+  },
+  {
+   "source": "L3-2",
+   "target": "L3-10",
+   "weight": 1
+  },
+  {
+   "source": "L3-2",
+   "target": "L3-3",
+   "weight": 1
+  },
+  {
+   "source": "L3-3",
+   "target": "L3-12",
+   "weight": 1
+  },
+  {
+   "source": "L3-3",
+   "target": "L3-5",
+   "weight": 1
+  },
+  {
+   "source": "L3-3",
+   "target": "L3-7",
+   "weight": 1
+  },
+  {
+   "source": "L3-4",
+   "target": "L3-12",
+   "weight": 1
+  },
+  {
+   "source": "L3-4",
+   "target": "L3-9",
+   "weight": 1
+  },
+  {
+   "source": "L3-5",
+   "target": "L3-2",
+   "weight": 1
+  },
+  {
+   "source": "L3-5",
+   "target": "L3-3",
+   "weight": 2
+  },
+  {
+   "source": "L3-5",
+   "target": "L3-7",
+   "weight": 1
+  },
+  {
+   "source": "L3-6",
+   "target": "L3-1",
+   "weight": 1
+  },
+  {
+   "source": "L3-6",
+   "target": "L3-11",
+   "weight": 1
+  },
+  {
+   "source": "L3-6",
+   "target": "L3-2",
+   "weight": 1
+  },
+  {
+   "source": "L3-6",
+   "target": "L3-7",
+   "weight": 1
+  },
+  {
+   "source": "L3-7",
+   "target": "L3-5",
+   "weight": 2
+  },
+  {
+   "source": "L3-8",
+   "target": "L3-4",
+   "weight": 1
+  },
+  {
+   "source": "L3-9",
+   "target": "L3-6",
+   "weight": 1
   }
  ],
  "coverage": {
