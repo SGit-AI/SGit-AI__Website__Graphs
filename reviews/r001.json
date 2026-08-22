@@ -7,7 +7,7 @@
   "source": "briefs/11__founder-review__first-reading.md",
   "version_reviewed": "v0.3.7",
   "state": "discussing",
-  "state_note": "In discussion: on 22 August the librarian of the source repository answered this review's needs (brief 13). Eleven of the twelve needs across r001 and r002 are met; only the reviewer's reading screenshots remain outstanding. The founder decisions are unchanged and open, with one reframed: the title choice is now three-way, because the concept already carries the published name G3. A founder pointer then added a third estate: sgraph.ai's library (served from a public vault, every page machine-readable), which upgrades the EmailFS case study to a live deployment and adds four more public vaults.",
+  "state_note": "In discussion: on 22 August the librarian of the source repository answered this review's needs (brief 13). Eleven of the twelve needs across r001 and r002 are met; only the reviewer's reading screenshots remain outstanding. The founder decisions are unchanged and open, with one reframed: the title choice is now three-way, because the concept already carries the published name G3. A founder pointer then added a third estate: sgraph.ai's library (served from a public vault, every page machine-readable), which upgrades the EmailFS case study to a live deployment and adds four more public vaults. The reviewer then calibrated the librarian's finding: docs.diniscruz.ai predates the workflow that produced the newer corpus, where the meaning-through-connectivity documents were written, so the title decision weighs recency of thinking alongside publication history (item 2's thread).",
   "items": [
     {
       "n": 1,
@@ -42,6 +42,18 @@
           "sources": [
             "[Graphs of Graphs of Graphs (G3) in Threat Modeling, May 2025](https://docs.diniscruz.ai/2025/05/30/graphs-of-graphs-of-graphs-g3-in-threat-modeling.html)"
           ]
+        },
+        {
+          "date": "22 August 2026",
+          "from": "Dinis Cruz, the reviewer",
+          "note": "\"I think that agentic review was a bit bias on the content that I published on docs.diniscruz.ai which was created before I developed the workflow that I use on the __Send repo, which is where those 'meaning through connectivity' docs were created.\"",
+          "sources": []
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the agent",
+          "note": "What the calibration changes: the two corpora are not equal witnesses, they are two stages of the same thinking. docs.diniscruz.ai, where G3 was named in May 2025, predates the workflow that later produced the source repository's corpus, and that newer corpus is where the meaning-through-connectivity documents were written. So the librarian's observation that the corpus says the phrase in prose sixteen times but never uses the G3 name reads differently now: not a failure to adopt an established name, but the evolved vocabulary of the later stage. Publication history and current position point at different names. The reweighing, for the reviewer to accept or reject: G3's May 2025 naming is settled history and belongs in the lineage chapter whatever the cover says; the title itself should be judged on where the thinking is now, which favours the two newer candidates (**Meaning Through Connectivity** standing, or **Fractal Semantic Graphs** with it as subtitle) over elevating G3 to the cover. The choice stays three-way and stays the reviewer's; only the weights moved.",
+          "sources": []
         }
       ]
     },
