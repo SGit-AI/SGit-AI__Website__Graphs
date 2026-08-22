@@ -36,11 +36,43 @@
              esc(rev.id) + '.json</a>.</p>');
       h.push('</div>');
 
+      if (rev.decisions && rev.decisions.length) {
+        var open = rev.decisions.filter(function (d) { return d.state === 'open'; }).length;
+        h.push('<section class="revds" id="decisions">');
+        h.push('<h2>The decisions <span class="rstate ' + (open ? 'rs-open' : 'rs-answered') +
+               '">' + (open ? open + ' open' : 'all answered') + '</span></h2>');
+        h.push('<p class="small dim">What this review is waiting on, extracted from its items ' +
+               'so nobody re-reads the whole page to find it. Answers land here and on the ' +
+               'item’s thread.</p>');
+        rev.decisions.forEach(function (d) {
+          h.push('<div class="revd" id="d-' + d.n + '">');
+          h.push('<p class="revdq"><b>D' + d.n + '</b> · <a href="#item-' + d.item + '">item ' +
+                 d.item + '</a> · <span class="rstate rs-' +
+                 (d.state === 'open' ? 'open' : 'answered') + '">' + esc(d.state) + '</span></p>');
+          h.push('<p>' + fmt(d.question) + '</p>');
+          if (d.state === 'open' && d.options && d.options.length) {
+            h.push('<ul>' + d.options.map(function (o) {
+              return '<li>' + fmt(o) + '</li>';
+            }).join('') + '</ul>');
+          }
+          if (d.answer) {
+            h.push('<p class="revda"><span class="revlbl">The answer</span>' + fmt(d.answer) +
+                   (d.date ? ' <span class="small dim">(' + esc(d.date) + ')</span>' : '') + '</p>');
+          }
+          h.push('</div>');
+        });
+        h.push('</section>');
+      }
+
       rev.items.forEach(function (it) {
         h.push('<section class="revitem" id="item-' + it.n + '">');
         h.push('<h2>' + it.n + ' · ' + esc(it.topic) +
                ' <span class="rstate rs-' + esc(it.state) + '">' +
                esc(STATES[it.state] || it.state) + '</span></h2>');
+        if (it.applied_in) {
+          h.push('<p class="small dim">Landed in <a href="../admin/versions.html">' +
+                 esc(it.applied_in) + '</a>.</p>');
+        }
         h.push('<blockquote class="revq"><span class="revlbl">The reviewer</span>' +
                fmt(it.reviewer_says) + '</blockquote>');
         h.push('<div class="revc"><span class="revlbl">Comment</span><p>' +

@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.12</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.13</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -131,6 +131,18 @@
         <td><span class="tstat t-done">Done · 21 Aug</span></td>
       </tr>
       <tr>
+        <td><b>N13</b></td>
+        <td>Per-vault guidance for the case-study programme.</td>
+        <td>From the r003 memo: "I can guide also for each of these vaults on what areas we should do more. We should take more screenshots. We should capture the evidence." The programme (task T26) has its proposed order and its source inventory; what it needs from the founder is the vault-by-vault steer: which areas to go deeper on, what to screenshot, what evidence to capture. Answers can arrive one vault at a time; each unlocks that case study.</td>
+        <td><span class="tstat t-open">Open</span></td>
+      </tr>
+      <tr>
+        <td><b>N12</b></td>
+        <td>Review r003: decouple the book, evidence first, reviews as graphs.</td>
+        <td>Founder voice memo, 22 August 2026, preserved verbatim as <a href="../briefs/14__founder-review__decouple-evidence-decisions.md">brief 14</a> and normalised into <a href="../reviews/r003.html">review r003</a>: six items with comments and proposals, and the first review to open with a <b>decisions register</b> (that register shipped immediately, on every review, as review tooling). Headlines: decouple the book from the website (site as research estate, book as the distilled best-of with provenance to site commits, the gate flipping from equality to provenance), the vault case-study programme before the next book version, and each review becoming a folder with its own graph managed as issues. Three decisions open; the refactor and the programme wait on them.</td>
+        <td><span class="tstat t-doing">In discussion</span></td>
+      </tr>
+      <tr>
         <td><b>N11</b></td>
         <td>Review r002: a book for humans and agents, answered item by item.</td>
         <td>Founder voice memo, 22 August 2026, preserved verbatim as <a href="../briefs/12__founder-review__humans-and-agents.md">brief 12</a> and normalised into <a href="../reviews/r002.html">review r002</a>: nine items with comments and proposals. Headlines: the dual-audience identity (interlocks with the r001 retitle: one title decision settles both), agent notes rewritten as briefings that state the deviation from standard usage, the book built as a graph with an evidence layer and a facts register (starting with the unsourced 10,000-hours story on the book's own front door), verification by agent as a designed and dogfooded use, per-chapter graphs showing evidence depth with ghosted unevidenced assertions, the agent toolbox page, footnotes for print, and the missing-pieces map. Nothing changed yet.</td>
@@ -228,6 +240,24 @@
         <td>Build <code>/book/</code> — the site as a book, in three reading modes.</td>
         <td>Founder request, 21 August 2026: a book-like reading sequence over the existing content. Built as a <b>generated projection</b> of the site's pages — chapter pages with a left table of contents, a single page, and a PDF — with a CI check that fails the build if a source page changes without the book regenerating. <a href="versions.html">The v0.2.0 row</a> has the details.</td>
         <td><span class="tstat t-done">Done · v0.2.0</span></td>
+      </tr>
+      <tr>
+        <td><b>T27</b></td>
+        <td>Reviews as folders with their own graphs, managed as issues.</td>
+        <td>From <a href="../reviews/r003.html">review r003</a> item 5: restructure to <code>reviews/rNNN/</code> folders where items, decisions, evidence and thread entries are nodes with typed edges (house grammar: verbs with inverses), draw each review's graph as an SVG on its page, and manage the folder with issues logic. Waits on r003 decision D2: in-repo issues in the IssuesFS pattern (recommended) or GitHub issues. Current review URLs stay as forwards.</td>
+        <td><span class="tstat t-open">Queued · on r003 D2</span></td>
+      </tr>
+      <tr>
+        <td><b>T26</b></td>
+        <td>The vault case-study programme: <code>/case-studies/</code>, one deep page per vault or system.</td>
+        <td>From <a href="../reviews/r003.html">review r003</a> item 3: the evidence estate the book will distil from, written at full site granularity with screenshots captured as code, real numbers, and an explicit "what the book will cite from this" block per page. Proposed order: the regulation graph vault, Risk Graph Explorer, browser isolation, the sgraph.ai library-as-a-vault, then SGit, IssuesFS and EmailFS from the librarian's resolved sources. Runs before the next book version. Waits on r003 decision D3 and the per-vault guidance (ask N13); best after T25 so the new depth never fights the old gate.</td>
+        <td><span class="tstat t-open">Queued · on r003 D3 + N13</span></td>
+      </tr>
+      <tr>
+        <td><b>T25</b></td>
+        <td>Decouple the book from the website: provenance replaces equality.</td>
+        <td>From <a href="../reviews/r003.html">review r003</a> item 1: the book gets its own source tree (<code>content/book/</code>), seeded verbatim from today's seventeen units so the split starts at zero drift; each unit carries a machine-readable provenance block (site pages, sections, site version, commit); the validate gate stops requiring the book to equal the site and starts requiring provenance to be present and resolvable, reporting rather than forbidding drift. Reader, single page, both PDFs, cover and the diff data all keep projecting from the book source unchanged. Waits on r003 decision D1.</td>
+        <td><span class="tstat t-open">Queued · on r003 D1</span></td>
       </tr>
       <tr>
         <td><b>T24</b></td>
@@ -342,7 +372,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.12</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.13</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

@@ -7,7 +7,40 @@
   "source": "briefs/12__founder-review__humans-and-agents.md",
   "version_reviewed": "v0.3.8",
   "state": "discussing",
-  "state_note": "In discussion: the librarian's resolution pack (brief 13) resolved item 4 outright, with the citation-network study identified (Greenberg, BMJ 2009) and the 10,000-hours sources named. The founder decisions (title allocation, pilot chapter, sequencing) remain open. A founder pointer added sgraph.ai's machine-readable layer as prior art for the agent toolbox (item 7).",
+  "state_note": "In discussion: the librarian's resolution pack (brief 13) resolved item 4 outright, with the citation-network study identified (Greenberg, BMJ 2009) and the 10,000-hours sources named. The founder decisions (title allocation, pilot chapter, sequencing) remain open. A founder pointer added sgraph.ai's machine-readable layer as prior art for the agent toolbox (item 7). Review r003 (22 August) then reordered the combined sequencing: the evidence programme (vault case studies at full site granularity) precedes the identity release, and the decoupling of book from website is proposed as the enabling refactor. This review's open decisions are explicit in the register above.",
+  "decisions": [
+    {
+      "n": 1,
+      "item": 1,
+      "question": "The allocation of 'for humans and agents': does it join the title, take the cover's descriptor strip, or live as the introduction's opening claim? Settled jointly with r001's decision D1 (the title itself), so one conversation closes both.",
+      "options": [
+        "In the title",
+        "On the descriptor strip",
+        "As the introduction's opening claim"
+      ],
+      "state": "open"
+    },
+    {
+      "n": 2,
+      "item": 3,
+      "question": "The pilot chapter for the book-as-graph: chapter 5 (Against schema-first) as proposed, or another chapter?",
+      "options": [
+        "Chapter 5, as proposed",
+        "Another chapter (name it)"
+      ],
+      "state": "open"
+    },
+    {
+      "n": 3,
+      "item": 9,
+      "question": "The combined sequencing, jointly with r001's decision D2 and as reshaped by review r003: standalone wins first (footnotes, toolbox, the database correction), the evidence programme (vault case studies) next, then the identity release, then the graph pilot and chapter visualisations.",
+      "options": [
+        "Sign off as reshaped",
+        "Adjust the order (say what moves)"
+      ],
+      "state": "open"
+    }
+  ],
   "items": [
     {
       "n": 1,
@@ -173,6 +206,14 @@
           "date": "22 August 2026",
           "from": "the librarian, SGraph-AI__App__Send",
           "note": "The librarian proposes an order consistent with the sequencing here: hand over docs.diniscruz.ai (closes N3 and feeds three items at once), seed the facts register from the paying-the-fact-creator brief, ship the IssuesFS ontology JSON (which also closes task T2), land the database correction with the July quote, and put the G3 naming finding in front of the founder before any retitle. Folded into the plan. See [brief 13](../briefs/13__librarian__source-resolution.md), the librarian's resolution pack, with machine-readable indexes [13__sources__graph-articles.json](../briefs/13__sources__graph-articles.json) and [13__send-repo-sources.csv](../briefs/13__send-repo-sources.csv)."
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the agent, from review r003",
+          "note": "[Review r003](r003.html) reshapes this sequencing at one point: after the standalone wins, the **evidence programme** runs before the identity release, not after it. The vault case studies land on the website at full granularity (enabled by the decoupling r003 item 1 proposes), and they are what feeds this review's evidence layer (item 4) and chapter graphs (item 6) with real bodies of evidence instead of placeholders. The identity release then distils from an estate that already holds the proof. The reshaped order is decision D3 in the register above, settled jointly with r001's D2.",
+          "sources": [
+            "[Review r003, items 1 and 3](r003.html)"
+          ]
         }
       ]
     }

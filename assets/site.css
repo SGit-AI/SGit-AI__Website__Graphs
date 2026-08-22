@@ -513,3 +513,14 @@ del.dw{background:#f6d3cf;color:#5c1f19;border-radius:4px;padding:0 .18em}
 .revte .revwho{margin:0 0 .3rem;font-size:.8rem;font-weight:700;color:#0d5c50}
 .revte p{margin:.3rem 0}
 .revte ul{margin:.4rem 0 0;padding-left:1.2rem}
+.rs-open{color:#a06a14;border-color:#dfc394;background:#faf3e3}
+.rs-answered{color:#1e6b3a;border-color:#a4cfb2;background:#e7f3ea}
+.revds{margin:1.4rem 0 1.8rem;padding:1rem 1.2rem;border:1px solid #dfc394;
+  border-left:3px solid #a06a14;background:#fffdf6;border-radius:10px}
+.revds>h2{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;margin-top:0}
+.revd{margin:.9rem 0 0;padding:.7rem .9rem;border:1px solid #eee5d0;background:#fff;
+  border-radius:8px}
+.revd .revdq{margin:0 0 .4rem;font-size:.85rem}
+.revd p{margin:.3rem 0 0}
+.revd ul{margin:.4rem 0 0;padding-left:1.2rem}
+.revda{padding-top:.4rem}

@@ -7,7 +7,30 @@
   "source": "briefs/11__founder-review__first-reading.md",
   "version_reviewed": "v0.3.7",
   "state": "discussing",
-  "state_note": "In discussion: on 22 August the librarian of the source repository answered this review's needs (brief 13). Eleven of the twelve needs across r001 and r002 are met; only the reviewer's reading screenshots remain outstanding. The founder decisions are unchanged and open, with one reframed: the title choice is now three-way, because the concept already carries the published name G3. A founder pointer then added a third estate: sgraph.ai's library (served from a public vault, every page machine-readable), which upgrades the EmailFS case study to a live deployment and adds four more public vaults. The reviewer then calibrated the librarian's finding: docs.diniscruz.ai predates the workflow that produced the newer corpus, where the meaning-through-connectivity documents were written, so the title decision weighs recency of thinking alongside publication history (item 2's thread).",
+  "state_note": "In discussion: on 22 August the librarian of the source repository answered this review's needs (brief 13). Eleven of the twelve needs across r001 and r002 are met; only the reviewer's reading screenshots remain outstanding. The founder decisions are unchanged and open, with one reframed: the title choice is now three-way, because the concept already carries the published name G3. A founder pointer then added a third estate: sgraph.ai's library (served from a public vault, every page machine-readable), which upgrades the EmailFS case study to a live deployment and adds four more public vaults. The reviewer then calibrated the librarian's finding: docs.diniscruz.ai predates the workflow that produced the newer corpus, where the meaning-through-connectivity documents were written, so the title decision weighs recency of thinking alongside publication history (item 2's thread). Review r003 (22 August) then reordered the sequencing: the evidence programme precedes the next book version, and the decoupling of book from website is proposed as the enabling refactor. This review's open decisions are explicit in the register above.",
+  "decisions": [
+    {
+      "n": 1,
+      "item": 2,
+      "question": "The title, three-way: keep **Meaning Through Connectivity** standing; adopt **Fractal Semantic Graphs: Meaning Through Connectivity**; or elevate the already-published name **G3**. With it, the three sub-questions from the proposal: exact casing and order; whether the site's own identity follows the book's; and whether the PDF files rename with forwards kept, or keep their URLs and retitle content only. The weighing so far, from item 2's thread: the librarian found G3 published and citable since May 2025; the reviewer then calibrated that the corpus naming meaning-through-connectivity is the later stage of the thinking, so recency of thinking counts alongside publication history. Whichever wins, the lineage chapter records G3's May 2025 naming.",
+      "options": [
+        "Meaning Through Connectivity (as is)",
+        "Fractal Semantic Graphs: Meaning Through Connectivity",
+        "Elevate G3 (alone or combined)"
+      ],
+      "state": "open"
+    },
+    {
+      "n": 2,
+      "item": 9,
+      "question": "Sign off the sequencing, as reshaped by review r003: the evidence programme (vault case studies at full site granularity) runs first; the identity release (title, lineage and fractal chapters) follows, distilling from that evidence; the no-dependency corrections land as agreed along the way; the chapter audit runs throughout.",
+      "options": [
+        "Sign off as reshaped",
+        "Adjust the order (say what moves)"
+      ],
+      "state": "open"
+    }
+  ],
   "items": [
     {
       "n": 1,
@@ -233,6 +256,14 @@
             "[SG Teams](https://sgraph.ai/en-gb/library/sg-teams.md) and [the agentic team roster](https://sgraph.ai/en-gb/library/agentic-teams/sgraph-ai-team.md)",
             "[Adding Email-FS-lite to your team](https://sgraph.ai/en-gb/library/guides/adopt-email-fs-lite.md)"
           ]
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the agent, from review r003",
+          "note": "[Review r003](r003.html) settles where these case studies live: on the website, at full granularity, as the evidence estate, with the book carrying the distilled best-of and provenance links back. In the reviewer's words there: 'that will provide the body of work, will provide the evidence, will provide the examples... so that when you want to make a statement in a book, you are supported by the evidence.' The sources mapped above stay the inputs; the output surface changed, and the programme now runs **before** the next book version rather than after the identity release.",
+          "sources": [
+            "[Review r003, items 1 and 3](r003.html)"
+          ]
         }
       ]
     },
@@ -250,7 +281,17 @@
       "impact": [
         "process"
       ],
-      "state": "proposed"
+      "state": "discussing",
+      "thread": [
+        {
+          "date": "22 August 2026",
+          "from": "the agent, from review r003",
+          "note": "The sequencing proposed here is reordered by [review r003](r003.html): the evidence programme runs first (in-depth case studies of the existing vaults, on the website, founder-guided), and the identity release (the retitle with the lineage and fractal chapters) follows, distilling from that evidence rather than preceding it. The correction (item 5) and the other no-dependency pieces still land as soon as agreed. What this review waits on is now explicit in its decisions register: D1 the title, D2 the reshaped sequencing.",
+          "sources": [
+            "[Review r003, item 3](r003.html)"
+          ]
+        }
+      ]
     }
   ]
 }

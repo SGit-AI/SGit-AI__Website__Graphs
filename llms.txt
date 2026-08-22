@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.3.12 (21 August 2026). Published by the sgit project — participant
+Site version: v0.3.13 (21 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /briefs/ is the source of truth and carries the same licence.
 
@@ -206,6 +206,12 @@ pages** so the two cannot drift
   standard usage, the book as a graph with an evidence layer (the 10,000-hours story
   is currently unsourced and the register starts there), verification by agent as a
   designed use, the agent toolbox, footnotes for print. State: commented.
+- https://graphs.sgit.ai/reviews/r003.html — review r003, the architectural turn:
+  decouple the book from the website (site as research estate, book as the distilled
+  best-of with provenance edges to site pages, versions and commits; the build gate
+  flips from equality to provenance), a vault case-study programme before the next
+  book version, and every review now opens with a machine-readable decisions
+  register (top-level `decisions` in the JSON). State: commented; three decisions open.
 - https://graphs.sgit.ai/book/changes.html — what changed between any two versions of
   the book, GitHub-style, in the browser. Machine-readable snapshots (one frozen JSON
   per release, extracted from the release tags) at /book/changes/data/index.json.

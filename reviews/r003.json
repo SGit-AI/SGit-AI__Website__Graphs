@@ -1,0 +1,139 @@
+{
+  "id": "r003",
+  "title": "Decouple the book, evidence first, reviews as graphs",
+  "reviewer": "Dinis Cruz",
+  "received": "22 August 2026",
+  "source_kind": "voice memo (transcript preserved verbatim)",
+  "source": "briefs/14__founder-review__decouple-evidence-decisions.md",
+  "version_reviewed": "v0.3.12",
+  "state": "commented",
+  "state_note": "Commented: the agent has responded to every item. Two items landed in the same release that published this review, because they are review tooling rather than book content: the decisions register (item 4) and the enrichment threads on r001 and r002 (item 6). The three decisions this review opens are in the register above; the decoupling refactor and the case-study programme wait on them.",
+  "decisions": [
+    {
+      "n": 1,
+      "item": 1,
+      "question": "Adopt the decoupling as specified? The book gets its own markdown source tree, seeded from today's seventeen units so the split starts at zero drift, and the build gate flips from equality (book must match the site) to provenance (every book unit must name the site pages, version and commit it distilled from, with drift reported rather than forbidden).",
+      "options": [
+        "Adopt as proposed",
+        "Adjust the architecture (say what changes)",
+        "Keep the coupling for now"
+      ],
+      "state": "open"
+    },
+    {
+      "n": 2,
+      "item": 5,
+      "question": "Which issues logic manages a review's folder: in-repo issues in the IssuesFS pattern (issues as files, states as data, the graph computable from the folder), or GitHub issues? The agent recommends in-repo: it keeps the serverless-pull-request property this workflow is named for, and it dogfoods the very case study r001 item 8 wants written.",
+      "options": [
+        "In-repo issues, IssuesFS pattern (recommended)",
+        "GitHub issues",
+        "Both: in-repo as the record, GitHub mirrored for notification"
+      ],
+      "state": "open"
+    },
+    {
+      "n": 3,
+      "item": 3,
+      "question": "The case-study order: confirm or reorder the proposed sequence (the regulation graph vault, then Risk Graph Explorer, then browser isolation, then the sgraph.ai library-as-a-vault, then SGit, IssuesFS and EmailFS from the resolved sources), and supply the per-vault guidance the memo promises: which areas to go deeper on, what to screenshot, what evidence to capture. That guidance is ask N13 on the comms board.",
+      "options": [
+        "Confirm the order and supply guidance vault by vault",
+        "Reorder (say which first)"
+      ],
+      "state": "open"
+    }
+  ],
+  "items": [
+    {
+      "n": 1,
+      "topic": "Decouple the book from the website",
+      "reviewer_says": "I think we need to decouple the book from the website. The original idea, one being a projection of the other, was already causing us some problems in language, but the problem is more subtle: there's a number of concepts that are not well captured in the book because we don't have enough references and enough good explanation of those concepts, and the agent that wrote the book correctly had to make a bunch of assumptions. We are mixing two concepts: I need a website where I can publish my latest research, my latest ideas, and go into detail at a way more level of granularity than we can go in a book; and the book should become the best of, this markdown-driven version of files and images, a condensed version of what we have on the website. This is a perfect example of the Wardley maps evolution from explorer to village, where we start to refactor and start to understand better the problem.",
+      "comment": "Agree, and the mechanism has a name in this repository: the equality gate. The build currently fails if the book does not match the site's content, which was the right explorer-stage tool (it made drift impossible while the identity was forming) and is now the constraint that flattens both surfaces: every time depth wants to grow on the site, the book's condensation pushes back, and every assumption the book-writing agent had to make is a reference the website never had room to carry. The diagnosis of the worst of both worlds is accurate. One small correction of record: as built, the book is the projection of the site, not the other way round; the strain was real in both directions, which is itself the evidence that the coupling, not its direction, was the problem.",
+      "proposal": "The refactor, concretely. (1) The site becomes the research estate: pages deepen and multiply freely, case studies, concept notes, agent-facing documentation, with no book consequence. (2) The book gets its own source tree, `content/book/`, seeded verbatim from today's seventeen units so the split starts at zero drift and diverges only deliberately: distillation, not duplication. (3) Provenance replaces equality: each book unit carries a sources block naming the site pages, sections, site version and commit it distilled from; the gate stops requiring the book to equal the site and starts requiring every unit's provenance to be present and resolvable, and the build reports, rather than forbids, a cited source page that changed since distillation, so drift is visible and re-distillation is a choice. (4) Everything downstream survives unchanged: the reader, the single page, both PDFs, the cover and the version-diff data all project from the book source exactly as they do today. (5) Sequenced as its own release, before the case-study programme starts writing deep pages, so the new depth never has to fight the old gate. Decision D1.",
+      "needs": [],
+      "impact": [
+        "build pipeline",
+        "validate gate",
+        "book source of truth",
+        "STYLE.md"
+      ],
+      "state": "proposed"
+    },
+    {
+      "n": 2,
+      "topic": "The clean text, and its provenance edges",
+      "reviewer_says": "This split means that there is a clean text now, which is the text of the book, which we version, which should be kind of independent from the website, although you need to link which parts of the website and which versions of the website and which commits of the website we got the reference from, which is again part of the graph itself of the content of the book. This is again our effort in making the book a graph.",
+      "comment": "This is the same edge r002 item 3 asked for, arriving from the other side: there, the book's sections wanted facts, hypotheses and ontology attached below them; here, every passage wants a provenance edge back to the estate it was distilled from. Together they make the book's graph bidirectional, downward to evidence and backward to source. It is also the book's own thesis applied to itself: the passage is a node, and what it means is what the edges reaching it (this site page, at this version, at this commit) let a reader or an agent trace.",
+      "proposal": "The provenance block of item 1 is the implementation, and it should be machine-readable from day one: the book manifest carries, per unit, a list of {site page, section anchor, site version, commit}. Rendered discreetly (the colophon and the agent surface, not inline clutter), and queryable, so the changes view can answer the question reviews actually need: which book passages are downstream of this site page, and has it moved since they were distilled? That is also the data structure r002 item 5's verification-by-agent dogfood needs, delivered for free.",
+      "needs": [],
+      "impact": [
+        "book manifest",
+        "colophon",
+        "agent surface",
+        "changes view"
+      ],
+      "state": "proposed"
+    },
+    {
+      "n": 3,
+      "topic": "The evidence programme: vault case studies before the next book version",
+      "reviewer_says": "What I would like to work next is a series of case studies, sort of what we started doing on the SGit website. I think that was a good one, but we should expand, and then I can guide for each of these vaults on what areas we should do more, we should take more screenshots, we should capture the evidence. The vaults I have created have that evidence, have real-world examples. We have a bit of work now to do on capturing all sorts of case studies and examples from the vaults we have already created, before we tackle the next version of the book, because this is what will provide evidence to all those bits that we need to do on the book.",
+      "comment": "Agree, and it resolves the tension the first two reviews left open: r001 item 8's case studies and r002 item 4's evidence layer both circled the same question, where does the depth live without bloating the book, and the decoupling answers it structurally: on the website, at full granularity. It also reorders the plan. The sequencing proposals in r001 item 9 and r002 item 9 put the identity release early; this memo puts the evidence programme first, and the threads on both items now record that. The inventory is already mapped: three sgit.ai demo vaults, four sgraph.ai public vaults, and the SGit, IssuesFS and EmailFS sources the librarian resolved path by path.",
+      "proposal": "A `/case-studies/` section, one deep page per vault or system: what it demonstrates about the discipline, the techniques used in practice, screenshots captured as code (r001 item 6's pipeline), the real numbers, and an explicit 'what the book will cite from this' block so distillation is designed in from the start. Proposed order, largest evidence first: the regulation graph vault, Risk Graph Explorer, browser isolation, the sgraph.ai library-as-a-vault, then SGit, IssuesFS and EmailFS from the resolved sources. Each case study ships as its own release; the book stays untouched until distillation. The founder's per-vault guidance is the open ask (N13); decision D3 confirms the order.",
+      "needs": [
+        "Per-vault guidance: which areas to go deeper on, what to screenshot, what evidence to capture (ask N13).",
+        "The screenshots-as-code pipeline from r001 item 6, which this programme would exercise immediately."
+      ],
+      "impact": [
+        "new site section",
+        "site navigation",
+        "the book's future evidence citations"
+      ],
+      "state": "proposed"
+    },
+    {
+      "n": 4,
+      "topic": "Reviews gain a decisions mode",
+      "reviewer_says": "The reviews need a new mode called decisions, which basically means you can see the decisions that are needed, and then the answers to the decisions. And the evidence.",
+      "comment": "Agreed, and it fixes a reading problem the two live reviews already have: their open decisions (the title, the humans-and-agents allocation, the pilot chapter, the sequencing) were buried inside proposals and threads, so anyone returning to a review had to re-read nine items to find what is actually being waited on.",
+      "proposal": "Landed in the same release that published this review, because it is review tooling, not book content: every review's JSON now carries a decisions register, and every review page renders it at the top: each decision numbered, linked to the item it belongs to, showing its options while open and its answer once made. r001 and r002's open decisions are now explicit (two on r001, three on r002), and this review adds three of its own. The register is machine-readable in the same JSON, so an agent reads the decision state the same way a human does.",
+      "needs": [],
+      "impact": [
+        "review pages",
+        "review JSON schema",
+        "reviews register"
+      ],
+      "state": "applied",
+      "applied_in": "v0.3.13"
+    },
+    {
+      "n": 5,
+      "topic": "Each review is a folder with its own graph, managed as issues",
+      "reviewer_says": "Each review in itself needs to be a folder that has its own graph that we need to visualise, and its graph should have the sections, the decisions that are needed, the answers to the decisions, and the evidence. Every request, every question, every piece of information or comment should itself be a node in a graph, where the view is a projection of that. Each review is a folder; inside its folder it has its own items, issues, questions, and if anything, we should be using issues here to clean this up, because that should be the logic of managing this. Because that's in itself, it's a graph.",
+      "comment": "Agree, and the current shape is already halfway there: each review is one JSON file whose page is a pure projection, and the items, decisions, threads and evidence are the nodes in all but name. What is missing is the edges being explicit, the folder being the unit, and the graph being drawable. The one genuine fork is which issues logic manages the folder: GitHub issues would put the conversation on rented infrastructure; in-repo issues, the IssuesFS pattern (issues as files, states as data, the graph computable from the folder), keep the serverless-pull-request property this workflow was named for, and would dogfood the exact case study r001 item 8 wants written.",
+      "proposal": "Restructure to `reviews/rNNN/` folders: the review head, then items, decisions and evidence as their own files, with typed edges in the folder's graph (item has-decision, decision answered-by, thread-entry responds-to, evidence supports), honouring the house grammar: verbs with inverses, no generic association. A generator draws each review's graph as an SVG on its page, items, decisions and evidence coloured by state, which proves r002 item 6's chapter-graph pattern on cheaper ground before the book uses it. Current URLs (rNNN.html, rNNN.json) stay as forwards. Recommendation on the fork: in-repo issues. Decision D2.",
+      "needs": [
+        "Decision D2 on the issues logic before the folder restructure lands."
+      ],
+      "impact": [
+        "reviews structure",
+        "review URLs (kept as forwards)",
+        "a per-review graph visualisation"
+      ],
+      "state": "proposed"
+    },
+    {
+      "n": 6,
+      "topic": "Keep enriching the reviews: the updates to r001 and r002",
+      "reviewer_says": "There's a couple of updates that we're gonna do to the other reviews, and I also want to comment a little bit more about capturing the reviews itself. I think we should capture this as a third review, and maybe keep enriching the reviews.",
+      "comment": "The enrichment pattern is now established across four releases and stays append-only: needs answered as threads (the librarian's pack), estates added as threads (sgraph.ai), calibrations as threads (the founder on the librarian), and now cross-review consequences as threads. A review is a conversation with a record, never rewritten history.",
+      "proposal": "Landed with this release: r001 item 8 records where the case studies now live (website at full granularity, book carries the distilled best-of), r001 item 9 and r002 item 9 record the resequencing (evidence programme first, identity release after, chapter audit throughout), and both reviews' state notes point here. Future updates keep the same shape: this review is the venue for the decoupling and evidence conversation, and its decisions register is where the three open calls get answered.",
+      "needs": [],
+      "impact": [
+        "r001",
+        "r002"
+      ],
+      "state": "applied",
+      "applied_in": "v0.3.13"
+    }
+  ]
+}

@@ -3,16 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>What was changed before publication — graphs.sgit.ai</title>
-<meta name="description" content="Three redactions, in three files, with visible markers — because a silent redaction is the worse of the two options.">
-<link rel="canonical" href="https://graphs.sgit.ai/documents/public.html">
+<title>Review r003: decouple the book, evidence first, reviews as graphs — graphs.sgit.ai</title>
+<meta name="description" content="The founder's third review: decouple the book from the website (the site as research estate, the book as the distilled best-of with provenance), a vault case-study programme before the next book version, a decisions register on every review, and each review as a folder with its own graph.">
+<link rel="canonical" href="https://graphs.sgit.ai/reviews/r003.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="graphs.sgit.ai">
-<meta property="og:url" content="https://graphs.sgit.ai/documents/public.html">
-<meta property="og:title" content="What was changed before publication">
-<meta property="og:description" content="Three redactions, in three files, with visible markers — because a silent redaction is the worse of the two options.">
+<meta property="og:url" content="https://graphs.sgit.ai/reviews/r002.html">
+<meta property="og:title" content="Review r003: decouple the book, evidence first, reviews as graphs">
+<meta property="og:description" content="Six items: the decoupling refactor, provenance edges from book to site commits, the vault case-study programme, the decisions register (landed immediately), reviews as folders with graphs managed as issues, and the enrichment threads on r001 and r002.">
 <meta name="twitter:card" content="summary">
-<link rel="alternate" type="text/markdown" href="../briefs/PUBLIC.md" title="The raw markdown, which is the source of truth">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
@@ -76,7 +75,7 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl here" href="../documents/index.html">Site<span class="caret">&#9662;</span></a>
+      <a class="nl" href="../documents/index.html">Site<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../documents/index.html">The documents</a>
       <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
@@ -91,31 +90,17 @@
   <script src="../assets/nav.js" defer></script>
 </div></nav>
 
-<main class="doc">
-<div class="crumb"><a href="../index.html">graphs.sgit.ai</a> / <a href="index.html">documents</a> / public</div>
-<h1>What was changed before publication</h1>
+<main class="doc" data-review="r003.json">
+  <div class="crumb"><a href="../index.html">graphs.sgit.ai</a> → <a href="index.html">reviews</a> → <b>r003</b></div>
+  <h1>Review r003: decouple the book, evidence first, reviews as graphs</h1>
+  <p class="lead">The founder's third review, received as a voice memo and normalised into six numbered items, and the first to open with a <b>decisions register</b>: the calls the conversation is waiting on, each linked to its item. The headline is architectural: decouple the book from the website, so the site can deepen into a research estate (starting with in-depth case studies of the existing vaults) while the book becomes the distilled best-of, a clean text whose passages carry provenance edges back to the site pages, versions and commits they came from. Two items landed with this review's own release because they are review tooling, not book content; everything else is proposed and waits on the decisions.</p>
 
-<div class="docmeta">
-  <span class="k">Kind</span><span class="v">Transparency note</span>
-  <span class="k">Author</span><span class="v">Prepared by the SG/Send agentic team for graphs.sgit.ai</span>
-  <span class="k">Licence</span><span class="v">CC BY 4.0</span>
-  <span class="k">Source</span><span class="v"><a href="../briefs/PUBLIC.md">raw markdown</a> · <a href="https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/briefs/PUBLIC.md">view on GitHub</a></span>
-</div>
+  <div id="review"><p class="small dim">Loading the review…</p></div>
 
-<h2 id="fact">The single most important thing in it</h2>
-<p class="lead">Three redactions, in three files, with visible markers — because a silent redaction is the worse of the two options.</p>
-
-<h2 id="on-site">Why it is on this site</h2>
-<p>The transparency convention this network uses when republishing anything.</p>
-
-<h2 id="read">Read the document</h2>
-<div class="mdread-label">📄 Rendered from the <a href="../briefs/PUBLIC.md">raw markdown</a> — which is the source of truth. This page is presentation.</div>
-<div class="mdread" id="mdread" data-src="../briefs/PUBLIC.md"><noscript><p class="dim">In-page rendering needs JavaScript — <a href="../briefs/PUBLIC.md">open the raw markdown</a>.</p></noscript></div>
-
-<div class="pagenav">
-  <span><a href="index.html">← All documents</a></span>
-  <span><a href="../briefs/PUBLIC.md">Raw markdown →</a></span>
-</div>
+  <div class="agent">
+    <h4>For an agent</h4>
+    <p>The review is the JSON at <a href="r003.json">/reviews/r003.json</a>; this page is its projection. New in the schema from this review on: a top-level <code>decisions</code> array (each decision carries its item, question, options and state, then its answer once made). This review proposes the decoupling of the book from the site (provenance replaces equality in the build gate) and the restructuring of reviews into folders whose items, decisions and evidence are nodes in a per-review graph. The verbatim source memo is <a href="../briefs/14__founder-review__decouple-evidence-decisions.md">brief 14</a>.</p>
+  </div>
 </main>
 
 <footer class="site"><div class="cols">
@@ -161,7 +146,6 @@
     <a href="../llms.txt">llms.txt</a>
   </div>
 </div></footer>
-<script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
-<script src="../assets/mdreader.js" defer></script>
+<script src="../assets/review.js" defer></script>
 </body>
 </html>
