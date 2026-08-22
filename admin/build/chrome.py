@@ -46,9 +46,10 @@ NAV = [
         ("Read it in one page", "book/single.html"),
         ("What changed between versions", "book/changes.html"),
         ("The reviews", "reviews/index.html"),
+        ("The altitude ladder", "altitudes/index.html"),
         ("The print PDF (6&times;9)", "book/meaning-through-connectivity.pdf"),
         ("The screen PDF (tablet)", "book/meaning-through-connectivity-screen.pdf"),
-    ], ("book/",)),
+    ], ("book/", "altitudes/")),
     ("The grammar", "grammar/index.html", [
         ("The rules you can apply tomorrow", "grammar/index.html"),
         ("The edge set", "grammar/edge-set.html"),

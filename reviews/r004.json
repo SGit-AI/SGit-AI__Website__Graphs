@@ -1,0 +1,132 @@
+{
+  "id": "r004",
+  "title": "The altitude ladder: one book at five altitudes",
+  "reviewer": "Dinis Cruz",
+  "received": "22 August 2026",
+  "source_kind": "voice memo (transcript preserved verbatim)",
+  "source": "briefs/16__founder-review__altitude-ladder.md",
+  "version_reviewed": "v0.3.14",
+  "state": "commented",
+  "state_note": "Commented, and the central item is built rather than proposed: this memo asks for an experiment, and an experiment that is only described has not been run. The ladder is live at /altitudes/ with levels 1 to 3 complete, level 4 for two chapters, the graph layer lifted on those paths, and five findings from the climb. No book content changed: the ladder is a new artefact beside the book, not an edit to it. Three decisions are open, and the first of them is whether the experiment earned a place in the pipeline at all.",
+  "decisions": [
+    {
+      "n": 1,
+      "item": 1,
+      "question": "Does the experiment continue? Three ways to take it: **stop** (the ladder stays as a published experiment, and the book carries on as it is); **finish the pilot** (take level 4 across all seventeen units, keeping the graph layer where it is); or **adopt** (the ladder becomes part of the build, authored in `content/altitudes/`, gate-checked like the book, with level 4 complete and the graph layer lifted everywhere). The agent recommends finishing the pilot first: the sharpest findings came from level 3 and the two drilled chapters, and the cost of the next twelve chapters is now measurable rather than guessed.",
+      "options": [
+        "Finish the pilot: level 4 for all seventeen units (recommended)",
+        "Adopt into the build now",
+        "Stop here, keep it as a published experiment"
+      ],
+      "state": "open"
+    },
+    {
+      "n": 2,
+      "item": 4,
+      "question": "The findings need a home. Do repeats and contradictions become a **standing register** (a page like the reviews register, where each finding has a state and is closed by a release), or do they stay a **per-run output** of the ladder, regenerated and re-read each time? The agent recommends the standing register: a contradiction that is found, forgotten and re-found is not a finding, it is a treadmill.",
+      "options": [
+        "A standing register with states (recommended)",
+        "A per-run output only"
+      ],
+      "state": "open"
+    },
+    {
+      "n": 3,
+      "item": 5,
+      "question": "Which audience variant is worth building first, once the ladder is stable: a **business** projection of level 2, a **graph-literate** projection of level 3, or a **non-English** projection of level 2 (the translation case, which tests whether the graph really is what survives)? Each is one re-projection from the same graph, not a new book.",
+      "options": [
+        "Business, from level 2",
+        "Graph-literate, from level 3",
+        "A non-English projection of level 2",
+        "None yet: stabilise the ladder first"
+      ],
+      "state": "open"
+    }
+  ],
+  "items": [
+    {
+      "n": 1,
+      "topic": "Build the ladder: five levels, each a compression of the one below",
+      "reviewer_says": "Can we try to create five or seven versions of the book, which are all at different altitude? Let's say the current book is level five. The top level is almost a paragraph, like the executive summary, and each of the phrases hyperlinks to the next level, and then that has the same thing, all the way down. It needs to be from the bottom up: each layer is a compression of the previous layer that captures the core ideas.",
+      "comment": "Built, because a described experiment is not an experiment. Five levels: the book (level 5, ~20,000 words), the sections (level 4), the seventeen units (level 3, 1,333 words), the six parts (level 2, 406 words), the book in one paragraph (level 1, 135 words). Built bottom-up as instructed, and that instruction turned out to be load-bearing rather than stylistic: writing level 1 first would have produced a marketing paragraph that the levels below could not have supported, and the discipline of only saying at a level what the level below actually contains is what generated every finding in item 4. One honest result to record: the pyramid is not monotonic per unit. Total words fall at every step, but a level 4 section digest is longer than that section's share of the level 3 chapter digest, because compression is per parent, not per descendant.",
+      "proposal": "Coverage as the memo suggested: levels 1 to 3 complete, level 4 for two chapters (chapter 2, The five ideas, and chapter 5, Against schema-first, which is also r002's proposed graph pilot, so the two experiments share a chapter). The ladder is at **/altitudes/**, the data at /altitudes/data/altitudes.json, and every unit links down to level 5 in the book. Whether it goes further is decision D1.",
+      "needs": [],
+      "impact": [
+        "new section (/altitudes/)",
+        "new generator (gen_altitudes.py)",
+        "no book content"
+      ],
+      "state": "applied",
+      "applied_in": "v0.3.15"
+    },
+    {
+      "n": 2,
+      "topic": "Keep the graph and the projection apart at every level",
+      "reviewer_says": "There's already two concepts here. There's the concept of the graph, which has all the facts, the evidence, the structure, the points, the ideas, what you're trying to convey, and then there's the execution of that, which is the text itself, and the evidence and all the links. Each of these layers needs to have those graphs, and then needs to have the projection. Maybe you don't need to do the projection for all of them.",
+      "comment": "Agreed and implemented, and it is the part of the memo that will matter longest: it separates what the book *knows* at a level from how that level *reads*. Each node carries a claims list with an evidence state (evidenced, argued, unevidenced) beside the text it supports, and the two are stored separately in the data. The unevidenced claims are rendered ghosted rather than hidden, which is r002 item 6's rule arriving early on cheaper ground.",
+      "proposal": "The graph layer is lifted for levels 1 and 2 and for the two drilled chapters' paths. Where it was not lifted, the node says so explicitly, because an empty panel and an unbuilt one look identical otherwise. This is also the direct route into r002 item 3 (the book as a graph): the ladder's claim nodes are that graph, arriving one level up from the chapter text, and the pilot proves the shape before the full lift is attempted.",
+      "needs": [],
+      "impact": [
+        "the ladder's data model",
+        "r002 item 3's design"
+      ],
+      "state": "applied",
+      "applied_in": "v0.3.15"
+    },
+    {
+      "n": 3,
+      "topic": "Many-to-many, not a clean tree",
+      "reviewer_says": "There should be a tree-like structure of this as you go up and as the concepts merge, and of course they could be many-to-many relationships.",
+      "comment": "The data model allows many-to-many in both directions (a phrase may compress several units; a unit may be compressed by several phrases), and the first real instance appeared immediately, which is finding 2: the Semantic Web's mistake is stated in chapter 1 and argued in full in chapter 5, so it should be compressed by both parts. The current level 2 assigns it to Part III alone. That is a choice the ladder forced and made visible, and the honest fix is a second parent rather than a tidier tree.",
+      "proposal": "Keep the model many-to-many and let the exceptions accumulate before generalising: the pilot has one clear case and one candidate, which is not enough to design a merge rule. Recorded as an observation rather than a change, and revisited if D1 extends the pilot.",
+      "needs": [],
+      "impact": [
+        "the ladder's data model"
+      ],
+      "state": "noted"
+    },
+    {
+      "n": 4,
+      "topic": "The repeats and contradictions the climb was expected to surface",
+      "reviewer_says": "In fact, it's interesting because I think with this we actually will find some repeated content and some contradictions in the content, which would be quite interesting. Once you look at all the facts, observations, hypotheses that a particular paragraph or section is doing, we should find contradictions with others, and then find a way to visualise.",
+      "comment": "The prediction held, and this is the experiment's real result. Five findings, published on the ladder page. The one that justifies the whole exercise: at level 3, chapter 12's paragraph (no graph database, no browser SPARQL or Cypher, no RDF in the code) sits four units from chapter 7's (a SQLite interface, an RDF/Turtle export and a graph REPL). Both sentences are true, one about the codebase and one about a published vault, but on one page they read as a contradiction. That is precisely the correction the reviewer asked for in r001 item 5, **reached independently by compression rather than by being told**, which is the strongest evidence available that the method works. Alongside it: a signposted repeat that compression forces a decision about, a compression loss localised to a rung (five ideas from a source that lists ten principles), a weight mismatch that gives the title decision a concrete test, and one control case.",
+      "proposal": "The visualisation the memo asks for, delivered as the findings section on the ladder page: each finding carries a kind, the units where it lives (linked, so a reader can climb straight to them), and a verdict. The control case is kept deliberately: a finding process that reported the already-disclosed relates-to contradiction as a discovery would be over-reporting, and showing that it does not is how the method earns trust. Where these findings live permanently is decision D2.",
+      "needs": [],
+      "impact": [
+        "/altitudes/#findings",
+        "r001 item 5 (gains independent evidence)",
+        "r001 item 3 (dilution localised)"
+      ],
+      "state": "applied",
+      "applied_in": "v0.3.15"
+    },
+    {
+      "n": 5,
+      "topic": "Translation, culture and stakeholder variants",
+      "reviewer_says": "This is also very interesting when we then start looking at translations and adapt them to different cultures, or even adapting to different stakeholders, or different audiences: a more technical audience, a more business-like audience, a more graph knowledge audience.",
+      "comment": "Agreed, and the ladder is the enabling structure rather than a side effect of it: the graph is what survives a change of audience, and the projection is what changes. A business edition is not a rewrite of 20,000 words, it is a re-projection of level 2 from the same claims with different examples; a translation is a re-projection rather than a re-translation, which is also the book's own concepts-not-words argument applied to itself. Worth stating the risk plainly: audience variants multiply the surface that can drift, and only the shared graph keeps them honest, so variants should not start before the graph layer is stable.",
+      "proposal": "Not yet. One variant, after the ladder stabilises, chosen at decision D3, built as a second projection of an existing level so the claim can be tested cheaply: does the same graph really carry a different audience, or does the projection quietly change the argument? If it changes the argument, that is a finding about the graph, not about the translation.",
+      "needs": [
+        "The ladder stable (decision D1) before any variant is built."
+      ],
+      "impact": [
+        "future editions",
+        "translation strategy"
+      ],
+      "state": "proposed"
+    },
+    {
+      "n": 6,
+      "topic": "What the experiment says about the decoupling in r003",
+      "reviewer_says": "This again, like this split means that there is a clean text now, which is the text of the book, which we version. (r003, carried forward: the book as the distilled best-of, with provenance back to the site.)",
+      "comment": "The ladder is evidence for r003's architecture, arriving from an unexpected direction. Level 3 is, in effect, the distilled best-of that r003 describes: seventeen paragraphs that carry the argument without the evidence, each linking down to the full text. If the decoupling lands, the site holds the research estate at full granularity, the book holds the writing, and the ladder is the machinery that connects them, because compression with provenance is exactly what a distillation is. It also suggests the decoupled book's provenance blocks and the ladder's descent edges are the same edge type pointing at different targets.",
+      "proposal": "Recorded as a connection rather than a change: r003's decision D1 does not need to wait for this, and if D1 adopts the decoupling, the ladder's descent edges should be built as the same mechanism as the provenance edges rather than a parallel one. Flagged so the two are designed once.",
+      "needs": [],
+      "impact": [
+        "r003 item 1",
+        "r003 item 2"
+      ],
+      "state": "noted"
+    }
+  ]
+}

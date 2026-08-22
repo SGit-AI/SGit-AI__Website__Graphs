@@ -1,0 +1,374 @@
+#!/usr/bin/env python3
+"""Generates altitudes/data/altitudes.json — the altitude ladder experiment.
+
+Five levels. Level 5 is the book itself (not duplicated here, only linked).
+Levels 4 to 1 are compressions, each built bottom-up from the level below it,
+so every phrase at a level has children at the level under it.
+
+The ladder is authored inline in this file, which is the honest description of
+a pilot: there is no separate source format yet, and inventing one before the
+shape is known would be schema-first. If the experiment is adopted, the
+authored text moves to content/altitudes/ and this becomes a compiler.
+
+Link syntax inside a projection: [phrase](node-id). Everything outside a
+bracketed span is plain text that carries no descent.
+"""
+import json, re, pathlib
+
+ROOT = pathlib.Path(__file__).resolve().parents[2]
+VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
+
+LEVELS = [
+    dict(n=1, name="The book in a paragraph",
+         note="One paragraph. Every sentence descends into a part."),
+    dict(n=2, name="The six parts",
+         note="One or two sentences per part. Phrases descend into chapters."),
+    dict(n=3, name="The seventeen units",
+         note="One paragraph per chapter, plus the introduction."),
+    dict(n=4, name="The sections",
+         note="Two or three sentences per section. Pilot coverage: chapters 2 and 5 only."),
+    dict(n=5, name="The book itself",
+         note="The written text, ~20,000 words. Not duplicated here: every level 4 and level 3 unit links into it."),
+]
+
+# ---------------------------------------------------------------- level 1
+N = {}
+
+def node(nid, level, title, text, book=None, claims=None, note=None):
+    N[nid] = dict(id=nid, level=level, title=title, text=text,
+                  book=book, claims=claims or [], note=note)
+
+def claim(t, state, ev=None):
+    """state: evidenced (a number or source backs it) | argued (the book argues
+    it) | unevidenced (asserted, nothing attached yet)."""
+    return dict(text=t, state=state, evidence=ev or [])
+
+node("L1", 1, "Meaning Through Connectivity, in one paragraph",
+ "[A node carries no inherent meaning: what a thing is emerges from the edges traceable from it, and confidence in that meaning is proportional to how richly it is connected.](L2-1) "
+ "[That makes the edge, not the node, the unit of design: every edge a verb with a distinct inverse, the generic association edge banned, and no graph ever rendered whole, only queried.](L2-2) "
+ "[It also makes schema-first the mistake to avoid, because merging vocabularies erases the disagreement that parties can safely keep while still agreeing about facts.](L2-3) "
+ "[The claim is tested against real graphs with real numbers rather than argued in the abstract.](L2-4) "
+ "[Most of the layer described here is proposed rather than shipped, and the book says which is which.](L2-5) "
+ "[Terms are given in plain English, and the publisher's interest in the argument is disclosed.](L2-6)",
+ claims=[
+   claim("Meaning is derived from edges, not carried by nodes.", "argued"),
+   claim("Confidence is a function of connectivity.", "argued"),
+   claim("The same grammar holds at every altitude (fractal).", "argued",
+         ["Stated as falsifiable in chapter 6; not tested in this book"]),
+   claim("Most of the semantic layer is designed, not shipped.", "evidenced",
+         ["Chapter 12's separation, verifiable by reading the source repository"]),
+ ])
+
+# ---------------------------------------------------------------- level 2
+node("L2-1", 2, "Part I · The claim",
+ "[Two variables both holding 8080 mean different things, because one reaches a type, a library and a pinned version while the other reaches nothing at all.](L3-intro) "
+ "[Of the three things people call a graph — network analysis, fast joins, semantics — this book is only the third.](L3-1) "
+ "[Five ideas carry the rest: a node alone means nothing; the same value differently connected means different things; nobody has to agree for the overlap to be computable; confidence is a function of connectivity; and a named absence beats a hidden one.](L3-2)",
+ claims=[
+   claim("The difference between the two variables is in the connectivity, not the value.", "evidenced",
+         ["Both are real Python; Safe_UInt__Port is shipped code, not a metaphor"]),
+   claim("Nobody has to agree on a definition for compatibility to be computed.", "argued"),
+ ])
+
+node("L2-2", 2, "Part II · The grammar",
+ "[Five rules you can apply tomorrow: every edge is a verb with a distinct inverse, the generic association edge is banned, paths must read as sentences, rich nodes are good, and you render the result of a query rather than the graph.](L3-3) "
+ "[Fifteen established edges with their inverses make the vocabulary pasteable, with nine of the inverse names proposed by this book and marked as such.](L3-4)",
+ claims=[
+   claim("Inverse asymmetry (owned_by vs owns) is what bounds fan-out.", "argued"),
+   claim("Nine of the fifteen inverse names are this book's proposals, not the corpus's.", "evidenced",
+         ["Marked row by row in the edge-set table"]),
+ ])
+
+node("L2-3", 2, "Part III · The full argument",
+ "[Meaning attached to nodes rather than derived from edges is schema-first thinking in graph syntax; the alternative is three layers — shared facts owned by nobody, per-party formulas, declared bridges — with classification as a computed path pattern and corrections that supersede rather than delete.](L3-5) "
+ "[The same grammar is claimed to hold at every altitude, which is a falsifiable claim about the seams in a stack, not a metaphor.](L3-6)",
+ claims=[
+   claim("Merging vocabularies erases the disagreement, which is the valuable part.", "argued"),
+   claim("Classification can be moved from a human judgment to a visible formula.", "argued",
+         ["Node type formulas are written; no executing implementation exists"]),
+   claim("The fractal claim is falsifiable and the book states how.", "argued"),
+ ])
+
+node("L2-4", 2, "Part IV · The proof",
+ "[Ten worked applications, with their numbers stated so a reader can check them.](L3-7) "
+ "[A 59-node risk graph that includes three risks created by the mitigation itself,](L3-8) "
+ "[a 51-node instance graph carrying one configuration fact to the board and the regulator,](L3-9) "
+ "[one EU AI Act provision traced down and back with five of nine questions left unanswered,](L3-10) "
+ "[and Wardley maps read as graphs, with coordinates the reverse of the convention most readers carry.](L3-11)",
+ claims=[
+   claim("The regulation graph holds 1,523 nodes and 1,944 edges.", "evidenced", ["Live vault, published"]),
+   claim("The browser-isolation graph holds 59 nodes and 75 edges, three of them risks of the mitigation.", "evidenced",
+         ["Parsed from the brief; the file is published"]),
+   claim("The unanswered questions are the output, not a shortfall.", "argued"),
+ ])
+
+node("L2-5", 2, "Part V · Reality",
+ "[A commit DAG, typed cross-vault edges, a read-only query API and three published vaults ship; the graph database, the path-query language and the RDF layer do not exist anywhere.](L3-12) "
+ "[Ten phases from February to August 2026 show the work moving from cryptographic trust chains to a claim about where meaning lives, and the routing failure that kept the philosophy invisible.](L3-13) "
+ "[Four sibling sites carry the same argument into keys, identities, control flow and vaults.](L3-14)",
+ claims=[
+   claim("The commit DAG, merge-base and three-way merge are implemented.", "evidenced",
+         ["Verifiable by reading the source repository"]),
+   claim("No graph database exists anywhere in the work.", "evidenced",
+         ["Stated in chapter 12; MGraph-DB is not a dependency"]),
+   claim("The philosophy documents are not routed from the file agents start at.", "evidenced",
+         ["Ask N1, open since 11 June 2026"]),
+ ])
+
+node("L2-6", 2, "Part VI · Appendices",
+ "[Every technical term has a plain-English alternative beside it.](L3-15) "
+ "[The publisher builds the products this book argues for, and the places where the approach loses are listed by the publisher rather than left to a critic.](L3-16)",
+ claims=[
+   claim("Concept and term are different objects; meaning is never stored in a term.", "argued"),
+   claim("The participant disclosure names where the approach loses.", "evidenced", ["Chapter 16"]),
+ ])
+
+# ---------------------------------------------------------------- level 3
+node("L3-intro", 3, "Introduction", 
+ "Two variables in a Python program both hold 8080. One is an int, and that is the whole graph. The other is a type carrying a range constraint, which reaches a library, a pinned version, its tests, its repository, its licence and its maintainer. The difference is not in the value: the meaning is identical in the developer's head and radically different in the graph, and the graph is what another system, another team or an agent has to work from. Expertise takes 10,000 hours, a claim carried through 242 papers and more than 200,000 citation paths back to a 1993 study that said something else. A document cannot fix that. A graph can: mark the claim superseded from a date, then ask which conclusions were resting on it.",
+ book="../book/introduction.html",
+ claims=[
+   claim("The 10,000-hours claim was an average, not a threshold, and half the top group had not reached it.", "evidenced",
+         ["1993 Berlin violin study; Greenberg, BMJ 2009 for the citation network (PubMed 19622839)"]),
+   claim("242 papers and 200,000+ citation paths carried it.", "evidenced", ["Greenberg, BMJ 2009"]),
+   claim("A graph can propagate the correction where a document cannot.", "argued"),
+ ])
+
+node("L3-1", 3, "1 · Why graphs at all",
+ "People mean three different things by graph: network analysis, fast joins, and semantics. This book is only the third. GraphRAG traverses knowledge rather than guessing it, but traversal needs edges to exist, and where the graph is thin, similarity search wins. RDF is a fine way to hand a graph to somebody else and a poor place to put the meaning, so the honest position is both, at different layers. Properties may carry data; they may never carry meaning.",
+ book="../book/ch-01-why-graphs-at-all.html")
+
+node("L3-2", 3, "2 · The five ideas",
+ "[A node is just a node: a label is not a meaning, and a node connected to nothing is literally meaningless.](L4-2-1) "
+ "[The same value, differently connected, means different things, which is why the difference is never in the value itself.](L4-2-2) "
+ "[Five teams each call something a Review, and none of them has to agree for the overlap between them to be computable.](L4-2-3) "
+ "[Confidence is a function of connectivity, and the remedy for low confidence is enrichment, never enforcement.](L4-2-4) "
+ "[Three of ten pieces of evidence is information, so a named absence beats a hidden one.](L4-2-5) "
+ "[That is altitude one, and the rest of the book descends from it.](L4-2-6)",
+ book="../book/ch-02-the-five-ideas.html",
+ claims=[
+   claim("A node with no edges carries no meaning.", "argued"),
+   claim("Compatibility is a spectrum, asymmetric and purpose-relative.", "argued"),
+   claim("The chapter carries five ideas; the foundational source lists ten principles.", "evidenced",
+         ["Thinking in Graphs (5 February 2026), Summary: Core Principles; addendum 01"]),
+ ])
+
+node("L3-3", 3, "3 · The rules you can apply tomorrow",
+ "Every edge is a verb, and every verb has a distinct inverse that is not the same edge walked backwards: owned_by and owns have different fan-out, and that asymmetry is what stops the graph exploding. The generic association edge is banned, because everything relates to everything, so it constrains nothing and costs fan-out. If a path does not read as a sentence in the reader's own language, the edges are wrong. Rich nodes are good: the blob is a rendering failure, not a modelling one. And never render the whole graph — render the result of a query.",
+ book="../book/ch-03-the-rules-you-can-apply-tomorrow.html")
+
+node("L3-4", 3, "4 · The edge set",
+ "Fifteen established edges with their inverses, the node types from the two most complete worked graphs, and the rules for extending the set: a new edge needs a sentence, its inverse needs a different sentence, and both need a stated domain and range. Nine of the inverse names are proposed by this book rather than quoted from the corpus, and the table marks which, because the glossary that would settle them does not exist.",
+ book="../book/ch-04-the-edge-set.html")
+
+node("L3-5", 3, "5 · Against schema-first",
+ "[The Semantic Web identified the right problem and made a subtle mistake in practice: meaning ended up attached to nodes rather than derived from edges, which is schema-first thinking dressed in graph syntax.](L4-5-1) "
+ "[So do not merge vocabularies, because merging erases the disagreement; keep three layers instead — shared facts owned by nobody, per-party formulas, declared bridges.](L4-5-2) "
+ "[Stop asking a human whether something is a vulnerability and write the formula instead.](L4-5-3) "
+ "[The grounding ladder says downward grounds and upward implies, and it is one formula among possible others.](L4-5-4) "
+ "[Supersede, never delete, so that a correction can be asked what was resting on it.](L4-5-5) "
+ "[And the unit of meaning is a concept, not a word, which is why a nuance survives translation.](L4-5-6)",
+ book="../book/ch-05-against-schema-first.html",
+ claims=[
+   claim("The Semantic Web attached meaning to nodes rather than deriving it from edges.", "argued",
+         ["Part 4 of Thinking in Graphs names schema.org, SKOS, Dublin Core and PROV-O"]),
+   claim("Parties can disagree about meaning while agreeing about facts.", "argued"),
+   claim("Judgment moves into a visible, versioned formula rather than disappearing.", "argued"),
+ ])
+
+node("L3-6", 3, "6 · A graph at every boundary",
+ "Fractal here is a precise claim rather than a metaphor: one grammar, one validator, one provenance rule at every altitude, so that zooming into any node expands it into a graph obeying identical rules. It is falsifiable, and the chapter says how to falsify it. Meaning is lost and re-guessed at every seam of an AI stack, which is where the cost actually shows up. Documents are projections of graphs. And twins are where the graph stops modelling and touches reality.",
+ book="../book/ch-06-a-graph-at-every-boundary.html")
+
+node("L3-7", 3, "7 · Worked graphs, with real numbers",
+ "Ten real applications with their numbers stated so a reader can check them: browser isolation at 59 nodes and 75 edges, the 2FA instance graph at 51 and 53, Article 26(5) end to end, AWS IAM closures, browser extensions, and the live EU AI Act regulation graph at 1,523 nodes and 1,944 edges, with eleven views including a SQLite interface, an RDF/Turtle export and a graph REPL, parsed deterministically from official XML with every element hash-verified to source bytes.",
+ book="../book/ch-07-worked-graphs-with-real-numbers.html")
+
+node("L3-8", 3, "8 · Whose session is the agent using?",
+ "Should an AI agent browse inside the user's own browser or an isolated one? The question is answered as computed reach rather than adjectives: a 59-node, 75-edge risk graph parsed from a brief, including three risks created by the mitigation itself. That is the graph's value here — the mitigation's own risks sit in the same structure as the risks it removes, which no adjective-based assessment surfaces.",
+ book="../book/ch-08-whose-session-is-the-agent-using.html")
+
+node("L3-9", 3, "9 · The 2FA instance graph",
+ "Two admin accounts without two-factor authentication, carried from a single configuration fact to the board and the regulator through 51 nodes and 53 edges. It is the only artefact in the book that is both a complete narrative and a machine-readable file, which is the point: one structure serves the reader and the machine with no translation step between them.",
+ book="../book/ch-09-the-2fa-instance-graph.html")
+
+node("L3-10", 3, "10 · Article 26(5), fact to board and back",
+ "One EU AI Act provision, one deployment, carried from a running system up to a board decision and back down. Nine question nodes, five of them unanswered — and the unanswered five are the actual output of the exercise. The graph's job was to name what nobody had answered, rather than produce a confident summary that hid it.",
+ book="../book/ch-10-article-26-5-fact-to-board-and-back.html")
+
+node("L3-11", 3, "11 · Wardley maps as graphs",
+ "A graph says these things are connected; a map adds where they sit. Wardley maps read cleanly as graphs, with one trap that will bite on day one: the coordinates are visibility and evolution, the reverse of the convention most readers carry into the exercise.",
+ book="../book/ch-11-wardley-maps-as-graphs.html")
+
+node("L3-12", 3, "12 · What ships, what is argued",
+ "This book's subject matter is almost entirely design, and saying so is the reason the rest is worth reading. Verifiable by reading code: a content-addressed commit DAG with multi-parent commits, a real merge-base and three-way merge, typed cross-vault edges, a read-only query API exposed to untrusted sandboxed apps, and three published vaults. Does not exist anywhere: any graph database, MGraph-DB as a dependency, browser SPARQL or Cypher, RDF in the code, the path-query language, and commit signing, which is written and only ever null.",
+ book="../book/ch-12-what-ships-what-is-argued.html")
+
+node("L3-13", 3, "13 · Origins: 2026",
+ "Ten phases from February to August 2026, dated from filenames and git rather than memory. The work moved from cryptographic trust chains to a claim about where meaning lives. The three canonical philosophy documents sit in a library folder, are referenced by four files, and are not referenced from the file every agent starts from: a routing failure rather than a comprehension failure, which is why the fix is an address.",
+ book="../book/ch-13-origins-2026.html")
+
+node("L3-14", 3, "14 · The network",
+ "Four sibling sites carry the same argument into different material: a public key means nothing alone; the Semantic Web's verification gap means graphs need identities too; control-flow graphs and the WAF Achilles heel; and a vault that is itself a graph. The reciprocal bridge pages that would make the philosophy linkable from each of them are still open asks.",
+ book="../book/ch-14-the-network.html")
+
+node("L3-15", 3, "15 · Glossary",
+ "Every technical term with a plain-English alternative beside it. Two distinctions do most of the work: a concept is the language-independent unit of meaning while a term is one language's label, so meaning is never stored in a term; and a taxonomy points upward, broader to narrower, while an ontology points outward, naming what types exist and how they may connect.",
+ book="../book/ch-15-glossary.html")
+
+node("L3-16", 3, "16 · The author's interest, and where this loses",
+ "The book is published by the project that builds the vault layer and the graph products it argues for, and that disclosure sits on its own page rather than in a footnote. It lists where the approach loses: where a document beats a graph, where the discipline costs more than it returns, and where a reader should not adopt it.",
+ book="../book/ch-16-the-author-s-interest-and-where-this-loses.html")
+
+# ---------------------------------------------------------------- level 4
+def l4(nid, title, text, book, claims=None):
+    node(nid, 4, title, text, book=book, claims=claims)
+
+l4("L4-2-1", "A node is just a node",
+   "A label is not a meaning. `Review` as a node with no edges tells a reader nothing about which of five processes it belongs to, who may run it, or what it produces. Connected to nothing, it is literally meaningless, and the fix is edges rather than a better name.",
+   "../book/ch-02-the-five-ideas.html#node",
+   [claim("A label is not a meaning.", "argued")])
+l4("L4-2-2", "The same value, differently connected",
+   "`port = 8080` reaches an int and stops. `port = Safe_UInt__Port(8080)` reaches a type carrying a range constraint, a library, a pinned version, its tests, its repository, its licence and its maintainer. The meaning is identical in the developer's head and radically different in the graph.",
+   "../book/ch-02-the-five-ideas.html#connectivity",
+   [claim("Safe_UInt__Port is real shipped code, not an illustration.", "evidenced",
+          ["The type exists in the source library"])])
+l4("L4-2-3", "Five teams, five processes, one word",
+   "Five teams each call something a Review and mean five different processes. Nobody has to agree on a shared definition for the overlap to be computable: compatibility turns out to be non-binary, asymmetric and purpose-relative, computed from the edges rather than declared in a standard.",
+   "../book/ch-02-the-five-ideas.html#five-reviews",
+   [claim("Compatibility is computed, not declared.", "argued",
+          ["Principle 6 of the foundational source, absent from this chapter"])])
+l4("L4-2-4", "Confidence is a function of connectivity",
+   "Confidence runs from no edges, through a few local edges, typed definitions, anchor nodes and external references, to rich multi-hop connectivity. The remedy for low confidence is enrichment, adding edges, never enforcement, adding rules: the graph grows rather than constrains.",
+   "../book/ch-02-the-five-ideas.html#confidence",
+   [claim("Enrichment, not enforcement.", "argued",
+          ["Principle 8 of the foundational source, stated here but not named as a principle"])])
+l4("L4-2-5", "Three of ten pieces of evidence is information",
+   "Three of ten is information, not a failure. \"We cannot confirm Z\" is a better answer than a guess, because a named absence can be queried, assigned and closed, while a hidden one silently supports whatever rests on it.",
+   "../book/ch-02-the-five-ideas.html#gaps",
+   [claim("Honest uncertainty is the default posture.", "argued",
+          ["Principle 7 of the foundational source"])])
+l4("L4-2-6", "That is altitude one",
+   "Altitude one is the city walls: enough to act on without any of the grammar below it. The rest of the book descends — roads and buildings in the grammar, people and cars in the full argument.",
+   "../book/ch-02-the-five-ideas.html#next")
+
+l4("L4-5-1", "Against schema-first, and the Semantic Web's mistake",
+   "The Semantic Web community identified the right problem — how independent parties exchange meaning without agreeing on everything upfront — and produced genuinely useful reference vocabularies. The mistake was in practice: meaning ended up attached to nodes rather than derived from edges, so each node became a little document describing itself. That is schema-first thinking dressed in graph syntax.",
+   "../book/ch-05-against-schema-first.html#schema-first",
+   [claim("The Semantic Web identified the right problem.", "argued"),
+    claim("schema.org, SKOS, Dublin Core and PROV-O are the useful outputs.", "evidenced",
+          ["Named in Part 4 of the foundational source"])])
+l4("L4-5-2", "Don't merge vocabularies",
+   "Merging two vocabularies erases the disagreement, which is usually the most valuable thing present. Three layers keep it: shared facts owned by nobody, per-party formulas over those facts, and declared bridges between them. Parties can disagree about meaning while agreeing about facts, which is the only stable basis for working together.",
+   "../book/ch-05-against-schema-first.html#ontologies",
+   [claim("Merging erases the disagreement.", "argued")])
+l4("L4-5-3", "Classification is a query, not a judgment",
+   "Stop asking a human \"is this a vulnerability?\" and write the formula: a Vulnerability is a Fact that also has an upward `gives_rise_to` path to a Risk. Judgment does not disappear; it moves out of the classifier's head into a formula that is visible, versioned and arguable.",
+   "../book/ch-05-against-schema-first.html#formulas",
+   [claim("Node type formulas make judgment visible and arguable.", "argued",
+          ["Written as design; no executing implementation exists"])])
+l4("L4-5-4", "The grounding ladder",
+   "Downward grounds and upward implies: a claim is grounded by what it rests on, and implies what rests on it. The ladder is one formula among possible others, and the chapter says so rather than presenting it as the only one.",
+   "../book/ch-05-against-schema-first.html#ladder",
+   [claim("The ladder is one formula among others.", "argued")])
+l4("L4-5-5", "Supersede, never delete",
+   "A superseded claim is marked from a date; it is not removed. Removing it destroys the thing you most need: the record that something once rested on it. The question a correction must be able to ask is which conclusions were resting on the thing just corrected.",
+   "../book/ch-05-against-schema-first.html#supersede",
+   [claim("Deleting a claim destroys the record of what rested on it.", "argued")])
+l4("L4-5-6", "A nuance survives translation",
+   "The unit of meaning is a concept, not a word: language-independent, carrying one preferred label per language plus alternates, related to other concepts as broader, narrower or related. A nuance survives translation because it was never stored in a word in the first place.",
+   "../book/ch-05-against-schema-first.html#concepts",
+   [claim("Meaning must never be stored in a term.", "argued")])
+
+# ---------------------------------------------------------------- findings
+FINDINGS = [
+ dict(kind="contradiction", title="The book says both that there is no query engine and that there is one",
+  detail="At level 3 the paragraph for chapter 12 (\"no graph database, no browser SPARQL or Cypher, no RDF in the code\") "
+         "sits four units from the paragraph for chapter 7 (\"eleven views including a SQLite interface, an RDF/Turtle export "
+         "and a graph REPL\"). Both sentences are true — one describes the codebase, the other describes a published vault — "
+         "but compressed onto one page they read as a contradiction, and a reader of the full book meets them forty pages apart.",
+  where=["L3-12", "L3-7"],
+  verdict="Open. This is exactly the correction the reviewer asked for in review r001 item 5, reached independently by climbing "
+          "the ladder rather than by being told. The compression is what made it visible."),
+ dict(kind="repeat", title="The Semantic Web's mistake is stated twice, in two parts",
+  detail="Chapter 1 carries the mistake in one paragraph with a pointer to the full treatment; chapter 5's first section is the "
+         "full treatment. At level 3 the two paragraphs say nearly the same sentence. Climbing to level 2 forced a choice, and "
+         "Part III took it — which means Part I's own summary leans on a claim that Part III owns.",
+  where=["L3-1", "L3-5", "L2-3"],
+  verdict="Legitimate as written: deliberate altitude repetition, signposted in the text. Worth noting that compression makes "
+          "the ownership question decidable, where prose leaves it ambiguous."),
+ dict(kind="compression-loss", title="Five ideas, from a source that lists ten principles",
+  detail="Climbing from level 4 to level 3 in chapter 2 loses nothing, because the chapter only ever had five. The loss happened "
+         "below level 5, between the foundational source document and the book: the source's summary lists ten core principles. "
+         "Three of the missing five are still present in this chapter's prose without being named as principles (compatibility "
+         "computed not declared, honest uncertainty, enrichment not enforcement); two are absent (cross-graph edges as "
+         "first-class, no node aware of how it is used).",
+  where=["L3-2", "L4-2-3", "L4-2-4", "L4-2-5"],
+  verdict="Open, and now localised. Review r001 item 3 asked which chapters were diluted relative to their sources; the ladder "
+          "says where on the ladder the dilution happened, which is a more useful answer than which chapter."),
+ dict(kind="weight", title="Compressed honestly, the book's top paragraph has no room for \"fractal\"",
+  detail="Level 1 was built bottom-up from level 2, and fractal did not survive the climb: it holds six mentions in one chapter "
+         "and one elsewhere, so it entered level 2 as a single clause inside Part III and was squeezed out at level 1. It appears "
+         "in the level 1 graph as a claim, but not in the level 1 text.",
+  where=["L1", "L2-3", "L3-6"],
+  verdict="Evidence for an open decision. Review r001 item 2 warns that retitling to Fractal Semantic Graphs without growing the "
+          "fractal treatment puts a promise on the cover the interior underdelivers. The ladder turns that warning into a test: "
+          "the title is right when the one-paragraph version of the book cannot be written without the word."),
+ dict(kind="control", title="A contradiction the book already narrates, which the method correctly does not flag as new",
+  detail="Chapter 3 bans the generic association edge, then names the project's own live configuration shipping a relates-to pair "
+         "with one edge instance using it. The ladder surfaces the tension; the book had already disclosed it deliberately, in the "
+         "same chapter, with the reasoning.",
+  where=["L3-3"],
+  verdict="No action, and kept here on purpose: it is the control case showing that the method distinguishes a hidden "
+          "contradiction from a disclosed one. A finding process that flagged this as a discovery would be over-reporting."),
+]
+
+# ---------------------------------------------------------------- compile
+SPAN = re.compile(r"\[([^\]]+)\]\(([A-Za-z0-9\-]+)\)")
+
+for nid, n in N.items():
+    segs, pos, kids = [], 0, []
+    for m in SPAN.finditer(n["text"]):
+        if m.start() > pos:
+            segs.append(dict(t=n["text"][pos:m.start()]))
+        segs.append(dict(t=m.group(1), to=m.group(2)))
+        kids.append(m.group(2))
+        pos = m.end()
+    if pos < len(n["text"]):
+        segs.append(dict(t=n["text"][pos:]))
+    n["segments"] = segs
+    n["children"] = kids
+    n["words"] = len(re.sub(SPAN, r"\1", n["text"]).split())
+    del n["text"]
+
+for nid, n in N.items():                      # parents, from the children edges
+    for k in n["children"]:
+        if k not in N:
+            raise SystemExit(f"gen_altitudes: {nid} descends into unknown node {k}")
+        N[k].setdefault("parents", []).append(nid)
+for n in N.values():
+    n.setdefault("parents", [])
+
+for L in LEVELS:
+    units = [n for n in N.values() if n["level"] == L["n"]]
+    L["units"] = len(units)
+    L["words"] = sum(n["words"] for n in units)
+L = {x["n"]: x for x in LEVELS}
+L[5]["units"], L[5]["words"] = 17, 20000      # the book itself, measured by the book build
+
+out = dict(version=VERSION, root="L1", levels=LEVELS,
+           nodes=N, findings=FINDINGS,
+           coverage=dict(
+             full_levels=[1, 2, 3],
+             pilot_levels={"4": ["chapter 2", "chapter 5"]},
+             graph_lifted=[nid for nid, n in N.items() if n["claims"]],
+             note="Levels 1 to 3 are complete. Level 4 exists for two chapters only, and the "
+                  "graph layer is lifted for the nodes on those two paths plus every node at "
+                  "levels 1 and 2. Everything not lifted is stated as not lifted rather than "
+                  "left to look finished."))
+
+p = ROOT / "altitudes/data/altitudes.json"
+p.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
+print(f"gen_altitudes: {len(N)} nodes across levels 1-4 "
+      f"({', '.join(str(x['units']) + '@L' + str(x['n']) for x in LEVELS)}), "
+      f"{len(FINDINGS)} findings, {p.stat().st_size:,} bytes")

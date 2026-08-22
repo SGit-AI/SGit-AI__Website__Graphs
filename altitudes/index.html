@@ -3,16 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Twenty worked examples, with counts — graphs.sgit.ai</title>
-<meta name="description" content="Numbers for the three live vaults come from the published pages; numbers for repo artefacts come from parsing the documents — and the pack never mixes the two.">
-<link rel="canonical" href="https://graphs.sgit.ai/documents/worked-examples.html">
-<meta property="og:type" content="article">
+<title>The altitude ladder — graphs.sgit.ai</title>
+<meta name="description" content="An experiment: the same book at five altitudes, each level a compression of the level below it, every phrase descending into the units it compresses. Built bottom-up, with the graph behind each text shown beside it — and the repeats and contradictions the climb surfaced.">
+<link rel="canonical" href="https://graphs.sgit.ai/altitudes/index.html">
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="graphs.sgit.ai">
-<meta property="og:url" content="https://graphs.sgit.ai/documents/worked-examples.html">
-<meta property="og:title" content="Twenty worked examples, with counts">
-<meta property="og:description" content="Numbers for the three live vaults come from the published pages; numbers for repo artefacts come from parsing the documents — and the pack never mixes the two.">
+<meta property="og:url" content="https://graphs.sgit.ai/reviews/index.html">
+<meta property="og:title" content="The altitude ladder — one book at five altitudes">
+<meta property="og:description" content="20,000 words compress to 1,275, then to 300, then to 115. Each phrase hyperlinks down to what it compressed. The climb found a contradiction, a repeat and a measurable compression loss.">
 <meta name="twitter:card" content="summary">
-<link rel="alternate" type="text/markdown" href="../briefs/03__worked-examples-index.md" title="The raw markdown, which is the source of truth">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
@@ -33,13 +32,13 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl" href="../book/index.html">The book<span class="caret">&#9662;</span></a>
+      <a class="nl here" href="../book/index.html">The book<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../book/index.html">Table of contents</a>
       <a class="sl" href="../book/single.html">Read it in one page</a>
       <a class="sl" href="../book/changes.html">What changed between versions</a>
       <a class="sl" href="../reviews/index.html">The reviews</a>
-      <a class="sl" href="../altitudes/index.html">The altitude ladder</a>
+      <a class="sl here" href="../altitudes/index.html">The altitude ladder</a>
       <a class="sl" href="../book/meaning-through-connectivity.pdf">The print PDF (6&times;9)</a>
       <a class="sl" href="../book/meaning-through-connectivity-screen.pdf">The screen PDF (tablet)</a>
       </div>
@@ -77,7 +76,7 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl here" href="../documents/index.html">Site<span class="caret">&#9662;</span></a>
+      <a class="nl" href="../documents/index.html">Site<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../documents/index.html">The documents</a>
       <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
@@ -93,30 +92,28 @@
 </div></nav>
 
 <main class="doc">
-<div class="crumb"><a href="../index.html">graphs.sgit.ai</a> / <a href="index.html">documents</a> / worked-examples</div>
-<h1>Twenty worked examples, with counts</h1>
+  <div class="crumb"><a href="../index.html">graphs.sgit.ai</a> → <b>The altitude ladder</b></div>
+  <h1>The altitude ladder</h1>
+  <p class="lead">An experiment, run at the reviewer's request in <a href="../reviews/r004.html">review r004</a>: the same book at five altitudes, where <b>each level is a compression of the level below it</b>, and every highlighted phrase descends into the units it compressed. It was built bottom-up, because that is the only direction in which a compression can be honest. Two things are kept apart at every level, as the memo asks: <b>the graph</b> (the claims, their evidence and their state) and <b>the projection</b> (the text you read). The point is not a shorter book. It is that a compression puts sentences next to each other that the full text keeps forty pages apart, and what that proximity reveals is <a href="#findings">below</a>.</p>
 
-<div class="docmeta">
-  <span class="k">Kind</span><span class="v">Index · v1.0 · 21 August 2026</span>
-  <span class="k">Author</span><span class="v">Prepared by the SG/Send agentic team for graphs.sgit.ai</span>
-  <span class="k">Licence</span><span class="v">CC BY 4.0</span>
-  <span class="k">Source</span><span class="v"><a href="../briefs/03__worked-examples-index.md">raw markdown</a> · <a href="https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/briefs/03__worked-examples-index.md">view on GitHub</a></span>
-</div>
+  <div class="note"><b>What was built, and what was not.</b> Levels 1 to 3 are complete: the whole book in one paragraph, the six parts, and all seventeen units. Level 4 exists for <b>two chapters only</b> (chapter 2, <em>The five ideas</em>, and chapter 5, <em>Against schema-first</em>), which is the pilot the memo asked for. Level 5 is the book itself and is not duplicated here: every unit above links down into it. The graph layer is lifted for levels 1 and 2 and for the two drilled chapters; where it was not lifted, the node says so rather than showing an empty panel.</div>
 
-<h2 id="fact">The single most important thing in it</h2>
-<p class="lead">Numbers for the three live vaults come from the published pages; numbers for repo artefacts come from parsing the documents — and the pack never mixes the two.</p>
+  <h2 id="ladder-hd">Climb it</h2>
+  <p>Start at the top and descend, or jump to a level and read across it. The browser's address bar carries the unit, so any node is linkable.</p>
+  <div id="ladder"><p class="small dim">Loading the ladder…</p></div>
 
-<h2 id="on-site">Why it is on this site</h2>
-<p>The source of every number on /examples/, and of the shortlist of five.</p>
+  <h2 id="findings">What the climb found</h2>
+  <p>The reviewer predicted this: <em>"I think with this we actually will find some repeated content and some contradictions in the content, which would be quite interesting."</em> Five findings, and the prediction holds — including one contradiction the book already knew about, kept here as the control case that shows the method can tell a hidden contradiction from a disclosed one.</p>
+  <div id="findings-list"><p class="small dim">Loading the findings…</p></div>
 
-<h2 id="read">Read the document</h2>
-<div class="mdread-label">📄 Rendered from the <a href="../briefs/03__worked-examples-index.md">raw markdown</a> — which is the source of truth. This page is presentation.</div>
-<div class="mdread" id="mdread" data-src="../briefs/03__worked-examples-index.md"><noscript><p class="dim">In-page rendering needs JavaScript — <a href="../briefs/03__worked-examples-index.md">open the raw markdown</a>.</p></noscript></div>
+  <h2 id="shape">The shape of the pyramid</h2>
+  <p>Words per level, which is the experiment's simplest result: <b>~20,000 → 546 (two chapters, twelve sections) → 1,333 → 406 → 135</b>. Level 3 is where the book becomes readable in one sitting, level 2 is where it becomes quotable, and level 1 is where it becomes a claim you either accept or reject. Level 4 is the only level that grew per unit rather than shrank, because a section digest is longer than its share of a chapter digest — a compression ladder is not monotonic per unit, only in total.</p>
+  <p>What this makes possible, and what the memo is really reaching for: <b>translation and audience adaptation happen at a level, not over the whole book</b>. A business reader is served by level 2 with different examples; a technical reader by level 3 with the same claims; a different culture by re-projecting from the same graph rather than re-translating 20,000 words. The graph is what survives the change of audience; the projection is what changes.</p>
 
-<div class="pagenav">
-  <span><a href="index.html">← All documents</a></span>
-  <span><a href="../briefs/03__worked-examples-index.md">Raw markdown →</a></span>
-</div>
+  <div class="agent">
+    <h4>For an agent</h4>
+    <p>The ladder is the JSON at <a href="data/altitudes.json">/altitudes/data/altitudes.json</a>; this page is one projection of it. Each node carries <code>level</code>, <code>segments</code> (the projection, where a segment with a <code>to</code> field is a descent edge), <code>children</code> and <code>parents</code> (many-to-many, so a phrase may compress several units and a unit may be compressed by several phrases), <code>claims</code> with an evidence <code>state</code> of evidenced, argued or unevidenced, and <code>book</code>, the link down to level 5. The <code>coverage</code> block states exactly what was and was not lifted. If you are asked to summarise this book, prefer the level whose granularity matches the question rather than compressing the full text yourself: that is what these levels are for. If you are asked to check the book, start from <code>findings</code>.</p>
+  </div>
 </main>
 
 <footer class="site"><div class="cols">
@@ -162,7 +159,6 @@
     <a href="../llms.txt">llms.txt</a>
   </div>
 </div></footer>
-<script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
-<script src="../assets/mdreader.js" defer></script>
+<script src="../assets/altitudes.js" defer></script>
 </body>
 </html>
