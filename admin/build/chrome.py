@@ -59,6 +59,15 @@ NAV = [
         ("The full argument", "depth/index.html"),
         ("A graph at every boundary", "depth/boundaries.html"),
     ], ("depth/",)),
+    ("The vaults", "vaults/index.html", [
+        ("The vaults, opened", "vaults/index.html"),
+        ("VoiceDebrief", "vaults/voice-debrief/index.html"),
+        ("&hellip; the junction rule", "vaults/voice-debrief/junction.html"),
+        ("&hellip; the empty layer", "vaults/voice-debrief/absence.html"),
+        ("Regulation Graph", "vaults/regulation-graph/index.html"),
+        ("&hellip; the provenance chain", "vaults/regulation-graph/provenance.html"),
+        ("&hellip; the query engines", "vaults/regulation-graph/engines.html"),
+    ], ("vaults/",)),
     ("Examples", "examples/index.html", [
         ("Worked graphs, with real numbers", "examples/index.html"),
         ("Browser isolation", "examples/browser-isolation.html"),

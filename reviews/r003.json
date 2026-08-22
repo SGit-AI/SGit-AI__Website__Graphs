@@ -7,7 +7,7 @@
   "source": "briefs/14__founder-review__decouple-evidence-decisions.md",
   "version_reviewed": "v0.3.12",
   "state": "discussing",
-  "state_note": "Commented: the agent has responded to every item. Two items landed in the same release that published this review, because they are review tooling rather than book content: the decisions register (item 4) and the enrichment threads on r001 and r002 (item 6). The three decisions this review opens are in the register above; the decoupling refactor and the case-study programme wait on them. The launch of issues-fs.sgit.ai on 22 August is external evidence for item 1 and splits item 3's programme into written case studies and distillations from sibling estates; decision D3 is revised accordingly.",
+  "state_note": "Commented: the agent has responded to every item. Two items landed in the same release that published this review, because they are review tooling rather than book content: the decisions register (item 4) and the enrichment threads on r001 and r002 (item 6). The three decisions this review opens are in the register above; the decoupling refactor and the case-study programme wait on them. The launch of issues-fs.sgit.ai on 22 August is external evidence for item 1 and splits item 3's programme into written case studies and distillations from sibling estates; decision D3 is revised accordingly. On 22 August the founder answered D3 by starting the programme himself: the VoiceDebrief and Regulation Graph analyses are published, ahead of the decoupling and the ladder.",
   "decisions": [
     {
       "n": 1,
@@ -40,7 +40,9 @@
         "Confirm the original order and supply guidance vault by vault",
         "Reorder (say which first)"
       ],
-      "state": "open"
+      "state": "answered",
+      "answer": "Neither of the proposed orders: the founder chose **the written vault analyses first, starting with VoiceDebrief and the Regulation Graph**, ahead of the decoupling refactor and the ladder work. Both are published at [/vaults/](../vaults/index.html) as of v0.3.19. The distillations from sibling estates (IssuesFS, EmailFS) and the remaining vaults stay queued behind them.",
+      "date": "22 August 2026"
     }
   ],
   "items": [
@@ -99,7 +101,7 @@
         "site navigation",
         "the book's future evidence citations"
       ],
-      "state": "discussing",
+      "state": "applied",
       "thread": [
         {
           "date": "22 August 2026",
@@ -109,8 +111,15 @@
             "[issues-fs.sgit.ai](https://issues-fs.sgit.ai/) — the IssuesFS entry becomes a distillation, not a write-up",
             "[sgraph.ai's Email-FS-lite protocol section](https://sgraph.ai/en-gb/library/how-it-works/email-fs-lite.md)"
           ]
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the agent",
+          "note": "**Started, and the shape held.** The founder brought this item forward ahead of the decoupling (D1) and the ladder (r004 D1), naming the first two vaults himself. [/vaults/](../vaults/index.html) is now a section with one folder and three pages per vault, the vault's own published screenshots, its derived facts quoted rather than recounted, and the **what the book will cite** block this item proposed, written per page rather than reverse-engineered later. One thing the first two analyses proved about the method: the depth is real. Each vault carried two ideas that a chapter could not have held — the junction rule and the empty layer for VoiceDebrief, the provenance chain and the query engines for the Regulation Graph — and the second of those settles r001 item 5's outstanding verification.",
+          "sources": []
         }
-      ]
+      ],
+      "applied_in": "v0.3.19"
     },
     {
       "n": 4,

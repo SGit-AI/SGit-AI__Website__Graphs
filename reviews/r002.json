@@ -18,7 +18,9 @@
         "On the descriptor strip",
         "As the introduction's opening claim"
       ],
-      "state": "open"
+      "state": "answered",
+      "answer": "**For humans and agents** becomes the subtitle, under *Fractal Semantic Graphs: Meaning Through Connectivity*. Settled with r001's D1 on 22 August 2026, exactly as this item proposed: the phrase names the audience rather than competing for space in the title.",
+      "date": "22 August 2026"
     },
     {
       "n": 2,
@@ -56,7 +58,7 @@
         "introduction",
         "metadata sheet"
       ],
-      "state": "proposed"
+      "state": "agreed"
     },
     {
       "n": 2,

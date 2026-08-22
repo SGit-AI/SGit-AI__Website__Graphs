@@ -7,7 +7,7 @@
   "source": "briefs/11__founder-review__first-reading.md",
   "version_reviewed": "v0.3.7",
   "state": "discussing",
-  "state_note": "In discussion: on 22 August the librarian of the source repository answered this review's needs (brief 13). Eleven of the twelve needs across r001 and r002 are met; only the reviewer's reading screenshots remain outstanding. The founder decisions are unchanged and open, with one reframed: the title choice is now three-way, because the concept already carries the published name G3. A founder pointer then added a third estate: sgraph.ai's library (served from a public vault, every page machine-readable), which upgrades the EmailFS case study to a live deployment and adds four more public vaults. The reviewer then calibrated the librarian's finding: docs.diniscruz.ai predates the workflow that produced the newer corpus, where the meaning-through-connectivity documents were written, so the title decision weighs recency of thinking alongside publication history (item 2's thread). Review r003 (22 August) then reordered the sequencing: the evidence programme precedes the next book version, and the decoupling of book from website is proposed as the enabling refactor. Nudged by the calibration, the librarian then issued addendum 01 (brief 15), correcting its own pack: the title phrase has a dated single origin (the foundational Issues-FS document of 5 February 2026, whose Part 3 also carries the fractal principle, so both candidate titles come from one file), the chapter audit gains a measurable dilution (ten principles at source, five in chapter 2), the lineage chapter's primary source moves to that document's Part 4, the database correction gains four shipped backends, and the IssuesFS case study is fully resourced. Decision D1 is reframed accordingly. This review's open decisions are explicit in the register above. On 22 August the Issues-FS estate published its own site, which meets item 8's largest need in full, moves item 5's evidence into public view, makes item 2's origin document citable, and raises one numbers discrepancy between the two estates (ask N15).",
+  "state_note": "In discussion: on 22 August the librarian of the source repository answered this review's needs (brief 13). Eleven of the twelve needs across r001 and r002 are met; only the reviewer's reading screenshots remain outstanding. The founder decisions are unchanged and open, with one reframed: the title choice is now three-way, because the concept already carries the published name G3. A founder pointer then added a third estate: sgraph.ai's library (served from a public vault, every page machine-readable), which upgrades the EmailFS case study to a live deployment and adds four more public vaults. The reviewer then calibrated the librarian's finding: docs.diniscruz.ai predates the workflow that produced the newer corpus, where the meaning-through-connectivity documents were written, so the title decision weighs recency of thinking alongside publication history (item 2's thread). Review r003 (22 August) then reordered the sequencing: the evidence programme precedes the next book version, and the decoupling of book from website is proposed as the enabling refactor. Nudged by the calibration, the librarian then issued addendum 01 (brief 15), correcting its own pack: the title phrase has a dated single origin (the foundational Issues-FS document of 5 February 2026, whose Part 3 also carries the fractal principle, so both candidate titles come from one file), the chapter audit gains a measurable dilution (ten principles at source, five in chapter 2), the lineage chapter's primary source moves to that document's Part 4, the database correction gains four shipped backends, and the IssuesFS case study is fully resourced. Decision D1 is reframed accordingly. This review's open decisions are explicit in the register above. On 22 August the Issues-FS estate published its own site, which meets item 8's largest need in full, moves item 5's evidence into public view, makes item 2's origin document citable, and raises one numbers discrepancy between the two estates (ask N15). On 22 August the title decision was answered: Fractal Semantic Graphs: Meaning Through Connectivity, for humans and agents. Item 5's verification need is met by the vault analyses.",
   "decisions": [
     {
       "n": 1,
@@ -18,7 +18,9 @@
         "Fractal Semantic Graphs: Meaning Through Connectivity (leading with Part 3)",
         "Elevate G3 (the published name, alone or combined)"
       ],
-      "state": "open"
+      "state": "answered",
+      "answer": "**Fractal Semantic Graphs: Meaning Through Connectivity**, with **for humans and agents** as the subtitle. Both halves come from the foundational document of 5 February 2026: the title from Part 3, the phrase after the colon from the document's own subtitle. G3 stays as history for the lineage chapter. Decided by the founder on 22 August 2026, and the propagation (cover, spine, wrap, half-title, colophon, running heads, metadata sheet, PDF filenames, site identity) is staged for the v0.4.0 identity release, which the founder deprioritised in favour of the vault analyses.",
+      "date": "22 August 2026"
     },
     {
       "n": 2,
@@ -56,7 +58,7 @@
         "site identity",
         "store listings"
       ],
-      "state": "discussing",
+      "state": "agreed",
       "thread": [
         {
           "date": "22 August 2026",
@@ -93,6 +95,12 @@
           "sources": [
             "[The five foundational concepts](https://issues-fs.sgit.ai/concepts/index.html), C1 Thinking in Graphs"
           ]
+        },
+        {
+          "date": "22 August 2026",
+          "from": "Dinis Cruz, the reviewer",
+          "note": "\"The official title will be **Fractal Semantic Graphs: Meaning Through Connectivity** with **for humans and agents** as the sub-title.\" Decision D1 answered; item agreed and staged for v0.4.0.",
+          "sources": []
         }
       ]
     },
@@ -185,9 +193,7 @@
       "reviewer_says": "A mistake in some of the comments is when we say we don't use databases. I have used graph databases. What I mean is that I don't have live graph databases. One of the vaults has a full-blown SPARQL and RDF sort of query, one even has SQLite in the browser: we load stuff, we delete stuff, we load on demand. It's about serverless and ephemeral infrastructure.",
       "comment": "Agree, and the book already half-knows it: chapter 7 describes the regulation vault's SQLite interface and RDF/Turtle export while the honesty table says 'No SPARQL or Cypher in the browser. No RDF or JSON-LD in the code.' Both sentences are true of the source repository's code and false as a description of the work as experienced, which is exactly the kind of reading a correction exists for. The accurate claim is stronger, not weaker: databases and query languages are used deliberately as ephemeral, in-browser, serverless instruments, spun up on demand and thrown away, and that ephemerality is the argument.",
       "proposal": "Reword at the sources and let every projection inherit: the front page honesty cell and chapter 12's absent-list change from absolute abstinence to the precise claim ('no live, persistent graph database anywhere; ephemeral in-browser engines, including SQLite and RDF querying in the vaults, are used and demonstrated, loaded on demand and discarded'). The 'not a graph database pitch' note stays, because it is about the thesis, and it remains true. Before landing: open the vaults and record exactly which one carries the SPARQL/RDF querying and which the in-browser SQLite, so the correction cites what it names.",
-      "needs": [
-        "Verification pass over the three public vaults to attribute the query capabilities precisely (agent can do this; no access blockers)."
-      ],
+      "needs": [],
       "impact": [
         "front page",
         "chapter 12",
@@ -222,6 +228,14 @@
           "sources": [
             "[What ships](https://issues-fs.sgit.ai/shipped/index.html) and its corrections page",
             "Two real packages (issues-fs 0.7.0, issues-fs-cli 0.3.0); two published-but-empty wheels; four unpublished"
+          ]
+        },
+        {
+          "date": "22 August 2026",
+          "from": "the agent",
+          "note": "**The verification need is met.** This item asked for a pass over the public vaults to attribute the query capabilities precisely before any wording changed. That analysis is now published at [the query engines](../vaults/regulation-graph/engines.html): the Regulation Graph's eleven views include **SQLite compiled to WebAssembly (sql.js), in memory**, and **rdflib with Turtle export**, both client-side over the vault bridge, with the vault never written by the app. Proposed wording is on that page, offered for agreement rather than applied, and it keeps the MGraph-DB line unchanged. The correction can land whenever you agree the sentence.",
+          "sources": [
+            "[The query engines, and what they settle](../vaults/regulation-graph/engines.html)"
           ]
         }
       ]

@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.3.18 (21 August 2026). Published by the sgit project — participant
+Site version: v0.3.19 (21 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /briefs/ is the source of truth and carries the same licence.
 
@@ -193,6 +193,20 @@ introduction and sixteen chapters in six parts, **generated from the site's own
 pages** so the two cannot drift
 (CI fails the build if a source page changes without the book regenerating).
 
+- https://graphs.sgit.ai/vaults/index.html — in-depth analysis of the graph vaults
+  published read-only on sgit.ai, one folder and several pages each. **This is the
+  evidence estate, not the book**: the pages are longer than a chapter allows and each
+  closes with an explicit "what the book will cite from this" block. Published so far:
+  **VoiceDebrief** (92 files, 18 commits; the junction rule — two paragraphs each lifted
+  into typed nodes and joined node-to-node through an intermediate layer, never
+  document-to-document; and an annotation layer deliberately left empty because no
+  duty-holder appears in the text) and the **Regulation Graph** (1,523 nodes, 1,944
+  edges; the EU AI Act parsed from official Formex XML with the SHA-256 of retrieved
+  bytes at the end of every provenance chain; SQLite over WebAssembly and rdflib with
+  Turtle export, both client-side and ephemeral). Screenshots are the vaults' own
+  published figures, re-published under CC BY 4.0; counts are the vaults' derived facts,
+  quoted rather than recounted. VoiceDebrief's parts 1 to 3 run on an explicitly
+  fictional corpus — carry that label if you cite it.
 - https://graphs.sgit.ai/reviews/index.html — the reviews of the book, run as a
   workflow: feedback in any form is normalised into numbered items, the agent comments
   and proposes before changing anything, agreed items land per release, and each
