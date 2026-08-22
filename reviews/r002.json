@@ -1,0 +1,103 @@
+{
+  "id": "r002",
+  "title": "A book for humans and agents",
+  "reviewer": "Dinis Cruz",
+  "received": "22 August 2026",
+  "source_kind": "voice memo (transcript preserved verbatim)",
+  "source": "briefs/12__founder-review__humans-and-agents.md",
+  "version_reviewed": "v0.3.8",
+  "state": "commented",
+  "state_note": "The agent has commented on every item and changed nothing. Several items here interlock with review r001 (the title above all): the responses say where, so one decision can settle both reviews' overlapping asks.",
+  "items": [
+    {
+      "n": 1,
+      "topic": "The identity: a book for humans and agents",
+      "reviewer_says": "We should just embrace it, and even the title should probably mention this, and we should have a good intro for it: this is a book for humans and agents.",
+      "comment": "Agree, and it names what the book already half-is: every chapter carries an agent note, the site publishes llms.txt and markdown twins, and the introduction ends addressed to agents. The tension is with r001 item 2: the title cannot carry fractal, meaning-through-connectivity AND humans-and-agents without collapsing under its own weight. The phrase is strongest as the book's stated audience, not as a third clause in the name.",
+      "proposal": "One allocation to settle both reviews: title **Fractal Semantic Graphs** (r001), subtitle **Meaning Through Connectivity**, and **'A book for humans and agents'** as the cover descriptor line and the opening statement of the introduction, which gains a section saying plainly how each kind of reader is expected to use it (item 5 carries the agent half of that statement). If the descriptor should instead keep the current discipline line, the humans-and-agents statement still opens the introduction. One question: descriptor on the cover, or introduction only?",
+      "needs": ["A decision on the title allocation, jointly with r001 item 2."],
+      "impact": ["cover", "introduction", "metadata sheet"],
+      "state": "proposed"
+    },
+    {
+      "n": 2,
+      "topic": "Agent notes rewritten as briefings: state the deviation from standard usage",
+      "reviewer_says": "On the agent's guidance, it's almost like: this is Claude that you're helping writing this. Think of the bits of the content that are not normally in your normal memory and the normal usage of terms: property graphs, how people usually use graph databases, the ephemeral concepts we have here, acceptance, the fractal stuff. Say how to think about the page and where it deviates from standard literature, and put indexes for the agent to go and find more.",
+      "comment": "Agree, and it is a sharper design than what exists: today's agent notes summarise the chapter, which duplicates what an agent can read anyway. The valuable note is the delta against the agent's prior: where this book's usage of a term departs from the standard usage already in its training, what to unlearn, and where to look next. That is a briefing, not a summary.",
+      "proposal": "A full pass over the seventeen agent notes with a fixed shape: (1) how this chapter deviates from standard usage (for example: edges carry meaning here, not properties; databases are ephemeral instruments here, never live infrastructure; fractal is a falsifiable claim here, not a metaphor); (2) what to carry forward when generating; (3) the index: where to fetch more (the machine surface of item 7). Rides naturally with the r001 item 3 chapter audit, since both walk every chapter once.",
+      "needs": [],
+      "impact": ["all agent notes", "STYLE.md (the shape becomes policy)"],
+      "state": "proposed"
+    },
+    {
+      "n": 3,
+      "topic": "The book is a graph: build the graph version",
+      "reviewer_says": "The book itself is a graph. Each section needs to have facts, hypotheses, its own ontology, its own defined terms, because we get meaning through connectivity. We should have a graph version of the book, and an abstraction layer where I can see a version that is just facts, just key concepts, the narrative, the objectives, the key points of a chapter.",
+      "comment": "Agree, and it is the book finally eating its own cooking: a book that argues documents are projections of graphs is itself, today, a document with no graph behind it. Honesty requires saying the true order here: the graph will be lifted FROM the written chapters (the decompilation direction the book itself describes, author-confirmed), and then becomes the source the projections check against. This is the largest single piece of work in either review and it should start narrow and real, not wide and hollow.",
+      "proposal": "A pilot before a platform: define the node types (claim, fact, hypothesis, term, evidence, source) and reuse the published edge set (backed_by, gives_rise_to, defines, deviates_from as a proposed extension); lift ONE chapter into book/graph/chNN.json with every node source-mapped to its span, and have the reviewer confirm the lift, since the author is the oracle. The abstraction layers (facts only, concepts only, narrative) then fall out as filters over node types, which is the book's own render-the-query rule applied to itself. Scale to all chapters only after the pilot's cost and value are known. Candidate pilot chapter: chapter 5 (against schema-first), because it is claim-dense and its evidence is thin, so the ghosts will show honestly.",
+      "needs": ["Agreement on the pilot chapter.", "The reviewer's confirmation pass on the pilot lift (the author is the oracle for a decompilation)."],
+      "impact": ["new machine surface (book/graph/)", "pipeline", "eventually every chapter"],
+      "state": "proposed"
+    },
+    {
+      "n": 4,
+      "topic": "The evidence layer: sources, cross-indexes, and the unsourced 10,000 hours",
+      "reviewer_says": "We should have a whole section of references, JSON files, cross-indexes, sources, links, which provide the body of evidence and the follow-up. The 10,000 hours: we mention it, but we don't source it. How do we know that our version is the correct one? That is a fact that needs to be verified. The words of the book are just words; they should be backed by evidence.",
+      "comment": "Agree, and the chosen example is perfect because it is the book's front door: the 10,000-hours story carries three checkable claims (the 1993 violinist study said average not threshold; half the top group had not reached it; 242 papers with 200,000 supporting citation paths) and currently cites only the corpus brief that told it to us. A book whose whole argument is that claims need downward edges to evidence opens with its best story resting on one internal pointer. Fixing this first is both the correction and the demonstration.",
+      "proposal": "A facts register: every load-bearing external claim gets an entry (claim, where it appears, source, verification state: verified against the source, sourced to the corpus only, or unverified and flagged), machine-readable and rendered as the book's references section. First entries, verified not pasted: the 1993 study (Ericsson, Krampe and Tesch-Romer, The Role of Deliberate Practice in the Acquisition of Expert Performance), the popularisation (Gladwell, Outliers, 2008), the original author's corrections (Ericsson's later writing, including Peak, 2016), and the citation-network numbers, whose underlying study the corpus brief must be made to name, because today OUR retelling has exactly the unsourced-claim shape the story warns about. Register entries feed the book graph (item 3) as evidence nodes, and print renders them as the references section with footnotes (item 8).",
+      "needs": ["The corpus brief behind the 242-papers figure, to identify the underlying citation-network study it drew from."],
+      "impact": ["front page hook", "chapter 5", "new references section", "print interior"],
+      "state": "proposed"
+    },
+    {
+      "n": 5,
+      "topic": "Verification as a designed use: hand the book to an agent",
+      "reviewer_says": "The expectation is not that the human follows up the clues. The human can give the book to an agent and ask: how much of this is correct? Can you check that the references are correct, that this is accurate? Someone should be able to create a summary, an infographic. Let's dogfood the book ourselves; that should make the book stronger.",
+      "comment": "Agree, and it converts the evidence layer from furniture into a feature: the references exist so that verification is cheap, and the book should say so. Dogfooding it also produces something no book usually has: a published verification report of itself, with the failures left visible.",
+      "proposal": "Three parts. (1) The introduction states the designed use: reader hands the book to an agent and asks the checking questions. (2) The book publishes the checking task itself: a standing verification prompt (check every register entry against its source; report agreements, discrepancies and unreachable sources) that any agent can run cold. (3) We run it first, on this book, with a fresh agent, and publish the result as the first verification report, dated and versioned, failures included. Summaries and infographics on demand are noted as uses the machine surface already supports and the toolbox page (item 7) will state.",
+      "needs": ["Item 4 landed first (there must be a register to verify)."],
+      "impact": ["introduction", "new verification report page", "reviews section"],
+      "state": "proposed"
+    },
+    {
+      "n": 6,
+      "topic": "Per-chapter graph visualisation: show how deep the evidence goes",
+      "reviewer_says": "For each chapter we can provide a visualisation of what that graph means: here's how deep the agent can go, here's how deep the evidence is. And that's okay when I'm making an assertion where there's no evidence connected so far: that means there's less meaning on the words.",
+      "comment": "Agree, and the honesty inversion is the best part: a chapter graph that proudly shows its unevidenced assertions as ghosted nodes applies the cover's own ghosted-edge rule to the text itself. Depends entirely on item 3 existing for the chapter being drawn; without the graph, the picture would be decoration, which the book forbids.",
+      "proposal": "Once the item 3 pilot lands: a per-chapter figure rendered from book/graph/chNN.json (mermaid now, since the pipeline already renders it; the interactive canvas arrives with the queued T16 work), claims and terms as nodes, backed_by edges downward to evidence, ghosted styling for assertions with nothing beneath them, and a one-line legend: solid is evidenced, ghosted is not yet. Web and screen editions get the figure in colour; print gets it monochrome like everything else.",
+      "needs": ["Item 3's pilot chapter graph."],
+      "impact": ["chapter pages", "book editions", "T16 (visualisation) moves closer"],
+      "state": "proposed"
+    },
+    {
+      "n": 7,
+      "topic": "The agent toolbox: publish the machine surface as tools",
+      "reviewer_says": "A book for humans and agents means part of the website is very machine readable and agent driven. We can even say: we provide a set of tools that agents can already use to make their life easier.",
+      "comment": "Agree, and most of the toolbox already exists unnamed: llms.txt and llms-full.txt, every chapter's markdown twin, book/manifest.json, the per-version diff data, the reviews JSON, the sitemap. What is missing is the page that presents them AS tools, with the task each one serves.",
+      "proposal": "An agent toolbox page under the book: each machine endpoint with its task recipe (to read the whole book in one fetch, to diff any two versions, to check what a review changed, to verify the register, to summarise a chapter from its markdown), written as instructions an agent can follow cold, and stated in llms.txt so agents find it first. The verification prompt of item 5 lives here. Cheap to build, high leverage, no dependencies.",
+      "needs": [],
+      "impact": ["new page", "llms.txt"],
+      "state": "proposed"
+    },
+    {
+      "n": 8,
+      "topic": "Footnotes for print: hyperlinks die on paper",
+      "reviewer_says": "Especially for the printed version, links between things should be done using footnotes, because the hyperlink works on the web and on the PDF, but won't work on a printed version.",
+      "comment": "Agree, and it is a real defect of the current interior: external references render as styled text whose destination a paper reader cannot recover. The typesetter supports real footnotes, so this is buildable now, independent of everything else in both reviews.",
+      "proposal": "The print pipeline converts external links into numbered footnotes carrying the URL (WeasyPrint's footnote support does the placement), while book-internal cross-references become page references computed by the typesetter, the same mechanism the contents page already uses, so they cannot disagree with the pagination. The web and screen editions keep hyperlinks. Once the references section (item 4) exists, footnotes can cite register entries instead of raw URLs, which reads better in print.",
+      "needs": [],
+      "impact": ["print interior", "print CSS", "page count and spine"],
+      "state": "proposed"
+    },
+    {
+      "n": 9,
+      "topic": "The missing pieces map, and the shape of the next versions",
+      "reviewer_says": "The missing pieces of the puzzle should be on a separate sort of mapping. The way we're describing right now, we start to see the graph of evidence and how everything fits together. Capture this on a review, create a debrief, and map out how you would change the book from here.",
+      "comment": "Agree, and the site already has the pattern: the brief pack's gap catalogue (G1 to G12) did exactly this for the corpus. The book now needs its own: unsourced claims, unevidenced assertions, promised-but-absent chapters, all in one named place, feeding the ghosted nodes of item 6. This page is the debrief the memo asks for; the sequencing below is the map.",
+      "proposal": "The map: a living missing-pieces register for the book (a sibling of the facts register, or a state within it), rendered as a page and consumed by the chapter graphs. The sequencing, folding in r001: FIRST the standalone wins with no dependencies: footnotes for print (item 8), the agent toolbox (item 7), the r001 database correction. THEN the evidence layer (item 4) and the verification dogfood (item 5), which also fix the book's front door. THEN v0.4.0: the title allocation (item 1 with r001 item 2), the humans-and-agents introduction, the lineage and fractal chapters. THEN the graph pilot (item 3) and its first chapter visualisation (item 6), which set the pattern the remaining chapters follow alongside r001's screenshots, vaults chapter and case studies.",
+      "needs": ["The reviewer's confirmation of this sequencing, or a reordering."],
+      "impact": ["process", "new register", "release plan"],
+      "state": "proposed"
+    }
+  ]
+}
