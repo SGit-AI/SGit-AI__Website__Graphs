@@ -1,295 +1,296 @@
 {
-  "id": "r004",
-  "title": "The altitude ladder: one book at five altitudes",
-  "reviewer": "Dinis Cruz",
-  "received": "22 August 2026",
-  "source_kind": "voice memo (transcript preserved verbatim)",
-  "source": "briefs/16__founder-review__altitude-ladder.md",
-  "version_reviewed": "v0.3.14",
-  "state": "commented",
-  "state_note": "Commented, and the central item is built rather than proposed: this memo asks for an experiment, and an experiment that is only described has not been run. The ladder is live at /altitudes/ with levels 1 to 3 complete, level 4 for two chapters, the graph layer lifted on those paths, and five findings from the climb. No book content changed: the ladder is a new artefact beside the book, not an edit to it. Three decisions are open, and the first of them is whether the experiment earned a place in the pipeline at all. A second round on 22 August acted on the reviewer's UX feedback: the ladder is now resizable columns with per-level indexes (item 1's thread), the descent links carry a switchable colour meaning (item 7), and every level has its own ontology and taxonomy (item 8), which produced finding 7 — the classes do not survive the climb. Four decisions now open. A third round on the same day fixed the column flicker (item 1's thread) and added the graph view (item 9), which brought the site its first vendored dependency and decision D5 with it. A third round (brief 17) added the concept layer — a dictionary crossed with a thesaurus, with computed peaks — and rebuilt the graph explorer around exploring from any node and keeping the view you made. Six decisions now open, the newest being whether to build the path-query language the book says does not exist. A fourth round built the path query the previous round declined to build, and reframed the findings register: contradictions are now states rather than accusations, with five deterministic checks running every build.",
-  "decisions": [
+ "id": "r004",
+ "title": "The altitude ladder: one book at five altitudes",
+ "reviewer": "Dinis Cruz",
+ "received": "22 August 2026",
+ "source_kind": "voice memo (transcript preserved verbatim)",
+ "source": "briefs/16__founder-review__altitude-ladder.md",
+ "version_reviewed": "v0.3.14",
+ "state": "commented",
+ "state_note": "Commented, and the central item is built rather than proposed: this memo asks for an experiment, and an experiment that is only described has not been run. The ladder is live at /altitudes/ with levels 1 to 3 complete, level 4 for two chapters, the graph layer lifted on those paths, and five findings from the climb. No book content changed: the ladder is a new artefact beside the book, not an edit to it. Three decisions are open, and the first of them is whether the experiment earned a place in the pipeline at all. A second round on 22 August acted on the reviewer's UX feedback: the ladder is now resizable columns with per-level indexes (item 1's thread), the descent links carry a switchable colour meaning (item 7), and every level has its own ontology and taxonomy (item 8), which produced finding 7 — the classes do not survive the climb. Four decisions now open. A third round on the same day fixed the column flicker (item 1's thread) and added the graph view (item 9), which brought the site its first vendored dependency and decision D5 with it. A third round (brief 17) added the concept layer — a dictionary crossed with a thesaurus, with computed peaks — and rebuilt the graph explorer around exploring from any node and keeping the view you made. Six decisions now open, the newest being whether to build the path-query language the book says does not exist. A fourth round built the path query the previous round declined to build, and reframed the findings register: contradictions are now states rather than accusations, with five deterministic checks running every build.",
+ "decisions": [
+  {
+   "n": 1,
+   "item": 1,
+   "question": "Does the experiment continue? Three ways to take it: **stop** (the ladder stays as a published experiment, and the book carries on as it is); **finish the pilot** (take level 4 across all seventeen units, keeping the graph layer where it is); or **adopt** (the ladder becomes part of the build, authored in `content/altitudes/`, gate-checked like the book, with level 4 complete and the graph layer lifted everywhere). The agent recommends finishing the pilot first: the sharpest findings came from level 3 and the two drilled chapters, and the cost of the next twelve chapters is now measurable rather than guessed.",
+   "options": [
+    "Finish the pilot: level 4 for all seventeen units (recommended)",
+    "Adopt into the build now",
+    "Stop here, keep it as a published experiment"
+   ],
+   "state": "open"
+  },
+  {
+   "n": 2,
+   "item": 4,
+   "question": "The findings need a home. Do repeats and contradictions become a **standing register** (a page like the reviews register, where each finding has a state and is closed by a release), or do they stay a **per-run output** of the ladder, regenerated and re-read each time? The agent recommends the standing register: a contradiction that is found, forgotten and re-found is not a finding, it is a treadmill.",
+   "options": [
+    "A standing register with states (recommended)",
+    "A per-run output only"
+   ],
+   "state": "open"
+  },
+  {
+   "n": 3,
+   "item": 5,
+   "question": "Which audience variant is worth building first, once the ladder is stable: a **business** projection of level 2, a **graph-literate** projection of level 3, or a **non-English** projection of level 2 (the translation case, which tests whether the graph really is what survives)? Each is one re-projection from the same graph, not a new book.",
+   "options": [
+    "Business, from level 2",
+    "Graph-literate, from level 3",
+    "A non-English projection of level 2",
+    "None yet: stabilise the ladder first"
+   ],
+   "state": "open"
+  },
+  {
+   "n": 4,
+   "item": 8,
+   "question": "The per-level ontologies and taxonomies are authored by the agent and are a first pass: the classes are defensible but not confirmed, and the author is the oracle for a classification of their own book. Confirm them, or correct the classes that are wrong? The most arguable calls: chapter 4 (the edge set) is classed **Prescription** rather than Apparatus; the Introduction is classed **Argument** rather than Signpost; and level 4's class vocabulary is about what a section does to the reader, which is a different kind of scheme from every level above it.",
+   "options": [
+    "Confirm as authored",
+    "Correct specific classes (say which)",
+    "Rework the class vocabulary at a level"
+   ],
+   "state": "open"
+  },
+  {
+   "n": 5,
+   "item": 9,
+   "question": "This site now carries its **first vendored third-party dependency** (Cytoscape.js 3.30.2, MIT, 373 KB, committed at /assets/vendor/). Everything else here is hand-written with no runtime dependencies, and that has been a stated property. Keep it (a real graph library earns its place for a real graph), replace it with a hand-written layout to preserve the no-dependency claim, or keep it and state the exception explicitly in the engineering page and chapter 12's honesty table?",
+   "options": [
+    "Keep both, and state the exception in the honesty table (recommended)",
+    "Keep both, no further statement",
+    "Replace Cytoscape with a hand-written layout, keep marked"
+   ],
+   "state": "open",
+   "correction": "**Corrected 23 August 2026, and the correction matters to the answer.** The question above says everything else here is hand-written with no runtime dependencies. That was wrong when it was written. Every reader page under `/documents/` has loaded **marked** from `cdn.jsdelivr.net` since the documents section shipped, and `assets/mdreader.js` still imports **Mermaid** from the same host. So Cytoscape was not the first third-party dependency; it was the first **vendored** one, and the two that came before it were worse for the property at stake, because a content delivery network is a third party the page must reach at read time. The record is left standing and corrected beside itself rather than edited, which is the discipline the corpus calls supersede, never delete. What changed in v0.3.24: marked is now vendored at `assets/vendor/marked.min.js` (MIT, 35 KB) and no page fetches it from a network; the Mermaid import stays, is best-effort, and is now stated in `LICENSES.md` instead of being silent. The decision is unchanged in shape but the honest count is **two vendored libraries and one stated exception**, not one."
+  },
+  {
+   "n": 6,
+   "item": 11,
+   "question": "One part of the memo is deliberately **not** built, and it is the interesting part. Paths can now be traced and read, but they cannot be **queried**: there is no way to say \"find every path from a concept to a piece of evidence that goes grounds → appears_in → backed_by\". That is a path-query language, and [chapter 12](../book/ch-12-what-ships-what-is-argued.html) currently lists exactly that under what does not exist anywhere. Building one here would make the honesty table wrong in an interesting way. Do we (a) leave it unbuilt and let the honesty table stand, (b) build a small pattern matcher over this graph only and amend chapter 12 to say a demonstrator exists here, or (c) treat it as the next experiment in its own right?",
+   "options": [
+    "Leave it unbuilt; the honesty table stands (recommended for now)",
+    "Build a demonstrator here and amend chapter 12",
+    "Make it the next experiment"
+   ],
+   "state": "answered",
+   "date": "22 August 2026",
+   "answer": "Build it. The founder's answer was a question — *\"why can't you create that path-query UI?\"* — and the honest reply is that nothing technical stopped it: the caution was about a **content** claim, not a capability. Built at [the graph page](../altitudes/graph.html): a pattern is a start filter and up to three edge-and-node steps, matches print as sentences using each edge's verb or inverse depending on direction, cycles cannot spin, and the result is capped at 300 **and says when it hit the cap**. What follows for the honesty table is option (b) in spirit but not in sequence: the page **states its own falsification in full** and proposes the precise wording, and chapter 12 changes only when you agree it, because book content still changes by agreement. No reader is misled in the meantime, because the correction sits beside the thing that caused it."
+  }
+ ],
+ "items": [
+  {
+   "n": 1,
+   "topic": "Build the ladder: five levels, each a compression of the one below",
+   "reviewer_says": "Can we try to create five or seven versions of the book, which are all at different altitude? Let's say the current book is level five. The top level is almost a paragraph, like the executive summary, and each of the phrases hyperlinks to the next level, and then that has the same thing, all the way down. It needs to be from the bottom up: each layer is a compression of the previous layer that captures the core ideas.",
+   "comment": "Built, because a described experiment is not an experiment. Five levels: the book (level 5, ~20,000 words), the sections (level 4), the seventeen units (level 3, 1,333 words), the six parts (level 2, 406 words), the book in one paragraph (level 1, 135 words). Built bottom-up as instructed, and that instruction turned out to be load-bearing rather than stylistic: writing level 1 first would have produced a marketing paragraph that the levels below could not have supported, and the discipline of only saying at a level what the level below actually contains is what generated every finding in item 4. One honest result to record: the pyramid is not monotonic per unit. Total words fall at every step, but a level 4 section digest is longer than that section's share of the level 3 chapter digest, because compression is per parent, not per descendant.",
+   "proposal": "Coverage as the memo suggested: levels 1 to 3 complete, level 4 for two chapters (chapter 2, The five ideas, and chapter 5, Against schema-first, which is also r002's proposed graph pilot, so the two experiments share a chapter). The ladder is at **/altitudes/**, the data at /altitudes/data/altitudes.json, and every unit links down to level 5 in the book. Whether it goes further is decision D1.",
+   "needs": [],
+   "impact": [
+    "new section (/altitudes/)",
+    "new generator (gen_altitudes.py)",
+    "no book content"
+   ],
+   "state": "applied",
+   "applied_in": "v0.3.15",
+   "thread": [
     {
-      "n": 1,
-      "item": 1,
-      "question": "Does the experiment continue? Three ways to take it: **stop** (the ladder stays as a published experiment, and the book carries on as it is); **finish the pilot** (take level 4 across all seventeen units, keeping the graph layer where it is); or **adopt** (the ladder becomes part of the build, authored in `content/altitudes/`, gate-checked like the book, with level 4 complete and the graph layer lifted everywhere). The agent recommends finishing the pilot first: the sharpest findings came from level 3 and the two drilled chapters, and the cost of the next twelve chapters is now measurable rather than guessed.",
-      "options": [
-        "Finish the pilot: level 4 for all seventeen units (recommended)",
-        "Adopt into the build now",
-        "Stop here, keep it as a published experiment"
-      ],
-      "state": "open"
+     "date": "22 August 2026",
+     "from": "Dinis Cruz, the reviewer",
+     "note": "\"At the moment there doesn't seem to be a way to see and navigate all items in a layer. For example at the moment I need to go to L1 to see a particular L2 entry. But at least between layers we shouldn't change the layer page/section when clicking on entries: if I'm in L1 and click on the link, in the same page/UI the L2 content should appear on a side panel (resizable) so that it becomes really obvious the tree like structure.\"",
+     "sources": []
     },
     {
-      "n": 2,
-      "item": 4,
-      "question": "The findings need a home. Do repeats and contradictions become a **standing register** (a page like the reviews register, where each finding has a state and is closed by a release), or do they stay a **per-run output** of the ladder, regenerated and re-read each time? The agent recommends the standing register: a contradiction that is found, forgotten and re-found is not a finding, it is a treadmill.",
-      "options": [
-        "A standing register with states (recommended)",
-        "A per-run output only"
-      ],
-      "state": "open"
+     "date": "22 August 2026",
+     "from": "the agent",
+     "note": "Both fixed, and the second was the more serious of the two: replacing the view on every click made the ladder behave like a set of pages that happened to be numbered, which hid the very structure the experiment exists to show. The ladder is now **columns**: opening a unit appends a column beside the current one, the chain from level 1 down to a section stays on screen, columns are resizable by dragging the bar between them, and the columns container scrolls rather than the page. The address bar carries the whole trail (`?t=L1,L2-3,L3-5`), so a **path** is linkable, not just a node. For the first point, every column has an **index button listing all units at that level**, grouped by that level's taxonomy; picking one rebuilds the ancestor columns to its left, so entering at level 3 directly still shows what it sits inside. Level entry from the top rail opens that level's index in place.",
+     "sources": []
     },
     {
-      "n": 3,
-      "item": 5,
-      "question": "Which audience variant is worth building first, once the ladder is stable: a **business** projection of level 2, a **graph-literate** projection of level 3, or a **non-English** projection of level 2 (the translation case, which tests whether the graph really is what survives)? Each is one re-projection from the same graph, not a new book.",
-      "options": [
-        "Business, from level 2",
-        "Graph-literate, from level 3",
-        "A non-English projection of level 2",
-        "None yet: stabilise the ladder first"
-      ],
-      "state": "open"
+     "date": "22 August 2026",
+     "from": "Dinis Cruz, the reviewer",
+     "note": "\"Fix the UX bug that when I have L1 and L2 open and I click on an L2 link on L1 text the screen doesn't move… now I click on an L3 link and there is a small animation as L3 opens up. But if I now click on another L3 link in L2 section I see the same animation which flicks the content and makes it hard to use.\"",
+     "sources": []
     },
     {
-      "n": 4,
-      "item": 8,
-      "question": "The per-level ontologies and taxonomies are authored by the agent and are a first pass: the classes are defensible but not confirmed, and the author is the oracle for a classification of their own book. Confirm them, or correct the classes that are wrong? The most arguable calls: chapter 4 (the edge set) is classed **Prescription** rather than Apparatus; the Introduction is classed **Argument** rather than Signpost; and level 4's class vocabulary is about what a section does to the reader, which is a different kind of scheme from every level above it.",
-      "options": [
-        "Confirm as authored",
-        "Correct specific classes (say which)",
-        "Rework the class vocabulary at a level"
-      ],
-      "state": "open"
-    },
-    {
-      "n": 5,
-      "item": 9,
-      "question": "This site now carries its **first vendored third-party dependency** (Cytoscape.js 3.30.2, MIT, 373 KB, committed at /assets/vendor/). Everything else here is hand-written with no runtime dependencies, and that has been a stated property. Keep it (a real graph library earns its place for a real graph), replace it with a hand-written layout to preserve the no-dependency claim, or keep it and state the exception explicitly in the engineering page and chapter 12's honesty table?",
-      "options": [
-        "Keep it, and state the exception in the honesty table (recommended)",
-        "Keep it, no further statement",
-        "Replace with a hand-written layout"
-      ],
-      "state": "open"
-    },
-    {
-      "n": 6,
-      "item": 11,
-      "question": "One part of the memo is deliberately **not** built, and it is the interesting part. Paths can now be traced and read, but they cannot be **queried**: there is no way to say \"find every path from a concept to a piece of evidence that goes grounds → appears_in → backed_by\". That is a path-query language, and [chapter 12](../book/ch-12-what-ships-what-is-argued.html) currently lists exactly that under what does not exist anywhere. Building one here would make the honesty table wrong in an interesting way. Do we (a) leave it unbuilt and let the honesty table stand, (b) build a small pattern matcher over this graph only and amend chapter 12 to say a demonstrator exists here, or (c) treat it as the next experiment in its own right?",
-      "options": [
-        "Leave it unbuilt; the honesty table stands (recommended for now)",
-        "Build a demonstrator here and amend chapter 12",
-        "Make it the next experiment"
-      ],
-      "state": "answered",
-      "date": "22 August 2026",
-      "answer": "Build it. The founder's answer was a question — *\"why can't you create that path-query UI?\"* — and the honest reply is that nothing technical stopped it: the caution was about a **content** claim, not a capability. Built at [the graph page](../altitudes/graph.html): a pattern is a start filter and up to three edge-and-node steps, matches print as sentences using each edge's verb or inverse depending on direction, cycles cannot spin, and the result is capped at 300 **and says when it hit the cap**. What follows for the honesty table is option (b) in spirit but not in sequence: the page **states its own falsification in full** and proposes the precise wording, and chapter 12 changes only when you agree it, because book content still changes by agreement. No reader is misled in the meantime, because the correction sits beside the thing that caused it."
+     "date": "22 August 2026",
+     "from": "the agent",
+     "note": "Diagnosed and fixed. One cause, two symptoms: every click rebuilt the **entire** column strip and then smooth-scrolled it to the far end. Rebuilding threw away the scroll position, so the strip snapped to zero and animated back — which reads as a flicker when the column being opened was already on screen and nothing needed to move. Now only the columns to the right of the click are rebuilt (the ones to the left keep their DOM, their scroll and their open panels), the strip's scroll position is preserved across the rebuild, and it scrolls **only far enough** to bring a genuinely off-screen column into view. Where nothing needs to move, the changed column gives a short pulse instead: feedback without motion, which answers the first half of the report. The pulse respects `prefers-reduced-motion`.",
+     "sources": []
     }
-  ],
-  "items": [
+   ]
+  },
+  {
+   "n": 2,
+   "topic": "Keep the graph and the projection apart at every level",
+   "reviewer_says": "There's already two concepts here. There's the concept of the graph, which has all the facts, the evidence, the structure, the points, the ideas, what you're trying to convey, and then there's the execution of that, which is the text itself, and the evidence and all the links. Each of these layers needs to have those graphs, and then needs to have the projection. Maybe you don't need to do the projection for all of them.",
+   "comment": "Agreed and implemented, and it is the part of the memo that will matter longest: it separates what the book *knows* at a level from how that level *reads*. Each node carries a claims list with an evidence state (evidenced, argued, unevidenced) beside the text it supports, and the two are stored separately in the data. The unevidenced claims are rendered ghosted rather than hidden, which is r002 item 6's rule arriving early on cheaper ground.",
+   "proposal": "The graph layer is lifted for levels 1 and 2 and for the two drilled chapters' paths. Where it was not lifted, the node says so explicitly, because an empty panel and an unbuilt one look identical otherwise. This is also the direct route into r002 item 3 (the book as a graph): the ladder's claim nodes are that graph, arriving one level up from the chapter text, and the pilot proves the shape before the full lift is attempted.",
+   "needs": [],
+   "impact": [
+    "the ladder's data model",
+    "r002 item 3's design"
+   ],
+   "state": "applied",
+   "applied_in": "v0.3.15"
+  },
+  {
+   "n": 3,
+   "topic": "Many-to-many, not a clean tree",
+   "reviewer_says": "There should be a tree-like structure of this as you go up and as the concepts merge, and of course they could be many-to-many relationships.",
+   "comment": "The data model allows many-to-many in both directions (a phrase may compress several units; a unit may be compressed by several phrases), and the first real instance appeared immediately, which is finding 2: the Semantic Web's mistake is stated in chapter 1 and argued in full in chapter 5, so it should be compressed by both parts. The current level 2 assigns it to Part III alone. That is a choice the ladder forced and made visible, and the honest fix is a second parent rather than a tidier tree.",
+   "proposal": "Keep the model many-to-many and let the exceptions accumulate before generalising: the pilot has one clear case and one candidate, which is not enough to design a merge rule. Recorded as an observation rather than a change, and revisited if D1 extends the pilot.",
+   "needs": [],
+   "impact": [
+    "the ladder's data model"
+   ],
+   "state": "noted",
+   "thread": [
     {
-      "n": 1,
-      "topic": "Build the ladder: five levels, each a compression of the one below",
-      "reviewer_says": "Can we try to create five or seven versions of the book, which are all at different altitude? Let's say the current book is level five. The top level is almost a paragraph, like the executive summary, and each of the phrases hyperlinks to the next level, and then that has the same thing, all the way down. It needs to be from the bottom up: each layer is a compression of the previous layer that captures the core ideas.",
-      "comment": "Built, because a described experiment is not an experiment. Five levels: the book (level 5, ~20,000 words), the sections (level 4), the seventeen units (level 3, 1,333 words), the six parts (level 2, 406 words), the book in one paragraph (level 1, 135 words). Built bottom-up as instructed, and that instruction turned out to be load-bearing rather than stylistic: writing level 1 first would have produced a marketing paragraph that the levels below could not have supported, and the discipline of only saying at a level what the level below actually contains is what generated every finding in item 4. One honest result to record: the pyramid is not monotonic per unit. Total words fall at every step, but a level 4 section digest is longer than that section's share of the level 3 chapter digest, because compression is per parent, not per descendant.",
-      "proposal": "Coverage as the memo suggested: levels 1 to 3 complete, level 4 for two chapters (chapter 2, The five ideas, and chapter 5, Against schema-first, which is also r002's proposed graph pilot, so the two experiments share a chapter). The ladder is at **/altitudes/**, the data at /altitudes/data/altitudes.json, and every unit links down to level 5 in the book. Whether it goes further is decision D1.",
-      "needs": [],
-      "impact": [
-        "new section (/altitudes/)",
-        "new generator (gen_altitudes.py)",
-        "no book content"
-      ],
-      "state": "applied",
-      "applied_in": "v0.3.15",
-      "thread": [
-        {
-          "date": "22 August 2026",
-          "from": "Dinis Cruz, the reviewer",
-          "note": "\"At the moment there doesn't seem to be a way to see and navigate all items in a layer. For example at the moment I need to go to L1 to see a particular L2 entry. But at least between layers we shouldn't change the layer page/section when clicking on entries: if I'm in L1 and click on the link, in the same page/UI the L2 content should appear on a side panel (resizable) so that it becomes really obvious the tree like structure.\"",
-          "sources": []
-        },
-        {
-          "date": "22 August 2026",
-          "from": "the agent",
-          "note": "Both fixed, and the second was the more serious of the two: replacing the view on every click made the ladder behave like a set of pages that happened to be numbered, which hid the very structure the experiment exists to show. The ladder is now **columns**: opening a unit appends a column beside the current one, the chain from level 1 down to a section stays on screen, columns are resizable by dragging the bar between them, and the columns container scrolls rather than the page. The address bar carries the whole trail (`?t=L1,L2-3,L3-5`), so a **path** is linkable, not just a node. For the first point, every column has an **index button listing all units at that level**, grouped by that level's taxonomy; picking one rebuilds the ancestor columns to its left, so entering at level 3 directly still shows what it sits inside. Level entry from the top rail opens that level's index in place.",
-          "sources": []
-        },
-        {
-          "date": "22 August 2026",
-          "from": "Dinis Cruz, the reviewer",
-          "note": "\"Fix the UX bug that when I have L1 and L2 open and I click on an L2 link on L1 text the screen doesn't move… now I click on an L3 link and there is a small animation as L3 opens up. But if I now click on another L3 link in L2 section I see the same animation which flicks the content and makes it hard to use.\"",
-          "sources": []
-        },
-        {
-          "date": "22 August 2026",
-          "from": "the agent",
-          "note": "Diagnosed and fixed. One cause, two symptoms: every click rebuilt the **entire** column strip and then smooth-scrolled it to the far end. Rebuilding threw away the scroll position, so the strip snapped to zero and animated back — which reads as a flicker when the column being opened was already on screen and nothing needed to move. Now only the columns to the right of the click are rebuilt (the ones to the left keep their DOM, their scroll and their open panels), the strip's scroll position is preserved across the rebuild, and it scrolls **only far enough** to bring a genuinely off-screen column into view. Where nothing needs to move, the changed column gives a short pulse instead: feedback without motion, which answers the first half of the report. The pulse respects `prefers-reduced-motion`.",
-          "sources": []
-        }
-      ]
-    },
-    {
-      "n": 2,
-      "topic": "Keep the graph and the projection apart at every level",
-      "reviewer_says": "There's already two concepts here. There's the concept of the graph, which has all the facts, the evidence, the structure, the points, the ideas, what you're trying to convey, and then there's the execution of that, which is the text itself, and the evidence and all the links. Each of these layers needs to have those graphs, and then needs to have the projection. Maybe you don't need to do the projection for all of them.",
-      "comment": "Agreed and implemented, and it is the part of the memo that will matter longest: it separates what the book *knows* at a level from how that level *reads*. Each node carries a claims list with an evidence state (evidenced, argued, unevidenced) beside the text it supports, and the two are stored separately in the data. The unevidenced claims are rendered ghosted rather than hidden, which is r002 item 6's rule arriving early on cheaper ground.",
-      "proposal": "The graph layer is lifted for levels 1 and 2 and for the two drilled chapters' paths. Where it was not lifted, the node says so explicitly, because an empty panel and an unbuilt one look identical otherwise. This is also the direct route into r002 item 3 (the book as a graph): the ladder's claim nodes are that graph, arriving one level up from the chapter text, and the pilot proves the shape before the full lift is attempted.",
-      "needs": [],
-      "impact": [
-        "the ladder's data model",
-        "r002 item 3's design"
-      ],
-      "state": "applied",
-      "applied_in": "v0.3.15"
-    },
-    {
-      "n": 3,
-      "topic": "Many-to-many, not a clean tree",
-      "reviewer_says": "There should be a tree-like structure of this as you go up and as the concepts merge, and of course they could be many-to-many relationships.",
-      "comment": "The data model allows many-to-many in both directions (a phrase may compress several units; a unit may be compressed by several phrases), and the first real instance appeared immediately, which is finding 2: the Semantic Web's mistake is stated in chapter 1 and argued in full in chapter 5, so it should be compressed by both parts. The current level 2 assigns it to Part III alone. That is a choice the ladder forced and made visible, and the honest fix is a second parent rather than a tidier tree.",
-      "proposal": "Keep the model many-to-many and let the exceptions accumulate before generalising: the pilot has one clear case and one candidate, which is not enough to design a merge rule. Recorded as an observation rather than a change, and revisited if D1 extends the pilot.",
-      "needs": [],
-      "impact": [
-        "the ladder's data model"
-      ],
-      "state": "noted",
-      "thread": [
-        {
-          "date": "22 August 2026",
-          "from": "the agent",
-          "note": "The column layout makes the many-to-many question visible rather than theoretical: a unit reached down two different paths now shows a different set of columns to its left, so the second parent this item predicted for the Semantic Web material (finding 2) would be observable as two trails ending at the same node. The trail currently reconstructs ancestors through the **first** parent only, which is honest for a pilot with one known case and would need a choice, not a default, once a second real case lands.",
-          "sources": []
-        }
-      ]
-    },
-    {
-      "n": 4,
-      "topic": "The repeats and contradictions the climb was expected to surface",
-      "reviewer_says": "In fact, it's interesting because I think with this we actually will find some repeated content and some contradictions in the content, which would be quite interesting. Once you look at all the facts, observations, hypotheses that a particular paragraph or section is doing, we should find contradictions with others, and then find a way to visualise.",
-      "comment": "The prediction held, and this is the experiment's real result. Five findings, published on the ladder page. The one that justifies the whole exercise: at level 3, chapter 12's paragraph (no graph database, no browser SPARQL or Cypher, no RDF in the code) sits four units from chapter 7's (a SQLite interface, an RDF/Turtle export and a graph REPL). Both sentences are true, one about the codebase and one about a published vault, but on one page they read as a contradiction. That is precisely the correction the reviewer asked for in r001 item 5, **reached independently by compression rather than by being told**, which is the strongest evidence available that the method works. Alongside it: a signposted repeat that compression forces a decision about, a compression loss localised to a rung (five ideas from a source that lists ten principles), a weight mismatch that gives the title decision a concrete test, and one control case.",
-      "proposal": "The visualisation the memo asks for, delivered as the findings section on the ladder page: each finding carries a kind, the units where it lives (linked, so a reader can climb straight to them), and a verdict. The control case is kept deliberately: a finding process that reported the already-disclosed relates-to contradiction as a discovery would be over-reporting, and showing that it does not is how the method earns trust. Where these findings live permanently is decision D2.",
-      "needs": [],
-      "impact": [
-        "/altitudes/#findings",
-        "r001 item 5 (gains independent evidence)",
-        "r001 item 3 (dilution localised)"
-      ],
-      "state": "applied",
-      "applied_in": "v0.3.15"
-    },
-    {
-      "n": 5,
-      "topic": "Translation, culture and stakeholder variants",
-      "reviewer_says": "This is also very interesting when we then start looking at translations and adapt them to different cultures, or even adapting to different stakeholders, or different audiences: a more technical audience, a more business-like audience, a more graph knowledge audience.",
-      "comment": "Agreed, and the ladder is the enabling structure rather than a side effect of it: the graph is what survives a change of audience, and the projection is what changes. A business edition is not a rewrite of 20,000 words, it is a re-projection of level 2 from the same claims with different examples; a translation is a re-projection rather than a re-translation, which is also the book's own concepts-not-words argument applied to itself. Worth stating the risk plainly: audience variants multiply the surface that can drift, and only the shared graph keeps them honest, so variants should not start before the graph layer is stable.",
-      "proposal": "Not yet. One variant, after the ladder stabilises, chosen at decision D3, built as a second projection of an existing level so the claim can be tested cheaply: does the same graph really carry a different audience, or does the projection quietly change the argument? If it changes the argument, that is a finding about the graph, not about the translation.",
-      "needs": [
-        "The ladder stable (decision D1) before any variant is built."
-      ],
-      "impact": [
-        "future editions",
-        "translation strategy"
-      ],
-      "state": "proposed"
-    },
-    {
-      "n": 6,
-      "topic": "What the experiment says about the decoupling in r003",
-      "reviewer_says": "This again, like this split means that there is a clean text now, which is the text of the book, which we version. (r003, carried forward: the book as the distilled best-of, with provenance back to the site.)",
-      "comment": "The ladder is evidence for r003's architecture, arriving from an unexpected direction. Level 3 is, in effect, the distilled best-of that r003 describes: seventeen paragraphs that carry the argument without the evidence, each linking down to the full text. If the decoupling lands, the site holds the research estate at full granularity, the book holds the writing, and the ladder is the machinery that connects them, because compression with provenance is exactly what a distillation is. It also suggests the decoupled book's provenance blocks and the ladder's descent edges are the same edge type pointing at different targets.",
-      "proposal": "Recorded as a connection rather than a change: r003's decision D1 does not need to wait for this, and if D1 adopts the decoupling, the ladder's descent edges should be built as the same mechanism as the provenance edges rather than a parallel one. Flagged so the two are designed once.",
-      "needs": [],
-      "impact": [
-        "r003 item 1",
-        "r003 item 2"
-      ],
-      "state": "noted"
-    },
-    {
-      "n": 7,
-      "topic": "Colour the descent links to mean something, switchably",
-      "reviewer_says": "I really like those links to the next layer, but can you experiment with different colours (to represent different things).",
-      "comment": "Worth doing, and the interesting part is that there is no single right answer: a descent link can usefully carry at least three different signals, and which one you want depends on why you are reading. Hard-coding one would have been a small act of schema-first.",
-      "proposal": "Built as a **switch**, not a scheme: the same links colour by **the evidence behind the unit below** (green evidenced, amber argued, red unevidenced, grey where the graph layer was not lifted), by **how far it descends** (teal descends further, slate is a leaf in this pilot), or by **taxonomy class** (one hue per class, with a legend naming the class and its level). Same text, three graphs over it, chosen by the reader — which is the book's own render-the-query rule applied to its own navigation. The mode is in the URL, so a coloured view is shareable. An observation worth recording: the evidence mode is the one that changes how the page reads, because it makes the unevidenced stretches of the argument visible at a glance rather than on inspection.",
-      "needs": [],
-      "impact": [
-        "/altitudes/",
-        "possibly the chapter graphs of r002 item 6"
-      ],
-      "state": "applied",
-      "applied_in": "v0.3.17"
-    },
-    {
-      "n": 8,
-      "topic": "An ontology and a taxonomy for every layer",
-      "reviewer_says": "Finally can you experiment with the creation of an Ontology and Taxonomy for each layer.",
-      "comment": "Done, and it stopped being bookkeeping about ten minutes in. Kept strictly apart in the way the book's own glossary keeps them apart: the taxonomy points upward (what kind of unit is this?), the ontology points outward (what types exist here and how may they connect?). Every edge type is a verb with a distinct inverse and a stated domain and range, because the grammar chapter demands that of any graph this project publishes, including this one.",
-      "proposal": "Each level now carries both, in the data and in a panel on every column. The result is [finding 7](../altitudes/index.html#findings), and it is the most interesting thing this experiment has produced after the database contradiction: **the classes do not survive the climb.** A section classed *Rule* at level 4 sits inside a chapter classed *Prescription* at level 3, inside a part classed *Argument* at level 2, and nothing inherits. The vocabulary changes kind rather than granularity: at level 4 a unit is best described by what it does to the reader (definition, demonstration, rule, correction, signpost); at level 2 by what kind of matter it is (argument, evidence, disclosure, apparatus). At level 1 the taxonomy collapses, because a taxonomy of one unit is not a taxonomy, and inventing a second class to fill the shape would have been exactly the schema-first move this book argues against. Two consequences: it is an argument against a single book-wide ontology, and it is a warning for r002 item 3, whose graph pilot should expect node types to be level-dependent rather than universal.",
-      "needs": [],
-      "impact": [
-        "/altitudes/",
-        "r002 item 3's node type design"
-      ],
-      "state": "applied",
-      "applied_in": "v0.3.17"
-    },
-    {
-      "n": 9,
-      "topic": "The ladder as one graph",
-      "reviewer_says": "Can you also try in a different page a graph visualisation (using one of the JavaScript graph visualisation libraries) of these multiple layers (with more or less content based on config options). I think it will be very interesting to see the relationships between the nodes at the multiple layers (for example the concepts linked between multiple layers, or the contradictions, should become visible).",
-      "comment": "Built at [/altitudes/graph.html](../altitudes/graph.html), and the prediction was right: the columns are good at one path and blind to everything else, and drawing the whole structure at once makes the non-tree parts the subject. Cytoscape.js, **vendored into the site rather than loaded from a CDN**, because a page about traceable structure should not depend on somebody else's uptime, and because this site has never had a runtime dependency it does not hold.",
-      "proposal": "Configurable as asked: levels on and off, node kinds (units, findings as nodes, claims, which add about forty), colouring by altitude, taxonomy class or evidence, four layouts including a layered one that places each altitude in its own band, label density and node sizing. Three things it shows that the columns cannot. **First**, the book is far less of a tree than its contents page suggests: forty-two cross-references between chapters, **measured from the book's own markdown rather than asserted**, run sideways across a compression tree of thirty-five edges — and the busiest source is the glossary, which no table of contents would predict. **Second**, where two findings touch the same unit: chapter 12 is held by the database contradiction and by the cross-estate edge-count finding at once, which is invisible in a list and obvious in a picture. **Third**, colouring by evidence redraws the argument's shape — evidenced units cluster in the proof chapters while the argument chapters run amber. One design decision worth the founder's eye: **a contradiction is a node, not an edge.** An edge meaning 'contradicts' would have to be its own inverse, which this book's grammar bans, so each finding is reified and `flags` the units it involves, with `flagged_by` as the inverse. The grammar chapter applied to a picture of the book itself.",
-      "needs": [],
-      "impact": [
-        "new page",
-        "vendored dependency (a first for this site)",
-        "r002 item 6's chapter graphs"
-      ],
-      "state": "applied",
-      "applied_in": "v0.3.18"
-    },
-    {
-      "n": 10,
-      "topic": "The concept layer: a dictionary and a thesaurus, in three dimensions",
-      "reviewer_says": "One of the things I don't think you fully capture is when I talk about ontology and taxonomy. There's the one you capture, which is kind of like structure. But there's also the concepts that we're talking about, because ultimately this is where you start to have the definition. It's kind of like a dictionary and a thesaurus at a three-dimensional level. Each concept has sideways concepts that it relates to, downward levels where this is expanded, and upward levels where this is consolidated. And there isn't just one centre of gravity — there are peaks that concepts flow into, and the stronger concepts have more connectivity.",
-      "comment": "Correct, and the gap was real: the per-level ontologies type the **units** (what kind of chunk of book is this?) and say nothing about the **ideas** the units carry. A concept is a different object with a different shape, and it crosses the ladder sideways rather than living at one altitude.",
-      "proposal": "Built at [/altitudes/concepts.html](../altitudes/concepts.html): **24 concepts**, each with a definition (the dictionary), what it is **also called** and what it is **near but importantly not** (the thesaurus, and the second half is the useful one — a near-miss named is a misreading prevented), typed edges to other concepts, the ladder units at several altitudes that carry it, and any published artefact that demonstrates it. Every relation is a verb with a distinct inverse — `grounds`/`grounded_by`, `specialises`/`generalises`, `constrains`/`constrained_by`, `enables`/`enabled_by`, `opposes`/`opposed_by` — because a concept map is precisely where the banned generic edge tempts you, and both directions are written into the data rather than inferred at read time. A relation stated from either end normalises to one canonical triple, so declaring it twice does not inflate anything. **Peaks are computed**: strength is a stated formula (`out + 2×incoming + units + 2×demonstrations`), which means the ranking can be disagreed with by recomputing rather than by arguing about taste.",
-      "needs": [],
-      "impact": [
-        "/altitudes/concepts.html",
-        "the ladder data",
-        "r002 item 4's facts register"
-      ],
-      "state": "applied",
-      "applied_in": "v0.3.20"
-    },
-    {
-      "n": 11,
-      "topic": "Explore the graph from anywhere, and keep the view you made",
-      "reviewer_says": "The power here is to be able to start to explore things from one area… allow me to double click to expand, allow me to select a couple and consolidate, allow me to have the radius… add the ability to take screenshots and the ability to capture the configuration that I took to get that screenshot… that view should almost be a combination of the settings that I chose, the zoom level, the bits that I ignored, the nodes that I consolidated or expanded… maximisation so I can leverage the screen… each edge in that graph should have a to and a from, so we can create a path based on those edge labels.",
-      "comment": "All of it built, and one part of it is the most useful thing on the page: **a path read as sentences**. Shift-click two nodes and the shortest path between them prints hop by hop, each edge named with its verb or its inverse depending on which way the path walks it. That is the book's own rule about paths reading as sentences, turned into a tool that checks itself: an edge whose inverse was named lazily produces a sentence that does not read, and you notice immediately.",
-      "proposal": "On the [graph page](../altitudes/graph.html): labels **inside** rounded rectangles with a wrap control and a cut control, or below, or off; edge labels on or off; force layout with an **iterations slider** and a run-until-settled pass that cools slowly; **radius exploration** from any node, with double-click to centre; **collapse a selection** into a group node and expand it again; **full screen**, **hide the panels**, and drag-resizable panes in both directions; **Save PNG**; and a **view file** carrying the settings, the zoom, the pan, the collapsed groups and every hand-moved node position, so a picture can be recreated rather than only kept. One layout fix worth recording because it is a general lesson: a force layout with no bounding box lays out into a square, so a wide pane wasted its sides — handing it the pane's real shape is what made the width usable.",
-      "needs": [],
-      "impact": [
-        "/altitudes/graph.html"
-      ],
-      "state": "applied",
-      "applied_in": "v0.3.20",
-      "thread": [
-        {
-          "date": "22 August 2026",
-          "from": "Dinis Cruz, the reviewer",
-          "note": "\"Why can't you create that path-query UI?\" Answered by building it: decision D6 is settled, and the page states its own falsification of chapter 12 rather than leaving the sentence quietly misleading.",
-          "sources": []
-        }
-      ]
-    },
-    {
-      "n": 12,
-      "topic": "Detectable, and acceptable: contradictions as measurements",
-      "reviewer_says": "What is really powerful about the approach we're taking is that a number of observations and conflicts and contradictions and errors will become deterministic and detectable via the visualisations or via the graphs. It doesn't mean that we shouldn't have them. Sometimes it's okay to contradict certain things because the context might mean it. The key is that we now can visualise it, and we can start to apply science to this.",
-      "comment": "This is the sharpest framing anyone has put on the findings work, and it exposes something the register was getting wrong. Every finding so far read as an accusation, which quietly implied that the correct number of contradictions is zero. That is false and it is also a bad incentive: a book with no detectable tensions is usually a book that has stopped saying anything.",
-      "proposal": "Two changes, both landed. **Findings now carry a state**: `open` or `accepted`, and an accepted one records **why** it was accepted, so the acceptance is itself arguable rather than assumed. Three are open, five accepted &mdash; and one is accepted *with a condition* rather than closed: the fractal weight mismatch is accepted because the v0.4.0 identity release will grow the interior, and it **returns to open** if v0.4.0 ships without that growth. That is risk acceptance in the form this estate already uses elsewhere. **And five checks now run on every build**, each stating the rule it ran: concepts strong in connectivity but with no published demonstration; units that two independent findings both touch; concepts nothing rests on; level 3 and 4 text the concept layer has not reached; and oppositions where a position and its antagonist appear in the same passage. A check with zero hits is kept, because a rule with no hits is still a rule. That is the difference the memo names: an observation somebody noticed is an opinion, and a rule that fires every time is a measurement.",
-      "needs": [],
-      "impact": [
-        "/altitudes/#checks",
-        "the findings register",
-        "r002 item 4's evidence layer"
-      ],
-      "state": "applied",
-      "applied_in": "v0.3.21"
+     "date": "22 August 2026",
+     "from": "the agent",
+     "note": "The column layout makes the many-to-many question visible rather than theoretical: a unit reached down two different paths now shows a different set of columns to its left, so the second parent this item predicted for the Semantic Web material (finding 2) would be observable as two trails ending at the same node. The trail currently reconstructs ancestors through the **first** parent only, which is honest for a pilot with one known case and would need a choice, not a default, once a second real case lands.",
+     "sources": []
     }
-  ]
+   ]
+  },
+  {
+   "n": 4,
+   "topic": "The repeats and contradictions the climb was expected to surface",
+   "reviewer_says": "In fact, it's interesting because I think with this we actually will find some repeated content and some contradictions in the content, which would be quite interesting. Once you look at all the facts, observations, hypotheses that a particular paragraph or section is doing, we should find contradictions with others, and then find a way to visualise.",
+   "comment": "The prediction held, and this is the experiment's real result. Five findings, published on the ladder page. The one that justifies the whole exercise: at level 3, chapter 12's paragraph (no graph database, no browser SPARQL or Cypher, no RDF in the code) sits four units from chapter 7's (a SQLite interface, an RDF/Turtle export and a graph REPL). Both sentences are true, one about the codebase and one about a published vault, but on one page they read as a contradiction. That is precisely the correction the reviewer asked for in r001 item 5, **reached independently by compression rather than by being told**, which is the strongest evidence available that the method works. Alongside it: a signposted repeat that compression forces a decision about, a compression loss localised to a rung (five ideas from a source that lists ten principles), a weight mismatch that gives the title decision a concrete test, and one control case.",
+   "proposal": "The visualisation the memo asks for, delivered as the findings section on the ladder page: each finding carries a kind, the units where it lives (linked, so a reader can climb straight to them), and a verdict. The control case is kept deliberately: a finding process that reported the already-disclosed relates-to contradiction as a discovery would be over-reporting, and showing that it does not is how the method earns trust. Where these findings live permanently is decision D2.",
+   "needs": [],
+   "impact": [
+    "/altitudes/#findings",
+    "r001 item 5 (gains independent evidence)",
+    "r001 item 3 (dilution localised)"
+   ],
+   "state": "applied",
+   "applied_in": "v0.3.15"
+  },
+  {
+   "n": 5,
+   "topic": "Translation, culture and stakeholder variants",
+   "reviewer_says": "This is also very interesting when we then start looking at translations and adapt them to different cultures, or even adapting to different stakeholders, or different audiences: a more technical audience, a more business-like audience, a more graph knowledge audience.",
+   "comment": "Agreed, and the ladder is the enabling structure rather than a side effect of it: the graph is what survives a change of audience, and the projection is what changes. A business edition is not a rewrite of 20,000 words, it is a re-projection of level 2 from the same claims with different examples; a translation is a re-projection rather than a re-translation, which is also the book's own concepts-not-words argument applied to itself. Worth stating the risk plainly: audience variants multiply the surface that can drift, and only the shared graph keeps them honest, so variants should not start before the graph layer is stable.",
+   "proposal": "Not yet. One variant, after the ladder stabilises, chosen at decision D3, built as a second projection of an existing level so the claim can be tested cheaply: does the same graph really carry a different audience, or does the projection quietly change the argument? If it changes the argument, that is a finding about the graph, not about the translation.",
+   "needs": [
+    "The ladder stable (decision D1) before any variant is built."
+   ],
+   "impact": [
+    "future editions",
+    "translation strategy"
+   ],
+   "state": "proposed"
+  },
+  {
+   "n": 6,
+   "topic": "What the experiment says about the decoupling in r003",
+   "reviewer_says": "This again, like this split means that there is a clean text now, which is the text of the book, which we version. (r003, carried forward: the book as the distilled best-of, with provenance back to the site.)",
+   "comment": "The ladder is evidence for r003's architecture, arriving from an unexpected direction. Level 3 is, in effect, the distilled best-of that r003 describes: seventeen paragraphs that carry the argument without the evidence, each linking down to the full text. If the decoupling lands, the site holds the research estate at full granularity, the book holds the writing, and the ladder is the machinery that connects them, because compression with provenance is exactly what a distillation is. It also suggests the decoupled book's provenance blocks and the ladder's descent edges are the same edge type pointing at different targets.",
+   "proposal": "Recorded as a connection rather than a change: r003's decision D1 does not need to wait for this, and if D1 adopts the decoupling, the ladder's descent edges should be built as the same mechanism as the provenance edges rather than a parallel one. Flagged so the two are designed once.",
+   "needs": [],
+   "impact": [
+    "r003 item 1",
+    "r003 item 2"
+   ],
+   "state": "noted"
+  },
+  {
+   "n": 7,
+   "topic": "Colour the descent links to mean something, switchably",
+   "reviewer_says": "I really like those links to the next layer, but can you experiment with different colours (to represent different things).",
+   "comment": "Worth doing, and the interesting part is that there is no single right answer: a descent link can usefully carry at least three different signals, and which one you want depends on why you are reading. Hard-coding one would have been a small act of schema-first.",
+   "proposal": "Built as a **switch**, not a scheme: the same links colour by **the evidence behind the unit below** (green evidenced, amber argued, red unevidenced, grey where the graph layer was not lifted), by **how far it descends** (teal descends further, slate is a leaf in this pilot), or by **taxonomy class** (one hue per class, with a legend naming the class and its level). Same text, three graphs over it, chosen by the reader — which is the book's own render-the-query rule applied to its own navigation. The mode is in the URL, so a coloured view is shareable. An observation worth recording: the evidence mode is the one that changes how the page reads, because it makes the unevidenced stretches of the argument visible at a glance rather than on inspection.",
+   "needs": [],
+   "impact": [
+    "/altitudes/",
+    "possibly the chapter graphs of r002 item 6"
+   ],
+   "state": "applied",
+   "applied_in": "v0.3.17"
+  },
+  {
+   "n": 8,
+   "topic": "An ontology and a taxonomy for every layer",
+   "reviewer_says": "Finally can you experiment with the creation of an Ontology and Taxonomy for each layer.",
+   "comment": "Done, and it stopped being bookkeeping about ten minutes in. Kept strictly apart in the way the book's own glossary keeps them apart: the taxonomy points upward (what kind of unit is this?), the ontology points outward (what types exist here and how may they connect?). Every edge type is a verb with a distinct inverse and a stated domain and range, because the grammar chapter demands that of any graph this project publishes, including this one.",
+   "proposal": "Each level now carries both, in the data and in a panel on every column. The result is [finding 7](../altitudes/index.html#findings), and it is the most interesting thing this experiment has produced after the database contradiction: **the classes do not survive the climb.** A section classed *Rule* at level 4 sits inside a chapter classed *Prescription* at level 3, inside a part classed *Argument* at level 2, and nothing inherits. The vocabulary changes kind rather than granularity: at level 4 a unit is best described by what it does to the reader (definition, demonstration, rule, correction, signpost); at level 2 by what kind of matter it is (argument, evidence, disclosure, apparatus). At level 1 the taxonomy collapses, because a taxonomy of one unit is not a taxonomy, and inventing a second class to fill the shape would have been exactly the schema-first move this book argues against. Two consequences: it is an argument against a single book-wide ontology, and it is a warning for r002 item 3, whose graph pilot should expect node types to be level-dependent rather than universal.",
+   "needs": [],
+   "impact": [
+    "/altitudes/",
+    "r002 item 3's node type design"
+   ],
+   "state": "applied",
+   "applied_in": "v0.3.17"
+  },
+  {
+   "n": 9,
+   "topic": "The ladder as one graph",
+   "reviewer_says": "Can you also try in a different page a graph visualisation (using one of the JavaScript graph visualisation libraries) of these multiple layers (with more or less content based on config options). I think it will be very interesting to see the relationships between the nodes at the multiple layers (for example the concepts linked between multiple layers, or the contradictions, should become visible).",
+   "comment": "Built at [/altitudes/graph.html](../altitudes/graph.html), and the prediction was right: the columns are good at one path and blind to everything else, and drawing the whole structure at once makes the non-tree parts the subject. Cytoscape.js, **vendored into the site rather than loaded from a CDN**, because a page about traceable structure should not depend on somebody else's uptime, and because this site has never had a runtime dependency it does not hold.",
+   "proposal": "Configurable as asked: levels on and off, node kinds (units, findings as nodes, claims, which add about forty), colouring by altitude, taxonomy class or evidence, four layouts including a layered one that places each altitude in its own band, label density and node sizing. Three things it shows that the columns cannot. **First**, the book is far less of a tree than its contents page suggests: forty-two cross-references between chapters, **measured from the book's own markdown rather than asserted**, run sideways across a compression tree of thirty-five edges — and the busiest source is the glossary, which no table of contents would predict. **Second**, where two findings touch the same unit: chapter 12 is held by the database contradiction and by the cross-estate edge-count finding at once, which is invisible in a list and obvious in a picture. **Third**, colouring by evidence redraws the argument's shape — evidenced units cluster in the proof chapters while the argument chapters run amber. One design decision worth the founder's eye: **a contradiction is a node, not an edge.** An edge meaning 'contradicts' would have to be its own inverse, which this book's grammar bans, so each finding is reified and `flags` the units it involves, with `flagged_by` as the inverse. The grammar chapter applied to a picture of the book itself.",
+   "needs": [],
+   "impact": [
+    "new page",
+    "vendored dependency (a first for this site)",
+    "r002 item 6's chapter graphs"
+   ],
+   "state": "applied",
+   "applied_in": "v0.3.18"
+  },
+  {
+   "n": 10,
+   "topic": "The concept layer: a dictionary and a thesaurus, in three dimensions",
+   "reviewer_says": "One of the things I don't think you fully capture is when I talk about ontology and taxonomy. There's the one you capture, which is kind of like structure. But there's also the concepts that we're talking about, because ultimately this is where you start to have the definition. It's kind of like a dictionary and a thesaurus at a three-dimensional level. Each concept has sideways concepts that it relates to, downward levels where this is expanded, and upward levels where this is consolidated. And there isn't just one centre of gravity — there are peaks that concepts flow into, and the stronger concepts have more connectivity.",
+   "comment": "Correct, and the gap was real: the per-level ontologies type the **units** (what kind of chunk of book is this?) and say nothing about the **ideas** the units carry. A concept is a different object with a different shape, and it crosses the ladder sideways rather than living at one altitude.",
+   "proposal": "Built at [/altitudes/concepts.html](../altitudes/concepts.html): **24 concepts**, each with a definition (the dictionary), what it is **also called** and what it is **near but importantly not** (the thesaurus, and the second half is the useful one — a near-miss named is a misreading prevented), typed edges to other concepts, the ladder units at several altitudes that carry it, and any published artefact that demonstrates it. Every relation is a verb with a distinct inverse — `grounds`/`grounded_by`, `specialises`/`generalises`, `constrains`/`constrained_by`, `enables`/`enabled_by`, `opposes`/`opposed_by` — because a concept map is precisely where the banned generic edge tempts you, and both directions are written into the data rather than inferred at read time. A relation stated from either end normalises to one canonical triple, so declaring it twice does not inflate anything. **Peaks are computed**: strength is a stated formula (`out + 2×incoming + units + 2×demonstrations`), which means the ranking can be disagreed with by recomputing rather than by arguing about taste.",
+   "needs": [],
+   "impact": [
+    "/altitudes/concepts.html",
+    "the ladder data",
+    "r002 item 4's facts register"
+   ],
+   "state": "applied",
+   "applied_in": "v0.3.20"
+  },
+  {
+   "n": 11,
+   "topic": "Explore the graph from anywhere, and keep the view you made",
+   "reviewer_says": "The power here is to be able to start to explore things from one area… allow me to double click to expand, allow me to select a couple and consolidate, allow me to have the radius… add the ability to take screenshots and the ability to capture the configuration that I took to get that screenshot… that view should almost be a combination of the settings that I chose, the zoom level, the bits that I ignored, the nodes that I consolidated or expanded… maximisation so I can leverage the screen… each edge in that graph should have a to and a from, so we can create a path based on those edge labels.",
+   "comment": "All of it built, and one part of it is the most useful thing on the page: **a path read as sentences**. Shift-click two nodes and the shortest path between them prints hop by hop, each edge named with its verb or its inverse depending on which way the path walks it. That is the book's own rule about paths reading as sentences, turned into a tool that checks itself: an edge whose inverse was named lazily produces a sentence that does not read, and you notice immediately.",
+   "proposal": "On the [graph page](../altitudes/graph.html): labels **inside** rounded rectangles with a wrap control and a cut control, or below, or off; edge labels on or off; force layout with an **iterations slider** and a run-until-settled pass that cools slowly; **radius exploration** from any node, with double-click to centre; **collapse a selection** into a group node and expand it again; **full screen**, **hide the panels**, and drag-resizable panes in both directions; **Save PNG**; and a **view file** carrying the settings, the zoom, the pan, the collapsed groups and every hand-moved node position, so a picture can be recreated rather than only kept. One layout fix worth recording because it is a general lesson: a force layout with no bounding box lays out into a square, so a wide pane wasted its sides — handing it the pane's real shape is what made the width usable.",
+   "needs": [],
+   "impact": [
+    "/altitudes/graph.html"
+   ],
+   "state": "applied",
+   "applied_in": "v0.3.20",
+   "thread": [
+    {
+     "date": "22 August 2026",
+     "from": "Dinis Cruz, the reviewer",
+     "note": "\"Why can't you create that path-query UI?\" Answered by building it: decision D6 is settled, and the page states its own falsification of chapter 12 rather than leaving the sentence quietly misleading.",
+     "sources": []
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "topic": "Detectable, and acceptable: contradictions as measurements",
+   "reviewer_says": "What is really powerful about the approach we're taking is that a number of observations and conflicts and contradictions and errors will become deterministic and detectable via the visualisations or via the graphs. It doesn't mean that we shouldn't have them. Sometimes it's okay to contradict certain things because the context might mean it. The key is that we now can visualise it, and we can start to apply science to this.",
+   "comment": "This is the sharpest framing anyone has put on the findings work, and it exposes something the register was getting wrong. Every finding so far read as an accusation, which quietly implied that the correct number of contradictions is zero. That is false and it is also a bad incentive: a book with no detectable tensions is usually a book that has stopped saying anything.",
+   "proposal": "Two changes, both landed. **Findings now carry a state**: `open` or `accepted`, and an accepted one records **why** it was accepted, so the acceptance is itself arguable rather than assumed. Three are open, five accepted &mdash; and one is accepted *with a condition* rather than closed: the fractal weight mismatch is accepted because the v0.4.0 identity release will grow the interior, and it **returns to open** if v0.4.0 ships without that growth. That is risk acceptance in the form this estate already uses elsewhere. **And five checks now run on every build**, each stating the rule it ran: concepts strong in connectivity but with no published demonstration; units that two independent findings both touch; concepts nothing rests on; level 3 and 4 text the concept layer has not reached; and oppositions where a position and its antagonist appear in the same passage. A check with zero hits is kept, because a rule with no hits is still a rule. That is the difference the memo names: an observation somebody noticed is an opinion, and a rule that fires every time is a measurement.",
+   "needs": [],
+   "impact": [
+    "/altitudes/#checks",
+    "the findings register",
+    "r002 item 4's evidence layer"
+   ],
+   "state": "applied",
+   "applied_in": "v0.3.21"
+  }
+ ]
 }

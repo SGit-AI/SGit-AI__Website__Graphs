@@ -172,21 +172,24 @@ CONTEXT = {
 
  "r004-D5": dict(
    short="The vendored dependency",
-   why="This site now carries Cytoscape.js (MIT, 373 KB) in assets/vendor/, against a "
-       "stated property that it has no runtime dependencies. An unrecorded exception to "
-       "a stated property is exactly what the honesty table exists to prevent, and this "
-       "is the second sentence in chapter 12 that this work has put under strain.",
-   options=[opt("Keep it and state the exception in the honesty table",
-                "The claim becomes precise: no runtime dependency except a vendored graph library, named and versioned.",
-                "Chapter 12 grows a line.", True),
-            opt("Keep it, no further statement",
+   why="This site now vendors **two** third-party libraries: Cytoscape.js (MIT, 373 KB) for the "
+       "graphs and marked (MIT, 35 KB) for the markdown readers. The premise this decision was "
+       "raised on was wrong, as the correction above records, and the honest position is that "
+       "there are two vendored libraries plus one stated network exception (Mermaid, best-effort). "
+       "An unrecorded exception to a stated property is exactly what the honesty table exists to "
+       "prevent, and this is the second sentence in chapter 12 that this work has put under strain.",
+   options=[opt("Keep both and state the exception in the honesty table",
+                "The claim becomes precise: no runtime dependency except two vendored libraries, named and versioned, plus a best-effort diagram renderer.",
+                "Chapter 12 grows a line, and the line is longer than it would have been in August.", True),
+            opt("Keep both, no further statement",
                 "Nothing changes.",
                 "A stated property with a silent exception, which is the failure mode this book names."),
-            opt("Replace it with a hand-written layout",
-                "The no-dependency claim stands unqualified.",
+            opt("Replace Cytoscape with a hand-written layout, keep marked",
+                "The dependency list shrinks to a markdown parser, which is far easier to defend.",
                 "Weeks of work to reproduce a mature library, and a worse graph while it happens.")],
    blocks=["chapter 12's wording, jointly with the path-query correction"],
    affects=[A("page", "the graph explorer", "../altitudes/graph.html"),
+            A("page", "the sources", "../docs/index.html"),
             A("book", "chapter 12", "../book/ch-12-what-ships-what-is-argued.html")]),
 
  # answered, kept for the record and for the paths that pass through them
@@ -248,6 +251,7 @@ for f in sorted((ROOT / "reviews").glob("r0*.json")):
             short=c.get("short", f'{rev["id"]} decision {d["n"]}'),
             question=d["question"], options_raw=d.get("options", []),
             state=d["state"], answer=d.get("answer"), date=d.get("date"),
+            correction=d.get("correction", ""),
             why=c.get("why", ""), options=c.get("options", []),
             blocks=[block(b) for b in c.get("blocks", [])],
             answer_with=c.get("answer_with", []),

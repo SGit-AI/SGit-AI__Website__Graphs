@@ -41,3 +41,27 @@ cards, arXiv papers, EU AI Act text and external URLs are quoted, not relicensed
 reasons unrelated to copyright — real personal data about third parties, and one case study
 that names a real product and needs a legal read. Those exclusions are stated at
 `briefs/PUBLIC.md` and on https://graphs.sgit.ai/examples/index.html#not-here.
+
+## Vendored third-party code
+
+Two JavaScript libraries are committed into this repository under `assets/vendor/` and served
+from it. They are **not** relicensed: each keeps its own licence, and its copyright header is
+left intact in the file.
+
+| File | Library | Version | Licence | Size | Used by |
+|---|---|---|---|---|---|
+| `assets/vendor/cytoscape.min.js` | [Cytoscape.js](https://js.cytoscape.org/) | 3.30.2 | MIT | 373 KB | the [ladder graph](https://graphs.sgit.ai/altitudes/graph.html), the [decisions](https://graphs.sgit.ai/decisions/index.html) graphs, the [docs](https://graphs.sgit.ai/docs/index.html) graphs |
+| `assets/vendor/marked.min.js` | [marked](https://marked.js.org/) | 12.0.2 | MIT | 35 KB | every in-page markdown reader under `/documents/` and `/docs/` |
+
+They are vendored rather than loaded from a content delivery network on purpose. A page that
+needs a third party to be reachable before it can render its own source document has a chain of
+custody with a hole in it, which is the failure this site spends sixteen chapters arguing
+against. Vendoring also means the pages render offline and that the exact bytes served are the
+bytes in this repository's history.
+
+**One remaining exception, stated rather than hidden.** `assets/mdreader.js` renders
+```` ```mermaid ```` fences by dynamically importing Mermaid from `cdn.jsdelivr.net`. That import
+is best-effort: when it fails, the fence stays visible as a code block and nothing else on the
+page is affected. It has not been vendored because the library is roughly two orders of magnitude
+larger than the two above and only a handful of documents contain a mermaid fence. This is a
+judgement, not an oversight, and it is recorded here so it can be argued with.

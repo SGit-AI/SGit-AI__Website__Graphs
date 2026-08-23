@@ -142,7 +142,7 @@ HEAD = '''<!doctype html>
 </main>
 
 <footer class="site"><div class="cols"></div></footer>
-<script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+<script src="../assets/vendor/marked.min.js"></script>
 <script src="../assets/mdreader.js" defer></script>
 </body>
 </html>

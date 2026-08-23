@@ -125,6 +125,14 @@
      "sources": [
       "[sgit.ai/demos/vaults/](https://sgit.ai/demos/vaults/index.html) — the vault index the three were taken from"
      ]
+    },
+    {
+     "date": "23 August 2026",
+     "from": "the agent",
+     "note": "**The other half of the evidence programme: the inputs.** The vault analyses cover what the discipline produced; this round covers what the book was produced *from*. [/docs/](../docs/index.html) carries **fifteen documents, 39,973 words**, chosen from the 147 rows of the three source manifests — of which 111 resolved against the public repositories, so the choice was made from the actual corpus rather than from titles. They are carried byte-for-byte with their SHA-256 and a gate check, because a site that argues for chain of custody should not summarise its own sources. The part worth arguing with is the **three kinds of link**: the documents are carried, the concept links are measured against a published phrase list, and the site links are authored with a note. Influence is then a stated formula over the three, and the page states what the measure is not. One thing only the consolidated graph could show: **the single concept measured in all fifteen documents is *a claim is worth its chain of custody*** — the corpus's most repeated idea is the one about repeating ideas honestly.",
+     "sources": [
+      "[the-cyber-boardroom/SGraph-AI__App__Send](https://github.com/the-cyber-boardroom/SGraph-AI__App__Send) — the public repository all fifteen are carried from, at commit b561fa6b14"
+     ]
     }
    ],
    "applied_in": "v0.3.19"

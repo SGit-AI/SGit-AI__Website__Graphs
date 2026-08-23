@@ -272,6 +272,9 @@
            '<p class="small dim">Raised in <a href="' + esc(d.href) + '">' + esc(d.review_title) +
            '</a>, item ' + d.item + '. <span class="dst dst-' + esc(d.state) + '">' + esc(d.state) + '</span></p></div>');
     h.push('<div class="dq">' + fmt(d.question) + '</div>');
+    if (d.correction) {
+      h.push('<div class="dcorr"><b>Corrected, not rewritten.</b> ' + fmt(d.correction) + '</div>');
+    }
     if (d.why) { h.push('<p class="dwhy"><b>Why it matters.</b> ' + fmt(d.why) + '</p>'); }
 
     if (d.state === 'open') {
