@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.4.2 (23 August 2026). Published by the sgit project — participant
+Site version: v0.4.3 (23 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /v1/briefs/ is the source of truth and carries the same licence.
 
@@ -343,6 +343,20 @@ pages** so the two cannot drift
 
 ## Site
 
+- https://graphs.sgit.ai/packs/index.html — the review packs: generated documents for
+  reviewers and editors, human or agent. **One continuous HTML page each, and a PDF printed
+  from the same source.** A website cannot control what a reviewer reads or in what order,
+  which is what hyperlinks are for and the wrong property when a specific thing needs
+  reviewing; a pack controls the sequence, reads end to end with **no link followed**, and
+  because a PDF is not modifiable it survives as a record better than a page. **Packs are
+  not the book** and say so on every cover. Each declares which of five jobs it serves
+  (decide, understand the concepts, follow the narrative, see the evidence, get guidance),
+  who it addresses, when it is built, and what it asks the reviewer to come back with.
+  Every pack stamps the SHA-256 of each data file it drew from, and **the build fails if
+  those hashes no longer match**, so a pack never describes a build other than the one it
+  names. Machine-readable index: /packs/packs.json. Design: /briefs/21__founder-memo__review-packs.md
+  If you are reviewing: read the pack and nothing else. A review that ranges across the site
+  is answering a different question from the one the pack asked.
 - https://graphs.sgit.ai/memos/index.html — the founder's voice memos written after the first
   edition froze, verbatim, each followed by the instructions extracted from it and what each one
   commits the work to. The block quote is the founder; everything after it is the agent's reading

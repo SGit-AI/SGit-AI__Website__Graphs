@@ -23,6 +23,11 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "21__founder-memo__review-packs.md": (
+     "Review packs, and briefing other agents",
+     "A website cannot control what a reviewer reads or in what order. A pack can: one "
+     "continuous page and a PDF printed from it, read end to end on an iPad or on paper. "
+     "The specification for the pack family, and a correction I owed about visualisations."),
  "20__founder-memo__the-universe-first.md": (
      "Build the universe first, then find the plot",
      "The memo that inverted the dev pack's construction order. The pack was defining answers "

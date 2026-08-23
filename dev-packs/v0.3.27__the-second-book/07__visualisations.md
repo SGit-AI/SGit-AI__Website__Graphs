@@ -10,18 +10,28 @@
 From the retrospective (`documents/what-the-graphs-found.html`), and it is not the intuitive
 answer:
 
-> **Every aggregate view produced findings. No per-item ego graph produced any.**
+> **Aggregate views produced the findings. Per-item views made the structure consumable.**
+> Both are compressions and neither is decoration. What differs is what they compress: an
+> aggregate compresses a whole corpus into a shape, a per-item view compresses one node's
+> neighbourhood into a glance.
 
 The whole-register decisions graph found four pieces of blocked work that two decisions each
 were waiting on under different names. The all-documents graph found the concept joins. The
 concept map's peak computation found that the position the book argues against is one of its
 strongest nodes. The cross-vault table found the capability scale.
 
-The ego graphs, one decision or one document with its neighbours, found nothing. They are good
-navigation and they make one thing comprehensible in a screen, and that is a different job.
+The ego graphs, one decision or one document with its neighbours, produced no discovery in that
+run. That measurement stands, and an earlier version of this file drew too narrow a conclusion
+from it by calling them *reading aids*. The founder's framing is the correct one and it is the
+book's own: **a visualisation is a compression**, in the same family as the path tables and the
+concept tables, which are also visualisations. Judging a compression by whether it produced a
+novel finding is like judging level 2 of the ladder by the same test. Compression's job is to
+make a structure consumable at an altitude, and the per-item graphs did that well enough that
+they are what made the interconnectivity legible.
 
-**Ego graphs are reading aids. Aggregate views are instruments.** They deserve different amounts
-of engineering, different amounts of trust, and different placement in the second book.
+**Aggregates are instruments and per-item views are compressions at a smaller scale.** They
+deserve different amounts of engineering and different placement in the second book, but the
+same amount of trust in what each one is for.
 
 There is a second finding underneath it. The aggregates only produced findings **after**
 something had been normalised: block phrases needed shared keys, concept edges needed a canonical
@@ -40,9 +50,9 @@ instrument; the layout is the lens.**
 | The concept map | `figures/03__concept-map.png` | instrument | **carry**, extend with external evidence per ADR-4 |
 | The path query | `figures/04__path-query.png` | instrument | **carry**, and promote: it is how a reader checks a claimed theme |
 | The decisions register, whole | `figures/05__decisions-all.png` | instrument | **carry** unchanged |
-| One decision as a peak | `figures/06__decision-ego.png` | reading aid | carry, keep cheap |
+| One decision as a peak | `figures/06__decision-ego.png` | local compression | carry, keep cheap |
 | The sources, all twenty-one | `figures/07__docs-all.png` | instrument | **carry**, and it becomes the evidence view of the second book |
-| One source, its concepts and places | `figures/08__doc-ego.png` | reading aid | carry, keep cheap |
+| One source, its concepts and places | `figures/08__doc-ego.png` | local compression | carry, keep cheap |
 
 ---
 

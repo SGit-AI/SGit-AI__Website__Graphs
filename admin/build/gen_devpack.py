@@ -27,7 +27,7 @@ BLURB = {
  "04__the-argument.md": "The spine, top down: five statements, their evidence, and the descent through five altitudes.",
  "05__architecture.md": "The decisions, as ADRs: five source trees, six node families, computed themes, generated grammar.",
  "06__the-plumbing.md": "The graph format, the unit format, the generators, and the seven new gates.",
- "07__visualisations.md": "Which views are instruments and which are reading aids, the conventions, and eight figures of what exists now.",
+ "07__visualisations.md": "Every view is a compression: which ones are instruments, which work at a single node, the conventions, and eight figures of what exists now.",
  "08__implementation-plan.md": "Seven phases, each ending at a gate, and the two ways the plan fails.",
  "09__verification-and-open-questions.md": "Acceptance criteria, what the rewrite does to the ten open decisions, and the eight questions only the founder can answer.",
 }

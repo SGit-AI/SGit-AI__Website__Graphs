@@ -259,6 +259,30 @@ if (!fs.existsSync(freezePath)) {
   if (gone > 5) errors.push(`…and ${gone - 5} more frozen file(s) are gone`);
 }
 
+// --- 4c. review packs are not stale ------------------------------------------
+// Gate 22. A pack records the SHA-256 of every data file it drew from, on its own cover.
+// That is what lets a reader years later check the pack against the build that produced it,
+// and it is worth nothing if the build ships a pack whose sources have since moved.
+const packsPath = path.join(ROOT, 'packs/packs.json');
+if (fs.existsSync(packsPath)) {
+  const packs = JSON.parse(fs.readFileSync(packsPath, 'utf8'));
+  if (packs.version !== VERSION) {
+    errors.push(`packs were generated at ${packs.version}, site is ${VERSION} — run gen_packs.py`);
+  }
+  for (const p of packs.packs) {
+    for (const src of p.sources) {
+      const f = path.join(ROOT, src.path);
+      if (!fs.existsSync(f)) { errors.push(`pack ${p.slug} names a source that is gone: ${src.path}`); continue; }
+      if (sha(fs.readFileSync(f)) !== src.sha256) {
+        errors.push(`pack ${p.slug} is stale: ${src.path} changed since it was built — run gen_packs.py`);
+      }
+    }
+    if (!fs.existsSync(path.join(ROOT, `packs/${p.slug}.html`))) {
+      errors.push(`pack page missing: packs/${p.slug}.html`);
+    }
+  }
+}
+
 // --- 9. the book is a projection ------------------------------------------
 const bookManifestPath = path.join(ROOT, 'v1/book/manifest.json');
 if (!fs.existsSync(bookManifestPath)) {

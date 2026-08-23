@@ -92,13 +92,14 @@ NAV = [
         ("The documents", "v1/documents/index.html"),
         ("&hellip; what the graphs found", "v1/documents/what-the-graphs-found.html"),
         ("The memos", "memos/index.html"),
+        ("The review packs", "packs/index.html"),
         ("The dev pack: the second book", "dev-pack/index.html"),
         ("Comms: tasks &amp; requests", "admin/comms.html"),
         ("Release history", "admin/versions.html"),
         ("Publishing the book", "admin/publishing.html"),
         ("Admin &amp; engineering", "admin/index.html"),
         ("Where we lose", "v1/about/participant.html"),
-    ], ("v1/documents/", "v1/briefs/", "admin/", "v1/about/", "dev-pack/", "memos/", "briefs/")),
+    ], ("v1/documents/", "v1/briefs/", "admin/", "v1/about/", "dev-pack/", "memos/", "briefs/", "packs/")),
 ]
 
 FOOTER = [
@@ -261,8 +262,14 @@ def main():
         if frozen and FROZEN_TREE in path.parents:
             skipped += 1
             continue
-        if path.relative_to(ROOT).as_posix() in ("v1/book/print.html", "v1/book/cover/wrap.html"):
+        rel_ = path.relative_to(ROOT).as_posix()
+        if rel_ in ("v1/book/print.html", "v1/book/cover/wrap.html"):
             # print sources carry no site chrome by design
+            continue
+        if rel_.startswith("packs/") and rel_ != "packs/index.html":
+            # a review pack is a document, not a page of the site: it carries its own cover
+            # and must read end to end with no link followed, so a nav would be an invitation
+            # to leave it
             continue
         rel = path.relative_to(ROOT).as_posix()
         up = "../" * (len(path.relative_to(ROOT).parts) - 1)

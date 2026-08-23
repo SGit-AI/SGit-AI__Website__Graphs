@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.2</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.3</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -102,6 +102,7 @@
       <a class="sl" href="../v1/documents/index.html">The documents</a>
       <a class="sl" href="../v1/documents/what-the-graphs-found.html">&hellip; what the graphs found</a>
       <a class="sl" href="../memos/index.html">The memos</a>
+      <a class="sl" href="../packs/index.html">The review packs</a>
       <a class="sl" href="../dev-pack/index.html">The dev pack: the second book</a>
       <a class="sl here" href="../admin/comms.html">Comms: tasks &amp; requests</a>
       <a class="sl" href="../admin/versions.html">Release history</a>
@@ -283,6 +284,12 @@
         <td>Build <code>/book/</code> — the site as a book, in three reading modes.</td>
         <td>Founder request, 21 August 2026: a book-like reading sequence over the existing content. Built as a <b>generated projection</b> of the site's pages — chapter pages with a left table of contents, a single page, and a PDF — with a CI check that fails the build if a source page changes without the book regenerating. <a href="versions.html">The v0.2.0 row</a> has the details.</td>
         <td><span class="tstat t-done">Done · v0.2.0</span></td>
+      </tr>
+      <tr>
+        <td><b>T37</b></td>
+        <td>Review packs: self-contained PDFs and pages aimed at reviewers and editors, human or agent.</td>
+        <td>Founder voice memo, 23 August 2026, published as <a href="../memos/21-founder-memo-review-packs.html">brief 21</a>. A pack is a document a reviewer can answer from without following a single link: cover, how to read it, provenance, body, and the asks it needs answered. Seventeen instructions from the memo are mapped to what each commits the work to, and the brief specifies six packs against five review jobs. <b>The first one shipped at v0.4.3</b>: <a href="../packs/concepts-and-evidence.html">concepts and evidence</a>, twenty-two pages, three figures captured from the live pages, built by <code>gen_packs.py</code> and gate-checked against the hashes of its sources so a stale pack fails the build. The memo also corrected a claim of ours: the per-item visualisations did help, and the dev pack's file 07 now says so.</td>
+        <td><span class="tstat t-doing">First pack shipped &middot; v0.4.3</span></td>
       </tr>
       <tr>
         <td><b>T36</b></td>
@@ -469,7 +476,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.2</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.3</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
