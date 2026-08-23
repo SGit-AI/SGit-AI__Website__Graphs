@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Risk Mandate, opened — graphs.sgit.ai</title>
+<meta name="description" content="The most complete software project published as a vault: 124 files, 98 commits, eight entry points, pinned releases — and an application that uses an LLM without ever holding the API key.">
+<link rel="canonical" href="https://graphs.sgit.ai/vaults/risk-mandate/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="graphs.sgit.ai">
+<meta property="og:url" content="https://graphs.sgit.ai/vaults/risk-mandate/index.html">
+<meta property="og:title" content="Risk Mandate, opened">
+<meta property="og:description" content="It uses an LLM and never holds the key. That distinction is usually impossible to express, let alone enforce.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../index.html">graphs<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
+  <span class="stage-pill">reference draft</span>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.3.22</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../../start/index.html">Start here<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../start/index.html">The five-minute version</a>
+      <a class="sl" href="../../why-graphs/index.html">Why graphs at all</a>
+      <a class="sl" href="../../glossary/index.html">Glossary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../book/index.html">The book<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../book/index.html">Table of contents</a>
+      <a class="sl" href="../../book/single.html">Read it in one page</a>
+      <a class="sl" href="../../book/changes.html">What changed between versions</a>
+      <a class="sl" href="../../reviews/index.html">The reviews</a>
+      <a class="sl" href="../../decisions/index.html">&hellip; the open decisions</a>
+      <a class="sl" href="../../altitudes/index.html">The altitude ladder</a>
+      <a class="sl" href="../../altitudes/graph.html">&hellip; as one graph</a>
+      <a class="sl" href="../../altitudes/concepts.html">&hellip; the concept map</a>
+      <a class="sl" href="../../book/meaning-through-connectivity.pdf">The print PDF (6&times;9)</a>
+      <a class="sl" href="../../book/meaning-through-connectivity-screen.pdf">The screen PDF (tablet)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../grammar/index.html">The grammar<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../grammar/index.html">The rules you can apply tomorrow</a>
+      <a class="sl" href="../../grammar/edge-set.html">The edge set</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../depth/index.html">Depth<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../depth/index.html">The full argument</a>
+      <a class="sl" href="../../depth/boundaries.html">A graph at every boundary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../../vaults/index.html">The vaults<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../vaults/index.html">The vaults, opened</a>
+      <a class="sl" href="../../vaults/voice-debrief/index.html">VoiceDebrief</a>
+      <a class="sl" href="../../vaults/voice-debrief/junction.html">&hellip; the junction rule</a>
+      <a class="sl" href="../../vaults/voice-debrief/absence.html">&hellip; the empty layer</a>
+      <a class="sl" href="../../vaults/regulation-graph/index.html">Regulation Graph</a>
+      <a class="sl" href="../../vaults/regulation-graph/provenance.html">&hellip; the provenance chain</a>
+      <a class="sl" href="../../vaults/regulation-graph/engines.html">&hellip; the query engines</a>
+      <a class="sl here" href="../../vaults/risk-mandate/index.html">Risk Mandate</a>
+      <a class="sl" href="../../vaults/agentic-browser-isolation/index.html">Agentic Browser Isolation</a>
+      <a class="sl" href="../../vaults/agentic-browser-isolation/acceptance.html">&hellip; the acceptance mechanism</a>
+      <a class="sl" href="../../vaults/risk-graph-explorer/index.html">Risk Graph Explorer</a>
+      <a class="sl" href="../../vaults/capability-scale.html">The capability scale</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../examples/index.html">Examples<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../examples/index.html">Worked graphs, with real numbers</a>
+      <a class="sl" href="../../examples/browser-isolation.html">Browser isolation</a>
+      <a class="sl" href="../../examples/2fa.html">The 2FA graph</a>
+      <a class="sl" href="../../examples/article-26-5.html">Article 26(5), end to end</a>
+      <a class="sl" href="../../maps/index.html">Wardley maps as graphs</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../shipped/index.html">Reality<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../shipped/index.html">What ships, what is argued</a>
+      <a class="sl" href="../../origins/index.html">Origins: 2026</a>
+      <a class="sl" href="../../network/index.html">The network</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../documents/index.html">Site<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../documents/index.html">The documents</a>
+      <a class="sl" href="../../admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl" href="../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../admin/publishing.html">Publishing the book</a>
+      <a class="sl" href="../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../about/participant.html">Where we lose</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Graphs">★ GitHub</a>
+  <script src="../../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+  <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> → <a href="../index.html">the vaults</a> → <b>Risk Mandate</b></div>
+  <h1>Risk Mandate, opened</h1>
+  <p class="lead">A field demo built to be handed to a stranger on an iPad, and underneath it the most complete software project in the catalogue: <b>124 files, 98 commits, eight entry points</b>, a test suite, build tooling and pinned releases, all inside one encrypted vault. It answers the question the other demos leave open — can you actually build something real in a vault — and it does the hardest thing safely: <b>it uses an LLM without ever holding the API key</b>.</p>
+
+  <div class="vfacts">
+    <div><b>124</b><span>files</span></div>
+    <div><b>98</b><span>commits</span></div>
+    <div><b>8</b><span>entry points</span></div>
+    <div><b>1.9 MB</b><span>total</span></div>
+    <div class="vf-big"><b>llm: chat · fs.write: one folder</b><span>what it asks for</span></div>
+  </div>
+  <p class="small dim">The vault's own derived facts, last updated 6 August 2026. Quoted, not recounted.</p>
+
+  <figure class="vshot"><img src="images/app-open.webp" width="1500" height="1000" loading="lazy" alt="The app as it opens from the published read key: scenarios, presets, and a version chip."><figcaption>The app as it opens from the published read key: scenarios, presets, and a version chip. <span class="small dim">· the vault's own published figure, <a href="https://sgit.ai/demos/vaults/risk-mandate/index.html">sgit.ai/demos/vaults/risk-mandate/</a>, fetched 22 August 2026, CC BY 4.0</span></figcaption></figure>
+
+  <h2 id="key">It uses an LLM. It never holds the key.</h2>
+  <p>The whole argument of this vault is in its <code>app.json</code>. The app is granted <code>llm: chat, models, usage, listen</code> and <code>fs.write</code> over <code>field/workspace/</code> and nothing else. <b>What is not granted is the credential.</b> The OpenRouter key lives in <code>.vault/llm/config.json</code> as <code>keySealed: {iv, ct}</code>, encrypted under the vault key: the host decrypts it and makes the outbound call, and the app frame is handed a result, never a secret. Opened with the published read key, that field is ciphertext nobody outside can decrypt — and the publisher says they checked rather than assumed.</p>
+  <p>The vault's own phrasing is the sentence to take away: the app gets <b><code>ops:llm-chat</code> without ever getting <code>bearer</code> of the key</b>. That distinction is usually impossible to express in a permission system, let alone enforce, because most systems only know how to hand over the credential and hope. Expressing it needs two different things to be nameable — the operation and the possession — which is a modelling problem before it is a security one, and it is <a href="../../book/ch-02-the-five-ideas.html#connectivity">this book's argument in a different domain</a>: what a component <em>is</em> is what it can reach.</p>
+  <figure class="vshot"><img src="images/permissions.webp" width="1500" height="724" loading="lazy" alt="app.json: LLM use granted, the key withheld, and write scoped to one folder."><figcaption>app.json: LLM use granted, the key withheld, and write scoped to one folder. <span class="small dim">· the vault's own published figure, <a href="https://sgit.ai/demos/vaults/risk-mandate/index.html">sgit.ai/demos/vaults/risk-mandate/</a>, fetched 22 August 2026, CC BY 4.0</span></figcaption></figure>
+
+  <h2 id="commits">Ninety-eight commits, and releases pinned to them</h2>
+  <p>This is not a document that happens to live in a vault; it is a software project developed in one. Ninety-eight commits, a test suite, build tooling, and <code>.vault/releases.json</code> pinning named releases (<code>v0.15.5</code>, <code>v0.10.3</code>, <code>v0.7.7</code>) to specific commit ids — which is exactly what the release selector in the app's chrome is reading. A version chip that resolves to a commit is a small thing that makes a large claim: the build you are looking at is identified, not described.</p>
+  <figure class="vshot"><img src="images/history.webp" width="1500" height="882" loading="lazy" alt="The SGit view: 98 commits of a real project, read with a published read key."><figcaption>The SGit view: 98 commits of a real project, read with a published read key. <span class="small dim">· the vault's own published figure, <a href="https://sgit.ai/demos/vaults/risk-mandate/index.html">sgit.ai/demos/vaults/risk-mandate/</a>, fetched 22 August 2026, CC BY 4.0</span></figcaption></figure>
+
+  <h2 id="convergent">Two projects, one tripwire, arrived at separately</h2>
+  <p>Its build script, <code>tools/build.mjs</code>, fails the build on any declarative external reference and on any credential-shaped string. <b>This site's release gate does the same two things</b>, and neither project copied the other. That is worth recording as more than a coincidence: two teams working on artefacts that travel — a vault handed over by key, a site published to a domain — independently concluded that the two things worth refusing at build time are <em>a dependency you do not control</em> and <em>a secret you did not mean to ship</em>.</p>
+  <p>When two implementations converge without contact, the shared part is usually the real constraint rather than either team's taste. It is the same evidence pattern as <a href="../../book/ch-05-against-schema-first.html#ontologies">two parties agreeing about facts while disagreeing about meaning</a>: the agreement is worth more precisely because it was not coordinated.</p>
+
+  <h2 id="audit">The audit, and the good kind of finding</h2>
+  <p>Audited across all 124 files before the key was published: no credentials, no personal data, and the vault's own key does not appear in its content — the failure that forced a republish elsewhere in this catalogue. Two findings were published because they are the useful kind. The OpenRouter credential <b>is present but sealed</b>, so a read-key holder gets ciphertext. And the single hit the secret scanner produced was <code>sk-test-abcdefghijklmnop</code> in <code>tests/suites/40-llm.mjs</code> — <b>a deliberately fake key in a test that asserts a reachable API key is caught</b>.</p>
+  <p>A scanner hit that turns out to be a security test is a good sign about a codebase, and it is the same shape as a finding this site has published about itself: a tripwire firing on the exact string a document needs in order to teach people to recognise it. The lesson both times is that a scan with no false positives is not scanning hard enough — and that the fix is reading the hit, not loosening the rule.</p>
+
+  <h2 id="open">Open it yourself</h2>
+  <pre><code>sgit clone sgit_rk1_a702fba803faac4369eb5d5a320b4dfa017af62bd2425fb298aac4b99e95c0ae:4zf6pf2z</code></pre>
+  <p class="small dim">A one-way read key. <a href="https://sgit.ai/demos/vaults/risk-mandate/index.html">The vault's own page</a> carries the live embeds and the full audit note.</p>
+
+  <div class="vcite"><span class="revlbl">What the book will cite from this</span><ul>
+    <li><b>Chapter 12 (what ships)</b> gains the most complete shipped artefact in the estate: a real application with 98 commits, pinned releases and a test suite, developed and delivered as an encrypted vault.</li>
+    <li><b>Chapter 8 (whose session is the agent using?)</b> gains its positive case. That chapter asks what an agent may reach; this vault shows a capability granted (<code>ops:llm-chat</code>) with the credential withheld, which is the shape the chapter argues for and had no instance of.</li>
+    <li><b>Chapter 16 (where this loses)</b> gains a convergence worth reporting honestly: two independent builds refusing the same two things is evidence about the constraint, not about either team.</li>
+    <li>The <a href="../capability-scale.html">capability scale</a> takes this vault as its interesting middle point.</li>
+  </ul></div>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">graphs<span>.sgit.ai</span></div>
+    <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
+    <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
+    <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.3.22</a> · <a href="../../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>Start here</h4>
+    <a href="../../start/index.html">&#8594; The five-minute version</a>
+    <a href="../../why-graphs/index.html">Why graphs at all</a>
+    <a href="../../glossary/index.html">Glossary</a>
+    <a href="../../book/index.html">The book</a>
+    <a href="../../book/single.html">&nbsp;&nbsp;&hellip; in one page</a>
+    <a href="../../book/meaning-through-connectivity.pdf">&nbsp;&nbsp;&hellip; as a print PDF</a>
+    <a href="../../book/meaning-through-connectivity-screen.pdf">&nbsp;&nbsp;&hellip; as a screen PDF</a>
+  </div>
+  <div>
+    <h4>The grammar</h4>
+    <a href="../../grammar/index.html">The rules</a>
+    <a href="../../grammar/edge-set.html">The edge set</a>
+    <a href="../../depth/index.html">The full argument</a>
+    <a href="../../depth/boundaries.html">A graph at every boundary</a>
+  </div>
+  <div>
+    <h4>Worked graphs</h4>
+    <a href="../../examples/index.html">All of them</a>
+    <a href="../../examples/browser-isolation.html">Browser isolation</a>
+    <a href="../../examples/2fa.html">The 2FA graph</a>
+    <a href="../../examples/article-26-5.html">Article 26(5)</a>
+    <a href="../../maps/index.html">Wardley maps</a>
+  </div>
+  <div>
+    <h4>Reality &amp; site</h4>
+    <a href="../../shipped/index.html">What ships, what is argued</a>
+    <a href="../../origins/index.html">Origins: 2026</a>
+    <a href="../../network/index.html">The network</a>
+    <a href="../../documents/index.html">The documents</a>
+    <a href="../../admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

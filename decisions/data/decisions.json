@@ -1,0 +1,879 @@
+{
+ "version": "v0.3.22",
+ "decisions": [
+  {
+   "id": "r001-D1",
+   "review": "r001",
+   "review_title": "First reading of the book",
+   "n": 1,
+   "item": 2,
+   "short": "The title",
+   "question": "The title, reframed twice since the review (item 2's thread has the full history). The phrase 'meaning through connectivity' has a dated, single origin: it is the subtitle of the foundational Issues-FS document **Thinking in Graphs: Meaning Through Connectivity** (5 February 2026), and the fractal candidate traces to Part 3 of the **same document**, The Fractal Principle. So the choice is which half of the foundational document's own vocabulary leads the cover, with **G3** (the published name, May 2025) as the outsider third option. With it, the three sub-questions from the proposal: exact casing and order; whether the site's own identity follows the book's; and whether the PDF files rename with forwards kept, or keep their URLs and retitle content only. Whichever wins, the lineage chapter records both terms coined in one Issues-FS document on 5 February 2026, and G3's May 2025 naming before them. **Now decidable against a public citation:** since 22 August the Issues-FS site publishes that foundational document as C1 with its core definition quoted, so the colophon the librarian wanted in front of the founder is public.",
+   "options_raw": [
+    "Meaning Through Connectivity (the document's subtitle, as is)",
+    "Fractal Semantic Graphs: Meaning Through Connectivity (leading with Part 3)",
+    "Elevate G3 (the published name, alone or combined)"
+   ],
+   "state": "answered",
+   "answer": "**Fractal Semantic Graphs: Meaning Through Connectivity**, with **for humans and agents** as the subtitle. Both halves come from the foundational document of 5 February 2026: the title from Part 3, the phrase after the colon from the document's own subtitle. G3 stays as history for the lineage chapter. Decided by the founder on 22 August 2026, and the propagation (cover, spine, wrap, half-title, colophon, running heads, metadata sheet, PDF filenames, site identity) is staged for the v0.4.0 identity release, which the founder deprioritised in favour of the vault analyses.",
+   "date": "22 August 2026",
+   "why": "Answered on 22 August.",
+   "options": [],
+   "blocks": [
+    {
+     "label": "v0.4.0",
+     "key": "v040",
+     "work": "the v0.4.0 identity release"
+    }
+   ],
+   "answer_with": [],
+   "affects": [
+    {
+     "kind": "book",
+     "label": "the cover and interior",
+     "href": "../book/index.html"
+    }
+   ],
+   "href": "../reviews/r001.html#item-2"
+  },
+  {
+   "id": "r001-D2",
+   "review": "r001",
+   "review_title": "First reading of the book",
+   "n": 2,
+   "item": 9,
+   "short": "Sign off the sequencing",
+   "question": "Sign off the sequencing, as reshaped by review r003: the evidence programme (vault case studies at full site granularity) runs first; the identity release (title, lineage and fractal chapters) follows, distilling from that evidence; the no-dependency corrections land as agreed along the way; the chapter audit runs throughout.",
+   "options_raw": [
+    "Sign off as reshaped",
+    "Adjust the order (say what moves)"
+   ],
+   "state": "open",
+   "answer": null,
+   "date": null,
+   "why": "Everything with a dependency waits on this. The order decides whether the identity release (title, cover, lineage and fractal chapters) comes before or after the evidence programme, and the two pull in opposite directions: the cover is decided and unshipped, while the estate is producing evidence faster than the book can absorb it.",
+   "options": [
+    {
+     "label": "Sign off as reshaped",
+     "does": "Evidence programme first, identity release after, corrections along the way, chapter audit throughout.",
+     "cost": "The cover says one thing and the published book says another for longer.",
+     "recommended": true
+    },
+    {
+     "label": "Adjust the order",
+     "does": "Name what moves and the rest re-plans around it.",
+     "cost": "Anything moved ahead of the evidence programme has to be written from argument rather than from artefacts.",
+     "recommended": false
+    }
+   ],
+   "blocks": [
+    {
+     "label": "v0.4.0 identity release",
+     "key": "v040",
+     "work": "the v0.4.0 identity release"
+    },
+    {
+     "label": "T26 the case-study programme's pace",
+     "key": "t26",
+     "work": "T26 · the vault case-study programme"
+    }
+   ],
+   "answer_with": [
+    "r002-D3"
+   ],
+   "affects": [
+    {
+     "kind": "review",
+     "label": "r001 item 9",
+     "href": "../reviews/r001.html"
+    },
+    {
+     "kind": "page",
+     "label": "the vault analyses",
+     "href": "../vaults/index.html"
+    }
+   ],
+   "href": "../reviews/r001.html#item-9"
+  },
+  {
+   "id": "r002-D1",
+   "review": "r002",
+   "review_title": "A book for humans and agents",
+   "n": 1,
+   "item": 1,
+   "short": "Humans and agents",
+   "question": "The allocation of 'for humans and agents': does it join the title, take the cover's descriptor strip, or live as the introduction's opening claim? Settled jointly with r001's decision D1 (the title itself), so one conversation closes both.",
+   "options_raw": [
+    "In the title",
+    "On the descriptor strip",
+    "As the introduction's opening claim"
+   ],
+   "state": "answered",
+   "answer": "**For humans and agents** becomes the subtitle, under *Fractal Semantic Graphs: Meaning Through Connectivity*. Settled with r001's D1 on 22 August 2026, exactly as this item proposed: the phrase names the audience rather than competing for space in the title.",
+   "date": "22 August 2026",
+   "why": "Answered with r001 D1.",
+   "options": [],
+   "blocks": [],
+   "answer_with": [],
+   "affects": [],
+   "href": "../reviews/r002.html#item-1"
+  },
+  {
+   "id": "r002-D2",
+   "review": "r002",
+   "review_title": "A book for humans and agents",
+   "n": 2,
+   "item": 3,
+   "short": "Pick the graph pilot chapter",
+   "question": "The pilot chapter for the book-as-graph: chapter 5 (Against schema-first) as proposed, or another chapter?",
+   "options_raw": [
+    "Chapter 5, as proposed",
+    "Another chapter (name it)"
+   ],
+   "state": "open",
+   "answer": null,
+   "date": null,
+   "why": "The book-as-a-graph work needs one chapter lifted into nodes with the author confirming the lift, because for a decompilation the author is the oracle. The choice matters more than it looks: a claim-dense chapter with thin evidence shows the ghosted nodes honestly, and a well-evidenced one makes the pilot look better than the method is.",
+   "options": [
+    {
+     "label": "Chapter 5, Against schema-first",
+     "does": "Claim-dense, evidence-thin: the ghosts will show.",
+     "cost": "It is also the chapter most likely to change in the identity release.",
+     "recommended": true
+    },
+    {
+     "label": "Another chapter",
+     "does": "Name it and the pilot moves.",
+     "cost": "A well-evidenced chapter flatters the pilot and teaches less.",
+     "recommended": false
+    }
+   ],
+   "blocks": [
+    {
+     "label": "r002 item 3",
+     "key": "pilot",
+     "work": "r002 item 3 · the graph pilot chapter"
+    },
+    {
+     "label": "the per-chapter graph visualisations of r002 item 6",
+     "key": "chgraphs",
+     "work": "the per-chapter graph visualisations"
+    }
+   ],
+   "answer_with": [],
+   "affects": [
+    {
+     "kind": "concept",
+     "label": "the concept layer",
+     "href": "../altitudes/concepts.html"
+    },
+    {
+     "kind": "review",
+     "label": "r002 item 3",
+     "href": "../reviews/r002.html"
+    }
+   ],
+   "href": "../reviews/r002.html#item-3"
+  },
+  {
+   "id": "r002-D3",
+   "review": "r002",
+   "review_title": "A book for humans and agents",
+   "n": 3,
+   "item": 9,
+   "short": "The combined sequencing",
+   "question": "The combined sequencing, jointly with r001's decision D2 and as reshaped by review r003: standalone wins first (footnotes, toolbox, the database correction), the evidence programme (vault case studies) next, then the identity release, then the graph pilot and chapter visualisations.",
+   "options_raw": [
+    "Sign off as reshaped",
+    "Adjust the order (say what moves)"
+   ],
+   "state": "open",
+   "answer": null,
+   "date": null,
+   "why": "The same question as r001 D2 seen from the agent-facing side. Answer them together or they will drift apart, which is itself a small instance of the problem the book keeps describing.",
+   "options": [
+    {
+     "label": "Sign off as reshaped",
+     "does": "Matches r001 D2.",
+     "cost": null,
+     "recommended": true
+    },
+    {
+     "label": "Adjust",
+     "does": "Say what moves.",
+     "cost": null,
+     "recommended": false
+    }
+   ],
+   "blocks": [
+    {
+     "label": "the standalone wins: footnotes, the agent toolbox, the database correction",
+     "key": "standalone",
+     "work": "the standalone corrections"
+    }
+   ],
+   "answer_with": [
+    "r001-D2"
+   ],
+   "affects": [
+    {
+     "kind": "review",
+     "label": "r002 item 9",
+     "href": "../reviews/r002.html"
+    }
+   ],
+   "href": "../reviews/r002.html#item-9"
+  },
+  {
+   "id": "r003-D1",
+   "review": "r003",
+   "review_title": "Decouple the book, evidence first, reviews as graphs",
+   "n": 1,
+   "item": 1,
+   "short": "Adopt the decoupling",
+   "question": "Adopt the decoupling as specified? The book gets its own markdown source tree, seeded from today's seventeen units so the split starts at zero drift, and the build gate flips from equality (book must match the site) to provenance (every book unit must name the site pages, version and commit it distilled from, with drift reported rather than forbidden).",
+   "options_raw": [
+    "Adopt as proposed",
+    "Adjust the architecture (say what changes)",
+    "Keep the coupling for now"
+   ],
+   "state": "open",
+   "answer": null,
+   "date": null,
+   "why": "The largest structural decision open, and the vault analyses have made it urgent rather than tidy: seven deep pages now sit outside the book's gate by accident rather than by design. The equality gate still requires the book to match the site, which is the constraint that flattens both surfaces.",
+   "options": [
+    {
+     "label": "Adopt as proposed",
+     "does": "The book gets its own source tree seeded at zero drift; the gate flips from equality to provenance, so every book unit names the pages, version and commit it distilled from, and drift is reported rather than forbidden.",
+     "cost": "One release of pipeline work before any new writing, and provenance blocks to maintain from then on.",
+     "recommended": true
+    },
+    {
+     "label": "Adjust the architecture",
+     "does": "Same split, different mechanism — say what changes.",
+     "cost": "Any weaker gate risks silent drift, which is the failure the current gate exists to stop.",
+     "recommended": false
+    },
+    {
+     "label": "Keep the coupling for now",
+     "does": "Nothing changes; the site stays constrained by what the book can carry.",
+     "cost": "The vault programme either duplicates the estate or stays thin about it.",
+     "recommended": false
+    }
+   ],
+   "blocks": [
+    {
+     "label": "T25",
+     "key": "t25",
+     "work": "T25 · decouple the book from the website"
+    },
+    {
+     "label": "T26 at full depth",
+     "key": "t26",
+     "work": "T26 · the vault case-study programme"
+    },
+    {
+     "label": "the book's provenance edges",
+     "key": "prov",
+     "work": "the book's provenance edges"
+    }
+   ],
+   "answer_with": [],
+   "affects": [
+    {
+     "kind": "review",
+     "label": "r003 item 1",
+     "href": "../reviews/r003.html"
+    },
+    {
+     "kind": "page",
+     "label": "the capability scale, which argues the same test",
+     "href": "../vaults/capability-scale.html"
+    }
+   ],
+   "href": "../reviews/r003.html#item-1"
+  },
+  {
+   "id": "r003-D2",
+   "review": "r003",
+   "review_title": "Decouple the book, evidence first, reviews as graphs",
+   "n": 2,
+   "item": 5,
+   "short": "Which issues logic runs a review folder",
+   "question": "Which issues logic manages a review's folder: in-repo issues in the IssuesFS pattern (issues as files, states as data, the graph computable from the folder), or GitHub issues? The agent recommends in-repo: it keeps the serverless-pull-request property this workflow is named for, and it dogfoods the very case study r001 item 8 wants written.",
+   "options_raw": [
+    "In-repo issues, IssuesFS pattern (recommended)",
+    "GitHub issues",
+    "Both: in-repo as the record, GitHub mirrored for notification"
+   ],
+   "state": "open",
+   "answer": null,
+   "date": null,
+   "why": "Reviews are already graphs in all but name. The choice is where the conversation lives, and it decides whether this workflow keeps the property it is named for.",
+   "options": [
+    {
+     "label": "In-repo issues, the IssuesFS pattern",
+     "does": "Issues as files, states as data, the graph computable from the folder.",
+     "cost": "No notifications: somebody has to look.",
+     "recommended": true
+    },
+    {
+     "label": "GitHub issues",
+     "does": "Notifications and a familiar interface.",
+     "cost": "The serverless-pull-request property is lost, and the record leaves the artefact.",
+     "recommended": false
+    },
+    {
+     "label": "Both",
+     "does": "In-repo as the record, GitHub mirrored for notification.",
+     "cost": "Two places to keep in step, which is the drift problem this project keeps writing about.",
+     "recommended": false
+    }
+   ],
+   "blocks": [
+    {
+     "label": "T27 reviews as folders with their own graphs",
+     "key": "t27",
+     "work": "T27 · reviews as folders with their own graphs"
+    }
+   ],
+   "answer_with": [],
+   "affects": [
+    {
+     "kind": "review",
+     "label": "r003 item 5",
+     "href": "../reviews/r003.html"
+    }
+   ],
+   "href": "../reviews/r003.html#item-5"
+  },
+  {
+   "id": "r003-D3",
+   "review": "r003",
+   "review_title": "Decouple the book, evidence first, reviews as graphs",
+   "n": 3,
+   "item": 3,
+   "short": "The case-study order",
+   "question": "The case-study order: confirm or reorder the proposed sequence (the regulation graph vault, then Risk Graph Explorer, then browser isolation, then the sgraph.ai library-as-a-vault, then SGit, IssuesFS and EmailFS from the resolved sources), and supply the per-vault guidance the memo promises: which areas to go deeper on, what to screenshot, what evidence to capture. That guidance is ask N13 on the comms board. **Revised by the launch of issues-fs.sgit.ai:** the programme now has two kinds of entry, written case studies and distillations from sibling estates that already hold the depth (IssuesFS, EmailFS). The agent recommends taking the distillations first, since they are ready now and they test the provenance mechanism against sites that keep moving.",
+   "options_raw": [
+    "Distillations first (IssuesFS, EmailFS), then the written vault studies (recommended)",
+    "Confirm the original order and supply guidance vault by vault",
+    "Reorder (say which first)"
+   ],
+   "state": "answered",
+   "answer": "Neither of the proposed orders: the founder chose **the written vault analyses first, starting with VoiceDebrief and the Regulation Graph**, ahead of the decoupling refactor and the ladder work. Both are published at [/vaults/](../vaults/index.html) as of v0.3.19. The distillations from sibling estates (IssuesFS, EmailFS) and the remaining vaults stay queued behind them.",
+   "date": "22 August 2026",
+   "why": "Answered by starting the programme.",
+   "options": [],
+   "blocks": [],
+   "answer_with": [],
+   "affects": [
+    {
+     "kind": "page",
+     "label": "the vaults",
+     "href": "../vaults/index.html"
+    }
+   ],
+   "href": "../reviews/r003.html#item-3"
+  },
+  {
+   "id": "r004-D1",
+   "review": "r004",
+   "review_title": "The altitude ladder: one book at five altitudes",
+   "n": 1,
+   "item": 1,
+   "short": "Does the ladder continue",
+   "question": "Does the experiment continue? Three ways to take it: **stop** (the ladder stays as a published experiment, and the book carries on as it is); **finish the pilot** (take level 4 across all seventeen units, keeping the graph layer where it is); or **adopt** (the ladder becomes part of the build, authored in `content/altitudes/`, gate-checked like the book, with level 4 complete and the graph layer lifted everywhere). The agent recommends finishing the pilot first: the sharpest findings came from level 3 and the two drilled chapters, and the cost of the next twelve chapters is now measurable rather than guessed.",
+   "options_raw": [
+    "Finish the pilot: level 4 for all seventeen units (recommended)",
+    "Adopt into the build now",
+    "Stop here, keep it as a published experiment"
+   ],
+   "state": "open",
+   "answer": null,
+   "date": null,
+   "why": "Levels 1 to 3 are complete and level 4 covers two chapters. The cost of the remaining fifteen is now measured rather than guessed, and every finding the ladder produced came from the levels that exist.",
+   "options": [
+    {
+     "label": "Finish the pilot: level 4 for all seventeen units",
+     "does": "Completes the ladder at its most productive altitude.",
+     "cost": "The largest single writing task open.",
+     "recommended": true
+    },
+    {
+     "label": "Adopt into the build",
+     "does": "The ladder is authored in content/, gate-checked like the book.",
+     "cost": "Gate-checking a thing that is still changing shape slows both.",
+     "recommended": false
+    },
+    {
+     "label": "Stop here",
+     "does": "The ladder stays a published experiment.",
+     "cost": "The concept layer and the checks keep working; only the level 4 coverage stalls.",
+     "recommended": false
+    }
+   ],
+   "blocks": [
+    {
+     "label": "level 4 completion",
+     "key": "t28",
+     "work": "T28 · finish or adopt the ladder"
+    },
+    {
+     "label": "the audience variants of D3",
+     "key": "t30",
+     "work": "T30 · audience and translation variants"
+    }
+   ],
+   "answer_with": [],
+   "affects": [
+    {
+     "kind": "page",
+     "label": "the altitude ladder",
+     "href": "../altitudes/index.html"
+    }
+   ],
+   "href": "../reviews/r004.html#item-1"
+  },
+  {
+   "id": "r004-D2",
+   "review": "r004",
+   "review_title": "The altitude ladder: one book at five altitudes",
+   "n": 2,
+   "item": 4,
+   "short": "Where the findings live",
+   "question": "The findings need a home. Do repeats and contradictions become a **standing register** (a page like the reviews register, where each finding has a state and is closed by a release), or do they stay a **per-run output** of the ladder, regenerated and re-read each time? The agent recommends the standing register: a contradiction that is found, forgotten and re-found is not a finding, it is a treadmill.",
+   "options_raw": [
+    "A standing register with states (recommended)",
+    "A per-run output only"
+   ],
+   "state": "open",
+   "answer": null,
+   "date": null,
+   "why": "Partly overtaken by events, and narrower than when it was written: findings now carry states with reasons, and five checks run on every build, which is already a standing register in everything but name. What is left is whether it gets its own page and its own numbering.",
+   "options": [
+    {
+     "label": "A standing register with its own page",
+     "does": "Findings get stable ids that a release can close, like the comms board's tasks.",
+     "cost": "Another register to keep current.",
+     "recommended": true
+    },
+    {
+     "label": "Leave it as it is",
+     "does": "The ladder page carries findings and checks together.",
+     "cost": "A finding cannot be cited by id from outside the page.",
+     "recommended": false
+    }
+   ],
+   "blocks": [
+    {
+     "label": "T29",
+     "key": "t29",
+     "work": "T29 · the findings register"
+    }
+   ],
+   "answer_with": [],
+   "affects": [
+    {
+     "kind": "page",
+     "label": "findings and checks",
+     "href": "../altitudes/index.html#findings"
+    }
+   ],
+   "href": "../reviews/r004.html#item-4"
+  },
+  {
+   "id": "r004-D3",
+   "review": "r004",
+   "review_title": "The altitude ladder: one book at five altitudes",
+   "n": 3,
+   "item": 5,
+   "short": "Which audience variant first",
+   "question": "Which audience variant is worth building first, once the ladder is stable: a **business** projection of level 2, a **graph-literate** projection of level 3, or a **non-English** projection of level 2 (the translation case, which tests whether the graph really is what survives)? Each is one re-projection from the same graph, not a new book.",
+   "options_raw": [
+    "Business, from level 2",
+    "Graph-literate, from level 3",
+    "A non-English projection of level 2",
+    "None yet: stabilise the ladder first"
+   ],
+   "state": "open",
+   "answer": null,
+   "date": null,
+   "why": "The ladder's claim is that the graph survives a change of audience and only the projection changes. One variant tests it; the translation case tests it hardest, because a language change cannot hide behind familiar examples.",
+   "options": [
+    {
+     "label": "Business, from level 2",
+     "does": "Cheapest, and the most likely to be asked for.",
+     "cost": null,
+     "recommended": false
+    },
+    {
+     "label": "Graph-literate, from level 3",
+     "does": "Tests whether the vocabulary can go up rather than down.",
+     "cost": null,
+     "recommended": false
+    },
+    {
+     "label": "A non-English projection of level 2",
+     "does": "The strongest test of the claim: if the argument changes, that is a finding about the graph.",
+     "cost": null,
+     "recommended": true
+    },
+    {
+     "label": "None yet",
+     "does": "Stabilise the ladder first.",
+     "cost": null,
+     "recommended": false
+    }
+   ],
+   "blocks": [
+    {
+     "label": "T30",
+     "key": "t30",
+     "work": "T30 · audience and translation variants"
+    }
+   ],
+   "answer_with": [],
+   "affects": [
+    {
+     "kind": "page",
+     "label": "the altitude ladder",
+     "href": "../altitudes/index.html"
+    }
+   ],
+   "href": "../reviews/r004.html#item-5"
+  },
+  {
+   "id": "r004-D4",
+   "review": "r004",
+   "review_title": "The altitude ladder: one book at five altitudes",
+   "n": 4,
+   "item": 8,
+   "short": "Confirm the taxonomy classes",
+   "question": "The per-level ontologies and taxonomies are authored by the agent and are a first pass: the classes are defensible but not confirmed, and the author is the oracle for a classification of their own book. Confirm them, or correct the classes that are wrong? The most arguable calls: chapter 4 (the edge set) is classed **Prescription** rather than Apparatus; the Introduction is classed **Argument** rather than Signpost; and level 4's class vocabulary is about what a section does to the reader, which is a different kind of scheme from every level above it.",
+   "options_raw": [
+    "Confirm as authored",
+    "Correct specific classes (say which)",
+    "Rework the class vocabulary at a level"
+   ],
+   "state": "open",
+   "answer": null,
+   "date": null,
+   "why": "The per-level classes are the agent's first pass, and for a classification of your own book the author is the oracle. Three calls are genuinely arguable: chapter 4 (the edge set) classed Prescription rather than Apparatus; the Introduction classed Argument rather than Signpost; and level 4's whole vocabulary being about what a section does to the reader rather than what kind of matter it is.",
+   "options": [
+    {
+     "label": "Confirm as authored",
+     "does": "The classes stand and the level 4 rollout uses them.",
+     "cost": null,
+     "recommended": true
+    },
+    {
+     "label": "Correct specific classes",
+     "does": "Name them and the data changes with the next build.",
+     "cost": null,
+     "recommended": false
+    },
+    {
+     "label": "Rework a level's vocabulary",
+     "does": "The largest change: a level's classes are replaced wholesale.",
+     "cost": null,
+     "recommended": false
+    }
+   ],
+   "blocks": [
+    {
+     "label": "level 4 rollout under D1",
+     "key": "t28",
+     "work": "T28 · finish or adopt the ladder"
+    }
+   ],
+   "answer_with": [],
+   "affects": [
+    {
+     "kind": "page",
+     "label": "the ontology and taxonomy panels",
+     "href": "../altitudes/index.html#onttax"
+    }
+   ],
+   "href": "../reviews/r004.html#item-8"
+  },
+  {
+   "id": "r004-D5",
+   "review": "r004",
+   "review_title": "The altitude ladder: one book at five altitudes",
+   "n": 5,
+   "item": 9,
+   "short": "The vendored dependency",
+   "question": "This site now carries its **first vendored third-party dependency** (Cytoscape.js 3.30.2, MIT, 373 KB, committed at /assets/vendor/). Everything else here is hand-written with no runtime dependencies, and that has been a stated property. Keep it (a real graph library earns its place for a real graph), replace it with a hand-written layout to preserve the no-dependency claim, or keep it and state the exception explicitly in the engineering page and chapter 12's honesty table?",
+   "options_raw": [
+    "Keep it, and state the exception in the honesty table (recommended)",
+    "Keep it, no further statement",
+    "Replace with a hand-written layout"
+   ],
+   "state": "open",
+   "answer": null,
+   "date": null,
+   "why": "This site now carries Cytoscape.js (MIT, 373 KB) in assets/vendor/, against a stated property that it has no runtime dependencies. An unrecorded exception to a stated property is exactly what the honesty table exists to prevent, and this is the second sentence in chapter 12 that this work has put under strain.",
+   "options": [
+    {
+     "label": "Keep it and state the exception in the honesty table",
+     "does": "The claim becomes precise: no runtime dependency except a vendored graph library, named and versioned.",
+     "cost": "Chapter 12 grows a line.",
+     "recommended": true
+    },
+    {
+     "label": "Keep it, no further statement",
+     "does": "Nothing changes.",
+     "cost": "A stated property with a silent exception, which is the failure mode this book names.",
+     "recommended": false
+    },
+    {
+     "label": "Replace it with a hand-written layout",
+     "does": "The no-dependency claim stands unqualified.",
+     "cost": "Weeks of work to reproduce a mature library, and a worse graph while it happens.",
+     "recommended": false
+    }
+   ],
+   "blocks": [
+    {
+     "label": "chapter 12's wording, jointly with the path-query correction",
+     "key": "ch12",
+     "work": "chapter 12's wording"
+    }
+   ],
+   "answer_with": [],
+   "affects": [
+    {
+     "kind": "page",
+     "label": "the graph explorer",
+     "href": "../altitudes/graph.html"
+    },
+    {
+     "kind": "book",
+     "label": "chapter 12",
+     "href": "../book/ch-12-what-ships-what-is-argued.html"
+    }
+   ],
+   "href": "../reviews/r004.html#item-9"
+  },
+  {
+   "id": "r004-D6",
+   "review": "r004",
+   "review_title": "The altitude ladder: one book at five altitudes",
+   "n": 6,
+   "item": 11,
+   "short": "The path query",
+   "question": "One part of the memo is deliberately **not** built, and it is the interesting part. Paths can now be traced and read, but they cannot be **queried**: there is no way to say \"find every path from a concept to a piece of evidence that goes grounds → appears_in → backed_by\". That is a path-query language, and [chapter 12](../book/ch-12-what-ships-what-is-argued.html) currently lists exactly that under what does not exist anywhere. Building one here would make the honesty table wrong in an interesting way. Do we (a) leave it unbuilt and let the honesty table stand, (b) build a small pattern matcher over this graph only and amend chapter 12 to say a demonstrator exists here, or (c) treat it as the next experiment in its own right?",
+   "options_raw": [
+    "Leave it unbuilt; the honesty table stands (recommended for now)",
+    "Build a demonstrator here and amend chapter 12",
+    "Make it the next experiment"
+   ],
+   "state": "answered",
+   "answer": "Build it. The founder's answer was a question — *\"why can't you create that path-query UI?\"* — and the honest reply is that nothing technical stopped it: the caution was about a **content** claim, not a capability. Built at [the graph page](../altitudes/graph.html): a pattern is a start filter and up to three edge-and-node steps, matches print as sentences using each edge's verb or inverse depending on direction, cycles cannot spin, and the result is capped at 300 **and says when it hit the cap**. What follows for the honesty table is option (b) in spirit but not in sequence: the page **states its own falsification in full** and proposes the precise wording, and chapter 12 changes only when you agree it, because book content still changes by agreement. No reader is misled in the meantime, because the correction sits beside the thing that caused it.",
+   "date": "22 August 2026",
+   "why": "Answered by building it.",
+   "options": [],
+   "blocks": [],
+   "answer_with": [],
+   "affects": [
+    {
+     "kind": "page",
+     "label": "the query",
+     "href": "../altitudes/graph.html#query"
+    }
+   ],
+   "href": "../reviews/r004.html#item-11"
+  }
+ ],
+ "open": 10,
+ "blocks": [
+  {
+   "key": "ch12",
+   "work": "chapter 12's wording",
+   "names": [
+    "chapter 12's wording, jointly with the path-query correction"
+   ],
+   "decisions": [
+    "r004-D5"
+   ]
+  },
+  {
+   "key": "chgraphs",
+   "work": "the per-chapter graph visualisations",
+   "names": [
+    "the per-chapter graph visualisations of r002 item 6"
+   ],
+   "decisions": [
+    "r002-D2"
+   ]
+  },
+  {
+   "key": "pilot",
+   "work": "r002 item 3 · the graph pilot chapter",
+   "names": [
+    "r002 item 3"
+   ],
+   "decisions": [
+    "r002-D2"
+   ]
+  },
+  {
+   "key": "prov",
+   "work": "the book's provenance edges",
+   "names": [
+    "the book's provenance edges"
+   ],
+   "decisions": [
+    "r003-D1"
+   ]
+  },
+  {
+   "key": "standalone",
+   "work": "the standalone corrections",
+   "names": [
+    "the standalone wins: footnotes, the agent toolbox, the database correction"
+   ],
+   "decisions": [
+    "r002-D3"
+   ]
+  },
+  {
+   "key": "t25",
+   "work": "T25 · decouple the book from the website",
+   "names": [
+    "T25"
+   ],
+   "decisions": [
+    "r003-D1"
+   ]
+  },
+  {
+   "key": "t26",
+   "work": "T26 · the vault case-study programme",
+   "names": [
+    "T26 the case-study programme's pace",
+    "T26 at full depth"
+   ],
+   "decisions": [
+    "r001-D2",
+    "r003-D1"
+   ]
+  },
+  {
+   "key": "t27",
+   "work": "T27 · reviews as folders with their own graphs",
+   "names": [
+    "T27 reviews as folders with their own graphs"
+   ],
+   "decisions": [
+    "r003-D2"
+   ]
+  },
+  {
+   "key": "t28",
+   "work": "T28 · finish or adopt the ladder",
+   "names": [
+    "level 4 completion",
+    "level 4 rollout under D1"
+   ],
+   "decisions": [
+    "r004-D1",
+    "r004-D4"
+   ]
+  },
+  {
+   "key": "t29",
+   "work": "T29 · the findings register",
+   "names": [
+    "T29"
+   ],
+   "decisions": [
+    "r004-D2"
+   ]
+  },
+  {
+   "key": "t30",
+   "work": "T30 · audience and translation variants",
+   "names": [
+    "the audience variants of D3",
+    "T30"
+   ],
+   "decisions": [
+    "r004-D1",
+    "r004-D3"
+   ]
+  },
+  {
+   "key": "v040",
+   "work": "the v0.4.0 identity release",
+   "names": [
+    "v0.4.0",
+    "v0.4.0 identity release"
+   ],
+   "decisions": [
+    "r001-D1",
+    "r001-D2"
+   ]
+  }
+ ],
+ "shared": [
+  {
+   "key": "t26",
+   "work": "T26 · the vault case-study programme",
+   "names": [
+    "T26 the case-study programme's pace",
+    "T26 at full depth"
+   ],
+   "decisions": [
+    "r001-D2",
+    "r003-D1"
+   ]
+  },
+  {
+   "key": "t28",
+   "work": "T28 · finish or adopt the ladder",
+   "names": [
+    "level 4 completion",
+    "level 4 rollout under D1"
+   ],
+   "decisions": [
+    "r004-D1",
+    "r004-D4"
+   ]
+  },
+  {
+   "key": "t30",
+   "work": "T30 · audience and translation variants",
+   "names": [
+    "the audience variants of D3",
+    "T30"
+   ],
+   "decisions": [
+    "r004-D1",
+    "r004-D3"
+   ]
+  },
+  {
+   "key": "v040",
+   "work": "the v0.4.0 identity release",
+   "names": [
+    "v0.4.0",
+    "v0.4.0 identity release"
+   ],
+   "decisions": [
+    "r001-D1",
+    "r001-D2"
+   ]
+  }
+ ],
+ "mechanism": {
+  "source": "../vaults/agentic-browser-isolation/acceptance.html",
+  "rules": [
+   "One named owner. Every decision here is the founder's; the agent proposes and never decides.",
+   "Answer, defer with a reason, or ask for more data. **There is no deny button**: a decision cannot be made to go away by not looking at it.",
+   "Nothing moves until it is taken personally. An answer recorded here is what unblocks the work that waits on it.",
+   "The reason travels with the answer, so a decision can be argued with later rather than only obeyed."
+  ]
+ }
+}

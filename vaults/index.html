@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.21</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.22</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -38,6 +38,7 @@
       <a class="sl" href="../book/single.html">Read it in one page</a>
       <a class="sl" href="../book/changes.html">What changed between versions</a>
       <a class="sl" href="../reviews/index.html">The reviews</a>
+      <a class="sl" href="../decisions/index.html">&hellip; the open decisions</a>
       <a class="sl" href="../altitudes/index.html">The altitude ladder</a>
       <a class="sl" href="../altitudes/graph.html">&hellip; as one graph</a>
       <a class="sl" href="../altitudes/concepts.html">&hellip; the concept map</a>
@@ -69,6 +70,11 @@
       <a class="sl" href="../vaults/regulation-graph/index.html">Regulation Graph</a>
       <a class="sl" href="../vaults/regulation-graph/provenance.html">&hellip; the provenance chain</a>
       <a class="sl" href="../vaults/regulation-graph/engines.html">&hellip; the query engines</a>
+      <a class="sl" href="../vaults/risk-mandate/index.html">Risk Mandate</a>
+      <a class="sl" href="../vaults/agentic-browser-isolation/index.html">Agentic Browser Isolation</a>
+      <a class="sl" href="../vaults/agentic-browser-isolation/acceptance.html">&hellip; the acceptance mechanism</a>
+      <a class="sl" href="../vaults/risk-graph-explorer/index.html">Risk Graph Explorer</a>
+      <a class="sl" href="../vaults/capability-scale.html">The capability scale</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -130,16 +136,22 @@
         <td><span class="rstate rs-applied">published</span></td>
       </tr>
       <tr>
-        <td>Risk Graph Explorer</td>
-        <td>Seven simultaneous views over one graph; ghosted edges for what nobody has answered; <code>permissions: {}</code>.</td>
-        <td>&mdash;</td>
-        <td><span class="rstate rs-open">queued</span></td>
+        <td><a href="risk-mandate/index.html"><b>Risk Mandate</b></a><br><span class="small dim">124 files &middot; 98 commits</span></td>
+        <td><b>A mandate as a graph, not a document.</b> The authority to do security work written as typed nodes with eight entry points into the same material, and ninety-eight commits of history that make the mandate's own evolution readable.</td>
+        <td><a href="risk-mandate/index.html">Overview</a></td>
+        <td><span class="rstate rs-applied">published</span></td>
       </tr>
       <tr>
-        <td>Agentic browser isolation</td>
-        <td>Acceptance-gated escalation, 17 entry points, five stakeholder altitudes.</td>
-        <td>&mdash;</td>
-        <td><span class="rstate rs-open">queued</span></td>
+        <td><a href="agentic-browser-isolation/index.html"><b>Agentic Browser Isolation</b></a><br><span class="small dim">104 files &middot; 17 entry points</span></td>
+        <td><b>One risk at seven altitudes.</b> The same isolation decision written seven times, once per stakeholder, each in that stakeholder's own language and none of them a summary of another &mdash; plus a risk acceptance mechanism with no deny button.</td>
+        <td><a href="agentic-browser-isolation/index.html">Overview</a> &middot; <a href="agentic-browser-isolation/acceptance.html">The acceptance mechanism</a></td>
+        <td><span class="rstate rs-applied">published</span></td>
+      </tr>
+      <tr>
+        <td><a href="risk-graph-explorer/index.html"><b>Risk Graph Explorer</b></a><br><span class="small dim">33 files &middot; <code>permissions: {}</code></span></td>
+        <td><b>An empty register is a correct answer.</b> Seven views recompute as questions are answered, ghosted edges show what nobody has answered yet, and the vault asks for no capability at all: no network, no storage, no account.</td>
+        <td><a href="risk-graph-explorer/index.html">Overview</a></td>
+        <td><span class="rstate rs-applied">published</span></td>
       </tr>
       <tr>
         <td>The sgraph.ai library</td>
@@ -151,11 +163,31 @@
   </table>
   </div>
 
+  <h2 id="across">Read across the vaults</h2>
+  <p>Some findings belong to no single vault. They only appear once several have been read side by side, which is the argument for doing the analyses at this depth rather than as five short summaries.</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Synthesis</th><th>What reading across produced</th><th>Drawn from</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><a href="capability-scale.html"><b>The capability scale</b></a></td>
+        <td>Every vault declares what it may do, inside itself, in the same vocabulary &mdash; so the declarations line up into a scale with a floor (<code>permissions: {}</code>, nothing requested), a hard middle (read one folder, write one folder) and a ceiling (a model call whose key is sealed into the vault rather than held by the reader). No single analysis produced this; the comparison did.</td>
+        <td>Five permission blocks &mdash; four from vaults analysed here, one quoted</td>
+      </tr>
+      <tr>
+        <td><a href="../decisions/index.html"><b>The acceptance mechanism, reused</b></a></td>
+        <td>The four rules the Agentic Browser Isolation vault applies to an accepted risk &mdash; one named owner, no deny button, nothing moves until it is taken personally, the reason travels with the answer &mdash; turn out to be exactly what this book's own open decisions needed. They now run the decisions page.</td>
+        <td>Agentic Browser Isolation</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
   <h2 id="method">How these analyses are made</h2>
   <p>Stated because an analysis of somebody else's artefact is worth exactly what its method is worth.</p>
   <ul>
     <li><b>Everything here is reachable with the published read key.</b> Each vault publishes a one-way read key on its own page; nothing in these analyses depends on private access, and every claim can be re-derived by a reader who opens the same key.</li>
-    <li><b>The screenshots are the vault's own published figures</b>, fetched from sgit.ai on 22 August 2026 and re-published here under CC BY 4.0 with a link back to the page they came from. They were not re-taken here, and no screenshot is cropped or annotated: what you see is what the vault publishes about itself.</li>
+    <li><b>The screenshots are the vault's own published figures</b>, fetched from sgit.ai on 22 and 23 August 2026 and re-published here under CC BY 4.0 with a link back to the page they came from. They were not re-taken here, and no screenshot is cropped or annotated: what you see is what the vault publishes about itself.</li>
     <li><b>The numbers are quoted, not recomputed.</b> Counts like <em>1,523 nodes and 1,944 edges</em> or <em>92 files, 18 commits</em> are the vaults' own derived facts, produced by their own derivation script from the read key. This site has not independently recounted them, and says so rather than implying an audit it did not run.</li>
     <li><b>Where a vault states a limit, the limit is carried across.</b> A fictional corpus stays labelled fictional; an experimental view stays labelled experimental; research the vault marks unverified stays marked unverified here.</li>
   </ul>
@@ -172,7 +204,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.21</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.22</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

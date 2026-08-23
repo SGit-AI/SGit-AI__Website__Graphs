@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.21</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.22</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -38,6 +38,7 @@
       <a class="sl" href="../book/single.html">Read it in one page</a>
       <a class="sl" href="../book/changes.html">What changed between versions</a>
       <a class="sl" href="../reviews/index.html">The reviews</a>
+      <a class="sl" href="../decisions/index.html">&hellip; the open decisions</a>
       <a class="sl" href="../altitudes/index.html">The altitude ladder</a>
       <a class="sl" href="../altitudes/graph.html">&hellip; as one graph</a>
       <a class="sl" href="../altitudes/concepts.html">&hellip; the concept map</a>
@@ -69,6 +70,11 @@
       <a class="sl" href="../vaults/regulation-graph/index.html">Regulation Graph</a>
       <a class="sl" href="../vaults/regulation-graph/provenance.html">&hellip; the provenance chain</a>
       <a class="sl" href="../vaults/regulation-graph/engines.html">&hellip; the query engines</a>
+      <a class="sl" href="../vaults/risk-mandate/index.html">Risk Mandate</a>
+      <a class="sl" href="../vaults/agentic-browser-isolation/index.html">Agentic Browser Isolation</a>
+      <a class="sl" href="../vaults/agentic-browser-isolation/acceptance.html">&hellip; the acceptance mechanism</a>
+      <a class="sl" href="../vaults/risk-graph-explorer/index.html">Risk Graph Explorer</a>
+      <a class="sl" href="../vaults/capability-scale.html">The capability scale</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -154,6 +160,7 @@
       <tr><td><code>admin/build/gen_book.py</code></td><td>Generates <a href="../book/index.html">the book</a> — chapter pages with a persistent table of contents, the single page, <code>book/print.html</code> (the print-interior source with its front matter and paginated contents), the manifest the gate checks, and <b>both PDF editions</b> — the print interior (WeasyPrint, 6″×9″, mirrored gutters, folios, running heads; Chromium fallback at the same trim, minus the apparatus, and it says so) and the screen edition (Chromium's print of <code>single.html</code> at US Letter, in the site's own design). Both are committed, because CI has neither WeasyPrint nor a browser; both are stamped with the site version, and the gate refuses a release if either lags.</td></tr>
       <tr><td><code>admin/build/gen_cover.py</code></td><td>Generates <a href="../book/cover/front.svg">the cover</a> as SVG — the front for the web, and the full KDP wrap (back + spine + front, with bleed) printed to <a href="../book/cover/meaning-through-connectivity-cover.pdf">a vector PDF</a>. The spine width is computed from the interior's page count, and the gate fails a release where the two disagree — a book that grows recomputes its own spine. The cover graph is a true subgraph in the book's edge vocabulary, arrows reading as sentences, one ghosted edge for the unanswered.</td></tr>
       <tr><td><code>admin/build/gen_altitudes.py</code></td><td>Generates <a href="../altitudes/index.html">the altitude ladder</a> — the book at five levels, each a compression of the level below it, emitted as <code>altitudes/data/altitudes.json</code>. Every node keeps its <b>projection</b> (segmented text, where a segment carrying a <code>to</code> is a descent edge) apart from its <b>graph</b> (claims with an evidence state). The ladder is authored inline in the generator, which is the honest shape of a pilot: inventing a source format before the shape is known would be schema-first. If <a href="../reviews/r004.html">r004</a> decision D1 adopts it, the text moves to <code>content/altitudes/</code> and this becomes a compiler with a gate check.</td></tr>
+      <tr><td><code>admin/build/gen_decisions.py</code></td><td>Generates <a href="../decisions/index.html">the decisions page</a> — every decision from every review as the peak of its own graph — into <code>decisions/data/decisions.json</code>. The questions, their state and the answers already given are <b>read out of the review files themselves</b>, so the page cannot drift from the register it projects. What the generator adds on top is authored context: per open decision, what each option does and <b>what it costs</b>. It <b>raises and fails the build</b> if an open decision has no context authored for it, which is what stops a question shipping with nothing under it.</td></tr>
       <tr><td><code>admin/build/validate.js</code></td><td>The gate. Node, no dependencies.</td></tr>
       <tr><td><code>assets/site.css</code></td><td>The shared stylesheet, in the sgit.ai design language, plus this site's components: the altitude doors, the proof strip, the agent block, and the semantic edge palette — amber is exposure, green is assurance, ghosted is unanswered.</td></tr>
       <tr><td><code>assets/nav.js</code>, <code>assets/mdreader.js</code></td><td>The phone menu, and the in-page markdown reader. Both degrade: if neither loads, every nav group label is still a link to a real page and every document is still reachable as raw markdown.</td></tr>
@@ -169,6 +176,7 @@
     <li><code>python3 admin/build/gen_book.py</code> — always: the gate fails on a stale book. Regenerates the PDF too.</li>
     <li><code>python3 admin/build/gen_cover.py</code> — after gen_book: recomputes the spine from the page count and re-prints the wrap.</li>
     <li><code>python3 admin/build/gen_altitudes.py</code> — if the ladder changed. It is not gate-checked yet, which is stated here rather than assumed: the ladder is a pilot and can lag the book until r004 decision D1 says otherwise.</li>
+    <li><code>python3 admin/build/gen_decisions.py</code> — if a review's decisions changed. It fails loudly rather than shipping an open decision with no options under it.</li>
     <li><code>python3 admin/build/chrome.py</code> — propagates the badge and any nav or footer change everywhere.</li>
     <li><code>node admin/build/validate.js</code> — must pass.</li>
     <li><code>git commit -am "site vX.Y.Z: …" &amp;&amp; git push origin dev</code>.</li>
@@ -201,7 +209,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.21</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.22</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
