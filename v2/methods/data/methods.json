@@ -131,12 +131,12 @@
   {
    "id": "redirect-stubs",
    "name": "Redirect stubs at former addresses",
-   "what": "Every page that moved kept a generated stub at its old address, pointing at the new one. Cheap insurance while the estate had possible external readers of the old paths.",
+   "what": "Every page that moved kept a generated stub at its old address, pointing at the new one. Cheap insurance while the estate had possible external readers of the old paths. Retired at v0.4.7 on the founder's call: the estate confirmed no external users of the old paths, and 108 stubs were more repo complexity than insurance. The generator went with them; git history holds both.",
    "born": "v0.4.0",
    "implemented_in": [
     "admin/build/gen_redirects.py"
    ],
-   "status": "in use",
+   "status": "superseded at v0.4.7",
    "for_the_book": "A compatibility layer is a cost worn knowingly, and retired knowingly."
   },
   {

@@ -115,6 +115,9 @@ for (const v of rows) if (rows.filter(x => x === v).length > 1) {
 const isPreserved = f => rel(f).startsWith('v2/artefacts/') && rel(f) !== 'v2/artefacts/index.html';
 for (const f of htmlFiles) {
   if (isPreserved(f)) continue;   // preserved bytes cite the world as of their capture; gate 26 owns their integrity
+  if (isFrozen(f)) continue;      // frozen pages cite the world as of their freeze: the redirect stubs that
+                                  // covered their outbound links were removed at v0.4.7 (founder decision, no
+                                  // external users), and gate 14 owns the frozen tree's integrity
   const t = fs.readFileSync(f, 'utf8');
   const dir = path.dirname(f);
   for (const m of t.matchAll(/(?:href|src|data-src)="([^"#]+)(?:#[^"]*)?"/g)) {

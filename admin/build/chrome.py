@@ -147,7 +147,7 @@ BLURB = ("A reference site about one use of graphs: <b>meaning through connectiv
          "style=\"display:inline;padding:0\"><b>sgit.ai</b></a> network. "
          "All content on this site is released under CC BY 4.0.")
 PARTNOTE = ('⚠ Participant disclosure: published by the sgit project, which builds the vault layer '
-            'and the graph products this site argues for. <a href="{up}about/participant.html" '
+            'and the graph products this site argues for. <a href="{up}v1/about/participant.html" '
             'style="display:inline;padding:0">Read the disclosure</a>.')
 NETLINE = ('<a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live '
            'graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · '
