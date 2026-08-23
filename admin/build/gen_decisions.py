@@ -240,6 +240,15 @@ def block(phrase):
     return dict(label=phrase, key=key, work=work)
 
 
+# The reviews froze into v1/ at v0.4.0, so a decision that needs correcting afterwards
+# cannot be edited at source, which is the point of freezing it. Amendments live outside the
+# frozen tree and are merged on: the original record stands, the amendment prints beside it.
+AMENDMENTS = {}
+_amf = ROOT / "decisions/amendments.json"
+if _amf.exists():
+    for a in json.loads(_amf.read_text())["amendments"]:
+        AMENDMENTS.setdefault(a["id"], []).append(a)
+
 decisions = []
 for f in sorted((ROOT / "v1/reviews").glob("r0*.json")):
     rev = json.loads(f.read_text())
@@ -252,11 +261,17 @@ for f in sorted((ROOT / "v1/reviews").glob("r0*.json")):
             question=d["question"], options_raw=d.get("options", []),
             state=d["state"], answer=d.get("answer"), date=d.get("date"),
             correction=d.get("correction", ""),
+            amendments=AMENDMENTS.get(did, []),
             why=c.get("why", ""), options=c.get("options", []),
             blocks=[block(b) for b in c.get("blocks", [])],
             answer_with=c.get("answer_with", []),
             affects=c.get("affects", []),
             href=f'../reviews/{rev["id"]}.html#item-{d["item"]}'))
+
+known = {d["id"] for d in decisions}
+orphans = [k for k in AMENDMENTS if k not in known]
+if orphans:
+    raise SystemExit("gen_decisions: amendments name decisions that do not exist: " + ", ".join(orphans))
 
 missing = [d["id"] for d in decisions if d["state"] == "open" and not d["why"]]
 if missing:

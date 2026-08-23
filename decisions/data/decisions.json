@@ -1,5 +1,5 @@
 {
- "version": "v0.4.0",
+ "version": "v0.4.1",
  "decisions": [
   {
    "id": "r001-D1",
@@ -18,6 +18,14 @@
    "answer": "**Fractal Semantic Graphs: Meaning Through Connectivity**, with **for humans and agents** as the subtitle. Both halves come from the foundational document of 5 February 2026: the title from Part 3, the phrase after the colon from the document's own subtitle. G3 stays as history for the lineage chapter. Decided by the founder on 22 August 2026, and the propagation (cover, spine, wrap, half-title, colophon, running heads, metadata sheet, PDF filenames, site identity) is staged for the v0.4.0 identity release, which the founder deprioritised in favour of the vault analyses.",
    "date": "22 August 2026",
    "correction": "",
+   "amendments": [
+    {
+     "id": "r001-D1",
+     "date": "23 August 2026",
+     "by": "the founder, reading the dev pack",
+     "note": "**The title and the subtitle are two fields, not one string.** The record above reads as though *for humans and agents* were part of the title. It is not.\n\n- **Title:** Fractal Semantic Graphs: Meaning Through Connectivity\n- **Subtitle:** For humans and agents\n\nAnd the subtitle has a **placement rule**, because it names the audience rather than the book: it belongs on **the cover and in the site's main sections**, and it does **not** go into the printed title, nor into the title field on KDP or Leanpub. A platform offering a separate subtitle field takes the descriptive subtitle recorded on [the metadata sheet](../admin/metadata.html#identity) instead.\n\nOne point is deliberately left open for whoever fills the form: whether a platform's title field takes the whole string, or splits at the colon with *Fractal Semantic Graphs* as title and *Meaning Through Connectivity* as subtitle. That is a platform convention, not a decision about the book."
+    }
+   ],
    "why": "Answered on 22 August.",
    "options": [],
    "blocks": [
@@ -53,6 +61,7 @@
    "answer": null,
    "date": null,
    "correction": "",
+   "amendments": [],
    "why": "Everything with a dependency waits on this. The order decides whether the identity release (title, cover, lineage and fractal chapters) comes before or after the evidence programme, and the two pull in opposite directions: the cover is decided and unshipped, while the estate is producing evidence faster than the book can absorb it.",
    "options": [
     {
@@ -114,6 +123,14 @@
    "answer": "**For humans and agents** becomes the subtitle, under *Fractal Semantic Graphs: Meaning Through Connectivity*. Settled with r001's D1 on 22 August 2026, exactly as this item proposed: the phrase names the audience rather than competing for space in the title.",
    "date": "22 August 2026",
    "correction": "",
+   "amendments": [
+    {
+     "id": "r002-D1",
+     "date": "23 August 2026",
+     "by": "the founder, reading the dev pack",
+     "note": "**Clarified with r001-D1.** The answer above already says the phrase names the audience rather than competing for space in the title, and that reading is confirmed: *For humans and agents* is the subtitle, capitalised as shown, carried on the cover and in the site's main sections, and kept out of the publishing platforms' title fields. See the amendment on [r001-D1](#r001-D1)."
+    }
+   ],
    "why": "Answered with r001 D1.",
    "options": [],
    "blocks": [],
@@ -137,6 +154,7 @@
    "answer": null,
    "date": null,
    "correction": "",
+   "amendments": [],
    "why": "The book-as-a-graph work needs one chapter lifted into nodes with the author confirming the lift, because for a decompilation the author is the oracle. The choice matters more than it looks: a claim-dense chapter with thin evidence shows the ghosted nodes honestly, and a well-evidenced one makes the pilot look better than the method is.",
    "options": [
     {
@@ -195,6 +213,7 @@
    "answer": null,
    "date": null,
    "correction": "",
+   "amendments": [],
    "why": "The same question as r001 D2 seen from the agent-facing side. Answer them together or they will drift apart, which is itself a small instance of the problem the book keeps describing.",
    "options": [
     {
@@ -246,6 +265,7 @@
    "answer": null,
    "date": null,
    "correction": "",
+   "amendments": [],
    "why": "The largest structural decision open, and the vault analyses have made it urgent rather than tidy: seven deep pages now sit outside the book's gate by accident rather than by design. The equality gate still requires the book to match the site, which is the constraint that flattens both surfaces.",
    "options": [
     {
@@ -316,6 +336,7 @@
    "answer": null,
    "date": null,
    "correction": "",
+   "amendments": [],
    "why": "Reviews are already graphs in all but name. The choice is where the conversation lives, and it decides whether this workflow keeps the property it is named for.",
    "options": [
     {
@@ -371,6 +392,7 @@
    "answer": "Neither of the proposed orders: the founder chose **the written vault analyses first, starting with VoiceDebrief and the Regulation Graph**, ahead of the decoupling refactor and the ladder work. Both are published at [/vaults/](../vaults/index.html) as of v0.3.19. The distillations from sibling estates (IssuesFS, EmailFS) and the remaining vaults stay queued behind them.",
    "date": "22 August 2026",
    "correction": "",
+   "amendments": [],
    "why": "Answered by starting the programme.",
    "options": [],
    "blocks": [],
@@ -401,6 +423,7 @@
    "answer": null,
    "date": null,
    "correction": "",
+   "amendments": [],
    "why": "Levels 1 to 3 are complete and level 4 covers two chapters. The cost of the remaining fifteen is now measured rather than guessed, and every finding the ladder produced came from the levels that exist.",
    "options": [
     {
@@ -460,6 +483,7 @@
    "answer": null,
    "date": null,
    "correction": "",
+   "amendments": [],
    "why": "Partly overtaken by events, and narrower than when it was written: findings now carry states with reasons, and five checks run on every build, which is already a standing register in everything but name. What is left is whether it gets its own page and its own numbering.",
    "options": [
     {
@@ -510,6 +534,7 @@
    "answer": null,
    "date": null,
    "correction": "",
+   "amendments": [],
    "why": "The ladder's claim is that the graph survives a change of audience and only the projection changes. One variant tests it; the translation case tests it hardest, because a language change cannot hide behind familiar examples.",
    "options": [
     {
@@ -571,6 +596,7 @@
    "answer": null,
    "date": null,
    "correction": "",
+   "amendments": [],
    "why": "The per-level classes are the agent's first pass, and for a classification of your own book the author is the oracle. Three calls are genuinely arguable: chapter 4 (the edge set) classed Prescription rather than Apparatus; the Introduction classed Argument rather than Signpost; and level 4's whole vocabulary being about what a section does to the reader rather than what kind of matter it is.",
    "options": [
     {
@@ -626,6 +652,7 @@
    "answer": null,
    "date": null,
    "correction": "**Corrected 23 August 2026, and the correction matters to the answer.** The question above says everything else here is hand-written with no runtime dependencies. That was wrong when it was written. Every reader page under `/documents/` has loaded **marked** from `cdn.jsdelivr.net` since the documents section shipped, and `assets/mdreader.js` still imports **Mermaid** from the same host. So Cytoscape was not the first third-party dependency; it was the first **vendored** one, and the two that came before it were worse for the property at stake, because a content delivery network is a third party the page must reach at read time. The record is left standing and corrected beside itself rather than edited, which is the discipline the corpus calls supersede, never delete. What changed in v0.3.24: marked is now vendored at `assets/vendor/marked.min.js` (MIT, 35 KB) and no page fetches it from a network; the Mermaid import stays, is best-effort, and is now stated in `LICENSES.md` instead of being silent. The decision is unchanged in shape but the honest count is **two vendored libraries and one stated exception**, not one.",
+   "amendments": [],
    "why": "This site now vendors **two** third-party libraries: Cytoscape.js (MIT, 373 KB) for the graphs and marked (MIT, 35 KB) for the markdown readers. The premise this decision was raised on was wrong, as the correction above records, and the honest position is that there are two vendored libraries plus one stated network exception (Mermaid, best-effort). An unrecorded exception to a stated property is exactly what the honesty table exists to prevent, and this is the second sentence in chapter 12 that this work has put under strain.",
    "options": [
     {
@@ -691,6 +718,7 @@
    "answer": "Build it. The founder's answer was a question — *\"why can't you create that path-query UI?\"* — and the honest reply is that nothing technical stopped it: the caution was about a **content** claim, not a capability. Built at [the graph page](../altitudes/graph.html): a pattern is a start filter and up to three edge-and-node steps, matches print as sentences using each edge's verb or inverse depending on direction, cycles cannot spin, and the result is capped at 300 **and says when it hit the cap**. What follows for the honesty table is option (b) in spirit but not in sequence: the page **states its own falsification in full** and proposes the precise wording, and chapter 12 changes only when you agree it, because book content still changes by agreement. No reader is misled in the meantime, because the correction sits beside the thing that caused it.",
    "date": "22 August 2026",
    "correction": "",
+   "amendments": [],
    "why": "Answered by building it.",
    "options": [],
    "blocks": [],

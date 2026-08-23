@@ -32,7 +32,13 @@
   /* ---- text -------------------------------------------------------------- */
   function esc(t) { return String(t == null ? '' : t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
   function fmt(t) {
-    return esc(t).replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/`([^`]+)`/g, '<code>$1</code>');
+    return esc(t)
+      .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
+      .replace(/\*([^*\n]+)\*/g, '<em>$1</em>')   /* after **bold**, so pairs left are italics */
+      .replace(/`([^`]+)`/g, '<code>$1</code>')
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+      .replace(/(?:^|\n)- (.+)/g, '<br>&middot; $1')
+      .replace(/\n\n/g, '</p><p>');
   }
   function plain(t) { return String(t == null ? '' : t).replace(/\*\*/g, '').replace(/`/g, ''); }
   function byId(id) { return D.decisions.filter(function (d) { return d.id === id; })[0]; }
@@ -293,6 +299,17 @@
     } else {
       h.push('<h3>The answer</h3><div class="dans">' + fmt(d.answer) +
              (d.date ? '<p class="small dim">Answered ' + esc(d.date) + '.</p>' : '') + '</div>');
+    }
+    /* The reviews froze at v0.4.0, so a decision corrected afterwards carries its amendment
+       beside the record rather than inside it. The original always stands. */
+    if (d.amendments && d.amendments.length) {
+      d.amendments.forEach(function (a) {
+        h.push('<div class="damend"><b>Amended ' + esc(a.date) + '</b>' +
+               (a.by ? ' <span class="small dim">' + esc(a.by) + '</span>' : '') +
+               '<div>' + fmt(a.note) + '</div></div>');
+      });
+    }
+    if (false) {
     }
 
     if (d.answer_with && d.answer_with.length) {

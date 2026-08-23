@@ -84,8 +84,13 @@ was checking. The second book starts with the gates rather than acquiring them.
 From the founder directly, in the memos and in the answered decisions register. These are
 settled inputs.
 
-1. **The book is called *Fractal Semantic Graphs: Meaning Through Connectivity*, subtitle
-   *for humans and agents*.** Decision r001-D1, answered 22 August.
+1. **The title and the subtitle are two fields, not one string.**
+   **Title:** *Fractal Semantic Graphs: Meaning Through Connectivity*.
+   **Subtitle:** *For humans and agents*. Decision r001-D1, answered 22 August, clarified
+   23 August. The subtitle carries a **placement rule** because it names the audience rather
+   than the book: it belongs on the cover and in the site's main sections, and it does **not**
+   go into the printed title or into a publishing platform's title field. See
+   [the metadata sheet](../../admin/metadata.html#identity).
 2. **The book is written top down**, starting from fractal semantic graphs and meaning through
    connectivity, and descending. Memo 1.
 3. **There are five versions of the book at five altitudes**, each larger than the one above,

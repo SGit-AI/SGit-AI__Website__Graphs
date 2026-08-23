@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.4.0 (23 August 2026). Published by the sgit project — participant
+Site version: v0.4.1 (23 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /v1/briefs/ is the source of truth and carries the same licence.
 

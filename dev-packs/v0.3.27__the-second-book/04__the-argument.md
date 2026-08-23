@@ -20,6 +20,28 @@ property, applied to the reading experience rather than described in a chapter a
 
 ---
 
+## The name, and what belongs in it
+
+**Title:** *Fractal Semantic Graphs: Meaning Through Connectivity*.
+**Subtitle:** *For humans and agents*.
+
+Both halves of the title come from documents carried at `/v1/docs/`: the first from
+*Fractal Semantic Graphs All The Way Down*, the second from *Thinking in Graphs*, whose own
+subtitle it is. The subtitle is a different kind of thing from either: it names **who the book
+is for**, not what it is about, and that difference decides where it may appear.
+
+| Surface | Carries the subtitle |
+|---|---|
+| The cover | **yes** |
+| The site's main sections | **yes** |
+| The printed title page | no |
+| A publishing platform's title field (KDP, Leanpub) | **no** |
+
+An audience descriptor in a title field is a claim about the book's subject, and it would be the
+wrong claim. The descriptive subtitle recorded on the metadata sheet takes that field instead.
+
+---
+
 ## The spine
 
 Five statements. Each is a node. Each has evidence edges that must resolve before the prose is

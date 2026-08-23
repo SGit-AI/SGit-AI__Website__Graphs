@@ -1,0 +1,17 @@
+{
+ "why": "The reviews that carry the decisions register moved into v1/ at v0.4.0 and froze there. A frozen record cannot be edited, which is the point of freezing it, so a decision that needs correcting or clarifying afterwards gets an amendment here instead. gen_decisions.py merges these onto the frozen record and the page prints both: the original stands, the amendment sits beside it. This is the corpus's own supersede-never-delete rule, applied to the mechanism that records the corpus's own decisions.",
+ "amendments": [
+  {
+   "id": "r001-D1",
+   "date": "23 August 2026",
+   "by": "the founder, reading the dev pack",
+   "note": "**The title and the subtitle are two fields, not one string.** The record above reads as though *for humans and agents* were part of the title. It is not.\n\n- **Title:** Fractal Semantic Graphs: Meaning Through Connectivity\n- **Subtitle:** For humans and agents\n\nAnd the subtitle has a **placement rule**, because it names the audience rather than the book: it belongs on **the cover and in the site's main sections**, and it does **not** go into the printed title, nor into the title field on KDP or Leanpub. A platform offering a separate subtitle field takes the descriptive subtitle recorded on [the metadata sheet](../admin/metadata.html#identity) instead.\n\nOne point is deliberately left open for whoever fills the form: whether a platform's title field takes the whole string, or splits at the colon with *Fractal Semantic Graphs* as title and *Meaning Through Connectivity* as subtitle. That is a platform convention, not a decision about the book."
+  },
+  {
+   "id": "r002-D1",
+   "date": "23 August 2026",
+   "by": "the founder, reading the dev pack",
+   "note": "**Clarified with r001-D1.** The answer above already says the phrase names the audience rather than competing for space in the title, and that reading is confirmed: *For humans and agents* is the subtitle, capitalised as shown, carried on the cover and in the site's main sections, and kept out of the publishing platforms' title fields. See the amendment on [r001-D1](#r001-D1)."
+  }
+ ]
+}

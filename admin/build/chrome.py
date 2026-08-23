@@ -215,10 +215,12 @@ def stamp_text_twins():
     date = release_date()
     stamp = f"Site version: {VERSION}" + (f" ({date})" if date else "")
     out = []
-    for name, pat, repl in (
-            ("llms.txt", r"Site version: v\d+\.\d+\.\d+(?: \([^)]*\))?", stamp),
-            ("llms-full.txt", r"Site version: v\d+\.\d+\.\d+(?: \([^)]*\))?", stamp),
-            ("v1/index.md", r"· site v\d+\.\d+\.\d+ ·", f"· site {VERSION} ·")):
+    twins = [("llms.txt", r"Site version: v\d+\.\d+\.\d+(?: \([^)]*\))?", stamp),
+             ("llms-full.txt", r"Site version: v\d+\.\d+\.\d+(?: \([^)]*\))?", stamp)]
+    if not FREEZE_MANIFEST.exists():
+        # the first edition's markdown twin froze with the page it mirrors
+        twins.append(("v1/index.md", r"· site v\d+\.\d+\.\d+ ·", f"· site {VERSION} ·"))
+    for name, pat, repl in twins:
         f = ROOT / name
         if not f.exists():
             continue

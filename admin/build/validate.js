@@ -70,14 +70,19 @@ const VERSION = fs.readFileSync(path.join(ROOT, 'admin/build/version.txt'), 'utf
 if (!/^v\d+\.\d+\.\d+$/.test(VERSION)) {
   errors.push(`version.txt does not carry a vX.Y.Z version: "${VERSION}"`);
 }
+// A page inside a frozen edition carries the badge of the release it froze at, and must:
+// changing it would change a frozen byte. Only live pages track the current version.
+const frozenPrefix = fs.existsSync(path.join(ROOT, 'v1/MANIFEST.json')) ? 'v1/' : null;
+const isFrozen = f => frozenPrefix !== null && rel(f).startsWith(frozenPrefix);
 for (const f of htmlFiles) {
+  if (isFrozen(f)) continue;
   const t = fs.readFileSync(f, 'utf8');
   const badges = [...t.matchAll(/class="ver"[^>]*>(v\d+\.\d+\.\d+)</g)].map(m => m[1]);
   for (const b of badges) if (b !== VERSION) {
     errors.push(`${rel(f)}: version badge ${b} != ${VERSION}`);
   }
 }
-for (const extra of ['llms.txt', 'llms-full.txt', 'v1/index.md']) {
+for (const extra of ['llms.txt', 'llms-full.txt'].concat(frozenPrefix ? [] : ['v1/index.md'])) {
   const t = fs.readFileSync(path.join(ROOT, extra), 'utf8');
   if (!t.includes(VERSION)) errors.push(`${extra} does not mention ${VERSION}`);
 }
@@ -226,6 +231,12 @@ if (!fs.existsSync(pagesManifestPath)) {
   }
 }
 
+// A frozen edition's book, cover and PDFs carry the version they froze at, and must: they
+// are evidence. The freshness checks below that compare an artefact's stamp to the current
+// site version apply only while an edition is live. The checks that compare an artefact to
+// its own source still apply, because a frozen source can never diverge from a frozen book.
+const editionFrozen = fs.existsSync(path.join(ROOT, 'v1/MANIFEST.json'));
+
 // --- 4b. the first edition is frozen ---------------------------------------
 // Gate 14. The first edition moved to v1/ at v0.4.0 and froze at v0.3.26. From that point
 // the tree is evidence. If a file changes, the answer is to restore it, not to regenerate
@@ -255,7 +266,7 @@ if (!fs.existsSync(bookManifestPath)) {
 } else {
   const book = JSON.parse(fs.readFileSync(bookManifestPath, 'utf8'));
   if (book.version !== VERSION) {
-    errors.push(`book was generated at ${book.version}, site is ${VERSION} — run gen_book.py (and regenerate the PDF)`);
+    if (!editionFrozen) errors.push(`book was generated at ${book.version}, site is ${VERSION} — run gen_book.py (and regenerate the PDF)`);
   }
   for (const ch of book.chapters) {
     const src = path.join(ROOT, ch.source);
@@ -296,7 +307,7 @@ if (!fs.existsSync(bookManifestPath)) {
     errors.push('v1/book/manifest.json has no cover entry — run gen_cover.py after gen_book.py');
   } else {
     if (book.cover.version !== VERSION) {
-      errors.push(`cover was generated at ${book.cover.version}, site is ${VERSION} — run gen_cover.py`);
+      if (!editionFrozen) errors.push(`cover was generated at ${book.cover.version}, site is ${VERSION} — run gen_cover.py`);
     }
     const interior = (book.pdfs || []).find(e => e.file === 'meaning-through-connectivity.pdf');
     if (interior && book.cover.pages_basis !== interior.pages) {
@@ -332,7 +343,7 @@ if (!fs.existsSync(bookManifestPath)) {
     }
     const entry = book.pdfs.find(e => e.file === name);
     if (entry.version !== VERSION) {
-      errors.push(`book/${name} was generated at ${entry.version}, site is ${VERSION} — run gen_book.py`);
+      if (!editionFrozen) errors.push(`book/${name} was generated at ${entry.version}, site is ${VERSION} — run gen_book.py`);
     }
     const f = path.join(ROOT, 'v1/book', name);
     if (!fs.existsSync(f) || fs.statSync(f).size < 50000) {
