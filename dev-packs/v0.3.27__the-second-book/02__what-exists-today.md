@@ -8,6 +8,19 @@ Every unit of the first book, every section of the site, every computed conclusi
 piece of machinery, with a verdict. Nothing is left without one, because an item with no
 verdict is an item that will be carried by accident.
 
+> **Revised 23 August. Every verdict below is a HYPOTHESIS, not a decision.**
+>
+> The founder read this file and named its defect precisely: *we are already defining the answer
+> before we know what questions we're answering, and this is very obvious in section two*. He is
+> right. A verdict on a unit of the first edition is a claim about what the second edition needs,
+> and what the second edition needs is not known until the universe exists and a plot line runs
+> through it. See [brief 20](../../briefs/20__founder-memo__the-universe-first.md).
+>
+> So read the table below as **the current guess with its reason attached**, which is worth
+> having (a guess with a reason is arguable; a blank is not) and is worth nothing as a commitment.
+> Each one is re-tested in phase 3, against the universe, and the ones that change are a
+> measurement of how much the universe knew that the guess did not.
+
 ---
 
 ## The verdict vocabulary
@@ -63,7 +76,7 @@ material lands in the altitude ladder, not on how good it is.
 | 8 | Whose session is the agent using? | 873 | **LIFT** | Strong worked example. Its source document is carried, and the browser-isolation vault analysis now goes far deeper than the chapter. |
 | 9 | The 2FA instance graph | 933 | **CARRY** | Self-contained, checkable, and the companion the *Digital Twins* source names. |
 | 10 | Article 26(5), fact to board and back | 914 | **LIFT** | The regulation vault and *Every Paragraph Is A Graph* both post-date it and both go further. |
-| 11 | Wardley maps as graphs | 920 | **DROP from the spine, keep as an appendix candidate** | Good material, and orthogonal to the top-down argument. Nothing in the concept map depends on it. Decide at level 4. |
+| 11 | Wardley maps as graphs | 920 | **REVERSED 23 August: candidate spine material** | The first verdict dropped it because nothing in the concept map depends on it, which measured the concept map rather than the material. The founder gave the missing reason: a map is a graph that has gained **position, movement and time**, a map of a map of a map is the fractal claim at its most legible, and maps are what make a graph actionable. You cannot have maps without graphs, but maps are where graphs gain strategy and gameplay. That is a claim about the book's subject, not a digression from it. |
 
 ### Part V · Reality
 
@@ -80,8 +93,9 @@ material lands in the altitude ladder, not on how good it is.
 | 15 | Glossary | 1,323 | **LIFT**, and merge | The second book has a concept layer with definitions, also-called and near-but-not. The glossary should be a projection of it, not a second list that can disagree with it. This is a real duplication in the first book. |
 | 16 | The author's interest, and where this loses | 1,001 | **CARRY** | Unchanged in spirit. *A Fact Does Not Exist In A Vacuum* is its source and says the graph has an agenda too. |
 
-**Summary of the first book's fate:** 5 CARRY, 7 LIFT, 3 REWRITE, 1 deferred. No unit is
-dropped outright, and no unit is carried without being placed at an altitude first.
+**Summary of the first book's current guess:** 5 CARRY, 7 LIFT, 3 REWRITE, 1 reversed to a
+spine candidate. No unit is dropped outright, and no unit is carried without being placed at
+an altitude first. Every one of these is re-tested against the universe in phase 3.
 
 ---
 
@@ -175,8 +189,8 @@ unchanged: the second book will be reviewed the same way.
 
 ## What is dropped, and the one thing that worries me about it
 
-Dropped outright: `html2md.py` (its job is done), and chapter 11 from the spine (deferred to a
-level-4 decision, not deleted).
+Dropped outright: `html2md.py`, and its job is done. **Chapter 11 is no longer on this list**:
+the Wardley verdict was reversed on 23 August and the material is now a candidate for the spine.
 
 Everything else survives in some form, which is a suspiciously comfortable answer. The honest
 reading is that **the audit was performed by the person who wrote most of it**, and the

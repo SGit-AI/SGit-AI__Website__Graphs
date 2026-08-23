@@ -20,14 +20,23 @@ each of them is checked by a build rather than by an opinion.
 | A5 | No sentence in prose quotes a computed number as a literal | gate 21 |
 | A6 | Every internal link resolves; blocks balance; no banned edge; no key-shaped strings | existing gates |
 
-### At the spine (end of phase 2)
+### At the universe (end of phase 2)
+
+| # | Criterion | Checked by |
+|---|---|---|
+| U1 | Every candidate plot line traces end to end through the universe with no gap | the stopping rule, gate 2 |
+| U2 | Every node carries its family, and every claim its evidence state | gate 16 |
+| U3 | Every audit hypothesis from file 02 has been re-tested, and the ones that moved are recorded | a report, not a gate |
+
+### At the spine (end of phase 3)
 
 | # | Criterion | Checked by |
 |---|---|---|
 | B1 | Every spine statement has at least three independent evidence paths | gate 17 |
 | B2 | No more than one of those paths runs through another spine node | gate 17 |
 | B3 | Any statement failing B1 is recorded in the graph as an opinion, not asserted as a theme | gate 17 |
-| B4 | The founder has signed off the spine | a decision, recorded in the register |
+| B4 | The founder recognises the derived spine as the book he intended | an author's judgement, recorded in the register |
+| B5 | The pacing check passes on every plot line: no concept is used before it is introduced | gate 22, ADR-10 |
 
 ### At each altitude
 
@@ -97,12 +106,17 @@ author's job.
 
 *Blocks:* phase 3, and everything the navigation says.
 
-### 4. Wardley maps: level 4, or dropped?
+### 4. Wardley maps: level 4, or dropped? · **ANSWERED 23 August**
 
-Chapter 11 of the first book. Nothing on the spine requires it and nothing in the concept map
-depends on it.
+**Neither. They are a spine candidate.** The founder gave the reasoning the first verdict was
+missing: a map is a graph that has gained position, movement and time; a map of a map of a map is
+the fractal claim at its most legible; the evolution axis is not fixed to genesis-to-commodity;
+and maps are what make a graph actionable. You cannot have maps without graphs, but maps are
+where graphs gain strategy and gameplay.
 
-*Blocks:* phase 5 only. *Recommendation:* decide at phase 5, not now.
+One consequence to carry into phase 2: this is the **only** spine candidate whose evidence has
+not been carried onto this site. Nothing in `/v1/docs/` covers Wardley maps. The Send corpus
+holds eight briefs on them and none is carried. That gap is work for phase 2.
 
 ### 5. Are the external evidence weights right?
 
@@ -118,6 +132,21 @@ sharpest tension in the retrospective and it applies here first.
 Levels 1 to 4 have word targets. Level 5 is the reference layer and could be unbounded.
 
 *Blocks:* phase 6's gate, and it can wait.
+
+### 6b. Is the economic and feedback-loop thread a spine candidate, or a plot line? · **NEW**
+
+The memo names something the current material barely carries: **the feedback loops and economic
+models that make a graph self-maintaining, even when the people in it do not care, do not want
+to, or when maintaining it runs against their own interest.** The founder wants to be able to ask
+the graph for the economic arguments and the feedback-loop arguments and get an answer.
+
+Two of the twenty-one carried sources touch it (*Paying The Fact Creator* most directly, *A Fact
+Does Not Exist In A Vacuum* second), and neither is about self-maintenance under indifference.
+That is a real gap, and the question is what shape the answer takes: a spine statement, a plot
+line that runs under several statements, or a hypothesis the book states and does not resolve.
+
+*Blocks:* nothing yet. It should be answered during phase 2, when the universe shows how much
+evidence actually exists behind it.
 
 ### 7. Who reviews the second book, and when?
 
@@ -146,10 +175,14 @@ Named in advance, because a plan that cannot be falsified is a wish.
 2. **Phase 3 takes longer than phase 4.** Level 1 is 150 words. If those 150 words take longer
    than the 8,000 of level 3, the top-down premise is not working as claimed and the difficulty
    is in the compression rather than in the writing, which would be worth knowing early.
-3. **The provenance blocks are all CARRY.** If the second book is mostly carried text with new
+3. **All five spine candidates survive phase 3 unchanged.** The spine is supposed to be *derived*
+   from where the plot lines converge, not confirmed. If the derivation returns exactly the five
+   statements written down three days before the universe existed, the derivation is decorative.
+   Expect at least one to move and at least one to be replaced.
+4. **The provenance blocks are all CARRY.** If the second book is mostly carried text with new
    front matter, the rewrite was a reorganisation and the honest thing is to say so and go back
    to the refactor that was cancelled.
-4. **Nobody disagrees with anything.** The method's whole claim is that it makes disagreement
+5. **Nobody disagrees with anything.** The method's whole claim is that it makes disagreement
    visible and specific. A rewrite that produces no arguments has not produced the thing it was
    for.
 

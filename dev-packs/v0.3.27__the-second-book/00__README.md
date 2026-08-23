@@ -3,7 +3,10 @@
 **version** v0.3.27 · **date** 23 August 2026
 **for** a fresh session starting the second book (assume no prior context)
 **source** two founder voice memos, 23 August 2026, reproduced in `01__the-memos.md`
-**status** Phase 0 is DONE at v0.4.0. Everything from phase 1 onward is PROPOSED and not implemented. Section 09 lists what only the founder can answer.
+**status** Phase 0 is DONE at v0.4.0. Everything from phase 1 onward is PROPOSED and not
+implemented. **Revised 23 August** by [brief 20](../../briefs/20__founder-memo__the-universe-first.md),
+which inverts the construction order and corrects three things this pack had wrong.
+Section 09 lists what only the founder can answer.
 **versions** This pack ships at v0.3.27. The first edition freezes at **v0.3.26**, the last release in
 which it was the only book. **v0.4.0 is phase 0**: the freeze itself.
 
@@ -42,9 +45,9 @@ relitigating any of it.
 
 ---
 
-## The Three Governing Rules
+## The Four Governing Rules
 
-Everything in this pack is downstream of three rules. A step that violates one of them is
+Everything in this pack is downstream of four rules. A step that violates one of them is
 wrong even if it looks like progress.
 
 ### Rule 1 · The graph comes before the prose, at every altitude
@@ -76,6 +79,22 @@ tree is hashed, and the build fails if a byte changes. See `03__freezing-the-fir
 This is the lesson of the last fourteen releases, written up in
 `briefs/18__agent__what-the-graphs-found.md`: every correction in that run was a number nothing
 was checking. The second book starts with the gates rather than acquiring them.
+
+### Rule 4 · The universe precedes the plot, and the plot precedes the levels
+
+> **Nothing about an altitude can be decided before the graph of concepts, claims and evidence
+> exists, and no altitude is written before the plot line through it is chosen.**
+
+Added 23 August, and it is the correction that reshaped this pack. The first draft went the
+other way: it named five spine statements and planned to attach evidence to them. That is
+defining the answer before the question is known, and the founder caught it at section 5. The
+material for the universe already exists (twenty-one carried sources, six vault analyses, a
+concept map of twenty-four, the whole first edition), so the work is decomposition rather than
+research.
+
+Note this does **not** contradict rule 1 or the memo of the morning. **Construction is
+bottom-up; reading is top-down.** The reader descends from a claim; the author arrives at the
+claim from the evidence. Confusing the two is what produced the first draft's phase order.
 
 ---
 

@@ -41,9 +41,15 @@ that benefits most from the graph being settled first.
 
 ---
 
-## ADR-3 · Six node families, one graph
+## ADR-3 · Six node families, one graph · **BUILT FIRST**
 
-**Status** PROPOSED · **Drives** memo 1.15
+**Status** PROPOSED · **Drives** memo 1.15, and brief 20
+
+**Promoted 23 August.** The founder named this the best thing in the pack and drew the
+consequence: *we cannot know what each of the levels will look like until we have done this*.
+So this is not one architecture decision among nine. It is **the first thing built**, and
+everything about the altitudes waits behind it. The families are also **open**: the memo says
+*we can add another*, and two candidates are named at the end of this section.
 
 ### Decision
 
@@ -183,6 +189,84 @@ resolve and the verdict to be present.
 This is the decoupling the third review asked for, arriving as a consequence of the rewrite
 rather than as a separate project. The gate flips from *the book must equal the site* to *the
 book must say where it came from*, which is what decision r003-D1 has been holding.
+
+---
+
+## ADR-9 · Plot lines are a first-class artefact
+
+**Status** PROPOSED · **Drives** brief 20, instructions 4 and 7
+
+### Decision
+
+A **plot line** is a named, ordered walk through the universe: a sequence of nodes that carries a
+reader from a question to a resolution. It is authored, it is stored in the graph, and it is the
+thing an altitude is written *from*.
+
+```json
+{ "id": "why-not-schema-first",
+  "question": "Why does defining everything up front fail?",
+  "walk": ["concept:schema-first", "fact:semantic-web-adoption", "unit:l3-grammar",
+           "concept:dont-merge-vocabularies", "vault:voice-debrief-junction"],
+  "turn": "the divergence was the finding, and merging would have erased it",
+  "levels": ["L2", "L3", "L4"] }
+```
+
+The founder's framing is a whodunit: the plot, the mystery machine, the sequence of events. A
+book is a journey, and a journey has an order, a pace and a turn. Chapter order is the *shadow*
+of the plot lines, not the thing itself, which is why the first draft could not say how L1
+becomes L2: it had no object in between.
+
+### Why this is not just a table of contents
+
+A table of contents is one ordering. **Plot lines overlap**, and that is the point: a transversal
+concept appears in several without being top-level in any, which is exactly what the memo
+describes as concepts that *funnel up* through the whole book without necessarily surfacing at
+level one. A concept's importance is then measurable as the number of plot lines that traverse
+it, which is a different measure from the peak formula and probably a better one for deciding
+what belongs at the top.
+
+---
+
+## ADR-10 · Pacing is checked, not felt
+
+**Status** PROPOSED · **Drives** brief 20, instructions 7 and 8
+
+### Decision
+
+For every concept and every unit that uses it, the build compares where the concept is
+**introduced** with where it is **needed**:
+
+```
+introduced(C) = the first unit, in reading order, that defines C
+FAIL if any unit using C appears before introduced(C)
+```
+
+A concept spent before it is given is a pacing defect, and the build names the exact pair of
+units. This is the memo's question made mechanical: *how do we introduce the concepts on chapter
+one that's going to be needed on chapter two?*
+
+It does not measure whether the writing is good. It measures whether the reader was asked to
+spend something they had not been given, which is a specific and common failure and one no
+author catches reliably in their own text.
+
+### And it gives reader feedback somewhere to attach
+
+Feedback of the form *I did not understand this, it became clear later* is a report that
+`introduced(C)` is later than it should be. Attached to the concept and the pair of units rather
+than to a page number, it survives a rewrite, which page-anchored feedback does not.
+
+---
+
+## Two candidate seventh families
+
+The memo says the six families can grow. Two candidates, neither adopted:
+
+**Question.** What the reader is made to wonder, as a node. A plot line already has one; making
+it a node lets several plot lines share a question and lets a question go unanswered visibly.
+
+**Turn.** The moment a reader's model changes: the punchline, in the memo's word. Naming them as
+nodes would make pace measurable as the distance between turns, which is either a genuinely
+useful measure or numerology, and there is no way to know before trying it.
 
 ---
 

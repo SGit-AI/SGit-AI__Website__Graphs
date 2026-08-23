@@ -1,8 +1,9 @@
 # The Argument, Top Down
 
 **version** v0.3.27 · **date** 23 August 2026
-**status** PROPOSED. This is the spine, not the text. Level 1's actual wording is written in
-phase 3 and is the founder's to approve.
+**status** PROPOSED, and **revised 23 August** by [brief 20](../../briefs/20__founder-memo__the-universe-first.md).
+These are **candidate** spine statements. They are not level 1, they are not agreed, and they are
+**arrived at from the universe** rather than declared ahead of it. The test is stated at the end.
 
 ---
 
@@ -42,16 +43,40 @@ wrong claim. The descriptive subtitle recorded on the metadata sheet takes that 
 
 ---
 
-## The spine
+## The candidate spine
 
-Five statements. Each is a node. Each has evidence edges that must resolve before the prose is
-written. Together they are level 1.
+Five statements, offered as the current guess and nothing more. The founder's note on them is the
+right one to carry at the top: *these five key elements might not be level one, we should not
+assume that this is it.*
+
+They are here because a plan with no candidate is harder to argue with than a plan with a wrong
+one. Each is a node, each needs evidence edges that resolve, and **each is re-derived in phase 3
+from the universe**, at which point some will survive, some will move down an altitude, and at
+least one should be replaced by something the universe surfaces that nobody listed here.
 
 ### 1. Fractal semantic graphs
 
-The same grammar at every altitude. One node type system, one edge vocabulary, one validator,
-one provenance rule, whether you are looking at a word, a paragraph, a document, a system, an
-organisation or an industry. Nothing crosses a boundary as an untyped blob.
+**Corrected 23 August. The first version of this statement was wrong about its own title.**
+
+Semantic graphs nested in a fractal way: graphs of graphs of graphs, ontologies of ontologies. A
+lexicon exists and is well connected, and **any scope may extend, specialise or override it where
+it needs to**, dynamically, without asking the centre. That is what Issues-FS does, and it is what
+the phrase means.
+
+The first draft defined it as *the same grammar at every altitude*, which is a claim about
+**uniformity**. The founder's claim is about **composition with local override**, which is a
+different and more interesting thing: uniformity is a constraint that makes things comparable,
+override is a capability that lets local meaning survive without fragmenting the whole.
+
+Uniformity is still true and is now in its right place: it is the **mechanism**, not the claim.
+What makes an override safe rather than a fork is that the grammar for expressing one is the same
+at every level. The pack had the mechanism standing in for the claim.
+
+The correction is worth recording for a second reason. `docs/issues-fs-lexicon.html`, carried on
+this site since v0.3.25, says in its own words that the Lexicon is **not** a schema registry and
+**not** the authoritative source of definitions, and that any scope can extend, specialise or
+override a bootstrap definition. The carried source contradicted the pack's definition and nobody
+noticed, which is a finding about the pack rather than about the source.
 
 *Evidence:* `docs/fractal-semantic-graphs.html` (the source of the title), `docs/graphs-of-graphs.html`,
 the capability scale read across five vaults, and this book's own five altitudes.
@@ -93,6 +118,23 @@ cannot be staged.
 *Evidence:* the retrospective at `documents/what-the-graphs-found.html`, the twelve findings in
 it, and the five checks that run on every build.
 
+### 6. Candidate, added 23 August: a map is a graph that has gained position, movement and time
+
+You cannot have maps without graphs. But a map is where a graph gains **position that means
+something, movement that is the point, and time that is expressible**, and those three are what
+turn a graph from a description into something you can act on. A map of a map of a map is the
+fractal claim in its most legible form, and the evolution axis is not fixed: other evolutions can
+be mapped, which generalises the technique rather than tying it to one diagram.
+
+*Evidence:* the first edition's chapter 11 and `/v1/maps/`, the Wardley material in the Send
+corpus (eight briefs, from the primer through to the agent-mandate maps), and the fact that this
+project's own method is being described in exactly these terms: explorer, villager, back to
+explorer with better tools.
+
+*Why it is a candidate and not yet a statement:* it is the one spine idea whose evidence has not
+been carried onto this site. Nothing in `/v1/docs/` covers it. That gap is itself the argument
+for phase 2 running before phase 3.
+
 ---
 
 ## How the descent works
@@ -106,8 +148,15 @@ is the thing the first book's ladder got structurally right and the second book 
 | **L1** | one page | ~150 words | the claim, and nothing else |
 | **L2** | one sitting | ~1,500 words | the five statements, each with its sharpest piece of evidence |
 | **L3** | one afternoon | ~8,000 words | the grammar, the method, the worked examples, the honesty table |
-| **L4** | the full argument | ~25,000 words | the objections, the history, the failures, the tensions |
-| **L5** | the reference | open | every concept, every path, every source, every measurement |
+| **L4** | the expansion | ~25,000 words | the objections, the history, the failures, the tensions |
+| **L5** | **the prose: the book** | open | the writing itself, at full length |
+
+**Revised 23 August.** The founder's description of the ladder differs from the first draft in
+one place that matters: **L5 is the prose, which is the book**, not a reference appendix, and
+**L3 is where the action is**, because it is the level with the most connection to the graphs
+being generated. L2 is the compression, L1 is the super summary in which almost every word links
+down. The reference material (concept register, path atlas, measurement tables) is not an
+altitude at all: it is the universe, and it sits underneath all five.
 
 Sizes are targets for shaping, not gates. The gate is on **coverage**, not length: every node at
 level N must have a parent at level N-1 and at least one child at level N+1 once that level
@@ -135,12 +184,13 @@ graph in phase 2.
 
 ---
 
-## Two things the first book has that the spine does not
+## One thing the first book has that the spine does not
 
 Named here so their absence is deliberate rather than accidental.
 
-**Wardley maps.** Chapter 11 of the first book. Nothing in the spine requires it and nothing in
-the concept map depends on it. It is a candidate for level 4 and it is not on the spine.
+**Wardley maps are now a sixth candidate, not an exclusion.** The first draft of this file put
+them off the spine. The founder reversed it, and the reasoning is in statement 6 above rather
+than here.
 
 **Graph RAG.** Per memo 1.17, this is a stated position and not a theme: one glossary entry and
 one passage where the deterministic-retrieval claim is already being made. The position, in one
@@ -158,6 +208,14 @@ gives this book its point:
 
 > **Every spine statement is reachable from at least three independent pieces of evidence, and
 > those evidence paths converge on it rather than on each other.**
+
+And one test that is not computable and is stated anyway, because it is the real one:
+
+> **By the time the founder reads the spine, the vision he has for the book's concept and story
+> should match what is written.**
+
+That is an author's recognition test. It cannot be automated and it should not be pretended
+otherwise. Its value is that it names who decides, and when.
 
 If a statement's evidence turns out to converge somewhere else, the spine is wrong and the
 statement moves. If a statement has no converging evidence, it is an opinion, and it either

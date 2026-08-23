@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.4.1 (23 August 2026). Published by the sgit project — participant
+Site version: v0.4.2 (23 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /v1/briefs/ is the source of truth and carries the same licence.
 
@@ -343,6 +343,17 @@ pages** so the two cannot drift
 
 ## Site
 
+- https://graphs.sgit.ai/memos/index.html — the founder's voice memos written after the first
+  edition froze, verbatim, each followed by the instructions extracted from it and what each one
+  commits the work to. The block quote is the founder; everything after it is the agent's reading
+  and is marked as such. Numbering continues from the frozen brief pack at /v1/briefs/ (00 to 19)
+  because the corpus is one sequence even though the editions are not.
+  Brief 20 (23 August) reshapes the dev pack: it caught the pack defining answers before the
+  questions were known, inverted the construction order so the **universe of concepts, claims and
+  evidence is built before any altitude is decided**, corrected what *fractal semantic graphs*
+  means (semantic graphs nested fractally with local override, not one grammar everywhere), and
+  reversed the verdict on Wardley maps (a map is a graph that has gained position, movement and
+  time). Raw markdown: /briefs/20__founder-memo__the-universe-first.md
 - https://graphs.sgit.ai/dev-pack/index.html — the dev pack for the second book, written
   23 August 2026 after two founder memos cancelled the planned refactor. **Status: PROPOSED.
   Nothing in it is implemented.** Ten markdown files under /dev-packs/v0.3.27__the-second-book/,
