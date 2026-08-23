@@ -1,0 +1,114 @@
+{
+ "scope": "source:thinking-in-graphs",
+ "parent": "book",
+ "kind": "source-scope",
+ "altitude": "one source document (layer 1 of the universe)",
+ "terms_from": "v2/universe/data/universe.json",
+ "note": "The document's terms are not re-authored here: they live in the universe extraction, anchored to the frozen bytes, and this scope declaration only maps them onto the book's vocabulary. same-concept means the two scopes name one idea; grounds means the document's term is what the book's term compresses or narrows; an unmapped term is a finding, not an error.",
+ "mappings": [
+  {
+   "term": "meaning-through-connectivity",
+   "book_term": "meaning-through-connectivity",
+   "relation": "same-concept",
+   "note": "The book's thesis is this document's; the book's subtitle is the document's subtitle."
+  },
+  {
+   "term": "node",
+   "book_term": "node-alone-means-nothing",
+   "relation": "grounds",
+   "note": "The document's definition of a node is what the book's term compresses."
+  },
+  {
+   "term": "connectivity",
+   "book_term": "confidence-from-connectivity",
+   "relation": "grounds",
+   "note": ""
+  },
+  {
+   "term": "schema-first",
+   "book_term": "schema-first",
+   "relation": "same-concept",
+   "note": ""
+  },
+  {
+   "term": "declared-meaning",
+   "book_term": "schema-first",
+   "relation": "grounds",
+   "note": "The document's name for the posture the book's term takes a stand against."
+  },
+  {
+   "term": "discovered-meaning",
+   "book_term": "meaning-through-connectivity",
+   "relation": "grounds",
+   "note": ""
+  },
+  {
+   "term": "compatibility",
+   "book_term": "compatibility-computed",
+   "relation": "same-concept",
+   "note": ""
+  },
+  {
+   "term": "anchor-node",
+   "book_term": "anchor-nodes",
+   "relation": "same-concept",
+   "note": ""
+  },
+  {
+   "term": "fractal-principle",
+   "book_term": "fractal",
+   "relation": "same-concept",
+   "note": "The document states the repetition; its Part 7 carries the override licence that brief 20 made the book's claim."
+  },
+  {
+   "term": "confidence-spectrum",
+   "book_term": "confidence-from-connectivity",
+   "relation": "same-concept",
+   "note": ""
+  },
+  {
+   "term": "enrichment",
+   "book_term": "enrichment-not-enforcement",
+   "relation": "same-concept",
+   "note": ""
+  },
+  {
+   "term": "honest-uncertainty",
+   "book_term": "named-absence",
+   "relation": "grounds",
+   "note": "The book's term is the operational narrowing of the document's posture."
+  },
+  {
+   "term": "graphs-of-graphs",
+   "book_term": "fractal",
+   "relation": "grounds",
+   "note": ""
+  },
+  {
+   "term": "local-vocabulary",
+   "book_term": "dont-merge-vocabularies",
+   "relation": "grounds",
+   "note": "The licence whose discipline the book's term states."
+  },
+  {
+   "term": "name-clash",
+   "book_term": "dont-merge-vocabularies",
+   "relation": "grounds",
+   "note": ""
+  },
+  {
+   "term": "lexicon",
+   "book_term": "lexicon",
+   "relation": "same-concept",
+   "note": "The book adopts the document's negative definition: not a dictionary, not a schema registry."
+  }
+ ],
+ "unmapped_notes": {
+  "cross-graph-edge": "The book's 24 concepts have no term for this. A real gap: the mechanism the document calls its most powerful has no name in the book's vocabulary yet.",
+  "version-pinning": "No book term. Candidate for the universe to surface in phase 2.",
+  "semantic-web": "A historical actor, not a book concept; the book's schema-first term carries the position taken.",
+  "librarian": "Used but never defined in the source; nothing to map.",
+  "type-safe": "Used but never defined in the source; nothing to map.",
+  "role-md": "Used but never defined in the source; nothing to map."
+ }
+}

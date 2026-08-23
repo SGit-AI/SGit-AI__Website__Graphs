@@ -47,6 +47,9 @@ NAV = [
         ("&hellip; the memos", "v2/memos/index.html"),
         ("&hellip; the review packs", "v2/packs/index.html"),
         ("&hellip; the universe, layer 1", "v2/universe/index.html"),
+        ("&hellip; the lexicon, in scopes", "v2/lexicon/index.html"),
+        ("&hellip; the methods register", "v2/methods/index.html"),
+        ("&hellip; the artefact catalogue", "v2/artefacts/index.html"),
         ("&hellip; the open decisions", "decisions/index.html"),
         ("The first edition &middot; frozen", "v1/book/index.html"),
         ("&hellip; read it in one page", "v1/book/single.html"),
@@ -268,6 +271,10 @@ def main():
         rel_ = path.relative_to(ROOT).as_posix()
         if rel_ in ("v1/book/print.html", "v1/book/cover/wrap.html"):
             # print sources carry no site chrome by design
+            continue
+        if rel_.startswith("v2/artefacts/") and rel_ != "v2/artefacts/index.html":
+            # a catalogued artefact is preserved bytes; touching it would trip gate 26,
+            # which is the mechanism working
             continue
         if rel_.startswith("v2/packs/") and rel_ != "v2/packs/index.html":
             # a review pack is a document, not a page of the site: it carries its own cover

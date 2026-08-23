@@ -54,7 +54,7 @@ PAGE = """<!doctype html>
 <nav class="site"><div class="row"></div></nav>
 
 <main class="doc">
-<div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="index.html">the dev pack</a> &rarr; <b>{num}</b></div>
+<div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="../index.html">the second edition</a> &rarr; <a href="index.html">the dev pack</a> &rarr; <b>{num}</b></div>
 <h1>{title}</h1>
 <p class="lead">{desc}</p>
 

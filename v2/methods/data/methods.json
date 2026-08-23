@@ -1,0 +1,235 @@
+{
+ "note": "Part of what the book talks about is how it was made. Every technique here was used in earnest on this project before being written down, each names the release where it first shipped, and superseded techniques stay listed with their supersession recorded, because the register obeys the discipline it documents.",
+ "methods": [
+  {
+   "id": "projection-chain",
+   "name": "The projection chain with gates",
+   "what": "Content lives in one source form and every published surface is generated from it, with a validator that fails the build on drift between them. A page cannot disagree with its source because the page is not authored.",
+   "born": "v0.1.0",
+   "implemented_in": [
+    "admin/build/validate.js",
+    "admin/build/chrome.py"
+   ],
+   "status": "in use",
+   "for_the_book": "The mechanism behind 'computed conclusions rather than asserted ones' applied to publishing itself."
+  },
+  {
+   "id": "release-discipline",
+   "name": "Validate, tag, deploy on every push",
+   "what": "Every push to the deploy branch is a release: gates run, a version is tagged, the site ships. A release costs one commit, so corrections ship the moment they exist.",
+   "born": "v0.1.0",
+   "implemented_in": [
+    ".github/workflows"
+   ],
+   "status": "in use",
+   "for_the_book": "Why the history has forty releases in days: cheap releases make the record fine-grained enough to learn from."
+  },
+  {
+   "id": "book-projection",
+   "name": "The book as a projection of the site",
+   "what": "Chapters, a single page, print and screen PDFs and a computed cover, all generated from the same sources as the site pages, gated so neither can drift from the other.",
+   "born": "v0.2.0",
+   "implemented_in": [
+    "admin/build/gen_book.py",
+    "admin/build/gen_cover.py"
+   ],
+   "status": "in use",
+   "for_the_book": "One source, many compressions: the fractal claim as a build pipeline."
+  },
+  {
+   "id": "review-register",
+   "name": "The review workflow as a typed register",
+   "what": "Reviews are JSON items with states (applied, discussing, declined), threaded answers, and pages projected from the register, so review history is queryable rather than buried in chat.",
+   "born": "v0.3.8",
+   "implemented_in": [
+    "assets/review.js"
+   ],
+   "status": "in use",
+   "for_the_book": "Disagreement made visible and specific, which is the method's whole claim."
+  },
+  {
+   "id": "decisions-as-graphs",
+   "name": "Decisions as peaks of a graph",
+   "what": "Each open decision is the top of a graph linking its question, options, side effects and the work it blocks; the founder's answers are captured beside it. The whole-register view found blocked work that two decisions each were waiting on under different names.",
+   "born": "v0.3.13",
+   "implemented_in": [
+    "admin/build/gen_decisions.py",
+    "assets/decisions.js"
+   ],
+   "status": "in use",
+   "for_the_book": "An aggregate view producing a finding no per-item view could."
+  },
+  {
+   "id": "carried-sources",
+   "name": "Carried sources: byte copies with hashes",
+   "what": "Source documents are carried whole, byte for byte, each with its SHA-256 recorded and re-verified, so a citation is to bytes that provably have not moved.",
+   "born": "v0.3.24",
+   "implemented_in": [
+    "admin/build/gen_docs.py"
+   ],
+   "status": "in use",
+   "for_the_book": "The provenance chain applied to the book's own inputs."
+  },
+  {
+   "id": "three-link-kinds",
+   "name": "Three kinds of link, drawn apart",
+   "what": "Carried (byte copy plus hash), measured (computed from published phrase lists, drawn dashed with a count), authored (a decision with a note, drawn solid). A reader can always tell which trust a line carries.",
+   "born": "v0.3.24",
+   "implemented_in": [
+    "assets/docs.js"
+   ],
+   "status": "in use",
+   "for_the_book": "Evidence states as a visual grammar."
+  },
+  {
+   "id": "computed-peaks",
+   "name": "Computed peaks and concentration",
+   "what": "A concept's strength and a corpus's peaks are computed from edges, units and demonstrations by a published formula that can be argued with; concentration separates a concept the corpus distributes from one that two documents carry.",
+   "born": "v0.3.20",
+   "implemented_in": [
+    "admin/build/gen_altitudes.py",
+    "admin/build/gen_docs.py"
+   ],
+   "status": "in use",
+   "for_the_book": "Themes are computed, not declared: ADR-4's ancestor."
+  },
+  {
+   "id": "altitude-ladder",
+   "name": "The altitude ladder",
+   "what": "One book at five altitudes, each complete at its own altitude, related by compression running upward. The pilot proved the method the second edition is built on.",
+   "born": "v0.3.15",
+   "implemented_in": [
+    "admin/build/gen_altitudes.py"
+   ],
+   "status": "in use",
+   "for_the_book": "The second book's own table of contents, piloted on the first."
+  },
+  {
+   "id": "supersede-never-delete",
+   "name": "Supersede, never delete",
+   "what": "Corrections are printed beside the originals: amendments name the decision they amend, superseded definitions stay visible under their replacement, and the build fails on an amendment naming nothing.",
+   "born": "v0.4.2",
+   "implemented_in": [
+    "decisions/amendments.json",
+    "admin/build/gen_decisions.py"
+   ],
+   "status": "in use",
+   "for_the_book": "History as part of the graph rather than something a correction erases."
+  },
+  {
+   "id": "edition-freeze",
+   "name": "The edition freeze: move, manifest, hash gate",
+   "what": "A finished edition moves under its own prefix, every byte is recorded in a manifest, and the build fails if any of them changes. Verified negatively before being declared done: change one byte, watch the build fail, put it back.",
+   "born": "v0.4.0",
+   "implemented_in": [
+    "admin/build/gen_freeze.py",
+    "admin/build/validate.js"
+   ],
+   "status": "in use",
+   "for_the_book": "What makes anchors into history stable forever."
+  },
+  {
+   "id": "redirect-stubs",
+   "name": "Redirect stubs at former addresses",
+   "what": "Every page that moved kept a generated stub at its old address, pointing at the new one. Cheap insurance while the estate had possible external readers of the old paths.",
+   "born": "v0.4.0",
+   "implemented_in": [
+    "admin/build/gen_redirects.py"
+   ],
+   "status": "in use",
+   "for_the_book": "A compatibility layer is a cost worn knowingly, and retired knowingly."
+  },
+  {
+   "id": "review-packs",
+   "name": "Review packs: documents that control the sequence",
+   "what": "One continuous page and a PDF printed from it, read end to end with no link followed, stamped with the SHA-256 of every data file it drew from, gated stale. A reviewer answers the pack, not the site.",
+   "born": "v0.4.3",
+   "implemented_in": [
+    "admin/build/gen_packs.py",
+    "assets/pack.css"
+   ],
+   "status": "in use",
+   "for_the_book": "Sequence control as the reviewing counterpart of hyperlinks."
+  },
+  {
+   "id": "figure-capture",
+   "name": "Figures captured from the live pages",
+   "what": "A figure in a document is a Chromium screenshot of the published page it describes, so the figure is what a reader would see, and a missing figure is a stated absence rather than a blank.",
+   "born": "v0.4.3",
+   "implemented_in": [
+    "admin/build/gen_pack_figures.py"
+   ],
+   "status": "in use",
+   "for_the_book": "Named absence applied to illustrations."
+  },
+  {
+   "id": "edition-gathering",
+   "name": "Each edition owns everything it uses",
+   "what": "Everything about making an edition lives inside its tree, taken as copies with provenance blocks; anything outside the edition trees must be deletable without either edition losing content. /book/ is a pointer to the current edition, never a shelf.",
+   "born": "v0.4.4",
+   "implemented_in": [
+    "v2/README.md"
+   ],
+   "status": "in use",
+   "for_the_book": "The decoupling of editions arriving as a property of the directory layout."
+  },
+  {
+   "id": "quote-anchored-extraction",
+   "name": "Quote-anchored extraction with a coverage rule",
+   "what": "Every extracted node carries a verbatim quote at recorded byte offsets in a frozen source; the build fails if the quote is not at its bytes, and every section with prose either yields nodes or is recorded empty with a reason.",
+   "born": "v0.4.5",
+   "implemented_in": [
+    "admin/build/gen_universe.py",
+    "admin/build/validate.js"
+   ],
+   "status": "in use",
+   "for_the_book": "Extraction hallucination made build-detectable; silence made impossible."
+  },
+  {
+   "id": "one-file-many-views",
+   "name": "One extraction, projected views",
+   "what": "The dictionary, taxonomy, thesaurus and ontology of a document are projections of one extraction file, never four authored artefacts, so they cannot disagree with each other.",
+   "born": "v0.4.5",
+   "implemented_in": [
+    "admin/build/gen_universe.py"
+   ],
+   "status": "in use",
+   "for_the_book": "The cure for the glossary-versus-concept-layer duplication the first edition carried."
+  },
+  {
+   "id": "scoped-lexicon",
+   "name": "The scoped lexicon with overrides",
+   "what": "Multiple lexicons at different altitudes: the book's root scope, a scope per source document, later a scope per altitude. A scope may extend, specialise or override an inherited definition, with the authority recorded and the superseded definition kept visible.",
+   "born": "v0.4.6",
+   "implemented_in": [
+    "admin/build/gen_lexicon.py",
+    "v2/lexicon/scopes"
+   ],
+   "status": "in use",
+   "for_the_book": "Fractal semantic graphs demonstrated on the book's own vocabulary."
+  },
+  {
+   "id": "artefact-catalogue",
+   "name": "The artefact catalogue",
+   "what": "Point-in-time artefacts, the pages and PDFs that captured a particular moment with a particular set of sources and thinking, are preserved byte for byte in a catalogued area, hash-gated so they can never be silently overwritten.",
+   "born": "v0.4.6",
+   "implemented_in": [
+    "admin/build/gen_artefacts.py",
+    "v2/artefacts"
+   ],
+   "status": "in use",
+   "for_the_book": "The history of how the result was reached is part of the result's graph."
+  },
+  {
+   "id": "numbers-not-in-prose",
+   "name": "The number nothing was checking",
+   "what": "The recurring failure class: a count or date written into prose that no gate covers, drifting silently. Each instance found became a gate; the standing answer is that prose does not quote computed numbers.",
+   "born": "v0.3.23",
+   "implemented_in": [
+    "admin/build/validate.js"
+   ],
+   "status": "in use",
+   "for_the_book": "The single most repeated lesson of the whole run, and gate 21 of the dev pack."
+  }
+ ]
+}

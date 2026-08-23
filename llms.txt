@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.4.5 (23 August 2026). Published by the sgit project — participant
+Site version: v0.4.6 (23 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /v1/briefs/ is the source of truth and carries the same licence.
 
@@ -362,6 +362,31 @@ pages** so the two cannot drift
   hashes). Each document also ships as a printable PDF for review with nothing else open.
   Pilot extracted: Thinking in Graphs, 57 nodes. The bridge layer (cross-document edges,
   authored) and layer 3 are not started.
+- https://graphs.sgit.ai/v2/lexicon/index.html — the book's lexicon, held the way the book says
+  vocabulary should be held: MULTIPLE LEXICONS AT DIFFERENT ALTITUDES, a well-connected root
+  scope any other scope may link to, and local override without asking the centre (the corrected
+  meaning of fractal semantic graphs, demonstrated on the book's own terms). The root scope
+  carries 27 terms: 24 copied from the first edition's concept layer with a provenance block,
+  3 authored at v2, and one already OVERRIDDEN with its authority recorded and the superseded
+  definition kept visible (the term "fractal", corrected by brief 20). One source scope per
+  extracted document maps the document's terms onto the book's (same-concept or grounds); an
+  unmapped term is published as a finding, and the build fails on a term neither mapped nor
+  noted. Machine surface: /v2/lexicon/data/lexicon.json. Resolution rule: a term at a scope
+  means that scope's definition if present, else the parent's.
+- https://graphs.sgit.ai/v2/methods/index.html — the register of graph techniques and workflows
+  this project has invented or adopted while building the book: 20 entries, each with what it
+  is, the release it first shipped in, the files that implement it (checked by the build for
+  entries still in use), and what it demonstrates for the second edition. Part of what the book
+  talks about is how it was made; the method chapter is written from this register. Superseded
+  techniques stay listed with their supersession recorded. Machine surface:
+  /v2/methods/data/methods.json.
+- https://graphs.sgit.ai/v2/artefacts/index.html — the catalogue of point-in-time artefacts,
+  preserved BYTE FOR BYTE: pages and PDFs that captured a particular moment with a particular
+  set of sources and thinking, pulled from the release tag that built them, every file's
+  SHA-256 recorded, and the build fails if any catalogued byte changes. First entry: the first
+  review pack as built at v0.4.3, with the era's stylesheets alongside so it still renders as
+  it did. Treat an artefact as what the site said at that moment, never as current state.
+  Machine surface: /v2/artefacts/data/catalog.json.
 - https://graphs.sgit.ai/book/index.html — a pointer, not a shelf: this address always points at
   the **current edition**, which is the second. The finished first edition is at /v1/book/.
 - https://graphs.sgit.ai/v2/packs/index.html — the review packs: generated documents for

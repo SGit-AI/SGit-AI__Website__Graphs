@@ -112,7 +112,9 @@ for (const v of rows) if (rows.filter(x => x === v).length > 1) {
 }
 
 // --- 2. internal links ----------------------------------------------------
+const isPreserved = f => rel(f).startsWith('v2/artefacts/') && rel(f) !== 'v2/artefacts/index.html';
 for (const f of htmlFiles) {
+  if (isPreserved(f)) continue;   // preserved bytes cite the world as of their capture; gate 26 owns their integrity
   const t = fs.readFileSync(f, 'utf8');
   const dir = path.dirname(f);
   for (const m of t.matchAll(/(?:href|src|data-src)="([^"#]+)(?:#[^"]*)?"/g)) {
@@ -318,6 +320,75 @@ if (fs.existsSync(uniPath)) {
     }
     if (!fs.existsSync(path.join(ROOT, `v2/universe/${src.slug}.pdf`))) {
       errors.push(`universe PDF missing: v2/universe/${src.slug}.pdf`);
+    }
+  }
+}
+
+// --- 4e. the lexicon resolves ------------------------------------------------
+// Gate 24. Scoped vocabulary: overrides must carry their authority and keep the
+// superseded definition; source-scope mappings must resolve on both sides against
+// the published universe. The generator checks this at build time; this re-checks
+// the published surface independently.
+const lexPath = path.join(ROOT, 'v2/lexicon/data/lexicon.json');
+if (fs.existsSync(lexPath)) {
+  const lex = JSON.parse(fs.readFileSync(lexPath, 'utf8'));
+  if (lex.version !== VERSION) {
+    errors.push(`lexicon was generated at ${lex.version}, site is ${VERSION} — run gen_lexicon.py`);
+  }
+  const bookScope = lex.scopes.find(s => s.kind === 'root');
+  const bookIds = new Set((bookScope ? bookScope.terms : []).map(t => t.id));
+  for (const t of (bookScope ? bookScope.terms : [])) {
+    if (!t.definition || !t.definition.trim()) errors.push(`lexicon term ${t.id}: empty definition`);
+    if (t.superseded && (!t.superseded.by || !t.superseded.definition)) {
+      errors.push(`lexicon term ${t.id}: override without authority or without the superseded definition`);
+    }
+  }
+  const uniP = path.join(ROOT, 'v2/universe/data/universe.json');
+  if (fs.existsSync(uniP)) {
+    const uni = JSON.parse(fs.readFileSync(uniP, 'utf8'));
+    const docTerms = {};
+    for (const src of uni.sources) docTerms[src.slug] = new Set(src.nodes.filter(n => n.family === 'concept').map(n => n.id));
+    for (const sc of lex.scopes.filter(s => s.kind === 'source-scope')) {
+      const slug = sc.scope.split(':')[1];
+      for (const m of (sc.mappings || [])) {
+        if (!bookIds.has(m.book_term)) errors.push(`lexicon ${sc.scope}: mapping to unknown book term ${m.book_term}`);
+        if (docTerms[slug] && !docTerms[slug].has(m.term)) errors.push(`lexicon ${sc.scope}: mapping from unknown document term ${m.term}`);
+      }
+    }
+  }
+}
+
+// --- 4f. the methods register is real ---------------------------------------
+// Gate 25. A technique still in use must point at code that exists; a register
+// entry claiming an implementation that is gone is the register going stale.
+const methPath = path.join(ROOT, 'v2/methods/data/methods.json');
+if (fs.existsSync(methPath)) {
+  const reg = JSON.parse(fs.readFileSync(methPath, 'utf8'));
+  for (const m of reg.methods) {
+    if (m.status === 'in use') {
+      for (const p2 of m.implemented_in) {
+        if (!fs.existsSync(path.join(ROOT, p2))) {
+          errors.push(`methods register: ${m.id} claims implementation at ${p2}, which does not exist`);
+        }
+      }
+    }
+  }
+}
+
+// --- 4g. catalogued artefacts are immutable ----------------------------------
+// Gate 26. The catalogue preserves point-in-time artefacts byte for byte; a
+// catalogued file that changed or vanished is history being silently overwritten,
+// which is the exact thing the catalogue exists to prevent.
+const catPath = path.join(ROOT, 'v2/artefacts/data/catalog.json');
+if (fs.existsSync(catPath)) {
+  const cat = JSON.parse(fs.readFileSync(catPath, 'utf8'));
+  for (const e of cat.entries) {
+    for (const f of e.files) {
+      const p2 = path.join(ROOT, f.path);
+      if (!fs.existsSync(p2)) { errors.push(`artefact ${e.id}: preserved file is gone: ${f.path}`); continue; }
+      if (sha(fs.readFileSync(p2)) !== f.sha256) {
+        errors.push(`artefact ${e.id}: ${f.path} no longer hashes to its record — a catalogued artefact is immutable`);
+      }
     }
   }
 }

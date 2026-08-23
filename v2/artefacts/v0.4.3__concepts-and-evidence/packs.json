@@ -1,0 +1,34 @@
+{
+ "version": "v0.4.3",
+ "date": "23 August 2026",
+ "packs": [
+  {
+   "slug": "concepts-and-evidence",
+   "title": "The concepts, and what the evidence says about them",
+   "job": "Understand the concepts &middot; see the evidence",
+   "built": "every release",
+   "who": "The author, an editor, or a reviewing agent who has read nothing else",
+   "lead": "The vocabulary this book is being built out of, what the twenty-one carried source documents actually say about it, where the material contradicts itself, and what is still unanswered. Assembled in one sequence so that none of it depends on clicking through a website.",
+   "version": "v0.4.3",
+   "date": "23 August 2026",
+   "pages": 22,
+   "engine": "weasyprint 69.0",
+   "sources": [
+    {
+     "path": "v1/altitudes/data/altitudes.json",
+     "sha256": "8f5c605ffcff8d5f812eaf001720c219af0cdcba423efc5bda4802d678b2822d"
+    },
+    {
+     "path": "v1/docs/data/docs.json",
+     "sha256": "1c957afa9e439e606a6b4b8fe4a9ccbe974fd663762c58dcfdb555fe9c80d0be"
+    },
+    {
+     "path": "decisions/data/decisions.json",
+     "sha256": "0cd6b34b6e88d98049620bf1cad929f01e45c4f5c405378e495b3c751d6064f6"
+    }
+   ],
+   "bytes": 44019,
+   "pdf_bytes": 625745
+  }
+ ]
+}

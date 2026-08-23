@@ -58,7 +58,7 @@ PAGE = """<!doctype html>
 <nav class="site"><div class="row"></div></nav>
 
 <main class="doc">
-<div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="index.html">the memos</a> &rarr; <b>{num}</b></div>
+<div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="../index.html">the second edition</a> &rarr; <a href="index.html">the memos</a> &rarr; <b>{num}</b></div>
 <h1>{title}</h1>
 <p class="lead">{desc}</p>
 
@@ -105,7 +105,7 @@ HUB = """<!doctype html>
 <nav class="site"><div class="row"></div></nav>
 
 <main class="doc">
-  <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <b>The memos</b></div>
+  <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="../index.html">the second edition</a> &rarr; <b>The memos</b></div>
   <h1>The memos</h1>
   <p class="lead">The founder's voice memos, transcribed and reproduced <b>verbatim</b>, because the house rule is that the founder's voice is source material and is not edited. Each one is followed by the instructions extracted from it and, for each instruction, what it commits the work to. That second half is the agent's reading and is marked as such.</p>
 

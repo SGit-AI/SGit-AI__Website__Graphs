@@ -1,0 +1,56 @@
+{
+ "note": "Point-in-time artefacts, preserved byte for byte. Each was created at a particular moment, from a particular set of sources and thinking, and the current site has since moved past it; the catalogue keeps the artefact itself, not a description of it. Entries are immutable: the build fails if any catalogued byte changes.",
+ "entries": [
+  {
+   "id": "v0.4.3__concepts-and-evidence",
+   "title": "The first review pack: concepts and evidence, as built at v0.4.3",
+   "captured_from": {
+    "release": "v0.4.3",
+    "tag": "v0.4.3",
+    "paths": [
+     "packs/concepts-and-evidence.html",
+     "packs/concepts-and-evidence.pdf",
+     "packs/packs.json",
+     "packs/figures/*"
+    ]
+   },
+   "moment": "The first pack ever built: 23 August 2026, twenty-two pages, drawn from the twenty-one carried sources, the twenty-four-concept map and the ten open decisions as they stood that afternoon, with three figures captured from the live pages of that build. The current pack at /v2/packs/ regenerates on every release and has already moved past this one; this is the original, byte for byte, with the era's stylesheets alongside so it still renders as it did.",
+   "files": [
+    {
+     "path": "v2/artefacts/v0.4.3__concepts-and-evidence/concepts-and-evidence.html",
+     "sha256": "35ff9288f769e2199fa7d34b5532385d3ca1d303d813f4abe8ee242997698da3"
+    },
+    {
+     "path": "v2/artefacts/v0.4.3__concepts-and-evidence/concepts-and-evidence.pdf",
+     "sha256": "53487cb666296a2d41ed7b4d5a975f1ba6524c6c7ce6c32267c1603994bc5c8c"
+    },
+    {
+     "path": "v2/artefacts/v0.4.3__concepts-and-evidence/packs.json",
+     "sha256": "2147c6eb97782d213064420cb54b1db807587b1802691db7cd98f104b472811b"
+    },
+    {
+     "path": "v2/artefacts/v0.4.3__concepts-and-evidence/figures/concepts.png",
+     "sha256": "6199cd0ac40cd4bb008ded42f4e54d4cb7c310ca762009c25bac151c669de145"
+    },
+    {
+     "path": "v2/artefacts/v0.4.3__concepts-and-evidence/figures/docs-all.png",
+     "sha256": "7fe0c3d891a0eb0a12f0d971a628558567c401d471bf16d80e1ca09bd22b6f34"
+    },
+    {
+     "path": "v2/artefacts/v0.4.3__concepts-and-evidence/figures/decisions.png",
+     "sha256": "a254e3c5230a99b2e2f291537ed3bbe571b9adbd19da6c8081a188f995d514ad"
+    },
+    {
+     "path": "v2/artefacts/assets/pack.css",
+     "sha256": "69954c57937a6c09ee793c4ffc3adea4be45fbd4dc28e3267ac5c8dadb0567b4"
+    },
+    {
+     "path": "v2/artefacts/assets/site.css",
+     "sha256": "85f144205fcf83078bbf768f5203bed2334a7a32fbeb61f801c7c9b573f47ada"
+    }
+   ],
+   "open": "v2/artefacts/v0.4.3__concepts-and-evidence/concepts-and-evidence.html",
+   "pdf": "v2/artefacts/v0.4.3__concepts-and-evidence/concepts-and-evidence.pdf"
+  }
+ ]
+}

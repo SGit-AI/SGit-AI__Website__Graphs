@@ -276,7 +276,7 @@ HUB = """<!doctype html>
 <nav class="site"><div class="row"></div></nav>
 
 <main class="doc">
-  <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <b>The review packs</b></div>
+  <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="../index.html">the second edition</a> &rarr; <b>The review packs</b></div>
   <h1>The review packs</h1>
   <p class="lead">A website cannot control what a reviewer reads, in what order, or what they skip: that is what hyperlinks are for, and it is the wrong property when you need someone to review a specific thing. <b>A pack controls the sequence.</b> One continuous page, a PDF printed from the same source, readable end to end on an iPad or on paper, with nothing in it that needs a link followed.</p>
 
