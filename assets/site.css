@@ -903,3 +903,9 @@ main.doc.bleed{max-width:min(1900px,97vw)}
 .dscore b{position:relative;z-index:1}
 @media (max-width:980px){.dgwrap{grid-template-columns:1fr}.dgside{max-height:none}}
 .dcorr{margin:.7rem 0;padding:.7rem .9rem;background:#fbebe9;border-left:3px solid #a33a31;border-radius:0 8px 8px 0;font-size:.9rem}
+/* the dev pack */
+.dpnum{font:700 .78rem/1 var(--sans);letter-spacing:.06em;color:#5b4d8f;white-space:nowrap}
+.dpfigs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.9rem;margin:1rem 0}
+.dpfig{margin:0;border:1px solid #e4e0d6;border-radius:10px;overflow:hidden;background:#fff}
+.dpfig img{display:block;width:100%;height:auto;border-bottom:1px solid #f4f1e8}
+.dpfig figcaption{padding:.4rem .6rem;font-size:.78rem;color:#8a8578}

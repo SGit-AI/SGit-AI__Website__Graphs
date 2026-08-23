@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.26</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.27</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -101,6 +101,7 @@
       <div class="sub">
       <a class="sl" href="../documents/index.html">The documents</a>
       <a class="sl" href="../documents/what-the-graphs-found.html">&hellip; what the graphs found</a>
+      <a class="sl" href="../dev-pack/index.html">The dev pack: the second book</a>
       <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
       <a class="sl here" href="../admin/versions.html">Release history</a>
       <a class="sl" href="../admin/publishing.html">Publishing the book</a>
@@ -122,6 +123,11 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.3.27</td>
+        <td>23 August 2026</td>
+        <td><b>The plan to write the book again, from the top down.</b> Two founder voice memos on 23 August cancelled the refactor that was planned and asked for something larger: enough structural evidence, tooling and workflow now exist to start again and write the book the way it was meant to be written, beginning at fractal semantic graphs and meaning through connectivity and descending from there. The memos are published verbatim at <a href="../briefs/19__founder-memo__the-second-book.md">briefs/19</a>, and the plan they asked for is <a href="../dev-pack/index.html">dev pack v0.3.27</a>: ten files in the pattern of the packs the sibling repositories already use. <b>Status is PROPOSED throughout and nothing in it is implemented.</b> <b>Three governing rules</b> carry the whole thing. The graph comes before the prose at every altitude, so no unit of text is written until the node it projects exists, carries its typed edges and has evidence that resolves. The first edition is <b>frozen at v0.3.26</b>, hashed, gated so the build fails if a byte changes, and copied from rather than edited, because the record of how this was worked out is worth more intact than improved. And every claim the book makes about itself is computed on every build, which is the lesson of the previous fourteen releases where every correction turned out to be a number nothing was checking. <b>The architecture is nine ADRs</b>, of which the sharpest is that <b>themes are computed rather than declared</b>: a theme is a node on which at least three independent evidence paths converge, no more than one of them passing through another theme, and a statement that fails the check is demoted, re-evidenced or labelled an opinion rather than asserted. The peak formula gains external evidence so that the carried sources and the vault demonstrations count, which is what the memo asked for when it said the evidence should link to the themes by itself. <b>Five altitudes become five source trees</b>, not one tree with five views, because the corpus's own <em>Refactoring Meaning</em> argues that going up a ladder is decompilation rather than compilation and only the author can resolve the ambiguity; the machine checks the compression relationship rather than performing it. <b>The audit gives every unit a verdict</b>: of the first book's seventeen units, five carry, seven lift, three are rewritten and one is deferred, and the file says plainly that an audit performed by the person who wrote most of it will skew toward the verdict that preserves material while sounding like change. The counter-check is stated as a number: level 3 should come in near 8,000 words against the first book's 15,600, and if it does not, the rewrite did not happen. Seven phases, each ending at a gate, with phase 0 shipping as v0.4.0; twenty gates in total, seven of them new, including one that stops prose quoting a computed number as a literal. Eight open questions are the founder's, and the pack records what the rewrite does to each of the ten open decisions: four dissolved or answered, two made urgent, four untouched. Eight figures captured from the live site are included, and file 07 states the finding that shaped them: every aggregate view produced a finding and no per-item view did. No book content changed.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.3.26</td>
         <td>23 August 2026</td>
@@ -317,7 +323,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.26</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.27</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

@@ -68,6 +68,12 @@
      "sources": [
       "[issues-fs.sgit.ai](https://issues-fs.sgit.ai/), published 22 August 2026, site v0.1.1"
      ]
+    },
+    {
+     "date": "23 August 2026",
+     "from": "the agent",
+     "note": "**Answered by construction, in a way this item did not anticipate.** Two founder memos have cancelled the refactor in favour of writing the book again from the top down, and [the dev pack](../dev-pack/index.html) makes the decoupling a consequence rather than a project: the second book is a different source tree that carries **provenance edges** back to the first, and ADR-8 flips the gate from *the book must equal the site* to *the book must say where it came from*, which is exactly what this item proposed. The first edition freezes at v0.3.26, hashed and gated. Decision r003-D1 can be closed as answered by the rewrite, and the pack's file 09 records what the rewrite does to the other nine open decisions: four dissolved or answered, two made urgent, four untouched.",
+     "sources": []
     }
    ]
   },

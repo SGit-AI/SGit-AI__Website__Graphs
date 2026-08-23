@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.3.26 (23 August 2026). Published by the sgit project — participant
+Site version: v0.3.27 (23 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /briefs/ is the source of truth and carries the same licence.
 
@@ -341,6 +341,22 @@ pages** so the two cannot drift
 
 ## Site
 
+- https://graphs.sgit.ai/dev-pack/index.html — the dev pack for the second book, written
+  23 August 2026 after two founder memos cancelled the planned refactor. **Status: PROPOSED.
+  Nothing in it is implemented.** Ten markdown files under /dev-packs/v0.3.27__the-second-book/,
+  which are the source of truth; each page renders one client-side and cannot drift from it.
+  The plan is to write the book again from the top down as a graph: five source trees at five
+  altitudes, each a complete book at its altitude, each declaring what it compresses. Three
+  governing rules: the graph comes before the prose at every altitude; the first edition is
+  frozen at v0.3.26 and copied from, never edited; every claim the book makes about itself is
+  computed on every build. The sharpest architectural decision is ADR-4: **themes are computed,
+  not declared** — a theme is where at least three independent evidence paths converge, and a
+  statement that fails the check is demoted or labelled an opinion rather than asserted.
+  Seven phases (freeze, plumbing, spine, L1+L2, L3, L4, L5), each ending at a gate; twenty
+  gates in total, seven of them new. Eight open questions are the founder's and are listed in
+  file 09, along with what the rewrite does to each of the ten open decisions: four dissolved
+  or answered, two made urgent, four untouched. Phase 0 ships as v0.4.0. Source memos:
+  /briefs/19__founder-memo__the-second-book.md
 - https://graphs.sgit.ai/documents/index.html — the twelve project documents, readable
   in-page and downloadable raw at /briefs/<filename>. **The raw markdown is the source of
   truth; the rendered page is presentation**, and each reader page renders its own source

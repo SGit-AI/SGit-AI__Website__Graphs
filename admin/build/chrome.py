@@ -91,12 +91,13 @@ NAV = [
     ("Site", "documents/index.html", [
         ("The documents", "documents/index.html"),
         ("&hellip; what the graphs found", "documents/what-the-graphs-found.html"),
+        ("The dev pack: the second book", "dev-pack/index.html"),
         ("Comms: tasks &amp; requests", "admin/comms.html"),
         ("Release history", "admin/versions.html"),
         ("Publishing the book", "admin/publishing.html"),
         ("Admin &amp; engineering", "admin/index.html"),
         ("Where we lose", "about/participant.html"),
-    ], ("documents/", "briefs/", "admin/", "about/")),
+    ], ("documents/", "briefs/", "admin/", "about/", "dev-pack/")),
 ]
 
 FOOTER = [
