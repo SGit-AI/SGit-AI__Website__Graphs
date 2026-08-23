@@ -455,6 +455,168 @@ CONTEXT = {
            P("concept", "The same grammar at every altitude", "../altitudes/concepts.html#fractal",
              "registers as the fractal case")],
    resolves=["r003 item 4 · the decisions mode"]),
+
+ "refactoring-meaning": dict(
+   title="Refactoring Meaning: This Is Decompilation Rather Than Compilation",
+   dated="9 August 2026",
+   short="The altitude ladder's own source, and the answer to why it is not a clean tree.",
+   intro="The altitude ladder on this site exists because of a voice memo in review r004. This is "
+         "the document that memo was reaching for, written two weeks earlier. Its central move is "
+         "one the ladder needed and did not have: going <em>up</em> the ladder, from text toward "
+         "meaning, is <b>decompilation rather than compilation</b>, and decompilation is the "
+         "ambiguous direction. Lifting is one-to-many, so something has to resolve the ambiguity, "
+         "and only the author holds the answer. That is why a ladder built by an agent is a proposal "
+         "and not a finding.",
+   summary=["Upward is decompilation rather than compilation, which is the ambiguous direction.",
+            "The transformation can be deterministic; the interpretation cannot, and the two should not be conflated.",
+            "The artefact is a graph of author-confirmed meaning, not a claim about truth: <em>is this what you meant</em> is answerable in seconds, <em>is this true</em> is not.",
+            "A reader disputing the reading is the elicitation working. Disagreement is the product.",
+            "The fractal property is <b>intersection rather than nesting</b>: one mention sits in several graphs at once.",
+            "Altitude and query are different controls, and a reader needs both."],
+   reread="Claim 10 answers r004 item 3 directly, and better than the item does. The ladder is "
+          "many-to-many because meaning intersects, not because the compression was sloppy.",
+   places=[P("layer", "The altitude ladder", "../altitudes/index.html",
+             "five levels, each a compression of the one below"),
+           P("page", "The ladder as one graph", "../altitudes/graph.html",
+             "altitude and query as two separate controls, which is claim 11 built"),
+           P("decision", "r004-D1 · does the ladder continue", "../decisions/index.html#r004-D1",
+             "the open decision this document is the strongest argument for"),
+           P("page", "Review r004", "../reviews/r004.html",
+             "the review whose central item this document precedes by two weeks")],
+   resolves=["r004 item 1 · build the ladder", "r004 item 3 · many-to-many, not a clean tree"]),
+
+ "an-index-is-not-a-source": dict(
+   title="An Index Is Not A Source: Caching Nodes Are A Separate Class",
+   dated="9 August 2026",
+   short="The rule this section is judged by. An index page is not evidence.",
+   intro="The most uncomfortable document to publish inside an index, which is why it belongs here. "
+         "Its rule is that <b>a node either asserts or points, and a reader must always be able to "
+         "tell which</b>. A caching node, meaning a pre-computed mapping or a lookup or a "
+         "convenience, asserts nothing, needs no attribution apparatus, and is prunable by "
+         "definition. The failure mode is letting the index quietly become the source, at which "
+         "point every claim downstream inherits the credibility of the weakest cache.",
+   summary=["A pre-created mapping is not a weak source: it is not a source at all.",
+            "A node either asserts or points, and the two classes must be structurally distinguishable.",
+            "If claims and routes are indistinguishable, every claim inherits the credibility of the weakest cache.",
+            "Caching nodes are prunable by definition, because they assert nothing.",
+            "A cached value without the date of its lookup is indistinguishable from a claim.",
+            "It does not matter where you start, which answers the belief that a complete ontology must come first."],
+   reread="Then look back at this page. Every summary in this section is a caching node: it points "
+          "at the document and asserts nothing on its own. The carried markdown is the source, and "
+          "the hash is what keeps the two distinguishable.",
+   places=[P("page", "The sources", "../docs/index.html",
+             "this section is an index, and is built to the rule in this document"),
+           P("page", "The edge set", "../grammar/edge-set.html",
+             "typed edges that say which class a node is in"),
+           P("concept", "Reference without authority", "../altitudes/concepts.html#anchor-nodes",
+             "the anchor node, which points rather than asserts")],
+   resolves=["r002 item 4 · the evidence layer", "r003 item 2 · provenance edges"]),
+
+ "compatibility-through-connectivity": dict(
+   title="Compatibility Through Connectivity: Testing Across Artifact Types",
+   dated="5 February 2026",
+   short="The companion to the cornerstone: compatibility as a measurement, not a declaration.",
+   intro="Written the same day as <a href=\"thinking-in-graphs.html\">Thinking in Graphs</a> and "
+         "declaring a dependency on it, this is the thesis pushed to a working conclusion. An "
+         "architect writes prose, a developer writes code, a runtime produces traces: these are "
+         "different languages for what should be the same truth, and the question worth asking is "
+         "not <em>does the code work</em> but <b>does the system work the way the architect thinks "
+         "it works</b>. Compatibility becomes something you compute by comparing the graphs "
+         "extracted from each representation, which is where this site's <em>compatibility is "
+         "computed, not declared</em> comes from.",
+   summary=["Compatibility is measured by comparing graphs extracted from different representations of the same system.",
+            "The question is not whether the code works, but whether all representations agree.",
+            "Two types of test: within a representation, and across representations.",
+            "Five layers, from prose to runtime trace, each yielding a graph.",
+            "Compatibility is a spectrum with an assessment, not a boolean anyone declares."],
+   reread="Part 7 extends meaning through connectivity beyond where the cornerstone leaves it. It "
+          "is the half of the thesis this book has argued least.",
+   places=[P("concept", "Compatibility is computed, not declared", "../altitudes/concepts.html#compatibility-computed",
+             "the concept sourced here"),
+           P("book", "Chapter 2 · The five ideas", "../book/ch-02-the-five-ideas.html",
+             "compatibility as a spectrum"),
+           P("vault", "The junction rule", "../vaults/voice-debrief/junction.html",
+             "two representations joined at the node layer and compared")],
+   resolves=["N3 · the canonical statement of the thesis"]),
+
+ "issues-fs-lexicon": dict(
+   title="Issues-FS Lexicon: The Root Graph of the Ecosystem",
+   dated="5 February 2026",
+   short="Anchor nodes in full, and the sharpest anti-schema statement in the corpus.",
+   intro="Every system that refuses a central schema eventually faces the same question: what stops "
+         "everyone inventing their own words? This document is the answer, and the answer is not a "
+         "registry. The Lexicon is explicitly <b>not the authoritative source of definitions</b>. It "
+         "is simply the most well-connected graph in the ecosystem, and other graphs link to it "
+         "because doing so raises the confidence and interoperability of their own nodes. Authority "
+         "by connectivity rather than by decree, which is the same trick the whole book turns.",
+   summary=["The Lexicon is the root graph of the ecosystem: well-connected anchor nodes for shared concepts.",
+            "It is <b>not</b> a schema registry and not the authoritative source of definitions.",
+            "Any scope can extend, specialise or override a bootstrap definition.",
+            "Graphs link to it to increase the confidence and interoperability of their own nodes.",
+            "The model is fractal: the same anchor-and-reference pattern at every scope."],
+   reread="It is the longest document in the set and the one that most directly answers the "
+          "objection every reader of chapter 5 will raise.",
+   places=[P("concept", "Reference without authority", "../altitudes/concepts.html#anchor-nodes",
+             "the concept sourced here, in full"),
+           P("book", "Chapter 5 · Against schema-first", "../book/ch-05-against-schema-first.html",
+             "the alternative to a registry"),
+           P("decision", "r003-D2 · which issues logic runs a review folder", "../decisions/index.html#r003-D2",
+             "the pattern the in-repo option would adopt")],
+   resolves=["r003 item 5 · reviews as folders with their own graphs"]),
+
+ "graph-canvas-repl": dict(
+   title="The Graph Canvas As A REPL: Un-Blinding The Agent",
+   dated="2 August 2026",
+   short="Why the explorer renders a query and not a graph, and what it is still missing.",
+   intro="The problem this names is one every agent-assisted session has and few people say out "
+         "loud: <b>the agent works blind while the person works slowly, on the same object</b>. A "
+         "canvas fixes half of that. Feeding the rendered result back to the agent fixes the other "
+         "half. What makes it a REPL rather than a viewer is the three requirements it lists, a "
+         "fast cycle, inspectable state and non-destructive exploration, and this site's explorer "
+         "currently has two of the three.",
+   summary=["The real problem is that the agent works blind while the person works slowly, on the same object.",
+            "A REPL requires a fast cycle, inspectable state and non-destructive exploration.",
+            "The recorded session is already the specification: the brief is the operation sequence plus a sentence of intent.",
+            "Operations should be a closed vocabulary in the established node and edge grammar, and anything it cannot express is a real gap in the model.",
+            "Never render the whole graph: render the result of a query.",
+            "Text diagrams are wrong for the canvas and right for the output, being diffable, committable and readable by both people and agents."],
+   reread="Claim 7 is the one to steal: what your operation vocabulary cannot express is a finding "
+          "about your model, not a missing feature.",
+   places=[P("page", "The ladder as one graph", "../altitudes/graph.html",
+             "the canvas, with the view file as its inspectable state"),
+           P("concept", "Never render the whole graph", "../altitudes/concepts.html#render-the-query",
+             "a second source for the concept, after the blob brief"),
+           P("book", "Chapter 3 · The rules you can apply tomorrow", "../book/ch-03-the-rules-you-can-apply-tomorrow.html",
+             "render the query, not the graph")],
+   resolves=["r004 item 9 · the ladder as one graph", "r004 item 11 · explore from anywhere"]),
+
+ "paying-the-fact-creator": dict(
+   title="Paying The Fact Creator: The Question Is Not Whether A Claim Is True",
+   dated="31 July 2026",
+   short="Citation diversion, and the most checkable worked example in the corpus.",
+   intro="The companion to <a href=\"a-fact-in-a-vacuum.html\">A Fact Does Not Exist In A Vacuum</a>, "
+         "and the more practical of the two. Its reframing is the useful part: <b>the billable "
+         "question is not whether a claim is true but whether this use of it is sound</b>, because "
+         "the common failure is a true finding applied to a conclusion it never supported. The "
+         "ten-thousand-hours case is worked through in detail: an average reported as a threshold, "
+         "half the studied group below it, deliberate practice reduced to time served, and the "
+         "original researcher spending years correcting it with none of the corrections attaching "
+         "to the claim.",
+   summary=["The fact creator should carry a continuing responsibility for accuracy, which currently nobody does.",
+            "Validation consumes somebody's paid time, so it is never free; outside a firm nobody pays it, and the public evidence base decays.",
+            "The billable question is not whether a claim is true but whether <em>this use</em> of it is sound.",
+            "Citation research documents the graph-depth effect, including the conversion of hypothesis into fact by citation alone.",
+            "It also names <b>citation diversion</b>: citing work that does not quite say what the citer implies.",
+            "Caching by claim-and-context pair is what makes repeated validation economically viable."],
+   reread="The ten-thousand-hours worked example is checkable end to end, which makes it the best "
+          "single demonstration in the corpus of why a claim needs its chain of custody.",
+   places=[P("concept", "A claim is worth its chain of custody", "../altitudes/concepts.html#provenance-chain",
+             "a computed peak, and the concept measured in every document here"),
+           P("vault", "The provenance chain", "../vaults/regulation-graph/provenance.html",
+             "hash-verified custody on real bytes"),
+           P("page", "Participant disclosure", "../about/participant.html",
+             "the same discipline turned on this site")],
+   resolves=["r002 item 4 · the evidence layer"]),
 }
 
 
@@ -486,7 +648,7 @@ PAGE = """<!doctype html>
 
 <div class="srcprov">
   <span class="k">Source</span><span class="v"><a href="{repo_url}">{repo}</a> &middot; <code>{path}</code></span>
-  <span class="k">Commit</span><span class="v"><code>{commit_short}</code> &middot; carried 23 August 2026</span>
+  <span class="k">Commit</span><span class="v"><code>{commit_short}</code> &middot; carried 23 August 2026</span>{origin}
   <span class="k">Licence</span><span class="v">{licence} (repository) &middot; {ccby}</span>
   <span class="k">Bytes</span><span class="v">{bytes:,} &middot; {words:,} words &middot; SHA-256 <code>{sha_short}</code></span>
   <span class="k">Dated</span><span class="v">{dated}</span>
@@ -527,6 +689,13 @@ def emit_pages(docs):
     out = ROOT / "docs"
     for d in docs:
         stamped = "CC BY 4.0 stated in the file" if d["ccby"] else "no per-file licence line"
+        o = d.get("origin")
+        origin = ("" if not o else
+                  '\n  <span class="k">Origin</span><span class="v">imported 11 June 2026 from '
+                  '<a href="%s">%s</a> &middot; <code>%s</code> &middot; <b>%s</b></span>'
+                  % (o["repo_url"], o["repo"], o["path"],
+                     "the two copies are byte-identical" if o["identical"]
+                     else "the two copies DIFFER \u2014 see the hub"))
         short_title = d["title"].split(":")[0].strip()
         (out / f'{d["slug"]}.html').write_text(PAGE.format(
             slug=d["slug"], title=d["title"], shorttitle=short_title,
@@ -536,7 +705,7 @@ def emit_pages(docs):
             repo=d["repo"], repo_url=d["repo_url"], path=d["path"],
             commit_short=d["commit"][:10], licence=d["licence"], ccby=stamped,
             bytes=d["bytes"], words=d["words"], sha_short=d["sha256"][:16],
-            dated=d["dated"]))
+            dated=d["dated"], origin=origin))
     return len(docs)
 
 
@@ -588,6 +757,7 @@ def main():
             places=places, resolves=c["resolves"], concepts=hits,
             words=m["words"], bytes=m["bytes"], sha256=sha,
             repo=m["repo"], repo_url=m["repo_url"], commit=m["commit"], ccby=ccby,
+            origin=m.get("origin"),
             licence=m["licence"], path=m["path"],
             influence=dict(score=score, concepts=len(hits), places=len(places),
                            resolves=len(c["resolves"]),
@@ -600,13 +770,25 @@ def main():
 
     # Two documents are joined when they measure the same concept. Computed, so the
     # consolidated graph shows the corpus's own shape rather than one drawn by hand.
-    shared = {}
+    shared, weight = {}, {}
     for d in docs:
         for h in d["concepts"]:
             shared.setdefault(h["id"], []).append(d["slug"])
-    common = sorted(({"id": k, "label": concepts[k]["label"], "docs": v, "n": len(v)}
-                     for k, v in shared.items() if len(v) > 1),
-                    key=lambda x: (-x["n"], x["label"]))
+            weight.setdefault(h["id"], []).append((h["n"], d["slug"]))
+    # A concept mentioned in every document is not the same as a concept carried by every
+    # document. Concentration says how much of a concept's total sits in its top three
+    # documents: high means a few documents do the work and the rest allude to it.
+    common = []
+    for k, v in shared.items():
+        if len(v) < 2:
+            continue
+        w = sorted(weight[k], reverse=True)
+        total = sum(n for n, _ in w)
+        top3 = sum(n for n, _ in w[:3])
+        common.append({"id": k, "label": concepts[k]["label"], "docs": v, "n": len(v),
+                       "total": total, "top": [{"slug": s_, "n": n_} for n_, s_ in w[:3]],
+                       "concentration": round(top3 / total, 2) if total else 0})
+    common.sort(key=lambda x: (-x["n"], x["label"]))
 
     out = dict(version=VERSION, docs=docs, common=common,
                match={k: v for k, v in MATCH.items()},

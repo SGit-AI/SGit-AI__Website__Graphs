@@ -1,5 +1,5 @@
 {
- "version": "v0.3.24",
+ "version": "v0.3.25",
  "docs": [
   {
    "slug": "thinking-in-graphs",
@@ -194,6 +194,13 @@
    "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
    "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
    "ccby": false,
+   "origin": {
+    "repo": "owasp-sbot/Issues-FS__Docs",
+    "repo_url": "https://github.com/owasp-sbot/Issues-FS__Docs",
+    "commit": "0a5a8516912c697e9847456fc5e2d578609d51a4",
+    "path": "docs/to_classify/v0_4_0__issues-fs__thinking-in-graphs.md",
+    "identical": true
+   },
    "licence": "Apache-2.0",
    "path": "library/concepts/v0_4_0__thinking-in-graphs.md",
    "influence": {
@@ -423,6 +430,7 @@
    "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
    "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
    "ccby": true,
+   "origin": null,
    "licence": "Apache-2.0",
    "path": "team/humans/dinis_cruz/briefs/07/28/regulation-graph-and-acceptability/v0.33.53__arch-brief__sg-send-every-paragraph-is-a-graph-eu-ai-act-definitions-as-nodes-twins-as-hooks-with-concepts-appendix.md",
    "influence": {
@@ -565,6 +573,7 @@
    "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
    "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
    "ccby": true,
+   "origin": null,
    "licence": "Apache-2.0",
    "path": "team/humans/dinis_cruz/briefs/07/12/architecture/v0.33.48__arch-brief__sg-send-fractal-semantic-graphs-agentic-operating-layer-deterministic-sovereign-open-source.md",
    "influence": {
@@ -575,6 +584,210 @@
     "formula": "concepts + 2 × places + 3 × review asks resolved"
    },
    "rank": 3
+  },
+  {
+   "slug": "issues-fs-lexicon",
+   "title": "Issues-FS Lexicon: The Root Graph of the Ecosystem",
+   "dated": "5 February 2026",
+   "short": "Anchor nodes in full, and the sharpest anti-schema statement in the corpus.",
+   "intro": "Every system that refuses a central schema eventually faces the same question: what stops everyone inventing their own words? This document is the answer, and the answer is not a registry. The Lexicon is explicitly <b>not the authoritative source of definitions</b>. It is simply the most well-connected graph in the ecosystem, and other graphs link to it because doing so raises the confidence and interoperability of their own nodes. Authority by connectivity rather than by decree, which is the same trick the whole book turns.",
+   "summary": [
+    "The Lexicon is the root graph of the ecosystem: well-connected anchor nodes for shared concepts.",
+    "It is <b>not</b> a schema registry and not the authoritative source of definitions.",
+    "Any scope can extend, specialise or override a bootstrap definition.",
+    "Graphs link to it to increase the confidence and interoperability of their own nodes.",
+    "The model is fractal: the same anchor-and-reference pattern at every scope."
+   ],
+   "reread": "It is the longest document in the set and the one that most directly answers the objection every reader of chapter 5 will raise.",
+   "places": [
+    {
+     "kind": "concept",
+     "label": "Reference without authority",
+     "href": "../altitudes/concepts.html#anchor-nodes",
+     "note": "the concept sourced here, in full"
+    },
+    {
+     "kind": "book",
+     "label": "Chapter 5 · Against schema-first",
+     "href": "../book/ch-05-against-schema-first.html",
+     "note": "the alternative to a registry"
+    },
+    {
+     "kind": "decision",
+     "label": "r003-D2 · which issues logic runs a review folder",
+     "href": "../decisions/index.html#r003-D2",
+     "note": "the pattern the in-repo option would adopt"
+    }
+   ],
+   "resolves": [
+    "r003 item 5 · reviews as folders with their own graphs"
+   ],
+   "concepts": [
+    {
+     "id": "anchor-nodes",
+     "label": "Reference without authority",
+     "n": 157,
+     "peak": false,
+     "phrases": [
+      "anchor node",
+      "anchor nodes",
+      "lexicon",
+      "reference graph"
+     ]
+    },
+    {
+     "id": "compatibility-computed",
+     "label": "Compatibility is computed, not declared",
+     "n": 19,
+     "peak": false,
+     "phrases": [
+      "compatibility",
+      "compatible",
+      "partial equivalence",
+      "a spectrum"
+     ]
+    },
+    {
+     "id": "named-absence",
+     "label": "A named absence beats a hidden one",
+     "n": 10,
+     "peak": false,
+     "phrases": [
+      "the gaps",
+      "missing",
+      "absence of evidence",
+      "unhooked",
+      "never defined",
+      "not answered"
+     ]
+    },
+    {
+     "id": "fractal",
+     "label": "The same grammar at every altitude",
+     "n": 9,
+     "peak": false,
+     "phrases": [
+      "fractal",
+      "graphs of graphs",
+      "ontologies of ontologies",
+      "all the way down",
+      "at every altitude",
+      "at every boundary"
+     ]
+    },
+    {
+     "id": "dont-merge-vocabularies",
+     "label": "Merging erases the disagreement",
+     "n": 5,
+     "peak": true,
+     "phrases": [
+      "bridges, not merges",
+      "never merges",
+      "divergence",
+      "diverge",
+      "keep their own definitions",
+      "bridge"
+     ]
+    },
+    {
+     "id": "provenance-chain",
+     "label": "A claim is worth its chain of custody",
+     "n": 3,
+     "peak": true,
+     "phrases": [
+      "provenance",
+      "chain of custody",
+      "attribution",
+      "citation"
+     ]
+    },
+    {
+     "id": "meaning-through-connectivity",
+     "label": "Meaning through connectivity",
+     "n": 2,
+     "peak": true,
+     "phrases": [
+      "meaning through connectivity",
+      "meaning is not declared",
+      "meaning comes from connectivity",
+      "meaning emerges"
+     ]
+    },
+    {
+     "id": "schema-first",
+     "label": "Schema-first thinking",
+     "n": 2,
+     "peak": true,
+     "phrases": [
+      "schema-first",
+      "standardized schema",
+      "standardised schema",
+      "conform first",
+      "conform-first",
+      "semantic web"
+     ]
+    },
+    {
+     "id": "confidence-from-connectivity",
+     "label": "Confidence is a function of connectivity",
+     "n": 1,
+     "peak": true,
+     "phrases": [
+      "confidence is",
+      "confidence in that meaning",
+      "blast radius",
+      "more connected",
+      "connectedness"
+     ]
+    },
+    {
+     "id": "enrichment-not-enforcement",
+     "label": "Enrichment, not enforcement",
+     "n": 1,
+     "peak": false,
+     "phrases": [
+      "enrichment",
+      "enrich",
+      "does not constrain"
+     ]
+    },
+    {
+     "id": "banned-generic-edge",
+     "label": "The generic association edge is banned",
+     "n": 1,
+     "peak": false,
+     "phrases": [
+      "relates-to",
+      "relates to",
+      "generic edge",
+      "related-to"
+     ]
+    }
+   ],
+   "words": 5228,
+   "bytes": 42732,
+   "sha256": "4b6e58cea445a52199ca97c4c8ed47f8b4fa765202792f3f230628749dfc4902",
+   "repo": "the-cyber-boardroom/SGraph-AI__App__Send",
+   "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
+   "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
+   "ccby": false,
+   "origin": {
+    "repo": "owasp-sbot/Issues-FS__Docs",
+    "repo_url": "https://github.com/owasp-sbot/Issues-FS__Docs",
+    "commit": "0a5a8516912c697e9847456fc5e2d578609d51a4",
+    "path": "docs/to_classify/v0_4_0__issues-fs__lexicon-architecture-v2.md",
+    "identical": true
+   },
+   "licence": "Apache-2.0",
+   "path": "library/concepts/v0_4_0__lexicon-architecture.md",
+   "influence": {
+    "score": 20,
+    "concepts": 11,
+    "places": 3,
+    "resolves": 1,
+    "formula": "concepts + 2 × places + 3 × review asks resolved"
+   },
+   "rank": 4
   },
   {
    "slug": "a-fact-in-a-vacuum",
@@ -688,6 +901,7 @@
    "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
    "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
    "ccby": true,
+   "origin": null,
    "licence": "Apache-2.0",
    "path": "team/humans/dinis_cruz/briefs/08/09/graphing-text/v0.33.57__arch-brief__sg-send-fact-does-not-exist-in-a-vacuum-agenda-is-context-corrections-must-propagate.md",
    "influence": {
@@ -697,7 +911,140 @@
     "resolves": 2,
     "formula": "concepts + 2 × places + 3 × review asks resolved"
    },
-   "rank": 4
+   "rank": 5
+  },
+  {
+   "slug": "refactoring-meaning",
+   "title": "Refactoring Meaning: This Is Decompilation Rather Than Compilation",
+   "dated": "9 August 2026",
+   "short": "The altitude ladder's own source, and the answer to why it is not a clean tree.",
+   "intro": "The altitude ladder on this site exists because of a voice memo in review r004. This is the document that memo was reaching for, written two weeks earlier. Its central move is one the ladder needed and did not have: going <em>up</em> the ladder, from text toward meaning, is <b>decompilation rather than compilation</b>, and decompilation is the ambiguous direction. Lifting is one-to-many, so something has to resolve the ambiguity, and only the author holds the answer. That is why a ladder built by an agent is a proposal and not a finding.",
+   "summary": [
+    "Upward is decompilation rather than compilation, which is the ambiguous direction.",
+    "The transformation can be deterministic; the interpretation cannot, and the two should not be conflated.",
+    "The artefact is a graph of author-confirmed meaning, not a claim about truth: <em>is this what you meant</em> is answerable in seconds, <em>is this true</em> is not.",
+    "A reader disputing the reading is the elicitation working. Disagreement is the product.",
+    "The fractal property is <b>intersection rather than nesting</b>: one mention sits in several graphs at once.",
+    "Altitude and query are different controls, and a reader needs both."
+   ],
+   "reread": "Claim 10 answers r004 item 3 directly, and better than the item does. The ladder is many-to-many because meaning intersects, not because the compression was sloppy.",
+   "places": [
+    {
+     "kind": "layer",
+     "label": "The altitude ladder",
+     "href": "../altitudes/index.html",
+     "note": "five levels, each a compression of the one below"
+    },
+    {
+     "kind": "page",
+     "label": "The ladder as one graph",
+     "href": "../altitudes/graph.html",
+     "note": "altitude and query as two separate controls, which is claim 11 built"
+    },
+    {
+     "kind": "decision",
+     "label": "r004-D1 · does the ladder continue",
+     "href": "../decisions/index.html#r004-D1",
+     "note": "the open decision this document is the strongest argument for"
+    },
+    {
+     "kind": "page",
+     "label": "Review r004",
+     "href": "../reviews/r004.html",
+     "note": "the review whose central item this document precedes by two weeks"
+    }
+   ],
+   "resolves": [
+    "r004 item 1 · build the ladder",
+    "r004 item 3 · many-to-many, not a clean tree"
+   ],
+   "concepts": [
+    {
+     "id": "fractal",
+     "label": "The same grammar at every altitude",
+     "n": 11,
+     "peak": false,
+     "phrases": [
+      "fractal",
+      "graphs of graphs",
+      "ontologies of ontologies",
+      "all the way down",
+      "at every altitude",
+      "at every boundary"
+     ]
+    },
+    {
+     "id": "provenance-chain",
+     "label": "A claim is worth its chain of custody",
+     "n": 4,
+     "peak": true,
+     "phrases": [
+      "provenance",
+      "chain of custody",
+      "attribution",
+      "citation"
+     ]
+    },
+    {
+     "id": "bidirectional-paths",
+     "label": "Both directions carry a name",
+     "n": 2,
+     "peak": false,
+     "phrases": [
+      "inward and outward",
+      "outward path",
+      "inward path",
+      "both directions",
+      "two directions"
+     ]
+    },
+    {
+     "id": "classification-as-query",
+     "label": "Classification is a query, not a judgment",
+     "n": 2,
+     "peak": false,
+     "phrases": [
+      "classification is a query",
+      "node type formula",
+      "classification as a query",
+      "type is set by edges",
+      "path pattern",
+      "path-pattern"
+     ]
+    },
+    {
+     "id": "dont-merge-vocabularies",
+     "label": "Merging erases the disagreement",
+     "n": 2,
+     "peak": true,
+     "phrases": [
+      "bridges, not merges",
+      "never merges",
+      "divergence",
+      "diverge",
+      "keep their own definitions",
+      "bridge"
+     ]
+    }
+   ],
+   "words": 3558,
+   "bytes": 21558,
+   "sha256": "fe6194f1ce55e386041976e3e127b0f5d137afc4ddee8ff77fe9d4e413220cfd",
+   "repo": "the-cyber-boardroom/SGraph-AI__App__Send",
+   "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
+   "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
+   "ccby": true,
+   "origin": null,
+   "licence": "Apache-2.0",
+   "path": "team/humans/dinis_cruz/briefs/08/09/graphing-text/v0.33.57__strategy-brief__sg-send-refactoring-meaning-decompilation-not-compilation-author-is-the-arbiter.md",
+   "influence": {
+    "score": 19,
+    "concepts": 5,
+    "places": 4,
+    "resolves": 2,
+    "formula": "concepts + 2 × places + 3 × review asks resolved"
+   },
+   "rank": 6
   },
   {
    "slug": "path-properties",
@@ -850,6 +1197,7 @@
    "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
    "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
    "ccby": true,
+   "origin": null,
    "licence": "Apache-2.0",
    "path": "team/humans/dinis_cruz/briefs/06/26/semantic-graph-and-query-paths/v0.33.35__arch-brief__sg-send-path-properties-read-as-language-ontology-of-ontologies-multigraph-creation-paths.md",
    "influence": {
@@ -859,7 +1207,7 @@
     "resolves": 1,
     "formula": "concepts + 2 × places + 3 × review asks resolved"
    },
-   "rank": 5
+   "rank": 7
   },
   {
    "slug": "avoid-the-blob",
@@ -1010,6 +1358,7 @@
    "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
    "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
    "ccby": true,
+   "origin": null,
    "licence": "Apache-2.0",
    "path": "team/humans/dinis_cruz/briefs/06/10/network-intelligence/v0.33.16__arch-brief__sg-send-semantic-graph-visualisation-subgraph-flip-verb-edges.md",
    "influence": {
@@ -1019,7 +1368,7 @@
     "resolves": 1,
     "formula": "concepts + 2 × places + 3 × review asks resolved"
    },
-   "rank": 6
+   "rank": 8
   },
   {
    "slug": "confidence-through-evidence",
@@ -1171,6 +1520,7 @@
    "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
    "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
    "ccby": true,
+   "origin": null,
    "licence": "Apache-2.0",
    "path": "team/humans/dinis_cruz/briefs/06/16/theses-and-reflections/v0.33.38__strategy-brief__confidence-through-evidence-blast-radius-graphs-mapping-the-gaps.md",
    "influence": {
@@ -1180,7 +1530,7 @@
     "resolves": 1,
     "formula": "concepts + 2 × places + 3 × review asks resolved"
    },
-   "rank": 7
+   "rank": 9
   },
   {
    "slug": "concepts-not-words",
@@ -1331,6 +1681,7 @@
    "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
    "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
    "ccby": true,
+   "origin": null,
    "licence": "Apache-2.0",
    "path": "team/humans/dinis_cruz/briefs/08/06/voice-debrief/v0.33.56__arch-brief__sg-send-concepts-not-words-skos-is-the-model-divergence-is-the-finding.md",
    "influence": {
@@ -1340,7 +1691,133 @@
     "resolves": 1,
     "formula": "concepts + 2 × places + 3 × review asks resolved"
    },
-   "rank": 8
+   "rank": 10
+  },
+  {
+   "slug": "graph-canvas-repl",
+   "title": "The Graph Canvas As A REPL: Un-Blinding The Agent",
+   "dated": "2 August 2026",
+   "short": "Why the explorer renders a query and not a graph, and what it is still missing.",
+   "intro": "The problem this names is one every agent-assisted session has and few people say out loud: <b>the agent works blind while the person works slowly, on the same object</b>. A canvas fixes half of that. Feeding the rendered result back to the agent fixes the other half. What makes it a REPL rather than a viewer is the three requirements it lists, a fast cycle, inspectable state and non-destructive exploration, and this site's explorer currently has two of the three.",
+   "summary": [
+    "The real problem is that the agent works blind while the person works slowly, on the same object.",
+    "A REPL requires a fast cycle, inspectable state and non-destructive exploration.",
+    "The recorded session is already the specification: the brief is the operation sequence plus a sentence of intent.",
+    "Operations should be a closed vocabulary in the established node and edge grammar, and anything it cannot express is a real gap in the model.",
+    "Never render the whole graph: render the result of a query.",
+    "Text diagrams are wrong for the canvas and right for the output, being diffable, committable and readable by both people and agents."
+   ],
+   "reread": "Claim 7 is the one to steal: what your operation vocabulary cannot express is a finding about your model, not a missing feature.",
+   "places": [
+    {
+     "kind": "page",
+     "label": "The ladder as one graph",
+     "href": "../altitudes/graph.html",
+     "note": "the canvas, with the view file as its inspectable state"
+    },
+    {
+     "kind": "concept",
+     "label": "Never render the whole graph",
+     "href": "../altitudes/concepts.html#render-the-query",
+     "note": "a second source for the concept, after the blob brief"
+    },
+    {
+     "kind": "book",
+     "label": "Chapter 3 · The rules you can apply tomorrow",
+     "href": "../book/ch-03-the-rules-you-can-apply-tomorrow.html",
+     "note": "render the query, not the graph"
+    }
+   ],
+   "resolves": [
+    "r004 item 9 · the ladder as one graph",
+    "r004 item 11 · explore from anywhere"
+   ],
+   "concepts": [
+    {
+     "id": "twin-attachment",
+     "label": "Obligations attach at the twin",
+     "n": 6,
+     "peak": false,
+     "phrases": [
+      "twin",
+      "twins",
+      "hooks into reality",
+      "twin primitive"
+     ]
+    },
+    {
+     "id": "dont-merge-vocabularies",
+     "label": "Merging erases the disagreement",
+     "n": 2,
+     "peak": true,
+     "phrases": [
+      "bridges, not merges",
+      "never merges",
+      "divergence",
+      "diverge",
+      "keep their own definitions",
+      "bridge"
+     ]
+    },
+    {
+     "id": "provenance-chain",
+     "label": "A claim is worth its chain of custody",
+     "n": 1,
+     "peak": true,
+     "phrases": [
+      "provenance",
+      "chain of custody",
+      "attribution",
+      "citation"
+     ]
+    },
+    {
+     "id": "bidirectional-paths",
+     "label": "Both directions carry a name",
+     "n": 1,
+     "peak": false,
+     "phrases": [
+      "inward and outward",
+      "outward path",
+      "inward path",
+      "both directions",
+      "two directions"
+     ]
+    },
+    {
+     "id": "render-the-query",
+     "label": "Never render the whole graph",
+     "n": 1,
+     "peak": false,
+     "phrases": [
+      "the blob",
+      "flip the subgraph",
+      "subgraph flip",
+      "narrow it",
+      "wide first",
+      "visualisation limit",
+      "condensed graph"
+     ]
+    }
+   ],
+   "words": 3471,
+   "bytes": 21822,
+   "sha256": "071096e05005f64a35c592b62b2bfe54cb1e249d0d12f49c76d57a52f6cec0e1",
+   "repo": "the-cyber-boardroom/SGraph-AI__App__Send",
+   "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
+   "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
+   "ccby": true,
+   "origin": null,
+   "licence": "Apache-2.0",
+   "path": "team/humans/dinis_cruz/briefs/08/02/vault-as-substrate/v0.33.55__arch-brief__sg-send-graph-canvas-repl-un-blinding-the-agent-mermaid-for-output-never-render-whole-graph.md",
+   "influence": {
+    "score": 17,
+    "concepts": 5,
+    "places": 3,
+    "resolves": 2,
+    "formula": "concepts + 2 × places + 3 × review asks resolved"
+   },
+   "rank": 11
   },
   {
    "slug": "ontologies-of-ontologies",
@@ -1478,6 +1955,7 @@
    "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
    "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
    "ccby": true,
+   "origin": null,
    "licence": "Apache-2.0",
    "path": "team/humans/dinis_cruz/briefs/06/28/ontology-and-definitions/v0.33.36__arch-brief__sg-send-ontologies-of-ontologies-three-layers-formulas-bridges-multiple-definitions.md",
    "influence": {
@@ -1487,7 +1965,7 @@
     "resolves": 1,
     "formula": "concepts + 2 × places + 3 × review asks resolved"
    },
-   "rank": 9
+   "rank": 12
   },
   {
    "slug": "the-grounding-ladder",
@@ -1627,6 +2105,7 @@
    "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
    "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
    "ccby": true,
+   "origin": null,
    "licence": "Apache-2.0",
    "path": "team/humans/dinis_cruz/briefs/06/28/ontology-and-definitions/v0.33.36__arch-brief__sg-send-grounding-ladder-fact-evidence-measure-vulnerability-risk-definitions.md",
    "influence": {
@@ -1636,7 +2115,117 @@
     "resolves": 1,
     "formula": "concepts + 2 × places + 3 × review asks resolved"
    },
-   "rank": 10
+   "rank": 13
+  },
+  {
+   "slug": "an-index-is-not-a-source",
+   "title": "An Index Is Not A Source: Caching Nodes Are A Separate Class",
+   "dated": "9 August 2026",
+   "short": "The rule this section is judged by. An index page is not evidence.",
+   "intro": "The most uncomfortable document to publish inside an index, which is why it belongs here. Its rule is that <b>a node either asserts or points, and a reader must always be able to tell which</b>. A caching node, meaning a pre-computed mapping or a lookup or a convenience, asserts nothing, needs no attribution apparatus, and is prunable by definition. The failure mode is letting the index quietly become the source, at which point every claim downstream inherits the credibility of the weakest cache.",
+   "summary": [
+    "A pre-created mapping is not a weak source: it is not a source at all.",
+    "A node either asserts or points, and the two classes must be structurally distinguishable.",
+    "If claims and routes are indistinguishable, every claim inherits the credibility of the weakest cache.",
+    "Caching nodes are prunable by definition, because they assert nothing.",
+    "A cached value without the date of its lookup is indistinguishable from a claim.",
+    "It does not matter where you start, which answers the belief that a complete ontology must come first."
+   ],
+   "reread": "Then look back at this page. Every summary in this section is a caching node: it points at the document and asserts nothing on its own. The carried markdown is the source, and the hash is what keeps the two distinguishable.",
+   "places": [
+    {
+     "kind": "page",
+     "label": "The sources",
+     "href": "../docs/index.html",
+     "note": "this section is an index, and is built to the rule in this document"
+    },
+    {
+     "kind": "page",
+     "label": "The edge set",
+     "href": "../grammar/edge-set.html",
+     "note": "typed edges that say which class a node is in"
+    },
+    {
+     "kind": "concept",
+     "label": "Reference without authority",
+     "href": "../altitudes/concepts.html#anchor-nodes",
+     "note": "the anchor node, which points rather than asserts"
+    }
+   ],
+   "resolves": [
+    "r002 item 4 · the evidence layer",
+    "r003 item 2 · provenance edges"
+   ],
+   "concepts": [
+    {
+     "id": "provenance-chain",
+     "label": "A claim is worth its chain of custody",
+     "n": 13,
+     "peak": true,
+     "phrases": [
+      "provenance",
+      "chain of custody",
+      "attribution",
+      "citation"
+     ]
+    },
+    {
+     "id": "enrichment-not-enforcement",
+     "label": "Enrichment, not enforcement",
+     "n": 2,
+     "peak": false,
+     "phrases": [
+      "enrichment",
+      "enrich",
+      "does not constrain"
+     ]
+    },
+    {
+     "id": "supersede-never-delete",
+     "label": "Supersede, never delete",
+     "n": 1,
+     "peak": false,
+     "phrases": [
+      "supersede",
+      "do not delete",
+      "never delete",
+      "amendment"
+     ]
+    },
+    {
+     "id": "ephemeral-engines",
+     "label": "The file system is the source of truth",
+     "n": 1,
+     "peak": false,
+     "phrases": [
+      "the browser is the database",
+      "source of truth",
+      "indexeddb",
+      "sqlite",
+      "ephemeral",
+      "no backend",
+      "file system is the source"
+     ]
+    }
+   ],
+   "words": 3325,
+   "bytes": 20948,
+   "sha256": "6ce3d9c69093c072ae0138cdb8e30dd15841f7a22497203ede1106ea368929ec",
+   "repo": "the-cyber-boardroom/SGraph-AI__App__Send",
+   "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
+   "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
+   "ccby": true,
+   "origin": null,
+   "licence": "Apache-2.0",
+   "path": "team/humans/dinis_cruz/briefs/08/09/graphing-text/v0.33.57__arch-brief__sg-send-index-is-not-a-source-caching-nodes-are-prunable-start-anywhere.md",
+   "influence": {
+    "score": 16,
+    "concepts": 4,
+    "places": 3,
+    "resolves": 2,
+    "formula": "concepts + 2 × places + 3 × review asks resolved"
+   },
+   "rank": 14
   },
   {
    "slug": "directed-edges-query-paths",
@@ -1762,6 +2351,7 @@
    "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
    "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
    "ccby": true,
+   "origin": null,
    "licence": "Apache-2.0",
    "path": "team/humans/dinis_cruz/briefs/06/26/semantic-graph-and-query-paths/v0.33.35__arch-brief__sg-send-directed-edges-inward-outward-query-paths-prevent-node-explosion.md",
    "influence": {
@@ -1771,7 +2361,7 @@
     "resolves": 1,
     "formula": "concepts + 2 × places + 3 × review asks resolved"
    },
-   "rank": 11
+   "rank": 15
   },
   {
    "slug": "the-browser-is-the-database",
@@ -1878,6 +2468,7 @@
    "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
    "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
    "ccby": true,
+   "origin": null,
    "licence": "Apache-2.0",
    "path": "team/humans/dinis_cruz/briefs/07/12/architecture/v0.33.48__arch-brief__sg-send-browser-local-databases-query-engine-vault-source-of-truth-incremental-sync-no-backend.md",
    "influence": {
@@ -1887,7 +2478,7 @@
     "resolves": 1,
     "formula": "concepts + 2 × places + 3 × review asks resolved"
    },
-   "rank": 12
+   "rank": 16
   },
   {
    "slug": "digital-twins-of-anything",
@@ -1996,6 +2587,7 @@
    "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
    "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
    "ccby": true,
+   "origin": null,
    "licence": "Apache-2.0",
    "path": "team/humans/dinis_cruz/briefs/06/26/digital-twins-and-world-models/v0.33.35__arch-brief__sg-send-digital-twins-twin-of-anything-dimensions-discipline-of-reality-simulation-testing.md",
    "influence": {
@@ -2005,7 +2597,136 @@
     "resolves": 1,
     "formula": "concepts + 2 × places + 3 × review asks resolved"
    },
-   "rank": 13
+   "rank": 17
+  },
+  {
+   "slug": "compatibility-through-connectivity",
+   "title": "Compatibility Through Connectivity: Testing Across Artifact Types",
+   "dated": "5 February 2026",
+   "short": "The companion to the cornerstone: compatibility as a measurement, not a declaration.",
+   "intro": "Written the same day as <a href=\"thinking-in-graphs.html\">Thinking in Graphs</a> and declaring a dependency on it, this is the thesis pushed to a working conclusion. An architect writes prose, a developer writes code, a runtime produces traces: these are different languages for what should be the same truth, and the question worth asking is not <em>does the code work</em> but <b>does the system work the way the architect thinks it works</b>. Compatibility becomes something you compute by comparing the graphs extracted from each representation, which is where this site's <em>compatibility is computed, not declared</em> comes from.",
+   "summary": [
+    "Compatibility is measured by comparing graphs extracted from different representations of the same system.",
+    "The question is not whether the code works, but whether all representations agree.",
+    "Two types of test: within a representation, and across representations.",
+    "Five layers, from prose to runtime trace, each yielding a graph.",
+    "Compatibility is a spectrum with an assessment, not a boolean anyone declares."
+   ],
+   "reread": "Part 7 extends meaning through connectivity beyond where the cornerstone leaves it. It is the half of the thesis this book has argued least.",
+   "places": [
+    {
+     "kind": "concept",
+     "label": "Compatibility is computed, not declared",
+     "href": "../altitudes/concepts.html#compatibility-computed",
+     "note": "the concept sourced here"
+    },
+    {
+     "kind": "book",
+     "label": "Chapter 2 · The five ideas",
+     "href": "../book/ch-02-the-five-ideas.html",
+     "note": "compatibility as a spectrum"
+    },
+    {
+     "kind": "vault",
+     "label": "The junction rule",
+     "href": "../vaults/voice-debrief/junction.html",
+     "note": "two representations joined at the node layer and compared"
+    }
+   ],
+   "resolves": [
+    "N3 · the canonical statement of the thesis"
+   ],
+   "concepts": [
+    {
+     "id": "compatibility-computed",
+     "label": "Compatibility is computed, not declared",
+     "n": 58,
+     "peak": false,
+     "phrases": [
+      "compatibility",
+      "compatible",
+      "partial equivalence",
+      "a spectrum"
+     ]
+    },
+    {
+     "id": "dont-merge-vocabularies",
+     "label": "Merging erases the disagreement",
+     "n": 13,
+     "peak": true,
+     "phrases": [
+      "bridges, not merges",
+      "never merges",
+      "divergence",
+      "diverge",
+      "keep their own definitions",
+      "bridge"
+     ]
+    },
+    {
+     "id": "anchor-nodes",
+     "label": "Reference without authority",
+     "n": 8,
+     "peak": false,
+     "phrases": [
+      "anchor node",
+      "anchor nodes",
+      "lexicon",
+      "reference graph"
+     ]
+    },
+    {
+     "id": "meaning-through-connectivity",
+     "label": "Meaning through connectivity",
+     "n": 5,
+     "peak": true,
+     "phrases": [
+      "meaning through connectivity",
+      "meaning is not declared",
+      "meaning comes from connectivity",
+      "meaning emerges"
+     ]
+    },
+    {
+     "id": "ephemeral-engines",
+     "label": "The file system is the source of truth",
+     "n": 2,
+     "peak": false,
+     "phrases": [
+      "the browser is the database",
+      "source of truth",
+      "indexeddb",
+      "sqlite",
+      "ephemeral",
+      "no backend",
+      "file system is the source"
+     ]
+    }
+   ],
+   "words": 4101,
+   "bytes": 41197,
+   "sha256": "057aadf8f5f461ddb6a39d6075cfa49ed37e951e3a05225bbb6ecbe095cdbfc8",
+   "repo": "the-cyber-boardroom/SGraph-AI__App__Send",
+   "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
+   "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
+   "ccby": false,
+   "origin": {
+    "repo": "owasp-sbot/Issues-FS__Docs",
+    "repo_url": "https://github.com/owasp-sbot/Issues-FS__Docs",
+    "commit": "0a5a8516912c697e9847456fc5e2d578609d51a4",
+    "path": "docs/to_classify/6-feb-other/v0_4_0__issues-fs__compatibility-through-connectivity.md",
+    "identical": true
+   },
+   "licence": "Apache-2.0",
+   "path": "library/concepts/v0_4_0__compatibility-through-connectivity.md",
+   "influence": {
+    "score": 14,
+    "concepts": 5,
+    "places": 3,
+    "resolves": 1,
+    "formula": "concepts + 2 × places + 3 × review asks resolved"
+   },
+   "rank": 18
   },
   {
    "slug": "graphs-of-graphs",
@@ -2106,6 +2827,7 @@
    "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
    "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
    "ccby": true,
+   "origin": null,
    "licence": "Apache-2.0",
    "path": "team/humans/dinis_cruz/briefs/06/18/agentic-permissions/v0.33.40__strategy-brief__graphs-of-graphs-ontology-of-ontologies-permissions-mapping-reality-not-complexity.md",
    "influence": {
@@ -2115,7 +2837,7 @@
     "resolves": 1,
     "formula": "concepts + 2 × places + 3 × review asks resolved"
    },
-   "rank": 14
+   "rank": 19
   },
   {
    "slug": "fractal-risk-registers",
@@ -2201,6 +2923,7 @@
    "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
    "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
    "ccby": true,
+   "origin": null,
    "licence": "Apache-2.0",
    "path": "team/humans/dinis_cruz/briefs/07/17/registers-mandate-and-intervals/v0.33.49__arch-brief__sg-send-fractal-risk-registers-one-per-accepting-role-domain-language-relevance-fade.md",
    "influence": {
@@ -2210,7 +2933,104 @@
     "resolves": 1,
     "formula": "concepts + 2 × places + 3 × review asks resolved"
    },
-   "rank": 15
+   "rank": 20
+  },
+  {
+   "slug": "paying-the-fact-creator",
+   "title": "Paying The Fact Creator: The Question Is Not Whether A Claim Is True",
+   "dated": "31 July 2026",
+   "short": "Citation diversion, and the most checkable worked example in the corpus.",
+   "intro": "The companion to <a href=\"a-fact-in-a-vacuum.html\">A Fact Does Not Exist In A Vacuum</a>, and the more practical of the two. Its reframing is the useful part: <b>the billable question is not whether a claim is true but whether this use of it is sound</b>, because the common failure is a true finding applied to a conclusion it never supported. The ten-thousand-hours case is worked through in detail: an average reported as a threshold, half the studied group below it, deliberate practice reduced to time served, and the original researcher spending years correcting it with none of the corrections attaching to the claim.",
+   "summary": [
+    "The fact creator should carry a continuing responsibility for accuracy, which currently nobody does.",
+    "Validation consumes somebody's paid time, so it is never free; outside a firm nobody pays it, and the public evidence base decays.",
+    "The billable question is not whether a claim is true but whether <em>this use</em> of it is sound.",
+    "Citation research documents the graph-depth effect, including the conversion of hypothesis into fact by citation alone.",
+    "It also names <b>citation diversion</b>: citing work that does not quite say what the citer implies.",
+    "Caching by claim-and-context pair is what makes repeated validation economically viable."
+   ],
+   "reread": "The ten-thousand-hours worked example is checkable end to end, which makes it the best single demonstration in the corpus of why a claim needs its chain of custody.",
+   "places": [
+    {
+     "kind": "concept",
+     "label": "A claim is worth its chain of custody",
+     "href": "../altitudes/concepts.html#provenance-chain",
+     "note": "a computed peak, and the concept measured in every document here"
+    },
+    {
+     "kind": "vault",
+     "label": "The provenance chain",
+     "href": "../vaults/regulation-graph/provenance.html",
+     "note": "hash-verified custody on real bytes"
+    },
+    {
+     "kind": "page",
+     "label": "Participant disclosure",
+     "href": "../about/participant.html",
+     "note": "the same discipline turned on this site"
+    }
+   ],
+   "resolves": [
+    "r002 item 4 · the evidence layer"
+   ],
+   "concepts": [
+    {
+     "id": "provenance-chain",
+     "label": "A claim is worth its chain of custody",
+     "n": 17,
+     "peak": true,
+     "phrases": [
+      "provenance",
+      "chain of custody",
+      "attribution",
+      "citation"
+     ]
+    },
+    {
+     "id": "named-absence",
+     "label": "A named absence beats a hidden one",
+     "n": 1,
+     "peak": false,
+     "phrases": [
+      "the gaps",
+      "missing",
+      "absence of evidence",
+      "unhooked",
+      "never defined",
+      "not answered"
+     ]
+    },
+    {
+     "id": "twin-attachment",
+     "label": "Obligations attach at the twin",
+     "n": 1,
+     "peak": false,
+     "phrases": [
+      "twin",
+      "twins",
+      "hooks into reality",
+      "twin primitive"
+     ]
+    }
+   ],
+   "words": 3382,
+   "bytes": 21772,
+   "sha256": "652c56875b4900b598100997d5af5deea761166cebb30ce65704fabb1283f0a8",
+   "repo": "the-cyber-boardroom/SGraph-AI__App__Send",
+   "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
+   "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
+   "ccby": true,
+   "origin": null,
+   "licence": "Apache-2.0",
+   "path": "team/humans/dinis_cruz/briefs/07/31/projects-budgets-and-evidence/v0.33.54__strategy-brief__sg-send-paying-the-fact-creator-contextual-validation-not-truth-micropayments-for-correct-use.md",
+   "influence": {
+    "score": 12,
+    "concepts": 3,
+    "places": 3,
+    "resolves": 1,
+    "formula": "concepts + 2 × places + 3 × review asks resolved"
+   },
+   "rank": 21
   }
  ],
  "common": [
@@ -2221,20 +3041,41 @@
     "thinking-in-graphs",
     "every-paragraph-is-a-graph",
     "fractal-semantic-graphs",
+    "issues-fs-lexicon",
     "a-fact-in-a-vacuum",
+    "refactoring-meaning",
     "path-properties",
     "avoid-the-blob",
     "confidence-through-evidence",
     "concepts-not-words",
+    "graph-canvas-repl",
     "ontologies-of-ontologies",
     "the-grounding-ladder",
+    "an-index-is-not-a-source",
     "directed-edges-query-paths",
     "the-browser-is-the-database",
     "digital-twins-of-anything",
     "graphs-of-graphs",
-    "fractal-risk-registers"
+    "fractal-risk-registers",
+    "paying-the-fact-creator"
    ],
-   "n": 15
+   "n": 20,
+   "total": 103,
+   "top": [
+    {
+     "slug": "a-fact-in-a-vacuum",
+     "n": 18
+    },
+    {
+     "slug": "paying-the-fact-creator",
+     "n": 17
+    },
+    {
+     "slug": "fractal-semantic-graphs",
+     "n": 16
+    }
+   ],
+   "concentration": 0.5
   },
   {
    "id": "fractal",
@@ -2243,6 +3084,8 @@
     "thinking-in-graphs",
     "every-paragraph-is-a-graph",
     "fractal-semantic-graphs",
+    "issues-fs-lexicon",
+    "refactoring-meaning",
     "path-properties",
     "avoid-the-blob",
     "confidence-through-evidence",
@@ -2252,22 +3095,23 @@
     "graphs-of-graphs",
     "fractal-risk-registers"
    ],
-   "n": 11
-  },
-  {
-   "id": "confidence-from-connectivity",
-   "label": "Confidence is a function of connectivity",
-   "docs": [
-    "thinking-in-graphs",
-    "fractal-semantic-graphs",
-    "confidence-through-evidence",
-    "concepts-not-words",
-    "the-grounding-ladder",
-    "directed-edges-query-paths",
-    "digital-twins-of-anything",
-    "graphs-of-graphs"
+   "n": 13,
+   "total": 115,
+   "top": [
+    {
+     "slug": "fractal-semantic-graphs",
+     "n": 23
+    },
+    {
+     "slug": "every-paragraph-is-a-graph",
+     "n": 21
+    },
+    {
+     "slug": "fractal-risk-registers",
+     "n": 17
+    }
    ],
-   "n": 8
+   "concentration": 0.53
   },
   {
    "id": "named-absence",
@@ -2275,13 +3119,63 @@
    "docs": [
     "thinking-in-graphs",
     "every-paragraph-is-a-graph",
+    "issues-fs-lexicon",
     "confidence-through-evidence",
     "concepts-not-words",
     "directed-edges-query-paths",
     "the-browser-is-the-database",
+    "graphs-of-graphs",
+    "paying-the-fact-creator"
+   ],
+   "n": 9,
+   "total": 44,
+   "top": [
+    {
+     "slug": "confidence-through-evidence",
+     "n": 15
+    },
+    {
+     "slug": "issues-fs-lexicon",
+     "n": 10
+    },
+    {
+     "slug": "thinking-in-graphs",
+     "n": 6
+    }
+   ],
+   "concentration": 0.7
+  },
+  {
+   "id": "confidence-from-connectivity",
+   "label": "Confidence is a function of connectivity",
+   "docs": [
+    "thinking-in-graphs",
+    "fractal-semantic-graphs",
+    "issues-fs-lexicon",
+    "confidence-through-evidence",
+    "concepts-not-words",
+    "the-grounding-ladder",
+    "directed-edges-query-paths",
+    "digital-twins-of-anything",
     "graphs-of-graphs"
    ],
-   "n": 7
+   "n": 9,
+   "total": 49,
+   "top": [
+    {
+     "slug": "confidence-through-evidence",
+     "n": 29
+    },
+    {
+     "slug": "graphs-of-graphs",
+     "n": 6
+    },
+    {
+     "slug": "the-grounding-ladder",
+     "n": 5
+    }
+   ],
+   "concentration": 0.82
   },
   {
    "id": "twin-attachment",
@@ -2289,13 +3183,31 @@
    "docs": [
     "every-paragraph-is-a-graph",
     "fractal-semantic-graphs",
+    "graph-canvas-repl",
     "ontologies-of-ontologies",
     "the-grounding-ladder",
     "directed-edges-query-paths",
     "the-browser-is-the-database",
-    "digital-twins-of-anything"
+    "digital-twins-of-anything",
+    "paying-the-fact-creator"
    ],
-   "n": 7
+   "n": 9,
+   "total": 135,
+   "top": [
+    {
+     "slug": "digital-twins-of-anything",
+     "n": 51
+    },
+    {
+     "slug": "every-paragraph-is-a-graph",
+     "n": 32
+    },
+    {
+     "slug": "the-grounding-ladder",
+     "n": 31
+    }
+   ],
+   "concentration": 0.84
   },
   {
    "id": "compatibility-computed",
@@ -2303,24 +3215,91 @@
    "docs": [
     "thinking-in-graphs",
     "every-paragraph-is-a-graph",
+    "issues-fs-lexicon",
     "path-properties",
     "confidence-through-evidence",
     "concepts-not-words",
-    "ontologies-of-ontologies"
+    "ontologies-of-ontologies",
+    "compatibility-through-connectivity"
    ],
-   "n": 6
+   "n": 8,
+   "total": 118,
+   "top": [
+    {
+     "slug": "compatibility-through-connectivity",
+     "n": 58
+    },
+    {
+     "slug": "issues-fs-lexicon",
+     "n": 19
+    },
+    {
+     "slug": "thinking-in-graphs",
+     "n": 17
+    }
+   ],
+   "concentration": 0.8
+  },
+  {
+   "id": "dont-merge-vocabularies",
+   "label": "Merging erases the disagreement",
+   "docs": [
+    "thinking-in-graphs",
+    "issues-fs-lexicon",
+    "refactoring-meaning",
+    "concepts-not-words",
+    "graph-canvas-repl",
+    "ontologies-of-ontologies",
+    "the-grounding-ladder",
+    "compatibility-through-connectivity"
+   ],
+   "n": 8,
+   "total": 48,
+   "top": [
+    {
+     "slug": "compatibility-through-connectivity",
+     "n": 13
+    },
+    {
+     "slug": "concepts-not-words",
+     "n": 11
+    },
+    {
+     "slug": "ontologies-of-ontologies",
+     "n": 9
+    }
+   ],
+   "concentration": 0.69
   },
   {
    "id": "bidirectional-paths",
    "label": "Both directions carry a name",
    "docs": [
     "every-paragraph-is-a-graph",
+    "refactoring-meaning",
     "path-properties",
     "avoid-the-blob",
+    "graph-canvas-repl",
     "the-grounding-ladder",
     "directed-edges-query-paths"
    ],
-   "n": 5
+   "n": 7,
+   "total": 35,
+   "top": [
+    {
+     "slug": "directed-edges-query-paths",
+     "n": 21
+    },
+    {
+     "slug": "the-grounding-ladder",
+     "n": 4
+    },
+    {
+     "slug": "avoid-the-blob",
+     "n": 3
+    }
+   ],
+   "concentration": 0.8
   },
   {
    "id": "meaning-through-connectivity",
@@ -2328,11 +3307,29 @@
    "docs": [
     "thinking-in-graphs",
     "every-paragraph-is-a-graph",
+    "issues-fs-lexicon",
     "avoid-the-blob",
     "confidence-through-evidence",
-    "digital-twins-of-anything"
+    "digital-twins-of-anything",
+    "compatibility-through-connectivity"
    ],
-   "n": 5
+   "n": 7,
+   "total": 22,
+   "top": [
+    {
+     "slug": "thinking-in-graphs",
+     "n": 6
+    },
+    {
+     "slug": "compatibility-through-connectivity",
+     "n": 5
+    },
+    {
+     "slug": "digital-twins-of-anything",
+     "n": 4
+    }
+   ],
+   "concentration": 0.68
   },
   {
    "id": "anchor-nodes",
@@ -2340,22 +3337,29 @@
    "docs": [
     "thinking-in-graphs",
     "every-paragraph-is-a-graph",
+    "issues-fs-lexicon",
     "path-properties",
     "concepts-not-words",
-    "ontologies-of-ontologies"
-   ],
-   "n": 5
-  },
-  {
-   "id": "dont-merge-vocabularies",
-   "label": "Merging erases the disagreement",
-   "docs": [
-    "thinking-in-graphs",
-    "concepts-not-words",
     "ontologies-of-ontologies",
-    "the-grounding-ladder"
+    "compatibility-through-connectivity"
    ],
-   "n": 4
+   "n": 7,
+   "total": 226,
+   "top": [
+    {
+     "slug": "issues-fs-lexicon",
+     "n": 157
+    },
+    {
+     "slug": "thinking-in-graphs",
+     "n": 47
+    },
+    {
+     "slug": "compatibility-through-connectivity",
+     "n": 8
+    }
+   ],
+   "concentration": 0.94
   },
   {
    "id": "ephemeral-engines",
@@ -2364,19 +3368,162 @@
     "every-paragraph-is-a-graph",
     "fractal-semantic-graphs",
     "confidence-through-evidence",
-    "the-browser-is-the-database"
+    "an-index-is-not-a-source",
+    "the-browser-is-the-database",
+    "compatibility-through-connectivity"
    ],
-   "n": 4
+   "n": 6,
+   "total": 63,
+   "top": [
+    {
+     "slug": "the-browser-is-the-database",
+     "n": 49
+    },
+    {
+     "slug": "fractal-semantic-graphs",
+     "n": 8
+    },
+    {
+     "slug": "every-paragraph-is-a-graph",
+     "n": 2
+    }
+   ],
+   "concentration": 0.94
   },
   {
    "id": "enrichment-not-enforcement",
    "label": "Enrichment, not enforcement",
    "docs": [
     "thinking-in-graphs",
+    "issues-fs-lexicon",
     "a-fact-in-a-vacuum",
-    "avoid-the-blob"
+    "avoid-the-blob",
+    "an-index-is-not-a-source"
    ],
-   "n": 3
+   "n": 5,
+   "total": 17,
+   "top": [
+    {
+     "slug": "a-fact-in-a-vacuum",
+     "n": 7
+    },
+    {
+     "slug": "thinking-in-graphs",
+     "n": 4
+    },
+    {
+     "slug": "avoid-the-blob",
+     "n": 3
+    }
+   ],
+   "concentration": 0.82
+  },
+  {
+   "id": "render-the-query",
+   "label": "Never render the whole graph",
+   "docs": [
+    "every-paragraph-is-a-graph",
+    "path-properties",
+    "avoid-the-blob",
+    "graph-canvas-repl"
+   ],
+   "n": 4,
+   "total": 34,
+   "top": [
+    {
+     "slug": "avoid-the-blob",
+     "n": 27
+    },
+    {
+     "slug": "path-properties",
+     "n": 5
+    },
+    {
+     "slug": "graph-canvas-repl",
+     "n": 1
+    }
+   ],
+   "concentration": 0.97
+  },
+  {
+   "id": "schema-first",
+   "label": "Schema-first thinking",
+   "docs": [
+    "thinking-in-graphs",
+    "every-paragraph-is-a-graph",
+    "issues-fs-lexicon",
+    "path-properties"
+   ],
+   "n": 4,
+   "total": 13,
+   "top": [
+    {
+     "slug": "thinking-in-graphs",
+     "n": 5
+    },
+    {
+     "slug": "path-properties",
+     "n": 4
+    },
+    {
+     "slug": "issues-fs-lexicon",
+     "n": 2
+    }
+   ],
+   "concentration": 0.85
+  },
+  {
+   "id": "banned-generic-edge",
+   "label": "The generic association edge is banned",
+   "docs": [
+    "thinking-in-graphs",
+    "issues-fs-lexicon",
+    "avoid-the-blob",
+    "confidence-through-evidence"
+   ],
+   "n": 4,
+   "total": 13,
+   "top": [
+    {
+     "slug": "avoid-the-blob",
+     "n": 10
+    },
+    {
+     "slug": "thinking-in-graphs",
+     "n": 1
+    },
+    {
+     "slug": "issues-fs-lexicon",
+     "n": 1
+    }
+   ],
+   "concentration": 0.92
+  },
+  {
+   "id": "classification-as-query",
+   "label": "Classification is a query, not a judgment",
+   "docs": [
+    "refactoring-meaning",
+    "ontologies-of-ontologies",
+    "the-grounding-ladder"
+   ],
+   "n": 3,
+   "total": 18,
+   "top": [
+    {
+     "slug": "the-grounding-ladder",
+     "n": 12
+    },
+    {
+     "slug": "ontologies-of-ontologies",
+     "n": 4
+    },
+    {
+     "slug": "refactoring-meaning",
+     "n": 2
+    }
+   ],
+   "concentration": 1.0
   },
   {
    "id": "edge-is-a-verb",
@@ -2386,37 +3533,49 @@
     "avoid-the-blob",
     "directed-edges-query-paths"
    ],
-   "n": 3
+   "n": 3,
+   "total": 11,
+   "top": [
+    {
+     "slug": "directed-edges-query-paths",
+     "n": 8
+    },
+    {
+     "slug": "every-paragraph-is-a-graph",
+     "n": 2
+    },
+    {
+     "slug": "avoid-the-blob",
+     "n": 1
+    }
+   ],
+   "concentration": 1.0
   },
   {
-   "id": "render-the-query",
-   "label": "Never render the whole graph",
+   "id": "supersede-never-delete",
+   "label": "Supersede, never delete",
    "docs": [
-    "every-paragraph-is-a-graph",
-    "path-properties",
-    "avoid-the-blob"
+    "a-fact-in-a-vacuum",
+    "concepts-not-words",
+    "an-index-is-not-a-source"
    ],
-   "n": 3
-  },
-  {
-   "id": "schema-first",
-   "label": "Schema-first thinking",
-   "docs": [
-    "thinking-in-graphs",
-    "every-paragraph-is-a-graph",
-    "path-properties"
+   "n": 3,
+   "total": 18,
+   "top": [
+    {
+     "slug": "a-fact-in-a-vacuum",
+     "n": 16
+    },
+    {
+     "slug": "concepts-not-words",
+     "n": 1
+    },
+    {
+     "slug": "an-index-is-not-a-source",
+     "n": 1
+    }
    ],
-   "n": 3
-  },
-  {
-   "id": "banned-generic-edge",
-   "label": "The generic association edge is banned",
-   "docs": [
-    "thinking-in-graphs",
-    "avoid-the-blob",
-    "confidence-through-evidence"
-   ],
-   "n": 3
+   "concentration": 1.0
   },
   {
    "id": "path-reads-as-a-sentence",
@@ -2425,16 +3584,19 @@
     "every-paragraph-is-a-graph",
     "path-properties"
    ],
-   "n": 2
-  },
-  {
-   "id": "classification-as-query",
-   "label": "Classification is a query, not a judgment",
-   "docs": [
-    "ontologies-of-ontologies",
-    "the-grounding-ladder"
+   "n": 2,
+   "total": 8,
+   "top": [
+    {
+     "slug": "path-properties",
+     "n": 6
+    },
+    {
+     "slug": "every-paragraph-is-a-graph",
+     "n": 2
+    }
    ],
-   "n": 2
+   "concentration": 1.0
   },
   {
    "id": "projection",
@@ -2443,16 +3605,19 @@
     "fractal-semantic-graphs",
     "fractal-risk-registers"
    ],
-   "n": 2
-  },
-  {
-   "id": "supersede-never-delete",
-   "label": "Supersede, never delete",
-   "docs": [
-    "a-fact-in-a-vacuum",
-    "concepts-not-words"
+   "n": 2,
+   "total": 9,
+   "top": [
+    {
+     "slug": "fractal-semantic-graphs",
+     "n": 6
+    },
+    {
+     "slug": "fractal-risk-registers",
+     "n": 3
+    }
    ],
-   "n": 2
+   "concentration": 1.0
   }
  ],
  "match": {
@@ -2622,9 +3787,9 @@
   ]
  },
  "totals": {
-  "docs": 15,
-  "words": 39973,
+  "docs": 21,
+  "words": 63038,
   "concepts": 23,
-  "places": 49
+  "places": 68
  }
 }

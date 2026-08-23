@@ -4,7 +4,7 @@
 > just words; **we capture meaning through connectivity.**"
 > — Dinis Cruz, 26 June 2026
 
-*Source: <https://graphs.sgit.ai/index.html> · site v0.3.24 · markdown twin of the front page.*
+*Source: <https://graphs.sgit.ai/index.html> · site v0.3.25 · markdown twin of the front page.*
 
 **Not a graph database pitch.** The claim is that one grammar is the interface at every
 boundary, not that we store things in a graph. There is no graph database anywhere in the

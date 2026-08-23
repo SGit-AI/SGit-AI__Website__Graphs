@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The sources — graphs.sgit.ai</title>
-<meta name="description" content="The fifteen source documents this book was built from, carried byte-for-byte with their hashes, with the concepts measured in each one and the places on this site that rest on them. Forty thousand words of the founder's own writing, ranked by a stated influence formula.">
+<meta name="description" content="The twenty-one source documents this book was built from, carried byte-for-byte with their hashes, with the concepts measured in each one and the places on this site that rest on them. Sixty-three thousand words of the founder's own writing, ranked by a stated influence formula.">
 <link rel="canonical" href="https://graphs.sgit.ai/docs/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="graphs.sgit.ai">
 <meta property="og:url" content="https://graphs.sgit.ai/docs/index.html">
 <meta property="og:title" content="The sources">
-<meta property="og:description" content="Fifteen documents, forty thousand words, carried with their hashes — and a graph showing which of them this site actually rests on.">
+<meta property="og:description" content="Twenty-one documents, sixty-three thousand words, carried with their hashes — and a graph showing which of them this site actually rests on.">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.24</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.25</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -115,17 +115,18 @@
 <main class="doc wide bleed">
   <div class="crumb"><a href="../index.html">graphs.sgit.ai</a> → <b>The sources</b></div>
   <h1>The sources</h1>
-  <p class="lead">This book did not start as a book. It started as several years of the founder's own architecture briefs, written for other reasons, in repositories that are still moving. Fifteen of them are carried here in full: <b>the actual markdown, byte for byte, with its hash</b>, next to what it says, why this site rests on it, and a graph of exactly where it lands. Forty thousand words, and every one of them is upstream of a chapter.</p>
+  <p class="lead">This book did not start as a book. It started as several years of the founder's own architecture briefs, written for other reasons, in repositories that are still moving. Twenty-one of them are carried here in full: <b>the actual markdown, byte for byte, with its hash</b>, next to what it says, why this site rests on it, and a graph of exactly where it lands. Sixty-three thousand words, and every one of them is upstream of a chapter.</p>
 
   <div class="note">
     <b>Why a site about provenance should not summarise its own sources.</b> Every other page here argues that a claim is worth its chain of custody, and that a document is a projection of a graph rather than a thing to be paraphrased. Applying that to this book's own inputs leaves only one honest design: carry the document, record where it came from, and let a reader check. Every page in this section renders <b>a copy taken from a public repository at a named commit</b>, with the SHA-256 printed beside it. Re-fetch the original and hash it; if the two disagree, this site is wrong and you can prove it.
   </div>
 
-  <h2 id="rank">The fifteen, ranked</h2>
+  <h2 id="rank">The set, ranked</h2>
   <div id="docshub"><p class="dim">Loading the register…</p></div>
 
-  <h2 id="all">All fifteen as one graph</h2>
-  <p>A document on its own tells you what it is about. Fifteen drawn together tell you something no single one can: <b>which ideas the corpus keeps returning to</b>. The documents were written months apart, for different audiences, about apparently different subjects. What joins them here is not a taxonomy anyone imposed. It is the concepts they were independently measured to contain.</p>
+  <h2 id="all">All of them as one graph</h2>
+  <p>A document on its own tells you what it is about. Twenty-one drawn together tell you something no single one can: <b>which ideas the corpus keeps returning to</b>. The documents were written months apart, for different audiences, about apparently different subjects. What joins them here is not a taxonomy anyone imposed. It is the concepts they were independently measured to contain.</p>
+  <p>The set grew from fifteen to twenty-one on 23 August, and the growth immediately cost the section its neatest claim. At fifteen, <em>a claim is worth its chain of custody</em> was measured in <b>every single document</b>. At twenty-one it is measured in twenty, and the one that does not reach it is <a href="compatibility-through-connectivity.html">Compatibility Through Connectivity</a> &mdash; one of the three oldest, written in February before the provenance vocabulary hardened. A universal that survives to n=15 and breaks at n=21 was never a universal. It is recorded here rather than quietly dropped, because the whole point of computing these numbers on every build is that they are allowed to move.</p>
   <div id="docsall"></div>
 
   <h2 id="method">How the links are made, and which kind each one is</h2>
@@ -142,13 +143,13 @@
   </div>
 
   <h2 id="licence">Provenance and licence</h2>
-  <p>All fifteen are carried from <a href="https://github.com/the-cyber-boardroom/SGraph-AI__App__Send">the-cyber-boardroom/SGraph-AI__App__Send</a>, a public repository licensed Apache-2.0, at commit <code>b561fa6b14</code>. That licence is recorded on every page beside the file it applies to. Fourteen of the fifteen <em>also</em> carry their own CC BY 4.0 line inside the file, stamped by the corpus's own licence audit; each page says which. Nothing here is relicensed and nothing is edited: what you read is what the repository holds at the commit named.</p>
-  <p><b>Two provenance notes worth recording, because both were checked rather than assumed.</b> First, <em>Thinking in Graphs</em> did not originate in that repository. It is an Issues-FS document, imported into <code>library/concepts/</code> on 11 June 2026 and marked in that folder's readme as a reference rather than a Send artefact. It is still published separately at <a href="https://github.com/owasp-sbot/Issues-FS__Docs">owasp-sbot/Issues-FS__Docs</a>, and the two copies are <b>byte-identical</b> &mdash; both hash to <code>9d23354fc9a674ae</code>, which is printed on its page. An import that changed nothing is the cheapest possible proof that nothing was changed.</p>
+  <p>All twenty-one are carried from <a href="https://github.com/the-cyber-boardroom/SGraph-AI__App__Send">the-cyber-boardroom/SGraph-AI__App__Send</a>, a public repository licensed Apache-2.0, at commit <code>b561fa6b14</code>. That licence is recorded on every page beside the file it applies to. Eighteen of the twenty-one <em>also</em> carry their own CC BY 4.0 line inside the file, stamped by the corpus's own licence audit; each page says which. Nothing here is relicensed and nothing is edited: what you read is what the repository holds at the commit named.</p>
+  <p><b>Two provenance notes worth recording, because both were checked rather than assumed.</b> First, three of the twenty-one did not originate in that repository: <em>Thinking in Graphs</em>, <em>Compatibility Through Connectivity</em> and the <em>Issues-FS Lexicon</em> are Issues-FS documents, imported into <code>library/concepts/</code> on 11 June 2026 and marked in that folder's readme as references rather than Send artefacts. All three are still published separately at <a href="https://github.com/owasp-sbot/Issues-FS__Docs">owasp-sbot/Issues-FS__Docs</a>, and <b>all three copies are byte-identical across the two repositories</b>. Each page prints its origin path and says so. An import that changed nothing is the cheapest possible proof that nothing was changed &mdash; and it is exactly those three, and only those three, that carry no CC BY line, because the corpus's licence audit stamped the Send tree and not the references imported into it. The pattern explains itself once you look.</p>
   <p>Second, the source manifest prepared for this site flagged that same document as a <em>licence blocker</em>, because the copy the librarian saw carried no CC BY line. It still carries none. What resolves it is the repository: the file sits in two public Apache-2.0 repositories, which is a licence, just not the one the audit was looking for. That is a resolution of fact rather than a decision, and it is stated here rather than quietly closed.</p>
 
   <div class="agent">
     <h4>For an agent</h4>
-    <p>The machine-readable register is at <a href="data/docs.json">data/docs.json</a>: fifteen documents with their measured concept counts, authored site links, influence breakdown, source repository, commit and SHA-256. The carried markdown is at <code>/docs/sources/&lt;slug&gt;.md</code> and is the source of truth for every reader page. Prefer the carried copy over the rendered page, and prefer re-fetching the original over both if you need to check it. Do not treat the influence score as a quality judgement: it measures load on this site, and the page says so.</p>
+    <p>The machine-readable register is at <a href="data/docs.json">data/docs.json</a>: twenty-one documents with their measured concept counts, authored site links, influence breakdown, source repository, commit and SHA-256. The carried markdown is at <code>/docs/sources/&lt;slug&gt;.md</code> and is the source of truth for every reader page. Prefer the carried copy over the rendered page, and prefer re-fetching the original over both if you need to check it. Do not treat the influence score as a quality judgement: it measures load on this site, and the page says so.</p>
   </div>
 </main>
 
@@ -158,7 +159,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.24</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.25</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

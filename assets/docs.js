@@ -225,15 +225,30 @@
 
   function commonList() {
     if (!D.common || !D.common.length) { return ''; }
-    var only = D.totals.concepts - D.common.length;
+    var only = D.totals.concepts - D.common.length, n = D.totals.docs;
+    var spread = D.common.slice().sort(function (a, b) { return a.concentration - b.concentration; });
     return '<div class="dshared"><h3>The concepts that join these documents</h3>' +
       '<p><b>' + D.common.length + ' of the ' + D.totals.concepts + '</b> concepts measured ' +
       'across the set appear in more than one document; ' + only + ' appear in only one. ' +
-      'The joins are what the consolidated graph above is made of.</p><ul>' +
-      D.common.slice(0, 8).map(function (c) {
-        return '<li><a href="../altitudes/concepts.html#' + esc(c.id) + '">' + esc(c.label) +
-          '</a> <span class="small dim">in ' + c.n + ' of the ' + D.totals.docs + '</span></li>';
-      }).join('') + '</ul></div>';
+      'The joins are what the consolidated graph above is made of.</p>' +
+      '<div class="tablewrap"><table class="dtab"><thead><tr><th>Concept</th><th>In</th>' +
+      '<th>Mentions</th><th>Concentration</th><th>Carried mostly by</th></tr></thead><tbody>' +
+      D.common.slice(0, 10).map(function (c) {
+        return '<tr><td><a href="../altitudes/concepts.html#' + esc(c.id) + '">' + esc(c.label) + '</a></td>' +
+          '<td>' + c.n + ' / ' + n + '</td><td>' + c.total + '</td>' +
+          '<td>' + c.concentration.toFixed(2) + '</td>' +
+          '<td class="small">' + c.top.map(function (t) {
+            var d = bySlug(t.slug);
+            return '<a href="' + esc(t.slug) + '.html">' + esc(cut(d ? d.title : t.slug, 30)) +
+              '</a> <span class="dim">' + t.n + '</span>';
+          }).join(', ') + '</td></tr>';
+      }).join('') + '</tbody></table></div>' +
+      '<p class="small dim"><b>Concentration</b> is the share of a concept\u2019s total mentions ' +
+      'sitting in its top three documents, computed on every build. It separates two things a ' +
+      'plain count hides: a concept the corpus genuinely distributes, and one that a couple of ' +
+      'documents carry while the rest allude to it. The most distributed is <b>' +
+      esc(spread[0].label) + '</b> at ' + spread[0].concentration.toFixed(2) + '; most of the ' +
+      'rest sit above 0.7, which is a caution about reading the counts as weight.</p></div>';
   }
 
   function renderHub() {

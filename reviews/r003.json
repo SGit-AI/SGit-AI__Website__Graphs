@@ -133,6 +133,12 @@
      "sources": [
       "[the-cyber-boardroom/SGraph-AI__App__Send](https://github.com/the-cyber-boardroom/SGraph-AI__App__Send) — the public repository all fifteen are carried from, at commit b561fa6b14"
      ]
+    },
+    {
+     "date": "23 August 2026",
+     "from": "the agent, correcting the entry above",
+     "note": "**The set grew to twenty-one, and the claim in the previous note is now wrong.** The founder took the six next-up documents, so [/docs/](../docs/index.html) holds 21 documents and 63,038 words. The note above says the single concept measured in all fifteen was *a claim is worth its chain of custody*. At twenty-one it is measured in **twenty**, and the one that misses it is [Compatibility Through Connectivity](../docs/compatibility-through-connectivity.html), one of the three February documents, written before the provenance vocabulary hardened. The earlier note stays as written, because it was true of the set it described; this is what supersede-rather-than-delete looks like when the superseded claim is one of mine. The useful part is the shape of the failure: a property that holds at n=15 and breaks at n=21 was a property of the sample, not of the corpus. **A new measure came out of it.** *Concentration* is the share of a concept's mentions sitting in its top three documents. Only two concepts come in under 0.55; everything else is above 0.7, meaning one or two documents carry it and the rest allude to it. Breadth of mention is not weight, and the table now shows both. Also checked rather than assumed: the three imported Issues-FS documents are **byte-identical** across both public repositories, and those same three are the only ones without a per-file CC BY line, because the licence audit stamped the Send tree and not the references imported into it.",
+     "sources": []
     }
    ],
    "applied_in": "v0.3.19"

@@ -8,7 +8,14 @@
   "path": "library/concepts/v0_4_0__thinking-in-graphs.md",
   "bytes": 36779,
   "sha256": "9d23354fc9a674ae34ddcc01095afbc2c7c3831e52e7bf5da7ae02df244a561a",
-  "words": 5297
+  "words": 5297,
+  "origin": {
+   "repo": "owasp-sbot/Issues-FS__Docs",
+   "repo_url": "https://github.com/owasp-sbot/Issues-FS__Docs",
+   "commit": "0a5a8516912c697e9847456fc5e2d578609d51a4",
+   "path": "docs/to_classify/v0_4_0__issues-fs__thinking-in-graphs.md",
+   "identical": true
+  }
  },
  {
   "slug": "fractal-semantic-graphs",
@@ -163,5 +170,85 @@
   "bytes": 18446,
   "sha256": "2f50e0c5dc9c80c5fbfab2118cd862e6bc3a9a0f96d53258715075441da11907",
   "words": 2674
+ },
+ {
+  "slug": "refactoring-meaning",
+  "repo": "the-cyber-boardroom/SGraph-AI__App__Send",
+  "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
+  "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
+  "licence": "Apache-2.0",
+  "path": "team/humans/dinis_cruz/briefs/08/09/graphing-text/v0.33.57__strategy-brief__sg-send-refactoring-meaning-decompilation-not-compilation-author-is-the-arbiter.md",
+  "bytes": 21558,
+  "sha256": "fe6194f1ce55e386041976e3e127b0f5d137afc4ddee8ff77fe9d4e413220cfd",
+  "words": 3558
+ },
+ {
+  "slug": "an-index-is-not-a-source",
+  "repo": "the-cyber-boardroom/SGraph-AI__App__Send",
+  "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
+  "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
+  "licence": "Apache-2.0",
+  "path": "team/humans/dinis_cruz/briefs/08/09/graphing-text/v0.33.57__arch-brief__sg-send-index-is-not-a-source-caching-nodes-are-prunable-start-anywhere.md",
+  "bytes": 20948,
+  "sha256": "6ce3d9c69093c072ae0138cdb8e30dd15841f7a22497203ede1106ea368929ec",
+  "words": 3325
+ },
+ {
+  "slug": "compatibility-through-connectivity",
+  "repo": "the-cyber-boardroom/SGraph-AI__App__Send",
+  "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
+  "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
+  "licence": "Apache-2.0",
+  "path": "library/concepts/v0_4_0__compatibility-through-connectivity.md",
+  "bytes": 41197,
+  "sha256": "057aadf8f5f461ddb6a39d6075cfa49ed37e951e3a05225bbb6ecbe095cdbfc8",
+  "words": 4101,
+  "origin": {
+   "repo": "owasp-sbot/Issues-FS__Docs",
+   "repo_url": "https://github.com/owasp-sbot/Issues-FS__Docs",
+   "commit": "0a5a8516912c697e9847456fc5e2d578609d51a4",
+   "path": "docs/to_classify/6-feb-other/v0_4_0__issues-fs__compatibility-through-connectivity.md",
+   "identical": true
+  }
+ },
+ {
+  "slug": "issues-fs-lexicon",
+  "repo": "the-cyber-boardroom/SGraph-AI__App__Send",
+  "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
+  "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
+  "licence": "Apache-2.0",
+  "path": "library/concepts/v0_4_0__lexicon-architecture.md",
+  "bytes": 42732,
+  "sha256": "4b6e58cea445a52199ca97c4c8ed47f8b4fa765202792f3f230628749dfc4902",
+  "words": 5228,
+  "origin": {
+   "repo": "owasp-sbot/Issues-FS__Docs",
+   "repo_url": "https://github.com/owasp-sbot/Issues-FS__Docs",
+   "commit": "0a5a8516912c697e9847456fc5e2d578609d51a4",
+   "path": "docs/to_classify/v0_4_0__issues-fs__lexicon-architecture-v2.md",
+   "identical": true
+  }
+ },
+ {
+  "slug": "graph-canvas-repl",
+  "repo": "the-cyber-boardroom/SGraph-AI__App__Send",
+  "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
+  "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
+  "licence": "Apache-2.0",
+  "path": "team/humans/dinis_cruz/briefs/08/02/vault-as-substrate/v0.33.55__arch-brief__sg-send-graph-canvas-repl-un-blinding-the-agent-mermaid-for-output-never-render-whole-graph.md",
+  "bytes": 21822,
+  "sha256": "071096e05005f64a35c592b62b2bfe54cb1e249d0d12f49c76d57a52f6cec0e1",
+  "words": 3471
+ },
+ {
+  "slug": "paying-the-fact-creator",
+  "repo": "the-cyber-boardroom/SGraph-AI__App__Send",
+  "repo_url": "https://github.com/the-cyber-boardroom/SGraph-AI__App__Send",
+  "commit": "b561fa6b14876891262e10a804cabdc36cbe85e6",
+  "licence": "Apache-2.0",
+  "path": "team/humans/dinis_cruz/briefs/07/31/projects-budgets-and-evidence/v0.33.54__strategy-brief__sg-send-paying-the-fact-creator-contextual-validation-not-truth-micropayments-for-correct-use.md",
+  "bytes": 21772,
+  "sha256": "652c56875b4900b598100997d5af5deea761166cebb30ce65704fabb1283f0a8",
+  "words": 3382
  }
 ]
