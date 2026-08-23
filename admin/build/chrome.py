@@ -90,6 +90,7 @@ NAV = [
     ], ("shipped/", "origins/", "network/")),
     ("Site", "documents/index.html", [
         ("The documents", "documents/index.html"),
+        ("&hellip; what the graphs found", "documents/what-the-graphs-found.html"),
         ("Comms: tasks &amp; requests", "admin/comms.html"),
         ("Release history", "admin/versions.html"),
         ("Publishing the book", "admin/publishing.html"),

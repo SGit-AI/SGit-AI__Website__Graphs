@@ -74,6 +74,17 @@ DOCS = [
      "link-following failed.",
      "The conventions this site inherits, and the hard constraints on publishing. "
      "Redacted before publication — see PUBLIC.md."),
+    ("what-the-graphs-found", "18__agent__what-the-graphs-found.md",
+     "What the graphs found",
+     "Retrospective brief · v0.3.26 · 23 August 2026",
+     "The visualisations did not produce the insights: the arithmetic behind them did, and "
+     "the visualisation is how a person notices. That is why the generators are "
+     "load-bearing and the renderers are replaceable.",
+     "Fourteen releases, twelve findings and the one mechanism behind all of them, written "
+     "before the refactor so that what would be expensive to rediscover is on the record. "
+     "Includes the thirteen gates that now fail the build, the class that keeps recurring "
+     "(a number nothing was checking, which is every correction in the run), and what the "
+     "refactor must not lose."),
     ("gaps", "08__gaps-and-fresh-writing.md", "The twelve gaps",
      "Gaps · v1.0 · 21 August 2026",
      "Twelve pages the corpus cannot supply. Two were blockers; the rest are marked on "

@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.3.25 (23 August 2026). Published by the sgit project — participant
+Site version: v0.3.26 (23 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /briefs/ is the source of truth and carries the same licence.
 
@@ -31,7 +31,7 @@ it as a graph database approach; the corpus says explicitly "not a graph databas
   is named in this file. CI fails the build if a hub is missing from it, and if the sitemap
   and the file tree disagree in either direction.
 - One fetch gets everything: https://graphs.sgit.ai/llms-full.txt is this file plus the
-  front page plus all eleven source documents, concatenated.
+  front page plus all twelve project documents, concatenated.
 - The site is pre-rendered static HTML. Nothing is assembled client-side except the document
   reader, which always has the raw markdown behind it.
 
@@ -341,11 +341,23 @@ pages** so the two cannot drift
 
 ## Site
 
-- https://graphs.sgit.ai/documents/index.html — the eleven source documents, readable
+- https://graphs.sgit.ai/documents/index.html — the twelve project documents, readable
   in-page and downloadable raw at /briefs/<filename>. **The raw markdown is the source of
   truth; the rendered page is presentation**, and each reader page renders its own source
   file so it cannot drift. Three redactions applied before publication, all recorded at
   /documents/public.html with visible markers.
+  Added v0.3.26: https://graphs.sgit.ai/documents/what-the-graphs-found.html — a
+  retrospective brief over releases v0.3.12 to v0.3.25, written before the refactor.
+  Its thesis: the visualisations did not produce the insights, the arithmetic behind them
+  did, and the visualisation is how a person notices. So the generators are load-bearing
+  and the renderers are replaceable. Records twelve findings with the mechanism that
+  produced each (the twelfth found while writing it: a generator reading ambient
+  state had been shipping a version diff missing eighteen releases) (including two corrections to the agent's own earlier claims), the
+  observation that every aggregate view produced findings while no per-item ego graph
+  produced any, the thirteen gates that now fail the build, and the class that keeps
+  recurring: a number nothing was checking, which is what every correction in the run
+  turned out to be. Raw markdown:
+  /briefs/18__agent__what-the-graphs-found.md
 - https://graphs.sgit.ai/admin/index.html — how the site is built: static HTML on GitHub
   Pages deployed from `dev`, with `validate → tag → deploy` on every push and a nine-check
   pre-release gate. Five of the checks are specific to this site: every section hub must

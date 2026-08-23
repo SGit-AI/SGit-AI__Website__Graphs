@@ -89,6 +89,22 @@ def semver_key(v):
 
 tags = sorted((t for t in git("tag").stdout.split() if re.fullmatch(r"v\d+\.\d+\.\d+", t)),
               key=semver_key)
+
+# This generator's completeness depends on ambient repository state: it reads whatever tags
+# the local clone happens to hold. A shallow or partial clone therefore produces a version
+# diff that is silently missing releases, which is exactly what happened before v0.3.26 —
+# fifteen tags present, thirty-three releases published, and nothing checking. The release
+# history in admin/versions.html is the authority, so compare against it and fail loudly.
+rows = re.findall(r'class="vnum">(v\d+\.\d+\.\d+)<',
+                  (ROOT / "admin/versions.html").read_text())
+absent = [v for v in rows if v != VERSION and v not in tags]
+if absent:
+    raise SystemExit(
+        "gen_changes: admin/versions.html lists releases this clone has no tag for: "
+        + ", ".join(sorted(absent, key=semver_key))
+        + ".\nThe version diff would ship with those releases missing and say nothing. "
+          "Run `git fetch --tags origin` and re-run.")
+
 OUT.mkdir(parents=True, exist_ok=True)
 index = []
 
