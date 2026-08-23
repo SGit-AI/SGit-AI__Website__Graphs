@@ -31,7 +31,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
-SRC = ROOT / "docs/sources"
+SRC = ROOT / "v1/docs/sources"
 
 
 def P(kind, label, href, note):
@@ -635,7 +635,7 @@ PAGE = """<!doctype html>
 <meta property="og:description" content="{desc}">
 <meta name="twitter:card" content="summary">
 <link rel="alternate" type="text/markdown" href="sources/{slug}.md" title="The carried source markdown">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
 
@@ -676,17 +676,17 @@ PAGE = """<!doctype html>
 </main>
 
 <footer class="site"><div class="cols"></div></footer>
-<script src="../assets/vendor/cytoscape.min.js"></script>
-<script src="../assets/vendor/marked.min.js"></script>
-<script src="../assets/docs.js" defer></script>
-<script src="../assets/mdreader.js" defer></script>
+<script src="../../assets/vendor/cytoscape.min.js"></script>
+<script src="../../assets/vendor/marked.min.js"></script>
+<script src="../../assets/docs.js" defer></script>
+<script src="../../assets/mdreader.js" defer></script>
 </body>
 </html>
 """
 
 
 def emit_pages(docs):
-    out = ROOT / "docs"
+    out = ROOT / "v1/docs"
     for d in docs:
         stamped = "CC BY 4.0 stated in the file" if d["ccby"] else "no per-file licence line"
         o = d.get("origin")
@@ -719,7 +719,7 @@ def count_phrases(text, phrases):
 
 def main():
     manifest = json.loads((SRC / "manifest.json").read_text())
-    alt = json.loads((ROOT / "altitudes/data/altitudes.json").read_text())
+    alt = json.loads((ROOT / "v1/altitudes/data/altitudes.json").read_text())
     concepts = {c["id"]: c for c in alt["concepts"]}
     peaks = set(alt["peaks"])
 
@@ -794,7 +794,7 @@ def main():
                match={k: v for k, v in MATCH.items()},
                totals=dict(docs=len(docs), words=sum(d["words"] for d in docs),
                            concepts=len(shared), places=sum(len(d["places"]) for d in docs)))
-    p = ROOT / "docs/data/docs.json"
+    p = ROOT / "v1/docs/data/docs.json"
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
     print(f'gen_docs: {len(docs)} documents, {out["totals"]["words"]:,} words, '

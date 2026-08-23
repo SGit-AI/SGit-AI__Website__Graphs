@@ -3,7 +3,7 @@
 **version** v0.3.27 · **date** 23 August 2026
 **for** a fresh session starting the second book (assume no prior context)
 **source** two founder voice memos, 23 August 2026, reproduced in `01__the-memos.md`
-**status** PROPOSED. Nothing here is implemented. Section 09 lists what only the founder can answer.
+**status** Phase 0 is DONE at v0.4.0. Everything from phase 1 onward is PROPOSED and not implemented. Section 09 lists what only the founder can answer.
 **versions** This pack ships at v0.3.27. The first edition freezes at **v0.3.26**, the last release in
 which it was the only book. **v0.4.0 is phase 0**: the freeze itself.
 

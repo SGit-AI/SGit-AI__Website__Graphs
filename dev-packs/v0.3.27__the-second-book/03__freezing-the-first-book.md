@@ -20,63 +20,76 @@ That is not arbitrary: it is the last release in which the first book was the on
 
 ## ADR-1 · How the freeze is done
 
-**Status** PROPOSED, with one part awaiting the founder (open question 1).
+**Status** DECIDED by the founder, 23 August 2026, and it is a **move**, not a copy.
+
+> "the copy of v1 should actually be move of all the relevant files to a folder structure that
+> is prefixed with `v1/*`, since some of those files might be good references of v2 (which
+> should have its own copy of the files used in that version). But at the moment v2 is empty"
 
 ### The decision
 
-Freeze in two parts, because the source and the published pages have different requirements.
-
-**Part A. The source is frozen by copy**, exactly as memo 2.6 asks.
+Every file that constitutes the first edition **moves** to a `v1/` prefix. Nothing is
+duplicated. When the second book needs a file, it takes **its own copy** into `v2/`, which is
+how an edition ends up owning everything it uses.
 
 ```
-books/
-  01__first-edition/
-    source/            byte-copy of content/*.md at v0.3.26   (17 units, 21,679 words)
-    ladder/            byte-copy of the altitudes data at v0.3.26
-    reviews/           byte-copy of r001 to r004 as they stood
-    MANIFEST.json      every file with its SHA-256, the release, the commit, the date
-    README.md          what this is, and the rule that it never changes
+v1/     the first edition, complete, frozen at v0.3.26
+v2/     empty. The second book takes copies into here as it needs them.
 ```
 
-This is what the second book copies **from**, which is the purpose memo 2.7 gives the freeze.
-A copy makes the first edition a nameable unit that can be opened without checking out an old
-commit, and it survives the second book restructuring `content/` however it likes.
+This is better than the copy proposed earlier, for a reason worth recording: a copy leaves two
+live trees and no rule about which one is authoritative, so the first thing that happens is
+somebody edits the wrong one. A move leaves exactly one, and the `v1/` prefix makes an
+edition's boundary visible in every path.
 
-**Part B. The published pages are frozen in place.**
+### What moves
 
-`/book/` and the sixteen chapter-source pages under `/start/`, `/why-graphs/`, `/grammar/`,
-`/depth/`, `/examples/`, `/maps/`, `/shipped/`, `/origins/`, `/network/`, `/glossary/` and
-`/about/` stay exactly where they are, and never change again.
+| Moves to `v1/` | Why |
+|---|---|
+| `book/` | the first edition itself: 22 pages, both PDFs, the cover, the version diff |
+| `content/` | its 17 source units |
+| `start/` `why-graphs/` `grammar/` `depth/` `examples/` `maps/` `shipped/` `origins/` `network/` `glossary/` `about/` | the sixteen chapter-source pages: they are the same text as the chapters and freeze with them |
+| `altitudes/` | the ladder pilot, which was built over the first edition |
+| `vaults/` | the evidence estate as the first edition cited it |
+| `docs/` | the twenty-one carried sources as the first edition used them |
+| `briefs/` and `documents/` | the brief pack that produced it and the readers over it |
+| `reviews/` | the four reviews of it |
+| `index.html`, `index.md` | the front page, which is also the book's introduction source |
 
-### Why part B is not a copy
+| Stays at the root | Why |
+|---|---|
+| `assets/` | the site's stylesheet, scripts and vendored libraries, shared by both editions |
+| `admin/` | engineering, release history, comms, publishing: site-level, not edition-level |
+| `decisions/` | the register spans editions by design |
+| `dev-pack/`, `dev-packs/` | this pack. It belongs to the second book, not the first |
+| `llms.txt`, `llms-full.txt`, `sitemap.xml`, `robots.txt`, `LICENSES.md` | the site's own surface |
 
-A literal copy of the published tree would duplicate two PDFs and a cover (about four megabytes)
-and would move or duplicate **thirty-four published URLs**. Those URLs are linked from the four
-reviews, the ladder's descent edges, the concept map's unit references, the twenty-one carried
-sources' authored place links, and the six vault analyses. Every one of those links would need
-rewriting, in files that are themselves records and should not be rewritten.
+The boundary is one `git mv` away from being different. If a tree is on the wrong side, moving
+it is a single command plus a regenerate, and the gates will say if a link broke.
 
-Freezing in place gives a stronger guarantee than copying: the bytes a reader fetched yesterday
-are the bytes they fetch in a year, at the same address. It also removes the failure mode where
-a copy and an original drift because someone edits the wrong one.
+### The URLs
 
-**The founder may prefer the literal reading of memo 2.6**, and it is his call. Open question 1.
+A move changes every URL under the moved trees. **Every moved HTML page keeps a stub at its old
+address**: a generated redirect carrying a canonical link to the new location and a visible line
+saying where it went and why. Roughly a hundred small files, generated by `gen_redirects.py`,
+excluded from the freeze manifest because they are not part of the edition.
+
+**Two URLs cannot be preserved this way**: the print and screen PDFs, because a PDF cannot carry
+a redirect. Their old addresses stop working and the new ones are under `v1/book/`. That is the
+one unavoidable cost of the move and it is recorded rather than discovered later.
 
 ### The gate that makes the freeze real
 
 A rule with no enforcement is a preference. `validate.js` gains:
 
 ```
-gate 14   every path listed in books/01__first-edition/MANIFEST.json must still hash
-          to its recorded SHA-256, and every frozen published page must still hash to
-          the value recorded at v0.3.26. The build fails on any difference.
+gate 14   every path listed in v1/MANIFEST.json must still hash to its recorded SHA-256.
+          The build fails on any difference.
 ```
 
 This is the same mechanism already protecting the twenty-one carried source documents, applied
-to the site's own history. It was verified once by deleting a tag and watching a build fail; the
-same negative test is required here before the freeze is declared done.
-
----
+to the site's own history. It is verified negatively before the freeze is declared done: change
+one byte, watch the build fail, put it back.
 
 ## The front page that explains everything
 

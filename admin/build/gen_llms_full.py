@@ -64,10 +64,10 @@ def main():
     parts.append(SEP.format(name="llms.txt"))
     parts.append((ROOT / "llms.txt").read_text())
     parts.append(SEP.format(name="index.md — the front page"))
-    parts.append((ROOT / "index.md").read_text())
+    parts.append((ROOT / "v1/index.md").read_text())
     missing = []
     for name in ORDER:
-        p = ROOT / "briefs" / name
+        p = ROOT / "v1/briefs" / name
         if not p.exists():
             missing.append(name)
             continue

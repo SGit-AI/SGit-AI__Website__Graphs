@@ -42,7 +42,7 @@ from markdown_it import MarkdownIt
 from mdit_py_plugins.container import container_plugin
 
 ROOT = Path(__file__).resolve().parents[2]
-SRC = ROOT / "content"
+SRC = ROOT / "v1/content"
 HOST = "https://graphs.sgit.ai"
 
 MERMAID_LOADER = """
@@ -216,8 +216,11 @@ def render_page(md_file):
         h = f(h)
 
     path = fm["path"]
+    # two roots now: `up` reaches the first edition's root (v1/), `site` reaches the
+    # site root, which is one level further out since the move at v0.4.0.
     up = "../" * (len(Path(path).parts) - 1)
-    crumb = f'<a href="{up}index.html">graphs.sgit.ai</a>'
+    site = up + "../"
+    crumb = f'<a href="{site}index.html">graphs.sgit.ai</a>'
     if fm.get("parent"):
         lbl, _, href = fm["parent"].partition("|")
         crumb += f' → <a href="{href}">{lbl}</a>'
@@ -242,15 +245,15 @@ def render_page(md_file):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{fm["title"]}</title>
 <meta name="description" content="{fm["description"]}">
-<link rel="canonical" href="{HOST}/{path}">
+<link rel="canonical" href="{HOST}/v1/{path}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="graphs.sgit.ai">
-<meta property="og:url" content="{HOST}/{path}">
+<meta property="og:url" content="{HOST}/v1/{path}">
 <meta property="og:title" content="{fm["og_title"]}">
 <meta property="og:description" content="{fm["og_description"]}">
 <meta name="twitter:card" content="summary">
 <link rel="alternate" type="text/markdown" href="{up}content/{md_file.stem}.md" title="This chapter as markdown — the source of truth">
-<link rel="stylesheet" href="{up}assets/site.css">
+<link rel="stylesheet" href="{site}assets/site.css">
 </head>
 <body>
 
@@ -262,12 +265,12 @@ def render_page(md_file):
 </body>
 </html>
 '''
-    (ROOT / path).write_text(page)
+    (ROOT / "v1" / path).write_text(page)
     main_m = re.search(r'<main class="doc">(.*?)</main>', page, re.S)
     return {
-        "md": f"content/{md_file.name}",
+        "md": f"v1/content/{md_file.name}",
         "md_sha256": hashlib.sha256(md_file.read_bytes()).hexdigest(),
-        "path": path,
+        "path": "v1/" + path,
         "main_sha256": hashlib.sha256(main_m.group(1).encode()).hexdigest(),
     }
 

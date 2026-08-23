@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Why graphs at all — graphs.sgit.ai</title>
+<meta name="description" content="Three different things people mean by graph — networks, storage, and semantics — and why this book is only about the third. Plus an honest position on GraphRAG, RDF, property graphs and hypergraphs.">
+<link rel="canonical" href="https://graphs.sgit.ai/v1/why-graphs/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="graphs.sgit.ai">
+<meta property="og:url" content="https://graphs.sgit.ai/v1/why-graphs/index.html">
+<meta property="og:title" content="Why graphs at all — and how this differs from GraphRAG and RDF">
+<meta property="og:description" content="Networks answer who is connected to whom. Graph databases answer how to make joins fast. This is the third use: what does this thing mean, and how sure can I be?">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="text/markdown" href="../content/why-graphs.md" title="This chapter as markdown — the source of truth">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../index.html">graphs<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
+  <span class="stage-pill">reference draft</span>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.4.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl here" href="../../v1/start/index.html">Start here<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/start/index.html">The five-minute version</a>
+      <a class="sl here" href="../../v1/why-graphs/index.html">Why graphs at all</a>
+      <a class="sl" href="../../v1/glossary/index.html">Glossary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/book/index.html">The book<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/book/index.html">Table of contents</a>
+      <a class="sl" href="../../v1/book/single.html">Read it in one page</a>
+      <a class="sl" href="../../v1/book/changes.html">What changed between versions</a>
+      <a class="sl" href="../../v1/reviews/index.html">The reviews</a>
+      <a class="sl" href="../../decisions/index.html">&hellip; the open decisions</a>
+      <a class="sl" href="../../v1/docs/index.html">The sources it came from</a>
+      <a class="sl" href="../../v1/altitudes/index.html">The altitude ladder</a>
+      <a class="sl" href="../../v1/altitudes/graph.html">&hellip; as one graph</a>
+      <a class="sl" href="../../v1/altitudes/concepts.html">&hellip; the concept map</a>
+      <a class="sl" href="../../v1/book/meaning-through-connectivity.pdf">The print PDF (6&times;9)</a>
+      <a class="sl" href="../../v1/book/meaning-through-connectivity-screen.pdf">The screen PDF (tablet)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/grammar/index.html">The grammar<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/grammar/index.html">The rules you can apply tomorrow</a>
+      <a class="sl" href="../../v1/grammar/edge-set.html">The edge set</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/depth/index.html">Depth<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/depth/index.html">The full argument</a>
+      <a class="sl" href="../../v1/depth/boundaries.html">A graph at every boundary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/vaults/index.html">The vaults<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/vaults/index.html">The vaults, opened</a>
+      <a class="sl" href="../../v1/vaults/voice-debrief/index.html">VoiceDebrief</a>
+      <a class="sl" href="../../v1/vaults/voice-debrief/junction.html">&hellip; the junction rule</a>
+      <a class="sl" href="../../v1/vaults/voice-debrief/absence.html">&hellip; the empty layer</a>
+      <a class="sl" href="../../v1/vaults/regulation-graph/index.html">Regulation Graph</a>
+      <a class="sl" href="../../v1/vaults/regulation-graph/provenance.html">&hellip; the provenance chain</a>
+      <a class="sl" href="../../v1/vaults/regulation-graph/engines.html">&hellip; the query engines</a>
+      <a class="sl" href="../../v1/vaults/risk-mandate/index.html">Risk Mandate</a>
+      <a class="sl" href="../../v1/vaults/agentic-browser-isolation/index.html">Agentic Browser Isolation</a>
+      <a class="sl" href="../../v1/vaults/agentic-browser-isolation/acceptance.html">&hellip; the acceptance mechanism</a>
+      <a class="sl" href="../../v1/vaults/risk-graph-explorer/index.html">Risk Graph Explorer</a>
+      <a class="sl" href="../../v1/vaults/capability-scale.html">The capability scale</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/examples/index.html">Examples<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/examples/index.html">Worked graphs, with real numbers</a>
+      <a class="sl" href="../../v1/examples/browser-isolation.html">Browser isolation</a>
+      <a class="sl" href="../../v1/examples/2fa.html">The 2FA graph</a>
+      <a class="sl" href="../../v1/examples/article-26-5.html">Article 26(5), end to end</a>
+      <a class="sl" href="../../v1/maps/index.html">Wardley maps as graphs</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/shipped/index.html">Reality<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/shipped/index.html">What ships, what is argued</a>
+      <a class="sl" href="../../v1/origins/index.html">Origins: 2026</a>
+      <a class="sl" href="../../v1/network/index.html">The network</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/documents/index.html">Site<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/documents/index.html">The documents</a>
+      <a class="sl" href="../../v1/documents/what-the-graphs-found.html">&hellip; what the graphs found</a>
+      <a class="sl" href="../../dev-pack/index.html">The dev pack: the second book</a>
+      <a class="sl" href="../../admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl" href="../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../admin/publishing.html">Publishing the book</a>
+      <a class="sl" href="../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../v1/about/participant.html">Where we lose</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Graphs">★ GitHub</a>
+  <script src="../../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+  <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> → <b>Why graphs at all</b></div>
+<h1>Why graphs at all</h1>
+<p class="lead">One word first: in this book a <strong>graph</strong> is a network, <strong>nodes and the edges that connect them</strong>, never a chart or a figure. Nothing here plots values on axes. Everything here is about things, and the stated relationships between them.</p>
+<p>And a suspicion to start from: <strong>you may already think in graphs without ever having called it that.</strong> Working out what an unfamiliar system is by tracing what it connects to; trusting a claim because of where it comes from rather than how it is worded; asking “what else breaks if this fails?” That is graph-thinking, and it is common. What is rare is doing it <em>deliberately, with rules</em>, and that is what this book teaches. So this chapter is written for three readers: the one who already thinks this way and never named it, the one who is not yet convinced, and the one who is convinced of something else. If you have used graphs professionally, the useful part is the second half, because this is a third use of graphs and probably not the one you are thinking of.</p>
+<div class="warnbox"><p><strong>Written fresh.</strong> The documents behind this book do not argue this case: they assume graph-thinking and get on with it, and none of them distinguishes this use of graphs from the common ones. That absence is recorded as gap <strong>G3</strong> (the third of the twelve gaps catalogued in <a href="../documents/gaps.html">the brief pack's gaps document</a>, its list of things the source corpus could not supply). This chapter fills it, written fresh rather than lifted from the corpus, so hold it to a lower evidential bar than the sourced chapters, and tell us where it is wrong.</p>
+</div>
+<h2 id="three-uses">Three different things people mean by “graph”</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Use</th><th>The question it answers</th><th>What you buy it for</th></tr></thead>
+<tbody>
+<tr><td><b>1 · Networks</b><br/><span class="small dim">social graphs, dependency graphs, citation networks</span></td><td>Who is connected to whom, and how centrally?</td><td>Analysis. Centrality, clustering, shortest path, community detection.</td></tr>
+<tr><td><b>2 · Storage</b><br/><span class="small dim">graph databases, triple stores</span></td><td>How do I make joins fast?</td><td>Performance. A traversal beats seven table joins.</td></tr>
+<tr><td><b>3 · Semantics</b><br/><span class="small dim">this book</span></td><td><b>What does this thing mean, and how sure can I be?</b></td><td>Meaning that survives a boundary: a different team, project, culture, language, or system.</td></tr>
+</tbody>
+</table>
+</div>
+<p>Uses 1 and 2 are well served and well understood. This book is about use 3, which is why the disclaimer is stated up front: <strong>not a graph database pitch.</strong> The claim is that one grammar is the interface at every boundary, not that things are stored in a graph. Nothing here depends on which store you use. As <a href="../shipped/index.html"><em>What ships, what is argued</em></a> says plainly, the work behind this book does not use a graph database at all.</p>
+<h2 id="the-argument">The argument, in four steps</h2>
+<div class="ladder">
+<div class="cap"><div class="capnum">1</div><h3>Declared meaning is brittle and local</h3><p>A schema works perfectly inside the system that defined it. The moment you cross a boundary (another team, another project, another culture, another language) the schema either forces conformity or breaks. Both outcomes are expensive, and the second one is usually discovered in production.</p>
+<span class="from"><strong>Source:</strong> <code>library/concepts/v0_4_0__thinking-in-graphs.md</code></span></div>
+<div class="cap"><div class="capnum">2</div><h3>The boundary is not an edge case; it is where all the work is</h3><p>Integration, compliance, procurement, supply chain, regulation, multi-team delivery, agents calling other systems: every one of these <em>is</em> a boundary problem. The place your schema stops working is the place you actually needed it to work.</p></div>
+<div class="cap"><div class="capnum">3</div><h3>Connectivity survives the boundary because it does not require agreement</h3><p>Two parties do not need a shared vocabulary to compare notes; they need to have connected their own nodes to enough context that the overlap can be computed. That is <a href="../start/index.html#five-reviews">the five Reviews</a>: five processes, no shared definition, and a precise answer to “did somebody other than the author look at this?”</p></div>
+<div class="cap"><div class="capnum">4</div><h3>And once meaning is computed, it can be checked, argued with, and versioned</h3><p>A judgment in someone's head cannot be reviewed. A judgment expressed as a required path-pattern can be read, disputed, versioned and tested against the data. Judgment does not disappear; it moves out of the classifier's head and <a href="../depth/index.html#formulas">into the formula</a>, where it is visible.</p></div>
+</div><h2 id="not-complexity">“What I am describing is not complexity, it is reality”</h2>
+<p>The most common objection is that this is over-engineering, and that a table would do. Sometimes a table would do. The reply worth quoting is:</p>
+<blockquote class="challenge">“what I am describing is not complexity, it is reality. This is the reality of business, the reality of the complex applications we have.”
+    <span class="small dim" style="display:block;font-style:normal;margin-top:.7rem">— 18 June 2026</span></blockquote>
+<p>The test is not whether the graph is simpler than a table. It is whether the <em>question you need answered</em> is expressible in a table. Three that are not:</p>
+<ul>
+<li><strong>Reach.</strong> A table lists the permissions an account has. Only a transitive closure over assume-role, pass-role and wildcard edges tells you what those permissions actually <em>reach</em>. <a href="../examples/index.html#aws-iam">The AWS IAM example</a> (IAM: identity and access management) names that closure and computes it.</li>
+<li><strong>Bidirectionality.</strong> “What does this browser extension reach?” and “how could my email be attacked?” are two different tables. They are one graph, walked in two directions. <a href="../examples/index.html#extensions">The browser-extension example</a>.</li>
+<li><strong>Propagation of a correction.</strong> Mark a claim superseded and ask which conclusions were resting on it. There is no table shape that answers that; it is the <a href="../index.html#hook">10,000-hours story</a>.</li>
+</ul>
+<h2 id="positioning">Where this sits next to GraphRAG, RDF and property graphs</h2>
+<div class="warnbox"><p><strong>Also written fresh, and more contested than the rest of the book.</strong> The corpus behind it has zero occurrences of “GraphRAG” or “hypergraph”. It holds a strong implicit position and never engages the named field; that silence is recorded as gap <strong>G11</strong> in the same gaps catalogue. What follows is our position, stated so it can be argued with, not a claim that the position was already worked out elsewhere.</p>
+</div>
+<h3>GraphRAG</h3>
+<p>GraphRAG (graph-based retrieval-augmented generation) shares a real premise with this book: retrieval over structure beats retrieval over a pile of chunks. The difference is what the structure is <em>for</em>.</p>
+<p>GraphRAG, in its common form, builds a graph in order to retrieve better context to put in a prompt. The graph is scaffolding for a generation step, and the model remains the thing that decides. The position here is stronger and narrower: <strong>knowledge is traversed, not guessed.</strong> Retrieval is a traversal from an intent node to grounded facts with provenance attached, rather than a similarity search returning plausible chunks. The model sits at the edge and <em>proposes</em> a graph; a deterministic validator decides whether that proposal is admissible.</p>
+<p>That is a real disagreement, and it has a cost worth stating: it requires the edges to exist. Similarity search works on an unstructured corpus today. Traversal does not. Where the graph is thin, this approach has nothing to say, and pretending otherwise would be the exact dishonesty this book stands against.</p>
+<h3>RDF, OWL and the Semantic Web</h3>
+<p>RDF (the Resource Description Framework) and OWL (the Web Ontology Language) are the Semantic Web's core standards, and the disagreement here is with a practice, not a goal. It is a respectful one, because the Semantic Web community identified the right problem two decades early. <a href="../depth/index.html#schema-first">The full argument is at altitude 3</a>. In one line: the mistake was attaching meaning <em>to nodes</em> rather than deriving it <em>from edges</em>, which turns each node into a little document that describes itself. That is schema-first thinking dressed in graph syntax.</p>
+<p>But note what the position is <strong>not</strong>: it is not anti-RDF at the serialisation layer. The live EU AI Act regulation graph <a href="https://sgit.ai/demos/vaults/regulation-graph/">exports RDF/Turtle</a>. The honest statement is <strong>“both, at different layers”</strong>. RDF is a fine way to hand a graph to somebody else; it is a poor place to put the meaning.</p>
+<h3>Property graphs</h3>
+<p>An awkward one to answer honestly, because this book's core rule is that properties do not carry meaning, and the one graph in this project that is <em>actually running</em> is a typed property graph: 12 node types, 10 verb/inverse edge types with domain and range constraints, <strong>71 nodes and 141 edges</strong> of live repository data. The resolution is that properties are allowed to carry <em>data</em>; they are not allowed to carry <em>meaning</em>. A property may hold a timestamp. It may not hold the answer to “what kind of thing is this?”, because that answer is a query. <a href="../depth/index.html#formulas">Node type formulas</a> is where this becomes precise.</p>
+<h3>Hypergraphs</h3>
+<p>No position. The corpus does not contain the word, and we will not manufacture a position to look complete. If you have a case where a binary edge with a named inverse loses something a hyperedge keeps, <a href="../../admin/comms.html">the comms board</a> (the project's public task list) is the place to put it.</p>
+<div class="agent">
+<h4>For an agent</h4><p>There are three distinct uses of graphs: <strong>network analysis</strong>, <strong>fast joins</strong>, and <strong>semantics</strong>. This book is the third: the graph exists so that meaning survives a boundary, and the store is an implementation detail. When summarising this material, do not describe it as a graph database approach; the corpus explicitly says <em>“not a graph database pitch”</em>.</p>
+</div>
+
+  <div class="pagenav"><span><a href="../index.html">← Front page</a></span><span><a href="../start/index.html">The five-minute version →</a></span></div>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">graphs<span>.sgit.ai</span></div>
+    <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
+    <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
+    <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.4.0</a> · <a href="../../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>Start here</h4>
+    <a href="../../v1/start/index.html">&#8594; The five-minute version</a>
+    <a href="../../v1/why-graphs/index.html">Why graphs at all</a>
+    <a href="../../v1/glossary/index.html">Glossary</a>
+    <a href="../../v1/book/index.html">The book</a>
+    <a href="../../v1/book/single.html">&nbsp;&nbsp;&hellip; in one page</a>
+    <a href="../../v1/book/meaning-through-connectivity.pdf">&nbsp;&nbsp;&hellip; as a print PDF</a>
+    <a href="../../v1/book/meaning-through-connectivity-screen.pdf">&nbsp;&nbsp;&hellip; as a screen PDF</a>
+  </div>
+  <div>
+    <h4>The grammar</h4>
+    <a href="../../v1/grammar/index.html">The rules</a>
+    <a href="../../v1/grammar/edge-set.html">The edge set</a>
+    <a href="../../v1/depth/index.html">The full argument</a>
+    <a href="../../v1/depth/boundaries.html">A graph at every boundary</a>
+  </div>
+  <div>
+    <h4>Worked graphs</h4>
+    <a href="../../v1/examples/index.html">All of them</a>
+    <a href="../../v1/examples/browser-isolation.html">Browser isolation</a>
+    <a href="../../v1/examples/2fa.html">The 2FA graph</a>
+    <a href="../../v1/examples/article-26-5.html">Article 26(5)</a>
+    <a href="../../v1/maps/index.html">Wardley maps</a>
+  </div>
+  <div>
+    <h4>Reality &amp; site</h4>
+    <a href="../../v1/shipped/index.html">What ships, what is argued</a>
+    <a href="../../v1/origins/index.html">Origins: 2026</a>
+    <a href="../../v1/network/index.html">The network</a>
+    <a href="../../v1/documents/index.html">The documents</a>
+    <a href="../../admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

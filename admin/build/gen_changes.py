@@ -31,11 +31,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
-OUT = ROOT / "book/changes/data"
+OUT = ROOT / "v1/book/changes/data"
 
 # The unit list comes from the book's own manifest: the machine-readable
 # projection of gen_book's chapter table, so the two cannot drift.
-manifest = json.loads((ROOT / "book/manifest.json").read_text())
+manifest = json.loads((ROOT / "v1/book/manifest.json").read_text())
 UNITS = [("intro", "Introduction", manifest["intro"]["source"])]
 UNITS += [(f"ch{ch['n']:02d}", ch["title"], ch["source"]) for ch in manifest["chapters"]]
 
@@ -113,8 +113,15 @@ for tag in tags:
         continue  # the current release is snapshotted from the working tree below
 
     def read_tag(source, tag=tag):
-        r = git("show", f"{tag}:{source}")
-        return r.stdout if r.returncode == 0 else None
+        # The first edition moved under v1/ at v0.4.0. A tag from before the move holds the
+        # page at its old path, one from after holds it under v1/. Try both, newest layout
+        # first, so the version diff keeps working across the move instead of silently
+        # losing every release before it.
+        for candidate in (source, source[3:] if source.startswith("v1/") else "v1/" + source):
+            r = git("show", f"{tag}:{candidate}")
+            if r.returncode == 0:
+                return r.stdout
+        return None
 
     d = git("log", "-1", "--format=%ad", "--date=format:%-d %B %Y", tag).stdout.strip()
     (OUT / f"{tag}.json").write_text(json.dumps(

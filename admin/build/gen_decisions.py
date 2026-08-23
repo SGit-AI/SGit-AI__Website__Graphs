@@ -241,7 +241,7 @@ def block(phrase):
 
 
 decisions = []
-for f in sorted((ROOT / "reviews").glob("r0*.json")):
+for f in sorted((ROOT / "v1/reviews").glob("r0*.json")):
     rev = json.loads(f.read_text())
     for d in rev.get("decisions", []):
         did = f'{rev["id"]}-D{d["n"]}'

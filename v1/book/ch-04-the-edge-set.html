@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>4 · The edge set — Meaning Through Connectivity</title>
+<meta name="description" content="Chapter 4 of Meaning Through Connectivity, the graphs.sgit.ai book. Also readable as a single page or as a PDF.">
+<link rel="canonical" href="https://graphs.sgit.ai/book/ch-04-the-edge-set.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="graphs.sgit.ai">
+<meta property="og:url" content="https://graphs.sgit.ai/book/ch-04-the-edge-set.html">
+<meta property="og:title" content="4 · The edge set — Meaning Through Connectivity">
+<meta property="og:description" content="Chapter 4 of Meaning Through Connectivity, the graphs.sgit.ai book. Also readable as a single page or as a PDF.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body class="bookpage">
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../index.html">graphs<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
+  <span class="stage-pill">reference draft</span>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.4.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/start/index.html">Start here<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/start/index.html">The five-minute version</a>
+      <a class="sl" href="../../v1/why-graphs/index.html">Why graphs at all</a>
+      <a class="sl" href="../../v1/glossary/index.html">Glossary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../../v1/book/index.html">The book<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/book/index.html">Table of contents</a>
+      <a class="sl" href="../../v1/book/single.html">Read it in one page</a>
+      <a class="sl" href="../../v1/book/changes.html">What changed between versions</a>
+      <a class="sl" href="../../v1/reviews/index.html">The reviews</a>
+      <a class="sl" href="../../decisions/index.html">&hellip; the open decisions</a>
+      <a class="sl" href="../../v1/docs/index.html">The sources it came from</a>
+      <a class="sl" href="../../v1/altitudes/index.html">The altitude ladder</a>
+      <a class="sl" href="../../v1/altitudes/graph.html">&hellip; as one graph</a>
+      <a class="sl" href="../../v1/altitudes/concepts.html">&hellip; the concept map</a>
+      <a class="sl" href="../../v1/book/meaning-through-connectivity.pdf">The print PDF (6&times;9)</a>
+      <a class="sl" href="../../v1/book/meaning-through-connectivity-screen.pdf">The screen PDF (tablet)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/grammar/index.html">The grammar<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/grammar/index.html">The rules you can apply tomorrow</a>
+      <a class="sl" href="../../v1/grammar/edge-set.html">The edge set</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/depth/index.html">Depth<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/depth/index.html">The full argument</a>
+      <a class="sl" href="../../v1/depth/boundaries.html">A graph at every boundary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/vaults/index.html">The vaults<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/vaults/index.html">The vaults, opened</a>
+      <a class="sl" href="../../v1/vaults/voice-debrief/index.html">VoiceDebrief</a>
+      <a class="sl" href="../../v1/vaults/voice-debrief/junction.html">&hellip; the junction rule</a>
+      <a class="sl" href="../../v1/vaults/voice-debrief/absence.html">&hellip; the empty layer</a>
+      <a class="sl" href="../../v1/vaults/regulation-graph/index.html">Regulation Graph</a>
+      <a class="sl" href="../../v1/vaults/regulation-graph/provenance.html">&hellip; the provenance chain</a>
+      <a class="sl" href="../../v1/vaults/regulation-graph/engines.html">&hellip; the query engines</a>
+      <a class="sl" href="../../v1/vaults/risk-mandate/index.html">Risk Mandate</a>
+      <a class="sl" href="../../v1/vaults/agentic-browser-isolation/index.html">Agentic Browser Isolation</a>
+      <a class="sl" href="../../v1/vaults/agentic-browser-isolation/acceptance.html">&hellip; the acceptance mechanism</a>
+      <a class="sl" href="../../v1/vaults/risk-graph-explorer/index.html">Risk Graph Explorer</a>
+      <a class="sl" href="../../v1/vaults/capability-scale.html">The capability scale</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/examples/index.html">Examples<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/examples/index.html">Worked graphs, with real numbers</a>
+      <a class="sl" href="../../v1/examples/browser-isolation.html">Browser isolation</a>
+      <a class="sl" href="../../v1/examples/2fa.html">The 2FA graph</a>
+      <a class="sl" href="../../v1/examples/article-26-5.html">Article 26(5), end to end</a>
+      <a class="sl" href="../../v1/maps/index.html">Wardley maps as graphs</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/shipped/index.html">Reality<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/shipped/index.html">What ships, what is argued</a>
+      <a class="sl" href="../../v1/origins/index.html">Origins: 2026</a>
+      <a class="sl" href="../../v1/network/index.html">The network</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/documents/index.html">Site<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/documents/index.html">The documents</a>
+      <a class="sl" href="../../v1/documents/what-the-graphs-found.html">&hellip; what the graphs found</a>
+      <a class="sl" href="../../dev-pack/index.html">The dev pack: the second book</a>
+      <a class="sl" href="../../admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl" href="../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../admin/publishing.html">Publishing the book</a>
+      <a class="sl" href="../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../v1/about/participant.html">Where we lose</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Graphs">★ GitHub</a>
+  <script src="../../assets/nav.js" defer></script>
+</div></nav>
+
+<div class="bookwrap">
+<aside class="booktoc">
+  <a class="tocch" href="introduction.html">Introduction</a>
+  <div class="tocpart">Part I · The claim</div>
+  <a class="tocch" href="ch-01-why-graphs-at-all.html">1 · Why graphs at all</a>
+  <a class="tocch" href="ch-02-the-five-ideas.html">2 · The five ideas</a>
+  <div class="tocpart">Part II · The grammar</div>
+  <a class="tocch" href="ch-03-the-rules-you-can-apply-tomorrow.html">3 · The rules you can apply tomorrow</a>
+  <a class="tocch here" href="ch-04-the-edge-set.html">4 · The edge set</a>
+  <div class="tocpart">Part III · The full argument</div>
+  <a class="tocch" href="ch-05-against-schema-first.html">5 · Against schema-first</a>
+  <a class="tocch" href="ch-06-a-graph-at-every-boundary.html">6 · A graph at every boundary</a>
+  <div class="tocpart">Part IV · The proof</div>
+  <a class="tocch" href="ch-07-worked-graphs-with-real-numbers.html">7 · Worked graphs, with real numbers</a>
+  <a class="tocch" href="ch-08-whose-session-is-the-agent-using.html">8 · Whose session is the agent using?</a>
+  <a class="tocch" href="ch-09-the-2fa-instance-graph.html">9 · The 2FA instance graph</a>
+  <a class="tocch" href="ch-10-article-26-5-fact-to-board-and-back.html">10 · Article 26(5), fact to board and back</a>
+  <a class="tocch" href="ch-11-wardley-maps-as-graphs.html">11 · Wardley maps as graphs</a>
+  <div class="tocpart">Part V · Reality</div>
+  <a class="tocch" href="ch-12-what-ships-what-is-argued.html">12 · What ships, what is argued</a>
+  <a class="tocch" href="ch-13-origins-2026.html">13 · Origins: 2026</a>
+  <a class="tocch" href="ch-14-the-network.html">14 · The network</a>
+  <div class="tocpart">Part VI · Appendices</div>
+  <a class="tocch" href="ch-15-glossary.html">15 · Glossary</a>
+  <a class="tocch" href="ch-16-the-author-s-interest-and-where-this-loses.html">16 · The author's interest, and where this loses</a>
+  <div class="tocmodes">
+    <a href="index.html">☰ Cover &amp; contents</a>
+    <a href="single.html">Read it in one page</a>
+    <a href="meaning-through-connectivity.pdf">The print PDF (6×9)</a>
+    <a href="meaning-through-connectivity-screen.pdf">The screen PDF (tablet)</a>
+  </div>
+</aside>
+  <div class="bookmain">
+    <div class="bookbar"><a href="index.html">☰ Contents</a> · <a href="single.html">single page</a> · <a href="meaning-through-connectivity.pdf">print PDF</a> · <a href="meaning-through-connectivity-screen.pdf">screen PDF</a> · <span>Meaning Through Connectivity · site v0.4.0</span></div>
+    <main class="doc bookch">
+<div class="chkick">Part II · The grammar</div>
+<div class="chnum">Chapter 4</div>
+<h1>The edge set</h1>
+
+  <p class="lead">A concrete, versioned, public vocabulary. This is the reference to paste into an agent session before asking it to build a graph, and the place to argue with if you think an edge is missing or wrongly named.</p>
+<div class="evbox ev-warn">
+<span class="evtag">Provenance</span>
+<p>Appendix A of the 28 July 2026 brief cites “the concepts glossary” as the authority on edge-grammar discipline and lists the established edge set. <b>No such file exists in the source repository</b>; it lives in another project. That absence is gap <b>G5</b> (the fifth of the twelve gaps catalogued in the brief pack, its list of things the corpus could not supply), and the pack's recommendation was that this book should either import the glossary or <em>become</em> it.</p>
+<p><b>This chapter becomes it.</b> Which means: the fifteen edge names below are quoted from the corpus and are load-bearing. Several of the <em>inverse</em> names are not. Where the corpus does not supply one, we propose it, and say so in the table. Proposed names are a starting point for disagreement, not a standard.</p>
+</div>
+<h2 id="edges">The fifteen established edges</h2>
+<p>Cited in Appendix A of <code>briefs/07/28/regulation-graph-and-acceptability/v0.33.53__arch-brief__…every-paragraph-is-a-graph…</code> as the established set. Every one of them is a verb; every one is directed.</p>
+<div class="tablewrap">
+<table>
+<thead>
+<tr>
+<th>Edge</th>
+<th>Inverse</th>
+<th>Reads as</th>
+<th>Where the inverse comes from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>connected_to</code></td>
+<td><code>connected_to</code></td>
+<td>A is connected to B</td>
+<td><span class="pill p-argued">symmetric</span></td>
+</tr>
+<tr>
+<td><code>observed_on</code></td>
+<td><code>bears_observation</code></td>
+<td>this evidence was observed on this system</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>backed_by</code></td>
+<td><code>evidences</code></td>
+<td>this fact is backed by this evidence</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>measured_by</code></td>
+<td><code>measures</code></td>
+<td>this fact is measured by this measure</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>grants</code></td>
+<td><code>granted_by</code></td>
+<td>this role grants this capability</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>reaches</code></td>
+<td><code>reachable_from</code></td>
+<td>this grant reaches this asset</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>enables</code></td>
+<td><code>enabled_by</code></td>
+<td>this capability enables this action</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>exposes</code></td>
+<td><code>exposed_by</code></td>
+<td>this fact exposes this blast radius</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>gives_rise_to</code></td>
+<td><code>arises_from</code></td>
+<td>this vulnerability gives rise to this risk</td>
+<td><span class="pill p-ships">in the corpus</span></td>
+</tr>
+<tr>
+<td><code>protected_by</code></td>
+<td><code>protects</code></td>
+<td>this asset is protected by this control</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>conditional_on</code></td>
+<td><code>conditions</code></td>
+<td>this control is conditional on this fact</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>defeated_by</code></td>
+<td><code>defeats</code></td>
+<td>this control is defeated by this attack</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>owned_by</code></td>
+<td><code>owns</code></td>
+<td>this system is owned by this role</td>
+<td><span class="pill p-ships">in the corpus</span></td>
+</tr>
+<tr>
+<td><code>accepted_by</code></td>
+<td><code>accepted</code></td>
+<td>this risk is accepted by this role</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+<tr>
+<td><code>underwritten_by</code></td>
+<td><code>underwrites</code></td>
+<td>this acceptance is underwritten by this role</td>
+<td><span class="pill p-argued">proposed here</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="warnbox"><p><strong>One row is in tension with this book's own rule.</strong> <code>connected_to</code> is the only symmetric edge in the set, and a symmetric edge with a broad verb sits uncomfortably close to <a href="ch-03-the-rules-you-can-apply-tomorrow.html#banned">the one that is banned</a>. It survives because in the graphs that use it it means something specific (physically or logically attached) rather than “associated somehow”. Treat it as a last resort: wherever you can name what kind of connection it is, name it, and the query gets better. If you think it should be dropped from the set, <a href="https://graphs.sgit.ai/admin/comms.html">say so</a>.</p>
+</div>
+<h3 id="also-used">Also used in the worked graphs</h3>
+<p>These appear in the browser-isolation graph and the 2FA (two-factor authentication) graph but are not in the fifteen. They are listed separately rather than folded in, because folding them in would quietly enlarge a set somebody else cited.</p>
+<div class="tablewrap">
+<table>
+<thead>
+<tr>
+<th>Edge</th>
+<th>Inverse</th>
+<th>Reads as</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>impairs</code></td>
+<td><code>impaired_by</code></td>
+<td>this risk impairs this asset</td>
+</tr>
+<tr>
+<td><code>emits</code></td>
+<td><code>emitted_by</code></td>
+<td>this control emits this detection signal</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="warnbox"><p><strong>One name is deliberately absent, and its absence is a rule.</strong> There is no generic association edge in this set. If you find yourself wanting one, the graph is telling you that you have not yet decided what the relationship is: <a href="ch-03-the-rules-you-can-apply-tomorrow.html#banned">rule 1</a>.</p>
+</div>
+<h2 id="node-types">Node types, from the worked graphs</h2>
+<p>Node types are more domain-specific than edges, so this is a worked example rather than a standard. These are the types in the two most complete graphs in the corpus.</p>
+<h3>The risk / assurance chain <span class="small dim">(browser isolation, 59 nodes / 75 edges)</span></h3>
+<p><code>Reality</code> · <code>Twin</code> · <code>Asset</code> · <code>Evidence</code> · <code>Measure</code> · <code>Fact</code> · <code>Grant</code> · <code>AuthorizationClosure</code> · <code>BlastRadius</code> · <code>Vulnerability</code> · <code>Risk</code> · <code>PreventiveControl</code> · <code>DetectiveControl</code> · <code>Owner</code> · <code>AcceptanceDecision</code></p>
+<p><code>AuthorizationClosure</code> is the one to notice: the transitive union of every grant reachable over assume-role, pass-role and wildcard edges. It is called <em>the agentic union</em>, and for an agent the closure is the rating floor, not the nominal grant. It is a node type that only exists because the graph can compute it.</p>
+<h3>The instance graph <span class="small dim">(2FA, 51 nodes / 53 edges)</span></h3>
+<p><code>Risk</code> (9) · <code>Actor</code> (9) · <code>Evidence</code> (6) · <code>Interval</code> (6) · <code>Fact</code> (5) · <code>Impact</code> (3) · <code>System</code> (2) · <code>Vulnerability</code> (2) · <code>DataClass</code> (2) · <code>Asset</code> · <code>ThreatAgent</code> · <code>Attack</code> · <code>Obligation</code> · <code>Register</code> · <code>Twin</code> · <code>Agent</code></p>
+<p><a href="ch-09-the-2fa-instance-graph.html">The 2FA graph in full →</a></p>
+<h2 id="shipped">The one that is actually running</h2>
+<p>Everything above is designed. One typed property graph in this project is <strong>live repository data</strong>, the issue tracker's own configuration: <strong>12 node types, 10 verb/inverse edge types with domain and range constraints, 71 nodes and 141 edges</strong> across 107 issue files, with edges stored bidirectionally.</p>
+<p>It is the cheapest credibility in this book and the most instructive artefact in this chapter, for two reasons. It demonstrates that domain and range constraints on a verb pair are enough structure to be useful. And it ships the banned edge, which is what the rule looks like when nothing enforces it. <a href="ch-12-what-ships-what-is-argued.html">What ships, in full →</a></p>
+<h2 id="rules">Rules for extending this set</h2>
+<ol>
+<li><strong>A new edge needs a sentence.</strong> If you cannot write “A ⟨verb⟩ B” and have a person in that business say it out loud, it is not an edge yet.</li>
+<li><strong>And its inverse needs a different sentence.</strong> If the inverse is just the same sentence read backwards, you have one relationship where you thought you had two. Check whether the direction you chose is the one with lower fan-out.</li>
+<li><strong>Domain and range, stated.</strong> Which node types may sit at each end. This is what makes a malformed graph detectable rather than merely wrong.</li>
+<li><strong>No generic association edge, ever.</strong> Not even temporarily. Temporarily is how the one in <code>link-types.json</code> got there.</li>
+<li><strong>Prefer adding an edge to adding a validation rule.</strong> Enrichment, not enforcement. The graph grows; it does not constrain.</li>
+</ol>
+<div class="agent">
+<h4>For an agent</h4><p>Use these fifteen verbs where they fit: <code>connected_to</code>, <code>observed_on</code>, <code>backed_by</code>, <code>measured_by</code>, <code>grants</code>, <code>reaches</code>, <code>enables</code>, <code>exposes</code>, <code>gives_rise_to</code>, <code>protected_by</code>, <code>conditional_on</code>, <code>defeated_by</code>, <code>owned_by</code>, <code>accepted_by</code>, <code>underwritten_by</code>. Each is directed and takes a distinct inverse. Do not invent a generic association edge. When you need a verb that is not here, name it as a sentence, state its inverse, state its domain and range, and mark it as an extension rather than folding it into this set.</p>
+</div>
+
+  
+      <div class="pagenav"><span><a href="ch-03-the-rules-you-can-apply-tomorrow.html">← 3 · The rules you can apply tomorrow</a></span><span><a href="ch-05-against-schema-first.html">5 · Against schema-first →</a></span></div>
+    </main>
+  </div>
+</div>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">graphs<span>.sgit.ai</span></div>
+    <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
+    <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
+    <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.4.0</a> · <a href="../../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>Start here</h4>
+    <a href="../../v1/start/index.html">&#8594; The five-minute version</a>
+    <a href="../../v1/why-graphs/index.html">Why graphs at all</a>
+    <a href="../../v1/glossary/index.html">Glossary</a>
+    <a href="../../v1/book/index.html">The book</a>
+    <a href="../../v1/book/single.html">&nbsp;&nbsp;&hellip; in one page</a>
+    <a href="../../v1/book/meaning-through-connectivity.pdf">&nbsp;&nbsp;&hellip; as a print PDF</a>
+    <a href="../../v1/book/meaning-through-connectivity-screen.pdf">&nbsp;&nbsp;&hellip; as a screen PDF</a>
+  </div>
+  <div>
+    <h4>The grammar</h4>
+    <a href="../../v1/grammar/index.html">The rules</a>
+    <a href="../../v1/grammar/edge-set.html">The edge set</a>
+    <a href="../../v1/depth/index.html">The full argument</a>
+    <a href="../../v1/depth/boundaries.html">A graph at every boundary</a>
+  </div>
+  <div>
+    <h4>Worked graphs</h4>
+    <a href="../../v1/examples/index.html">All of them</a>
+    <a href="../../v1/examples/browser-isolation.html">Browser isolation</a>
+    <a href="../../v1/examples/2fa.html">The 2FA graph</a>
+    <a href="../../v1/examples/article-26-5.html">Article 26(5)</a>
+    <a href="../../v1/maps/index.html">Wardley maps</a>
+  </div>
+  <div>
+    <h4>Reality &amp; site</h4>
+    <a href="../../v1/shipped/index.html">What ships, what is argued</a>
+    <a href="../../v1/origins/index.html">Origins: 2026</a>
+    <a href="../../v1/network/index.html">The network</a>
+    <a href="../../v1/documents/index.html">The documents</a>
+    <a href="../../admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

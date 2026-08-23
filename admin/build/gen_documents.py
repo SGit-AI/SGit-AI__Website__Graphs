@@ -119,7 +119,7 @@ HEAD = '''<!doctype html>
 <meta property="og:description" content="{desc}">
 <meta name="twitter:card" content="summary">
 <link rel="alternate" type="text/markdown" href="../briefs/{src}" title="The raw markdown, which is the source of truth">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
 
@@ -153,19 +153,19 @@ HEAD = '''<!doctype html>
 </main>
 
 <footer class="site"><div class="cols"></div></footer>
-<script src="../assets/vendor/marked.min.js"></script>
-<script src="../assets/mdreader.js" defer></script>
+<script src="../../assets/vendor/marked.min.js"></script>
+<script src="../../assets/mdreader.js" defer></script>
 </body>
 </html>
 '''
 
 
 def main():
-    out = ROOT / "documents"
+    out = ROOT / "v1/documents"
     out.mkdir(exist_ok=True)
     written = []
     for slug, src, title, kind, fact, why in DOCS:
-        if not (ROOT / "briefs" / src).exists():
+        if not (ROOT / "v1/briefs" / src).exists():
             print(f"  ! briefs/{src} is missing", file=sys.stderr)
             continue
         desc = fact.replace('"', "&quot;")

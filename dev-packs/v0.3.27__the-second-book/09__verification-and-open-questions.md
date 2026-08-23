@@ -72,14 +72,11 @@ untouched. That is a real reduction, and it is a reason to start rather than to 
 
 These are the founder's. Each one blocks something specific, named.
 
-### 1. The freeze: copy or freeze in place?
+### 1. The freeze: copy or freeze in place? · **ANSWERED 23 August**
 
-Memo 2.6 asks for a copy of everything. ADR-1 proposes copying the **source** and freezing the
-**published pages in place**, because a literal copy moves or duplicates thirty-four URLs that
-the reviews, the ladder, the concept map and the carried sources all link into.
-
-*Blocks:* phase 0. *Recommendation:* ADR-1 as written. *Cost of the alternative:* rewriting
-links inside files that are themselves historical records.
+**It is a move, to a `v1/` prefix.** Not a copy, and not a freeze in place. The second book takes
+its own copies into `v2/` as it needs them, so each edition owns everything it uses. ADR-1 in
+file 03 records the boundary, the URL cost and the gate. Shipped as v0.4.0.
 
 ### 2. Where does the second book live, and what happens to the front page?
 

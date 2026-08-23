@@ -19,7 +19,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup, NavigableString, Tag
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "content"
+OUT = ROOT / "v1/content"
 
 # output-page path -> content name (chapter order = book order, plus glossary etc.)
 PAGES = {

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Acceptance-gated escalation — graphs.sgit.ai</title>
+<meta name="description" content="Seven altitudes, one named owner each, a risk that sits pending until that owner accepts it personally, escalation only after acceptance, and no deny button. The most transferable mechanism in the vault catalogue.">
+<link rel="canonical" href="https://graphs.sgit.ai/vaults/agentic-browser-isolation/acceptance.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="graphs.sgit.ai">
+<meta property="og:url" content="https://graphs.sgit.ai/vaults/agentic-browser-isolation/acceptance.html">
+<meta property="og:title" content="Acceptance-gated escalation">
+<meta property="og:description" content="No deny button: accept, mitigate, or ask for more data. And nothing moves up until somebody personally takes it.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../../index.html">graphs<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
+  <span class="stage-pill">reference draft</span>
+  <a class="ver" href="../../../admin/versions.html" title="Site release history">v0.4.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/start/index.html">Start here<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/start/index.html">The five-minute version</a>
+      <a class="sl" href="../../../v1/why-graphs/index.html">Why graphs at all</a>
+      <a class="sl" href="../../../v1/glossary/index.html">Glossary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/book/index.html">The book<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/book/index.html">Table of contents</a>
+      <a class="sl" href="../../../v1/book/single.html">Read it in one page</a>
+      <a class="sl" href="../../../v1/book/changes.html">What changed between versions</a>
+      <a class="sl" href="../../../v1/reviews/index.html">The reviews</a>
+      <a class="sl" href="../../../decisions/index.html">&hellip; the open decisions</a>
+      <a class="sl" href="../../../v1/docs/index.html">The sources it came from</a>
+      <a class="sl" href="../../../v1/altitudes/index.html">The altitude ladder</a>
+      <a class="sl" href="../../../v1/altitudes/graph.html">&hellip; as one graph</a>
+      <a class="sl" href="../../../v1/altitudes/concepts.html">&hellip; the concept map</a>
+      <a class="sl" href="../../../v1/book/meaning-through-connectivity.pdf">The print PDF (6&times;9)</a>
+      <a class="sl" href="../../../v1/book/meaning-through-connectivity-screen.pdf">The screen PDF (tablet)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/grammar/index.html">The grammar<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/grammar/index.html">The rules you can apply tomorrow</a>
+      <a class="sl" href="../../../v1/grammar/edge-set.html">The edge set</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/depth/index.html">Depth<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/depth/index.html">The full argument</a>
+      <a class="sl" href="../../../v1/depth/boundaries.html">A graph at every boundary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../../../v1/vaults/index.html">The vaults<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/vaults/index.html">The vaults, opened</a>
+      <a class="sl" href="../../../v1/vaults/voice-debrief/index.html">VoiceDebrief</a>
+      <a class="sl" href="../../../v1/vaults/voice-debrief/junction.html">&hellip; the junction rule</a>
+      <a class="sl" href="../../../v1/vaults/voice-debrief/absence.html">&hellip; the empty layer</a>
+      <a class="sl" href="../../../v1/vaults/regulation-graph/index.html">Regulation Graph</a>
+      <a class="sl" href="../../../v1/vaults/regulation-graph/provenance.html">&hellip; the provenance chain</a>
+      <a class="sl" href="../../../v1/vaults/regulation-graph/engines.html">&hellip; the query engines</a>
+      <a class="sl" href="../../../v1/vaults/risk-mandate/index.html">Risk Mandate</a>
+      <a class="sl" href="../../../v1/vaults/agentic-browser-isolation/index.html">Agentic Browser Isolation</a>
+      <a class="sl here" href="../../../v1/vaults/agentic-browser-isolation/acceptance.html">&hellip; the acceptance mechanism</a>
+      <a class="sl" href="../../../v1/vaults/risk-graph-explorer/index.html">Risk Graph Explorer</a>
+      <a class="sl" href="../../../v1/vaults/capability-scale.html">The capability scale</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/examples/index.html">Examples<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/examples/index.html">Worked graphs, with real numbers</a>
+      <a class="sl" href="../../../v1/examples/browser-isolation.html">Browser isolation</a>
+      <a class="sl" href="../../../v1/examples/2fa.html">The 2FA graph</a>
+      <a class="sl" href="../../../v1/examples/article-26-5.html">Article 26(5), end to end</a>
+      <a class="sl" href="../../../v1/maps/index.html">Wardley maps as graphs</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/shipped/index.html">Reality<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/shipped/index.html">What ships, what is argued</a>
+      <a class="sl" href="../../../v1/origins/index.html">Origins: 2026</a>
+      <a class="sl" href="../../../v1/network/index.html">The network</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/documents/index.html">Site<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/documents/index.html">The documents</a>
+      <a class="sl" href="../../../v1/documents/what-the-graphs-found.html">&hellip; what the graphs found</a>
+      <a class="sl" href="../../../dev-pack/index.html">The dev pack: the second book</a>
+      <a class="sl" href="../../../admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl" href="../../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../../admin/publishing.html">Publishing the book</a>
+      <a class="sl" href="../../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../../v1/about/participant.html">Where we lose</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Graphs">★ GitHub</a>
+  <script src="../../../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+  <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> → <a href="../index.html">the vaults</a> → <a href="index.html">Agentic Browser Isolation</a> → <b>Acceptance-gated escalation</b></div>
+  <h1>Acceptance-gated escalation</h1>
+  <p class="lead">Strip the browsers out of this vault and one mechanism is left that would work on almost any decision anywhere. It is four rules, and each one removes a specific way that organisational decisions normally rot.</p>
+
+  <ol class="acclist">
+    <li><b>Every altitude has one named owner.</b> L1 IT, L2 CISO, L3 DPO, CFO and COO, L4 CEO, L5 Board. Not a team, not a function: a person at that altitude.</li>
+    <li><b>Each owner holds the risk in their own language.</b> The same exposure is restated at every level rather than passed upward verbatim. A board does not receive a sentence about session cookies; it receives what that exposure means at its altitude.</li>
+    <li><b>Nothing is assigned automatically.</b> A risk sits <em>pending</em> until its owner accepts it <b>personally</b>, and <b>only an accepted risk escalates</b> to the altitude above.</li>
+    <li><b>There is no deny button.</b> The available moves are accept, mitigate, or ask for more data. You cannot make a risk go away by disagreeing with it.</li>
+  </ol>
+
+  <figure class="vshot"><img src="images/stakeholders.webp" width="1500" height="1050" loading="lazy" alt="Seven stakeholder altitudes, each with its own pending and accepted counts."><figcaption>Seven stakeholder altitudes, each with its own pending and accepted counts. <span class="small dim">· the vault's own published figure, <a href="https://sgit.ai/demos/vaults/agentic-browser-isolation/index.html">sgit.ai/demos/vaults/agentic-browser-isolation/</a>, fetched 22 August 2026, CC BY 4.0</span></figcaption></figure>
+
+  <h2 id="counts">Read the counts, not the diagram</h2>
+  <p>The picture above is a status report and most readers walk past it. IT has <b>five risks pending</b>; every altitude above it is <b>waiting, with nothing arrived</b>. That is not a rendering artefact and it is not a backlog: it is the mechanism working. Nothing has been passed up <em>because nothing has been accepted yet</em>, and the system refuses to let an unaccepted risk appear on a board's plate as though somebody had taken it.</p>
+  <p>Compare the failure mode this replaces. In the ordinary arrangement, a risk is <em>escalated</em> — which usually means forwarded — and arrives at a higher altitude with nobody having taken responsibility at the lower one. The higher owner then either accepts something they cannot evaluate, or sends it back, and either way the record shows movement where none happened. Requiring personal acceptance before escalation makes the ownership <b>legible as data</b> rather than implied by an email thread.</p>
+
+  <h2 id="graph">Why this is a graph mechanism and not a workflow</h2>
+  <p>A workflow would model this as states and transitions. What the vault models instead is <b>edges with named owners on them</b>, which buys three things a state machine does not.</p>
+  <ul>
+    <li><b>The absence is visible.</b> An altitude with nothing arrived is showing you a fact — nobody below has accepted — rather than an empty queue. This book calls that <a href="../../book/ch-02-the-five-ideas.html#gaps">a named absence</a>, and here it is load-bearing: the emptiness of the board's list is the most informative thing on the page.</li>
+    <li><b>The path is the answer.</b> Ask <em>who holds this exposure?</em> and the answer is a traversal — from the technical fact, through each acceptance, to whichever altitude it has reached — rather than a field somebody set. <a href="../../book/ch-05-against-schema-first.html#formulas">Classification as a computed path</a>, applied to accountability.</li>
+    <li><b>Restatement is an edge, not a copy.</b> Because each altitude holds the risk in its own language, the same exposure exists as several nodes joined by acceptance edges. Nothing is overwritten in translation, so a board-level statement can always be walked back down to the packet it came from.</li>
+  </ul>
+
+  <h2 id="borrowed">This site has borrowed it</h2>
+  <p>The <a href="../../../decisions/index.html">decisions page</a> published alongside this analysis runs the same four rules over the open decisions of the book's reviews: one named owner, options rather than a yes-or-no, nothing moves until it is taken personally, and no deny button — a decision can be answered, deferred with a reason, or sent back for more data, but it cannot be silently dropped. Borrowing a mechanism from an artefact you are analysing is the strongest form of citation available: <b>it either works or it visibly does not</b>.</p>
+
+  <div class="vcite"><span class="revlbl">What the book will cite from this</span><ul>
+    <li>A <b>section of its own</b>, wherever acceptance is discussed: the four rules are short enough to quote in full and general enough to apply outside risk.</li>
+    <li><b>Chapter 2's named absence</b> gains its strongest instance: an empty altitude that is informative precisely because it is empty.</li>
+    <li><b>Chapter 5's classification-as-a-query</b> gains an accountability example, which is more legible to a business reader than the vulnerability formula it currently uses.</li>
+    <li><b>Chapter 16 (where this loses)</b> gains an honest cost: acceptance-gating slows escalation down on purpose, and an organisation that wants speed above traceability will hate it.</li>
+  </ul></div>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">graphs<span>.sgit.ai</span></div>
+    <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
+    <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
+    <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../../../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../../admin/versions.html">v0.4.0</a> · <a href="../../../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>Start here</h4>
+    <a href="../../../v1/start/index.html">&#8594; The five-minute version</a>
+    <a href="../../../v1/why-graphs/index.html">Why graphs at all</a>
+    <a href="../../../v1/glossary/index.html">Glossary</a>
+    <a href="../../../v1/book/index.html">The book</a>
+    <a href="../../../v1/book/single.html">&nbsp;&nbsp;&hellip; in one page</a>
+    <a href="../../../v1/book/meaning-through-connectivity.pdf">&nbsp;&nbsp;&hellip; as a print PDF</a>
+    <a href="../../../v1/book/meaning-through-connectivity-screen.pdf">&nbsp;&nbsp;&hellip; as a screen PDF</a>
+  </div>
+  <div>
+    <h4>The grammar</h4>
+    <a href="../../../v1/grammar/index.html">The rules</a>
+    <a href="../../../v1/grammar/edge-set.html">The edge set</a>
+    <a href="../../../v1/depth/index.html">The full argument</a>
+    <a href="../../../v1/depth/boundaries.html">A graph at every boundary</a>
+  </div>
+  <div>
+    <h4>Worked graphs</h4>
+    <a href="../../../v1/examples/index.html">All of them</a>
+    <a href="../../../v1/examples/browser-isolation.html">Browser isolation</a>
+    <a href="../../../v1/examples/2fa.html">The 2FA graph</a>
+    <a href="../../../v1/examples/article-26-5.html">Article 26(5)</a>
+    <a href="../../../v1/maps/index.html">Wardley maps</a>
+  </div>
+  <div>
+    <h4>Reality &amp; site</h4>
+    <a href="../../../v1/shipped/index.html">What ships, what is argued</a>
+    <a href="../../../v1/origins/index.html">Origins: 2026</a>
+    <a href="../../../v1/network/index.html">The network</a>
+    <a href="../../../v1/documents/index.html">The documents</a>
+    <a href="../../../admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="../../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

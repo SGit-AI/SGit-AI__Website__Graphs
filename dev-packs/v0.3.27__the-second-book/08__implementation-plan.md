@@ -28,9 +28,14 @@ work: there is no phase after which the project has a half-finished artefact.
 
 ---
 
-## Phase 0 · Freeze the first edition
+## Phase 0 · Freeze the first edition · **DONE at v0.4.0**
 
-**No book text changes. Nothing is deleted.**
+**No book text changed. Nothing was deleted.** It was executed as a **move** rather than a
+copy, per the founder's answer to open question 1: everything that constitutes the first
+edition now sits under `v1/`, `v2/` exists and is empty, `v1/MANIFEST.json` records 236
+files and 10.9 MB, and gate 14 was verified negatively before the phase was called done.
+Ninety-three redirect stubs hold the former addresses. Two PDF URLs could not be preserved.
+
 
 1. Copy `content/`, the ladder data and the four review files into
    `books/01__first-edition/`, with a `MANIFEST.json` recording every path, its SHA-256, the

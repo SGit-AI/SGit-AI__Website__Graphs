@@ -34,7 +34,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
-OUT = ROOT / "book" / "cover"
+OUT = ROOT / "v1/book" / "cover"
 PDF_NAME = "meaning-through-connectivity-cover.pdf"
 DATE = "21 August 2026"
 
@@ -354,7 +354,7 @@ def wrap_svg(spine):
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    manifest_path = ROOT / "book/manifest.json"
+    manifest_path = ROOT / "v1/book/manifest.json"
     manifest = json.loads(manifest_path.read_text())
     pages = next(e["pages"] for e in manifest["pdfs"]
                  if e["file"] == "meaning-through-connectivity.pdf")

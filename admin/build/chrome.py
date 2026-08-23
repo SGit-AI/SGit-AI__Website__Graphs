@@ -36,98 +36,98 @@ PARENT_TITLE = ("sgit.ai — the parent project: the vault layer, the shipped CL
 #   · `prefixes` decides the "here" state, so a page that is not itself in the nav
 #     still lights up the group it belongs to.
 NAV = [
-    ("Start here", "start/index.html", [
-        ("The five-minute version", "start/index.html"),
-        ("Why graphs at all", "why-graphs/index.html"),
-        ("Glossary", "glossary/index.html"),
-    ], ("start/", "why-graphs/", "glossary/")),
-    ("The book", "book/index.html", [
-        ("Table of contents", "book/index.html"),
-        ("Read it in one page", "book/single.html"),
-        ("What changed between versions", "book/changes.html"),
-        ("The reviews", "reviews/index.html"),
+    ("Start here", "v1/start/index.html", [
+        ("The five-minute version", "v1/start/index.html"),
+        ("Why graphs at all", "v1/why-graphs/index.html"),
+        ("Glossary", "v1/glossary/index.html"),
+    ], ("v1/start/", "v1/why-graphs/", "v1/glossary/")),
+    ("The book", "v1/book/index.html", [
+        ("Table of contents", "v1/book/index.html"),
+        ("Read it in one page", "v1/book/single.html"),
+        ("What changed between versions", "v1/book/changes.html"),
+        ("The reviews", "v1/reviews/index.html"),
         ("&hellip; the open decisions", "decisions/index.html"),
-        ("The sources it came from", "docs/index.html"),
-        ("The altitude ladder", "altitudes/index.html"),
-        ("&hellip; as one graph", "altitudes/graph.html"),
-        ("&hellip; the concept map", "altitudes/concepts.html"),
-        ("The print PDF (6&times;9)", "book/meaning-through-connectivity.pdf"),
-        ("The screen PDF (tablet)", "book/meaning-through-connectivity-screen.pdf"),
-    ], ("book/", "altitudes/", "reviews/", "decisions/", "docs/")),
-    ("The grammar", "grammar/index.html", [
-        ("The rules you can apply tomorrow", "grammar/index.html"),
-        ("The edge set", "grammar/edge-set.html"),
-    ], ("grammar/",)),
-    ("Depth", "depth/index.html", [
-        ("The full argument", "depth/index.html"),
-        ("A graph at every boundary", "depth/boundaries.html"),
-    ], ("depth/",)),
-    ("The vaults", "vaults/index.html", [
-        ("The vaults, opened", "vaults/index.html"),
-        ("VoiceDebrief", "vaults/voice-debrief/index.html"),
-        ("&hellip; the junction rule", "vaults/voice-debrief/junction.html"),
-        ("&hellip; the empty layer", "vaults/voice-debrief/absence.html"),
-        ("Regulation Graph", "vaults/regulation-graph/index.html"),
-        ("&hellip; the provenance chain", "vaults/regulation-graph/provenance.html"),
-        ("&hellip; the query engines", "vaults/regulation-graph/engines.html"),
-        ("Risk Mandate", "vaults/risk-mandate/index.html"),
-        ("Agentic Browser Isolation", "vaults/agentic-browser-isolation/index.html"),
-        ("&hellip; the acceptance mechanism", "vaults/agentic-browser-isolation/acceptance.html"),
-        ("Risk Graph Explorer", "vaults/risk-graph-explorer/index.html"),
-        ("The capability scale", "vaults/capability-scale.html"),
-    ], ("vaults/",)),
-    ("Examples", "examples/index.html", [
-        ("Worked graphs, with real numbers", "examples/index.html"),
-        ("Browser isolation", "examples/browser-isolation.html"),
-        ("The 2FA graph", "examples/2fa.html"),
-        ("Article 26(5), end to end", "examples/article-26-5.html"),
-        ("Wardley maps as graphs", "maps/index.html"),
-    ], ("examples/", "maps/")),
-    ("Reality", "shipped/index.html", [
-        ("What ships, what is argued", "shipped/index.html"),
-        ("Origins: 2026", "origins/index.html"),
-        ("The network", "network/index.html"),
-    ], ("shipped/", "origins/", "network/")),
-    ("Site", "documents/index.html", [
-        ("The documents", "documents/index.html"),
-        ("&hellip; what the graphs found", "documents/what-the-graphs-found.html"),
+        ("The sources it came from", "v1/docs/index.html"),
+        ("The altitude ladder", "v1/altitudes/index.html"),
+        ("&hellip; as one graph", "v1/altitudes/graph.html"),
+        ("&hellip; the concept map", "v1/altitudes/concepts.html"),
+        ("The print PDF (6&times;9)", "v1/book/meaning-through-connectivity.pdf"),
+        ("The screen PDF (tablet)", "v1/book/meaning-through-connectivity-screen.pdf"),
+    ], ("v1/book/", "v1/altitudes/", "v1/reviews/", "decisions/", "v1/docs/")),
+    ("The grammar", "v1/grammar/index.html", [
+        ("The rules you can apply tomorrow", "v1/grammar/index.html"),
+        ("The edge set", "v1/grammar/edge-set.html"),
+    ], ("v1/grammar/",)),
+    ("Depth", "v1/depth/index.html", [
+        ("The full argument", "v1/depth/index.html"),
+        ("A graph at every boundary", "v1/depth/boundaries.html"),
+    ], ("v1/depth/",)),
+    ("The vaults", "v1/vaults/index.html", [
+        ("The vaults, opened", "v1/vaults/index.html"),
+        ("VoiceDebrief", "v1/vaults/voice-debrief/index.html"),
+        ("&hellip; the junction rule", "v1/vaults/voice-debrief/junction.html"),
+        ("&hellip; the empty layer", "v1/vaults/voice-debrief/absence.html"),
+        ("Regulation Graph", "v1/vaults/regulation-graph/index.html"),
+        ("&hellip; the provenance chain", "v1/vaults/regulation-graph/provenance.html"),
+        ("&hellip; the query engines", "v1/vaults/regulation-graph/engines.html"),
+        ("Risk Mandate", "v1/vaults/risk-mandate/index.html"),
+        ("Agentic Browser Isolation", "v1/vaults/agentic-browser-isolation/index.html"),
+        ("&hellip; the acceptance mechanism", "v1/vaults/agentic-browser-isolation/acceptance.html"),
+        ("Risk Graph Explorer", "v1/vaults/risk-graph-explorer/index.html"),
+        ("The capability scale", "v1/vaults/capability-scale.html"),
+    ], ("v1/vaults/",)),
+    ("Examples", "v1/examples/index.html", [
+        ("Worked graphs, with real numbers", "v1/examples/index.html"),
+        ("Browser isolation", "v1/examples/browser-isolation.html"),
+        ("The 2FA graph", "v1/examples/2fa.html"),
+        ("Article 26(5), end to end", "v1/examples/article-26-5.html"),
+        ("Wardley maps as graphs", "v1/maps/index.html"),
+    ], ("v1/examples/", "v1/maps/")),
+    ("Reality", "v1/shipped/index.html", [
+        ("What ships, what is argued", "v1/shipped/index.html"),
+        ("Origins: 2026", "v1/origins/index.html"),
+        ("The network", "v1/network/index.html"),
+    ], ("v1/shipped/", "v1/origins/", "v1/network/")),
+    ("Site", "v1/documents/index.html", [
+        ("The documents", "v1/documents/index.html"),
+        ("&hellip; what the graphs found", "v1/documents/what-the-graphs-found.html"),
         ("The dev pack: the second book", "dev-pack/index.html"),
         ("Comms: tasks &amp; requests", "admin/comms.html"),
         ("Release history", "admin/versions.html"),
         ("Publishing the book", "admin/publishing.html"),
         ("Admin &amp; engineering", "admin/index.html"),
-        ("Where we lose", "about/participant.html"),
-    ], ("documents/", "briefs/", "admin/", "about/", "dev-pack/")),
+        ("Where we lose", "v1/about/participant.html"),
+    ], ("v1/documents/", "v1/briefs/", "admin/", "v1/about/", "dev-pack/")),
 ]
 
 FOOTER = [
     ("Start here", [
-        ("&#8594; The five-minute version", "start/index.html"),
-        ("Why graphs at all", "why-graphs/index.html"),
-        ("Glossary", "glossary/index.html"),
-        ("The book", "book/index.html"),
-        ("&nbsp;&nbsp;&hellip; in one page", "book/single.html"),
-        ("&nbsp;&nbsp;&hellip; as a print PDF", "book/meaning-through-connectivity.pdf"),
-        ("&nbsp;&nbsp;&hellip; as a screen PDF", "book/meaning-through-connectivity-screen.pdf"),
+        ("&#8594; The five-minute version", "v1/start/index.html"),
+        ("Why graphs at all", "v1/why-graphs/index.html"),
+        ("Glossary", "v1/glossary/index.html"),
+        ("The book", "v1/book/index.html"),
+        ("&nbsp;&nbsp;&hellip; in one page", "v1/book/single.html"),
+        ("&nbsp;&nbsp;&hellip; as a print PDF", "v1/book/meaning-through-connectivity.pdf"),
+        ("&nbsp;&nbsp;&hellip; as a screen PDF", "v1/book/meaning-through-connectivity-screen.pdf"),
     ]),
     ("The grammar", [
-        ("The rules", "grammar/index.html"),
-        ("The edge set", "grammar/edge-set.html"),
-        ("The full argument", "depth/index.html"),
-        ("A graph at every boundary", "depth/boundaries.html"),
+        ("The rules", "v1/grammar/index.html"),
+        ("The edge set", "v1/grammar/edge-set.html"),
+        ("The full argument", "v1/depth/index.html"),
+        ("A graph at every boundary", "v1/depth/boundaries.html"),
     ]),
     ("Worked graphs", [
-        ("All of them", "examples/index.html"),
-        ("Browser isolation", "examples/browser-isolation.html"),
-        ("The 2FA graph", "examples/2fa.html"),
-        ("Article 26(5)", "examples/article-26-5.html"),
-        ("Wardley maps", "maps/index.html"),
+        ("All of them", "v1/examples/index.html"),
+        ("Browser isolation", "v1/examples/browser-isolation.html"),
+        ("The 2FA graph", "v1/examples/2fa.html"),
+        ("Article 26(5)", "v1/examples/article-26-5.html"),
+        ("Wardley maps", "v1/maps/index.html"),
     ]),
     ("Reality &amp; site", [
-        ("What ships, what is argued", "shipped/index.html"),
-        ("Origins: 2026", "origins/index.html"),
-        ("The network", "network/index.html"),
-        ("The documents", "documents/index.html"),
+        ("What ships, what is argued", "v1/shipped/index.html"),
+        ("Origins: 2026", "v1/origins/index.html"),
+        ("The network", "v1/network/index.html"),
+        ("The documents", "v1/documents/index.html"),
         ("Comms: tasks &amp; requests", "admin/comms.html"),
         ("llms.txt", "llms.txt"),
     ]),
@@ -176,8 +176,8 @@ def nav_html(rel, up):
 
 
 def footer_html(rel, up):
-    partnote = PARTNOTE_SELF if rel == "about/participant.html" else PARTNOTE.format(up=up)
-    md_twin = f' · <a href="{up}index.md">this page as markdown</a>' if rel == "index.html" else ""
+    partnote = PARTNOTE_SELF if rel == "v1/about/participant.html" else PARTNOTE.format(up=up)
+    md_twin = f' · <a href="{up}v1/index.md">this page as markdown</a>' if rel == "v1/index.html" else ""
     cols = "\n".join(
         "  <div>\n"
         f"    <h4>{head}</h4>\n"
@@ -218,7 +218,7 @@ def stamp_text_twins():
     for name, pat, repl in (
             ("llms.txt", r"Site version: v\d+\.\d+\.\d+(?: \([^)]*\))?", stamp),
             ("llms-full.txt", r"Site version: v\d+\.\d+\.\d+(?: \([^)]*\))?", stamp),
-            ("index.md", r"· site v\d+\.\d+\.\d+ ·", f"· site {VERSION} ·")):
+            ("v1/index.md", r"· site v\d+\.\d+\.\d+ ·", f"· site {VERSION} ·")):
         f = ROOT / name
         if not f.exists():
             continue
@@ -233,17 +233,39 @@ def stamp_text_twins():
     return out
 
 
+def is_stub(t):
+    """Redirect stubs left at the first edition's former addresses carry no chrome by
+    design: they are signposts, not pages, and adding a nav to one would invite a reader
+    to stay on it."""
+    return '<meta name="robots" content="noindex">' in t and 'This page moved' in t
+
+
+# Once the first edition is frozen its chrome freezes with it: a frozen page carries the
+# nav and the version badge of the release it froze at, which is the honest thing for an
+# artefact that is evidence rather than working material. Without this, every release
+# would rewrite the nav inside v1/ and gate 14 would fail on the next build.
+FROZEN_TREE = ROOT / "v1"
+FREEZE_MANIFEST = FROZEN_TREE / "MANIFEST.json"
+
+
 def main():
+    frozen = FREEZE_MANIFEST.exists()
     changed = []
+    skipped = 0
     for path in sorted(ROOT.rglob("*.html")):
         if ".git" in path.parts:
             continue
-        if path.relative_to(ROOT).as_posix() in ("book/print.html", "book/cover/wrap.html"):
+        if frozen and FROZEN_TREE in path.parents:
+            skipped += 1
+            continue
+        if path.relative_to(ROOT).as_posix() in ("v1/book/print.html", "v1/book/cover/wrap.html"):
             # print sources carry no site chrome by design
             continue
         rel = path.relative_to(ROOT).as_posix()
         up = "../" * (len(path.relative_to(ROOT).parts) - 1)
         text = path.read_text()
+        if is_stub(text):
+            continue
         before = text
         text, n_nav = re.subn(r'<nav class="site">.*?</nav>', lambda _: nav_html(rel, up),
                               text, count=1, flags=re.S)
@@ -257,7 +279,8 @@ def main():
             path.write_text(text)
             changed.append(rel)
     changed += stamp_text_twins()
-    print(f"chrome: {VERSION} applied — {len(changed)} file(s) updated")
+    note = f", {skipped} frozen page(s) left alone" if skipped else ""
+    print(f"chrome: {VERSION} applied — {len(changed)} file(s) updated{note}")
     for c in changed:
         print(f"  · {c}")
 

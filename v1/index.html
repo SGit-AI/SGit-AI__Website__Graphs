@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>graphs.sgit.ai — meaning through connectivity</title>
+<meta name="description" content="A node carries no inherent meaning. What a thing is emerges from the edges traceable from it, and confidence in that meaning is proportional to how richly it is connected. A reference site that teaches that discipline in three altitudes and proves it with real worked graphs.">
+<link rel="canonical" href="https://graphs.sgit.ai/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="graphs.sgit.ai">
+<meta property="og:url" content="https://graphs.sgit.ai/index.html">
+<meta property="og:title" content="graphs.sgit.ai — a node is just a node; meaning lives in the edges">
+<meta property="og:description" content="Two nodes both hold 8080. One is connected to a type, a library and a version; the other to nothing. The difference is not in the value; it is in the connectivity. Not a graph database pitch.">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="text/markdown" href="index.md" title="This page as markdown">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
+  <span class="stage-pill">reference draft</span>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../v1/start/index.html">Start here<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../v1/start/index.html">The five-minute version</a>
+      <a class="sl" href="../v1/why-graphs/index.html">Why graphs at all</a>
+      <a class="sl" href="../v1/glossary/index.html">Glossary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../v1/book/index.html">The book<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../v1/book/index.html">Table of contents</a>
+      <a class="sl" href="../v1/book/single.html">Read it in one page</a>
+      <a class="sl" href="../v1/book/changes.html">What changed between versions</a>
+      <a class="sl" href="../v1/reviews/index.html">The reviews</a>
+      <a class="sl" href="../decisions/index.html">&hellip; the open decisions</a>
+      <a class="sl" href="../v1/docs/index.html">The sources it came from</a>
+      <a class="sl" href="../v1/altitudes/index.html">The altitude ladder</a>
+      <a class="sl" href="../v1/altitudes/graph.html">&hellip; as one graph</a>
+      <a class="sl" href="../v1/altitudes/concepts.html">&hellip; the concept map</a>
+      <a class="sl" href="../v1/book/meaning-through-connectivity.pdf">The print PDF (6&times;9)</a>
+      <a class="sl" href="../v1/book/meaning-through-connectivity-screen.pdf">The screen PDF (tablet)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../v1/grammar/index.html">The grammar<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../v1/grammar/index.html">The rules you can apply tomorrow</a>
+      <a class="sl" href="../v1/grammar/edge-set.html">The edge set</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../v1/depth/index.html">Depth<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../v1/depth/index.html">The full argument</a>
+      <a class="sl" href="../v1/depth/boundaries.html">A graph at every boundary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../v1/vaults/index.html">The vaults<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../v1/vaults/index.html">The vaults, opened</a>
+      <a class="sl" href="../v1/vaults/voice-debrief/index.html">VoiceDebrief</a>
+      <a class="sl" href="../v1/vaults/voice-debrief/junction.html">&hellip; the junction rule</a>
+      <a class="sl" href="../v1/vaults/voice-debrief/absence.html">&hellip; the empty layer</a>
+      <a class="sl" href="../v1/vaults/regulation-graph/index.html">Regulation Graph</a>
+      <a class="sl" href="../v1/vaults/regulation-graph/provenance.html">&hellip; the provenance chain</a>
+      <a class="sl" href="../v1/vaults/regulation-graph/engines.html">&hellip; the query engines</a>
+      <a class="sl" href="../v1/vaults/risk-mandate/index.html">Risk Mandate</a>
+      <a class="sl" href="../v1/vaults/agentic-browser-isolation/index.html">Agentic Browser Isolation</a>
+      <a class="sl" href="../v1/vaults/agentic-browser-isolation/acceptance.html">&hellip; the acceptance mechanism</a>
+      <a class="sl" href="../v1/vaults/risk-graph-explorer/index.html">Risk Graph Explorer</a>
+      <a class="sl" href="../v1/vaults/capability-scale.html">The capability scale</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../v1/examples/index.html">Examples<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../v1/examples/index.html">Worked graphs, with real numbers</a>
+      <a class="sl" href="../v1/examples/browser-isolation.html">Browser isolation</a>
+      <a class="sl" href="../v1/examples/2fa.html">The 2FA graph</a>
+      <a class="sl" href="../v1/examples/article-26-5.html">Article 26(5), end to end</a>
+      <a class="sl" href="../v1/maps/index.html">Wardley maps as graphs</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../v1/shipped/index.html">Reality<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../v1/shipped/index.html">What ships, what is argued</a>
+      <a class="sl" href="../v1/origins/index.html">Origins: 2026</a>
+      <a class="sl" href="../v1/network/index.html">The network</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../v1/documents/index.html">Site<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../v1/documents/index.html">The documents</a>
+      <a class="sl" href="../v1/documents/what-the-graphs-found.html">&hellip; what the graphs found</a>
+      <a class="sl" href="../dev-pack/index.html">The dev pack: the second book</a>
+      <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/publishing.html">Publishing the book</a>
+      <a class="sl" href="../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../v1/about/participant.html">Where we lose</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Graphs">★ GitHub</a>
+  <script src="../assets/nav.js" defer></script>
+</div></nav>
+
+<header class="hero">
+  <div class="eyebrow">Semantic graphs · meaning through connectivity</div>
+  <h1>A node is just a node.<br>Meaning lives in the edges.</h1>
+  <p class="sub">Two nodes both hold the value <code>8080</code>. One is connected to a type, which is connected to a library, which is connected to a version. The other is connected to nothing. <b>The difference is not in the value. The difference is in the connectivity.</b> This site teaches that discipline, in increasing depth, and proves it with real worked graphs.</p>
+  <div class="ctas">
+    <a class="cta1" href="start/index.html">Start at the city walls →</a>
+    <a class="cta2" href="why-graphs/index.html">Why graphs at all →</a>
+    <a class="cta2" href="grammar/index.html">The rules, if you are in a hurry →</a>
+  </div>
+</header>
+
+<section class="band alt" id="claim">
+  <div class="split">
+    <blockquote class="challenge" style="margin-top:0">“in our graph we do not use properties, because properties do not have meaning, they are just words; <b>we capture meaning through connectivity.</b>”
+      <span class="small dim" style="display:block;font-style:normal;margin-top:.7rem">— Dinis Cruz, 26 June 2026, in an architecture brief about digital twins. The tightest formulation in the corpus; <a href="documents/the-thesis.html">the other thirty-four are here</a>.</span>
+    </blockquote>
+    <div class="note" style="margin-bottom:0"><b>Read this before you read anything else: this is not a graph database pitch.</b> The claim is that one grammar is the interface at every boundary, <em>not</em> that we store things in a graph. There is no graph database anywhere in the work behind this site, and <a href="shipped/index.html">we say so on its own page</a>. If you came here expecting Neo4j-versus-RDF, <a href="why-graphs/index.html#positioning">the positioning page</a> is the honest answer.</div>
+  </div>
+</section>
+
+<section class="band" id="hook">
+  <h2>The story that needs no security or legal background</h2>
+  <p class="blurb">If you only read one thing here, read this. It is what a graph does that a document cannot.</p>
+  <div class="split">
+    <p>Everyone has heard that expertise takes <b>10,000 hours</b>. The number comes from a 1993 study of violinists. In that study it was an <em>average</em>, not a threshold, and half the top group had not reached it. The original author spent much of his career correcting the popularisation.</p>
+    <p><b>None of the corrections ever attached to the claim.</b> The claim had by then been carried through a citation network of <b>242 papers</b> and more than <b>200,000 supporting citation paths</b>: paths which, followed to the bottom, lead back to nothing.</p>
+    <p>A document cannot fix this. You can publish a correction, and the correction sits somewhere else, unread. A graph can: mark the claim superseded from a date, and then <b>ask the graph which conclusions were resting on it</b>. That query has an answer. It is the same query, whether the claim is a study about violinists, a risk someone accepted last quarter, or a fact your compliance report depends on.</p>
+    <p class="small dim">Source: <code>briefs/08/09/graphing-text/v0.33.57__arch-brief__…fact-does-not-exist-in-a-vacuum…</code>, 9 August 2026. Discussed at <a href="depth/index.html#supersede">supersede, never delete</a>.</p>
+  </div>
+</section>
+
+<section class="band alt" id="altitudes">
+  <h2>Three altitudes</h2>
+  <p class="blurb">“this is just a question of <b>altitude</b>, like if you see something from a very high altitude you just see the city walls, and as you zoom in you start to see roads and buildings, and eventually people and cars.” The site is built that way on purpose: the navigation is a demonstration of the argument, not just a way around it.</p>
+  <div class="altitudes">
+    <a class="alt" href="start/index.html">
+      <div class="num">Altitude 1 · the city walls</div>
+      <h3>Start here</h3>
+      <p>Five ideas, no jargon, about fifteen minutes. A port number, five teams who all say “Review” and mean five different things, and why “we cannot confirm Z” is a better answer than a guess.</p>
+      <span class="go">The five-minute version →</span>
+    </a>
+    <a class="alt a2" href="grammar/index.html">
+      <div class="num">Altitude 2 · roads and buildings</div>
+      <h3>The grammar</h3>
+      <p>Rules you can apply to your own graph tomorrow. Every edge is a verb with a distinct inverse. <code data-banned-verb>relates-to</code> is banned. Never render the whole graph: render the result of a query.</p>
+      <span class="go">The rules →</span>
+    </a>
+    <a class="alt a3" href="depth/index.html">
+      <div class="num">Altitude 3 · people and cars</div>
+      <h3>Depth</h3>
+      <p>The full argument: against schema-first, ontologies of ontologies, classification as a computed path-pattern, and why determinism and provenance are <em>consequences</em> of fixing the seams rather than features.</p>
+      <span class="go">The full argument →</span>
+    </a>
+  </div>
+</section>
+
+<section class="band" id="book">
+  <h2>Or read it as a book</h2>
+  <p class="blurb">The same content, in a reading order: <b>Meaning Through Connectivity</b>, an introduction and sixteen chapters in six parts. The book is generated from these pages, so the two cannot drift: the build fails if a page changes without the book regenerating. Documents are projections; this is that argument, applied to this site.</p>
+  <div class="cards" style="max-width:900px">
+    <a class="card" href="book/index.html">
+      <div class="tag">chapters</div>
+      <h3>Chapter pages</h3>
+      <p>One chapter per page, with the table of contents beside you. The claim, the grammar, the full argument, the proof, reality.</p>
+      <span class="go">Open the contents →</span>
+    </a>
+    <a class="card" href="book/single.html">
+      <div class="tag">one page</div>
+      <h3>The whole book, one page</h3>
+      <p>The introduction and all sixteen chapters in a single HTML file: read it straight through, search it with ctrl-F, or fetch it once.</p>
+      <span class="go">Read it in one page →</span>
+    </a>
+    <a class="card" href="book/meaning-through-connectivity.pdf">
+      <div class="tag">two pdfs</div>
+      <h3>The PDF, in two editions</h3>
+      <p>A <b>print interior</b> at 6″×9″ (gutters, folios, a paginated contents, print-on-demand ready) and a <b>screen edition</b> in the site's own design, made for reading on a tablet. Both regenerate together from the same chapters, stamped with the site version.</p>
+      <span class="go">Print →&nbsp;&nbsp;·&nbsp;&nbsp;<span style="white-space:nowrap"><a href="book/meaning-through-connectivity-screen.pdf" style="display:inline;padding:0">Screen →</a></span></span>
+    </a>
+  </div>
+</section>
+
+<section class="band alt" id="proof">
+  <h2>Real graphs, real numbers</h2>
+  <p class="blurb">Three of these are live and public right now: you can open them and count. The rest are parsed from the design documents behind them. We never mix the two: a live number is labelled live.</p>
+  <div class="proof">
+    <div class="n"><b>1,523 · 1,944</b><span>nodes · edges in the EU AI Act regulation graph</span><em>live vault</em></div>
+    <div class="n"><b>18 · 37 · 14</b><span>facts · risks · provisions in the Risk Graph Explorer “Exposed” preset</span><em>live vault</em></div>
+    <div class="n"><b>17</b><span>entry points in the agentic browser isolation graph, across 5 stakeholder altitudes</span><em>live vault</em></div>
+    <div class="n"><b>59 · 75</b><span>nodes · edges in the browser-isolation risk graph, including 3 risks <em style="font-style:italic">of the mitigation</em></span><em>parsed from the brief</em></div>
+    <div class="n"><b>51 · 53</b><span>nodes · edges in the 2FA (two-factor authentication) instance graph, in one machine-readable file</span><em>parsed from the brief</em></div>
+    <div class="n"><b>71 · 141</b><span>nodes · edges in a typed property graph that is live repo data, not a design</span><em>measured</em></div>
+  </div>
+  <p class="blurb" style="margin-top:1.6rem;margin-bottom:0"><a href="examples/index.html">All the worked examples, with what each one teaches →</a></p>
+</section>
+
+<section class="band" id="honesty">
+  <h2>What is built, and what is argued</h2>
+  <p class="blurb">This site's subject matter is almost entirely design. Saying so is not a caveat bolted on at the end; it is the reason the rest of it is worth reading.</p>
+  <div class="split">
+    <table>
+      <thead><tr><th>Ships, and you can check it by reading code</th><th>Argued, and published as argument</th><th>Absent, and we will not imply otherwise</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>A content-addressed commit DAG (directed acyclic graph) with multi-parent commits, a real wave-BFS (breadth-first search) merge-base and three-way merge · a graph of graphs via typed <code>*.link.json</code> edges · a read-only DAG query API exposed to untrusted sandboxed apps · a live typed property graph of <b>71 nodes / 141 edges</b> · three published vaults</td>
+          <td>The semantic risk ontology · node type formulas · ontologies of ontologies · the grounding ladder · a graph at every boundary · almost everything else on this site</td>
+          <td><b>No graph database.</b> No MGraph-DB dependency. No SPARQL or Cypher (the graph query languages) in the browser. No RDF or JSON-LD (the Semantic Web's formats) in the code. No path-query language. Commit signing is written and only ever set to <code>null</code></td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="cap">The honest sentence, which belongs on the front page rather than buried: <b>“We ship a hand-written content-addressed object graph in the browser. We do not use a graph database, and we say so in our own architecture notes.”</b> <a href="shipped/index.html">The full separation →</a></p>
+  </div>
+</section>
+
+<section class="band alt" id="agents">
+  <h2>If you are an agent</h2>
+  <div class="split">
+    <p>This site exists partly because agents under-weight this material, and the cause is known and mechanical: the three canonical philosophy documents were imported from another project, are referenced by four files, and are not referenced from the repository's <code>CLAUDE.md</code> at all. An agent reading that file and working forwards <b>never encounters the philosophy</b>. That is a routing failure, not a comprehension failure, so the fix is an address.</p>
+    <div class="agent">
+      <h4>For an agent</h4>
+      <p>Fetch <a href="../llms.txt">/llms.txt</a> first: every entry carries the page's single most important fact, not just its topic, because for some fetch tools those descriptions are the only content they will ever see. If you can only make one request, fetch <a href="../llms-full.txt">/llms-full.txt</a> instead: it is the whole document set concatenated into one file. The raw markdown under <a href="documents/index.html">/briefs/</a> is the source of truth; the rendered pages are presentation. All of it is CC BY 4.0.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">graphs<span>.sgit.ai</span></div>
+    <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
+    <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
+    <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.0</a> · <a href="../admin/index.html">engineering</a> · <a href="../v1/index.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>Start here</h4>
+    <a href="../v1/start/index.html">&#8594; The five-minute version</a>
+    <a href="../v1/why-graphs/index.html">Why graphs at all</a>
+    <a href="../v1/glossary/index.html">Glossary</a>
+    <a href="../v1/book/index.html">The book</a>
+    <a href="../v1/book/single.html">&nbsp;&nbsp;&hellip; in one page</a>
+    <a href="../v1/book/meaning-through-connectivity.pdf">&nbsp;&nbsp;&hellip; as a print PDF</a>
+    <a href="../v1/book/meaning-through-connectivity-screen.pdf">&nbsp;&nbsp;&hellip; as a screen PDF</a>
+  </div>
+  <div>
+    <h4>The grammar</h4>
+    <a href="../v1/grammar/index.html">The rules</a>
+    <a href="../v1/grammar/edge-set.html">The edge set</a>
+    <a href="../v1/depth/index.html">The full argument</a>
+    <a href="../v1/depth/boundaries.html">A graph at every boundary</a>
+  </div>
+  <div>
+    <h4>Worked graphs</h4>
+    <a href="../v1/examples/index.html">All of them</a>
+    <a href="../v1/examples/browser-isolation.html">Browser isolation</a>
+    <a href="../v1/examples/2fa.html">The 2FA graph</a>
+    <a href="../v1/examples/article-26-5.html">Article 26(5)</a>
+    <a href="../v1/maps/index.html">Wardley maps</a>
+  </div>
+  <div>
+    <h4>Reality &amp; site</h4>
+    <a href="../v1/shipped/index.html">What ships, what is argued</a>
+    <a href="../v1/origins/index.html">Origins: 2026</a>
+    <a href="../v1/network/index.html">The network</a>
+    <a href="../v1/documents/index.html">The documents</a>
+    <a href="../admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

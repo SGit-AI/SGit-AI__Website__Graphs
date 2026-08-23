@@ -54,7 +54,7 @@ from posixpath import dirname as pdirname, join as pjoin, normpath
 ROOT = Path(__file__).resolve().parents[2]
 VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
 HOST = "https://graphs.sgit.ai"
-OUT = ROOT / "book"
+OUT = ROOT / "v1/book"
 # Two PDF editions, one source. Both are regenerated on every release — the
 # gate's freshness check makes that non-optional — and both carry the site
 # version on their cover/edition page, so a reader can always tell which
@@ -220,7 +220,7 @@ def extract_front():
     point at the thing a book reader is already holding). validate.js hashes
     the same hero..footer region and fails the build if the front page changes
     without the book regenerating."""
-    t = (ROOT / "index.html").read_text()
+    t = (ROOT / "v1/index.html").read_text()
     m = re.search(r'<header class="hero">.*?(?=<footer class="site">)', t, re.S)
     if not m:
         sys.exit("gen_book: index.html has no hero..footer region to project")
@@ -329,7 +329,7 @@ def head(rel, title, desc, og_type="article"):
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body class="bookpage">
 
@@ -346,7 +346,7 @@ FOOT = '''
 def extract(source):
     """Return (raw_main, content, source_hash). content = main minus crumb,
     pagenav and h1; raw_main is what validate.js will hash."""
-    t = (ROOT / source).read_text()
+    t = (ROOT / "v1" / source).read_text()
     m = re.search(r'<main class="doc">(.*?)</main>', t, re.S)
     if not m:
         sys.exit(f"gen_book: {source} has no <main class=\"doc\"> block")
@@ -372,7 +372,7 @@ def rewrite_links(content, source, mode, chnum, page_to_ch, ch_files):
     """Rewrite hrefs for the book. Book-internal targets become chapter links
     (reader mode) or #chNN anchors (single mode); everything else becomes an
     absolute site URL, so the links keep working in the PDF too."""
-    src_dir = pdirname(source)
+    src_dir = pdirname("v1/" + source)
 
     def repl(m):
         href = m.group(1)
@@ -446,8 +446,10 @@ for old in glob(str(OUT / "ch-*.html")):
 
 CH_FILES = {n: f"ch-{n:02d}-{slugify(t)}.html" for n, (_, _, t) in enumerate(CHAPTERS, 1)}
 CH_FILES[0] = INTRO_FILE
-PAGE_TO_CH = {source: n for n, (_, source, _) in enumerate(CHAPTERS, 1)}
-PAGE_TO_CH["index.html"] = 0
+# keyed by PUBLISHED path: the first edition lives under v1/, so a relative link inside a
+# source page resolves against v1/<dir> and an absolute site URL must too.
+PAGE_TO_CH = {"v1/" + source: n for n, (_, source, _) in enumerate(CHAPTERS, 1)}
+PAGE_TO_CH["v1/index.html"] = 0
 
 manifest = {"version": VERSION, "title": TITLE, "chapters": []}
 singles = []
@@ -484,7 +486,7 @@ intro_frag = re.sub(r'id="([^"]+)"', lambda m: f'id="intro-{m.group(1)}"', intro
 singles.append((0, None, "Introduction", intro_header, intro_frag))
 
 manifest["intro"] = {"file": INTRO_FILE, "title": "Introduction",
-                     "source": "index.html", "source_sha256": intro_digest}
+                     "source": "v1/index.html", "source_sha256": intro_digest}
 
 for n, (pi, source, title) in enumerate(CHAPTERS, 1):
     raw, content, digest = extract(source)
@@ -523,7 +525,7 @@ for n, (pi, source, title) in enumerate(CHAPTERS, 1):
 
     manifest["chapters"].append({
         "n": n, "part": f"Part {roman} · {ptitle}", "title": title,
-        "file": CH_FILES[n], "source": source, "source_sha256": digest,
+        "file": CH_FILES[n], "source": "v1/" + source, "source_sha256": digest,
     })
 
 # ------------------------------------------------------------ index.html ----
@@ -608,8 +610,8 @@ pp = f"""<!doctype html>
 <title>{TITLE} — print interior</title>
 <meta name="description" content="The print-interior edition of {TITLE}: 6in x 9in trim, mirrored margins, folios, a paginated contents. Typeset from this file by WeasyPrint.">
 <link rel="canonical" href="{HOST}/book/print.html">
-<link rel="stylesheet" href="../assets/site.css">
-<link rel="stylesheet" href="../assets/print-book.css">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/print-book.css">
 </head>
 <body class="bookpage">
 

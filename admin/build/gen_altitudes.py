@@ -695,7 +695,7 @@ HREF_FILE = {
 def cross_references():
     out = {}
     for stem, nid in CHAPTER_FILE.items():
-        f = ROOT / "content" / (stem + ".md")
+        f = ROOT / "v1/content" / (stem + ".md")
         if not f.exists():
             continue
         for href in re.findall(r"\]\(\.\./([a-z0-9\-/]+\.html)", f.read_text()):
@@ -901,7 +901,7 @@ out = dict(version=VERSION, root="L1", levels=LEVELS,
                   "levels 1 and 2. Everything not lifted is stated as not lifted rather than "
                   "left to look finished."))
 
-p = ROOT / "altitudes/data/altitudes.json"
+p = ROOT / "v1/altitudes/data/altitudes.json"
 p.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
 print(f"gen_altitudes: {len(CITES)} measured cites edges between chapters")
 print("gen_altitudes: %d concepts, %d concept edges (each mirrored), peaks: %s"
