@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.22</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.3.23</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -120,6 +120,11 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.3.23</td>
+        <td>23 August 2026</td>
+        <td><b>The date on the agent surface was three releases stale, and nothing was watching it.</b> <code>llms.txt</code> opens with <em>Site version: vX.Y.Z (date)</em>, and every agent that reads this site reads that line first. <code>chrome.py</code> has stamped the version there since v0.2.4 &mdash; precisely because hand-editing it had silently missed twice on a sibling site &mdash; but it never stamped the <b>date</b>, so the date sat at 21 August through v0.3.20, v0.3.21 and v0.3.22 while the versions beside it moved. The fix is the same shape as the original: the date is now read from the release's own row in <a href="versions.html">the history table</a> rather than stamped as today, so rebuilding an old release does not re-date it, and <b>a new gate check fails the build</b> when the two disagree. This is the second time on this site that a value was correct in one place, copied by hand into another, and drifted &mdash; and the second time the answer was to make one place own it and let the gate enforce the agreement. No content changed.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.3.22</td>
         <td>23 August 2026</td>
@@ -295,7 +300,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.3.22</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.3.23</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

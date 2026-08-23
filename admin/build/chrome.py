@@ -192,21 +192,38 @@ def footer_html(rel, up):
             f'  </div>\n{cols}\n</div></footer>')
 
 
+def release_date():
+    """The date of the current release, read from its own row in the history table.
+    Read rather than stamped as today, so a rebuild of an old release does not
+    silently re-date it."""
+    t = (ROOT / "admin/versions.html").read_text()
+    m = re.search(r'class="vnum">' + re.escape(VERSION) + r"<[^>]*>\s*<td>([^<]+)</td>", t)
+    return m.group(1).strip() if m else None
+
+
 def stamp_text_twins():
     """The version also appears in llms.txt, llms-full.txt and index.md, and
     validate.js enforces that it agrees. Nothing used to SET it there on the
     sibling sites, so it was hand-edited every release — and hand-editing it
-    silently missed twice. Own it here instead."""
+    silently missed twice. Own it here instead.
+
+    The DATE beside the version in llms.txt is stamped here too, and for the same
+    reason: it was not, so it drifted three releases behind before anyone read it."""
+    date = release_date()
+    stamp = f"Site version: {VERSION}" + (f" ({date})" if date else "")
     out = []
-    for name, pat in (("llms.txt", r"Site version: v\d+\.\d+\.\d+"),
-                      ("llms-full.txt", r"Site version: v\d+\.\d+\.\d+"),
-                      ("index.md", r"· site v\d+\.\d+\.\d+ ·")):
+    for name, pat, repl in (
+            ("llms.txt", r"Site version: v\d+\.\d+\.\d+(?: \([^)]*\))?", stamp),
+            ("llms-full.txt", r"Site version: v\d+\.\d+\.\d+(?: \([^)]*\))?", stamp),
+            ("index.md", r"· site v\d+\.\d+\.\d+ ·", f"· site {VERSION} ·")):
         f = ROOT / name
         if not f.exists():
             continue
         t = f.read_text()
-        repl = (f"Site version: {VERSION}" if "Site version" in pat else f"· site {VERSION} ·")
-        t2, n = re.subn(pat, repl, t, count=1)
+        # llms-full.txt carries the bare form on its generated header line and the
+        # dated form in the copy of llms.txt below it; both are rewritten
+        count = 0 if name == "llms-full.txt" else 1
+        t2, n = re.subn(pat, repl, t, count=count)
         if n and t2 != t:
             f.write_text(t2)
             out.append(name)

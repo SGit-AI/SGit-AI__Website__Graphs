@@ -74,6 +74,19 @@ const versTable = fs.readFileSync(path.join(ROOT, 'admin/versions.html'), 'utf8'
 if (!versTable.includes(`class="vnum">${VERSION}<`)) {
   errors.push(`admin/versions.html has no row for ${VERSION}`);
 }
+// the date beside the version on the agent surface must be the date of that
+// release's own row. It was not stamped by anything, so it sat three releases
+// behind while every agent reading llms.txt quoted it
+const dateRow = versTable.match(new RegExp('class="vnum">' + VERSION.replace(/\./g, '\\.') + '<[^>]*>\\s*<td>([^<]+)</td>'));
+if (dateRow) {
+  const stamped = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8')
+    .match(/Site version: v\d+\.\d+\.\d+ \(([^)]+)\)/);
+  if (!stamped) errors.push('llms.txt does not carry a dated site version');
+  else if (stamped[1].trim() !== dateRow[1].trim()) {
+    errors.push(`llms.txt dates ${VERSION} as "${stamped[1].trim()}", admin/versions.html says "${dateRow[1].trim()}"`);
+  }
+}
+
 // each release appears exactly once — a blanket version-bump sed that touches
 // the history table produces duplicates, which shipped once on the NHI site
 const rows = [...versTable.matchAll(/class="vnum">(v\d+\.\d+\.\d+)</g)].map(m => m[1]);
