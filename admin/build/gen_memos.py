@@ -6,7 +6,7 @@ Then run chrome.py, which fills in the nav and footer.
 
 Briefs 00 to 19 belong to the first edition and froze with it; they are at /v1/briefs/ and
 are read at /v1/documents/. This generator serves the ones written since, which live at
-/briefs/ and continue the same numbering, because the corpus is one sequence even though
+/v2/briefs/ and continue the same numbering, because the corpus is one sequence even though
 the editions are not.
 
 Same convention as everywhere else here: the raw markdown is the source of truth and each
@@ -17,9 +17,9 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-SRC = ROOT / "briefs"
-OUT = ROOT / "memos"
-GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/briefs"
+SRC = ROOT / "v2" / "briefs"
+OUT = ROOT / "v2" / "memos"
+GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
@@ -43,22 +43,22 @@ PAGE = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title} &mdash; graphs.sgit.ai</title>
 <meta name="description" content="{desc}">
-<link rel="canonical" href="https://graphs.sgit.ai/memos/{slug}.html">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/memos/{slug}.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="graphs.sgit.ai">
-<meta property="og:url" content="https://graphs.sgit.ai/memos/{slug}.html">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/memos/{slug}.html">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta name="twitter:card" content="summary">
 <link rel="alternate" type="text/markdown" href="../briefs/{src}" title="The raw markdown, which is the source of truth">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
 
 <nav class="site"><div class="row"></div></nav>
 
 <main class="doc">
-<div class="crumb"><a href="../index.html">graphs.sgit.ai</a> &rarr; <a href="index.html">the memos</a> &rarr; <b>{num}</b></div>
+<div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="index.html">the memos</a> &rarr; <b>{num}</b></div>
 <h1>{title}</h1>
 <p class="lead">{desc}</p>
 
@@ -78,8 +78,8 @@ PAGE = """<!doctype html>
 </main>
 
 <footer class="site"><div class="cols"></div></footer>
-<script src="../assets/vendor/marked.min.js"></script>
-<script src="../assets/mdreader.js" defer></script>
+<script src="../../assets/vendor/marked.min.js"></script>
+<script src="../../assets/mdreader.js" defer></script>
 </body>
 </html>
 """
@@ -91,25 +91,25 @@ HUB = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The memos &mdash; graphs.sgit.ai</title>
 <meta name="description" content="Founder memos written after the first edition froze, reproduced verbatim with the instructions extracted and mapped to what each one commits the work to. Briefs 00 to 19 froze with the first edition and are at /v1/documents/.">
-<link rel="canonical" href="https://graphs.sgit.ai/memos/index.html">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/memos/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="graphs.sgit.ai">
-<meta property="og:url" content="https://graphs.sgit.ai/memos/index.html">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/memos/index.html">
 <meta property="og:title" content="The memos">
 <meta property="og:description" content="The founder's voice, verbatim, with every instruction mapped to what it commits the work to.">
 <meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
 
 <nav class="site"><div class="row"></div></nav>
 
 <main class="doc">
-  <div class="crumb"><a href="../index.html">graphs.sgit.ai</a> &rarr; <b>The memos</b></div>
+  <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <b>The memos</b></div>
   <h1>The memos</h1>
   <p class="lead">The founder's voice memos, transcribed and reproduced <b>verbatim</b>, because the house rule is that the founder's voice is source material and is not edited. Each one is followed by the instructions extracted from it and, for each instruction, what it commits the work to. That second half is the agent's reading and is marked as such.</p>
 
-  <div class="note"><b>Where the earlier ones are.</b> Briefs 00 to 19 belong to the first edition and froze with it at <a href="../admin/versions.html">v0.3.26</a>. They are readable at <a href="../v1/documents/index.html">/v1/documents/</a> and raw at <code>/v1/briefs/</code>. This section holds the briefs written since, and <b>the numbering continues rather than restarting</b>, because the corpus is one sequence even though the editions are not.</div>
+  <div class="note"><b>Where the earlier ones are.</b> Briefs 00 to 19 belong to the first edition and froze with it at <a href="../../admin/versions.html">v0.3.26</a>. They are readable at <a href="../../v1/documents/index.html">/v1/documents/</a> and raw at <code>/v1/briefs/</code>. This section holds the briefs written since, and <b>the numbering continues rather than restarting</b>, because the corpus is one sequence even though the editions are not.</div>
 
   <div class="tablewrap">
   <table>

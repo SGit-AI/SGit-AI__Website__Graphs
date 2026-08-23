@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>The decisions — graphs.sgit.ai</title>
-<meta name="description" content="Every open decision from the book's reviews, drawn as the peak of its own graph: the options below it, the side effect that comes with each one, the work it blocks and the pages it touches. Answers are held in this browser and copied back by hand.">
-<link rel="canonical" href="https://graphs.sgit.ai/decisions/index.html">
+<title>The second edition &mdash; graphs.sgit.ai</title>
+<meta name="description" content="The second edition of the book, being written from the top down as a graph. It does not exist as a book yet: this tree holds everything about making it, and this page says what is here and what happens next.">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="graphs.sgit.ai">
-<meta property="og:url" content="https://graphs.sgit.ai/decisions/index.html">
-<meta property="og:title" content="The decisions">
-<meta property="og:description" content="Ten open questions, each the peak of a small graph. Options, side effects, blocked work, and an answer you record in your own browser and paste back.">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/index.html">
+<meta property="og:title" content="The second edition">
+<meta property="og:description" content="Fractal Semantic Graphs: Meaning Through Connectivity. Being written from the top down, as a graph. Everything about making it lives in this tree.">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/site.css">
 </head>
@@ -34,11 +34,11 @@
     <div class="ni ni-has">
       <a class="nl here" href="../v2/index.html">The book<span class="caret">&#9662;</span></a>
       <div class="sub">
-      <a class="sl" href="../v2/index.html">The second edition &middot; current</a>
+      <a class="sl here" href="../v2/index.html">The second edition &middot; current</a>
       <a class="sl" href="../v2/dev-pack/index.html">&hellip; the dev pack: the plan</a>
       <a class="sl" href="../v2/memos/index.html">&hellip; the memos</a>
       <a class="sl" href="../v2/packs/index.html">&hellip; the review packs</a>
-      <a class="sl here" href="../decisions/index.html">&hellip; the open decisions</a>
+      <a class="sl" href="../decisions/index.html">&hellip; the open decisions</a>
       <a class="sl" href="../v1/book/index.html">The first edition &middot; frozen</a>
       <a class="sl" href="../v1/book/single.html">&hellip; read it in one page</a>
       <a class="sl" href="../v1/book/changes.html">&hellip; what changed between versions</a>
@@ -118,34 +118,35 @@
   <script src="../assets/nav.js" defer></script>
 </div></nav>
 
-<main class="doc wide bleed">
-  <div class="crumb"><a href="../v1/index.html">graphs.sgit.ai</a> → <a href="../v1/reviews/index.html">the reviews</a> → <b>The decisions</b></div>
-  <h1>The decisions</h1>
-  <p class="lead">Four reviews have run over this book, and each left behind questions only the founder can answer. Until now those questions lived where they were raised — inside the review that raised them — which is the wrong shape: a decision is not a comment on a paragraph, it is a <b>peak</b>. Work hangs off it. Other decisions hang off it. This page turns each one back into the peak of its own graph, so that the question, the answers on the table, the cost each answer carries, and the work waiting on it are all one hop apart.</p>
+<main class="doc">
+  <div class="crumb"><a href="../index.html">graphs.sgit.ai</a> &rarr; <b>The second edition</b></div>
+  <h1>The second edition</h1>
+  <p class="lead"><b>Fractal Semantic Graphs: Meaning Through Connectivity</b> <span class="small dim">&middot; for humans and agents</span>. Being written from the top down, as a graph: the universe of concepts, claims and evidence first, the plot lines through it next, the spine derived from where they converge, and only then the prose. <b>It does not exist as a book yet.</b> What exists is the plan, the memos that shaped it, the review packs for the people and agents who will check the work, and the rule this tree enforces.</p>
 
-  <div class="note">
-    <b>The mechanism is borrowed, not invented.</b> One of the vaults analysed on this site — <a href="../v1/vaults/agentic-browser-isolation/index.html">Agentic Browser Isolation</a> — ships a risk acceptance mechanism whose four rules are exactly what an unanswered question needs. <a href="../v1/vaults/agentic-browser-isolation/acceptance.html">Read the analysis</a>; the rules run here unchanged:
-    <ol>
-      <li><b>One named owner.</b> Every decision on this page is the founder's. The agent proposes, marks what it would choose, and never decides.</li>
-      <li><b>There is no deny button.</b> Answer it, defer it with a reason, or say what data would make it answerable. A decision cannot be made to go away by not looking at it, which is why <em>defer</em> and <em>more data</em> are choices here and both demand a reason.</li>
-      <li><b>Nothing moves until it is taken personally.</b> The list under <em>this blocks</em> is not a threat, it is the actual state of the work.</li>
-      <li><b>The reason travels with the answer.</b> An answer without a <em>because</em> can only be obeyed. An answer with one can be argued with in six months, including by the person who gave it.</li>
-    </ol>
+  <div class="note"><b>The rule of this tree.</b> Each edition owns everything it uses. Everything about <em>making</em> the second edition lives under <code>/v2/</code>: the plan, the founder's memos, the review packs, and, as they arrive, the project management, the universe and the book's own graph. When the edition needs material from the first, it takes its own copy in here with a provenance block naming where it came from. Anything outside <code>/v1/</code> and <code>/v2/</code> is the site's own chrome and spans editions; nothing an edition depends on lives out there. One day this tree freezes the way <a href="../v1/index.html">/v1/</a> did, and a <code>/v3/</code> begins.</div>
+
+  <h2 id="here">What is in this tree today</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>What</th><th>Where</th><th>State</th></tr></thead>
+    <tbody>
+      <tr><td><b>The dev pack</b> &mdash; the plan: ten files, seven phases, the ADRs, the open questions</td><td><a href="dev-pack/index.html">/v2/dev-pack/</a></td><td>PROPOSED throughout</td></tr>
+      <tr><td><b>The memos</b> &mdash; the founder's voice, verbatim, with every instruction mapped</td><td><a href="memos/index.html">/v2/memos/</a> &middot; raw at <a href="briefs/20__founder-memo__the-universe-first.md">/v2/briefs/</a></td><td>source material, not edited</td></tr>
+      <tr><td><b>The review packs</b> &mdash; documents a reviewer can answer with no link followed</td><td><a href="packs/index.html">/v2/packs/</a></td><td>first pack shipped at v0.4.3</td></tr>
+    </tbody>
+  </table>
   </div>
 
-  <div id="decisions"><p class="dim">Loading the register…</p></div>
+  <h2 id="next">What happens next</h2>
+  <p>The universe gets built <b>bottom up</b>, one carried source document at a time: each of the twenty-one documents at <a href="../v1/docs/index.html">/v1/docs/</a> gets its own local graph &mdash; its concepts with the document's own definitions, its claims with their evidence state, every node anchored to the section and characters that carry it. The sources are byte-frozen behind a hash gate, so an anchor into one is stable forever and the build can verify every quoted extraction against the frozen bytes. A bridge layer then records, as authored decisions, where documents name the same idea differently and where they disagree. The book's universe connects to those nodes; it does not absorb them. It starts with a pilot on one document, to settle the method before it is applied twenty more times.</p>
 
-  <h2 id="how">Where these come from</h2>
-  <p>Nothing on this page is authored twice. The questions, their state, and the answers already given are read straight out of <a href="../v1/reviews/index.html">the review files</a> — <code>reviews/r001.json</code> through <code>r004.json</code>, each of which carries a top-level <code>decisions</code> array — by <code>admin/build/gen_decisions.py</code>, which emits <a href="data/decisions.json">data/decisions.json</a>. So the register here cannot drift from the register there: if a decision is answered in a review, this page shows it answered on the next build, and if a review adds a decision without context, <b>the build fails</b> rather than shipping a question with no options under it.</p>
-  <p>What <em>is</em> authored here is the part a raw register does not have: for each open decision, what each answer actually does, and what it costs. That is the mapping of side effects, and it is written by the agent as a proposal. Disagreeing with an option's stated cost is itself a useful answer — say so in the <em>because</em> and the option list gets rewritten.</p>
+  <h2 id="first">Where the first edition is</h2>
+  <p>Complete, frozen at <b>v0.3.26</b>, and readable at <a href="../v1/book/index.html">/v1/book/</a> with <a href="../v1/index.html">its own front page</a> explaining how it happened. Its bytes are recorded in <code>/v1/MANIFEST.json</code> and the build fails if any of them changes. It was never published beyond this site; it is kept intact as the record, the source material, and the worked example of the method the second edition industrialises.</p>
 
-  <h2 id="graph">Why a decision is a peak</h2>
-  <p>The <a href="../v1/altitudes/concepts.html">concept map</a> computes its peaks from a stated formula, and the point of that exercise was that a peak is not a chosen thing: it is what a lot of edges point at. A decision is the same shape from the other direction. It has <b>out-edges to options</b> (what could be true), each option has an out-edge to <b>the effect that follows from choosing it</b>, and it has out-edges to the <b>work that cannot proceed</b> and the <b>pages that change</b> when it is answered. Draw that and the register stops being a to-do list and becomes what it always was: a small graph where a single node, once set, propagates.</p>
-  <p>Switch the panel on the right to <b>all</b> and a second thing becomes visible, which no list could show: two decisions that block the same work are, for scheduling purposes, one decision. The count of those is printed above, and it is <b>computed on every build</b> rather than claimed here, because the interesting part is not that it happens but <em>how</em> it hides. Each decision names the work it blocks in the vocabulary of its own review, so the same task appears as <em>level 4 completion</em> in one place and <em>level 4 rollout under D1</em> in another. The generator gives every phrase a shared key and fails the build on a phrase it has never seen, which turns "is this new work?" from a question nobody asks into a question the build asks for you. That is the same class of finding the <a href="../v1/altitudes/index.html#findings">altitude ladder</a> turns up when two chapters say the same thing differently.</p>
-
-  <h2 id="answer">What happens to an answer</h2>
-  <p>Answers are stored in <code>localStorage</code>, in this browser, under one key. Nothing is sent anywhere — this site has no server, no analytics and no form endpoint, and adding one to collect decisions would be a strange thing for a site that argues for traceable, portable structure. The <b>copy</b> buttons are the transport: they produce a plain-text block, one entry per decision, that pastes straight back into the conversation that raised the questions. From there the answer lands in the review file, the review file regenerates this page, and the decision shows as answered with its date. That round trip — browser, paste, review file, build — is the whole mechanism, and every step of it is inspectable.</p>
-  <p class="small dim">One consequence worth stating plainly: clearing this browser's site data clears the drafts. They are drafts on purpose. The record is the review file, and an answer is only really given once it has travelled.</p>
+  <div class="agent">
+    <h4>For an agent</h4>
+    <p>This tree is the second edition's own; nothing in it is book text yet. The plan is under <code>/v2/dev-pack/</code> (raw markdown under <code>/v2/dev-packs/</code>), the founder's memos are raw under <code>/v2/briefs/</code>, and the review packs' machine index is <code>/v2/packs/packs.json</code>. If you are reviewing, take a pack and read nothing else. Do not cite this tree as the book: the book is the first edition at <code>/v1/book/</code> until the second exists, and <code>/book/</code> always points at the current one.</p>
+  </div>
 </main>
 
 <footer class="site"><div class="cols">
@@ -191,7 +192,5 @@
     <a href="../llms.txt">llms.txt</a>
   </div>
 </div></footer>
-<script src="../assets/vendor/cytoscape.min.js"></script>
-<script src="../assets/decisions.js" defer></script>
 </body>
 </html>

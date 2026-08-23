@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.3</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.4</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -32,19 +32,21 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl" href="../v1/book/index.html">The book<span class="caret">&#9662;</span></a>
+      <a class="nl" href="../v2/index.html">The book<span class="caret">&#9662;</span></a>
       <div class="sub">
-      <a class="sl" href="../v1/book/index.html">Table of contents</a>
-      <a class="sl" href="../v1/book/single.html">Read it in one page</a>
-      <a class="sl" href="../v1/book/changes.html">What changed between versions</a>
-      <a class="sl" href="../v1/reviews/index.html">The reviews</a>
+      <a class="sl" href="../v2/index.html">The second edition &middot; current</a>
+      <a class="sl" href="../v2/dev-pack/index.html">&hellip; the dev pack: the plan</a>
+      <a class="sl" href="../v2/memos/index.html">&hellip; the memos</a>
+      <a class="sl" href="../v2/packs/index.html">&hellip; the review packs</a>
       <a class="sl" href="../decisions/index.html">&hellip; the open decisions</a>
-      <a class="sl" href="../v1/docs/index.html">The sources it came from</a>
-      <a class="sl" href="../v1/altitudes/index.html">The altitude ladder</a>
-      <a class="sl" href="../v1/altitudes/graph.html">&hellip; as one graph</a>
-      <a class="sl" href="../v1/altitudes/concepts.html">&hellip; the concept map</a>
-      <a class="sl" href="../v1/book/meaning-through-connectivity.pdf">The print PDF (6&times;9)</a>
-      <a class="sl" href="../v1/book/meaning-through-connectivity-screen.pdf">The screen PDF (tablet)</a>
+      <a class="sl" href="../v1/book/index.html">The first edition &middot; frozen</a>
+      <a class="sl" href="../v1/book/single.html">&hellip; read it in one page</a>
+      <a class="sl" href="../v1/book/changes.html">&hellip; what changed between versions</a>
+      <a class="sl" href="../v1/reviews/index.html">&hellip; the reviews</a>
+      <a class="sl" href="../v1/docs/index.html">&hellip; the sources it came from</a>
+      <a class="sl" href="../v1/altitudes/index.html">&hellip; the altitude ladder</a>
+      <a class="sl" href="../v1/book/meaning-through-connectivity.pdf">&hellip; the print PDF (6&times;9)</a>
+      <a class="sl" href="../v1/book/meaning-through-connectivity-screen.pdf">&hellip; the screen PDF (tablet)</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -101,9 +103,9 @@
       <div class="sub">
       <a class="sl" href="../v1/documents/index.html">The documents</a>
       <a class="sl" href="../v1/documents/what-the-graphs-found.html">&hellip; what the graphs found</a>
-      <a class="sl" href="../memos/index.html">The memos</a>
-      <a class="sl" href="../packs/index.html">The review packs</a>
-      <a class="sl" href="../dev-pack/index.html">The dev pack: the second book</a>
+      <a class="sl" href="../v2/memos/index.html">The memos</a>
+      <a class="sl" href="../v2/packs/index.html">The review packs</a>
+      <a class="sl" href="../v2/dev-pack/index.html">The dev pack: the second book</a>
       <a class="sl" href="../admin/comms.html">Comms: tasks &amp; requests</a>
       <a class="sl here" href="../admin/versions.html">Release history</a>
       <a class="sl" href="../admin/publishing.html">Publishing the book</a>
@@ -125,6 +127,11 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.4.4</td>
+        <td>23 August 2026</td>
+        <td><b>The second edition gathers everything it owns into <code>/v2/</code>, and <code>/book/</code> becomes a pointer.</b> Three founder decisions, given in review of the dev pack. First: everything for the next set of work lives inside <code>/v2/</code>, including the project management and the scaffolding, in preparation for the day <code>/v2/</code> is archived and a <code>/v3/</code> begins. Second: anything outside <code>/v1/</code> and <code>/v2/</code> is the site's own chrome, and the boundary is testable: if everything outside the two edition trees were deleted, neither edition would lose content. Third: <code>/book/</code> stops being an address any edition owns and becomes <b>the pointer to the current edition, which from now on is the second</b>; the first edition was never released and nothing external links into it, so it is kept as history, source material and worked examples rather than as the thing <code>/book/</code> means. Executed as a move: the dev pack (<a href="../v2/dev-pack/index.html">/v2/dev-pack/</a>, raw under <code>/v2/dev-packs/</code>), the memos (<a href="../v2/memos/index.html">/v2/memos/</a>, raw under <code>/v2/briefs/</code>) and the review packs (<a href="../v2/packs/index.html">/v2/packs/</a>) all moved, with redirect stubs at every former HTML address; the two markdown briefs and the pack PDF cannot carry redirects, and that cost is recorded here rather than discovered. <a href="../v2/index.html">/v2/</a> gained its front page, <a href="../book/index.html">/book/</a> now names both editions and points at the current one, and the nav's book menu leads with the second edition. This answered <b>open question 2</b> in the dev pack (where does the second book live), so phase 1, the plumbing, is unblocked; the pack's file 09 records the answer. No book content changed, and nothing under <code>/v1/</code> was touched.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.4.3</td>
         <td>23 August 2026</td>
@@ -345,7 +352,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.3</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.4</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

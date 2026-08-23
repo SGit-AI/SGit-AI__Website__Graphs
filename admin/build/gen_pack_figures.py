@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "packs/figures"
+OUT = ROOT / "v2/packs/figures"
 CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
 BASE = "http://127.0.0.1:8899"
 

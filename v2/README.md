@@ -1,13 +1,23 @@
 # The second edition
 
-**Empty, on purpose.**
+This directory is where the second edition of the book is being made, from the top down,
+as a graph. **No book text exists yet.** What lives here is everything *about* making it:
+the plan ([the dev pack](dev-pack/index.html), raw under `dev-packs/`), the founder's
+memos (raw under `briefs/`, read at [memos/](memos/index.html)), the review packs
+([packs/](packs/index.html)), and, as they arrive, the project management, the universe
+and the book's own graph. The founder's rule, 23 August 2026: everything for this next
+set of work lives inside this folder, including the project management and scaffolding,
+in preparation for the day `/v2/` becomes the archived version and a `/v3/` begins.
 
-This directory is where the second edition of the book will be written, from the top down,
-as a graph. Nothing is in it yet.
+The plan's status is PROPOSED throughout. Phase 0, the move of the first edition into
+`../v1/` and its freeze, shipped as **v0.4.0**; the gathering of the second edition's
+material into this tree shipped as **v0.4.4**. Phase 1 is the plumbing and it has not
+started.
 
-The plan is [dev pack v0.3.27](../dev-pack/index.html), and its status is PROPOSED
-throughout. Phase 0, which is the move of the first edition into `../v1/` and its freeze,
-shipped as **v0.4.0**. Phase 1 is the plumbing and it has not started.
+One invariant to hold: **anything outside `/v1/` and `/v2/` is the site's own chrome and
+is not part of any edition.** If everything outside the two edition trees were deleted,
+neither edition would lose content. `/book/` at the root is a pointer to the current
+edition, which is this one.
 
 ## The rule this directory exists to enforce
 

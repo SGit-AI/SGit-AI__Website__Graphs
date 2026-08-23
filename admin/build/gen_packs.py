@@ -23,7 +23,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
-OUT = ROOT / "packs"
+OUT = ROOT / "v2" / "packs"
 FIG = OUT / "figures"
 TODAY = date.today().strftime("%-d %B %Y")
 
@@ -262,25 +262,25 @@ HUB = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The review packs &mdash; graphs.sgit.ai</title>
 <meta name="description" content="Generated packs for reviewers and editors, human or agent: one continuous page each and a PDF printed from it, in a fixed order, readable end to end with no link followed. Supporting material, not the book.">
-<link rel="canonical" href="https://graphs.sgit.ai/packs/index.html">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/packs/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="graphs.sgit.ai">
-<meta property="og:url" content="https://graphs.sgit.ai/packs/index.html">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/packs/index.html">
 <meta property="og:title" content="The review packs">
 <meta property="og:description" content="A pack controls the sequence, which a website cannot. Read end to end on an iPad, or print it.">
 <meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
 
 <nav class="site"><div class="row"></div></nav>
 
 <main class="doc">
-  <div class="crumb"><a href="../index.html">graphs.sgit.ai</a> &rarr; <b>The review packs</b></div>
+  <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <b>The review packs</b></div>
   <h1>The review packs</h1>
   <p class="lead">A website cannot control what a reviewer reads, in what order, or what they skip: that is what hyperlinks are for, and it is the wrong property when you need someone to review a specific thing. <b>A pack controls the sequence.</b> One continuous page, a PDF printed from the same source, readable end to end on an iPad or on paper, with nothing in it that needs a link followed.</p>
 
-  <div class="note"><b>These are not the book.</b> They are supporting material, generated from the same data the site publishes. The book is at <a href="../v1/book/index.html">/v1/book/</a>. A pack exists to make one thing reviewable: it declares which of the five jobs it serves (decide, understand the concepts, follow the narrative, see the evidence, get guidance), who it is addressed to, and what it is asking you to come back with. The design is in <a href="../memos/21-founder-memo-review-packs.html">brief 21</a>.</div>
+  <div class="note"><b>These are not the book.</b> They are supporting material, generated from the same data the site publishes. The book is at <a href="../../v1/book/index.html">/v1/book/</a>. A pack exists to make one thing reviewable: it declares which of the five jobs it serves (decide, understand the concepts, follow the narrative, see the evidence, get guidance), who it is addressed to, and what it is asking you to come back with. The design is in <a href="../memos/21-founder-memo-review-packs.html">brief 21</a>.</div>
 
   <div class="tablewrap">
   <table>
@@ -313,9 +313,9 @@ SHELL = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} &mdash; a review pack &mdash; graphs.sgit.ai</title>
 <meta name="description" content="{lead}">
-<link rel="canonical" href="https://graphs.sgit.ai/packs/{slug}.html">
-<link rel="stylesheet" href="../assets/site.css">
-<link rel="stylesheet" href="../assets/pack.css">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/packs/{slug}.html">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/pack.css">
 </head>
 <body>
 <main class="pack">
@@ -332,7 +332,7 @@ SHELL = """<!doctype html>
     <div class="packnote"><b>This is not the book.</b> It is supporting material, generated from
     the same data the site publishes, arranged in a fixed order so that a reviewer and the author
     read the same things in the same sequence. The book is at
-    <a href="../v1/book/index.html">/v1/book/</a>. Nothing in this pack needs a link followed.</div>
+    <a href="../../v1/book/index.html">/v1/book/</a>. Nothing in this pack needs a link followed.</div>
   </div>
 {body}
   <h2 class="packsec">Provenance</h2>

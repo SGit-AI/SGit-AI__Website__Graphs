@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://graphs.sgit.ai/index.html</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/dev-pack/00-README.html</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/dev-pack/01-the-memos.html</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/dev-pack/02-what-exists-today.html</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/dev-pack/03-freezing-the-first-book.html</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/dev-pack/04-the-argument.html</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/dev-pack/05-architecture.html</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/dev-pack/06-the-plumbing.html</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/dev-pack/07-visualisations.html</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/dev-pack/08-implementation-plan.html</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/dev-pack/09-verification-and-open-questions.html</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/dev-pack/index.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/dev-pack/00-README.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/dev-pack/01-the-memos.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/dev-pack/02-what-exists-today.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/dev-pack/03-freezing-the-first-book.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/dev-pack/04-the-argument.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/dev-pack/05-architecture.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/dev-pack/06-the-plumbing.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/dev-pack/07-visualisations.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/dev-pack/08-implementation-plan.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/dev-pack/09-verification-and-open-questions.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/dev-pack/index.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/index.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/memos/20-founder-memo-the-universe-first.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/memos/21-founder-memo-review-packs.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/memos/index.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/packs/concepts-and-evidence.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/packs/concepts-and-evidence.pdf</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/packs/index.html</loc><lastmod>2026-08-23</lastmod></url>
   <url><loc>https://graphs.sgit.ai/admin/comms.html</loc><lastmod>2026-08-23</lastmod></url>
   <url><loc>https://graphs.sgit.ai/admin/index.html</loc><lastmod>2026-08-23</lastmod></url>
   <url><loc>https://graphs.sgit.ai/admin/metadata.html</loc><lastmod>2026-08-23</lastmod></url>
   <url><loc>https://graphs.sgit.ai/admin/publishing.html</loc><lastmod>2026-08-23</lastmod></url>
   <url><loc>https://graphs.sgit.ai/admin/versions.html</loc><lastmod>2026-08-23</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/book/index.html</loc><lastmod>2026-08-23</lastmod></url>
   <url><loc>https://graphs.sgit.ai/decisions/index.html</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/memos/20-founder-memo-the-universe-first.html</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/memos/21-founder-memo-review-packs.html</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/memos/index.html</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/packs/concepts-and-evidence.html</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/packs/concepts-and-evidence.pdf</loc><lastmod>2026-08-23</lastmod></url>
-  <url><loc>https://graphs.sgit.ai/packs/index.html</loc><lastmod>2026-08-23</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v1/about/participant.html</loc><lastmod>2026-08-23</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v1/altitudes/concepts.html</loc><lastmod>2026-08-23</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v1/altitudes/graph.html</loc><lastmod>2026-08-23</lastmod></url>

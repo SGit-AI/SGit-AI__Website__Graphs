@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.3</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.4</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -32,19 +32,21 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl" href="../v1/book/index.html">The book<span class="caret">&#9662;</span></a>
+      <a class="nl" href="../v2/index.html">The book<span class="caret">&#9662;</span></a>
       <div class="sub">
-      <a class="sl" href="../v1/book/index.html">Table of contents</a>
-      <a class="sl" href="../v1/book/single.html">Read it in one page</a>
-      <a class="sl" href="../v1/book/changes.html">What changed between versions</a>
-      <a class="sl" href="../v1/reviews/index.html">The reviews</a>
+      <a class="sl" href="../v2/index.html">The second edition &middot; current</a>
+      <a class="sl" href="../v2/dev-pack/index.html">&hellip; the dev pack: the plan</a>
+      <a class="sl" href="../v2/memos/index.html">&hellip; the memos</a>
+      <a class="sl" href="../v2/packs/index.html">&hellip; the review packs</a>
       <a class="sl" href="../decisions/index.html">&hellip; the open decisions</a>
-      <a class="sl" href="../v1/docs/index.html">The sources it came from</a>
-      <a class="sl" href="../v1/altitudes/index.html">The altitude ladder</a>
-      <a class="sl" href="../v1/altitudes/graph.html">&hellip; as one graph</a>
-      <a class="sl" href="../v1/altitudes/concepts.html">&hellip; the concept map</a>
-      <a class="sl" href="../v1/book/meaning-through-connectivity.pdf">The print PDF (6&times;9)</a>
-      <a class="sl" href="../v1/book/meaning-through-connectivity-screen.pdf">The screen PDF (tablet)</a>
+      <a class="sl" href="../v1/book/index.html">The first edition &middot; frozen</a>
+      <a class="sl" href="../v1/book/single.html">&hellip; read it in one page</a>
+      <a class="sl" href="../v1/book/changes.html">&hellip; what changed between versions</a>
+      <a class="sl" href="../v1/reviews/index.html">&hellip; the reviews</a>
+      <a class="sl" href="../v1/docs/index.html">&hellip; the sources it came from</a>
+      <a class="sl" href="../v1/altitudes/index.html">&hellip; the altitude ladder</a>
+      <a class="sl" href="../v1/book/meaning-through-connectivity.pdf">&hellip; the print PDF (6&times;9)</a>
+      <a class="sl" href="../v1/book/meaning-through-connectivity-screen.pdf">&hellip; the screen PDF (tablet)</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -101,9 +103,9 @@
       <div class="sub">
       <a class="sl" href="../v1/documents/index.html">The documents</a>
       <a class="sl" href="../v1/documents/what-the-graphs-found.html">&hellip; what the graphs found</a>
-      <a class="sl" href="../memos/index.html">The memos</a>
-      <a class="sl" href="../packs/index.html">The review packs</a>
-      <a class="sl" href="../dev-pack/index.html">The dev pack: the second book</a>
+      <a class="sl" href="../v2/memos/index.html">The memos</a>
+      <a class="sl" href="../v2/packs/index.html">The review packs</a>
+      <a class="sl" href="../v2/dev-pack/index.html">The dev pack: the second book</a>
       <a class="sl here" href="../admin/comms.html">Comms: tasks &amp; requests</a>
       <a class="sl" href="../admin/versions.html">Release history</a>
       <a class="sl" href="../admin/publishing.html">Publishing the book</a>
@@ -286,21 +288,27 @@
         <td><span class="tstat t-done">Done · v0.2.0</span></td>
       </tr>
       <tr>
+        <td><b>T38</b></td>
+        <td>Gather the second edition into <code>/v2/</code>; <code>/book/</code> becomes the pointer to the current edition.</td>
+        <td>Founder decision, 23 August 2026, in review of the dev pack: everything for the next set of work lives inside <code>/v2/</code>, including the project management and the scaffolding, in preparation for the day <code>/v2/</code> is archived and a <code>/v3/</code> begins; anything outside <code>/v1/</code> and <code>/v2/</code> must be deletable without either edition losing content; and <code>/book/</code> stops being an address any edition owns and becomes the pointer to the current one, which from now on is the second. This also answered <a href="../v2/dev-pack/09-verification-and-open-questions.html">open question 2</a>, so phase 1 of the plan is unblocked. Executed at v0.4.4: the dev pack, the memos, the briefs and the review packs moved to <code>/v2/</code>, with redirect stubs at their former addresses, and <a href="../v2/index.html">/v2/</a> gained its front page.</td>
+        <td><span class="tstat t-done">Done &middot; v0.4.4</span></td>
+      </tr>
+      <tr>
         <td><b>T37</b></td>
         <td>Review packs: self-contained PDFs and pages aimed at reviewers and editors, human or agent.</td>
-        <td>Founder voice memo, 23 August 2026, published as <a href="../memos/21-founder-memo-review-packs.html">brief 21</a>. A pack is a document a reviewer can answer from without following a single link: cover, how to read it, provenance, body, and the asks it needs answered. Seventeen instructions from the memo are mapped to what each commits the work to, and the brief specifies six packs against five review jobs. <b>The first one shipped at v0.4.3</b>: <a href="../packs/concepts-and-evidence.html">concepts and evidence</a>, twenty-two pages, three figures captured from the live pages, built by <code>gen_packs.py</code> and gate-checked against the hashes of its sources so a stale pack fails the build. The memo also corrected a claim of ours: the per-item visualisations did help, and the dev pack's file 07 now says so.</td>
+        <td>Founder voice memo, 23 August 2026, published as <a href="../v2/memos/21-founder-memo-review-packs.html">brief 21</a>. A pack is a document a reviewer can answer from without following a single link: cover, how to read it, provenance, body, and the asks it needs answered. Seventeen instructions from the memo are mapped to what each commits the work to, and the brief specifies six packs against five review jobs. <b>The first one shipped at v0.4.3</b>: <a href="../v2/packs/concepts-and-evidence.html">concepts and evidence</a>, twenty-two pages, three figures captured from the live pages, built by <code>gen_packs.py</code> and gate-checked against the hashes of its sources so a stale pack fails the build. The memo also corrected a claim of ours: the per-item visualisations did help, and the dev pack's file 07 now says so.</td>
         <td><span class="tstat t-doing">First pack shipped &middot; v0.4.3</span></td>
       </tr>
       <tr>
         <td><b>T36</b></td>
         <td>The universe: the graph of concepts, claims and evidence the second book is derived from.</td>
-        <td>From <a href="../memos/20-founder-memo-the-universe-first.html">brief 20</a>, which inverted the dev pack's construction order. <b>Phase 2 of the plan, and the next thing to build after the plumbing.</b> Decompose the material already held (twenty-one carried sources, six vault analyses, the concept map's twenty-four, the whole first edition, and the Wardley material still uncarried) into the six node families, with every claim carrying its evidence state and every evidence edge resolving to a hash. No prose, no spine, no altitudes. Its stopping rule is computable: the universe is sufficient when every candidate plot line traces end to end through it without a gap. Blocked only on phase 1, the plumbing, which is blocked on open question 2.</td>
+        <td>From <a href="../v2/memos/20-founder-memo-the-universe-first.html">brief 20</a>, which inverted the dev pack's construction order. <b>Phase 2 of the plan, and the next thing to build after the plumbing.</b> Decompose the material already held (twenty-one carried sources, six vault analyses, the concept map's twenty-four, the whole first edition, and the Wardley material still uncarried) into the six node families, with every claim carrying its evidence state and every evidence edge resolving to a hash. No prose, no spine, no altitudes. Its stopping rule is computable: the universe is sufficient when every candidate plot line traces end to end through it without a gap. Blocked only on phase 1, the plumbing; open question 2 was answered on 23 August, so nothing blocks phase 1 any more.</td>
         <td><span class="tstat t-open">Next · after phase 1</span></td>
       </tr>
       <tr>
         <td><b>T35</b></td>
         <td>The second book, written top down. <b>The plan exists; the work has not started.</b></td>
-        <td>Two founder voice memos, 23 August 2026, published at <a href="../v1/briefs/19__founder-memo__the-second-book.md">briefs/19</a>: the planned refactor is cancelled, and the book is written again from the top down as a graph. The plan is <a href="../dev-pack/index.html">dev pack v0.3.27</a>, ten files, status PROPOSED throughout. Seven phases, each ending at a gate, starting with freezing the first edition at v0.3.26 and building the plumbing before any prose is written. <b>Phase 0 shipped at v0.4.0</b>: the founder answered open question 1 with a third option, a <b>move</b> to a <code>v1/</code> prefix rather than a copy, and the first edition is now frozen there behind a hash gate with 93 redirect stubs at its former addresses. <code>/v2/</code> exists and is empty. Phase 1 is the plumbing and is next; seven open questions remain and each blocks a named phase.</td>
+        <td>Two founder voice memos, 23 August 2026, published at <a href="../v1/briefs/19__founder-memo__the-second-book.md">briefs/19</a>: the planned refactor is cancelled, and the book is written again from the top down as a graph. The plan is <a href="../v2/dev-pack/index.html">dev pack v0.3.27</a>, ten files, status PROPOSED throughout. Seven phases, each ending at a gate, starting with freezing the first edition at v0.3.26 and building the plumbing before any prose is written. <b>Phase 0 shipped at v0.4.0</b>: the founder answered open question 1 with a third option, a <b>move</b> to a <code>v1/</code> prefix rather than a copy, and the first edition is now frozen there behind a hash gate with 93 redirect stubs at its former addresses. <code>/v2/</code> now holds everything about making the second edition, per the founder's v0.4.4 decision (task T38). Phase 1 is the plumbing and is next; six open questions remain.</td>
         <td><span class="tstat t-doing">Phase 0 done · v0.4.0</span></td>
       </tr>
       <tr>
@@ -476,7 +484,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.3</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.4</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

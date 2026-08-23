@@ -91,8 +91,8 @@ HEAD = """<!doctype html>
       </tr>
       <tr>
         <td><b>The second edition</b><br><span class="small dim">Fractal Semantic Graphs: Meaning Through Connectivity</span></td>
-        <td><span class="rstate rs-open">planned &middot; not started</span></td>
-        <td><a href="dev-pack/index.html">The plan</a> &middot; <a href="v1/briefs/19__founder-memo__the-second-book.md">the memos that asked for it</a></td>
+        <td><span class="rstate rs-open">in preparation &middot; the plan and its scaffolding</span></td>
+        <td><a href="v2/index.html">Its front page</a> &middot; <a href="v2/dev-pack/index.html">the plan</a> &middot; <a href="v2/memos/index.html">the memos</a> &middot; <a href="v2/packs/index.html">the review packs</a></td>
       </tr>
     </tbody>
   </table>
@@ -124,7 +124,7 @@ HEAD = """<!doctype html>
       <tr><td><a href="v1/reviews/index.html"><b>The reviews</b></a></td><td>Four rounds of founder review, run as a serverless pull request.</td><td>the first edition</td></tr>
       <tr><td><a href="v1/documents/index.html"><b>The documents</b></a></td><td>The brief pack that produced the site, and the retrospective over the work.</td><td>the first edition</td></tr>
       <tr><td><a href="decisions/index.html"><b>The decisions</b></a></td><td>Every open question, drawn as the peak of its own graph, answered in your own browser.</td><td>both editions</td></tr>
-      <tr><td><a href="dev-pack/index.html"><b>The dev pack</b></a></td><td>The plan for the second edition: ten files, seven phases, twenty gates, eight open questions.</td><td>the second edition</td></tr>
+      <tr><td><a href="v2/index.html"><b>The second edition</b></a></td><td>Everything about making it, gathered in one tree: the dev pack, the memos, the review packs.</td><td>the second edition</td></tr>
       <tr><td><a href="admin/index.html"><b>Engineering</b></a></td><td>The generators, the gates, the release process.</td><td>the site</td></tr>
     </tbody>
   </table>
@@ -136,7 +136,7 @@ HEAD = """<!doctype html>
 
   <div class="agent">
     <h4>For an agent</h4>
-    <p>Start at <a href="llms.txt">llms.txt</a>, which names every section hub and is gate-checked against the file tree. The first edition is everything under <code>/v1/</code> and is frozen at <b>{frozen}</b>: its bytes are recorded in <code>/v1/MANIFEST.json</code> with SHA-256 per file, and the build fails if any of them changes. The second edition does not exist yet; its plan is at <code>/dev-pack/</code> and its status is PROPOSED throughout. Machine surfaces that span both: <code>/decisions/data/decisions.json</code>, <code>/v1/docs/data/docs.json</code>, <code>/v1/altitudes/data/altitudes.json</code>. Every page moved from <code>/x/</code> to <code>/v1/x/</code> on {frozen_next}, and the old addresses still resolve as redirects.</p>
+    <p>Start at <a href="llms.txt">llms.txt</a>, which names every section hub and is gate-checked against the file tree. The first edition is everything under <code>/v1/</code> and is frozen at <b>{frozen}</b>: its bytes are recorded in <code>/v1/MANIFEST.json</code> with SHA-256 per file, and the build fails if any of them changes. The second edition does not exist as a book yet; everything about making it lives under <code>/v2/</code> (hub: /v2/index.html), its plan is at <code>/v2/dev-pack/</code>, and its status is PROPOSED throughout. <code>/book/</code> always points at the current edition, which is the second. Machine surfaces that span both: <code>/decisions/data/decisions.json</code>, <code>/v1/docs/data/docs.json</code>, <code>/v1/altitudes/data/altitudes.json</code>. Every page moved from <code>/x/</code> to <code>/v1/x/</code> on {frozen_next}, and the old addresses still resolve as redirects.</p>
   </div>
 </main>
 

@@ -41,19 +41,21 @@ NAV = [
         ("Why graphs at all", "v1/why-graphs/index.html"),
         ("Glossary", "v1/glossary/index.html"),
     ], ("v1/start/", "v1/why-graphs/", "v1/glossary/")),
-    ("The book", "v1/book/index.html", [
-        ("Table of contents", "v1/book/index.html"),
-        ("Read it in one page", "v1/book/single.html"),
-        ("What changed between versions", "v1/book/changes.html"),
-        ("The reviews", "v1/reviews/index.html"),
+    ("The book", "v2/index.html", [
+        ("The second edition &middot; current", "v2/index.html"),
+        ("&hellip; the dev pack: the plan", "v2/dev-pack/index.html"),
+        ("&hellip; the memos", "v2/memos/index.html"),
+        ("&hellip; the review packs", "v2/packs/index.html"),
         ("&hellip; the open decisions", "decisions/index.html"),
-        ("The sources it came from", "v1/docs/index.html"),
-        ("The altitude ladder", "v1/altitudes/index.html"),
-        ("&hellip; as one graph", "v1/altitudes/graph.html"),
-        ("&hellip; the concept map", "v1/altitudes/concepts.html"),
-        ("The print PDF (6&times;9)", "v1/book/meaning-through-connectivity.pdf"),
-        ("The screen PDF (tablet)", "v1/book/meaning-through-connectivity-screen.pdf"),
-    ], ("v1/book/", "v1/altitudes/", "v1/reviews/", "decisions/", "v1/docs/")),
+        ("The first edition &middot; frozen", "v1/book/index.html"),
+        ("&hellip; read it in one page", "v1/book/single.html"),
+        ("&hellip; what changed between versions", "v1/book/changes.html"),
+        ("&hellip; the reviews", "v1/reviews/index.html"),
+        ("&hellip; the sources it came from", "v1/docs/index.html"),
+        ("&hellip; the altitude ladder", "v1/altitudes/index.html"),
+        ("&hellip; the print PDF (6&times;9)", "v1/book/meaning-through-connectivity.pdf"),
+        ("&hellip; the screen PDF (tablet)", "v1/book/meaning-through-connectivity-screen.pdf"),
+    ], ("v2/", "book/", "v1/book/", "v1/altitudes/", "v1/reviews/", "decisions/", "v1/docs/")),
     ("The grammar", "v1/grammar/index.html", [
         ("The rules you can apply tomorrow", "v1/grammar/index.html"),
         ("The edge set", "v1/grammar/edge-set.html"),
@@ -91,15 +93,15 @@ NAV = [
     ("Site", "v1/documents/index.html", [
         ("The documents", "v1/documents/index.html"),
         ("&hellip; what the graphs found", "v1/documents/what-the-graphs-found.html"),
-        ("The memos", "memos/index.html"),
-        ("The review packs", "packs/index.html"),
-        ("The dev pack: the second book", "dev-pack/index.html"),
+        ("The memos", "v2/memos/index.html"),
+        ("The review packs", "v2/packs/index.html"),
+        ("The dev pack: the second book", "v2/dev-pack/index.html"),
         ("Comms: tasks &amp; requests", "admin/comms.html"),
         ("Release history", "admin/versions.html"),
         ("Publishing the book", "admin/publishing.html"),
         ("Admin &amp; engineering", "admin/index.html"),
         ("Where we lose", "v1/about/participant.html"),
-    ], ("v1/documents/", "v1/briefs/", "admin/", "v1/about/", "dev-pack/", "memos/", "briefs/", "packs/")),
+    ], ("v1/documents/", "v1/briefs/", "admin/", "v1/about/")),
 ]
 
 FOOTER = [
@@ -266,7 +268,7 @@ def main():
         if rel_ in ("v1/book/print.html", "v1/book/cover/wrap.html"):
             # print sources carry no site chrome by design
             continue
-        if rel_.startswith("packs/") and rel_ != "packs/index.html":
+        if rel_.startswith("v2/packs/") and rel_ != "v2/packs/index.html":
             # a review pack is a document, not a page of the site: it carries its own cover
             # and must read end to end with no link followed, so a nav would be an invitation
             # to leave it

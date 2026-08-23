@@ -14,9 +14,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 PACK = "v0.3.27__the-second-book"
-SRC = ROOT / "dev-packs" / PACK
-OUT = ROOT / "dev-pack"
-GH = f"https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/dev-packs/{PACK}"
+SRC = ROOT / "v2" / "dev-packs" / PACK
+OUT = ROOT / "v2" / "dev-pack"
+GH = f"https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/dev-packs/{PACK}"
 
 # one line per file, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
@@ -39,22 +39,22 @@ PAGE = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title} &mdash; graphs.sgit.ai</title>
 <meta name="description" content="{desc}">
-<link rel="canonical" href="https://graphs.sgit.ai/dev-pack/{slug}.html">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/dev-pack/{slug}.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="graphs.sgit.ai">
-<meta property="og:url" content="https://graphs.sgit.ai/dev-pack/{slug}.html">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/dev-pack/{slug}.html">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta name="twitter:card" content="summary">
 <link rel="alternate" type="text/markdown" href="../dev-packs/{pack}/{src}" title="The raw markdown, which is the source of truth">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
 
 <nav class="site"><div class="row"></div></nav>
 
 <main class="doc">
-<div class="crumb"><a href="../index.html">graphs.sgit.ai</a> &rarr; <a href="index.html">the dev pack</a> &rarr; <b>{num}</b></div>
+<div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="index.html">the dev pack</a> &rarr; <b>{num}</b></div>
 <h1>{title}</h1>
 <p class="lead">{desc}</p>
 
@@ -75,8 +75,8 @@ PAGE = """<!doctype html>
 </main>
 
 <footer class="site"><div class="cols"></div></footer>
-<script src="../assets/vendor/marked.min.js"></script>
-<script src="../assets/mdreader.js" defer></script>
+<script src="../../assets/vendor/marked.min.js"></script>
+<script src="../../assets/mdreader.js" defer></script>
 </body>
 </html>
 """

@@ -263,7 +263,7 @@ if (!fs.existsSync(freezePath)) {
 // Gate 22. A pack records the SHA-256 of every data file it drew from, on its own cover.
 // That is what lets a reader years later check the pack against the build that produced it,
 // and it is worth nothing if the build ships a pack whose sources have since moved.
-const packsPath = path.join(ROOT, 'packs/packs.json');
+const packsPath = path.join(ROOT, 'v2/packs/packs.json');
 if (fs.existsSync(packsPath)) {
   const packs = JSON.parse(fs.readFileSync(packsPath, 'utf8'));
   if (packs.version !== VERSION) {
@@ -277,8 +277,8 @@ if (fs.existsSync(packsPath)) {
         errors.push(`pack ${p.slug} is stale: ${src.path} changed since it was built — run gen_packs.py`);
       }
     }
-    if (!fs.existsSync(path.join(ROOT, `packs/${p.slug}.html`))) {
-      errors.push(`pack page missing: packs/${p.slug}.html`);
+    if (!fs.existsSync(path.join(ROOT, `v2/packs/${p.slug}.html`))) {
+      errors.push(`pack page missing: v2/packs/${p.slug}.html`);
     }
   }
 }

@@ -41,6 +41,32 @@ STUB = """<!doctype html>
 """
 
 
+STUB2 = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Moved into the second edition's tree &mdash; graphs.sgit.ai</title>
+<meta http-equiv="refresh" content="0; url={to}">
+<link rel="canonical" href="https://graphs.sgit.ai/{new}">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="{up}assets/site.css">
+</head>
+<body>
+<main class="doc">
+<h1>This page moved</h1>
+<p class="lead">Everything that belongs to the second edition &mdash; its plan, its memos, its review packs &mdash; moved under <code>/v2/</code> at v0.4.4, so that each edition owns everything it uses. This address still works and now redirects.</p>
+<p><a href="{to}"><b>Continue to {new}</b></a></p>
+<p class="small dim">If you are not redirected automatically, follow the link above. The rule is explained on <a href="{up}v2/index.html">the second edition's front page</a>.</p>
+</main>
+</body>
+</html>
+"""
+
+# Trees that moved from the root into v2/ at v0.4.4. Markdown and PDF files cannot carry a
+# redirect; their loss is recorded in the release notes rather than discovered.
+V2_MOVED = ("memos", "dev-pack", "packs")
+
+
 def main():
     n = 0
     for f in sorted(V1.rglob("*.html")):
@@ -55,7 +81,20 @@ def main():
         old.parent.mkdir(parents=True, exist_ok=True)
         old.write_text(STUB.format(to=up + "v1/" + rel, new="v1/" + rel, up=up))
         n += 1
-    print(f"gen_redirects: {n} stub(s) at the first edition's former addresses")
+    n2 = 0
+    for tree in V2_MOVED:
+        for f in sorted((ROOT / "v2" / tree).rglob("*.html")):
+            rel = f.relative_to(ROOT / "v2").as_posix()
+            old = ROOT / rel
+            if old.exists() and "<title>Moved" not in old.read_text(errors="replace")[:400]:
+                continue                              # never overwrite a live page
+            depth = rel.count("/")
+            up = "../" * depth
+            old.parent.mkdir(parents=True, exist_ok=True)
+            old.write_text(STUB2.format(to=up + "v2/" + rel, new="v2/" + rel, up=up))
+            n2 += 1
+    print(f"gen_redirects: {n} stub(s) at the first edition's former addresses, "
+          f"{n2} at the second edition's")
 
 
 if __name__ == "__main__":

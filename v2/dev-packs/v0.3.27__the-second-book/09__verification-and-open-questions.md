@@ -87,16 +87,21 @@ These are the founder's. Each one blocks something specific, named.
 its own copies into `v2/` as it needs them, so each edition owns everything it uses. ADR-1 in
 file 03 records the boundary, the URL cost and the gate. Shipped as v0.4.0.
 
-### 2. Where does the second book live, and what happens to the front page?
+### 2. Where does the second book live, and what happens to the front page? · **ANSWERED 23 August**
 
-The first edition owns `/book/` and the root `index.html` is its introduction source. The second
-book needs a path and, eventually, the front door.
+**Each edition owns its prefix, and `/book/` is a pointer to the current edition.** The founder's
+decision, which is a third option neither listed here nor recommended: the second edition lives
+at `/v2/`, permanently, and everything about making it lives inside that tree too, including the
+project management and the scaffolding, in preparation for the day `/v2/` is archived and a
+`/v3/` begins. `/book/` at the root stops being an address that any edition owns and becomes the
+pointer to whichever edition is current, which from now on is the second. The root front page
+stays edition-neutral. Two supporting facts the founder recorded with it: the first edition was
+never released and nothing external links into it, so it is kept as history, source material and
+worked examples; and anything outside `/v1/` and `/v2/` must be deletable without either edition
+losing content, which is the boundary made testable. Executed at v0.4.4: the dev pack, the
+memos, the briefs and the review packs all moved into `/v2/`.
 
-*Blocks:* phase 1. *Options:* the second book at `/v2/` until it is complete then it takes
-`/book/` with the first edition moving to `/first-edition/`; or the second book takes a
-permanent new path and `/book/` means the first edition forever. *Recommendation:* the second
-option, because moving published URLs is what the freeze exists to avoid, and a book that has to
-be renamed to be finished has a deadline built into its address.
+*Phase 1 is no longer blocked.*
 
 ### 3. What are the five altitudes called, to a reader?
 

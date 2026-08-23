@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 HOST = (ROOT / "CNAME").read_text().strip()
-SKIP_DIRS = {".git", ".github", "node_modules", "assets", "dev-packs"}
+SKIP_DIRS = {".git", ".github", "node_modules", "assets"}
 
 
 def is_stub(p):
@@ -46,7 +46,7 @@ def main():
 
     # the front page first, then the second edition's plan, then the first edition
     def rank(r):
-        return (0 if r == "index.html" else 1 if r.startswith("dev-pack/")
+        return (0 if r == "index.html" else 1 if r.startswith("v2/")
                 else 2 if not r.startswith("v1/") else 3, r)
 
     rows = "\n".join(
