@@ -1,0 +1,904 @@
+{
+ "doc": {
+  "slug": "thinking-in-graphs",
+  "title": "Thinking in Graphs: Meaning Through Connectivity",
+  "source": "v1/docs/sources/thinking-in-graphs.md",
+  "sha256": "9d23354fc9a674ae34ddcc01095afbc2c7c3831e52e7bf5da7ae02df244a561a",
+  "dated": "2026-02-05",
+  "extracted": "2026-08-23",
+  "extractor": "agent",
+  "note": "Every node below is a record that this document says something, at a named anchor. Whether what it says is true is not evaluated at this layer; that judgement belongs to the book's universe, which connects to these nodes."
+ },
+ "nodes": [
+  {
+   "id": "node",
+   "family": "concept",
+   "defined": true,
+   "label": "node",
+   "statement": "A node carries local properties but has no obligation to declare what it is, how it is used, or what it means.",
+   "anchor": {
+    "section": "Nodes Have No Obligation to Explain Themselves",
+    "quote": "A node in a graph is just a node. It may carry some local properties — a title, a value, a timestamp — but it has no inherent obligation to declare what it \"is,\" how it should be used, or what it means."
+   }
+  },
+  {
+   "id": "meaning-through-connectivity",
+   "family": "concept",
+   "defined": true,
+   "label": "meaning through connectivity",
+   "statement": "What a thing is emerges from the edges traceable from it.",
+   "anchor": {
+    "section": "Nodes Have No Obligation to Explain Themselves",
+    "quote": "In a graph-first model, what something \"is\" emerges from the edges you can trace from it."
+   }
+  },
+  {
+   "id": "connectivity",
+   "family": "concept",
+   "defined": true,
+   "label": "connectivity",
+   "statement": "A node is meaningful in proportion to how richly it is connected.",
+   "anchor": {
+    "section": "Nodes Have No Obligation to Explain Themselves",
+    "quote": "A node connected to a rich web of other nodes is meaningful in proportion to that connectivity."
+   }
+  },
+  {
+   "id": "schema-first",
+   "family": "concept",
+   "defined": true,
+   "label": "schema-first",
+   "statement": "The type system tells you what something is before you encounter it.",
+   "anchor": {
+    "section": "Nodes Have No Obligation to Explain Themselves",
+    "quote": "schema-first thinking, where the type system tells you what something is before you encounter it"
+   }
+  },
+  {
+   "id": "declared-meaning",
+   "family": "concept",
+   "defined": true,
+   "label": "declared meaning",
+   "statement": "Meaning asserted by a schema, which instances conform to or fail.",
+   "anchor": {
+    "section": "Meaning Is Not Declared — It Is Discovered",
+    "quote": "In a schema-first system, meaning is declared: \"This object IS a Task. It HAS these fields. Its status MUST be one of these values.\" The schema is the authority, and instances conform or fail validation."
+   }
+  },
+  {
+   "id": "discovered-meaning",
+   "family": "concept",
+   "defined": true,
+   "label": "discovered meaning",
+   "statement": "Meaning determined by traversing a node's edges.",
+   "anchor": {
+    "section": "Meaning Is Not Declared — It Is Discovered",
+    "quote": "In a graph-first system, meaning is discovered: \"This node has edges to other nodes. By traversing those edges, we can determine what this node relates to, what constraints apply, and how confidently we can characterise it.\""
+   }
+  },
+  {
+   "id": "compatibility",
+   "family": "concept",
+   "defined": true,
+   "label": "compatibility",
+   "statement": "The degree to which two nodes' subgraphs overlap when traced toward common reference points.",
+   "anchor": {
+    "section": "Compatibility Is a Graph Computation",
+    "quote": "Two nodes are not compatible because they share a type declaration. They are compatible to the degree that their subgraphs overlap when traced toward common reference points."
+   }
+  },
+  {
+   "id": "fractal-principle",
+   "family": "concept",
+   "defined": true,
+   "label": "the fractal principle",
+   "statement": "The same structural pattern, nodes with edges and meaning through connectivity, repeats at every level of zoom.",
+   "anchor": {
+    "section": "Every Scope Defines Its Own Vocabulary",
+    "quote": "the same structural pattern — nodes with edges, meaning through connectivity — repeats at every level of zoom"
+   }
+  },
+  {
+   "id": "local-vocabulary",
+   "family": "concept",
+   "defined": true,
+   "label": "local vocabulary",
+   "statement": "Every level of the scope hierarchy can introduce its own nodes, edges, types and definitions.",
+   "anchor": {
+    "section": "Every Scope Defines Its Own Vocabulary",
+    "quote": "Every level in this hierarchy can introduce its own nodes, edges, types, and definitions."
+   }
+  },
+  {
+   "id": "name-clash",
+   "family": "concept",
+   "defined": true,
+   "label": "name clash",
+   "statement": "Label collisions between scopes, expected and resolved structurally rather than by name.",
+   "anchor": {
+    "section": "Name Clashes Are Normal",
+    "quote": "In a fractal system, name clashes are inevitable and non-problematic."
+   }
+  },
+  {
+   "id": "semantic-web",
+   "family": "concept",
+   "defined": true,
+   "label": "the Semantic Web",
+   "statement": "The community that identified the right problem: exchanging meaning without agreeing on everything upfront.",
+   "anchor": {
+    "section": "The Semantic Web's Insight (and Mistake)",
+    "quote": "The Semantic Web community identified the right problem: how do independent parties exchange meaning without agreeing on everything upfront?"
+   }
+  },
+  {
+   "id": "anchor-node",
+   "family": "concept",
+   "defined": true,
+   "label": "anchor node",
+   "statement": "A node that is well-connected, well-maintained and well-known, with no special authority.",
+   "anchor": {
+    "section": "What Anchor Nodes Actually Are",
+    "quote": "An anchor node is simply a node that:"
+   }
+  },
+  {
+   "id": "confidence-spectrum",
+   "family": "concept",
+   "defined": true,
+   "label": "the confidence spectrum",
+   "statement": "Every assertion about a node sits on a spectrum from no edges to rich multi-hop connectivity.",
+   "anchor": {
+    "section": "The Confidence Spectrum",
+    "quote": "Every assertion the system makes about a node sits on a confidence spectrum:"
+   }
+  },
+  {
+   "id": "honest-uncertainty",
+   "family": "concept",
+   "defined": true,
+   "label": "honest uncertainty",
+   "statement": "The default posture: report what the edges support, what is missing, and what that does to confidence.",
+   "anchor": {
+    "section": "Honest Uncertainty Is the Default",
+    "quote": "The system's default posture is honest uncertainty"
+   }
+  },
+  {
+   "id": "enrichment",
+   "family": "concept",
+   "defined": true,
+   "label": "enrichment",
+   "statement": "The response to low confidence: add edges rather than fail validation.",
+   "anchor": {
+    "section": "Enrichment, Not Enforcement",
+    "quote": "the response is not validation failure. It is an opportunity for enrichment"
+   }
+  },
+  {
+   "id": "graphs-of-graphs",
+   "family": "concept",
+   "defined": true,
+   "label": "graphs of graphs",
+   "statement": "The ecosystem is not one flat graph; it is a graph of graphs, recursively.",
+   "anchor": {
+    "section": "The Recursive Structure",
+    "quote": "It is a graph of graphs, recursively"
+   }
+  },
+  {
+   "id": "cross-graph-edge",
+   "family": "concept",
+   "defined": true,
+   "label": "cross-graph edge",
+   "statement": "An edge that crosses from one sovereign graph into another, carrying meaning between them.",
+   "anchor": {
+    "section": "Cross-Graph References",
+    "quote": "it creates an edge that crosses from the Issues-FS graph into the osbot-utils Type_Safe graph"
+   }
+  },
+  {
+   "id": "version-pinning",
+   "family": "concept",
+   "defined": true,
+   "label": "version pinning",
+   "statement": "A cross-graph edge may pin meaning to a version or float with the latest; the graph records the choice.",
+   "anchor": {
+    "section": "Versioning and Temporal Graphs",
+    "quote": "If the edge points to `osbot-utils@3.63.4`, then the meaning is pinned to that version's definition."
+   }
+  },
+  {
+   "id": "lexicon",
+   "family": "concept",
+   "defined": true,
+   "label": "the Lexicon",
+   "statement": "Not a dictionary or a schema registry: curated anchor nodes, cross-graph edges, traversal tools and overridable bootstrap definitions.",
+   "anchor": {
+    "section": "What the Lexicon Actually Provides",
+    "quote": "the Issues-FS Lexicon is not a dictionary or a schema registry"
+   }
+  },
+  {
+   "id": "librarian",
+   "family": "concept",
+   "defined": false,
+   "label": "the Librarian",
+   "statement": "Used twice as the agent who adds or arbitrates edges; never defined in this document.",
+   "anchor": {
+    "section": "Name Clashes Are Normal",
+    "quote": "A human or a Librarian agent can then decide"
+   }
+  },
+  {
+   "id": "type-safe",
+   "family": "concept",
+   "defined": false,
+   "label": "Type_Safe",
+   "statement": "The runtime type framework the port example leans on; assumed, not defined here.",
+   "anchor": {
+    "section": "The Safe_UInt__Port Example",
+    "quote": "Consider a concrete example from the osbot-utils Type_Safe framework:"
+   }
+  },
+  {
+   "id": "role-md",
+   "family": "concept",
+   "defined": false,
+   "label": "ROLE.md",
+   "statement": "Used as the thing that makes a role meaningful; its own format is never defined here.",
+   "anchor": {
+    "section": "This Applies to Everything",
+    "quote": "If it links to a ROLE.md definition, to a set of issue types it can create, to handoff protocols — then we know what this QA role does."
+   }
+  },
+  {
+   "id": "c-central",
+   "family": "claim",
+   "support": "demonstrated",
+   "label": "the central claim",
+   "statement": "Everything is a graph; meaning is discovered through relationships, not declared; confidence is proportional to connectivity.",
+   "about": [
+    "meaning-through-connectivity",
+    "connectivity"
+   ],
+   "anchor": {
+    "section": "What This Document Is",
+    "quote": "everything is a graph, meaning is not declared but discovered through graph relationships, and confidence in that meaning is proportional to how richly connected a node is to other nodes that provide context"
+   }
+  },
+  {
+   "id": "c-literal",
+   "family": "claim",
+   "support": "declared",
+   "label": "not a metaphor",
+   "statement": "The claim is a literal architectural principle, not a metaphor.",
+   "about": [
+    "meaning-through-connectivity"
+   ],
+   "anchor": {
+    "section": "What This Document Is",
+    "quote": "This is not a metaphor. It is a literal architectural principle"
+   }
+  },
+  {
+   "id": "c-no-edges-no-meaning",
+   "family": "claim",
+   "support": "declared",
+   "label": "no edges, no meaning",
+   "statement": "A node connected to nothing is, literally, meaningless.",
+   "about": [
+    "node",
+    "connectivity"
+   ],
+   "anchor": {
+    "section": "Nodes Have No Obligation to Explain Themselves",
+    "quote": "A node connected to nothing is meaningless — literally."
+   }
+  },
+  {
+   "id": "c-difference-is-connectivity",
+   "family": "claim",
+   "support": "demonstrated",
+   "label": "the difference is connectivity",
+   "statement": "Two identical values differ radically in meaning when their connectivity differs.",
+   "about": [
+    "connectivity",
+    "meaning-through-connectivity"
+   ],
+   "anchor": {
+    "section": "The Safe_UInt__Port Example",
+    "quote": "**The difference is not in the value.** Both scenarios have `8080`. The difference is in the **connectivity**."
+   }
+  },
+  {
+   "id": "c-evidence-or-not",
+   "family": "claim",
+   "support": "argued",
+   "label": "the graph provides the evidence or it does not",
+   "statement": "The system reports what it can and cannot confirm rather than assuming meaning.",
+   "about": [
+    "honest-uncertainty"
+   ],
+   "anchor": {
+    "section": "This Applies to Everything",
+    "quote": "The graph either provides the evidence or it doesn't. The system's job is to report what it can and can't confirm, not to assume meaning where the edges don't support it."
+   }
+  },
+  {
+   "id": "c-brittle-vs-resilient",
+   "family": "claim",
+   "support": "argued",
+   "label": "declared is brittle, discovered is resilient",
+   "statement": "Declared meaning breaks at boundaries; discovered meaning thins but composes.",
+   "about": [
+    "declared-meaning",
+    "discovered-meaning"
+   ],
+   "anchor": {
+    "section": "Meaning Is Not Declared — It Is Discovered",
+    "quote": "declared meaning is brittle and local"
+   }
+  },
+  {
+   "id": "c-common-ground-discovered",
+   "family": "claim",
+   "support": "demonstrated",
+   "label": "common ground is discovered, not imposed",
+   "statement": "Structural overlap can be found across five different review processes without any team conforming to a shared schema.",
+   "about": [
+    "compatibility"
+   ],
+   "anchor": {
+    "section": "Finding Common Ground Through Graph Analysis",
+    "quote": "The common ground was *discovered* in the graph, not *imposed* on it."
+   }
+  },
+  {
+   "id": "c-compat-spectrum",
+   "family": "claim",
+   "support": "argued",
+   "label": "compatibility is a spectrum",
+   "statement": "Compatibility is not binary, not symmetric, not global, and it is computable.",
+   "about": [
+    "compatibility"
+   ],
+   "anchor": {
+    "section": "Compatibility Is a Graph Computation",
+    "quote": "**Not binary** — it's a spectrum (Team A and Team C are more compatible than Team A and Team B)"
+   }
+  },
+  {
+   "id": "c-no-registration",
+   "family": "claim",
+   "support": "argued",
+   "label": "no registration with the parent",
+   "statement": "A child scope never needs to register its vocabulary with a parent scope.",
+   "about": [
+    "local-vocabulary",
+    "fractal-principle"
+   ],
+   "anchor": {
+    "section": "Every Scope Defines Its Own Vocabulary",
+    "quote": "At no level does a child scope need to \"register\" its vocabulary with a parent scope."
+   }
+  },
+  {
+   "id": "c-structural-resolution",
+   "family": "claim",
+   "support": "argued",
+   "label": "resolution is structural",
+   "statement": "Name clashes resolve by graph identity and traversal path, not by the label.",
+   "about": [
+    "name-clash"
+   ],
+   "anchor": {
+    "section": "Name Clashes Are Normal",
+    "quote": "Resolution is structural, not nominal."
+   }
+  },
+  {
+   "id": "c-observations-not-errors",
+   "family": "claim",
+   "support": "argued",
+   "label": "observations, not errors",
+   "statement": "Gaps, partial mappings and contradictions are surfaced for judgement, not rejected as failures.",
+   "about": [
+    "honest-uncertainty"
+   ],
+   "anchor": {
+    "section": "Incompatibility and Missing Pieces Are Expected",
+    "quote": "None of these are errors. They are observations that the graph analysis can make, surfacing them for human (or agent) judgment."
+   }
+  },
+  {
+   "id": "c-semweb-mistake",
+   "family": "claim",
+   "support": "argued",
+   "label": "the Semantic Web's mistake",
+   "statement": "The mistake was attaching meaning to nodes rather than deriving it from edges.",
+   "about": [
+    "semantic-web"
+   ],
+   "anchor": {
+    "section": "The Semantic Web's Insight (and Mistake)",
+    "quote": "They ended up attaching meaning *to nodes* rather than deriving meaning *from edges*."
+   }
+  },
+  {
+   "id": "c-dressed-in-graph-syntax",
+   "family": "claim",
+   "support": "declared",
+   "label": "schema-first in graph syntax",
+   "statement": "Self-describing nodes are schema-first thinking wearing graph syntax.",
+   "about": [
+    "semantic-web",
+    "schema-first"
+   ],
+   "anchor": {
+    "section": "The Semantic Web's Insight (and Mistake)",
+    "quote": "This is schema-first thinking dressed in graph syntax. The node knows what it is."
+   }
+  },
+  {
+   "id": "c-mappings-by-anyone",
+   "family": "claim",
+   "support": "argued",
+   "label": "mappings can come from anyone",
+   "statement": "Cross-reference edges may be added by the team, an agent, an analysis or a third party, without touching the original node.",
+   "about": [
+    "anchor-node",
+    "cross-graph-edge"
+   ],
+   "anchor": {
+    "section": "The Graph-First Correction",
+    "quote": "the mappings might have been added by anyone: the team itself, a Librarian agent, an automated analysis, or a third party doing an integration"
+   }
+  },
+  {
+   "id": "c-no-special-authority",
+   "family": "claim",
+   "support": "argued",
+   "label": "anchors have no special authority",
+   "statement": "An anchor node enables discovery; it does not force conformity.",
+   "about": [
+    "anchor-node"
+   ],
+   "anchor": {
+    "section": "What Anchor Nodes Actually Are",
+    "quote": "**Has no special authority** — it does not force conformity; it enables discovery"
+   }
+  },
+  {
+   "id": "c-confidence-computable",
+   "family": "claim",
+   "support": "argued",
+   "label": "confidence is computable",
+   "statement": "How confident the system is about a node is always computable from the graph.",
+   "about": [
+    "confidence-spectrum",
+    "connectivity"
+   ],
+   "anchor": {
+    "section": "The Confidence Spectrum",
+    "quote": "the answer is always computable from the graph: count the edges, measure the depth of traversal to anchor nodes, assess the authority of the nodes reached"
+   }
+  },
+  {
+   "id": "c-never-assumes",
+   "family": "claim",
+   "support": "declared",
+   "label": "gaps are never filled with assumptions",
+   "statement": "The system reports found and missing edges and never fills gaps by assuming.",
+   "about": [
+    "honest-uncertainty"
+   ],
+   "anchor": {
+    "section": "Honest Uncertainty Is the Default",
+    "quote": "It never fills in the gaps with assumptions."
+   }
+  },
+  {
+   "id": "c-grow-not-constrain",
+   "family": "claim",
+   "support": "argued",
+   "label": "grow the graph, do not tighten the schema",
+   "statement": "The ecosystem improves by adding edges, not by imposing stricter schemas.",
+   "about": [
+    "enrichment"
+   ],
+   "anchor": {
+    "section": "Enrichment, Not Enforcement",
+    "quote": "not by imposing stricter schemas, but by growing the graph"
+   }
+  },
+  {
+   "id": "c-sovereign-graphs",
+   "family": "claim",
+   "support": "argued",
+   "label": "each graph is sovereign",
+   "statement": "Cross-graph edges give interoperability across teams, languages, cultures and agendas without any graph changing internally.",
+   "about": [
+    "cross-graph-edge"
+   ],
+   "anchor": {
+    "section": "Cross-Graph References",
+    "quote": "This is what makes the graph model scale across teams, languages, cultures, and agendas. Each graph is sovereign."
+   }
+  },
+  {
+   "id": "c-pin-or-float",
+   "family": "claim",
+   "support": "argued",
+   "label": "pin or float, but say which",
+   "statement": "Pinned and floating version edges are both valid; the graph makes the choice explicit and traceable.",
+   "about": [
+    "version-pinning"
+   ],
+   "anchor": {
+    "section": "Versioning and Temporal Graphs",
+    "quote": "Both are valid choices. The graph makes the choice explicit and traceable."
+   }
+  },
+  {
+   "id": "c-override",
+   "family": "claim",
+   "support": "argued",
+   "label": "local override is a capability",
+   "statement": "Any scope may override or specialise bootstrap definitions by creating local nodes with different subgraphs.",
+   "about": [
+    "local-vocabulary",
+    "lexicon"
+   ],
+   "anchor": {
+    "section": "What Every Repo Can Do",
+    "quote": "**Override or specialise** bootstrap definitions by creating local nodes with different subgraphs"
+   }
+  },
+  {
+   "id": "c-honest-assessments",
+   "family": "claim",
+   "support": "argued",
+   "label": "we know, we think, we cannot confirm",
+   "statement": "The system's observations end in a three-state honest assessment.",
+   "about": [
+    "honest-uncertainty",
+    "confidence-spectrum"
+   ],
+   "anchor": {
+    "section": "What the System Can Observe",
+    "quote": "**Generate honest assessments**: \"We know X. We think Y. We cannot confirm Z.\""
+   }
+  },
+  {
+   "id": "c-authority-from-connectivity",
+   "family": "claim",
+   "support": "declared",
+   "label": "authority is not identity",
+   "statement": "Authority is a property of connectivity, provenance and governance, not of identity.",
+   "about": [
+    "anchor-node",
+    "connectivity"
+   ],
+   "anchor": {
+    "section": "What the System Never Does",
+    "quote": "authority is a property of connectivity, provenance, and governance, not of identity"
+   }
+  },
+  {
+   "id": "c-structural-not-nominal",
+   "family": "claim",
+   "support": "demonstrated",
+   "label": "connection is structural, not nominal",
+   "statement": "A Japanese-labelled process connects to an English-labelled anchor through edges, with no shared label needed.",
+   "about": [
+    "compatibility",
+    "name-clash"
+   ],
+   "anchor": {
+    "section": "The QA Engineer in Tokyo",
+    "quote": "The connection is structural (via graph edges), not nominal (via shared label)."
+   }
+  },
+  {
+   "id": "c-traceable-chain",
+   "family": "claim",
+   "support": "demonstrated",
+   "label": "the review chain is traceable",
+   "statement": "A three-city review chain in three languages is traceable end to end through the graph.",
+   "about": [
+    "cross-graph-edge",
+    "compatibility"
+   ],
+   "anchor": {
+    "section": "The Compliance Officer in Frankfurt",
+    "quote": "The review chain is traceable through the graph."
+   }
+  },
+  {
+   "id": "c-absence-reported",
+   "family": "claim",
+   "support": "demonstrated",
+   "label": "absence is reported, not papered over",
+   "statement": "The system does not pretend a GitHub issue is a Feature_Request; it reports the missing edge and what adding it would enable.",
+   "about": [
+    "honest-uncertainty"
+   ],
+   "anchor": {
+    "section": "The Open Source Contributor in Nairobi",
+    "quote": "The system doesn't pretend the GitHub issue is a Feature_Request just because a human would make that inference."
+   }
+  },
+  {
+   "id": "c-ten-principles",
+   "family": "claim",
+   "support": "demonstrated",
+   "label": "the document compresses itself to ten principles",
+   "statement": "The summary lists ten core principles. The first edition distilled five ideas from this source; the gap is ladder finding 3.",
+   "about": [
+    "meaning-through-connectivity"
+   ],
+   "anchor": {
+    "section": "Summary: Core Principles",
+    "quote": "1. **Everything is a node.** Nodes carry local properties but have no obligation to declare what they are or how they should be used."
+   }
+  },
+  {
+   "id": "h-inevitable-mess",
+   "family": "hypothesis",
+   "label": "distributed vocabulary produces gaps",
+   "statement": "A fractal system with distributed vocabulary will inevitably produce gaps, partial mappings and contradictions.",
+   "about": [
+    "fractal-principle",
+    "local-vocabulary"
+   ],
+   "anchor": {
+    "section": "Incompatibility and Missing Pieces Are Expected",
+    "quote": "A fractal system with distributed vocabulary will inevitably produce:"
+   }
+  },
+  {
+   "id": "h-thinner-across-boundaries",
+   "family": "hypothesis",
+   "label": "meaning thins measurably at boundaries",
+   "statement": "Crossing a boundary thins meaning rather than breaking it, and the system can report exactly how thin.",
+   "about": [
+    "discovered-meaning",
+    "confidence-spectrum"
+   ],
+   "anchor": {
+    "section": "Meaning Is Not Declared — It Is Discovered",
+    "quote": "it just means some edges don't extend across that boundary, and the meaning becomes thinner (less confident) on the other side"
+   }
+  },
+  {
+   "id": "h-self-understanding",
+   "family": "hypothesis",
+   "label": "every edge grows self-understanding",
+   "statement": "Each added edge increments the system's understanding of itself; the ecosystem improves this way over time.",
+   "about": [
+    "enrichment"
+   ],
+   "anchor": {
+    "section": "Enrichment, Not Enforcement",
+    "quote": "Every edge added is a small increment in the system's understanding of itself."
+   }
+  },
+  {
+   "id": "o-foundation",
+   "family": "objective",
+   "label": "be the foundation",
+   "statement": "Underpin every other document in the ecosystem: the philosophy everything else is built on.",
+   "about": [],
+   "anchor": {
+    "section": "What This Document Is",
+    "quote": "This is the foundational document for the Issues-FS ecosystem."
+   }
+  },
+  {
+   "id": "ex-port",
+   "family": "example",
+   "label": "the Safe_UInt__Port example",
+   "statement": "Two scenarios with the identical value 8080, differing only in connectivity, yield radically different meaning.",
+   "demonstrates": [
+    "c-difference-is-connectivity",
+    "c-central"
+   ],
+   "anchor": {
+    "section": "The Safe_UInt__Port Example",
+    "quote": "class Safe_UInt__Port(Safe_UInt):"
+   }
+  },
+  {
+   "id": "ex-five-reviews",
+   "family": "example",
+   "label": "the five Reviews",
+   "statement": "Five teams' Review processes, none aware of the others, analysed for structural overlap without any conforming.",
+   "demonstrates": [
+    "c-common-ground-discovered",
+    "c-compat-spectrum"
+   ],
+   "anchor": {
+    "section": "The Review Example",
+    "quote": "Consider five different teams, each with a process they call \"Review\":"
+   }
+  },
+  {
+   "id": "ex-preflabel",
+   "family": "example",
+   "label": "the prefLabel counter-example",
+   "statement": "A SKOS prefLabel declaration shown as meaning encoded on the node itself: the mistake, in six lines.",
+   "demonstrates": [
+    "c-semweb-mistake",
+    "c-dressed-in-graph-syntax"
+   ],
+   "anchor": {
+    "section": "The Semantic Web's Insight (and Mistake)",
+    "quote": "skos:prefLabel  \"Review\"@en"
+   }
+  },
+  {
+   "id": "ex-end-to-end",
+   "family": "example",
+   "label": "the end-to-end scenario",
+   "statement": "London, Tokyo, Frankfurt and Nairobi: one task, three review vocabularies, one unmapped proposal, every confidence statement computed.",
+   "demonstrates": [
+    "c-traceable-chain",
+    "c-structural-not-nominal",
+    "c-absence-reported"
+   ],
+   "anchor": {
+    "section": "The Graph",
+    "quote": "Task-42 (in Project: Issues-FS__Service)"
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "meaning-through-connectivity",
+   "verb": "departs-from",
+   "to": "schema-first",
+   "anchor": {
+    "section": "Nodes Have No Obligation to Explain Themselves",
+    "quote": "This is a deliberate departure from schema-first thinking"
+   }
+  },
+  {
+   "from": "connectivity",
+   "verb": "determines",
+   "to": "confidence-spectrum",
+   "anchor": {
+    "section": "What This Document Is",
+    "quote": "confidence in that meaning is proportional to how richly connected a node is"
+   }
+  },
+  {
+   "from": "lexicon",
+   "verb": "provides",
+   "to": "anchor-node",
+   "anchor": {
+    "section": "What the Lexicon Actually Provides",
+    "quote": "**A curated set of well-connected anchor nodes** for the issues domain"
+   }
+  },
+  {
+   "from": "anchor-node",
+   "verb": "enables",
+   "to": "compatibility",
+   "anchor": {
+    "section": "What Anchor Nodes Actually Are",
+    "quote": "A node in a child scope that links to a Lexicon anchor node gains meaning by association."
+   }
+  },
+  {
+   "from": "cross-graph-edge",
+   "verb": "enables",
+   "to": "compatibility",
+   "anchor": {
+    "section": "Cross-Graph References",
+    "quote": "Cross-graph edges create interoperability without requiring any graph to change its internal structure."
+   }
+  },
+  {
+   "from": "enrichment",
+   "verb": "remedies",
+   "to": "confidence-spectrum",
+   "anchor": {
+    "section": "Enrichment, Not Enforcement",
+    "quote": "When the system identifies low-confidence nodes, the response is not validation failure."
+   }
+  },
+  {
+   "from": "fractal-principle",
+   "verb": "licenses",
+   "to": "local-vocabulary",
+   "anchor": {
+    "section": "Every Scope Defines Its Own Vocabulary",
+    "quote": "Every level in this hierarchy can introduce its own nodes, edges, types, and definitions.",
+    "occurrence": 1
+   }
+  },
+  {
+   "from": "graphs-of-graphs",
+   "verb": "exhibits",
+   "to": "fractal-principle",
+   "anchor": {
+    "section": "The Recursive Structure",
+    "quote": "At every level, the same principles apply"
+   }
+  }
+ ],
+ "near_but_not": [
+  {
+   "this": "anchor-node",
+   "not": "a schema other nodes must conform to",
+   "anchor": {
+    "section": "The Graph-First Correction",
+    "quote": "It is not a schema that other nodes must conform to. It is a reference point that other nodes may link to."
+   }
+  },
+  {
+   "this": "lexicon",
+   "not": "a dictionary or a schema registry",
+   "anchor": {
+    "section": "What the Lexicon Actually Provides",
+    "quote": "the Issues-FS Lexicon is not a dictionary or a schema registry",
+    "occurrence": 1
+   }
+  },
+  {
+   "this": "compatibility",
+   "not": "a shared type declaration",
+   "anchor": {
+    "section": "Compatibility Is a Graph Computation",
+    "quote": "Two nodes are not compatible because they share a type declaration.",
+    "occurrence": 1
+   }
+  },
+  {
+   "this": "discovered-meaning",
+   "not": "conformity imposed by analysis",
+   "anchor": {
+    "section": "Finding Common Ground Through Graph Analysis",
+    "quote": "This analysis happened without any team changing their process, learning a shared vocabulary, or conforming to a schema."
+   }
+  },
+  {
+   "this": "graphs-of-graphs",
+   "not": "graph syntax over self-describing nodes",
+   "anchor": {
+    "section": "The Semantic Web's Insight (and Mistake)",
+    "quote": "This is schema-first thinking dressed in graph syntax.",
+    "occurrence": 1
+   }
+  }
+ ],
+ "aliases": [
+  {
+   "a": "meaning-through-connectivity",
+   "b": "meaning comes from edges",
+   "anchor": {
+    "section": "Summary: Core Principles",
+    "quote": "**Meaning comes from edges.** What a node \"is\" emerges from the graph relationships that can be traced from it."
+   }
+  },
+  {
+   "a": "fractal-principle",
+   "b": "graphs of graphs of graphs",
+   "anchor": {
+    "section": "Every Scope Defines Its Own Vocabulary",
+    "quote": "It is graphs of graphs of graphs, at every level of scope"
+   }
+  }
+ ],
+ "empty_sections": [
+  {
+   "section": "The Setup",
+   "why": "Scene-setting for the worked example; its content is carried by the end-to-end example node."
+  },
+  {
+   "section": "Part 8: A Worked Example — End to End",
+   "why": "Announces the worked example; the example itself is the node anchored in The Graph."
+  }
+ ]
+}

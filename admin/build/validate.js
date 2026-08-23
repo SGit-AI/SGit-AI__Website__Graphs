@@ -283,6 +283,45 @@ if (fs.existsSync(packsPath)) {
   }
 }
 
+// --- 4d. the universe cannot cite words that are not there -------------------
+// Gate 23. Every layer 1 node is anchored to a verbatim quote at recorded byte offsets
+// in a frozen source. gen_universe.py verifies this at build time; this gate re-verifies
+// the PUBLISHED surface independently, because a generator checking its own output is
+// one process trusting itself.
+const uniPath = path.join(ROOT, 'v2/universe/data/universe.json');
+if (fs.existsSync(uniPath)) {
+  const uni = JSON.parse(fs.readFileSync(uniPath, 'utf8'));
+  if (uni.version !== VERSION) {
+    errors.push(`universe was generated at ${uni.version}, site is ${VERSION} — run gen_universe.py`);
+  }
+  for (const src of uni.sources) {
+    const f = path.join(ROOT, src.source);
+    if (!fs.existsSync(f)) { errors.push(`universe source is gone: ${src.source}`); continue; }
+    const raw = fs.readFileSync(f);
+    if (sha(raw) !== src.sha256) {
+      errors.push(`universe ${src.slug}: source no longer hashes to the recorded SHA-256`);
+      continue;
+    }
+    const anchored = [];
+    for (const n of src.nodes) anchored.push([`node ${n.id}`, n.anchor]);
+    for (const e of src.edges) anchored.push([`edge ${e.from}->${e.to}`, e.anchor]);
+    for (const x of src.near_but_not) anchored.push([`near-but-not ${x.this}`, x.anchor]);
+    for (const x of src.aliases) anchored.push([`alias ${x.a}`, x.anchor]);
+    for (const [where, a] of anchored) {
+      const got = raw.slice(a.chars[0], a.chars[1]).toString('utf8');
+      if (got !== a.quote) {
+        errors.push(`universe ${src.slug} ${where}: quote does not match the bytes at ${a.chars[0]}–${a.chars[1]}`);
+      }
+    }
+    if (!fs.existsSync(path.join(ROOT, `v2/universe/${src.slug}.html`))) {
+      errors.push(`universe page missing: v2/universe/${src.slug}.html`);
+    }
+    if (!fs.existsSync(path.join(ROOT, `v2/universe/${src.slug}.pdf`))) {
+      errors.push(`universe PDF missing: v2/universe/${src.slug}.pdf`);
+    }
+  }
+}
+
 // --- 9. the book is a projection ------------------------------------------
 const bookManifestPath = path.join(ROOT, 'v1/book/manifest.json');
 if (!fs.existsSync(bookManifestPath)) {

@@ -46,6 +46,7 @@ NAV = [
         ("&hellip; the dev pack: the plan", "v2/dev-pack/index.html"),
         ("&hellip; the memos", "v2/memos/index.html"),
         ("&hellip; the review packs", "v2/packs/index.html"),
+        ("&hellip; the universe, layer 1", "v2/universe/index.html"),
         ("&hellip; the open decisions", "decisions/index.html"),
         ("The first edition &middot; frozen", "v1/book/index.html"),
         ("&hellip; read it in one page", "v1/book/single.html"),
