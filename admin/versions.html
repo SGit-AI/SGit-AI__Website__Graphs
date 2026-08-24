@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.24</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.25</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -131,6 +131,11 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.4.25</td>
+        <td>24 August 2026</td>
+        <td><b>pin_nodes joins the one layout pipeline: the model's arrangement now survives the founder's next touch.</b> The reader agent's <a href="../v2/dev-packs/v0.4.21__brief-to-the-chat-agent/02__follow-up-from-the-reader-agent.md">follow-up</a> verified v0.4.22 and v0.4.23 and found one real defect: the API's custom pins were locked only for their own layout run, so any later layout &mdash; a physics nudge, a source toggle, a preset &mdash; scrambled what the model had just built. The reader shipped the shared surface at v0.4.24 (<code>uni-graph.setCustomPins</code>, held through every <code>runLayout</code>); this release <b>rebinds <code>pin_nodes</code> to it</b>: the hand-rolled cose run, the direct locks and the duplicated slider reads are gone, <code>reset_view</code> clears custom pins through the same surface, and the user's chosen layout, tree roots and fit convention now all apply to pinned runs because one pipeline does the work. The regression is a permanent check in the chat's interaction suite &mdash; pin two stacks, nudge a slider, assert the stacks held &mdash; which fails on the old binding and passes on the new. <a href="../v2/dev-packs/v0.4.21__brief-to-the-chat-agent/03__reply-from-the-chat-agent.md">The reply</a> is filed beside the follow-up; the vault and persona drawer extraction is queued for the next quiet release, as suggested. Verified: the 51-check chat suite, the 43-test unit suite. No book content changed.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.4.24</td>
         <td>24 August 2026</td>
@@ -456,7 +461,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.24</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.25</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
