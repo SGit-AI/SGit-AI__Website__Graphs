@@ -38,14 +38,27 @@ export function graphStyle() {
       'line-color': '#b9c2d0', 'target-arrow-shape': 'none' } },
     { selector: '.uni-szm', style: { 'font-size': 12 } },
     { selector: '.uni-szl', style: { 'font-size': 16 } },
-    { selector: 'node.uni-boxed', style: { 'text-background-color': '#fff',
-      'text-background-opacity': 1, 'text-background-shape': 'round-rectangle',
-      'text-background-padding': 3, 'text-border-width': 1, 'text-border-opacity': 1,
-      'text-border-color': '#c9ccd2' } },
-    { selector: '.uni-hide', style: { display: 'none' } },
-    { selector: '.uni-nolabel', style: { label: '' } },
+    /* focus sizing sits BEFORE boxed so a boxed node keeps its label-box shape
+       when focused (cytoscape's cascade is order-based); the ring survives */
     { selector: 'node.uni-focus', style: { 'border-width': 4, 'border-color': '#c9a227',
       width: 28, height: 28, 'font-weight': 'bold', color: '#111' } },
+    /* boxed mode: the node IS the box, label inside, read and clicked directly */
+    { selector: 'node.uni-boxed', style: { shape: 'round-rectangle', width: 'label',
+      height: 'label', padding: '5px', 'text-valign': 'center', 'text-halign': 'center',
+      'text-margin-y': 0, color: '#fff', 'text-wrap': 'wrap', 'text-max-width': 150 } },
+    { selector: 'node[family = "section"].uni-boxed', style: { color: '#4a5568' } },
+    { selector: 'node[family = "peak"]', style: { 'background-color': '#39415a',
+      shape: 'round-rectangle', width: 'label', height: 'label', padding: '6px',
+      'text-valign': 'center', 'text-halign': 'center', 'text-margin-y': 0,
+      color: '#fff', 'font-weight': 'bold' } },
+    { selector: 'edge[kind = "derived"]', style: { width: 1, 'line-style': 'dashed',
+      'line-color': '#c9b8d8', 'target-arrow-shape': 'none', 'curve-style': 'haystack' } },
+    { selector: 'edge.uni-path', style: { width: 3, 'line-color': '#c9a227',
+      'target-arrow-color': '#c9a227', opacity: 1 } },
+    { selector: 'node.uni-path', style: { 'border-width': 3, 'border-color': '#c9a227' } },
+    { selector: 'node.uni-boxed.uni-focus', style: { 'border-width': 4, 'border-color': '#c9a227' } },
+    { selector: '.uni-hide', style: { display: 'none' } },
+    { selector: '.uni-nolabel', style: { label: '' } },
     { selector: '.uni-dim', style: { opacity: 0.15 } },
   ];
 }

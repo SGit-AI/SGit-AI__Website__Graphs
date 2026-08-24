@@ -6,12 +6,8 @@
    @fires uni:pref  detail {key: 'scroll'|'kinds'|'graph', value}
 */
 'use strict';
-
-export const KINDS = [
-  ['concept', 'dictionary'], ['claim', 'claims'], ['hypothesis', 'hypotheses'],
-  ['objective', 'objectives'], ['example', 'examples'], ['edge', 'relations'],
-  ['nbn', 'near-but-nots'], ['alias', 'also-called'],
-];
+import { KINDS } from '../core/kinds.js';
+export { KINDS };
 
 export class UniOptions extends HTMLElement {
   connectedCallback() {

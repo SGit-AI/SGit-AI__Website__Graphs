@@ -7,27 +7,19 @@
    @fires uni:mark-click   detail {aid}  a highlight or data item was clicked
    @fires uni:step-select  detail {aid}  the stepper moved to an anchor
    @fires uni:need-panel   the pane needs the panel opened to show something
+   @fires uni:pref         detail {key: 'kinds'|'mode', value}  a kind-bar toggle or mode switch
 */
 'use strict';
 import { elementarySegments } from '../core/segments.js';
-import { spliceMarkers, tokensToMarks, escAttr } from '../core/markup.js';
+import { spliceMarkers, tokensToMarks } from '../core/markup.js';
 import { headingChain } from '../core/doctree.js';
+import { buildDataHTML } from './source-data.js';
+import { SRC_HEAD_HTML, kindBarHTML, renderTrail } from './source-head.js';
 
 export class UniSource extends HTMLElement {
   connectedCallback() {
     this.innerHTML =
-      '<div class="uni-srcbox">' +
-      '  <div class="uni-srchead">' +
-      '    <span class="uni-mode"><button id="uni-msrc" class="on">source</button><button id="uni-mdata">data</button></span>' +
-      '    <b id="uni-panetitle">The frozen source</b>' +
-      '    <span class="uni-step">' +
-      '      <button id="uni-prev" title="Previous highlighted anchor">&#8249;</button>' +
-      '      <span class="cnt" id="uni-cnt">&ndash;</span>' +
-      '      <button id="uni-next" title="Next highlighted anchor">&#8250;</button>' +
-      '    </span>' +
-      '    <a class="dim" id="uni-rawlink">raw</a>' +
-      '    <div class="uni-trail" id="uni-trail"><span class="dim">every highlight sits on gate-verified bytes</span></div>' +
-      '  </div>' +
+      '<div class="uni-srcbox">' + SRC_HEAD_HTML +
       '  <div class="uni-srcbody mdread" id="uni-src"><p class="dim">Loading the frozen source…</p></div>' +
       '  <div class="uni-srcbody" id="uni-data" style="display:none"><p class="dim">Loading the extraction…</p></div>' +
       '</div>';
@@ -58,7 +50,12 @@ export class UniSource extends HTMLElement {
     this._navIdx = -1;
     this._heads = [];
     this._kindOf = {};
-    U.anchors.forEach((a) => { this._kindOf[a.aid] = a.kind; });
+    const counts = {};
+    U.anchors.forEach((a) => {
+      this._kindOf[a.aid] = a.kind;
+      counts[a.kind] = (counts[a.kind] || 0) + 1;
+    });
+    this.querySelector('#uni-kbar').innerHTML = kindBarHTML(counts);
     this.querySelector('#uni-rawlink').href = U.source;
     this._load();
     if (opts.mode === 'data') this.setMode('data');
@@ -71,10 +68,20 @@ export class UniSource extends HTMLElement {
     if (t.id === 'uni-mdata') { this.setMode('data'); return; }
     if (t.id === 'uni-prev') { this._step(this._navIdx - 1); return; }
     if (t.id === 'uni-next') { this._step(this._navIdx <= -1 ? 0 : this._navIdx + 1); return; }
+    const kb = t.closest('[data-kbar]');
+    if (kb) {
+      const k = kb.getAttribute('data-kbar');
+      const set = new Set(this._enabled || []);
+      if (set.has(k)) set.delete(k); else set.add(k);
+      this.dispatchEvent(new CustomEvent('uni:pref',
+        { bubbles: true, detail: { key: 'kinds', value: Array.from(set) } }));
+      return;
+    }
     const mk = t.closest('mark.uni-anchor');
     if (mk) {
+      /* overlapping links: the last-added one wins the click */
       this.dispatchEvent(new CustomEvent('uni:mark-click',
-        { bubbles: true, detail: { aid: mk.getAttribute('data-aids').split(' ')[0] } }));
+        { bubbles: true, detail: { aid: mk.getAttribute('data-aids').split(' ').pop() } }));
       return;
     }
     const it = t.closest('.uni-jitem[data-aid]');
@@ -139,6 +146,20 @@ export class UniSource extends HTMLElement {
       .sort((a, b) => a.chars[0] - b.chars[0]);
     this._navIdx = -1;
     this._counter();
+    this.querySelectorAll('[data-kbar]').forEach((b) => {
+      b.classList.toggle('on', !!on[b.getAttribute('data-kbar')]);
+    });
+  }
+
+  /** Scroll the source pane to a heading by its text; unknown or empty goes
+      to the top. This is what a doc-tree node tap navigates with. */
+  scrollToHeading(title) {
+    this.dispatchEvent(new CustomEvent('uni:need-panel', { bubbles: true }));
+    if (this._mode !== 'source') this.setMode('source');
+    const head = this._heads.find((h) => h.el.textContent.trim() === title);
+    if (head) this._scrollTo(head.el, this._box);
+    else this._box.scrollTo({ top: 0, behavior: 'instant' });
+    requestAnimationFrame(() => this.updateTrail());
   }
 
   _counter() {
@@ -162,25 +183,8 @@ export class UniSource extends HTMLElement {
     for (let i = 0; i < this._heads.length; i++) {
       if (this._heads[i].el.getBoundingClientRect().top <= boxTop) cur = i; else break;
     }
-    this._trail.textContent = '';
-    const chain = headingChain(this._heads, cur);
-    if (!chain.length) {
-      const s = document.createElement('span');
-      s.className = 'dim'; s.textContent = 'top of the document';
-      this._trail.appendChild(s);
-      return;
-    }
-    chain.forEach((idx, k) => {
-      if (k) {
-        const sep = document.createElement('span');
-        sep.className = 'crumbsep'; sep.textContent = '›';
-        this._trail.appendChild(sep);
-      }
-      const a = document.createElement('a');
-      a.textContent = this._heads[idx].el.textContent;
-      a.addEventListener('click', () => this._scrollTo(this._heads[idx].el, this._box));
-      this._trail.appendChild(a);
-    });
+    renderTrail(this._trail, this._heads, headingChain(this._heads, cur),
+      (el) => this._scrollTo(el, this._box));
   }
 
   _load() {
@@ -222,26 +226,7 @@ export class UniSource extends HTMLElement {
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return r.json();
     }).then((ex) => {
-      const item = (aid, obj) =>
-        '<div class="uni-jitem"' + (aid ? ' data-aid="' + escAttr(aid) + '" id="j-' + escAttr(aid) + '"' : '') +
-        '><pre>' + escAttr(JSON.stringify(obj, null, 1)) + '</pre></div>';
-      const h = ['<div class="uni-jlinks">The data this page is a projection of: ' +
-        '<a href="' + escAttr(U.extraction) + '">extraction.json</a> · ' +
-        '<a href="' + escAttr(U.folder) + 'crossrefs.json">crossrefs.json</a> · ' +
-        '<a href="../usage-model.json">usage-model.json</a> · ' +
-        '<a href="' + escAttr(U.folder) + 'index.html">the document folder</a></div>'];
-      h.push('<div class="uni-jhead">doc</div>', item(null, ex.doc));
-      h.push('<div class="uni-jhead">nodes (' + ex.nodes.length + ')</div>');
-      ex.nodes.forEach((n) => h.push(item(n.id, n)));
-      h.push('<div class="uni-jhead">edges (' + ex.edges.length + ')</div>');
-      ex.edges.forEach((x, i) => h.push(item('edge-' + i, x)));
-      h.push('<div class="uni-jhead">near_but_not (' + ex.near_but_not.length + ')</div>');
-      ex.near_but_not.forEach((x, i) => h.push(item('nbn-' + i, x)));
-      h.push('<div class="uni-jhead">aliases (' + ex.aliases.length + ')</div>');
-      ex.aliases.forEach((x, i) => h.push(item('alias-' + i, x)));
-      h.push('<div class="uni-jhead">empty_sections (' + (ex.empty_sections || []).length + ')</div>');
-      (ex.empty_sections || []).forEach((x) => h.push(item(null, x)));
-      this._dataBody.innerHTML = h.join('');
+      this._dataBody.innerHTML = buildDataHTML(U, ex);
       this.dispatchEvent(new CustomEvent('uni:data-ready', { bubbles: true }));
     }).catch(() => {
       this._dataBody.textContent = '';

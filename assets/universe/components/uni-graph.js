@@ -1,41 +1,38 @@
 /* @module universe/components/uni-graph
    Single responsibility: the local graph as a custom element: the cytoscape
-   instance, its options strip (layout, labels, physics, view), the document-tree
-   overlay, subtree filtering and the focus ring. Renders from properties and
-   emits; it never reaches into services or the reader's state.
+   instance, its options strip, the node-pack sources (doc tree, family peaks,
+   derived links), the explore-from-selection view with its degree stepper and
+   stats bar, paths-to-peaks, preset views, maximise, and the focus ring.
+   Visibility flows through one pipeline so the shared kind toggles, the packs
+   and the explore filter always compose. Renders from properties and emits;
+   it never reaches into services or the reader's state.
    Light DOM; the host is display:contents so layout CSS is untouched.
-   @fires uni:node-tap  detail {id}  a node was tapped
+   @fires uni:node-tap  detail {id, label}  a node was tapped
    @fires uni:gpref     detail {key, value}  a persistable graph pref changed
    @fires uni:clear-request  the user asked to clear the selection
 */
 'use strict';
 import { graphStyle, layoutOptions } from '../core/cystyle.js';
 import { docTreeElements, DOC_ROOT_ID } from '../core/doctree.js';
+import { familyPeakElements, derivedConceptEdges } from '../core/packs.js';
+import { NODE_KINDS } from '../core/kinds.js';
+import { neighbourhoodIds, nextDegree } from '../core/explore.js';
+import { PRESET_VIEWS } from '../core/views.js';
+import { STRIP_HTML, reflectStrip, renderStats } from './graph-strip.js';
+import { focusNode, applyPaths } from './graph-fx.js';
+
+/** The toggles that change what is visible and so need a refresh. */
+const VIS_TOGGLES = ['gtree', 'gpeaks', 'gderived', 'gexp'];
 
 export class UniGraph extends HTMLElement {
   connectedCallback() {
     this.innerHTML =
       '<div class="uni-graphbox">' +
       '  <button class="uni-gcog" title="Graph options">&#9881;</button>' +
-      '  <div class="uni-gopts" hidden>' +
-      '    <div class="grow"><span class="glab">layout</span>' +
-      '      <button data-glay="cose">cose</button><button data-glay="concentric">rings</button>' +
-      '      <button data-glay="grid">grid</button><button data-glay="tree">tree</button></div>' +
-      '    <div class="grow"><span class="glab">labels</span>' +
-      '      <button data-glabels="1">show</button>' +
-      '      <button data-gsize="s">S</button><button data-gsize="m">M</button><button data-gsize="l">L</button>' +
-      '      <button data-gboxed="1">boxed</button></div>' +
-      '    <div class="grow"><span class="glab">physics</span>' +
-      '      <span class="gval">string</span><input type="range" id="uni-glen" min="40" max="280" step="10">' +
-      '      <span class="gval">pull</span><input type="range" id="uni-gpull" min="10" max="300" step="10">' +
-      '      <span class="small dim">(cose)</span></div>' +
-      '    <div class="grow"><span class="glab">view</span>' +
-      '      <button data-gtree="1">doc tree</button>' +
-      '      <button data-gsub="1">subtree only</button>' +
-      '      <button data-gfit="1">fit</button>' +
-      '      <button data-gclear="1">clear focus</button></div>' +
-      '  </div>' +
+      '  <button class="uni-gbig" data-gmax="1" title="Maximise the graph">&#x26F6;</button>' +
+      '  <div class="uni-gopts" hidden>' + STRIP_HTML + '</div>' +
       '  <div class="uni-cy" id="uni-cy"></div>' +
+      '  <div class="uni-gstats" id="uni-gstats"></div>' +
       '</div>';
     this._gopts = this.querySelector('.uni-gopts');
     this.addEventListener('click', this);
@@ -44,14 +41,17 @@ export class UniGraph extends HTMLElement {
 
   /**
    * Create the cytoscape instance and apply the persisted look.
-   * @param {{title: string, taxonomy: Array, anchors: Array, elements: Array}} data
-   * @param {{glay, gsize, gboxed, gtree, glen, gpull}} prefs
+   * @param {{title, taxonomy, anchors, elements}} data - the page's blob
+   * @param {{glay, gsize, gboxed, gtree, gpeaks, gderived, gexp, gdeg, gpaths, glen, gpull, kinds}} prefs
    */
   init(data, prefs) {
     this._data = data;
-    this._p = Object.assign({ labels: true, gsub: false }, prefs);
-    this._treeEles = null;
+    this._p = Object.assign({ labels: true }, prefs);
+    this._kinds = prefs.kinds || null;
+    this._kindsKey = (this._kinds || []).slice().sort().join(' ');
+    this._treeEles = null; this._peakEles = null; this._derivedEles = null;
     this._selected = null;
+    this._fitted = false;
     this.cy = window.cytoscape({
       container: this.querySelector('#uni-cy'),
       elements: data.elements,
@@ -59,13 +59,14 @@ export class UniGraph extends HTMLElement {
       style: graphStyle(),
     });
     this.cy.on('tap', 'node', (evt) => {
-      this.dispatchEvent(new CustomEvent('uni:node-tap', { bubbles: true, detail: { id: evt.target.id() } }));
+      this.dispatchEvent(new CustomEvent('uni:node-tap',
+        { bubbles: true, detail: { id: evt.target.id(), label: evt.target.data('label') } }));
     });
     this.querySelector('#uni-glen').value = this._p.glen;
     this.querySelector('#uni-gpull').value = this._p.gpull;
+    this._refreshVisibility();
     this._applyLook();
-    this._applyTree();
-    if (this._p.glay !== 'cose' || this._p.gtree) this.runLayout();
+    if (this._p.glay !== 'cose' || VIS_TOGGLES.some((k) => this._p[k])) this.runLayout();
   }
 
   /** One delegated handler for the options strip. */
@@ -75,28 +76,51 @@ export class UniGraph extends HTMLElement {
       p.glen = parseInt(this.querySelector('#uni-glen').value, 10);
       p.gpull = parseInt(this.querySelector('#uni-gpull').value, 10);
       this._emitPref('glen', p.glen); this._emitPref('gpull', p.gpull);
-      clearTimeout(this._slideT);
-      this._slideT = setTimeout(() => { if (p.glay === 'cose') this.runLayout(); }, 250);
+      /* live: re-run the layout as the slider moves, one run per frame */
+      if (p.glay === 'cose' && !this._liveT) {
+        this._liveT = requestAnimationFrame(() => { this._liveT = 0; this.runLayout(); });
+      }
       return;
     }
     const b = e.target.closest('button');
     if (!b) return;
     if (b.classList.contains('uni-gcog')) { this._gopts.hidden = !this._gopts.hidden; return; }
+    if (b.hasAttribute('data-gmax')) {
+      const box = this.querySelector('.uni-graphbox').classList.toggle('uni-gmax');
+      this.cy.resize(); this.cy.fit(this.cy.elements().not('.uni-hide'), 24);
+      b.title = box ? 'Back to the panel' : 'Maximise the graph';
+      return;
+    }
+    if (b.hasAttribute('data-gview')) { this._applyView(b.getAttribute('data-gview')); return; }
+    if (b.hasAttribute('data-gdegdn') || b.hasAttribute('data-gdegup') || b.hasAttribute('data-gdegmax')) {
+      p.gdeg = nextDegree(p.gdeg,
+        b.hasAttribute('data-gdegmax') ? 'max' : b.hasAttribute('data-gdegup') ? 'up' : 'down');
+      this._emitPref('gdeg', p.gdeg); this.refresh();
+      return;
+    }
     if (b.hasAttribute('data-glay')) { p.glay = b.getAttribute('data-glay'); this._emitPref('glay', p.glay); this._applyLook(); this.runLayout(); }
     if (b.hasAttribute('data-gsize')) { p.gsize = b.getAttribute('data-gsize'); this._emitPref('gsize', p.gsize); this._applyLook(); }
     if (b.hasAttribute('data-glabels')) { p.labels = !p.labels; this._applyLook(); }
     if (b.hasAttribute('data-gboxed')) { p.gboxed = !p.gboxed; this._emitPref('gboxed', p.gboxed ? 1 : 0); this._applyLook(); }
-    if (b.hasAttribute('data-gtree')) {
-      p.gtree = !p.gtree; this._emitPref('gtree', p.gtree ? 1 : 0);
-      this._applyLook(); this._applyTree(); this.applySubtree(this._selected);
-      if (!p.gsub) this.runLayout();
-    }
-    if (b.hasAttribute('data-gsub')) {
-      p.gsub = !p.gsub; this._applyLook(); this.applySubtree(this._selected);
-      if (!p.gsub) this.runLayout();
-    }
+    VIS_TOGGLES.forEach((k) => {
+      if (!b.hasAttribute('data-' + k)) return;
+      p[k] = !p[k]; this._emitPref(k, p[k] ? 1 : 0); this.refresh();
+    });
+    if (b.hasAttribute('data-gpaths')) { p.gpaths = !p.gpaths; this._emitPref('gpaths', p.gpaths ? 1 : 0); this._applyLook(); this._applyPaths(); }
     if (b.hasAttribute('data-gfit')) this.cy.fit(this.cy.elements().not('.uni-hide'), 24);
     if (b.hasAttribute('data-gclear')) this.dispatchEvent(new CustomEvent('uni:clear-request', { bubbles: true }));
+  }
+
+  /** Apply a preset view: a named preference bundle, then one refresh. */
+  _applyView(key) {
+    const v = PRESET_VIEWS.find((x) => x.key === key);
+    if (!v) return;
+    Object.assign(this._p, v.prefs);
+    Object.keys(v.prefs).forEach((k) => {
+      const val = v.prefs[k];
+      this._emitPref(k, typeof val === 'boolean' ? (val ? 1 : 0) : val);
+    });
+    this.refresh();
   }
 
   _emitPref(key, value) {
@@ -107,75 +131,78 @@ export class UniGraph extends HTMLElement {
     const p = this._p;
     this.cy.nodes().toggleClass('uni-nolabel', !p.labels);
     this.cy.elements().toggleClass('uni-szm', p.gsize === 'm').toggleClass('uni-szl', p.gsize === 'l');
-    this.cy.nodes().toggleClass('uni-boxed', p.gboxed);
-    this._gopts.querySelectorAll('[data-glay]').forEach((x) => x.classList.toggle('on', x.getAttribute('data-glay') === p.glay));
-    this._gopts.querySelectorAll('[data-gsize]').forEach((x) => x.classList.toggle('on', x.getAttribute('data-gsize') === p.gsize));
-    this._gopts.querySelector('[data-glabels]').classList.toggle('on', p.labels);
-    this._gopts.querySelector('[data-gboxed]').classList.toggle('on', p.gboxed);
-    this._gopts.querySelector('[data-gtree]').classList.toggle('on', p.gtree);
-    this._gopts.querySelector('[data-gsub]').classList.toggle('on', p.gsub);
+    this.cy.nodes().not('[family = "peak"]').toggleClass('uni-boxed', p.gboxed);
+    reflectStrip(this._gopts, p);
   }
 
-  _applyTree() {
-    if (this._p.gtree) {
-      if (!this._treeEles) {
-        this._treeEles = this.cy.add(docTreeElements(
-          this._data.title, this._data.taxonomy, this._data.anchors,
-          (aid) => this.cy.$id(aid).nonempty()));
-      }
-      this._treeEles.removeClass('uni-hide');
-    } else if (this._treeEles) {
-      this._treeEles.addClass('uni-hide');
+  /** The shared kind toggles: node families off here mirror marks off in the
+      source pane. Only re-filters when the set actually changed. */
+  applyKinds(kinds) {
+    const key = (kinds || []).slice().sort().join(' ');
+    if (key === this._kindsKey) return;
+    this._kindsKey = key;
+    this._kinds = kinds;
+    if (this.cy) this.refresh();
+  }
+
+  /** Recompute visibility, look and layout in one pass. */
+  refresh() { this._refreshVisibility(); this._applyLook(); this.runLayout(); }
+
+  /* The one visibility pipeline: materialise the enabled node packs, hide the
+     disabled ones and the toggled-off families, then the explore filter, the
+     paths and the stats over what remains. */
+  _refreshVisibility() {
+    const cy = this.cy, p = this._p;
+    if (p.gtree && !this._treeEles) {
+      this._treeEles = cy.add(docTreeElements(this._data.title, this._data.taxonomy,
+        this._data.anchors, (aid) => cy.$id(aid).nonempty()));
     }
-  }
-
-  /**
-   * Subtree-only filtering from the selection. Containment is traversed DOWNWARD
-   * only: climbing up would reach the document root and re-include everything.
-   * Note: incomers() with an edge selector returns edges WITHOUT their source
-   * nodes, so the sources are collected explicitly or the walk stalls.
-   * @param {string|null} selectedAid
-   */
-  applySubtree(selectedAid) {
-    this._selected = selectedAid;
-    const cy = this.cy;
+    if (p.gpeaks && !this._peakEles) this._peakEles = cy.add(familyPeakElements(this._data.elements));
+    if (p.gderived && !this._derivedEles) this._derivedEles = cy.add(derivedConceptEdges(this._data.elements));
     cy.elements().removeClass('uni-hide');
-    this._applyTree();
-    if (!this._p.gsub || !selectedAid || cy.$id(selectedAid).empty()) return;
-    let keep = cy.collection().union(cy.$id(selectedAid));
-    let frontier = keep;
-    while (frontier.length) {
-      const inEdges = frontier.incomers('edge[kind = "about"], edge[kind = "demonstrates"]');
-      const next = frontier.outgoers().union(inEdges).union(inEdges.sources()).difference(keep);
-      keep = keep.union(next);
-      frontier = next.nodes();
+    if (this._treeEles && !p.gtree) this._treeEles.addClass('uni-hide');
+    if (this._peakEles && !p.gpeaks) this._peakEles.addClass('uni-hide');
+    if (this._derivedEles && !p.gderived) this._derivedEles.addClass('uni-hide');
+    if (this._kinds) {
+      NODE_KINDS.filter((k) => this._kinds.indexOf(k) === -1)
+        .forEach((k) => cy.nodes('[family = "' + k + '"]').addClass('uni-hide'));
     }
-    cy.elements().difference(keep).addClass('uni-hide');
-    this.runLayout();
+    /* everything still visible is the explore walk's universe; remember it so
+       the stats can price the next hop before the reader pays for it */
+    const base = cy.elements().not('.uni-hide');
+    this._visData = base.map((x) => x.data());
+    if (p.gexp && this._selected && cy.$id(this._selected).nonempty()
+        && !cy.$id(this._selected).hasClass('uni-hide')) {
+      const deg = p.gdeg === 'max' ? Infinity : p.gdeg;
+      const keep = neighbourhoodIds(this._visData, this._selected, deg);
+      base.filter((x) => !keep.has(x.id())).addClass('uni-hide');
+    }
+    this._applyPaths();
+    this._renderStats();
   }
 
-  /** The reader keeps the element informed of the one selection, so a later
-      subtree toggle or tree layout has its root without re-asking. */
-  set selected(aid) { this._selected = aid; }
+  /* The stats bar: what the current view holds, and what one more degree of
+     separation would add — the choose-a-path-before-walking-it affordance. */
+  _renderStats() {
+    renderStats(this.querySelector('#uni-gstats'),
+      this.cy.elements().not('.uni-hide').map((x) => x.data()),
+      this._visData, this._p, this._selected);
+  }
+
+  _applyPaths() { applyPaths(this.cy, this._p.gpaths, this._selected); }
+
+  /** The reader keeps the element informed of the one selection; the explore
+      view, the paths and a tree layout follow it without re-asking. */
+  set selected(aid) {
+    if (this._selected === aid) return;
+    this._selected = aid;
+    if (!this.cy) return;
+    if (this._p.gexp) this.refresh(); else { this._applyPaths(); this._renderStats(); }
+  }
   get selected() { return this._selected; }
 
-  /** Whether subtree-only mode is active. */
-  get subtreeOn() { return this._p.gsub; }
-  /** Exit subtree mode without a layout run (the caller decides). */
-  exitSubtree() { this._p.gsub = false; this._applyLook(); this.applySubtree(null); this.runLayout(); }
-
   /** Focus one node: ring it, dim the rest, centre it. */
-  focus(id, tempo) {
-    const cy = this.cy;
-    const node = cy.$id(id);
-    cy.elements().removeClass('uni-focus uni-dim');
-    if (node.empty()) return;
-    cy.elements().addClass('uni-dim');
-    node.closedNeighborhood().removeClass('uni-dim');
-    node.addClass('uni-focus');
-    cy.animate({ center: { eles: node } },
-      { duration: tempo === 'smooth' ? 350 : tempo === 'fast' ? 140 : 0 });
-  }
+  focus(id, tempo) { focusNode(this.cy, id, tempo); }
 
   /** Drop the focus ring and dimming. */
   clearFocus() { if (this.cy) this.cy.elements().removeClass('uni-focus uni-dim'); }
@@ -184,8 +211,13 @@ export class UniGraph extends HTMLElement {
   runLayout() {
     const p = this._p;
     const vis = this.cy.elements().not('.uni-hide');
-    const roots = p.gtree ? 'node[family = "docroot"]'
-      : (this._selected && this.cy.$id(this._selected).nonempty() ? this.cy.$id(this._selected) : undefined);
+    let roots;
+    if (p.gtree || p.gpeaks) {
+      const tops = vis.nodes('[family = "docroot"], [family = "peak"]');
+      if (tops.length) roots = tops;
+    } else if (this._selected && this.cy.$id(this._selected).nonempty()) {
+      roots = this.cy.$id(this._selected);
+    }
     vis.layout(layoutOptions(p.glay, { len: p.glen, pull: p.gpull }, roots)).run();
     this.cy.fit(vis, 24);
   }
@@ -195,7 +227,16 @@ export class UniGraph extends HTMLElement {
     if (target && this.cy && this.cy.container() !== target) this.cy.mount(target);
   }
 
-  resize() { if (this.cy) this.cy.resize(); }
+  /** Resize, and fit once the canvas first has real size (the founder's
+      fit-on-open: the panel is sized after init, so init cannot fit). */
+  resize() {
+    if (!this.cy) return;
+    this.cy.resize();
+    if (!this._fitted && this.cy.width() > 0 && this.cy.height() > 0) {
+      this._fitted = true;
+      this.cy.fit(this.cy.elements().not('.uni-hide'), 24);
+    }
+  }
 }
 
 customElements.define('uni-graph', UniGraph);

@@ -257,6 +257,32 @@
    ],
    "status": "in use",
    "for_the_book": "A document that captures where it is used can rate that use: the core of an author's ability to police the life of their ideas."
+  },
+  {
+   "id": "node-packs-and-peaks",
+   "name": "Node packs, and a peak for every family",
+   "what": "The graph's contents are chosen as sources of nodes, not as one fixed view: the extraction's families, the document tree, the synthetic family peaks and the derived weaker links are each a pack, toggled in or out, and the view is their union. Every family gets a peak: a synthetic summit node (the dictionary, the claims, the hypotheses) with containment edges to its members, so the tree layout reads as pyramids, the document's own beside one per family. The first weaker-link layer is derived, never asserted: two concepts co-claimed by the same claim are joined by a dashed, counted, arrowless edge, drawn as measurement, not as a verb. One kinds list in the core tier drives the source pane's highlights and the graph's families from the same toggles, so the two panes cannot disagree about what is shown.",
+   "born": "v0.4.14",
+   "implemented_in": [
+    "assets/universe/core/packs.js",
+    "assets/universe/core/kinds.js",
+    "assets/universe/components/uni-graph.js"
+   ],
+   "status": "in use",
+   "for_the_book": "The book's universe is packs of packs: each document contributes its families, each altitude gets its peak, and a reader composes the view instead of inheriting it."
+  },
+  {
+   "id": "explore-by-degrees",
+   "name": "Explore by degrees: focus, grow, and price the next hop",
+   "what": "The answer to the dot-blob problem every graph database visualisation hits as edges multiply. From a selected node, the focused view shows exactly the selection at degree zero and grows one undirected ring at a time towards the peaks, with 'max' removing the limit. A stats bar counts what the current view holds, node families and edge kinds apart, and also prices the next hop: the families and edges one more degree would bring in, read before paying for it. Paths-to-peaks gold-lines the shortest routes from the selection to every visible summit. Five preset views (overview, reading map, pyramids, concept web, around selection) apply a whole preference bundle in one click and are plain data, so new common paths cost an entry, not code.",
+   "born": "v0.4.14",
+   "implemented_in": [
+    "assets/universe/core/explore.js",
+    "assets/universe/core/views.js",
+    "assets/universe/components/graph-strip.js"
+   ],
+   "status": "in use",
+   "for_the_book": "When document graphs connect to the book's own universe the paths become massive; choosing a path by its price is how navigation survives the scale."
   }
  ]
 }

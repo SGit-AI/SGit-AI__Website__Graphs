@@ -53,10 +53,13 @@ export function tokensToMarks(html, segs, kindOf, labelOf) {
   let m;
   const openTagFor = (idx) => {
     const ids = segs[idx].ids;
-    const kind = kindOf(ids[0]) || 'edge';
+    /* when links overlap, the last-added one wins the colour, the chip and the
+       click; the title still names every link on the span */
+    const kind = kindOf(ids[ids.length - 1]) || 'edge';
     const label = escAttr(ids.map((id) => labelOf(id) || id).join(' · '));
-    return '<mark class="uni-anchor uni-k-' + kind + '" data-aids="' + ids.join(' ') +
-           '" title="' + label + '">';
+    const more = ids.length > 1 ? ' data-more=" +' + (ids.length - 1) + '"' : '';
+    return '<mark class="uni-anchor uni-k-' + kind + '" data-kind="' + kind + '"' + more +
+           ' data-aids="' + ids.join(' ') + '" title="' + label + '">';
   };
   while ((m = tokenOrTag.exec(html)) !== null) {
     out.push(html.slice(pos, m.index));
