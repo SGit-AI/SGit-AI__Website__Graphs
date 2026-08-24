@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.4.17 (24 August 2026). Published by the sgit project — participant
+Site version: v0.4.18 (24 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /v1/briefs/ is the source of truth and carries the same licence.
 
@@ -381,7 +381,11 @@ pages** so the two cannot drift
   the OpenRouter workflow (the user's own key, kept in the browser's localStorage only, never
   sent to any sgraph.ai host; default model anthropic/claude-sonnet-5), clipboard screenshot
   paste, and the model's tool calls executed against the page API at user-controlled levels.
-  Plan and contract: /v2/dev-packs/v0.4.13__universe-chat/00__plan.md.
+  The chat can PERSIST TO AN SG/SEND VAULT the user holds the key to: each conversation
+  becomes a folder of files (/universe-chat/<doc>/<session>/ — session.json, messages.json,
+  drafts.json, trace.txt, documents/), encrypted in the browser before upload, autosaved,
+  restorable, and readable by any key-holding agent — the model's save_to_vault tool writes
+  its own documents there. Plan and contract: /v2/dev-packs/v0.4.13__universe-chat/00__plan.md.
 - https://graphs.sgit.ai/v2/lexicon/index.html — the book's lexicon, held the way the book says
   vocabulary should be held: MULTIPLE LEXICONS AT DIFFERENT ALTITUDES, a well-connected root
   scope any other scope may link to, and local override without asking the centre (the corrected

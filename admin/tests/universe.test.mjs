@@ -301,5 +301,44 @@ test('nodedoc: the composed document holds exactly what the data holds', () => {
   assert.equal(composeNodeDoc(NDEX, null, 'nope'), null);
 });
 
+/* ---- vault-core: the chat's persistence logic, pure ------------------------ */
+const { parseVaultKey, sessionId, sessionFolder, changedFiles, sessionFiles, documentName } =
+  await import('../../assets/universe-chat/vault-core.js');
+test('vault-core: the last colon splits key from vault id', () => {
+  assert.deepEqual(parseVaultKey('pass:with:colons:vault-abc'),
+    { kind: 'passphrase', passphrase: 'pass:with:colons', vaultId: 'vault-abc' });
+  assert.deepEqual(parseVaultKey(' river-cloud-3847 '), { kind: 'token', token: 'river-cloud-3847' });
+  assert.throws(() => parseVaultKey(''), /empty/);
+  assert.throws(() => parseVaultKey('trailing:'), /passphrase:vaultId/);
+});
+test('vault-core: session ids sort by time and land in a safe folder', () => {
+  const id = sessionId(new Date(Date.UTC(2026, 7, 24, 18, 5, 9)), 'ab12');
+  assert.equal(id, '20260824-180509-ab12');
+  assert.equal(sessionFolder('thinking-in-graphs', id),
+    '/universe-chat/thinking-in-graphs/20260824-180509-ab12');
+  assert.throws(() => sessionFolder('../evil', id), /bad slug/);
+  assert.throws(() => sessionFolder('ok', '../up'), /bad session id/);
+});
+test('vault-core: only moved files are written, and hashes advance', () => {
+  const first = changedFiles({ 'a.json': 'one', 'b.txt': 'two' }, {});
+  assert.deepEqual(Object.keys(first.writes).sort(), ['a.json', 'b.txt']);
+  const second = changedFiles({ 'a.json': 'one', 'b.txt': 'CHANGED' }, first.hashes);
+  assert.deepEqual(Object.keys(second.writes), ['b.txt']);
+  assert.deepEqual(Object.keys(changedFiles({ 'a.json': 'one' }, second.hashes).writes), []);
+});
+test('vault-core: a session serializes only what it has', () => {
+  const files = sessionFiles({ messages: { turns: [] }, drafts: { annotations: [], crossrefs: [], scratch: { nodes: [], edges: [] } }, trace: '  ' });
+  assert.deepEqual(Object.keys(files), ['messages.json']);   /* empty drafts and blank trace are not written */
+  const full = sessionFiles({ meta: { doc: 'd' }, messages: { turns: [1] },
+    drafts: { annotations: [{ id: 'x' }], crossrefs: [], scratch: { nodes: [], edges: [] } }, trace: 'line\n' });
+  assert.deepEqual(Object.keys(full).sort(), ['drafts.json', 'messages.json', 'session.json', 'trace.txt']);
+});
+test('vault-core: document names are tamed and default to markdown', () => {
+  assert.equal(documentName('Claims Review!.md'), 'Claims-Review.md');
+  assert.equal(documentName('summary'), 'summary.md');
+  assert.equal(documentName('../../etc/passwd'), 'etc-passwd.md');
+  assert.throws(() => documentName('///'), /usable name/);
+});
+
 console.log(`universe tests: ${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

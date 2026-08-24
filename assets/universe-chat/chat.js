@@ -49,8 +49,25 @@ const state = {
   levels: (() => { try { return JSON.parse(pref('levels', '')) || { view: true, author: false }; }
     catch (e) { return { view: true, author: false }; } })(),
   promptChars: 0,
+  traceLines: [],
+  vault: { client: null, sid: null, autosave: pref('vasave', '1') === '1', timer: 0, meta: null },
 };
 let aside = null, bus = null, tool = null;
+let traceFn = () => {};
+
+/* The one chat-local tool: it exists only while a vault is connected, and it
+   writes only inside the current session's folder. */
+const SAVE_DOC_TOOL = {
+  type: 'function',
+  function: {
+    name: 'save_to_vault',
+    description: 'Save a document you have written into the user’s connected vault, inside this chat session’s folder. Use it when the user asks to keep, save or export something you produced — a summary, a review, a rewrite. Returns the vault path.',
+    parameters: { type: 'object', properties: {
+      name: { type: 'string', description: 'File name, e.g. "claims-review.md".' },
+      content: { type: 'string', description: 'The full file content.' } },
+    required: ['name', 'content'], additionalProperties: false },
+  },
+};
 
 export function open() {
   if (!state.built) build();
@@ -104,6 +121,7 @@ function build() {
     '  <span class="uchat-est" id="uc-est" title="Rough size of what each message carries: the grounding prompt plus the enabled tools"></span>' +
     '  <button class="uchat-hbtn" id="uc-settings" title="Model, provider and key">model</button>' +
     '  <button class="uchat-hbtn" id="uc-tools" title="Which tool levels the model may use">tools</button>' +
+    '  <button class="uchat-hbtn" id="uc-vault" title="Persist sessions to an encrypted vault">vault</button>' +
     '  <button class="uchat-hbtn" id="uc-help" title="What this is">?</button>' +
     '  <button class="uchat-hbtn" id="uc-new" title="Start a fresh conversation">New</button>' +
     '  <button class="uchat-hbtn" id="uc-close" title="Close">&#10005;</button>' +
@@ -118,6 +136,20 @@ function build() {
     '  <label><input type="checkbox" id="uc-lvl-view"> view <span class="lvl-note">&mdash; drive the reader: select, filter, lay out, highlight.</span></label>' +
     '  <label><input type="checkbox" id="uc-lvl-author"> author <span class="lvl-note">&mdash; scratch nodes and drafts, visibly unsaved; nothing anchored is ever written.</span></label>' +
     '  <p>Every call the model makes is logged &mdash; <code>window.__tool.meta.getLog()</code> in the console shows the full audit trail.</p>' +
+    '</div>' +
+    '<div class="uchat-drawer" id="uc-drawer-vault" hidden>' +
+    '  <h5>The vault &middot; sessions that survive the refresh</h5>' +
+    '  <p>Paste a vault key (<code>passphrase:vaultId</code> or a Simple Token). Every conversation is then saved as a folder of files under <code>/universe-chat/</code> in that vault &mdash; encrypted in this browser before anything leaves it, readable by <code>sgit clone</code> anywhere you hold the key. The key stays in this browser&rsquo;s localStorage, like the model key.</p>' +
+    '  <input type="password" id="uc-vkey" placeholder="vault key:  passphrase:vaultId  or  word-word-0000" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;background:#12122a;color:#e2e8f0;border:1px solid #2d3060;border-radius:5px;padding:7px 9px;font:12px monospace">' +
+    '  <input type="password" id="uc-vtoken" placeholder="server access key (if the server requires one)" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;margin-top:6px;background:#12122a;color:#e2e8f0;border:1px solid #2d3060;border-radius:5px;padding:7px 9px;font:12px monospace">' +
+    '  <input type="text" id="uc-vendpoint" placeholder="endpoint (default https://send.sgraph.ai)" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;margin-top:6px;background:#12122a;color:#e2e8f0;border:1px solid #2d3060;border-radius:5px;padding:7px 9px;font:12px monospace">' +
+    '  <p style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">' +
+    '    <button class="uchat-hbtn" id="uc-vconnect">connect</button>' +
+    '    <button class="uchat-hbtn" id="uc-vsave" hidden>save now</button>' +
+    '    <button class="uchat-hbtn" id="uc-vforget" hidden>forget key</button>' +
+    '    <span class="small" id="uc-vmsg" style="color:#94a3b8"></span></p>' +
+    '  <label><input type="checkbox" id="uc-vasave" checked> autosave after every reply <span class="lvl-note">&mdash; one commit per changed file, pushed immediately</span></label>' +
+    '  <div id="uc-vsessions"></div>' +
     '</div>' +
     '<div class="uchat-drawer" id="uc-drawer-help" hidden>' +
     '  <h5>What this is</h5>' +
@@ -137,7 +169,8 @@ function build() {
     '<sg-llm-chat-input></sg-llm-chat-input>' +
     '<div class="uchat-nokey" id="uc-nokey"><b>No model connected.</b> The page is unaffected &mdash; it never needed one. To chat, <button id="uc-nokey-open">open model settings</button> and paste your OpenRouter key. It stays in this browser.</div>' +
     '<div class="uchat-foot">' +
-    '  <span class="model" id="uc-model">&mdash;</span><span class="sp"></span>' +
+    '  <span class="model" id="uc-model">&mdash;</span>' +
+    '  <span id="uc-vstat"></span><span class="sp"></span>' +
     '  <sg-llm-stats compact></sg-llm-stats>' +
     '</div>';
 
@@ -157,6 +190,7 @@ function build() {
   wireHeader();
   wireChips();
   wireResize();
+  wireVault();
   refreshSchemas();
   buildSystemPrompt();
 
@@ -176,12 +210,18 @@ function wireBus() {
     line.textContent = text;
     el.appendChild(line);
     el.scrollTop = el.scrollHeight;
+    state.traceLines.push(text);
   };
+  traceFn = trace;
 
   bus.addEventListener(SGL_LLM.SEND, (e) => {
     if (state.schemas.length && !e.detail.tools) {
       e.detail.tools = state.schemas;
       e.detail.tool_choice = 'auto';
+    }
+    if (state.vault.client && state.vault.client.connected) {
+      e.detail.tools = (e.detail.tools || []).concat([SAVE_DOC_TOOL]);
+      e.detail.tool_choice = e.detail.tool_choice || 'auto';
     }
   });
 
@@ -204,8 +244,12 @@ function wireBus() {
       trace('', '→ ' + name + ' ' + (argText.length > 120 ? argText.slice(0, 120) + '…' : argText));
       let out;
       try {
-        if (!tool || typeof tool[name] !== 'function') throw new Error('unknown tool: ' + name);
-        out = await tool[name](JSON.parse(argText));
+        if (name === 'save_to_vault') {
+          const a = JSON.parse(argText);
+          out = await vaultSaveDocument(a.name, a.content);
+        } else if (!tool || typeof tool[name] !== 'function') {
+          throw new Error('unknown tool: ' + name);
+        } else out = await tool[name](JSON.parse(argText));
         let body = JSON.stringify(out === undefined ? null : out);
         if (body.length > 24000) body = body.slice(0, 24000) + '…(truncated)';
         results.push({ role: 'tool', tool_call_id: c.id, content: body });
@@ -238,7 +282,9 @@ function wireBus() {
       && !(typeof t.content === 'string' ? t.content.trim() : t.content)
       && !(t.images && t.images.length)));
     if (kept.length !== st.turns.length) hist.setState({ ...st, turns: kept });
+    scheduleVaultSave();
   });
+  bus.addEventListener(SGL_LLM.REQUEST_ERROR, () => scheduleVaultSave());
 
   bus.addEventListener(SGL_LLM.CONNECTED, (e) => {
     state.connected = true;
@@ -266,7 +312,7 @@ function wireBus() {
 
 /* ---- header, drawers, chips, resize --------------------------------------- */
 function toggleDrawer(which, force) {
-  for (const d of ['settings', 'tools', 'help']) {
+  for (const d of ['settings', 'tools', 'vault', 'help']) {
     const el = document.getElementById('uc-drawer-' + d);
     const btn = document.getElementById('uc-' + (d === 'help' ? 'help' : d));
     const on = d === which ? (force !== undefined ? force : el.hidden) : false;
@@ -278,6 +324,7 @@ function toggleDrawer(which, force) {
 function wireHeader() {
   document.getElementById('uc-settings').addEventListener('click', () => toggleDrawer('settings'));
   document.getElementById('uc-tools').addEventListener('click', () => toggleDrawer('tools'));
+  document.getElementById('uc-vault').addEventListener('click', () => toggleDrawer('vault'));
   document.getElementById('uc-help').addEventListener('click', () => toggleDrawer('help'));
   document.getElementById('uc-close').addEventListener('click', close);
   document.getElementById('uc-nokey-open').addEventListener('click', () => toggleDrawer('settings', true));
@@ -285,6 +332,9 @@ function wireHeader() {
     const hist = bus.__sgLlmChatHistory;
     if (hist) hist.clear();
     state.hops = 0;
+    state.traceLines = [];
+    state.vault.sid = null;      /* the next save starts a new session folder */
+    state.vault.meta = null;
     document.getElementById('uc-trace').textContent = '';
     document.getElementById('uc-body').classList.add('uchat-fresh');
     buildSystemPrompt();
@@ -383,4 +433,157 @@ async function buildSystemPrompt() {
   const hist = bus.__sgLlmChatHistory;
   if (hist) hist.setSystemPrompt(prompt);
   updateEstimate();
+}
+
+/* ---- the vault: sessions that survive the refresh -------------------------- */
+function vstat(text, err) {
+  const el = document.getElementById('uc-vstat');
+  el.textContent = text;
+  el.style.color = err ? '#f87171' : '#4ade80';
+  const msg = document.getElementById('uc-vmsg');
+  if (msg) { msg.textContent = text; msg.style.color = err ? '#f87171' : '#94a3b8'; }
+}
+
+function wireVault() {
+  const keyInput = document.getElementById('uc-vkey');
+  const connectBtn = document.getElementById('uc-vconnect');
+  const saveBtn = document.getElementById('uc-vsave');
+  const forgetBtn = document.getElementById('uc-vforget');
+  const asaveChk = document.getElementById('uc-vasave');
+  asaveChk.checked = state.vault.autosave;
+  asaveChk.addEventListener('change', () => {
+    state.vault.autosave = asaveChk.checked;
+    setPref('vasave', asaveChk.checked ? '1' : '0');
+  });
+
+  const tokenInput = document.getElementById('uc-vtoken');
+  const endpointInput = document.getElementById('uc-vendpoint');
+  const connect = async (rawKey, accessToken, endpoint) => {
+    connectBtn.disabled = true;
+    vstat('vault: connecting…');
+    try {
+      const { ChatVault } = await import('./vault.js');
+      const client = new ChatVault();
+      const { vaultId } = await client.connect(rawKey,
+        { accessToken: accessToken || undefined, endpoint: endpoint || undefined });
+      state.vault.client = client;
+      setPref('vault', JSON.stringify({ key: rawKey, token: accessToken || '', endpoint: endpoint || '' }));
+      vstat('vault: ' + vaultId);
+      saveBtn.hidden = false; forgetBtn.hidden = false;
+      connectBtn.textContent = 'reconnect';
+      renderSessions();
+    } catch (err) {
+      vstat('vault: ' + err.message, true);
+    } finally { connectBtn.disabled = false; }
+  };
+
+  connectBtn.addEventListener('click', () => {
+    const raw = keyInput.value.trim();
+    if (raw) connect(raw, tokenInput.value.trim(), endpointInput.value.trim());
+  });
+  saveBtn.addEventListener('click', () => vaultSaveNow('save now'));
+  forgetBtn.addEventListener('click', () => {
+    setPref('vault', '');
+    keyInput.value = ''; tokenInput.value = ''; endpointInput.value = '';
+    if (state.vault.client) state.vault.client.disconnect();
+    state.vault.client = null;
+    saveBtn.hidden = true; forgetBtn.hidden = true;
+    connectBtn.textContent = 'connect';
+    document.getElementById('uc-vsessions').textContent = '';
+    vstat('');
+    document.getElementById('uc-vstat').textContent = '';
+  });
+
+  const saved = pref('vault', '');
+  if (saved) {
+    let cfg;
+    try { cfg = JSON.parse(saved); } catch (e) { cfg = { key: saved, token: '', endpoint: '' }; }
+    if (cfg && cfg.key) {
+      keyInput.value = cfg.key;
+      tokenInput.value = cfg.token || '';
+      endpointInput.value = cfg.endpoint || '';
+      connect(cfg.key, cfg.token, cfg.endpoint);
+    }
+  }
+}
+
+async function renderSessions() {
+  const box = document.getElementById('uc-vsessions');
+  const client = state.vault.client;
+  if (!client || !client.connected) { box.textContent = ''; return; }
+  let sessions = [];
+  try { sessions = await client.listSessions(U.slug); } catch (e) { /* an empty vault is fine */ }
+  box.innerHTML = '';
+  if (!sessions.length) return;
+  const h = document.createElement('h5');
+  h.textContent = 'Saved sessions for this document';
+  box.appendChild(h);
+  for (const sid of sessions.slice(0, 12)) {
+    const b = document.createElement('button');
+    b.className = 'uchat-chip';
+    b.textContent = (sid === state.vault.sid ? '▸ ' : '') + sid
+      + (sid === state.vault.sid ? ' (current)' : ' — restore');
+    b.addEventListener('click', async () => {
+      try {
+        const { messages } = await client.loadSession(U.slug, sid);
+        const hist = bus.__sgLlmChatHistory;
+        hist.setState(messages);
+        state.vault.sid = sid;
+        state.vault.meta = null;      /* session.json already exists in the vault */
+        state.hops = 0;
+        document.getElementById('uc-body').classList.remove('uchat-fresh');
+        vstat('vault: restored ' + sid);
+        renderSessions();
+      } catch (err) { vstat('vault: ' + err.message, true); }
+    });
+    box.appendChild(b);
+  }
+}
+
+function scheduleVaultSave() {
+  if (!state.vault.autosave || !state.vault.client || !state.vault.client.connected) return;
+  clearTimeout(state.vault.timer);
+  state.vault.timer = setTimeout(() => vaultSaveNow('autosave'), 1200);
+}
+
+async function vaultSaveNow(why) {
+  const client = state.vault.client;
+  const hist = bus.__sgLlmChatHistory;
+  if (!client || !client.connected || !hist) return;
+  const messages = hist.getState();
+  if (!messages.turns.length) return;
+  if (!state.vault.sid) {
+    const { sessionId } = await import('./vault-core.js');
+    state.vault.sid = sessionId(new Date());
+    state.vault.meta = { doc: U.slug, title: U.title, page: location.href,
+      started: new Date().toISOString(), model: state.model || null };
+  }
+  let drafts = null;
+  try { drafts = await tool.get_drafts(); } catch (e) { /* page API optional here */ }
+  try {
+    const r = await client.save(U.slug, state.vault.sid, {
+      meta: state.vault.meta, messages, drafts,
+      trace: state.traceLines.join('\n') + '\n',
+    });
+    if (r.written.length) {
+      vstat('vault: saved ' + r.written.join(', ') + ' · ' + new Date().toISOString().slice(11, 16));
+      renderSessions();
+    }
+  } catch (err) {
+    vstat('vault: save failed — ' + err.message, true);
+    traceFn('err', '✗ vault save — ' + err.message);
+  }
+}
+
+async function vaultSaveDocument(name, content) {
+  const client = state.vault.client;
+  if (!client || !client.connected) throw new Error('no vault connected — the user connects one in the vault drawer');
+  if (!state.vault.sid) await vaultSaveNow('first document');
+  if (!state.vault.sid) {
+    const { sessionId } = await import('./vault-core.js');
+    state.vault.sid = sessionId(new Date());
+  }
+  const r = await client.saveDocument(U.slug, state.vault.sid, name, content);
+  traceFn('ok', '✓ saved to vault: ' + r.path);
+  return { saved: r.path, vault: client.vaultId };
 }
