@@ -122,6 +122,18 @@ body.uchat-open .uchat-fab { display: none; }
 .uchat-nokey[hidden] { display: none; }
 .uchat-nokey button { color: #f1d492; background: none; border: none; cursor: pointer; text-decoration: underline; font: inherit; padding: 0; }
 
+/* ---- drawer form controls --------------------------------------------------- */
+.uchat-in {
+  width: 100%; box-sizing: border-box; background: #12122a; color: #e2e8f0;
+  border: 1px solid #2d3060; border-radius: 5px; padding: 7px 9px; font: 12px monospace;
+}
+.uchat-in + .uchat-in, .uchat-in + .uchat-ta, input + .uchat-ta { margin-top: 6px; }
+.uchat-in-ui { font: 12px system-ui, sans-serif; }
+.uchat-ta { resize: vertical; }
+.uchat-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.uchat-msg { color: #94a3b8; }
+.uchat-h5gap { margin-top: 10px; }
+
 @media (max-width: 900px) {
   :root { --uchat-w: 100vw; }
   body.uchat-open { margin-right: 0; }

@@ -34,6 +34,13 @@ lists the levels.
 | `get_coverage` | — | the taxonomy with each section's yield |
 | `get_crossrefs` | — | the usage ledger, rated against the usage model |
 | `get_state` | — | selection, layout, kinds, panel/graph visibility, draft counts |
+| `compose_node_doc` | `{id}` | the full composed record of one node (claims, relations both ways, uses) |
+| `rank_nodes` | — | every node by richness — where the meaning is, and where it is starving |
+| `search` | `{text}` | loose-text match over ids, labels, statements, quotes |
+| `graph_snapshot` | `{full?}` | the canvas as a PNG data URL (the chat attaches it as an image) |
+| `get_recent_activity` | `{since?}` | the interaction ledger — what the user last tapped or clicked |
+| `price_next_hop` | `{degrees?}` | what one more explore degree would add around the selection |
+| `get_lexicon` / `get_usage_model` | — | the scoped lexicon; the usage model with its level tests |
 
 ## Methods — view
 
@@ -48,6 +55,11 @@ lists the levels.
 | `explore_selection` | `{on, id?, degrees?, to_peaks?}` — the N-hop neighbourhood filter |
 | `show_sources` | `{document?, doc_tree?, family_peaks?, derived_links?}` |
 | `pin_peaks` / `paths_to_peaks` | `{on}` |
+| `pin_nodes` | `{left?, right?, clear?}` — arbitrary stacks, locked for the layout run |
+| `scroll_to_heading` | `{title}` |
+| `step_anchor` | `{direction: next\|previous}` — the audit walk |
+| `maximize_graph` | `{on}` |
+| `reset_view` | — — overview preset, nothing pinned, selection cleared, no reload |
 | `set_highlight_kinds` | `{kinds: string[]}` |
 | `set_graph_look` | `{labels?, size?, boxed?}` |
 | `show_panel` / `show_graph` | `{on}` |

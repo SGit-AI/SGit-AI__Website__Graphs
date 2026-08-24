@@ -17,6 +17,9 @@
 import { SgToolApi } from 'https://tools.sgraph.ai/core/sg-tool-api/v0/v0.1/v0.1.0/sg-tool-api.js';
 import { COMMANDS, LEVELS, toolSchemas, clampRange } from './core/commands.js';
 import { composeNodeDoc, nodeRichness } from './core/nodedoc.js';
+import { pinPositions } from './core/packs.js';
+import { layoutOptions } from './core/cystyle.js';
+import { neighbourhoodIds, graphStats } from './core/explore.js';
 
 const U = window.UNIVERSE;
 const layout = document.querySelector('.uni-layout');
@@ -26,7 +29,7 @@ if (U && layout && graph) publish();
 
 function publish() {
   /* ---- lazily fetched data: the extraction and the source bytes ---------- */
-  let exP = null, srcP = null, crP = null;
+  let exP = null, srcP = null, crP = null, lexP = null, umP = null;
   const getEx = () => (exP = exP || fetch(U.extraction).then((r) => r.json()));
   const getSrc = () => (srcP = srcP || fetch(U.source).then((r) => r.arrayBuffer())
     .then((b) => new Uint8Array(b)));
@@ -35,6 +38,24 @@ function publish() {
   /* ---- session-local author state ---------------------------------------- */
   const drafts = { annotations: [], crossrefs: [], scratch: { nodes: [], edges: [] } };
   let scratchStyled = false;
+  let pinned = null;
+
+  /* ---- the activity ring: what happened on the page, for "this/here" ------ */
+  const activity = [];
+  let actSeq = 0;
+  const record = (event, detail) => {
+    activity.push({ seq: ++actSeq, event, ...detail });
+    if (activity.length > 50) activity.shift();
+  };
+  layout.addEventListener('uni:node-tap', (e) => record('user-tapped-graph-node',
+    { id: e.detail.id, label: e.detail.label }));
+  layout.addEventListener('uni:mark-click', (e) => record('user-clicked-source-mark',
+    { id: e.detail.aid }));
+  layout.addEventListener('uni:gmax', (e) => record('graph-maximized', { on: e.detail.on }));
+  layout.addEventListener('uni:gpref', (e) => record('graph-pref-changed',
+    { key: e.detail.key, value: e.detail.value }));
+  layout.addEventListener('uni:pref', (e) => record('reader-pref-changed',
+    { key: e.detail.key, value: Array.isArray(e.detail.value) ? e.detail.value.join(' ') : e.detail.value }));
 
   /* ---- helpers over the reader's published surfaces ----------------------- */
   const emit = (name, detail) => layout.dispatchEvent(new CustomEvent(name, { detail }));
@@ -153,6 +174,35 @@ function publish() {
       const ex = await getEx();
       return nodeRichness(ex);
     },
+    graph_snapshot: ({ full } = {}) => {
+      const data_url = graph.cy.png({ output: 'base64uri', full: !!full, scale: 1,
+        maxWidth: 900, maxHeight: 700, bg: '#faf8f2' });
+      return { data_url, bytes: data_url.length, full: !!full,
+        note: 'in the chat this arrives as an image on the next turn' };
+    },
+    get_recent_activity: ({ since } = {}) => {
+      const from = Number.isFinite(since) ? since : 0;
+      return { latest_seq: actSeq, entries: activity.filter((a) => a.seq > from) };
+    },
+    price_next_hop: ({ degrees } = {}) => {
+      const sel = graph.selected;
+      if (!sel) throw new Error('price_next_hop needs a selection — select_node first');
+      const shown = (gbtn('#uni-gdeg') || { textContent: '1' }).textContent;
+      const deg = Number.isFinite(degrees) ? degrees
+        : (shown === '∞' ? Infinity : parseInt(shown, 10) || 1);
+      const data = U.elements.map((el) => el.data);
+      const cur = neighbourhoodIds(data, sel, deg);
+      const nxt = neighbourhoodIds(data, sel, deg === Infinity ? Infinity : deg + 1);
+      const added = data.filter((d) => nxt.has(d.id) && !cur.has(d.id));
+      return { from_degrees: deg === Infinity ? 'max' : deg, in_view: graphStats(
+        data.filter((d) => cur.has(d.id))), next_hop_adds: graphStats(added),
+        added_ids: added.filter((d) => !d.source).map((d) => d.id).slice(0, 30) };
+    },
+    get_lexicon: () => (lexP = lexP || fetch('../lexicon/data/lexicon.json').then((r) => {
+      if (!r.ok) throw new Error('lexicon fetch failed: ' + r.status);
+      return r.json();
+    })),
+    get_usage_model: () => (umP = umP || fetch('usage-model.json').then((r) => r.json())),
     search: async ({ text }) => {
       const q = String(text || '').toLowerCase().trim();
       if (q.length < 2) throw new Error('search needs at least 2 characters');
@@ -227,6 +277,65 @@ function publish() {
         family_peaks: btnOn('[data-gpeaks]'), derived_links: btnOn('[data-gderived]') };
     },
     pin_peaks: ({ on }) => { clickIf('[data-gpin]', on); return { pin_peaks: on }; },
+    pin_nodes: ({ left = [], right = [], clear } = {}) => {
+      const cy = graph.cy;
+      if (clear) {
+        if (pinned) { pinned.unlock(); pinned = null; }
+        graph.runLayout();
+        return { cleared: true };
+      }
+      const ids = left.concat(right);
+      if (!ids.length) throw new Error('pin_nodes needs left and/or right ids (or clear: true)');
+      for (const id of ids) {
+        const n = cy.$id(id);
+        if (n.empty() || n.hasClass('uni-hide')) throw new Error('not visible on the canvas: ' + id);
+      }
+      if (pinned) { pinned.unlock(); pinned = null; }
+      const vis = cy.elements().not('.uni-hide');
+      const pos = pinPositions(left, right, Math.max(0, vis.nodes().length - ids.length));
+      ids.forEach((id) => cy.$id(id).position(pos[id]));
+      pinned = cy.collection(ids.map((id) => cy.$id(id)));
+      pinned.lock();
+      const len = parseInt(graph.querySelector('#uni-glen').value, 10) || 90;
+      const pull = parseInt(graph.querySelector('#uni-gpull').value, 10) || 90;
+      vis.layout(layoutOptions('cose', { len, pull })).run();
+      pinned.unlock();
+      cy.fit(vis, 24);
+      return { pinned: { left, right },
+        note: 'stacks placed and the physics settled the rest between them; nodes stay hand-draggable' };
+    },
+    scroll_to_heading: ({ title }) => {
+      if (!U.taxonomy.some((t) => t.title === title)) {
+        throw new Error('unknown heading: ' + title + ' — get_coverage lists them');
+      }
+      document.querySelector('uni-source').scrollToHeading(title);
+      return { scrolled_to: title };
+    },
+    step_anchor: ({ direction }) => {
+      const id = direction === 'previous' ? '#uni-prev'
+        : direction === 'next' ? '#uni-next' : null;
+      if (!id) throw new Error('direction is next or previous');
+      const b = document.querySelector('uni-source ' + id);
+      if (!b) throw new Error('the source pane has no stepper on this screen');
+      b.click();
+      return { stepped: direction, selected: graph.selected || null };
+    },
+    maximize_graph: ({ on }) => {
+      const box = graph.querySelector('.uni-graphbox');
+      if (box.classList.contains('uni-gmax') !== on) gbtn('[data-gmax]').click();
+      return { maximized: on };
+    },
+    reset_view: () => {
+      impl.maximize_graph({ on: false });
+      if (pinned) { pinned.unlock(); pinned = null; }
+      clickIf('[data-gpin]', false);
+      impl.set_view_preset({ view: 'overview' });
+      impl.clear_selection();
+      impl.set_highlight_kinds({ kinds: ['concept', 'claim', 'hypothesis', 'objective',
+        'example', 'edge', 'nbn', 'alias'] });
+      impl.show_graph({ on: true });
+      return { reset: true };
+    },
     paths_to_peaks: ({ on }) => { clickIf('[data-gpaths]', on); return { paths_to_peaks: on }; },
     set_highlight_kinds: ({ kinds }) => { emit('uni:pref', { key: 'kinds', value: kinds }); return { kinds }; },
     set_graph_look: ({ labels, size, boxed }) => {

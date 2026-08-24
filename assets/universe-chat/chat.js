@@ -27,6 +27,9 @@ import 'https://tools.sgraph.ai/components/llm/sg-llm-request/v0/v0.1/v0.1.4/sg-
 import 'https://tools.sgraph.ai/components/llm/sg-llm-chat-history/v0/v0.1/v0.1.10/sg-llm-chat-history.js';
 import 'https://tools.sgraph.ai/components/llm/sg-llm-chat-input/v0/v0.1/v0.1.5/sg-llm-chat-input.js';
 import 'https://tools.sgraph.ai/components/llm/sg-llm-stats/v0/v0.1/v0.1.1/sg-llm-stats.js';
+import { panelMarkup } from './chat-markup.js';
+import { wireToolLoop } from './tool-loop.js';
+import { groundingPrompt } from './chat-core.js';
 
 const CHAT_MESSAGE = 'llm:chat-message';
 const DEFAULT_MODEL = 'anthropic/claude-sonnet-5';
@@ -169,78 +172,7 @@ function build() {
   const w = pref('w', '');
   if (w) document.documentElement.style.setProperty('--uchat-w', w);
 
-  aside.innerHTML =
-    '<div class="uchat-resize" title="Drag to resize"></div>' +
-    '<div class="uchat-head">' +
-    '  <b>Talk to this graph</b> <span class="uchat-badge">metered</span>' +
-    '  <span class="sp"></span>' +
-    '  <span class="uchat-est" id="uc-est" title="Rough size of what each message carries: the grounding prompt plus the enabled tools"></span>' +
-    '  <button class="uchat-hbtn" id="uc-mic" title="Voice note: record, transcribe with your key, send">&#127908;</button>' +
-    '  <button class="uchat-hbtn" id="uc-settings" title="Model, provider and key">model</button>' +
-    '  <button class="uchat-hbtn" id="uc-tools" title="Which tool levels the model may use">tools</button>' +
-    '  <button class="uchat-hbtn" id="uc-vault" title="Persist sessions to an encrypted vault">vault</button>' +
-    '  <button class="uchat-hbtn" id="uc-persona" title="Read as a persona: an angle applied to every answer">persona</button>' +
-    '  <button class="uchat-hbtn" id="uc-help" title="What this is">?</button>' +
-    '  <button class="uchat-hbtn" id="uc-new" title="Start a fresh conversation">New</button>' +
-    '  <button class="uchat-hbtn" id="uc-close" title="Close">&#10005;</button>' +
-    '</div>' +
-    '<div class="uchat-drawer" id="uc-drawer-settings" hidden>' +
-    '  <h5>Model &middot; the OpenRouter workflow</h5>' +
-    '  <p>Your key is pasted here once and kept in this browser&rsquo;s localStorage only &mdash; it is never sent to any sgraph.ai or sgit.ai host. Requests go from your browser straight to the provider. Default model: <code>' + DEFAULT_MODEL + '</code>.</p>' +
-    '</div>' +
-    '<div class="uchat-drawer" id="uc-drawer-tools" hidden>' +
-    '  <h5>What the model is allowed to do here</h5>' +
-    '  <label><input type="checkbox" checked disabled> read <span class="lvl-note">&mdash; the universe as data: nodes, claims, anchors, the frozen source. Always on.</span></label>' +
-    '  <label><input type="checkbox" id="uc-lvl-view"> view <span class="lvl-note">&mdash; drive the reader: select, filter, lay out, highlight.</span></label>' +
-    '  <label><input type="checkbox" id="uc-lvl-author"> author <span class="lvl-note">&mdash; scratch nodes and drafts, visibly unsaved; nothing anchored is ever written.</span></label>' +
-    '  <p>Every call the model makes is logged &mdash; <code>window.__tool.meta.getLog()</code> in the console shows the full audit trail.</p>' +
-    '</div>' +
-    '<div class="uchat-drawer" id="uc-drawer-vault" hidden>' +
-    '  <h5>The vault &middot; sessions that survive the refresh</h5>' +
-    '  <p>Paste a vault key (<code>passphrase:vaultId</code> or a Simple Token). Every conversation is then saved as a folder of files under <code>/universe-chat/</code> in that vault &mdash; encrypted in this browser before anything leaves it, readable by <code>sgit clone</code> anywhere you hold the key. The key stays in this browser&rsquo;s localStorage, like the model key.</p>' +
-    '  <input type="password" id="uc-vkey" placeholder="vault key:  passphrase:vaultId  or  word-word-0000" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;background:#12122a;color:#e2e8f0;border:1px solid #2d3060;border-radius:5px;padding:7px 9px;font:12px monospace">' +
-    '  <input type="password" id="uc-vtoken" placeholder="server access key (if the server requires one)" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;margin-top:6px;background:#12122a;color:#e2e8f0;border:1px solid #2d3060;border-radius:5px;padding:7px 9px;font:12px monospace">' +
-    '  <input type="text" id="uc-vendpoint" placeholder="endpoint (default https://send.sgraph.ai)" autocomplete="off" spellcheck="false" style="width:100%;box-sizing:border-box;margin-top:6px;background:#12122a;color:#e2e8f0;border:1px solid #2d3060;border-radius:5px;padding:7px 9px;font:12px monospace">' +
-    '  <p style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">' +
-    '    <button class="uchat-hbtn" id="uc-vconnect">connect</button>' +
-    '    <button class="uchat-hbtn" id="uc-vsave" hidden>save now</button>' +
-    '    <button class="uchat-hbtn" id="uc-vforget" hidden>forget key</button>' +
-    '    <span class="small" id="uc-vmsg" style="color:#94a3b8"></span></p>' +
-    '  <label><input type="checkbox" id="uc-vasave" checked> autosave after every reply <span class="lvl-note">&mdash; one commit per changed file, pushed immediately</span></label>' +
-    '  <div id="uc-vsessions"></div>' +
-    '</div>' +
-    '<div class="uchat-drawer" id="uc-drawer-persona" hidden>' +
-    '  <h5>The persona &middot; one document, many readers</h5>' +
-    '  <p>A persona is an angle applied to every answer &mdash; a role, a language, a level. With a vault connected, personas live in it at <code>/personas/</code>, where you or any agent holding the key can tune them or add new ones; the views the model saves for a persona, and your feedback on them, land beside it. That ledger is the seed of the personalised document.</p>' +
-    '  <div id="uc-plist"></div>' +
-    '  <h5 style="margin-top:10px">New or edited persona</h5>' +
-    '  <input type="text" id="uc-pname" placeholder="name, e.g. the CFO" style="width:100%;box-sizing:border-box;background:#12122a;color:#e2e8f0;border:1px solid #2d3060;border-radius:5px;padding:7px 9px;font:12px system-ui">' +
-    '  <textarea id="uc-pprompt" rows="3" placeholder="the angle: who is reading, what they need, how to speak to them" style="width:100%;box-sizing:border-box;margin-top:6px;background:#12122a;color:#e2e8f0;border:1px solid #2d3060;border-radius:5px;padding:7px 9px;font:12px system-ui;resize:vertical"></textarea>' +
-    '  <p><button class="uchat-hbtn" id="uc-puse">use now</button> <button class="uchat-hbtn" id="uc-psave">save to vault &amp; use</button> <span class="small" id="uc-pmsg" style="color:#94a3b8"></span></p>' +
-    '</div>' +
-    '<div class="uchat-drawer" id="uc-drawer-help" hidden>' +
-    '  <h5>What this is</h5>' +
-    '  <p>A chat over <b>this document&rsquo;s local graph</b> &mdash; the extraction, its anchors, and the frozen source underneath. The model reads them through the page&rsquo;s own API and, at the <i>view</i> level, drives the reader for you: ask it to select, filter or re-lay the graph.</p>' +
-    '  <p>Paste a screenshot straight into the input (Ctrl/Cmd-V) when pointing at something is easier than describing it.</p>' +
-    '  <p>The same API is yours in the console: see <a href="skills/SKILL-browser.md">SKILL-browser</a> and <a href="skills/SKILL-api.md">SKILL-api</a>. The plan behind this panel: <a href="../dev-packs/v0.4.13__universe-chat/00__plan.md">the universe chat plan</a>.</p>' +
-    '</div>' +
-    '<div class="uchat-body uchat-fresh" id="uc-body">' +
-    '  <div class="uchat-intro">' +
-    '    <p><b>Nothing has been sent yet &mdash; and nothing has been spent.</b></p>' +
-    '    <p>The page, the graph and every table are free, local and already verified against the frozen bytes. This side is what the page cannot do alone &mdash; questions, review, the graph driven by instruction &mdash; charged per call to your own OpenRouter key. Start here:</p>' +
-    '    <div id="uc-chips"></div>' +
-    '  </div>' +
-    '  <sg-llm-chat-history></sg-llm-chat-history>' +
-    '</div>' +
-    '<div class="uchat-trace" id="uc-trace"></div>' +
-    '<sg-llm-chat-input></sg-llm-chat-input>' +
-    '<div class="uchat-nokey" id="uc-nokey"><b>No model connected.</b> The page is unaffected &mdash; it never needed one. To chat, <button id="uc-nokey-open">open model settings</button> and paste your OpenRouter key. It stays in this browser.</div>' +
-    '<div class="uchat-foot">' +
-    '  <span class="model" id="uc-model">&mdash;</span>' +
-    '  <span class="model" id="uc-pfoot"></span>' +
-    '  <span id="uc-vstat"></span><span class="sp"></span>' +
-    '  <sg-llm-stats compact></sg-llm-stats>' +
-    '</div>';
+  aside.innerHTML = panelMarkup(DEFAULT_MODEL);
 
   /* listeners BEFORE the request engine joins the bus: same-target listeners
      run in registration order, which is what lets the augmenter add tools to
@@ -271,7 +203,7 @@ function build() {
   if (!cfg || !cfg.apiKey) toggleDrawer('settings', true);
 }
 
-/* ---- the bus: augment sends, run the tool loop, keep the transcript clean -- */
+/* ---- the bus: status wiring here; the agentic engine lives in tool-loop.js - */
 function wireBus() {
   const trace = (cls, text) => {
     const el = document.getElementById('uc-trace');
@@ -284,94 +216,35 @@ function wireBus() {
   };
   traceFn = trace;
 
-  bus.addEventListener(SGL_LLM.SEND, (e) => {
-    if (state.schemas.length && !e.detail.tools) {
-      e.detail.tools = state.schemas;
-      e.detail.tool_choice = 'auto';
-    }
-    if (state.connected) {
-      e.detail.tools = (e.detail.tools || []).concat([INFOGRAPHIC_TOOL]);
-      e.detail.tool_choice = e.detail.tool_choice || 'auto';
-    }
-    if (state.vault.client && state.vault.client.connected) {
-      e.detail.tools = (e.detail.tools || []).concat([SAVE_DOC_TOOL]);
-      if (state.persona.active) {
-        e.detail.tools = e.detail.tools.concat([SAVE_VIEW_TOOL, FEEDBACK_TOOL]);
+  wireToolLoop({
+    bus, events: SGL_LLM, chatEvent: CHAT_MESSAGE, state,
+    getTool: () => tool,
+    extraTools: () => {
+      const extra = [];
+      if (state.connected) extra.push(INFOGRAPHIC_TOOL);
+      if (state.vault.client && state.vault.client.connected) {
+        extra.push(SAVE_DOC_TOOL);
+        if (state.persona.active) extra.push(SAVE_VIEW_TOOL, FEEDBACK_TOOL);
       }
-      e.detail.tool_choice = e.detail.tool_choice || 'auto';
-    }
+      return extra;
+    },
+    runLocal: (name, a) => {
+      if (name === 'save_to_vault') return vaultSaveDocument(a.name, a.content);
+      if (name === 'generate_infographic') return makeInfographic(a.brief, a.style);
+      if (name === 'save_view') return personaSaveView(a.name, a.content);
+      if (name === 'record_feedback') return personaRecordFeedback(a.view, a.verdict, a.note);
+      return null;
+    },
+    trace,
+    getHistory: () => bus.__sgLlmChatHistory,
+    onTurnSettled: () => scheduleVaultSave(),
+    getRequest: () => aside.querySelector('sg-llm-request'),
+    maxHops: MAX_HOPS,
   });
 
   bus.addEventListener(CHAT_MESSAGE, () => {
-    state.hops = 0;
     document.getElementById('uc-body').classList.remove('uchat-fresh');
   });
-
-  bus.addEventListener(SGL_LLM.TOOL_CALLS, async (e) => {
-    const { toolCalls, messages } = e.detail;
-    state.hops += 1;
-    if (state.hops > MAX_HOPS) {
-      trace('err', '⏹ stopped after ' + MAX_HOPS + ' tool rounds in one turn');
-      return;
-    }
-    const results = [];
-    for (const c of toolCalls) {
-      const name = c.function && c.function.name;
-      let argText = (c.function && c.function.arguments) || '{}';
-      trace('', '→ ' + name + ' ' + (argText.length > 120 ? argText.slice(0, 120) + '…' : argText));
-      let out;
-      try {
-        if (name === 'save_to_vault') {
-          const a = JSON.parse(argText);
-          out = await vaultSaveDocument(a.name, a.content);
-        } else if (name === 'generate_infographic') {
-          const a = JSON.parse(argText);
-          out = await makeInfographic(a.brief, a.style);
-        } else if (name === 'save_view') {
-          const a = JSON.parse(argText);
-          out = await personaSaveView(a.name, a.content);
-        } else if (name === 'record_feedback') {
-          const a = JSON.parse(argText);
-          out = await personaRecordFeedback(a.view, a.verdict, a.note);
-        } else if (!tool || typeof tool[name] !== 'function') {
-          throw new Error('unknown tool: ' + name);
-        } else out = await tool[name](JSON.parse(argText));
-        let body = JSON.stringify(out === undefined ? null : out);
-        if (body.length > 24000) body = body.slice(0, 24000) + '…(truncated)';
-        results.push({ role: 'tool', tool_call_id: c.id, content: body });
-        trace('ok', '✓ ' + name);
-      } catch (err) {
-        results.push({ role: 'tool', tool_call_id: c.id,
-          content: JSON.stringify({ error: err.message }) });
-        trace('err', '✗ ' + name + ' — ' + err.message);
-      }
-    }
-    const cont = [...messages,
-      { role: 'assistant', content: null, tool_calls: toolCalls }, ...results];
-    /* the engine clears its busy flag in the same tick this handler first
-       yields in; wait it out rather than racing it */
-    const req = aside.querySelector('sg-llm-request');
-    for (let i = 0; i < 100 && req.busy; i++) await new Promise((r) => setTimeout(r, 50));
-    bus.dispatchEvent(new CustomEvent(SGL_LLM.SEND, {
-      detail: { messages: cont, mode: 'build', tools: state.schemas, tool_choice: 'auto' },
-    }));
-  });
-
-  bus.addEventListener(SGL_LLM.REQUEST_COMPLETE, (e) => {
-    /* a pure tool-call turn leaves an empty assistant bubble in the history;
-       once the loop lands (no more tool calls), sweep those out */
-    if (e.detail.toolCalls && e.detail.toolCalls.length) return;
-    const hist = bus.__sgLlmChatHistory;
-    if (!hist) return;
-    const st = hist.getState();
-    const kept = st.turns.filter((t) => !(t.role === 'assistant'
-      && !(typeof t.content === 'string' ? t.content.trim() : t.content)
-      && !(t.images && t.images.length)));
-    if (kept.length !== st.turns.length) hist.setState({ ...st, turns: kept });
-    scheduleVaultSave();
-  });
-  bus.addEventListener(SGL_LLM.REQUEST_ERROR, () => scheduleVaultSave());
-
   bus.addEventListener(SGL_LLM.CONNECTED, (e) => {
     state.connected = true;
     state.model = (e.detail && e.detail.model) || '';
@@ -393,6 +266,7 @@ function wireBus() {
   });
   bus.addEventListener(SGL_LLM.REQUEST_ERROR, (e) => {
     trace('err', '✗ request — ' + ((e.detail && e.detail.error) || 'failed'));
+    scheduleVaultSave();
   });
 }
 
@@ -407,25 +281,35 @@ function toggleDrawer(which, force) {
   }
 }
 
+function newConversation() {
+  const hist = bus.__sgLlmChatHistory;
+  if (hist) hist.clear();
+  state.hops = 0;
+  state.traceLines = [];
+  state.vault.sid = null;      /* the next save starts a new session folder */
+  state.vault.meta = null;
+  document.getElementById('uc-trace').textContent = '';
+  document.getElementById('uc-body').classList.add('uchat-fresh');
+  buildSystemPrompt();
+}
+
 function wireHeader() {
-  document.getElementById('uc-settings').addEventListener('click', () => toggleDrawer('settings'));
-  document.getElementById('uc-tools').addEventListener('click', () => toggleDrawer('tools'));
-  document.getElementById('uc-vault').addEventListener('click', () => toggleDrawer('vault'));
-  document.getElementById('uc-persona').addEventListener('click', () => toggleDrawer('persona'));
-  document.getElementById('uc-help').addEventListener('click', () => toggleDrawer('help'));
-  document.getElementById('uc-close').addEventListener('click', close);
-  document.getElementById('uc-nokey-open').addEventListener('click', () => toggleDrawer('settings', true));
-  document.getElementById('uc-new').addEventListener('click', () => {
-    const hist = bus.__sgLlmChatHistory;
-    if (hist) hist.clear();
-    state.hops = 0;
-    state.traceLines = [];
-    state.vault.sid = null;      /* the next save starts a new session folder */
-    state.vault.meta = null;
-    document.getElementById('uc-trace').textContent = '';
-    document.getElementById('uc-body').classList.add('uchat-fresh');
-    buildSystemPrompt();
+  /* one delegated handler, per the guidelines' handleEvent pattern */
+  aside.querySelector('.uchat-head').addEventListener('click', (e) => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    switch (b.id) {
+      case 'uc-settings': toggleDrawer('settings'); break;
+      case 'uc-tools': toggleDrawer('tools'); break;
+      case 'uc-vault': toggleDrawer('vault'); break;
+      case 'uc-persona': toggleDrawer('persona'); break;
+      case 'uc-help': toggleDrawer('help'); break;
+      case 'uc-close': close(); break;
+      case 'uc-new': newConversation(); break;
+      default: break;                        /* uc-mic wires its own state */
+    }
   });
+  document.getElementById('uc-nokey-open').addEventListener('click', () => toggleDrawer('settings', true));
 
   const view = document.getElementById('uc-lvl-view');
   const author = document.getElementById('uc-lvl-author');
@@ -493,34 +377,13 @@ function updateEstimate() {
 
 async function buildSystemPrompt() {
   if (!tool) return;
-  let prompt;
+  let data = null;
   try {
     const [doc, nodes, pairings] = await Promise.all([
       tool.get_doc(), tool.get_nodes(), tool.get_pairings()]);
-    const concepts = nodes.filter((n) => n.family === 'concept');
-    const claims = nodes.filter((n) => n.family === 'claim');
-    const rest = nodes.filter((n) => n.family !== 'concept' && n.family !== 'claim');
-    prompt = [
-      'You are the chat panel on a page of graphs.sgit.ai: the layer 1 local graph of one frozen source document, "' + doc.title + '".',
-      'Every item on the page is a record that THIS DOCUMENT SAYS something, at a verified anchor — whether it is true is deliberately not judged at this layer. Answer from the extraction and the source, cite item ids in backticks (e.g. `meaning-through-connectivity`), and when a claim is involved say how the document supports it (demonstrated, argued or declared). If the extraction does not carry an answer, say so rather than inventing one.',
-      'You have tools. Reading tools fetch the data; view tools drive the page — when the user asks to see, show, select, filter or lay out something, actually do it with the view tools rather than describing what they could click. After driving the view, say briefly what is now on screen.',
-      'The dictionary (id: label — statement; * = used but never defined):',
-      concepts.map((c) => '  ' + (c.defined ? '' : '*') + c.id + ': ' + c.label + ' — ' + c.statement).join('\n'),
-      'The claims (id [support]: statement):',
-      claims.map((c) => '  ' + c.id + ' [' + c.support + ']: ' + c.statement).join('\n'),
-      'Hypotheses, objectives and worked examples:',
-      rest.map((n) => '  ' + n.id + ' [' + n.family + ']: ' + n.statement).join('\n'),
-      'Also-called: ' + pairings.also_called.map((x) => x.a + ' ↔ ' + x.b).join('; '),
-      'Near-but-not: ' + pairings.near_but_not.map((x) => x.this + ' is NOT ' + x.not).join('; '),
-    ].join('\n\n');
-  } catch (e) {
-    prompt = 'You are the chat panel on a universe document page of graphs.sgit.ai. The page API is unavailable, so answer only from what the user pastes, and say the grounding failed to load.';
-  }
-  const p = state.persona.active;
-  if (p) {
-    prompt += '\n\nTHE READER PERSONA — "' + p.name + '". ' + p.prompt
-      + '\nEverything you write speaks to this persona. When you produce a rewritten, summarised, translated or projected version of the document for them, save it with save_view (a view is a first-class artefact, not chat text). When the user reacts to a saved view — it landed, it is wrong, it is unclear — record that with record_feedback against the view, quoting their reasoning: the feedback ledger is what the next generation of the view is built from.';
-  }
+    data = { doc, nodes, pairings };
+  } catch (e) { /* groundingPrompt states the failure honestly */ }
+  const prompt = groundingPrompt(data, state.persona.active);
   state.promptChars = prompt.length;
   const hist = bus.__sgLlmChatHistory;
   if (hist) hist.setSystemPrompt(prompt);

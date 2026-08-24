@@ -362,5 +362,55 @@ test('vault-core: document names are tamed and default to markdown', () => {
   assert.throws(() => documentName('///'), /usable name/);
 });
 
+/* ---- chat-core: the grounding prompt and the loop's pure rules ------------- */
+const { groundingPrompt, sweepTurns, truncateToolResult } =
+  await import('../../assets/universe-chat/chat-core.js');
+test('chat-core: the grounding prompt carries every section, in order', () => {
+  const p = groundingPrompt({
+    doc: { title: 'Doc T' },
+    nodes: [
+      { id: 'c1', family: 'concept', label: 'C One', statement: 's1', defined: true },
+      { id: 'c2', family: 'concept', label: 'C Two', statement: 's2', defined: false },
+      { id: 'k1', family: 'claim', label: 'K', statement: 'ks', support: 'argued' },
+      { id: 'h1', family: 'hypothesis', label: 'H', statement: 'hs' }],
+    pairings: { also_called: [{ a: 'c1', b: 'alias' }], near_but_not: [{ this: 'c1', not: 'a schema' }] },
+  }, null);
+  const marks = ['"Doc T"', 'THIS DOCUMENT SAYS', 'get_recent_activity', 'graph_snapshot',
+    'The dictionary', '  c1: C One — s1', '  *c2: C Two — s2',
+    'The claims', '  k1 [argued]: ks', 'Hypotheses', '  h1 [hypothesis]: hs',
+    'Also-called: c1 ↔ alias', 'Near-but-not: c1 is NOT a schema'];
+  let at = -1;
+  for (const m of marks) {
+    const i = p.indexOf(m);
+    assert.ok(i > at, 'missing or out of order: ' + m);
+    at = i;
+  }
+  assert.ok(!p.includes('READER PERSONA'));
+});
+test('chat-core: the persona section appends, and the fallback stays honest', () => {
+  const p = groundingPrompt(null, { name: 'the CFO', prompt: 'Costs first.' });
+  assert.ok(p.includes('The page API is unavailable'));
+  assert.ok(p.includes('THE READER PERSONA — "the CFO". Costs first.'));
+  assert.ok(p.includes('save_view') && p.includes('record_feedback'));
+});
+test('chat-core: the sweep drops only truly empty assistant turns', () => {
+  const turns = [
+    { role: 'user', content: '' },
+    { role: 'assistant', content: '  ' },
+    { role: 'assistant', content: '', images: [{ image_url: { url: 'x' } }] },
+    { role: 'assistant', content: 'kept' }];
+  const kept = sweepTurns(turns);
+  assert.equal(kept.length, 3);
+  assert.ok(!kept.some((t) => t.role === 'assistant' && t.content === '  '));
+  const same = [{ role: 'assistant', content: 'a' }];
+  assert.equal(sweepTurns(same), same);   /* identity when nothing drops */
+});
+test('chat-core: tool results are bounded', () => {
+  assert.equal(truncateToolResult({ a: 1 }), '{"a":1}');
+  assert.equal(truncateToolResult(undefined), 'null');
+  const big = truncateToolResult({ s: 'x'.repeat(30000) }, 100);
+  assert.ok(big.length < 130 && big.endsWith('…(truncated)'));
+});
+
 console.log(`universe tests: ${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

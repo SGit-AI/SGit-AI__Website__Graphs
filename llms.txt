@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.4.22 (24 August 2026). Published by the sgit project — participant
+Site version: v0.4.23 (24 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /v1/briefs/ is the source of truth and carries the same licence.
 
@@ -375,8 +375,12 @@ pages** so the two cannot drift
   extraction, anchors, the frozen bytes), view (selection, preset views, node-pack sources, the
   explore stepper, layouts, highlights), author (scratch elements and session drafts; nothing
   anchored is ever written). The browser console, Playwright and LLM agents are equal consumers;
-  every invocation is logged. Spec: /v2/universe/skills/SKILL-api.md; console and Playwright
-  guide: /v2/universe/skills/SKILL-browser.md. The same pages carry an on-demand CHAT PANEL
+  every invocation is logged. 44 commands, including compose_node_doc (the full record of one
+  node), rank_nodes, search, graph_snapshot (the canvas as a PNG — the chat attaches it so the
+  model sees the layout it made), pin_nodes (arbitrary left/right stacks), get_recent_activity
+  (the interaction ledger behind "this/here"), scroll_to_heading, step_anchor (the audit walk),
+  price_next_hop, get_lexicon and get_usage_model. Spec: /v2/universe/skills/SKILL-api.md;
+  console and Playwright guide: /v2/universe/skills/SKILL-browser.md. The same pages carry an on-demand CHAT PANEL
   ("talk to this graph") built from the family's published LLM components at tools.sgraph.ai:
   the OpenRouter workflow (the user's own key, kept in the browser's localStorage only, never
   sent to any sgraph.ai host; default model anthropic/claude-sonnet-5), clipboard screenshot
