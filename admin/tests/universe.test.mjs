@@ -108,5 +108,41 @@ test('cystyle: the stylesheet still carries the focus ring and hide classes', ()
     .forEach((s) => assert.ok(sel.includes(s), s));
 });
 
+/* ---- commands: the table and its two projections stay honest -------------- */
+const { COMMANDS, LEVELS, toolSchemas, clampRange } =
+  await import('../../assets/universe/core/commands.js');
+test('commands: every entry is complete and snake_case', () => {
+  for (const c of COMMANDS) {
+    assert.match(c.name, /^[a-z][a-z0-9_]*$/, c.name);
+    assert.ok(LEVELS.includes(c.level), c.name + ' level');
+    assert.ok(c.description.length > 20, c.name + ' description');
+    assert.ok(c.properties && Array.isArray(c.required), c.name + ' schema');
+    for (const r of c.required) assert.ok(r in c.properties, c.name + ' requires unknown param ' + r);
+  }
+});
+test('commands: names are unique', () => {
+  assert.equal(new Set(COMMANDS.map((c) => c.name)).size, COMMANDS.length);
+});
+test('commands: toolSchemas filters by level and keeps OpenAI shape', () => {
+  const read = toolSchemas(['read']);
+  assert.ok(read.length > 0 && read.length < COMMANDS.length);
+  for (const t of read) {
+    assert.equal(t.type, 'function');
+    assert.equal(t.function.parameters.additionalProperties, false);
+    assert.equal(COMMANDS.find((c) => c.name === t.function.name).level, 'read');
+  }
+  assert.equal(toolSchemas(LEVELS).length, COMMANDS.length);
+});
+test('commands: an unknown level throws rather than silently vanishing', () => {
+  assert.throws(() => toolSchemas(['read', 'wizard']), /unknown tool level/);
+});
+test('commands: clampRange never exceeds the cap or the text', () => {
+  assert.deepEqual(clampRange(undefined, undefined, 100), { start: 0, end: 100 });
+  assert.deepEqual(clampRange(0, 99999, 20000), { start: 0, end: 6000 });
+  assert.deepEqual(clampRange(50, 40, 100), { start: 50, end: 50 });
+  assert.deepEqual(clampRange(-5, 10, 100), { start: 0, end: 10 });
+  assert.deepEqual(clampRange(90, undefined, 100), { start: 90, end: 100 });
+});
+
 console.log(`universe tests: ${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

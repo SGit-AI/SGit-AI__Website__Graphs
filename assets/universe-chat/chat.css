@@ -1,0 +1,126 @@
+/* The universe chat panel. Independent of the page: the page ships only the
+   floating button (boot.js); everything here mounts on demand. The panel is
+   dark to match the family's LLM components (which render in their own shadow
+   DOM); the header speaks the site's serif. */
+
+:root { --uchat-w: 420px; }
+
+body.uchat-open { margin-right: var(--uchat-w); }
+
+/* ---- the floating button ------------------------------------------------- */
+.uchat-fab {
+  position: fixed; right: 18px; bottom: 18px; z-index: 400;
+  font: 600 14px/1 system-ui, sans-serif;
+  background: #14202b; color: #f3efe6;
+  border: 1px solid #2c3e50; border-radius: 999px;
+  padding: 11px 18px; cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .25);
+}
+.uchat-fab:hover { background: #1d2f3f; }
+body.uchat-open .uchat-fab { display: none; }
+
+/* ---- the panel ----------------------------------------------------------- */
+.uchat {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 390;
+  width: var(--uchat-w); max-width: 96vw;
+  display: flex; flex-direction: column;
+  background: #0d0d1a; color: #e2e8f0;
+  border-left: 1px solid #26263f;
+  font: 13px/1.5 system-ui, sans-serif;
+}
+.uchat[hidden] { display: none; }
+
+.uchat-resize {
+  position: absolute; left: -4px; top: 0; bottom: 0; width: 8px;
+  cursor: ew-resize; z-index: 391;
+}
+.uchat-resize:hover, .uchat-resize.drag { background: rgba(124, 158, 248, .25); }
+
+/* ---- header -------------------------------------------------------------- */
+.uchat-head {
+  flex-shrink: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px;
+  padding: 10px 12px; border-bottom: 1px solid #26263f; background: #101024;
+}
+.uchat-head b {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 15px; font-weight: 600; letter-spacing: .01em; white-space: nowrap;
+}
+.uchat-badge {
+  font: 700 9px/1 system-ui, sans-serif; letter-spacing: .1em;
+  color: #d8a54a; border: 1px solid #6b5320; border-radius: 4px;
+  padding: 3px 5px; text-transform: uppercase;
+}
+.uchat-head .sp { flex: 1; }
+.uchat-hbtn {
+  font: 12px/1 monospace; color: #94a3b8; background: #171730;
+  border: 1px solid #2d3060; border-radius: 5px; padding: 5px 8px; cursor: pointer;
+  white-space: nowrap;
+}
+.uchat-hbtn:hover { color: #e2e8f0; background: #20204a; }
+.uchat-hbtn.on { color: #7c9ef8; border-color: #3d5a99; }
+.uchat-est { font: 11px/1 monospace; color: #64748b; }
+
+/* ---- drawers (settings, tools, help) -------------------------------------- */
+.uchat-drawer {
+  flex-shrink: 0; border-bottom: 1px solid #26263f; background: #0f1020;
+  padding: 10px 12px; max-height: 46vh; overflow-y: auto;
+}
+.uchat-drawer[hidden] { display: none; }
+.uchat-drawer h5 {
+  margin: 0 0 6px; font: 700 10px/1 system-ui, sans-serif;
+  letter-spacing: .08em; text-transform: uppercase; color: #64748b;
+}
+.uchat-drawer p { margin: 6px 0; color: #94a3b8; font-size: 12px; }
+.uchat-drawer a { color: #7c9ef8; }
+.uchat-drawer label { display: block; margin: 5px 0; font-size: 12px; color: #cbd5e1; cursor: pointer; }
+.uchat-drawer label .lvl-note { color: #64748b; margin-left: 4px; }
+.uchat-drawer input[type="checkbox"] { accent-color: #7c9ef8; margin-right: 6px; }
+
+/* ---- intro + chips -------------------------------------------------------- */
+.uchat-intro { padding: 14px 14px 6px; overflow-y: auto; }
+.uchat-intro b { color: #f1f5f9; }
+.uchat-intro p { margin: 0 0 10px; color: #94a3b8; font-size: 12.5px; }
+.uchat-chip {
+  display: block; width: 100%; text-align: left; margin: 6px 0;
+  font: 13px/1.45 system-ui, sans-serif; color: #dbe3f0;
+  background: #12122a; border: 1px solid #2d3060; border-radius: 9px;
+  padding: 9px 12px; cursor: pointer;
+}
+.uchat-chip:hover { background: #1a1a3a; border-color: #3d5a99; }
+
+/* ---- body ----------------------------------------------------------------- */
+.uchat-body { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+.uchat-body sg-llm-chat-history { flex: 1; min-height: 0; }
+.uchat-body.uchat-fresh sg-llm-chat-history { display: none; }
+.uchat-body:not(.uchat-fresh) .uchat-intro { display: none; }
+
+/* ---- tool trace ------------------------------------------------------------ */
+.uchat-trace {
+  flex-shrink: 0; max-height: 110px; overflow-y: auto;
+  border-top: 1px solid #26263f; background: #0b0b16;
+  font: 10.5px/1.6 monospace; color: #64748b; padding: 4px 12px;
+}
+.uchat-trace:empty { display: none; }
+.uchat-trace .ok { color: #4ade80; }
+.uchat-trace .err { color: #f87171; }
+
+/* ---- input + footer -------------------------------------------------------- */
+.uchat sg-llm-chat-input { flex-shrink: 0; }
+.uchat-foot {
+  flex-shrink: 0; display: flex; align-items: center; gap: 8px;
+  padding: 5px 12px; border-top: 1px solid #26263f; background: #101024;
+  font: 10.5px/1.5 monospace; color: #64748b;
+}
+.uchat-foot .model { color: #94a3b8; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.uchat-foot .sp { flex: 1; }
+.uchat-nokey {
+  padding: 9px 12px; border-top: 1px solid #4a3a10; background: #191307;
+  color: #d8a54a; font-size: 12px;
+}
+.uchat-nokey[hidden] { display: none; }
+.uchat-nokey button { color: #f1d492; background: none; border: none; cursor: pointer; text-decoration: underline; font: inherit; padding: 0; }
+
+@media (max-width: 900px) {
+  :root { --uchat-w: 100vw; }
+  body.uchat-open { margin-right: 0; }
+}

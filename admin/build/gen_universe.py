@@ -417,6 +417,8 @@ DOC_PAGE = """<!doctype html>
 <script src="../../assets/vendor/cytoscape.min.js"></script>
 <script src="../../assets/vendor/marked.min.js"></script>
 <script type="module" src="../../assets/universe-view.js"></script>
+<script type="module" src="../../assets/universe/universe-api.js"></script>
+<script type="module" src="../../assets/universe-chat/boot.js"></script>
 </body>
 </html>
 """
