@@ -58,11 +58,22 @@
     '<div class="uni-graphbox">' +
     '  <button class="uni-gcog" title="Graph options">&#9881;</button>' +
     '  <div class="uni-gopts" hidden>' +
-    '    <span>layout</span>' +
-    '    <button data-glay="cose">cose</button><button data-glay="concentric">rings</button><button data-glay="grid">grid</button>' +
-    '    <button data-glabels="1">labels</button>' +
-    '    <button data-gfit="1">fit</button>' +
-    '    <button data-gclear="1">clear focus</button>' +
+    '    <div class="grow"><span class="glab">layout</span>' +
+    '      <button data-glay="cose">cose</button><button data-glay="concentric">rings</button>' +
+    '      <button data-glay="grid">grid</button><button data-glay="tree">tree</button></div>' +
+    '    <div class="grow"><span class="glab">labels</span>' +
+    '      <button data-glabels="1">show</button>' +
+    '      <button data-gsize="s">S</button><button data-gsize="m">M</button><button data-gsize="l">L</button>' +
+    '      <button data-gboxed="1">boxed</button></div>' +
+    '    <div class="grow"><span class="glab">physics</span>' +
+    '      <span class="gval">string</span><input type="range" id="uni-glen" min="40" max="280" step="10">' +
+    '      <span class="gval">pull</span><input type="range" id="uni-gpull" min="10" max="300" step="10">' +
+    '      <span class="small dim">(cose)</span></div>' +
+    '    <div class="grow"><span class="glab">view</span>' +
+    '      <button data-gtree="1">doc tree</button>' +
+    '      <button data-gsub="1">subtree only</button>' +
+    '      <button data-gfit="1">fit</button>' +
+    '      <button data-gclear="1">clear focus</button></div>' +
     '  </div>' +
     '  <div class="uni-cy" id="uni-cy"></div>' +
     '</div>' +
@@ -224,6 +235,13 @@
 
   /* ---------------- the graph ------------------------------------------------ */
   var showLabels = true;
+  var glay = pref('glay', 'cose');
+  var gsize = pref('gsize', 's');
+  var gboxed = prefBool('gboxed', false);
+  var gtree = prefBool('gtree', false);
+  var gsub = false;
+  var glen = parseInt(pref('glen', '90'), 10);
+  var gpull = parseInt(pref('gpull', '90'), 10);   /* nodeRepulsion, in thousands */
   cy = cytoscape({
     container: document.getElementById('uni-cy'),
     elements: U.elements,
@@ -243,6 +261,21 @@
         'label': 'data(verb)', 'font-size': 8, 'color': '#3f6ad8', 'text-background-color': '#fff',
         'text-background-opacity': .85, 'text-background-padding': 2 } },
       { selector: 'edge[kind = "demonstrates"]', style: { 'line-style': 'dashed' } },
+      { selector: 'node[family = "section"]', style: { 'background-color': '#eef1f6',
+        'shape': 'round-rectangle', 'width': 30, 'height': 16, 'border-width': 1,
+        'border-color': '#c2cad8', 'color': '#4a5568', 'font-size': 9 } },
+      { selector: 'node[family = "docroot"]', style: { 'background-color': '#1f2430',
+        'shape': 'round-rectangle', 'width': 44, 'height': 20, 'color': '#1f2430',
+        'font-weight': 'bold' } },
+      { selector: 'edge[kind = "contains"]', style: { 'width': 1, 'line-style': 'dotted',
+        'line-color': '#b9c2d0', 'target-arrow-shape': 'none' } },
+      { selector: '.uni-szm', style: { 'font-size': 12 } },
+      { selector: '.uni-szl', style: { 'font-size': 16 } },
+      { selector: 'node.uni-boxed', style: { 'text-background-color': '#fff',
+        'text-background-opacity': 1, 'text-background-shape': 'round-rectangle',
+        'text-background-padding': 3, 'text-border-width': 1, 'text-border-opacity': 1,
+        'text-border-color': '#c9ccd2' } },
+      { selector: '.uni-hide', style: { 'display': 'none' } },
       { selector: '.uni-nolabel', style: { 'label': '' } },
       { selector: 'node.uni-focus', style: { 'border-width': 4, 'border-color': '#c9a227',
         'width': 28, 'height': 28, 'font-weight': 'bold', 'color': '#111' } },
@@ -262,26 +295,108 @@
       { duration: scrollMode === 'smooth' ? 350 : scrollMode === 'fast' ? 140 : 0 });
   }
 
+  /* ---- the document tree: title -> parts -> sections -> extracted nodes ---- */
+  var treeEles = null;
+  function buildTreeEles() {
+    if (treeEles) return treeEles;
+    var els = [];
+    var rootId = 'sec:__doc';
+    els.push({ data: { id: rootId, label: U.title, family: 'docroot' } });
+    var stack = [];   /* [level, id] of open headings */
+    (U.taxonomy || []).forEach(function (t, i) {
+      if (i === 0) return;                       /* the H1 is the root itself */
+      var id = 'sec:' + t.title;
+      while (stack.length && stack[stack.length - 1][0] >= t.level) stack.pop();
+      var parent = stack.length ? stack[stack.length - 1][1] : rootId;
+      els.push({ data: { id: id, label: t.title, family: 'section' } });
+      els.push({ data: { id: 'ce:' + i, source: parent, target: id, kind: 'contains' } });
+      stack.push([t.level, id]);
+    });
+    U.anchors.forEach(function (a, i) {
+      if (!a.section || cy.$id(a.aid).empty()) return;
+      els.push({ data: { id: 'ca:' + i, source: 'sec:' + a.section, target: a.aid, kind: 'contains' } });
+    });
+    treeEles = cy.add(els);
+    return treeEles;
+  }
+  function applyTree() {
+    if (gtree) buildTreeEles().removeClass('uni-hide');
+    else if (treeEles) treeEles.addClass('uni-hide');
+  }
+
+  /* ---- subtree mode: only what hangs off the current selection ------------- */
+  function applySubtree() {
+    cy.elements().removeClass('uni-hide');
+    applyTree();
+    if (!gsub || !selected || cy.$id(selected).empty()) return;
+    var keep = cy.collection().union(cy.$id(selected));
+    var frontier = keep;
+    while (frontier.length) {
+      /* an edge-selector on incomers() returns the edges WITHOUT their source
+         nodes, so the sources must be collected explicitly or the walk stalls */
+      /* containment is traversed DOWNWARD only (outgoers): climbing up would
+         reach the document root and re-include everything below it */
+      var inEdges = frontier.incomers('edge[kind = "about"], edge[kind = "demonstrates"]');
+      var next = frontier.outgoers().union(inEdges).union(inEdges.sources()).difference(keep);
+      keep = keep.union(next);
+      frontier = next.nodes();
+    }
+    cy.elements().difference(keep).addClass('uni-hide');
+    runLayout();
+  }
+
+  /* ---- one layout runner, honouring the sliders and the tree --------------- */
+  function runLayout() {
+    var vis = cy.elements().not('.uni-hide');
+    var opts;
+    if (glay === 'cose') opts = { name: 'cose', animate: false, nodeRepulsion: gpull * 1000,
+      idealEdgeLength: glen, padding: 24 };
+    else if (glay === 'concentric') opts = { name: 'concentric', animate: false, padding: 24,
+      minNodeSpacing: 22,
+      concentric: function (n) { return n.data('family') === 'concept' ? 3 : n.data('family') === 'claim' ? 2 : 1; },
+      levelWidth: function () { return 1; } };
+    else if (glay === 'tree') opts = { name: 'breadthfirst', animate: false, directed: true,
+      padding: 24, spacingFactor: 1.1,
+      roots: gtree ? 'node[family = "docroot"]' : (selected && cy.$id(selected).nonempty() ? cy.$id(selected) : undefined) };
+    else opts = { name: 'grid', animate: false, padding: 24 };
+    vis.layout(opts).run();
+    cy.fit(vis, 24);
+  }
+  function applyLook() {
+    cy.nodes().toggleClass('uni-nolabel', !showLabels);
+    cy.elements().toggleClass('uni-szm', gsize === 'm').toggleClass('uni-szl', gsize === 'l');
+    cy.nodes().toggleClass('uni-boxed', gboxed);
+    gopts.querySelectorAll('[data-glay]').forEach(function (x) { x.classList.toggle('on', x.getAttribute('data-glay') === glay); });
+    gopts.querySelectorAll('[data-gsize]').forEach(function (x) { x.classList.toggle('on', x.getAttribute('data-gsize') === gsize); });
+    gopts.querySelector('[data-glabels]').classList.toggle('on', showLabels);
+    gopts.querySelector('[data-gboxed]').classList.toggle('on', gboxed);
+    gopts.querySelector('[data-gtree]').classList.toggle('on', gtree);
+    gopts.querySelector('[data-gsub]').classList.toggle('on', gsub);
+  }
+
   var gopts = panel.querySelector('.uni-gopts');
   panel.querySelector('.uni-gcog').addEventListener('click', function () { gopts.hidden = !gopts.hidden; });
+  document.getElementById('uni-glen').value = glen;
+  document.getElementById('uni-gpull').value = gpull;
+  var slideT = null;
+  function slid() {
+    glen = parseInt(document.getElementById('uni-glen').value, 10);
+    gpull = parseInt(document.getElementById('uni-gpull').value, 10);
+    setPref('glen', glen); setPref('gpull', gpull);
+    clearTimeout(slideT);
+    slideT = setTimeout(function () { if (glay === 'cose') runLayout(); }, 250);
+  }
+  document.getElementById('uni-glen').addEventListener('input', slid);
+  document.getElementById('uni-gpull').addEventListener('input', slid);
   gopts.addEventListener('click', function (e) {
     var b = e.target.closest('button'); if (!b) return;
-    if (b.hasAttribute('data-glay')) {
-      var name = b.getAttribute('data-glay');
-      gopts.querySelectorAll('[data-glay]').forEach(function (x) { x.classList.toggle('on', x === b); });
-      cy.layout(name === 'cose'
-        ? { name: 'cose', animate: false, nodeRepulsion: 90000, idealEdgeLength: 90, padding: 24 }
-        : name === 'concentric'
-          ? { name: 'concentric', animate: false, padding: 24, minNodeSpacing: 22,
-              concentric: function (n) { return n.data('family') === 'concept' ? 3 : n.data('family') === 'claim' ? 2 : 1; },
-              levelWidth: function () { return 1; } }
-          : { name: 'grid', animate: false, padding: 24 }).run();
-    }
-    if (b.hasAttribute('data-glabels')) {
-      showLabels = !showLabels; b.classList.toggle('on', !showLabels);
-      cy.nodes().toggleClass('uni-nolabel', !showLabels);
-    }
-    if (b.hasAttribute('data-gfit')) cy.fit(undefined, 24);
+    if (b.hasAttribute('data-glay')) { glay = b.getAttribute('data-glay'); setPref('glay', glay); applyLook(); runLayout(); }
+    if (b.hasAttribute('data-gsize')) { gsize = b.getAttribute('data-gsize'); setPref('gsize', gsize); applyLook(); }
+    if (b.hasAttribute('data-glabels')) { showLabels = !showLabels; applyLook(); }
+    if (b.hasAttribute('data-gboxed')) { gboxed = !gboxed; setPref('gboxed', gboxed ? 1 : 0); applyLook(); }
+    if (b.hasAttribute('data-gtree')) { gtree = !gtree; setPref('gtree', gtree ? 1 : 0); applyLook(); applyTree(); applySubtree(); if (!gsub) runLayout(); }
+    if (b.hasAttribute('data-gsub')) { gsub = !gsub; applyLook(); applySubtree(); if (!gsub) runLayout(); }
+    if (b.hasAttribute('data-gfit')) cy.fit(cy.elements().not('.uni-hide'), 24);
     if (b.hasAttribute('data-gclear')) clearSelection();
   });
 
@@ -376,17 +491,20 @@
      used. A second click on the selected thing deselects it everywhere. */
   var selected = null;
   var clearBtn = document.getElementById('uni-clear');
-  function clearSelection() {
+  function clearSelection(keepSub) {
     selected = null;
     document.querySelectorAll('.uni-sel').forEach(function (el) { el.classList.remove('uni-sel'); });
     if (cy) cy.elements().removeClass('uni-focus uni-dim');
     clearBtn.hidden = true;
+    /* a real clear exits subtree mode (there is no root left to hang it on);
+       an internal clear during re-selection keeps it, so the subtree follows */
+    if (gsub && !keepSub) { gsub = false; applyLook(); applySubtree(); runLayout(); }
   }
-  clearBtn.addEventListener('click', clearSelection);
+  clearBtn.addEventListener('click', function () { clearSelection(); });
   function select(aid, opts) {
     opts = opts || {};
     if (selected === aid && !opts.force) { clearSelection(); return; }
-    clearSelection();
+    clearSelection(true);
     selected = aid;
     clearBtn.hidden = false;
     var a = null;
@@ -399,6 +517,7 @@
       dataBody.querySelectorAll('.uni-jitem[data-aid="' + aid + '"]').forEach(function (el) { el.classList.add('uni-sel'); });
     }
     if (cy.$id(aid).nonempty()) focusNode(aid);
+    if (gsub) applySubtree();
   }
 
   cy.on('tap', 'node', function (evt) {
@@ -522,7 +641,8 @@
         var a = U.anchors.find(function (x) { return x.aid === id; });
         return a ? a.label : id;
       }).join(' · ').replace(/"/g, '&quot;');
-      return '<mark class="uni-anchor" data-aids="' + ids.join(' ') + '" title="' + label + '">';
+      var k = kindOf[ids[0]] || 'edge';
+      return '<mark class="uni-anchor uni-k-' + k + '" data-aids="' + ids.join(' ') + '" title="' + label + '">';
     }
     while ((m = tokenOrTag.exec(html)) !== null) {
       out.push(html.slice(pos, m.index));
@@ -567,4 +687,7 @@
   WIDE.addEventListener('change', applyState);
   applyState();
   if (paneMode === 'data') setMode('data');
+  applyLook();
+  applyTree();
+  if (glay !== 'cose' || gtree) runLayout();
 })();

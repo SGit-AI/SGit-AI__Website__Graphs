@@ -623,6 +623,7 @@ def main():
         anchors = []
         for n in ex["nodes"]:
             anchors.append({"aid": n["id"], "row": f'n-{n["id"]}', "kind": n["family"],
+                            "section": n["anchor"]["section"],
                             "chars": n["anchor"]["chars"], "label": n["label"]})
         for i, e in enumerate(ex["edges"]):
             anchors.append({"aid": f"edge-{i}", "row": f"edge-{i}", "kind": "edge",
@@ -636,8 +637,10 @@ def main():
             anchors.append({"aid": f"alias-{i}", "row": f"alias-{i}", "kind": "alias",
                             "chars": x["anchor"]["chars"],
                             "label": f'{x["a"]} is also called {x["b"]}'})
-        unidata = json.dumps({"slug": d["slug"], "source": "../../" + d["source"],
+        unidata = json.dumps({"slug": d["slug"], "title": d["title"],
+                              "source": "../../" + d["source"],
                               "sha256": d["sha256"], "anchors": anchors,
+                              "taxonomy": ex["taxonomy"],
                               "extraction": f'docs/{d["slug"]}/extraction.json',
                               "folder": f'docs/{d["slug"]}/',
                               "elements": graph_json(ex)})

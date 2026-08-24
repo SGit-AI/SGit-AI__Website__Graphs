@@ -57,14 +57,31 @@ mark.uni-anchor.uni-hit { animation: uniflash 1.6s ease-out; background: rgba(24
   border-bottom-color: #c58f00; }
 @keyframes uniflash { 0% { background: rgba(240, 180, 41, .85); } 100% { background: rgba(240, 180, 41, .45); } }
 
-/* the persistent selection: row, marks and graph node stay lit until cleared */
-tr.uni-sel > td { background: rgba(63, 106, 216, .10); }
-mark.uni-anchor.uni-sel { background: rgba(240, 180, 41, .45); border-bottom-color: #c58f00; }
+/* the persistent selection: row, marks and graph node stay lit until cleared.
+   The selected row NEVER fades: its flash ends at the selection colour, not at
+   transparent, so the arrival animation cannot wash the selection away. */
+tr.uni-sel > td { background: rgba(63, 106, 216, .16); }
+tr.uni-sel > td:first-child { box-shadow: inset 4px 0 0 var(--accent, #3f6ad8); }
 #uni-clear { border-color: #c58f00; }
 
 /* the row flash on the left when arriving from the source or the graph */
 tr.uni-hit > td { animation: unirow 1.6s ease-out; }
+tr.uni-sel.uni-hit > td { animation: unirowsel 1.6s ease-out; }
 @keyframes unirow { 0% { background: rgba(240, 180, 41, .5); } 100% { background: transparent; } }
+@keyframes unirowsel { 0% { background: rgba(240, 180, 41, .55); } 100% { background: rgba(63, 106, 216, .16); } }
+
+/* highlights colour-coded by what the anchor is: the graph's own palette */
+mark.uni-anchor.uni-k-concept.uni-vis { background: rgba(63, 106, 216, .14); border-bottom-color: #3f6ad8; }
+mark.uni-anchor.uni-k-claim.uni-vis { background: rgba(47, 158, 99, .16); border-bottom-color: #2f9e63; }
+mark.uni-anchor.uni-k-hypothesis.uni-vis { background: rgba(197, 143, 0, .16); border-bottom-color: #c58f00; }
+mark.uni-anchor.uni-k-objective.uni-vis { background: rgba(155, 89, 182, .15); border-bottom-color: #9b59b6; }
+mark.uni-anchor.uni-k-example.uni-vis { background: rgba(208, 101, 78, .15); border-bottom-color: #d0654e; }
+mark.uni-anchor.uni-k-edge.uni-vis { background: rgba(63, 106, 216, .10); border-bottom-color: #8fa7e0; }
+mark.uni-anchor.uni-k-nbn.uni-vis { background: rgba(160, 60, 60, .12); border-bottom-color: #b06060; }
+mark.uni-anchor.uni-k-alias.uni-vis { background: rgba(120, 120, 130, .14); border-bottom-color: #8a8f98; }
+
+/* the selection outranks every kind colour: last rule at equal specificity wins */
+mark.uni-anchor.uni-sel, mark.uni-anchor.uni-sel.uni-vis, mark.uni-anchor.uni-sel:hover { background: rgba(240, 180, 41, .5); border-bottom-color: #c58f00; }
 
 /* anchor blocks in the left tables become jump affordances */
 .anchgo { cursor: pointer; border-radius: 6px; }
@@ -109,9 +126,14 @@ body.uni-panel-on #unigraph-inline { display: none; }
 .uni-jitem.uni-hit { animation: unirow 1.6s ease-out; }
 
 /* the graph's collapsible config strip */
-.uni-gopts { position: absolute; top: 6px; left: 6px; right: 6px; z-index: 6; display: flex;
-  gap: .35rem; align-items: center; flex-wrap: wrap; background: rgba(255,255,255,.92);
-  border: 1px solid var(--line2, #ddd); border-radius: 8px; padding: .3rem .5rem; font-size: .74rem; }
+.uni-gopts { position: absolute; top: 6px; left: 6px; right: 6px; z-index: 6;
+  background: rgba(255,255,255,.95); border: 1px solid var(--line2, #ddd); border-radius: 8px;
+  padding: .35rem .55rem; font-size: .74rem; max-height: 70%; overflow: auto; }
+.uni-gopts .grow { display: flex; gap: .35rem; align-items: center; flex-wrap: wrap; margin: .15rem 0; }
+.uni-gopts .glab { font-size: .66rem; text-transform: uppercase; letter-spacing: .06em;
+  opacity: .55; min-width: 3.6rem; }
+.uni-gopts input[type="range"] { width: 7rem; vertical-align: middle; }
+.uni-gopts .gval { font-size: .68rem; opacity: .6; min-width: 2.2rem; }
 .uni-gopts button { font: inherit; font-size: .74rem; border: 1px solid var(--line2, #ccc);
   border-radius: 6px; background: #fff; cursor: pointer; padding: .1rem .45rem; }
 .uni-gopts button.on { background: var(--accent, #3f6ad8); color: #fff; border-color: var(--accent, #3f6ad8); }
