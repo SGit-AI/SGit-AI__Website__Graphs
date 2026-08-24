@@ -19,10 +19,10 @@ import { familyPeakElements, derivedConceptEdges, derivedGroupPeaks } from '../c
 import { NODE_KINDS } from '../core/kinds.js';
 import { neighbourhoodIds, nextDegree } from '../core/explore.js';
 import { STRIP_HTML, reflectStrip, renderStats, applyPresetView } from './graph-strip.js';
-import { focusNode, applyPaths, runPinnedLayout } from './graph-fx.js';
+import { focusNode, applyPaths, runPinnedLayout, layoutRoots } from './graph-fx.js';
 
-/** The toggles that change what is visible and so need a refresh. The document
-    itself is a source like any other: all sources off means an empty canvas. */
+/** The visibility toggles; gdoc makes the document a source like any other,
+    so all sources off means an empty canvas. */
 const VIS_TOGGLES = ['gdoc', 'gtree', 'gpeaks', 'gderived', 'gexp'];
 
 export class UniGraph extends HTMLElement {
@@ -207,21 +207,28 @@ export class UniGraph extends HTMLElement {
   /** Drop the focus ring and dimming. */
   clearFocus() { if (this.cy) this.cy.elements().removeClass('uni-focus uni-dim'); }
 
-  /** Re-run the current layout over the visible elements, summits pinned when
-      the reader asked for it (placed once per pin-on; hand-drags then hold). */
+  /** Custom pin stacks (the page API's arbitrary pinning, data down): while
+      set, EVERY layout run keeps these ids locked at their stacks, so a
+      slider nudge cannot scramble an arrangement the chat built. They replace
+      the summit pinning while set; null (or empty) clears them.
+      @param {string[]|null} left @param {string[]} [right] */
+  setCustomPins(left, right) {
+    const has = (left && left.length) || (right && right.length);
+    this._customPins = has ? { left: left || [], right: right || [] } : null;
+    this._pinPlaced = false;
+    this.runLayout();
+  }
+  get customPins() { return this._customPins || null; }
+
+  /** Re-run the current layout over the visible elements, pins held through
+      every run (placed once per pin-on; hand-drags then hold). */
   runLayout() {
     const p = this._p;
     const vis = this.cy.elements().not('.uni-hide');
-    let roots;
-    if (p.gtree || p.gpeaks || p.gderived) {
-      const tops = vis.nodes('[family = "docroot"], [family = "peak"], [family = "dgroup"]');
-      if (tops.length) roots = tops;
-    } else if (this._selected && this.cy.$id(this._selected).nonempty()) {
-      roots = this.cy.$id(this._selected);
-    }
-    const opts = layoutOptions(p.glay, { len: p.glen, pull: p.gpull }, roots);
-    if (p.gpin) {
-      runPinnedLayout(this.cy, vis, opts, !this._pinPlaced);
+    const opts = layoutOptions(p.glay, { len: p.glen, pull: p.gpull },
+      layoutRoots(this.cy, vis, p, this._selected));
+    if (p.gpin || this._customPins) {
+      runPinnedLayout(this.cy, vis, opts, !this._pinPlaced, this._customPins);
       this._pinPlaced = true;
     } else {
       vis.layout(opts).run();
@@ -234,8 +241,8 @@ export class UniGraph extends HTMLElement {
     if (target && this.cy && this.cy.container() !== target) this.cy.mount(target);
   }
 
-  /** Resize, and fit once the canvas first has real size (the founder's
-      fit-on-open: the panel is sized after init, so init cannot fit). */
+  /** Resize, and fit once the canvas first has real size (fit-on-open:
+      the panel is sized after init, so init cannot fit). */
   resize() {
     if (!this.cy) return;
     this.cy.resize();

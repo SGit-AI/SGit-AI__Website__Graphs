@@ -43,23 +43,46 @@ export function applyPaths(cy, on, selected) {
 }
 
 /**
- * Run a layout with the summits pinned: place any summits into the left stack
- * (doc root and family peaks) and the right stack (derived-group peaks) when
- * asked, lock them for the run so the physics settles the free nodes around
- * them, and unlock after so the reader can drag them by hand between runs.
+ * The layout roots for the current view: the visible summits when any summit
+ * source is on, else the selection, else let the layout pick.
+ * @returns {object|undefined} a cytoscape collection or undefined
+ */
+export function layoutRoots(cy, vis, p, selected) {
+  if (p.gtree || p.gpeaks || p.gderived) {
+    const tops = vis.nodes('[family = "docroot"], [family = "peak"], [family = "dgroup"]');
+    if (tops.length) return tops;
+    return undefined;
+  }
+  if (selected && cy.$id(selected).nonempty()) return cy.$id(selected);
+  return undefined;
+}
+
+/**
+ * Run a layout with pinned stacks: the summits by default, or the custom
+ * left/right id lists when given (the page API's arbitrary pinning). Pins are
+ * placed into the stacks when asked, locked for the run so the physics
+ * settles the free nodes around them, and unlocked after so the reader can
+ * drag them by hand between runs. Called from every layout run while pinning
+ * is active, so a slider nudge or source toggle cannot scramble the stacks.
  * @param {object} cy - the cytoscape instance
  * @param {object} vis - the visible elements collection
  * @param {object} layoutOpts - options for the layout to run
- * @param {boolean} place - whether to (re)place the summits into the stacks
- * @returns {boolean} whether any summit was pinned
+ * @param {boolean} place - whether to (re)place the pins into the stacks
+ * @param {{left: string[], right: string[]}|null} custom - explicit stacks;
+ *   null pins the summit families instead
+ * @returns {boolean} whether anything was pinned
  */
-export function runPinnedLayout(cy, vis, layoutOpts, place) {
-  const pins = vis.nodes('[family = "docroot"], [family = "peak"], [family = "dgroup"]');
-  if (!pins.length) { vis.layout(layoutOpts).run(); return false; }
+export function runPinnedLayout(cy, vis, layoutOpts, place, custom) {
+  const onCanvas = (id) => vis.getElementById(id).nonempty();
+  const left = custom ? custom.left.filter(onCanvas)
+    : vis.nodes('[family = "docroot"], [family = "peak"]').map((n) => n.id());
+  const right = custom ? custom.right.filter(onCanvas)
+    : vis.nodes('[family = "dgroup"]').map((n) => n.id());
+  const ids = left.concat(right);
+  if (!ids.length) { vis.layout(layoutOpts).run(); return false; }
+  const pins = cy.collection(ids.map((id) => cy.$id(id)));
   if (place) {
-    const ids = (sel) => pins.filter(sel).map((n) => n.id());
-    const pos = pinPositions(ids('[family = "docroot"], [family = "peak"]'),
-      ids('[family = "dgroup"]'), vis.nodes().length - pins.length);
+    const pos = pinPositions(left, right, vis.nodes().length - ids.length);
     pins.forEach((n) => n.position(pos[n.id()]));
   }
   pins.lock();
