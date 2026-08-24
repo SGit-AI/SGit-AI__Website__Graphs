@@ -54,6 +54,15 @@
 
   var panel = document.createElement('aside');
   panel.className = 'uni-panel';
+  /* the site nav is sticky with a higher z-index; without this offset it
+     overlays the panel's top strip and hides the graph options gear */
+  function sizeUnderNav() {
+    var nav = document.querySelector('nav.site');
+    var h = nav ? nav.offsetHeight : 0;
+    panel.style.top = h + 'px';
+    panel.style.height = 'calc(100vh - ' + h + 'px)';
+  }
+  window.addEventListener('resize', sizeUnderNav);
   panel.innerHTML =
     '<div class="uni-graphbox">' +
     '  <button class="uni-gcog" title="Graph options">&#9881;</button>' +
@@ -685,6 +694,7 @@
   });
 
   WIDE.addEventListener('change', applyState);
+  sizeUnderNav();
   applyState();
   if (paneMode === 'data') setMode('data');
   applyLook();
