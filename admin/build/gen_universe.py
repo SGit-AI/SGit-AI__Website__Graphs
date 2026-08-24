@@ -416,7 +416,7 @@ DOC_PAGE = """<!doctype html>
 <script>window.UNIVERSE = {unidata};</script>
 <script src="../../assets/vendor/cytoscape.min.js"></script>
 <script src="../../assets/vendor/marked.min.js"></script>
-<script src="../../assets/universe-view.js" defer></script>
+<script type="module" src="../../assets/universe-view.js"></script>
 </body>
 </html>
 """

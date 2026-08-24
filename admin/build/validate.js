@@ -413,6 +413,19 @@ if (fs.existsSync(catPath)) {
   }
 }
 
+// --- 4h. the universe reader's unit suite is green ---------------------------
+// Gate 27. The reader's pure core (segments, markup, doc tree, styles) carries
+// known-answer vectors; a refactor that changes behaviour fails the release
+// rather than shipping silently different highlights.
+{
+  const { execSync } = require('child_process');
+  try {
+    execSync('node ' + path.join(ROOT, 'admin/tests/universe.test.mjs'), { stdio: 'pipe' });
+  } catch (e) {
+    errors.push('universe unit suite failed — run: node admin/tests/universe.test.mjs');
+  }
+}
+
 // --- 9. the book is a projection ------------------------------------------
 const bookManifestPath = path.join(ROOT, 'v1/book/manifest.json');
 if (!fs.existsSync(bookManifestPath)) {

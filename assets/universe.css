@@ -91,6 +91,9 @@ mark.uni-anchor.uni-sel, mark.uni-anchor.uni-sel.uni-vis, mark.uni-anchor.uni-se
 
 body.uni-panel-on #unigraph-inline { display: none; }
 
+/* component hosts are transparent to layout: their children are the flex items */
+uni-graph, uni-source, uni-options { display: contents; }
+
 /* the reader options popover */
 .uni-optwrap { position: relative; }
 .uni-opts { position: absolute; top: calc(100% + 6px); left: 0; z-index: 40; min-width: 300px;

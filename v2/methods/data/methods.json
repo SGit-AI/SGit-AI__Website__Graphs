@@ -234,10 +234,11 @@
   {
    "id": "anchored-reader",
    "name": "The anchored reader: source, extraction and graph on one screen",
-   "what": "A per-document universe page gains a resizable side panel holding the local graph and the rendered frozen source. Anchor highlights are driven by the same byte offsets gate 23 verifies, never by re-searching the text: the raw bytes are sliced at the recorded offsets before rendering, so a highlight can only sit on the exact bytes the extraction cited. Clicking an extraction row shows the cited bytes; clicking a highlight shows the extraction row; clicking a graph node shows both; a toggle shows every anchor at once, which makes the coverage rule visible on the document itself.",
+   "what": "A per-document universe page gains a resizable side panel holding the local graph and the rendered frozen source. Anchor highlights are driven by the same byte offsets gate 23 verifies, never by re-searching the text: the raw bytes are sliced at the recorded offsets before rendering, so a highlight can only sit on the exact bytes the extraction cited. Clicking an extraction row shows the cited bytes; clicking a highlight shows the extraction row; clicking a graph node shows both; a toggle shows every anchor at once, which makes the coverage rule visible on the document itself. Since v0.4.13 the implementation is a three-tier ESM structure: a pure, node-tested core (segments, markup, doc tree, styles), custom elements that render and emit, and a thin reader shell; the unit suite is a build gate.",
    "born": "v0.4.8",
    "implemented_in": [
     "assets/universe-view.js",
+    "assets/universe",
     "assets/universe.css",
     "admin/build/gen_universe.py"
    ],
