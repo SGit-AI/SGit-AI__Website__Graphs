@@ -143,6 +143,16 @@ function close() {
   nudgeViewport();
 }
 
+/* Esc closes the panel — unless focus is inside an input, where Esc belongs
+   to the field (clearing a draft, dismissing autocomplete) */
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape' || !state.built || aside.hidden) return;
+  const t = e.target;
+  const typing = t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA'
+    || t.closest && t.closest('sg-llm-chat-input, sg-llm-connection'));
+  if (!typing) close();
+});
+
 /* The one concession outside window.__tool: the reader's canvas needs a
    resize nudge when the viewport it sits in changes width. resize() is a
    public method of the published element. */

@@ -22,7 +22,7 @@ export function panelMarkup(defaultModel) {
     '  <button class="uchat-hbtn" id="uc-persona" title="Read as a persona: an angle applied to every answer">persona</button>' +
     '  <button class="uchat-hbtn" id="uc-help" title="What this is">?</button>' +
     '  <button class="uchat-hbtn" id="uc-new" title="Start a fresh conversation">New</button>' +
-    '  <button class="uchat-hbtn" id="uc-close" title="Close">&#10005;</button>' +
+    '  <button class="uchat-hbtn uchat-close" id="uc-close" title="Close the chat panel (Esc) — the 💬 button brings it back">&#10005; close</button>' +
     '</div>' +
     '<div class="uchat-drawer" id="uc-drawer-settings" hidden>' +
     '  <h5>Model &middot; the OpenRouter workflow</h5>' +
