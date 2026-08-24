@@ -42,6 +42,7 @@ const CHIPS = [
   'Which terms does the document use but never define? Show me each one.',
   'Review three anchors: is each quote fair to the section it comes from?',
   'Create an infographic of this document’s claims and how each is supported.',
+  'Rewrite this document’s opening for the current persona, and save it as a view.',
   'What would a sceptic of graph-first modelling push back on here?',
 ];
 
@@ -52,12 +53,54 @@ const state = {
   promptChars: 0,
   traceLines: [],
   vault: { client: null, sid: null, autosave: pref('vasave', '1') === '1', timer: 0, meta: null },
+  persona: { active: null, vaultList: [] },
 };
 let aside = null, bus = null, tool = null;
 let traceFn = () => {};
 
 /* The one chat-local tool: it exists only while a vault is connected, and it
    writes only inside the current session's folder. */
+/* The starter personas: reading angles, offered before any vault exists. A
+   persona used from a vault-connected chat is saved there, where any key
+   holder — the founder, an agent, a pipeline — can tune it or add more. */
+const BUILTIN_PERSONAS = [
+  { slug: 'engineer', name: 'the engineer',
+    prompt: 'The reader is a hands-on software engineer. Lead with mechanisms and concrete consequences: what they would build, query or refactor differently tomorrow. Code-shaped examples beat abstractions.' },
+  { slug: 'ciso', name: 'the CISO',
+    prompt: 'The reader runs risk for a board. Translate every claim into exposure, assurance and evidence: what becomes provable, what stays a judgement call, what an auditor would accept. Short, decision-shaped answers.' },
+  { slug: 'sceptic', name: 'the sceptic',
+    prompt: 'The reader doubts graph-first modelling. Steel-man their objections before answering them, concede what the document only argues or declares, and never present an argued claim as demonstrated.' },
+  { slug: 'plain-english', name: 'plain English',
+    prompt: 'The reader is smart but not technical. No jargon survives: every technical term is unpacked in ordinary words the first time it appears, and examples come from everyday life.' },
+  { slug: 'portugues', name: 'português',
+    prompt: 'Responde sempre em português europeu. Mantém os factos, os ids dos nós e as citações exactamente iguais ao original — muda a língua, nunca o conteúdo.' },
+];
+
+const SAVE_VIEW_TOOL = {
+  type: 'function',
+  function: {
+    name: 'save_view',
+    description: 'Save a persona-targeted VIEW of this document into the vault — a rewrite, summary, translation or projection shaped for the active persona. Views live under the persona, beside the feedback they earn, and are the raw material of the personalised document. Returns the vault path.',
+    parameters: { type: 'object', properties: {
+      name: { type: 'string', description: 'File name for the view, e.g. "opening-rewrite.md".' },
+      content: { type: 'string', description: 'The full view content.' } },
+    required: ['name', 'content'], additionalProperties: false },
+  },
+};
+
+const FEEDBACK_TOOL = {
+  type: 'function',
+  function: {
+    name: 'record_feedback',
+    description: 'Record the user’s reaction to a saved view, beside that view in the vault. Call this whenever the user judges a view you saved — it landed, it is wrong, it is unclear — quoting their reasoning in the note. This feedback is what the next generation of the view is built from.',
+    parameters: { type: 'object', properties: {
+      view: { type: 'string', description: 'The view file name the feedback is about.' },
+      verdict: { type: 'string', enum: ['right', 'wrong', 'unclear', 'note'] },
+      note: { type: 'string', description: 'The user’s reaction, in substance — what worked or failed and why.' } },
+    required: ['view', 'verdict', 'note'], additionalProperties: false },
+  },
+};
+
 const INFOGRAPHIC_TOOL = {
   type: 'function',
   function: {
@@ -136,6 +179,7 @@ function build() {
     '  <button class="uchat-hbtn" id="uc-settings" title="Model, provider and key">model</button>' +
     '  <button class="uchat-hbtn" id="uc-tools" title="Which tool levels the model may use">tools</button>' +
     '  <button class="uchat-hbtn" id="uc-vault" title="Persist sessions to an encrypted vault">vault</button>' +
+    '  <button class="uchat-hbtn" id="uc-persona" title="Read as a persona: an angle applied to every answer">persona</button>' +
     '  <button class="uchat-hbtn" id="uc-help" title="What this is">?</button>' +
     '  <button class="uchat-hbtn" id="uc-new" title="Start a fresh conversation">New</button>' +
     '  <button class="uchat-hbtn" id="uc-close" title="Close">&#10005;</button>' +
@@ -165,6 +209,15 @@ function build() {
     '  <label><input type="checkbox" id="uc-vasave" checked> autosave after every reply <span class="lvl-note">&mdash; one commit per changed file, pushed immediately</span></label>' +
     '  <div id="uc-vsessions"></div>' +
     '</div>' +
+    '<div class="uchat-drawer" id="uc-drawer-persona" hidden>' +
+    '  <h5>The persona &middot; one document, many readers</h5>' +
+    '  <p>A persona is an angle applied to every answer &mdash; a role, a language, a level. With a vault connected, personas live in it at <code>/personas/</code>, where you or any agent holding the key can tune them or add new ones; the views the model saves for a persona, and your feedback on them, land beside it. That ledger is the seed of the personalised document.</p>' +
+    '  <div id="uc-plist"></div>' +
+    '  <h5 style="margin-top:10px">New or edited persona</h5>' +
+    '  <input type="text" id="uc-pname" placeholder="name, e.g. the CFO" style="width:100%;box-sizing:border-box;background:#12122a;color:#e2e8f0;border:1px solid #2d3060;border-radius:5px;padding:7px 9px;font:12px system-ui">' +
+    '  <textarea id="uc-pprompt" rows="3" placeholder="the angle: who is reading, what they need, how to speak to them" style="width:100%;box-sizing:border-box;margin-top:6px;background:#12122a;color:#e2e8f0;border:1px solid #2d3060;border-radius:5px;padding:7px 9px;font:12px system-ui;resize:vertical"></textarea>' +
+    '  <p><button class="uchat-hbtn" id="uc-puse">use now</button> <button class="uchat-hbtn" id="uc-psave">save to vault &amp; use</button> <span class="small" id="uc-pmsg" style="color:#94a3b8"></span></p>' +
+    '</div>' +
     '<div class="uchat-drawer" id="uc-drawer-help" hidden>' +
     '  <h5>What this is</h5>' +
     '  <p>A chat over <b>this document&rsquo;s local graph</b> &mdash; the extraction, its anchors, and the frozen source underneath. The model reads them through the page&rsquo;s own API and, at the <i>view</i> level, drives the reader for you: ask it to select, filter or re-lay the graph.</p>' +
@@ -184,6 +237,7 @@ function build() {
     '<div class="uchat-nokey" id="uc-nokey"><b>No model connected.</b> The page is unaffected &mdash; it never needed one. To chat, <button id="uc-nokey-open">open model settings</button> and paste your OpenRouter key. It stays in this browser.</div>' +
     '<div class="uchat-foot">' +
     '  <span class="model" id="uc-model">&mdash;</span>' +
+    '  <span class="model" id="uc-pfoot"></span>' +
     '  <span id="uc-vstat"></span><span class="sp"></span>' +
     '  <sg-llm-stats compact></sg-llm-stats>' +
     '</div>';
@@ -206,6 +260,7 @@ function build() {
   wireResize();
   wireVault();
   wireMic();
+  wirePersona();
   refreshSchemas();
   buildSystemPrompt();
 
@@ -240,6 +295,9 @@ function wireBus() {
     }
     if (state.vault.client && state.vault.client.connected) {
       e.detail.tools = (e.detail.tools || []).concat([SAVE_DOC_TOOL]);
+      if (state.persona.active) {
+        e.detail.tools = e.detail.tools.concat([SAVE_VIEW_TOOL, FEEDBACK_TOOL]);
+      }
       e.detail.tool_choice = e.detail.tool_choice || 'auto';
     }
   });
@@ -269,6 +327,12 @@ function wireBus() {
         } else if (name === 'generate_infographic') {
           const a = JSON.parse(argText);
           out = await makeInfographic(a.brief, a.style);
+        } else if (name === 'save_view') {
+          const a = JSON.parse(argText);
+          out = await personaSaveView(a.name, a.content);
+        } else if (name === 'record_feedback') {
+          const a = JSON.parse(argText);
+          out = await personaRecordFeedback(a.view, a.verdict, a.note);
         } else if (!tool || typeof tool[name] !== 'function') {
           throw new Error('unknown tool: ' + name);
         } else out = await tool[name](JSON.parse(argText));
@@ -334,7 +398,7 @@ function wireBus() {
 
 /* ---- header, drawers, chips, resize --------------------------------------- */
 function toggleDrawer(which, force) {
-  for (const d of ['settings', 'tools', 'vault', 'help']) {
+  for (const d of ['settings', 'tools', 'vault', 'persona', 'help']) {
     const el = document.getElementById('uc-drawer-' + d);
     const btn = document.getElementById('uc-' + (d === 'help' ? 'help' : d));
     const on = d === which ? (force !== undefined ? force : el.hidden) : false;
@@ -347,6 +411,7 @@ function wireHeader() {
   document.getElementById('uc-settings').addEventListener('click', () => toggleDrawer('settings'));
   document.getElementById('uc-tools').addEventListener('click', () => toggleDrawer('tools'));
   document.getElementById('uc-vault').addEventListener('click', () => toggleDrawer('vault'));
+  document.getElementById('uc-persona').addEventListener('click', () => toggleDrawer('persona'));
   document.getElementById('uc-help').addEventListener('click', () => toggleDrawer('help'));
   document.getElementById('uc-close').addEventListener('click', close);
   document.getElementById('uc-nokey-open').addEventListener('click', () => toggleDrawer('settings', true));
@@ -451,10 +516,127 @@ async function buildSystemPrompt() {
   } catch (e) {
     prompt = 'You are the chat panel on a universe document page of graphs.sgit.ai. The page API is unavailable, so answer only from what the user pastes, and say the grounding failed to load.';
   }
+  const p = state.persona.active;
+  if (p) {
+    prompt += '\n\nTHE READER PERSONA — "' + p.name + '". ' + p.prompt
+      + '\nEverything you write speaks to this persona. When you produce a rewritten, summarised, translated or projected version of the document for them, save it with save_view (a view is a first-class artefact, not chat text). When the user reacts to a saved view — it landed, it is wrong, it is unclear — record that with record_feedback against the view, quoting their reasoning: the feedback ledger is what the next generation of the view is built from.';
+  }
   state.promptChars = prompt.length;
   const hist = bus.__sgLlmChatHistory;
   if (hist) hist.setSystemPrompt(prompt);
   updateEstimate();
+}
+
+/* ---- personas: one document, many readers ---------------------------------- */
+function personaFoot() {
+  const el = document.getElementById('uc-pfoot');
+  el.textContent = state.persona.active ? '· as ' + state.persona.active.name : '';
+}
+
+function allPersonas() {
+  const vaultSlugs = new Set(state.persona.vaultList.map((p) => p.slug));
+  return state.persona.vaultList.concat(
+    BUILTIN_PERSONAS.filter((b) => !vaultSlugs.has(b.slug)).map((b) => ({ ...b, builtin: true })));
+}
+
+function setActivePersona(p) {
+  state.persona.active = p;
+  setPref('persona', p ? p.slug : '');
+  personaFoot();
+  renderPersonaList();
+  buildSystemPrompt();
+}
+
+function renderPersonaList() {
+  const box = document.getElementById('uc-plist');
+  box.innerHTML = '';
+  const mk = (label, on, cb, title) => {
+    const b = document.createElement('button');
+    b.className = 'uchat-hbtn' + (on ? ' on' : '');
+    b.style.margin = '0 6px 6px 0';
+    b.textContent = label;
+    if (title) b.title = title;
+    b.addEventListener('click', cb);
+    box.appendChild(b);
+  };
+  mk('none', !state.persona.active, () => setActivePersona(null), 'No persona: the plain grounding prompt');
+  for (const p of allPersonas()) {
+    mk(p.name + (p.builtin ? '' : ' ⬢'), state.persona.active && state.persona.active.slug === p.slug,
+      () => setActivePersona(p),
+      (p.builtin ? 'built-in — saved to the vault when used from a connected chat' : 'from the vault') +
+      '\n' + p.prompt);
+  }
+}
+
+async function refreshPersonaList() {
+  const client = state.vault.client;
+  if (client && client.connected) {
+    try { state.persona.vaultList = await client.listPersonas(); }
+    catch (e) { state.persona.vaultList = []; }
+  }
+  /* restore the remembered choice once the vault list is in */
+  const want = pref('persona', '');
+  if (want && (!state.persona.active || state.persona.active.slug !== want)) {
+    const found = allPersonas().find((p) => p.slug === want);
+    if (found) { state.persona.active = found; personaFoot(); buildSystemPrompt(); }
+  }
+  renderPersonaList();
+}
+
+function wirePersona() {
+  const nameIn = document.getElementById('uc-pname');
+  const promptIn = document.getElementById('uc-pprompt');
+  const msg = document.getElementById('uc-pmsg');
+  document.getElementById('uc-puse').addEventListener('click', () => {
+    const name = nameIn.value.trim(), p = promptIn.value.trim();
+    if (!name || !p) { msg.textContent = 'a persona needs a name and an angle'; return; }
+    setActivePersona({ slug: name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, ''),
+      name, prompt: p, session_only: true });
+    msg.textContent = 'in use for this session (not saved)';
+  });
+  document.getElementById('uc-psave').addEventListener('click', async () => {
+    const name = nameIn.value.trim(), p = promptIn.value.trim();
+    if (!name || !p) { msg.textContent = 'a persona needs a name and an angle'; return; }
+    const client = state.vault.client;
+    if (!client || !client.connected) { msg.textContent = 'connect a vault first — or "use now" for this session only'; return; }
+    try {
+      const slug = await client.savePersona(name, p, { author: 'user (chat)' });
+      msg.textContent = 'saved to the vault as ' + slug;
+      await refreshPersonaList();
+      const saved = allPersonas().find((x) => x.slug === slug);
+      if (saved) setActivePersona(saved);
+    } catch (err) { msg.textContent = 'save failed — ' + err.message; }
+  });
+  refreshPersonaList();
+}
+
+async function ensureActivePersonaInVault() {
+  const p = state.persona.active;
+  const client = state.vault.client;
+  if (!p || !client || !client.connected) throw new Error('needs a vault and an active persona');
+  const inVault = state.persona.vaultList.some((x) => x.slug === p.slug);
+  if (!inVault) {
+    await client.savePersona(p.name, p.prompt, { author: p.builtin ? 'builtin (chat)' : 'user (chat)' });
+    state.persona.vaultList = await client.listPersonas();
+    renderPersonaList();
+  }
+  return p;
+}
+
+async function personaSaveView(name, content) {
+  const p = await ensureActivePersonaInVault();
+  const r = await state.vault.client.saveView(p.slug, U.slug, name, content);
+  traceFn('ok', '✓ view saved for ' + p.name + ': ' + r.path);
+  return { saved: r.path, persona: p.slug,
+    note: 'tell the user where it landed, and invite their reaction — record it with record_feedback' };
+}
+
+async function personaRecordFeedback(view, verdict, note) {
+  const p = await ensureActivePersonaInVault();
+  const r = await state.vault.client.recordFeedback(p.slug, U.slug, view, {
+    at: new Date().toISOString(), session: state.vault.sid || null, verdict, note });
+  traceFn('ok', '✓ feedback filed on ' + view + ' (' + verdict + ')');
+  return { filed: r.path, entries: r.entries };
 }
 
 /* ---- the vault: sessions that survive the refresh -------------------------- */
@@ -494,6 +676,7 @@ function wireVault() {
       saveBtn.hidden = false; forgetBtn.hidden = false;
       connectBtn.textContent = 'reconnect';
       renderSessions();
+      refreshPersonaList();
     } catch (err) {
       vstat('vault: ' + err.message, true);
     } finally { connectBtn.disabled = false; }
@@ -679,7 +862,8 @@ async function ensureVaultSid() {
   const { sessionId } = await import('./vault-core.js');
   state.vault.sid = sessionId(new Date());
   state.vault.meta = { doc: U.slug, title: U.title, page: location.href,
-    started: new Date().toISOString(), model: state.model || null };
+    started: new Date().toISOString(), model: state.model || null,
+    persona: state.persona.active ? state.persona.active.slug : null };
 }
 
 async function vaultSaveDocument(name, content) {

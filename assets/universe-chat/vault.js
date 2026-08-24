@@ -16,7 +16,8 @@ import { createSession }
   from 'https://tools.sgraph.ai/core/vault-session/v1/v1.0/v1.0.0/sg-vault-session.js';
 import { addFile, updateFile, createFolder }
   from 'https://tools.sgraph.ai/core/vault-mutations/v1/v1.0/v1.0.0/sg-vault-mutations.js';
-import { parseVaultKey, sessionFolder, changedFiles, sessionFiles, documentName, VAULT_ROOT }
+import { parseVaultKey, sessionFolder, changedFiles, sessionFiles, documentName, VAULT_ROOT,
+  personaFolder, personaSlug, viewsFolder, appendFeedback, PERSONAS_ROOT }
   from './vault-core.js';
 
 export const DEFAULT_ENDPOINT = 'https://send.sgraph.ai';
@@ -145,20 +146,89 @@ export class ChatVault {
       .sort().reverse();
   }
 
+  /** Read one file's text, or null when it does not exist. */
+  async _read(path) {
+    const folder = path.slice(0, path.lastIndexOf('/')) || '/';
+    try { await this.session.loadSubTree(folder); } catch (e) { return null; }
+    const node = this.session.treeModel.getNode(path);
+    if (!node || !node.blob_id) return null;
+    const bytes = await this.session.getFile(node.blob_id);
+    return new TextDecoder().decode(new Uint8Array(bytes));
+  }
+
   /** Load one session's messages (and drafts, if saved) back out of the vault. */
   async loadSession(slug, sid) {
     const folder = sessionFolder(slug, sid);
-    await this._ensurePath(folder);
-    await this.session.loadSubTree(folder);
-    const read = async (name) => {
-      const node = this.session.treeModel.getNode(folder + '/' + name);
-      if (!node || !node.blob_id) return null;
-      const bytes = await this.session.getFile(node.blob_id);
-      return new TextDecoder().decode(new Uint8Array(bytes));
-    };
-    const messages = await read('messages.json');
+    const messages = await this._read(folder + '/messages.json');
     if (!messages) throw new Error('that session has no messages.json');
-    const drafts = await read('drafts.json');
+    const drafts = await this._read(folder + '/drafts.json');
     return { messages: JSON.parse(messages), drafts: drafts ? JSON.parse(drafts) : null };
+  }
+
+  /* ---- personas: reading angles any key holder can author ------------------ */
+
+  /** The personas in the vault, each read from its persona.json. */
+  async listPersonas() {
+    const base = '/' + PERSONAS_ROOT;
+    try { await this.session.loadSubTree(base); } catch (e) { return []; }
+    const node = this.session.treeModel.getNode(base);
+    if (!node || !node.children) return [];
+    const out = [];
+    for (const k of Object.keys(node.children).sort()) {
+      if (node.children[k] && node.children[k].type === 'file') continue;
+      try {
+        const raw = await this._read(personaFolder(k) + '/persona.json');
+        if (raw) out.push({ slug: k, ...JSON.parse(raw) });
+      } catch (e) { out.push({ slug: k, name: k, prompt: '', broken: e.message }); }
+    }
+    return out;
+  }
+
+  /** Create or update one persona's persona.json. Returns its slug. */
+  async savePersona(name, prompt, extra = {}) {
+    const slug = personaSlug(name);
+    const folder = personaFolder(slug);
+    const existing = await this._read(folder + '/persona.json');
+    const prev = existing ? JSON.parse(existing) : {};
+    const body = JSON.stringify({ ...prev, name, prompt, ...extra,
+      updated: new Date().toISOString(),
+      created: prev.created || new Date().toISOString() }, null, 1) + '\n';
+    await this._ensurePath(folder);
+    await this._writeFile(folder, 'persona.json', body);
+    await this.session.push();
+    return slug;
+  }
+
+  /** Save one persona-targeted view of a document. */
+  async saveView(pslug, docSlug, name, content) {
+    const folder = viewsFolder(pslug, docSlug);
+    const file = documentName(name);
+    await this._ensurePath(folder);
+    await this._writeFile(folder, file, String(content));
+    await this.session.push();
+    return { path: folder + '/' + file, view: file };
+  }
+
+  /** The saved views of one document for one persona. */
+  async listViews(pslug, docSlug) {
+    const folder = viewsFolder(pslug, docSlug);
+    try { await this.session.loadSubTree(folder); } catch (e) { return []; }
+    const node = this.session.treeModel.getNode(folder);
+    if (!node || !node.children) return [];
+    return Object.keys(node.children).sort()
+      .filter((k) => k !== 'feedback.json' && !k.endsWith('.feedback.json'));
+  }
+
+  /** File one feedback entry beside a view: <view>.feedback.json. */
+  async recordFeedback(pslug, docSlug, viewName, entry) {
+    const folder = viewsFolder(pslug, docSlug);
+    const view = documentName(viewName);
+    const fname = view + '.feedback.json';
+    const existing = await this._read(folder + '/' + fname);
+    const body = appendFeedback(existing, entry);
+    await this._ensurePath(folder);
+    await this._writeFile(folder, fname, body);
+    await this.session.push();
+    return { path: folder + '/' + fname, entries: JSON.parse(body).entries.length };
   }
 }

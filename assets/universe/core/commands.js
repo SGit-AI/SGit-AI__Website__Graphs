@@ -52,6 +52,16 @@ export const COMMANDS = [
   { name: 'get_state', level: 'read',
     description: 'The reader’s current state: the selected node, highlight kinds, panel and graph visibility, plus scratch and draft counts.',
     properties: {}, required: [] },
+  { name: 'compose_node_doc', level: 'read',
+    description: 'The full composed document of ONE node: its statement and anchor, every claim about it, its asserted relations both ways, demonstrations, distinctions, aliases, derived links and rated uses — the same composition the reader’s per-node pages are built from. Prefer this over many get_nodes calls when the conversation centres on one node.',
+    properties: { id: { type: 'string', description: 'The node id.' } }, required: ['id'] },
+  { name: 'rank_nodes', level: 'read',
+    description: 'Every node ranked by richness (incident links: claims about it, relations, demonstrations). The top of the list is where the meaning is; the bottom is where the graph is starving.',
+    properties: {}, required: [] },
+  { name: 'search', level: 'read',
+    description: 'Case-insensitive text search across node ids, labels, statements and anchored quotes. Use it when the user names something loosely before reaching for get_nodes.',
+    properties: { text: { type: 'string', description: 'The text to look for (min 2 chars).' } },
+    required: ['text'] },
 
   /* ---- view ------------------------------------------------------------- */
   { name: 'select_node', level: 'view',

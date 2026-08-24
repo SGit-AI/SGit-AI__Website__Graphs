@@ -92,6 +92,54 @@ export function sessionFiles(parts) {
   return out;
 }
 
+/* ---- personas: reading angles, stored in the vault ------------------------- */
+
+/** Where personas live inside the vault. */
+export const PERSONAS_ROOT = 'personas';
+
+/** A persona's folder: /personas/<slug> */
+export function personaFolder(slug) {
+  if (!/^[a-z0-9][a-z0-9-]*$/.test(slug)) throw new Error('bad persona slug: ' + slug);
+  return '/' + PERSONAS_ROOT + '/' + slug;
+}
+
+/** A display name → a persona slug. */
+export function personaSlug(name) {
+  const s = String(name || '').toLowerCase().trim()
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  if (!s) throw new Error('the persona needs a usable name');
+  return s;
+}
+
+/** Where one persona's views of one document live: /personas/<p>/views/<doc> */
+export function viewsFolder(pslug, docSlug) {
+  if (!/^[a-z0-9-]+$/.test(docSlug)) throw new Error('bad slug: ' + docSlug);
+  return personaFolder(pslug) + '/views/' + docSlug;
+}
+
+/**
+ * Append one feedback entry to a view's feedback record. Pure: takes the
+ * existing file content (or null) and returns the new content. The record is
+ * the memo's point — the reader's reaction stored beside the view it judges.
+ * @param {string|null} existing - current feedback.json content
+ * @param {{at: string, session: string|null, verdict: string, note: string}} entry
+ */
+export function appendFeedback(existing, entry) {
+  for (const k of ['at', 'verdict', 'note']) {
+    if (!entry[k]) throw new Error('feedback needs ' + k);
+  }
+  if (['right', 'wrong', 'unclear', 'note'].indexOf(entry.verdict) === -1) {
+    throw new Error('verdict is right, wrong, unclear or note');
+  }
+  let rec = { entries: [] };
+  if (existing) {
+    try { rec = JSON.parse(existing); } catch (e) { throw new Error('feedback file is not JSON'); }
+    if (!Array.isArray(rec.entries)) rec.entries = [];
+  }
+  rec.entries.push(entry);
+  return JSON.stringify(rec, null, 1) + '\n';
+}
+
 /** A safe file name for a model-authored document inside the session folder. */
 export function documentName(name) {
   const clean = String(name || '').trim().replace(/[^\w.-]+/g, '-')

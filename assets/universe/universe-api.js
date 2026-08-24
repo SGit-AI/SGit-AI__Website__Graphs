@@ -16,6 +16,7 @@
 'use strict';
 import { SgToolApi } from 'https://tools.sgraph.ai/core/sg-tool-api/v0/v0.1/v0.1.0/sg-tool-api.js';
 import { COMMANDS, LEVELS, toolSchemas, clampRange } from './core/commands.js';
+import { composeNodeDoc, nodeRichness } from './core/nodedoc.js';
 
 const U = window.UNIVERSE;
 const layout = document.querySelector('.uni-layout');
@@ -141,6 +142,37 @@ function publish() {
       drafts: { annotations: drafts.annotations.length, crossrefs: drafts.crossrefs.length,
         scratch_nodes: drafts.scratch.nodes.length, scratch_edges: drafts.scratch.edges.length },
     }),
+
+    compose_node_doc: async ({ id }) => {
+      const [ex, cr] = await Promise.all([getEx(), getCr().catch(() => ({ refs: [] }))]);
+      const m = composeNodeDoc(ex, cr, id);
+      if (!m) throw new Error('unknown node: ' + id);
+      return m;
+    },
+    rank_nodes: async () => {
+      const ex = await getEx();
+      return nodeRichness(ex);
+    },
+    search: async ({ text }) => {
+      const q = String(text || '').toLowerCase().trim();
+      if (q.length < 2) throw new Error('search needs at least 2 characters');
+      const ex = await getEx();
+      const hits = [];
+      for (const n of ex.nodes) {
+        const hay = (n.id + ' ' + n.label + ' ' + n.statement + ' '
+          + (n.anchor && n.anchor.quote || '')).toLowerCase();
+        if (hay.indexOf(q) !== -1) hits.push({ id: n.id, family: n.family, label: n.label,
+          statement: n.statement });
+      }
+      for (const a of U.anchors) {
+        if (a.kind === 'edge' || a.kind === 'nbn' || a.kind === 'alias') {
+          if (String(a.label).toLowerCase().indexOf(q) !== -1) {
+            hits.push({ id: a.aid, family: a.kind, label: a.label });
+          }
+        }
+      }
+      return { matches: hits.slice(0, 40), of: hits.length };
+    },
 
     /* view — every command goes through the reader's own events and buttons */
     select_node: ({ id }) => {

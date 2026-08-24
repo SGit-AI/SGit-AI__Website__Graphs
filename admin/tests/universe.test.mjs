@@ -333,6 +333,28 @@ test('vault-core: a session serializes only what it has', () => {
     drafts: { annotations: [{ id: 'x' }], crossrefs: [], scratch: { nodes: [], edges: [] } }, trace: 'line\n' });
   assert.deepEqual(Object.keys(full).sort(), ['drafts.json', 'messages.json', 'session.json', 'trace.txt']);
 });
+const { personaSlug, personaFolder, viewsFolder, appendFeedback } =
+  await import('../../assets/universe-chat/vault-core.js');
+test('vault-core: persona names become safe slugs and folders', () => {
+  assert.equal(personaSlug('The CFO!'), 'the-cfo');
+  assert.equal(personaFolder('the-cfo'), '/personas/the-cfo');
+  assert.equal(viewsFolder('the-cfo', 'thinking-in-graphs'),
+    '/personas/the-cfo/views/thinking-in-graphs');
+  assert.throws(() => personaSlug('!!!'), /usable name/);
+  assert.throws(() => personaFolder('../up'), /bad persona slug/);
+  assert.throws(() => viewsFolder('the-cfo', '../up'), /bad slug/);
+});
+test('vault-core: feedback appends, validates, and starts from nothing', () => {
+  const one = appendFeedback(null, { at: 't1', session: 's1', verdict: 'wrong', note: 'too long' });
+  const rec1 = JSON.parse(one);
+  assert.equal(rec1.entries.length, 1);
+  const two = JSON.parse(appendFeedback(one, { at: 't2', session: null, verdict: 'right', note: 'better' }));
+  assert.equal(two.entries.length, 2);
+  assert.equal(two.entries[0].note, 'too long');
+  assert.throws(() => appendFeedback(null, { at: 't', verdict: 'meh', note: 'x' }), /verdict/);
+  assert.throws(() => appendFeedback(null, { at: 't', verdict: 'right' }), /needs note/);
+  assert.throws(() => appendFeedback('not json', { at: 't', verdict: 'right', note: 'x' }), /not JSON/);
+});
 test('vault-core: document names are tamed and default to markdown', () => {
   assert.equal(documentName('Claims Review!.md'), 'Claims-Review.md');
   assert.equal(documentName('summary'), 'summary.md');

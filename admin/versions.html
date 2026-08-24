@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.21</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.22</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -131,6 +131,11 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.4.22</td>
+        <td>24 August 2026</td>
+        <td><b>The persona round: one document, many readers, and the feedback ledger the personalised book grows from.</b> The founder's memo of 24 August, round three. A <b>persona</b> is an angle applied to every answer &mdash; a role, a language, a level &mdash; and it lives where the memo put it: <b>in the vault</b>, at <code>/personas/&lt;slug&gt;/persona.json</code>, where the founder, an agent in a cloud session, or a pipeline holding the key can tune existing personas or author new ones, and the chat picks them up. Five built-ins seed the list (the engineer, the CISO, the sceptic, plain English, portugu&ecirc;s &mdash; the founder's own translate-keeping-facts-identical example); a drawer edits or creates more, for the session or into the vault. The active persona reshapes the grounding prompt, is recorded in each saved session's meta, and is named in the footer. Two new model tools make the views first-class: <code>save_view</code> writes a persona-targeted rewrite, summary, translation or projection to <code>/personas/&lt;p&gt;/views/&lt;doc&gt;/</code>, and <code>record_feedback</code> files the user's reaction (right, wrong, unclear, note &mdash; with their reasoning) <b>beside the view it judges</b> &mdash; the two-way dialogue the memo called the game-changer, stored where the next generation of the view is built from. Also this release, from <a href="../v2/dev-pack/index.html">the reader agent's brief</a> (v0.4.21), the nearly-free slice: three new read commands on the page API &mdash; <code>compose_node_doc</code> (the full composed record of one node, per brief 24), <code>rank_nodes</code> (richness-ranked, the gap-finding conversation) and <code>search</code> &mdash; with <a href="../v2/dev-packs/v0.4.21__brief-to-the-chat-agent/01__reply-from-the-chat-agent.md">a written reply</a> accepting the rest in sequence for the founder's green light. Verified: thirteen vault checks (persona authored, prompt reshaped, view saved, feedback filed, all surviving a reload), the 39-check chat suite, the 39-test unit suite. No book content changed.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.4.21</td>
         <td>24 August 2026</td>
@@ -441,7 +446,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.21</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.22</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
