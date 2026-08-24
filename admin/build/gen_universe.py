@@ -359,7 +359,7 @@ DOC_PAGE = """<!doctype html>
 
 <nav class="site"><div class="row"></div></nav>
 
-<main class="doc">
+<main class="doc uni-full">
 <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="../index.html">the second edition</a> &rarr; <a href="index.html">the universe</a> &rarr; <b>{slug}</b></div>
 <h1>The local graph of <em>{title}</em></h1>
 <p class="lead">{lead}</p>
@@ -508,16 +508,19 @@ def main():
         # highlights are driven by the same offsets gate 23 verifies
         anchors = []
         for n in ex["nodes"]:
-            anchors.append({"aid": n["id"], "row": f'n-{n["id"]}',
+            anchors.append({"aid": n["id"], "row": f'n-{n["id"]}', "kind": n["family"],
                             "chars": n["anchor"]["chars"], "label": n["label"]})
         for i, e in enumerate(ex["edges"]):
-            anchors.append({"aid": f"edge-{i}", "row": f"edge-{i}", "chars": e["anchor"]["chars"],
+            anchors.append({"aid": f"edge-{i}", "row": f"edge-{i}", "kind": "edge",
+                            "chars": e["anchor"]["chars"],
                             "label": f'{e["from"]} {e["verb"]} {e["to"]}'})
         for i, x in enumerate(ex["near_but_not"]):
-            anchors.append({"aid": f"nbn-{i}", "row": f"nbn-{i}", "chars": x["anchor"]["chars"],
+            anchors.append({"aid": f"nbn-{i}", "row": f"nbn-{i}", "kind": "nbn",
+                            "chars": x["anchor"]["chars"],
                             "label": f'{x["this"]} is not {x["not"]}'})
         for i, x in enumerate(ex["aliases"]):
-            anchors.append({"aid": f"alias-{i}", "row": f"alias-{i}", "chars": x["anchor"]["chars"],
+            anchors.append({"aid": f"alias-{i}", "row": f"alias-{i}", "kind": "alias",
+                            "chars": x["anchor"]["chars"],
                             "label": f'{x["a"]} is also called {x["b"]}'})
         unidata = json.dumps({"slug": d["slug"], "source": "../../" + d["source"],
                               "sha256": d["sha256"], "anchors": anchors,

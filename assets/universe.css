@@ -42,15 +42,25 @@ body.uni-panel-on .uni-vsplit { display: block; }
   border-color: var(--accent, #3f6ad8); }
 .uni-tools .dim { font-size: .76rem; }
 
-/* anchor highlights in the rendered source */
+/* the reader page uses every pixel it can get */
+main.doc.uni-full { max-width: none; padding: 1.6rem 1.6rem 3rem; }
+main.doc.uni-full .uni-left { padding-right: 1.2rem; }
+
+/* anchor highlights in the rendered source; .uni-vis is set per mark by the
+   family filter in the reader options */
 mark.uni-anchor { background: transparent; color: inherit; border-bottom: 2px solid transparent;
   cursor: pointer; border-radius: 2px; padding: 0; transition: background .18s, border-color .18s; }
-body.uni-showall mark.uni-anchor { background: rgba(63, 106, 216, .13);
+mark.uni-anchor.uni-vis { background: rgba(63, 106, 216, .13);
   border-bottom-color: rgba(63, 106, 216, .55); }
 mark.uni-anchor:hover { background: rgba(63, 106, 216, .22); border-bottom-color: var(--accent, #3f6ad8); }
 mark.uni-anchor.uni-hit { animation: uniflash 1.6s ease-out; background: rgba(240, 180, 41, .45);
   border-bottom-color: #c58f00; }
 @keyframes uniflash { 0% { background: rgba(240, 180, 41, .85); } 100% { background: rgba(240, 180, 41, .45); } }
+
+/* the persistent selection: row, marks and graph node stay lit until cleared */
+tr.uni-sel > td { background: rgba(63, 106, 216, .10); }
+mark.uni-anchor.uni-sel { background: rgba(240, 180, 41, .45); border-bottom-color: #c58f00; }
+#uni-clear { border-color: #c58f00; }
 
 /* the row flash on the left when arriving from the source or the graph */
 tr.uni-hit > td { animation: unirow 1.6s ease-out; }
@@ -63,6 +73,39 @@ tr.uni-hit > td { animation: unirow 1.6s ease-out; }
 .anchgo:hover .uni-goglyph { opacity: 1; }
 
 body.uni-panel-on #unigraph-inline { display: none; }
+
+/* the reader options popover */
+.uni-optwrap { position: relative; }
+.uni-opts { position: absolute; top: calc(100% + 6px); left: 0; z-index: 40; min-width: 300px;
+  background: #fff; border: 1px solid var(--line2, #ccc); border-radius: 10px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.14); padding: .9rem 1rem; font-size: .82rem; }
+.uni-opts h5 { margin: .6rem 0 .3rem; font-size: .72rem; text-transform: uppercase;
+  letter-spacing: .06em; opacity: .6; }
+.uni-opts h5:first-child { margin-top: 0; }
+.uni-opts label { display: inline-flex; align-items: center; gap: .3rem; margin: .1rem .7rem .1rem 0; }
+.uni-opts .uni-quick { font-size: .76rem; opacity: .75; cursor: pointer; text-decoration: underline; margin-right: .6rem; }
+
+/* the source pane's location trail and anchor stepper */
+.uni-trail { display: flex; align-items: center; gap: .3rem; flex-wrap: wrap; width: 100%;
+  min-height: 1.2rem; font-size: .76rem; }
+.uni-trail span.crumbsep { opacity: .4; }
+.uni-trail a { cursor: pointer; color: var(--accent-dk, #2b4eae); }
+.uni-step { display: inline-flex; align-items: center; gap: .25rem; margin-left: auto; }
+.uni-step button { font: inherit; font-size: .78rem; border: 1px solid var(--line2, #ccc);
+  border-radius: 6px; background: #fff; cursor: pointer; padding: .1rem .5rem; }
+.uni-step .cnt { font-size: .74rem; opacity: .7; min-width: 4.2em; text-align: center; }
+
+/* the graph's collapsible config strip */
+.uni-gopts { position: absolute; top: 6px; left: 6px; right: 6px; z-index: 6; display: flex;
+  gap: .35rem; align-items: center; flex-wrap: wrap; background: rgba(255,255,255,.92);
+  border: 1px solid var(--line2, #ddd); border-radius: 8px; padding: .3rem .5rem; font-size: .74rem; }
+.uni-gopts button { font: inherit; font-size: .74rem; border: 1px solid var(--line2, #ccc);
+  border-radius: 6px; background: #fff; cursor: pointer; padding: .1rem .45rem; }
+.uni-gopts button.on { background: var(--accent, #3f6ad8); color: #fff; border-color: var(--accent, #3f6ad8); }
+.uni-gcog { position: absolute; top: 6px; left: 6px; z-index: 7; font-size: .8rem;
+  border: 1px solid var(--line2, #ccc); border-radius: 6px; background: rgba(255,255,255,.92);
+  cursor: pointer; padding: .05rem .4rem; }
+body.uni-graph-off .uni-graphbox, body.uni-graph-off .uni-hsplit { display: none; }
 
 @media (max-width: 1099px) {
   body.uni-panel-on .uni-panel, body.uni-panel-on .uni-vsplit { display: none; }

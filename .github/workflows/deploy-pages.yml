@@ -136,20 +136,25 @@ jobs:
           git push origin "refs/tags/$TAG"
           echo "tagged ${REL:0:9} as $TAG"
 
-          # Best-effort: the backfilled historical tags. GITHUB_TOKEN cannot
-          # push a ref to a commit whose tree carries a DIFFERENT
-          # .github/workflows blob, so releases predating a workflow change may
-          # be rejected. Push what is accepted, report what is not.
-          MISSED=0
+          # Best-effort: the backfilled historical tags. Check the remote FIRST and
+          # push only what it lacks — re-pushing forty existing tags every run was
+          # forty no-op round-trips and forty "backfill ok" log lines per release.
+          # GITHUB_TOKEN cannot push a ref to a commit whose tree carries a
+          # DIFFERENT .github/workflows blob, so a genuinely missing historical
+          # tag may still be rejected; report those once, quietly skip the rest.
+          REMOTE=$(git ls-remote --tags origin 'v*' | awk -F/ '{print $NF}' | sed 's/\^{}$//' | sort -u)
+          MISSED=0; PUSHED=0; PRESENT=0
           for t in $(git tag --list 'v*'); do
             [ "$t" = "$TAG" ] && continue
+            if grep -qx "$t" <<< "$REMOTE"; then PRESENT=$((PRESENT+1)); continue; fi
             if git push origin "refs/tags/$t" >/dev/null 2>&1; then
-              echo "backfill ok: $t"
+              echo "backfilled to remote: $t"; PUSHED=$((PUSHED+1))
             else
               echo "::warning::could not push backfill tag $t (GITHUB_TOKEN workflow-file limit)"
               MISSED=$((MISSED+1))
             fi
           done
+          echo "backfill: $PRESENT already on the remote, $PUSHED pushed, $MISSED rejected"
           if [ "$MISSED" -gt 0 ]; then
             echo "::notice::$MISSED historical tag(s) still need a human push: git push origin --tags"
           fi

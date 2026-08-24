@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.8</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.9</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -131,6 +131,11 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.4.9</td>
+        <td>24 August 2026</td>
+        <td><b>The reader grows up: selection, the trail, the stepper, the tempo, and the whole width.</b> Founder feedback on using v0.4.8, all of it acted on. <b>The nasty bug first</b>: clicking a graph node scrolled the extraction a little and to nowhere useful. Two causes, both real: v0.4.8 let the browser scroll every ancestor when centring a source highlight, so the window fought itself; and the site's own stylesheet declares smooth scrolling globally, which silently turned every programmatic jump into a slow glide that the next jump interrupted mid-flight. The reader now computes each scroll itself and forces it instant, so a jump is a jump. <b>Selection is now persistent</b>: clicking a node, an anchor or a highlight selects it everywhere at once, the extraction row, the source bytes and the graph node stay lit until the same thing is clicked again (which deselects it everywhere) or the top-level clear control is used. <b>The reader options pane</b> adds what the founder asked for: scrolling tempo (immediate, fast, smooth), per-family highlighting (dictionary, claims, hypotheses, objectives, examples, relations, near-but-nots, also-called, with all and none shortcuts), and graph visibility. With families highlighted, the <b>stepper</b> walks the document anchor by anchor in byte order, selecting each in the extraction and the graph as it goes, which is the read-the-document-and-audit-the-extraction workflow the founder described: a way to catch blind spots and mis-mappings by reading the source with the extraction beside it. <b>The location trail</b> shows the heading path of wherever the source pane is, clickable, sticky, updated as the pane scrolls, so landing deep in the document never loses the way back up. <b>The graph gains a config strip</b> (layouts, labels, fit, clear) behind a gear, keeps itself in sync with every click and step, and can be hidden entirely to give the source the full panel. The page now uses the <b>full viewport width</b>, and panel sizes are remembered per document. Also in this release: the CI tag step now checks the remote before backfilling, so it pushes only tags the remote lacks and prints one summary line instead of forty-four, which also shaves the pointless round-trips off every deployment. All thirty interaction checks pass in headless Chromium. No book content changed.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.4.8</td>
         <td>24 August 2026</td>
@@ -376,7 +381,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.8</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.9</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
