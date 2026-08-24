@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.16</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.17</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -131,6 +131,11 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.4.17</td>
+        <td>24 August 2026</td>
+        <td><b>The universe pages gain a JavaScript API and a chat panel that drives it.</b> Per <a href="../v2/dev-packs/v0.4.13__universe-chat/00__plan.md">the universe chat plan</a> and the founder's decisions of 24 August (CDN over vendoring for the family's own components; ship it; Sonnet as the default; the risk-mandate register as the UX baseline). Two strangers on one page, and the contract is testable: <b>the page publishes an API, the chat consumes it, neither imports the other's modules</b>. The API is the family's Tool API Primitive: <code>universe-api.js</code> registers the reader's commands on <code>window.__tool</code> — read (the extraction, anchors, the frozen bytes), view (selection, the preset views, the node-pack sources, the explore stepper, pinned peaks, layouts, highlights — driven through the reader's own events and buttons, no component touched) and author (scratch elements and drafts, visibly unsaved; nothing anchored is ever written — the gates keep that monopoly). The command table is pure data under <code>assets/universe/core/commands.js</code>, projected into OpenAI function schemas per enabled level, and <b>gate 27 now tests the table and its projections</b>. Console and Playwright are equal consumers: <a href="../v2/universe/skills/SKILL-browser.md">SKILL-browser</a> and <a href="../v2/universe/skills/SKILL-api.md">SKILL-api</a> ship beside the pages. The chat is a floating button and a lazy load: <code>universe-chat/boot.js</code> ships ~1&nbsp;KB; the panel assembles the family's published LLM components from <code>tools.sgraph.ai</code> (pinned versions) — connection, history, input with clipboard screenshot paste, stats — over the <code>[data-llm-bus]</code> event contract, with the OpenRouter workflow (the key pasted once, kept in this browser's localStorage, never sent to any sgraph.ai host) and <code>anthropic/claude-sonnet-5</code> as the default. A bus-level loop executes the model's tool calls against <code>window.__tool</code> (capped rounds, every invocation in <code>meta.getLog()</code>), a levels switchboard decides what the model may do, and the intro is the register's honesty restated: nothing has been sent yet, and nothing has been spent. Verified by thirty-four Playwright checks in headless Chromium, on top of the unit suite. No book content changed.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.4.16</td>
         <td>24 August 2026</td>
@@ -416,7 +421,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.16</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.17</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
