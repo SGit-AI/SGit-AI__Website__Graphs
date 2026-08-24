@@ -296,6 +296,20 @@
    ],
    "status": "in use",
    "for_the_book": "The whole book is this operation on steroids: every altitude is a document grown from nodes, and the per-node page is the small end of the same telescope."
+  },
+  {
+   "id": "pinned-nodes",
+   "name": "Pinned nodes (locked summits, free field)",
+   "what": "Fix a small set of structurally important nodes on the canvas and let the force layout settle everything else around them. In the reader: doc root and family peaks stack the left edge, derived-group summits the right, locked only while a layout runs so they stay hand-draggable between runs; a re-triggered layout respects the dragged spots. Position becomes information (a free node's resting place is the visible sum of the forces on it), the map stays stable across re-layouts, starved families read as visibly under-tethered peaks, and every document's graph shares one spatial grammar. The full debrief of the technique and the problems it solves is at v2/dev-packs/v0.4.16__pinned-nodes/00__debrief.md.",
+   "born": "v0.4.16",
+   "implemented_in": [
+    "assets/universe/core/packs.js",
+    "assets/universe/components/graph-fx.js",
+    "assets/universe/components/uni-graph.js",
+    "v2/dev-packs/v0.4.16__pinned-nodes/00__debrief.md"
+   ],
+   "status": "in use",
+   "for_the_book": "The chapter-level demonstration that a graph becomes a map only when it has landmarks: spend a few nodes' freedom to buy meaning for every other node's position."
   }
  ]
 }
