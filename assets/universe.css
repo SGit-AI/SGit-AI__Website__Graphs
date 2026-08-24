@@ -225,3 +225,11 @@ body.uni-graph-off .uni-graphbox, body.uni-graph-off .uni-hsplit { display: none
   nav.site, footer.site, .crumb, .crumbline, .note { display: none; }
   .ndoc-item { break-inside: avoid; }
 }
+
+/* maximised graph: the page chrome yields — nav and splitters hidden, no
+   background scroll — so the canvas truly owns the viewport (also the fix for
+   the sticky nav and a splitter painting over the maximised canvas: sticky
+   ancestors trap the box's z-index in their own stacking context) */
+body.uni-gmax-on { overflow: hidden; }
+body.uni-gmax-on nav.site { display: none; }
+body.uni-gmax-on .uni-vsplit, body.uni-gmax-on .uni-hsplit { display: none; }

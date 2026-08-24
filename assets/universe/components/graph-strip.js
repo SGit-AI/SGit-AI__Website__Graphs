@@ -23,6 +23,7 @@ export const STRIP_HTML =
   '  <span class="gval">pull</span><input type="range" id="uni-gpull" min="10" max="300" step="10">' +
   '  <span class="small dim">(cose)</span></div>' +
   '<div class="grow"><span class="glab">sources</span>' +
+  '  <button data-gdoc="1">document</button>' +
   '  <button data-gtree="1">doc tree</button>' +
   '  <button data-gpeaks="1">family peaks</button>' +
   '  <button data-gderived="1">derived links</button></div>' +
@@ -33,9 +34,30 @@ export const STRIP_HTML =
   '  <button data-gdegup="1">+</button>' +
   '  <button data-gdegmax="1">to peaks</button></div>' +
   '<div class="grow"><span class="glab">view</span>' +
+  '  <button data-gpin="1">pin peaks</button>' +
   '  <button data-gpaths="1">paths to peaks</button>' +
   '  <button data-gfit="1">fit</button>' +
   '  <button data-gclear="1">clear focus</button></div>';
+
+/**
+ * Apply a preset view: merge its preference bundle and emit each change so the
+ * reader persists it. The element refreshes after; this only mutates and emits.
+ * @param {Element} host - the <uni-graph> element (events bubble from it)
+ * @param {object} prefs - the live preference object, mutated in place
+ * @param {string} key - the preset's key
+ * @returns {boolean} whether the key named a preset
+ */
+export function applyPresetView(host, prefs, key) {
+  const v = PRESET_VIEWS.find((x) => x.key === key);
+  if (!v) return false;
+  Object.assign(prefs, v.prefs);
+  Object.keys(v.prefs).forEach((k) => {
+    const val = v.prefs[k];
+    host.dispatchEvent(new CustomEvent('uni:gpref', { bubbles: true,
+      detail: { key: k, value: typeof val === 'boolean' ? (val ? 1 : 0) : val } }));
+  });
+  return true;
+}
 
 /**
  * Reflect the preferences into the strip's pressed states.
@@ -45,8 +67,9 @@ export const STRIP_HTML =
 export function reflectStrip(root, p) {
   root.querySelectorAll('[data-glay]').forEach((x) => x.classList.toggle('on', x.getAttribute('data-glay') === p.glay));
   root.querySelectorAll('[data-gsize]').forEach((x) => x.classList.toggle('on', x.getAttribute('data-gsize') === p.gsize));
-  const flags = { glabels: p.labels, gboxed: p.gboxed, gtree: p.gtree, gpeaks: p.gpeaks,
-    gderived: p.gderived, gexp: p.gexp, gpaths: p.gpaths, gdegmax: p.gdeg === 'max' };
+  const flags = { glabels: p.labels, gboxed: p.gboxed, gdoc: p.gdoc, gtree: p.gtree,
+    gpeaks: p.gpeaks, gderived: p.gderived, gexp: p.gexp, gpin: p.gpin,
+    gpaths: p.gpaths, gdegmax: p.gdeg === 'max' };
   Object.keys(flags).forEach((k) => {
     root.querySelector('[data-' + k + ']').classList.toggle('on', !!flags[k]);
   });

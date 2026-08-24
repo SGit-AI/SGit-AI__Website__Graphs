@@ -179,6 +179,8 @@ function boot() {
     else if (key === 'mode') setPref('mode', value);
   });
   layout.addEventListener('uni:gpref', (e) => setPref(e.detail.key, e.detail.value));
+  /* maximised graph: the page chrome yields so the canvas owns the viewport */
+  layout.addEventListener('uni:gmax', (e) => document.body.classList.toggle('uni-gmax-on', e.detail.on));
   layout.addEventListener('uni:node-tap', (e) => {
     const id = e.detail.id;
     if (id.indexOf('peak:') === 0) return;               /* a peak is a summit, not an anchor */
@@ -232,7 +234,8 @@ function boot() {
   /* ---- boot ---------------------------------------------------------------- */
   graph.init(U, {
     glay: pref('glay', 'cose'), gsize: pref('gsize', 's'), gboxed: prefBool('gboxed', false),
-    gtree: prefBool('gtree', false), gpeaks: prefBool('gpeaks', false),
+    gdoc: prefBool('gdoc', true), gtree: prefBool('gtree', false),
+    gpeaks: prefBool('gpeaks', false), gpin: prefBool('gpin', false),
     gderived: prefBool('gderived', false), gexp: prefBool('gexp', false),
     gdeg: (() => { const v = pref('gdeg', '1'); return v === 'max' ? 'max' : (parseInt(v, 10) || 0); })(),
     gpaths: prefBool('gpaths', false),

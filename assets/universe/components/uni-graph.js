@@ -9,20 +9,21 @@
    Light DOM; the host is display:contents so layout CSS is untouched.
    @fires uni:node-tap  detail {id, label}  a node was tapped
    @fires uni:gpref     detail {key, value}  a persistable graph pref changed
+   @fires uni:gmax      detail {on}  the maximised state changed
    @fires uni:clear-request  the user asked to clear the selection
 */
 'use strict';
 import { graphStyle, layoutOptions } from '../core/cystyle.js';
 import { docTreeElements, DOC_ROOT_ID } from '../core/doctree.js';
-import { familyPeakElements, derivedConceptEdges } from '../core/packs.js';
+import { familyPeakElements, derivedConceptEdges, derivedGroupPeaks } from '../core/packs.js';
 import { NODE_KINDS } from '../core/kinds.js';
 import { neighbourhoodIds, nextDegree } from '../core/explore.js';
-import { PRESET_VIEWS } from '../core/views.js';
-import { STRIP_HTML, reflectStrip, renderStats } from './graph-strip.js';
-import { focusNode, applyPaths } from './graph-fx.js';
+import { STRIP_HTML, reflectStrip, renderStats, applyPresetView } from './graph-strip.js';
+import { focusNode, applyPaths, runPinnedLayout } from './graph-fx.js';
 
-/** The toggles that change what is visible and so need a refresh. */
-const VIS_TOGGLES = ['gtree', 'gpeaks', 'gderived', 'gexp'];
+/** The toggles that change what is visible and so need a refresh. The document
+    itself is a source like any other: all sources off means an empty canvas. */
+const VIS_TOGGLES = ['gdoc', 'gtree', 'gpeaks', 'gderived', 'gexp'];
 
 export class UniGraph extends HTMLElement {
   connectedCallback() {
@@ -58,6 +59,7 @@ export class UniGraph extends HTMLElement {
       layout: layoutOptions('cose', { len: this._p.glen, pull: this._p.gpull }),
       style: graphStyle(),
     });
+    this._baseEles = this.cy.elements();
     this.cy.on('tap', 'node', (evt) => {
       this.dispatchEvent(new CustomEvent('uni:node-tap',
         { bubbles: true, detail: { id: evt.target.id(), label: evt.target.data('label') } }));
@@ -66,7 +68,8 @@ export class UniGraph extends HTMLElement {
     this.querySelector('#uni-gpull').value = this._p.gpull;
     this._refreshVisibility();
     this._applyLook();
-    if (this._p.glay !== 'cose' || VIS_TOGGLES.some((k) => this._p[k])) this.runLayout();
+    if (this._p.glay !== 'cose' || this._p.gpin
+        || VIS_TOGGLES.some((k) => (k === 'gdoc' ? !this._p[k] : this._p[k]))) this.runLayout();
   }
 
   /** One delegated handler for the options strip. */
@@ -86,12 +89,17 @@ export class UniGraph extends HTMLElement {
     if (!b) return;
     if (b.classList.contains('uni-gcog')) { this._gopts.hidden = !this._gopts.hidden; return; }
     if (b.hasAttribute('data-gmax')) {
-      const box = this.querySelector('.uni-graphbox').classList.toggle('uni-gmax');
+      const on = this.querySelector('.uni-graphbox').classList.toggle('uni-gmax');
+      /* the reader hides the page chrome (nav, splitters) while maximised */
+      this.dispatchEvent(new CustomEvent('uni:gmax', { bubbles: true, detail: { on } }));
       this.cy.resize(); this.cy.fit(this.cy.elements().not('.uni-hide'), 24);
-      b.title = box ? 'Back to the panel' : 'Maximise the graph';
+      b.title = on ? 'Back to the panel' : 'Maximise the graph';
       return;
     }
-    if (b.hasAttribute('data-gview')) { this._applyView(b.getAttribute('data-gview')); return; }
+    if (b.hasAttribute('data-gview')) {
+      if (applyPresetView(this, p, b.getAttribute('data-gview'))) this.refresh();
+      return;
+    }
     if (b.hasAttribute('data-gdegdn') || b.hasAttribute('data-gdegup') || b.hasAttribute('data-gdegmax')) {
       p.gdeg = nextDegree(p.gdeg,
         b.hasAttribute('data-gdegmax') ? 'max' : b.hasAttribute('data-gdegup') ? 'up' : 'down');
@@ -106,21 +114,14 @@ export class UniGraph extends HTMLElement {
       if (!b.hasAttribute('data-' + k)) return;
       p[k] = !p[k]; this._emitPref(k, p[k] ? 1 : 0); this.refresh();
     });
+    if (b.hasAttribute('data-gpin')) {
+      p.gpin = !p.gpin; this._emitPref('gpin', p.gpin ? 1 : 0);
+      if (p.gpin) this._pinPlaced = false;   /* pin-on re-places the stacks */
+      this._applyLook(); this.runLayout();
+    }
     if (b.hasAttribute('data-gpaths')) { p.gpaths = !p.gpaths; this._emitPref('gpaths', p.gpaths ? 1 : 0); this._applyLook(); this._applyPaths(); }
     if (b.hasAttribute('data-gfit')) this.cy.fit(this.cy.elements().not('.uni-hide'), 24);
     if (b.hasAttribute('data-gclear')) this.dispatchEvent(new CustomEvent('uni:clear-request', { bubbles: true }));
-  }
-
-  /** Apply a preset view: a named preference bundle, then one refresh. */
-  _applyView(key) {
-    const v = PRESET_VIEWS.find((x) => x.key === key);
-    if (!v) return;
-    Object.assign(this._p, v.prefs);
-    Object.keys(v.prefs).forEach((k) => {
-      const val = v.prefs[k];
-      this._emitPref(k, typeof val === 'boolean' ? (val ? 1 : 0) : val);
-    });
-    this.refresh();
   }
 
   _emitPref(key, value) {
@@ -140,8 +141,7 @@ export class UniGraph extends HTMLElement {
   applyKinds(kinds) {
     const key = (kinds || []).slice().sort().join(' ');
     if (key === this._kindsKey) return;
-    this._kindsKey = key;
-    this._kinds = kinds;
+    this._kindsKey = key; this._kinds = kinds;
     if (this.cy) this.refresh();
   }
 
@@ -158,8 +158,10 @@ export class UniGraph extends HTMLElement {
         this._data.anchors, (aid) => cy.$id(aid).nonempty()));
     }
     if (p.gpeaks && !this._peakEles) this._peakEles = cy.add(familyPeakElements(this._data.elements));
-    if (p.gderived && !this._derivedEles) this._derivedEles = cy.add(derivedConceptEdges(this._data.elements));
+    if (p.gderived && !this._derivedEles) this._derivedEles = cy.add(
+      derivedConceptEdges(this._data.elements).concat(derivedGroupPeaks(this._data.elements)));
     cy.elements().removeClass('uni-hide');
+    if (!p.gdoc) this._baseEles.addClass('uni-hide');
     if (this._treeEles && !p.gtree) this._treeEles.addClass('uni-hide');
     if (this._peakEles && !p.gpeaks) this._peakEles.addClass('uni-hide');
     if (this._derivedEles && !p.gderived) this._derivedEles.addClass('uni-hide');
@@ -167,8 +169,7 @@ export class UniGraph extends HTMLElement {
       NODE_KINDS.filter((k) => this._kinds.indexOf(k) === -1)
         .forEach((k) => cy.nodes('[family = "' + k + '"]').addClass('uni-hide'));
     }
-    /* everything still visible is the explore walk's universe; remember it so
-       the stats can price the next hop before the reader pays for it */
+    /* what remains is the explore walk's universe; kept for the stats bar */
     const base = cy.elements().not('.uni-hide');
     this._visData = base.map((x) => x.data());
     if (p.gexp && this._selected && cy.$id(this._selected).nonempty()
@@ -181,8 +182,7 @@ export class UniGraph extends HTMLElement {
     this._renderStats();
   }
 
-  /* The stats bar: what the current view holds, and what one more degree of
-     separation would add — the choose-a-path-before-walking-it affordance. */
+  /* The stats bar: the view's counts plus what the next hop would add. */
   _renderStats() {
     renderStats(this.querySelector('#uni-gstats'),
       this.cy.elements().not('.uni-hide').map((x) => x.data()),
@@ -207,18 +207,25 @@ export class UniGraph extends HTMLElement {
   /** Drop the focus ring and dimming. */
   clearFocus() { if (this.cy) this.cy.elements().removeClass('uni-focus uni-dim'); }
 
-  /** Re-run the current layout over the visible elements. */
+  /** Re-run the current layout over the visible elements, summits pinned when
+      the reader asked for it (placed once per pin-on; hand-drags then hold). */
   runLayout() {
     const p = this._p;
     const vis = this.cy.elements().not('.uni-hide');
     let roots;
-    if (p.gtree || p.gpeaks) {
-      const tops = vis.nodes('[family = "docroot"], [family = "peak"]');
+    if (p.gtree || p.gpeaks || p.gderived) {
+      const tops = vis.nodes('[family = "docroot"], [family = "peak"], [family = "dgroup"]');
       if (tops.length) roots = tops;
     } else if (this._selected && this.cy.$id(this._selected).nonempty()) {
       roots = this.cy.$id(this._selected);
     }
-    vis.layout(layoutOptions(p.glay, { len: p.glen, pull: p.gpull }, roots)).run();
+    const opts = layoutOptions(p.glay, { len: p.glen, pull: p.gpull }, roots);
+    if (p.gpin) {
+      runPinnedLayout(this.cy, vis, opts, !this._pinPlaced);
+      this._pinPlaced = true;
+    } else {
+      vis.layout(opts).run();
+    }
     this.cy.fit(vis, 24);
   }
 

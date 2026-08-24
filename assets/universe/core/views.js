@@ -8,18 +8,18 @@
     left exactly as the reader had it. */
 export const PRESET_VIEWS = [
   { key: 'overview', label: 'overview',
-    prefs: { glay: 'cose', gtree: false, gpeaks: false, gderived: false,
+    prefs: { glay: 'cose', gdoc: true, gtree: false, gpeaks: false, gderived: false,
       gexp: false, gpaths: false, gboxed: false } },
   { key: 'reading-map', label: 'reading map',
-    prefs: { glay: 'tree', gtree: true, gpeaks: false, gderived: false,
+    prefs: { glay: 'tree', gdoc: true, gtree: true, gpeaks: false, gderived: false,
       gexp: false, gpaths: false, gboxed: true } },
   { key: 'pyramids', label: 'pyramids',
-    prefs: { glay: 'tree', gtree: false, gpeaks: true, gderived: false,
+    prefs: { glay: 'tree', gdoc: true, gtree: false, gpeaks: true, gderived: false,
       gexp: false, gpaths: false, gboxed: true } },
   { key: 'concept-web', label: 'concept web',
-    prefs: { glay: 'cose', gtree: false, gpeaks: false, gderived: true,
+    prefs: { glay: 'cose', gdoc: true, gtree: false, gpeaks: false, gderived: true,
       gexp: false, gpaths: false, gboxed: true } },
   { key: 'around-selection', label: 'around selection',
-    prefs: { glay: 'cose', gtree: false, gpeaks: true, gderived: true,
+    prefs: { glay: 'cose', gdoc: true, gtree: false, gpeaks: true, gderived: true,
       gexp: true, gdeg: 2, gpaths: true, gboxed: false } },
 ];

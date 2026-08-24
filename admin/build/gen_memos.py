@@ -23,6 +23,13 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "25__founder-note__pinned-peaks.md": (
+     "Pinned peaks, and the document as a source",
+     "Lock the summits at the edges of the canvas and let the physics settle everything "
+     "else between them: doc root and family peaks left, derived-group summits right, "
+     "hand-draggable between layout runs. Also: the document becomes a source like any "
+     "other (all sources off = empty canvas), the derived groups get their own peaks, and "
+     "the maximised graph finally owns the whole viewport."),
  "24__founder-memo__document-from-a-node.md": (
      "A document grown from one node",
      "The experiment after the reader: pick one node and compose the document of that "

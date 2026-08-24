@@ -112,7 +112,7 @@ test('cystyle: tree is breadthfirst, directed, with the given roots', () => {
 test('cystyle: the stylesheet still carries the focus ring and hide classes', () => {
   const sel = graphStyle().map((r) => r.selector);
   ['node.uni-focus', '.uni-hide', '.uni-dim', 'edge[kind = "contains"]',
-    'node[family = "peak"]', 'edge[kind = "derived"]', 'edge.uni-path']
+    'node[family = "peak"]', 'node[family = "dgroup"]', 'edge[kind = "derived"]', 'edge.uni-path']
     .forEach((s) => assert.ok(sel.includes(s), s));
 });
 
@@ -159,7 +159,7 @@ test('explore: stats count families and edge kinds apart, readably', () => {
 /* ---- views: the presets only name real preferences ------------------------- */
 import { PRESET_VIEWS } from '../../assets/universe/core/views.js';
 test('views: every preset pref is a known key with a sane value', () => {
-  const KEYS = ['glay', 'gtree', 'gpeaks', 'gderived', 'gexp', 'gdeg', 'gpaths', 'gboxed'];
+  const KEYS = ['glay', 'gdoc', 'gtree', 'gpeaks', 'gderived', 'gexp', 'gdeg', 'gpaths', 'gboxed'];
   assert.ok(PRESET_VIEWS.length >= 4);
   PRESET_VIEWS.forEach((v) => {
     assert.ok(v.key && v.label, v.key);
@@ -169,7 +169,8 @@ test('views: every preset pref is a known key with a sane value', () => {
 });
 
 /* ---- packs: family peaks and the co-claimed derivation --------------------- */
-import { familyPeakElements, derivedConceptEdges } from '../../assets/universe/core/packs.js';
+import { familyPeakElements, derivedConceptEdges, derivedGroupPeaks, pinPositions }
+  from '../../assets/universe/core/packs.js';
 test('packs: a peak per populated family, contains edges to members', () => {
   const els = familyPeakElements([
     { data: { id: 'c1', family: 'concept' } }, { data: { id: 'c2', family: 'concept' } },
@@ -190,6 +191,35 @@ test('packs: co-claimed concepts derive one counted symmetric edge', () => {
   assert.equal(els.length, 1);
   assert.equal(els[0].data.count, 2);
   assert.deepEqual([els[0].data.source, els[0].data.target].sort(), ['a', 'b']);
+});
+test('packs: derived groups get a summit each, named after the best-connected member', () => {
+  /* two components: {a, b, c} joined through a, and {d, e}; a has the degree */
+  const els = derivedGroupPeaks([
+    { data: { id: 'a', label: 'alpha', family: 'concept' } },
+    { data: { id: 'b', label: 'beta', family: 'concept' } },
+    { data: { id: 'c', label: 'gamma', family: 'concept' } },
+    { data: { id: 'd', label: 'delta', family: 'concept' } },
+    { data: { id: 'e', label: 'epsilon', family: 'concept' } },
+    { data: { source: 'k1', target: 'a', kind: 'about' } },
+    { data: { source: 'k1', target: 'b', kind: 'about' } },
+    { data: { source: 'k2', target: 'a', kind: 'about' } },
+    { data: { source: 'k2', target: 'c', kind: 'about' } },
+    { data: { source: 'k3', target: 'd', kind: 'about' } },
+    { data: { source: 'k3', target: 'e', kind: 'about' } }]);
+  const peaks = els.filter((x) => x.data.family === 'dgroup');
+  assert.equal(peaks.length, 2);
+  assert.equal(peaks[0].data.label, 'around alpha');   /* largest component first */
+  assert.equal(peaks[1].data.label, 'around delta');
+  assert.equal(els.filter((x) => x.data.kind === 'contains').length, 5);
+});
+test('packs: pin positions stack left and right, gap scaled by the free count', () => {
+  const pos = pinPositions(['doc', 'p1', 'p2'], ['g1'], 10);
+  assert.equal(pos['doc'].x, 0);
+  assert.equal(pos['p2'].x, 0);
+  assert.equal(pos['g1'].x, 700);            /* max(700, 10 * 26) */
+  assert.ok(pos['doc'].y < pos['p1'].y && pos['p1'].y < pos['p2'].y);
+  assert.equal(pos['g1'].y, 200);            /* a lone pin sits mid-stack */
+  assert.equal(pinPositions([], ['g1'], 40)['g1'].x, 1040);
 });
 
 /* ---- nodedoc: the document of one node, composed purely -------------------- */
