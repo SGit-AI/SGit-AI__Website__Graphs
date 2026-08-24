@@ -38,7 +38,7 @@ const setPref = (k, v) => { try { localStorage.setItem('uchat:' + k, String(v));
 
 const CHIPS = [
   'What does this document claim, and how well does it support each claim?',
-  'Select the concept the most claims depend on, and show only its subtree.',
+  'Select the concept the most claims depend on, and explore two hops around it.',
   'Which terms does the document use but never define? Show me each one.',
   'Review three anchors: is each quote fair to the section it comes from?',
   'What would a sceptic of graph-first modelling push back on here?',

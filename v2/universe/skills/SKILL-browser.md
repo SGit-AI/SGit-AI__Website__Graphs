@@ -28,11 +28,12 @@ await tool.get_source_text({ start: a.chars[0] - 500, end: a.chars[1] + 500 });
 
 ```js
 await tool.select_node({ id: 'fractal-principle' });   // row + source bytes + graph ring
-await tool.show_subtree_only({ on: true });            // filter to its subtree
-await tool.set_layout({ layout: 'tree' });             // lay the subtree out as a tree
+await tool.explore_selection({ on: true, degrees: 2 }); // keep only its 2-hop neighbourhood
+await tool.set_layout({ layout: 'tree' });             // lay that neighbourhood out as a tree
+await tool.set_view_preset({ view: 'pyramids' });      // or one of the reader's preset views
 await tool.fit_graph();
+await tool.explore_selection({ on: false });
 await tool.clear_selection();
-await tool.show_subtree_only({ on: false });
 ```
 
 ## Playwright

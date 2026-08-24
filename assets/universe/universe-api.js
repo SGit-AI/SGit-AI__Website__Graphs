@@ -125,10 +125,14 @@ function publish() {
     },
     get_state: () => ({
       selected: graph.selected || null,
-      subtree_only: graph.subtreeOn,
-      doc_tree: btnOn('[data-gtree]'),
       layout: (['cose', 'concentric', 'grid', 'tree']
         .find((l) => btnOn('[data-glay="' + l + '"]')) || 'cose'),
+      sources: { document: btnOn('[data-gdoc]'), doc_tree: btnOn('[data-gtree]'),
+        family_peaks: btnOn('[data-gpeaks]'), derived_links: btnOn('[data-gderived]') },
+      explore: { on: btnOn('[data-gexp]'),
+        degrees: (gbtn('#uni-gdeg') || { textContent: '1' }).textContent },
+      pin_peaks: btnOn('[data-gpin]'), paths_to_peaks: btnOn('[data-gpaths]'),
+      stats: ((gbtn('#uni-gstats') || {}).textContent || '').trim(),
       labels: btnOn('[data-glabels]'), boxed: btnOn('[data-gboxed]'),
       panel_on: document.getElementById('uni-tglpanel').getAttribute('aria-pressed') === 'true',
       graph_on: !document.body.classList.contains('uni-graph-off'),
@@ -160,13 +164,38 @@ function publish() {
       len.dispatchEvent(new Event('input', { bubbles: true }));
       return { spring_length: parseInt(len.value, 10), pull: parseInt(pl.value, 10) };
     },
-    show_subtree_only: ({ on, id }) => {
-      if (id) impl.select_node({ id });
-      if (on && !graph.selected) throw new Error('subtree needs a selection — pass id or select_node first');
-      clickIf('[data-gsub]', on);
-      return { subtree_only: graph.subtreeOn, root: graph.selected || null };
+    set_view_preset: ({ view }) => {
+      const b = gbtn('[data-gview="' + view + '"]');
+      if (!b) throw new Error('unknown preset view: ' + view);
+      b.click();
+      return { view };
     },
-    toggle_doc_tree: ({ on }) => { clickIf('[data-gtree]', on); return { doc_tree: on }; },
+    explore_selection: ({ on, id, degrees, to_peaks }) => {
+      if (id) impl.select_node({ id });
+      if (on && !graph.selected) throw new Error('explore needs a selection — pass id or select_node first');
+      clickIf('[data-gexp]', on);
+      const shown = () => gbtn('#uni-gdeg').textContent;
+      if (on && to_peaks) {
+        if (shown() !== '∞') gbtn('[data-gdegmax]').click();
+      } else if (on && Number.isFinite(degrees)) {
+        const want = Math.max(0, Math.min(degrees, 6));
+        if (shown() === '∞') gbtn('[data-gdegmax]').click();   /* ∞ toggles back to 1 */
+        for (let i = 0; i < 12 && parseInt(shown(), 10) !== want; i++) {
+          gbtn(parseInt(shown(), 10) < want ? '[data-gdegup]' : '[data-gdegdn]').click();
+        }
+      }
+      return { explore: on, root: graph.selected || null, degrees: shown() };
+    },
+    show_sources: ({ document: doc, doc_tree, family_peaks, derived_links }) => {
+      if (typeof doc === 'boolean') clickIf('[data-gdoc]', doc);
+      if (typeof doc_tree === 'boolean') clickIf('[data-gtree]', doc_tree);
+      if (typeof family_peaks === 'boolean') clickIf('[data-gpeaks]', family_peaks);
+      if (typeof derived_links === 'boolean') clickIf('[data-gderived]', derived_links);
+      return { document: btnOn('[data-gdoc]'), doc_tree: btnOn('[data-gtree]'),
+        family_peaks: btnOn('[data-gpeaks]'), derived_links: btnOn('[data-gderived]') };
+    },
+    pin_peaks: ({ on }) => { clickIf('[data-gpin]', on); return { pin_peaks: on }; },
+    paths_to_peaks: ({ on }) => { clickIf('[data-gpaths]', on); return { paths_to_peaks: on }; },
     set_highlight_kinds: ({ kinds }) => { emit('uni:pref', { key: 'kinds', value: kinds }); return { kinds }; },
     set_graph_look: ({ labels, size, boxed }) => {
       if (typeof labels === 'boolean') clickIf('[data-glabels]', labels);

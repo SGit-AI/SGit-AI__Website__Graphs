@@ -23,6 +23,32 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "25__founder-note__pinned-peaks.md": (
+     "Pinned peaks, and the document as a source",
+     "Lock the summits at the edges of the canvas and let the physics settle everything "
+     "else between them: doc root and family peaks left, derived-group summits right, "
+     "hand-draggable between layout runs. Also: the document becomes a source like any "
+     "other (all sources off = empty canvas), the derived groups get their own peaks, and "
+     "the maximised graph finally owns the whole viewport."),
+ "24__founder-memo__document-from-a-node.md": (
+     "A document grown from one node",
+     "The experiment after the reader: pick one node and compose the document of that "
+     "concept from what the anchored data verifiably holds — programmatic first, no "
+     "authored prose, on its own page, printable. The book workflow run from a single "
+     "word upward; the whole book is the same operation on steroids."),
+ "23__founder-notes__reader-round-two.md": (
+     "Visible links, live physics, and exploring the graph",
+     "Three notes sent while brief 22 was being built: every link in the source visible "
+     "and toggleable from the pane itself, one toggle set driving both panes, physics "
+     "applied as the slider moves, and the explore workflow — focus on a selection, grow "
+     "it degree by degree towards the peaks, with stats that price the next hop before "
+     "you pay for it. Answers two of brief 22's questions; three remain open."),
+ "22__founder-memo__universe-viewer.md": (
+     "The universe viewer, and where it goes next",
+     "Feedback on using the reader in earnest: nodes as readable boxes, the doc tree as "
+     "navigation, families as selectable node packs each with its own peak, stronger and "
+     "weaker links between concepts, paths to the peaks, and a freeze-and-grow workflow. "
+     "Twelve instructions mapped, four questions put back to the founder."),
  "21__founder-memo__review-packs.md": (
      "Review packs, and briefing other agents",
      "A website cannot control what a reviewer reads or in what order. A pack can: one "

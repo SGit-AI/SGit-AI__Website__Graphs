@@ -42,10 +42,12 @@ lists the levels.
 | `select_node` | `{id}` — selects everywhere: row, source bytes, graph ring |
 | `clear_selection` | — |
 | `fit_graph` | — |
+| `set_view_preset` | `{view: overview\|reading-map\|pyramids\|concept-web\|around-selection}` |
 | `set_layout` | `{layout: cose\|concentric\|grid\|tree}` |
 | `set_physics` | `{spring_length?, pull?}` |
-| `show_subtree_only` | `{on, id?}` |
-| `toggle_doc_tree` | `{on}` |
+| `explore_selection` | `{on, id?, degrees?, to_peaks?}` — the N-hop neighbourhood filter |
+| `show_sources` | `{document?, doc_tree?, family_peaks?, derived_links?}` |
+| `pin_peaks` / `paths_to_peaks` | `{on}` |
 | `set_highlight_kinds` | `{kinds: string[]}` |
 | `set_graph_look` | `{labels?, size?, boxed?}` |
 | `show_panel` / `show_graph` | `{on}` |

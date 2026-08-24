@@ -465,6 +465,9 @@ HUB = """<!doctype html>
   </table>
   </div>
 
+  <h2 id="nodedoc">The document of one node</h2>
+  <p>The experiment of brief 24, programmatic phase: pick a node and read <a href="node-doc.html">the document that grows from it</a> &mdash; everything the anchored extraction verifiably holds about that one concept, composed in document structure with no authored prose. The picker ranks every node by how many links it carries, which makes the richness of each concept measurable before any writing happens.</p>
+
   <h2 id="rules">The rules this section holds itself to</h2>
   <ul>
     <li><b>One extraction file per document</b>, and the dictionary, taxonomy, thesaurus and ontology views are projections of it. Four authored artefacts per document would be four things that can disagree; one file with four views cannot.</li>
@@ -481,6 +484,40 @@ HUB = """<!doctype html>
 </main>
 
 <footer class="site"><div class="cols"></div></footer>
+</body>
+</html>
+"""
+
+NODEDOC_PAGE = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The document of one node &mdash; graphs.sgit.ai</title>
+<meta name="description" content="Brief 24's experiment, programmatic phase: pick a node and read the document that grows from it — everything the anchored extraction verifiably holds about one concept, with no authored prose.">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/universe/node-doc.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="graphs.sgit.ai">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/universe/node-doc.html">
+<meta property="og:title" content="The document of one node">
+<meta property="og:description" content="Everything the anchored extraction verifiably holds about one concept, composed as a document.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/universe.css">
+</head>
+<body>
+
+<nav class="site"><div class="row"></div></nav>
+
+<main class="doc">
+  <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="../index.html">the second edition</a> &rarr; <a href="index.html">the universe</a> &rarr; <b>the document of one node</b></div>
+  <h1>The document of one node</h1>
+  <div id="ndoc"><p class="dim">Loading the extraction&hellip;</p></div>
+  <div class="note"><b>What this is.</b> The experiment of brief 24, programmatic phase: the page assembles only what the anchored extraction and the cross-reference ledger verifiably hold about the chosen node. The connecting prose is deliberately absent; writing it, layer by layer up to a mini book per node, is the later phase. The composition is the pure module <code>assets/universe/core/nodedoc.js</code>; this page is one thin view over the same data the reader projects.</div>
+</main>
+
+<footer class="site"><div class="cols"></div></footer>
+<script type="module" src="../../assets/universe/nodedoc-page.js"></script>
 </body>
 </html>
 """
@@ -714,6 +751,7 @@ def main():
 
     (OUT / "index.html").write_text(HUB.format(rows="\n".join(rows), total=TOTAL_SOURCES,
                                                remaining=TOTAL_SOURCES - len(rows)))
+    (OUT / "node-doc.html").write_text(NODEDOC_PAGE)
     (DATA / "universe.json").write_text(json.dumps(published, indent=1, ensure_ascii=False) + "\n")
     print(f'gen_universe: {len(rows)} of {TOTAL_SOURCES} source(s) extracted, hub and data written')
 

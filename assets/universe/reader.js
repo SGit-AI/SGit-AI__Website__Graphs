@@ -5,6 +5,7 @@
    the window-side scrolling. All rendering lives in the components; all pure
    logic lives in core/. */
 'use strict';
+import { allKinds } from './core/kinds.js';
 import './components/uni-options.js';
 import './components/uni-graph.js';
 import './components/uni-source.js';
@@ -23,7 +24,8 @@ function boot() {
     panelOn: prefBool('panel', true),
     graphOn: prefBool('graph', true),
     scroll: pref('scroll', 'instant'),
-    kinds: (() => { try { return JSON.parse(pref('kinds', 'null')) || []; } catch (e) { return []; } })(),
+    /* every link visible by default; an empty list is a deliberate "none" */
+    kinds: (() => { try { return JSON.parse(pref('kinds', 'null')) || allKinds(); } catch (e) { return allKinds(); } })(),
     selected: null,
   };
 
@@ -62,6 +64,7 @@ function boot() {
   tools.innerHTML =
     '<button id="uni-tglpanel" class="uni-wide-only" aria-pressed="false">&#9707; side panel</button>' +
     '<uni-options></uni-options>' +
+    '<button id="uni-reset" title="Forget every saved view preference for this document and reload">&#8634; reset view</button>' +
     '<button id="uni-clear" title="Clear the selected node everywhere" hidden>&#10005; clear selection</button>' +
     '<span class="dim" id="uni-status"></span>';
   const meta = left.querySelector('.docmeta');
@@ -115,6 +118,7 @@ function boot() {
       requestAnimationFrame(() => graph.resize());
     }
     source.applyKinds(state.kinds);
+    if (graph.cy) graph.applyKinds(state.kinds);   /* one toggle set drives both panes */
   }
 
   /* ---- the one selection: persistent, toggled, cleared from the top ------- */
@@ -124,14 +128,14 @@ function boot() {
     if (scroll !== false) scrollToEl(el, window);
     el.classList.remove('uni-hit'); void el.offsetWidth; el.classList.add('uni-hit');
   }
-  function clearSelection(keepSub) {
+  function clearSelection(reselecting) {
     state.selected = null;
-    graph.selected = null;
+    /* dropping the graph's selection also releases an explore view */
+    if (!reselecting) graph.selected = null;
     document.querySelectorAll('tr.uni-sel').forEach((el) => el.classList.remove('uni-sel'));
     source.setSelected(null);
     graph.clearFocus();
     clearBtn.hidden = true;
-    if (graph.subtreeOn && !keepSub) graph.exitSubtree();
   }
   function select(aid, opts) {
     opts = opts || {};
@@ -148,9 +152,20 @@ function boot() {
       source.setSelected(aid);
     }
     if (graph.cy.$id(aid).nonempty()) graph.focus(aid, state.scroll);
-    if (graph.subtreeOn) graph.applySubtree(aid);
   }
   clearBtn.addEventListener('click', () => clearSelection());
+  tools.querySelector('#uni-reset').addEventListener('click', () => {
+    try {
+      const stale = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.indexOf(LS) === 0) stale.push(k);
+      }
+      stale.forEach((k) => localStorage.removeItem(k));
+    } catch (e) { /* storage may be blocked; the reload still resets the session */ }
+    history.replaceState(null, '', location.pathname);
+    location.reload();
+  });
 
   /* ---- wiring: data down, events up --------------------------------------- */
   tools.querySelector('#uni-tglpanel').addEventListener('click', () => {
@@ -164,7 +179,17 @@ function boot() {
     else if (key === 'mode') setPref('mode', value);
   });
   layout.addEventListener('uni:gpref', (e) => setPref(e.detail.key, e.detail.value));
-  layout.addEventListener('uni:node-tap', (e) => select(e.detail.id));
+  /* maximised graph: the page chrome yields so the canvas owns the viewport */
+  layout.addEventListener('uni:gmax', (e) => document.body.classList.toggle('uni-gmax-on', e.detail.on));
+  layout.addEventListener('uni:node-tap', (e) => {
+    const id = e.detail.id;
+    if (id.indexOf('peak:') === 0) return;               /* a peak is a summit, not an anchor */
+    if (id.indexOf('sec:') === 0) {                      /* the doc tree navigates the source */
+      source.scrollToHeading(id === 'sec:__doc' ? '' : e.detail.label);
+      return;
+    }
+    select(id);
+  });
   layout.addEventListener('uni:mark-click', (e) => select(e.detail.aid));
   layout.addEventListener('uni:step-select', (e) => select(e.detail.aid, { force: true, scrollLeft: false }));
   layout.addEventListener('uni:clear-request', () => clearSelection());
@@ -209,8 +234,13 @@ function boot() {
   /* ---- boot ---------------------------------------------------------------- */
   graph.init(U, {
     glay: pref('glay', 'cose'), gsize: pref('gsize', 's'), gboxed: prefBool('gboxed', false),
-    gtree: prefBool('gtree', false),
+    gdoc: prefBool('gdoc', true), gtree: prefBool('gtree', false),
+    gpeaks: prefBool('gpeaks', false), gpin: prefBool('gpin', false),
+    gderived: prefBool('gderived', false), gexp: prefBool('gexp', false),
+    gdeg: (() => { const v = pref('gdeg', '1'); return v === 'max' ? 'max' : (parseInt(v, 10) || 0); })(),
+    gpaths: prefBool('gpaths', false),
     glen: parseInt(pref('glen', '90'), 10), gpull: parseInt(pref('gpull', '90'), 10),
+    kinds: state.kinds,
   });
   source.init(U, { mode: pref('mode', 'source'), scrollTo: scrollToEl });
   WIDE.addEventListener('change', applyState);
