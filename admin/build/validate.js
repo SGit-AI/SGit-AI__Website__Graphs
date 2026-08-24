@@ -324,6 +324,23 @@ if (fs.existsSync(uniPath)) {
     if (!fs.existsSync(path.join(ROOT, `v2/universe/${src.slug}.pdf`))) {
       errors.push(`universe PDF missing: v2/universe/${src.slug}.pdf`);
     }
+    // the standalone folder: its source copy is a byte twin of the frozen original
+    const copy = path.join(ROOT, src.folder, 'source.md');
+    if (!fs.existsSync(copy)) {
+      errors.push(`universe ${src.slug}: the folder has no source.md`);
+    } else if (sha(fs.readFileSync(copy)) !== src.sha256) {
+      errors.push(`universe ${src.slug}: the folder's source.md drifted from the frozen original`);
+    }
+    // every recorded use is rated with a rating the model actually defines
+    const modelPath = path.join(ROOT, 'v2/universe/usage-model.json');
+    if (fs.existsSync(modelPath)) {
+      const levels = new Set(JSON.parse(fs.readFileSync(modelPath, 'utf8')).levels.map(l => l.id));
+      for (const r of (src.crossrefs || [])) {
+        if (!levels.has(r.rating)) {
+          errors.push(`universe ${src.slug} crossref ${r.id}: rating ${r.rating} is not in the usage model`);
+        }
+      }
+    }
   }
 }
 

@@ -1,0 +1,36 @@
+{
+ "name": "The usage maturity model",
+ "version": 1,
+ "principle": "A source document captures, when possible, the references of where it is being used and quoted, so that the document, and ideally its author, can rate each use of its contents. The rating is a judgement about the USE, never about the user: the same site can carry aligned uses and misaligned ones side by side, and finding a misaligned one is the mechanism working.",
+ "levels": [
+  {
+   "id": "aligned",
+   "label": "Aligned",
+   "meaning": "A correct use. The use says what the source says: a verbatim quote in its context, or a faithful paraphrase or derivation that the source's author would recognise as their idea.",
+   "test": "Read the use, then the cited part of the source. Would the source's author say: yes, that is what I said?"
+  },
+  {
+   "id": "stretched",
+   "label": "Stretched",
+   "meaning": "An ambiguous or loosened use. Recognisably derived from the source, but context was dropped, scope was widened, or a nuance the source insists on was lost. Not false, and not quite what the source says.",
+   "test": "The author would say: that came from my document, but it is not quite what I meant, or it leaves out something I said mattered."
+  },
+  {
+   "id": "misaligned",
+   "label": "Misaligned",
+   "meaning": "A wrong use. The use claims the source says something it does not: a misquote, an inverted meaning, an attribution the text cannot support.",
+   "test": "The author would say: that is not what the document says."
+  },
+  {
+   "id": "unrated",
+   "label": "Unrated",
+   "meaning": "A known use that nobody has judged yet. Recorded so the absence of a rating is visible rather than hidden.",
+   "test": "None. This is the named absence, awaiting a judgement."
+  }
+ ],
+ "notes": [
+  "Ratings are authored judgements, signed and dated inside each document's crossrefs.json.",
+  "A superseded use keeps its rating with the supersession recorded: history stays in the ledger.",
+  "The model itself is versioned; arguing with a level's test is how it improves."
+ ]
+}

@@ -69,7 +69,8 @@
     '<div class="uni-hsplit" title="Drag to resize"></div>' +
     '<div class="uni-srcbox">' +
     '  <div class="uni-srchead">' +
-    '    <b>The frozen source</b>' +
+    '    <span class="uni-mode"><button id="uni-msrc" class="on">source</button><button id="uni-mdata">data</button></span>' +
+    '    <b id="uni-panetitle">The frozen source</b>' +
     '    <span class="uni-step">' +
     '      <button id="uni-prev" title="Previous highlighted anchor">&#8249;</button>' +
     '      <span class="cnt" id="uni-cnt">&ndash;</span>' +
@@ -79,6 +80,7 @@
     '    <div class="uni-trail" id="uni-trail"><span class="dim">every highlight sits on gate-verified bytes</span></div>' +
     '  </div>' +
     '  <div class="uni-srcbody mdread" id="uni-src"><p class="dim">Loading the frozen source…</p></div>' +
+    '  <div class="uni-srcbody" id="uni-data" style="display:none"><p class="dim">Loading the extraction…</p></div>' +
     '</div>';
   layout.appendChild(panel);
   main.appendChild(layout);
@@ -291,9 +293,77 @@
     el.classList.remove('uni-hit'); void el.offsetWidth; el.classList.add('uni-hit');
   }
   var srcBody = document.getElementById('uni-src');
+  var dataBody = document.getElementById('uni-data');
   var srcBox = panel.querySelector('.uni-srcbox');
+  var paneMode = pref('mode', 'source');            /* source | data */
+  var dataBuilt = false;
+
+  function buildData() {
+    if (dataBuilt) return;
+    dataBuilt = true;
+    fetch(U.extraction).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }).then(function (ex) {
+      var h = ['<div class="uni-jlinks">The data this page is a projection of: ' +
+        '<a href="' + U.extraction + '">extraction.json</a> · ' +
+        '<a href="' + U.folder + 'crossrefs.json">crossrefs.json</a> · ' +
+        '<a href="../usage-model.json">usage-model.json</a> · ' +
+        '<a href="' + U.folder + 'index.html">the document folder</a></div>'];
+      function item(aid, obj) {
+        return '<div class="uni-jitem" data-aid="' + aid + '" id="j-' + aid + '"><pre>' +
+          JSON.stringify(obj, null, 1).replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</pre></div>';
+      }
+      h.push('<div class="uni-jhead">doc</div>', '<div class="uni-jitem"><pre>' +
+        JSON.stringify(ex.doc, null, 1).replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</pre></div>');
+      h.push('<div class="uni-jhead">nodes (' + ex.nodes.length + ')</div>');
+      ex.nodes.forEach(function (n) { h.push(item(n.id, n)); });
+      h.push('<div class="uni-jhead">edges (' + ex.edges.length + ')</div>');
+      ex.edges.forEach(function (e, i) { h.push(item('edge-' + i, e)); });
+      h.push('<div class="uni-jhead">near_but_not (' + ex.near_but_not.length + ')</div>');
+      ex.near_but_not.forEach(function (x, i) { h.push(item('nbn-' + i, x)); });
+      h.push('<div class="uni-jhead">aliases (' + ex.aliases.length + ')</div>');
+      ex.aliases.forEach(function (x, i) { h.push(item('alias-' + i, x)); });
+      h.push('<div class="uni-jhead">empty_sections (' + (ex.empty_sections || []).length + ')</div>');
+      (ex.empty_sections || []).forEach(function (x) {
+        h.push('<div class="uni-jitem"><pre>' + JSON.stringify(x, null, 1).replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</pre></div>');
+      });
+      dataBody.innerHTML = h.join('');
+      if (selected) {
+        dataBody.querySelectorAll('.uni-jitem[data-aid="' + selected + '"]').forEach(function (el) { el.classList.add('uni-sel'); });
+      }
+      dataBody.addEventListener('click', function (e) {
+        var it = e.target.closest('.uni-jitem[data-aid]');
+        if (it) select(it.getAttribute('data-aid'));
+      });
+    }).catch(function () {
+      dataBody.innerHTML = '<p class="dim">Could not load the extraction in-page — ' +
+        '<a href="' + U.extraction + '">open the raw file</a> instead.</p>';
+    });
+  }
+  function setMode(m) {
+    paneMode = m; setPref('mode', m);
+    srcBody.style.display = m === 'source' ? '' : 'none';
+    dataBody.style.display = m === 'data' ? '' : 'none';
+    document.getElementById('uni-msrc').classList.toggle('on', m === 'source');
+    document.getElementById('uni-mdata').classList.toggle('on', m === 'data');
+    document.getElementById('uni-panetitle').textContent = m === 'source' ? 'The frozen source' : 'The extraction data';
+    trailBox.style.display = m === 'source' ? '' : 'none';
+    if (m === 'data') buildData();
+  }
+  document.getElementById('uni-msrc').addEventListener('click', function () { setMode('source'); });
+  document.getElementById('uni-mdata').addEventListener('click', function () { setMode('data'); });
+
   function flashSource(aid) {
     if (!panelOn) { panelOn = true; setPref('panel', 1); applyState(); }
+    if (paneMode === 'data') {
+      buildData();
+      var it = dataBody.querySelector('.uni-jitem[data-aid="' + aid + '"]');
+      if (!it) return;
+      scrollToEl(it, srcBox);
+      it.classList.remove('uni-hit'); void it.offsetWidth; it.classList.add('uni-hit');
+      return;
+    }
     var marks = srcBody.querySelectorAll('mark.uni-anchor[data-aids~="' + aid + '"]');
     if (!marks.length) return;
     scrollToEl(marks[0], srcBox);
@@ -326,6 +396,7 @@
       if (row) { row.classList.add('uni-sel'); flashRow(a.row, opts.scrollLeft !== false); }
       flashSource(aid);
       srcBody.querySelectorAll('mark.uni-anchor[data-aids~="' + aid + '"]').forEach(function (m) { m.classList.add('uni-sel'); });
+      dataBody.querySelectorAll('.uni-jitem[data-aid="' + aid + '"]').forEach(function (el) { el.classList.add('uni-sel'); });
     }
     if (cy.$id(aid).nonempty()) focusNode(aid);
   }
@@ -495,4 +566,5 @@
 
   WIDE.addEventListener('change', applyState);
   applyState();
+  if (paneMode === 'data') setMode('data');
 })();

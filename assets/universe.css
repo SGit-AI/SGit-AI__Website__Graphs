@@ -95,6 +95,19 @@ body.uni-panel-on #unigraph-inline { display: none; }
   border-radius: 6px; background: #fff; cursor: pointer; padding: .1rem .5rem; }
 .uni-step .cnt { font-size: .74rem; opacity: .7; min-width: 4.2em; text-align: center; }
 
+/* the data mode: the raw extraction JSON, item by item, selection-synced */
+.uni-mode { display: inline-flex; gap: 0; border: 1px solid var(--line2, #ccc); border-radius: 7px; overflow: hidden; }
+.uni-mode button { font: inherit; font-size: .74rem; border: 0; background: #fff; cursor: pointer; padding: .15rem .55rem; }
+.uni-mode button.on { background: var(--accent, #3f6ad8); color: #fff; }
+.uni-jhead { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; opacity: .55; margin: 1.1rem 0 .4rem; }
+.uni-jlinks { font-size: .78rem; margin-bottom: .6rem; }
+.uni-jitem { border: 1px solid var(--line2, #e2e2e2); border-radius: 8px; margin: .35rem 0; cursor: pointer; }
+.uni-jitem pre { margin: 0; padding: .5rem .7rem; font-size: .72rem; line-height: 1.45; white-space: pre-wrap;
+  word-break: break-word; background: transparent; }
+.uni-jitem:hover { border-color: var(--accent, #3f6ad8); }
+.uni-jitem.uni-sel { border-color: #c58f00; background: rgba(240, 180, 41, .12); }
+.uni-jitem.uni-hit { animation: unirow 1.6s ease-out; }
+
 /* the graph's collapsible config strip */
 .uni-gopts { position: absolute; top: 6px; left: 6px; right: 6px; z-index: 6; display: flex;
   gap: .35rem; align-items: center; flex-wrap: wrap; background: rgba(255,255,255,.92);

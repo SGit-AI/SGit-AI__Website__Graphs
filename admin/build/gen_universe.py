@@ -8,7 +8,7 @@ Then run chrome.py, which fills in the nav and footer on the site pages.
 The layer model this implements (agreed with the founder, 23 August 2026):
 
   layer 0   the frozen bytes            v1/docs/sources/, hashed in v1/MANIFEST.json
-  layer 1   per-document local graphs   v2/universe/sources/<slug>.json   AUTHORED
+  layer 1   per-document local graphs   v2/universe/docs/<slug>/          AUTHORED
   layer 2   the bridge layer            cross-document edges              not yet
   layer 3   the book's universe         the six families                  not yet
 
@@ -37,7 +37,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from gen_packs import pdf_page_count, esc, fmt  # noqa: E402
 
 VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
-SRC = ROOT / "v2" / "universe" / "sources"
+DOCS = ROOT / "v2" / "universe" / "docs"
 OUT = ROOT / "v2" / "universe"
 DATA = OUT / "data"
 
@@ -122,8 +122,8 @@ def resolve_anchor(anchor, raw, ranges, errors, where):
             "chars": [at, at + len(q)], "para": para}
 
 
-def load_and_verify(path):
-    ex = json.loads(path.read_text())
+def load_and_verify(folder):
+    ex = json.loads((folder / "extraction.json").read_text())
     doc = ex["doc"]
     src = ROOT / doc["source"]
     raw = src.read_bytes()
@@ -133,6 +133,41 @@ def load_and_verify(path):
         errors.append(f"{doc['slug']}: source hash mismatch — extraction records "
                       f"{doc['sha256'][:12]}…, file is {got[:12]}…")
         raise SystemExit("gen_universe: " + errors[0])
+    if folder.name != doc["slug"]:
+        raise SystemExit(f"gen_universe: folder {folder.name} holds extraction for {doc['slug']}")
+
+    # the folder is standalone: its source copy must be byte-identical to the frozen original
+    copy = folder / "source.md"
+    if not copy.exists():
+        errors.append(f"{doc['slug']}: folder has no source.md — the standalone folder must carry its own copy")
+    elif hashlib.sha256(copy.read_bytes()).hexdigest() != doc["sha256"]:
+        errors.append(f"{doc['slug']}: source.md in the folder no longer matches the frozen original")
+
+    # crossrefs: every rating resolves in the usage model, every local path exists,
+    # every concept named exists in the extraction
+    model = json.loads((ROOT / "v2/universe/usage-model.json").read_text())
+    levels = {l["id"] for l in model["levels"]}
+    ex["_model"] = model
+    crossrefs = {"refs": []}
+    cr_path = folder / "crossrefs.json"
+    if cr_path.exists():
+        crossrefs = json.loads(cr_path.read_text())
+        concept_ids = {n["id"] for n in ex["nodes"]}
+        seen_ids = set()
+        for r in crossrefs["refs"]:
+            if r["id"] in seen_ids:
+                errors.append(f"crossrefs {doc['slug']}: duplicate ref id {r['id']!r}")
+            seen_ids.add(r["id"])
+            if r["rating"] not in levels:
+                errors.append(f"crossrefs {r['id']}: rating {r['rating']!r} is not in the usage model")
+            if not r["where"].startswith("http") and not (ROOT / r["where"]).exists():
+                errors.append(f"crossrefs {r['id']}: local path does not exist: {r['where']}")
+            for c in r.get("what", []):
+                if c not in concept_ids:
+                    errors.append(f"crossrefs {r['id']}: names unknown node {c!r}")
+            if not r.get("rated_by") or not r.get("rated"):
+                errors.append(f"crossrefs {r['id']}: a rating is a judgement and must be signed and dated")
+    ex["_crossrefs"] = crossrefs
     ranges, heads = sections_of(raw)
 
     anchored_sections = set()
@@ -221,7 +256,7 @@ def doc_body(ex, for_print=False):
     h = []
 
     h.append('<h2 id="method">How to read this page</h2>')
-    h.append('<p>This is <b>layer 1</b> of the universe: one document\'s local graph. Every entry below is a record that <em>this document says something, at a named anchor</em>. Whether what it says is true is not judged here; that judgement belongs to the book\'s universe, which will connect to these nodes. The four views are projections of <a href="sources/' + esc(d["slug"]) + '.json">one extraction file</a>, so they cannot disagree with each other, and the build refuses to ship if any quoted anchor is not found verbatim in the frozen source, so nothing below can cite words that are not there.</p>')
+    h.append('<p>This is <b>layer 1</b> of the universe: one document\'s local graph. Every entry below is a record that <em>this document says something, at a named anchor</em>. Whether what it says is true is not judged here; that judgement belongs to the book\'s universe, which will connect to these nodes. The four views are projections of <a href="docs/' + esc(d["slug"]) + '/extraction.json">one extraction file</a>, so they cannot disagree with each other, and the build refuses to ship if any quoted anchor is not found verbatim in the frozen source, so nothing below can cite words that are not there.</p>')
 
     # 1 · dictionary
     h.append('<h2 id="dictionary">1 &middot; The dictionary: the document\'s own vocabulary</h2>')
@@ -367,7 +402,9 @@ DOC_PAGE = """<!doctype html>
 <div class="docmeta">
   <span class="k">Layer</span><span class="v">1 &middot; per-document local graph &middot; <b>the pilot</b>, 1 of {total} sources</span>
   <span class="k">Source</span><span class="v"><a href="../../{source}">{source}</a> &middot; frozen, SHA-256 <code>{sha12}&hellip;</code></span>
-  <span class="k">Extraction</span><span class="v"><a href="sources/{slug}.json">sources/{slug}.json</a> &middot; authored by the agent, {extracted} &middot; every anchor build-verified against the frozen bytes</span>
+  <span class="k">Extraction</span><span class="v"><a href="docs/{slug}/extraction.json">docs/{slug}/extraction.json</a> &middot; authored by the agent, {extracted} &middot; every anchor build-verified against the frozen bytes</span>
+  <span class="k">The folder</span><span class="v"><a href="docs/{slug}/index.html">docs/{slug}/</a> &middot; the document's standalone home: the source copy, the extraction, the cross-references &middot; portable between repositories</span>
+  <span class="k">Used by</span><span class="v"><a href="docs/{slug}/index.html#crossrefs">{n_refs} known uses</a>, rated against <a href="usage-model.json">the usage model</a>: {refs_line}</span>
   <span class="k">Yield</span><span class="v">{n_concepts} concepts ({n_undefined} used-but-undefined) &middot; {n_claims} claims &middot; {n_hyp} hypotheses &middot; {n_obj} objective &middot; {n_ex} examples &middot; {n_edges} asserted edges</span>
   <span class="k">PDF</span><span class="v"><a href="{slug}.pdf">the extraction, printable</a> &middot; {pdf_pages} pages, for review with nothing else open</span>
 </div>
@@ -437,7 +474,7 @@ HUB = """<!doctype html>
 
   <div class="agent">
     <h4>For an agent</h4>
-    <p>The machine surface is <a href="data/universe.json">data/universe.json</a>: every node, edge, alias and distinction, with resolved byte offsets into the frozen sources and the SHA-256 each anchor was verified against. The authored extraction files are under <code>sources/</code>. Treat a layer 1 node as a statement about a document, never as a statement about the world. If you are reviewing an extraction, use its PDF and read nothing else; come back item by item against the node ids.</p>
+    <p>The machine surface is <a href="data/universe.json">data/universe.json</a>: every node, edge, alias and distinction, with resolved byte offsets into the frozen sources and the SHA-256 each anchor was verified against. Each document's standalone folder under <code>docs/</code> holds its source copy, its extraction and its cross-references (<code>crossrefs.json</code>, rated against <code>usage-model.json</code>). Treat a layer 1 node as a statement about a document, never as a statement about the world. If you are reviewing an extraction, use its PDF and read nothing else; come back item by item against the node ids.</p>
   </div>
 </main>
 
@@ -469,13 +506,82 @@ PRINT_PAGE = """<!doctype html>
 """
 
 
+FOLDER_PAGE = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{slug} &mdash; the document folder &mdash; graphs.sgit.ai</title>
+<meta name="description" content="The standalone folder for one source document: its byte copy of the frozen source, its extraction, and its cross-references rated against the usage maturity model. Portable between repositories.">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/universe/docs/{slug}/index.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="graphs.sgit.ai">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/universe/docs/{slug}/index.html">
+<meta property="og:title" content="{slug}: the document folder">
+<meta property="og:description" content="Everything the estate holds about one source document, in one portable folder.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../../../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row"></div></nav>
+
+<main class="doc">
+  <div class="crumb"><a href="../../../../index.html">graphs.sgit.ai</a> &rarr; <a href="../../../index.html">the second edition</a> &rarr; <a href="../../index.html">the universe</a> &rarr; <a href="../../{slug}.html">{slug}</a> &rarr; <b>the folder</b></div>
+  <h1>The document folder: <em>{title}</em></h1>
+  <p class="lead">Everything this estate holds about one source document, in one standalone folder that can be moved or copied between repositories without losing anything. The reader over it is at <a href="../../{slug}.html">the document page</a>; these files are the sources of truth it projects.</p>
+
+  <h2 id="files">The files</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>File</th><th>What it is</th><th>Integrity</th></tr></thead>
+    <tbody>
+{file_rows}
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="crossrefs">Where this document is used, and how well</h2>
+  <p>{cr_note}</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Use</th><th>Of</th><th>How</th><th>Rating</th><th>Judgement</th></tr></thead>
+    <tbody>
+{cr_rows}
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="model">The usage maturity model</h2>
+  <p>{model_principle}</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Level</th><th>Meaning</th><th>The test</th></tr></thead>
+    <tbody>
+{model_rows}
+    </tbody>
+  </table>
+  </div>
+
+  <div class="agent">
+    <h4>For an agent</h4>
+    <p>This folder is self-contained: <code>source.md</code> is a build-verified byte copy of the frozen original, <code>extraction.json</code> is the layer 1 local graph with gate-verified anchors, and <code>crossrefs.json</code> records the known uses of this document with a signed, dated rating against <code>../../usage-model.json</code>. If you use this document's material anywhere, the honest move is to add a crossref entry for your use, rated unrated, so the document's steward can judge it. A rating judges the use, never the user.</p>
+  </div>
+</main>
+
+<footer class="site"><div class="cols"></div></footer>
+</body>
+</html>
+"""
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     DATA.mkdir(exist_ok=True)
     rows = []
     published = {"version": VERSION, "layer": 1, "sources": []}
-    for f in sorted(SRC.glob("*.json")):
-        ex = load_and_verify(f)
+    for folder in sorted(d for d in DOCS.iterdir() if d.is_dir()):
+        ex = load_and_verify(folder)
         d = ex["doc"]
         concepts = by_family(ex, "concept")
         stats = dict(
@@ -487,6 +593,14 @@ def main():
             n_ex=len(by_family(ex, "example")),
             n_edges=len(ex["edges"]),
         )
+        crs = ex["_crossrefs"]["refs"]
+        model = ex["_model"]
+        by_rating = {}
+        for r in crs:
+            by_rating[r["rating"]] = by_rating.get(r["rating"], 0) + 1
+        refs_line = " &middot; ".join(f'{v} {k}' for k, v in sorted(by_rating.items())) or "none recorded yet"
+        stats["n_refs"] = len(crs)
+
         lead = (f'What one document actually says, as a graph: {stats["n_concepts"]} concepts in its own words, '
                 f'{stats["n_claims"]} claims each carrying how the document supports them, '
                 f'{stats["n_hyp"]} hypotheses, {stats["n_ex"]} worked demonstrations and {stats["n_edges"]} asserted relations, '
@@ -524,24 +638,69 @@ def main():
                             "label": f'{x["a"]} is also called {x["b"]}'})
         unidata = json.dumps({"slug": d["slug"], "source": "../../" + d["source"],
                               "sha256": d["sha256"], "anchors": anchors,
+                              "extraction": f'docs/{d["slug"]}/extraction.json',
+                              "folder": f'docs/{d["slug"]}/',
                               "elements": graph_json(ex)})
 
         (OUT / f'{d["slug"]}.html').write_text(DOC_PAGE.format(
             title=esc(d["title"]), slug=d["slug"], desc=esc(desc), lead=lead,
             source=d["source"], sha12=d["sha256"][:12], extracted=d["extracted"],
             total=TOTAL_SOURCES, body=body, pdf_pages=pages or "?",
-            unidata=unidata,
+            unidata=unidata, refs_line=refs_line,
             **stats))
+
+        # the folder page: files with their integrity, the crossrefs, the model
+        label = {n["id"]: n["label"] for n in ex["nodes"]}
+        file_rows = []
+        for fname, what, integ in [
+            ("source.md", "A byte copy of the frozen source, so the folder stands alone.",
+             f'verified equal to <code>{d["source"]}</code> &middot; SHA-256 <code>{d["sha256"][:16]}&hellip;</code>'),
+            ("extraction.json", "The layer 1 local graph: dictionary, claims, hypotheses, demonstrations, relations, every one anchored.",
+             "every anchor verified against the frozen bytes on every build (gate 23)"),
+            ("crossrefs.json", "The known uses of this document across the estate, each rated against the usage model.",
+             "ratings, paths and named concepts validated on every build"),
+            ("README.md", "What this folder is, for a reader who finds it outside this repository.", "&mdash;"),
+        ]:
+            fp = folder / fname
+            size = f"{fp.stat().st_size:,} bytes" if fp.exists() else "missing"
+            file_rows.append(f'      <tr><td><a href="{fname}"><code>{fname}</code></a><div class="small dim">{size}</div></td>'
+                             f'<td>{what}</td><td class="small dim">{integ}</td></tr>')
+        cr_rows = []
+        rcls = {"aligned": "rs-applied", "stretched": "rs-discussing", "misaligned": "rs-declined", "unrated": "rs-open"}
+        for r in crs:
+            where = (f'<a href="{r["where"]}">{esc(r["where"])}</a>' if r["where"].startswith("http")
+                     else f'<a href="../../../../{r["where"]}">{esc(r["where"])}</a>')
+            what_l = ", ".join(
+                f'<a href="../../{d["slug"]}.html#n-{c}">{esc(label[c])}</a>' for c in r.get("what", []))
+            sup = f'<div class="small dim">superseded: {esc(r["superseded"])}</div>' if r.get("superseded") else ""
+            cr_rows.append(
+                f'      <tr id="cr-{r["id"]}"><td>{where}{sup}</td><td class="small">{what_l}</td>'
+                f'<td class="small">{r["how"]}</td>'
+                f'<td><span class="rstate {rcls.get(r["rating"], "rs-open")}">{r["rating"]}</span></td>'
+                f'<td class="small dim">{esc(r["note"])}<div>{esc(r["rated_by"])} &middot; {esc(r["rated"])}</div></td></tr>')
+        model_rows = []
+        for lv in model["levels"]:
+            model_rows.append(f'      <tr><td><span class="rstate {rcls.get(lv["id"], "rs-open")}">{esc(lv["label"])}</span></td>'
+                              f'<td>{esc(lv["meaning"])}</td><td class="small dim">{esc(lv["test"])}</td></tr>')
+        (folder / "index.html").write_text(FOLDER_PAGE.format(
+            slug=d["slug"], title=esc(d["title"]), file_rows="\n".join(file_rows),
+            cr_note=esc(ex["_crossrefs"].get("note", "")), cr_rows="\n".join(cr_rows),
+            model_principle=esc(model["principle"]), model_rows="\n".join(model_rows)))
 
         rows.append(
             f'      <tr><td><a href="{d["slug"]}.html"><b>{esc(d["title"])}</b></a>'
             f'<div class="small dim">dated {d["dated"]} &middot; the cornerstone; the book\'s subtitle is this document\'s subtitle</div></td>'
             f'<td><span class="rstate rs-applied">extracted &middot; pilot</span></td>'
             f'<td class="small">{stats["n_concepts"]} concepts &middot; {stats["n_claims"]} claims &middot; '
-            f'{stats["n_edges"]} edges &middot; <a href="{d["slug"]}.pdf">PDF, {pages}pp</a></td></tr>')
+            f'{stats["n_edges"]} edges &middot; {stats["n_refs"]} known uses &middot; '
+            f'<a href="docs/{d["slug"]}/index.html">the folder</a> &middot; '
+            f'<a href="{d["slug"]}.pdf">PDF, {pages}pp</a></td></tr>')
 
         published["sources"].append({**{k: d[k] for k in ("slug", "title", "source", "sha256", "dated", "extracted")},
                                      **stats, "pdf_pages": pages,
+                                     "folder": f'v2/universe/docs/{d["slug"]}',
+                                     "source_copy_sha256": hashlib.sha256((folder / "source.md").read_bytes()).hexdigest(),
+                                     "crossrefs": crs,
                                      "nodes": ex["nodes"], "edges": ex["edges"],
                                      "near_but_not": ex["near_but_not"], "aliases": ex["aliases"],
                                      "taxonomy": ex["taxonomy"], "coverage": ex["coverage"]})

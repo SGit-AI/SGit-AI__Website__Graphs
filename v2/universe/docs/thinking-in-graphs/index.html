@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>thinking-in-graphs &mdash; the document folder &mdash; graphs.sgit.ai</title>
+<meta name="description" content="The standalone folder for one source document: its byte copy of the frozen source, its extraction, and its cross-references rated against the usage maturity model. Portable between repositories.">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/universe/docs/thinking-in-graphs/index.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="graphs.sgit.ai">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/universe/docs/thinking-in-graphs/index.html">
+<meta property="og:title" content="thinking-in-graphs: the document folder">
+<meta property="og:description" content="Everything the estate holds about one source document, in one portable folder.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../../../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../../../index.html">graphs<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
+  <span class="stage-pill">reference draft</span>
+  <a class="ver" href="../../../../admin/versions.html" title="Site release history">v0.4.10</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../../../../v1/start/index.html">Start here<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../../v1/start/index.html">The five-minute version</a>
+      <a class="sl" href="../../../../v1/why-graphs/index.html">Why graphs at all</a>
+      <a class="sl" href="../../../../v1/glossary/index.html">Glossary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../../../../v2/index.html">The book<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../../v2/index.html">The second edition &middot; current</a>
+      <a class="sl" href="../../../../v2/dev-pack/index.html">&hellip; the dev pack: the plan</a>
+      <a class="sl" href="../../../../v2/memos/index.html">&hellip; the memos</a>
+      <a class="sl" href="../../../../v2/packs/index.html">&hellip; the review packs</a>
+      <a class="sl" href="../../../../v2/universe/index.html">&hellip; the universe, layer 1</a>
+      <a class="sl" href="../../../../v2/lexicon/index.html">&hellip; the lexicon, in scopes</a>
+      <a class="sl" href="../../../../v2/methods/index.html">&hellip; the methods register</a>
+      <a class="sl" href="../../../../v2/artefacts/index.html">&hellip; the artefact catalogue</a>
+      <a class="sl" href="../../../../decisions/index.html">&hellip; the open decisions</a>
+      <a class="sl" href="../../../../v1/book/index.html">The first edition &middot; frozen</a>
+      <a class="sl" href="../../../../v1/book/single.html">&hellip; read it in one page</a>
+      <a class="sl" href="../../../../v1/book/changes.html">&hellip; what changed between versions</a>
+      <a class="sl" href="../../../../v1/reviews/index.html">&hellip; the reviews</a>
+      <a class="sl" href="../../../../v1/docs/index.html">&hellip; the sources it came from</a>
+      <a class="sl" href="../../../../v1/altitudes/index.html">&hellip; the altitude ladder</a>
+      <a class="sl" href="../../../../v1/book/meaning-through-connectivity.pdf">&hellip; the print PDF (6&times;9)</a>
+      <a class="sl" href="../../../../v1/book/meaning-through-connectivity-screen.pdf">&hellip; the screen PDF (tablet)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../../v1/grammar/index.html">The grammar<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../../v1/grammar/index.html">The rules you can apply tomorrow</a>
+      <a class="sl" href="../../../../v1/grammar/edge-set.html">The edge set</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../../v1/depth/index.html">Depth<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../../v1/depth/index.html">The full argument</a>
+      <a class="sl" href="../../../../v1/depth/boundaries.html">A graph at every boundary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../../v1/vaults/index.html">The vaults<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../../v1/vaults/index.html">The vaults, opened</a>
+      <a class="sl" href="../../../../v1/vaults/voice-debrief/index.html">VoiceDebrief</a>
+      <a class="sl" href="../../../../v1/vaults/voice-debrief/junction.html">&hellip; the junction rule</a>
+      <a class="sl" href="../../../../v1/vaults/voice-debrief/absence.html">&hellip; the empty layer</a>
+      <a class="sl" href="../../../../v1/vaults/regulation-graph/index.html">Regulation Graph</a>
+      <a class="sl" href="../../../../v1/vaults/regulation-graph/provenance.html">&hellip; the provenance chain</a>
+      <a class="sl" href="../../../../v1/vaults/regulation-graph/engines.html">&hellip; the query engines</a>
+      <a class="sl" href="../../../../v1/vaults/risk-mandate/index.html">Risk Mandate</a>
+      <a class="sl" href="../../../../v1/vaults/agentic-browser-isolation/index.html">Agentic Browser Isolation</a>
+      <a class="sl" href="../../../../v1/vaults/agentic-browser-isolation/acceptance.html">&hellip; the acceptance mechanism</a>
+      <a class="sl" href="../../../../v1/vaults/risk-graph-explorer/index.html">Risk Graph Explorer</a>
+      <a class="sl" href="../../../../v1/vaults/capability-scale.html">The capability scale</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../../v1/examples/index.html">Examples<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../../v1/examples/index.html">Worked graphs, with real numbers</a>
+      <a class="sl" href="../../../../v1/examples/browser-isolation.html">Browser isolation</a>
+      <a class="sl" href="../../../../v1/examples/2fa.html">The 2FA graph</a>
+      <a class="sl" href="../../../../v1/examples/article-26-5.html">Article 26(5), end to end</a>
+      <a class="sl" href="../../../../v1/maps/index.html">Wardley maps as graphs</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../../v1/shipped/index.html">Reality<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../../v1/shipped/index.html">What ships, what is argued</a>
+      <a class="sl" href="../../../../v1/origins/index.html">Origins: 2026</a>
+      <a class="sl" href="../../../../v1/network/index.html">The network</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../../v1/documents/index.html">Site<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../../v1/documents/index.html">The documents</a>
+      <a class="sl" href="../../../../v1/documents/what-the-graphs-found.html">&hellip; what the graphs found</a>
+      <a class="sl" href="../../../../v2/memos/index.html">The memos</a>
+      <a class="sl" href="../../../../v2/packs/index.html">The review packs</a>
+      <a class="sl" href="../../../../v2/dev-pack/index.html">The dev pack: the second book</a>
+      <a class="sl" href="../../../../admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl" href="../../../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../../../admin/publishing.html">Publishing the book</a>
+      <a class="sl" href="../../../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../../../v1/about/participant.html">Where we lose</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Graphs">★ GitHub</a>
+  <script src="../../../../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+  <div class="crumb"><a href="../../../../index.html">graphs.sgit.ai</a> &rarr; <a href="../../../index.html">the second edition</a> &rarr; <a href="../../index.html">the universe</a> &rarr; <a href="../../thinking-in-graphs.html">thinking-in-graphs</a> &rarr; <b>the folder</b></div>
+  <h1>The document folder: <em>Thinking in Graphs: Meaning Through Connectivity</em></h1>
+  <p class="lead">Everything this estate holds about one source document, in one standalone folder that can be moved or copied between repositories without losing anything. The reader over it is at <a href="../../thinking-in-graphs.html">the document page</a>; these files are the sources of truth it projects.</p>
+
+  <h2 id="files">The files</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>File</th><th>What it is</th><th>Integrity</th></tr></thead>
+    <tbody>
+      <tr><td><a href="source.md"><code>source.md</code></a><div class="small dim">36,779 bytes</div></td><td>A byte copy of the frozen source, so the folder stands alone.</td><td class="small dim">verified equal to <code>v1/docs/sources/thinking-in-graphs.md</code> &middot; SHA-256 <code>9d23354fc9a674ae&hellip;</code></td></tr>
+      <tr><td><a href="extraction.json"><code>extraction.json</code></a><div class="small dim">30,361 bytes</div></td><td>The layer 1 local graph: dictionary, claims, hypotheses, demonstrations, relations, every one anchored.</td><td class="small dim">every anchor verified against the frozen bytes on every build (gate 23)</td></tr>
+      <tr><td><a href="crossrefs.json"><code>crossrefs.json</code></a><div class="small dim">3,954 bytes</div></td><td>The known uses of this document across the estate, each rated against the usage model.</td><td class="small dim">ratings, paths and named concepts validated on every build</td></tr>
+      <tr><td><a href="README.md"><code>README.md</code></a><div class="small dim">1,208 bytes</div></td><td>What this folder is, for a reader who finds it outside this repository.</td><td class="small dim">&mdash;</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="crossrefs">Where this document is used, and how well</h2>
+  <p>A first pass, from what this estate knows about its own use of the document. Each entry is an authored judgement, signed and dated. The entry for the first edition's fractal definition is the model earning its keep on day one: a stretched use, caught, corrected and recorded rather than erased.</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Use</th><th>Of</th><th>How</th><th>Rating</th><th>Judgement</th></tr></thead>
+    <tbody>
+      <tr id="cr-book-thesis"><td><a href="../../../../v1/book/index.html">v1/book/index.html</a></td><td class="small"><a href="../../thinking-in-graphs.html#n-meaning-through-connectivity">meaning through connectivity</a>, <a href="../../thinking-in-graphs.html#n-node">node</a></td><td class="small">derivation</td><td><span class="rstate rs-applied">aligned</span></td><td class="small dim">The first edition's thesis and its subtitle are this document's central claim and subtitle. The book argues up to what the document states in Part 1.<div>agent &middot; 2026-08-24</div></td></tr>
+      <tr id="cr-front-page-claim"><td><a href="../../../../index.html">index.html</a></td><td class="small"><a href="../../thinking-in-graphs.html#n-meaning-through-connectivity">meaning through connectivity</a>, <a href="../../thinking-in-graphs.html#n-connectivity">connectivity</a></td><td class="small">paraphrase</td><td><span class="rstate rs-applied">aligned</span></td><td class="small dim">The site's lead sentence is a faithful compression of the central claim.<div>agent &middot; 2026-08-24</div></td></tr>
+      <tr id="cr-concept-layer"><td><a href="../../../../v1/altitudes/data/altitudes.json">v1/altitudes/data/altitudes.json</a></td><td class="small"><a href="../../thinking-in-graphs.html#n-meaning-through-connectivity">meaning through connectivity</a>, <a href="../../thinking-in-graphs.html#n-confidence-spectrum">the confidence spectrum</a>, <a href="../../thinking-in-graphs.html#n-enrichment">enrichment</a>, <a href="../../thinking-in-graphs.html#n-anchor-node">anchor node</a>, <a href="../../thinking-in-graphs.html#n-compatibility">compatibility</a>, <a href="../../thinking-in-graphs.html#n-honest-uncertainty">honest uncertainty</a></td><td class="small">derivation</td><td><span class="rstate rs-applied">aligned</span></td><td class="small dim">Six of the first edition's twenty-four concepts compress ideas this document defines; the lexicon's mappings record which.<div>agent &middot; 2026-08-24</div></td></tr>
+      <tr id="cr-v1-fractal-definition"><td><a href="../../../../v1/altitudes/data/altitudes.json">v1/altitudes/data/altitudes.json</a><div class="small dim">superseded: the lexicon's fractal entry carries the corrected definition since v0.4.6</div></td><td class="small"><a href="../../thinking-in-graphs.html#n-fractal-principle">the fractal principle</a>, <a href="../../thinking-in-graphs.html#n-local-vocabulary">local vocabulary</a></td><td class="small">derivation</td><td><span class="rstate rs-discussing">stretched</span></td><td class="small dim">The first edition defined fractal as one grammar at every level: uniformity. This document's Part 3 and Part 7 license local vocabulary and override, which is composition, not uniformity. Caught by the founder (brief 20), corrected in the lexicon at v0.4.6 with the superseded definition kept visible. The current book definition is aligned; this entry records the stretched one because history stays in the ledger.<div>agent &middot; 2026-08-24</div></td></tr>
+      <tr id="cr-lexicon-adoption"><td><a href="../../../../v2/lexicon/scopes/00__book.json">v2/lexicon/scopes/00__book.json</a></td><td class="small"><a href="../../thinking-in-graphs.html#n-lexicon">the Lexicon</a>, <a href="../../thinking-in-graphs.html#n-local-vocabulary">local vocabulary</a></td><td class="small">definition</td><td><span class="rstate rs-applied">aligned</span></td><td class="small dim">The book scope adopts this document's negative definition of the Lexicon verbatim in spirit: not a dictionary, not a schema registry.<div>agent &middot; 2026-08-24</div></td></tr>
+      <tr id="cr-issues-fs-site"><td><a href="https://issues-fs.sgit.ai/concepts/index.html">https://issues-fs.sgit.ai/concepts/index.html</a></td><td class="small"><a href="../../thinking-in-graphs.html#n-meaning-through-connectivity">meaning through connectivity</a></td><td class="small">citation</td><td><span class="rstate rs-applied">aligned</span></td><td class="small dim">The sibling site cites this document as the foundational one, with its word count and date, and paraphrases the claim faithfully.<div>agent &middot; 2026-08-24</div></td></tr>
+      <tr id="cr-docs-measured"><td><a href="../../../../v1/docs/data/docs.json">v1/docs/data/docs.json</a></td><td class="small"><a href="../../thinking-in-graphs.html#n-meaning-through-connectivity">meaning through connectivity</a></td><td class="small">measured</td><td><span class="rstate rs-applied">aligned</span></td><td class="small dim">The measured concept-by-document matrix counts this document's phrase hits; mechanical, no interpretation to misalign.<div>agent &middot; 2026-08-24</div></td></tr>
+      <tr id="cr-universe-extraction"><td><a href="../../../../v2/universe/docs/thinking-in-graphs/extraction.json">v2/universe/docs/thinking-in-graphs/extraction.json</a></td><td class="small"><a href="../../thinking-in-graphs.html#n-meaning-through-connectivity">meaning through connectivity</a>, <a href="../../thinking-in-graphs.html#n-node">node</a>, <a href="../../thinking-in-graphs.html#n-connectivity">connectivity</a></td><td class="small">quote</td><td><span class="rstate rs-applied">aligned</span></td><td class="small dim">The layer 1 extraction quotes the document at recorded byte offsets and the build fails if any quote is not at its bytes: aligned by construction.<div>agent &middot; 2026-08-24</div></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="model">The usage maturity model</h2>
+  <p>A source document captures, when possible, the references of where it is being used and quoted, so that the document, and ideally its author, can rate each use of its contents. The rating is a judgement about the USE, never about the user: the same site can carry aligned uses and misaligned ones side by side, and finding a misaligned one is the mechanism working.</p>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Level</th><th>Meaning</th><th>The test</th></tr></thead>
+    <tbody>
+      <tr><td><span class="rstate rs-applied">Aligned</span></td><td>A correct use. The use says what the source says: a verbatim quote in its context, or a faithful paraphrase or derivation that the source's author would recognise as their idea.</td><td class="small dim">Read the use, then the cited part of the source. Would the source's author say: yes, that is what I said?</td></tr>
+      <tr><td><span class="rstate rs-discussing">Stretched</span></td><td>An ambiguous or loosened use. Recognisably derived from the source, but context was dropped, scope was widened, or a nuance the source insists on was lost. Not false, and not quite what the source says.</td><td class="small dim">The author would say: that came from my document, but it is not quite what I meant, or it leaves out something I said mattered.</td></tr>
+      <tr><td><span class="rstate rs-declined">Misaligned</span></td><td>A wrong use. The use claims the source says something it does not: a misquote, an inverted meaning, an attribution the text cannot support.</td><td class="small dim">The author would say: that is not what the document says.</td></tr>
+      <tr><td><span class="rstate rs-open">Unrated</span></td><td>A known use that nobody has judged yet. Recorded so the absence of a rating is visible rather than hidden.</td><td class="small dim">None. This is the named absence, awaiting a judgement.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="agent">
+    <h4>For an agent</h4>
+    <p>This folder is self-contained: <code>source.md</code> is a build-verified byte copy of the frozen original, <code>extraction.json</code> is the layer 1 local graph with gate-verified anchors, and <code>crossrefs.json</code> records the known uses of this document with a signed, dated rating against <code>../../usage-model.json</code>. If you use this document's material anywhere, the honest move is to add a crossref entry for your use, rated unrated, so the document's steward can judge it. A rating judges the use, never the user.</p>
+  </div>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">graphs<span>.sgit.ai</span></div>
+    <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
+    <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
+    <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../../../../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../../../admin/versions.html">v0.4.10</a> · <a href="../../../../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>Start here</h4>
+    <a href="../../../../v1/start/index.html">&#8594; The five-minute version</a>
+    <a href="../../../../v1/why-graphs/index.html">Why graphs at all</a>
+    <a href="../../../../v1/glossary/index.html">Glossary</a>
+    <a href="../../../../v1/book/index.html">The book</a>
+    <a href="../../../../v1/book/single.html">&nbsp;&nbsp;&hellip; in one page</a>
+    <a href="../../../../v1/book/meaning-through-connectivity.pdf">&nbsp;&nbsp;&hellip; as a print PDF</a>
+    <a href="../../../../v1/book/meaning-through-connectivity-screen.pdf">&nbsp;&nbsp;&hellip; as a screen PDF</a>
+  </div>
+  <div>
+    <h4>The grammar</h4>
+    <a href="../../../../v1/grammar/index.html">The rules</a>
+    <a href="../../../../v1/grammar/edge-set.html">The edge set</a>
+    <a href="../../../../v1/depth/index.html">The full argument</a>
+    <a href="../../../../v1/depth/boundaries.html">A graph at every boundary</a>
+  </div>
+  <div>
+    <h4>Worked graphs</h4>
+    <a href="../../../../v1/examples/index.html">All of them</a>
+    <a href="../../../../v1/examples/browser-isolation.html">Browser isolation</a>
+    <a href="../../../../v1/examples/2fa.html">The 2FA graph</a>
+    <a href="../../../../v1/examples/article-26-5.html">Article 26(5)</a>
+    <a href="../../../../v1/maps/index.html">Wardley maps</a>
+  </div>
+  <div>
+    <h4>Reality &amp; site</h4>
+    <a href="../../../../v1/shipped/index.html">What ships, what is argued</a>
+    <a href="../../../../v1/origins/index.html">Origins: 2026</a>
+    <a href="../../../../v1/network/index.html">The network</a>
+    <a href="../../../../v1/documents/index.html">The documents</a>
+    <a href="../../../../admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="../../../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
- "version": "v0.4.9",
+ "version": "v0.4.10",
  "layer": 1,
  "sources": [
   {
@@ -16,7 +16,120 @@
    "n_obj": 1,
    "n_ex": 4,
    "n_edges": 8,
+   "n_refs": 8,
    "pdf_pages": 14,
+   "folder": "v2/universe/docs/thinking-in-graphs",
+   "source_copy_sha256": "9d23354fc9a674ae34ddcc01095afbc2c7c3831e52e7bf5da7ae02df244a561a",
+   "crossrefs": [
+    {
+     "id": "book-thesis",
+     "where": "v1/book/index.html",
+     "what": [
+      "meaning-through-connectivity",
+      "node"
+     ],
+     "how": "derivation",
+     "rating": "aligned",
+     "note": "The first edition's thesis and its subtitle are this document's central claim and subtitle. The book argues up to what the document states in Part 1.",
+     "rated_by": "agent",
+     "rated": "2026-08-24"
+    },
+    {
+     "id": "front-page-claim",
+     "where": "index.html",
+     "what": [
+      "meaning-through-connectivity",
+      "connectivity"
+     ],
+     "how": "paraphrase",
+     "rating": "aligned",
+     "note": "The site's lead sentence is a faithful compression of the central claim.",
+     "rated_by": "agent",
+     "rated": "2026-08-24"
+    },
+    {
+     "id": "concept-layer",
+     "where": "v1/altitudes/data/altitudes.json",
+     "what": [
+      "meaning-through-connectivity",
+      "confidence-spectrum",
+      "enrichment",
+      "anchor-node",
+      "compatibility",
+      "honest-uncertainty"
+     ],
+     "how": "derivation",
+     "rating": "aligned",
+     "note": "Six of the first edition's twenty-four concepts compress ideas this document defines; the lexicon's mappings record which.",
+     "rated_by": "agent",
+     "rated": "2026-08-24"
+    },
+    {
+     "id": "v1-fractal-definition",
+     "where": "v1/altitudes/data/altitudes.json",
+     "what": [
+      "fractal-principle",
+      "local-vocabulary"
+     ],
+     "how": "derivation",
+     "rating": "stretched",
+     "note": "The first edition defined fractal as one grammar at every level: uniformity. This document's Part 3 and Part 7 license local vocabulary and override, which is composition, not uniformity. Caught by the founder (brief 20), corrected in the lexicon at v0.4.6 with the superseded definition kept visible. The current book definition is aligned; this entry records the stretched one because history stays in the ledger.",
+     "superseded": "the lexicon's fractal entry carries the corrected definition since v0.4.6",
+     "rated_by": "agent",
+     "rated": "2026-08-24"
+    },
+    {
+     "id": "lexicon-adoption",
+     "where": "v2/lexicon/scopes/00__book.json",
+     "what": [
+      "lexicon",
+      "local-vocabulary"
+     ],
+     "how": "definition",
+     "rating": "aligned",
+     "note": "The book scope adopts this document's negative definition of the Lexicon verbatim in spirit: not a dictionary, not a schema registry.",
+     "rated_by": "agent",
+     "rated": "2026-08-24"
+    },
+    {
+     "id": "issues-fs-site",
+     "where": "https://issues-fs.sgit.ai/concepts/index.html",
+     "what": [
+      "meaning-through-connectivity"
+     ],
+     "how": "citation",
+     "rating": "aligned",
+     "note": "The sibling site cites this document as the foundational one, with its word count and date, and paraphrases the claim faithfully.",
+     "rated_by": "agent",
+     "rated": "2026-08-24"
+    },
+    {
+     "id": "docs-measured",
+     "where": "v1/docs/data/docs.json",
+     "what": [
+      "meaning-through-connectivity"
+     ],
+     "how": "measured",
+     "rating": "aligned",
+     "note": "The measured concept-by-document matrix counts this document's phrase hits; mechanical, no interpretation to misalign.",
+     "rated_by": "agent",
+     "rated": "2026-08-24"
+    },
+    {
+     "id": "universe-extraction",
+     "where": "v2/universe/docs/thinking-in-graphs/extraction.json",
+     "what": [
+      "meaning-through-connectivity",
+      "node",
+      "connectivity"
+     ],
+     "how": "quote",
+     "rating": "aligned",
+     "note": "The layer 1 extraction quotes the document at recorded byte offsets and the build fails if any quote is not at its bytes: aligned by construction.",
+     "rated_by": "agent",
+     "rated": "2026-08-24"
+    }
+   ],
    "nodes": [
     {
      "id": "node",
