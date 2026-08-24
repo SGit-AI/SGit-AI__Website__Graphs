@@ -75,10 +75,11 @@ export function panelMarkup(defaultModel) {
     '<div class="uchat-trace" id="uc-trace"></div>' +
     '<sg-llm-chat-input></sg-llm-chat-input>' +
     '<div class="uchat-nokey" id="uc-nokey"><b>No model connected.</b> The page is unaffected &mdash; it never needed one. To chat, <button id="uc-nokey-open">open model settings</button> and paste your OpenRouter key. It stays in this browser.</div>' +
+    '<div class="uchat-usage" id="uc-usage" hidden><sg-llm-stats></sg-llm-stats></div>' +
     '<div class="uchat-foot">' +
     '  <span class="model" id="uc-model">&mdash;</span>' +
     '  <span class="model" id="uc-pfoot"></span>' +
     '  <span id="uc-vstat"></span><span class="sp"></span>' +
-    '  <sg-llm-stats compact></sg-llm-stats>' +
+    '  <button class="uchat-hbtn" id="uc-usage-btn" title="Tokens, cost and streaming details" aria-pressed="false">usage &#9662;</button>' +
     '</div>';
 }

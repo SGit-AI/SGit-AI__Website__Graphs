@@ -310,6 +310,13 @@ function wireHeader() {
     }
   });
   document.getElementById('uc-nokey-open').addEventListener('click', () => toggleDrawer('settings', true));
+  document.getElementById('uc-usage-btn').addEventListener('click', () => {
+    const box = document.getElementById('uc-usage');
+    const btn = document.getElementById('uc-usage-btn');
+    box.hidden = !box.hidden;
+    btn.setAttribute('aria-pressed', String(!box.hidden));
+    btn.innerHTML = box.hidden ? 'usage &#9662;' : 'usage &#9652;';
+  });
 
   const view = document.getElementById('uc-lvl-view');
   const author = document.getElementById('uc-lvl-author');
@@ -343,7 +350,7 @@ function wireResize() {
   grip.addEventListener('pointerdown', (e) => {
     e.preventDefault();
     grip.classList.add('drag');
-    grip.setPointerCapture(e.pointerId);
+    try { grip.setPointerCapture(e.pointerId); } catch (err) { /* capture is a nicety */ }
     const move = (ev) => {
       const px = Math.min(Math.max(window.innerWidth - ev.clientX, 320), 760);
       document.documentElement.style.setProperty('--uchat-w', px + 'px');

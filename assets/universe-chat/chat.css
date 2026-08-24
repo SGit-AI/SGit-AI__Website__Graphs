@@ -31,10 +31,16 @@ body.uchat-open .uchat-fab { display: none; }
 .uchat[hidden] { display: none; }
 
 .uchat-resize {
-  position: absolute; left: -4px; top: 0; bottom: 0; width: 8px;
+  position: absolute; left: -12px; top: 0; bottom: 0; width: 22px;
   cursor: ew-resize; z-index: 391;
+  touch-action: none;                      /* iPad: the drag is ours, not a scroll */
 }
-.uchat-resize:hover, .uchat-resize.drag { background: rgba(124, 158, 248, .25); }
+.uchat-resize::after {
+  content: ''; position: absolute; left: 9px; top: 50%; height: 56px; width: 4px;
+  transform: translateY(-50%); border-radius: 2px; background: #2d3060;
+}
+.uchat-resize:hover, .uchat-resize.drag { background: rgba(124, 158, 248, .18); }
+.uchat-resize:hover::after, .uchat-resize.drag::after { background: #7c9ef8; }
 
 /* ---- header -------------------------------------------------------------- */
 .uchat-head {
@@ -108,6 +114,11 @@ body.uchat-open .uchat-fab { display: none; }
 
 /* ---- input + footer -------------------------------------------------------- */
 .uchat sg-llm-chat-input { flex-shrink: 0; }
+.uchat-usage {
+  flex-shrink: 0; max-height: 42vh; overflow-y: auto;
+  border-top: 1px solid #26263f; background: #0b0b16;
+}
+.uchat-usage[hidden] { display: none; }
 .uchat-foot {
   flex-shrink: 0; display: flex; align-items: center; gap: 8px;
   padding: 5px 12px; border-top: 1px solid #26263f; background: #101024;
