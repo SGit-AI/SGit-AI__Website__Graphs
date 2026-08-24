@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.19</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.20</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -131,6 +131,11 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.4.20</td>
+        <td>24 August 2026</td>
+        <td><b>The chat learns to listen and to draw: voice notes and infographics, both landing in the vault.</b> The founder's memo of 24 August, round two. A <b>mic button</b> in the chat header records a voice note (the family's <code>sg-audio</code>), converts it to WAV in the browser (<code>sg-audio-decode</code> &mdash; the one format every OpenRouter audio model accepts), transcribes it with a curated audio-capable model (<code>google/gemini-3.5-flash</code>) using the user's own key, and sends the transcript as an ordinary chat message &mdash; so "sometimes I just want to have a chat about it" is now literal. With a vault connected, the WAV itself is kept under the session's <code>voice-notes/</code>. The model gains <code>generate_infographic</code>: it writes the brief itself (the layout, the exact wording, the claims with their support states), one OpenRouter call with image modalities (<code>google/gemini-3.1-flash-image-preview</code>, per the estate's curated picker) renders the image into the transcript &mdash; where the chat history's existing lightbox, copy and save already apply &mdash; and the PNG lands under the session's <code>images/</code>. Both capabilities live in a lazily-imported <code>media.js</code>: nobody who never presses the mic pays for the audio stack. Also this release: <b>the vault format divergence brief</b> for the Tools team at <a href="briefs/2026-08-24__brief__sgit-cli-browser-vault-format-divergence.md">admin/briefs/</a> &mdash; sgit-CLI 0.16 and the published browser vault modules no longer share a format; evidence verbatim, four testable asks, repro harness offered. Verified: the 36-check chat suite (mic present, media module loads with the curated ids, the infographic tool offered once a model connects), the six-check vault round-trip re-run, the 37-test unit suite. No book content changed.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.4.19</td>
         <td>24 August 2026</td>
@@ -431,7 +436,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.19</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.20</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

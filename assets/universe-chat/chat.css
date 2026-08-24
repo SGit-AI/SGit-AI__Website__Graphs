@@ -58,6 +58,8 @@ body.uchat-open .uchat-fab { display: none; }
 }
 .uchat-hbtn:hover { color: #e2e8f0; background: #20204a; }
 .uchat-hbtn.on { color: #7c9ef8; border-color: #3d5a99; }
+.uchat-hbtn.rec { color: #f87171; border-color: #7f1d1d; animation: uchat-pulse 1.2s ease infinite; }
+@keyframes uchat-pulse { 0%, 100% { background: #171730; } 50% { background: #3a1420; } }
 .uchat-est { font: 11px/1 monospace; color: #64748b; }
 
 /* ---- drawers (settings, tools, help) -------------------------------------- */

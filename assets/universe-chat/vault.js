@@ -114,14 +114,23 @@ export class ChatVault {
     try { return await run; } finally { this._saving = null; }
   }
 
-  /** Write one model-authored document into the session's documents/ folder. */
-  async saveDocument(slug, sid, name, content) {
-    const folder = sessionFolder(slug, sid) + '/documents';
+  /**
+   * Write one file into a subfolder of the session (documents/, voice-notes/,
+   * images/ …). Content may be a string or a Uint8Array.
+   */
+  async saveFile(slug, sid, subfolder, name, content) {
+    if (!/^[a-z-]+$/.test(subfolder)) throw new Error('bad subfolder: ' + subfolder);
+    const folder = sessionFolder(slug, sid) + '/' + subfolder;
     const file = documentName(name);
     await this._ensurePath(folder);
-    await this._writeFile(folder, file, String(content));
+    await this._writeFile(folder, file, content instanceof Uint8Array ? content : String(content));
     await this.session.push();
     return { path: folder + '/' + file };
+  }
+
+  /** Write one model-authored document into the session's documents/ folder. */
+  saveDocument(slug, sid, name, content) {
+    return this.saveFile(slug, sid, 'documents', name, content);
   }
 
   /** The saved sessions for one document, newest first. */

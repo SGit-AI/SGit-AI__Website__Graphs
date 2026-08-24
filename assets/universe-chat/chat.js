@@ -41,6 +41,7 @@ const CHIPS = [
   'Select the concept the most claims depend on, and explore two hops around it.',
   'Which terms does the document use but never define? Show me each one.',
   'Review three anchors: is each quote fair to the section it comes from?',
+  'Create an infographic of this document’s claims and how each is supported.',
   'What would a sceptic of graph-first modelling push back on here?',
 ];
 
@@ -57,6 +58,18 @@ let traceFn = () => {};
 
 /* The one chat-local tool: it exists only while a vault is connected, and it
    writes only inside the current session's folder. */
+const INFOGRAPHIC_TOOL = {
+  type: 'function',
+  function: {
+    name: 'generate_infographic',
+    description: 'Generate an infographic image from a brief you write, render it in the chat, and (when a vault is connected) save the PNG into this session’s images/ folder. Use it when the user asks for an infographic, a visual summary, or a diagram-as-image of something from this document. Write the brief yourself: the layout, the exact text to show, the claims with their support states.',
+    parameters: { type: 'object', properties: {
+      brief: { type: 'string', description: 'What the infographic must show, including exact wording.' },
+      style: { type: 'string', description: 'Optional style guidance (palette, tone, density).' } },
+    required: ['brief'], additionalProperties: false },
+  },
+};
+
 const SAVE_DOC_TOOL = {
   type: 'function',
   function: {
@@ -119,6 +132,7 @@ function build() {
     '  <b>Talk to this graph</b> <span class="uchat-badge">metered</span>' +
     '  <span class="sp"></span>' +
     '  <span class="uchat-est" id="uc-est" title="Rough size of what each message carries: the grounding prompt plus the enabled tools"></span>' +
+    '  <button class="uchat-hbtn" id="uc-mic" title="Voice note: record, transcribe with your key, send">&#127908;</button>' +
     '  <button class="uchat-hbtn" id="uc-settings" title="Model, provider and key">model</button>' +
     '  <button class="uchat-hbtn" id="uc-tools" title="Which tool levels the model may use">tools</button>' +
     '  <button class="uchat-hbtn" id="uc-vault" title="Persist sessions to an encrypted vault">vault</button>' +
@@ -191,6 +205,7 @@ function build() {
   wireChips();
   wireResize();
   wireVault();
+  wireMic();
   refreshSchemas();
   buildSystemPrompt();
 
@@ -218,6 +233,10 @@ function wireBus() {
     if (state.schemas.length && !e.detail.tools) {
       e.detail.tools = state.schemas;
       e.detail.tool_choice = 'auto';
+    }
+    if (state.connected) {
+      e.detail.tools = (e.detail.tools || []).concat([INFOGRAPHIC_TOOL]);
+      e.detail.tool_choice = e.detail.tool_choice || 'auto';
     }
     if (state.vault.client && state.vault.client.connected) {
       e.detail.tools = (e.detail.tools || []).concat([SAVE_DOC_TOOL]);
@@ -247,6 +266,9 @@ function wireBus() {
         if (name === 'save_to_vault') {
           const a = JSON.parse(argText);
           out = await vaultSaveDocument(a.name, a.content);
+        } else if (name === 'generate_infographic') {
+          const a = JSON.parse(argText);
+          out = await makeInfographic(a.brief, a.style);
         } else if (!tool || typeof tool[name] !== 'function') {
           throw new Error('unknown tool: ' + name);
         } else out = await tool[name](JSON.parse(argText));
@@ -552,12 +574,7 @@ async function vaultSaveNow(why) {
   if (!client || !client.connected || !hist) return;
   const messages = hist.getState();
   if (!messages.turns.length) return;
-  if (!state.vault.sid) {
-    const { sessionId } = await import('./vault-core.js');
-    state.vault.sid = sessionId(new Date());
-    state.vault.meta = { doc: U.slug, title: U.title, page: location.href,
-      started: new Date().toISOString(), model: state.model || null };
-  }
+  await ensureVaultSid();
   let drafts = null;
   try { drafts = await tool.get_drafts(); } catch (e) { /* page API optional here */ }
   try {
@@ -575,14 +592,100 @@ async function vaultSaveNow(why) {
   }
 }
 
+/* ---- voice notes: record → transcribe with the user's key → send ----------- */
+function wireMic() {
+  const mic = document.getElementById('uc-mic');
+  let rec = null, t0 = 0, timer = 0;
+  const idle = () => {
+    mic.classList.remove('rec');
+    mic.innerHTML = '&#127908;';
+    clearInterval(timer);
+  };
+  mic.addEventListener('click', async () => {
+    if (!state.connected) { toggleDrawer('settings', true); return; }
+    if (rec) {
+      const h = rec; rec = null;
+      idle();
+      mic.disabled = true; mic.textContent = '…';
+      try {
+        const wav = await h.stop();
+        if (!wav) throw new Error('nothing was recorded');
+        traceFn('', '→ transcribing voice note (' + Math.round(wav.size / 1024) + ' KB wav)');
+        const media = await import('./media.js');
+        const text = await media.transcribe(wav);
+        traceFn('ok', '✓ transcribed: ' + (text.length > 80 ? text.slice(0, 80) + '…' : text));
+        bus.dispatchEvent(new CustomEvent(CHAT_MESSAGE, { detail: { text } }));
+        if (state.vault.client && state.vault.client.connected) {
+          try {
+            await ensureVaultSid();
+            const bytes = new Uint8Array(await wav.arrayBuffer());
+            const r = await state.vault.client.saveFile(U.slug, state.vault.sid, 'voice-notes',
+              'note-' + new Date().toISOString().slice(11, 19).replace(/:/g, '') + '.wav', bytes);
+            traceFn('ok', '✓ voice note kept: ' + r.path);
+          } catch (err) { traceFn('err', '✗ voice note not saved — ' + err.message); }
+        }
+      } catch (err) {
+        traceFn('err', '✗ voice — ' + err.message);
+      } finally { mic.disabled = false; idle(); }
+      return;
+    }
+    try {
+      const media = await import('./media.js');
+      rec = await media.startVoiceNote();
+      t0 = performance.now();
+      mic.classList.add('rec');
+      timer = setInterval(() => {
+        const s = Math.floor((performance.now() - t0) / 1000);
+        mic.textContent = '■ ' + Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+      }, 500);
+      mic.textContent = '■ 0:00';
+    } catch (err) {
+      rec = null; idle();
+      traceFn('err', '✗ mic — ' + err.message);
+    }
+  });
+}
+
+/* ---- infographics: one image call, rendered in the transcript, kept -------- */
+async function makeInfographic(brief, style) {
+  const media = await import('./media.js');
+  traceFn('', '→ generating infographic (' + media.IMAGE_MODEL + ')');
+  const { dataUrl } = await media.generateInfographic(brief, style);
+  const hist = bus.__sgLlmChatHistory;
+  if (hist) {
+    const st = hist.getState();
+    st.turns.push({ role: 'assistant', content: '[infographic]',
+      images: [{ image_url: { url: dataUrl } }] });
+    hist.setState(st);
+  }
+  let saved = null;
+  if (state.vault.client && state.vault.client.connected) {
+    try {
+      await ensureVaultSid();
+      const r = await state.vault.client.saveFile(U.slug, state.vault.sid, 'images',
+        'infographic-' + new Date().toISOString().slice(11, 19).replace(/:/g, '') + '.png',
+        media.dataUrlToBytes(dataUrl));
+      saved = r.path;
+      traceFn('ok', '✓ infographic kept: ' + r.path);
+    } catch (err) { traceFn('err', '✗ infographic not saved — ' + err.message); }
+  }
+  scheduleVaultSave();
+  return { shown_in_chat: true, saved_to_vault: saved,
+    note: 'the image is already displayed to the user' + (saved ? ' and saved at ' + saved : '') };
+}
+
+async function ensureVaultSid() {
+  if (state.vault.sid) return;
+  const { sessionId } = await import('./vault-core.js');
+  state.vault.sid = sessionId(new Date());
+  state.vault.meta = { doc: U.slug, title: U.title, page: location.href,
+    started: new Date().toISOString(), model: state.model || null };
+}
+
 async function vaultSaveDocument(name, content) {
   const client = state.vault.client;
   if (!client || !client.connected) throw new Error('no vault connected — the user connects one in the vault drawer');
-  if (!state.vault.sid) await vaultSaveNow('first document');
-  if (!state.vault.sid) {
-    const { sessionId } = await import('./vault-core.js');
-    state.vault.sid = sessionId(new Date());
-  }
+  await ensureVaultSid();
   const r = await client.saveDocument(U.slug, state.vault.sid, name, content);
   traceFn('ok', '✓ saved to vault: ' + r.path);
   return { saved: r.path, vault: client.vaultId };
