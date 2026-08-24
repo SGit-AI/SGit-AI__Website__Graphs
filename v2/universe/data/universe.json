@@ -1,5 +1,5 @@
 {
- "version": "v0.4.7",
+ "version": "v0.4.8",
  "layer": 1,
  "sources": [
   {
@@ -16,7 +16,7 @@
    "n_obj": 1,
    "n_ex": 4,
    "n_edges": 8,
-   "pdf_pages": 15,
+   "pdf_pages": 14,
    "nodes": [
     {
      "id": "node",

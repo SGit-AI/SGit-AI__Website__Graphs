@@ -200,14 +200,16 @@ def by_family(ex, fam):
     return [n for n in ex["nodes"] if n["family"] == fam]
 
 
-def anchor_html(a, small=True):
+def anchor_html(a, aid=None, small=True):
     cls = "small dim" if small else ""
-    return (f'<div class="{cls}" style="margin-top:.35rem">&sect; {esc(a["section"])} &middot; '
-            f'bytes {a["chars"][0]:,}&ndash;{a["chars"][1]:,}<br>'
+    go = f' anchgo" data-aid="{aid}" title="Show these bytes in the source panel' if aid else ""
+    glyph = ' <span class="uni-goglyph">&#8599;</span>' if aid else ""
+    return (f'<div class="{cls}{go}" style="margin-top:.35rem">&sect; {esc(a["section"])} &middot; '
+            f'bytes {a["chars"][0]:,}&ndash;{a["chars"][1]:,}{glyph}<br>'
             f'<span style="opacity:.85">&ldquo;{fmt(a["quote"])}&rdquo;</span></div>')
 
 
-def doc_body(ex):
+def doc_body(ex, for_print=False):
     """The per-document page body: the four projections plus coverage, all from one file."""
     d = ex["doc"]
     concepts = by_family(ex, "concept")
@@ -228,7 +230,7 @@ def doc_body(ex):
     for c in sorted(concepts, key=lambda x: (not x["defined"], x["label"])):
         state = '<span class="rstate rs-applied">defined</span>' if c["defined"] else '<span class="rstate rs-open">used, never defined</span>'
         h.append(f'<tr id="n-{c["id"]}"><td><b>{esc(c["label"])}</b><div class="small dim">{esc(c["statement"])}</div></td>'
-                 f'<td>{state}</td><td>{anchor_html(c["anchor"])}</td></tr>')
+                 f'<td>{state}</td><td>{anchor_html(c["anchor"], aid=c["id"])}</td></tr>')
     h.append('</tbody></table></div>')
 
     # 2 · claims
@@ -244,7 +246,7 @@ def doc_body(ex):
         about = ", ".join(f'<a href="#n-{a}">{esc(label[a])}</a>' for a in c.get("about", []))
         h.append(f'<tr id="n-{c["id"]}"><td><b>{esc(c["label"])}</b><div class="small dim">{esc(c["statement"])}</div></td>'
                  f'<td><span class="rstate {cls}">{c["support"]}</span></td>'
-                 f'<td class="small">{about}</td><td>{anchor_html(c["anchor"])}</td></tr>')
+                 f'<td class="small">{about}</td><td>{anchor_html(c["anchor"], aid=c["id"])}</td></tr>')
     h.append('</tbody></table></div>')
 
     # 3 · hypotheses, objectives, examples
@@ -257,36 +259,39 @@ def doc_body(ex):
                 f'<a href="#n-{x}">{esc(label[x])}</a>' for x in n["demonstrates"]) + "</div>"
         h.append(f'<tr id="n-{n["id"]}"><td><span class="rstate rs-discussing">{n["family"]}</span></td>'
                  f'<td><b>{esc(n["label"])}</b><div class="small dim">{esc(n["statement"])}</div>{extra}</td>'
-                 f'<td>{anchor_html(n["anchor"])}</td></tr>')
+                 f'<td>{anchor_html(n["anchor"], aid=n["id"])}</td></tr>')
     h.append('</tbody></table></div>')
 
     # 4 · edges
     h.append('<h2 id="edges">4 &middot; The ontology: relations the document itself asserts</h2>')
     h.append('<p>Concept-to-concept edges, each with its declared inverse per the house grammar, and each anchored to the sentence that asserts it. These are the document\'s relations, carried; the bridge layer (layer 2) will add cross-document edges as authored decisions.</p>')
     h.append('<div class="tablewrap"><table><thead><tr><th>From</th><th>Verb (inverse)</th><th>To</th><th>Anchor</th></tr></thead><tbody>')
-    for e in ex["edges"]:
-        h.append(f'<tr><td><a href="#n-{e["from"]}">{esc(label[e["from"]])}</a></td>'
+    for i, e in enumerate(ex["edges"]):
+        h.append(f'<tr id="edge-{i}"><td><a href="#n-{e["from"]}">{esc(label[e["from"]])}</a></td>'
                  f'<td><code>{e["verb"]}</code> <span class="small dim">({e["inverse"]})</span></td>'
-                 f'<td><a href="#n-{e["to"]}">{esc(label[e["to"]])}</a></td><td>{anchor_html(e["anchor"])}</td></tr>')
+                 f'<td><a href="#n-{e["to"]}">{esc(label[e["to"]])}</a></td><td>{anchor_html(e["anchor"], aid=f"edge-{i}")}</td></tr>')
     h.append('</tbody></table></div>')
 
     # 5 · thesaurus + near-but-not
     h.append('<h2 id="thesaurus">5 &middot; The thesaurus, and the distinctions drawn on purpose</h2>')
     h.append('<div class="tablewrap"><table><thead><tr><th></th><th>Pair</th><th>Anchor</th></tr></thead><tbody>')
-    for x in ex["aliases"]:
-        h.append(f'<tr><td><span class="rstate rs-applied">also called</span></td>'
+    for i, x in enumerate(ex["aliases"]):
+        h.append(f'<tr id="alias-{i}"><td><span class="rstate rs-applied">also called</span></td>'
                  f'<td><a href="#n-{x["a"]}">{esc(label[x["a"]])}</a> &harr; <b>{esc(x["b"])}</b></td>'
-                 f'<td>{anchor_html(x["anchor"])}</td></tr>')
-    for x in ex["near_but_not"]:
-        h.append(f'<tr><td><span class="rstate rs-declined">near but not</span></td>'
+                 f'<td>{anchor_html(x["anchor"], aid=f"alias-{i}")}</td></tr>')
+    for i, x in enumerate(ex["near_but_not"]):
+        h.append(f'<tr id="nbn-{i}"><td><span class="rstate rs-declined">near but not</span></td>'
                  f'<td><a href="#n-{x["this"]}">{esc(label[x["this"]])}</a> is <b>not</b> {esc(x["not"])}</td>'
-                 f'<td>{anchor_html(x["anchor"])}</td></tr>')
+                 f'<td>{anchor_html(x["anchor"], aid=f"nbn-{i}")}</td></tr>')
     h.append('</tbody></table></div>')
 
     # 6 · graph
     h.append('<h2 id="graph">6 &middot; The local graph, drawn</h2>')
-    h.append('<p class="small dim">Concepts are the round nodes; claims, hypotheses, objectives and examples attach to what they are about. Every element on this drawing exists in the tables above with its anchor; the drawing is a compression, not an extra source.</p>')
-    h.append('<div id="unigraph" style="width:100%;height:640px;border:1px solid var(--line,#ccc);border-radius:8px"></div>')
+    if for_print:
+        h.append('<p>The graph is an interactive view: it lives in the web page\'s side panel, where clicking a node opens both the extraction row and the cited bytes in the source. A static rendering would be a decoration here; the tables above are the graph\'s content in full.</p>')
+    else:
+        h.append('<p class="small dim">Concepts are the round nodes; claims, hypotheses, objectives and examples attach to what they are about. The graph lives in the <b>side panel</b> on wide screens, so it stays visible while you follow its links: clicking a node opens both the extraction row here and the cited bytes in the source. On narrow screens it renders below. Every element on the drawing exists in the tables above with its anchor; the drawing is a compression, not an extra source.</p>')
+        h.append('<div id="unigraph-inline" style="width:100%;height:560px;border:1px solid var(--line,#ccc);border-radius:8px"></div>')
 
     # 7 · taxonomy + coverage
     h.append('<h2 id="coverage">7 &middot; The taxonomy, and the coverage rule</h2>')
@@ -333,38 +338,6 @@ def graph_json(ex):
     return els
 
 
-GRAPH_JS = """
-document.addEventListener('DOMContentLoaded', function () {
-  var box = document.getElementById('unigraph');
-  if (!box || typeof cytoscape === 'undefined') return;
-  var cy = cytoscape({
-    container: box,
-    elements: %ELS%,
-    layout: { name: 'cose', animate: false, nodeRepulsion: 90000, idealEdgeLength: 90, padding: 24 },
-    style: [
-      { selector: 'node', style: { 'label': 'data(label)', 'font-size': 9, 'width': 14, 'height': 14,
-        'text-wrap': 'wrap', 'text-max-width': 110, 'text-valign': 'bottom', 'text-margin-y': 4,
-        'background-color': '#8a8f98', 'color': '#666' } },
-      { selector: 'node[family = "concept"]', style: { 'background-color': '#3f6ad8', 'width': 22, 'height': 22, 'font-weight': 'bold', 'color': '#333' } },
-      { selector: 'node[family = "claim"]', style: { 'background-color': '#2f9e63' } },
-      { selector: 'node[family = "hypothesis"]', style: { 'background-color': '#c58f00' } },
-      { selector: 'node[family = "objective"]', style: { 'background-color': '#9b59b6' } },
-      { selector: 'node[family = "example"]', style: { 'background-color': '#d0654e', 'shape': 'round-rectangle' } },
-      { selector: 'edge', style: { 'width': 1, 'line-color': '#c9ccd2', 'curve-style': 'bezier',
-        'target-arrow-shape': 'triangle', 'arrow-scale': .7, 'target-arrow-color': '#c9ccd2' } },
-      { selector: 'edge[kind = "asserted"]', style: { 'width': 2, 'line-color': '#3f6ad8', 'target-arrow-color': '#3f6ad8',
-        'label': 'data(verb)', 'font-size': 8, 'color': '#3f6ad8', 'text-background-color': '#fff',
-        'text-background-opacity': .85, 'text-background-padding': 2 } },
-      { selector: 'edge[kind = "demonstrates"]', style: { 'line-style': 'dashed' } }
-    ]
-  });
-  cy.on('tap', 'node', function (evt) {
-    var el = document.getElementById('n-' + evt.target.id());
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  });
-});
-"""
-
 DOC_PAGE = """<!doctype html>
 <html lang="en">
 <head>
@@ -380,6 +353,7 @@ DOC_PAGE = """<!doctype html>
 <meta property="og:description" content="{desc}">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/universe.css">
 </head>
 <body>
 
@@ -402,8 +376,10 @@ DOC_PAGE = """<!doctype html>
 </main>
 
 <footer class="site"><div class="cols"></div></footer>
+<script>window.UNIVERSE = {unidata};</script>
 <script src="../../assets/vendor/cytoscape.min.js"></script>
-<script>{graphjs}</script>
+<script src="../../assets/vendor/marked.min.js"></script>
+<script src="../../assets/universe-view.js" defer></script>
 </body>
 </html>
 """
@@ -524,15 +500,34 @@ def main():
         import weasyprint
         weasyprint.HTML(string=PRINT_PAGE.format(
             title=esc(d["title"]), lead=esc(lead), source=d["source"], sha=d["sha256"],
-            extracted=d["extracted"], version=VERSION, body=body),
+            extracted=d["extracted"], version=VERSION, body=doc_body(ex, for_print=True)),
             base_url=str(OUT) + "/").write_pdf(str(pdf))
         pages = pdf_page_count(pdf)
+
+        # the reader's data: every anchor with the row it belongs to, so the panel's
+        # highlights are driven by the same offsets gate 23 verifies
+        anchors = []
+        for n in ex["nodes"]:
+            anchors.append({"aid": n["id"], "row": f'n-{n["id"]}',
+                            "chars": n["anchor"]["chars"], "label": n["label"]})
+        for i, e in enumerate(ex["edges"]):
+            anchors.append({"aid": f"edge-{i}", "row": f"edge-{i}", "chars": e["anchor"]["chars"],
+                            "label": f'{e["from"]} {e["verb"]} {e["to"]}'})
+        for i, x in enumerate(ex["near_but_not"]):
+            anchors.append({"aid": f"nbn-{i}", "row": f"nbn-{i}", "chars": x["anchor"]["chars"],
+                            "label": f'{x["this"]} is not {x["not"]}'})
+        for i, x in enumerate(ex["aliases"]):
+            anchors.append({"aid": f"alias-{i}", "row": f"alias-{i}", "chars": x["anchor"]["chars"],
+                            "label": f'{x["a"]} is also called {x["b"]}'})
+        unidata = json.dumps({"slug": d["slug"], "source": "../../" + d["source"],
+                              "sha256": d["sha256"], "anchors": anchors,
+                              "elements": graph_json(ex)})
 
         (OUT / f'{d["slug"]}.html').write_text(DOC_PAGE.format(
             title=esc(d["title"]), slug=d["slug"], desc=esc(desc), lead=lead,
             source=d["source"], sha12=d["sha256"][:12], extracted=d["extracted"],
             total=TOTAL_SOURCES, body=body, pdf_pages=pages or "?",
-            graphjs=GRAPH_JS.replace("%ELS%", json.dumps(graph_json(ex))),
+            unidata=unidata,
             **stats))
 
         rows.append(

@@ -1,0 +1,70 @@
+/* graphs.sgit.ai — the universe reader: extraction on the left, the frozen source and
+   the local graph in a resizable panel on the right. The highlights are driven by the
+   same verified byte offsets gate 23 checks, never by re-searching the text. */
+
+.uni-layout { display: flex; align-items: stretch; gap: 0; }
+.uni-left { min-width: 0; flex: 1 1 58%; }
+.uni-panel { display: none; flex: 0 0 42%; min-width: 320px; max-width: 64%;
+  position: sticky; top: 0; height: 100vh; box-sizing: border-box;
+  border-left: 1px solid var(--line2, #ddd); background: var(--panel2, #fafafa);
+  flex-direction: column; }
+body.uni-panel-on .uni-panel { display: flex; }
+body.uni-panel-on .uni-left { flex-basis: 58%; }
+
+.uni-vsplit { flex: 0 0 6px; cursor: col-resize; display: none;
+  background: transparent; position: relative; z-index: 5; }
+body.uni-panel-on .uni-vsplit { display: block; }
+.uni-vsplit:hover, .uni-vsplit.drag { background: var(--accent, #3f6ad8); opacity: .35; }
+
+.uni-graphbox { flex: 0 0 44%; min-height: 120px; border-bottom: 1px solid var(--line2, #ddd);
+  position: relative; background: #fff; }
+.uni-graphbox .uni-cy { position: absolute; inset: 0; }
+.uni-hsplit { flex: 0 0 6px; cursor: row-resize; background: transparent; }
+.uni-hsplit:hover, .uni-hsplit.drag { background: var(--accent, #3f6ad8); opacity: .35; }
+
+.uni-srcbox { flex: 1 1 auto; min-height: 120px; overflow: auto; background: #fff; }
+.uni-srcbox .uni-srchead { position: sticky; top: 0; z-index: 3;
+  background: var(--panel2, #fafafa); border-bottom: 1px solid var(--line2, #ddd);
+  padding: .45rem .9rem; font-size: .78rem; display: flex; gap: .8rem; align-items: center;
+  flex-wrap: wrap; }
+.uni-srcbox .uni-srcbody { padding: 1rem 1.4rem 3rem; }
+.uni-srcbox .uni-srcbody h1 { font-size: 1.35rem; }
+.uni-srcbox .uni-srcbody h2 { font-size: 1.12rem; }
+.uni-srcbox .uni-srcbody h3 { font-size: .98rem; }
+
+/* the toolbar above the page content */
+.uni-tools { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap;
+  margin: .6rem 0 1rem; }
+.uni-tools button { font: inherit; font-size: .8rem; padding: .32rem .7rem;
+  border: 1px solid var(--line2, #ccc); border-radius: 7px; background: #fff;
+  cursor: pointer; color: inherit; }
+.uni-tools button[aria-pressed="true"] { background: var(--accent, #3f6ad8); color: #fff;
+  border-color: var(--accent, #3f6ad8); }
+.uni-tools .dim { font-size: .76rem; }
+
+/* anchor highlights in the rendered source */
+mark.uni-anchor { background: transparent; color: inherit; border-bottom: 2px solid transparent;
+  cursor: pointer; border-radius: 2px; padding: 0; transition: background .18s, border-color .18s; }
+body.uni-showall mark.uni-anchor { background: rgba(63, 106, 216, .13);
+  border-bottom-color: rgba(63, 106, 216, .55); }
+mark.uni-anchor:hover { background: rgba(63, 106, 216, .22); border-bottom-color: var(--accent, #3f6ad8); }
+mark.uni-anchor.uni-hit { animation: uniflash 1.6s ease-out; background: rgba(240, 180, 41, .45);
+  border-bottom-color: #c58f00; }
+@keyframes uniflash { 0% { background: rgba(240, 180, 41, .85); } 100% { background: rgba(240, 180, 41, .45); } }
+
+/* the row flash on the left when arriving from the source or the graph */
+tr.uni-hit > td { animation: unirow 1.6s ease-out; }
+@keyframes unirow { 0% { background: rgba(240, 180, 41, .5); } 100% { background: transparent; } }
+
+/* anchor blocks in the left tables become jump affordances */
+.anchgo { cursor: pointer; border-radius: 6px; }
+.anchgo:hover { background: rgba(63, 106, 216, .08); outline: 1px solid rgba(63, 106, 216, .3); }
+.anchgo .uni-goglyph { opacity: .45; font-size: .85em; }
+.anchgo:hover .uni-goglyph { opacity: 1; }
+
+body.uni-panel-on #unigraph-inline { display: none; }
+
+@media (max-width: 1099px) {
+  body.uni-panel-on .uni-panel, body.uni-panel-on .uni-vsplit { display: none; }
+  .uni-tools .uni-wide-only { display: none; }
+}

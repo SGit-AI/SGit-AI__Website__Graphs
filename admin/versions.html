@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.7</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.8</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -131,6 +131,11 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.4.8</td>
+        <td>24 August 2026</td>
+        <td><b>The universe reader: the source, the extraction and the graph on one screen.</b> Founder request, on reading the pilot. The per-document universe page gains a <b>resizable side panel</b>: the local graph on top, the rendered frozen source below, with a draggable divider between panes and between the two halves. Every anchor in the source is highlighted <b>from the same byte offsets gate 23 verifies</b>: the raw bytes are fetched, sliced at the recorded offsets, and marked before the markdown is rendered, so a highlight can only ever sit on the exact bytes the extraction cited; nothing re-searches the text, and the trust built at extraction time becomes navigation at reading time for free. The three-way jumps: clicking an anchor in the extraction tables scrolls the source to the cited bytes and flashes them; clicking a highlighted span in the source jumps to the extraction row about it; and clicking a node on the graph, which now stays visible instead of navigating away, opens <b>both</b> at once. A toggle shows every anchor in the source simultaneously, which turns the document into a visible coverage map: the parts extraction touched and the parts it deliberately left are apparent at a glance. The panel remembers its state and sizes per document, degrades to the previous single-column page on narrow screens (the graph renders inline there), and the PDF is untouched except that its section 6 now says the graph is an interactive view rather than printing an empty box. Tested end to end in headless Chromium before shipping: 72 anchors resolved to 73 verified spans with zero stray markers, and all six interaction paths (table to source, source to table, graph to both, the show-all toggle, panel off relocating the graph inline, panel back) verified by script. The 27 claims now read with the document beside them, which was the point. No book content changed.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.4.7</td>
         <td>23 August 2026</td>
@@ -371,7 +376,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.7</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.8</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

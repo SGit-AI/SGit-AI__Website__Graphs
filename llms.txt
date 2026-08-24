@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.4.7 (23 August 2026). Published by the sgit project — participant
+Site version: v0.4.8 (24 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /v1/briefs/ is the source of truth and carries the same licence.
 
@@ -359,7 +359,7 @@ pages** so the two cannot drift
   words that are not there. A layer 1 node means only "this document says this, here"; whether
   it is true is judged at layer 3, the book's universe, which connects to these nodes rather
   than absorbing them. Machine surface: /v2/universe/data/universe.json (nodes, edges, offsets,
-  hashes). Each document also ships as a printable PDF for review with nothing else open.
+  hashes). Each document also ships as a printable PDF for review with nothing else open; the web page carries an interactive reader (side panel: the local graph and the rendered frozen source, highlights driven by the gate-verified byte offsets, three-way jumps between tables, graph and source).
   Pilot extracted: Thinking in Graphs, 57 nodes. The bridge layer (cross-document edges,
   authored) and layer 3 are not started.
 - https://graphs.sgit.ai/v2/lexicon/index.html — the book's lexicon, held the way the book says

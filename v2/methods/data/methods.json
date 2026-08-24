@@ -230,6 +230,19 @@
    ],
    "status": "in use",
    "for_the_book": "The single most repeated lesson of the whole run, and gate 21 of the dev pack."
+  },
+  {
+   "id": "anchored-reader",
+   "name": "The anchored reader: source, extraction and graph on one screen",
+   "what": "A per-document universe page gains a resizable side panel holding the local graph and the rendered frozen source. Anchor highlights are driven by the same byte offsets gate 23 verifies, never by re-searching the text: the raw bytes are sliced at the recorded offsets before rendering, so a highlight can only sit on the exact bytes the extraction cited. Clicking an extraction row shows the cited bytes; clicking a highlight shows the extraction row; clicking a graph node shows both; a toggle shows every anchor at once, which makes the coverage rule visible on the document itself.",
+   "born": "v0.4.8",
+   "implemented_in": [
+    "assets/universe-view.js",
+    "assets/universe.css",
+    "admin/build/gen_universe.py"
+   ],
+   "status": "in use",
+   "for_the_book": "The verified anchor is the interface: trust built at extraction time becomes navigation at reading time, at no new cost."
   }
  ]
 }
