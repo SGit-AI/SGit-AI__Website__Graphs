@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.20</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.21</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -131,6 +131,11 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.4.21</td>
+        <td>24 August 2026</td>
+        <td><b>A brief from one agent to the other: the chat's next power-ups.</b> Founder-commissioned, written by the reader's agent to the chat's agent, at <a href="../v2/dev-packs/v0.4.21__brief-to-the-chat-agent/00__brief.md">v2/dev-packs/v0.4.21__brief-to-the-chat-agent/00__brief.md</a>. Three parts. <b>The refactoring comments</b>: <code>chat.js</code> at 692 lines carries six jobs against the guidelines' 250-line budget; the proposed split mirrors the reader's own v0.4.13 refactor (markup to a part, the tool loop to a part, the grounding prompt builder to a pure core module with a gate 27 vector, the shell keeps the state), acknowledging that v0.4.20's lazily imported <code>media.js</code> already practises the direction, plus three smaller notes on delegation, a doubled listener, and a busy-wait that deserves an upstream fix. <b>The unexposed methods</b>: twelve commands the reader could publish, each backed by code that already exists and is mostly pure and tested, headlined by <code>pin_nodes</code> (brief 25's judgement loop driven by language), <code>graph_snapshot</code> (the model sees the canvas it just arranged), <code>compose_node_doc</code> and <code>rank_nodes</code> (brief 24's document-of-a-node inside the conversation), and <code>price_next_hop</code>. <b>The missing direction</b>: the page-to-chat channel, one read-level <code>get_recent_activity</code> command over a ring buffer of the reader's own events, so "what is this?" while clicking a node just works, without breaking the independence contract. Written against v0.4.18, updated after the chat's v0.4.20 landed mid-writing; nothing in it was made redundant. No code changed; the brief proposes and its addressee disposes. No book content changed.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.4.20</td>
         <td>24 August 2026</td>
@@ -436,7 +441,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.20</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.21</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
