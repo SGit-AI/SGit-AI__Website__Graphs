@@ -192,5 +192,48 @@ test('packs: co-claimed concepts derive one counted symmetric edge', () => {
   assert.deepEqual([els[0].data.source, els[0].data.target].sort(), ['a', 'b']);
 });
 
+/* ---- nodedoc: the document of one node, composed purely -------------------- */
+import { extractionElements, nodeRichness, composeNodeDoc } from '../../assets/universe/core/nodedoc.js';
+const NDEX = {
+  doc: { slug: 'd', title: 'Doc' },
+  nodes: [
+    { id: 'a', family: 'concept', label: 'alpha', statement: 's-a', anchor: { section: 'S1', quote: 'q-a' } },
+    { id: 'b', family: 'concept', label: 'beta', anchor: { section: 'S1', quote: 'q-b' } },
+    { id: 'k1', family: 'claim', label: 'claim one', about: ['a', 'b'], anchor: { section: 'S2', quote: 'q-k1' } },
+    { id: 'k2', family: 'claim', label: 'claim two', about: ['a'], anchor: { section: 'S2', quote: 'q-k2' } },
+    { id: 'e1', family: 'example', label: 'ex one', demonstrates: ['a'], anchor: { section: 'S3', quote: 'q-e1' } }],
+  edges: [{ from: 'a', verb: 'enables', to: 'b', anchor: { section: 'S1', quote: 'q-edge' } }],
+  near_but_not: [{ this: 'a', not: 'a schema', anchor: { section: 'S1', quote: 'q-nbn' } }],
+  aliases: [{ a: 'a', b: 'also alpha', anchor: { section: 'S1', quote: 'q-al' } }],
+  empty_sections: [],
+};
+test('nodedoc: extraction becomes elements with about, demonstrates and asserted edges', () => {
+  const els = extractionElements(NDEX);
+  const kinds = {};
+  els.forEach((e) => { if (e.data.kind) kinds[e.data.kind] = (kinds[e.data.kind] || 0) + 1; });
+  assert.deepEqual(kinds, { about: 3, demonstrates: 1, asserted: 1 });
+  assert.equal(els.filter((e) => !e.data.source).length, 5);
+});
+test('nodedoc: richness ranks by incident links, alphabetical on ties', () => {
+  const r = nodeRichness(NDEX);
+  assert.equal(r[0].id, 'a');
+  assert.equal(r[0].links, 4);   /* k1, k2, e1 point at it, and it asserts to b */
+  assert.ok(r.every((x, i) => i === 0 || r[i - 1].links >= x.links));
+});
+test('nodedoc: the composed document holds exactly what the data holds', () => {
+  const m = composeNodeDoc(NDEX, { refs: [{ id: 'r1', where: 'x.html', what: ['a'], how: 'quote', rating: 'aligned' }] }, 'a');
+  assert.equal(m.claimsAbout.length, 2);
+  assert.equal(m.demonstratedBy.length, 1);
+  assert.deepEqual(m.asserts, [{ verb: 'enables', other: 'beta', anchor: { section: 'S1', quote: 'q-edge' } }]);
+  assert.equal(m.assertedBy.length, 0);
+  assert.equal(m.aliases.length, 1);
+  assert.equal(m.nearButNot.length, 1);
+  assert.deepEqual(m.derived, [{ other: 'beta', count: 1 }]);
+  assert.equal(m.crossrefs.length, 1);
+  assert.equal(m.degrees[0].degree, 1);
+  assert.deepEqual(m.degrees[0].added.nodes, { concept: 1, claim: 2, example: 1 });
+  assert.equal(composeNodeDoc(NDEX, null, 'nope'), null);
+});
+
 console.log(`universe tests: ${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

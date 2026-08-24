@@ -283,6 +283,19 @@
    ],
    "status": "in use",
    "for_the_book": "When document graphs connect to the book's own universe the paths become massive; choosing a path by its price is how navigation survives the scale."
+  },
+  {
+   "id": "document-from-a-node",
+   "name": "The document of one node",
+   "what": "Brief 24's experiment, programmatic phase: pick one node and read the document that grows from it. The page assembles only what the anchored data verifiably holds — the node's definition quote at its recorded bytes, the claims about it, its directional relationships each with its own verb, the examples demonstrating it, its aliases and its explicit not-this distinctions, its derived weaker links, its rated uses across the estate, and a degrees table measuring how far it reaches. No prose is authored; the connecting prose is the later, LLM phase, running the book workflow from a single node upward. The picker ranks every node by its link count, so the richness of each concept is measurable before any writing happens: a rich node makes pages, a thin one makes a paragraph, and the difference is a finding.",
+   "born": "v0.4.15",
+   "implemented_in": [
+    "assets/universe/core/nodedoc.js",
+    "assets/universe/nodedoc-page.js",
+    "admin/build/gen_universe.py"
+   ],
+   "status": "in use",
+   "for_the_book": "The whole book is this operation on steroids: every altitude is a document grown from nodes, and the per-node page is the small end of the same telescope."
   }
  ]
 }

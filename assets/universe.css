@@ -198,3 +198,30 @@ body.uni-graph-off .uni-graphbox, body.uni-graph-off .uni-hsplit { display: none
   body.uni-panel-on .uni-panel, body.uni-panel-on .uni-vsplit { display: none; }
   .uni-tools .uni-wide-only { display: none; }
 }
+
+/* ---- the document-of-one-node page (brief 24, programmatic phase) -------- */
+.ndoc-fam { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .04em;
+  text-transform: uppercase; color: #fff; background: #8a8f98; border-radius: 8px;
+  padding: .05rem .5rem; vertical-align: middle; }
+.ndoc-f-concept { background: #3f6ad8; }
+.ndoc-f-claim { background: #2f9e63; }
+.ndoc-f-hypothesis { background: #c58f00; }
+.ndoc-f-objective { background: #9b59b6; }
+.ndoc-f-example { background: #d0654e; }
+.ndoc-f-edge { background: #8fa7e0; }
+.ndoc-f-nbn { background: #b06060; }
+.ndoc-f-alias, .ndoc-f-derived, .ndoc-f-ref { background: #8a8f98; }
+.ndoc-item { margin: .7rem 0; padding: .55rem .8rem; border: 1px solid var(--line2, #e2e5ea);
+  border-radius: 8px; background: var(--panel2, #fbfbfc); }
+.ndoc-anchor { font-size: .82rem; color: #556; margin-top: .3rem; }
+.ndoc-anchor blockquote { margin: .25rem 0 0 0; padding: .1rem .7rem; border-left: 3px solid #c9a227;
+  font-style: italic; color: #444; }
+.crumbline { font-size: .82rem; margin: .2rem 0 1rem; }
+.rate-aligned { color: #2f9e63; }
+.rate-stretched { color: #c58f00; }
+.rate-misaligned { color: #b04040; }
+.rate-unrated { color: #777; }
+@media print {
+  nav.site, footer.site, .crumb, .crumbline, .note { display: none; }
+  .ndoc-item { break-inside: avoid; }
+}

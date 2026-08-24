@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>The Implementation Plan &mdash; graphs.sgit.ai</title>
-<meta name="description" content="Seven phases, each ending at a gate, and the two ways the plan fails.">
-<link rel="canonical" href="https://graphs.sgit.ai/v2/dev-pack/08-implementation-plan.html">
+<title>The document of one node &mdash; graphs.sgit.ai</title>
+<meta name="description" content="Brief 24's experiment, programmatic phase: pick a node and read the document that grows from it — everything the anchored extraction verifiably holds about one concept, with no authored prose.">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/universe/node-doc.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="graphs.sgit.ai">
-<meta property="og:url" content="https://graphs.sgit.ai/v2/dev-pack/08-implementation-plan.html">
-<meta property="og:title" content="The Implementation Plan">
-<meta property="og:description" content="Seven phases, each ending at a gate, and the two ways the plan fails.">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/universe/node-doc.html">
+<meta property="og:title" content="The document of one node">
+<meta property="og:description" content="Everything the anchored extraction verifiably holds about one concept, composed as a document.">
 <meta name="twitter:card" content="summary">
-<link rel="alternate" type="text/markdown" href="../dev-packs/v0.3.27__the-second-book/08__implementation-plan.md" title="The raw markdown, which is the source of truth">
 <link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/universe.css">
 </head>
 <body>
 
@@ -124,24 +124,10 @@
 </div></nav>
 
 <main class="doc">
-<div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="../index.html">the second edition</a> &rarr; <a href="index.html">the dev pack</a> &rarr; <b>08</b></div>
-<h1>The Implementation Plan</h1>
-<p class="lead">Seven phases, each ending at a gate, and the two ways the plan fails.</p>
-
-<div class="docmeta">
-  <span class="k">Pack</span><span class="v">v0.4.0 &middot; the second book</span>
-  <span class="k">Status</span><span class="v">PROPOSED &mdash; nothing here is implemented</span>
-  <span class="k">Licence</span><span class="v">CC BY 4.0</span>
-  <span class="k">Source</span><span class="v"><a href="../dev-packs/v0.3.27__the-second-book/08__implementation-plan.md">raw markdown</a> &middot; <a href="https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/dev-packs/v0.3.27__the-second-book/08__implementation-plan.md">view on GitHub</a></span>
-</div>
-
-<div class="mdread-label">&#128196; Rendered from the <a href="../dev-packs/v0.3.27__the-second-book/08__implementation-plan.md">raw markdown</a>, which is the source of truth. This page is presentation.</div>
-<div class="mdread" id="mdread" data-src="../dev-packs/v0.3.27__the-second-book/08__implementation-plan.md"><noscript><p class="dim">In-page rendering needs JavaScript &mdash; <a href="../dev-packs/v0.3.27__the-second-book/08__implementation-plan.md">open the raw markdown</a>.</p></noscript></div>
-
-<div class="pagenav">
-  <span><a href="07-visualisations.html">&larr; 07</a></span>
-  <span><a href="09-verification-and-open-questions.html">09 &rarr;</a></span>
-</div>
+  <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="../index.html">the second edition</a> &rarr; <a href="index.html">the universe</a> &rarr; <b>the document of one node</b></div>
+  <h1>The document of one node</h1>
+  <div id="ndoc"><p class="dim">Loading the extraction&hellip;</p></div>
+  <div class="note"><b>What this is.</b> The experiment of brief 24, programmatic phase: the page assembles only what the anchored extraction and the cross-reference ledger verifiably hold about the chosen node. The connecting prose is deliberately absent; writing it, layer by layer up to a mini book per node, is the later phase. The composition is the pure module <code>assets/universe/core/nodedoc.js</code>; this page is one thin view over the same data the reader projects.</div>
 </main>
 
 <footer class="site"><div class="cols">
@@ -187,7 +173,6 @@
     <a href="../../llms.txt">llms.txt</a>
   </div>
 </div></footer>
-<script src="../../assets/vendor/marked.min.js"></script>
-<script src="../../assets/mdreader.js" defer></script>
+<script type="module" src="../../assets/universe/nodedoc-page.js"></script>
 </body>
 </html>
