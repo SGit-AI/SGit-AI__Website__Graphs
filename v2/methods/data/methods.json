@@ -361,6 +361,17 @@
    ],
    "status": "in use",
    "for_the_book": "Queries are not written, they are walked: the reader's own navigation is the query language, and generalising one step at a time is how a single observation becomes a reusable question."
+  },
+  {
+   "id": "immediate-connection",
+   "name": "The immediate-connection register",
+   "what": "A standing design document that names the experience target for every interactive surface in this repo: Bret Victor's principle that creators need an immediate connection to what they create, composed with the project's own stability rule that every unasked-for node move costs the viewer their mental picture. The register maps Victor's five demo patterns (scrub a value, show the future, show the data, behaviour on the thing, perform rather than configure) to the viewer features that already implement them, names the gaps, fully specifies two buildable ones (view time travel, relayout ghosts), and ends in a six-point checklist (immediate, stable, visible, projectable, direct, modular) that any change to an interactive surface should pass. It is written for agents: read it before building, update it when a pattern lands.",
+   "born": "v0.4.35",
+   "implemented_in": [
+    "v2/dev-packs/design__immediate-connection/00__the-victor-register.md"
+   ],
+   "status": "in use",
+   "for_the_book": "Design taste can be captured as an executable register: when the target experience is written down as patterns plus a checklist, every future contributor (human or agent) extends the instinct on purpose instead of by luck."
   }
  ]
 }
