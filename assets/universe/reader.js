@@ -237,6 +237,7 @@ function boot() {
     gdoc: prefBool('gdoc', true), gtree: prefBool('gtree', false),
     gpeaks: prefBool('gpeaks', false), gpin: prefBool('gpin', false),
     gstable: prefBool('gstable', true), gschema: prefBool('gschema', false),
+    galign: prefBool('galign', false), galshow: prefBool('galshow', false),
     gslots: (() => { try { return JSON.parse(pref('gslots', '') || 'null'); } catch (e) { return null; } })(),
     gderived: prefBool('gderived', false), gexp: prefBool('gexp', false),
     gdeg: (() => { const v = pref('gdeg', '1'); return v === 'max' ? 'max' : (parseInt(v, 10) || 0); })(),

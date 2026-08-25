@@ -19,6 +19,7 @@ import { graphStyle, layoutOptions } from '../core/cystyle.js';
 import { docTreeElements, DOC_ROOT_ID } from '../core/doctree.js';
 import { familyPeakElements, derivedConceptEdges, derivedGroupPeaks } from '../core/packs.js';
 import { schemaElements } from '../core/schema.js';
+import { alignmentElements, railPositions } from '../core/align.js';
 import { defaultAssignments } from '../core/slots.js';
 import { NODE_KINDS } from '../core/kinds.js';
 import { neighbourhoodIds, nextDegree } from '../core/explore.js';
@@ -58,7 +59,7 @@ export class UniGraph extends HTMLElement {
     this._kinds = prefs.kinds || null;
     this._kindsKey = (this._kinds || []).slice().sort().join(' ');
     this._treeEles = null; this._peakEles = null; this._derivedEles = null;
-    this._schemaEles = null;
+    this._schemaEles = null; this._alignEles = null;
     this._pins = prefs.gslots || null;   /* board or chat assignments, else summits */
     this._selected = null;
     this._fitted = false;
@@ -80,7 +81,7 @@ export class UniGraph extends HTMLElement {
     this.querySelector('#uni-gpull').value = this._p.gpull;
     this._refreshVisibility();
     this._applyLook();
-    if (this._p.glay !== 'cose' || this._p.gpin
+    if (this._p.glay !== 'cose' || this._p.gpin || this._p.galign
         || VIS_TOGGLES.some((k) => (k === 'gdoc' ? !this._p[k] : this._p[k]))) this.runLayout(true);
     /* a default boot skips runLayout, so seed the stable-add baseline here */
     if (!this._shownIds) {
@@ -126,6 +127,16 @@ export class UniGraph extends HTMLElement {
     if (b.hasAttribute('data-gsize')) { p.gsize = b.getAttribute('data-gsize'); this._emitPref('gsize', p.gsize); this._applyLook(); }
     if (b.hasAttribute('data-glabels')) { p.labels = !p.labels; this._applyLook(); }
     if (b.hasAttribute('data-gboxed')) { p.gboxed = !p.gboxed; this._emitPref('gboxed', p.gboxed ? 1 : 0); this._applyLook(); }
+    if (b.hasAttribute('data-galign')) {
+      p.galign = !p.galign; this._emitPref('galign', p.galign ? 1 : 0);
+      if (p.galign && !p.gtree) { p.gtree = true; this._emitPref('gtree', 1); }
+      this.refresh(true);   /* aligning IS a re-arrangement ask */
+      return;
+    }
+    if (b.hasAttribute('data-galshow')) {
+      p.galshow = !p.galshow; this._emitPref('galshow', p.galshow ? 1 : 0);
+      this._applyLook(); return;
+    }
     VIS_TOGGLES.forEach((k) => {
       if (!b.hasAttribute('data-' + k)) return;
       p[k] = !p[k]; this._emitPref(k, p[k] ? 1 : 0); this.refresh();
@@ -151,6 +162,7 @@ export class UniGraph extends HTMLElement {
     this.cy.nodes().toggleClass('uni-nolabel', !p.labels);
     this.cy.elements().toggleClass('uni-szm', p.gsize === 'm').toggleClass('uni-szl', p.gsize === 'l');
     this.cy.nodes().not('[family = "peak"]').toggleClass('uni-boxed', p.gboxed);
+    if (this._alignEles) this._alignEles.toggleClass('uni-alshow', !!p.galshow);
     reflectStrip(this._gopts, p);
   }
 
@@ -179,12 +191,20 @@ export class UniGraph extends HTMLElement {
     if (p.gpeaks && !this._peakEles) this._peakEles = cy.add(familyPeakElements(this._data.elements));
     if (p.gderived && !this._derivedEles) this._derivedEles = cy.add(
       derivedConceptEdges(this._data.elements).concat(derivedGroupPeaks(this._data.elements)));
-    if (p.gschema && !this._schemaEles) this._schemaEles = cy.add(schemaElements(this._data.elements));
+    if (p.gschema && !this._schemaEles) {
+      this._schemaEles = cy.add(schemaElements(this._data.elements, this._data.verbs));
+    }
+    if (p.galign && this._treeEles && !this._alignEles) {
+      this._alignEles = cy.add(alignmentElements(this._data.taxonomy));
+      const rp = railPositions(this._alignEles.nodes().map((n) => n.data('level')).sort((a, b) => a - b));
+      this._alignEles.nodes().forEach((n) => { n.position(rp[n.id()]); n.lock(); });
+    }
     cy.elements().removeClass('uni-hide');
     if (!p.gdoc) this._baseEles.addClass('uni-hide');
     if (this._treeEles && !p.gtree) this._treeEles.addClass('uni-hide');
     if (this._peakEles && !p.gpeaks) this._peakEles.addClass('uni-hide');
     if (this._derivedEles && !p.gderived) this._derivedEles.addClass('uni-hide');
+    if (this._alignEles && !(p.galign && p.gtree)) this._alignEles.addClass('uni-hide');
     if (this._schemaEles) {
       if (p.gschema) {
         cy.elements().addClass('uni-hide');

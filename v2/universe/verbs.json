@@ -1,0 +1,18 @@
+{
+ "note": "One direction per relation is the rule (brief 26): every relation is stored one way and declares its unique inverse, so the reverse reading is always derivable and never stored. This register is the first go the founder asked for; the schema view surfaces both directions so the verbs can be improved by looking at them. A verb this register does not carry fails the build, and no two verbs may share an inverse.",
+ "asserted": {
+  "departs-from": "departed-from-by",
+  "determines": "determined-by",
+  "provides": "provided-by",
+  "enables": "enabled-by",
+  "remedies": "remedied-by",
+  "licenses": "licensed-by",
+  "exhibits": "exhibited-by"
+ },
+ "structural": {
+  "about": "subject-of",
+  "demonstrates": "demonstrated-by",
+  "contains": "part-of"
+ },
+ "symmetric": ["derived"]
+}

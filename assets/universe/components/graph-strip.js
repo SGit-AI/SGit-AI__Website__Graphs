@@ -27,6 +27,7 @@ export const STRIP_HTML =
   '  <button data-gtree="1">doc tree</button>' +
   '  <button data-gpeaks="1">family peaks</button>' +
   '  <button data-gderived="1">derived links</button>' +
+  '  <button data-galign="1" title="Rails that pull each heading level onto its own line">align</button>' +
   '  <button data-gschema="1">schema</button></div>' +
   '<div class="grow"><span class="glab">explore</span>' +
   '  <button data-gexp="1">focus on selection</button>' +
@@ -38,6 +39,7 @@ export const STRIP_HTML =
   '  <button data-gstable="1" title="What is on canvas holds still while newcomers settle">stable add</button>' +
   '  <button data-gpin="1">pin peaks</button>' +
   '  <button data-gboard="1" title="Drag the peaks between the four border areas">peak board</button>' +
+  '  <button data-galshow="1" title="Reveal the invisible alignment lines">align lines</button>' +
   '  <button data-gpaths="1">paths to peaks</button>' +
   '  <button data-gfit="1">fit</button>' +
   '  <button data-gclear="1">clear focus</button></div>';
@@ -71,8 +73,9 @@ export function reflectStrip(root, p) {
   root.querySelectorAll('[data-glay]').forEach((x) => x.classList.toggle('on', x.getAttribute('data-glay') === p.glay));
   root.querySelectorAll('[data-gsize]').forEach((x) => x.classList.toggle('on', x.getAttribute('data-gsize') === p.gsize));
   const flags = { glabels: p.labels, gboxed: p.gboxed, gdoc: p.gdoc, gtree: p.gtree,
-    gpeaks: p.gpeaks, gderived: p.gderived, gschema: p.gschema, gexp: p.gexp,
-    gpin: p.gpin, gstable: p.gstable, gpaths: p.gpaths, gdegmax: p.gdeg === 'max' };
+    gpeaks: p.gpeaks, gderived: p.gderived, galign: p.galign, gschema: p.gschema,
+    gexp: p.gexp, gpin: p.gpin, gstable: p.gstable, galshow: p.galshow,
+    gpaths: p.gpaths, gdegmax: p.gdeg === 'max' };
   Object.keys(flags).forEach((k) => {
     root.querySelector('[data-' + k + ']').classList.toggle('on', !!flags[k]);
   });

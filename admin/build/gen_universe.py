@@ -43,15 +43,24 @@ DATA = OUT / "data"
 
 TOTAL_SOURCES = 21   # the carried estate this layer will eventually cover
 
-VERB_INVERSE = {
-    "departs-from": "departed-from-by",
-    "determines": "determined-by",
-    "provides": "provided-by",
-    "enables": "enabled-by",
-    "remedies": "remedied-by",
-    "licenses": "licensed-by",
-    "exhibits": "exhibited-by",
-}
+# the verbs register (brief 26: one direction per relation, the inverse declared,
+# never stored). Loaded from data so the register is reviewable estate, not code.
+_VERBS = json.loads((ROOT / "v2" / "universe" / "verbs.json").read_text())
+VERB_INVERSE = dict(_VERBS["asserted"])
+ALL_INVERSES = {**_VERBS["asserted"], **_VERBS["structural"],
+                **{v: v for v in _VERBS["symmetric"]}}
+
+def _check_verbs():
+    seen = {}
+    for verb, inv in ALL_INVERSES.items():
+        if verb != inv and inv in ALL_INVERSES:
+            raise SystemExit(f"gen_universe: inverse {inv!r} of {verb!r} is itself a stored verb — one direction only")
+        if inv in seen and verb not in _VERBS["symmetric"]:
+            raise SystemExit(f"gen_universe: verbs {seen[inv]!r} and {verb!r} share the inverse {inv!r}")
+        seen[inv] = verb
+        if verb == inv and verb not in _VERBS["symmetric"]:
+            raise SystemExit(f"gen_universe: {verb!r} is its own inverse but is not declared symmetric")
+_check_verbs()
 
 FAMILY_LABEL = {
     "concept": "Concept", "claim": "Claim", "hypothesis": "Hypothesis",
@@ -682,6 +691,7 @@ def main():
                               "taxonomy": ex["taxonomy"],
                               "extraction": f'docs/{d["slug"]}/extraction.json',
                               "folder": f'docs/{d["slug"]}/',
+                              "verbs": ALL_INVERSES,
                               "elements": graph_json(ex)})
 
         (OUT / f'{d["slug"]}.html').write_text(DOC_PAGE.format(

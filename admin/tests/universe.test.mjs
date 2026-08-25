@@ -98,10 +98,13 @@ test('doctree: headingChain walks up through the levels', () => {
 });
 
 /* ---- cystyle: the physics land in the layout ------------------------------ */
-test('cystyle: cose honours the sliders', () => {
+test('cystyle: cose honours the sliders, align ties stay short', () => {
   const o = layoutOptions('cose', { len: 200, pull: 150 });
-  assert.equal(o.idealEdgeLength, 200);
+  const edge = (kind) => ({ data: () => kind });
+  assert.equal(o.idealEdgeLength(edge('about')), 200);
+  assert.equal(o.idealEdgeLength(edge('align')), 34);
   assert.equal(o.nodeRepulsion, 150000);
+  assert.equal(o.fit, false);   /* the caller decides whether the viewport moves */
 });
 test('cystyle: tree is breadthfirst, directed, with the given roots', () => {
   const o = layoutOptions('tree', { len: 90, pull: 90 }, 'node[family = "docroot"]');
@@ -313,6 +316,38 @@ test('schema: one node per family with counts, one edge per typed relation', () 
   assert.equal(byLabel['demonstrates ×1'].source, 'st:example');
   assert.equal(byLabel['enables ×1'].source, 'st:concept');   /* the verb, not the kind */
   assert.equal(byLabel['enables ×1'].target, 'st:concept');
+});
+
+/* ---- align: the invisible rails (brief 26, answered) ----------------------- */
+import { alignmentElements, railPositions } from '../../assets/universe/core/align.js';
+test('align: one rail per heading level, every section tied to its rail', () => {
+  const els = alignmentElements([
+    { title: 'Doc', level: 1 },
+    { title: 'Part 1', level: 2 }, { title: 'Sec A', level: 3 },
+    { title: 'Part 2', level: 2 }]);
+  const rails = els.filter((x) => x.data.family === 'rail').map((x) => x.data.id);
+  assert.deepEqual(rails, ['rail:2', 'rail:3']);
+  const ties = els.filter((x) => x.data.kind === 'align')
+    .map((x) => x.data.source + '>' + x.data.target);
+  assert.deepEqual(ties, ['rail:2>sec:Part 1', 'rail:3>sec:Sec A', 'rail:2>sec:Part 2']);
+});
+test('align: rails column up, deeper levels further right', () => {
+  const pos = railPositions([2, 3]);
+  assert.ok(pos['rail:2'].x < pos['rail:3'].x);
+  assert.equal(pos['rail:2'].y, pos['rail:3'].y);
+});
+
+/* ---- schema with the verbs register: both directions reviewable ------------ */
+test('schema: the verbs register puts the declared inverse on the label', () => {
+  const els = schemaElements([
+    { data: { id: 'a', family: 'concept' } }, { data: { id: 'k1', family: 'claim' } },
+    { data: { source: 'k1', target: 'a', kind: 'about' } },
+    { data: { source: 'a', target: 'a', kind: 'derived' } }],
+  { about: 'subject-of', derived: 'derived' });
+  const labels = els.filter((x) => x.data.source).map((x) => x.data.label).sort();
+  assert.deepEqual(labels, ['about ⇄ subject-of ×1', 'derived ×1']);   /* symmetric: no arrow pair */
+  const about = els.find((x) => x.data.verb === 'about');
+  assert.equal(about.data.inverse, 'subject-of');
 });
 
 /* ---- nodedoc: the document of one node, composed purely -------------------- */

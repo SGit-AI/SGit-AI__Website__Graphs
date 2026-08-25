@@ -118,8 +118,10 @@ export function runStableLayout(cy, vis, layoutOpts, shownIds) {
       n.position({ x: p.x + 60, y: p.y + 60 });
     }
   });
+  /* permanently locked infrastructure (the alignment rails) must stay locked */
+  const already = prev.filter((n) => n.locked());
   prev.lock();
   vis.layout(layoutOpts).run();
-  prev.unlock();
+  prev.not(already).unlock();
   return 'settled';
 }

@@ -68,6 +68,16 @@ export function graphStyle() {
       shape: 'round-rectangle', width: 'label', height: 'label', padding: '6px',
       'text-valign': 'center', 'text-halign': 'center', 'text-margin-y': 0,
       color: '#fff', 'font-weight': 'bold' } },
+    /* the alignment rails (brief 26): invisible by default, always pulling;
+       the uni-alshow class reveals what has been doing the arranging */
+    { selector: 'node[family = "rail"]', style: { width: 8, height: 8, opacity: 0,
+      'background-color': '#c9a227', label: '' } },
+    { selector: 'edge[kind = "align"]', style: { opacity: 0, width: 1,
+      'line-color': '#c9a227', 'line-style': 'dashed', 'target-arrow-shape': 'none',
+      'curve-style': 'straight' } },
+    { selector: 'node[family = "rail"].uni-alshow', style: { opacity: 0.9,
+      label: 'data(label)', 'font-size': 9, color: '#8a6d1a' } },
+    { selector: 'edge[kind = "align"].uni-alshow', style: { opacity: 0.4 } },
     { selector: 'edge[kind = "derived"]', style: { width: 1, 'line-style': 'dashed',
       'line-color': '#c9b8d8', 'target-arrow-shape': 'none', 'curve-style': 'haystack' } },
     { selector: 'edge.uni-path', style: { width: 3, 'line-color': '#c9a227',
@@ -91,8 +101,11 @@ export function graphStyle() {
  */
 export function layoutOptions(name, physics, treeRoots) {
   if (name === 'cose') {
+    /* align ties are kept short whatever the string setting: the rails pull
+       their level onto a line even while the rest of the graph breathes */
     return { name: 'cose', animate: false, fit: false, nodeRepulsion: physics.pull * 1000,
-      idealEdgeLength: physics.len, padding: 24 };
+      idealEdgeLength: (edge) => (edge.data('kind') === 'align' ? 34 : physics.len),
+      padding: 24 };
   }
   if (name === 'concentric') {
     return { name: 'concentric', animate: false, fit: false, padding: 24, minNodeSpacing: 22,

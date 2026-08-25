@@ -53,3 +53,32 @@ is read as "one to and one from".*
    inverse is undeclared or which appears in both directions under one name, and gate-level
    enforcement follows once the marking has been reviewed. Enforce at the gate now, or
    review in the schema view first?
+
+---
+
+## The founder's answers (24 August 2026, in chat, verbatim)
+
+> 1 , use 7 slots
+> 2 yes that is correct
+> 3 yes exactly, and we need a toggle to make them visible and invisible
+> 4 i think it will better to have a first go at creating those inverse verbs , and then we use our new visualisations (like the schema one) to improve them
+
+**Acted on at v0.4.29:**
+
+1. `SLOT_COUNT` is 7.
+2. Peaks-of-peaks is a confirmed direction: when a summit family grows too crowded to
+   read as peaks, the answer is another level of summit, the same mechanism one level up.
+   Recorded here; built when the crowding first appears.
+3. The **align** source ships: one invisible rail per heading level, locked in its own
+   column, every section tied to its rail with a short invisible edge, so the physics
+   pulls each level onto its own line and the document reads as a left-rooted tree. The
+   **align lines** toggle reveals and hides the rails and their ties; hidden or shown,
+   they are always doing the pulling. The rails stay locked through stable-add runs, so
+   the alignment survives adding and removing sources.
+4. The first go at the inverse verbs is the **verbs register**, `v2/universe/verbs.json`:
+   every asserted verb with its declared inverse, the structural relations (about ⇄
+   subject-of, demonstrates ⇄ demonstrated-by, contains ⇄ part-of), and the symmetric
+   relations (derived) marked as such. The build fails on a verb the register does not
+   carry, on two verbs sharing an inverse, and on an undeclared self-inverse. The schema
+   view now labels every relation with both directions (verb ⇄ inverse ×count), which is
+   the review surface for improving the first-go names, exactly as answered.

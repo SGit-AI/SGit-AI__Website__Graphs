@@ -8,8 +8,9 @@
 /** The four areas, in the order the board draws them. */
 export const AREAS = ['top', 'right', 'bottom', 'left'];
 
-/** Slots per area; few on purpose — a crowded border is not a set of peaks. */
-export const SLOT_COUNT = 6;
+/** Slots per area; few on purpose — a crowded border is not a set of peaks.
+    Seven, by the founder's answer to brief 26's question 1. */
+export const SLOT_COUNT = 7;
 
 /**
  * A default placement: the doc root and family peaks fill the left slots,
