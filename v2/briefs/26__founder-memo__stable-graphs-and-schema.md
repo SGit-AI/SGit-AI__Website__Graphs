@@ -82,3 +82,25 @@ is read as "one to and one from".*
    carry, on two verbs sharing an inverse, and on an undeclared self-inverse. The schema
    view now labels every relation with both directions (verb ⇄ inverse ×count), which is
    the review surface for improving the first-go names, exactly as answered.
+
+---
+
+## Follow-on (same day, in chat, verbatim)
+
+> Yes can you try that, and do you have a schema view where we can see all (or a subset) of those node types and verbs edges ? (This should should some very interesting patterns
+
+**Acted on at v0.4.30:**
+
+- **Family rails**: with family peaks and align both on, every node family gets its own
+  invisible rail and settles onto its own row — the dictionary above the claims above the
+  examples — so the pyramids read as a chart of floors. Same mechanism as the level rails,
+  turned sideways; same visibility toggle; sections and summits stay out of the rows.
+- **The schema over any subset**: the schema view is now rebuilt from whatever sources are
+  on at the moment it is opened (and it re-derives live as sources toggle), so the source
+  buttons are its subset selector. Document only: the pure semantic core. Add the doc
+  tree: the section types and their containment arrive. Add peaks and derived: the
+  synthetic layers join. The founder's prediction held on first look: the full schema of
+  the pilot shows nine node types and twenty-four typed relations, with section (38) as
+  the containment hub, concept (22) as the semantic sink where about ⇄ subject-of ×40,
+  all seven asserted verbs and derived ×13 converge, and the alignment rails correctly
+  absent — they are layout physics, not semantics.

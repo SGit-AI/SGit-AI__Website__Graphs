@@ -41,3 +41,44 @@ export function railPositions(levels) {
   levels.forEach((lv, i) => { pos['rail:' + lv] = { x: 170 * (i + 1), y: 320 }; });
   return pos;
 }
+
+/**
+ * Rails for the node families (the founder's follow-on to brief 26): one
+ * invisible rail per family with members, every member tied to it, so each
+ * family settles onto its own row — all the claims on one line under their
+ * summit, the pyramids reading as an org chart.
+ * @param {Array<object>} elements - cytoscape element definitions
+ * @param {string[]} families - the families that get a rail (the node kinds)
+ * @returns {Array<object>} rail nodes (family "rail") and align edges
+ */
+export function familyRailElements(elements, families) {
+  const byFam = {};
+  elements.forEach((el) => {
+    const d = el.data;
+    if (d.id && !d.source && families.indexOf(d.family) !== -1) {
+      (byFam[d.family] = byFam[d.family] || []).push(d.id);
+    }
+  });
+  const els = [];
+  let i = 0;
+  families.forEach((fam) => {
+    if (!byFam[fam]) return;
+    els.push({ data: { id: 'frail:' + fam, label: fam + ' row', family: 'rail', rowOf: fam } });
+    byFam[fam].forEach((id) => {
+      els.push({ data: { id: 'af:' + (i++), source: 'frail:' + fam, target: id, kind: 'align' } });
+    });
+  });
+  return els;
+}
+
+/**
+ * Where each family rail sits: one row per family, top to bottom in the
+ * given order, so the families stack like the floors of a chart.
+ * @param {string[]} famIds - the rail ids in row order
+ * @returns {Object<string, {x: number, y: number}>} position per rail id
+ */
+export function familyRailPositions(famIds) {
+  const pos = {};
+  famIds.forEach((id, i) => { pos[id] = { x: 480, y: 190 * (i + 1) }; });
+  return pos;
+}

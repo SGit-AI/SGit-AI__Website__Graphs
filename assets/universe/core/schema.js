@@ -23,7 +23,8 @@ export function schemaElements(elements, inverses) {
   const nodeCounts = {};
   elements.forEach((el) => {
     const d = el.data;
-    if (d.id && !d.source && d.family) {
+    /* the rails and their ties are layout infrastructure, not semantics */
+    if (d.id && !d.source && d.family && d.family !== 'rail' && d.family !== 'schema') {
       familyOf[d.id] = d.family;
       nodeCounts[d.family] = (nodeCounts[d.family] || 0) + 1;
     }
@@ -31,7 +32,7 @@ export function schemaElements(elements, inverses) {
   const rels = new Map();
   elements.forEach((el) => {
     const d = el.data;
-    if (!d.source) return;
+    if (!d.source || d.kind === 'align' || d.kind === 'schema') return;
     const from = familyOf[d.source], to = familyOf[d.target];
     if (!from || !to) return;
     const verb = d.kind === 'asserted' && d.verb ? d.verb : (d.kind || 'edge');

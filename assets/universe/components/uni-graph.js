@@ -19,7 +19,8 @@ import { graphStyle, layoutOptions } from '../core/cystyle.js';
 import { docTreeElements, DOC_ROOT_ID } from '../core/doctree.js';
 import { familyPeakElements, derivedConceptEdges, derivedGroupPeaks } from '../core/packs.js';
 import { schemaElements } from '../core/schema.js';
-import { alignmentElements, railPositions } from '../core/align.js';
+import { alignmentElements, railPositions, familyRailElements, familyRailPositions }
+  from '../core/align.js';
 import { defaultAssignments } from '../core/slots.js';
 import { NODE_KINDS } from '../core/kinds.js';
 import { neighbourhoodIds, nextDegree } from '../core/explore.js';
@@ -59,7 +60,7 @@ export class UniGraph extends HTMLElement {
     this._kinds = prefs.kinds || null;
     this._kindsKey = (this._kinds || []).slice().sort().join(' ');
     this._treeEles = null; this._peakEles = null; this._derivedEles = null;
-    this._schemaEles = null; this._alignEles = null;
+    this._schemaEles = null; this._alignEles = null; this._famRailEles = null;
     this._pins = prefs.gslots || null;   /* board or chat assignments, else summits */
     this._selected = null;
     this._fitted = false;
@@ -129,7 +130,8 @@ export class UniGraph extends HTMLElement {
     if (b.hasAttribute('data-gboxed')) { p.gboxed = !p.gboxed; this._emitPref('gboxed', p.gboxed ? 1 : 0); this._applyLook(); }
     if (b.hasAttribute('data-galign')) {
       p.galign = !p.galign; this._emitPref('galign', p.galign ? 1 : 0);
-      if (p.galign && !p.gtree) { p.gtree = true; this._emitPref('gtree', 1); }
+      /* rails need something to align: the doc tree's levels or the families */
+      if (p.galign && !p.gtree && !p.gpeaks) { p.gtree = true; this._emitPref('gtree', 1); }
       this.refresh(true);   /* aligning IS a re-arrangement ask */
       return;
     }
@@ -163,6 +165,7 @@ export class UniGraph extends HTMLElement {
     this.cy.elements().toggleClass('uni-szm', p.gsize === 'm').toggleClass('uni-szl', p.gsize === 'l');
     this.cy.nodes().not('[family = "peak"]').toggleClass('uni-boxed', p.gboxed);
     if (this._alignEles) this._alignEles.toggleClass('uni-alshow', !!p.galshow);
+    if (this._famRailEles) this._famRailEles.toggleClass('uni-alshow', !!p.galshow);
     reflectStrip(this._gopts, p);
   }
 
@@ -191,29 +194,34 @@ export class UniGraph extends HTMLElement {
     if (p.gpeaks && !this._peakEles) this._peakEles = cy.add(familyPeakElements(this._data.elements));
     if (p.gderived && !this._derivedEles) this._derivedEles = cy.add(
       derivedConceptEdges(this._data.elements).concat(derivedGroupPeaks(this._data.elements)));
-    if (p.gschema && !this._schemaEles) {
-      this._schemaEles = cy.add(schemaElements(this._data.elements, this._data.verbs));
-    }
     if (p.galign && this._treeEles && !this._alignEles) {
       this._alignEles = cy.add(alignmentElements(this._data.taxonomy));
       const rp = railPositions(this._alignEles.nodes().map((n) => n.data('level')).sort((a, b) => a - b));
       this._alignEles.nodes().forEach((n) => { n.position(rp[n.id()]); n.lock(); });
     }
+    if (p.galign && p.gpeaks && !this._famRailEles) {
+      this._famRailEles = cy.add(familyRailElements(this._data.elements, NODE_KINDS));
+      const fp = familyRailPositions(this._famRailEles.nodes().map((n) => n.id()));
+      this._famRailEles.nodes().forEach((n) => { n.position(fp[n.id()]); n.lock(); });
+    }
+    /* the schema is rebuilt from the CURRENT sources on every refresh, so the
+       source toggles are its subset selector (the founder's ask) */
+    if (this._schemaEles) { cy.remove(this._schemaEles); this._schemaEles = null; }
     cy.elements().removeClass('uni-hide');
     if (!p.gdoc) this._baseEles.addClass('uni-hide');
     if (this._treeEles && !p.gtree) this._treeEles.addClass('uni-hide');
     if (this._peakEles && !p.gpeaks) this._peakEles.addClass('uni-hide');
     if (this._derivedEles && !p.gderived) this._derivedEles.addClass('uni-hide');
     if (this._alignEles && !(p.galign && p.gtree)) this._alignEles.addClass('uni-hide');
-    if (this._schemaEles) {
-      if (p.gschema) {
-        cy.elements().addClass('uni-hide');
-        this._schemaEles.removeClass('uni-hide');
-      } else this._schemaEles.addClass('uni-hide');
-    }
+    if (this._famRailEles && !(p.galign && p.gpeaks)) this._famRailEles.addClass('uni-hide');
     if (this._kinds && !p.gschema) {
       NODE_KINDS.filter((k) => this._kinds.indexOf(k) === -1)
         .forEach((k) => cy.nodes('[family = "' + k + '"]').addClass('uni-hide'));
+    }
+    if (p.gschema) {
+      const defs = cy.elements().not('.uni-hide').map((x) => ({ data: x.data() }));
+      cy.elements().addClass('uni-hide');
+      this._schemaEles = cy.add(schemaElements(defs, this._data.verbs));
     }
     /* what remains is the explore walk's universe; kept for the stats bar */
     const base = cy.elements().not('.uni-hide');
@@ -282,16 +290,21 @@ export class UniGraph extends HTMLElement {
   runLayout(full) {
     const p = this._p, cy = this.cy;
     const vis = cy.elements().not('.uni-hide');
+    /* the rails steer only the physics: a hierarchy layout must not traverse
+       their ties, and the schema view is rebuilt fresh so it lays out fully */
+    const eles = p.glay === 'cose' ? vis
+      : vis.not('node[family = "rail"]').not('edge[kind = "align"]');
+    if (p.gschema) full = true;
     const opts = layoutOptions(p.glay, { len: p.glen, pull: p.gpull },
       layoutRoots(cy, vis, p, this._selected));
     let mode = 'full';
-    if (p.gstable && !full && this._shownIds) mode = runStableLayout(cy, vis, opts, this._shownIds);
+    if (p.gstable && !full && this._shownIds) mode = runStableLayout(cy, eles, opts, this._shownIds);
     if (mode === 'full' || mode === 'first') {
       if (p.gpin) {
-        runPinnedLayout(cy, vis, opts, !this._pinPlaced, this._pins || summitAssignments(vis));
+        runPinnedLayout(cy, eles, opts, !this._pinPlaced, this._pins || summitAssignments(vis));
         this._pinPlaced = true;
-      } else vis.layout(opts).run();
-      cy.fit(vis, 24);
+      } else eles.layout(opts).run();
+      cy.fit(eles, 24);
     }
     this._shownIds = new Set(vis.nodes().map((n) => n.id()));
   }

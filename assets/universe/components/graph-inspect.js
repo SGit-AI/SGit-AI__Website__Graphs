@@ -13,7 +13,8 @@ const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g,
   (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 const SYNTH = { section: 'a section of the document', docroot: 'the document itself',
-  peak: 'a family summit', dgroup: 'a derived grouping', schema: 'a node type' };
+  peak: 'a family summit', dgroup: 'a derived grouping', schema: 'a node type',
+  rail: 'an alignment rail — invisible, always pulling' };
 
 /** Build the inspector inside the graphbox; returns its state object. */
 export function inspectInit(host) {

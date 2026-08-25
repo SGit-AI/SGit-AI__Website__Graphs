@@ -319,7 +319,8 @@ test('schema: one node per family with counts, one edge per typed relation', () 
 });
 
 /* ---- align: the invisible rails (brief 26, answered) ----------------------- */
-import { alignmentElements, railPositions } from '../../assets/universe/core/align.js';
+import { alignmentElements, railPositions, familyRailElements, familyRailPositions }
+  from '../../assets/universe/core/align.js';
 test('align: one rail per heading level, every section tied to its rail', () => {
   const els = alignmentElements([
     { title: 'Doc', level: 1 },
@@ -335,6 +336,28 @@ test('align: rails column up, deeper levels further right', () => {
   const pos = railPositions([2, 3]);
   assert.ok(pos['rail:2'].x < pos['rail:3'].x);
   assert.equal(pos['rail:2'].y, pos['rail:3'].y);
+});
+test('align: family rails row up, one per populated family, members tied', () => {
+  const els = familyRailElements([
+    { data: { id: 'a', family: 'concept' } }, { data: { id: 'b', family: 'concept' } },
+    { data: { id: 'k1', family: 'claim' } }, { data: { id: 's1', family: 'section' } }],
+  ['concept', 'claim', 'hypothesis']);
+  const rails = els.filter((x) => x.data.family === 'rail').map((x) => x.data.id);
+  assert.deepEqual(rails, ['frail:concept', 'frail:claim']);   /* no empty-family rail */
+  const ties = els.filter((x) => x.data.kind === 'align');
+  assert.equal(ties.length, 3);
+  assert.ok(ties.every((t) => t.data.target !== 's1'), 'sections are not family members');
+  const pos = familyRailPositions(rails);
+  assert.ok(pos['frail:concept'].y < pos['frail:claim'].y);    /* rows stack downward */
+  assert.equal(pos['frail:concept'].x, pos['frail:claim'].x);
+});
+test('schema: rails and their ties never enter the schema', () => {
+  const els = schemaElements([
+    { data: { id: 'a', family: 'concept' } },
+    { data: { id: 'r', family: 'rail' } },
+    { data: { id: 't', source: 'r', target: 'a', kind: 'align' } }]);
+  assert.equal(els.filter((x) => !x.data.source).length, 1);
+  assert.equal(els.filter((x) => x.data.source).length, 0);
 });
 
 /* ---- schema with the verbs register: both directions reviewable ------------ */
