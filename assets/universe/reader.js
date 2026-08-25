@@ -9,6 +9,7 @@ import { allKinds } from './core/kinds.js';
 import './components/uni-options.js';
 import './components/uni-graph.js';
 import './components/uni-source.js';
+import { initStatePane } from './components/state-pane.js';
 
 const U = window.UNIVERSE;
 if (U && window.cytoscape) boot();
@@ -26,6 +27,7 @@ function boot() {
     scroll: pref('scroll', 'instant'),
     /* every link visible by default; an empty list is a deliberate "none" */
     kinds: (() => { try { return JSON.parse(pref('kinds', 'null')) || allKinds(); } catch (e) { return allKinds(); } })(),
+    debugOn: prefBool('debug', false) || location.hash === '#debug',
     selected: null,
   };
 
@@ -48,6 +50,7 @@ function boot() {
   main.appendChild(layout);
   const graph = panel.querySelector('uni-graph');
   const source = panel.querySelector('uni-source');
+  const pane = initStatePane({ slug: U.slug, graph });
 
   /* the sticky nav overlays the panel top without this runtime offset */
   function sizeUnderNav() {
@@ -110,7 +113,9 @@ function boot() {
     document.body.classList.toggle('uni-panel-on', state.panelOn && WIDE.matches);
     document.body.classList.toggle('uni-graph-off', !state.graphOn);
     tools.querySelector('#uni-tglpanel').setAttribute('aria-pressed', String(state.panelOn));
-    options.reflect({ scroll: state.scroll, kinds: state.kinds, graph: state.graphOn });
+    options.reflect({ scroll: state.scroll, kinds: state.kinds, graph: state.graphOn,
+      debug: state.debugOn });
+    pane.setOn(state.debugOn);
     inlineBox = inlineBox || document.getElementById('unigraph-inline');
     if (inlineBox) inlineBox.style.display = (state.graphOn && !(state.panelOn && WIDE.matches)) ? '' : 'none';
     if (state.graphOn) {
@@ -143,6 +148,7 @@ function boot() {
     clearSelection(true);
     state.selected = aid;
     graph.selected = aid;
+    pane.note('select ' + aid);
     clearBtn.hidden = false;
     const a = U.anchors.find((x) => x.aid === aid);
     if (a) {
@@ -176,9 +182,14 @@ function boot() {
     if (key === 'scroll') { state.scroll = value; setPref('scroll', value); }
     else if (key === 'kinds') { state.kinds = value; setPref('kinds', JSON.stringify(value)); applyState(); }
     else if (key === 'graph') { state.graphOn = value; setPref('graph', value ? 1 : 0); applyState(); }
+    else if (key === 'debug') { state.debugOn = value; setPref('debug', value ? 1 : 0); applyState(); }
     else if (key === 'mode') setPref('mode', value);
+    pane.note(key + '\u2192' + (typeof value === 'object' ? 'set' : value));
   });
-  layout.addEventListener('uni:gpref', (e) => setPref(e.detail.key, e.detail.value));
+  layout.addEventListener('uni:gpref', (e) => {
+    setPref(e.detail.key, e.detail.value);
+    pane.note(e.detail.key + '\u2192' + e.detail.value);
+  });
   /* maximised graph: the page chrome yields so the canvas owns the viewport */
   layout.addEventListener('uni:gmax', (e) => document.body.classList.toggle('uni-gmax-on', e.detail.on));
   layout.addEventListener('uni:node-tap', (e) => {
@@ -265,5 +276,8 @@ function boot() {
   if (location.hash === '#graph') requestAnimationFrame(openGraphView);
   window.addEventListener('hashchange', () => {
     if (location.hash === '#graph') openGraphView();
+    if (location.hash === '#debug' && !state.debugOn) {
+      state.debugOn = true; setPref('debug', 1); applyState();
+    }
   });
 }

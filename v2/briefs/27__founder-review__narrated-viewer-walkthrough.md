@@ -112,3 +112,29 @@ tied to the evidence they were said about, provenance never overwritten. Ten mom
 took three and a half minutes to record and carried six actionable findings, two of
 which (the explore pollution, the board coverage) a written note would likely have
 described less precisely than one screenshot each did.
+
+---
+
+## Follow-on (25 August 2026, in chat, verbatim)
+
+> great, so how can we add some more info that is useful to you? (since the prob here is that the recorded doesn't have programatic access to the page it is being recorded
+>
+> what if we add a debug pane (bottom right) that has that info you asked for?
+
+> relevant when I'm doing this type of narrations or other debug cases where you kinda want to have some extra info to help to diagnose something
+
+**Acted on at v0.4.32: the state pane.** The founder's inversion is the right fix: if the
+recorder cannot reach the page, the page broadcasts its state into the pixels the recorder
+does capture, and the review tool's cleanup model, which already reads the screenshots,
+transcribes the state the same way it read the "peak board" button. The pane sits bottom
+right, off by default (it exists for narrations and debug sessions), enabled by `#debug`
+on the URL, or the reader options popover, and it shows on short high-contrast monospace
+lines: the site version, the document slug and hash, a clock (which joins each screenshot
+to the recording's own timeline), the current selection, the layout and look, the sources
+that are on, the explore state and any hidden edge kinds, the visible counts, and **the
+last action taken** ("last: gpeaks→1", "select connectivity"), which is the line that
+disambiguates "this" and "here" in a narration. The same truth is published as
+`window.__uniState()` for any tool that does gain programmatic access, so pixels and API
+can never disagree. The suggested tool-side half: teach the cleanup model that when a
+capture contains the state pane, it should transcribe it into a per-moment `state` field
+in `session.json`, which closes the loop the follow-on opened.

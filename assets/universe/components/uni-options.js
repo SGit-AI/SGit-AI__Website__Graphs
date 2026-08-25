@@ -24,6 +24,7 @@ export class UniOptions extends HTMLElement {
       ).join('') + '</span>' +
       '  <h5>Panel</h5>' +
       '  <label><input type="checkbox" id="uni-graphchk"> show the graph</label>' +
+      '  <label><input type="checkbox" id="uni-debugchk"> state pane (for narrated reviews and debugging)</label>' +
       '</div></span>';
     this._box = this.querySelector('#uni-opts');
     this.addEventListener('click', this);
@@ -54,6 +55,7 @@ export class UniOptions extends HTMLElement {
     }
     if (t.name === 'uni-scroll') this._emit('scroll', t.value);
     else if (t.id === 'uni-graphchk') this._emit('graph', t.checked);
+    else if (t.id === 'uni-debugchk') this._emit('debug', t.checked);
     else if (t.hasAttribute('data-kind')) {
       const set = new Set(this._kinds || []);
       if (t.checked) set.add(t.getAttribute('data-kind'));
@@ -77,6 +79,7 @@ export class UniOptions extends HTMLElement {
       c.checked = state.kinds.indexOf(c.getAttribute('data-kind')) !== -1;
     });
     this.querySelector('#uni-graphchk').checked = state.graph;
+    this.querySelector('#uni-debugchk').checked = !!state.debug;
   }
 }
 

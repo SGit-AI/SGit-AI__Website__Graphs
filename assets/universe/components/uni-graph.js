@@ -344,6 +344,23 @@ export class UniGraph extends HTMLElement {
     this._shownIds = new Set(vis.nodes().map((n) => n.id()));
   }
 
+  /** The pane- and tool-facing state: prefs, sources, selection, filters and
+      visible counts, one truth for the state pane and window.__uniState. */
+  get snapshot() {
+    const p = this._p;
+    return {
+      prefs: { glay: p.glay, gsize: p.gsize, boxed: !!p.gboxed, labels: !!p.labels,
+        stable: !!p.gstable, pin: !!p.gpin, paths: !!p.gpaths,
+        exp: !!p.gexp, deg: p.gdeg, glen: p.glen, gpull: p.gpull },
+      sources: { doc: !!p.gdoc, tree: !!p.gtree, peaks: !!p.gpeaks,
+        derived: !!p.gderived, align: !!p.galign, schema: !!p.gschema },
+      selected: this._selected,
+      edgesOff: this._edgeOff ? Array.from(this._edgeOff) : [],
+      visible: this.cy ? { nodes: this.cy.nodes().not('.uni-hide').length,
+        edges: this.cy.edges().not('.uni-hide').length } : null,
+    };
+  }
+
   /** Move the canvas between the panel and the inline fallback container. */
   mountTo(target) {
     if (target && this.cy && this.cy.container() !== target) this.cy.mount(target);

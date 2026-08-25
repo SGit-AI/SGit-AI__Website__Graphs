@@ -278,3 +278,12 @@ body.uni-gmax-on .uni-vsplit, body.uni-gmax-on .uni-hsplit { display: none; }
   cursor: grab; user-select: none; max-width: 160px; overflow: hidden;
   text-overflow: ellipsis; white-space: nowrap; }
 .pb-chip.picked { outline: 3px solid #c9a227; }
+
+/* ---- the state pane (brief 27 follow-on): page state broadcast into the
+   pixels a screen recording captures; off unless narrating or debugging ----- */
+.uni-statepane { position: fixed; right: .7rem; bottom: 4.9rem; z-index: 90;
+  background: rgba(15, 18, 28, .92); color: #d9e4f5; border-radius: 8px;
+  padding: .45rem .65rem; font: 11px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  max-width: 350px; pointer-events: none; white-space: nowrap; }
+.uni-statepane div { overflow: hidden; text-overflow: ellipsis; }
+.uni-statepane div:first-child { color: #9fd6a8; font-weight: 700; }
