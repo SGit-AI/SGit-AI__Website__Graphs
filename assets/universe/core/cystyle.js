@@ -51,6 +51,19 @@ export function graphStyle() {
       shape: 'round-rectangle', width: 'label', height: 'label', padding: '6px',
       'text-valign': 'center', 'text-halign': 'center', 'text-margin-y': 0,
       color: '#fff', 'font-weight': 'bold' } },
+    /* the schema view: one node per type (its family's own colour), edges
+       labelled with the verb or kind and how often it occurs */
+    { selector: 'node[family = "schema"]', style: {
+      'background-color': (ele) => FAMILY_COLOURS[ele.data('typeOf')] || '#2b3446',
+      shape: 'round-rectangle', width: 'label', height: 'label', padding: '8px',
+      'text-valign': 'center', 'text-halign': 'center', 'text-margin-y': 0,
+      color: '#fff', 'font-weight': 'bold', 'font-size': 12 } },
+    { selector: 'edge[kind = "schema"]', style: { width: 2, 'line-color': '#8a8f98',
+      'target-arrow-color': '#8a8f98', 'target-arrow-shape': 'triangle',
+      label: 'data(label)', 'font-size': 9, color: '#555',
+      'text-background-color': '#fff', 'text-background-opacity': 0.9,
+      'text-background-padding': 2, 'curve-style': 'bezier',
+      'control-point-step-size': 60 } },
     { selector: 'node[family = "dgroup"]', style: { 'background-color': '#8e77a8',
       shape: 'round-rectangle', width: 'label', height: 'label', padding: '6px',
       'text-valign': 'center', 'text-halign': 'center', 'text-margin-y': 0,
@@ -69,6 +82,8 @@ export function graphStyle() {
 
 /**
  * Layout options for a named layout, honouring the physics settings.
+ * Every layout runs with fit: false — the caller decides whether the viewport
+ * moves, which is what makes the stable-add principle (brief 26) possible.
  * @param {string} name - cose | concentric | grid | tree
  * @param {{len: number, pull: number}} physics - string length and pull (thousands)
  * @param {object|string|undefined} treeRoots - roots for the tree layout
@@ -76,17 +91,17 @@ export function graphStyle() {
  */
 export function layoutOptions(name, physics, treeRoots) {
   if (name === 'cose') {
-    return { name: 'cose', animate: false, nodeRepulsion: physics.pull * 1000,
+    return { name: 'cose', animate: false, fit: false, nodeRepulsion: physics.pull * 1000,
       idealEdgeLength: physics.len, padding: 24 };
   }
   if (name === 'concentric') {
-    return { name: 'concentric', animate: false, padding: 24, minNodeSpacing: 22,
+    return { name: 'concentric', animate: false, fit: false, padding: 24, minNodeSpacing: 22,
       concentric: (n) => (n.data('family') === 'concept' ? 3 : n.data('family') === 'claim' ? 2 : 1),
       levelWidth: () => 1 };
   }
   if (name === 'tree') {
-    return { name: 'breadthfirst', animate: false, directed: true, padding: 24,
+    return { name: 'breadthfirst', animate: false, fit: false, directed: true, padding: 24,
       spacingFactor: 1.1, roots: treeRoots };
   }
-  return { name: 'grid', animate: false, padding: 24 };
+  return { name: 'grid', animate: false, fit: false, padding: 24 };
 }

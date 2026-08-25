@@ -258,6 +258,63 @@ test('packs: pin positions stack left and right, gap scaled by the free count', 
   assert.equal(pinPositions([], ['g1'], 40)['g1'].x, 1040);
 });
 
+/* ---- slots: the four border areas and their aligned slots (brief 26) ------- */
+import { AREAS, SLOT_COUNT, defaultAssignments, slotPositions, freeSlot }
+  from '../../assets/universe/core/slots.js';
+test('slots: defaults fill left and right in order, capped at the slot count', () => {
+  const a = defaultAssignments(['d', 'p1'], ['g1']);
+  assert.deepEqual(a['d'], { area: 'left', slot: 0 });
+  assert.deepEqual(a['p1'], { area: 'left', slot: 1 });
+  assert.deepEqual(a['g1'], { area: 'right', slot: 0 });
+  assert.equal(Object.keys(defaultAssignments(Array.from({ length: 9 }, (_, i) => 'x' + i), [])).length,
+    SLOT_COUNT);
+});
+test('slots: positions align along each border band', () => {
+  const pos = slotPositions({
+    a: { area: 'top', slot: 0 }, b: { area: 'top', slot: 3 },
+    c: { area: 'left', slot: 2 }, d: { area: 'right', slot: 2 },
+    e: { area: 'bottom', slot: 1 } }, 10);
+  assert.equal(pos.a.y, 0);
+  assert.equal(pos.b.y, 0);                          /* the top band is one line */
+  assert.ok(pos.a.x < pos.b.x);                      /* slots keep their order */
+  assert.equal(pos.c.x, 0);
+  assert.equal(pos.d.x, 700);                        /* max(700, 10 * 26) */
+  assert.equal(pos.c.y, pos.d.y);                    /* same slot, same height */
+  assert.ok(pos.e.y > pos.c.y);                      /* the bottom band is below */
+  assert.equal(AREAS.length, 4);
+});
+test('slots: freeSlot skips used slots and reports a full area', () => {
+  const a = { x: { area: 'top', slot: 0 }, y: { area: 'top', slot: 1 } };
+  assert.equal(freeSlot(a, 'top'), 2);
+  assert.equal(freeSlot(a, 'left'), 0);
+  const full = {};
+  for (let i = 0; i < SLOT_COUNT; i++) full['n' + i] = { area: 'top', slot: i };
+  assert.equal(freeSlot(full, 'top'), -1);
+});
+
+/* ---- schema: the types and how they connect (brief 26) --------------------- */
+import { schemaElements } from '../../assets/universe/core/schema.js';
+test('schema: one node per family with counts, one edge per typed relation', () => {
+  const els = schemaElements([
+    { data: { id: 'a', family: 'concept' } }, { data: { id: 'b', family: 'concept' } },
+    { data: { id: 'k1', family: 'claim' } }, { data: { id: 'e1', family: 'example' } },
+    { data: { source: 'k1', target: 'a', kind: 'about' } },
+    { data: { source: 'k1', target: 'b', kind: 'about' } },
+    { data: { source: 'e1', target: 'a', kind: 'demonstrates' } },
+    { data: { source: 'a', target: 'b', kind: 'asserted', verb: 'enables' } }]);
+  const nodes = els.filter((x) => !x.data.source);
+  assert.deepEqual(nodes.map((n) => n.data.label).sort(),
+    ['claim (1)', 'concept (2)', 'example (1)']);
+  const edges = els.filter((x) => x.data.source);
+  const byLabel = {};
+  edges.forEach((e) => { byLabel[e.data.label] = e.data; });
+  assert.equal(byLabel['about ×2'].source, 'st:claim');
+  assert.equal(byLabel['about ×2'].target, 'st:concept');
+  assert.equal(byLabel['demonstrates ×1'].source, 'st:example');
+  assert.equal(byLabel['enables ×1'].source, 'st:concept');   /* the verb, not the kind */
+  assert.equal(byLabel['enables ×1'].target, 'st:concept');
+});
+
 /* ---- nodedoc: the document of one node, composed purely -------------------- */
 import { extractionElements, nodeRichness, composeNodeDoc } from '../../assets/universe/core/nodedoc.js';
 const NDEX = {

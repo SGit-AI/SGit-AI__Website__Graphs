@@ -1,11 +1,13 @@
 /* @module universe/components/uni-graph
    Single responsibility: the local graph as a custom element: the cytoscape
-   instance, its options strip, the node-pack sources (doc tree, family peaks,
-   derived links), the explore-from-selection view with its degree stepper and
-   stats bar, paths-to-peaks, preset views, maximise, and the focus ring.
-   Visibility flows through one pipeline so the shared kind toggles, the packs
-   and the explore filter always compose. Renders from properties and emits;
-   it never reaches into services or the reader's state.
+   instance, its options strip, the node-pack sources (document, doc tree,
+   family peaks, derived links, the schema), the explore view with its degree
+   stepper and stats bar, paths-to-peaks, presets, maximise with its node
+   inspector, slotted pinning with the peak board, the stable-add principle
+   (brief 26: a node already on canvas never moves when the view changes),
+   and the focus ring. Visibility flows through one pipeline so every filter
+   composes. Renders from properties and emits; the add-on surfaces (board,
+   inspector) live in parts so the core element stays legible.
    Light DOM; the host is display:contents so layout CSS is untouched.
    @fires uni:node-tap  detail {id, label}  a node was tapped
    @fires uni:gpref     detail {key, value}  a persistable graph pref changed
@@ -16,14 +18,19 @@
 import { graphStyle, layoutOptions } from '../core/cystyle.js';
 import { docTreeElements, DOC_ROOT_ID } from '../core/doctree.js';
 import { familyPeakElements, derivedConceptEdges, derivedGroupPeaks } from '../core/packs.js';
+import { schemaElements } from '../core/schema.js';
+import { defaultAssignments } from '../core/slots.js';
 import { NODE_KINDS } from '../core/kinds.js';
 import { neighbourhoodIds, nextDegree } from '../core/explore.js';
 import { STRIP_HTML, reflectStrip, renderStats, applyPresetView } from './graph-strip.js';
-import { focusNode, applyPaths, runPinnedLayout, layoutRoots } from './graph-fx.js';
+import { focusNode, applyPaths, layoutRoots, runPinnedLayout, runStableLayout,
+  summitAssignments } from './graph-fx.js';
+import { inspectInit, inspectNode, inspectLegend } from './graph-inspect.js';
+import { toggleBoard } from './pin-board.js';
 
 /** The visibility toggles; gdoc makes the document a source like any other,
-    so all sources off means an empty canvas. */
-const VIS_TOGGLES = ['gdoc', 'gtree', 'gpeaks', 'gderived', 'gexp'];
+    so all sources off means an empty canvas; gschema shows only the schema. */
+const VIS_TOGGLES = ['gdoc', 'gtree', 'gpeaks', 'gderived', 'gschema', 'gexp'];
 
 export class UniGraph extends HTMLElement {
   connectedCallback() {
@@ -42,17 +49,20 @@ export class UniGraph extends HTMLElement {
 
   /**
    * Create the cytoscape instance and apply the persisted look.
-   * @param {{title, taxonomy, anchors, elements}} data - the page's blob
-   * @param {{glay, gsize, gboxed, gtree, gpeaks, gderived, gexp, gdeg, gpaths, glen, gpull, kinds}} prefs
+   * @param {{title, taxonomy, anchors, elements, extraction}} data - the page's blob
+   * @param {object} prefs - the persisted graph preferences (see the reader)
    */
   init(data, prefs) {
     this._data = data;
-    this._p = Object.assign({ labels: true }, prefs);
+    this._p = Object.assign({ labels: true, gstable: true }, prefs);
     this._kinds = prefs.kinds || null;
     this._kindsKey = (this._kinds || []).slice().sort().join(' ');
     this._treeEles = null; this._peakEles = null; this._derivedEles = null;
+    this._schemaEles = null;
+    this._pins = prefs.gslots || null;   /* board or chat assignments, else summits */
     this._selected = null;
     this._fitted = false;
+    this._shownIds = null;
     this.cy = window.cytoscape({
       container: this.querySelector('#uni-cy'),
       elements: data.elements,
@@ -60,7 +70,9 @@ export class UniGraph extends HTMLElement {
       style: graphStyle(),
     });
     this._baseEles = this.cy.elements();
+    this._inspect = inspectInit(this);
     this.cy.on('tap', 'node', (evt) => {
+      inspectNode(this._inspect, this._data, evt.target.data());
       this.dispatchEvent(new CustomEvent('uni:node-tap',
         { bubbles: true, detail: { id: evt.target.id(), label: evt.target.data('label') } }));
     });
@@ -69,7 +81,11 @@ export class UniGraph extends HTMLElement {
     this._refreshVisibility();
     this._applyLook();
     if (this._p.glay !== 'cose' || this._p.gpin
-        || VIS_TOGGLES.some((k) => (k === 'gdoc' ? !this._p[k] : this._p[k]))) this.runLayout();
+        || VIS_TOGGLES.some((k) => (k === 'gdoc' ? !this._p[k] : this._p[k]))) this.runLayout(true);
+    /* a default boot skips runLayout, so seed the stable-add baseline here */
+    if (!this._shownIds) {
+      this._shownIds = new Set(this.cy.elements().not('.uni-hide').nodes().map((n) => n.id()));
+    }
   }
 
   /** One delegated handler for the options strip. */
@@ -81,7 +97,7 @@ export class UniGraph extends HTMLElement {
       this._emitPref('glen', p.glen); this._emitPref('gpull', p.gpull);
       /* live: re-run the layout as the slider moves, one run per frame */
       if (p.glay === 'cose' && !this._liveT) {
-        this._liveT = requestAnimationFrame(() => { this._liveT = 0; this.runLayout(); });
+        this._liveT = requestAnimationFrame(() => { this._liveT = 0; this.runLayout(true); });
       }
       return;
     }
@@ -97,7 +113,7 @@ export class UniGraph extends HTMLElement {
       return;
     }
     if (b.hasAttribute('data-gview')) {
-      if (applyPresetView(this, p, b.getAttribute('data-gview'))) this.refresh();
+      if (applyPresetView(this, p, b.getAttribute('data-gview'))) this.refresh(true);
       return;
     }
     if (b.hasAttribute('data-gdegdn') || b.hasAttribute('data-gdegup') || b.hasAttribute('data-gdegmax')) {
@@ -106,7 +122,7 @@ export class UniGraph extends HTMLElement {
       this._emitPref('gdeg', p.gdeg); this.refresh();
       return;
     }
-    if (b.hasAttribute('data-glay')) { p.glay = b.getAttribute('data-glay'); this._emitPref('glay', p.glay); this._applyLook(); this.runLayout(); }
+    if (b.hasAttribute('data-glay')) { p.glay = b.getAttribute('data-glay'); this._emitPref('glay', p.glay); this._applyLook(); this.runLayout(true); }
     if (b.hasAttribute('data-gsize')) { p.gsize = b.getAttribute('data-gsize'); this._emitPref('gsize', p.gsize); this._applyLook(); }
     if (b.hasAttribute('data-glabels')) { p.labels = !p.labels; this._applyLook(); }
     if (b.hasAttribute('data-gboxed')) { p.gboxed = !p.gboxed; this._emitPref('gboxed', p.gboxed ? 1 : 0); this._applyLook(); }
@@ -114,10 +130,12 @@ export class UniGraph extends HTMLElement {
       if (!b.hasAttribute('data-' + k)) return;
       p[k] = !p[k]; this._emitPref(k, p[k] ? 1 : 0); this.refresh();
     });
+    if (b.hasAttribute('data-gstable')) { p.gstable = !p.gstable; this._emitPref('gstable', p.gstable ? 1 : 0); this._applyLook(); }
+    if (b.hasAttribute('data-gboard')) { toggleBoard(this); return; }
     if (b.hasAttribute('data-gpin')) {
-      p.gpin = !p.gpin; this._emitPref('gpin', p.gpin ? 1 : 0);
-      if (p.gpin) this._pinPlaced = false;   /* pin-on re-places the stacks */
-      this._applyLook(); this.runLayout();
+      p.gpin = !p.gpin; this._pinAuto = false; this._emitPref('gpin', p.gpin ? 1 : 0);
+      if (p.gpin) this._pinPlaced = false;   /* pin-on re-places the slots */
+      this._applyLook(); this.runLayout(true);
     }
     if (b.hasAttribute('data-gpaths')) { p.gpaths = !p.gpaths; this._emitPref('gpaths', p.gpaths ? 1 : 0); this._applyLook(); this._applyPaths(); }
     if (b.hasAttribute('data-gfit')) this.cy.fit(this.cy.elements().not('.uni-hide'), 24);
@@ -146,11 +164,12 @@ export class UniGraph extends HTMLElement {
   }
 
   /** Recompute visibility, look and layout in one pass. */
-  refresh() { this._refreshVisibility(); this._applyLook(); this.runLayout(); }
+  refresh(full) { this._refreshVisibility(); this._applyLook(); this.runLayout(full); }
 
   /* The one visibility pipeline: materialise the enabled node packs, hide the
-     disabled ones and the toggled-off families, then the explore filter, the
-     paths and the stats over what remains. */
+     disabled ones and the toggled-off families (the schema view is exclusive:
+     just the types and how they connect), then the explore filter, the paths,
+     the stats and the inspector legend over what remains. */
   _refreshVisibility() {
     const cy = this.cy, p = this._p;
     if (p.gtree && !this._treeEles) {
@@ -160,12 +179,19 @@ export class UniGraph extends HTMLElement {
     if (p.gpeaks && !this._peakEles) this._peakEles = cy.add(familyPeakElements(this._data.elements));
     if (p.gderived && !this._derivedEles) this._derivedEles = cy.add(
       derivedConceptEdges(this._data.elements).concat(derivedGroupPeaks(this._data.elements)));
+    if (p.gschema && !this._schemaEles) this._schemaEles = cy.add(schemaElements(this._data.elements));
     cy.elements().removeClass('uni-hide');
     if (!p.gdoc) this._baseEles.addClass('uni-hide');
     if (this._treeEles && !p.gtree) this._treeEles.addClass('uni-hide');
     if (this._peakEles && !p.gpeaks) this._peakEles.addClass('uni-hide');
     if (this._derivedEles && !p.gderived) this._derivedEles.addClass('uni-hide');
-    if (this._kinds) {
+    if (this._schemaEles) {
+      if (p.gschema) {
+        cy.elements().addClass('uni-hide');
+        this._schemaEles.removeClass('uni-hide');
+      } else this._schemaEles.addClass('uni-hide');
+    }
+    if (this._kinds && !p.gschema) {
       NODE_KINDS.filter((k) => this._kinds.indexOf(k) === -1)
         .forEach((k) => cy.nodes('[family = "' + k + '"]').addClass('uni-hide'));
     }
@@ -182,11 +208,11 @@ export class UniGraph extends HTMLElement {
     this._renderStats();
   }
 
-  /* The stats bar: the view's counts plus what the next hop would add. */
+  /* The stats bar and the inspector's type legend, over the visible view. */
   _renderStats() {
-    renderStats(this.querySelector('#uni-gstats'),
-      this.cy.elements().not('.uni-hide').map((x) => x.data()),
-      this._visData, this._p, this._selected);
+    const shown = this.cy.elements().not('.uni-hide').map((x) => x.data());
+    renderStats(this.querySelector('#uni-gstats'), shown, this._visData, this._p, this._selected);
+    inspectLegend(this._inspect, shown);
   }
 
   _applyPaths() { applyPaths(this.cy, this._p.gpaths, this._selected); }
@@ -207,33 +233,47 @@ export class UniGraph extends HTMLElement {
   /** Drop the focus ring and dimming. */
   clearFocus() { if (this.cy) this.cy.elements().removeClass('uni-focus uni-dim'); }
 
-  /** Custom pin stacks (the page API's arbitrary pinning, data down): while
-      set, EVERY layout run keeps these ids locked at their stacks, so a
-      slider nudge cannot scramble an arrangement the chat built. They replace
-      the summit pinning while set; null (or empty) clears them.
-      @param {string[]|null} left @param {string[]} [right] */
+  /** Custom pin stacks (the page API, data down): left ids stack on the left
+      band, right ids on the right; held through EVERY layout run; null clears
+      back to the summit defaults. Kept for the chat's pin_nodes binding. */
   setCustomPins(left, right) {
     const has = (left && left.length) || (right && right.length);
-    this._customPins = has ? { left: left || [], right: right || [] } : null;
-    this._pinPlaced = false;
-    this.runLayout();
+    this.setPinAssignments(has ? defaultAssignments(left || [], right || []) : null);
   }
-  get customPins() { return this._customPins || null; }
+  get customPins() { return this._pins; }
 
-  /** Re-run the current layout over the visible elements, pins held through
-      every run (placed once per pin-on; hand-drags then hold). */
-  runLayout() {
-    const p = this._p;
-    const vis = this.cy.elements().not('.uni-hide');
+  /** Slotted pin assignments (the peak board, data down): id -> {area, slot}
+      across the four border bands. Replaces summit defaults while set. */
+  setPinAssignments(assignments) {
+    this._pins = assignments && Object.keys(assignments).length ? assignments : null;
+    this._pinPlaced = false;
+    this._emitPref('gslots', this._pins ? JSON.stringify(this._pins) : '');
+    /* assignments imply pinning; clearing undoes a pin-on the assignment forced */
+    if (this._pins && !this._p.gpin) { this._p.gpin = true; this._pinAuto = true; this._emitPref('gpin', 1); this._applyLook(); }
+    else if (!this._pins && this._pinAuto) { this._p.gpin = false; this._pinAuto = false; this._emitPref('gpin', 0); this._applyLook(); }
+    this.runLayout(true);
+  }
+  get pinAssignments() { return this._pins || summitAssignments(this.cy.elements().not('.uni-hide')); }
+
+  /** Re-run the layout. Stable-add (brief 26) governs implicit re-runs: what
+      was on canvas holds still while newcomers settle, and the viewport stays
+      put. An explicit ask (layout button, slider, pins, presets) passes full
+      and lays out everything. Pins are held locked through every run. */
+  runLayout(full) {
+    const p = this._p, cy = this.cy;
+    const vis = cy.elements().not('.uni-hide');
     const opts = layoutOptions(p.glay, { len: p.glen, pull: p.gpull },
-      layoutRoots(this.cy, vis, p, this._selected));
-    if (p.gpin || this._customPins) {
-      runPinnedLayout(this.cy, vis, opts, !this._pinPlaced, this._customPins);
-      this._pinPlaced = true;
-    } else {
-      vis.layout(opts).run();
+      layoutRoots(cy, vis, p, this._selected));
+    let mode = 'full';
+    if (p.gstable && !full && this._shownIds) mode = runStableLayout(cy, vis, opts, this._shownIds);
+    if (mode === 'full' || mode === 'first') {
+      if (p.gpin) {
+        runPinnedLayout(cy, vis, opts, !this._pinPlaced, this._pins || summitAssignments(vis));
+        this._pinPlaced = true;
+      } else vis.layout(opts).run();
+      cy.fit(vis, 24);
     }
-    this.cy.fit(vis, 24);
+    this._shownIds = new Set(vis.nodes().map((n) => n.id()));
   }
 
   /** Move the canvas between the panel and the inline fallback container. */

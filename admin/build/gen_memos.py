@@ -23,6 +23,13 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "26__founder-memo__stable-graphs-and-schema.md": (
+     "Fixed nodes, the four areas, and the schema",
+     "The stability principle: every node move costs the reader their mental picture, so "
+     "what is on canvas holds still while newcomers settle. The four border areas with "
+     "their aligned slots, the drag-and-drop peak board, the maximised view's inspector "
+     "and type legend, the invisible alignment lines to come, and the schema view that "
+     "judges the graph at the type level. Nine instructions mapped, four questions back."),
  "25__founder-note__pinned-peaks.md": (
      "Pinned peaks, and the document as a source",
      "Lock the summits at the edges of the canvas and let the physics settle everything "

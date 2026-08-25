@@ -4,7 +4,7 @@
    pinned-summits layout run.
    A part of <uni-graph>: pure functions over the cytoscape instance, no state. */
 'use strict';
-import { pinPositions } from '../core/packs.js';
+import { defaultAssignments, slotPositions } from '../core/slots.js';
 
 /**
  * Focus one node: ring it, dim the rest, centre it in the given tempo.
@@ -57,36 +57,69 @@ export function layoutRoots(cy, vis, p, selected) {
   return undefined;
 }
 
+/** The summit families' default placement when no explicit assignments exist:
+    doc root and family peaks down the left band, derived groups down the right. */
+export function summitAssignments(vis) {
+  return defaultAssignments(
+    vis.nodes('[family = "docroot"], [family = "peak"]').map((n) => n.id()),
+    vis.nodes('[family = "dgroup"]').map((n) => n.id()));
+}
+
 /**
- * Run a layout with pinned stacks: the summits by default, or the custom
- * left/right id lists when given (the page API's arbitrary pinning). Pins are
- * placed into the stacks when asked, locked for the run so the physics
- * settles the free nodes around them, and unlocked after so the reader can
- * drag them by hand between runs. Called from every layout run while pinning
- * is active, so a slider nudge or source toggle cannot scramble the stacks.
- * @param {object} cy - the cytoscape instance
- * @param {object} vis - the visible elements collection
+ * Run a layout with pinned slots: the given area/slot assignments are placed
+ * into the border bands when asked, locked for the run so the physics settles
+ * the free nodes between them, and unlocked after so the reader can drag them
+ * by hand between runs. Called from every layout run while pinning is active,
+ * so a slider nudge or source toggle cannot scramble the arrangement.
+ * @param {object} cy @param {object} vis - the visible elements
  * @param {object} layoutOpts - options for the layout to run
- * @param {boolean} place - whether to (re)place the pins into the stacks
- * @param {{left: string[], right: string[]}|null} custom - explicit stacks;
- *   null pins the summit families instead
+ * @param {boolean} place - whether to (re)place the pins into their slots
+ * @param {Object<string, {area, slot}>} assignments
  * @returns {boolean} whether anything was pinned
  */
-export function runPinnedLayout(cy, vis, layoutOpts, place, custom) {
-  const onCanvas = (id) => vis.getElementById(id).nonempty();
-  const left = custom ? custom.left.filter(onCanvas)
-    : vis.nodes('[family = "docroot"], [family = "peak"]').map((n) => n.id());
-  const right = custom ? custom.right.filter(onCanvas)
-    : vis.nodes('[family = "dgroup"]').map((n) => n.id());
-  const ids = left.concat(right);
+export function runPinnedLayout(cy, vis, layoutOpts, place, assignments) {
+  const live = {};
+  Object.keys(assignments).forEach((id) => {
+    if (vis.getElementById(id).nonempty()) live[id] = assignments[id];
+  });
+  const ids = Object.keys(live);
   if (!ids.length) { vis.layout(layoutOpts).run(); return false; }
   const pins = cy.collection(ids.map((id) => cy.$id(id)));
   if (place) {
-    const pos = pinPositions(left, right, vis.nodes().length - ids.length);
+    const pos = slotPositions(live, vis.nodes().length - ids.length);
     pins.forEach((n) => n.position(pos[n.id()]));
   }
   pins.lock();
   vis.layout(layoutOpts).run();
   pins.unlock();
   return true;
+}
+
+/**
+ * The stable-add run, per brief 26: a node already on the canvas never moves
+ * when the view gains or loses elements, because every move costs the reader
+ * their mental picture. Removals move nothing at all; additions freeze every
+ * previously shown node, seed each newcomer beside an already-placed
+ * neighbour, let the physics settle only the newcomers, then unlock.
+ * @param {object} cy @param {object} vis @param {object} layoutOpts
+ * @param {Set<string>} shownIds - node ids visible after the previous run
+ * @returns {string} 'removed' | 'settled' | 'first' (caller runs a full layout)
+ */
+export function runStableLayout(cy, vis, layoutOpts, shownIds) {
+  const nodes = vis.nodes();
+  const fresh = nodes.filter((n) => !shownIds.has(n.id()));
+  if (!fresh.length) return 'removed';
+  const prev = nodes.difference(fresh);
+  if (!prev.length) return 'first';
+  fresh.forEach((n) => {
+    const near = n.neighborhood('node').intersection(prev);
+    if (near.length) {
+      const p = near[0].position();
+      n.position({ x: p.x + 60, y: p.y + 60 });
+    }
+  });
+  prev.lock();
+  vis.layout(layoutOpts).run();
+  prev.unlock();
+  return 'settled';
 }

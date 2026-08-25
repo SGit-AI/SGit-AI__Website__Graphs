@@ -310,6 +310,44 @@
    ],
    "status": "in use",
    "for_the_book": "The chapter-level demonstration that a graph becomes a map only when it has landmarks: spend a few nodes' freedom to buy meaning for every other node's position."
+  },
+  {
+   "id": "stable-add",
+   "name": "Position-stable graph updates (stable add)",
+   "what": "Brief 26's stability principle as a mode, on by default: every node move costs the reader their mental picture, so when the view gains or loses elements, what was on canvas holds still. Removals move nothing; additions freeze every previously shown node, seed each newcomer beside an already-placed neighbour, settle only the newcomers in the force field, then unlock. The viewport holds too: no layout is allowed to re-fit unless the reader explicitly asked for a new arrangement. Explicit asks (a layout button, the physics sliders, a preset) still lay out everything, because asking is not a context switch.",
+   "born": "v0.4.28",
+   "implemented_in": [
+    "assets/universe/components/graph-fx.js",
+    "assets/universe/components/uni-graph.js",
+    "assets/universe/core/cystyle.js"
+   ],
+   "status": "in use",
+   "for_the_book": "The navigation claim made mechanical: a graph is explorable only while its map survives interaction, for a person and for an agent reading a snapshot alike."
+  },
+  {
+   "id": "slotted-peaks",
+   "name": "The four areas, their slots, and the peak board",
+   "what": "The border of the canvas divided into four rectangles (top, right, bottom, left), each with six aligned slots; the pinned summits live in slots, so the fixed nodes read as an aligned frame rather than a scatter. A dedicated board shows only the peaks, colour-coded by summit type, and the founder drags one from left to right or top to bottom; every change re-anchors the whole graph immediately and persists per document. The slot geometry is a pure, tested function; the board is an add-on part that edits assignments and hands them to the one layout pipeline.",
+   "born": "v0.4.28",
+   "implemented_in": [
+    "assets/universe/core/slots.js",
+    "assets/universe/components/pin-board.js",
+    "assets/universe/components/graph-fx.js"
+   ],
+   "status": "in use",
+   "for_the_book": "Landmarks are authored, not computed: the human places the few anchors that give the canvas a geography, and the machine settles the many free nodes between them."
+  },
+  {
+   "id": "schema-view",
+   "name": "The schema view",
+   "what": "A visualisation of just the schema: one node per node type with its member count, one edge per typed relation labelled with its verb (never the bare kind when a verb exists) and how often it occurs, shown exclusively on the same canvas with the same instrument. Brief 26 names its purpose: a great way to understand how good we are and what refactors we need. Day one on the pilot it shows claims reaching concepts through one relation used forty times while concept-to-concept runs through seven verbs used once or twice each, which is exactly the raw material for the one-direction-per-relation decision.",
+   "born": "v0.4.28",
+   "implemented_in": [
+    "assets/universe/core/schema.js",
+    "assets/universe/components/uni-graph.js"
+   ],
+   "status": "in use",
+   "for_the_book": "A graph's quality is legible at the type level before it is legible anywhere else; the schema is the graph's own review pack."
   }
  ]
 }

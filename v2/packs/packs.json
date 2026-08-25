@@ -1,6 +1,6 @@
 {
- "version": "v0.4.24",
- "date": "24 August 2026",
+ "version": "v0.4.25",
+ "date": "25 August 2026",
  "packs": [
   {
    "slug": "concepts-and-evidence",
@@ -9,8 +9,8 @@
    "built": "every release",
    "who": "The author, an editor, or a reviewing agent who has read nothing else",
    "lead": "The vocabulary this book is being built out of, what the twenty-one carried source documents actually say about it, where the material contradicts itself, and what is still unanswered. Assembled in one sequence so that none of it depends on clicking through a website.",
-   "version": "v0.4.24",
-   "date": "24 August 2026",
+   "version": "v0.4.25",
+   "date": "25 August 2026",
    "pages": 22,
    "engine": "weasyprint 69.0",
    "sources": [
@@ -28,7 +28,7 @@
     }
    ],
    "bytes": 44033,
-   "pdf_bytes": 625748
+   "pdf_bytes": 625742
   }
  ]
 }
