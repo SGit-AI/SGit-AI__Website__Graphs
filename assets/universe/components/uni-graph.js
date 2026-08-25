@@ -30,6 +30,7 @@ import { focusNode, applyPaths, layoutRoots, runPinnedLayout, runStableLayout,
 import { inspectInit, inspectNode, inspectLegend, inspectHop, inspectTrailStart }
   from './graph-inspect.js';
 import { toggleBoard } from './pin-board.js';
+import { toggleTrailBoard } from './trail-board.js';
 
 /** The visibility toggles; gdoc makes the document a source like any other,
     so all sources off means an empty canvas; gschema shows only the schema. */
@@ -75,7 +76,7 @@ export class UniGraph extends HTMLElement {
     this._baseEles = this.cy.elements();
     this._inspect = inspectInit(this);
     this.cy.on('tap', 'node', (evt) => {
-      inspectTrailStart(this._inspect, evt.target.data('label'));
+      inspectTrailStart(this._inspect, evt.target.data());
       inspectNode(this._inspect, this._data, evt.target.data());
       this.dispatchEvent(new CustomEvent('uni:node-tap',
         { bubbles: true, detail: { id: evt.target.id(), label: evt.target.data('label') } }));
@@ -112,12 +113,13 @@ export class UniGraph extends HTMLElement {
       const id = gl.getAttribute('data-golink');
       const n = this.cy.$id(id);
       if (n.empty()) return;
-      inspectHop(this._inspect, gl.getAttribute('data-verb'), n.data('label'));
+      inspectHop(this._inspect, gl.getAttribute('data-verb'), n.data());
       inspectNode(this._inspect, this._data, n.data());
       this.dispatchEvent(new CustomEvent('uni:node-tap',
         { bubbles: true, detail: { id, label: n.data('label') } }));
       return;
     }
+    if (e.target.closest('[data-trailedit]')) { toggleTrailBoard(this, this._inspect); return; }
     if (e.target.closest('[data-trailclear]')) { inspectTrailStart(this._inspect, null); return; }
     const ln = e.target.closest('[data-leg-node]');
     if (ln) { this._legendToggle(ln.getAttribute('data-leg-node')); return; }
@@ -308,6 +310,20 @@ export class UniGraph extends HTMLElement {
 
   /** Focus one node: ring it, dim the rest, centre it. */
   focus(id, tempo) { focusNode(this.cy, id, tempo); }
+
+  /** Light every path a query matched (teal); null clears. */
+  showMatches(paths) {
+    const cy = this.cy;
+    cy.elements().removeClass('uni-qmatch');
+    (paths || []).forEach((p) => p.forEach((id, i) => {
+      cy.$id(id).addClass('uni-qmatch');
+      if (i) cy.$id(p[i - 1]).edgesWith(cy.$id(id)).addClass('uni-qmatch');
+    }));
+  }
+
+  /** The inspector's container: where the reader mounts the blast-radius
+      mini graph, beside the details the inspector already renders. */
+  get inspectorEl() { return this._inspect.el; }
 
   /** Drop the focus ring and dimming. */
   clearFocus() { if (this.cy) this.cy.elements().removeClass('uni-focus uni-dim'); }

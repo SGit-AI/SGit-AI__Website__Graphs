@@ -83,6 +83,10 @@ export function graphStyle() {
     { selector: 'edge.uni-path', style: { width: 3, 'line-color': '#c9a227',
       'target-arrow-color': '#c9a227', opacity: 1 } },
     { selector: 'node.uni-path', style: { 'border-width': 3, 'border-color': '#c9a227' } },
+    /* path-query matches: teal, distinct from the gold paths-to-peaks */
+    { selector: 'edge.uni-qmatch', style: { width: 3, 'line-color': '#2a9d8f',
+      'target-arrow-color': '#2a9d8f', opacity: 1 } },
+    { selector: 'node.uni-qmatch', style: { 'border-width': 3, 'border-color': '#2a9d8f' } },
     { selector: 'node.uni-boxed.uni-focus', style: { 'border-width': 4, 'border-color': '#c9a227' } },
     { selector: '.uni-hide', style: { display: 'none' } },
     { selector: '.uni-nolabel', style: { label: '' } },

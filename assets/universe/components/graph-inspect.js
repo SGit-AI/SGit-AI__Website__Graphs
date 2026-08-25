@@ -78,26 +78,31 @@ export function inspectNode(ins, U, d) {
   }).catch(() => { ins.node.innerHTML = head + links; });
 }
 
-/** A hop taken by following a link row: the path query grows by one step. */
-export function inspectHop(ins, verb, label) {
-  ins.trail.push({ verb, label });
+/** A hop taken by following a link row: the path query grows by one step.
+    Each entry keeps the node's identity so the board can replay or
+    generalise it. */
+export function inspectHop(ins, verb, d) {
+  ins.trail.push({ verb, id: d.id, family: d.family, label: d.label, exact: true });
   if (ins.trail.length > 8) ins.trail.shift();
   renderTrail(ins);
 }
 
 /** Start the trail over (a fresh selection not made by following a link). */
-export function inspectTrailStart(ins, label) {
-  ins.trail = label ? [{ verb: null, label }] : [];
+export function inspectTrailStart(ins, d) {
+  ins.trail = d ? [{ verb: null, id: d.id, family: d.family, label: d.label, exact: true }] : [];
   renderTrail(ins);
 }
 
-function renderTrail(ins) {
+export function renderTrail(ins) {
   const t = ins.trailEl;
   if (!ins.trail.length) { t.hidden = true; return; }
   t.hidden = false;
   t.innerHTML = '<b>path:</b> ' + ins.trail.map((h) =>
-    (h.verb ? '<span class="ilv">-' + esc(h.verb) + '→</span> ' : '') + esc(h.label))
-    .join(' ') + ' <span class="uni-quick" data-trailclear="1">clear</span>';
+    (h.verb ? '<span class="ilv">-' + esc(h.verb) + '→</span> ' : '')
+    + (h.exact === false ? '<i>any ' + esc(h.family || 'node') + '</i>' : esc(h.label)))
+    .join(' ')
+    + ' <span class="uni-quick" data-trailedit="1">edit / run</span>'
+    + ' <span class="uni-quick" data-trailclear="1">clear</span>';
 }
 
 /** The live legend: every node type and edge type in the current view, with

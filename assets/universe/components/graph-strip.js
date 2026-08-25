@@ -8,34 +8,34 @@ import { neighbourhoodIds, graphStats, statsText } from '../core/explore.js';
 
 /** The strip: presets, layout, labels, physics, node-pack sources, view, explore. */
 export const STRIP_HTML =
-  '<div class="grow"><span class="glab">views</span>' +
+  '<div class="grow" data-g="views"><span class="glab">views</span>' +
   PRESET_VIEWS.map((v) => '  <button data-gview="' + v.key + '">' + v.label + '</button>').join('') +
   '</div>' +
-  '<div class="grow"><span class="glab">layout</span>' +
+  '<div class="grow" data-g="layout"><span class="glab">layout</span>' +
   '  <button data-glay="cose">cose</button><button data-glay="concentric">rings</button>' +
   '  <button data-glay="grid">grid</button><button data-glay="tree">tree</button></div>' +
-  '<div class="grow"><span class="glab">labels</span>' +
+  '<div class="grow" data-g="labels"><span class="glab">labels</span>' +
   '  <button data-glabels="1">show</button>' +
   '  <button data-gsize="s">S</button><button data-gsize="m">M</button><button data-gsize="l">L</button>' +
   '  <button data-gboxed="1">boxed</button></div>' +
-  '<div class="grow"><span class="glab">physics</span>' +
+  '<div class="grow" data-g="physics"><span class="glab">physics</span>' +
   '  <span class="gval">string</span><input type="range" id="uni-glen" min="40" max="280" step="10">' +
   '  <span class="gval">pull</span><input type="range" id="uni-gpull" min="10" max="300" step="10">' +
   '  <span class="small dim">(cose)</span></div>' +
-  '<div class="grow"><span class="glab">sources</span>' +
+  '<div class="grow" data-g="sources"><span class="glab">sources</span>' +
   '  <button data-gdoc="1">document</button>' +
   '  <button data-gtree="1">doc tree</button>' +
   '  <button data-gpeaks="1">family peaks</button>' +
   '  <button data-gderived="1">derived links</button>' +
   '  <button data-galign="1" title="Rails that pull each heading level onto its own line">align</button>' +
   '  <button data-gschema="1">schema</button></div>' +
-  '<div class="grow"><span class="glab">explore</span>' +
+  '<div class="grow" data-g="explore"><span class="glab">explore</span>' +
   '  <button data-gexp="1">focus on selection</button>' +
   '  <span class="gval">grow</span>' +
   '  <button data-gdegdn="1">&minus;</button><span class="gdeg" id="uni-gdeg">1</span>' +
   '  <button data-gdegup="1">+</button>' +
   '  <button data-gdegmax="1">to peaks</button></div>' +
-  '<div class="grow"><span class="glab">view</span>' +
+  '<div class="grow" data-g="view"><span class="glab">view</span>' +
   '  <button data-gstable="1" title="What is on canvas holds still while newcomers settle">stable add</button>' +
   '  <button data-gpin="1">pin peaks</button>' +
   '  <button data-gboard="1" title="Drag the peaks between the four border areas">peak board</button>' +

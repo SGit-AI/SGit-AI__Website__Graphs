@@ -51,6 +51,11 @@ function boot() {
   const graph = panel.querySelector('uni-graph');
   const source = panel.querySelector('uni-source');
   const pane = initStatePane({ slug: U.slug, graph });
+  /* the blast-radius mini graph: the same component, features disabled (the
+     founder's reuse rule), living in the inspector, permanently in explore
+     mode so it always shows the selection's neighbourhood */
+  const mini = document.createElement('uni-graph');
+  mini.setAttribute('mini', '');
 
   /* the sticky nav overlays the panel top without this runtime offset */
   function sizeUnderNav() {
@@ -148,6 +153,8 @@ function boot() {
     clearSelection(true);
     state.selected = aid;
     graph.selected = aid;
+    mini.selected = aid;
+    mini.classList.add('has-sel');
     pane.note('select ' + aid);
     clearBtn.hidden = false;
     const a = U.anchors.find((x) => x.aid === aid);
@@ -187,11 +194,16 @@ function boot() {
     pane.note(key + '\u2192' + (typeof value === 'object' ? 'set' : value));
   });
   layout.addEventListener('uni:gpref', (e) => {
+    if (e.target.hasAttribute && e.target.hasAttribute('mini')) return;   /* mini prefs stay its own */
     setPref(e.detail.key, e.detail.value);
     pane.note(e.detail.key + '\u2192' + e.detail.value);
   });
   /* maximised graph: the page chrome yields so the canvas owns the viewport */
-  layout.addEventListener('uni:gmax', (e) => document.body.classList.toggle('uni-gmax-on', e.detail.on));
+  layout.addEventListener('uni:gmax', (e) => {
+    if (e.target.hasAttribute && e.target.hasAttribute('mini')) return;
+    document.body.classList.toggle('uni-gmax-on', e.detail.on);
+    requestAnimationFrame(() => mini.resize());
+  });
   layout.addEventListener('uni:node-tap', (e) => {
     const id = e.detail.id;
     if (id.indexOf('peak:') === 0) return;               /* a peak is a summit, not an anchor */
@@ -203,7 +215,10 @@ function boot() {
   });
   layout.addEventListener('uni:mark-click', (e) => select(e.detail.aid));
   layout.addEventListener('uni:step-select', (e) => select(e.detail.aid, { force: true, scrollLeft: false }));
-  layout.addEventListener('uni:clear-request', () => clearSelection());
+  layout.addEventListener('uni:clear-request', (e) => {
+    if (e.target.hasAttribute && e.target.hasAttribute('mini')) return;
+    clearSelection();
+  });
   layout.addEventListener('uni:need-panel', () => {
     if (!state.panelOn) { state.panelOn = true; setPref('panel', 1); applyState(); }
   });
@@ -256,6 +271,11 @@ function boot() {
     glen: parseInt(pref('glen', '90'), 10), gpull: parseInt(pref('gpull', '90'), 10),
     kinds: state.kinds,
   });
+  graph.inspectorEl.insertBefore(mini, graph.inspectorEl.querySelector('.uni-insp-legend'));
+  mini.init(U, { glay: 'cose', gsize: 's', gboxed: false, gtree: false, gpeaks: false,
+    gpin: false, gstable: false, gschema: false, galign: false, galshow: false,
+    gderived: false, gdoc: true, gexp: true, gdeg: 1, gpaths: false,
+    glen: 60, gpull: 80, kinds: state.kinds });
   source.init(U, { mode: pref('mode', 'source'), scrollTo: scrollToEl });
   WIDE.addEventListener('change', applyState);
   sizeUnderNav();

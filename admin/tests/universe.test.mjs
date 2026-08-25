@@ -373,6 +373,58 @@ test('schema: the verbs register puts the declared inverse on the label', () => 
   assert.equal(about.data.inverse, 'subject-of');
 });
 
+/* ---- pathquery: the trail made runnable (brief 28, answered) --------------- */
+import { displayedVerbIndex, trailToQuery, runPathQuery, nextVerbs }
+  from '../../assets/universe/core/pathquery.js';
+const PQ_ELS = [
+  { data: { id: 'a', family: 'concept', label: 'alpha' } },
+  { data: { id: 'b', family: 'concept', label: 'beta' } },
+  { data: { id: 'c', family: 'concept', label: 'gamma' } },
+  { data: { id: 'k1', family: 'claim', label: 'claim one' } },
+  { data: { id: 'k2', family: 'claim', label: 'claim two' } },
+  { data: { source: 'a', target: 'b', kind: 'asserted', verb: 'enables' } },
+  { data: { source: 'b', target: 'c', kind: 'asserted', verb: 'enables' } },
+  { data: { source: 'k1', target: 'b', kind: 'about' } },
+  { data: { source: 'k2', target: 'b', kind: 'about' } },
+];
+const PQ_VERBS = { enables: 'enabled-by', about: 'subject-of' };
+test('pathquery: displayed inverses resolve to the stored direction', () => {
+  const idx = displayedVerbIndex(PQ_VERBS);
+  assert.deepEqual(idx['enables'], { stored: 'enables', dir: 'out' });
+  assert.deepEqual(idx['enabled-by'], { stored: 'enables', dir: 'in' });
+  assert.deepEqual(idx['subject-of'], { stored: 'about', dir: 'in' });
+});
+test('pathquery: an exact trail replays to exactly its own path', () => {
+  const steps = trailToQuery([
+    { id: 'a', family: 'concept', label: 'alpha' },
+    { verb: 'enables', id: 'b', family: 'concept', label: 'beta' }]);
+  const r = runPathQuery(PQ_ELS, PQ_VERBS, steps);
+  assert.deepEqual(r.paths, [['a', 'b']]);
+});
+test('pathquery: a family wildcard fans out, and inverse hops walk backwards', () => {
+  /* concept -subject-of-> any claim: from b through the inverse of about */
+  const steps = [
+    { verb: null, id: null, family: 'concept' },
+    { verb: 'subject-of', id: null, family: 'claim' }];
+  const r = runPathQuery(PQ_ELS, PQ_VERBS, steps);
+  assert.deepEqual(r.paths.map((p) => p.join('>')).sort(), ['b>k1', 'b>k2']);
+  assert.equal(r.truncated, false);
+});
+test('pathquery: two-hop wildcard chains compose', () => {
+  const steps = [
+    { verb: null, id: null, family: 'concept' },
+    { verb: 'enables', id: null, family: null },
+    { verb: 'enables', id: null, family: null }];
+  const r = runPathQuery(PQ_ELS, PQ_VERBS, steps);
+  assert.deepEqual(r.paths, [['a', 'b', 'c']]);
+});
+test('pathquery: projection lists the verbs that can extend the path', () => {
+  const fromConcept = nextVerbs(PQ_ELS, PQ_VERBS, 'concept');
+  assert.ok(fromConcept.indexOf('enables') !== -1, 'out verb');
+  assert.ok(fromConcept.indexOf('subject-of') !== -1, 'inverse of about');
+  assert.ok(fromConcept.indexOf('about') === -1, 'about itself leaves claims, not concepts');
+});
+
 /* ---- nodedoc: the document of one node, composed purely -------------------- */
 import { extractionElements, nodeRichness, composeNodeDoc } from '../../assets/universe/core/nodedoc.js';
 const NDEX = {

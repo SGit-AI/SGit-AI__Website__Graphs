@@ -51,3 +51,37 @@ used before; the closing "one" is the end of "make sense of this one".*
    crossrefs do?
 3. **Drag-and-drop query building** got one mention ("maybe some kind of drag and drop
    environment"). Park it until the trail proves the concept, or sketch it now?
+
+---
+
+## The founder's answers (25 August 2026, in chat, verbatim)
+
+> 1 yes , I mean a subgraph on the right pane (another graph) which like you did in the decisions helped to see the blast radius of a node (or selection). Note ideally you should be able to use the same codebase and features from the main graph , for example having an options pane to control some of the graph visualisation properties). It should be a case of disabling a number of features, and reuse web components
+> 2 yes, exactly, and that trail (great name btw) needs to be editable and customisable, kinda like what we did with the ui for the pinned nodes (on that topic, is that (now nicely smaller) pane with the pinned nodes position, resizable?)
+> 3 can you do it now, since that will be one of the most important features (specifically when we have real time rendering of the selections and ways to project possible paths forward)
+
+**Acted on at v0.4.34:**
+
+1. **The blast-radius mini graph** is literally the same web component: a second
+   `<uni-graph mini>` mounted in the inspector, initialised with most features disabled
+   and explore mode pinned on, so it always shows the current selection's neighbourhood
+   with the existing degree stepper as its zoom. Its options pane is the main strip with
+   only the layout and explore groups visible; taps in the mini select everywhere; its
+   preferences never touch the main graph's. The reuse rule held exactly as asked: no new
+   engine, features disabled, one component serving both canvases.
+2. **The trail board**: the editable, customisable trail, in the peak board's idiom.
+   Every step is a chip: × removes it, dragging reorders it, and clicking it toggles
+   between this-exact-node and any-node-of-its-family, which is the generalisation that
+   turns a walk into a query. And the aside answered honestly: the peak board was NOT
+   resizable; both boards are now.
+3. **The path query, built now.** The pure runner (`core/pathquery.js`, gate-27-tested)
+   replays a query over the whole graph, resolving displayed inverse verbs back to their
+   stored direction through the verbs register, so a trail that walked "subject-of"
+   correctly traverses the about edges backwards. **Run** lights every matched path on
+   the main canvas in teal (distinct from the gold paths-to-peaks) and lists the matches,
+   each clickable. **Project forward** is the founder's phrase made mechanical: the board
+   lists every verb that could extend the path from its current end (computed from the
+   graph, out-verbs and declared inverses both), and clicking one appends a speculative
+   hop and runs it, showing what the future path would match. **Save** keeps named
+   queries per document; folder persistence (the crossrefs write path, human-committed)
+   is the recorded next step once queries prove themselves worth freezing.

@@ -299,3 +299,43 @@ body.uni-gmax-on .uni-vsplit, body.uni-gmax-on .uni-hsplit { display: none; }
 .uni-insp-trail .ilv { color: #8a6d1a; }
 .uni-insp-trail [data-trailclear] { cursor: pointer; text-decoration: underline;
   margin-left: .3rem; color: #667; }
+
+/* ---- the blast-radius mini graph (brief 28, answer 1): the same component,
+   features disabled, living in the inspector -------------------------------- */
+uni-graph[mini] { display: none; margin: .7rem 0; }
+uni-graph[mini].has-sel { display: block; }
+uni-graph[mini] .uni-graphbox { position: relative; height: 250px; flex: none;
+  border: 1px solid var(--line2, #ddd); border-radius: 8px; overflow: hidden; }
+uni-graph[mini] .uni-graphbox .uni-cy { inset: 0 0 1.2rem 0; }
+uni-graph[mini] .uni-gbig, uni-graph[mini] .uni-inspect,
+uni-graph[mini] .uni-gopts .grow { display: none; }
+uni-graph[mini] .uni-gopts .grow[data-g="layout"],
+uni-graph[mini] .uni-gopts .grow[data-g="explore"] { display: flex; }
+uni-graph[mini] .uni-gstats { height: 1.2rem; font-size: .6rem; }
+
+/* the trail board (brief 28, answers 2 and 3) */
+.uni-trailboard { position: absolute; right: 310px; bottom: 1.8rem; width: 520px;
+  max-width: 55%; max-height: 70%; z-index: 9; background: rgba(255,255,255,.96);
+  border: 1px solid var(--line2, #ccc); border-radius: 10px; overflow: auto;
+  resize: both; box-shadow: 0 12px 40px rgba(0,0,0,.18); padding: .6rem .8rem;
+  font-size: .78rem; }
+.tb-steps { margin: .5rem 0; line-height: 2.1; }
+.tb-chip { background: #2b3446; color: #fff; border-radius: 8px; padding: .18rem .55rem;
+  cursor: pointer; user-select: none; }
+.tb-chip.wild { background: #2a9d8f; font-style: italic; }
+.tb-chip .tb-x { opacity: .6; margin-left: .25rem; cursor: pointer; }
+.tb-chip .tb-x:hover { opacity: 1; }
+.tb-project { margin: .4rem 0; }
+.tb-verb, .tb-load { font: inherit; font-size: .72rem; border: 1px solid var(--line2, #ccc);
+  border-radius: 8px; background: #fff; cursor: pointer; padding: .1rem .5rem; margin: .1rem 0; }
+.tb-results { margin: .5rem 0; line-height: 1.7; }
+.tb-res { cursor: pointer; }
+.tb-res:hover { background: rgba(42, 157, 143, .12); }
+.uni-trailboard .pb-head button { font: inherit; font-size: .75rem;
+  border: 1px solid var(--line2, #ccc); border-radius: 6px; background: #fff;
+  cursor: pointer; padding: .2rem .55rem; }
+.uni-trailboard h6 { margin: .6rem 0 .25rem; font-size: .64rem;
+  text-transform: uppercase; color: #99a; }
+
+/* the peak board is now resizable (brief 28's aside) */
+.uni-pinboard { resize: both; overflow: auto; min-width: 380px; min-height: 300px; }

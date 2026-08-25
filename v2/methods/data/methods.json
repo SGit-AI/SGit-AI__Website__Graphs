@@ -348,6 +348,19 @@
    ],
    "status": "in use",
    "for_the_book": "A graph's quality is legible at the type level before it is legible anywhere else; the schema is the graph's own review pack."
+  },
+  {
+   "id": "path-query",
+   "name": "The path query (trail, board, runner)",
+   "what": "Brief 28's central move: navigating a graph hop by hop IS writing a query, so the trail a reader walks is recorded (node, verb, node), edited on a board (steps as chips: remove, reorder by drag, generalise a node to its family), and run by a pure tested engine that resolves displayed inverse verbs back to their stored direction through the verbs register. Run lights every matched path on the canvas; project-forward lists the verbs that could extend the path and appends one speculatively, showing what the future path would match before it is walked. Named queries persist per document.",
+   "born": "v0.4.34",
+   "implemented_in": [
+    "assets/universe/core/pathquery.js",
+    "assets/universe/components/trail-board.js",
+    "assets/universe/components/graph-inspect.js"
+   ],
+   "status": "in use",
+   "for_the_book": "Queries are not written, they are walked: the reader's own navigation is the query language, and generalising one step at a time is how a single observation becomes a reusable question."
   }
  ]
 }
