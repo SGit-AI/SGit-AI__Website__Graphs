@@ -17,8 +17,6 @@
 import { SgToolApi } from 'https://tools.sgraph.ai/core/sg-tool-api/v0/v0.1/v0.1.0/sg-tool-api.js';
 import { COMMANDS, LEVELS, toolSchemas, clampRange } from './core/commands.js';
 import { composeNodeDoc, nodeRichness } from './core/nodedoc.js';
-import { pinPositions } from './core/packs.js';
-import { layoutOptions } from './core/cystyle.js';
 import { neighbourhoodIds, graphStats } from './core/explore.js';
 
 const U = window.UNIVERSE;
@@ -38,7 +36,6 @@ function publish() {
   /* ---- session-local author state ---------------------------------------- */
   const drafts = { annotations: [], crossrefs: [], scratch: { nodes: [], edges: [] } };
   let scratchStyled = false;
-  let pinned = null;
 
   /* ---- the activity ring: what happened on the page, for "this/here" ------ */
   const activity = [];
@@ -278,31 +275,19 @@ function publish() {
     },
     pin_peaks: ({ on }) => { clickIf('[data-gpin]', on); return { pin_peaks: on }; },
     pin_nodes: ({ left = [], right = [], clear } = {}) => {
-      const cy = graph.cy;
-      if (clear) {
-        if (pinned) { pinned.unlock(); pinned = null; }
-        graph.runLayout();
-        return { cleared: true };
-      }
+      /* bound to the component's own pipeline (uni-graph.setCustomPins, added
+         at v0.4.24 after the reader agent's follow-up): the stacks now hold
+         through every later layout, whatever triggers it */
+      if (clear) { graph.setCustomPins(null); return { cleared: true }; }
       const ids = left.concat(right);
       if (!ids.length) throw new Error('pin_nodes needs left and/or right ids (or clear: true)');
       for (const id of ids) {
-        const n = cy.$id(id);
+        const n = graph.cy.$id(id);
         if (n.empty() || n.hasClass('uni-hide')) throw new Error('not visible on the canvas: ' + id);
       }
-      if (pinned) { pinned.unlock(); pinned = null; }
-      const vis = cy.elements().not('.uni-hide');
-      const pos = pinPositions(left, right, Math.max(0, vis.nodes().length - ids.length));
-      ids.forEach((id) => cy.$id(id).position(pos[id]));
-      pinned = cy.collection(ids.map((id) => cy.$id(id)));
-      pinned.lock();
-      const len = parseInt(graph.querySelector('#uni-glen').value, 10) || 90;
-      const pull = parseInt(graph.querySelector('#uni-gpull').value, 10) || 90;
-      vis.layout(layoutOptions('cose', { len, pull })).run();
-      pinned.unlock();
-      cy.fit(vis, 24);
+      graph.setCustomPins(left, right);
       return { pinned: { left, right },
-        note: 'stacks placed and the physics settled the rest between them; nodes stay hand-draggable' };
+        note: 'stacks placed in the reader’s own layout pipeline; they hold through later layouts and stay hand-draggable between runs' };
     },
     scroll_to_heading: ({ title }) => {
       if (!U.taxonomy.some((t) => t.title === title)) {
@@ -327,7 +312,7 @@ function publish() {
     },
     reset_view: () => {
       impl.maximize_graph({ on: false });
-      if (pinned) { pinned.unlock(); pinned = null; }
+      if (graph.customPins) graph.setCustomPins(null);
       clickIf('[data-gpin]', false);
       impl.set_view_preset({ view: 'overview' });
       impl.clear_selection();

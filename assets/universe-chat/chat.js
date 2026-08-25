@@ -143,6 +143,16 @@ function close() {
   nudgeViewport();
 }
 
+/* Esc closes the panel — unless focus is inside an input, where Esc belongs
+   to the field (clearing a draft, dismissing autocomplete) */
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape' || !state.built || aside.hidden) return;
+  const t = e.target;
+  const typing = t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA'
+    || t.closest && t.closest('sg-llm-chat-input, sg-llm-connection'));
+  if (!typing) close();
+});
+
 /* The one concession outside window.__tool: the reader's canvas needs a
    resize nudge when the viewport it sits in changes width. resize() is a
    public method of the published element. */
@@ -310,6 +320,13 @@ function wireHeader() {
     }
   });
   document.getElementById('uc-nokey-open').addEventListener('click', () => toggleDrawer('settings', true));
+  document.getElementById('uc-usage-btn').addEventListener('click', () => {
+    const box = document.getElementById('uc-usage');
+    const btn = document.getElementById('uc-usage-btn');
+    box.hidden = !box.hidden;
+    btn.setAttribute('aria-pressed', String(!box.hidden));
+    btn.innerHTML = box.hidden ? 'usage &#9662;' : 'usage &#9652;';
+  });
 
   const view = document.getElementById('uc-lvl-view');
   const author = document.getElementById('uc-lvl-author');
@@ -343,7 +360,7 @@ function wireResize() {
   grip.addEventListener('pointerdown', (e) => {
     e.preventDefault();
     grip.classList.add('drag');
-    grip.setPointerCapture(e.pointerId);
+    try { grip.setPointerCapture(e.pointerId); } catch (err) { /* capture is a nicety */ }
     const move = (ev) => {
       const px = Math.min(Math.max(window.innerWidth - ev.clientX, 320), 760);
       document.documentElement.style.setProperty('--uchat-w', px + 'px');
