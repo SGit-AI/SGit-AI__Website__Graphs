@@ -27,7 +27,8 @@ import { neighbourhoodIds, nextDegree } from '../core/explore.js';
 import { STRIP_HTML, reflectStrip, renderStats, applyPresetView } from './graph-strip.js';
 import { focusNode, applyPaths, layoutRoots, runPinnedLayout, runStableLayout,
   summitAssignments } from './graph-fx.js';
-import { inspectInit, inspectNode, inspectLegend } from './graph-inspect.js';
+import { inspectInit, inspectNode, inspectLegend, inspectHop, inspectTrailStart }
+  from './graph-inspect.js';
 import { toggleBoard } from './pin-board.js';
 
 /** The visibility toggles; gdoc makes the document a source like any other,
@@ -74,6 +75,7 @@ export class UniGraph extends HTMLElement {
     this._baseEles = this.cy.elements();
     this._inspect = inspectInit(this);
     this.cy.on('tap', 'node', (evt) => {
+      inspectTrailStart(this._inspect, evt.target.data('label'));
       inspectNode(this._inspect, this._data, evt.target.data());
       this.dispatchEvent(new CustomEvent('uni:node-tap',
         { bubbles: true, detail: { id: evt.target.id(), label: evt.target.data('label') } }));
@@ -103,6 +105,20 @@ export class UniGraph extends HTMLElement {
       }
       return;
     }
+    const gl = e.target.closest('[data-golink]');
+    if (gl) {
+      /* following a link: the hop joins the path trail, the inspector moves
+         to the other node, and the reader selects it everywhere */
+      const id = gl.getAttribute('data-golink');
+      const n = this.cy.$id(id);
+      if (n.empty()) return;
+      inspectHop(this._inspect, gl.getAttribute('data-verb'), n.data('label'));
+      inspectNode(this._inspect, this._data, n.data());
+      this.dispatchEvent(new CustomEvent('uni:node-tap',
+        { bubbles: true, detail: { id, label: n.data('label') } }));
+      return;
+    }
+    if (e.target.closest('[data-trailclear]')) { inspectTrailStart(this._inspect, null); return; }
     const ln = e.target.closest('[data-leg-node]');
     if (ln) { this._legendToggle(ln.getAttribute('data-leg-node')); return; }
     const le = e.target.closest('[data-leg-edge]');

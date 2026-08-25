@@ -23,6 +23,13 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "28__founder-memo__node-navigation-and-path-queries.md": (
+     "Node navigation, reverse verbs, and the path query",
+     "Click a node and see its whole universe on the right: every link out with its "
+     "verb, every link in read through the declared inverse, each row a hop that "
+     "extends the path trail — the beginnings of the path query. Plus the scale "
+     "framing (nodes will grow near-exponentially) and two pane bugs fixed where "
+     "they pointed."),
  "27__founder-review__narrated-viewer-walkthrough.md": (
      "A narrated walkthrough of the viewer",
      "The first narrated review: ten screen captures with the founder's words spoken "

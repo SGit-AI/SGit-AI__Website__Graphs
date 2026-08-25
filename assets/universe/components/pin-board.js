@@ -10,11 +10,21 @@ import { AREAS, SLOT_COUNT, freeSlot } from '../core/slots.js';
 
 const COLOURS = { docroot: '#1f2430', peak: '#39415a', dgroup: '#8e77a8' };
 
-/** Open or close the board over the graphbox. */
+/** Open or close the board beside the canvas: the graphbox gets pb-open so
+    the canvas insets shrink (brief 28: every pin visible while the board is
+    up), and the view refits to the space that remains. */
 export function toggleBoard(host) {
   const open = host.querySelector('.uni-pinboard');
-  if (open) { open.remove(); return; }
-  build(host);
+  if (open) { open.remove(); }
+  else build(host);
+  host.querySelector('.uni-graphbox').classList.toggle('pb-open', !open);
+  refit(host);
+}
+
+function refit(host) {
+  if (!host.cy) return;
+  host.cy.resize();
+  host.cy.fit(host.cy.elements().not('.uni-hide'), 30);
 }
 
 function build(host) {
@@ -83,7 +93,12 @@ function build(host) {
 
   let picked = null;
   el.addEventListener('click', (e) => {
-    if (e.target.closest('.pb-close')) { el.remove(); return; }
+    if (e.target.closest('.pb-close')) {
+      el.remove();
+      host.querySelector('.uni-graphbox').classList.remove('pb-open');
+      refit(host);
+      return;
+    }
     if (e.target.closest('.pb-reset')) {
       a = {}; host.setPinAssignments(null); a = Object.assign({}, host.pinAssignments);
       render(); return;

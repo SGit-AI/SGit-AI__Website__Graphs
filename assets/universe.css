@@ -287,3 +287,15 @@ body.uni-gmax-on .uni-vsplit, body.uni-gmax-on .uni-hsplit { display: none; }
   max-width: 350px; pointer-events: none; white-space: nowrap; }
 .uni-statepane div { overflow: hidden; text-overflow: ellipsis; }
 .uni-statepane div:first-child { color: #9fd6a8; font-weight: 700; }
+
+/* ---- brief 28: panes shrink the canvas instead of covering it ------------ */
+.uni-graphbox.uni-gmax .uni-cy { inset: 0 300px 1.4rem 0; }
+.uni-graphbox.uni-gmax.pb-open .uni-cy { left: 520px; }
+
+/* the inspector's link rows and the path trail they build */
+.uni-inspect .ilv { font-style: italic; color: #667; font-size: .74rem; }
+.uni-insp-trail { font-size: .76rem; color: #8a6d1a; margin: 0 0 .55rem;
+  line-height: 1.6; }
+.uni-insp-trail .ilv { color: #8a6d1a; }
+.uni-insp-trail [data-trailclear] { cursor: pointer; text-decoration: underline;
+  margin-left: .3rem; color: #667; }
