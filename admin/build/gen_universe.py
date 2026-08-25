@@ -334,7 +334,7 @@ def doc_body(ex, for_print=False):
     if for_print:
         h.append('<p>The graph is an interactive view: it lives in the web page\'s side panel, where clicking a node opens both the extraction row and the cited bytes in the source. A static rendering would be a decoration here; the tables above are the graph\'s content in full.</p>')
     else:
-        h.append('<p class="small dim">Concepts are the round nodes; claims, hypotheses, objectives and examples attach to what they are about. The graph lives in the <b>side panel</b> on wide screens, so it stays visible while you follow its links: clicking a node opens both the extraction row here and the cited bytes in the source. On narrow screens it renders below. Every element on the drawing exists in the tables above with its anchor; the drawing is a compression, not an extra source.</p>')
+        h.append('<p class="small dim">Concepts are the round nodes; claims, hypotheses, objectives and examples attach to what they are about. The graph lives in the <b>side panel</b> on wide screens, so it stays visible while you follow its links: clicking a node opens both the extraction row here and the cited bytes in the source. On narrow screens it renders below. Every element on the drawing exists in the tables above with its anchor; the drawing is a compression, not an extra source. <a href="#graph"><b>Open the live graph, maximised &rarr;</b></a></p>')
         h.append('<div id="unigraph-inline" style="width:100%;height:560px;border:1px solid var(--line,#ccc);border-radius:8px"></div>')
 
     # 7 · taxonomy + coverage

@@ -103,6 +103,16 @@ export class UniGraph extends HTMLElement {
       }
       return;
     }
+    const ln = e.target.closest('[data-leg-node]');
+    if (ln) { this._legendToggle(ln.getAttribute('data-leg-node')); return; }
+    const le = e.target.closest('[data-leg-edge]');
+    if (le) {
+      const k = le.getAttribute('data-leg-edge');
+      this._edgeOff = this._edgeOff || new Set();
+      if (this._edgeOff.has(k)) this._edgeOff.delete(k); else this._edgeOff.add(k);
+      this.refresh();
+      return;
+    }
     const b = e.target.closest('button');
     if (!b) return;
     if (b.classList.contains('uni-gcog')) { this._gopts.hidden = !this._gopts.hidden; return; }
@@ -157,6 +167,23 @@ export class UniGraph extends HTMLElement {
 
   _emitPref(key, value) {
     this.dispatchEvent(new CustomEvent('uni:gpref', { bubbles: true, detail: { key, value } }));
+  }
+
+  /** A legend node-type row: extraction families toggle the shared kinds (the
+      reader persists and mirrors the source pane); synthetic families toggle
+      their own source. */
+  _legendToggle(fam) {
+    const strip = { peak: '[data-gpeaks]', dgroup: '[data-gderived]', section: '[data-gtree]',
+      docroot: '[data-gtree]', rail: '[data-galign]', schema: '[data-gschema]' };
+    if (strip[fam]) {
+      const b = this.querySelector(strip[fam]);
+      if (b) b.click();
+      return;
+    }
+    const set = new Set(this._kinds || NODE_KINDS);
+    if (set.has(fam)) set.delete(fam); else set.add(fam);
+    this.dispatchEvent(new CustomEvent('uni:pref',
+      { bubbles: true, detail: { key: 'kinds', value: Array.from(set) } }));
   }
 
   _applyLook() {
@@ -223,9 +250,14 @@ export class UniGraph extends HTMLElement {
       cy.elements().addClass('uni-hide');
       this._schemaEles = cy.add(schemaElements(defs, this._data.verbs));
     }
-    /* what remains is the explore walk's universe; kept for the stats bar */
+    if (this._edgeOff && this._edgeOff.size) {
+      this._edgeOff.forEach((k) => cy.edges('[kind = "' + k + '"]').addClass('uni-hide'));
+    }
+    /* what remains is the explore walk's universe; the rails and their ties
+       are layout physics, so they join neither the walk nor the counts */
     const base = cy.elements().not('.uni-hide');
-    this._visData = base.map((x) => x.data());
+    this._visData = base.filter((x) => x.data('kind') !== 'align' && x.data('family') !== 'rail')
+      .map((x) => x.data());
     if (p.gexp && this._selected && cy.$id(this._selected).nonempty()
         && !cy.$id(this._selected).hasClass('uni-hide')) {
       const deg = p.gdeg === 'max' ? Infinity : p.gdeg;
@@ -236,11 +268,14 @@ export class UniGraph extends HTMLElement {
     this._renderStats();
   }
 
-  /* The stats bar and the inspector's type legend, over the visible view. */
+  /* The stats bar and the inspector's type legend, over the visible view
+     (minus the rails and their ties, which are physics, not content). */
   _renderStats() {
-    const shown = this.cy.elements().not('.uni-hide').map((x) => x.data());
+    const shown = this.cy.elements().not('.uni-hide')
+      .filter((x) => x.data('kind') !== 'align' && x.data('family') !== 'rail')
+      .map((x) => x.data());
     renderStats(this.querySelector('#uni-gstats'), shown, this._visData, this._p, this._selected);
-    inspectLegend(this._inspect, shown);
+    inspectLegend(this._inspect, shown, this._edgeOff);
   }
 
   _applyPaths() { applyPaths(this.cy, this._p.gpaths, this._selected); }

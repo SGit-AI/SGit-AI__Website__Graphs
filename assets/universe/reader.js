@@ -253,4 +253,17 @@ function boot() {
     const id = location.hash.slice(3);
     if (U.anchors.some((a) => a.aid === id)) select(id, { force: true });
   }
+  /* #graph lands straight in the maximised graph (the narrated review's ask:
+     the live instrument should be one click away, not a scroll away) */
+  function openGraphView() {
+    if (!state.panelOn) { state.panelOn = true; setPref('panel', 1); }
+    if (!state.graphOn) { state.graphOn = true; setPref('graph', 1); }
+    applyState();
+    const box = graph.querySelector('.uni-graphbox');
+    if (box && !box.classList.contains('uni-gmax')) graph.querySelector('[data-gmax]').click();
+  }
+  if (location.hash === '#graph') requestAnimationFrame(openGraphView);
+  window.addEventListener('hashchange', () => {
+    if (location.hash === '#graph') openGraphView();
+  });
 }

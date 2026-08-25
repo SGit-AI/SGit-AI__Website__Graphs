@@ -23,6 +23,13 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "27__founder-review__narrated-viewer-walkthrough.md": (
+     "A narrated walkthrough of the viewer",
+     "The first narrated review: ten screen captures with the founder's words spoken "
+     "over them, words joined to pixels the way anchors join claims to bytes. Six "
+     "findings connected to their screens — the live graph one click away, a clickable "
+     "type legend, the explore walk cleansed of the rails' invisible ties, and the peak "
+     "board docked so the canvas it re-anchors stays visible."),
  "26__founder-memo__stable-graphs-and-schema.md": (
      "Fixed nodes, the four areas, and the schema",
      "The stability principle: every node move costs the reader their mental picture, so "

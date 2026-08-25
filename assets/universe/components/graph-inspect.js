@@ -51,16 +51,22 @@ export function inspectNode(ins, U, d) {
 }
 
 /** The live legend: every node type and edge type in the current view, with
-    counts — the raw material for thinking about paths and the schema. */
-export function inspectLegend(ins, visData) {
+    counts. Every row is a control (the narrated review's ask): a node type
+    row toggles that family or its source; an edge type row hides and shows
+    that relation, and a hidden relation keeps its row so the way back stays. */
+export function inspectLegend(ins, visData, edgeOff) {
   const s = graphStats(visData);
-  const row = (label, count, colour) =>
-    '<div><i style="background:' + colour + '"></i>' + esc(label) +
-    ' <span class="dim">' + count + '</span></div>';
+  const row = (attr, key, count, colour, off) =>
+    '<div class="leg-row' + (off ? ' off' : '') + '" ' + attr + '="' + esc(key) +
+    '" title="Click to toggle"><i style="background:' + colour + '"></i>' + esc(key) +
+    ' <span class="dim">' + (off ? 'off' : count) + '</span></div>';
   const nodes = Object.keys(s.nodes).sort().map((f) =>
-    row(f, s.nodes[f], FAMILY_COLOURS[f] || '#8a8f98')).join('');
+    row('data-leg-node', f, s.nodes[f], FAMILY_COLOURS[f] || '#8a8f98', false)).join('');
+  const offRows = [];
+  (edgeOff || new Set()).forEach((k) => { if (!s.edges[k]) offRows.push(k); });
   const edges = Object.keys(s.edges).sort().map((k) =>
-    row(k, s.edges[k], '#c9ccd2')).join('');
+    row('data-leg-edge', k, s.edges[k], '#c9ccd2', false)).join('') +
+    offRows.sort().map((k) => row('data-leg-edge', k, 0, '#c9ccd2', true)).join('');
   ins.legend.innerHTML = '<h6>node types in view</h6>' + (nodes || '<div class="dim">none</div>') +
     '<h6>edge types in view</h6>' + (edges || '<div class="dim">none</div>');
 }
