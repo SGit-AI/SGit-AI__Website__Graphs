@@ -41,6 +41,17 @@ BLURB = {
 # the working packs: everything under dev-packs/ that is not the main pack.
 # short: the url prefix for the rendered pages. label: how the hub names the pack.
 SIDE = [
+ {"dir": "v0.5.10__the-book-writing-pack", "short": "book-pack", "label": "The book-writing pack",
+  "packline": "v0.5.10 &middot; three books, three sessions",
+  "statusline": "COMMISSIONED &mdash; paste an entry prompt into a fresh session; one book each",
+  "blurbs": {
+   "00__README.md": "The commission verbatim, how to run the three sessions, and the three governing rules: the title is locked, every claim is anchored, the reader is on a plane.",
+   "01__the-corpus.md": "The shared reading list in five layers with fetch paths and skim markers, and the precedence rules when sources disagree.",
+   "02__shared-conventions.md": "Output shape (markdown, self-rendering pages, one print PDF), the screenshot and time-travel harness, honesty gates, branch discipline for parallel sessions, and the definition of done.",
+   "03__entry-a-the-universe.md": "Book A: the atlas — 40 to 80 concepts as one spread each, grouped by neighbourhood, with a machine twin (universe.json) the book renders from.",
+   "04__entry-b-the-book.md": "Book B: the argument whole — a proposed eight-chapter spine from first principles to the running system, worked examples over abstractions.",
+   "05__entry-c-the-making-of.md": "Book C: the true story for other authors — the loop, the gates, the failures, screenshots re-taken from git tags, and a playbook that stands alone.",
+  }},
  {"dir": "v0.5.0__the-v04-retrospective", "short": "retro", "label": "The v0.4 retrospective",
   "packline": "v0.5.0 &middot; closing the v0.4 era",
   "statusline": "RETROSPECTIVE &mdash; the era is closed; the judgements are the agent's",

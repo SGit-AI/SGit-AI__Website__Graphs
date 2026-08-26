@@ -23,6 +23,18 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "38__founder-memo__three-books-from-this-estate.md": (
+     "Three books from this estate: the book-writing pack",
+     "Something a little bit different: not a build round but a writing round. "
+     "Three books from this repo and the work so far, each in its own fresh "
+     "session, read on tomorrow's long flight — the universe/atlas volume for "
+     "'Fractal Semantic Graphs: Meaning Through Connectivity', the book itself "
+     "(title locked, full editorial freedom elsewhere), and 'Creating a Book "
+     "Using Fractal Semantic Graphs' for other authors: the story of book 2's "
+     "experimentations, PoCs with screenshots of the evolution, and the "
+     "agentic workflow — an expansion of the v0.4 retrospective. Delivered as "
+     "one dev-pack-style pack with three entry prompts, since most of the "
+     "briefing is shared."),
  "37__founder-memo__zooming-into-the-code-itself.md": (
      "Keep zooming: the code itself gets the graph treatment",
      "Graphs of graphs, one zoom further in: the operator scripts are small but "
