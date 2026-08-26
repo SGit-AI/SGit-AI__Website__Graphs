@@ -155,5 +155,54 @@ export function buildView(view, d) {
         String((b.sentences || []).reduce((a, s) => a + s.words.length, 0)),
         cut(b.text, 100)]));
   }
+  /* ---- the operator folders' files (brief 36 addendum) -------------------- */
+  if (view === 'opschema') {
+    const tRows = (list) => table(['type', 'what it is'], list.map((t) =>
+      ['<code>' + esc(t.type) + '</code>', esc(t.means)]));
+    return '<p><b>' + esc(d.name) + '</b>' + (d.core ? ' · core' : ' · optional') +
+      ' — ' + esc(d.role) + '.</p>' +
+      '<h4>reads</h4>' + tRows(d.io.reads) + '<h4>writes</h4>' + tRows(d.io.writes) +
+      '<h4>runs after</h4><p>' + (d.prerequisites.length
+        ? d.prerequisites.map((p) => '<code>' + esc(p) + '</code>').join(' &rarr; ') + ' &rarr; <b>' + esc(d.operator) + '</b>'
+        : '<b>' + esc(d.operator) + '</b> — it is first') + '</p>' +
+      '<p class="small dim">' + esc(d.note) + '</p>';
+  }
+  if (view === 'opdata') {
+    return '<p>' + esc(d.note) + '</p>' +
+      table(['provenance', 'what', 'where / value', 'why'], d.entries.map((e) => [
+        chip(e.kind), '<b>' + esc(e.name) + '</b>',
+        e.source ? '<code>' + esc(e.source) + '</code>'
+          : '<code>' + cut(JSON.stringify(e.data), 90) + '</code>',
+        esc(e.why)]));
+  }
+  if (view === 'opexamples') {
+    const sum = (v) => {
+      if (Array.isArray(v)) {
+        const names = v.slice(0, 3).map((x) => x && (x.label || x.form || x.word || x.id))
+          .filter(Boolean).map(esc);
+        return '<b>' + v.length + '</b> item(s)' + (names.length ? ': ' + names.join(', ') + (v.length > 3 ? ', …' : '') : '');
+      }
+      if (v && typeof v === 'object') {
+        return v.label ? esc(v.label) : Object.keys(v).map(esc).join(', ') || 'empty';
+      }
+      return cut(JSON.stringify(v), 60);
+    };
+    return '<p><b>' + d.vectors.length + '</b> vector(s), captured against <code>' +
+      esc(d.world) + '</code> — ' + esc(d.note) + '</p>' +
+      d.vectors.map((v) => '<div class="fv-vec"><p><b>&ldquo;' + esc(v.prompt) + '&rdquo;</b>' +
+        (v.label ? ' · ' + esc(v.label) : '') +
+        (v.opts && Object.keys(v.opts).length ? ' · opts <code>' + esc(JSON.stringify(v.opts)) + '</code>' : '') + '</p>' +
+        table(['', 'key', 'holds'],
+          Object.keys(v.input).map((k) => ['in', '<code>' + esc(k) + '</code>', sum(v.input[k])])
+            .concat(Object.keys(v.output).map((k) => ['<b>out</b>', '<code>' + esc(k) + '</code>', sum(v.output[k])]))) +
+        '</div>').join('');
+  }
+  if (view === 'opmanifest') {
+    return '<p>' + esc(d.note) + '</p>' +
+      table(['operator', '', 'reads &rarr; writes', 'role', 'files'], d.operators.map((o) => [
+        '<b>' + esc(o.key) + '</b>', o.core ? chip('core') : '',
+        '<code>' + o.reads.map(esc).join('+') + ' &rarr; ' + o.writes.map(esc).join('+') + '</code>',
+        cut(o.role, 70), String(o.files.length)]));
+  }
   return null;
 }

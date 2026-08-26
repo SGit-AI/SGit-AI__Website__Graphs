@@ -103,3 +103,40 @@ The instruction table is the agent's reading, for the founder to correct.
   document's world. When the fan-out lands, standard data stays, derived data becomes
   per-document, and the examples should probably carry a `world` field naming their
   document.
+
+---
+
+## Addendum — the iPad review (typed, same evening, over four screenshots)
+
+> Great, can you look at these pics of what it looks like
+>
+> - can you improve the main operators page
+> - each operator page (as I click on them on the left, should open either the html or
+>   markdown page
+> - note that the html is not rendering
+> - for the json pages, that formatting is what should happen on the raw page, on the
+>   rendered they should look like what you did for the docs files, where you created some
+>   really nice rendering/visualisation of some or all of that data
+
+The agent's reading, built as v0.5.8:
+
+9. **The landing state earns its screen.** Instead of "pick a file", the explorer opens on
+   an overview: the pipeline drawn as a clickable flow (each operator a chip, the type it
+   writes carried on the arrow to the next), and a card per operator — role, core badge,
+   typed io, vector count, straight links to its workbench and its book page.
+
+10. **Clicking an operator opens its page.** The folder row now expands AND opens the
+    operator's book page (md, rendered) in one click; `index.html` in the tree opens the
+    workbench itself.
+
+11. **html renders as a page.** The rendered tab for an html file now embeds the actual
+    page (the workbench, live in the pane); the tinted source moves to raw — it was never
+    a rendering.
+
+12. **json gets the docs-files treatment.** The tinted pretty-print becomes the RAW view,
+    as the review says it should be; the rendered view becomes real data-driven
+    visualisation in the fileview core (tested under gate 27): the schema as the typed
+    reads/writes contract with the prerequisite chain drawn; the official data as a
+    provenance-chipped table (standard / authored / derived); the example vectors as
+    cards — prompt, options, input and output summarised per key with counts; the
+    manifest as the operators table.

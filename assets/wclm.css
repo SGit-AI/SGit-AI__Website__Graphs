@@ -164,3 +164,26 @@
   .fx-wrap { flex-direction: column; }
   .fx-tree { flex: none; max-height: 40vh; border-right: 0; border-bottom: 1px solid var(--line2, #ddd); }
 }
+
+/* ---- brief 36 addendum: the explorer's overview + real renders ------------ */
+.ov-flow { display: flex; flex-wrap: wrap; gap: .25rem .15rem; align-items: center;
+  padding: .6rem .4rem; border: 1px solid var(--line2, #ddd); border-radius: 10px;
+  margin-bottom: .4rem; }
+.ov-arr { font-size: .66rem; color: #667; white-space: nowrap; }
+.ov-arr code { font-size: .64rem; color: #4a7fb5; }
+.ov-op { font: inherit; font-size: .74rem; padding: .18rem .55rem; border-radius: 8px;
+  cursor: pointer; border: 1px dashed #2a9d8f; background: rgba(42,157,143,.07); }
+.ov-op.core { border-style: solid; font-weight: 700; background: rgba(42,157,143,.14); }
+.ov-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: .6rem; margin-top: .8rem; }
+.ov-card { border: 1px solid var(--line2, #ddd); border-radius: 10px; padding: .55rem .7rem; }
+.ov-card h4 { margin: 0 0 .2rem; }
+.ov-card p { margin: .2rem 0; }
+.ov-name { font: inherit; font-weight: 700; cursor: pointer; border: 0; background: none;
+  padding: 0; color: #1c7a6e; }
+.ov-name:hover { text-decoration: underline; }
+.ndoc-f-core { background: rgba(42,157,143,.16); }
+.fx-frame { width: 100%; height: 72vh; border: 1px solid var(--line2, #ddd); border-radius: 8px; background: #fff; }
+.fx-view h4 { margin: .8rem 0 .25rem; }
+.fv-vec { border: 1px solid var(--line2, #eee); border-radius: 8px; padding: .4rem .6rem; margin: .5rem 0; }
+.fv-vec p { margin: .1rem 0 .3rem; }

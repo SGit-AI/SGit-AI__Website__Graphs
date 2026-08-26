@@ -1,14 +1,20 @@
 /* @module wclm/ops-explorer
-   Single responsibility: the operators explorer (brief 36) — every operator
-   folder as a tree on the left, every file readable on the right, raw (the
-   exact bytes) or rendered (tinted json/js, marked-up markdown), each file
-   deep-linkable (#tokenise/schema.json). The v0.5.1 document explorer's
-   pattern, applied to the engine's own building blocks. */
+   Single responsibility: the operators explorer (brief 36 + its iPad review).
+   Landing: the pipeline drawn as a clickable flow plus a card per operator.
+   Tree: clicking an operator opens its book page; clicking a file opens it —
+   RENDERED means really rendered (marked-up markdown, the html page embedded
+   live, json as the docs-files-style data views), RAW means the tinted
+   byte-honest source. Every file deep-links (#tokenise/schema.json). */
 'use strict';
-import { rawJsonHtml, rawMdHtml, rawJsHtml } from '../universe/core/fileview.js';
+import { rawJsonHtml, rawMdHtml, rawJsHtml, buildView } from '../universe/core/fileview.js';
 
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g,
   (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+const JSON_VIEW = { 'schema.json': 'opschema', 'data.json': 'opdata',
+  'examples.json': 'opexamples', 'manifest.json': 'opmanifest' };
+const FLOW = ['tokenise', 'normalise', 'resolve', 'senses', 'operators', 'passthrough',
+  'attend', 'bind', 'expand', 'converge', 'translate', 'fractal'];
 
 const mount = document.getElementById('opsx');
 if (mount) {
@@ -19,6 +25,7 @@ if (mount) {
 function boot(man) {
   const open = new Set();
   let cur = null;   /* { key, name, text, tab } */
+  const opOf = (k) => man.operators.find((o) => o.key === k);
 
   const draw = () => {
     mount.innerHTML = '<div class="fx-wrap"><nav class="fx-tree">' +
@@ -34,40 +41,81 @@ function boot(man) {
       ).join('') + '</nav><section class="fx-body">' + body() + '</section></div>';
   };
 
+  /* the landing overview: the pipeline as a clickable flow, then the cards */
+  const overview = () => {
+    const flow = FLOW.map((k) => opOf(k)).filter(Boolean).map((o, i, all) => {
+      const prev = all[i - 1];
+      const arrow = prev ? '<span class="ov-arr">&mdash;<code>' + prev.writes.join('+') + '</code>&rarr;</span>' : '';
+      return arrow + '<button class="ov-op' + (o.core ? ' core' : '') + '" data-open="' + o.key + '">' + esc(o.key) + '</button>';
+    }).join('');
+    return '<div class="ov-flow"><span class="ov-arr"><code>text</code>&rarr;</span>' + flow +
+      '<span class="ov-arr">&rarr;<code>the meaning</code></span></div>' +
+      '<p class="small dim">The pipeline in canonical order — each arrow carries the data type the previous engine writes. Click any engine for its book page; four are core (solid), the rest toggle, drag and mix on <a href="../index.html">the WCLM page</a>.</p>' +
+      '<div class="ov-cards">' + FLOW.map((k) => opOf(k)).filter(Boolean).map((o) =>
+        '<div class="ov-card"><h4><button class="ov-name" data-open="' + o.key + '">' + esc(o.key) + '</button>' +
+        (o.core ? ' <span class="ndoc-fam ndoc-f-core">core</span>' : '') + '</h4>' +
+        '<p class="small">' + esc(o.role) + '.</p>' +
+        '<p class="small"><code>' + o.reads.join('+') + ' &rarr; ' + o.writes.join('+') + '</code></p>' +
+        '<p class="small"><a href="' + o.key + '/">the workbench</a> · ' +
+        '<a href="#' + o.key + '/' + o.key + '.md" data-open="' + o.key + '">the book page</a> · ' +
+        o.files.length + ' files</p></div>').join('') + '</div>';
+  };
+
   const body = () => {
-    if (!cur) return '<p class="dim">Pick a file. Every operator folder holds its code (js), its book page (md), its schema, its official data, its example vectors and its workbench (html) — raw or rendered.</p>';
+    if (!cur) return overview();
     const path = cur.key + '/' + cur.name;
-    const tabs = ['rendered', 'raw'].map((t) =>
+    const isJs = cur.name.endsWith('.js');
+    const tabs = (isJs ? ['raw'] : ['rendered', 'raw']).map((t) =>
       '<button class="fx-tab' + (cur.tab === t ? ' on' : '') + '" data-t="' + t + '">' + t + '</button>').join('');
     return '<div class="fx-head"><code>' + esc(path) + '</code> ' + tabs +
       ' <a class="small" href="' + esc(path) + '">open as a plain URL</a>' +
-      (cur.name === 'index.html' ? ' <a class="small" href="' + cur.key + '/">open the workbench</a>' : '') +
+      (cur.name === 'index.html' ? ' <a class="small" href="' + cur.key + '/">open the workbench full-page</a>' : '') +
       '</div>' + render();
   };
 
   const render = () => {
     const n = cur.name;
-    if (cur.tab === 'raw') return '<pre class="fv-raw">' + esc(cur.text) + '</pre>';
-    if (n.endsWith('.json')) return rawJsonHtml(cur.text);
-    if (n.endsWith('.js')) return rawJsHtml(cur.text);
+    if (cur.tab === 'raw' || n.endsWith('.js')) {
+      if (n.endsWith('.json')) return rawJsonHtml(cur.text);
+      if (n.endsWith('.md')) return rawMdHtml(cur.text);
+      return rawJsHtml(cur.text);
+    }
     if (n.endsWith('.md')) {
       return window.marked ? '<div class="mdread">' + window.marked.parse(cur.text) + '</div>' : rawMdHtml(cur.text);
     }
-    return rawJsHtml(cur.text);   /* html source, tinted */
+    if (n.endsWith('.html')) {
+      return '<iframe class="fx-frame" src="' + cur.key + '/' + esc(n) + '" title="' + esc(cur.key) + ' workbench"></iframe>';
+    }
+    if (n.endsWith('.json')) {
+      try {
+        const html = buildView(JSON_VIEW[n], JSON.parse(cur.text));
+        if (html) return '<div class="fx-view">' + html + '</div>';
+      } catch (e) { /* fall through to the tinted source */ }
+      return rawJsonHtml(cur.text);
+    }
+    return rawJsHtml(cur.text);
   };
 
   const load = (key, name) => fetch(key + '/' + name).then((r) => r.text()).then((text) => {
-    cur = { key, name, text, tab: 'rendered' };
+    cur = { key, name, text, tab: name.endsWith('.js') ? 'raw' : 'rendered' };
     location.hash = key + '/' + name;
     draw();
   });
 
   mount.addEventListener('click', (e) => {
+    const go = e.target.closest('[data-open]');
+    if (go) {
+      const k = go.getAttribute('data-open');
+      open.add(k);
+      load(k, k + '.md');
+      return;
+    }
     const d = e.target.closest('[data-d]');
     if (d) {
       const k = d.getAttribute('data-d');
-      if (open.has(k)) open.delete(k); else open.add(k);
-      draw();
+      if (open.has(k) && cur && cur.key === k) { open.delete(k); draw(); return; }
+      open.add(k);
+      load(k, k + '.md');            /* opening a folder opens its book page */
       return;
     }
     const f = e.target.closest('[data-f]');

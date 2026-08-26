@@ -897,6 +897,17 @@ test('operators: every recorded example vector replays byte-identical', () => {
   }
   assert.ok(n >= 30, 'a real corpus of vectors ran: ' + n);
 });
+test('fileview: the operator json views build from the real folder files', async () => {
+  const { buildView } = await import('../../assets/universe/core/fileview.js');
+  const sch = buildView('opschema', JSON.parse(rf(OPS_DIR + 'bind/schema.json', 'utf8')));
+  assert.ok(sch.includes('T7 bind') && sch.includes('<code>stream</code>') && sch.includes('runs after'));
+  const dat = buildView('opdata', JSON.parse(rf(OPS_DIR + 'operators/data.json', 'utf8')));
+  assert.ok(dat.includes('ndoc-f-standard') && dat.includes('negates'));
+  const exv = buildView('opexamples', JSON.parse(rf(OPS_DIR + 'converge/examples.json', 'utf8')));
+  assert.ok(exv.includes('thinking-in-graphs') && exv.includes('fv-vec') && exv.includes('item(s)'));
+  const mani = buildView('opmanifest', JSON.parse(rf(OPS_DIR + 'manifest.json', 'utf8')));
+  assert.ok(mani.includes('tokenise') && mani.includes('&rarr;'));
+});
 test('fileview: rawJsHtml tints comments, strings and keywords', async () => {
   const { rawJsHtml } = await import('../../assets/universe/core/fileview.js');
   const out = rawJsHtml("/* why */ const x = 'graph'; // tail");
