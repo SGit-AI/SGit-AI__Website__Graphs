@@ -9,6 +9,7 @@ import { docTreeElements, headingChain, DOC_ROOT_ID } from '../../assets/univers
 import { coreState, mergeShard, childrenOf, breadcrumb, loadForms, formOf, coreRecord,
   loadTokens, formRecord } from '../../assets/universe/core/coretree.js';
 import { viewOf, rawJsonHtml, rawMdHtml, buildView } from '../../assets/universe/core/fileview.js';
+import { fnv64, runEngine } from '../../assets/wclm/engine.js';
 import { layoutOptions, graphStyle } from '../../assets/universe/core/cystyle.js';
 
 let pass = 0, fail = 0;
@@ -693,6 +694,46 @@ test('fileview: the ledger and token views build from real shapes', () => {
   assert.ok(tokens.includes('fv-bar') && tokens.includes('padding 40%'));
   assert.ok(!tokens.includes(' ◊</b>'), 'count 6 < 10 stays unflagged in the bars');
   assert.equal(buildView('nope', {}), null);
+});
+
+/* ---- wclm: the deterministic transformer (brief 31) ----------------------- */
+test('wclm: the hash is pinned, so python and js can never drift', () => {
+  assert.equal(fnv64('graph'), '32ec982977fe');   /* gen_wclm.py prints the same */
+  assert.equal(fnv64('Graph'), fnv64('Graph'));
+  assert.notEqual(fnv64('graph'), fnv64('graphs'));
+});
+const WC_WORLD = {
+  tokens: {
+    [fnv64('meaning')]: { n: 0, form: 'meaning', count: 20, class: 'content', w: 0.2, top: [['connectivity', 5]] },
+    [fnv64('connectivity')]: { n: 1, form: 'connectivity', count: 15, class: 'content', w: 0.25, top: [['meaning', 5]] },
+    [fnv64('the')]: { n: 2, form: 'the', count: 99, class: 'padding', w: 0.01 },
+  },
+  cooc: [['meaning', 'connectivity', 5]],
+  concepts: [
+    { id: 'mtc', label: 'meaning through connectivity', family: 'concept',
+      statement: 'What a thing is emerges from its edges.', forms: ['meaning', 'connectivity'] },
+    { id: 'con', label: 'connectivity', family: 'concept', forms: ['connectivity'] }],
+  edges: [{ from: 'c1', verb: 'about', to: 'mtc' }],
+  pack: { terms: [{ id: 'pk:meaning', label: 'meaning', def: 'What a thing is.',
+    forms: ['meaning'], edges: [['about', 'pk:connectivity']] }] },
+};
+test('wclm: six layers run and the exact concept out-binds its members', () => {
+  const R = runEngine('the meaning through connectivity', WC_WORLD);
+  assert.equal(R.layers.tokenise.length, 4);
+  assert.equal(R.layers.resolve.filter((t) => t.known).length, 3);   /* through unknown */
+  assert.equal(R.layers.attend.pairs.length, 1);
+  assert.equal(R.layers.attend.pairs[0].w, 5);
+  const ids = R.layers.bind.map((b) => b.id);
+  assert.ok(ids.includes('mtc') && ids.includes('con') && ids.includes('pk:meaning'));
+  assert.equal(R.meaning.id, 'mtc');            /* specificity beats the one-worders */
+  assert.equal(R.meaning.def, 'What a thing is emerges from its edges.');
+  assert.ok(R.meaning.blast >= 1);              /* the about-edge counts */
+});
+test('wclm: deterministic replay, and an empty universe answers honestly', () => {
+  const a = runEngine('meaning connectivity', WC_WORLD);
+  const b = runEngine('meaning connectivity', WC_WORLD);
+  assert.deepEqual(a, b);
+  assert.equal(runEngine('zebra quantum', WC_WORLD).meaning, null);
 });
 
 console.log(`universe tests: ${pass} passed, ${fail} failed`);

@@ -23,6 +23,16 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "31__founder-memo__the-wclm-a-deterministic-transformer.md": (
+     "The WCLM: a deterministic transformer over our graphs",
+     "The crazy experiment, commissioned: a mini engine in the shape of a "
+     "transformer where nothing is learned and everything is named — tokens are "
+     "content hashes, the layers are deterministic transformations with declared "
+     "roles, attention is the co-occurrence and concept-binding made visible, and "
+     "the query flips from predict-the-next-word to what-does-this-mean, answered "
+     "with provenance, blast radius and weights instead of probability. Training "
+     "is tweaking graph inputs, never fitting numbers. Meaning packs bring the "
+     "world above the document: QA is part of development."),
  "30__founder-memo__words-as-tokens-and-the-two-way-transform.md": (
      "Words as tokens, and the two-way transform",
      "Each document is its own token universe: every word a unique entry with no "

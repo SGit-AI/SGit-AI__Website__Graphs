@@ -20,7 +20,7 @@
   <a class="brand" href="../../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.5.1</a>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.5.2</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -61,6 +61,7 @@
       <a class="sl" href="../../decisions/index.html">The open decisions</a>
       <a class="sl" href="../../v2/dev-pack/design-00-the-victor-register.html">The immediate-connection register</a>
       <a class="sl" href="../../v2/dev-pack/retro-00-the-v04-retrospective.html">The v0.4 retrospective</a>
+      <a class="sl" href="../../v2/wclm/index.html">The WCLM &middot; a deterministic transformer</a>
       </div>
     </div>
     <div class="ni ni-has">
@@ -154,6 +155,7 @@
       <tr><td class="dpnum">28</td><td><a href="28-founder-memo-node-navigation-and-path-queries.html"><b>Node navigation, reverse verbs, and the path query</b></a></td><td>Click a node and see its whole universe on the right: every link out with its verb, every link in read through the declared inverse, each row a hop that extends the path trail — the beginnings of the path query. Plus the scale framing (nodes will grow near-exponentially) and two pane bugs fixed where they pointed.</td><td><a href="../briefs/28__founder-memo__node-navigation-and-path-queries.md">.md</a></td></tr>
       <tr><td class="dpnum">29</td><td><a href="29-founder-memo-the-core-graph-document-to-word.html"><b>The core graph: document to word</b></a></td><td>The foundational graph under everything else: transform the document all the way down — sections, paragraphs, sentences, words — like an AST driven by the content, every level a node with an ID, because pointing at character 256 breaks the moment the document changes. Bold and links become span nodes, every distinct word gets a counted form node, the tree expands bit by bit from sharded files, the controls move into tabs, and the inspector shows everything known about a node.</td><td><a href="../briefs/29__founder-memo__the-core-graph-document-to-word.md">.md</a></td></tr>
       <tr><td class="dpnum">30</td><td><a href="30-founder-memo-words-as-tokens-and-the-two-way-transform.html"><b>Words as tokens, and the two-way transform</b></a></td><td>Each document is its own token universe: every word a unique entry with no vocabulary cap, classified (padding, verb, content), stemmed into families, scored for different-meanings-in-the-same-document, and connected by co-occurrence into the document's own attention map. Plus the instruction addressed sooner more than later: the graph must rebuild the markdown byte-for-byte, with formatting captured in its own graph beside the semantic one.</td><td><a href="../briefs/30__founder-memo__words-as-tokens-and-the-two-way-transform.md">.md</a></td></tr>
+      <tr><td class="dpnum">31</td><td><a href="31-founder-memo-the-wclm-a-deterministic-transformer.html"><b>The WCLM: a deterministic transformer over our graphs</b></a></td><td>The crazy experiment, commissioned: a mini engine in the shape of a transformer where nothing is learned and everything is named — tokens are content hashes, the layers are deterministic transformations with declared roles, attention is the co-occurrence and concept-binding made visible, and the query flips from predict-the-next-word to what-does-this-mean, answered with provenance, blast radius and weights instead of probability. Training is tweaking graph inputs, never fitting numbers. Meaning packs bring the world above the document: QA is part of development.</td><td><a href="../briefs/31__founder-memo__the-wclm-a-deterministic-transformer.md">.md</a></td></tr>
     </tbody>
   </table>
   </div>
@@ -170,7 +172,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../../admin/versions.html">v0.5.1</a> · <a href="../../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.5.2</a> · <a href="../../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

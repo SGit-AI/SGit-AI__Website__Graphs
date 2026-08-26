@@ -1,0 +1,53 @@
+/* graphs.sgit.ai — the WCLM experiment (brief 31): the deterministic
+   transformer's page. Columns are layers, arcs are attention and look-back,
+   stroke width is weight. Deliberately separate from the reader's CSS. */
+
+.wc-ask { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin: .8rem 0 1rem; }
+.wc-ask input { font: inherit; font-size: .95rem; padding: .4rem .7rem; min-width: 20rem;
+  border: 1px solid var(--line2, #ccc); border-radius: 8px; flex: 0 1 26rem; }
+.wc-ask button { font: inherit; font-size: .85rem; padding: .4rem 1rem; cursor: pointer;
+  border: 1px solid #2a9d8f; border-radius: 8px; background: #2a9d8f; color: #fff; font-weight: 700; }
+
+.wc-cols { position: relative; display: flex; gap: 2.2rem; align-items: flex-start;
+  overflow-x: auto; padding: .6rem .2rem 1rem; border: 1px solid var(--line2, #ddd);
+  border-radius: 10px; background: #fff; }
+.wc-col { flex: 1 0 13rem; min-width: 12rem; display: flex; flex-direction: column;
+  gap: .35rem; padding: .3rem .4rem; position: relative; z-index: 2; }
+.wc-lh { margin-bottom: .3rem; }
+.wc-lh b { display: block; font-size: .78rem; }
+.wc-lh .small { display: block; line-height: 1.3; }
+
+.wc-chip { border: 1px solid var(--line2, #d5d8de); border-radius: 8px; background: #fff;
+  padding: .25rem .5rem; font-size: .76rem; line-height: 1.35; }
+.wc-chip code { display: block; font-size: .62rem; color: #8a8f98; }
+.wc-chip .small { display: block; font-size: .64rem; color: #667; }
+.wc-tok { border-left: 4px solid #8fa7e0; }
+.wc-res { border-left: 4px solid #2a9d8f; }
+.wc-res.ctc-padding { opacity: .5; }
+.wc-res.ctc-verb b { font-style: italic; }
+.wc-res.ctc-unknown { border-left-color: #c9ccd2; }
+.wc-phrase { border-style: dashed; margin-top: .4rem; }
+.wc-pair { border-left: 4px solid #c58f00; }
+.wc-pull { border-left: 4px solid #e4d9b8; font-size: .7rem; }
+.wc-bind { border-left: 4px solid #3f6ad8; }
+.wc-bind.wc-pack { border-left-color: #9b59b6; }
+.wc-exp { border-left: 4px solid #c9ccd2; font-size: .72rem; }
+.wc-conv { border-left: 4px solid #2f9e63; }
+.wc-conv.on { background: rgba(47, 158, 99, .12); font-weight: 600; }
+
+.wc-wires { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.wc-wires path { fill: none; }
+.wc-wires .wc-line { stroke: rgba(42, 157, 143, .45); }
+.wc-wires .wc-dimline { stroke: rgba(150, 155, 165, .3); }
+.wc-wires .wc-docline { stroke: rgba(63, 106, 216, .4); }
+.wc-wires .wc-packline { stroke: rgba(155, 89, 182, .4); }
+
+.wc-card { margin-top: 1rem; border: 1px solid var(--line2, #ddd); border-radius: 10px;
+  padding: .8rem 1rem; background: var(--panel2, #fafafa); }
+.wc-card h3 { margin: 0 0 .4rem; font-size: 1rem; }
+
+@media (max-width: 760px) {
+  .wc-cols { gap: 1.2rem; }
+  .wc-col { flex: 1 0 11rem; min-width: 10rem; }
+  .wc-ask input { min-width: 0; flex: 1 1 100%; }
+}

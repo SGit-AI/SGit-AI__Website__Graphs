@@ -410,6 +410,19 @@
    ],
    "status": "in use",
    "for_the_book": "Identity through change is the property offsets and paths can never give: mint an identity once, persist it, and make every rebuild prove it can carry the past forward before it is allowed to ship. The ledger diff between two versions is change detection for free: untouched, edited, moved, new, retired."
+  },
+  {
+   "id": "wclm",
+   "name": "The WCLM: a deterministic transformer",
+   "what": "Brief 31's experiment, the founder's coinage: not a large language model but a words content language model. An engine in the shape of a transformer where nothing is learned and everything is named: tokens are content hashes (FNV-1a 64, the same word tokenises identically in every document, python and javascript implementations gate-checked against shared vectors), and six layers are pure functions with declared roles — tokenise, resolve, attend, bind, expand, converge. Attention is the co-occurrence and concept-binding the estate already computed, drawn as weighted arcs between layer columns. The query flips from predict-the-next-word to what-does-this-mean: the answer is a concept with its statement, anchored quote, blast radius and the visible path that produced it — an attribution graph by construction, where interpretability research must reverse-engineer one. Every weight is a stated formula written in the world file (class weight over log2(2+count); bind = half label coverage plus half prompt coverage; total = 2·bind + 0.1·blast): training this model is editing graph inputs and meaning packs, never fitting numbers. Meaning packs supply the world above the document (QA part-of development, issues-fs kind-of a version file system), authored extraction-style.",
+   "born": "v0.5.2",
+   "implemented_in": [
+    "assets/wclm/engine.js",
+    "admin/build/gen_wclm.py",
+    "v2/wclm/packs/graphs-domain.json"
+   ],
+   "status": "experiment",
+   "for_the_book": "The transformer's shape survives with its mystery removed: when the layers are named transformations over graphs instead of learned matrices, the model's every answer arrives with its reasons attached, and training becomes editing meaning rather than fitting numbers."
   }
  ]
 }

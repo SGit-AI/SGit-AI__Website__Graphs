@@ -68,8 +68,9 @@ NAV = [
         ("The open decisions", "decisions/index.html"),
         ("The immediate-connection register", "v2/dev-pack/design-00-the-victor-register.html"),
         ("The v0.4 retrospective", "v2/dev-pack/retro-00-the-v04-retrospective.html"),
+        ("The WCLM &middot; a deterministic transformer", "v2/wclm/index.html"),
     ], ("v2/universe/", "v2/memos/", "v2/methods/", "v2/lexicon/", "v2/artefacts/",
-        "v2/briefs/", "v2/dev-packs/", "decisions/")),
+        "v2/briefs/", "v2/dev-packs/", "v2/wclm/", "decisions/")),
     ("The grammar", "v1/grammar/index.html", [
         ("The rules you can apply tomorrow", "v1/grammar/index.html"),
         ("The edge set", "v1/grammar/edge-set.html"),
