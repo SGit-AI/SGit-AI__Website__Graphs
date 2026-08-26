@@ -9,7 +9,8 @@ import { docTreeElements, headingChain, DOC_ROOT_ID } from '../../assets/univers
 import { coreState, mergeShard, childrenOf, breadcrumb, loadForms, formOf, coreRecord,
   loadTokens, formRecord } from '../../assets/universe/core/coretree.js';
 import { viewOf, rawJsonHtml, rawMdHtml, buildView } from '../../assets/universe/core/fileview.js';
-import { fnv64, runPipeline, runDelta, BLOCKS } from '../../assets/wclm/engine.js';
+import { fnv64, runPipeline, runDelta, BLOCKS, DEFAULT_PIPELINE, TYPES } from '../../assets/wclm/engine.js';
+import { numberOf, senseOf } from '../../assets/wclm/senses.js';
 import { layoutOptions, graphStyle } from '../../assets/universe/core/cystyle.js';
 
 let pass = 0, fail = 0;
@@ -708,20 +709,23 @@ const WC_WORLD = {
     [fnv64('connectivity')]: { n: 1, form: 'connectivity', count: 15, class: 'content', w: 0.25, top: [['meaning', 5]] },
     [fnv64('the')]: { n: 2, form: 'the', count: 99, class: 'padding', w: 0.01 },
     [fnv64('without')]: { n: 3, form: 'without', count: 5, class: 'padding', w: 0.02 },
+    [fnv64('edges')]: { n: 4, form: 'edges', count: 12, class: 'content', w: 0.24 },
   },
   stems: { meaning: ['meaning', 'meanings'] },
   cooc: [['meaning', 'connectivity', 5]],
   concepts: [
     { id: 'mtc', label: 'meaning through connectivity', family: 'concept',
       statement: 'What a thing is emerges from its edges.', forms: ['meaning', 'connectivity'] },
-    { id: 'con', label: 'connectivity', family: 'concept', forms: ['connectivity'] }],
+    { id: 'con', label: 'connectivity', family: 'concept', forms: ['connectivity'] },
+    { id: 'edg', label: 'edges', family: 'concept', forms: ['edges'] }],
   edges: [{ from: 'c1', verb: 'about', to: 'mtc' }],
   pack: { terms: [{ id: 'pk:meaning', label: 'meaning', def: 'What a thing is.',
     forms: ['meaning'], edges: [['about', 'pk:connectivity']] }] },
 };
 test('wclm: the pipeline runs strictly and the exact concept out-binds its members', () => {
   const R = runPipeline('the meaning through connectivity', WC_WORLD);
-  assert.equal(R.steps.filter((x) => !x.skipped).length, BLOCKS.length);
+  assert.equal(R.steps.filter((x) => !x.skipped).length, DEFAULT_PIPELINE.flat().length);
+  assert.ok(BLOCKS.length > DEFAULT_PIPELINE.flat().length);    /* passthrough waits in the registry */
   assert.equal(R.state.tokens.length, 4);
   assert.equal(R.state.resolved.filter((t) => t.known).length, 3);
   assert.equal(R.state.attention.profiles.length, 2);           /* padding dropped */
@@ -751,8 +755,77 @@ test('wclm: blocks mix and match, illegal orders skip with a reason', () => {
   const min = runPipeline('meaning connectivity', WC_WORLD, ['tokenise', 'resolve', 'bind', 'converge']);
   assert.equal(min.meaning.id, 'mtc');
   const bad = runPipeline('meaning', WC_WORLD, ['expand', 'tokenise', 'resolve', 'bind', 'converge']);
-  assert.equal(bad.steps.find((x) => x.key === 'expand').skipped, 'needs bind');
+  assert.ok(bad.steps.find((x) => x.key === 'expand').skipped.includes('needs bindings'));
   assert.ok(bad.meaning);                                       /* the rest still runs */
+});
+/* ---- wclm: senses, number, layers of engines (brief 34) ------------------- */
+const WC_SENSE = { ...WC_WORLD, senses: { meaning: [
+  { key: 'doc', label: 'meaning through edges', domain: 'this document',
+    def: 'What a thing is emerges from its connections.' },
+  { key: 'legal', label: 'the meaning of a term', domain: 'law',
+    def: 'What a contract term is held to say.' }] } };
+test('wclm: number is evidence and the document sense is the default', () => {
+  assert.equal(numberOf('meanings', WC_WORLD.stems).num, 'plural');
+  assert.equal(numberOf('meanings', WC_WORLD.stems).base, 'meaning');
+  assert.equal(numberOf('meaning', WC_WORLD.stems).num, 'singular');
+  assert.equal(senseOf('meanings', WC_SENSE, {}).word, 'meaning');   /* plural inherits */
+  const R = runPipeline('meaning through connectivity', WC_SENSE);
+  assert.deepEqual(R.state.senseTable.map((x) => x.word + ':' + x.active), ['meaning:doc']);
+  assert.equal(R.meaning.id, 'mtc');                            /* the default changes nothing */
+  assert.equal(R.notes.length, 0);
+});
+test('wclm: switching a sense withdraws the word and says what stops applying', () => {
+  const R = runPipeline('meaning connectivity', WC_SENSE, null, { senses: { meaning: 'legal' } });
+  assert.equal(R.meaning.id, 'con');                            /* mtc loses its via-word */
+  const sb = R.state.bindings.find((b) => b.kind === 'sense');
+  assert.equal(sb.id, 'sense:meaning.legal');
+  assert.ok(R.notes[0].includes('you read "meaning" as the meaning of a term'));
+  assert.ok(R.notes[0].includes('do not apply'));
+  /* a word said twice still withdraws ONCE: one binding, one note */
+  const twice = runPipeline('meaning of meaning', WC_SENSE, null, { senses: { meaning: 'legal' } });
+  assert.equal(twice.state.bindings.filter((b) => b.kind === 'sense').length, 1);
+  assert.equal(twice.notes.length, 1);
+});
+test('wclm: engines share a layer, and a sibling need is honestly skipped', () => {
+  const R = runPipeline('meaning without connectivity', WC_SENSE,
+    [['tokenise'], ['resolve'], ['senses', 'operators'], ['bind'], ['converge']]);
+  const li = (k) => R.steps.find((x) => x.key === k).layer;
+  assert.equal(li('senses'), li('operators'));                  /* side by side */
+  assert.notEqual(R.meaning.id, 'mtc');                         /* negation still bites */
+  const bad = runPipeline('meaning', WC_WORLD, [['tokenise'], ['resolve', 'attend'], ['bind'], ['converge']]);
+  assert.ok(bad.steps.find((x) => x.key === 'attend').skipped.includes('needs stream'));
+  assert.ok(bad.meaning);
+});
+test('wclm: passthrough carries what its layer-mates would withdraw', () => {
+  const kept = runPipeline('meaning without connectivity', WC_WORLD,
+    [['tokenise'], ['resolve'], ['operators', 'passthrough'], ['bind'], ['converge']]);
+  assert.equal(kept.meaning.id, 'mtc');                         /* the withdrawal is advisory */
+  assert.ok(kept.notes[0].includes('contradicts the world'));   /* the clue stays written */
+  const strict = runPipeline('meaning without connectivity', WC_WORLD,
+    [['tokenise'], ['resolve'], ['operators'], ['bind'], ['converge']]);
+  assert.notEqual(strict.meaning.id, 'mtc');
+});
+test('wclm: every engine declares its schema, and fractal runs a WCLM inside', () => {
+  BLOCKS.forEach((b) => {
+    assert.ok(b.io && b.io.reads.length && b.io.writes.length, b.key + ' declares io');
+    b.io.reads.concat(b.io.writes).forEach((t) => assert.ok(TYPES[t], b.key + ' uses unknown type ' + t));
+  });
+  const R = runPipeline('meaning through connectivity', WC_WORLD,
+    [['tokenise'], ['resolve'], ['bind'], ['converge'], ['fractal']]);
+  assert.equal(R.state.fractal.text, 'What a thing is emerges from its edges.');
+  assert.equal(R.state.fractal.meaning.id, 'edg');              /* the meaning of the meaning */
+  const early = runPipeline('meaning', WC_WORLD,
+    [['tokenise'], ['fractal'], ['resolve'], ['bind'], ['converge']]);
+  assert.ok(early.steps.find((x) => x.key === 'fractal').skipped.includes('needs meanings'));
+  assert.ok(early.meaning);                                     /* the rest still runs */
+});
+test('wclm: a sense switch is measured by the delta and replays deterministically', () => {
+  const a = runPipeline('meaning connectivity', WC_SENSE);
+  const b = runPipeline('meaning connectivity', WC_SENSE, null, { senses: { meaning: 'legal' } });
+  const d = runDelta(a, b);
+  assert.ok(d.layers.senses.added.includes('meaning:legal'));
+  assert.ok(d.winner.changed);
+  assert.deepEqual(runPipeline('meaning connectivity', WC_SENSE, null, { senses: { meaning: 'legal' } }), b);
 });
 test('wclm: the run delta measures impact, deterministic replay holds', () => {
   const a = runPipeline('meaning', WC_WORLD);

@@ -84,6 +84,17 @@ def main():
         for tgt in nd.get("about", []):
             edges.append({"from": nd["id"], "verb": "about", "to": tgt})
 
+    # the senses register (brief 34): authored word senses across industries;
+    # every word must be one the universe actually holds, and every word's
+    # first sense must be the document's own
+    senses = json.loads((OUT / "senses.json").read_text())["words"]
+    known_forms = {r["form"] for r in table.values()}
+    for word, entries in senses.items():
+        if word not in known_forms:
+            raise SystemExit(f"gen_wclm: senses register names {word!r}, which this universe has never seen")
+        if not entries or entries[0]["key"] != "doc":
+            raise SystemExit(f"gen_wclm: {word!r} must lead with the document's own sense (key 'doc')")
+
     packs = []
     for pf in sorted((OUT / "packs").glob("*.json")):
         p = json.loads(pf.read_text())
@@ -105,15 +116,17 @@ def main():
         "tokens": table, "order": order,
         "stems": {k: v for k, v in tokens.get("stems", [])},
         "cooc": tokens.get("edges", []),
-        "concepts": concepts, "edges": edges, "pack": pack,
+        "concepts": concepts, "edges": edges, "pack": pack, "senses": senses,
     }
     (OUT / "data" / "world.json").write_text(json.dumps(world, ensure_ascii=False) + "\n")
 
     (OUT / "index.html").write_text(PAGE.format(version=VERSION))
     n_terms = len(pack["terms"])
+    n_senses = sum(len(v) for v in senses.values())
     print(f"gen_wclm: world — {len(order)} token hashes, {len(concepts)} concepts, "
           f"{len(edges)} doc edges, {len(world['cooc'])} co-occurrence edges, "
-          f"{n_terms} pack terms in {len(packs)} pack(s); "
+          f"{n_terms} pack terms in {len(packs)} pack(s), "
+          f"{n_senses} senses over {len(senses)} word(s); "
           f"fnv64('graph') = {vectors['graph']}")
 
 
@@ -142,7 +155,7 @@ PAGE = """<!doctype html>
 <main class="doc uni-full">
 <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="../universe/index.html">the universe</a> &rarr; <b>the WCLM</b></div>
 <h1>The WCLM: a words content language model</h1>
-<p class="lead">Briefs 31&ndash;33's experiment: an engine in the shape of a transformer where <b>nothing is learned and everything is named</b>. Tokens are content hashes, so the same word tokenises identically in every document. The pipeline is <b>eight reusable blocks</b> &mdash; toggle them, reorder them, and each reads only the block before it, so no wire ever jumps a layer. Early blocks say <i>this is what we think you said</i> (the dictionary and thesaurus repairs, with their evidence). Operators make the little words count: <i>without</i> is not <i>through</i>, and when the prompt negates something this universe asserts, the contradiction is said out loud. And the query flips: instead of predicting the next word, ask <b>what does this mean</b> &mdash; the answer is a concept with its statement, its anchored quote, its blast radius, and a click on any box lights up its <b>full evidence trail</b>, back to the tokens and forward to the answer. Same prompt, same world, same picture, every time. Training this model means editing its graph inputs (<a href="data/world.json">the world</a>, <a href="packs/graphs-domain.json">the meaning packs</a>), never fitting numbers.</p>
+<p class="lead">Briefs 31&ndash;34's experiment: an engine in the shape of a transformer where <b>nothing is learned and everything is named</b>. Tokens are content hashes, so the same word tokenises identically in every document. The pipeline is <b>layers of reusable engines</b> &mdash; toggle them, drag them between layers, run several side by side in one slot, and each layer reads only the layer before it, so no wire ever jumps. Early engines say <i>this is what we think you said</i> (the dictionary and thesaurus repairs, with their evidence). The senses engine knows a word means different things in different industries &mdash; a graph is a network graph here, a chart in a boardroom, a function plot at school &mdash; and <b>switching a word's sense shows exactly which of this universe's claims stop applying</b>; singular and plural are read as evidence too, because graph is not graphs. Operators make the little words count: <i>without</i> is not <i>through</i>, and when the prompt negates something this universe asserts, the contradiction is said out loud. Every engine declares its <b>schema</b> &mdash; the data types it reads and writes, six types in the whole pipeline &mdash; so compatibility is structural: an engine placed where its input type is not yet written is skipped with the reason named, and any engine writing the right type can stand in. It is even fractal: the <b>fractal engine is a full WCLM inside an engine</b>, re-running the winning meaning's own statement one zoom down. And the query flips: instead of predicting the next word, ask <b>what does this mean</b> &mdash; the answer is a concept with its statement, its anchored quote, its blast radius, and a click on any box lights up its <b>full evidence trail</b>. Same prompt, same world, same picture, every time. Training this model means editing its graph inputs (<a href="data/world.json">the world</a>, <a href="packs/graphs-domain.json">the meaning packs</a>, <a href="senses.json">the senses register</a>), never fitting numbers.</p>
 
 <div class="wc-ask">
   <input id="wc-q" type="text" value="meaning through connectivity" spellcheck="false"

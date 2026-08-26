@@ -23,6 +23,18 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "34__founder-memo__words-have-many-meanings.md": (
+     "Words have many meanings: senses, number, and the world model per word",
+     "Each word needs a world model: singular is not plural (graph is not graphs, "
+     "and 'graph of graphs' is not 'graphs of graphs'), and the same word means "
+     "completely different things across industries — a graph is a network graph "
+     "here, a chart in a boardroom, a function plot at school. The thought "
+     "exercise: author three to five senses per word, let people switch to THEIR "
+     "definition, and programmatically show what stops applying (a graph that is "
+     "a diagram is not fractal). Two addenda from the same day: layers must hold "
+     "MULTIPLE engines side by side (pass-through itself an engine, include it or "
+     "block the stream), and every engine must declare its input/output schema — "
+     "including a fractal mode where one engine is a full WCLM inside."),
  "33__founder-review__the-detective-playbook.md": (
      "The detective playbook: a narrated review of the WCLM",
      "Eight narrated moments over the deterministic transformer, and the finding "

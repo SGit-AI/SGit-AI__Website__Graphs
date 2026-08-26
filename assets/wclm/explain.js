@@ -5,7 +5,7 @@
    what it feeds downstream, and every entry is itself clickable, so the why
    can be walked in both directions. A part of the wclm page. */
 'use strict';
-import { BLOCKS } from './engine.js';
+import { BLOCKS, TYPES } from './engine.js';
 
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g,
   (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -37,18 +37,17 @@ export function renderExplain(pane, id, ctx) {
     '<p class="small dim">every entry is clickable — it&rsquo;s graphs all the way.</p>';
 }
 
-/** Explain one layer: its role, what it reads, what it writes, this run's count. */
+/** Explain one engine: its role, its schema (the types it reads and writes),
+    this run's count. The schema is the compatibility contract (brief 34). */
 export function renderLayerCard(pane, key, count) {
   const l = BLOCKS.find((x) => x.key === key);
-  const idx = BLOCKS.indexOf(l);
-  const reads = idx === 0 ? 'the prompt text' : 'the previous executed block&rsquo;s output — never anything further back';
-  const writes = key === 'converge' ? 'the answer: meaning, provenance, blast radius, contradictions' : 'the next block&rsquo;s input';
+  const typed = (list) => list.map((t) =>
+    '<b>' + esc(t) + '</b> <span class="dim">(' + esc(TYPES[t] || t) + ')</span>').join(', ');
   pane.innerHTML = '<div class="wc-sh"><b>' + esc(l.name) + '</b>' +
-    '<span class="small dim">a reusable deterministic block' + (l.core ? '' : ' · optional: toggle it in the pipeline bar') + '</span></div>' +
+    '<span class="small dim">a reusable deterministic engine' + (l.core ? '' : ' · optional: toggle or drag it in the pipeline bar — engines can share a layer') + '</span></div>' +
     '<p>' + esc(l.role) + '.</p>' +
-    (l.needs.length ? '<div class="ev-row"><span class="dim">needs</span> ' + l.needs.join(', ') + '</div>' : '') +
-    '<div class="ev-row"><span class="dim">reads</span> ' + reads + '</div>' +
-    '<div class="ev-row"><span class="dim">writes</span> ' + writes + '</div>' +
+    '<div class="ev-row"><span class="dim">reads</span> ' + typed(l.io.reads) + ' — from the layers before it, never further back than what they stacked</div>' +
+    '<div class="ev-row"><span class="dim">writes</span> ' + typed(l.io.writes) + '</div>' +
     '<div class="ev-row"><span class="dim">this run</span> ' + count + ' item(s)</div>' +
-    '<p class="small dim">Same input, same output, always — the layer is a stated transformation, never a fitted formula. To change what it does, change the world it reads.</p>';
+    '<p class="small dim">The schema is the compatibility contract: any engine writing what this one reads can feed it, and a placement whose types are unmet is skipped with the missing type named. Same input, same output, always — a stated transformation, never a fitted formula.</p>';
 }

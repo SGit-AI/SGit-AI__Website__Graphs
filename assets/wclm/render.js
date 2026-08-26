@@ -11,14 +11,16 @@ const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g,
 const r2 = (x) => Math.round(x * 100) / 100;
 
 /**
- * Render one executed block's column. ctx: { chip, wire, last } where last is
- * the previous block's anchor maps ({byI, byForm, byBind}); returns the html
- * and mutates ctx.last to this block's anchors.
+ * Render one executed engine's evidence. ctx: { chip, wire, last, cur } where
+ * last holds the PREVIOUS LAYER's anchor maps ({byI, byForm, byBind}) and cur
+ * the maps this layer's engines share — the caller opens cur per layer and
+ * commits it to last when the layer's engines have all rendered, so engines
+ * sharing a layer all wire from the previous layer (brief 34's addendum).
  */
 export function renderBlock(key, s, world, ctx) {
   const { chip, wire } = ctx;
   const last = ctx.last || {};
-  const byI = new Map(), byForm = new Map(), byBind = new Map();
+  const { byI, byForm, byBind } = ctx.cur;
   let html = '';
 
   if (key === 'tokenise') {
@@ -66,6 +68,46 @@ export function renderBlock(key, s, world, ctx) {
     }).join('');
   }
 
+  if (key === 'senses') {
+    html = s.resolved.map((t) => {
+      byI.set(t.i, 'sn' + t.i);
+      if (t.known && t.class !== 'padding' && t.class !== 'operator') byForm.set(t.form, 'sn' + t.i);
+      const has = t.sense || t.num;
+      wire(last.byI.get(t.i), 'sn' + t.i, 0.4, has ? '' : 'wc-dimline',
+        t.sense ? 'its sense declared' : t.num ? 'its number read from the stem family' : 'no senses recorded: passed through');
+      if (!has) {
+        return chip('sn' + t.i, key, 'wc-pass', esc(t.form), t.form,
+          [['status', 'the senses register holds nothing for it: passed through']], t.form);
+      }
+      const rows = [];
+      if (t.num) {
+        rows.push(['number', t.num.num === 'plural'
+          ? 'plural of "' + t.num.base + '" — more than one involved (evidence: the stem family ' + t.num.family.join(' / ') + ')'
+          : 'singular (evidence: the stem family ' + t.num.family.join(' / ') + ' also holds its plural)']);
+      }
+      if (t.sense) {
+        rows.push(['active sense', t.sense.label + ' (' + t.sense.domain + ')' + (t.foreign ? ' — SWITCHED away from this document' : ': this document’s own')],
+          ['it means', t.sense.def], ['senses held', t.sense.options.map((o) => o.label).join(' · ')]);
+      }
+      return chip('sn' + t.i, key, 'wc-sn' + (t.foreign ? ' wc-foreign' : ''),
+        '<b>' + esc(t.form) + '</b>' +
+        (t.num ? '<span class="small">' + (t.num.num === 'plural' ? '&#10697; plural of ' + esc(t.num.base) : '&#9675; singular') + '</span>' : '') +
+        (t.sense ? '<span class="small' + (t.foreign ? '' : ' dim') + '">' + esc(t.sense.label) + ' &middot; ' + esc(t.sense.domain) + '</span>' : ''),
+        t.form, rows, t.form);
+    }).join('');
+  }
+
+  if (key === 'passthrough') {
+    const carried = s.resolved.filter((t) => t.negated || t.foreign);
+    html = carried.map((t) => {
+      byI.set(t.i, 'pt' + t.i);
+      wire(last.byI.get(t.i), 'pt' + t.i, 0.4, '', 'carried past the withdrawal');
+      return chip('pt' + t.i, key, 'wc-pass', esc(t.form) + ' <span class="small">carried</span>', t.form,
+        [['status', 'would be withdrawn (' + (t.negated ? 'negated' : 'sense-switched')
+          + '), but passthrough carries it — the clue stays written, nothing is blocked']], t.form);
+    }).join('') || '<div class="dim small">nothing to carry this run</div>';
+  }
+
   if (key === 'operators') {
     html = s.resolved.map((t) => {
       byI.set(t.i, 'o' + t.i);
@@ -110,8 +152,8 @@ export function renderBlock(key, s, world, ctx) {
         if (from) wire(from, 'b' + k, b.score, '', '"' + f + '" is in this label');
       });
       return chip('b' + k, key, 'wc-bind wc-' + b.kind, '<b>' + esc(b.label) + '</b><span class="small">' +
-        (b.kind === 'pack' ? 'meaning pack' : esc(b.family)) + ' · bind ' + b.score + '</span>', b.label,
-        [['source', b.kind === 'pack' ? 'a meaning pack' : 'the document extraction'],
+        (b.kind === 'pack' ? 'meaning pack' : b.kind === 'sense' ? esc(b.domain) : esc(b.family)) + ' · bind ' + b.score + '</span>', b.label,
+        [['source', b.kind === 'pack' ? 'a meaning pack' : b.kind === 'sense' ? 'the senses register — a switched word binds its chosen sense' : 'the document extraction'],
          ['bind', b.score + ' = ½ label + ½ prompt coverage (evidence; the halves are opinion)'],
          ['via', b.via.join(', ')]], b.id);
     }).join('') || '<div class="dim small">nothing bound</div>';
@@ -132,6 +174,7 @@ export function renderBlock(key, s, world, ctx) {
 
   if (key === 'converge') {
     html = s.ranked.slice(0, 6).map((m, k) => {
+      byBind.set(m.id, 'c' + k);
       wire(last.byBind.get(m.id), 'c' + k, m.total / 2, '',
         'bind ' + m.score + ' doubled (opinion), plus 0.1 (opinion) per neighbour (' + m.blast + ', evidence)');
       return chip('c' + k, key, 'wc-conv' + (k === 0 ? ' on' : ''),
@@ -141,6 +184,36 @@ export function renderBlock(key, s, world, ctx) {
     }).join('') || '<div class="dim small">no meaning found in this universe</div>';
   }
 
-  ctx.last = { byI, byForm: byForm.size ? byForm : (last.byForm || new Map()), byBind: byBind.size ? byBind : (last.byBind || new Map()) };
+  if (key === 'fractal') {
+    if (s.fractal && s.fractal.meaning) {
+      const f = s.fractal;
+      wire(last.byBind.get(s.meaning.id), 'f0', 0.6, '', 'the winner&rsquo;s statement re-enters the pipeline');
+      html = chip('f0', key, 'wc-frac', '<b>' + esc(f.meaning.label) + '</b>' +
+        '<span class="small">the meaning of the meaning &middot; score ' + f.meaning.total + '</span>' +
+        '<span class="small dim">a full WCLM ran inside: tokenise &rarr; resolve &rarr; bind &rarr; converge</span>',
+        'the inner run', [['inner prompt', f.text],
+          ['inner winner', f.meaning.label + ' (' + f.meaning.total + ')'],
+          ['depth', 'one zoom down — the inner pipeline holds no fractal engine, so it ends']],
+        f.meaning.id);
+    } else {
+      html = '<div class="dim small">the winner carries no statement to zoom into</div>';
+    }
+  }
+
   return html;
+}
+
+/** Open a layer's shared anchor maps; the returned commit folds them into
+    ctx.last once every engine in the layer has rendered. */
+export function openLayer(ctx) {
+  const last = ctx.last || {};
+  ctx.cur = { byI: new Map(), byForm: new Map(), byBind: new Map() };
+  return () => {
+    const c = ctx.cur;
+    ctx.last = {
+      byI: c.byI.size ? c.byI : (last.byI || new Map()),
+      byForm: c.byForm.size ? c.byForm : (last.byForm || new Map()),
+      byBind: c.byBind.size ? c.byBind : (last.byBind || new Map()),
+    };
+  };
 }

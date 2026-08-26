@@ -3,15 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>The universe &mdash; graphs.sgit.ai</title>
-<meta name="description" content="Layer 1 of the second edition's universe: one local graph per carried source document, every node anchored to the frozen bytes that carry it, every anchor verified on every build.">
-<link rel="canonical" href="https://graphs.sgit.ai/v2/universe/index.html">
-<meta property="og:type" content="website">
+<title>Words have many meanings: senses, number, and the world model per word &mdash; graphs.sgit.ai</title>
+<meta name="description" content="Each word needs a world model: singular is not plural (graph is not graphs, and 'graph of graphs' is not 'graphs of graphs'), and the same word means completely different things across industries — a graph is a network graph here, a chart in a boardroom, a function plot at school. The thought exercise: author three to five senses per word, let people switch to THEIR definition, and programmatically show what stops applying (a graph that is a diagram is not fractal). Two addenda from the same day: layers must hold MULTIPLE engines side by side (pass-through itself an engine, include it or block the stream), and every engine must declare its input/output schema — including a fractal mode where one engine is a full WCLM inside.">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/memos/34-founder-memo-words-have-many-meanings.html">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="graphs.sgit.ai">
-<meta property="og:url" content="https://graphs.sgit.ai/v2/universe/index.html">
-<meta property="og:title" content="The universe">
-<meta property="og:description" content="The second edition's universe, built bottom up from the carried sources, one anchored local graph per document.">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/memos/34-founder-memo-words-have-many-meanings.html">
+<meta property="og:title" content="Words have many meanings: senses, number, and the world model per word">
+<meta property="og:description" content="Each word needs a world model: singular is not plural (graph is not graphs, and 'graph of graphs' is not 'graphs of graphs'), and the same word means completely different things across industries — a graph is a network graph here, a chart in a boardroom, a function plot at school. The thought exercise: author three to five senses per word, let people switch to THEIR definition, and programmatically show what stops applying (a graph that is a diagram is not fractal). Two addenda from the same day: layers must hold MULTIPLE engines side by side (pass-through itself an engine, include it or block the stream), and every engine must declare its input/output schema — including a fractal mode where one engine is a full WCLM inside.">
 <meta name="twitter:card" content="summary">
+<link rel="alternate" type="text/markdown" href="../briefs/34__founder-memo__words-have-many-meanings.md" title="The raw markdown, which is the source of truth">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -50,7 +51,7 @@
     <div class="ni ni-has">
       <a class="nl here" href="../../v2/universe/index.html">The universe<span class="caret">&#9662;</span></a>
       <div class="sub">
-      <a class="sl here" href="../../v2/universe/index.html">Layer 1: the documents, extracted</a>
+      <a class="sl" href="../../v2/universe/index.html">Layer 1: the documents, extracted</a>
       <a class="sl" href="../../v2/universe/thinking-in-graphs.html">&hellip; the pilot: Thinking in Graphs</a>
       <a class="sl" href="../../v2/universe/thinking-in-graphs.graph.html">&hellip; its graph, standalone &middot; phone-friendly</a>
       <a class="sl" href="../../v2/universe/thinking-in-graphs.files.html">&hellip; its files, raw and viewed</a>
@@ -134,43 +135,23 @@
 </div></nav>
 
 <main class="doc">
-  <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="../index.html">the second edition</a> &rarr; <b>The universe</b></div>
-  <h1>The universe, built bottom up</h1>
-  <p class="lead">The second edition is written from a universe of concepts, claims and evidence, and the universe is built <b>bottom up</b>: one local graph per carried source document, each document keeping its own vocabulary, with bridges between them added later as authored decisions. Nothing here is book text. This is the material the book's own graph will connect to.</p>
+<div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="../index.html">the second edition</a> &rarr; <a href="index.html">the memos</a> &rarr; <b>34</b></div>
+<h1>Words have many meanings: senses, number, and the world model per word</h1>
+<p class="lead">Each word needs a world model: singular is not plural (graph is not graphs, and 'graph of graphs' is not 'graphs of graphs'), and the same word means completely different things across industries — a graph is a network graph here, a chart in a boardroom, a function plot at school. The thought exercise: author three to five senses per word, let people switch to THEIR definition, and programmatically show what stops applying (a graph that is a diagram is not fractal). Two addenda from the same day: layers must hold MULTIPLE engines side by side (pass-through itself an engine, include it or block the stream), and every engine must declare its input/output schema — including a fractal mode where one engine is a full WCLM inside.</p>
 
-  <div class="note"><b>The layer model.</b><br>
-  <b>Layer 0</b> &middot; the frozen bytes: the 21 carried sources under <code>/v1/docs/sources/</code>, each hashed in the freeze manifest, so an anchor into one is stable forever.<br>
-  <b>Layer 1</b> &middot; per-document local graphs, this section: the document's own dictionary, claims with their support state, hypotheses, objectives, demonstrations and asserted relations, every one anchored to a verbatim quote. <b>The build refuses to ship an anchor whose quote is not found in the frozen bytes</b>, so extraction cannot cite words that are not there. Every layer 1 node means only: <em>this document says this, here</em>.<br>
-  <b>Layer 2</b> &middot; the bridge layer, not started: cross-document edges, authored with a note, recording where documents name the same idea differently and where they disagree. Divergence is preserved as a finding, never merged away.<br>
-  <b>Layer 3</b> &middot; the book's universe, not started: the six node families of the dev pack's ADR-3, connecting down into layers 1 and 2 as evidence.</div>
+<div class="docmeta">
+  <span class="k">Kind</span><span class="v">Founder memo &middot; source material, not edited</span>
+  <span class="k">Licence</span><span class="v">CC BY 4.0</span>
+  <span class="k">Source</span><span class="v"><a href="../briefs/34__founder-memo__words-have-many-meanings.md">raw markdown</a> &middot; <a href="https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs/34__founder-memo__words-have-many-meanings.md">view on GitHub</a></span>
+</div>
 
-  <h2 id="sources">The sources, and where extraction stands</h2>
-  <div class="tablewrap">
-  <table>
-    <thead><tr><th>Document</th><th>State</th><th>Yield</th></tr></thead>
-    <tbody>
-      <tr><td><a href="thinking-in-graphs.html"><b>Thinking in Graphs: Meaning Through Connectivity</b></a><div class="small dim">dated 2026-02-05 &middot; the cornerstone; the book's subtitle is this document's subtitle</div></td><td><span class="rstate rs-applied">extracted &middot; pilot</span></td><td class="small">22 concepts &middot; 27 claims &middot; 8 edges &middot; 8 known uses &middot; <a href="docs/thinking-in-graphs/index.html">the folder</a> &middot; <a href="thinking-in-graphs.pdf">PDF, 14pp</a></td></tr>
-      <tr><td class="dim">the other 20 carried sources</td><td><span class="rstate rs-open">queued</span></td><td class="small dim">the pilot settles the method first; each will get the same treatment</td></tr>
-    </tbody>
-  </table>
-  </div>
+<div class="mdread-label">&#128196; Rendered from the <a href="../briefs/34__founder-memo__words-have-many-meanings.md">raw markdown</a>, which is the source of truth. This page is presentation.</div>
+<div class="mdread" id="mdread" data-src="../briefs/34__founder-memo__words-have-many-meanings.md"><noscript><p class="dim">In-page rendering needs JavaScript &mdash; <a href="../briefs/34__founder-memo__words-have-many-meanings.md">open the raw markdown</a>.</p></noscript></div>
 
-  <h2 id="nodedoc">The document of one node</h2>
-  <p>The experiment of brief 24, programmatic phase: pick a node and read <a href="node-doc.html">the document that grows from it</a> &mdash; everything the anchored extraction verifiably holds about that one concept, composed in document structure with no authored prose. The picker ranks every node by how many links it carries, which makes the richness of each concept measurable before any writing happens.</p>
-
-  <h2 id="rules">The rules this section holds itself to</h2>
-  <ul>
-    <li><b>One extraction file per document</b>, and the dictionary, taxonomy, thesaurus and ontology views are projections of it. Four authored artefacts per document would be four things that can disagree; one file with four views cannot.</li>
-    <li><b>Every node is anchored</b> to a verbatim quote in a named section, and the build verifies the quote against the frozen bytes on every release. A hallucinated quote fails the build; a misread of a real quote is what review is for.</li>
-    <li><b>Coverage is total by construction</b>: every section with prose either yields anchored items or is recorded as deliberately empty with a reason. A recorded empty section is a finding; a silent one is a hole.</li>
-    <li><b>Truth is deferred.</b> Layer 1 records what a document says, including its own evidence state (demonstrated, argued, declared). Whether it is right is layer 3's question.</li>
-    <li><b>The extractor is an author too.</b> The extraction is the agent's reading, marked as such, and it ships with the anchors a reviewer needs to check it. Undefined-but-used terms are recorded as named absences.</li>
-  </ul>
-
-  <div class="agent">
-    <h4>For an agent</h4>
-    <p>The machine surface is <a href="data/universe.json">data/universe.json</a>: every node, edge, alias and distinction, with resolved byte offsets into the frozen sources and the SHA-256 each anchor was verified against. Each document's standalone folder under <code>docs/</code> holds its source copy, its extraction and its cross-references (<code>crossrefs.json</code>, rated against <code>usage-model.json</code>). Treat a layer 1 node as a statement about a document, never as a statement about the world. If you are reviewing an extraction, use its PDF and read nothing else; come back item by item against the node ids. If you are building or changing anything interactive, first read <a href="../dev-pack/design-00-the-victor-register.html">the immediate-connection register</a>: it names the experience these viewers are built towards, maps which patterns already exist, and carries the checklist a change should pass.</p>
-  </div>
+<div class="pagenav">
+  <span><a href="index.html">&larr; All memos</a></span>
+  <span><a href="../dev-pack/index.html">The dev pack &rarr;</a></span>
+</div>
 </main>
 
 <footer class="site"><div class="cols">
@@ -216,5 +197,7 @@
     <a href="../../llms.txt">llms.txt</a>
   </div>
 </div></footer>
+<script src="../../assets/vendor/marked.min.js"></script>
+<script src="../../assets/mdreader.js" defer></script>
 </body>
 </html>

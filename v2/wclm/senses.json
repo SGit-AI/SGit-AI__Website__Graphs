@@ -1,0 +1,52 @@
+{
+  "register": "word senses across industries (brief 34)",
+  "note": "The thought exercise the memo asks for: three to five definitions per word that mean completely different things across industries. The first sense of every word is always this document's own, reached through its connections (a graph is connected to network, to nodes and edges, to mathematics). Authored by the agent for the founder's review, exactly like the meaning packs: to train the model, edit this file.",
+  "words": {
+    "graph": [
+      { "key": "doc", "label": "the network graph", "domain": "this document",
+        "def": "Nodes joined by edges; meaning through connectivity. The sense reached through this document's own connections: graph connects to network, to nodes and edges, to mathematics, to the fractal principle." },
+      { "key": "chart", "label": "a chart of data", "domain": "business reporting",
+        "def": "Bars, lines and axes drawn from numbers: 'the sales graph is up'. No nodes, no edges — a picture of quantities, not of connections." },
+      { "key": "plot", "label": "the graph of a function", "domain": "school mathematics",
+        "def": "The curve of y = f(x) drawn on axes. A set of points satisfying an equation — connectivity plays no part." },
+      { "key": "paper", "label": "graph paper", "domain": "stationery",
+        "def": "The printed square grid you draw on. The word names the ruled page itself, not anything drawn upon it." },
+      { "key": "social", "label": "the social graph", "domain": "social platforms",
+        "def": "Who follows whom, who is friends with whom. The closest industry sense to this document's: it IS a network graph, wearing a product name." }
+    ],
+    "node": [
+      { "key": "doc", "label": "a point in a graph", "domain": "this document",
+        "def": "A thing that exists by being connected: a node holds edges, and what it means emerges from what those edges reach." },
+      { "key": "runtime", "label": "Node.js, the runtime", "domain": "software tooling",
+        "def": "The JavaScript runtime ('does it run on Node?'). A product name, no relation to graph structure." },
+      { "key": "lymph", "label": "a lymph node", "domain": "medicine",
+        "def": "A small gland of the immune system. In a clinic, 'swollen nodes' has nothing to do with edges." },
+      { "key": "stem", "label": "a stem node", "domain": "botany",
+        "def": "The joint on a plant stem where a leaf or branch grows. Gardeners cut just above one." },
+      { "key": "host", "label": "a machine on the network", "domain": "IT operations",
+        "def": "Any device with an address: a server, a switch, a sensor. Nearer to this document's sense — the machines really are vertices of a network — but the word names hardware, not structure." }
+    ],
+    "fractal": [
+      { "key": "doc", "label": "the fractal principle", "domain": "this document",
+        "def": "The same structural pattern — nodes with edges, meaning through connectivity — repeating at every level of zoom: a graph of graphs, every scope defining its own vocabulary." },
+      { "key": "math", "label": "a self-similar set", "domain": "mathematics",
+        "def": "Mandelbrot and Koch: a set whose parts resemble the whole at every magnification, with fractional dimension." },
+      { "key": "art", "label": "fractal art", "domain": "digital art",
+        "def": "Images rendered from iterating those sets: posters, album covers, screen savers." },
+      { "key": "antenna", "label": "a fractal antenna", "domain": "radio engineering",
+        "def": "A self-similar conductor shape that packs a long electrical length into a small space; in phones and RFID tags." },
+      { "key": "figurative", "label": "endlessly nested (figurative)", "domain": "everyday speech",
+        "def": "'The problem is fractal': every part turns out to have parts. Borrowed imagery, no geometry claimed." }
+    ],
+    "task": [
+      { "key": "doc", "label": "a node someone called Task", "domain": "this document",
+        "def": "The document's own example: an issue labelled 'Task' is just a node — only its edges to a definition say what a Task is, and that definition changes with culture and context." },
+      { "key": "pm", "label": "a unit of work", "domain": "project management",
+        "def": "Something with an owner, an estimate and a due date, living on a board between 'to do' and 'done'." },
+      { "key": "os", "label": "a running process", "domain": "operating systems",
+        "def": "A scheduled unit of execution: the task manager, a task switch, kill the task." },
+      { "key": "chore", "label": "a household chore", "domain": "everyday speech",
+        "def": "Something on the list for the weekend. No board, no scheduler — just the oldest sense of the word." }
+    ]
+  }
+}

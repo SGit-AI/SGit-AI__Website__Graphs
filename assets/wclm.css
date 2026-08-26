@@ -104,3 +104,20 @@
 .wc-wires .wc-pairline { stroke: rgba(197, 143, 0, .55); }
 .wc-note { border-left: 3px solid #b06060; background: rgba(176, 96, 96, .08);
   padding: .35rem .6rem; border-radius: 4px; font-size: .84rem; }
+
+/* ---- brief 34: senses, number, layers of engines -------------------------- */
+.wc-lay { display: inline-flex; gap: .25rem; padding: .12rem; border-radius: 9px; }
+.wc-lay-multi { border: 1px dashed rgba(42,157,143,.55); background: rgba(42,157,143,.05); }
+.wc-gap { display: inline-block; width: .5rem; height: 1.3rem; border-radius: 3px; vertical-align: middle; }
+.wc-gap:hover { background: rgba(42,157,143,.25); }
+.wc-senses { display: flex; gap: .5rem .9rem; align-items: center; flex-wrap: wrap; margin: .35rem 0 .55rem; }
+.wc-sw { display: inline-flex; gap: .25rem; align-items: center; }
+.wc-so { font-size: .66rem; padding: .1rem .45rem; border-radius: 7px; cursor: pointer;
+  border: 1px solid var(--line2, #ccc); background: #fff; }
+.wc-so.on { border-color: #2a9d8f; background: rgba(42,157,143,.14); font-weight: 600; }
+.wc-sn { border-left: 4px solid #4a7fb5; }
+.wc-sn.wc-foreign { border-left-color: #9b59b6; background: rgba(155,89,182,.08); }
+.wc-bind.wc-sense { border-left: 4px solid #9b59b6; }
+.wc-col-multi .wc-eng + .wc-eng { margin-top: .8rem; padding-top: .6rem;
+  border-top: 1px dashed rgba(42,157,143,.4); }
+.wc-frac { border-left: 4px solid #2a6db5; background: rgba(42,109,181,.07); }

@@ -1,20 +1,21 @@
 /* @module wclm/wclm-page
-   Single responsibility: the WCLM page's shell (briefs 31–33) — assemble the
-   pipeline from its block registry (toggle and drag in the pipeline bar), run
-   it, render the executed blocks as strictly-adjacent columns via render.js,
-   trace the FULL evidence path on click (transitive, both directions — the
-   detective playbook), measure run-to-run impact, and answer with meaning,
-   provenance and any contradictions. Computation lives in engine.js, pure. */
+   Single responsibility: the WCLM page's shell (briefs 31–34) — assemble the
+   pipeline as LAYERS of engines (toggle, drag between layers, several engines
+   side by side in one slot), run it, render each layer as a strictly-adjacent
+   column via render.js, offer a sense picker for every prompt word the senses
+   register knows, trace the FULL evidence path on click (transitive, both
+   directions), measure run-to-run impact, and answer with meaning, provenance
+   and contradictions. Computation lives in engine.js and senses.js, pure. */
 'use strict';
 import { runPipeline, runDelta, BLOCKS, DEFAULT_PIPELINE } from './engine.js';
-import { renderBlock } from './render.js';
+import { renderBlock, openLayer } from './render.js';
 import { renderExplain, renderLayerCard } from './explain.js';
 
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g,
   (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 const EXAMPLES = ['meaning through connectivity', 'meaning without connectivity',
-  'anchor nodes and reference graphs', 'graphs of graphs', 'qa',
+  'graphs of graphs', 'graph of graphs', 'anchor nodes and reference graphs', 'qa',
   'graphz and nodez conected', 'meaning through nodes and graph sausages', 'zebra quantum'];
 
 const mount = document.getElementById('wclm');
@@ -23,35 +24,64 @@ if (mount) {
     .catch(() => { mount.innerHTML = '<p class="dim">the world file did not load</p>'; });
 }
 
+/* the stored pipeline: layers of engine keys; migrates the flat v0.5.4 shape */
 function loadPipe() {
+  let pipe = DEFAULT_PIPELINE.map((L) => L.slice());
   try {
     const p = JSON.parse(localStorage.getItem('wclm:pipe') || 'null');
-    if (Array.isArray(p) && p.length) return p.filter((k) => BLOCKS.some((b) => b.key === k));
-  } catch (e) { /* fall through */ }
-  return DEFAULT_PIPELINE.slice();
+    if (Array.isArray(p) && p.length) {
+      pipe = p.map((L) => (Array.isArray(L) ? L : [L]).filter((k) => BLOCKS.some((b) => b.key === k)))
+        .filter((L) => L.length);
+      const flat = pipe.flat();
+      DEFAULT_PIPELINE.flat().forEach((k) => {
+        if (flat.includes(k)) return;
+        const home = pipe.find((L) => L.includes(k === 'senses' ? 'operators' : 'bind'));
+        if (k === 'senses' && home) home.unshift(k); else pipe.splice(pipe.length - 1, 0, [k]);
+      });
+    }
+  } catch (e) { /* the default stands */ }
+  return pipe;
+}
+
+function loadOff() {
+  try {
+    const o = JSON.parse(localStorage.getItem('wclm:off') || 'null');
+    if (Array.isArray(o)) return new Set(o.filter((k) => BLOCKS.some((b) => b.key === k && !b.core)));
+  } catch (e) { /* the default stands */ }
+  return new Set(['passthrough', 'fractal']);
 }
 
 function boot(world) {
   const q = document.getElementById('wc-q');
   const ask = document.querySelector('.wc-ask');
   let pipe = loadPipe();
-  let off = new Set();
+  if (!pipe.flat().includes('passthrough')) (pipe.find((L) => L.includes('operators')) || pipe[0]).push('passthrough');
+  if (!pipe.flat().includes('fractal')) pipe.push(['fractal']);
+  const off = loadOff();
+  const chosen = {};
   let prev = null;
 
   const bar = document.createElement('div');
   bar.className = 'wc-pipe';
+  const picker = document.createElement('div');
+  picker.className = 'wc-senses';
   const ex = document.createElement('div');
   ex.className = 'wc-ex';
   ex.innerHTML = '<span class="small dim">strong &rarr; weak:</span> ' + EXAMPLES.map((e) =>
     '<button class="wc-exb" data-ex="' + esc(e) + '">' + esc(e) + '</button>').join('');
   ask.after(bar);
   bar.after(ex);
+  ex.after(picker);
 
-  const active = () => pipe.filter((k) => !off.has(k));
+  const active = () => pipe.map((L) => L.filter((k) => !off.has(k))).filter((L) => L.length);
   const go = () => {
-    try { localStorage.setItem('wclm:pipe', JSON.stringify(pipe)); } catch (e) { /* fine */ }
-    const R = runPipeline(q.value, world, active());
+    try {
+      localStorage.setItem('wclm:pipe', JSON.stringify(pipe));
+      localStorage.setItem('wclm:off', JSON.stringify(Array.from(off)));
+    } catch (e) { /* fine */ }
+    const R = runPipeline(q.value, world, active(), { senses: chosen });
     drawBar(bar, pipe, off, R);
+    drawPicker(picker, R, chosen, go);
     draw(world, R, prev);
     prev = R;
   };
@@ -71,18 +101,37 @@ function boot(world) {
     go();
   });
   let drag = null;
+  const lift = (k) => {                      /* take the engine out of its layer;
+                                                returns the index of a layer removed by emptying, else -1 */
+    const idx = pipe.findIndex((x) => x.includes(k));
+    if (idx < 0) return -1;
+    const L = pipe[idx];
+    L.splice(L.indexOf(k), 1);
+    if (!L.length) { pipe.splice(idx, 1); return idx; }
+    return -1;
+  };
   bar.addEventListener('dragstart', (e) => {
     const b = e.target.closest('.wc-blk');
     if (b) drag = b.getAttribute('data-blk');
   });
-  bar.addEventListener('dragover', (e) => { if (e.target.closest('.wc-blk')) e.preventDefault(); });
+  bar.addEventListener('dragover', (e) => { if (e.target.closest('.wc-blk, .wc-gap')) e.preventDefault(); });
   bar.addEventListener('drop', (e) => {
-    const b = e.target.closest('.wc-blk');
-    if (!b || !drag) return;
-    e.preventDefault();
-    const to = pipe.indexOf(b.getAttribute('data-blk'));
-    pipe.splice(pipe.indexOf(drag), 1);
-    pipe.splice(to, 0, drag);
+    if (!drag) return;
+    const blk = e.target.closest('.wc-blk');
+    const gap = e.target.closest('.wc-gap');
+    if (blk && blk.getAttribute('data-blk') !== drag) {
+      e.preventDefault();
+      const host = pipe.find((L) => L.includes(blk.getAttribute('data-blk')));
+      lift(drag);
+      host.push(drag);                       /* join the target's layer */
+    } else if (gap) {
+      e.preventDefault();
+      let at = Number(gap.getAttribute('data-gap'));
+      const removedAt = lift(drag);
+      if (removedAt >= 0 && removedAt < at) at -= 1;
+      if (at > pipe.length) at = pipe.length;
+      pipe.splice(at, 0, [drag]);            /* a layer of its own */
+    }
     drag = null;
     go();
   });
@@ -90,18 +139,38 @@ function boot(world) {
   go();
 }
 
-/* the pipeline bar: the reusable blocks, mix-and-match (brief 33) */
+/* the pipeline bar: layers of reusable engines, mix and match (briefs 33–34) */
 function drawBar(bar, pipe, off, R) {
-  bar.innerHTML = '<span class="small dim">the pipeline (click to toggle, drag to reorder):</span> ' +
-    pipe.map((k) => {
-      const b = BLOCKS.find((x) => x.key === k);
-      const step = R.steps.find((s) => s.key === k);
-      const state = off.has(k) ? 'off' : step && step.skipped ? 'skip' : 'on';
-      return '<span class="wc-blk wc-blk-' + state + (b.core ? ' wc-blk-core' : '') +
-        '" data-blk="' + k + '" draggable="' + !b.core + '" title="' + esc(b.role) +
-        (state === 'skip' ? ' — SKIPPED: ' + esc(step.skipped) : '') + '">' + esc(b.name) +
-        (state === 'skip' ? ' &#9888;' : '') + '</span>';
-    }).join('');
+  const gap = (i) => '<span class="wc-gap" data-gap="' + i + '" title="drop an engine here for a layer of its own"></span>';
+  bar.innerHTML = '<span class="small dim">the pipeline (click to toggle, drag onto an engine to share its layer, into a gap for its own):</span> ' +
+    pipe.map((L, li) => gap(li) + '<span class="wc-lay' + (L.length > 1 ? ' wc-lay-multi' : '') + '">' +
+      L.map((k) => {
+        const b = BLOCKS.find((x) => x.key === k);
+        const step = R.steps.find((s) => s.key === k);
+        const state = off.has(k) ? 'off' : step && step.skipped ? 'skip' : 'on';
+        return '<span class="wc-blk wc-blk-' + state + (b.core ? ' wc-blk-core' : '') +
+          '" data-blk="' + k + '" draggable="' + !b.core + '" title="' + esc(b.role) +
+          (state === 'skip' ? ' — SKIPPED: ' + esc(step.skipped) : '') + '">' + esc(b.name) +
+          (state === 'skip' ? ' &#9888;' : '') + '</span>';
+      }).join('') + '</span>').join('') + gap(pipe.length);
+}
+
+/* the sense picker (brief 34): every prompt word the register knows */
+function drawPicker(el, R, chosen, go) {
+  const table = R.state.senseTable || [];
+  if (!table.length) { el.innerHTML = ''; return; }
+  el.innerHTML = '<span class="small dim">what do you mean by:</span> ' + table.map((w) =>
+    '<span class="wc-sw"><b>' + esc(w.word) + '</b> ' + w.options.map((o) =>
+      '<button class="wc-so' + (o.key === w.active ? ' on' : '') + '" data-w="' + esc(w.word) +
+      '" data-s="' + esc(o.key) + '" title="' + esc(o.domain) + '">' + esc(o.label) + '</button>').join('') +
+    '</span>').join(' ');
+  el.onclick = (e) => {
+    const b = e.target.closest('.wc-so');
+    if (!b) return;
+    const w = b.getAttribute('data-w'), k = b.getAttribute('data-s');
+    if (k === 'doc') delete chosen[w]; else chosen[w] = k;
+    go();
+  };
 }
 
 function draw(world, R, prevRun) {
@@ -110,6 +179,7 @@ function draw(world, R, prevRun) {
   const info = new Map();
   const ctx = {
     last: null,
+    cur: null,
     chip(id, layer, cls, html, title, rows, key) {
       info.set(id, { layer, title, rows });
       return '<div class="wc-chip ' + cls + '" data-c="' + id + '"' +
@@ -117,26 +187,39 @@ function draw(world, R, prevRun) {
     },
     wire(a, b, w, cls, why) { if (a && b) wires.push({ a, b, w, cls, why }); },
   };
-  const executed = R.steps.filter((s) => !s.skipped).map((s) => s.key);
-  const cols = executed.map((k) => {
-    const b = BLOCKS.find((x) => x.key === k);
-    return '<div class="wc-col"><div class="wc-lh" data-lh="' + k + '" title="Click: what this block does"><b>' +
-      b.name + '</b><span class="small dim">' + b.role + '</span></div>' +
-      renderBlock(k, R.state, world, ctx) + '</div>';
+  /* group the executed steps back into their layers */
+  const layers = [];
+  R.steps.filter((s) => !s.skipped).forEach((s) => {
+    const cur = layers[layers.length - 1];
+    if (cur && cur.li === s.layer) cur.keys.push(s.key);
+    else layers.push({ li: s.layer, keys: [s.key] });
+  });
+  const cols = layers.map(({ keys }) => {
+    const commit = openLayer(ctx);
+    const parts = keys.map((k) => {
+      const b = BLOCKS.find((x) => x.key === k);
+      return '<div class="wc-eng" data-eng="' + k + '">' +
+        '<div class="wc-lh" data-lh="' + k + '" title="Click: what this engine does"><b>' +
+        b.name + '</b><span class="small dim">' + b.role + '</span></div>' +
+        renderBlock(k, R.state, world, ctx) + '</div>';
+    }).join('');
+    commit();
+    return '<div class="wc-col' + (keys.length > 1 ? ' wc-col-multi' : '') + '">' + parts + '</div>';
   }).join('');
 
   mount.innerHTML = deltaLine(delta) + '<div class="wc-wrap"><div class="wc-cols">' + cols +
     '<svg class="wc-wires" aria-hidden="true"></svg></div>' +
-    '<aside class="wc-side"><p class="dim small">Click any box for its full evidence trail — everything upstream that produced it, everything downstream it feeds. Click a block title for what the block does.</p></aside></div>' +
+    '<aside class="wc-side"><p class="dim small">Click any box for its full evidence trail — everything upstream that produced it, everything downstream it feeds. Click an engine title for what the engine does.</p></aside></div>' +
     meaningCard(R);
 
   if (delta) {
-    executed.forEach((k, ci) => {
-      const d = delta.layers[k];
+    mount.querySelectorAll('.wc-eng').forEach((eng) => {
+      const d = delta.layers[eng.getAttribute('data-eng')];
       if (!d) return;
       const added = new Set(d.added.map((x) => String(x).split(':')[0]));
-      mount.querySelectorAll('.wc-col:nth-child(' + (ci + 1) + ') .wc-chip[data-k]')
-        .forEach((el) => { if (added.has(el.getAttribute('data-k'))) el.classList.add('wc-new'); });
+      eng.querySelectorAll('.wc-chip[data-k]').forEach((el) => {
+        if (added.has(el.getAttribute('data-k'))) el.classList.add('wc-new');
+      });
     });
   }
 
@@ -157,7 +240,9 @@ function draw(world, R, prevRun) {
 
   const pane = mount.querySelector('.wc-side');
   const counts = {};
-  executed.forEach((k, ci) => { counts[k] = mount.querySelectorAll('.wc-col:nth-child(' + (ci + 1) + ') .wc-chip').length; });
+  mount.querySelectorAll('.wc-eng').forEach((eng) => {
+    counts[eng.getAttribute('data-eng')] = eng.querySelectorAll('.wc-chip').length;
+  });
   const select = (id) => {
     const trail = closure(id);
     mount._trail = trail;
@@ -189,8 +274,11 @@ function draw(world, R, prevRun) {
       const hot = t && t.has(w.a) && t.has(w.b);
       const ra = a.getBoundingClientRect(); const rb = b.getBoundingClientRect();
       const same = w.cls === 'wc-pairline';
-      const x1 = (same ? ra.left : ra.right) - br.left, y1 = ra.top + ra.height / 2 - br.top + box.scrollTop;
-      const x2 = rb.left - br.left, y2 = rb.top + rb.height / 2 - br.top + box.scrollTop;
+      /* chip rects are viewport-space; the canvas lives in the box's CONTENT
+         space, so both scroll offsets must come back in (the scrolled-right
+         wire bug the founder caught live on v0.5.4) */
+      const x1 = (same ? ra.left : ra.right) - br.left + box.scrollLeft, y1 = ra.top + ra.height / 2 - br.top + box.scrollTop;
+      const x2 = rb.left - br.left + box.scrollLeft, y2 = rb.top + rb.height / 2 - br.top + box.scrollTop;
       const mid = same ? x1 - 18 : (x1 + x2) / 2;
       return '<path class="' + (w.cls || 'wc-line') + (hot ? ' wc-hot' : t ? ' wc-cold' : '') +
         '" stroke-width="' + Math.max(1, Math.min(5, w.w * 3)) +
@@ -224,7 +312,7 @@ function meaningCard(R) {
   const others = R.state.ranked.slice(1, 4);
   return '<div class="wc-card">' + notes +
     '<h3>the meaning: ' + esc(m.label) + ' <span class="small dim">score ' + m.total +
-    ' · ' + (m.kind === 'pack' ? 'from a meaning pack' : 'from the document') + '</span></h3>' +
+    ' · ' + (m.kind === 'pack' ? 'from a meaning pack' : m.kind === 'sense' ? 'from the senses register' : 'from the document') + '</span></h3>' +
     (m.def ? '<p>' + esc(m.def) + '</p>' : '') +
     (m.quote ? '<div class="ndoc-anchor">&sect; ' + esc(m.section) + '<blockquote>&ldquo;' + esc(m.quote) + '&rdquo;</blockquote></div>' : '') +
     '<p class="small">bound via <b>' + m.via.map(esc).join(', ') + '</b> · blast radius <b>' + m.blast + '</b></p>' +
