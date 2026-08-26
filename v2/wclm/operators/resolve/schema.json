@@ -1,0 +1,25 @@
+{
+ "operator": "resolve",
+ "name": "T3 resolve",
+ "core": true,
+ "role": "each hash looks itself up in the world: form, class, count, weight",
+ "io": {
+  "reads": [
+   {
+    "type": "tokens",
+    "means": "hashed word tokens, in order"
+   }
+  ],
+  "writes": [
+   {
+    "type": "stream",
+    "means": "tokens resolved against the world, carrying every clue mark (class, number, sense, negation)"
+   }
+  ]
+ },
+ "prerequisites": [
+  "tokenise",
+  "normalise"
+ ],
+ "note": "derived from resolve.js — the code is the source of truth; a gate re-derives and compares"
+}

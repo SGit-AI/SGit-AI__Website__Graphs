@@ -1,0 +1,1190 @@
+{
+ "operator": "senses",
+ "world": "thinking-in-graphs",
+ "note": "captured by running the engine (deterministic); the workbench re-runs and compares",
+ "vectors": [
+  {
+   "prompt": "graphs of graphs",
+   "opts": {},
+   "input": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.289,
+      "form": "graphs",
+      "hash": "86598276e526",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": []
+     },
+     {
+      "i": 1,
+      "w": 0.008,
+      "form": "of",
+      "hash": "08b06007b556",
+      "known": true,
+      "class": "padding",
+      "count": 60,
+      "top": []
+     },
+     {
+      "i": 2,
+      "w": 0.289,
+      "form": "graphs",
+      "hash": "86598276e526",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": []
+     }
+    ]
+   },
+   "output": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.289,
+      "form": "graphs",
+      "hash": "86598276e526",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": [],
+      "num": {
+       "num": "plural",
+       "base": "graph",
+       "family": [
+        "graph",
+        "graphs"
+       ]
+      },
+      "sense": {
+       "word": "graph",
+       "active": "doc",
+       "label": "the network graph",
+       "domain": "this document",
+       "def": "Nodes joined by edges; meaning through connectivity. The sense reached through this document's own connections: graph connects to network, to nodes and edges, to mathematics, to the fractal principle.",
+       "options": [
+        {
+         "key": "doc",
+         "label": "the network graph",
+         "domain": "this document"
+        },
+        {
+         "key": "chart",
+         "label": "a chart of data",
+         "domain": "business reporting"
+        },
+        {
+         "key": "plot",
+         "label": "the graph of a function",
+         "domain": "school mathematics"
+        },
+        {
+         "key": "paper",
+         "label": "graph paper",
+         "domain": "stationery"
+        },
+        {
+         "key": "social",
+         "label": "the social graph",
+         "domain": "social platforms"
+        }
+       ]
+      }
+     },
+     {
+      "i": 1,
+      "w": 0.008,
+      "form": "of",
+      "hash": "08b06007b556",
+      "known": true,
+      "class": "padding",
+      "count": 60,
+      "top": []
+     },
+     {
+      "i": 2,
+      "w": 0.289,
+      "form": "graphs",
+      "hash": "86598276e526",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": [],
+      "num": {
+       "num": "plural",
+       "base": "graph",
+       "family": [
+        "graph",
+        "graphs"
+       ]
+      },
+      "sense": {
+       "word": "graph",
+       "active": "doc",
+       "label": "the network graph",
+       "domain": "this document",
+       "def": "Nodes joined by edges; meaning through connectivity. The sense reached through this document's own connections: graph connects to network, to nodes and edges, to mathematics, to the fractal principle.",
+       "options": [
+        {
+         "key": "doc",
+         "label": "the network graph",
+         "domain": "this document"
+        },
+        {
+         "key": "chart",
+         "label": "a chart of data",
+         "domain": "business reporting"
+        },
+        {
+         "key": "plot",
+         "label": "the graph of a function",
+         "domain": "school mathematics"
+        },
+        {
+         "key": "paper",
+         "label": "graph paper",
+         "domain": "stationery"
+        },
+        {
+         "key": "social",
+         "label": "the social graph",
+         "domain": "social platforms"
+        }
+       ]
+      }
+     }
+    ],
+    "senseTable": [
+     {
+      "i": 0,
+      "form": "graphs",
+      "word": "graph",
+      "active": "doc",
+      "options": [
+       {
+        "key": "doc",
+        "label": "the network graph",
+        "domain": "this document"
+       },
+       {
+        "key": "chart",
+        "label": "a chart of data",
+        "domain": "business reporting"
+       },
+       {
+        "key": "plot",
+        "label": "the graph of a function",
+        "domain": "school mathematics"
+       },
+       {
+        "key": "paper",
+        "label": "graph paper",
+        "domain": "stationery"
+       },
+       {
+        "key": "social",
+        "label": "the social graph",
+        "domain": "social platforms"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "prompt": "graph and node and fractal",
+   "opts": {},
+   "input": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.167,
+      "form": "graph",
+      "hash": "32ec982977fe",
+      "known": true,
+      "class": "content",
+      "count": 61,
+      "top": [
+       [
+        "node",
+        13
+       ],
+       [
+        "edges",
+        11
+       ],
+       [
+        "nodes",
+        7
+       ],
+       [
+        "doesn't",
+        6
+       ],
+       [
+        "review",
+        6
+       ],
+       [
+        "say",
+        5
+       ]
+      ]
+     },
+     {
+      "i": 1,
+      "w": 0.008,
+      "form": "and",
+      "hash": "e6f79719051f",
+      "known": true,
+      "class": "padding",
+      "count": 60,
+      "top": []
+     },
+     {
+      "i": 2,
+      "w": 0.167,
+      "form": "node",
+      "hash": "3c2f1bbad186",
+      "known": true,
+      "class": "content",
+      "count": 62,
+      "top": [
+       [
+        "graph",
+        13
+       ],
+       [
+        "review",
+        12
+       ],
+       [
+        "connected",
+        8
+       ],
+       [
+        "edges",
+        7
+       ],
+       [
+        "nodes",
+        6
+       ],
+       [
+        "meaning",
+        5
+       ]
+      ]
+     },
+     {
+      "i": 3,
+      "w": 0.008,
+      "form": "and",
+      "hash": "e6f79719051f",
+      "known": true,
+      "class": "padding",
+      "count": 60,
+      "top": []
+     },
+     {
+      "i": 4,
+      "w": 0.333,
+      "form": "fractal",
+      "hash": "4d6024f7487c",
+      "known": true,
+      "class": "content",
+      "count": 6,
+      "top": [
+       [
+        "system",
+        3
+       ],
+       [
+        "every",
+        2
+       ],
+       [
+        "hierarchy",
+        2
+       ]
+      ]
+     }
+    ]
+   },
+   "output": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.167,
+      "form": "graph",
+      "hash": "32ec982977fe",
+      "known": true,
+      "class": "content",
+      "count": 61,
+      "top": [
+       [
+        "node",
+        13
+       ],
+       [
+        "edges",
+        11
+       ],
+       [
+        "nodes",
+        7
+       ],
+       [
+        "doesn't",
+        6
+       ],
+       [
+        "review",
+        6
+       ],
+       [
+        "say",
+        5
+       ]
+      ],
+      "num": {
+       "num": "singular",
+       "base": "graph",
+       "family": [
+        "graph",
+        "graphs"
+       ]
+      },
+      "sense": {
+       "word": "graph",
+       "active": "doc",
+       "label": "the network graph",
+       "domain": "this document",
+       "def": "Nodes joined by edges; meaning through connectivity. The sense reached through this document's own connections: graph connects to network, to nodes and edges, to mathematics, to the fractal principle.",
+       "options": [
+        {
+         "key": "doc",
+         "label": "the network graph",
+         "domain": "this document"
+        },
+        {
+         "key": "chart",
+         "label": "a chart of data",
+         "domain": "business reporting"
+        },
+        {
+         "key": "plot",
+         "label": "the graph of a function",
+         "domain": "school mathematics"
+        },
+        {
+         "key": "paper",
+         "label": "graph paper",
+         "domain": "stationery"
+        },
+        {
+         "key": "social",
+         "label": "the social graph",
+         "domain": "social platforms"
+        }
+       ]
+      }
+     },
+     {
+      "i": 1,
+      "w": 0.008,
+      "form": "and",
+      "hash": "e6f79719051f",
+      "known": true,
+      "class": "padding",
+      "count": 60,
+      "top": []
+     },
+     {
+      "i": 2,
+      "w": 0.167,
+      "form": "node",
+      "hash": "3c2f1bbad186",
+      "known": true,
+      "class": "content",
+      "count": 62,
+      "top": [
+       [
+        "graph",
+        13
+       ],
+       [
+        "review",
+        12
+       ],
+       [
+        "connected",
+        8
+       ],
+       [
+        "edges",
+        7
+       ],
+       [
+        "nodes",
+        6
+       ],
+       [
+        "meaning",
+        5
+       ]
+      ],
+      "num": {
+       "num": "singular",
+       "base": "node",
+       "family": [
+        "node",
+        "nodes"
+       ]
+      },
+      "sense": {
+       "word": "node",
+       "active": "doc",
+       "label": "a point in a graph",
+       "domain": "this document",
+       "def": "A thing that exists by being connected: a node holds edges, and what it means emerges from what those edges reach.",
+       "options": [
+        {
+         "key": "doc",
+         "label": "a point in a graph",
+         "domain": "this document"
+        },
+        {
+         "key": "runtime",
+         "label": "Node.js, the runtime",
+         "domain": "software tooling"
+        },
+        {
+         "key": "lymph",
+         "label": "a lymph node",
+         "domain": "medicine"
+        },
+        {
+         "key": "stem",
+         "label": "a stem node",
+         "domain": "botany"
+        },
+        {
+         "key": "host",
+         "label": "a machine on the network",
+         "domain": "IT operations"
+        }
+       ]
+      }
+     },
+     {
+      "i": 3,
+      "w": 0.008,
+      "form": "and",
+      "hash": "e6f79719051f",
+      "known": true,
+      "class": "padding",
+      "count": 60,
+      "top": []
+     },
+     {
+      "i": 4,
+      "w": 0.333,
+      "form": "fractal",
+      "hash": "4d6024f7487c",
+      "known": true,
+      "class": "content",
+      "count": 6,
+      "top": [
+       [
+        "system",
+        3
+       ],
+       [
+        "every",
+        2
+       ],
+       [
+        "hierarchy",
+        2
+       ]
+      ],
+      "sense": {
+       "word": "fractal",
+       "active": "doc",
+       "label": "the fractal principle",
+       "domain": "this document",
+       "def": "The same structural pattern — nodes with edges, meaning through connectivity — repeating at every level of zoom: a graph of graphs, every scope defining its own vocabulary.",
+       "options": [
+        {
+         "key": "doc",
+         "label": "the fractal principle",
+         "domain": "this document"
+        },
+        {
+         "key": "math",
+         "label": "a self-similar set",
+         "domain": "mathematics"
+        },
+        {
+         "key": "art",
+         "label": "fractal art",
+         "domain": "digital art"
+        },
+        {
+         "key": "antenna",
+         "label": "a fractal antenna",
+         "domain": "radio engineering"
+        },
+        {
+         "key": "figurative",
+         "label": "endlessly nested (figurative)",
+         "domain": "everyday speech"
+        }
+       ]
+      }
+     }
+    ],
+    "senseTable": [
+     {
+      "i": 0,
+      "form": "graph",
+      "word": "graph",
+      "active": "doc",
+      "options": [
+       {
+        "key": "doc",
+        "label": "the network graph",
+        "domain": "this document"
+       },
+       {
+        "key": "chart",
+        "label": "a chart of data",
+        "domain": "business reporting"
+       },
+       {
+        "key": "plot",
+        "label": "the graph of a function",
+        "domain": "school mathematics"
+       },
+       {
+        "key": "paper",
+        "label": "graph paper",
+        "domain": "stationery"
+       },
+       {
+        "key": "social",
+        "label": "the social graph",
+        "domain": "social platforms"
+       }
+      ]
+     },
+     {
+      "i": 2,
+      "form": "node",
+      "word": "node",
+      "active": "doc",
+      "options": [
+       {
+        "key": "doc",
+        "label": "a point in a graph",
+        "domain": "this document"
+       },
+       {
+        "key": "runtime",
+        "label": "Node.js, the runtime",
+        "domain": "software tooling"
+       },
+       {
+        "key": "lymph",
+        "label": "a lymph node",
+        "domain": "medicine"
+       },
+       {
+        "key": "stem",
+        "label": "a stem node",
+        "domain": "botany"
+       },
+       {
+        "key": "host",
+        "label": "a machine on the network",
+        "domain": "IT operations"
+       }
+      ]
+     },
+     {
+      "i": 4,
+      "form": "fractal",
+      "word": "fractal",
+      "active": "doc",
+      "options": [
+       {
+        "key": "doc",
+        "label": "the fractal principle",
+        "domain": "this document"
+       },
+       {
+        "key": "math",
+        "label": "a self-similar set",
+        "domain": "mathematics"
+       },
+       {
+        "key": "art",
+        "label": "fractal art",
+        "domain": "digital art"
+       },
+       {
+        "key": "antenna",
+        "label": "a fractal antenna",
+        "domain": "radio engineering"
+       },
+       {
+        "key": "figurative",
+        "label": "endlessly nested (figurative)",
+        "domain": "everyday speech"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "prompt": "task",
+   "opts": {},
+   "input": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.27,
+      "form": "task",
+      "hash": "d9603bef07a9",
+      "known": true,
+      "class": "content",
+      "count": 11,
+      "top": [
+       [
+        "edges",
+        3
+       ],
+       [
+        "node",
+        2
+       ],
+       [
+        "definition",
+        2
+       ],
+       [
+        "system",
+        2
+       ],
+       [
+        "define",
+        2
+       ],
+       [
+        "single",
+        2
+       ]
+      ]
+     }
+    ]
+   },
+   "output": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.27,
+      "form": "task",
+      "hash": "d9603bef07a9",
+      "known": true,
+      "class": "content",
+      "count": 11,
+      "top": [
+       [
+        "edges",
+        3
+       ],
+       [
+        "node",
+        2
+       ],
+       [
+        "definition",
+        2
+       ],
+       [
+        "system",
+        2
+       ],
+       [
+        "define",
+        2
+       ],
+       [
+        "single",
+        2
+       ]
+      ],
+      "sense": {
+       "word": "task",
+       "active": "doc",
+       "label": "a node someone called Task",
+       "domain": "this document",
+       "def": "The document's own example: an issue labelled 'Task' is just a node — only its edges to a definition say what a Task is, and that definition changes with culture and context.",
+       "options": [
+        {
+         "key": "doc",
+         "label": "a node someone called Task",
+         "domain": "this document"
+        },
+        {
+         "key": "pm",
+         "label": "a unit of work",
+         "domain": "project management"
+        },
+        {
+         "key": "os",
+         "label": "a running process",
+         "domain": "operating systems"
+        },
+        {
+         "key": "chore",
+         "label": "a household chore",
+         "domain": "everyday speech"
+        }
+       ]
+      }
+     }
+    ],
+    "senseTable": [
+     {
+      "i": 0,
+      "form": "task",
+      "word": "task",
+      "active": "doc",
+      "options": [
+       {
+        "key": "doc",
+        "label": "a node someone called Task",
+        "domain": "this document"
+       },
+       {
+        "key": "pm",
+        "label": "a unit of work",
+        "domain": "project management"
+       },
+       {
+        "key": "os",
+        "label": "a running process",
+        "domain": "operating systems"
+       },
+       {
+        "key": "chore",
+        "label": "a household chore",
+        "domain": "everyday speech"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "prompt": "graphs of graphs",
+   "label": "graph as a chart",
+   "opts": {
+    "senses": {
+     "graph": "chart"
+    }
+   },
+   "input": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.289,
+      "form": "graphs",
+      "hash": "86598276e526",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": []
+     },
+     {
+      "i": 1,
+      "w": 0.008,
+      "form": "of",
+      "hash": "08b06007b556",
+      "known": true,
+      "class": "padding",
+      "count": 60,
+      "top": []
+     },
+     {
+      "i": 2,
+      "w": 0.289,
+      "form": "graphs",
+      "hash": "86598276e526",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": []
+     }
+    ]
+   },
+   "output": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.289,
+      "form": "graphs",
+      "hash": "86598276e526",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": [],
+      "num": {
+       "num": "plural",
+       "base": "graph",
+       "family": [
+        "graph",
+        "graphs"
+       ]
+      },
+      "sense": {
+       "word": "graph",
+       "active": "chart",
+       "label": "a chart of data",
+       "domain": "business reporting",
+       "def": "Bars, lines and axes drawn from numbers: 'the sales graph is up'. No nodes, no edges — a picture of quantities, not of connections.",
+       "options": [
+        {
+         "key": "doc",
+         "label": "the network graph",
+         "domain": "this document"
+        },
+        {
+         "key": "chart",
+         "label": "a chart of data",
+         "domain": "business reporting"
+        },
+        {
+         "key": "plot",
+         "label": "the graph of a function",
+         "domain": "school mathematics"
+        },
+        {
+         "key": "paper",
+         "label": "graph paper",
+         "domain": "stationery"
+        },
+        {
+         "key": "social",
+         "label": "the social graph",
+         "domain": "social platforms"
+        }
+       ]
+      },
+      "foreign": true
+     },
+     {
+      "i": 1,
+      "w": 0.008,
+      "form": "of",
+      "hash": "08b06007b556",
+      "known": true,
+      "class": "padding",
+      "count": 60,
+      "top": []
+     },
+     {
+      "i": 2,
+      "w": 0.289,
+      "form": "graphs",
+      "hash": "86598276e526",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": [],
+      "num": {
+       "num": "plural",
+       "base": "graph",
+       "family": [
+        "graph",
+        "graphs"
+       ]
+      },
+      "sense": {
+       "word": "graph",
+       "active": "chart",
+       "label": "a chart of data",
+       "domain": "business reporting",
+       "def": "Bars, lines and axes drawn from numbers: 'the sales graph is up'. No nodes, no edges — a picture of quantities, not of connections.",
+       "options": [
+        {
+         "key": "doc",
+         "label": "the network graph",
+         "domain": "this document"
+        },
+        {
+         "key": "chart",
+         "label": "a chart of data",
+         "domain": "business reporting"
+        },
+        {
+         "key": "plot",
+         "label": "the graph of a function",
+         "domain": "school mathematics"
+        },
+        {
+         "key": "paper",
+         "label": "graph paper",
+         "domain": "stationery"
+        },
+        {
+         "key": "social",
+         "label": "the social graph",
+         "domain": "social platforms"
+        }
+       ]
+      },
+      "foreign": true
+     }
+    ],
+    "senseTable": [
+     {
+      "i": 0,
+      "form": "graphs",
+      "word": "graph",
+      "active": "chart",
+      "options": [
+       {
+        "key": "doc",
+        "label": "the network graph",
+        "domain": "this document"
+       },
+       {
+        "key": "chart",
+        "label": "a chart of data",
+        "domain": "business reporting"
+       },
+       {
+        "key": "plot",
+        "label": "the graph of a function",
+        "domain": "school mathematics"
+       },
+       {
+        "key": "paper",
+        "label": "graph paper",
+        "domain": "stationery"
+       },
+       {
+        "key": "social",
+        "label": "the social graph",
+        "domain": "social platforms"
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "prompt": "graphs of graphs",
+   "label": "node as a lymph node",
+   "opts": {
+    "senses": {
+     "node": "lymph"
+    }
+   },
+   "input": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.289,
+      "form": "graphs",
+      "hash": "86598276e526",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": []
+     },
+     {
+      "i": 1,
+      "w": 0.008,
+      "form": "of",
+      "hash": "08b06007b556",
+      "known": true,
+      "class": "padding",
+      "count": 60,
+      "top": []
+     },
+     {
+      "i": 2,
+      "w": 0.289,
+      "form": "graphs",
+      "hash": "86598276e526",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": []
+     }
+    ]
+   },
+   "output": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.289,
+      "form": "graphs",
+      "hash": "86598276e526",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": [],
+      "num": {
+       "num": "plural",
+       "base": "graph",
+       "family": [
+        "graph",
+        "graphs"
+       ]
+      },
+      "sense": {
+       "word": "graph",
+       "active": "doc",
+       "label": "the network graph",
+       "domain": "this document",
+       "def": "Nodes joined by edges; meaning through connectivity. The sense reached through this document's own connections: graph connects to network, to nodes and edges, to mathematics, to the fractal principle.",
+       "options": [
+        {
+         "key": "doc",
+         "label": "the network graph",
+         "domain": "this document"
+        },
+        {
+         "key": "chart",
+         "label": "a chart of data",
+         "domain": "business reporting"
+        },
+        {
+         "key": "plot",
+         "label": "the graph of a function",
+         "domain": "school mathematics"
+        },
+        {
+         "key": "paper",
+         "label": "graph paper",
+         "domain": "stationery"
+        },
+        {
+         "key": "social",
+         "label": "the social graph",
+         "domain": "social platforms"
+        }
+       ]
+      }
+     },
+     {
+      "i": 1,
+      "w": 0.008,
+      "form": "of",
+      "hash": "08b06007b556",
+      "known": true,
+      "class": "padding",
+      "count": 60,
+      "top": []
+     },
+     {
+      "i": 2,
+      "w": 0.289,
+      "form": "graphs",
+      "hash": "86598276e526",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": [],
+      "num": {
+       "num": "plural",
+       "base": "graph",
+       "family": [
+        "graph",
+        "graphs"
+       ]
+      },
+      "sense": {
+       "word": "graph",
+       "active": "doc",
+       "label": "the network graph",
+       "domain": "this document",
+       "def": "Nodes joined by edges; meaning through connectivity. The sense reached through this document's own connections: graph connects to network, to nodes and edges, to mathematics, to the fractal principle.",
+       "options": [
+        {
+         "key": "doc",
+         "label": "the network graph",
+         "domain": "this document"
+        },
+        {
+         "key": "chart",
+         "label": "a chart of data",
+         "domain": "business reporting"
+        },
+        {
+         "key": "plot",
+         "label": "the graph of a function",
+         "domain": "school mathematics"
+        },
+        {
+         "key": "paper",
+         "label": "graph paper",
+         "domain": "stationery"
+        },
+        {
+         "key": "social",
+         "label": "the social graph",
+         "domain": "social platforms"
+        }
+       ]
+      }
+     }
+    ],
+    "senseTable": [
+     {
+      "i": 0,
+      "form": "graphs",
+      "word": "graph",
+      "active": "doc",
+      "options": [
+       {
+        "key": "doc",
+        "label": "the network graph",
+        "domain": "this document"
+       },
+       {
+        "key": "chart",
+        "label": "a chart of data",
+        "domain": "business reporting"
+       },
+       {
+        "key": "plot",
+        "label": "the graph of a function",
+        "domain": "school mathematics"
+       },
+       {
+        "key": "paper",
+        "label": "graph paper",
+        "domain": "stationery"
+       },
+       {
+        "key": "social",
+        "label": "the social graph",
+        "domain": "social platforms"
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

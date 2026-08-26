@@ -1,0 +1,28 @@
+{
+ "operator": "passthrough",
+ "name": "passthrough",
+ "core": false,
+ "role": "carries evidence the marking engines would withdraw — their clues stay written, nothing is blocked",
+ "io": {
+  "reads": [
+   {
+    "type": "stream",
+    "means": "tokens resolved against the world, carrying every clue mark (class, number, sense, negation)"
+   }
+  ],
+  "writes": [
+   {
+    "type": "stream",
+    "means": "tokens resolved against the world, carrying every clue mark (class, number, sense, negation)"
+   }
+  ]
+ },
+ "prerequisites": [
+  "tokenise",
+  "normalise",
+  "resolve",
+  "senses",
+  "operators"
+ ],
+ "note": "derived from passthrough.js — the code is the source of truth; a gate re-derives and compares"
+}

@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.5.6 (26 August 2026). Published by the sgit project — participant
+Site version: v0.5.7 (26 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /v1/briefs/ is the source of truth and carries the same licence.
 
@@ -368,6 +368,13 @@ pages** so the two cannot drift
   Machine surface: /v2/wclm/data/world.json (the compiled world: token table, co-occurrence,
   concepts, meaning packs, the weight formulas); /v2/wclm/packs/ holds the authored meaning
   packs. Training this model is editing those graph inputs, never fitting numbers.
+- https://graphs.sgit.ai/v2/wclm/operators/index.html — the operators: each of the WCLM's
+  twelve engines as a first-class folder (/v2/wclm/operators/<key>/) holding the code the
+  engine actually imports, its typed schema (schema.json, derived from the code), its
+  official data with provenance (data.json: standard across documents, authored for review,
+  or derived by another transformation), its documentation (md), its deterministic example
+  vectors (examples.json, replayed as tests), and a workbench page to execute, test, debug
+  and visualise input, transformation and output. Machine surface: /v2/wclm/operators/manifest.json.
   Each document lives in a STANDALONE FOLDER (/v2/universe/docs/<slug>/) holding a
   build-verified byte copy of the frozen source, the extraction, and crossrefs.json: the ledger
   of where the document is used across the estate, each use rated against the usage maturity

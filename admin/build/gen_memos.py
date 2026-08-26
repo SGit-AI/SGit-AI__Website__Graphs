@@ -23,6 +23,16 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "36__founder-memo__operators-as-first-class-folders.md": (
+     "Operators as first-class folders: tune each one individually",
+     "The file-explorer treatment, applied to the engine's own building "
+     "blocks: every operator in a dedicated folder with its code, its md, its "
+     "html workbench and its json; schemas as json files; examples and sample "
+     "data; official operator data marked standard, authored or derived (from "
+     "another operator or transformation); a reusable UI to execute, test, "
+     "debug and visualise input, transformation and output; and visual "
+     "representations of architecture and execution, js-drawn and "
+     "ascii-drawn."),
  "35__founder-memo__the-fractal-nature-of-the-wclm.md": (
      "The fractal nature of the WCLM: world models, analogies, anchored facts",
      "The engines are world-model transformations — every layer asks what does "

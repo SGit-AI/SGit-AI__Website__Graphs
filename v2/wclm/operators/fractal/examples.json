@@ -1,0 +1,633 @@
+{
+ "operator": "fractal",
+ "world": "thinking-in-graphs",
+ "note": "captured by running the engine (deterministic); the workbench re-runs and compares",
+ "vectors": [
+  {
+   "prompt": "meaning through connectivity",
+   "opts": {},
+   "input": {
+    "ranked": [
+     {
+      "id": "meaning-through-connectivity",
+      "kind": "doc",
+      "label": "meaning through connectivity",
+      "family": "concept",
+      "score": 1,
+      "via": [
+       "meaning",
+       "connectivity"
+      ],
+      "neighbours": [
+       {
+        "id": "schema-first",
+        "label": "schema-first",
+        "verb": "departs-from",
+        "dir": "out",
+        "src": "doc"
+       },
+       {
+        "id": "c-central",
+        "label": "the central claim",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-literal",
+        "label": "not a metaphor",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-difference-is-connectivity",
+        "label": "the difference is connectivity",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-ten-principles",
+        "label": "the document compresses itself to ten principles",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       }
+      ],
+      "degree": 5,
+      "blast": 5,
+      "anchor": "fact-anchored: a quote in §Nodes Have No Obligation to Explain Themselves",
+      "total": 2.5,
+      "def": "What a thing is emerges from the edges traceable from it.",
+      "section": "Nodes Have No Obligation to Explain Themselves",
+      "quote": "In a graph-first model, what something \"is\" emerges from the edges you can trace from it."
+     },
+     {
+      "id": "connectivity",
+      "kind": "doc",
+      "label": "connectivity",
+      "family": "concept",
+      "score": 0.75,
+      "via": [
+       "connectivity"
+      ],
+      "neighbours": [
+       {
+        "id": "confidence-spectrum",
+        "label": "the confidence spectrum",
+        "verb": "determines",
+        "dir": "out",
+        "src": "doc"
+       },
+       {
+        "id": "c-central",
+        "label": "the central claim",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-no-edges-no-meaning",
+        "label": "no edges, no meaning",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-difference-is-connectivity",
+        "label": "the difference is connectivity",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-confidence-computable",
+        "label": "confidence is computable",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-authority-from-connectivity",
+        "label": "authority is not identity",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       }
+      ],
+      "degree": 6,
+      "blast": 6,
+      "anchor": "fact-anchored: a quote in §Nodes Have No Obligation to Explain Themselves",
+      "total": 2.1,
+      "def": "A node is meaningful in proportion to how richly it is connected.",
+      "section": "Nodes Have No Obligation to Explain Themselves",
+      "quote": "A node connected to a rich web of other nodes is meaningful in proportion to that connectivity."
+     },
+     {
+      "id": "pk:connectivity",
+      "kind": "pack",
+      "label": "connectivity",
+      "score": 0.75,
+      "via": [
+       "connectivity"
+      ],
+      "neighbours": [
+       {
+        "id": "pk:graph",
+        "label": "graph",
+        "verb": "part-of",
+        "dir": "out",
+        "src": "pack"
+       }
+      ],
+      "degree": 1,
+      "blast": 1,
+      "anchor": "an authored term: proposed in a meaning pack",
+      "total": 1.6,
+      "def": "How richly a node is joined to nodes that provide context; confidence grows with it.",
+      "section": null,
+      "quote": null
+     },
+     {
+      "id": "pk:meaning",
+      "kind": "pack",
+      "label": "meaning",
+      "score": 0.75,
+      "via": [
+       "meaning"
+      ],
+      "neighbours": [
+       {
+        "id": "pk:connectivity",
+        "label": "connectivity",
+        "verb": "about",
+        "dir": "out",
+        "src": "pack"
+       }
+      ],
+      "degree": 1,
+      "blast": 1,
+      "anchor": "an authored term: proposed in a meaning pack",
+      "total": 1.6,
+      "def": "What a thing is, discovered through the edges traceable from it.",
+      "section": null,
+      "quote": null
+     },
+     {
+      "id": "c-no-edges-no-meaning",
+      "kind": "doc",
+      "label": "no edges, no meaning",
+      "family": "claim",
+      "score": 0.6,
+      "via": [
+       "meaning"
+      ],
+      "neighbours": [
+       {
+        "id": "node",
+        "label": "node",
+        "verb": "about",
+        "dir": "out",
+        "src": "doc"
+       },
+       {
+        "id": "connectivity",
+        "label": "connectivity",
+        "verb": "about",
+        "dir": "out",
+        "src": "doc"
+       }
+      ],
+      "degree": 2,
+      "blast": 2,
+      "anchor": "fact-anchored: a quote in §Nodes Have No Obligation to Explain Themselves",
+      "total": 1.4,
+      "def": "A node connected to nothing is, literally, meaningless.",
+      "section": "Nodes Have No Obligation to Explain Themselves",
+      "quote": "A node connected to nothing is meaningless — literally."
+     },
+     {
+      "id": "c-difference-is-connectivity",
+      "kind": "doc",
+      "label": "the difference is connectivity",
+      "family": "claim",
+      "score": 0.5,
+      "via": [
+       "connectivity"
+      ],
+      "neighbours": [
+       {
+        "id": "connectivity",
+        "label": "connectivity",
+        "verb": "about",
+        "dir": "out",
+        "src": "doc"
+       },
+       {
+        "id": "meaning-through-connectivity",
+        "label": "meaning through connectivity",
+        "verb": "about",
+        "dir": "out",
+        "src": "doc"
+       }
+      ],
+      "degree": 2,
+      "blast": 2,
+      "anchor": "fact-anchored: a quote in §The Safe_UInt__Port Example",
+      "total": 1.2,
+      "def": "Two identical values differ radically in meaning when their connectivity differs.",
+      "section": "The Safe_UInt__Port Example",
+      "quote": "**The difference is not in the value.** Both scenarios have `8080`. The difference is in the **connectivity**."
+     },
+     {
+      "id": "discovered-meaning",
+      "kind": "doc",
+      "label": "discovered meaning",
+      "family": "concept",
+      "score": 0.5,
+      "via": [
+       "meaning"
+      ],
+      "neighbours": [
+       {
+        "id": "c-brittle-vs-resilient",
+        "label": "declared is brittle, discovered is resilient",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "h-thinner-across-boundaries",
+        "label": "meaning thins measurably at boundaries",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       }
+      ],
+      "degree": 2,
+      "blast": 2,
+      "anchor": "fact-anchored: a quote in §Meaning Is Not Declared — It Is Discovered",
+      "total": 1.2,
+      "def": "Meaning determined by traversing a node's edges.",
+      "section": "Meaning Is Not Declared — It Is Discovered",
+      "quote": "In a graph-first system, meaning is discovered: \"This node has edges to other nodes. By traversing those edges, we can determine what this node relates to, what constraints apply, and how confidently we can characterise it.\""
+     },
+     {
+      "id": "declared-meaning",
+      "kind": "doc",
+      "label": "declared meaning",
+      "family": "concept",
+      "score": 0.5,
+      "via": [
+       "meaning"
+      ],
+      "neighbours": [
+       {
+        "id": "c-brittle-vs-resilient",
+        "label": "declared is brittle, discovered is resilient",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       }
+      ],
+      "degree": 1,
+      "blast": 1,
+      "anchor": "fact-anchored: a quote in §Meaning Is Not Declared — It Is Discovered",
+      "total": 1.1,
+      "def": "Meaning asserted by a schema, which instances conform to or fail.",
+      "section": "Meaning Is Not Declared — It Is Discovered",
+      "quote": "In a schema-first system, meaning is declared: \"This object IS a Task. It HAS these fields. Its status MUST be one of these values.\" The schema is the authority, and instances conform or fail validation."
+     },
+     {
+      "id": "h-thinner-across-boundaries",
+      "kind": "doc",
+      "label": "meaning thins measurably at boundaries",
+      "family": "hypothesis",
+      "score": 0.375,
+      "via": [
+       "meaning"
+      ],
+      "neighbours": [
+       {
+        "id": "discovered-meaning",
+        "label": "discovered meaning",
+        "verb": "about",
+        "dir": "out",
+        "src": "doc"
+       },
+       {
+        "id": "confidence-spectrum",
+        "label": "the confidence spectrum",
+        "verb": "about",
+        "dir": "out",
+        "src": "doc"
+       }
+      ],
+      "degree": 2,
+      "blast": 2,
+      "anchor": "fact-anchored: a quote in §Meaning Is Not Declared — It Is Discovered",
+      "total": 0.95,
+      "def": "Crossing a boundary thins meaning rather than breaking it, and the system can report exactly how thin.",
+      "section": "Meaning Is Not Declared — It Is Discovered",
+      "quote": "it just means some edges don't extend across that boundary, and the meaning becomes thinner (less confident) on the other side"
+     }
+    ],
+    "meaning": {
+     "id": "meaning-through-connectivity",
+     "kind": "doc",
+     "label": "meaning through connectivity",
+     "family": "concept",
+     "score": 1,
+     "via": [
+      "meaning",
+      "connectivity"
+     ],
+     "neighbours": [
+      {
+       "id": "schema-first",
+       "label": "schema-first",
+       "verb": "departs-from",
+       "dir": "out",
+       "src": "doc"
+      },
+      {
+       "id": "c-central",
+       "label": "the central claim",
+       "verb": "about",
+       "dir": "in",
+       "src": "doc"
+      },
+      {
+       "id": "c-literal",
+       "label": "not a metaphor",
+       "verb": "about",
+       "dir": "in",
+       "src": "doc"
+      },
+      {
+       "id": "c-difference-is-connectivity",
+       "label": "the difference is connectivity",
+       "verb": "about",
+       "dir": "in",
+       "src": "doc"
+      },
+      {
+       "id": "c-ten-principles",
+       "label": "the document compresses itself to ten principles",
+       "verb": "about",
+       "dir": "in",
+       "src": "doc"
+      }
+     ],
+     "degree": 5,
+     "blast": 5,
+     "anchor": "fact-anchored: a quote in §Nodes Have No Obligation to Explain Themselves",
+     "total": 2.5,
+     "def": "What a thing is emerges from the edges traceable from it.",
+     "section": "Nodes Have No Obligation to Explain Themselves",
+     "quote": "In a graph-first model, what something \"is\" emerges from the edges you can trace from it."
+    },
+    "notes": []
+   },
+   "output": {
+    "fractal": {
+     "text": "What a thing is emerges from the edges traceable from it.",
+     "meaning": {
+      "id": "c-no-edges-no-meaning",
+      "label": "no edges, no meaning",
+      "total": 0.834,
+      "kind": "doc"
+     }
+    }
+   }
+  },
+  {
+   "prompt": "graphs of graphs",
+   "opts": {},
+   "input": {
+    "ranked": [
+     {
+      "id": "graphs-of-graphs",
+      "kind": "doc",
+      "label": "graphs of graphs",
+      "family": "concept",
+      "score": 1.5,
+      "via": [
+       "graphs",
+       "graphs"
+      ],
+      "neighbours": [
+       {
+        "id": "fractal-principle",
+        "label": "the fractal principle",
+        "verb": "exhibits",
+        "dir": "out",
+        "src": "doc"
+       }
+      ],
+      "degree": 1,
+      "blast": 1,
+      "anchor": "fact-anchored: a quote in §The Recursive Structure",
+      "total": 3.1,
+      "def": "The ecosystem is not one flat graph; it is a graph of graphs, recursively.",
+      "section": "The Recursive Structure",
+      "quote": "It is a graph of graphs, recursively"
+     }
+    ],
+    "meaning": {
+     "id": "graphs-of-graphs",
+     "kind": "doc",
+     "label": "graphs of graphs",
+     "family": "concept",
+     "score": 1.5,
+     "via": [
+      "graphs",
+      "graphs"
+     ],
+     "neighbours": [
+      {
+       "id": "fractal-principle",
+       "label": "the fractal principle",
+       "verb": "exhibits",
+       "dir": "out",
+       "src": "doc"
+      }
+     ],
+     "degree": 1,
+     "blast": 1,
+     "anchor": "fact-anchored: a quote in §The Recursive Structure",
+     "total": 3.1,
+     "def": "The ecosystem is not one flat graph; it is a graph of graphs, recursively.",
+     "section": "The Recursive Structure",
+     "quote": "It is a graph of graphs, recursively"
+    },
+    "notes": []
+   },
+   "output": {
+    "fractal": {
+     "text": "The ecosystem is not one flat graph; it is a graph of graphs, recursively.",
+     "meaning": {
+      "id": "graphs-of-graphs",
+      "label": "graphs of graphs",
+      "total": 1.334,
+      "kind": "doc"
+     }
+    }
+   }
+  },
+  {
+   "prompt": "anchor nodes",
+   "opts": {},
+   "input": {
+    "ranked": [
+     {
+      "id": "anchor-node",
+      "kind": "doc",
+      "label": "anchor node",
+      "family": "concept",
+      "score": 0.6,
+      "via": [
+       "anchor"
+      ],
+      "neighbours": [
+       {
+        "id": "lexicon",
+        "label": "the Lexicon",
+        "verb": "provides",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "compatibility",
+        "label": "compatibility",
+        "verb": "enables",
+        "dir": "out",
+        "src": "doc"
+       },
+       {
+        "id": "c-mappings-by-anyone",
+        "label": "mappings can come from anyone",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-no-special-authority",
+        "label": "anchors have no special authority",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-authority-from-connectivity",
+        "label": "authority is not identity",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       }
+      ],
+      "degree": 5,
+      "blast": 5,
+      "anchor": "fact-anchored: a quote in §What Anchor Nodes Actually Are",
+      "total": 1.7,
+      "def": "A node that is well-connected, well-maintained and well-known, with no special authority.",
+      "section": "What Anchor Nodes Actually Are",
+      "quote": "An anchor node is simply a node that:"
+     },
+     {
+      "id": "pk:anchor",
+      "kind": "pack",
+      "label": "anchor",
+      "score": 0.75,
+      "via": [
+       "anchor"
+      ],
+      "neighbours": [
+       {
+        "id": "pk:provenance",
+        "label": "provenance",
+        "verb": "part-of",
+        "dir": "out",
+        "src": "pack"
+       }
+      ],
+      "degree": 1,
+      "blast": 1,
+      "anchor": "an authored term: proposed in a meaning pack",
+      "total": 1.6,
+      "def": "A verified pointer from a claim to the exact bytes that support it.",
+      "section": null,
+      "quote": null
+     }
+    ],
+    "meaning": {
+     "id": "anchor-node",
+     "kind": "doc",
+     "label": "anchor node",
+     "family": "concept",
+     "score": 0.6,
+     "via": [
+      "anchor"
+     ],
+     "neighbours": [
+      {
+       "id": "lexicon",
+       "label": "the Lexicon",
+       "verb": "provides",
+       "dir": "in",
+       "src": "doc"
+      },
+      {
+       "id": "compatibility",
+       "label": "compatibility",
+       "verb": "enables",
+       "dir": "out",
+       "src": "doc"
+      },
+      {
+       "id": "c-mappings-by-anyone",
+       "label": "mappings can come from anyone",
+       "verb": "about",
+       "dir": "in",
+       "src": "doc"
+      },
+      {
+       "id": "c-no-special-authority",
+       "label": "anchors have no special authority",
+       "verb": "about",
+       "dir": "in",
+       "src": "doc"
+      },
+      {
+       "id": "c-authority-from-connectivity",
+       "label": "authority is not identity",
+       "verb": "about",
+       "dir": "in",
+       "src": "doc"
+      }
+     ],
+     "degree": 5,
+     "blast": 5,
+     "anchor": "fact-anchored: a quote in §What Anchor Nodes Actually Are",
+     "total": 1.7,
+     "def": "A node that is well-connected, well-maintained and well-known, with no special authority.",
+     "section": "What Anchor Nodes Actually Are",
+     "quote": "An anchor node is simply a node that:"
+    },
+    "notes": []
+   },
+   "output": {
+    "fractal": {
+     "text": "A node that is well-connected, well-maintained and well-known, with no special authority.",
+     "meaning": {
+      "id": "node",
+      "label": "node",
+      "total": 1.166,
+      "kind": "doc"
+     }
+    }
+   }
+  }
+ ]
+}

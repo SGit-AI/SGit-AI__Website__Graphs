@@ -1,0 +1,106 @@
+{
+ "operator": "tokenise",
+ "world": "thinking-in-graphs",
+ "note": "captured by running the engine (deterministic); the workbench re-runs and compares",
+ "vectors": [
+  {
+   "prompt": "meaning through connectivity",
+   "opts": {},
+   "input": {
+    "text": "meaning through connectivity"
+   },
+   "output": {
+    "tokens": [
+     {
+      "i": 0,
+      "w": "meaning",
+      "form": "meaning",
+      "hash": "853103f906a5"
+     },
+     {
+      "i": 1,
+      "w": "through",
+      "form": "through",
+      "hash": "79fa8d97ac77"
+     },
+     {
+      "i": 2,
+      "w": "connectivity",
+      "form": "connectivity",
+      "hash": "20991b42a657"
+     }
+    ],
+    "phrase": {
+     "text": "meaning through connectivity",
+     "hash": "600570097a68"
+    }
+   }
+  },
+  {
+   "prompt": "Graph GRAPH graph",
+   "opts": {},
+   "input": {
+    "text": "Graph GRAPH graph"
+   },
+   "output": {
+    "tokens": [
+     {
+      "i": 0,
+      "w": "Graph",
+      "form": "graph",
+      "hash": "32ec982977fe"
+     },
+     {
+      "i": 1,
+      "w": "GRAPH",
+      "form": "graph",
+      "hash": "32ec982977fe"
+     },
+     {
+      "i": 2,
+      "w": "graph",
+      "form": "graph",
+      "hash": "32ec982977fe"
+     }
+    ],
+    "phrase": {
+     "text": "Graph GRAPH graph",
+     "hash": "35fd69a9b8c3"
+    }
+   }
+  },
+  {
+   "prompt": "graphs of graphs",
+   "opts": {},
+   "input": {
+    "text": "graphs of graphs"
+   },
+   "output": {
+    "tokens": [
+     {
+      "i": 0,
+      "w": "graphs",
+      "form": "graphs",
+      "hash": "86598276e526"
+     },
+     {
+      "i": 1,
+      "w": "of",
+      "form": "of",
+      "hash": "08b06007b556"
+     },
+     {
+      "i": 2,
+      "w": "graphs",
+      "form": "graphs",
+      "hash": "86598276e526"
+     }
+    ],
+    "phrase": {
+     "text": "graphs of graphs",
+     "hash": "add2b4be2034"
+    }
+   }
+  }
+ ]
+}

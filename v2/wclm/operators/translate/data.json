@@ -1,0 +1,18 @@
+{
+ "operator": "translate",
+ "note": "Official data: the analogies register — authored, the equivalence surface between this document's concepts and other worlds.",
+ "entries": [
+  {
+   "kind": "authored",
+   "name": "the analogies register",
+   "source": "../../analogies.json",
+   "why": "16 mappings across finance, operations and medicine, each carrying its why; every 'for' id gated against the extraction"
+  },
+  {
+   "kind": "standard",
+   "name": "gap rule",
+   "data": "an unmapped concept answers 'no analogy authored yet'",
+   "why": "a gap is a correction opportunity, said — never a silence"
+  }
+ ]
+}

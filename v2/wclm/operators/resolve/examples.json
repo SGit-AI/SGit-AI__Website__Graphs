@@ -1,0 +1,319 @@
+{
+ "operator": "resolve",
+ "world": "thinking-in-graphs",
+ "note": "captured by running the engine (deterministic); the workbench re-runs and compares",
+ "vectors": [
+  {
+   "prompt": "meaning through connectivity",
+   "opts": {},
+   "input": {
+    "tokens": [
+     {
+      "i": 0,
+      "w": "meaning",
+      "form": "meaning",
+      "hash": "853103f906a5"
+     },
+     {
+      "i": 1,
+      "w": "through",
+      "form": "through",
+      "hash": "79fa8d97ac77"
+     },
+     {
+      "i": 2,
+      "w": "connectivity",
+      "form": "connectivity",
+      "hash": "20991b42a657"
+     }
+    ],
+    "phrase": {
+     "text": "meaning through connectivity",
+     "hash": "600570097a68"
+    }
+   },
+   "output": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.206,
+      "form": "meaning",
+      "hash": "853103f906a5",
+      "known": true,
+      "class": "content",
+      "count": 27,
+      "top": [
+       [
+        "edges",
+        11
+       ],
+       [
+        "node",
+        5
+       ],
+       [
+        "nodes",
+        5
+       ],
+       [
+        "connectivity",
+        4
+       ],
+       [
+        "confidence",
+        3
+       ],
+       [
+        "declared",
+        3
+       ]
+      ]
+     },
+     {
+      "i": 1,
+      "w": 0.016,
+      "form": "through",
+      "hash": "79fa8d97ac77",
+      "known": true,
+      "class": "padding",
+      "count": 7,
+      "top": []
+     },
+     {
+      "i": 2,
+      "w": 0.289,
+      "form": "connectivity",
+      "hash": "20991b42a657",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": [
+       [
+        "nodes",
+        4
+       ],
+       [
+        "meaning",
+        4
+       ],
+       [
+        "node",
+        3
+       ],
+       [
+        "edges",
+        3
+       ],
+       [
+        "confidence",
+        3
+       ],
+       [
+        "every",
+        2
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "prompt": "the graph of the node",
+   "opts": {},
+   "input": {
+    "tokens": [
+     {
+      "i": 0,
+      "w": "the",
+      "form": "the",
+      "hash": "56f5c9194461"
+     },
+     {
+      "i": 1,
+      "w": "graph",
+      "form": "graph",
+      "hash": "32ec982977fe"
+     },
+     {
+      "i": 2,
+      "w": "of",
+      "form": "of",
+      "hash": "08b06007b556"
+     },
+     {
+      "i": 3,
+      "w": "the",
+      "form": "the",
+      "hash": "56f5c9194461"
+     },
+     {
+      "i": 4,
+      "w": "node",
+      "form": "node",
+      "hash": "3c2f1bbad186"
+     }
+    ],
+    "phrase": {
+     "text": "the graph of the node",
+     "hash": "ab6e5d4d0f4f"
+    }
+   },
+   "output": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.006,
+      "form": "the",
+      "hash": "56f5c9194461",
+      "known": true,
+      "class": "padding",
+      "count": 242,
+      "top": []
+     },
+     {
+      "i": 1,
+      "w": 0.167,
+      "form": "graph",
+      "hash": "32ec982977fe",
+      "known": true,
+      "class": "content",
+      "count": 61,
+      "top": [
+       [
+        "node",
+        13
+       ],
+       [
+        "edges",
+        11
+       ],
+       [
+        "nodes",
+        7
+       ],
+       [
+        "doesn't",
+        6
+       ],
+       [
+        "review",
+        6
+       ],
+       [
+        "say",
+        5
+       ]
+      ]
+     },
+     {
+      "i": 2,
+      "w": 0.008,
+      "form": "of",
+      "hash": "08b06007b556",
+      "known": true,
+      "class": "padding",
+      "count": 60,
+      "top": []
+     },
+     {
+      "i": 3,
+      "w": 0.006,
+      "form": "the",
+      "hash": "56f5c9194461",
+      "known": true,
+      "class": "padding",
+      "count": 242,
+      "top": []
+     },
+     {
+      "i": 4,
+      "w": 0.167,
+      "form": "node",
+      "hash": "3c2f1bbad186",
+      "known": true,
+      "class": "content",
+      "count": 62,
+      "top": [
+       [
+        "graph",
+        13
+       ],
+       [
+        "review",
+        12
+       ],
+       [
+        "connected",
+        8
+       ],
+       [
+        "edges",
+        7
+       ],
+       [
+        "nodes",
+        6
+       ],
+       [
+        "meaning",
+        5
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "prompt": "zebra quantum",
+   "opts": {},
+   "input": {
+    "tokens": [
+     {
+      "i": 0,
+      "w": "zebra",
+      "form": "zebra",
+      "hash": "f71973316691",
+      "fix": null
+     },
+     {
+      "i": 1,
+      "w": "quantum",
+      "form": "quantum",
+      "hash": "5bfc2b7f1803",
+      "fix": null
+     }
+    ],
+    "phrase": {
+     "text": "zebra quantum",
+     "hash": "18e114651315"
+    }
+   },
+   "output": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0,
+      "form": "zebra",
+      "hash": "f71973316691",
+      "fix": null,
+      "known": false,
+      "class": "unknown",
+      "count": 0,
+      "top": []
+     },
+     {
+      "i": 1,
+      "w": 0,
+      "form": "quantum",
+      "hash": "5bfc2b7f1803",
+      "fix": null,
+      "known": false,
+      "class": "unknown",
+      "count": 0,
+      "top": []
+     }
+    ]
+   }
+  }
+ ]
+}

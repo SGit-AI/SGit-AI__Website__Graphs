@@ -1,0 +1,24 @@
+{
+ "operator": "senses",
+ "note": "Official data: the senses register (authored, the training surface) and the stem families (derived) that prove number and let plurals inherit senses.",
+ "entries": [
+  {
+   "kind": "authored",
+   "name": "the senses register",
+   "source": "../../senses.json",
+   "why": "three to five definitions per word across industries; the document's own sense always first; edit this file to train"
+  },
+  {
+   "kind": "derived",
+   "name": "the stem families",
+   "source": "../../data/world.json#stems",
+   "why": "singular/plural pairs proved by the family; 'graphs' inherits the senses of 'graph' through it"
+  },
+  {
+   "kind": "standard",
+   "name": "default rule",
+   "data": "active = the document's own sense unless the caller switches it",
+   "why": "a document defining its own ontology is a feature (brief 34)"
+  }
+ ]
+}

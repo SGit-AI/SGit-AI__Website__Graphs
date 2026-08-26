@@ -1,0 +1,31 @@
+{
+ "operator": "converge",
+ "name": "T9 converge",
+ "core": true,
+ "role": "evidence is summed; the meaning, its provenance, its blast radius and its contradictions come out",
+ "io": {
+  "reads": [
+   {
+    "type": "bindings",
+    "means": "candidate meanings with scores and the forms that lit them"
+   }
+  ],
+  "writes": [
+   {
+    "type": "meanings",
+    "means": "the ranked answer with provenance, blast radius and notes"
+   }
+  ]
+ },
+ "prerequisites": [
+  "tokenise",
+  "normalise",
+  "resolve",
+  "senses",
+  "operators",
+  "attend",
+  "bind",
+  "expand"
+ ],
+ "note": "derived from converge.js — the code is the source of truth; a gate re-derives and compares"
+}

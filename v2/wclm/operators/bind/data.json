@@ -1,0 +1,34 @@
+{
+ "operator": "bind",
+ "note": "Official data: the three surfaces the prompt lights, each with its provenance, plus the formula constants (standard opinion — the training loop has already edited this formula once).",
+ "entries": [
+  {
+   "kind": "derived",
+   "name": "document concepts",
+   "source": "../../data/world.json#concepts",
+   "why": "from the extraction: labels, forms, statements, anchors"
+  },
+  {
+   "kind": "authored",
+   "name": "pack terms",
+   "source": "../../packs/graphs-domain.json",
+   "why": "the meaning packs — the agent proposes, the founder reviews"
+  },
+  {
+   "kind": "authored",
+   "name": "chosen senses",
+   "source": "../../senses.json",
+   "why": "a switched word binds its sense instead of this document's concepts"
+  },
+  {
+   "kind": "standard",
+   "name": "formula constants",
+   "data": {
+    "label_half": 0.5,
+    "prompt_half": 0.5,
+    "pull_bonus": 0.1
+   },
+   "why": "bind = ½ label + ½ prompt coverage + 0.1·pulled; halves are opinion, coverages are evidence"
+  }
+ ]
+}

@@ -60,6 +60,21 @@ export function rawMdHtml(text) {
   return '<pre class="fv-raw">' + lines.join('\n') + '</pre>';
 }
 
+/** Raw JavaScript, lightly tinted: comments, strings, keywords. */
+export function rawJsHtml(text) {
+  const re = /\/\*[\s\S]*?\*\/|\/\/[^\n]*|'(?:[^'\\\n]|\\.)*'|"(?:[^"\\\n]|\\.)*"|`(?:[^`\\]|\\.)*`|\b(?:export|import|from|const|let|var|function|return|if|else|for|while|new|class|extends|this|typeof|of|in|null|true|false|undefined)\b/g;
+  let out = '', last = 0, m;
+  while ((m = re.exec(String(text)))) {
+    out += esc(text.slice(last, m.index));
+    const t = m[0];
+    if (t.startsWith('/*') || t.startsWith('//')) out += '<span class="fv-com">' + esc(t) + '</span>';
+    else if ("'\"`".includes(t[0])) out += '<span class="fv-str">' + esc(t) + '</span>';
+    else out += '<span class="fv-kw">' + esc(t) + '</span>';
+    last = m.index + t.length;
+  }
+  return '<pre class="fv-raw">' + out + esc(String(text).slice(last)) + '</pre>';
+}
+
 const table = (heads, rows) =>
   '<div class="tablewrap"><table class="fv-t"><thead><tr>' +
   heads.map((h) => '<th>' + esc(h) + '</th>').join('') + '</tr></thead><tbody>' +

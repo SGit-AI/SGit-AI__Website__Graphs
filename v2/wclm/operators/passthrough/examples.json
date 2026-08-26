@@ -1,0 +1,99 @@
+{
+ "operator": "passthrough",
+ "world": "thinking-in-graphs",
+ "note": "captured by running the engine (deterministic); the workbench re-runs and compares",
+ "vectors": [
+  {
+   "prompt": "meaning without connectivity",
+   "opts": {},
+   "input": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.206,
+      "form": "meaning",
+      "hash": "853103f906a5",
+      "known": true,
+      "class": "content",
+      "count": 27,
+      "top": [
+       [
+        "edges",
+        11
+       ],
+       [
+        "node",
+        5
+       ],
+       [
+        "nodes",
+        5
+       ],
+       [
+        "connectivity",
+        4
+       ],
+       [
+        "confidence",
+        3
+       ],
+       [
+        "declared",
+        3
+       ]
+      ]
+     },
+     {
+      "i": 1,
+      "w": 0.016,
+      "form": "without",
+      "hash": "5437c29a5289",
+      "known": true,
+      "class": "operator",
+      "count": 7,
+      "top": []
+     },
+     {
+      "i": 2,
+      "w": 0.289,
+      "form": "connectivity",
+      "hash": "20991b42a657",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": [
+       [
+        "nodes",
+        4
+       ],
+       [
+        "meaning",
+        4
+       ],
+       [
+        "node",
+        3
+       ],
+       [
+        "edges",
+        3
+       ],
+       [
+        "confidence",
+        3
+       ],
+       [
+        "every",
+        2
+       ]
+      ],
+      "negated": true
+     }
+    ]
+   },
+   "output": {
+    "carryAll": true
+   }
+  }
+ ]
+}

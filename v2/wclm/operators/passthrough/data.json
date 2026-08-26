@@ -1,0 +1,12 @@
+{
+ "operator": "passthrough",
+ "note": "Official data: none of its own — the point of the engine. Only the standard rule it implements.",
+ "entries": [
+  {
+   "kind": "standard",
+   "name": "the carry rule",
+   "data": "carryAll applies to the whole run; the marking engines it relaxes are senses (foreign) and operators (negated)",
+   "why": "include it for an advisory run, leave it out for a strict one (brief 34's addendum)"
+  }
+ ]
+}

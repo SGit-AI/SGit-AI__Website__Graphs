@@ -1,0 +1,182 @@
+{
+ "operator": "normalise",
+ "world": "thinking-in-graphs",
+ "note": "captured by running the engine (deterministic); the workbench re-runs and compares",
+ "vectors": [
+  {
+   "prompt": "graphz and nodez conected",
+   "opts": {},
+   "input": {
+    "tokens": [
+     {
+      "i": 0,
+      "w": "graphz",
+      "form": "graphz",
+      "hash": "86598b76e527"
+     },
+     {
+      "i": 1,
+      "w": "and",
+      "form": "and",
+      "hash": "e6f79719051f"
+     },
+     {
+      "i": 2,
+      "w": "nodez",
+      "form": "nodez",
+      "hash": "ca4ef5720723"
+     },
+     {
+      "i": 3,
+      "w": "conected",
+      "form": "conected",
+      "hash": "d112e55d2e83"
+     }
+    ],
+    "phrase": {
+     "text": "graphz and nodez conected",
+     "hash": "e8810b5509cd"
+    }
+   },
+   "output": {
+    "tokens": [
+     {
+      "i": 0,
+      "w": "graphz",
+      "form": "graph",
+      "hash": "32ec982977fe",
+      "fix": {
+       "from": "graphz",
+       "how": "edit distance 1 (evidence: the universe has \"graph\")"
+      }
+     },
+     {
+      "i": 1,
+      "w": "and",
+      "form": "and",
+      "hash": "e6f79719051f"
+     },
+     {
+      "i": 2,
+      "w": "nodez",
+      "form": "node",
+      "hash": "3c2f1bbad186",
+      "fix": {
+       "from": "nodez",
+       "how": "edit distance 1 (evidence: the universe has \"node\")"
+      }
+     },
+     {
+      "i": 3,
+      "w": "conected",
+      "form": "connected",
+      "hash": "304f38944119",
+      "fix": {
+       "from": "conected",
+       "how": "edit distance 1 (evidence: the universe has \"connected\")"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "prompt": "meaninged and connectivvity",
+   "opts": {},
+   "input": {
+    "tokens": [
+     {
+      "i": 0,
+      "w": "meaninged",
+      "form": "meaninged",
+      "hash": "fc460b126d4c"
+     },
+     {
+      "i": 1,
+      "w": "and",
+      "form": "and",
+      "hash": "e6f79719051f"
+     },
+     {
+      "i": 2,
+      "w": "connectivvity",
+      "form": "connectivvity",
+      "hash": "9ea91b819ef6"
+     }
+    ],
+    "phrase": {
+     "text": "meaninged and connectivvity",
+     "hash": "f5a82841c88a"
+    }
+   },
+   "output": {
+    "tokens": [
+     {
+      "i": 0,
+      "w": "meaninged",
+      "form": "meaninged",
+      "hash": "fc460b126d4c",
+      "fix": null
+     },
+     {
+      "i": 1,
+      "w": "and",
+      "form": "and",
+      "hash": "e6f79719051f"
+     },
+     {
+      "i": 2,
+      "w": "connectivvity",
+      "form": "connectivity",
+      "hash": "20991b42a657",
+      "fix": {
+       "from": "connectivvity",
+       "how": "edit distance 1 (evidence: the universe has \"connectivity\")"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "prompt": "zebra quantum",
+   "opts": {},
+   "input": {
+    "tokens": [
+     {
+      "i": 0,
+      "w": "zebra",
+      "form": "zebra",
+      "hash": "f71973316691"
+     },
+     {
+      "i": 1,
+      "w": "quantum",
+      "form": "quantum",
+      "hash": "5bfc2b7f1803"
+     }
+    ],
+    "phrase": {
+     "text": "zebra quantum",
+     "hash": "18e114651315"
+    }
+   },
+   "output": {
+    "tokens": [
+     {
+      "i": 0,
+      "w": "zebra",
+      "form": "zebra",
+      "hash": "f71973316691",
+      "fix": null
+     },
+     {
+      "i": 1,
+      "w": "quantum",
+      "form": "quantum",
+      "hash": "5bfc2b7f1803",
+      "fix": null
+     }
+    ]
+   }
+  }
+ ]
+}

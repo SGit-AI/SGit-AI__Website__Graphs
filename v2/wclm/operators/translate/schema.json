@@ -1,0 +1,32 @@
+{
+ "operator": "translate",
+ "name": "translate",
+ "core": false,
+ "role": "analogies for an audience: the answer restated in the listener’s own concept, with the why carried",
+ "io": {
+  "reads": [
+   {
+    "type": "meanings",
+    "means": "the ranked answer with provenance, blast radius and notes"
+   }
+  ],
+  "writes": [
+   {
+    "type": "meanings",
+    "means": "the ranked answer with provenance, blast radius and notes"
+   }
+  ]
+ },
+ "prerequisites": [
+  "tokenise",
+  "normalise",
+  "resolve",
+  "senses",
+  "operators",
+  "attend",
+  "bind",
+  "expand",
+  "converge"
+ ],
+ "note": "derived from translate.js — the code is the source of truth; a gate re-derives and compares"
+}

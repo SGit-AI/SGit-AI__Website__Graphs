@@ -1,0 +1,24 @@
+{
+ "operator": "resolve",
+ "note": "Official data: the token table this engine looks hashes up in (derived, per document) and the class weights (standard opinion).",
+ "entries": [
+  {
+   "kind": "derived",
+   "name": "the token table",
+   "source": "../../data/world.json#tokens",
+   "why": "created by gen_coregraph.py's token analysis: form, class, count per hash — unique to each document"
+  },
+  {
+   "kind": "standard",
+   "name": "class weights",
+   "data": {
+    "content": 1.0,
+    "code": 1.0,
+    "verb": 0.7,
+    "number": 0.3,
+    "padding": 0.05
+   },
+   "why": "opinion, stated in the world's weights string; w = classW / log2(2 + count)"
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "operator": "tokenise",
+ "note": "Official data: the pinned hash vectors. STANDARD across every document — the Python generator and the JS engine are gate-checked against these exact values, so the two implementations can never drift.",
+ "entries": [
+  {
+   "kind": "standard",
+   "name": "hash vectors",
+   "data": {
+    "graph": "32ec982977fe",
+    "graphs": "86598276e526",
+    "node": "13936a12bcbc"
+   },
+   "why": "fnv64 over the lowercased form; identical in gen_wclm.py and engine.js"
+  },
+  {
+   "kind": "standard",
+   "name": "word rule",
+   "data": "letters, digits, underscore, with inner apostrophes and hyphens",
+   "why": "what counts as a word; changing it changes every downstream hash"
+  }
+ ]
+}

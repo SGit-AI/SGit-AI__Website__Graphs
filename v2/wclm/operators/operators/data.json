@@ -1,0 +1,25 @@
+{
+ "operator": "operators",
+ "note": "Official data: the word table itself — STANDARD across every document. Extending this engine's reach is editing this table.",
+ "entries": [
+  {
+   "kind": "standard",
+   "name": "the word table",
+   "data": {
+    "without": "negates",
+    "not": "negates",
+    "no": "negates",
+    "never": "negates",
+    "versus": "contrasts",
+    "vs": "contrasts"
+   },
+   "why": "the little words that flip meaning; negation marks the next known non-padding token"
+  },
+  {
+   "kind": "standard",
+   "name": "scope rule",
+   "data": "one token; contrast recorded but not yet acted on downstream",
+   "why": "phrase-level grammar is future work (brief 34: 'eventually, grammar rules')"
+  }
+ ]
+}

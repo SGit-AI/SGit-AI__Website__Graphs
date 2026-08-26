@@ -1,0 +1,27 @@
+{
+ "operator": "operators",
+ "name": "T5 operators",
+ "core": false,
+ "role": "the little words that flip meaning: negation marked, contradiction kept",
+ "io": {
+  "reads": [
+   {
+    "type": "stream",
+    "means": "tokens resolved against the world, carrying every clue mark (class, number, sense, negation)"
+   }
+  ],
+  "writes": [
+   {
+    "type": "stream",
+    "means": "tokens resolved against the world, carrying every clue mark (class, number, sense, negation)"
+   }
+  ]
+ },
+ "prerequisites": [
+  "tokenise",
+  "normalise",
+  "resolve",
+  "senses"
+ ],
+ "note": "derived from operators.js — the code is the source of truth; a gate re-derives and compares"
+}

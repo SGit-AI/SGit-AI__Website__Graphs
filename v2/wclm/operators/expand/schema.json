@@ -1,0 +1,30 @@
+{
+ "operator": "expand",
+ "name": "T8 expand",
+ "core": false,
+ "role": "each bound meaning assembles its neighbourhood: the world model, gathered per meaning",
+ "io": {
+  "reads": [
+   {
+    "type": "bindings",
+    "means": "candidate meanings with scores and the forms that lit them"
+   }
+  ],
+  "writes": [
+   {
+    "type": "bindings",
+    "means": "candidate meanings with scores and the forms that lit them"
+   }
+  ]
+ },
+ "prerequisites": [
+  "tokenise",
+  "normalise",
+  "resolve",
+  "senses",
+  "operators",
+  "attend",
+  "bind"
+ ],
+ "note": "derived from expand.js — the code is the source of truth; a gate re-derives and compares"
+}

@@ -1,0 +1,388 @@
+{
+ "operator": "bind",
+ "world": "thinking-in-graphs",
+ "note": "captured by running the engine (deterministic); the workbench re-runs and compares",
+ "vectors": [
+  {
+   "prompt": "meaning through connectivity",
+   "opts": {},
+   "input": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.206,
+      "form": "meaning",
+      "hash": "853103f906a5",
+      "known": true,
+      "class": "content",
+      "count": 27,
+      "top": [
+       [
+        "edges",
+        11
+       ],
+       [
+        "node",
+        5
+       ],
+       [
+        "nodes",
+        5
+       ],
+       [
+        "connectivity",
+        4
+       ],
+       [
+        "confidence",
+        3
+       ],
+       [
+        "declared",
+        3
+       ]
+      ]
+     },
+     {
+      "i": 1,
+      "w": 0.016,
+      "form": "through",
+      "hash": "79fa8d97ac77",
+      "known": true,
+      "class": "padding",
+      "count": 7,
+      "top": []
+     },
+     {
+      "i": 2,
+      "w": 0.289,
+      "form": "connectivity",
+      "hash": "20991b42a657",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": [
+       [
+        "nodes",
+        4
+       ],
+       [
+        "meaning",
+        4
+       ],
+       [
+        "node",
+        3
+       ],
+       [
+        "edges",
+        3
+       ],
+       [
+        "confidence",
+        3
+       ],
+       [
+        "every",
+        2
+       ]
+      ]
+     }
+    ]
+   },
+   "output": {
+    "bindings": [
+     {
+      "id": "meaning-through-connectivity",
+      "kind": "doc",
+      "label": "meaning through connectivity",
+      "family": "concept",
+      "score": 1,
+      "via": [
+       "meaning",
+       "connectivity"
+      ]
+     },
+     {
+      "id": "connectivity",
+      "kind": "doc",
+      "label": "connectivity",
+      "family": "concept",
+      "score": 0.75,
+      "via": [
+       "connectivity"
+      ]
+     },
+     {
+      "id": "pk:connectivity",
+      "kind": "pack",
+      "label": "connectivity",
+      "score": 0.75,
+      "via": [
+       "connectivity"
+      ]
+     },
+     {
+      "id": "pk:meaning",
+      "kind": "pack",
+      "label": "meaning",
+      "score": 0.75,
+      "via": [
+       "meaning"
+      ]
+     },
+     {
+      "id": "c-no-edges-no-meaning",
+      "kind": "doc",
+      "label": "no edges, no meaning",
+      "family": "claim",
+      "score": 0.6,
+      "via": [
+       "meaning"
+      ]
+     },
+     {
+      "id": "c-difference-is-connectivity",
+      "kind": "doc",
+      "label": "the difference is connectivity",
+      "family": "claim",
+      "score": 0.5,
+      "via": [
+       "connectivity"
+      ]
+     },
+     {
+      "id": "declared-meaning",
+      "kind": "doc",
+      "label": "declared meaning",
+      "family": "concept",
+      "score": 0.5,
+      "via": [
+       "meaning"
+      ]
+     },
+     {
+      "id": "discovered-meaning",
+      "kind": "doc",
+      "label": "discovered meaning",
+      "family": "concept",
+      "score": 0.5,
+      "via": [
+       "meaning"
+      ]
+     },
+     {
+      "id": "h-thinner-across-boundaries",
+      "kind": "doc",
+      "label": "meaning thins measurably at boundaries",
+      "family": "hypothesis",
+      "score": 0.375,
+      "via": [
+       "meaning"
+      ]
+     }
+    ],
+    "negated": [],
+    "foreign": []
+   }
+  },
+  {
+   "prompt": "meaning without connectivity",
+   "opts": {},
+   "input": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.206,
+      "form": "meaning",
+      "hash": "853103f906a5",
+      "known": true,
+      "class": "content",
+      "count": 27,
+      "top": [
+       [
+        "edges",
+        11
+       ],
+       [
+        "node",
+        5
+       ],
+       [
+        "nodes",
+        5
+       ],
+       [
+        "connectivity",
+        4
+       ],
+       [
+        "confidence",
+        3
+       ],
+       [
+        "declared",
+        3
+       ]
+      ]
+     },
+     {
+      "i": 1,
+      "w": 0.016,
+      "form": "without",
+      "hash": "5437c29a5289",
+      "known": true,
+      "class": "operator",
+      "count": 7,
+      "top": []
+     },
+     {
+      "i": 2,
+      "w": 0.289,
+      "form": "connectivity",
+      "hash": "20991b42a657",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": [
+       [
+        "nodes",
+        4
+       ],
+       [
+        "meaning",
+        4
+       ],
+       [
+        "node",
+        3
+       ],
+       [
+        "edges",
+        3
+       ],
+       [
+        "confidence",
+        3
+       ],
+       [
+        "every",
+        2
+       ]
+      ],
+      "negated": true
+     }
+    ]
+   },
+   "output": {
+    "bindings": [
+     {
+      "id": "pk:meaning",
+      "kind": "pack",
+      "label": "meaning",
+      "score": 1,
+      "via": [
+       "meaning"
+      ]
+     },
+     {
+      "id": "c-no-edges-no-meaning",
+      "kind": "doc",
+      "label": "no edges, no meaning",
+      "family": "claim",
+      "score": 0.85,
+      "via": [
+       "meaning"
+      ]
+     },
+     {
+      "id": "declared-meaning",
+      "kind": "doc",
+      "label": "declared meaning",
+      "family": "concept",
+      "score": 0.75,
+      "via": [
+       "meaning"
+      ]
+     },
+     {
+      "id": "discovered-meaning",
+      "kind": "doc",
+      "label": "discovered meaning",
+      "family": "concept",
+      "score": 0.75,
+      "via": [
+       "meaning"
+      ]
+     },
+     {
+      "id": "meaning-through-connectivity",
+      "kind": "doc",
+      "label": "meaning through connectivity",
+      "family": "concept",
+      "score": 0.75,
+      "via": [
+       "meaning"
+      ]
+     },
+     {
+      "id": "h-thinner-across-boundaries",
+      "kind": "doc",
+      "label": "meaning thins measurably at boundaries",
+      "family": "hypothesis",
+      "score": 0.625,
+      "via": [
+       "meaning"
+      ]
+     }
+    ],
+    "negated": [
+     "connectivity"
+    ],
+    "foreign": []
+   }
+  },
+  {
+   "prompt": "qa",
+   "opts": {},
+   "input": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.356,
+      "form": "qa",
+      "hash": "08d26307b573",
+      "known": true,
+      "class": "content",
+      "count": 5,
+      "top": [
+       [
+        "role",
+        3
+       ],
+       [
+        "called",
+        2
+       ]
+      ]
+     }
+    ]
+   },
+   "output": {
+    "bindings": [
+     {
+      "id": "pk:qa",
+      "kind": "pack",
+      "label": "qa",
+      "score": 1,
+      "via": [
+       "qa"
+      ]
+     }
+    ],
+    "negated": [],
+    "foreign": []
+   }
+  }
+ ]
+}

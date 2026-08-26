@@ -1,0 +1,776 @@
+{
+ "operator": "attend",
+ "world": "thinking-in-graphs",
+ "note": "captured by running the engine (deterministic); the workbench re-runs and compares",
+ "vectors": [
+  {
+   "prompt": "meaning through connectivity",
+   "opts": {},
+   "input": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.206,
+      "form": "meaning",
+      "hash": "853103f906a5",
+      "known": true,
+      "class": "content",
+      "count": 27,
+      "top": [
+       [
+        "edges",
+        11
+       ],
+       [
+        "node",
+        5
+       ],
+       [
+        "nodes",
+        5
+       ],
+       [
+        "connectivity",
+        4
+       ],
+       [
+        "confidence",
+        3
+       ],
+       [
+        "declared",
+        3
+       ]
+      ]
+     },
+     {
+      "i": 1,
+      "w": 0.016,
+      "form": "through",
+      "hash": "79fa8d97ac77",
+      "known": true,
+      "class": "padding",
+      "count": 7,
+      "top": []
+     },
+     {
+      "i": 2,
+      "w": 0.289,
+      "form": "connectivity",
+      "hash": "20991b42a657",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": [
+       [
+        "nodes",
+        4
+       ],
+       [
+        "meaning",
+        4
+       ],
+       [
+        "node",
+        3
+       ],
+       [
+        "edges",
+        3
+       ],
+       [
+        "confidence",
+        3
+       ],
+       [
+        "every",
+        2
+       ]
+      ]
+     }
+    ]
+   },
+   "output": {
+    "attention": {
+     "profiles": [
+      {
+       "i": 0,
+       "form": "meaning",
+       "negated": false,
+       "pairs": [
+        {
+         "j": 2,
+         "other": "connectivity",
+         "w": 4
+        }
+       ],
+       "pulls": [
+        {
+         "form": "edges",
+         "w": 11
+        },
+        {
+         "form": "node",
+         "w": 5
+        },
+        {
+         "form": "nodes",
+         "w": 5
+        }
+       ]
+      },
+      {
+       "i": 2,
+       "form": "connectivity",
+       "negated": false,
+       "pairs": [
+        {
+         "j": 0,
+         "other": "meaning",
+         "w": 4
+        }
+       ],
+       "pulls": [
+        {
+         "form": "nodes",
+         "w": 4
+        },
+        {
+         "form": "meaning",
+         "w": 4
+        },
+        {
+         "form": "node",
+         "w": 3
+        }
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "prompt": "anchor nodes and reference graphs",
+   "opts": {},
+   "input": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.179,
+      "form": "anchor",
+      "hash": "29a0fa84c0ac",
+      "known": true,
+      "class": "verb",
+      "count": 13,
+      "top": [
+       [
+        "lexicon",
+        6
+       ],
+       [
+        "nodes",
+        6
+       ],
+       [
+        "node",
+        4
+       ],
+       [
+        "edges",
+        3
+       ],
+       [
+        "links",
+        3
+       ],
+       [
+        "link",
+        3
+       ]
+      ],
+      "num": {
+       "num": "singular",
+       "base": "anchor",
+       "family": [
+        "anchor",
+        "anchors"
+       ]
+      }
+     },
+     {
+      "i": 1,
+      "w": 0.18,
+      "form": "nodes",
+      "hash": "ca4efc720723",
+      "known": true,
+      "class": "content",
+      "count": 45,
+      "top": [
+       [
+        "edges",
+        16
+       ],
+       [
+        "reference",
+        8
+       ],
+       [
+        "graph",
+        7
+       ],
+       [
+        "node",
+        6
+       ],
+       [
+        "anchor",
+        6
+       ],
+       [
+        "meaning",
+        5
+       ]
+      ],
+      "num": {
+       "num": "plural",
+       "base": "node",
+       "family": [
+        "node",
+        "nodes"
+       ]
+      },
+      "sense": {
+       "word": "node",
+       "active": "doc",
+       "label": "a point in a graph",
+       "domain": "this document",
+       "def": "A thing that exists by being connected: a node holds edges, and what it means emerges from what those edges reach.",
+       "options": [
+        {
+         "key": "doc",
+         "label": "a point in a graph",
+         "domain": "this document"
+        },
+        {
+         "key": "runtime",
+         "label": "Node.js, the runtime",
+         "domain": "software tooling"
+        },
+        {
+         "key": "lymph",
+         "label": "a lymph node",
+         "domain": "medicine"
+        },
+        {
+         "key": "stem",
+         "label": "a stem node",
+         "domain": "botany"
+        },
+        {
+         "key": "host",
+         "label": "a machine on the network",
+         "domain": "IT operations"
+        }
+       ]
+      }
+     },
+     {
+      "i": 2,
+      "w": 0.008,
+      "form": "and",
+      "hash": "e6f79719051f",
+      "known": true,
+      "class": "padding",
+      "count": 60,
+      "top": []
+     },
+     {
+      "i": 3,
+      "w": 0.228,
+      "form": "reference",
+      "hash": "9a7b103262a7",
+      "known": true,
+      "class": "content",
+      "count": 19,
+      "top": [
+       [
+        "nodes",
+        8
+       ],
+       [
+        "edges",
+        5
+       ],
+       [
+        "points",
+        4
+       ],
+       [
+        "org",
+        4
+       ],
+       [
+        "schema",
+        4
+       ],
+       [
+        "graph",
+        4
+       ]
+      ],
+      "num": {
+       "num": "singular",
+       "base": "reference",
+       "family": [
+        "reference",
+        "references"
+       ]
+      }
+     },
+     {
+      "i": 4,
+      "w": 0.289,
+      "form": "graphs",
+      "hash": "86598276e526",
+      "known": true,
+      "class": "content",
+      "count": 9,
+      "top": [],
+      "num": {
+       "num": "plural",
+       "base": "graph",
+       "family": [
+        "graph",
+        "graphs"
+       ]
+      },
+      "sense": {
+       "word": "graph",
+       "active": "doc",
+       "label": "the network graph",
+       "domain": "this document",
+       "def": "Nodes joined by edges; meaning through connectivity. The sense reached through this document's own connections: graph connects to network, to nodes and edges, to mathematics, to the fractal principle.",
+       "options": [
+        {
+         "key": "doc",
+         "label": "the network graph",
+         "domain": "this document"
+        },
+        {
+         "key": "chart",
+         "label": "a chart of data",
+         "domain": "business reporting"
+        },
+        {
+         "key": "plot",
+         "label": "the graph of a function",
+         "domain": "school mathematics"
+        },
+        {
+         "key": "paper",
+         "label": "graph paper",
+         "domain": "stationery"
+        },
+        {
+         "key": "social",
+         "label": "the social graph",
+         "domain": "social platforms"
+        }
+       ]
+      }
+     }
+    ]
+   },
+   "output": {
+    "attention": {
+     "profiles": [
+      {
+       "i": 0,
+       "form": "anchor",
+       "negated": false,
+       "pairs": [
+        {
+         "j": 1,
+         "other": "nodes",
+         "w": 6
+        }
+       ],
+       "pulls": [
+        {
+         "form": "lexicon",
+         "w": 6
+        },
+        {
+         "form": "nodes",
+         "w": 6
+        },
+        {
+         "form": "node",
+         "w": 4
+        }
+       ]
+      },
+      {
+       "i": 1,
+       "form": "nodes",
+       "negated": false,
+       "pairs": [
+        {
+         "j": 3,
+         "other": "reference",
+         "w": 8
+        },
+        {
+         "j": 0,
+         "other": "anchor",
+         "w": 6
+        }
+       ],
+       "pulls": [
+        {
+         "form": "edges",
+         "w": 16
+        },
+        {
+         "form": "reference",
+         "w": 8
+        },
+        {
+         "form": "graph",
+         "w": 7
+        }
+       ]
+      },
+      {
+       "i": 3,
+       "form": "reference",
+       "negated": false,
+       "pairs": [
+        {
+         "j": 1,
+         "other": "nodes",
+         "w": 8
+        }
+       ],
+       "pulls": [
+        {
+         "form": "nodes",
+         "w": 8
+        },
+        {
+         "form": "edges",
+         "w": 5
+        },
+        {
+         "form": "points",
+         "w": 4
+        }
+       ]
+      },
+      {
+       "i": 4,
+       "form": "graphs",
+       "negated": false,
+       "pairs": [],
+       "pulls": []
+      }
+     ]
+    }
+   }
+  },
+  {
+   "prompt": "graph node edge",
+   "opts": {},
+   "input": {
+    "resolved": [
+     {
+      "i": 0,
+      "w": 0.167,
+      "form": "graph",
+      "hash": "32ec982977fe",
+      "known": true,
+      "class": "content",
+      "count": 61,
+      "top": [
+       [
+        "node",
+        13
+       ],
+       [
+        "edges",
+        11
+       ],
+       [
+        "nodes",
+        7
+       ],
+       [
+        "doesn't",
+        6
+       ],
+       [
+        "review",
+        6
+       ],
+       [
+        "say",
+        5
+       ]
+      ],
+      "num": {
+       "num": "singular",
+       "base": "graph",
+       "family": [
+        "graph",
+        "graphs"
+       ]
+      },
+      "sense": {
+       "word": "graph",
+       "active": "doc",
+       "label": "the network graph",
+       "domain": "this document",
+       "def": "Nodes joined by edges; meaning through connectivity. The sense reached through this document's own connections: graph connects to network, to nodes and edges, to mathematics, to the fractal principle.",
+       "options": [
+        {
+         "key": "doc",
+         "label": "the network graph",
+         "domain": "this document"
+        },
+        {
+         "key": "chart",
+         "label": "a chart of data",
+         "domain": "business reporting"
+        },
+        {
+         "key": "plot",
+         "label": "the graph of a function",
+         "domain": "school mathematics"
+        },
+        {
+         "key": "paper",
+         "label": "graph paper",
+         "domain": "stationery"
+        },
+        {
+         "key": "social",
+         "label": "the social graph",
+         "domain": "social platforms"
+        }
+       ]
+      }
+     },
+     {
+      "i": 1,
+      "w": 0.167,
+      "form": "node",
+      "hash": "3c2f1bbad186",
+      "known": true,
+      "class": "content",
+      "count": 62,
+      "top": [
+       [
+        "graph",
+        13
+       ],
+       [
+        "review",
+        12
+       ],
+       [
+        "connected",
+        8
+       ],
+       [
+        "edges",
+        7
+       ],
+       [
+        "nodes",
+        6
+       ],
+       [
+        "meaning",
+        5
+       ]
+      ],
+      "num": {
+       "num": "singular",
+       "base": "node",
+       "family": [
+        "node",
+        "nodes"
+       ]
+      },
+      "sense": {
+       "word": "node",
+       "active": "doc",
+       "label": "a point in a graph",
+       "domain": "this document",
+       "def": "A thing that exists by being connected: a node holds edges, and what it means emerges from what those edges reach.",
+       "options": [
+        {
+         "key": "doc",
+         "label": "a point in a graph",
+         "domain": "this document"
+        },
+        {
+         "key": "runtime",
+         "label": "Node.js, the runtime",
+         "domain": "software tooling"
+        },
+        {
+         "key": "lymph",
+         "label": "a lymph node",
+         "domain": "medicine"
+        },
+        {
+         "key": "stem",
+         "label": "a stem node",
+         "domain": "botany"
+        },
+        {
+         "key": "host",
+         "label": "a machine on the network",
+         "domain": "IT operations"
+        }
+       ]
+      }
+     },
+     {
+      "i": 2,
+      "w": 0.256,
+      "form": "edge",
+      "hash": "3a7524602c72",
+      "known": true,
+      "class": "content",
+      "count": 13,
+      "top": [
+       [
+        "graph",
+        3
+       ],
+       [
+        "osbot-utils",
+        3
+       ],
+       [
+        "meaning",
+        3
+       ],
+       [
+        "adding",
+        2
+       ],
+       [
+        "field",
+        2
+       ],
+       [
+        "know",
+        2
+       ]
+      ],
+      "num": {
+       "num": "singular",
+       "base": "edge",
+       "family": [
+        "edge",
+        "edges"
+       ]
+      }
+     }
+    ]
+   },
+   "output": {
+    "attention": {
+     "profiles": [
+      {
+       "i": 0,
+       "form": "graph",
+       "negated": false,
+       "pairs": [
+        {
+         "j": 1,
+         "other": "node",
+         "w": 13
+        },
+        {
+         "j": 2,
+         "other": "edge",
+         "w": 3
+        }
+       ],
+       "pulls": [
+        {
+         "form": "node",
+         "w": 13
+        },
+        {
+         "form": "edges",
+         "w": 11
+        },
+        {
+         "form": "nodes",
+         "w": 7
+        }
+       ]
+      },
+      {
+       "i": 1,
+       "form": "node",
+       "negated": false,
+       "pairs": [
+        {
+         "j": 0,
+         "other": "graph",
+         "w": 13
+        }
+       ],
+       "pulls": [
+        {
+         "form": "graph",
+         "w": 13
+        },
+        {
+         "form": "review",
+         "w": 12
+        },
+        {
+         "form": "connected",
+         "w": 8
+        }
+       ]
+      },
+      {
+       "i": 2,
+       "form": "edge",
+       "negated": false,
+       "pairs": [
+        {
+         "j": 0,
+         "other": "graph",
+         "w": 3
+        }
+       ],
+       "pulls": [
+        {
+         "form": "graph",
+         "w": 3
+        },
+        {
+         "form": "osbot-utils",
+         "w": 3
+        },
+        {
+         "form": "meaning",
+         "w": 3
+        }
+       ]
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

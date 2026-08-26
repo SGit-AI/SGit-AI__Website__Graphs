@@ -862,5 +862,49 @@ test('wclm: the run delta measures impact, deterministic replay holds', () => {
   assert.equal(runPipeline('zebra quantum', WC_WORLD).meaning, null);
 });
 
+/* ---- the operator folders (brief 36): complete, undrifted, replayable ----- */
+const { readFileSync: rf, readdirSync: rd, statSync: st } = await import('node:fs');
+const { runOperator, prereqOf, CANON } = await import('../../assets/wclm/opruntime.js');
+const OPS_DIR = new URL('../../v2/wclm/operators/', import.meta.url).pathname;
+const REAL_WORLD = JSON.parse(rf(new URL('../../v2/wclm/data/world.json', import.meta.url).pathname, 'utf8'));
+test('operators: every engine has a complete folder and an undrifted schema', () => {
+  const dirs = rd(OPS_DIR).filter((f) => st(OPS_DIR + f).isDirectory()).sort();
+  assert.equal(dirs.length, BLOCKS.length);
+  for (const key of dirs) {
+    const block = BLOCKS.find((b) => b.key === key);
+    assert.ok(block, key + ' is registered');
+    for (const f of [key + '.js', key + '.md', 'data.json', 'schema.json', 'examples.json', 'index.html']) {
+      assert.ok(st(OPS_DIR + key + '/' + f).size > 0, key + '/' + f + ' exists');
+    }
+    const schema = JSON.parse(rf(OPS_DIR + key + '/schema.json', 'utf8'));
+    assert.deepEqual(schema.io.reads.map((x) => x.type), block.io.reads, key + ' reads drift');
+    assert.deepEqual(schema.io.writes.map((x) => x.type), block.io.writes, key + ' writes drift');
+    assert.deepEqual(schema.prerequisites, prereqOf(key), key + ' prerequisites drift');
+    const data = JSON.parse(rf(OPS_DIR + key + '/data.json', 'utf8'));
+    data.entries.forEach((e) => assert.ok(['standard', 'authored', 'derived'].includes(e.kind), key + ' provenance'));
+  }
+});
+test('operators: every recorded example vector replays byte-identical', () => {
+  let n = 0;
+  for (const key of CANON.concat(['passthrough'])) {
+    const ex = JSON.parse(rf(OPS_DIR + key + '/examples.json', 'utf8'));
+    for (const v of ex.vectors) {
+      const r = runOperator(key, v.prompt, REAL_WORLD, v.opts || {}, Object.keys(v.output));
+      assert.deepEqual(r.output, v.output, key + ' vector "' + v.prompt + '"' + (v.label ? ' (' + v.label + ')' : ''));
+      assert.deepEqual(r.input, v.input, key + ' input slice "' + v.prompt + '"');
+      n += 1;
+    }
+  }
+  assert.ok(n >= 30, 'a real corpus of vectors ran: ' + n);
+});
+test('fileview: rawJsHtml tints comments, strings and keywords', async () => {
+  const { rawJsHtml } = await import('../../assets/universe/core/fileview.js');
+  const out = rawJsHtml("/* why */ const x = 'graph'; // tail");
+  assert.ok(out.includes('fv-com">/* why */'));
+  assert.ok(out.includes('fv-str') && out.includes('&#039;graph&#039;') || out.includes("'graph'"));
+  assert.ok(out.includes('fv-kw">const'));
+  assert.ok(out.includes('fv-com">// tail'));
+});
+
 console.log(`universe tests: ${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

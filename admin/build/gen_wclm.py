@@ -16,6 +16,7 @@ two sides can never drift.
 import json
 import math
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -131,6 +132,16 @@ def main():
     (OUT / "data" / "world.json").write_text(json.dumps(world, ensure_ascii=False) + "\n")
 
     (OUT / "index.html").write_text(PAGE.format(version=VERSION))
+
+    # the operator folders (brief 36): a workbench page per operator, the
+    # explorer over all of them, then the node generator derives each
+    # folder's schema.json and examples.json from the code itself
+    op_keys = sorted(p.name for p in (OUT / "operators").iterdir() if p.is_dir())
+    for key in op_keys:
+        (OUT / "operators" / key / "index.html").write_text(OP_PAGE.format(key=key))
+    (OUT / "operators" / "index.html").write_text(EXPLORER)
+    subprocess.run(["node", str(ROOT / "admin" / "build" / "gen_operators.mjs")], check=True)
+
     n_terms = len(pack["terms"])
     n_senses = sum(len(v) for v in senses.values())
     print(f"gen_wclm: world — {len(order)} token hashes, {len(concepts)} concepts, "
@@ -166,7 +177,7 @@ PAGE = """<!doctype html>
 <main class="doc uni-full">
 <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="../universe/index.html">the universe</a> &rarr; <b>the WCLM</b></div>
 <h1>The WCLM: a words content language model</h1>
-<p class="lead">Briefs 31&ndash;34's experiment: an engine in the shape of a transformer where <b>nothing is learned and everything is named</b>. Tokens are content hashes, so the same word tokenises identically in every document. The pipeline is <b>layers of reusable engines</b> &mdash; toggle them, drag them between layers, run several side by side in one slot, and each layer reads only the layer before it, so no wire ever jumps. Early engines say <i>this is what we think you said</i> (the dictionary and thesaurus repairs, with their evidence). The senses engine knows a word means different things in different industries &mdash; a graph is a network graph here, a chart in a boardroom, a function plot at school &mdash; and <b>switching a word's sense shows exactly which of this universe's claims stop applying</b>; singular and plural are read as evidence too, because graph is not graphs. Operators make the little words count: <i>without</i> is not <i>through</i>, and when the prompt negates something this universe asserts, the contradiction is said out loud. Every engine declares its <b>schema</b> &mdash; the data types it reads and writes, six types in the whole pipeline &mdash; so compatibility is structural: an engine placed where its input type is not yet written is skipped with the reason named, and any engine writing the right type can stand in. It is even fractal: the <b>fractal engine is a full WCLM inside an engine</b>, re-running the winning meaning's own statement one zoom down. The <b>translate engine speaks analogies</b>: pick an audience and the answer is restated in their own concept &mdash; graphs of graphs, for somebody from finance, is <i>spreadsheets of spreadsheets</i> (<a href="analogies.json">the analogies register</a>) &mdash; and every answer now declares its <b>anchoring</b>: a quoted fact, a stated claim, or an authored term. And the query flips: instead of predicting the next word, ask <b>what does this mean</b> &mdash; the answer is a concept with its statement, its anchored quote, its blast radius, and a click on any box lights up its <b>full evidence trail</b>. Same prompt, same world, same picture, every time. Training this model means editing its graph inputs (<a href="data/world.json">the world</a>, <a href="packs/graphs-domain.json">the meaning packs</a>, <a href="senses.json">the senses register</a>), never fitting numbers.</p>
+<p class="lead">Briefs 31&ndash;34's experiment: an engine in the shape of a transformer where <b>nothing is learned and everything is named</b>. Tokens are content hashes, so the same word tokenises identically in every document. The pipeline is <b>layers of reusable engines</b> &mdash; toggle them, drag them between layers, run several side by side in one slot, and each layer reads only the layer before it, so no wire ever jumps. Early engines say <i>this is what we think you said</i> (the dictionary and thesaurus repairs, with their evidence). The senses engine knows a word means different things in different industries &mdash; a graph is a network graph here, a chart in a boardroom, a function plot at school &mdash; and <b>switching a word's sense shows exactly which of this universe's claims stop applying</b>; singular and plural are read as evidence too, because graph is not graphs. Operators make the little words count: <i>without</i> is not <i>through</i>, and when the prompt negates something this universe asserts, the contradiction is said out loud. Every engine declares its <b>schema</b> &mdash; the data types it reads and writes, six types in the whole pipeline &mdash; so compatibility is structural: an engine placed where its input type is not yet written is skipped with the reason named, and any engine writing the right type can stand in. It is even fractal: the <b>fractal engine is a full WCLM inside an engine</b>, re-running the winning meaning's own statement one zoom down. The <b>translate engine speaks analogies</b>: pick an audience and the answer is restated in their own concept &mdash; graphs of graphs, for somebody from finance, is <i>spreadsheets of spreadsheets</i> (<a href="analogies.json">the analogies register</a>) &mdash; and every answer now declares its <b>anchoring</b>: a quoted fact, a stated claim, or an authored term. And the query flips: instead of predicting the next word, ask <b>what does this mean</b> &mdash; the answer is a concept with its statement, its anchored quote, its blast radius, and a click on any box lights up its <b>full evidence trail</b>. Same prompt, same world, same picture, every time. Training this model means editing its graph inputs (<a href="data/world.json">the world</a>, <a href="packs/graphs-domain.json">the meaning packs</a>, <a href="senses.json">the senses register</a>), never fitting numbers. Since brief 36 every engine is also a <b>first-class folder</b>: <a href="operators/index.html">the operators</a> &mdash; code, schema, official data with provenance, docs, example vectors, and a workbench each.</p>
 
 <div class="wc-ask">
   <input id="wc-q" type="text" value="meaning through connectivity" spellcheck="false"
@@ -180,6 +191,83 @@ PAGE = """<!doctype html>
 
 <footer class="site"><div class="cols"></div></footer>
 <script type="module" src="../../assets/wclm.js"></script>
+</body>
+</html>
+"""
+
+
+
+
+OP_PAGE = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The {key} operator &mdash; workbench &mdash; graphs.sgit.ai</title>
+<meta name="description" content="The {key} operator's workbench: execute it over the real world, test its recorded example vectors, debug the raw state, and see input, transformation and output side by side.">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/wclm/operators/{key}/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="graphs.sgit.ai">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/wclm/operators/{key}/index.html">
+<meta property="og:title" content="The {key} operator">
+<meta property="og:description" content="One of the WCLM's building blocks, first-class: code, schema, data, docs, examples and this workbench, all in its folder.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../../../assets/site.css">
+<link rel="stylesheet" href="../../../../assets/universe.css">
+<link rel="stylesheet" href="../../../../assets/wclm.css">
+</head>
+<body>
+
+<nav class="site"><div class="row"></div></nav>
+
+<main class="doc uni-full">
+<div class="crumb"><a href="../../../../index.html">graphs.sgit.ai</a> &rarr; <a href="../../index.html">the WCLM</a> &rarr; <a href="../index.html">the operators</a> &rarr; <b>{key}</b></div>
+<h1>The {key} operator</h1>
+<p class="lead">A building block of the WCLM, first-class in its own folder: <a href="{key}.js">the code</a> (the source of truth the engine imports), <a href="{key}.md">the book page</a>, <a href="schema.json">the schema</a> (derived from the code), <a href="data.json">the official data</a> with its provenance, and <a href="examples.json">the example vectors</a> (captured deterministically; the test button replays them). Browse every file raw or rendered in <a href="../index.html#{key}/{key}.md">the explorer</a>.</p>
+
+<div id="opwb" data-op="{key}"></div>
+</main>
+
+<footer class="site"><div class="cols"></div></footer>
+<script type="module" src="../../../../assets/wclm/op-page.js"></script>
+</body>
+</html>
+"""
+
+
+EXPLORER = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The operators &mdash; every engine in its folder &mdash; graphs.sgit.ai</title>
+<meta name="description" content="The WCLM's twelve operators as first-class folders: code, schema, official data, docs, example vectors and a workbench each. Browse every file, raw or rendered.">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/wclm/operators/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="graphs.sgit.ai">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/wclm/operators/index.html">
+<meta property="og:title" content="The operators: every engine in its folder">
+<meta property="og:description" content="Twelve deterministic building blocks, each with its code, schema, data, docs, examples and workbench.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../../assets/site.css">
+<link rel="stylesheet" href="../../../assets/universe.css">
+<link rel="stylesheet" href="../../../assets/wclm.css">
+</head>
+<body>
+
+<nav class="site"><div class="row"></div></nav>
+
+<main class="doc uni-full">
+<div class="crumb"><a href="../../../index.html">graphs.sgit.ai</a> &rarr; <a href="../index.html">the WCLM</a> &rarr; <b>the operators</b></div>
+<h1>The operators: every engine in its folder</h1>
+<p class="lead">Brief 36: the WCLM's building blocks as first-class artefacts, the way the pilot document got its file explorer. Each of the twelve operators lives in a dedicated folder holding <b>the code the engine actually imports</b>, its <b>schema</b> (reads and writes, derived from the code so it can never drift), its <b>official data</b> with provenance &mdash; standard across every document, authored for review, or derived by another transformation &mdash; its <b>book page</b> with the architecture drawn, its <b>example vectors</b> (captured deterministically, replayable as tests), and its <b>workbench</b>: execute, test, debug, and see input &rarr; transformation &rarr; output. Every file below reads raw or rendered, and deep-links.</p>
+
+<div id="opsx"></div>
+</main>
+
+<footer class="site"><div class="cols"></div></footer>
+<script src="../../../assets/vendor/marked.min.js"></script>
+<script type="module" src="../../../assets/wclm/ops-explorer.js"></script>
 </body>
 </html>
 """

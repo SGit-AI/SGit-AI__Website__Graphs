@@ -1,0 +1,33 @@
+{
+ "operator": "converge",
+ "note": "Official data: the summing multipliers (the two numbers most worth arguing with) and the anchoring ladder.",
+ "entries": [
+  {
+   "kind": "standard",
+   "name": "multipliers",
+   "data": {
+    "bind_multiplier": 2,
+    "blast_bonus": 0.1
+   },
+   "why": "total = 2·bind + 0.1·blast; both are opinion, both inputs are evidence"
+  },
+  {
+   "kind": "standard",
+   "name": "the anchoring ladder",
+   "data": [
+    "fact-anchored: a quote in a named section",
+    "a stated claim: asserted, not quoted",
+    "an authored term: meaning pack",
+    "a chosen sense: the register",
+    "unanchored"
+   ],
+   "why": "brief 35's 'here's a fact': every answer declares which rung it stands on"
+  },
+  {
+   "kind": "derived",
+   "name": "quotes and statements",
+   "source": "../../data/world.json#concepts",
+   "why": "the anchors the ladder reads come from the extraction"
+  }
+ ]
+}

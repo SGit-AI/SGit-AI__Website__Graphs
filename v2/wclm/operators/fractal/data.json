@@ -1,0 +1,31 @@
+{
+ "operator": "fractal",
+ "note": "Official data: the inner pipeline shape and the depth rule.",
+ "entries": [
+  {
+   "kind": "standard",
+   "name": "the inner pipeline",
+   "data": [
+    [
+     "tokenise"
+    ],
+    [
+     "resolve"
+    ],
+    [
+     "bind"
+    ],
+    [
+     "converge"
+    ]
+   ],
+   "why": "a complete WCLM, run as one engine; it holds no fractal engine, so depth is one by construction"
+  },
+  {
+   "kind": "derived",
+   "name": "the inner world",
+   "source": "../../data/world.json",
+   "why": "the inner run reads the same world as every other engine"
+  }
+ ]
+}

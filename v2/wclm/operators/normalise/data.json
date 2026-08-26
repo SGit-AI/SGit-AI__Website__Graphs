@@ -1,0 +1,31 @@
+{
+ "operator": "normalise",
+ "note": "Official data: the two repair sources, both created by another transformation (gen_coregraph.py), plus the standard repair rules.",
+ "entries": [
+  {
+   "kind": "derived",
+   "name": "the dictionary",
+   "source": "../../data/world.json#tokens",
+   "why": "the universe's own forms — ed1 repairs only into words the document actually says"
+  },
+  {
+   "kind": "derived",
+   "name": "the thesaurus",
+   "source": "../../data/world.json#stems",
+   "why": "the stem families computed from the document; a stranded form is pulled to its family's most-said member"
+  },
+  {
+   "kind": "standard",
+   "name": "repair rules",
+   "data": {
+    "min_length_for_ed1": 4,
+    "order": [
+     "dictionary (ed1)",
+     "thesaurus (stem family)"
+    ],
+    "tie_break": "alphabetical"
+   },
+   "why": "deterministic repair; dictionary before thesaurus"
+  }
+ ]
+}

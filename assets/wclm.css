@@ -124,3 +124,43 @@
 .wc-tran { border-left: 4px solid #b0761f; background: rgba(176,118,31,.06); }
 .wc-tranline { border-left: 3px solid #b0761f; padding-left: .5rem; }
 .wc-aud { margin-top: -.25rem; }
+
+/* ---- brief 36: the operator folders, explorer and workbench --------------- */
+.fx-wrap { display: flex; min-height: 70vh; border: 1px solid var(--line2, #ddd); border-radius: 10px; overflow: hidden; }
+.fx-body { flex: 1 1 auto; min-width: 0; padding: .6rem .9rem; overflow: auto; }
+.fx-dir { padding: .4rem .7rem .25rem; cursor: pointer; font-size: .78rem; border-top: 1px solid var(--line2, #eee); }
+.fx-dir:hover, .fx-dir.on { background: rgba(42,157,143,.06); }
+.op-head { display: flex; gap: 1.2rem; align-items: flex-start; flex-wrap: wrap; margin-bottom: .6rem; }
+.op-flow { flex: 0 0 auto; }
+.op-flow text { font-size: 11px; fill: currentColor; }
+.op-flow path { stroke: #6a8; fill: none; stroke-width: 1.4; }
+.op-flow marker path { fill: #6a8; stroke: none; }
+.op-flow .op-f-type { fill: rgba(74,127,181,.12); stroke: #4a7fb5; }
+.op-flow .op-f-op { fill: rgba(42,157,143,.14); stroke: #2a9d8f; }
+.op-ctl { display: flex; gap: .5rem; margin: .4rem 0; }
+.op-ctl input { flex: 1 1 auto; font: inherit; padding: .4rem .6rem; border: 1px solid var(--line2, #ccc); border-radius: 8px; }
+.op-ctl button { font: inherit; font-size: .78rem; padding: .3rem .8rem; border-radius: 8px;
+  border: 1px solid #2a9d8f; background: rgba(42,157,143,.12); cursor: pointer; }
+.op-ex { display: flex; gap: .35rem; flex-wrap: wrap; margin-bottom: .6rem; }
+.op-preset { border-color: #9b59b6; }
+.op-cols { display: grid; grid-template-columns: 1fr auto 1fr; gap: .8rem; align-items: start; }
+.op-pane { border: 1px solid var(--line2, #ddd); border-radius: 10px; padding: .5rem .7rem; min-width: 0; overflow: auto; }
+.op-pane h4 { margin: 0 0 .1rem; }
+.op-sub { margin: .4rem 0; }
+.op-k { font-weight: 700; }
+.op-sub .fv-raw { max-height: 16rem; overflow: auto; font-size: .68rem; }
+.op-mid { align-self: center; }
+.op-box { border: 2px solid #2a9d8f; border-radius: 12px; padding: .6rem .8rem; max-width: 15rem;
+  background: rgba(42,157,143,.06); }
+.op-box.op-skip { border-color: #c58f00; background: rgba(240,180,41,.1); }
+.op-dbg { margin-top: .8rem; }
+.op-dbg .fv-raw { max-height: 24rem; overflow: auto; font-size: .66rem; }
+.op-vec { padding: .3rem .5rem; border-radius: 6px; margin: .2rem 0; }
+.op-vec.ok { background: rgba(42,157,143,.08); }
+.op-vec.bad { background: rgba(176,96,96,.12); }
+.fv-com { color: #7a8; font-style: italic; }
+@media (max-width: 900px) {
+  .op-cols { grid-template-columns: 1fr; }
+  .fx-wrap { flex-direction: column; }
+  .fx-tree { flex: none; max-height: 40vh; border-right: 0; border-bottom: 1px solid var(--line2, #ddd); }
+}

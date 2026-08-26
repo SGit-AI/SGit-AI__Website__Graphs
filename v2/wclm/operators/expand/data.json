@@ -1,0 +1,26 @@
+{
+ "operator": "expand",
+ "note": "Official data: the edge sources a meaning's neighbourhood is gathered from.",
+ "entries": [
+  {
+   "kind": "derived",
+   "name": "document edges",
+   "source": "../../data/world.json#edges",
+   "why": "extraction edges plus about-attachments flattened by gen_wclm.py, so blast radius counts what the viewer shows"
+  },
+  {
+   "kind": "authored",
+   "name": "pack edges",
+   "source": "../../packs/graphs-domain.json",
+   "why": "edges the meaning packs declare on their terms"
+  },
+  {
+   "kind": "standard",
+   "name": "display cap",
+   "data": {
+    "neighbours_kept": 6
+   },
+   "why": "degree is counted in full; the display keeps the first six"
+  }
+ ]
+}

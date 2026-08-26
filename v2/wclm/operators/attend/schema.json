@@ -1,0 +1,28 @@
+{
+ "operator": "attend",
+ "name": "T6 attend",
+ "core": false,
+ "role": "each surviving token carries its attention: pairs stacked between profiles, companions pulled in",
+ "io": {
+  "reads": [
+   {
+    "type": "stream",
+    "means": "tokens resolved against the world, carrying every clue mark (class, number, sense, negation)"
+   }
+  ],
+  "writes": [
+   {
+    "type": "profiles",
+    "means": "attention profiles: pairs and pulls per surviving token"
+   }
+  ]
+ },
+ "prerequisites": [
+  "tokenise",
+  "normalise",
+  "resolve",
+  "senses",
+  "operators"
+ ],
+ "note": "derived from attend.js — the code is the source of truth; a gate re-derives and compares"
+}

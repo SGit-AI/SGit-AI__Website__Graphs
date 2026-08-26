@@ -1,0 +1,29 @@
+{
+ "operator": "bind",
+ "name": "T7 bind",
+ "core": true,
+ "role": "forms light the concepts and pack terms whose labels they cover; negated and sense-switched forms withdraw",
+ "io": {
+  "reads": [
+   {
+    "type": "stream",
+    "means": "tokens resolved against the world, carrying every clue mark (class, number, sense, negation)"
+   }
+  ],
+  "writes": [
+   {
+    "type": "bindings",
+    "means": "candidate meanings with scores and the forms that lit them"
+   }
+  ]
+ },
+ "prerequisites": [
+  "tokenise",
+  "normalise",
+  "resolve",
+  "senses",
+  "operators",
+  "attend"
+ ],
+ "note": "derived from bind.js — the code is the source of truth; a gate re-derives and compares"
+}

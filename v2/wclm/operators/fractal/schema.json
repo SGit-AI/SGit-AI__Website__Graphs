@@ -1,0 +1,33 @@
+{
+ "operator": "fractal",
+ "name": "fractal",
+ "core": false,
+ "role": "a full WCLM inside an engine: the winner’s statement re-enters the pipeline, one zoom down",
+ "io": {
+  "reads": [
+   {
+    "type": "meanings",
+    "means": "the ranked answer with provenance, blast radius and notes"
+   }
+  ],
+  "writes": [
+   {
+    "type": "meanings",
+    "means": "the ranked answer with provenance, blast radius and notes"
+   }
+  ]
+ },
+ "prerequisites": [
+  "tokenise",
+  "normalise",
+  "resolve",
+  "senses",
+  "operators",
+  "attend",
+  "bind",
+  "expand",
+  "converge",
+  "translate"
+ ],
+ "note": "derived from fractal.js — the code is the source of truth; a gate re-derives and compares"
+}

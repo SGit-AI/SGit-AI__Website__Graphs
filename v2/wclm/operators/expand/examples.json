@@ -1,0 +1,711 @@
+{
+ "operator": "expand",
+ "world": "thinking-in-graphs",
+ "note": "captured by running the engine (deterministic); the workbench re-runs and compares",
+ "vectors": [
+  {
+   "prompt": "meaning through connectivity",
+   "opts": {},
+   "input": {
+    "bindings": [
+     {
+      "id": "meaning-through-connectivity",
+      "kind": "doc",
+      "label": "meaning through connectivity",
+      "family": "concept",
+      "score": 1,
+      "via": [
+       "meaning",
+       "connectivity"
+      ]
+     },
+     {
+      "id": "connectivity",
+      "kind": "doc",
+      "label": "connectivity",
+      "family": "concept",
+      "score": 0.75,
+      "via": [
+       "connectivity"
+      ]
+     },
+     {
+      "id": "pk:connectivity",
+      "kind": "pack",
+      "label": "connectivity",
+      "score": 0.75,
+      "via": [
+       "connectivity"
+      ]
+     },
+     {
+      "id": "pk:meaning",
+      "kind": "pack",
+      "label": "meaning",
+      "score": 0.75,
+      "via": [
+       "meaning"
+      ]
+     },
+     {
+      "id": "c-no-edges-no-meaning",
+      "kind": "doc",
+      "label": "no edges, no meaning",
+      "family": "claim",
+      "score": 0.6,
+      "via": [
+       "meaning"
+      ]
+     },
+     {
+      "id": "c-difference-is-connectivity",
+      "kind": "doc",
+      "label": "the difference is connectivity",
+      "family": "claim",
+      "score": 0.5,
+      "via": [
+       "connectivity"
+      ]
+     },
+     {
+      "id": "declared-meaning",
+      "kind": "doc",
+      "label": "declared meaning",
+      "family": "concept",
+      "score": 0.5,
+      "via": [
+       "meaning"
+      ]
+     },
+     {
+      "id": "discovered-meaning",
+      "kind": "doc",
+      "label": "discovered meaning",
+      "family": "concept",
+      "score": 0.5,
+      "via": [
+       "meaning"
+      ]
+     },
+     {
+      "id": "h-thinner-across-boundaries",
+      "kind": "doc",
+      "label": "meaning thins measurably at boundaries",
+      "family": "hypothesis",
+      "score": 0.375,
+      "via": [
+       "meaning"
+      ]
+     }
+    ],
+    "assembled": null
+   },
+   "output": {
+    "assembled": [
+     {
+      "id": "meaning-through-connectivity",
+      "kind": "doc",
+      "label": "meaning through connectivity",
+      "family": "concept",
+      "score": 1,
+      "via": [
+       "meaning",
+       "connectivity"
+      ],
+      "neighbours": [
+       {
+        "id": "schema-first",
+        "label": "schema-first",
+        "verb": "departs-from",
+        "dir": "out",
+        "src": "doc"
+       },
+       {
+        "id": "c-central",
+        "label": "the central claim",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-literal",
+        "label": "not a metaphor",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-difference-is-connectivity",
+        "label": "the difference is connectivity",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-ten-principles",
+        "label": "the document compresses itself to ten principles",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       }
+      ],
+      "degree": 5
+     },
+     {
+      "id": "connectivity",
+      "kind": "doc",
+      "label": "connectivity",
+      "family": "concept",
+      "score": 0.75,
+      "via": [
+       "connectivity"
+      ],
+      "neighbours": [
+       {
+        "id": "confidence-spectrum",
+        "label": "the confidence spectrum",
+        "verb": "determines",
+        "dir": "out",
+        "src": "doc"
+       },
+       {
+        "id": "c-central",
+        "label": "the central claim",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-no-edges-no-meaning",
+        "label": "no edges, no meaning",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-difference-is-connectivity",
+        "label": "the difference is connectivity",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-confidence-computable",
+        "label": "confidence is computable",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-authority-from-connectivity",
+        "label": "authority is not identity",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       }
+      ],
+      "degree": 6
+     },
+     {
+      "id": "pk:connectivity",
+      "kind": "pack",
+      "label": "connectivity",
+      "score": 0.75,
+      "via": [
+       "connectivity"
+      ],
+      "neighbours": [
+       {
+        "id": "pk:graph",
+        "label": "graph",
+        "verb": "part-of",
+        "dir": "out",
+        "src": "pack"
+       }
+      ],
+      "degree": 1
+     },
+     {
+      "id": "pk:meaning",
+      "kind": "pack",
+      "label": "meaning",
+      "score": 0.75,
+      "via": [
+       "meaning"
+      ],
+      "neighbours": [
+       {
+        "id": "pk:connectivity",
+        "label": "connectivity",
+        "verb": "about",
+        "dir": "out",
+        "src": "pack"
+       }
+      ],
+      "degree": 1
+     },
+     {
+      "id": "c-no-edges-no-meaning",
+      "kind": "doc",
+      "label": "no edges, no meaning",
+      "family": "claim",
+      "score": 0.6,
+      "via": [
+       "meaning"
+      ],
+      "neighbours": [
+       {
+        "id": "node",
+        "label": "node",
+        "verb": "about",
+        "dir": "out",
+        "src": "doc"
+       },
+       {
+        "id": "connectivity",
+        "label": "connectivity",
+        "verb": "about",
+        "dir": "out",
+        "src": "doc"
+       }
+      ],
+      "degree": 2
+     },
+     {
+      "id": "c-difference-is-connectivity",
+      "kind": "doc",
+      "label": "the difference is connectivity",
+      "family": "claim",
+      "score": 0.5,
+      "via": [
+       "connectivity"
+      ],
+      "neighbours": [
+       {
+        "id": "connectivity",
+        "label": "connectivity",
+        "verb": "about",
+        "dir": "out",
+        "src": "doc"
+       },
+       {
+        "id": "meaning-through-connectivity",
+        "label": "meaning through connectivity",
+        "verb": "about",
+        "dir": "out",
+        "src": "doc"
+       }
+      ],
+      "degree": 2
+     },
+     {
+      "id": "declared-meaning",
+      "kind": "doc",
+      "label": "declared meaning",
+      "family": "concept",
+      "score": 0.5,
+      "via": [
+       "meaning"
+      ],
+      "neighbours": [
+       {
+        "id": "c-brittle-vs-resilient",
+        "label": "declared is brittle, discovered is resilient",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       }
+      ],
+      "degree": 1
+     },
+     {
+      "id": "discovered-meaning",
+      "kind": "doc",
+      "label": "discovered meaning",
+      "family": "concept",
+      "score": 0.5,
+      "via": [
+       "meaning"
+      ],
+      "neighbours": [
+       {
+        "id": "c-brittle-vs-resilient",
+        "label": "declared is brittle, discovered is resilient",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "h-thinner-across-boundaries",
+        "label": "meaning thins measurably at boundaries",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       }
+      ],
+      "degree": 2
+     },
+     {
+      "id": "h-thinner-across-boundaries",
+      "kind": "doc",
+      "label": "meaning thins measurably at boundaries",
+      "family": "hypothesis",
+      "score": 0.375,
+      "via": [
+       "meaning"
+      ],
+      "neighbours": [
+       {
+        "id": "discovered-meaning",
+        "label": "discovered meaning",
+        "verb": "about",
+        "dir": "out",
+        "src": "doc"
+       },
+       {
+        "id": "confidence-spectrum",
+        "label": "the confidence spectrum",
+        "verb": "about",
+        "dir": "out",
+        "src": "doc"
+       }
+      ],
+      "degree": 2
+     }
+    ]
+   }
+  },
+  {
+   "prompt": "anchor nodes and reference graphs",
+   "opts": {},
+   "input": {
+    "bindings": [
+     {
+      "id": "graphs-of-graphs",
+      "kind": "doc",
+      "label": "graphs of graphs",
+      "family": "concept",
+      "score": 0.75,
+      "via": [
+       "graphs",
+       "graphs"
+      ]
+     },
+     {
+      "id": "pk:anchor",
+      "kind": "pack",
+      "label": "anchor",
+      "score": 0.625,
+      "via": [
+       "anchor"
+      ]
+     },
+     {
+      "id": "anchor-node",
+      "kind": "doc",
+      "label": "anchor node",
+      "family": "concept",
+      "score": 0.475,
+      "via": [
+       "anchor"
+      ]
+     }
+    ],
+    "assembled": null
+   },
+   "output": {
+    "assembled": [
+     {
+      "id": "graphs-of-graphs",
+      "kind": "doc",
+      "label": "graphs of graphs",
+      "family": "concept",
+      "score": 0.75,
+      "via": [
+       "graphs",
+       "graphs"
+      ],
+      "neighbours": [
+       {
+        "id": "fractal-principle",
+        "label": "the fractal principle",
+        "verb": "exhibits",
+        "dir": "out",
+        "src": "doc"
+       }
+      ],
+      "degree": 1
+     },
+     {
+      "id": "pk:anchor",
+      "kind": "pack",
+      "label": "anchor",
+      "score": 0.625,
+      "via": [
+       "anchor"
+      ],
+      "neighbours": [
+       {
+        "id": "pk:provenance",
+        "label": "provenance",
+        "verb": "part-of",
+        "dir": "out",
+        "src": "pack"
+       }
+      ],
+      "degree": 1
+     },
+     {
+      "id": "anchor-node",
+      "kind": "doc",
+      "label": "anchor node",
+      "family": "concept",
+      "score": 0.475,
+      "via": [
+       "anchor"
+      ],
+      "neighbours": [
+       {
+        "id": "lexicon",
+        "label": "the Lexicon",
+        "verb": "provides",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "compatibility",
+        "label": "compatibility",
+        "verb": "enables",
+        "dir": "out",
+        "src": "doc"
+       },
+       {
+        "id": "c-mappings-by-anyone",
+        "label": "mappings can come from anyone",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-no-special-authority",
+        "label": "anchors have no special authority",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-authority-from-connectivity",
+        "label": "authority is not identity",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       }
+      ],
+      "degree": 5
+     }
+    ]
+   }
+  },
+  {
+   "prompt": "connectivity",
+   "opts": {},
+   "input": {
+    "bindings": [
+     {
+      "id": "connectivity",
+      "kind": "doc",
+      "label": "connectivity",
+      "family": "concept",
+      "score": 1,
+      "via": [
+       "connectivity"
+      ]
+     },
+     {
+      "id": "pk:connectivity",
+      "kind": "pack",
+      "label": "connectivity",
+      "score": 1,
+      "via": [
+       "connectivity"
+      ]
+     },
+     {
+      "id": "meaning-through-connectivity",
+      "kind": "doc",
+      "label": "meaning through connectivity",
+      "family": "concept",
+      "score": 0.85,
+      "via": [
+       "connectivity"
+      ]
+     },
+     {
+      "id": "c-difference-is-connectivity",
+      "kind": "doc",
+      "label": "the difference is connectivity",
+      "family": "claim",
+      "score": 0.75,
+      "via": [
+       "connectivity"
+      ]
+     }
+    ],
+    "assembled": null
+   },
+   "output": {
+    "assembled": [
+     {
+      "id": "connectivity",
+      "kind": "doc",
+      "label": "connectivity",
+      "family": "concept",
+      "score": 1,
+      "via": [
+       "connectivity"
+      ],
+      "neighbours": [
+       {
+        "id": "confidence-spectrum",
+        "label": "the confidence spectrum",
+        "verb": "determines",
+        "dir": "out",
+        "src": "doc"
+       },
+       {
+        "id": "c-central",
+        "label": "the central claim",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-no-edges-no-meaning",
+        "label": "no edges, no meaning",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-difference-is-connectivity",
+        "label": "the difference is connectivity",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-confidence-computable",
+        "label": "confidence is computable",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-authority-from-connectivity",
+        "label": "authority is not identity",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       }
+      ],
+      "degree": 6
+     },
+     {
+      "id": "pk:connectivity",
+      "kind": "pack",
+      "label": "connectivity",
+      "score": 1,
+      "via": [
+       "connectivity"
+      ],
+      "neighbours": [
+       {
+        "id": "pk:graph",
+        "label": "graph",
+        "verb": "part-of",
+        "dir": "out",
+        "src": "pack"
+       }
+      ],
+      "degree": 1
+     },
+     {
+      "id": "meaning-through-connectivity",
+      "kind": "doc",
+      "label": "meaning through connectivity",
+      "family": "concept",
+      "score": 0.85,
+      "via": [
+       "connectivity"
+      ],
+      "neighbours": [
+       {
+        "id": "schema-first",
+        "label": "schema-first",
+        "verb": "departs-from",
+        "dir": "out",
+        "src": "doc"
+       },
+       {
+        "id": "c-central",
+        "label": "the central claim",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-literal",
+        "label": "not a metaphor",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-difference-is-connectivity",
+        "label": "the difference is connectivity",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       },
+       {
+        "id": "c-ten-principles",
+        "label": "the document compresses itself to ten principles",
+        "verb": "about",
+        "dir": "in",
+        "src": "doc"
+       }
+      ],
+      "degree": 5
+     },
+     {
+      "id": "c-difference-is-connectivity",
+      "kind": "doc",
+      "label": "the difference is connectivity",
+      "family": "claim",
+      "score": 0.75,
+      "via": [
+       "connectivity"
+      ],
+      "neighbours": [
+       {
+        "id": "connectivity",
+        "label": "connectivity",
+        "verb": "about",
+        "dir": "out",
+        "src": "doc"
+       },
+       {
+        "id": "meaning-through-connectivity",
+        "label": "meaning through connectivity",
+        "verb": "about",
+        "dir": "out",
+        "src": "doc"
+       }
+      ],
+      "degree": 2
+     }
+    ]
+   }
+  }
+ ]
+}

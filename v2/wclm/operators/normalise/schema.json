@@ -1,0 +1,24 @@
+{
+ "operator": "normalise",
+ "name": "T2 normalise",
+ "core": false,
+ "role": "the dictionary and the thesaurus: what we think you said, with the fix named",
+ "io": {
+  "reads": [
+   {
+    "type": "tokens",
+    "means": "hashed word tokens, in order"
+   }
+  ],
+  "writes": [
+   {
+    "type": "tokens",
+    "means": "hashed word tokens, in order"
+   }
+  ]
+ },
+ "prerequisites": [
+  "tokenise"
+ ],
+ "note": "derived from normalise.js — the code is the source of truth; a gate re-derives and compares"
+}

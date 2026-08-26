@@ -1,0 +1,18 @@
+{
+ "operator": "attend",
+ "note": "Official data: both attention sources are created by another transformation (gen_coregraph.py) from sentence co-membership in the document.",
+ "entries": [
+  {
+   "kind": "derived",
+   "name": "co-occurrence edges",
+   "source": "../../data/world.json#cooc",
+   "why": "pairs: shared-sentence counts between prompt tokens — counted evidence, never learned"
+  },
+  {
+   "kind": "derived",
+   "name": "companion pulls",
+   "source": "../../data/world.json#tokens (top)",
+   "why": "each token's habitual neighbours from the token analysis; capped at 3 per profile"
+  }
+ ]
+}

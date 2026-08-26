@@ -1,0 +1,22 @@
+{
+ "operator": "tokenise",
+ "name": "T1 tokenise",
+ "core": true,
+ "role": "words become hash tokens; the phrase gets the hash of its hashes",
+ "io": {
+  "reads": [
+   {
+    "type": "text",
+    "means": "the prompt string"
+   }
+  ],
+  "writes": [
+   {
+    "type": "tokens",
+    "means": "hashed word tokens, in order"
+   }
+  ]
+ },
+ "prerequisites": [],
+ "note": "derived from tokenise.js — the code is the source of truth; a gate re-derives and compares"
+}
