@@ -9,7 +9,7 @@ import { docTreeElements, headingChain, DOC_ROOT_ID } from '../../assets/univers
 import { coreState, mergeShard, childrenOf, breadcrumb, loadForms, formOf, coreRecord,
   loadTokens, formRecord } from '../../assets/universe/core/coretree.js';
 import { viewOf, rawJsonHtml, rawMdHtml, buildView } from '../../assets/universe/core/fileview.js';
-import { fnv64, runEngine } from '../../assets/wclm/engine.js';
+import { fnv64, runEngine, runDelta } from '../../assets/wclm/engine.js';
 import { layoutOptions, graphStyle } from '../../assets/universe/core/cystyle.js';
 
 let pass = 0, fail = 0;
@@ -728,6 +728,16 @@ test('wclm: six layers run and the exact concept out-binds its members', () => {
   assert.equal(R.meaning.id, 'mtc');            /* specificity beats the one-worders */
   assert.equal(R.meaning.def, 'What a thing is emerges from its edges.');
   assert.ok(R.meaning.blast >= 1);              /* the about-edge counts */
+});
+test('wclm: the run delta measures the impact of a changed prompt', () => {
+  const a = runEngine('meaning', WC_WORLD);
+  const b = runEngine('meaning connectivity', WC_WORLD);
+  const d = runDelta(a, b);
+  assert.deepEqual(d.layers.tokenise.added, ['connectivity']);
+  assert.deepEqual(d.layers.tokenise.removed, []);
+  assert.ok(d.layers.bind.added.includes('con'));      /* the new word's concept arrives */
+  assert.ok(d.winner.changed);                          /* pk:meaning -> mtc on specificity */
+  assert.equal(runDelta(null, b), null);                /* first run has no baseline */
 });
 test('wclm: deterministic replay, and an empty universe answers honestly', () => {
   const a = runEngine('meaning connectivity', WC_WORLD);

@@ -23,6 +23,16 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "32__founder-memo__every-box-explains-itself.md": (
+     "Every box explains itself, both ways",
+     "The WCLM verdict (it worked) and the next rounds: every chip at every layer "
+     "clickable, opening its reason-to-be — caused by upstream, feeding downstream, "
+     "because it's graphs all over. A side pane for the explanations, layer cards for "
+     "the layers themselves, run-to-run impact made visible (adding one word made a "
+     "massive difference and the engine should say exactly how much), and example "
+     "buttons from strong to weak connectivity. Plus the direction: one of these "
+     "engines at every abstraction jump of the book, rationally explaining each "
+     "compression."),
  "31__founder-memo__the-wclm-a-deterministic-transformer.md": (
      "The WCLM: a deterministic transformer over our graphs",
      "The crazy experiment, commissioned: a mini engine in the shape of a "

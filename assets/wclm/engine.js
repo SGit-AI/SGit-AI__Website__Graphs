@@ -130,6 +130,36 @@ function converge(bindings, expansion, world) {
   return ranked;
 }
 
+const DELTA_KEYS = {
+  tokenise: (L) => L.map((t) => t.form),
+  resolve: (L) => L.filter((t) => t.known).map((t) => t.form),
+  attend: (L) => L.pairs.map((p) => p.af + '~' + p.bf),
+  bind: (L) => L.map((b) => b.id),
+  expand: (L) => L.reached,
+  converge: (L) => L.map((m) => m.id),
+};
+
+/**
+ * The impact of a prompt change (brief 32): what each layer gained and lost
+ * against the previous run, and whether the winner moved. Pure and symmetric:
+ * feed it any two runs.
+ * @returns {object|null} {layers: {key: {added, removed}}, winner} or null
+ */
+export function runDelta(prev, next) {
+  if (!prev || !next) return null;
+  const layers = {};
+  Object.keys(DELTA_KEYS).forEach((k) => {
+    const a = new Set(DELTA_KEYS[k](prev.layers[k]));
+    const b = DELTA_KEYS[k](next.layers[k]);
+    const bs = new Set(b);
+    layers[k] = { added: b.filter((x) => !a.has(x)),
+      removed: Array.from(a).filter((x) => !bs.has(x)) };
+  });
+  const from = prev.meaning ? prev.meaning.label : null;
+  const to = next.meaning ? next.meaning.label : null;
+  return { layers, winner: { from, to, changed: from !== to } };
+}
+
 /**
  * Run the whole stack. Deterministic: same text + same world = same output.
  * @returns {{phrase, layers, meaning}} layer traces keyed as in LAYERS
