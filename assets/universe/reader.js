@@ -146,6 +146,8 @@ function boot() {
     source.setSelected(null);
     graph.clearFocus();
     clearBtn.hidden = true;
+    /* on small screens the maximised inspector is a bottom sheet shown on selection */
+    graph.querySelector('.uni-graphbox').classList.remove('uni-hassel');
   }
   function select(aid, opts) {
     opts = opts || {};
@@ -155,6 +157,7 @@ function boot() {
     graph.selected = aid;
     mini.selected = aid;
     mini.classList.add('has-sel');
+    graph.querySelector('.uni-graphbox').classList.add('uni-hassel');
     pane.note('select ' + aid);
     clearBtn.hidden = false;
     const a = U.anchors.find((x) => x.aid === aid);

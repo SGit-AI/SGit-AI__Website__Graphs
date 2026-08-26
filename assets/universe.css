@@ -383,3 +383,32 @@ uni-graph[mini] .uni-gopts .gtabpane { display: contents; }
 .ct-w.ctc-verb .ct-lab { font-style: italic; }
 .ct-w.ctc-code .ct-lab { font-family: ui-monospace, monospace; font-size: .95em; }
 .ct-w.ctc-number .ct-lab { color: #8a8f98; }
+
+/* ---- the standalone graph page (v0.4.39): the component with no reader ---- */
+body.uni-standalone { margin: 0; overflow: hidden; background: #fff; }
+.uni-standalone .uni-gbig { display: none; }
+.uni-pagebar { position: absolute; top: 6px; left: 40px; z-index: 7; font-size: .72rem;
+  background: rgba(255,255,255,.92); border: 1px solid var(--line2, #ddd);
+  border-radius: 8px; padding: .18rem .55rem; display: flex; gap: .6rem;
+  align-items: center; white-space: nowrap; }
+.uni-pagebar a { text-decoration: none; font-weight: 600; }
+
+/* ---- small screens: the maximised graph on a phone ------------------------ */
+@media (max-width: 760px) {
+  .uni-graphbox.uni-gmax .uni-cy { inset: 0 0 1.4rem 0; }
+  /* the inspector becomes a bottom sheet, shown only while something is selected */
+  .uni-gmax .uni-inspect { top: auto; left: 0; right: 0; bottom: 1.4rem; width: auto;
+    max-height: 44%; border-left: 0; border-top: 1px solid var(--line2, #ddd);
+    display: none; }
+  .uni-gmax.uni-hassel .uni-inspect { display: block; }
+  .uni-gmax .uni-inspect uni-graph[mini] .uni-graphbox { height: 170px; }
+  /* every floating pane goes full width, margins kept */
+  .uni-coretree { left: .4rem; right: .4rem; width: auto; max-width: none; min-width: 0;
+    top: 2.8rem; bottom: 46%; }
+  .uni-trailboard { left: .4rem; right: .4rem; width: auto; max-width: none; min-width: 0; }
+  .uni-pinboard { left: .4rem; right: .4rem; width: auto; max-width: none; min-width: 0;
+    height: min(50%, 420px); }
+  .uni-graphbox.uni-gmax.pb-open .uni-cy { left: 0; }
+  .uni-gopts { max-height: 52%; }
+  .uni-pagebar span.dim { display: none; }
+}

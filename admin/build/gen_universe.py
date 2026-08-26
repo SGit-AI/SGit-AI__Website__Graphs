@@ -334,7 +334,7 @@ def doc_body(ex, for_print=False):
     if for_print:
         h.append('<p>The graph is an interactive view: it lives in the web page\'s side panel, where clicking a node opens both the extraction row and the cited bytes in the source. A static rendering would be a decoration here; the tables above are the graph\'s content in full.</p>')
     else:
-        h.append('<p class="small dim">Concepts are the round nodes; claims, hypotheses, objectives and examples attach to what they are about. The graph lives in the <b>side panel</b> on wide screens, so it stays visible while you follow its links: clicking a node opens both the extraction row here and the cited bytes in the source. On narrow screens it renders below. Every element on the drawing exists in the tables above with its anchor; the drawing is a compression, not an extra source. <a href="#graph"><b>Open the live graph, maximised &rarr;</b></a></p>')
+        h.append(f'<p class="small dim">Concepts are the round nodes; claims, hypotheses, objectives and examples attach to what they are about. The graph lives in the <b>side panel</b> on wide screens, so it stays visible while you follow its links: clicking a node opens both the extraction row here and the cited bytes in the source. On narrow screens it renders below. Every element on the drawing exists in the tables above with its anchor; the drawing is a compression, not an extra source. <a href="#graph"><b>Open the live graph, maximised &rarr;</b></a> &middot; <a href="{d["slug"]}.graph.html"><b>or as its own page</b></a>, the same component with no reader around it &mdash; phone-friendly.</p>')
         h.append('<div id="unigraph-inline" style="width:100%;height:560px;border:1px solid var(--line,#ccc);border-radius:8px"></div>')
 
     # 7 · taxonomy + coverage
@@ -493,6 +493,32 @@ HUB = """<!doctype html>
 </main>
 
 <footer class="site"><div class="cols"></div></footer>
+</body>
+</html>
+"""
+
+GRAPH_PAGE = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{title} &mdash; the graph &mdash; graphs.sgit.ai</title>
+<meta name="description" content="The local graph of {title}, standalone: the same reusable component the reader embeds, with no reader around it. Phone-friendly.">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/universe/{slug}.graph.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="graphs.sgit.ai">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/universe/{slug}.graph.html">
+<meta property="og:title" content="{title} &mdash; the graph">
+<meta property="og:description" content="The local graph, standalone and full-viewport.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/universe.css">
+</head>
+<body>
+<noscript><p style="padding:1rem">The graph is interactive and needs JavaScript &mdash; <a href="{slug}.html">the reader page</a> carries the same content as tables.</p></noscript>
+<script>window.UNIVERSE = {unidata};</script>
+<script src="../../assets/vendor/cytoscape.min.js"></script>
+<script type="module" src="../../assets/universe-graph.js"></script>
 </body>
 </html>
 """
@@ -700,6 +726,10 @@ def main():
             total=TOTAL_SOURCES, body=body, pdf_pages=pages or "?",
             unidata=unidata, refs_line=refs_line,
             **stats))
+
+        # the standalone graph page: the same component, no reader around it
+        (OUT / f'{d["slug"]}.graph.html').write_text(GRAPH_PAGE.format(
+            title=esc(d["title"]), slug=d["slug"], unidata=unidata))
 
         # the folder page: files with their integrity, the crossrefs, the model
         label = {n["id"]: n["label"] for n in ex["nodes"]}
