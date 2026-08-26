@@ -908,6 +908,27 @@ test('fileview: the operator json views build from the real folder files', async
   const mani = buildView('opmanifest', JSON.parse(rf(OPS_DIR + 'manifest.json', 'utf8')));
   assert.ok(mani.includes('tokenise') && mani.includes('&rarr;'));
 });
+test('anatomy: every operator has one, tiling its code, anchored and linked', async () => {
+  const { anatomyFlowSvg, anatomyBodyHtml, anatomyPaneHtml } = await import('../../assets/wclm/code-anatomy.js');
+  for (const key of CANON.concat(['passthrough'])) {
+    const anat = JSON.parse(rf(OPS_DIR + key + '/anatomy.json', 'utf8'));
+    const src = rf(OPS_DIR + key + '/' + key + '.js', 'utf8').split('\n');
+    assert.equal(anat.segments[0].lines[0], 1, key + ' starts at line 1');
+    anat.segments.forEach((s, i) => {
+      assert.equal(src[s.lines[0] - 1].trim(), s.head.trim(), key + '/' + s.id + ' head anchors');
+      if (i > 0) assert.equal(s.lines[0], anat.segments[i - 1].lines[1] + 1, key + '/' + s.id + ' tiles');
+      assert.ok(s.does.length > 30, key + '/' + s.id + ' explains itself');
+      (s.feeds || []).forEach((f) => assert.ok(anat.segments.some((x) => x.id === f), key + '/' + s.id + ' feeds ' + f));
+    });
+    assert.equal(anat.segments[anat.segments.length - 1].lines[1], src.length, key + ' covers the file');
+  }
+  const anat = JSON.parse(rf(OPS_DIR + 'bind/anatomy.json', 'utf8'));
+  const code = rf(OPS_DIR + 'bind/bind.js', 'utf8');
+  assert.ok(anatomyFlowSvg(anat).includes('an-fbox') && anatomyFlowSvg(anat).includes('data-seg="run-score"'));
+  assert.ok(anatomyBodyHtml(code, anat).includes('the stated formula'));
+  const pane = anatomyPaneHtml(anat, 'run-score');
+  assert.ok(pane.includes('pulled') && pane.includes('fed by'));
+});
 test('fileview: rawJsHtml tints comments, strings and keywords', async () => {
   const { rawJsHtml } = await import('../../assets/universe/core/fileview.js');
   const out = rawJsHtml("/* why */ const x = 'graph'; // tail");

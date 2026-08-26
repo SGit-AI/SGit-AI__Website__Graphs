@@ -1,0 +1,72 @@
+{
+ "operator": "expand",
+ "note": "The code's own extraction (brief 37): authored segments, anchored by the exact text of each first line; the build resolves heads to line ranges and fails on drift.",
+ "segments": [
+  {
+   "id": "doc",
+   "kind": "docs",
+   "head": "/* @module wclm/operators/expand",
+   "label": "the module's claim",
+   "does": "Can you expand this? — each bound meaning gathers its neighbourhood; the degree becomes the blast radius converge scores with.",
+   "feeds": [
+    "contract"
+   ],
+   "lines": [
+    1,
+    4
+   ]
+  },
+  {
+   "id": "contract",
+   "kind": "contract",
+   "head": "'use strict';",
+   "label": "strict mode + the pipeline contract",
+   "does": "Optional; reads bindings, writes bindings — an enriching stage. Skipping it is legal: converge falls back to degree zero.",
+   "feeds": [
+    "run"
+   ],
+   "lines": [
+    5,
+    10
+   ]
+  },
+  {
+   "id": "run",
+   "kind": "step",
+   "head": "  run(s, world) {",
+   "label": "gathering the neighbourhoods",
+   "does": "label() resolves any id to its display label (concepts first, then pack terms, else the id itself). For each binding: every document edge touching the id joins the neighbourhood with its verb and direction; pack terms add their own declared edges. neighbours keeps the first 6 for display; degree counts them ALL — the honest number.",
+   "vars": {
+    "label(id)": "id -> label through both surfaces",
+    "n": "the gathered neighbourhood",
+    "s.assembled": "bindings + {neighbours, degree}"
+   },
+   "reads": [
+    "s.bindings",
+    "world.edges",
+    "world.pack.terms"
+   ],
+   "writes": [
+    "s.assembled"
+   ],
+   "feeds": [
+    "ui"
+   ],
+   "lines": [
+    11,
+    27
+   ]
+  },
+  {
+   "id": "ui",
+   "kind": "export",
+   "head": "export const ui = {",
+   "label": "the workbench declaration",
+   "does": "Prompts whose winners have rich, thin and empty neighbourhoods.",
+   "lines": [
+    28,
+    32
+   ]
+  }
+ ]
+}

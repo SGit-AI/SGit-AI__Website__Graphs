@@ -50,6 +50,25 @@ for (const key of folders) {
     { operator: key, world: world.doc, note: 'captured by running the engine (deterministic); the workbench re-runs and compares', vectors },
     null, 1) + '\n');
 
+  /* the code's own extraction (brief 37): resolve each authored segment's
+     head line to a line range, tiling the file completely; drift fails here */
+  const anatPath = join(OPS, key, 'anatomy.json');
+  const anat = JSON.parse(readFileSync(anatPath, 'utf8'));
+  const src = readFileSync(join(OPS, key, key + '.js'), 'utf8').split('\n');
+  let cursor = 0;
+  anat.segments.forEach((s, i) => {
+    let at = -1;
+    for (let ln = cursor; ln < src.length; ln++) {
+      if (src[ln].trim() === s.head.trim()) { at = ln; break; }
+    }
+    if (at < 0) throw new Error(`gen_operators: ${key} anatomy segment "${s.id}" — head not found after line ${cursor + 1}: ${s.head}`);
+    if (i === 0 && at !== 0) throw new Error(`gen_operators: ${key} anatomy must start at line 1 (segment "${s.id}" resolved to ${at + 1})`);
+    if (i > 0) anat.segments[i - 1].lines = [anat.segments[i - 1].lines[0], at];
+    s.lines = [at + 1, src.length];
+    cursor = at + 1;
+  });
+  writeFileSync(anatPath, JSON.stringify(anat, null, 1) + '\n');
+
   const files = readdirSync(join(OPS, key)).sort().map((f) => ({ name: f, bytes: statSync(join(OPS, key, f)).size }));
   manifest.operators.push({ key, name: block.name, role: block.role, core: !!block.core,
     reads: block.io.reads, writes: block.io.writes, files });

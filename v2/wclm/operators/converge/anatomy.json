@@ -1,0 +1,115 @@
+{
+ "operator": "converge",
+ "note": "The code's own extraction (brief 37): authored segments, anchored by the exact text of each first line; the build resolves heads to line ranges and fails on drift.",
+ "segments": [
+  {
+   "id": "doc",
+   "kind": "docs",
+   "head": "/* @module wclm/operators/converge",
+   "label": "the module's claim",
+   "does": "The summing engine: total = 2·bind + 0.1·blast, and the answer leaves with its receipts — anchoring, provenance, and every contradiction said out loud.",
+   "feeds": [
+    "contract"
+   ],
+   "lines": [
+    1,
+    7
+   ]
+  },
+  {
+   "id": "setup",
+   "kind": "imports",
+   "head": "'use strict';",
+   "label": "the two helpers",
+   "does": "r3 for stable rounding; leansOn from the senses module — which concepts lean on a word, through its stem family — for the sense-switch warnings.",
+   "feeds": [
+    "run-rank"
+   ],
+   "lines": [
+    8,
+    11
+   ]
+  },
+  {
+   "id": "contract",
+   "kind": "contract",
+   "head": "export const block = {",
+   "label": "the pipeline contract",
+   "does": "Core; reads bindings, writes meanings — the pipeline's last mandatory stage.",
+   "feeds": [
+    "run-rank"
+   ],
+   "lines": [
+    12,
+    15
+   ]
+  },
+  {
+   "id": "run-rank",
+   "kind": "step",
+   "head": "  run(s, world) {",
+   "label": "the ranking, with anchoring",
+   "does": "base falls back to bare bindings (degree 0) when expand was skipped. byId indexes both surfaces for provenance lookups. Each candidate gets: its ANCHORING rung (a quote in a named section > a statement > an authored pack term > a chosen sense > unanchored), total = 2·score + 0.1·degree (both multipliers opinion), and its def/section/quote carried along. Sorted by total, ties by id; the winner is ranked[0] or an honest null.",
+   "vars": {
+    "base": "assembled bindings, or bare ones",
+    "byId": "id -> concept/term record",
+    "anchor": "the declared rung",
+    "s.ranked": "the scored candidates",
+    "s.meaning": "the winner or null"
+   },
+   "reads": [
+    "s.assembled",
+    "s.bindings",
+    "world.concepts",
+    "world.pack.terms"
+   ],
+   "writes": [
+    "s.ranked",
+    "s.meaning"
+   ],
+   "feeds": [
+    "run-notes"
+   ],
+   "lines": [
+    16,
+    36
+   ]
+  },
+  {
+   "id": "run-notes",
+   "kind": "step",
+   "head": "    s.notes = (s.negated || []).flatMap((f) =>",
+   "label": "the contradictions, spoken",
+   "does": "Two kinds of warning, never silently resolved: a NEGATED word that belongs to a concept's own label quotes that concept's statement back ('the query contradicts the world'); a SENSE-SWITCHED word lists the claims that lean on it — computed via leansOn, top three named, the rest counted — and says they do not apply under the caller's sense.",
+   "vars": {
+    "s.notes": "the warnings the answer card speaks"
+   },
+   "reads": [
+    "s.negated",
+    "s.foreign",
+    "world.concepts"
+   ],
+   "writes": [
+    "s.notes"
+   ],
+   "feeds": [
+    "ui"
+   ],
+   "lines": [
+    37,
+    53
+   ]
+  },
+  {
+   "id": "ui",
+   "kind": "export",
+   "head": "export const ui = {",
+   "label": "the workbench declaration",
+   "does": "The plain, negated and plural prompts — one of each answer shape.",
+   "lines": [
+    54,
+    58
+   ]
+  }
+ ]
+}

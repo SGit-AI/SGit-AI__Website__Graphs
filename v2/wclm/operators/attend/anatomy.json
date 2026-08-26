@@ -1,0 +1,108 @@
+{
+ "operator": "attend",
+ "note": "The code's own extraction (brief 37): authored segments, anchored by the exact text of each first line; the build resolves heads to line ranges and fails on drift.",
+ "segments": [
+  {
+   "id": "doc",
+   "kind": "docs",
+   "head": "/* @module wclm/operators/attend",
+   "label": "the module's claim",
+   "does": "The look-back as data: pairs (shared-sentence counts between prompt tokens) and pulls (each token's habitual companions). Counted evidence, never learned.",
+   "feeds": [
+    "contract"
+   ],
+   "lines": [
+    1,
+    5
+   ]
+  },
+  {
+   "id": "contract",
+   "kind": "contract",
+   "head": "'use strict';",
+   "label": "strict mode + the pipeline contract",
+   "does": "Optional; reads stream, writes profiles — the one engine that changes the stream's SHAPE before binding.",
+   "feeds": [
+    "run-survivors"
+   ],
+   "lines": [
+    6,
+    11
+   ]
+  },
+  {
+   "id": "run-survivors",
+   "kind": "step",
+   "head": "  run(s, world) {",
+   "label": "who survives into attention",
+   "does": "Filters the stream to the tokens that attend at all: known, not padding, not an operator word, and not sense-switched — unless passthrough set carryAll, in which case foreign words attend too (advisory mode).",
+   "vars": {
+    "meaty": "the surviving tokens — every one gets a profile"
+   },
+   "reads": [
+    "s.resolved",
+    "s.carryAll"
+   ],
+   "feeds": [
+    "run-cooc"
+   ],
+   "lines": [
+    12,
+    14
+   ]
+  },
+  {
+   "id": "run-cooc",
+   "kind": "step",
+   "head": "    const co = {};",
+   "label": "the co-occurrence index",
+   "does": "Flattens the world's co-occurrence edges into a symmetric 'a|b' -> weight map for O(1) pair lookups during the profile build.",
+   "vars": {
+    "co": "both directions of every cooc edge, keyed 'formA|formB'"
+   },
+   "reads": [
+    "world.cooc"
+   ],
+   "feeds": [
+    "run-profiles"
+   ],
+   "lines": [
+    15,
+    16
+   ]
+  },
+  {
+   "id": "run-profiles",
+   "kind": "step",
+   "head": "    s.attention = { profiles: meaty.map((t) => ({ i: t.i, form: t.form, negated: !!t.negated,",
+   "label": "the profiles",
+   "does": "One profile per survivor: PAIRS — every other survivor it shares sentences with (weight = the shared count, zero-weight pairs dropped, sorted strongest first) — and PULLS — its top 3 companions from the token analysis. The negated mark rides along so bind can still withdraw.",
+   "vars": {
+    "pairs": "[{j, other, w}] — in-prompt affinity, evidence",
+    "pulls": "[{form, w}] — the world leaning in, capped at 3",
+    "s.attention": "{profiles} — what bind reads instead of the raw stream"
+   },
+   "writes": [
+    "s.attention"
+   ],
+   "feeds": [
+    "ui"
+   ],
+   "lines": [
+    17,
+    24
+   ]
+  },
+  {
+   "id": "ui",
+   "kind": "export",
+   "head": "export const ui = {",
+   "label": "the workbench declaration",
+   "does": "Prompts where pairs light up (words that share sentences) and where they do not.",
+   "lines": [
+    25,
+    29
+   ]
+  }
+ ]
+}

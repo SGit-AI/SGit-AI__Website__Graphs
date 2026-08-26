@@ -1,0 +1,70 @@
+{
+ "operator": "resolve",
+ "note": "The code's own extraction (brief 37): authored segments, anchored by the exact text of each first line; the build resolves heads to line ranges and fails on drift.",
+ "segments": [
+  {
+   "id": "doc",
+   "kind": "docs",
+   "head": "/* @module wclm/operators/resolve",
+   "label": "the module's claim",
+   "does": "The lookup: every hash finds its record in the world, or is marked unknown with weight zero — nothing downstream pretends otherwise.",
+   "feeds": [
+    "contract"
+   ],
+   "lines": [
+    1,
+    5
+   ]
+  },
+  {
+   "id": "contract",
+   "kind": "contract",
+   "head": "'use strict';",
+   "label": "strict mode + the pipeline contract",
+   "does": "No imports at all — resolve is pure lookup. Core; reads tokens, writes stream (the resolved token stream every clue-marking engine annotates).",
+   "feeds": [
+    "run"
+   ],
+   "lines": [
+    6,
+    11
+   ]
+  },
+  {
+   "id": "run",
+   "kind": "step",
+   "head": "  run(s, world) {",
+   "label": "the transformation",
+   "does": "One map over the tokens: found records come back carrying class, count, weight and top companions; misses come back known:false with class 'unknown' and w 0 — honest zeros, not silent drops.",
+   "vars": {
+    "rec": "the world's token-table row for this hash, or undefined",
+    "s.resolved": "[{...token, known, class, count, w, top}] — the stream"
+   },
+   "reads": [
+    "s.tokens",
+    "world.tokens"
+   ],
+   "writes": [
+    "s.resolved"
+   ],
+   "feeds": [
+    "ui"
+   ],
+   "lines": [
+    12,
+    21
+   ]
+  },
+  {
+   "id": "ui",
+   "kind": "export",
+   "head": "export const ui = {",
+   "label": "the workbench declaration",
+   "does": "Prompts covering content words, padding-heavy phrasing, and words this universe has never seen.",
+   "lines": [
+    22,
+    26
+   ]
+  }
+ ]
+}

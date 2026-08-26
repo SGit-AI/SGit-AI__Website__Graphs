@@ -187,3 +187,41 @@
 .fx-view h4 { margin: .8rem 0 .25rem; }
 .fv-vec { border: 1px solid var(--line2, #eee); border-radius: 8px; padding: .4rem .6rem; margin: .5rem 0; }
 .fv-vec p { margin: .1rem 0 .3rem; }
+
+/* ---- brief 37: code anatomy + chip-wired workbenches ---------------------- */
+.an-flow { max-width: 100%; margin: .3rem 0 .6rem; }
+.an-flow rect { fill: rgba(42,157,143,.07); stroke: #2a9d8f; cursor: pointer; }
+.an-flow .an-k-docs rect { stroke: #667; fill: rgba(102,102,119,.07); }
+.an-flow .an-k-imports rect { stroke: #4a7fb5; fill: rgba(74,127,181,.08); }
+.an-flow .an-k-data rect { stroke: #b0761f; fill: rgba(176,118,31,.08); }
+.an-flow .an-k-contract rect { stroke: #9b59b6; fill: rgba(155,89,182,.08); }
+.an-flow .an-k-export rect { stroke: #667; fill: rgba(102,102,119,.05); }
+.an-flow text { font-size: 11px; fill: currentColor; pointer-events: none; }
+.an-flow .an-fl { font-size: 9px; opacity: .55; }
+.an-flow .an-farr { stroke: #6a8; fill: none; stroke-width: 1.3; }
+.an-flow .an-farr { marker-end: url(#anArr); }
+.an-flow marker path { fill: #6a8; stroke: none; }
+.an-fbox.on rect { stroke-width: 2.5; fill: rgba(42,157,143,.18); }
+.an-cols { display: flex; gap: .9rem; align-items: flex-start; }
+.an-code { flex: 1 1 auto; min-width: 0; }
+.an-pane { flex: 0 0 21rem; position: sticky; top: .5rem; max-height: 80vh; overflow: auto;
+  border: 1px solid var(--line2, #ddd); border-radius: 10px; padding: .5rem .7rem; }
+.an-seg { border: 1px solid var(--line2, #ddd); border-left-width: 4px; border-radius: 8px;
+  margin: .4rem 0; cursor: pointer; overflow: hidden; }
+.an-seg .fv-raw { margin: 0; font-size: .68rem; }
+.an-sh { display: flex; gap: .6rem; align-items: baseline; padding: .25rem .6rem;
+  background: rgba(42,157,143,.05); border-bottom: 1px solid var(--line2, #eee); }
+.an-seg.on { border-color: #2a9d8f; box-shadow: 0 0 0 1px rgba(42,157,143,.4); }
+.an-seg.an-k-docs { border-left-color: #667; }
+.an-seg.an-k-imports { border-left-color: #4a7fb5; }
+.an-seg.an-k-data { border-left-color: #b0761f; }
+.an-seg.an-k-contract { border-left-color: #9b59b6; }
+.an-seg.an-k-step { border-left-color: #2a9d8f; }
+.an-seg.an-k-export { border-left-color: #667; }
+.opx { position: relative; }
+.opx-wires { position: absolute; inset: 0; pointer-events: none; }
+.op-sel { border: 1px solid var(--line2, #ddd); border-radius: 10px; padding: .5rem .7rem; margin-top: .6rem; }
+@media (max-width: 900px) {
+  .an-cols { flex-direction: column; }
+  .an-pane { position: static; flex: none; max-height: none; }
+}

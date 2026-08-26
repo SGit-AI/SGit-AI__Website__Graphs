@@ -23,6 +23,18 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "37__founder-memo__zooming-into-the-code-itself.md": (
+     "Keep zooming: the code itself gets the graph treatment",
+     "Graphs of graphs, one zoom further in: the operator scripts are small but "
+     "context-heavy, so give them the Bret Victor treatment — group the parts "
+     "of the code visually, explain each part on a right pane (what it does, "
+     "what the variables do, the inputs and outputs of the inner bits), and "
+     "draw the architecture as flowcharts and fluxograms, for an audience that "
+     "knows JS. Apply the main WCLM's visual linking of components, data and "
+     "ids to every operator — each one a mini app with its own js and css for "
+     "experiments. Try it on the json files too. And frame all of it as the "
+     "lab: PoC ways to see, run, visualise and debug in the small space, then "
+     "promote the ones that worked into the main WCLM UI and workflows."),
  "36__founder-memo__operators-as-first-class-folders.md": (
      "Operators as first-class folders: tune each one individually",
      "The file-explorer treatment, applied to the engine's own building "

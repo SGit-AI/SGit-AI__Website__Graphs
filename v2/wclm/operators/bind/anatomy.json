@@ -1,0 +1,146 @@
+{
+ "operator": "bind",
+ "note": "The code's own extraction (brief 37): authored segments, anchored by the exact text of each first line; the build resolves heads to line ranges and fails on drift.",
+ "segments": [
+  {
+   "id": "doc",
+   "kind": "docs",
+   "head": "/* @module wclm/operators/bind",
+   "label": "the module's claim",
+   "does": "Forms light the meanings whose labels they cover. The formula is stated where it can be edited — and has been, once, by the founder: that IS the training loop.",
+   "feeds": [
+    "contract"
+   ],
+   "lines": [
+    1,
+    7
+   ]
+  },
+  {
+   "id": "setup",
+   "kind": "imports",
+   "head": "'use strict';",
+   "label": "strict mode + one helper",
+   "does": "r3 from the engine: every stated formula reports through 3-decimal rounding so replays compare byte-identical.",
+   "feeds": [
+    "run-present"
+   ],
+   "lines": [
+    8,
+    10
+   ]
+  },
+  {
+   "id": "contract",
+   "kind": "contract",
+   "head": "export const block = {",
+   "label": "the pipeline contract",
+   "does": "Core; reads stream, writes bindings. Falls back gracefully: profiles when attend ran, the content stream otherwise.",
+   "feeds": [
+    "run-present"
+   ],
+   "lines": [
+    11,
+    14
+   ]
+  },
+  {
+   "id": "run-present",
+   "kind": "step",
+   "head": "  run(s, world) {",
+   "label": "who counts as present",
+   "does": "Builds the evidence set: content tokens (known, non-padding, non-operator); src is the attention profiles when they exist, else the content stream minus foreign words; keep() drops negated forms unless carryAll made the marks advisory. present is the Set of forms allowed to light meanings.",
+   "vars": {
+    "content": "the content tokens, foreign included (for the withdrawal audit)",
+    "src": "profiles or filtered stream — the evidence source",
+    "present": "the forms that may bind",
+    "s.negated": "the withdrawn-by-negation list converge will check"
+   },
+   "reads": [
+    "s.resolved",
+    "s.attention",
+    "s.carryAll"
+   ],
+   "feeds": [
+    "run-foreign"
+   ],
+   "lines": [
+    15,
+    21
+   ]
+  },
+  {
+   "id": "run-foreign",
+   "kind": "step",
+   "head": "    s.foreign = [];",
+   "label": "one withdrawal per word",
+   "does": "Collects the sense-switched words — ONE entry per word however often it is said (the duplicated-note bug the founder's screenshot caught, fixed here) — carrying the sense's label, domain and definition for the sense binding and converge's warning. Empty in advisory mode.",
+   "vars": {
+    "seenW": "the words already withdrawn",
+    "s.foreign": "[{form, word, label, domain, def}]"
+   },
+   "feeds": [
+    "run-score"
+   ],
+   "lines": [
+    22,
+    31
+   ]
+  },
+  {
+   "id": "run-score",
+   "kind": "step",
+   "head": "    const pulled = new Set(s.attention ? s.attention.profiles.flatMap((p) => p.pulls.map((x) => x.form)) : []);",
+   "label": "the stated formula",
+   "does": "bind = half label coverage + half prompt coverage + 0.1 per label form that attention PULLED into range. Coverages are evidence; the halves and the bonus are opinion. Returns null when nothing lights — a non-binding is not a zero-scoring binding.",
+   "vars": {
+    "pulled": "forms attention dragged nearby",
+    "score(forms)": "the formula, or null when no direct coverage"
+   },
+   "feeds": [
+    "run-light"
+   ],
+   "lines": [
+    32,
+    41
+   ]
+  },
+  {
+   "id": "run-light",
+   "kind": "step",
+   "head": "    s.bindings = [];",
+   "label": "lighting the three surfaces",
+   "does": "Scores every document concept and every pack term whose label overlaps present, recording via — the exact forms that lit it. Then each foreign word binds its CHOSEN sense instead: the word fully covers the sense's label, over the prompt's content forms. Sorted by score, ties by id, so replay is stable.",
+   "vars": {
+    "s.bindings": "[{id, kind: doc|pack|sense, label, score, via, ...}] ranked"
+   },
+   "reads": [
+    "world.concepts",
+    "world.pack.terms"
+   ],
+   "writes": [
+    "s.bindings",
+    "s.negated",
+    "s.foreign"
+   ],
+   "feeds": [
+    "ui"
+   ],
+   "lines": [
+    42,
+    64
+   ]
+  },
+  {
+   "id": "ui",
+   "kind": "export",
+   "head": "export const ui = {",
+   "label": "the workbench declaration",
+   "does": "The exact-concept prompt, the negation prompt, and the pack-term prompt.",
+   "lines": [
+    65,
+    69
+   ]
+  }
+ ]
+}

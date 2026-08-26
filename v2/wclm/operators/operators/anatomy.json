@@ -1,0 +1,88 @@
+{
+ "operator": "operators",
+ "note": "The code's own extraction (brief 37): authored segments, anchored by the exact text of each first line; the build resolves heads to line ranges and fails on drift.",
+ "segments": [
+  {
+   "id": "doc",
+   "kind": "docs",
+   "head": "/* @module wclm/operators/operators",
+   "label": "the module's claim",
+   "does": "The little words that flip meaning: born from the live experiment where 'without' was padding and the negated phrase answered like the plain one.",
+   "feeds": [
+    "table"
+   ],
+   "lines": [
+    1,
+    8
+   ]
+  },
+  {
+   "id": "table",
+   "kind": "data",
+   "head": "export const OPERATORS = { without: 'negates', not: 'negates', no: 'negates', never: 'negates',",
+   "label": "the word table — this operator's official data",
+   "does": "Standard across every document: four negators and two contrast markers. Extending the engine's reach IS editing this table; it is exported so the folder's data.json and the tests can hold the same truth.",
+   "vars": {
+    "OPERATORS": "{word: 'negates'|'contrasts'} — the entire vocabulary of little words"
+   },
+   "feeds": [
+    "run"
+   ],
+   "lines": [
+    9,
+    11
+   ]
+  },
+  {
+   "id": "contract",
+   "kind": "contract",
+   "head": "export const block = {",
+   "label": "the pipeline contract",
+   "does": "Optional; reads stream, writes stream — the second marking engine.",
+   "feeds": [
+    "run"
+   ],
+   "lines": [
+    12,
+    15
+   ]
+  },
+  {
+   "id": "run",
+   "kind": "step",
+   "head": "  run(s) {",
+   "label": "the marking pass",
+   "does": "Walks the stream; a token found in the table becomes class 'operator' (it stops being content). A NEGATING word marks its TARGET — the next known, non-padding, non-operator token — with negated: true; bind later withdraws it, converge checks it against the world's own claims. Every operator occurrence is recorded in s.ops with its target (or null when nothing follows). Scope is one token by design; phrase grammar is future work.",
+   "vars": {
+    "op": "'negates' | 'contrasts' for this token, or undefined",
+    "target": "the token the negation lands on",
+    "s.ops": "[{i, form, op, target}] — the audit trail the UI renders"
+   },
+   "reads": [
+    "s.resolved"
+   ],
+   "writes": [
+    "s.resolved — negated marks, operator classes",
+    "s.ops"
+   ],
+   "feeds": [
+    "ui"
+   ],
+   "lines": [
+    16,
+    28
+   ]
+  },
+  {
+   "id": "ui",
+   "kind": "export",
+   "head": "export const ui = {",
+   "label": "the workbench declaration",
+   "does": "Negated, contrasted and plain prompts side by side.",
+   "lines": [
+    29,
+    33
+   ]
+  }
+ ]
+}

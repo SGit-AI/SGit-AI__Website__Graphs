@@ -1,0 +1,112 @@
+{
+ "operator": "normalise",
+ "note": "The code's own extraction (brief 37): authored segments, anchored by the exact text of each first line; the build resolves heads to line ranges and fails on drift.",
+ "segments": [
+  {
+   "id": "doc",
+   "kind": "docs",
+   "head": "/* @module wclm/operators/normalise",
+   "label": "the module's claim",
+   "does": "This is what we think you said: unknown tokens get repaired by dictionary (edit distance) then thesaurus (stem family), every fix named, every failure admitted.",
+   "feeds": [
+    "contract"
+   ],
+   "lines": [
+    1,
+    5
+   ]
+  },
+  {
+   "id": "setup",
+   "kind": "imports",
+   "head": "'use strict';",
+   "label": "the three shared helpers",
+   "does": "fnv64 to re-hash a repaired form, ed1 (Levenshtein <= 1, mirroring the generator's near-miss rule) and stemKey (ported rule-for-rule from gen_coregraph.stem_key).",
+   "vars": {
+    "ed1": "true when two forms are at most one edit apart",
+    "stemKey": "a form's stem, using the vocab to disambiguate -ing/-ed"
+   },
+   "feeds": [
+    "run"
+   ],
+   "lines": [
+    6,
+    8
+   ]
+  },
+  {
+   "id": "contract",
+   "kind": "contract",
+   "head": "export const block = {",
+   "label": "the pipeline contract",
+   "does": "Optional (toggleable); reads tokens and writes tokens — a rewriting stage, not a new type.",
+   "feeds": [
+    "run"
+   ],
+   "lines": [
+    9,
+    12
+   ]
+  },
+  {
+   "id": "run-setup",
+   "kind": "step",
+   "head": "  run(s, world) {",
+   "label": "the repair sources, prepared",
+   "does": "Builds the lookup sets once per run: every form the world knows (the dictionary), and the vocab (forms plus stem keys) stemKey needs to resolve -ing/-ed bases.",
+   "vars": {
+    "forms": "every surface form in the world's token table",
+    "known": "the same, as a Set for O(1) membership",
+    "vocab": "forms + stem-family keys, for stemKey's base checks"
+   },
+   "reads": [
+    "world.tokens",
+    "world.stems"
+   ],
+   "feeds": [
+    "run-repair"
+   ],
+   "lines": [
+    13,
+    16
+   ]
+  },
+  {
+   "id": "run-repair",
+   "kind": "step",
+   "head": "    s.tokens = s.tokens.map((t) => {",
+   "label": "the repair ladder",
+   "does": "Per token: known hash passes through untouched. Unknown: (1) dictionary — candidates within one length of the token, length >= 4 (stops of/on style false repairs), ed1 match, ALPHABETICAL tie-break so the repair is deterministic; (2) thesaurus — the token's stem lands in a known family, and the family's most-said member stands in; (3) neither — fix: null, kept visible. A repair rewrites form AND hash, and records {from, how} as evidence.",
+   "vars": {
+    "hit": "the dictionary repair, if any",
+    "fam": "the stem family the token's stem lands in",
+    "best": "the family's most frequent known member",
+    "t.fix": "{from, how} — the named evidence, or null for an honest failure"
+   },
+   "reads": [
+    "s.tokens"
+   ],
+   "writes": [
+    "s.tokens — forms/hashes rewritten, fixes attached"
+   ],
+   "feeds": [
+    "ui"
+   ],
+   "lines": [
+    17,
+    32
+   ]
+  },
+  {
+   "id": "ui",
+   "kind": "export",
+   "head": "export const ui = {",
+   "label": "the workbench declaration",
+   "does": "The three canonical repair prompts: dictionary fixes, a thesaurus fix, and honest unknowns.",
+   "lines": [
+    33,
+    37
+   ]
+  }
+ ]
+}

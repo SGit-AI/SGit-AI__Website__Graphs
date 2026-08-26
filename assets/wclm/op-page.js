@@ -8,6 +8,8 @@
 'use strict';
 import { BLOCKS, TYPES } from './engine.js';
 import { runOperator, prereqOf } from './opruntime.js';
+import { renderBlock, openLayer } from './render.js';
+import { ioFlowSvg } from './ioflow.js';
 import { rawJsonHtml } from '../universe/core/fileview.js';
 
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g,
@@ -25,9 +27,13 @@ async function boot(key) {
   ]);
   const ui = mod.ui || { prompts: ['meaning through connectivity'], watch: [] };
   let opts = {};
+  /* the mini-app hook (brief 37): a <key>.css in the folder skins this workbench */
+  fetch(key + '.css').then((r) => (r.ok ? r.text() : null)).then((css) => {
+    if (css) { const st = document.createElement('style'); st.textContent = css; document.head.appendChild(st); }
+  }).catch(() => {});
 
   mount.innerHTML =
-    '<div class="op-head">' + ioFlow(block) +
+    '<div class="op-head">' + ioFlowSvg(block) +
     '<div><b>' + esc(block.name) + '</b> · ' + (block.core ? 'core' : 'optional') +
     '<p class="small dim">' + esc(block.role) + '. Runs after: ' +
     (prereqOf(key).join(' → ') || 'nothing — it is first') + '.</p></div></div>' +
@@ -46,18 +52,79 @@ async function boot(key) {
   const run = () => {
     const r = runOperator(key, q.value, world, opts, ui.watch);
     const step = r.full.steps.find((x) => x.key === key);
-    out.innerHTML = '<div class="op-cols">' +
-      pane('the input', 'what ' + key + ' read — its declared types, sliced from the state',
-        Object.keys(r.input).map((k) => sub(k, r.input[k])).join('')) +
+    /* the WCLM's own visual language (brief 37): render the run as chips and
+       wires — the previous layer's evidence, the operator, its output — by
+       replaying every executed layer through the shared renderer and keeping
+       the last two columns plus the wires that land in the final one. */
+    const wires = [];
+    const info = new Map();
+    const colOf = new Map();
+    let col = -1;
+    const ctx = {
+      last: null, cur: null,
+      chip(id, layer, cls, html, title, rows, k2) {
+        info.set(id, { title, rows });
+        colOf.set(id, col);
+        return '<div class="wc-chip ' + cls + '" data-c="' + id + '">' + html + '</div>';
+      },
+      wire(a, b, w, cls, why) { if (a && b) wires.push({ a, b, w, cls, why }); },
+    };
+    const layers = [];
+    r.full.steps.filter((x) => !x.skipped).forEach((x) => {
+      const curL = layers[layers.length - 1];
+      if (curL && curL.li === x.layer) curL.keys.push(x.key); else layers.push({ li: x.layer, keys: [x.key] });
+    });
+    let inputHtml = '', outputHtml = '';
+    layers.forEach(({ keys }, idx) => {
+      col += 1;
+      const commit = openLayer(ctx);
+      const html = keys.map((k) => renderBlock(k, r.full.state, world, ctx)).join('');
+      commit();
+      if (idx === layers.length - 2) inputHtml = html;
+      if (idx === layers.length - 1) outputHtml = html;
+    });
+    const lastCol = col;
+    const drawn = wires.filter((w) => colOf.get(w.b) === lastCol);
+    out.innerHTML = '<div class="op-cols opx">' +
+      pane('the input', 'the previous layer&rsquo;s evidence — what ' + key + ' read',
+        inputHtml || ('<div class="wc-chip wc-phrase"><span class="dim small">the prompt</span><b>' + esc(q.value) + '</b></div>')) +
       '<div class="op-mid"><div class="op-box' + (step && step.skipped ? ' op-skip' : '') + '"><b>' + esc(block.name) + '</b>' +
       (step && step.skipped ? '<p class="small">SKIPPED: ' + esc(step.skipped) + '</p>'
         : '<p class="small">' + esc(block.role) + '</p>') +
       '<p class="small dim">opts: <code>' + esc(JSON.stringify(opts)) + '</code></p>' +
-      '<p class="small"><a href="' + key + '.md">how it works (md)</a> · <a href="data.json">its data</a> · <a href="schema.json">its schema</a></p></div></div>' +
-      pane('the output', 'what ' + key + ' wrote — its watch keys after the run',
-        Object.keys(r.output).map((k) => sub(k, r.output[k])).join('')) +
-      '</div><details class="op-dbg"><summary>debug: the full state after the run</summary>' +
+      '<p class="small"><a href="' + key + '.md">how it works</a> · <a href="data.json">its data</a> · <a href="schema.json">its schema</a></p></div></div>' +
+      pane('the output', 'what ' + key + ' wrote — every chip clickable', outputHtml) +
+      '<svg class="wc-wires opx-wires" aria-hidden="true"></svg></div>' +
+      '<div class="op-sel wc-side"><p class="dim small">Click any chip for its record.</p></div>' +
+      '<details class="op-dbg"><summary>debug: the watched slices and the full state</summary>' +
+      Object.keys(r.output).map((k) => sub(k, r.output[k])).join('') +
       rawJsonHtml(JSON.stringify(stripOpts(r.full.state))) + '</details>';
+    const box = out.querySelector('.opx');
+    const svg = out.querySelector('.opx-wires');
+    const paint = () => {
+      const br = box.getBoundingClientRect();
+      svg.setAttribute('width', box.scrollWidth); svg.setAttribute('height', box.scrollHeight);
+      svg.innerHTML = drawn.map((w) => {
+        const a = box.querySelector('[data-c="' + w.a + '"]');
+        const b = box.querySelector('[data-c="' + w.b + '"]');
+        if (!a || !b) return '';
+        const ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
+        const x1 = ra.right - br.left + box.scrollLeft, y1 = ra.top + ra.height / 2 - br.top + box.scrollTop;
+        const x2 = rb.left - br.left + box.scrollLeft, y2 = rb.top + rb.height / 2 - br.top + box.scrollTop;
+        const mid = (x1 + x2) / 2;
+        return '<path class="' + (w.cls || 'wc-line') + '" stroke-width="' + Math.max(1, Math.min(5, w.w * 3)) +
+          '" d="M' + x1 + ' ' + y1 + ' C' + mid + ' ' + y1 + ' ' + mid + ' ' + y2 + ' ' + x2 + ' ' + y2 + '"/>';
+      }).join('');
+    };
+    requestAnimationFrame(paint);
+    out.onclick = (e) => {
+      const c = e.target.closest('.wc-chip[data-c]');
+      if (!c || !info.has(c.getAttribute('data-c'))) return;
+      const it = info.get(c.getAttribute('data-c'));
+      out.querySelectorAll('.wc-chip').forEach((x) => x.classList.toggle('wc-sel', x === c));
+      out.querySelector('.op-sel').innerHTML = '<div class="wc-sh"><b>' + esc(it.title) + '</b></div>' +
+        (it.rows || []).map(([k2, v]) => '<div class="ev-row"><span class="dim">' + esc(k2) + '</span> ' + esc(v) + '</div>').join('');
+    };
   };
 
   const test = () => {
@@ -100,18 +167,4 @@ const pane = (title, hint, body) =>
 const sub = (k, v) => '<div class="op-sub"><code class="op-k">' + esc(k) + '</code>' +
   rawJsonHtml(JSON.stringify(v)) + '</div>';
 
-/* the typed IO flow: reads → operator → writes, from the schema itself */
-function ioFlow(block) {
-  const box = (x, y, w, txt, cls) =>
-    '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="26" rx="6" class="op-f-' + cls + '"/>' +
-    '<text x="' + (x + w / 2) + '" y="' + (y + 17) + '" text-anchor="middle">' + esc(txt) + '</text>';
-  const arrow = (x1, x2, y) => '<path d="M' + x1 + ' ' + y + ' H' + x2 + '" marker-end="url(#opArr)"/>';
-  const reads = block.io.reads, writes = block.io.writes;
-  let svg = '<defs><marker id="opArr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L8 4 L0 8 z"/></marker></defs>';
-  reads.forEach((t, i) => { const y = 8 + i * 34; svg += box(2, y, 92, t, 'type') + arrow(96, 128, y + 13); });
-  svg += box(130, 8 + (Math.max(reads.length, writes.length) - 1) * 17, 96, block.key, 'op');
-  writes.forEach((t, i) => { const y = 8 + i * 34; svg += arrow(228, 258, y + 13) + box(260, y, 92, t, 'type'); });
-  const h = 16 + Math.max(reads.length, writes.length) * 34;
-  return '<svg class="op-flow" viewBox="0 0 356 ' + h + '" width="330" height="' + Math.min(h, 90) + '"' +
-    ' role="img" aria-label="' + esc(block.key) + ' reads ' + reads.join(', ') + ' and writes ' + writes.join(', ') + '">' + svg + '</svg>';
-}
+/* (the typed IO flow moved to ioflow.js, shared with the explorer) */

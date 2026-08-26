@@ -7,6 +7,8 @@
    byte-honest source. Every file deep-links (#tokenise/schema.json). */
 'use strict';
 import { rawJsonHtml, rawMdHtml, rawJsHtml, buildView } from '../universe/core/fileview.js';
+import { anatomyFlowSvg, anatomyBodyHtml, anatomyPaneHtml } from './code-anatomy.js';
+import { ioFlowSvg } from './ioflow.js';
 
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g,
   (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -39,6 +41,10 @@ function boot(man) {
           '" data-k="' + o.key + '" data-f="' + esc(f.name) + '">' + esc(f.name) +
           ' <span class="small dim">' + f.bytes + 'b</span></div>').join('') : '')
       ).join('') + '</nav><section class="fx-body">' + body() + '</section></div>';
+    if (cur && cur.anat && cur.seg) {
+      mount.querySelectorAll('[data-seg]').forEach((el) =>
+        el.classList.toggle('on', el.getAttribute('data-seg') === cur.seg));
+    }
   };
 
   /* the landing overview: the pipeline as a clickable flow, then the cards */
@@ -65,7 +71,7 @@ function boot(man) {
     if (!cur) return overview();
     const path = cur.key + '/' + cur.name;
     const isJs = cur.name.endsWith('.js');
-    const tabs = (isJs ? ['raw'] : ['rendered', 'raw']).map((t) =>
+    const tabs = (isJs && !cur.anat ? ['raw'] : ['rendered', 'raw']).map((t) =>
       '<button class="fx-tab' + (cur.tab === t ? ' on' : '') + '" data-t="' + t + '">' + t + '</button>').join('');
     return '<div class="fx-head"><code>' + esc(path) + '</code> ' + tabs +
       ' <a class="small" href="' + esc(path) + '">open as a plain URL</a>' +
@@ -75,6 +81,12 @@ function boot(man) {
 
   const render = () => {
     const n = cur.name;
+    if (n.endsWith('.js') && cur.tab === 'rendered' && cur.anat) {
+      /* the anatomy (brief 37): fluxogram + grouped code + explanation pane */
+      return anatomyFlowSvg(cur.anat) +
+        '<div class="an-cols"><div class="an-code">' + anatomyBodyHtml(cur.text, cur.anat) +
+        '</div><aside class="an-pane wc-side">' + anatomyPaneHtml(cur.anat, cur.seg) + '</aside></div>';
+    }
     if (cur.tab === 'raw' || n.endsWith('.js')) {
       if (n.endsWith('.json')) return rawJsonHtml(cur.text);
       if (n.endsWith('.md')) return rawMdHtml(cur.text);
@@ -88,16 +100,27 @@ function boot(man) {
     }
     if (n.endsWith('.json')) {
       try {
-        const html = buildView(JSON_VIEW[n], JSON.parse(cur.text));
-        if (html) return '<div class="fx-view">' + html + '</div>';
+        const d = JSON.parse(cur.text);
+        const html = buildView(JSON_VIEW[n], d);
+        if (html) {
+          const flow = n === 'schema.json'
+            ? ioFlowSvg({ key: d.operator, io: { reads: d.io.reads.map((x) => x.type), writes: d.io.writes.map((x) => x.type) } })
+            : '';
+          return '<div class="fx-view">' + flow + html + '</div>';
+        }
       } catch (e) { /* fall through to the tinted source */ }
       return rawJsonHtml(cur.text);
     }
     return rawJsHtml(cur.text);
   };
 
-  const load = (key, name) => fetch(key + '/' + name).then((r) => r.text()).then((text) => {
-    cur = { key, name, text, tab: name.endsWith('.js') ? 'raw' : 'rendered' };
+  const load = (key, name) => fetch(key + '/' + name).then((r) => r.text()).then(async (text) => {
+    let anat = null;
+    if (name.endsWith('.js')) {
+      anat = await fetch(key + '/anatomy.json').then((r) => (r.ok ? r.json() : null)).catch(() => null);
+    }
+    cur = { key, name, text, anat, seg: anat ? anat.segments[0].id : null, tab: 'rendered' };
+    if (name.endsWith('.js') && !anat) cur.tab = 'raw';
     location.hash = key + '/' + name;
     draw();
   });
@@ -120,6 +143,12 @@ function boot(man) {
     }
     const f = e.target.closest('[data-f]');
     if (f) { load(f.getAttribute('data-k'), f.getAttribute('data-f')); return; }
+    const sg = e.target.closest('[data-goseg], .fx-body [data-seg]');
+    if (sg && cur && cur.anat) {
+      cur.seg = sg.getAttribute('data-goseg') || sg.getAttribute('data-seg');
+      draw();
+      return;
+    }
     const t = e.target.closest('[data-t]');
     if (t && cur) { cur.tab = t.getAttribute('data-t'); draw(); }
   });

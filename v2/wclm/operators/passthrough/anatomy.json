@@ -1,0 +1,51 @@
+{
+ "operator": "passthrough",
+ "note": "The code's own extraction (brief 37): authored segments, anchored by the exact text of each first line; the build resolves heads to line ranges and fails on drift.",
+ "segments": [
+  {
+   "id": "doc",
+   "kind": "docs",
+   "head": "/* @module wclm/operators/passthrough",
+   "label": "the module's claim",
+   "does": "The smallest engine in the registry, and deliberately so: include it in a layer and the marking engines' withdrawals become advisory — clues stay written, nothing is blocked.",
+   "feeds": [
+    "contract"
+   ],
+   "lines": [
+    1,
+    6
+   ]
+  },
+  {
+   "id": "contract",
+   "kind": "contract",
+   "head": "'use strict';",
+   "label": "the contract and the one-line run",
+   "does": "Optional; reads stream, writes stream. The whole transformation is s.carryAll = true — a run-wide flag that attend and bind consult: with it set, negated and foreign tokens keep flowing while their marks (and converge's warnings) survive.",
+   "vars": {
+    "s.carryAll": "the advisory switch — one boolean, read by attend and bind"
+   },
+   "writes": [
+    "s.carryAll"
+   ],
+   "feeds": [
+    "ui"
+   ],
+   "lines": [
+    7,
+    15
+   ]
+  },
+  {
+   "id": "ui",
+   "kind": "export",
+   "head": "export const ui = {",
+   "label": "the workbench declaration",
+   "does": "One prompt: the founder's own experiment, 'meaning without connectivity' — strict changes the winner, carried does not.",
+   "lines": [
+    16,
+    20
+   ]
+  }
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "operator": "tokenise",
+ "note": "The code's own extraction (brief 37): authored segments, anchored by the exact text of each first line; the build resolves heads to line ranges and fails on drift.",
+ "segments": [
+  {
+   "id": "doc",
+   "kind": "docs",
+   "head": "/* @module wclm/operators/tokenise",
+   "label": "the module's claim",
+   "does": "States the operator's single responsibility: words become content-hash tokens, no registry anywhere — the hash IS the identity, in this document and every other.",
+   "feeds": [
+    "contract"
+   ],
+   "lines": [
+    1,
+    5
+   ]
+  },
+  {
+   "id": "setup",
+   "kind": "imports",
+   "head": "'use strict';",
+   "label": "strict mode + the one dependency",
+   "does": "Pulls fnv64 from the shared engine helpers. Nothing else is imported: the operator's whole world is the text it is given.",
+   "vars": {
+    "fnv64": "FNV-1a 64-bit over code points, cut to 12 hex — the shared hash both Python and JS pin"
+   },
+   "feeds": [
+    "run"
+   ],
+   "lines": [
+    6,
+    8
+   ]
+  },
+  {
+   "id": "worddef",
+   "kind": "data",
+   "head": "const WORD_RE = /[A-Za-z0-9_]+(?:['’-][A-Za-z0-9_]+)*/g;",
+   "label": "what counts as a word",
+   "does": "The word rule as one regex: letters, digits, underscore, with apostrophes and hyphens allowed INSIDE a word. Changing this changes every downstream hash — deliberately boring.",
+   "vars": {
+    "WORD_RE": "the tokeniser's entire opinion about word boundaries"
+   },
+   "feeds": [
+    "run"
+   ],
+   "lines": [
+    9,
+    10
+   ]
+  },
+  {
+   "id": "contract",
+   "kind": "contract",
+   "head": "export const block = {",
+   "label": "the pipeline contract",
+   "does": "Declares the operator to the registry: key, display name, core (cannot be toggled off), the typed io (reads text, writes tokens) the runner enforces, and the one-line role every UI shows.",
+   "writes": [
+    "the registry entry the engine imports"
+   ],
+   "feeds": [
+    "run"
+   ],
+   "lines": [
+    11,
+    14
+   ]
+  },
+  {
+   "id": "run",
+   "kind": "step",
+   "head": "  run(s) {",
+   "label": "the transformation",
+   "does": "Matches every word, lowercases it, and hashes the lowercase form — so Graph, GRAPH and graph are one token. Each token keeps its position i and original spelling w. The phrase then gets the hash of all token hashes joined with '+': order matters, so 'graph of graphs' and 'graphs of graphs' can never collide.",
+   "vars": {
+    "s.tokens": "[{i, w, form, hash}] — position, spelling, lowercase form, content address",
+    "s.phrase": "{text, hash} — the whole prompt's own address"
+   },
+   "reads": [
+    "s.text — the prompt string"
+   ],
+   "writes": [
+    "s.tokens",
+    "s.phrase"
+   ],
+   "feeds": [
+    "ui"
+   ],
+   "lines": [
+    15,
+    21
+   ]
+  },
+  {
+   "id": "ui",
+   "kind": "export",
+   "head": "export const ui = {",
+   "label": "the workbench declaration",
+   "does": "Sample prompts and the state keys the workbench watches. This is the custom part every operator brings to the shared shell.",
+   "vars": {
+    "prompts": "clicked into the workbench input",
+    "watch": "the output slice shown and vectored"
+   },
+   "lines": [
+    22,
+    26
+   ]
+  }
+ ]
+}

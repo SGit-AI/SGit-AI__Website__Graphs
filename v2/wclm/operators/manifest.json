@@ -14,6 +14,10 @@
    ],
    "files": [
     {
+     "name": "anatomy.json",
+     "bytes": 2991
+    },
+    {
      "name": "attend.js",
      "bytes": 1379
     },
@@ -51,6 +55,10 @@
     "bindings"
    ],
    "files": [
+    {
+     "name": "anatomy.json",
+     "bytes": 4344
+    },
     {
      "name": "bind.js",
      "bytes": 3541
@@ -90,6 +98,10 @@
    ],
    "files": [
     {
+     "name": "anatomy.json",
+     "bytes": 3223
+    },
+    {
      "name": "converge.js",
      "bytes": 3257
     },
@@ -127,6 +139,10 @@
     "bindings"
    ],
    "files": [
+    {
+     "name": "anatomy.json",
+     "bytes": 1937
+    },
     {
      "name": "data.json",
      "bytes": 694
@@ -166,6 +182,10 @@
    ],
    "files": [
     {
+     "name": "anatomy.json",
+     "bytes": 2327
+    },
+    {
      "name": "data.json",
      "bytes": 586
     },
@@ -203,6 +223,10 @@
     "tokens"
    ],
    "files": [
+    {
+     "name": "anatomy.json",
+     "bytes": 3320
+    },
     {
      "name": "data.json",
      "bytes": 888
@@ -242,6 +266,10 @@
    ],
    "files": [
     {
+     "name": "anatomy.json",
+     "bytes": 2627
+    },
+    {
      "name": "data.json",
      "bytes": 722
     },
@@ -279,6 +307,10 @@
     "stream"
    ],
    "files": [
+    {
+     "name": "anatomy.json",
+     "bytes": 1488
+    },
     {
      "name": "data.json",
      "bytes": 440
@@ -318,6 +350,10 @@
    ],
    "files": [
     {
+     "name": "anatomy.json",
+     "bytes": 1820
+    },
+    {
      "name": "data.json",
      "bytes": 664
     },
@@ -355,6 +391,10 @@
     "stream"
    ],
    "files": [
+    {
+     "name": "anatomy.json",
+     "bytes": 2824
+    },
     {
      "name": "data.json",
      "bytes": 858
@@ -394,6 +434,10 @@
    ],
    "files": [
     {
+     "name": "anatomy.json",
+     "bytes": 3193
+    },
+    {
      "name": "data.json",
      "bytes": 718
     },
@@ -431,6 +475,10 @@
     "meanings"
    ],
    "files": [
+    {
+     "name": "anatomy.json",
+     "bytes": 2031
+    },
     {
      "name": "data.json",
      "bytes": 618

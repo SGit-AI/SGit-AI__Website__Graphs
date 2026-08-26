@@ -1,0 +1,73 @@
+{
+ "operator": "translate",
+ "note": "The code's own extraction (brief 37): authored segments, anchored by the exact text of each first line; the build resolves heads to line ranges and fails on drift.",
+ "segments": [
+  {
+   "id": "doc",
+   "kind": "docs",
+   "head": "/* @module wclm/operators/translate",
+   "label": "the module's claim",
+   "does": "Say it in their world: the answer restated in the listener's own concept from the authored analogies register, gaps admitted as correction opportunities.",
+   "feeds": [
+    "contract"
+   ],
+   "lines": [
+    1,
+    6
+   ]
+  },
+  {
+   "id": "contract",
+   "kind": "contract",
+   "head": "'use strict';",
+   "label": "strict mode + the pipeline contract",
+   "does": "Optional; reads meanings, writes meanings — it runs after converge and enriches the answer.",
+   "feeds": [
+    "run"
+   ],
+   "lines": [
+    7,
+    12
+   ]
+  },
+  {
+   "id": "run",
+   "kind": "step",
+   "head": "  run(s, world) {",
+   "label": "the register lookup",
+   "does": "No audience chosen (or an unknown one) -> translated stays null and the engine is a pass-through. With an audience: the top three ranked meanings are looked up in that audience's maps; a hit carries say (their concept) and why (why the equivalence lands); a miss carries nulls — rendered as 'no analogy authored yet', never hidden.",
+   "vars": {
+    "key": "opts.audience from the picker",
+    "aud": "the audience's register entry",
+    "hit": "the mapping for this meaning, if authored",
+    "s.translated": "{audience, label, items: [{id, from, say, why}]} or null"
+   },
+   "reads": [
+    "s.ranked",
+    "world.analogies",
+    "s.opts.audience"
+   ],
+   "writes": [
+    "s.translated"
+   ],
+   "feeds": [
+    "ui"
+   ],
+   "lines": [
+    13,
+    24
+   ]
+  },
+  {
+   "id": "ui",
+   "kind": "export",
+   "head": "export const ui = {",
+   "label": "the workbench declaration",
+   "does": "The graphs-of-graphs prompt plus one preset per audience: finance, operations, medicine.",
+   "lines": [
+    25,
+    32
+   ]
+  }
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "operator": "fractal",
+ "note": "The code's own extraction (brief 37): authored segments, anchored by the exact text of each first line; the build resolves heads to line ranges and fails on drift.",
+ "segments": [
+  {
+   "id": "doc",
+   "kind": "docs",
+   "head": "/* @module wclm/operators/fractal",
+   "label": "the module's claim",
+   "does": "A full WCLM inside an engine: the winner's own statement re-enters a complete inner pipeline, one zoom down — the existence proof that engines compose.",
+   "feeds": [
+    "contract"
+   ],
+   "lines": [
+    1,
+    7
+   ]
+  },
+  {
+   "id": "setup",
+   "kind": "imports",
+   "head": "'use strict';",
+   "label": "the recursive import",
+   "does": "runPipeline from the engine — the module the engine itself imports this file into. The cycle is safe because runPipeline is a hoisted function declaration, only CALLED at run time.",
+   "vars": {
+    "runPipeline": "the whole engine, used as a subroutine"
+   },
+   "feeds": [
+    "run"
+   ],
+   "lines": [
+    8,
+    10
+   ]
+  },
+  {
+   "id": "contract",
+   "kind": "contract",
+   "head": "export const block = {",
+   "label": "the pipeline contract",
+   "does": "Optional; reads meanings, writes meanings — it needs a winner to zoom into.",
+   "feeds": [
+    "run"
+   ],
+   "lines": [
+    11,
+    14
+   ]
+  },
+  {
+   "id": "run",
+   "kind": "step",
+   "head": "  run(s, world) {",
+   "label": "the inner run",
+   "does": "No winner, or a winner with no statement -> fractal is null, honestly. Otherwise the winner's def re-enters a fixed inner pipeline — tokenise, resolve, bind, converge, and deliberately NO fractal, so depth is one by construction. The inner winner comes back as the meaning of the meaning, with its own id, label, total and kind.",
+   "vars": {
+    "inner": "the complete inner run over the same world",
+    "s.fractal": "{text: the statement, meaning: the inner winner} or null"
+   },
+   "reads": [
+    "s.meaning",
+    "world (all of it, by the inner run)"
+   ],
+   "writes": [
+    "s.fractal"
+   ],
+   "feeds": [
+    "ui"
+   ],
+   "lines": [
+    15,
+    24
+   ]
+  },
+  {
+   "id": "ui",
+   "kind": "export",
+   "head": "export const ui = {",
+   "label": "the workbench declaration",
+   "does": "Prompts whose winners carry statements worth zooming into.",
+   "lines": [
+    25,
+    29
+   ]
+  }
+ ]
+}
