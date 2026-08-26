@@ -30,7 +30,12 @@ Gates (any failure kills the build):
   5. the document rebuilds from the formatting graph BYTE-IDENTICAL to the source
   6. the semantic shards re-derive from the formatting graph alone (the two
      graphs cannot disagree, because one provably generates the other)
+  7. the identity ledger (docs/<slug>/ids.json) covers every doc, section and
+     block with a unique live uid, and a second carry-forward pass over its own
+     output changes nothing (identity assignment is deterministic)
 """
+import difflib
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -39,6 +44,8 @@ ROOT = Path(__file__).resolve().parents[2]
 SLUG = "thinking-in-graphs"
 SRC = ROOT / "v2" / "universe" / "docs" / SLUG / "source.md"
 OUT = ROOT / "v2" / "universe" / "data" / "core" / SLUG
+LEDGER = ROOT / "v2" / "universe" / "docs" / SLUG / "ids.json"
+PREFIX = "".join(w[0] for w in SLUG.split("-"))   # thinking-in-graphs -> tig
 VERSION = (ROOT / "admin" / "build" / "version.txt").read_text().strip()
 
 LADDER = {
@@ -335,6 +342,80 @@ def token_analysis(forms, sen_forms, form_sens):
             "near": sorted(near), "edges": edges[:400]}
 
 
+def assign_ids(current, ledger):
+    """The identity ledger's match-then-mint pass (the founder's IDs question,
+    answered): a short opaque uid (tig:b42) is minted once and carried forward
+    across edits, so cross-references hold the identity while the locator (the
+    human-readable structural path) is free to move. Matching order per node:
+    same locator (edits in place update the hash), then same content hash (the
+    node moved; identity follows it), then fuzzy similarity of locator and text
+    head (renamed AND edited). Whatever the document no longer has is retired,
+    never deleted, so identity history survives. Deterministic: same input plus
+    same ledger always yields the same output (gate 7 enforces it).
+    @param current: [(level, locator, text)] in document order
+    @param ledger: the previous ids.json content ({} on first run)
+    @returns (uid_by_locator, new_ledger_dict)
+    """
+    prev = {e["uid"]: e for e in (ledger.get("ids") or [])}
+    minted = dict(ledger.get("minted") or {})
+    unclaimed = {u: e for u, e in prev.items() if e["status"] == "live"}
+    live_rows, uid_by_loc = [], {}
+    lv = {"doc": "d", "sec": "s", "blk": "b"}
+
+    def claim(uid, level, locator, h, head):
+        del unclaimed[uid]
+        live_rows.append({"uid": uid, "level": level, "locator": locator,
+                          "hash": h, "head": head, "status": "live"})
+        uid_by_loc[locator] = uid
+
+    staged = [(level, locator, text,
+               hashlib.sha256(text.encode("utf-8")).hexdigest()[:12], text[:80])
+              for level, locator, text in current]
+    loc_index = {e["locator"]: u for u, e in unclaimed.items()}
+    remaining = []
+    for level, locator, text, h, head in staged:
+        u = loc_index.get(locator)
+        if u in unclaimed and prev[u]["level"] == level:
+            claim(u, level, locator, h, head)
+        else:
+            remaining.append((level, locator, text, h, head))
+    hash_index = {}
+    for u, e in unclaimed.items():
+        hash_index.setdefault((e["level"], e["hash"]), []).append(u)
+    still = []
+    for level, locator, text, h, head in remaining:
+        us = [u for u in hash_index.get((level, h), []) if u in unclaimed]
+        if us:
+            claim(us[0], level, locator, h, head)
+        else:
+            still.append((level, locator, text, h, head))
+    for level, locator, text, h, head in still:
+        best, score = None, 0.0
+        for u, e in unclaimed.items():
+            if e["level"] != level:
+                continue
+            r = max(difflib.SequenceMatcher(None, e["locator"], locator).ratio(),
+                    difflib.SequenceMatcher(None, e.get("head", ""), head).ratio())
+            if r > score:
+                best, score = u, r
+        if best and score >= 0.75:
+            claim(best, level, locator, h, head)
+        else:
+            k = lv[level]
+            minted[k] = minted.get(k, 0) + 1
+            uid = f'{ledger.get("prefix", PREFIX)}:{k}{minted[k]}'
+            live_rows.append({"uid": uid, "level": level, "locator": locator,
+                              "hash": h, "head": head, "status": "live"})
+            uid_by_loc[locator] = uid
+    retired = sorted(
+        [{**e, "status": "retired"} for e in unclaimed.values()]
+        + [e for e in prev.values() if e["status"] == "retired"],
+        key=lambda e: e["uid"])
+    return uid_by_loc, {"doc": f"doc:{SLUG}", "prefix": ledger.get("prefix", PREFIX),
+                        "levels": ["doc", "sec", "blk"], "minted": minted,
+                        "ids": live_rows + retired}
+
+
 def main():
     raw = SRC.read_bytes()
     heads = headings(raw)
@@ -364,6 +445,7 @@ def main():
     shard_n = 0
     sen_forms, form_sens = [], {}          # per-sentence forms; form -> sentence indexes
     fmt_pieces, fmt_blocks, sem_check = [], {}, {}
+    pending_shards = []                    # written after the ledger assigns uids
     fcur = 0                               # the formatting walk's byte cursor
     for s in secs:
         body_start = raw.find(b"\n", s["start"]) + 1
@@ -445,11 +527,31 @@ def main():
         if blk_rows:
             shard_n += 1
             entry["shard"] = f"sec-{shard_n:02d}.json"
-            (OUT / entry["shard"]).write_text(json.dumps(
-                {"sec": s["id"], "blocks": blk_rows}, ensure_ascii=False) + "\n")
+            pending_shards.append((entry["shard"], {"sec": s["id"], "blocks": blk_rows}))
         index_secs.append(entry)
         for k in counts:
             totals[k] += counts[k]
+
+    # the identity ledger (v0.4.40): stable uids beside the structural locators
+    old = json.loads(LEDGER.read_text()) if LEDGER.exists() else {}
+    current = ([("doc", doc_id, title)]
+               + [("sec", s["id"], f'{s["level"]}|{s["title"]}') for s in secs[1:]]
+               + [("blk", bid, md) for bid, md in fmt_blocks.items()])
+    uid_by_loc, new_ledger = assign_ids(current, old)
+    # gate 7: full coverage, unique uids, and an idempotent second pass
+    live = [e for e in new_ledger["ids"] if e["status"] == "live"]
+    if len(live) != len(current) or len({e["uid"] for e in new_ledger["ids"]}) != len(new_ledger["ids"]):
+        raise SystemExit("gen_coregraph: the ledger lost coverage or minted a duplicate uid")
+    again_uid, again = assign_ids(current, new_ledger)
+    if again != new_ledger or again_uid != uid_by_loc:
+        raise SystemExit("gen_coregraph: the ledger is not idempotent — carry-forward is unstable")
+    LEDGER.write_text(json.dumps(new_ledger, ensure_ascii=False, indent=1) + "\n")
+    for entry in index_secs:
+        entry["uid"] = uid_by_loc[entry["id"]]
+    for fname, payload in pending_shards:
+        for b in payload["blocks"]:
+            b["uid"] = uid_by_loc[b["id"]]
+        (OUT / fname).write_text(json.dumps(payload, ensure_ascii=False) + "\n")
 
     # the formatting graph, and gate 5: the document rebuilds byte-identical
     if raw[fcur:].strip():
@@ -499,6 +601,10 @@ def main():
         "sections": index_secs}, ensure_ascii=False, indent=1) + "\n")
     size = sum(f.stat().st_size for f in OUT.glob("*.json"))
     st = tokens["stats"]
+    n_ret = sum(1 for e in new_ledger["ids"] if e["status"] == "retired")
+    print(f"gen_coregraph: ledger {new_ledger['prefix']}: {len(live)} live uid(s), "
+          f"{n_ret} retired, minted d{new_ledger['minted'].get('d', 0)}/"
+          f"s{new_ledger['minted'].get('s', 0)}/b{new_ledger['minted'].get('b', 0)}")
     print(f"gen_coregraph: {SLUG} — {len(index_secs)} sections, {totals['blocks']} blocks, "
           f"{totals['sentences']} sentences, {totals['words']} words ({len(forms)} forms), "
           f"{totals['spans']} spans, {shard_n} shard(s), {size:,} bytes; "

@@ -590,7 +590,7 @@ const CT_INDEX = {
   sections: [
     { id: 'doc:d', title: 'The Doc', level: 1, parent: null, counts: { blocks: 0, sentences: 0, words: 0 } },
     { id: 'sec:A', title: 'A', level: 2, parent: 'doc:d', shard: 'sec-01.json',
-      counts: { blocks: 1, sentences: 2, words: 5 } },
+      uid: 'd:s1', counts: { blocks: 1, sentences: 2, words: 5 } },
     { id: 'sec:A1', title: 'A1', level: 3, parent: 'sec:A', counts: { blocks: 0, sentences: 0, words: 0 } }],
 };
 const CT_SHARD = { sec: 'sec:A', blocks: [
@@ -632,6 +632,7 @@ test('coretree: forms count instances and the record says so', () => {
   assert.equal(wordRows.marked, 'bold');
   const secRows = Object.fromEntries(coreRecord(st, 'sec:A'));
   assert.ok(secRows.holds.includes('5 words'));
+  assert.ok(secRows.uid.startsWith('d:s1'));   /* the ledger identity surfaces */
   assert.ok(Object.fromEntries(coreRecord(st, 'blk:A/1')).bytes.includes('verification only'));
 });
 

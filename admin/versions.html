@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.39</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.40</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -131,6 +131,11 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.4.40</td>
+        <td>26 August 2026</td>
+        <td><b>The identity ledger: IDs that survive refactoring.</b> The founder asked whether the core graph's IDs should be random; the analysis behind this release is that randomness was never the missing ingredient, <b>persistence</b> was, and this ships it. Every document now keeps a committed ledger (<code>docs/&lt;slug&gt;/ids.json</code>) mapping short opaque uids — <code>tig:d1</code>, <code>tig:s1</code>&hellip;<code>tig:s38</code>, <code>tig:b1</code>&hellip;<code>tig:b186</code>, 225 identities for the pilot — to each node's current structural locator plus a content hash. The structural paths (<code>sec:What This Document Is</code>, <code>blk:&hellip;/3</code>) are demoted to what they honestly are, <b>locators</b>: human-readable, derived, free to move; the uid is the identity a cross-reference should hold. <b>Match-then-mint carry-forward</b> on every rebuild: same locator claims its uid first (an edit in place just updates the hash), then same content hash (a moved block's identity follows it), then fuzzy similarity of locator and text head (renamed AND edited); only what matches nothing gets a fresh uid, and whatever the document no longer has is <b>retired, never deleted and never reused</b>, so identity history survives. <b>Gate 7</b> makes the contract executable: full coverage of every doc, section and block; unique uids; and a second carry-forward pass over the ledger's own output must change nothing, or the build dies. The full edit repertoire was verified against the algorithm before shipping: a renamed section keeps its uid, its unedited blocks follow by hash, an edited-and-renamed block carries by fuzzy match, a moved block keeps its identity, a new block mints fresh, a deleted block retires with its uid preserved forever. The uids surface everywhere the nodes do: the core index, every shard, and the inspector's record ("uid tig:b3 — the stable identity; the id above is the locator and may move"). The document folder documents its new file. And the free consequence the founder wanted IDs for in the first place: the ledger diff between two versions of a document IS change detection — untouched, edited, moved, new, retired — waiting only for a second version to exist. Methods register entry 34. Sixty-one gate-27 tests green. No book content changed.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.4.39</td>
         <td>26 August 2026</td>
@@ -531,7 +536,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.39</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.40</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

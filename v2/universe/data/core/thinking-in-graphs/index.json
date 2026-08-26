@@ -1,5 +1,5 @@
 {
- "version": "v0.4.39",
+ "version": "v0.4.40",
  "slug": "thinking-in-graphs",
  "doc": "doc:thinking-in-graphs",
  "title": "Thinking in Graphs: Meaning Through Connectivity",
@@ -32,7 +32,8 @@
     "sentences": 1,
     "words": 19
    },
-   "shard": "sec-01.json"
+   "shard": "sec-01.json",
+   "uid": "tig:d1"
   },
   {
    "id": "sec:What This Document Is",
@@ -44,7 +45,8 @@
     "sentences": 6,
     "words": 123
    },
-   "shard": "sec-02.json"
+   "shard": "sec-02.json",
+   "uid": "tig:s1"
   },
   {
    "id": "sec:Part 1: Everything Is a Node",
@@ -55,7 +57,8 @@
     "blocks": 0,
     "sentences": 0,
     "words": 0
-   }
+   },
+   "uid": "tig:s2"
   },
   {
    "id": "sec:Nodes Have No Obligation to Explain Themselves",
@@ -67,7 +70,8 @@
     "sentences": 10,
     "words": 134
    },
-   "shard": "sec-03.json"
+   "shard": "sec-03.json",
+   "uid": "tig:s3"
   },
   {
    "id": "sec:The Safe_UInt__Port Example",
@@ -79,7 +83,8 @@
     "sentences": 23,
     "words": 242
    },
-   "shard": "sec-04.json"
+   "shard": "sec-04.json",
+   "uid": "tig:s4"
   },
   {
    "id": "sec:This Applies to Everything",
@@ -91,7 +96,8 @@
     "sentences": 12,
     "words": 187
    },
-   "shard": "sec-05.json"
+   "shard": "sec-05.json",
+   "uid": "tig:s5"
   },
   {
    "id": "sec:Part 2: Meaning Through Connectivity",
@@ -102,7 +108,8 @@
     "blocks": 0,
     "sentences": 0,
     "words": 0
-   }
+   },
+   "uid": "tig:s6"
   },
   {
    "id": "sec:Meaning Is Not Declared — It Is Discovered",
@@ -114,7 +121,8 @@
     "sentences": 16,
     "words": 197
    },
-   "shard": "sec-06.json"
+   "shard": "sec-06.json",
+   "uid": "tig:s7"
   },
   {
    "id": "sec:The Review Example",
@@ -126,7 +134,8 @@
     "sentences": 9,
     "words": 88
    },
-   "shard": "sec-07.json"
+   "shard": "sec-07.json",
+   "uid": "tig:s8"
   },
   {
    "id": "sec:Finding Common Ground Through Graph Analysis",
@@ -138,7 +147,8 @@
     "sentences": 14,
     "words": 168
    },
-   "shard": "sec-08.json"
+   "shard": "sec-08.json",
+   "uid": "tig:s9"
   },
   {
    "id": "sec:Compatibility Is a Graph Computation",
@@ -150,7 +160,8 @@
     "sentences": 4,
     "words": 114
    },
-   "shard": "sec-09.json"
+   "shard": "sec-09.json",
+   "uid": "tig:s10"
   },
   {
    "id": "sec:Part 3: The Fractal Principle",
@@ -161,7 +172,8 @@
     "blocks": 0,
     "sentences": 0,
     "words": 0
-   }
+   },
+   "uid": "tig:s11"
   },
   {
    "id": "sec:Every Scope Defines Its Own Vocabulary",
@@ -173,7 +185,8 @@
     "sentences": 18,
     "words": 244
    },
-   "shard": "sec-10.json"
+   "shard": "sec-10.json",
+   "uid": "tig:s12"
   },
   {
    "id": "sec:Name Clashes Are Normal",
@@ -185,7 +198,8 @@
     "sentences": 14,
     "words": 159
    },
-   "shard": "sec-11.json"
+   "shard": "sec-11.json",
+   "uid": "tig:s13"
   },
   {
    "id": "sec:Incompatibility and Missing Pieces Are Expected",
@@ -197,7 +211,8 @@
     "sentences": 13,
     "words": 155
    },
-   "shard": "sec-12.json"
+   "shard": "sec-12.json",
+   "uid": "tig:s14"
   },
   {
    "id": "sec:Part 4: Anchor Nodes and Reference Graphs",
@@ -208,7 +223,8 @@
     "blocks": 0,
     "sentences": 0,
     "words": 0
-   }
+   },
+   "uid": "tig:s15"
   },
   {
    "id": "sec:The Semantic Web's Insight (and Mistake)",
@@ -220,7 +236,8 @@
     "sentences": 13,
     "words": 132
    },
-   "shard": "sec-13.json"
+   "shard": "sec-13.json",
+   "uid": "tig:s16"
   },
   {
    "id": "sec:The Graph-First Correction",
@@ -232,7 +249,8 @@
     "sentences": 16,
     "words": 184
    },
-   "shard": "sec-14.json"
+   "shard": "sec-14.json",
+   "uid": "tig:s17"
   },
   {
    "id": "sec:What Anchor Nodes Actually Are",
@@ -244,7 +262,8 @@
     "sentences": 13,
     "words": 158
    },
-   "shard": "sec-15.json"
+   "shard": "sec-15.json",
+   "uid": "tig:s18"
   },
   {
    "id": "sec:Part 5: Confidence as a Function of Connectivity",
@@ -255,7 +274,8 @@
     "blocks": 0,
     "sentences": 0,
     "words": 0
-   }
+   },
+   "uid": "tig:s19"
   },
   {
    "id": "sec:The Confidence Spectrum",
@@ -267,7 +287,8 @@
     "sentences": 3,
     "words": 57
    },
-   "shard": "sec-16.json"
+   "shard": "sec-16.json",
+   "uid": "tig:s20"
   },
   {
    "id": "sec:Honest Uncertainty Is the Default",
@@ -279,7 +300,8 @@
     "sentences": 15,
     "words": 171
    },
-   "shard": "sec-17.json"
+   "shard": "sec-17.json",
+   "uid": "tig:s21"
   },
   {
    "id": "sec:Enrichment, Not Enforcement",
@@ -291,7 +313,8 @@
     "sentences": 7,
     "words": 104
    },
-   "shard": "sec-18.json"
+   "shard": "sec-18.json",
+   "uid": "tig:s22"
   },
   {
    "id": "sec:Part 6: Graphs of Graphs",
@@ -302,7 +325,8 @@
     "blocks": 0,
     "sentences": 0,
     "words": 0
-   }
+   },
+   "uid": "tig:s23"
   },
   {
    "id": "sec:The Recursive Structure",
@@ -314,7 +338,8 @@
     "sentences": 13,
     "words": 162
    },
-   "shard": "sec-19.json"
+   "shard": "sec-19.json",
+   "uid": "tig:s24"
   },
   {
    "id": "sec:Cross-Graph References",
@@ -326,7 +351,8 @@
     "sentences": 8,
     "words": 145
    },
-   "shard": "sec-20.json"
+   "shard": "sec-20.json",
+   "uid": "tig:s25"
   },
   {
    "id": "sec:Versioning and Temporal Graphs",
@@ -338,7 +364,8 @@
     "sentences": 10,
     "words": 153
    },
-   "shard": "sec-21.json"
+   "shard": "sec-21.json",
+   "uid": "tig:s26"
   },
   {
    "id": "sec:Part 7: Practical Implications for Issues-FS",
@@ -349,7 +376,8 @@
     "blocks": 0,
     "sentences": 0,
     "words": 0
-   }
+   },
+   "uid": "tig:s27"
   },
   {
    "id": "sec:What the Lexicon Actually Provides",
@@ -361,7 +389,8 @@
     "sentences": 7,
     "words": 106
    },
-   "shard": "sec-22.json"
+   "shard": "sec-22.json",
+   "uid": "tig:s28"
   },
   {
    "id": "sec:What Every Repo Can Do",
@@ -373,7 +402,8 @@
     "sentences": 6,
     "words": 72
    },
-   "shard": "sec-23.json"
+   "shard": "sec-23.json",
+   "uid": "tig:s29"
   },
   {
    "id": "sec:What the System Can Observe",
@@ -385,7 +415,8 @@
     "sentences": 11,
     "words": 84
    },
-   "shard": "sec-24.json"
+   "shard": "sec-24.json",
+   "uid": "tig:s30"
   },
   {
    "id": "sec:What the System Never Does",
@@ -397,7 +428,8 @@
     "sentences": 7,
     "words": 60
    },
-   "shard": "sec-25.json"
+   "shard": "sec-25.json",
+   "uid": "tig:s31"
   },
   {
    "id": "sec:Part 8: A Worked Example — End to End",
@@ -409,7 +441,8 @@
     "sentences": 1,
     "words": 27
    },
-   "shard": "sec-26.json"
+   "shard": "sec-26.json",
+   "uid": "tig:s32"
   },
   {
    "id": "sec:The Setup",
@@ -421,7 +454,8 @@
     "sentences": 6,
     "words": 43
    },
-   "shard": "sec-27.json"
+   "shard": "sec-27.json",
+   "uid": "tig:s33"
   },
   {
    "id": "sec:The Graph",
@@ -433,7 +467,8 @@
     "sentences": 9,
     "words": 139
    },
-   "shard": "sec-28.json"
+   "shard": "sec-28.json",
+   "uid": "tig:s34"
   },
   {
    "id": "sec:The QA Engineer in Tokyo",
@@ -445,7 +480,8 @@
     "sentences": 9,
     "words": 84
    },
-   "shard": "sec-29.json"
+   "shard": "sec-29.json",
+   "uid": "tig:s35"
   },
   {
    "id": "sec:The Compliance Officer in Frankfurt",
@@ -457,7 +493,8 @@
     "sentences": 10,
     "words": 107
    },
-   "shard": "sec-30.json"
+   "shard": "sec-30.json",
+   "uid": "tig:s36"
   },
   {
    "id": "sec:The Open Source Contributor in Nairobi",
@@ -469,7 +506,8 @@
     "sentences": 10,
     "words": 122
    },
-   "shard": "sec-31.json"
+   "shard": "sec-31.json",
+   "uid": "tig:s37"
   },
   {
    "id": "sec:Summary: Core Principles",
@@ -481,7 +519,8 @@
     "sentences": 28,
     "words": 281
    },
-   "shard": "sec-32.json"
+   "shard": "sec-32.json",
+   "uid": "tig:s38"
   }
  ]
 }

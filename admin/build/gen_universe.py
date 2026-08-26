@@ -741,6 +741,8 @@ def main():
              "every anchor verified against the frozen bytes on every build (gate 23)"),
             ("crossrefs.json", "The known uses of this document across the estate, each rated against the usage model.",
              "ratings, paths and named concepts validated on every build"),
+            ("ids.json", "The identity ledger: a short stable uid for the document, every section and every block, carried forward across edits by match-then-mint, so cross-references hold identities instead of fragile locators.",
+             "coverage, uniqueness and idempotent carry-forward gated on every build"),
             ("README.md", "What this folder is, for a reader who finds it outside this repository.", "&mdash;"),
         ]:
             fp = folder / fname

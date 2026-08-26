@@ -16,7 +16,7 @@ export function coreState(indexJson) {
   indexJson.sections.forEach((s) => {
     st.nodes.set(s.id, { id: s.id, kind: s.id === st.doc ? 'doc' : 'sec',
       label: s.title, parent: s.parent, level: s.level, counts: s.counts,
-      shard: s.shard || null, childSecs: [], blocks: [] });
+      uid: s.uid || null, shard: s.shard || null, childSecs: [], blocks: [] });
   });
   indexJson.sections.forEach((s) => {
     if (s.parent && st.nodes.has(s.parent)) st.nodes.get(s.parent).childSecs.push(s.id);
@@ -54,7 +54,7 @@ export function mergeShard(st, secId, shardJson) {
       return sid;
     });
     st.nodes.set(b.id, { id: b.id, kind: b.kind, label: b.text || b.kind,
-      parent: secId, range: b.range, sentences: sens,
+      parent: secId, range: b.range, uid: b.uid || null, sentences: sens,
       spans: (b.spans || []).map((sp) => sp.id) });
     sec.blocks.push(b.id);
   });
@@ -137,6 +137,7 @@ export function coreRecord(st, id) {
   if (!n) return [];
   const name = (st.ladder || {})[n.kind] || n.kind;
   const rows = [['id', n.id], ['level', name]];
+  if (n.uid) rows.splice(1, 0, ['uid', n.uid + ' — the stable identity; the id above is the locator and may move']);
   if (n.kind === 'wrd') {
     if (n.marks.length) rows.push(['marked', n.marks.join(', ')]);
     const f = formOf(st, n.label);

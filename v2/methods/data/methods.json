@@ -398,6 +398,18 @@
    ],
    "status": "in use",
    "for_the_book": "A document read as its own token universe measures itself: how much of it is padding, where its meaning concentrates, which of its words secretly name more than one thing. The statistics are not the understanding, but they say exactly where understanding should look first."
+  },
+  {
+   "id": "identity-ledger",
+   "name": "The identity ledger (match-then-mint)",
+   "what": "The answer to the founder's IDs question, with the load-bearing insight that randomness was never the missing ingredient — persistence was. Every document keeps a committed ledger (ids.json) mapping short opaque uids (tig:b42) to the current structural locator plus a content hash. The generator carries identities forward on every rebuild: same locator claims its uid first (edits in place just update the hash), then same content hash (a moved block's identity follows it), then fuzzy similarity of locator and text head (renamed and edited); only what matches nothing gets a freshly minted uid, and whatever the document no longer has is retired, never deleted, so identity history survives and uids are never reused. Cross-references hold the uid; the locator stays human-readable and free to move. Gate 7 makes the contract executable: full coverage, unique uids, and a second carry-forward pass over the ledger's own output must change nothing. Verified against the full edit repertoire: rename, edit in place, move, add, delete.",
+   "born": "v0.4.40",
+   "implemented_in": [
+    "admin/build/gen_coregraph.py",
+    "v2/universe/docs/thinking-in-graphs/ids.json"
+   ],
+   "status": "in use",
+   "for_the_book": "Identity through change is the property offsets and paths can never give: mint an identity once, persist it, and make every rebuild prove it can carry the past forward before it is allowed to ship. The ledger diff between two versions is change detection for free: untouched, edited, moved, new, retired."
   }
  ]
 }

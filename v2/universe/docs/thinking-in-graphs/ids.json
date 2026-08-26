@@ -1,0 +1,1816 @@
+{
+ "doc": "doc:thinking-in-graphs",
+ "prefix": "tig",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 38,
+  "b": 186
+ },
+ "ids": [
+  {
+   "uid": "tig:d1",
+   "level": "doc",
+   "locator": "doc:thinking-in-graphs",
+   "hash": "43d46d7a6e56",
+   "head": "Thinking in Graphs: Meaning Through Connectivity",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s1",
+   "level": "sec",
+   "locator": "sec:What This Document Is",
+   "hash": "ab4e184c4ec7",
+   "head": "2|What This Document Is",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s2",
+   "level": "sec",
+   "locator": "sec:Part 1: Everything Is a Node",
+   "hash": "e2011fd1ab2e",
+   "head": "2|Part 1: Everything Is a Node",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s3",
+   "level": "sec",
+   "locator": "sec:Nodes Have No Obligation to Explain Themselves",
+   "hash": "d57b8af939c8",
+   "head": "3|Nodes Have No Obligation to Explain Themselves",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s4",
+   "level": "sec",
+   "locator": "sec:The Safe_UInt__Port Example",
+   "hash": "e6b4bdf9770b",
+   "head": "3|The Safe_UInt__Port Example",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s5",
+   "level": "sec",
+   "locator": "sec:This Applies to Everything",
+   "hash": "9cc989b1dda4",
+   "head": "3|This Applies to Everything",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s6",
+   "level": "sec",
+   "locator": "sec:Part 2: Meaning Through Connectivity",
+   "hash": "13a95361d60d",
+   "head": "2|Part 2: Meaning Through Connectivity",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s7",
+   "level": "sec",
+   "locator": "sec:Meaning Is Not Declared — It Is Discovered",
+   "hash": "ae5d45c6dd71",
+   "head": "3|Meaning Is Not Declared — It Is Discovered",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s8",
+   "level": "sec",
+   "locator": "sec:The Review Example",
+   "hash": "978fcfc720fb",
+   "head": "3|The Review Example",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s9",
+   "level": "sec",
+   "locator": "sec:Finding Common Ground Through Graph Analysis",
+   "hash": "35862e23ebac",
+   "head": "3|Finding Common Ground Through Graph Analysis",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s10",
+   "level": "sec",
+   "locator": "sec:Compatibility Is a Graph Computation",
+   "hash": "49503eaa0871",
+   "head": "3|Compatibility Is a Graph Computation",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s11",
+   "level": "sec",
+   "locator": "sec:Part 3: The Fractal Principle",
+   "hash": "898cbdb56b0e",
+   "head": "2|Part 3: The Fractal Principle",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s12",
+   "level": "sec",
+   "locator": "sec:Every Scope Defines Its Own Vocabulary",
+   "hash": "58c65e2fe92f",
+   "head": "3|Every Scope Defines Its Own Vocabulary",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s13",
+   "level": "sec",
+   "locator": "sec:Name Clashes Are Normal",
+   "hash": "86dd3a11ba81",
+   "head": "3|Name Clashes Are Normal",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s14",
+   "level": "sec",
+   "locator": "sec:Incompatibility and Missing Pieces Are Expected",
+   "hash": "479ac48cdf53",
+   "head": "3|Incompatibility and Missing Pieces Are Expected",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s15",
+   "level": "sec",
+   "locator": "sec:Part 4: Anchor Nodes and Reference Graphs",
+   "hash": "d263e490f58a",
+   "head": "2|Part 4: Anchor Nodes and Reference Graphs",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s16",
+   "level": "sec",
+   "locator": "sec:The Semantic Web's Insight (and Mistake)",
+   "hash": "f3ba8592e1a8",
+   "head": "3|The Semantic Web's Insight (and Mistake)",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s17",
+   "level": "sec",
+   "locator": "sec:The Graph-First Correction",
+   "hash": "9ebfe9e5d0b6",
+   "head": "3|The Graph-First Correction",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s18",
+   "level": "sec",
+   "locator": "sec:What Anchor Nodes Actually Are",
+   "hash": "bc344a538b83",
+   "head": "3|What Anchor Nodes Actually Are",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s19",
+   "level": "sec",
+   "locator": "sec:Part 5: Confidence as a Function of Connectivity",
+   "hash": "1700bdba126c",
+   "head": "2|Part 5: Confidence as a Function of Connectivity",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s20",
+   "level": "sec",
+   "locator": "sec:The Confidence Spectrum",
+   "hash": "54f29e3c56a8",
+   "head": "3|The Confidence Spectrum",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s21",
+   "level": "sec",
+   "locator": "sec:Honest Uncertainty Is the Default",
+   "hash": "1fd9c182e99f",
+   "head": "3|Honest Uncertainty Is the Default",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s22",
+   "level": "sec",
+   "locator": "sec:Enrichment, Not Enforcement",
+   "hash": "7e3d63616142",
+   "head": "3|Enrichment, Not Enforcement",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s23",
+   "level": "sec",
+   "locator": "sec:Part 6: Graphs of Graphs",
+   "hash": "0227f6720ce7",
+   "head": "2|Part 6: Graphs of Graphs",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s24",
+   "level": "sec",
+   "locator": "sec:The Recursive Structure",
+   "hash": "517aa3764d90",
+   "head": "3|The Recursive Structure",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s25",
+   "level": "sec",
+   "locator": "sec:Cross-Graph References",
+   "hash": "9bb99ea6c13f",
+   "head": "3|Cross-Graph References",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s26",
+   "level": "sec",
+   "locator": "sec:Versioning and Temporal Graphs",
+   "hash": "7a06c81517e6",
+   "head": "3|Versioning and Temporal Graphs",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s27",
+   "level": "sec",
+   "locator": "sec:Part 7: Practical Implications for Issues-FS",
+   "hash": "7f14f5b91d11",
+   "head": "2|Part 7: Practical Implications for Issues-FS",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s28",
+   "level": "sec",
+   "locator": "sec:What the Lexicon Actually Provides",
+   "hash": "7340bbe753ce",
+   "head": "3|What the Lexicon Actually Provides",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s29",
+   "level": "sec",
+   "locator": "sec:What Every Repo Can Do",
+   "hash": "fa49909be135",
+   "head": "3|What Every Repo Can Do",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s30",
+   "level": "sec",
+   "locator": "sec:What the System Can Observe",
+   "hash": "08ca4a106fd9",
+   "head": "3|What the System Can Observe",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s31",
+   "level": "sec",
+   "locator": "sec:What the System Never Does",
+   "hash": "0573d23df0da",
+   "head": "3|What the System Never Does",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s32",
+   "level": "sec",
+   "locator": "sec:Part 8: A Worked Example — End to End",
+   "hash": "4f13f0faf847",
+   "head": "2|Part 8: A Worked Example — End to End",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s33",
+   "level": "sec",
+   "locator": "sec:The Setup",
+   "hash": "4b6073d8b457",
+   "head": "3|The Setup",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s34",
+   "level": "sec",
+   "locator": "sec:The Graph",
+   "hash": "65c62214e127",
+   "head": "3|The Graph",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s35",
+   "level": "sec",
+   "locator": "sec:The QA Engineer in Tokyo",
+   "hash": "bbbd9160a3b2",
+   "head": "3|The QA Engineer in Tokyo",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s36",
+   "level": "sec",
+   "locator": "sec:The Compliance Officer in Frankfurt",
+   "hash": "0e0afefd8639",
+   "head": "3|The Compliance Officer in Frankfurt",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s37",
+   "level": "sec",
+   "locator": "sec:The Open Source Contributor in Nairobi",
+   "hash": "9029892d5364",
+   "head": "3|The Open Source Contributor in Nairobi",
+   "status": "live"
+  },
+  {
+   "uid": "tig:s38",
+   "level": "sec",
+   "locator": "sec:Summary: Core Principles",
+   "hash": "1cfd3a1b87c7",
+   "head": "2|Summary: Core Principles",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b1",
+   "level": "blk",
+   "locator": "blk:Thinking in Graphs: Meaning Through Connectivity/1",
+   "hash": "e6046065723a",
+   "head": "**Document:** issues-fs__thinking-in-graphs  \n**Version:** v1.0  \n**Date:** 2026",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b2",
+   "level": "blk",
+   "locator": "blk:Thinking in Graphs: Meaning Through Connectivity/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b3",
+   "level": "blk",
+   "locator": "blk:What This Document Is/1",
+   "hash": "323326eee460",
+   "head": "This is the foundational document for the Issues-FS ecosystem. It captures the c",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b4",
+   "level": "blk",
+   "locator": "blk:What This Document Is/2",
+   "hash": "9225d44ceefe",
+   "head": "The central claim is simple: **everything is a graph, meaning is not declared bu",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b5",
+   "level": "blk",
+   "locator": "blk:What This Document Is/3",
+   "hash": "c2ea8c3d2429",
+   "head": "This is not a metaphor. It is a literal architectural principle that drives how ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b6",
+   "level": "blk",
+   "locator": "blk:What This Document Is/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b7",
+   "level": "blk",
+   "locator": "blk:Nodes Have No Obligation to Explain Themselves/1",
+   "hash": "086556d4981e",
+   "head": "A node in a graph is just a node. It may carry some local properties — a title, ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b8",
+   "level": "blk",
+   "locator": "blk:Nodes Have No Obligation to Explain Themselves/2",
+   "hash": "e4b0b98ccd42",
+   "head": "This is a deliberate departure from schema-first thinking, where the type system",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b9",
+   "level": "blk",
+   "locator": "blk:Nodes Have No Obligation to Explain Themselves/3",
+   "hash": "26e3b73bb74e",
+   "head": "This is not a weakness. It is the foundational design choice.",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b10",
+   "level": "blk",
+   "locator": "blk:The Safe_UInt__Port Example/1",
+   "hash": "11de475e4ed9",
+   "head": "Consider a concrete example from the osbot-utils Type_Safe framework:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b11",
+   "level": "blk",
+   "locator": "blk:The Safe_UInt__Port Example/2",
+   "hash": "a7404ef3d45e",
+   "head": "```python\nclass Safe_UInt__Port(Safe_UInt):\n    min_value  = 0\n    max_value  = ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b12",
+   "level": "blk",
+   "locator": "blk:The Safe_UInt__Port Example/3",
+   "hash": "391021d4acf3",
+   "head": "Now consider two scenarios in an Issues-FS graph:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b13",
+   "level": "blk",
+   "locator": "blk:The Safe_UInt__Port Example/4",
+   "hash": "6eda3d4d6f2e",
+   "head": "**Scenario A:** A node has a field `port` with the value `8080`, and that field ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b14",
+   "level": "blk",
+   "locator": "blk:The Safe_UInt__Port Example/5",
+   "hash": "377c563b18d8",
+   "head": "The graph looks like:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b15",
+   "level": "blk",
+   "locator": "blk:The Safe_UInt__Port Example/6",
+   "hash": "96515aedc884",
+   "head": "```\nnode__server_config\n    ├── field: port\n    │     ├── value: 8080\n    │     ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b16",
+   "level": "blk",
+   "locator": "blk:The Safe_UInt__Port Example/7",
+   "hash": "27efe8f0aed1",
+   "head": "From this graph, we can say with confidence: \"This is a network port. It is an u",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b17",
+   "level": "blk",
+   "locator": "blk:The Safe_UInt__Port Example/8",
+   "hash": "6970512a7bcf",
+   "head": "**Scenario B:** A node has a field `port` with the value `8080`, typed as `int`.",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b18",
+   "level": "blk",
+   "locator": "blk:The Safe_UInt__Port Example/9",
+   "hash": "bb3ff7e39047",
+   "head": "```\nnode__server_config\n    ├── field: port\n    │     ├── value: 8080\n    │     ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b19",
+   "level": "blk",
+   "locator": "blk:The Safe_UInt__Port Example/10",
+   "hash": "434b8f91f11b",
+   "head": "From this graph, all we can say is: \"There is a field called 'port' with the val",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b20",
+   "level": "blk",
+   "locator": "blk:The Safe_UInt__Port Example/11",
+   "hash": "82d39e740be5",
+   "head": "**The difference is not in the value.** Both scenarios have `8080`. The differen",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b21",
+   "level": "blk",
+   "locator": "blk:This Applies to Everything/1",
+   "hash": "57ae0f1b01f4",
+   "head": "The port example is about a primitive value, but the principle applies to every ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b22",
+   "level": "blk",
+   "locator": "blk:This Applies to Everything/2",
+   "hash": "69d5d2261d72",
+   "head": "- An issue labelled \"Task\" is just a node. If it has edges to an issue-type defi",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b23",
+   "level": "blk",
+   "locator": "blk:This Applies to Everything/3",
+   "hash": "6cbe736d9bf9",
+   "head": "- A role called \"QA\" is just a node. If it links to a ROLE.md definition, to a s",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b24",
+   "level": "blk",
+   "locator": "blk:This Applies to Everything/4",
+   "hash": "d3fa8a450d6d",
+   "head": "- A status called \"completed\" is just a string. If it links to a state machine t",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b25",
+   "level": "blk",
+   "locator": "blk:This Applies to Everything/5",
+   "hash": "3934592c3677",
+   "head": "The graph either provides the evidence or it doesn't. The system's job is to rep",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b26",
+   "level": "blk",
+   "locator": "blk:This Applies to Everything/6",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b27",
+   "level": "blk",
+   "locator": "blk:Meaning Is Not Declared — It Is Discovered/1",
+   "hash": "6e21eaae5264",
+   "head": "In a schema-first system, meaning is declared: \"This object IS a Task. It HAS th",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b28",
+   "level": "blk",
+   "locator": "blk:Meaning Is Not Declared — It Is Discovered/2",
+   "hash": "803742072bf1",
+   "head": "In a graph-first system, meaning is discovered: \"This node has edges to other no",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b29",
+   "level": "blk",
+   "locator": "blk:Meaning Is Not Declared — It Is Discovered/3",
+   "hash": "19b7bb50268e",
+   "head": "The distinction matters because declared meaning is brittle and local. A schema ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b30",
+   "level": "blk",
+   "locator": "blk:Meaning Is Not Declared — It Is Discovered/4",
+   "hash": "c97f6e5ad0d9",
+   "head": "Discovered meaning is resilient and composable. Each context adds its own edges.",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b31",
+   "level": "blk",
+   "locator": "blk:The Review Example/1",
+   "hash": "80c75a193f45",
+   "head": "Consider five different teams, each with a process they call \"Review\":",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b32",
+   "level": "blk",
+   "locator": "blk:The Review Example/2",
+   "hash": "19abccb01ed4",
+   "head": "**Team A (Japanese manufacturing)** has a Review node connected to:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b33",
+   "level": "blk",
+   "locator": "blk:The Review Example/3",
+   "hash": "3a25c706738b",
+   "head": "```\nReview-A\n    ├── has_step ──→ assign_inspector\n    ├── has_step ──→ assign_r",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b34",
+   "level": "blk",
+   "locator": "blk:The Review Example/4",
+   "hash": "b6f65397ad57",
+   "head": "**Team B (open source contributor)** has a Review node connected to:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b35",
+   "level": "blk",
+   "locator": "blk:The Review Example/5",
+   "hash": "ac4c802167d5",
+   "head": "```\nReview-B\n    ├── has_step ──→ look_at_PR\n    ├── has_step ──→ leave_comment ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b36",
+   "level": "blk",
+   "locator": "blk:The Review Example/6",
+   "hash": "1255cce14e88",
+   "head": "**Team C (Frankfurt compliance)** has a Review node connected to:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b37",
+   "level": "blk",
+   "locator": "blk:The Review Example/7",
+   "hash": "8e411cc2fab7",
+   "head": "```\nReview-C\n    ├── has_step ──→ assign_responsible_officer\n    ├── has_step ──",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b38",
+   "level": "blk",
+   "locator": "blk:The Review Example/8",
+   "hash": "de52833b76af",
+   "head": "**Team D (Lagos startup)** has a Review node connected to:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b39",
+   "level": "blk",
+   "locator": "blk:The Review Example/9",
+   "hash": "9311a2137f87",
+   "head": "```\nReview-D\n    ├── has_step ──→ record_loom_video\n    ├── has_step ──→ post_co",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b40",
+   "level": "blk",
+   "locator": "blk:The Review Example/10",
+   "hash": "992e740a355e",
+   "head": "**Team E (São Paulo agency)** has a Review node connected to:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b41",
+   "level": "blk",
+   "locator": "blk:The Review Example/11",
+   "hash": "e59882efe3ac",
+   "head": "```\nReview-E\n    ├── has_step ──→ client_presentation\n    ├── has_step ──→ colle",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b42",
+   "level": "blk",
+   "locator": "blk:The Review Example/12",
+   "hash": "9d64cbf14eb0",
+   "head": "None of these nodes are \"aware\" of each other. None of them declare \"I am a sche",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b43",
+   "level": "blk",
+   "locator": "blk:Finding Common Ground Through Graph Analysis/1",
+   "hash": "f6c3fd91add1",
+   "head": "Now suppose these five teams need to collaborate, or we simply want to understan",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b44",
+   "level": "blk",
+   "locator": "blk:Finding Common Ground Through Graph Analysis/2",
+   "hash": "9cab84a59cee",
+   "head": "**Step 1: Identify common subgraph patterns.**",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b45",
+   "level": "blk",
+   "locator": "blk:Finding Common Ground Through Graph Analysis/3",
+   "hash": "814eaad5fca3",
+   "head": "All five Reviews share some edges, though they use different local labels:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b46",
+   "level": "blk",
+   "locator": "blk:Finding Common Ground Through Graph Analysis/4",
+   "hash": "dcb61ff9e1e1",
+   "head": "```\nCommon edges found across all 5:\n    has_step ──→ [some form of examining th",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b47",
+   "level": "blk",
+   "locator": "blk:Finding Common Ground Through Graph Analysis/5",
+   "hash": "b00753913086",
+   "head": "**Step 2: Surface the structural observation.**",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b48",
+   "level": "blk",
+   "locator": "blk:Finding Common Ground Through Graph Analysis/6",
+   "hash": "0b618a30b4a3",
+   "head": "The graph analysis can now say: \"Team B's Review is structurally thinner than th",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b49",
+   "level": "blk",
+   "locator": "blk:Finding Common Ground Through Graph Analysis/7",
+   "hash": "ff204a39c8f3",
+   "head": "**Step 3: No one had to agree on anything.**",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b50",
+   "level": "blk",
+   "locator": "blk:Finding Common Ground Through Graph Analysis/8",
+   "hash": "f987242cbb95",
+   "head": "This analysis happened without any team changing their process, learning a share",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b51",
+   "level": "blk",
+   "locator": "blk:Compatibility Is a Graph Computation/1",
+   "hash": "60fc10b3fa99",
+   "head": "This redefines what \"compatibility\" means. Two nodes are not compatible because ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b52",
+   "level": "blk",
+   "locator": "blk:Compatibility Is a Graph Computation/2",
+   "hash": "35987dda301a",
+   "head": "Compatibility is:\n- **Not binary** — it's a spectrum (Team A and Team C are more",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b53",
+   "level": "blk",
+   "locator": "blk:Compatibility Is a Graph Computation/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b54",
+   "level": "blk",
+   "locator": "blk:Every Scope Defines Its Own Vocabulary/1",
+   "hash": "c1d8cbcacc50",
+   "head": "The Issues-FS ecosystem is not one graph. It is graphs of graphs of graphs, at e",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b55",
+   "level": "blk",
+   "locator": "blk:Every Scope Defines Its Own Vocabulary/2",
+   "hash": "7847c9ace1aa",
+   "head": "```\nIssues-FS__Lexicon (root)\n    └── Issues-FS__Service (project)\n        └── P",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b56",
+   "level": "blk",
+   "locator": "blk:Every Scope Defines Its Own Vocabulary/3",
+   "hash": "ee457ab3c574",
+   "head": "Every level in this hierarchy can introduce its own nodes, edges, types, and def",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b57",
+   "level": "blk",
+   "locator": "blk:Every Scope Defines Its Own Vocabulary/4",
+   "hash": "67140c1f7757",
+   "head": "**The root Lexicon** provides anchor nodes for well-understood concepts. These a",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b58",
+   "level": "blk",
+   "locator": "blk:Every Scope Defines Its Own Vocabulary/5",
+   "hash": "40a7477718a5",
+   "head": "**A project** can introduce issue types that only make sense within that project",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b59",
+   "level": "blk",
+   "locator": "blk:Every Scope Defines Its Own Vocabulary/6",
+   "hash": "aa24b310dcf1",
+   "head": "**An epic within that project** might further specialise: `Lightning_Talk_Propos",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b60",
+   "level": "blk",
+   "locator": "blk:Every Scope Defines Its Own Vocabulary/7",
+   "hash": "86b172ee8e94",
+   "head": "**A single task** might define its own sub-vocabulary: checkboxes, sub-steps, ac",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b61",
+   "level": "blk",
+   "locator": "blk:Every Scope Defines Its Own Vocabulary/8",
+   "hash": "f8e458e7a15d",
+   "head": "At no level does a child scope need to \"register\" its vocabulary with a parent s",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b62",
+   "level": "blk",
+   "locator": "blk:Name Clashes Are Normal/1",
+   "hash": "de2406919545",
+   "head": "In a fractal system, name clashes are inevitable and non-problematic. `Task-23` ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b63",
+   "level": "blk",
+   "locator": "blk:Name Clashes Are Normal/2",
+   "hash": "7c2b259ec364",
+   "head": "Resolution is structural, not nominal. Each node has a unique identity in the gr",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b64",
+   "level": "blk",
+   "locator": "blk:Name Clashes Are Normal/3",
+   "hash": "d4386447f36d",
+   "head": "Type-level clashes are more interesting. If `Project-6` defines a `Review` issue",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b65",
+   "level": "blk",
+   "locator": "blk:Incompatibility and Missing Pieces Are Expected/1",
+   "hash": "fde0507a07fd",
+   "head": "A fractal system with distributed vocabulary will inevitably produce:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b66",
+   "level": "blk",
+   "locator": "blk:Incompatibility and Missing Pieces Are Expected/2",
+   "hash": "5e5678e9ef21",
+   "head": "- **Gaps:** An issue references an issue type that doesn't have a definition nod",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b67",
+   "level": "blk",
+   "locator": "blk:Incompatibility and Missing Pieces Are Expected/3",
+   "hash": "b92eac89617b",
+   "head": "- **Partial mappings:** An issue type in one scope maps to 3 out of 5 aspects of",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b68",
+   "level": "blk",
+   "locator": "blk:Incompatibility and Missing Pieces Are Expected/4",
+   "hash": "a64ee9455fc3",
+   "head": "- **Contradictions:** Two definitions in overlapping scopes make conflicting cla",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b69",
+   "level": "blk",
+   "locator": "blk:Incompatibility and Missing Pieces Are Expected/5",
+   "hash": "1077b65c3cfa",
+   "head": "None of these are errors. They are observations that the graph analysis can make",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b70",
+   "level": "blk",
+   "locator": "blk:Incompatibility and Missing Pieces Are Expected/6",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b71",
+   "level": "blk",
+   "locator": "blk:The Semantic Web's Insight (and Mistake)/1",
+   "hash": "3dca202d9a51",
+   "head": "The Semantic Web community identified the right problem: how do independent part",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b72",
+   "level": "blk",
+   "locator": "blk:The Semantic Web's Insight (and Mistake)/2",
+   "hash": "3e5bb37d3d07",
+   "head": "But the community made a subtle mistake in practice. They ended up attaching mea",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b73",
+   "level": "blk",
+   "locator": "blk:The Semantic Web's Insight (and Mistake)/3",
+   "hash": "b9ec5e74f071",
+   "head": "```\nissues:Review\n    skos:prefLabel  \"Review\"@en\n    skos:prefLabel  \"レビュー\"@ja\n",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b74",
+   "level": "blk",
+   "locator": "blk:The Semantic Web's Insight (and Mistake)/4",
+   "hash": "c83b6864dfd0",
+   "head": "You are declaring: \"This node IS a Review, and here are its labels in different ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b75",
+   "level": "blk",
+   "locator": "blk:The Semantic Web's Insight (and Mistake)/5",
+   "hash": "22662de37c07",
+   "head": "This is schema-first thinking dressed in graph syntax. The node knows what it is",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b76",
+   "level": "blk",
+   "locator": "blk:The Graph-First Correction/1",
+   "hash": "da63f3bd97e1",
+   "head": "In a graph-first model, the schema.org `Review` concept is just another node in ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b77",
+   "level": "blk",
+   "locator": "blk:The Graph-First Correction/2",
+   "hash": "5a4242c485e1",
+   "head": "A team's local Review node does not declare \"I am a schema:Review.\" Instead, the",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b78",
+   "level": "blk",
+   "locator": "blk:The Graph-First Correction/3",
+   "hash": "edf35ae58034",
+   "head": "```\nReview-A\n    ├── has_step ──→ document_findings\n    │                    └──",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b79",
+   "level": "blk",
+   "locator": "blk:The Graph-First Correction/4",
+   "hash": "3733c2576cd0",
+   "head": "The edges express partial, specific mappings. \"Our `document_findings` step is s",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b80",
+   "level": "blk",
+   "locator": "blk:The Graph-First Correction/5",
+   "hash": "133d7046eccd",
+   "head": "The local Review node remains untouched. It does not carry any schema.org metada",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b81",
+   "level": "blk",
+   "locator": "blk:What Anchor Nodes Actually Are/1",
+   "hash": "53905d272cf7",
+   "head": "An anchor node is simply a node that:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b82",
+   "level": "blk",
+   "locator": "blk:What Anchor Nodes Actually Are/2",
+   "hash": "d49f4972c1db",
+   "head": "1. **Is well-connected** — it has many edges to other well-defined concepts",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b83",
+   "level": "blk",
+   "locator": "blk:What Anchor Nodes Actually Are/3",
+   "hash": "9666911b04ac",
+   "head": "2. **Is well-maintained** — someone (schema.org, W3C, the Issues-FS Lexicon) kee",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b84",
+   "level": "blk",
+   "locator": "blk:What Anchor Nodes Actually Are/4",
+   "hash": "01b208f9d898",
+   "head": "3. **Is well-known** — many other nodes across many scopes link to it",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b85",
+   "level": "blk",
+   "locator": "blk:What Anchor Nodes Actually Are/5",
+   "hash": "4a336b1b6eb8",
+   "head": "4. **Has no special authority** — it does not force conformity; it enables disco",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b86",
+   "level": "blk",
+   "locator": "blk:What Anchor Nodes Actually Are/6",
+   "hash": "c65099c72438",
+   "head": "The Issues-FS Lexicon's job is to provide a curated set of anchor nodes for the ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b87",
+   "level": "blk",
+   "locator": "blk:What Anchor Nodes Actually Are/7",
+   "hash": "6af6dfe0f5b4",
+   "head": "A node in a child scope that links to a Lexicon anchor node gains meaning by ass",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b88",
+   "level": "blk",
+   "locator": "blk:What Anchor Nodes Actually Are/8",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b89",
+   "level": "blk",
+   "locator": "blk:The Confidence Spectrum/1",
+   "hash": "272dec416e51",
+   "head": "Every assertion the system makes about a node sits on a confidence spectrum:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b90",
+   "level": "blk",
+   "locator": "blk:The Confidence Spectrum/2",
+   "hash": "40d41ab86616",
+   "head": "```\nNo edges          ──→  \"We know nothing about this node beyond its label\"\n  ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b91",
+   "level": "blk",
+   "locator": "blk:The Confidence Spectrum/3",
+   "hash": "561f237e665b",
+   "head": "The system should always be able to answer: \"How confident are we about what thi",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b92",
+   "level": "blk",
+   "locator": "blk:Honest Uncertainty Is the Default/1",
+   "hash": "eeb8bb3e55d8",
+   "head": "Most nodes in most graphs will sit in the middle of this spectrum. They have som",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b93",
+   "level": "blk",
+   "locator": "blk:Honest Uncertainty Is the Default/2",
+   "hash": "259e8c6c613a",
+   "head": "- \"This field is called `port` and has value `8080`. We *think* it's a network p",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b94",
+   "level": "blk",
+   "locator": "blk:Honest Uncertainty Is the Default/3",
+   "hash": "89f1a3889c35",
+   "head": "- \"This issue is labelled `Review`. It has edges to three steps. Based on those ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b95",
+   "level": "blk",
+   "locator": "blk:Honest Uncertainty Is the Default/4",
+   "hash": "fc3e458d2ad4",
+   "head": "- \"This role is called `QA`. It has a ROLE.md that defines responsibilities. But",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b96",
+   "level": "blk",
+   "locator": "blk:Honest Uncertainty Is the Default/5",
+   "hash": "d4985c5805e8",
+   "head": "In every case, the system reports what it found (the edges that exist), what it ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b97",
+   "level": "blk",
+   "locator": "blk:Enrichment, Not Enforcement/1",
+   "hash": "cb722edcdf5c",
+   "head": "When the system identifies low-confidence nodes, the response is not validation ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b98",
+   "level": "blk",
+   "locator": "blk:Enrichment, Not Enforcement/2",
+   "hash": "ebff5f5d00f5",
+   "head": "The Librarian role, or automated tooling, or a developer can add that edge. The ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b99",
+   "level": "blk",
+   "locator": "blk:Enrichment, Not Enforcement/3",
+   "hash": "7c777c3a7cd5",
+   "head": "This is how the ecosystem improves over time: not by imposing stricter schemas, ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b100",
+   "level": "blk",
+   "locator": "blk:Enrichment, Not Enforcement/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b101",
+   "level": "blk",
+   "locator": "blk:The Recursive Structure/1",
+   "hash": "e1a4f2660bdb",
+   "head": "The Issues-FS ecosystem is not a single flat graph. It is a graph of graphs, rec",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b102",
+   "level": "blk",
+   "locator": "blk:The Recursive Structure/2",
+   "hash": "3f8867033841",
+   "head": "- **An issue** is a node in a project's graph. But the issue itself may contain ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b103",
+   "level": "blk",
+   "locator": "blk:The Recursive Structure/3",
+   "hash": "8ea418c5223a",
+   "head": "- **A project** is a node in the ecosystem graph. But the project contains a gra",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b104",
+   "level": "blk",
+   "locator": "blk:The Recursive Structure/4",
+   "hash": "de80eb683bc0",
+   "head": "- **The Lexicon** is a graph of reference concepts. But each concept (like \"Deci",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b105",
+   "level": "blk",
+   "locator": "blk:The Recursive Structure/5",
+   "hash": "05c7ba3040ef",
+   "head": "- **A role repo** is a node in the development graph. But it contains a graph of",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b106",
+   "level": "blk",
+   "locator": "blk:The Recursive Structure/6",
+   "hash": "25c4f3154c1a",
+   "head": "- **The Type_Safe framework** is a graph of type definitions. But each type (lik",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b107",
+   "level": "blk",
+   "locator": "blk:The Recursive Structure/7",
+   "hash": "9e1bcfc8f82e",
+   "head": "At every level, the same principles apply: nodes are just nodes, meaning comes f",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b108",
+   "level": "blk",
+   "locator": "blk:Cross-Graph References/1",
+   "hash": "a5cea713062a",
+   "head": "The most powerful aspect of this model is cross-graph references. When an issue ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b109",
+   "level": "blk",
+   "locator": "blk:Cross-Graph References/2",
+   "hash": "4f2c8960eae1",
+   "head": "Similarly, when a local Review node has edges to `schema.org/Review` subcomponen",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b110",
+   "level": "blk",
+   "locator": "blk:Cross-Graph References/3",
+   "hash": "10816384586c",
+   "head": "This is what makes the graph model scale across teams, languages, cultures, and ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b111",
+   "level": "blk",
+   "locator": "blk:Versioning and Temporal Graphs/1",
+   "hash": "e64ae6c49697",
+   "head": "Cross-graph edges raise an important question: when `Safe_UInt__Port` changes in",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b112",
+   "level": "blk",
+   "locator": "blk:Versioning and Temporal Graphs/2",
+   "hash": "96375fd8d666",
+   "head": "The answer depends on which version edge the project graph contains. If the edge",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b113",
+   "level": "blk",
+   "locator": "blk:Versioning and Temporal Graphs/3",
+   "hash": "4802d816c3af",
+   "head": "This applies to all cross-graph references. A link to a Lexicon anchor node can ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b114",
+   "level": "blk",
+   "locator": "blk:Versioning and Temporal Graphs/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b115",
+   "level": "blk",
+   "locator": "blk:What the Lexicon Actually Provides/1",
+   "hash": "1ce2f1dec09a",
+   "head": "Given this graph-first philosophy, the Issues-FS Lexicon is not a dictionary or ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b116",
+   "level": "blk",
+   "locator": "blk:What the Lexicon Actually Provides/2",
+   "hash": "13d1029409e5",
+   "head": "1. **A curated set of well-connected anchor nodes** for the issues domain (Task,",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b117",
+   "level": "blk",
+   "locator": "blk:What the Lexicon Actually Provides/3",
+   "hash": "cc91675a1826",
+   "head": "2. **A set of cross-graph edges** to external reference vocabularies (schema.org",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b118",
+   "level": "blk",
+   "locator": "blk:What the Lexicon Actually Provides/4",
+   "hash": "560b68bafe91",
+   "head": "3. **Graph traversal tools** that can compute: connectivity depth, compatibility",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b119",
+   "level": "blk",
+   "locator": "blk:What the Lexicon Actually Provides/5",
+   "hash": "ccce62a15b95",
+   "head": "4. **Bootstrap definitions** — opinionated but overridable types for common issu",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b120",
+   "level": "blk",
+   "locator": "blk:What Every Repo Can Do/1",
+   "hash": "691b46171908",
+   "head": "Every repository and every scope in the fractal hierarchy can:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b121",
+   "level": "blk",
+   "locator": "blk:What Every Repo Can Do/2",
+   "hash": "818309f99de6",
+   "head": "- **Add nodes and edges** in its own graph without coordinating with any other s",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b122",
+   "level": "blk",
+   "locator": "blk:What Every Repo Can Do/3",
+   "hash": "b94d89011e6f",
+   "head": "- **Link to Lexicon anchors** for the concepts it wants to connect to the broade",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b123",
+   "level": "blk",
+   "locator": "blk:What Every Repo Can Do/4",
+   "hash": "5219f169699f",
+   "head": "- **Define local types** that only make sense in its own context",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b124",
+   "level": "blk",
+   "locator": "blk:What Every Repo Can Do/5",
+   "hash": "c19a4b2c1156",
+   "head": "- **Override or specialise** bootstrap definitions by creating local nodes with ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b125",
+   "level": "blk",
+   "locator": "blk:What Every Repo Can Do/6",
+   "hash": "5e129926528d",
+   "head": "- **Ignore the Lexicon entirely** for concepts that are purely local",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b126",
+   "level": "blk",
+   "locator": "blk:What the System Can Observe/1",
+   "hash": "ce53ef817351",
+   "head": "Given any set of connected graphs, the system can:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b127",
+   "level": "blk",
+   "locator": "blk:What the System Can Observe/2",
+   "hash": "f24c1b4d0730",
+   "head": "- **Compute confidence** for any node: how well-connected is it to defining node",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b128",
+   "level": "blk",
+   "locator": "blk:What the System Can Observe/3",
+   "hash": "8ba11a490420",
+   "head": "- **Compute compatibility** between any two nodes: how much do their subgraphs o",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b129",
+   "level": "blk",
+   "locator": "blk:What the System Can Observe/4",
+   "hash": "f9146449dbbe",
+   "head": "- **Identify gaps**: where are there missing edges that would increase understan",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b130",
+   "level": "blk",
+   "locator": "blk:What the System Can Observe/5",
+   "hash": "22e5d69113c2",
+   "head": "- **Surface conflicts**: where do two definitions in overlapping scopes contradi",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b131",
+   "level": "blk",
+   "locator": "blk:What the System Can Observe/6",
+   "hash": "5b437cb52dae",
+   "head": "- **Trace provenance**: where did this definition come from? What authority does",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b132",
+   "level": "blk",
+   "locator": "blk:What the System Can Observe/7",
+   "hash": "e44bf1625e51",
+   "head": "- **Generate honest assessments**: \"We know X. We think Y. We cannot confirm Z.\"",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b133",
+   "level": "blk",
+   "locator": "blk:What the System Never Does/1",
+   "hash": "697cfb24e7f0",
+   "head": "The system never:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b134",
+   "level": "blk",
+   "locator": "blk:What the System Never Does/2",
+   "hash": "fc185bc4095b",
+   "head": "- **Rejects a node** for lacking type conformity",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b135",
+   "level": "blk",
+   "locator": "blk:What the System Never Does/3",
+   "hash": "387e1a23ab68",
+   "head": "- **Forces a vocabulary** on any scope",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b136",
+   "level": "blk",
+   "locator": "blk:What the System Never Does/4",
+   "hash": "4a1cfc6964db",
+   "head": "- **Assumes meaning** where edges don't support it",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b137",
+   "level": "blk",
+   "locator": "blk:What the System Never Does/5",
+   "hash": "cf4c9c4a355b",
+   "head": "- **Hides uncertainty** behind default assumptions",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b138",
+   "level": "blk",
+   "locator": "blk:What the System Never Does/6",
+   "hash": "270e7aead9a3",
+   "head": "- **Requires registration** of local vocabulary with a parent scope",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b139",
+   "level": "blk",
+   "locator": "blk:What the System Never Does/7",
+   "hash": "ee220b9d2bf2",
+   "head": "- **Treats any node as authoritative** by virtue of its source alone — authority",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b140",
+   "level": "blk",
+   "locator": "blk:What the System Never Does/8",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b141",
+   "level": "blk",
+   "locator": "blk:Part 8: A Worked Example — End to End/1",
+   "hash": "fa720619ad97",
+   "head": "To illustrate the full model, here is a complete scenario that spans the fractal",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b142",
+   "level": "blk",
+   "locator": "blk:The Setup/1",
+   "hash": "772abdf189b9",
+   "head": "A distributed team is building Issues-FS itself. The team includes:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b143",
+   "level": "blk",
+   "locator": "blk:The Setup/2",
+   "hash": "69e77e771495",
+   "head": "- A developer in London writing the core library",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b144",
+   "level": "blk",
+   "locator": "blk:The Setup/3",
+   "hash": "08c681e80e86",
+   "head": "- A QA engineer in Tokyo writing integration tests",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b145",
+   "level": "blk",
+   "locator": "blk:The Setup/4",
+   "hash": "77abdc55bb0f",
+   "head": "- A compliance officer in Frankfurt reviewing security practices",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b146",
+   "level": "blk",
+   "locator": "blk:The Setup/5",
+   "hash": "61ab0c1175b2",
+   "head": "- An open source contributor in Nairobi proposing a feature",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b147",
+   "level": "blk",
+   "locator": "blk:The Graph/1",
+   "hash": "83a9c5fef4c6",
+   "head": "**The developer creates a task:**",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b148",
+   "level": "blk",
+   "locator": "blk:The Graph/2",
+   "hash": "d74cef684acd",
+   "head": "```\nTask-42 (in Project: Issues-FS__Service)\n    ├── title: \"Add rate limiting t",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b149",
+   "level": "blk",
+   "locator": "blk:The Graph/3",
+   "hash": "05e7a7d1a6f8",
+   "head": "**What the system can say about this task:**",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b150",
+   "level": "blk",
+   "locator": "blk:The Graph/4",
+   "hash": "f53398b6ff85",
+   "head": "- \"Task-42 is a Task (high confidence: linked to project definition which links ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b151",
+   "level": "blk",
+   "locator": "blk:The Graph/5",
+   "hash": "78faa5ab1315",
+   "head": "- \"Its status is 'in_progress,' which is a valid state with defined transitions ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b152",
+   "level": "blk",
+   "locator": "blk:The Graph/6",
+   "hash": "4ac890cbdab7",
+   "head": "- \"It is assigned to the Dev role, which has a ROLE.md definition (confidence fr",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b153",
+   "level": "blk",
+   "locator": "blk:The Graph/7",
+   "hash": "c76c9c68b9c8",
+   "head": "- \"The `port` field is a network port, 0-65535 (high confidence: linked to Safe_",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b154",
+   "level": "blk",
+   "locator": "blk:The Graph/8",
+   "hash": "29ea6d5aba56",
+   "head": "- \"The `max_requests_per_minute` field is an unsigned integer (medium confidence",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b155",
+   "level": "blk",
+   "locator": "blk:The QA Engineer in Tokyo/1",
+   "hash": "c6d12ca343bb",
+   "head": "The QA engineer creates a review request — but in their local vocabulary:",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b156",
+   "level": "blk",
+   "locator": "blk:The QA Engineer in Tokyo/2",
+   "hash": "d13a529b181e",
+   "head": "```\nレビュー依頼-7 (in Scope: Issues-FS__Dev__Role__QA)\n    ├── title: \"Task-42のレート制限実",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b157",
+   "level": "blk",
+   "locator": "blk:The QA Engineer in Tokyo/3",
+   "hash": "63fab130c4c4",
+   "head": "**What the system can say:**",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b158",
+   "level": "blk",
+   "locator": "blk:The QA Engineer in Tokyo/4",
+   "hash": "c83c55f5264b",
+   "head": "- \"レビュー依頼-7 links to Task-42 (confirmed: direct edge).\"",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b159",
+   "level": "blk",
+   "locator": "blk:The QA Engineer in Tokyo/5",
+   "hash": "29751854195f",
+   "head": "- \"Its type links to the Lexicon Review_Request anchor with a 4/5 partial match ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b160",
+   "level": "blk",
+   "locator": "blk:The QA Engineer in Tokyo/6",
+   "hash": "1d89f8c72ca3",
+   "head": "- \"It includes a corrective actions step (是正措置) that the Lexicon reference doesn",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b161",
+   "level": "blk",
+   "locator": "blk:The QA Engineer in Tokyo/7",
+   "hash": "0a57c988411c",
+   "head": "- \"The language is Japanese. The Lexicon anchor's labels don't include a Japanes",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b162",
+   "level": "blk",
+   "locator": "blk:The Compliance Officer in Frankfurt/1",
+   "hash": "1bbad49e6427",
+   "head": "The compliance officer needs to verify that the review process meets regulatory ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b163",
+   "level": "blk",
+   "locator": "blk:The Compliance Officer in Frankfurt/2",
+   "hash": "d803a5ae4279",
+   "head": "```\nÜberprüfung-3 (in Scope: Frankfurt Compliance)\n    ├── type ──→ Audit_Review",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b164",
+   "level": "blk",
+   "locator": "blk:The Compliance Officer in Frankfurt/3",
+   "hash": "63fab130c4c4",
+   "head": "**What the system can say:**",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b165",
+   "level": "blk",
+   "locator": "blk:The Compliance Officer in Frankfurt/4",
+   "hash": "999d374b02eb",
+   "head": "- \"Überprüfung-3 (Frankfurt) reviews レビュー依頼-7 (Tokyo) which reviews Task-42 (Lon",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b166",
+   "level": "blk",
+   "locator": "blk:The Compliance Officer in Frankfurt/5",
+   "hash": "c734eb2b80a8",
+   "head": "- \"Both review processes link to the Lexicon Review_Request anchor. Their overla",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b167",
+   "level": "blk",
+   "locator": "blk:The Compliance Officer in Frankfurt/6",
+   "hash": "8a1b255f81f6",
+   "head": "- \"For the narrow purpose of 'was the code reviewed,' both processes are compati",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b168",
+   "level": "blk",
+   "locator": "blk:The Open Source Contributor in Nairobi/1",
+   "hash": "c88f2e8d0b65",
+   "head": "The contributor proposes a feature but has no connection to the role system or t",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b169",
+   "level": "blk",
+   "locator": "blk:The Open Source Contributor in Nairobi/2",
+   "hash": "a5f9a8bd4693",
+   "head": "```\nfeature-proposal-1 (in Scope: GitHub Issues)\n    ├── title: \"Add WebSocket s",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b170",
+   "level": "blk",
+   "locator": "blk:The Open Source Contributor in Nairobi/3",
+   "hash": "63fab130c4c4",
+   "head": "**What the system can say:**",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b171",
+   "level": "blk",
+   "locator": "blk:The Open Source Contributor in Nairobi/4",
+   "hash": "75bccb5c7474",
+   "head": "- \"feature-proposal-1 is a GitHub issue labelled 'enhancement.' We have no link ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b172",
+   "level": "blk",
+   "locator": "blk:The Open Source Contributor in Nairobi/5",
+   "hash": "c15ecc1f58e6",
+   "head": "- \"If `Issues-FS__Service__GitHub` were to import this issue, it could add an ed",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b173",
+   "level": "blk",
+   "locator": "blk:The Open Source Contributor in Nairobi/6",
+   "hash": "3d8cb300405a",
+   "head": "**This is honest.** The system doesn't pretend the GitHub issue is a Feature_Req",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b174",
+   "level": "blk",
+   "locator": "blk:The Open Source Contributor in Nairobi/7",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b175",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/1",
+   "hash": "7fe2b5f842a8",
+   "head": "1. **Everything is a node.** Nodes carry local properties but have no obligation",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b176",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/2",
+   "hash": "e9826ed605b8",
+   "head": "2. **Meaning comes from edges.** What a node \"is\" emerges from the graph relatio",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b177",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/3",
+   "hash": "6cbbd2e8f0f2",
+   "head": "3. **Confidence is proportional to connectivity.** The more edges you can trace ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b178",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/4",
+   "hash": "71e454595cec",
+   "head": "4. **The system is fractal.** Every scope — from the root Lexicon down to a sing",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b179",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/5",
+   "hash": "3919aa56731b",
+   "head": "5. **Anchor nodes enable interoperability without enforcing conformity.** The Le",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b180",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/6",
+   "hash": "993e099422ed",
+   "head": "6. **Compatibility is computed, not declared.** Two nodes are compatible to the ",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b181",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/7",
+   "hash": "5fbb7abd2894",
+   "head": "7. **Honest uncertainty is the default.** The system reports what the graph supp",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b182",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/8",
+   "hash": "493ca795c810",
+   "head": "8. **Enrichment, not enforcement.** When confidence is low, the remedy is adding",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b183",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/9",
+   "hash": "4c270d6317ea",
+   "head": "9. **Cross-graph edges are first-class.** The most powerful connections span gra",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b184",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/10",
+   "hash": "f7017dfec2c6",
+   "head": "10. **No node is aware of how it's used.** The information about what a node mea",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b185",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/11",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "tig:b186",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/12",
+   "hash": "5d93aa14483d",
+   "head": "*Thinking in Graphs: Meaning Through Connectivity v1.0*  \n*Date: 2026-02-05*",
+   "status": "live"
+  }
+ ]
+}
