@@ -8,7 +8,7 @@
 <!-- gen:stat:edges -->168<!-- /gen:stat:edges --> named connections ·
 <!-- gen:stat:sources -->35<!-- /gen:stat:sources --> sources quoted ·
 built <!-- gen:stat:built -->2026-08-26<!-- /gen:stat:built --> against estate version
-<!-- gen:stat:estate_version -->v0.5.11<!-- /gen:stat:estate_version -->
+<!-- gen:stat:estate_version -->v0.5.14<!-- /gen:stat:estate_version -->
 
 ---
 

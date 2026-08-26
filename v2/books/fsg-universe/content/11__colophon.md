@@ -165,7 +165,7 @@ access.
 Written by Claude, an AI system made by Anthropic, as one session of a three-book commission
 recorded in the estate's memo of 26 August 2026. The founder's words throughout are source
 material, reproduced without edit. Built against estate version
-<!-- gen:stat:estate_version -->v0.5.11<!-- /gen:stat:estate_version --> on
+<!-- gen:stat:estate_version -->v0.5.14<!-- /gen:stat:estate_version --> on
 <!-- gen:stat:built -->2026-08-26<!-- /gen:stat:built -->.
 
 Released under the Creative Commons Attribution 4.0 International licence (CC BY 4.0).
