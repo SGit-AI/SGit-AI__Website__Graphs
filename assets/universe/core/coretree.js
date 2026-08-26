@@ -97,6 +97,37 @@ export function formOf(st, text) {
   return st.forms ? st.forms.get(String(text).toLowerCase()) || null : null;
 }
 
+/** Attach the token analysis (brief 30): classes, stems, spread, companions. */
+export function loadTokens(st, tokensJson) {
+  st.tokens = { stats: tokensJson.stats, map: new Map(), stems: new Map() };
+  (tokensJson.forms || []).forEach((f) => st.tokens.map.set(f.form, f));
+  (tokensJson.stems || []).forEach(([k, v]) => st.tokens.stems.set(k, v));
+  st.tokens.near = tokensJson.near || [];
+}
+
+/**
+ * Everything the token analysis knows about one word form.
+ * @returns {Array<[string, string]>} label/value rows (empty before loadTokens)
+ */
+export function formRecord(st, form) {
+  const t = st.tokens && st.tokens.map.get(String(form).toLowerCase());
+  if (!t) return [];
+  const rows = [['id', 'w:' + t.form], ['class', t.class],
+    ['appears', t.count + '× in this document']];
+  if (t.stem && st.tokens.stems.has(t.stem)) {
+    rows.push(['family', st.tokens.stems.get(t.stem).join(', ')]);
+  }
+  const near = st.tokens.near.filter((p) => p[0] === t.form || p[1] === t.form)
+    .map((p) => (p[0] === t.form ? p[1] : p[0]));
+  if (near.length) rows.push(['near-miss', near.join(', ')]);
+  if (t.top) rows.push(['gravity', t.top.map((x) => x[0] + ' ×' + x[1]).join(', ')]);
+  if (t.spread != null) {
+    rows.push(['spread', t.spread + (t.spread >= 0.9 && t.count >= 10
+      ? ' — candidate for different meanings in this document' : '')]);
+  }
+  return rows;
+}
+
 /**
  * Everything the model knows about one node, flattened for the inspector.
  * @returns {Array<[string, string]>} label/value rows
@@ -110,6 +141,9 @@ export function coreRecord(st, id) {
     if (n.marks.length) rows.push(['marked', n.marks.join(', ')]);
     const f = formOf(st, n.label);
     if (f) rows.push(['appears', f.count + '× in this document']);
+    formRecord(st, n.label).forEach(([k, v]) => {
+      if (k !== 'id' && k !== 'appears') rows.push([k, v]);
+    });
   }
   if (n.covers) rows.push(['covers', n.covers.length + ' word(s)']);
   if (n.href) rows.push(['href', n.href]);

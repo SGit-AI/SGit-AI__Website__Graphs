@@ -374,3 +374,12 @@ uni-graph[mini] .uni-gopts .gtabpane { display: contents; }
 .ev-row .dim { flex: 0 0 5.4rem; }
 .ev-row span + * { min-width: 0; }
 .ndoc-f-core { background: #5a5f6a; }
+
+/* ---- the words mode of the core tree (brief 30) --------------------------- */
+.uni-coretree .ct-mode { font-size: .62rem; padding: 0 .45rem; opacity: .55; margin-left: .3rem; }
+.uni-coretree .ct-mode.on { opacity: 1; font-weight: 700; border-bottom: 2px solid #2a9d8f; }
+.ct-w { display: inline-block; margin-right: .15rem; }
+.ct-w.ctc-padding { opacity: .45; }
+.ct-w.ctc-verb .ct-lab { font-style: italic; }
+.ct-w.ctc-code .ct-lab { font-family: ui-monospace, monospace; font-size: .95em; }
+.ct-w.ctc-number .ct-lab { color: #8a8f98; }

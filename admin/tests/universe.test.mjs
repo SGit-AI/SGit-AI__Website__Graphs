@@ -6,8 +6,8 @@ import assert from 'node:assert/strict';
 import { elementarySegments } from '../../assets/universe/core/segments.js';
 import { spliceMarkers, tokensToMarks, escAttr } from '../../assets/universe/core/markup.js';
 import { docTreeElements, headingChain, DOC_ROOT_ID } from '../../assets/universe/core/doctree.js';
-import { coreState, mergeShard, childrenOf, breadcrumb, loadForms, formOf, coreRecord }
-  from '../../assets/universe/core/coretree.js';
+import { coreState, mergeShard, childrenOf, breadcrumb, loadForms, formOf, coreRecord,
+  loadTokens, formRecord } from '../../assets/universe/core/coretree.js';
 import { layoutOptions, graphStyle } from '../../assets/universe/core/cystyle.js';
 
 let pass = 0, fail = 0;
@@ -633,6 +633,30 @@ test('coretree: forms count instances and the record says so', () => {
   const secRows = Object.fromEntries(coreRecord(st, 'sec:A'));
   assert.ok(secRows.holds.includes('5 words'));
   assert.ok(Object.fromEntries(coreRecord(st, 'blk:A/1')).bytes.includes('verification only'));
+});
+
+test('coretree: the token analysis reads back into form records', () => {
+  const st = coreState(CT_INDEX);
+  loadTokens(st, {
+    stats: { instances: 5, forms: 4, by_class: { content: 2, padding: 1, verb: 1, code: 0, number: 0 },
+      padding_share: 0.4, hapax: 2, stem_families: 1 },
+    forms: [
+      { form: 'graphs', count: 2, class: 'content', stem: 'graph', spread: 0.95,
+        top: [['nodes', 2], ['win', 1]] },
+      { form: 'nodes', count: 1, class: 'content', stem: 'graph' },
+      { form: 'the', count: 1, class: 'padding' },
+      { form: 'carry', count: 1, class: 'verb' }],
+    stems: [['graph', ['graph', 'graphs']]],
+    near: [['graphs', 'graph']],
+  });
+  const rows = Object.fromEntries(formRecord(st, 'Graphs'));   /* case-folded */
+  assert.equal(rows.id, 'w:graphs');
+  assert.equal(rows.class, 'content');
+  assert.equal(rows.family, 'graph, graphs');
+  assert.equal(rows['near-miss'], 'graph');
+  assert.equal(rows.gravity, 'nodes ×2, win ×1');
+  assert.ok(rows.spread.includes('candidate') === false);      /* count 2 < 10 stays unflagged */
+  assert.deepEqual(formRecord(st, 'absent'), []);
 });
 
 console.log(`universe tests: ${pass} passed, ${fail} failed`);

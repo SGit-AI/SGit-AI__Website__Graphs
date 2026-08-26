@@ -23,6 +23,15 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "30__founder-memo__words-as-tokens-and-the-two-way-transform.md": (
+     "Words as tokens, and the two-way transform",
+     "Each document is its own token universe: every word a unique entry with no "
+     "vocabulary cap, classified (padding, verb, content), stemmed into families, "
+     "scored for different-meanings-in-the-same-document, and connected by "
+     "co-occurrence into the document's own attention map. Plus the instruction "
+     "addressed sooner more than later: the graph must rebuild the markdown "
+     "byte-for-byte, with formatting captured in its own graph beside the "
+     "semantic one."),
  "29__founder-memo__the-core-graph-document-to-word.md": (
      "The core graph: document to word",
      "The foundational graph under everything else: transform the document all the way "

@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.37</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.38</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -131,6 +131,11 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.4.38</td>
+        <td>26 August 2026</td>
+        <td><b>Words as tokens, and the transform that goes both ways.</b> Brief 30, recorded before the founder had seen v0.4.37 in the browser, built the same day. <b>The instruction addressed "sooner more than later" came first</b>: the graph must be able to rebuild the document. Formatting now lives in its own graph exactly as the memo prescribes — <code>fmt.json</code> holds the heading lines, the gaps, and the raw markdown of every block, joined to the semantic shards by the same block IDs — and two new build gates hold the contract: gate 5 rebuilds the source markdown from the formatting graph and fails unless it is <b>byte-identical</b> (it is), and gate 6 re-derives every semantic block from the formatting graph alone, so the two graphs cannot drift apart because one provably generates the other. Six gates now guard the core graph. <b>Then the token universe</b>: the memo's insight is that an LLM tokeniser caps its vocabulary to limit the universe, but a document needs no cap, so every word form is a token with full identity. The analysis pass classifies all 951 forms — 739 content, 99 padding, 65 verb (a curated heuristic list, recorded as such), 34 code-shaped, 14 numbers — and the statistics land the memo's compression instinct precisely: <b>45% of the document's word use is padding</b>, 505 forms appear exactly once, and 114 stem families group the inflections (graph/graphs, anchor/anchors). Misspelling-adjacent pairs surface by edit distance (identity/identify caught in the pilot). <b>The attention map</b>: a co-occurrence graph over sentences gives every form its centre of gravity — "node" travels with graph ×13, review ×12, connected ×8 — and the <b>context-spread score</b> answers the memo's most interesting ask, when does a word mean different things in the same document: a high count with diverse sentence neighbourhoods flags the candidates, and the pilot's top two are <b>"node" (62×, spread 0.957) and "graph" (61×, 0.988)</b>, which are exactly the two words the founder used as examples in the memo, derived independently by arithmetic. <b>The viewer</b>: the core tree pane gains a words mode — the ranked token list with class styling (padding dimmed, verbs italic, code mono), the statistics line, ◊ marking the thirty different-meanings candidates — and clicking any form shows everything known about it on the right: class, count, stem family, near misses, gravity, spread. Word rows in the tree inherit the same records. Deterministic IDs restated as law (they already were, structurally); the book-scope ID registry read as the next structural step and asked back as a question. One new gate-27 vector (61 tests); verified in headless Chromium including an in-page rebuild of the document from the served formatting graph, identical to the served source. Brief 30 carries the memo verbatim with eleven instructions mapped and four questions back. No book content changed.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.4.37</td>
         <td>26 August 2026</td>
@@ -521,7 +526,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.37</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.38</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

@@ -1,5 +1,5 @@
 {
- "version": "v0.4.37",
+ "version": "v0.4.38",
  "slug": "thinking-in-graphs",
  "doc": "doc:thinking-in-graphs",
  "title": "Thinking in Graphs: Meaning Through Connectivity",
@@ -19,6 +19,8 @@
   "spans": 143
  },
  "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
  "sections": [
   {
    "id": "doc:thinking-in-graphs",

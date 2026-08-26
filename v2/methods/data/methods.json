@@ -376,7 +376,7 @@
   {
    "id": "core-graph",
    "name": "The core graph: document to word",
-   "what": "Brief 29's foundational move: the document transformed into a graph at every level of its own structure — document, section, block (paragraph, bullet item, code, quote, table), sentence, word — each level a node with an ID linked to its parent, like an AST driven by the content. Inline markup becomes span nodes covering the word instances they mark, and every distinct word gets a form node carrying its count and every instance, so emphasis and repetition are queryable structure. IDs are the reference currency at every level; byte ranges are kept only as build-time verification metadata, because pointing at character offsets breaks the moment the document changes. Storage answers the one-big-file question with shards: an index with the section skeleton, one shard per section fetched only when a viewer expands it, and the word-form index. Four build gates prove the transform is lossless: block ranges reassemble each section, sentences reassemble each block, form totals equal instance totals, and every span covers the words it claims.",
+   "what": "Brief 29's foundational move: the document transformed into a graph at every level of its own structure — document, section, block (paragraph, bullet item, code, quote, table), sentence, word — each level a node with an ID linked to its parent, like an AST driven by the content. Inline markup becomes span nodes covering the word instances they mark, and every distinct word gets a form node carrying its count and every instance, so emphasis and repetition are queryable structure. IDs are the reference currency at every level; byte ranges are kept only as build-time verification metadata, because pointing at character offsets breaks the moment the document changes. Storage answers the one-big-file question with shards: an index with the section skeleton, one shard per section fetched only when a viewer expands it, and the word-form index. Brief 30 added the two-way transform: formatting lives in its own graph (fmt.json — heading lines, gaps, raw markdown per block, joined to the semantic graph by the block IDs), and the build now rebuilds the source markdown from the graph and fails unless it is byte-identical, with a second gate proving the semantic shards re-derive from the formatting graph alone. Six gates in all: block ranges reassemble each section, sentences reassemble each block, form totals equal instance totals, spans cover the words they claim, the rebuild is byte-identical, and the two graphs cannot disagree.",
    "born": "v0.4.37",
    "implemented_in": [
     "admin/build/gen_coregraph.py",
@@ -385,6 +385,19 @@
    ],
    "status": "in use",
    "for_the_book": "Before a graph can carry meaning about a document it must first BE the document: a lossless, ID-addressed transform of every structural level, so that everything built above it points at stable identities instead of fragile offsets."
+  },
+  {
+   "id": "document-tokens",
+   "name": "The document as its own token universe",
+   "what": "Brief 30's move, inspired by how transformers tokenise but inverted: an LLM tokeniser caps the vocabulary to limit the universe, while a document needs no cap, so every word form is a token with full identity. The analysis pass classifies each form (padding, verb, content, code, number) with the meaning-density statistics on top (the pilot: 45% of word use is padding, 505 forms appear once), groups forms into stem families, surfaces near-miss pairs by edit distance, builds the co-occurrence graph over sentences (each form's centre of gravity, the document's own attention map), and scores every frequent content form for context spread, where a high count with diverse sentence neighbourhoods flags a candidate for different meanings in the same document. On the pilot the top candidates are 'node' and 'graph', the founder's own examples. All heuristic and statistical, no NLP model; recorded as such so a proper tagging pass can replace parts honestly.",
+   "born": "v0.4.38",
+   "implemented_in": [
+    "admin/build/gen_coregraph.py",
+    "assets/universe/core/coretree.js",
+    "assets/universe/components/core-tree.js"
+   ],
+   "status": "in use",
+   "for_the_book": "A document read as its own token universe measures itself: how much of it is padding, where its meaning concentrates, which of its words secretly name more than one thing. The statistics are not the understanding, but they say exactly where understanding should look first."
   }
  ]
 }

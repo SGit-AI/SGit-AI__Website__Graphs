@@ -6,7 +6,8 @@
    file). Clicking a row shows everything the model knows about that node, and
    selects it on the canvas when the canvas has it. A part of <uni-graph>. */
 'use strict';
-import { coreState, mergeShard, childrenOf, breadcrumb, loadForms, coreRecord } from '../core/coretree.js';
+import { coreState, mergeShard, childrenOf, breadcrumb, loadForms, loadTokens,
+  coreRecord, formRecord } from '../core/coretree.js';
 
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g,
   (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -22,6 +23,8 @@ function build(host, opts) {
   const el = document.createElement('div');
   el.className = 'uni-coretree';
   el.innerHTML = '<div class="pb-head"><b>The core tree</b> ' +
+    '<button class="ct-mode on" data-mode="tree">tree</button>' +
+    '<button class="ct-mode" data-mode="words">words</button> ' +
     '<span class="dim small">document &rarr; section &rarr; block &rarr; sentence &rarr; word</span>' +
     '<span class="sp"></span><button class="pb-close">&#10005;</button></div>' +
     '<div class="ct-rows dim small">loading the core index &hellip;</div>';
@@ -31,6 +34,7 @@ function build(host, opts) {
   const loading = new Set();
   let st = null;
   let picked = null;
+  let mode = 'tree';
 
   const get = (f) => fetch(opts.base + f).then((r) => {
     if (!r.ok) throw new Error(f + ' ' + r.status);
@@ -41,7 +45,8 @@ function build(host, opts) {
     st = coreState(idx);
     render();
     toggleRow(st.doc);   /* open the root, fetching its own shard if it has one */
-    return get(idx.forms).then((w) => { loadForms(st, w); if (picked) pick(picked); });
+    return get(idx.forms).then((w) => { loadForms(st, w); if (picked) pick(picked); })
+      .then(() => (idx.tokens ? get(idx.tokens).then((t) => loadTokens(st, t)) : null));
   }).catch(() => { rowsEl.textContent = 'no core data for this document yet'; });
 
   function rows(id, depth, out) {
@@ -62,10 +67,32 @@ function build(host, opts) {
   }
 
   function render() {
+    rowsEl.classList.remove('dim');
+    if (mode === 'words') { renderWords(); return; }
     const out = [];
     rows(st.doc, 0, out);
-    rowsEl.classList.remove('dim');
     rowsEl.innerHTML = out.join('');
+  }
+
+  /* the words mode (brief 30): every form a token, ranked, classed, clickable */
+  function renderWords() {
+    if (!st.tokens) { rowsEl.innerHTML = '<span class="dim small">no token analysis yet</span>'; return; }
+    const s = st.tokens.stats;
+    const head = '<div class="small dim">' + s.instances + ' words &middot; ' + s.forms +
+      ' forms &middot; ' + s.by_class.content + ' content / ' + s.by_class.padding +
+      ' padding (' + Math.round(s.padding_share * 100) + '% of use) / ' + s.by_class.verb +
+      ' verb &middot; ' + s.hapax + ' used once &middot; ' + s.stem_families + ' families</div>';
+    const cap = 250;
+    const list = [];
+    st.tokens.map.forEach((t) => {
+      if (list.length >= cap) return;
+      list.push('<div class="ct-row ct-w ctc-' + t.class + (picked === 'w:' + t.form ? ' on' : '') +
+        '" data-form="' + esc(t.form) + '"><span class="ct-lab">' + esc(t.form) + '</span>' +
+        ' <span class="ct-n">×' + t.count + (t.spread >= 0.9 && t.count >= 10 ? ' ◊' : '') + '</span></div>');
+    });
+    rowsEl.innerHTML = head + list.join('') +
+      (st.tokens.map.size > cap ? '<div class="dim small">… and ' + (st.tokens.map.size - cap) +
+        ' more, all in tokens.json (◊ marks different-meanings candidates)</div>' : '');
   }
 
   function toggleRow(id) {
@@ -95,8 +122,22 @@ function build(host, opts) {
 
   el.addEventListener('click', (e) => {
     if (e.target.closest('.pb-close')) { el.remove(); return; }
+    const m = e.target.closest('.ct-mode');
+    if (m && st) {
+      mode = m.getAttribute('data-mode');
+      el.querySelectorAll('.ct-mode').forEach((x) => x.classList.toggle('on', x === m));
+      render(); return;
+    }
     const ex = e.target.closest('.ct-exp');
     if (ex) { toggleRow(ex.getAttribute('data-exp')); return; }
+    const w = e.target.closest('[data-form]');
+    if (w && st) {
+      const form = w.getAttribute('data-form');
+      picked = 'w:' + form;
+      host.inspectCore({ id: picked, rows: formRecord(st, form), label: form,
+        path: [{ id: st.doc, kind: 'doc', label: st.title }, { id: picked, kind: 'w', label: form }] });
+      render(); return;
+    }
     const row = e.target.closest('.ct-row');
     if (row && st) pick(row.getAttribute('data-id'));
   });
