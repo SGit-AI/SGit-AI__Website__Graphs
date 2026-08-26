@@ -1,0 +1,3990 @@
+{
+ "atlas": {
+  "title": "Fractal Semantic Graphs: Meaning Through Connectivity",
+  "volume": "The Universe",
+  "slug": "fsg-universe",
+  "version": "1.0",
+  "built": "2026-08-26",
+  "author": "Claude (Anthropic), as the writing session for book A of the three-book commission",
+  "commissioned_by": "v2/dev-packs/v0.5.10__the-book-writing-pack/03__entry-a-the-universe.md",
+  "estate_version": "v0.5.11",
+  "note": "Every node below is a record that this estate says something, at a named anchor in a named source. Layer 1 discipline applies: a node states what a source says, here; whether it is true is a question for the reader. Edges are of two kinds, and the kind is on the edge: an ANCHORED edge carries a quote that supports the relation; an AUTHORED edge is this atlas's own reading, with the reasoning in its note.",
+  "hash_note": "A source under v1/ is byte-frozen by the edition freeze; its hash is gated and a change fails the build. Everything else is a live page or a register that regenerates on release, so its hash records the bytes this atlas read and a change is reported rather than fatal. What protects the anchor in both cases is the quote check, which runs on every source."
+ },
+ "sources": [
+  {
+   "id": "src:thinking-in-graphs",
+   "kind": "carried source",
+   "title": "Thinking in Graphs: Meaning Through Connectivity",
+   "where": "v1/docs/sources/thinking-in-graphs.md",
+   "note": "5 February 2026. The cornerstone; the book's subtitle is this document's subtitle.",
+   "sha256": "9d23354fc9a674ae34ddcc01095afbc2c7c3831e52e7bf5da7ae02df244a561a",
+   "frozen": true
+  },
+  {
+   "id": "src:fractal-semantic-graphs",
+   "kind": "carried source",
+   "title": "Fractal Semantic Graphs All The Way Down",
+   "where": "v1/docs/sources/fractal-semantic-graphs.md",
+   "note": "12 July 2026. The architecture brief the title's first two words come from.",
+   "sha256": "f3a35790e296a6165077d6007b493e61bfaf5d5047372c7b771032997269889c",
+   "frozen": true
+  },
+  {
+   "id": "src:graphs-of-graphs",
+   "kind": "carried source",
+   "title": "Graphs Of Graphs: Mapping Reality, Not Complexity",
+   "where": "v1/docs/sources/graphs-of-graphs.md",
+   "note": "Strategy brief, v0.33.40.",
+   "sha256": "f8a54c08e4619ef35d3fdfee47c80445e79f734b27ac8971fba789fb0f43eba5",
+   "frozen": true
+  },
+  {
+   "id": "src:ontologies-of-ontologies",
+   "kind": "carried source",
+   "title": "Ontologies of Ontologies: Multiple Definitions, Three Layers, and Bridges",
+   "where": "v1/docs/sources/ontologies-of-ontologies.md",
+   "note": "Architecture brief, v0.33.36.",
+   "sha256": "6a44e740f5d95270886f24cfbf47e4bbf20289c038b9f476ceab2aeb8c60a06c",
+   "frozen": true
+  },
+  {
+   "id": "src:path-properties",
+   "kind": "carried source",
+   "title": "Graph Path Properties: Reading as Language",
+   "where": "v1/docs/sources/path-properties.md",
+   "note": "Architecture brief, v0.33.35.",
+   "sha256": "809b5f6a018682169a5df18947d6619906a2621e79fb7c02a05a17da0133cbed",
+   "frozen": true
+  },
+  {
+   "id": "src:directed-edges-query-paths",
+   "kind": "carried source",
+   "title": "Directed Edges, Inward and Outward Paths, and Query Paths",
+   "where": "v1/docs/sources/directed-edges-query-paths.md",
+   "note": "Architecture brief, v0.33.35.",
+   "sha256": "93e634f9156780899258046fb911ebf054ad78fd5e37507247942ce9fb0c6b29",
+   "frozen": true
+  },
+  {
+   "id": "src:avoid-the-blob",
+   "kind": "carried source",
+   "title": "Visualising Semantic Graphs: Avoid The Blob, Use Verb Edges, And Flip The Subgraph",
+   "where": "v1/docs/sources/avoid-the-blob.md",
+   "note": "Architecture brief, v0.33.16. 10 June 2026.",
+   "sha256": "3e491bf9c8564f00cae224ef573ca8e7289ca069c65a93e89ad9050455bfe5bf",
+   "frozen": true
+  },
+  {
+   "id": "src:the-grounding-ladder",
+   "kind": "carried source",
+   "title": "The Grounding Ladder",
+   "where": "v1/docs/sources/the-grounding-ladder.md",
+   "note": "Architecture brief, v0.33.36.",
+   "sha256": "1c7ac25dd18b0df035af0ee06c5c9a8c36b232cf2d031fdbf4ab639d1aba75e5",
+   "frozen": true
+  },
+  {
+   "id": "src:confidence-through-evidence",
+   "kind": "carried source",
+   "title": "Confidence Through Evidence: Blast Radius, And Mapping The Gaps",
+   "where": "v1/docs/sources/confidence-through-evidence.md",
+   "note": "Strategy brief, v0.33.38.",
+   "sha256": "6d30f39aecf8293d4c12ad032baf58ad0c6ef362294c6a162614e51a4fedc479",
+   "frozen": true
+  },
+  {
+   "id": "src:a-fact-in-a-vacuum",
+   "kind": "carried source",
+   "title": "A Fact Does Not Exist In A Vacuum",
+   "where": "v1/docs/sources/a-fact-in-a-vacuum.md",
+   "note": "Architecture brief, v0.33.57.",
+   "sha256": "bfa0b474e3c85b68bfdcfdde87f253becf56983e3ceb1cb5a023d927a8ed56ef",
+   "frozen": true
+  },
+  {
+   "id": "src:concepts-not-words",
+   "kind": "carried source",
+   "title": "Concepts, Not Words",
+   "where": "v1/docs/sources/concepts-not-words.md",
+   "note": "Architecture brief, v0.33.56. 6-9 August 2026.",
+   "sha256": "96637ac8ea76723bac3b4937f629c7f32769b3985c18708651cc311d3bb81515",
+   "frozen": true
+  },
+  {
+   "id": "src:the-browser-is-the-database",
+   "kind": "carried source",
+   "title": "The Browser Is The Database",
+   "where": "v1/docs/sources/the-browser-is-the-database.md",
+   "note": "Architecture brief, v0.33.48.",
+   "sha256": "553c7bac74a73aa02c4047c4e510c8d55021f94e909ad712dc0210a1d2450974",
+   "frozen": true
+  },
+  {
+   "id": "src:every-paragraph-is-a-graph",
+   "kind": "carried source",
+   "title": "Every Paragraph Is A Graph",
+   "where": "v1/docs/sources/every-paragraph-is-a-graph.md",
+   "note": "Architecture brief, v0.33.53. 28 July 2026. Appendix A is the corpus's only single list of its own concepts.",
+   "sha256": "5a2aad555f5238d84d82bc558e6d3c636807ebde2b56ca19fc00a97917331d73",
+   "frozen": true
+  },
+  {
+   "id": "src:fractal-risk-registers",
+   "kind": "carried source",
+   "title": "Fractal Risk Registers",
+   "where": "v1/docs/sources/fractal-risk-registers.md",
+   "note": "Architecture brief, v0.33.49.",
+   "sha256": "2f50e0c5dc9c80c5fbfab2118cd862e6bc3a9a0f96d53258715075441da11907",
+   "frozen": true
+  },
+  {
+   "id": "src:refactoring-meaning",
+   "kind": "carried source",
+   "title": "Refactoring Meaning: This Is Decompilation Rather Than Compilation",
+   "where": "v1/docs/sources/refactoring-meaning.md",
+   "note": "Strategy brief, v0.33.57.",
+   "sha256": "fe6194f1ce55e386041976e3e127b0f5d137afc4ddee8ff77fe9d4e413220cfd",
+   "frozen": true
+  },
+  {
+   "id": "src:an-index-is-not-a-source",
+   "kind": "carried source",
+   "title": "An Index Is Not A Source",
+   "where": "v1/docs/sources/an-index-is-not-a-source.md",
+   "note": "Architecture brief, v0.33.57.",
+   "sha256": "6ce3d9c69093c072ae0138cdb8e30dd15841f7a22497203ede1106ea368929ec",
+   "frozen": true
+  },
+  {
+   "id": "src:compatibility-through-connectivity",
+   "kind": "carried source",
+   "title": "Compatibility Through Connectivity: Testing Across Artifact Types",
+   "where": "v1/docs/sources/compatibility-through-connectivity.md",
+   "note": "The most developed unimplemented idea in the corpus.",
+   "sha256": "057aadf8f5f461ddb6a39d6075cfa49ed37e951e3a05225bbb6ecbe095cdbfc8",
+   "frozen": true
+  },
+  {
+   "id": "src:issues-fs-lexicon",
+   "kind": "carried source",
+   "title": "Issues-FS Lexicon: The Root Graph of the Ecosystem",
+   "where": "v1/docs/sources/issues-fs-lexicon.md",
+   "note": "5 February 2026. The document brief 20 says the pack contradicted without noticing.",
+   "sha256": "4b6e58cea445a52199ca97c4c8ed47f8b4fa765202792f3f230628749dfc4902",
+   "frozen": true
+  },
+  {
+   "id": "src:graph-canvas-repl",
+   "kind": "carried source",
+   "title": "The Graph Canvas As A REPL",
+   "where": "v1/docs/sources/graph-canvas-repl.md",
+   "note": "Architecture brief, v0.33.55.",
+   "sha256": "071096e05005f64a35c592b62b2bfe54cb1e249d0d12f49c76d57a52f6cec0e1",
+   "frozen": true
+  },
+  {
+   "id": "src:paying-the-fact-creator",
+   "kind": "carried source",
+   "title": "Paying The Fact Creator",
+   "where": "v1/docs/sources/paying-the-fact-creator.md",
+   "note": "Strategy brief, v0.33.54. 31 July 2026.",
+   "sha256": "652c56875b4900b598100997d5af5deea761166cebb30ce65704fabb1283f0a8",
+   "frozen": true
+  },
+  {
+   "id": "src:digital-twins-of-anything",
+   "kind": "carried source",
+   "title": "Digital Twins of Anything, and the Discipline of Reality",
+   "where": "v1/docs/sources/digital-twins-of-anything.md",
+   "note": "Architecture brief, v0.33.35.",
+   "sha256": "57e7c30d961f83625bded2a92939a33210b22c419362c0f625b9c6c97e03c9c9",
+   "frozen": true
+  },
+  {
+   "id": "v1:start",
+   "kind": "first edition",
+   "title": "The five-minute version",
+   "where": "v1/content/start.md",
+   "note": "Altitude 1.",
+   "sha256": "bd97e1e29ba9b9c8f0ce693890b2b879a953df4bce1ecbf1d2e9066ff671ae8b",
+   "frozen": true
+  },
+  {
+   "id": "v1:grammar",
+   "kind": "first edition",
+   "title": "The rules you can apply tomorrow",
+   "where": "v1/content/grammar.md",
+   "note": "Altitude 2.",
+   "sha256": "518fd22f81c3aeadfc8a7828b9ddea92be63dc825510bf252de26778a8a2a01e",
+   "frozen": true
+  },
+  {
+   "id": "v1:edge-set",
+   "kind": "first edition",
+   "title": "The edge set",
+   "where": "v1/content/grammar-edge-set.md",
+   "note": "The fifteen edges, with the proposed inverses marked.",
+   "sha256": "5bc982af8e93615213cf46406a9d95d96b20bca1e3ad9d7102e9a62720f45b3e",
+   "frozen": true
+  },
+  {
+   "id": "v1:depth",
+   "kind": "first edition",
+   "title": "The full argument",
+   "where": "v1/content/depth.md",
+   "note": "Altitude 3.",
+   "sha256": "27116913cf703e0a7d92029b0e6f6eb93ec85c34fd390d5362577cace9b79d06",
+   "frozen": true
+  },
+  {
+   "id": "v1:boundaries",
+   "kind": "first edition",
+   "title": "A graph at every boundary",
+   "where": "v1/content/depth-boundaries.md",
+   "note": "Altitude 3, second half.",
+   "sha256": "ea7a1c82cded38c6ee93ad532c93b03aaa304f24b06fb0ac9478152a50bb085a",
+   "frozen": true
+  },
+  {
+   "id": "v1:why-graphs",
+   "kind": "first edition",
+   "title": "Why graphs at all",
+   "where": "v1/content/why-graphs.md",
+   "note": "Written fresh; gaps G3 and G11.",
+   "sha256": "b69f989d7644fbfc905c31550f90aa7c350bfa7cd0a07610e8f90b56da307adc",
+   "frozen": true
+  },
+  {
+   "id": "v1:glossary",
+   "kind": "first edition",
+   "title": "Glossary",
+   "where": "v1/content/glossary.md",
+   "note": "Written fresh; gap G4.",
+   "sha256": "e2a43a9b20b41b34477cfa4d528a0253b22f6ec3db334b07d431a620a1327bf1",
+   "frozen": true
+  },
+  {
+   "id": "v1:shipped",
+   "kind": "first edition",
+   "title": "What ships, what is argued",
+   "where": "v1/content/shipped.md",
+   "note": "The honesty chapter.",
+   "sha256": "4f280739ad57cdf228e53408da8e232a10b168e421d0a46b8b4f3989255c1813",
+   "frozen": true
+  },
+  {
+   "id": "v1:examples",
+   "kind": "first edition",
+   "title": "Worked graphs, with real numbers",
+   "where": "v1/content/examples.md",
+   "note": "Ten applications; three live.",
+   "sha256": "6ebe143ad30ace98b3197fcef0c5f6092f92c929159151688cb6dda2e604625b",
+   "frozen": true
+  },
+  {
+   "id": "v1:maps",
+   "kind": "first edition",
+   "title": "Wardley maps as graphs",
+   "where": "v1/content/maps.md",
+   "note": "The coordinate trap.",
+   "sha256": "f97a7075fd10650845fb6769b9b18f729f808dad4e30b8042d1ced6c5a8eff29",
+   "frozen": true
+  },
+  {
+   "id": "v1:network",
+   "kind": "first edition",
+   "title": "The network",
+   "where": "v1/content/network.md",
+   "note": "How the argument reaches the sibling sites.",
+   "sha256": "83d69a1a15ad0c48acc41f05029368cbca74d2ac2837b9714732531397ad53a2",
+   "frozen": true
+  },
+  {
+   "id": "v1:origins",
+   "kind": "first edition",
+   "title": "Origins: 2026",
+   "where": "v1/content/origins.md",
+   "note": "Ten phases, dated.",
+   "sha256": "291e41a9236d841a893d813381d7ee78cfda91c647a1dd834b21107cc1d528ef",
+   "frozen": true
+  },
+  {
+   "id": "v2:brief-20",
+   "kind": "founder memo",
+   "title": "Brief 20: build the universe first, then find the plot",
+   "where": "v2/briefs/20__founder-memo__the-universe-first.md",
+   "note": "23 August 2026. Corrects the definition of fractal.",
+   "sha256": "8bec0e730fc6c65bccd88016d27dda44573274309fc89f1fcf5e4b6f4ec1e8d6",
+   "frozen": false
+  },
+  {
+   "id": "v2:brief-21",
+   "kind": "founder memo",
+   "title": "Brief 21: review packs, and briefing other agents",
+   "where": "v2/briefs/21__founder-memo__review-packs.md",
+   "note": "23 August 2026.",
+   "sha256": "02aaa3e0af2883b809852348b06a46fa678ed44f6b0f8832f65fc0967fd4c70b",
+   "frozen": false
+  },
+  {
+   "id": "v2:brief-26",
+   "kind": "founder memo",
+   "title": "Brief 26: fixed nodes, the four areas, and the schema",
+   "where": "v2/briefs/26__founder-memo__stable-graphs-and-schema.md",
+   "note": "24 August 2026.",
+   "sha256": "9e427f24b49e7e161be2479dd95598c236fe2b33d8e310021a3429f23854b591",
+   "frozen": false
+  },
+  {
+   "id": "v2:brief-28",
+   "kind": "founder memo",
+   "title": "Brief 28: node navigation, reverse verbs, and the path query",
+   "where": "v2/briefs/28__founder-memo__node-navigation-and-path-queries.md",
+   "note": "25 August 2026.",
+   "sha256": "d8106edbfd11396abc8afe91b78dd3cf2290ab0b28673d81ae36ddcef0c2b4a3",
+   "frozen": false
+  },
+  {
+   "id": "v2:brief-29",
+   "kind": "founder memo",
+   "title": "Brief 29: the core graph, document to word",
+   "where": "v2/briefs/29__founder-memo__the-core-graph-document-to-word.md",
+   "note": "26 August 2026.",
+   "sha256": "5b5b77157555ee8de923bb8534b28357a420356da06cc6606d166989739de5f4",
+   "frozen": false
+  },
+  {
+   "id": "v2:brief-30",
+   "kind": "founder memo",
+   "title": "Brief 30: words as tokens, and the two-way transformation",
+   "where": "v2/briefs/30__founder-memo__words-as-tokens-and-the-two-way-transform.md",
+   "note": "26 August 2026.",
+   "sha256": "37af3520e06a6e401044a4ca0ea4f7c4251b7674dd8ede221f38d58e349bcec1",
+   "frozen": false
+  },
+  {
+   "id": "v2:brief-31",
+   "kind": "founder memo",
+   "title": "Brief 31: the WCLM, a deterministic transformer",
+   "where": "v2/briefs/31__founder-memo__the-wclm-a-deterministic-transformer.md",
+   "note": "26 August 2026.",
+   "sha256": "2e807fb5c7b56c23eca9191cb074cfa4a7c3c4563e227d430e732172c4d0185a",
+   "frozen": false
+  },
+  {
+   "id": "v2:brief-34",
+   "kind": "founder memo",
+   "title": "Brief 34: words have many meanings",
+   "where": "v2/briefs/34__founder-memo__words-have-many-meanings.md",
+   "note": "26 August 2026.",
+   "sha256": "ae560695302cab975d39f456963dcb369f856cbf31bb50194fd0fc8ba29ff35f",
+   "frozen": false
+  },
+  {
+   "id": "v2:brief-35",
+   "kind": "founder memo",
+   "title": "Brief 35: the fractal nature of the WCLM",
+   "where": "v2/briefs/35__founder-memo__the-fractal-nature-of-the-wclm.md",
+   "note": "26 August 2026.",
+   "sha256": "13e72ca2ceeaeb474db47ac23239ca81340547ed7bc3a819cf51c397b7d4f1f1",
+   "frozen": false
+  },
+  {
+   "id": "v2:brief-36",
+   "kind": "founder memo",
+   "title": "Brief 36: operators as first-class folders",
+   "where": "v2/briefs/36__founder-memo__operators-as-first-class-folders.md",
+   "note": "26 August 2026.",
+   "sha256": "a10d77a26b53a627398fdc0cf6f529f818b00805e956311bf51f7c47f438e925",
+   "frozen": false
+  },
+  {
+   "id": "v2:brief-38",
+   "kind": "founder memo",
+   "title": "Brief 38: three books from this estate",
+   "where": "v2/briefs/38__founder-memo__three-books-from-this-estate.md",
+   "note": "26 August 2026. The commission behind this volume.",
+   "sha256": "ff39691999a3fdab3316719651ec959063ae3aa439fc5c929c9e25643ecc8c54",
+   "frozen": false
+  },
+  {
+   "id": "v2:methods",
+   "kind": "register",
+   "title": "The methods register",
+   "where": "v2/methods/data/methods.json",
+   "note": "35 techniques, each used in earnest before being written down.",
+   "sha256": "bfe37d235d9a28fd9392349e46211923b8b5540244c9d9b0c15e3d146cdfaa3b",
+   "frozen": false
+  },
+  {
+   "id": "v2:lexicon",
+   "kind": "register",
+   "title": "The lexicon, in scopes",
+   "where": "v2/lexicon/data/lexicon.json",
+   "note": "27 book-scope terms plus the pilot's source scope.",
+   "sha256": "752bbcc5c3e86de059e4541ecdc19753309b63f995c27c21104fad481b9d1572",
+   "frozen": false
+  },
+  {
+   "id": "v2:extraction",
+   "kind": "extraction",
+   "title": "The pilot extraction: Thinking in Graphs",
+   "where": "v2/universe/docs/thinking-in-graphs/extraction.json",
+   "note": "57 nodes, every one anchored to a verbatim quote and byte-verified on every build.",
+   "sha256": "782abc53bfb488df58ad31b07353e865815ef006fec676ae5eedc02f0ddd53db",
+   "frozen": false
+  },
+  {
+   "id": "v2:crossrefs",
+   "kind": "ledger",
+   "title": "The pilot's usage ledger",
+   "where": "v2/universe/docs/thinking-in-graphs/crossrefs.json",
+   "note": "Where the document is used, each use rated.",
+   "sha256": "917ef766c6054ad2683d77a5f2341c472839e2bbfe2156192fbda66d4301d753",
+   "frozen": false
+  },
+  {
+   "id": "v2:world",
+   "kind": "engine data",
+   "title": "The WCLM world file",
+   "where": "v2/wclm/data/world.json",
+   "note": "The compiled world, with its weight formulas stated in the file.",
+   "sha256": "7eed7f75e159d33918252acd73ebda2c9ce66ac2e3d87cc9516aed45040a16e9",
+   "frozen": false
+  },
+  {
+   "id": "v2:retrospective",
+   "kind": "retrospective",
+   "title": "The v0.4 retrospective",
+   "where": "v2/dev-packs/v0.5.0__the-v04-retrospective/00__the-v04-retrospective.md",
+   "note": "Forty-one releases in four days, weighed.",
+   "sha256": "c0bfcb8e628963682f22e1cebfb797bec04668e4d66bdd00e95eb9059a239efc",
+   "frozen": false
+  },
+  {
+   "id": "v2:pack-00",
+   "kind": "commission",
+   "title": "The book-writing pack: the commission",
+   "where": "v2/dev-packs/v0.5.10__the-book-writing-pack/00__README.md",
+   "note": "The three governing rules.",
+   "sha256": "11f7eedbc4baeb8b4406f097a96046c271bf368a60826981c3ff0c97fce1619f",
+   "frozen": false
+  },
+  {
+   "id": "v2:pack-03",
+   "kind": "commission",
+   "title": "The book-writing pack: entry A",
+   "where": "v2/dev-packs/v0.5.10__the-book-writing-pack/03__entry-a-the-universe.md",
+   "note": "This volume's editorial charter.",
+   "sha256": "7f052cbacf6e6561de8725bc38a8c1b2fb47b34aaefc316a3bcab14a5ed6b0d8",
+   "frozen": false
+  },
+  {
+   "id": "v2:op-bind",
+   "kind": "operator",
+   "title": "bind: forms light the meanings they cover",
+   "where": "v2/wclm/operators/bind/bind.md",
+   "note": "T7, core.",
+   "sha256": "03c9b7ea66c45690fb1678f9bed1b7c442760be969c21a39e8d7110992d5e45c",
+   "frozen": false
+  },
+  {
+   "id": "v2:op-converge",
+   "kind": "operator",
+   "title": "converge: the answer, with its receipts",
+   "where": "v2/wclm/operators/converge/converge.md",
+   "note": "T9, core.",
+   "sha256": "52f39bcc82648c7385b2eaeeca5265881453012a8234f4804be107a003e3403e",
+   "frozen": false
+  },
+  {
+   "id": "v2:op-expand",
+   "kind": "operator",
+   "title": "expand: the world model, gathered per meaning",
+   "where": "v2/wclm/operators/expand/expand.md",
+   "note": "T8, optional.",
+   "sha256": "4f94b4292059a30b2b5197bca1ce4dcadd9a1c904434258b2724d8b49c997dd4",
+   "frozen": false
+  },
+  {
+   "id": "v2:op-attend",
+   "kind": "operator",
+   "title": "attend: the look-back, as data",
+   "where": "v2/wclm/operators/attend/attend.md",
+   "note": "T6, optional.",
+   "sha256": "63e74d5e4929405304c51f446ee8989de5a3e268b345010636e8ee2f4fa7109d",
+   "frozen": false
+  },
+  {
+   "id": "page:capability-scale",
+   "kind": "site page",
+   "title": "The capability scale",
+   "where": "v1/vaults/capability-scale.html",
+   "note": "The synthesis no single vault analysis produced.",
+   "sha256": "5f3e47da31db98eab06d47732507307a721f3704b837e0adcf6395e21981a89b",
+   "frozen": true
+  },
+  {
+   "id": "page:vaults",
+   "kind": "site page",
+   "title": "The vaults, opened",
+   "where": "v1/vaults/index.html",
+   "note": "Five published graph vaults, analysed.",
+   "sha256": "57fa2e8d27f3d0d66d42c1b7748e015feafe6022aef67f9feb8336cdf48e0a28",
+   "frozen": true
+  },
+  {
+   "id": "page:universe",
+   "kind": "site page",
+   "title": "The universe, built bottom up",
+   "where": "v2/universe/index.html",
+   "note": "The layer model and the rules the section holds itself to.",
+   "sha256": "ccbec24df8cfb9585d5778097bd705d3d3529acd0759577a26f3e505cf1943f7",
+   "frozen": false
+  },
+  {
+   "id": "page:versions",
+   "kind": "site page",
+   "title": "Release history (v0.5 era)",
+   "where": "admin/versions.html",
+   "note": "Every push to dev is a release; every row narrates what happened.",
+   "sha256": "767da165b6a67b5f16ea4c9f2d6be7de1badaac95daaec3c6228edfd4ee21e20",
+   "frozen": false
+  },
+  {
+   "id": "page:v1-front",
+   "kind": "site page",
+   "title": "The first edition's front page",
+   "where": "v1/index.html",
+   "note": "Carries the 10,000-hours hook.",
+   "sha256": "3638caafd01a24b7633f612a11a118ae8aaddf44e5c6555b522354d8e7ee34bb",
+   "frozen": true
+  },
+  {
+   "id": "ext:sgit-vaults",
+   "kind": "fetched page",
+   "title": "Published vaults",
+   "where": "https://sgit.ai/demos/vaults/index.html",
+   "note": "Fetched 26 August 2026; snapshot in data/fetched/vaults.html. Site version v0.2.45.",
+   "sha256": null,
+   "frozen": false
+  },
+  {
+   "id": "ext:sgit-network",
+   "kind": "fetched page",
+   "title": "The sgit.ai network",
+   "where": "https://sgit.ai/network/index.html",
+   "note": "Fetched 26 August 2026; snapshot in data/fetched/network.html. Site version v0.2.45.",
+   "sha256": null,
+   "frozen": false
+  }
+ ],
+ "regions": [
+  {
+   "id": "core",
+   "label": "The meaning core",
+   "blurb": "Where the thesis lives: a node is an address, the edges are the meaning, and the same value differently connected is a different thing."
+  },
+  {
+   "id": "grammar",
+   "label": "The grammar of edges",
+   "blurb": "The rules that make a graph queryable: verbs with distinct inverses, no generic edge, paths that read as sentences, and the query rendered instead of the graph."
+  },
+  {
+   "id": "anchors",
+   "label": "Anchors, scopes and bridges",
+   "blurb": "How meaning crosses a boundary without anybody agreeing: reference points with no authority, scopes that override, and bridges instead of merges."
+  },
+  {
+   "id": "confidence",
+   "label": "Confidence, evidence and reality",
+   "blurb": "What a claim will bear, computed: the two ladders, the blast radius, the named absence, and the twin where the graph touches something real."
+  },
+  {
+   "id": "provenance",
+   "label": "Provenance, correction and time",
+   "blurb": "Who said it, what rested on it, and what happens when it turns out to be wrong."
+  },
+  {
+   "id": "fractal",
+   "label": "The fractal principle",
+   "blurb": "The title's first two words, as a testable claim: composition with local override, projections, altitude, and the map that a graph becomes when it gains position."
+  },
+  {
+   "id": "machinery",
+   "label": "The machinery",
+   "blurb": "What the estate actually built to hold all of this: the extraction, the core graph, the identity ledger, the instrument and the deterministic transformer."
+  },
+  {
+   "id": "estate",
+   "label": "The estate, the vaults and the network",
+   "blurb": "Where the ideas are running, where they are only argued, and the honesty positions that separate the two."
+  }
+ ],
+ "verbs": [
+  {
+   "verb": "bounds",
+   "inverse": "bounded-by",
+   "form": "A bounds B",
+   "reads": "this is what keeps that finite"
+  },
+  {
+   "verb": "carries",
+   "inverse": "carried-by",
+   "form": "A carries B",
+   "reads": "this travels with that wherever it goes"
+  },
+  {
+   "verb": "computes",
+   "inverse": "computed-by",
+   "form": "A computes B",
+   "reads": "this is derived rather than asserted"
+  },
+  {
+   "verb": "contradicts",
+   "inverse": "contradicted-by",
+   "form": "A contradicts B",
+   "reads": "these two cannot both stand as written"
+  },
+  {
+   "verb": "demonstrates",
+   "inverse": "demonstrated-by",
+   "form": "A demonstrates B",
+   "reads": "this worked artefact shows that idea running"
+  },
+  {
+   "verb": "departs-from",
+   "inverse": "departed-from-by",
+   "form": "A departs from B",
+   "reads": "this position is a deliberate departure from that one"
+  },
+  {
+   "verb": "determines",
+   "inverse": "determined-by",
+   "form": "A determines B",
+   "reads": "this fixes the value of that"
+  },
+  {
+   "verb": "enables",
+   "inverse": "enabled-by",
+   "form": "A enables B",
+   "reads": "this makes that possible"
+  },
+  {
+   "verb": "extends",
+   "inverse": "extended-by",
+   "form": "A extends B",
+   "reads": "this adds to that without changing it"
+  },
+  {
+   "verb": "generalises",
+   "inverse": "specialised-by",
+   "form": "A generalises B",
+   "reads": "this is the wider statement of that"
+  },
+  {
+   "verb": "grounds",
+   "inverse": "grounded-by",
+   "form": "A grounds B",
+   "reads": "this idea is what that one rests on"
+  },
+  {
+   "verb": "implements",
+   "inverse": "implemented-by",
+   "form": "A implements B",
+   "reads": "this is the built form of that idea"
+  },
+  {
+   "verb": "licenses",
+   "inverse": "licensed-by",
+   "form": "A licenses B",
+   "reads": "this permits that, without asking the centre"
+  },
+  {
+   "verb": "measures",
+   "inverse": "measured-by",
+   "form": "A measures B",
+   "reads": "this is how that is counted"
+  },
+  {
+   "verb": "names",
+   "inverse": "named-by",
+   "form": "A names B",
+   "reads": "this gives that thing its word"
+  },
+  {
+   "verb": "provides",
+   "inverse": "provided-by",
+   "form": "A provides B",
+   "reads": "this supplies that"
+  },
+  {
+   "verb": "refuses",
+   "inverse": "refused-by",
+   "form": "A refuses B",
+   "reads": "this rules that out on purpose"
+  },
+  {
+   "verb": "remedies",
+   "inverse": "remedied-by",
+   "form": "A remedies B",
+   "reads": "this is the answer to that problem"
+  },
+  {
+   "verb": "replaces",
+   "inverse": "replaced-by",
+   "form": "A replaces B",
+   "reads": "this supersedes that from a date"
+  },
+  {
+   "verb": "requires",
+   "inverse": "required-by",
+   "form": "A requires B",
+   "reads": "this cannot be had without that"
+  }
+ ],
+ "nodes": [
+  {
+   "id": "meaning-through-connectivity",
+   "family": "concept",
+   "region": "core",
+   "label": "meaning through connectivity",
+   "statement": "What a thing is emerges from the edges traceable from it, not from anything stored inside it.",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Nodes Have No Obligation to Explain Themselves",
+    "quote": "In a graph-first model, what something \"is\" emerges from the edges you can trace from it."
+   },
+   "also_called": [
+    "the thesis",
+    "the title after the colon"
+   ],
+   "live": [
+    "The whole estate: it is the site's lead sentence and the book's subtitle."
+   ]
+  },
+  {
+   "id": "node-alone-means-nothing",
+   "family": "claim",
+   "region": "core",
+   "label": "a node alone means nothing",
+   "statement": "A node connected to nothing is meaningless, literally rather than rhetorically: there is nothing there to be right or wrong about. Anything can be a node, and being one obliges it to explain nothing.",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Nodes Have No Obligation to Explain Themselves",
+    "quote": "A node connected to nothing is meaningless — literally."
+   },
+   "also_called": [
+    "a node is just a node"
+   ],
+   "live": [
+    "The first idea of the first edition's altitude 1."
+   ],
+   "also_anchored": [
+    {
+     "source": "src:thinking-in-graphs",
+     "section": "Summary: Core Principles",
+     "quote": "**Everything is a node.** Nodes carry local properties but have no obligation to declare what they are or how they should be used.",
+     "was": "everything is a node"
+    }
+   ]
+  },
+  {
+   "id": "the-difference-is-connectivity",
+   "family": "example",
+   "region": "core",
+   "label": "the same value, differently connected",
+   "statement": "Two variables both holding 8080 mean radically different things, because one reaches a type, a library and a pinned version and the other reaches nothing.",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "The Safe_UInt__Port Example",
+    "quote": "**The difference is not in the value.** Both scenarios have `8080`. The difference is in the **connectivity**."
+   },
+   "also_called": [
+    "the port example",
+    "the Safe_UInt__Port example"
+   ],
+   "live": [
+    "The on-ramp of the first edition's altitude 1; the sentence the capability scale reuses in a security register."
+   ]
+  },
+  {
+   "id": "declared-meaning",
+   "family": "concept",
+   "region": "core",
+   "label": "declared meaning",
+   "statement": "Meaning asserted in advance by a schema, which instances either conform to or fail.",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Meaning Is Not Declared — It Is Discovered",
+    "quote": "The schema is the authority, and instances conform or fail validation."
+   },
+   "also_called": [
+    "schema-first"
+   ],
+   "live": [
+    "The position the whole estate takes a stand against."
+   ]
+  },
+  {
+   "id": "discovered-meaning",
+   "family": "concept",
+   "region": "core",
+   "label": "discovered meaning",
+   "statement": "Meaning determined at query time by traversing a node's edges, rather than read off its label.",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Meaning Is Not Declared — It Is Discovered",
+    "quote": "By traversing those edges, we can determine what this node relates to, what constraints apply, and how confidently we can characterise it."
+   },
+   "live": [
+    "The WCLM's converge engine answers exactly this way: a meaning with the path that produced it."
+   ]
+  },
+  {
+   "id": "properties-carry-data-not-meaning",
+   "family": "position",
+   "region": "core",
+   "label": "properties carry data, never meaning",
+   "statement": "A property may hold a timestamp; it may not hold the answer to what kind of thing this is, because that answer is a query over edges.",
+   "anchor": {
+    "source": "src:digital-twins-of-anything",
+    "section": "The Twin Is the Endpoint of the Graph",
+    "quote": "in our graph we do not use properties, because properties do not have meaning, they are just words; we capture meaning through connectivity."
+   },
+   "also_called": [
+    "properties are just words"
+   ],
+   "live": [
+    "Held even against the estate's own live typed property graph: 12 node types, 71 nodes, 141 edges."
+   ]
+  },
+  {
+   "id": "compatibility-computed",
+   "family": "concept",
+   "region": "core",
+   "label": "compatibility is computed, not declared",
+   "statement": "Whether two things work together is a degree of subgraph overlap, asymmetric and purpose-relative, not a boolean somebody asserts.",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Compatibility Is a Graph Computation",
+    "quote": "They are compatible to the degree that their subgraphs overlap when traced toward common reference points."
+   },
+   "also_called": [
+    "a spectrum, not a boolean"
+   ],
+   "live": [
+    "The five Reviews; the compatibility-testing design across five artefact layers."
+   ]
+  },
+  {
+   "id": "five-reviews",
+   "family": "example",
+   "region": "core",
+   "label": "the five Reviews",
+   "statement": "Five organisations each call something a Review; no definition can be agreed, and the overlap is computable anyway, because the common ground is discovered in the graph rather than imposed on it.",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "The Review Example",
+    "quote": "Consider five different teams, each with a process they call \"Review\":"
+   },
+   "live": [
+    "The best on-ramp in the material, and the one to try on a sceptical colleague."
+   ],
+   "also_anchored": [
+    {
+     "source": "src:thinking-in-graphs",
+     "section": "Finding Common Ground Through Graph Analysis",
+     "quote": "The common ground was *discovered* in the graph, not *imposed* on it.",
+     "was": "common ground is discovered, not imposed"
+    }
+   ]
+  },
+  {
+   "id": "semantic-web-mistake",
+   "family": "position",
+   "region": "core",
+   "label": "the Semantic Web's mistake",
+   "statement": "The right problem was identified two decades early; the error was attaching meaning to nodes instead of deriving it from edges.",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "The Semantic Web's Insight (and Mistake)",
+    "quote": "They ended up attaching meaning *to nodes* rather than deriving meaning *from edges*."
+   },
+   "also_called": [
+    "schema-first thinking dressed in graph syntax"
+   ],
+   "live": [
+    "The disagreement is with a practice, not with RDF as a serialisation: the live regulation graph exports RDF/Turtle."
+   ]
+  },
+  {
+   "id": "not-a-graph-database-pitch",
+   "family": "position",
+   "region": "core",
+   "label": "not a graph database pitch",
+   "statement": "This is the third use of graphs, semantics, not the first two: network analysis and fast joins. The store is an implementation detail.",
+   "anchor": {
+    "source": "v1:why-graphs",
+    "section": "Three different things people mean by graph",
+    "quote": "This book is about use 3, which is why the disclaimer is stated up front: **not a graph database pitch.**"
+   },
+   "live": [
+    "Carried verbatim into every summary the estate publishes, including llms.txt."
+   ]
+  },
+  {
+   "id": "edge-is-a-verb",
+   "family": "method",
+   "region": "grammar",
+   "label": "every edge is a verb",
+   "statement": "An edge is not a line but a claim, and a claim needs a verb, stated in both directions.",
+   "anchor": {
+    "source": "src:avoid-the-blob",
+    "section": "Two-Way Verb Edges, And Never Relates-To",
+    "quote": "the way I create graphs, they are always a two-way relationship and always to do with verbs."
+   },
+   "live": [
+    "The fifteen-edge vocabulary; the WCLM's verbs register, which resolves displayed inverses back to stored direction."
+   ]
+  },
+  {
+   "id": "distinct-inverse",
+   "family": "method",
+   "region": "grammar",
+   "label": "the inverse is a different relationship",
+   "statement": "An inverse is not the same edge walked backwards: it has a different name, a different reading and a different fan-out, and that asymmetry is what bounds traversal.",
+   "anchor": {
+    "source": "src:directed-edges-query-paths",
+    "section": "Why Inward and Outward Must Differ",
+    "quote": "The inverse of an edge is not the same edge walked backwards; it is a different, meaningful relationship."
+   },
+   "live": [
+    "Brief 28 turned it into navigation: click a node and read what points at it, in English."
+   ]
+  },
+  {
+   "id": "banned-generic-edge",
+   "family": "position",
+   "region": "grammar",
+   "label": "the generic association edge is banned",
+   "statement": "A generic association edge constrains nothing, so it cannot narrow a traversal: it costs fan-out and buys nothing.",
+   "anchor": {
+    "source": "src:avoid-the-blob",
+    "section": "Two-Way Verb Edges, And Never Relates-To",
+    "quote": "You can never have relates-to, because relates-to is meaningless, two things always relate to each other. The more granular the edge, the better the query you can write."
+   },
+   "live": [
+    "Broken by the project's own shipped configuration, and narrated rather than quietly fixed."
+   ]
+  },
+  {
+   "id": "path-reads-as-a-sentence",
+   "family": "method",
+   "region": "grammar",
+   "label": "a path must read as a sentence",
+   "statement": "If a traversal does not read as natural language in the reader's own tongue and business context, the edges are wrong.",
+   "anchor": {
+    "source": "src:path-properties",
+    "section": "Paths Should Read as Language",
+    "quote": "the path should read in English, or not even in English, it should read in the language and the culture and the business context we are talking about."
+   },
+   "also_called": [
+    "the sentence test"
+   ],
+   "live": [
+    "The cheapest quality check in the estate: read the paths aloud and the bad edges announce themselves."
+   ]
+  },
+  {
+   "id": "direction-bounds-fan-out",
+   "family": "claim",
+   "region": "grammar",
+   "label": "direction bounds the result, not the graph",
+   "statement": "Because each hop filters on edge type and direction, multi-seed queries converge on a handful of peaks instead of exploding.",
+   "anchor": {
+    "source": "src:directed-edges-query-paths",
+    "section": "Why This Prevents the Explosion of Nodes",
+    "quote": "The size of the result is then bounded by the number of peaks, not by the fan-out of the graph."
+   },
+   "live": [
+    "The reader's paths-to-peaks view gold-lines the shortest route from a selection to every visible summit."
+   ]
+  },
+  {
+   "id": "the-fifteen-edges",
+   "family": "artefact",
+   "region": "grammar",
+   "label": "the fifteen established edges",
+   "statement": "A concrete, versioned, public edge vocabulary, every one a directed verb, with nine of the inverse names proposed by the book rather than quoted.",
+   "anchor": {
+    "source": "v1:edge-set",
+    "section": "The fifteen established edges",
+    "quote": "Every one of them is a verb; every one is directed."
+   },
+   "live": [
+    "Published so it can be argued with; the honesty of the proposed column is load-bearing."
+   ]
+  },
+  {
+   "id": "node-type-formula",
+   "family": "concept",
+   "region": "grammar",
+   "label": "classification is a query, not a judgment",
+   "statement": "A node type is a required pattern of typed, directed paths that a node either matches or does not; the content does not decide the type, the paths do.",
+   "anchor": {
+    "source": "src:the-grounding-ladder",
+    "section": "Type Is Set by Edges: Classification as a Query",
+    "quote": "A fact and a vulnerability can have identical content; what makes one a vulnerability is the upward edge to a risk."
+   },
+   "also_called": [
+    "node type formulas"
+   ],
+   "live": [
+    "Roughly 31 node types and 7 formulas in the AWS IAM worked instance; nothing executes them."
+   ]
+  },
+  {
+   "id": "the-blob",
+   "family": "concept",
+   "region": "grammar",
+   "label": "the blob",
+   "statement": "The hairball render that shows everything and therefore nothing, and tempts people to delete relationships to make the picture better. Past three or four hundred nodes a render conveys texture, not information.",
+   "anchor": {
+    "source": "src:avoid-the-blob",
+    "section": "The Blob Anti-Pattern",
+    "quote": "I see a lot of people get into semantic graphs, get excited, and arrive at the big blob, the big visualisation of thousands or millions of interconnections, just one big blob."
+   },
+   "live": [
+    "Named again by the founder about his own viewer in brief 28: interesting, but not yet useful."
+   ],
+   "also_anchored": [
+    {
+     "source": "src:avoid-the-blob",
+     "section": "The Visualisation Limit",
+     "quote": "anything above 300 or 400 nodes cannot be easily visualised.",
+     "was": "the visualisation limit"
+    }
+   ]
+  },
+  {
+   "id": "rich-nodes-are-good",
+   "family": "position",
+   "region": "grammar",
+   "label": "rich nodes are good",
+   "statement": "The blob is a rendering failure mistaken for a modelling failure; pruning solves the picture by destroying the asset.",
+   "anchor": {
+    "source": "src:avoid-the-blob",
+    "section": "Rich Nodes Are Good",
+    "quote": "the more rich a node is, the more connections it has, the better."
+   },
+   "live": [
+    "The reason the pilot document was extracted twice: a reading and the text itself."
+   ]
+  },
+  {
+   "id": "build-wide-find-the-few-flip",
+   "family": "method",
+   "region": "grammar",
+   "label": "build wide, find the few, flip",
+   "statement": "Capture the universe first, run the question, then re-root the query at the handful of nodes it found and walk out again.",
+   "anchor": {
+    "source": "src:avoid-the-blob",
+    "section": "The Subgraph Flip",
+    "quote": "You flip it and query from that node, which dramatically reduces the graph, because you now see only the nodes relevant to that person, that unit, that company."
+   },
+   "also_called": [
+    "the subgraph flip",
+    "multi-graph creation paths"
+   ],
+   "live": [
+    "The reader's explore-by-degrees walk is this move with a price shown before each hop."
+   ]
+  },
+  {
+   "id": "render-the-query",
+   "family": "method",
+   "region": "grammar",
+   "label": "never render the whole graph",
+   "statement": "The default view is never the graph; it is the result of a query, because a diagram of everything is rarely useful.",
+   "anchor": {
+    "source": "src:graph-canvas-repl",
+    "section": "Never Render The Whole Graph",
+    "quote": "a diagram showing everything is rarely useful, while a diagram showing one node interacting with its neighbours is always readable."
+   },
+   "live": [
+    "Every rendered graph in the first edition; the reader's five preset views."
+   ]
+  },
+  {
+   "id": "path-query-is-walked",
+   "family": "method",
+   "region": "grammar",
+   "label": "queries are walked, not written",
+   "statement": "Navigating a graph hop by hop IS writing a query, so the trail a reader walks is recorded, edited as steps, generalised and re-run.",
+   "anchor": {
+    "source": "v2:methods",
+    "section": "path-query",
+    "quote": "Queries are not written, they are walked: the reader's own navigation is the query language, and generalising one step at a time is how a single observation becomes a reusable question."
+   },
+   "live": [
+    "Shipped at v0.4.34: trail, board and a pure tested runner, with named queries persisted per document."
+   ]
+  },
+  {
+   "id": "anchor-node",
+   "family": "concept",
+   "region": "anchors",
+   "label": "the anchor node",
+   "statement": "A well-connected, well-known reference point other nodes may link to, with no authority to make them. Nodes are nearly free, so some exist only to be one.",
+   "anchor": {
+    "source": "src:issues-fs-lexicon",
+    "section": "What Makes a Good Anchor Node",
+    "quote": "It is a reference point, not a gatekeeper."
+   },
+   "also_called": [
+    "bridge node",
+    "a shared landmark"
+   ],
+   "live": [
+    "The move it licenses: link to schema.org, do not become schema.org."
+   ],
+   "also_anchored": [
+    {
+     "source": "src:thinking-in-graphs",
+     "section": "What Anchor Nodes Actually Are",
+     "quote": "**Has no special authority** — it does not force conformity; it enables discovery",
+     "was": "an anchor has no special authority"
+    },
+    {
+     "source": "src:path-properties",
+     "section": "Cheap Nodes, and Anchors for Many Languages",
+     "quote": "with graphs of graphs it costs almost nothing to have more nodes and edges, and sometimes you have nodes that only exist to provide anchors for some queries",
+     "was": "nodes are nearly free"
+    }
+   ]
+  },
+  {
+   "id": "lexicon",
+   "family": "concept",
+   "region": "anchors",
+   "label": "the lexicon",
+   "statement": "A shared vocabulary held as connected reference nodes, more connected than its children but not more authoritative than them.",
+   "anchor": {
+    "source": "src:issues-fs-lexicon",
+    "section": "The Lexicon Is the Root, Not the Authority",
+    "quote": "It is not special because its definitions are authoritative."
+   },
+   "live": [
+    "v2/lexicon/: 27 book-scope terms, each with what it is near but is not."
+   ]
+  },
+  {
+   "id": "scope-and-override",
+   "family": "concept",
+   "region": "anchors",
+   "label": "the scope, and its right to override",
+   "statement": "Any scope may extend, specialise or override an inherited definition, and it never has to register its vocabulary with the scope above.",
+   "anchor": {
+    "source": "src:issues-fs-lexicon",
+    "section": "Every Scope Is a Potential Lexicon",
+    "quote": "Each level can link to the level above — or not. The richness of cross-scope connectivity is a choice, not a requirement."
+   },
+   "live": [
+    "The lexicon records the authority behind every override and keeps the superseded definition visible."
+   ],
+   "also_anchored": [
+    {
+     "source": "src:thinking-in-graphs",
+     "section": "Every Scope Defines Its Own Vocabulary",
+     "quote": "At no level does a child scope need to \"register\" its vocabulary with a parent scope.",
+     "was": "no registration with the parent"
+    }
+   ]
+  },
+  {
+   "id": "dont-merge-vocabularies",
+   "family": "position",
+   "region": "anchors",
+   "label": "merging erases the disagreement",
+   "statement": "Folding two vocabularies into one is the lossy operation, because what it destroys is usually the finding. Make them compatible instead; that is what an ontology of ontologies is for.",
+   "anchor": {
+    "source": "src:ontologies-of-ontologies",
+    "section": "Bridges, Not Merges",
+    "quote": "it erases the disagreement that was the whole point of having two parties."
+   },
+   "also_called": [
+    "keep both senses"
+   ],
+   "live": [
+    "Applied to translation, to transcription, and to two agents disagreeing about the same repository."
+   ],
+   "also_anchored": [
+    {
+     "source": "src:path-properties",
+     "section": "Understanding Over Schema: The Ontology of Ontologies",
+     "quote": "I always err on the side of understanding versus a standardized schema.",
+     "was": "understanding over a standardised schema"
+    }
+   ]
+  },
+  {
+   "id": "three-layers",
+   "family": "concept",
+   "region": "anchors",
+   "label": "three layers: facts, formulas, bridges",
+   "statement": "Shared facts owned by nobody, per-party formulas owned by each, and declared bridges negotiated between them.",
+   "anchor": {
+    "source": "src:ontologies-of-ontologies",
+    "section": "The Three Layers",
+    "quote": "parties can disagree about meaning while still agreeing about facts, which is the only stable basis for working together."
+   },
+   "live": [
+    "The separation is the design: swap a formula and the shared graph does not move."
+   ]
+  },
+  {
+   "id": "bridge",
+   "family": "concept",
+   "region": "anchors",
+   "label": "the bridge",
+   "statement": "An explicit, inspectable, arguable connection between two formulas at a stated point, which may be partial or conditional.",
+   "anchor": {
+    "source": "src:ontologies-of-ontologies",
+    "section": "Bridges, Not Merges",
+    "quote": "A bridge can be an anchor node that both formulas reference, an equivalence between edge types in two formulas, or a conditional mapping"
+   },
+   "live": [
+    "Layer 2 of the second edition's universe: authored cross-document edges. Not started."
+   ]
+  },
+  {
+   "id": "meaning-travels-by-translation",
+   "family": "claim",
+   "region": "anchors",
+   "label": "meaning travels by translation, not agreement",
+   "statement": "Meaning crosses languages, cultures and agendas by maintaining translations between definitions each side still owns.",
+   "anchor": {
+    "source": "src:ontologies-of-ontologies",
+    "section": "How Meaning Travels Across Domains",
+    "quote": "It does not move by everyone agreeing on one definition; it moves by maintaining translations between definitions that each side continues to own."
+   },
+   "live": [
+    "The WCLM's analogies register does this for audiences: sixteen concepts mapped into finance, operations and medicine."
+   ]
+  },
+  {
+   "id": "cross-graph-edge",
+   "family": "concept",
+   "region": "anchors",
+   "label": "the cross-graph edge",
+   "statement": "An edge that crosses from one sovereign graph into another and carries meaning between them, without either graph changing inside.",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Cross-Graph References",
+    "quote": "Cross-graph edges create interoperability without requiring any graph to change its internal structure."
+   },
+   "live": [
+    "Shipped: typed *.link.json edges between vaults, optionally pinned to a commit in the target's history."
+   ]
+  },
+  {
+   "id": "version-pinning",
+   "family": "concept",
+   "region": "anchors",
+   "label": "pin or float, but say which",
+   "statement": "A cross-graph edge may pin meaning to a version or float with the latest; both are valid and the graph records the choice.",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Versioning and Temporal Graphs",
+    "quote": "If the edge points to `osbot-utils@3.63.4`, then the meaning is pinned to that version's definition."
+   },
+   "live": [
+    "The vault link file can pin to a commit, so a cross-graph edge cannot silently follow a moving target."
+   ]
+  },
+  {
+   "id": "name-clash",
+   "family": "concept",
+   "region": "anchors",
+   "label": "name clashes are normal",
+   "statement": "Two scopes will use the same label for different things; resolution is by graph identity and traversal path, never by the label.",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Name Clashes Are Normal",
+    "quote": "Resolution is structural, not nominal."
+   },
+   "live": [
+    "The WCLM's senses register is the same problem inside one word: three to five meanings each for graph, node, fractal and task."
+   ]
+  },
+  {
+   "id": "concept-not-word",
+   "family": "concept",
+   "region": "anchors",
+   "label": "the concept, not the word",
+   "statement": "The unit of meaning is a concept, language-independent, carrying one preferred label per language; a term is how one language happens to express it.",
+   "anchor": {
+    "source": "src:concepts-not-words",
+    "section": "The Word Is Concept",
+    "quote": "**The distinction that does all the work is concept against term.**"
+   },
+   "live": [
+    "It caught an English word that was wrong: draft, for something that was never a draft."
+   ]
+  },
+  {
+   "id": "divergence-is-the-finding",
+   "family": "position",
+   "region": "anchors",
+   "label": "divergence is the finding",
+   "statement": "Where two languages' induced graphs differ, that difference is either an error or a real lexical gap, and either way it is output rather than noise.",
+   "anchor": {
+    "source": "src:concepts-not-words",
+    "section": "Where The Graphs Diverge Is The Finding",
+    "quote": "**Divergence should be surfaced, not resolved.**"
+   },
+   "live": [
+    "The same conclusion the estate reached about two transcription models disagreeing about a word."
+   ]
+  },
+  {
+   "id": "junction-rule",
+   "family": "method",
+   "region": "anchors",
+   "label": "join at the node layer",
+   "statement": "To connect two bodies of text, lift both into typed nodes first and join at an intermediate layer; never document to document.",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "junction-rule",
+    "quote": "To connect two bodies of text, lift **both** into typed nodes first and join at an intermediate layer. A document-to-document link is only as good as the sentence somebody wrote around it."
+   },
+   "live": [
+    "Demonstrated in the VoiceDebrief vault: two paragraphs joined node to node, neither document citing the other."
+   ]
+  },
+  {
+   "id": "confidence-ladder",
+   "family": "concept",
+   "region": "confidence",
+   "label": "the confidence ladder",
+   "statement": "How much a claim will bear is computable from how richly it is connected: no edges, local edges, typed definitions, anchor nodes, external references, rich multi-hop paths.",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "The Confidence Spectrum",
+    "quote": "the answer is always computable from the graph: count the edges, measure the depth of traversal to anchor nodes, assess the authority of the nodes reached"
+   },
+   "also_called": [
+    "the confidence spectrum"
+   ],
+   "live": [
+    "Six rungs in the first edition; the WCLM applies it to its own output as an anchoring declaration."
+   ]
+  },
+  {
+   "id": "grounding-ladder",
+   "family": "concept",
+   "region": "confidence",
+   "label": "the grounding ladder",
+   "statement": "One node type formula: fact grounds to evidence to measure to twin to reality, and a fact becomes a vulnerability only by an upward path to a risk.",
+   "anchor": {
+    "source": "src:the-grounding-ladder",
+    "section": "The Formula, as Paths",
+    "quote": "`Vulnerability := a Fact (grounded below) AND an upward path to a Risk.`"
+   },
+   "live": [
+    "Stated explicitly as ONE formula among possible others, which is what stops it becoming a schema."
+   ]
+  },
+  {
+   "id": "two-directions",
+   "family": "claim",
+   "region": "confidence",
+   "label": "downward grounds, upward implies",
+   "statement": "Walking down asks whether something is real; walking up asks what it means and why it matters. The two directions do different jobs.",
+   "anchor": {
+    "source": "src:the-grounding-ladder",
+    "section": "Two Directions, Two Jobs",
+    "quote": "Downward is grounding: is this real, does it reach a measure, a twin, and ultimately reality? Upward is classification and implication: what is this node, and why does it matter?"
+   },
+   "live": [
+    "A node with only upward paths is a hypothesis; with only downward paths, a fact on the shelf."
+   ]
+  },
+  {
+   "id": "the-floor",
+   "family": "concept",
+   "region": "confidence",
+   "label": "the floor",
+   "statement": "Grounding terminates at the last node where going deeper would neither improve observability nor change a decision. It is a stated judgement, not a node type.",
+   "anchor": {
+    "source": "src:the-grounding-ladder",
+    "section": "What the Floor Actually Is",
+    "quote": "the floor is the last node where going deeper would neither improve observability nor change a decision."
+   },
+   "live": [
+    "One of the two places the source names where subjectivity can leak back into a computable formula."
+   ]
+  },
+  {
+   "id": "blast-radius",
+   "family": "concept",
+   "region": "confidence",
+   "label": "the blast radius",
+   "statement": "Everything reachable from a thing once it goes wrong: a closure, not a list, and the thing confidence is actually about.",
+   "anchor": {
+    "source": "src:confidence-through-evidence",
+    "section": "Confidence Is Understanding The Blast Radius",
+    "quote": "the confidence here is understanding the blast radius, for example for a vulnerability, understanding the impact of a change."
+   },
+   "live": [
+    "The WCLM scores it literally: blast radius is the degree of the winning meaning, and it is in the arithmetic."
+   ]
+  },
+  {
+   "id": "map-the-gaps",
+   "family": "method",
+   "region": "confidence",
+   "label": "map the gaps, not only the evidence",
+   "statement": "Three of the ten pieces of evidence you need is information: it quantifies confidence, names the seven to go and get, and makes the case to fund them.",
+   "anchor": {
+    "source": "src:confidence-through-evidence",
+    "section": "Map What You Have, And What Is Missing",
+    "quote": "You do not just map what you have, you map what you need, and this is the thing we do not do a lot in products: we do not list what is missing, so we can have assurance of how confident we are."
+   },
+   "live": [
+    "The Article 26(5) example: the output of the exercise is the five questions nobody could answer."
+   ]
+  },
+  {
+   "id": "named-absence",
+   "family": "position",
+   "region": "confidence",
+   "label": "a named absence beats a hidden one",
+   "statement": "An absence that is stated can be counted, queried, assigned and closed; an absence that is hidden silently supports whatever rests on it. The lack of a fact is itself a fact.",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "named-absence",
+    "quote": "Three of ten pieces of evidence is information. An absence that is stated can be queried, assigned and closed; an absence that is hidden silently supports whatever rests on it."
+   },
+   "also_called": [
+    "honest uncertainty",
+    "the ghosted node"
+   ],
+   "live": [
+    "Drawn, not omitted: the Risk Graph Explorer ghosts unanswered edges rather than leaving them out."
+   ],
+   "also_anchored": [
+    {
+     "source": "src:confidence-through-evidence",
+     "section": "The Thesis: Confidence Is Based On Evidence",
+     "quote": "lack of evidence is evidence, lack of fact is a fact.",
+     "was": "the absence of evidence is evidence"
+    }
+   ]
+  },
+  {
+   "id": "air-gap",
+   "family": "concept",
+   "region": "confidence",
+   "label": "the air gap",
+   "statement": "Where the graph cannot reach a real system, it holds an explicit, tracked gap with a name, an owner and a frequency, rather than a blank or a drawn connection it does not have.",
+   "anchor": {
+    "source": "v1:boundaries",
+    "section": "And where it cannot reach, name the gap",
+    "quote": "this needs to be manually updated once a week, but the point is we now know where that gap is."
+   },
+   "live": [
+    "The sharpest Wardley map in the material: the ends are solved and the middle is people. Still unrendered."
+   ]
+  },
+  {
+   "id": "enrichment-not-enforcement",
+   "family": "position",
+   "region": "confidence",
+   "label": "enrichment, not enforcement",
+   "statement": "The remedy for low confidence is adding edges, never adding validation rules. The graph grows; it does not constrain.",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Enrichment, Not Enforcement",
+    "quote": "When the system identifies low-confidence nodes, the response is not validation failure. It is an opportunity for enrichment"
+   },
+   "live": [
+    "Small to state and hard to hold on to: it is what separates this from every schema validator."
+   ]
+  },
+  {
+   "id": "honest-uncertainty",
+   "family": "position",
+   "region": "confidence",
+   "label": "we know X, we think Y, we cannot confirm Z",
+   "statement": "The honest output of such a system is not a score but three sentences, each with a reason you can trace.",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "What the System Can Observe",
+    "quote": "**Generate honest assessments**: \"We know X. We think Y. We cannot confirm Z.\""
+   },
+   "live": [
+    "The WCLM answers nonsense with nothing, which is the same posture executed by a machine."
+   ]
+  },
+  {
+   "id": "leverage-point",
+   "family": "claim",
+   "region": "confidence",
+   "label": "the leverage point",
+   "statement": "The node whose change propagates widest is often low in the graph and unremarkable, and it is where attention and money should go.",
+   "anchor": {
+    "source": "src:confidence-through-evidence",
+    "section": "The Leverage Point",
+    "quote": "the places where you have the highest risk and the highest impact are almost the places of highest leverage."
+   },
+   "live": [
+    "The evidence graph does not only measure confidence: it locates where to spend."
+   ]
+  },
+  {
+   "id": "twin",
+   "family": "concept",
+   "region": "confidence",
+   "label": "the twin",
+   "statement": "Where the graph stops modelling and continues into a real system. Every place the graph would otherwise stop is a twin, and whether a given twin actually reaches reality is itself a measurable fact.",
+   "anchor": {
+    "source": "src:digital-twins-of-anything",
+    "section": "The Twin Is the Endpoint of the Graph",
+    "quote": "the power of the twin is that we always arrive at the twin, so the edges and the peaks and the endpoints of the graph continue into the twin, and then ideally into reality."
+   },
+   "live": [
+    "A twin can be made of an organisation, an inbox, a person, a behaviour, the weather, even luck."
+   ],
+   "also_anchored": [
+    {
+     "source": "src:digital-twins-of-anything",
+     "section": "Connectedness Is a Measurable Fact",
+     "quote": "whether we can continue to reality is a measurable fact, it is connected or it is not.",
+     "was": "whether it reaches reality is a measurable fact"
+    }
+   ]
+  },
+  {
+   "id": "reality-discipline",
+   "family": "position",
+   "region": "confidence",
+   "label": "everything modelled must be real",
+   "statement": "No hypothetical risks, no speculative systems: either there is evidence and the thing exists, or it is not in the graph.",
+   "anchor": {
+    "source": "src:digital-twins-of-anything",
+    "section": "The Discipline of Reality",
+    "quote": "in this model, everything has to be relevant, everything has to be a fact, everything has to exist, because it is based on reality."
+   },
+   "live": [
+    "The rule that keeps a risk graph from turning into a brainstorm."
+   ]
+  },
+  {
+   "id": "supersede-never-delete",
+   "family": "position",
+   "region": "provenance",
+   "label": "supersede, never delete",
+   "statement": "A corrected claim is marked from a date and kept, because removing it destroys the record of what was resting on it.",
+   "anchor": {
+    "source": "src:a-fact-in-a-vacuum",
+    "section": "Supersede, Do Not Delete",
+    "quote": "A corrected claim is **marked superseded from a date**, not deleted."
+   },
+   "live": [
+    "Repealed provisions in the regulation graph are marked repealed_from; the lexicon keeps superseded definitions visible under their replacements."
+   ]
+  },
+  {
+   "id": "propagation-of-corrections",
+   "family": "claim",
+   "region": "provenance",
+   "label": "propagation is what a graph can do",
+   "statement": "In a document a correction is a new document and nothing that cited the original knows. In a graph a correction is an edge, and everything downstream is reachable.",
+   "anchor": {
+    "source": "src:a-fact-in-a-vacuum",
+    "section": "Propagation Is What A Graph Can Do And A Document Cannot",
+    "quote": "In a document, a correction is a new document. Nothing that cited the original knows."
+   },
+   "live": [
+    "The question it makes answerable: how much of what I believe rests on claims that have since been corrected?"
+   ]
+  },
+  {
+   "id": "ten-thousand-hours",
+   "family": "example",
+   "region": "provenance",
+   "label": "the 10,000-hours citation network",
+   "statement": "242 papers and more than 200,000 supporting citation paths carried a claim its own author spent a career correcting, and none of the corrections ever reached it.",
+   "anchor": {
+    "source": "page:v1-front",
+    "section": "The hook",
+    "quote": "None of the corrections ever attached to the claim"
+   },
+   "live": [
+    "The clearest non-technical case for corrections propagating, and the reason supersede-never-delete is a rule rather than a preference."
+   ]
+  },
+  {
+   "id": "weight-by-independence",
+   "family": "method",
+   "region": "provenance",
+   "label": "weight by independence, not by count",
+   "statement": "Ten citations of one source are one source; a confidence number built on counting measures popularity instead.",
+   "anchor": {
+    "source": "v1:depth",
+    "section": "Supersede, never delete: corrections must propagate",
+    "quote": "Ten citations of one source are one source."
+   },
+   "live": [
+    "The rule the 10,000-hours network violates at scale."
+   ]
+  },
+  {
+   "id": "contextual-validation",
+   "family": "position",
+   "region": "provenance",
+   "label": "is this use of it sound?",
+   "statement": "The question worth paying for is not whether a claim is true but whether this use of it is one the source supports.",
+   "anchor": {
+    "source": "src:paying-the-fact-creator",
+    "section": "The Question Is Not Whether It Is True",
+    "quote": "the angle is not just, is this statement correct in itself; the question is, is this correct in this context, for this use, for this conclusion, for this kind of set of events."
+   },
+   "also_called": [
+    "citation diversion, in reverse"
+   ],
+   "live": [
+    "The pilot's usage ledger is this made concrete: every use of the document rated aligned, stretched, misaligned or unrated, signed and dated."
+   ]
+  },
+  {
+   "id": "index-is-not-a-source",
+   "family": "method",
+   "region": "provenance",
+   "label": "an index is not a source",
+   "statement": "A node either asserts something or points at something, and a reader must always be able to tell which; pointer nodes are the one class safe to prune.",
+   "anchor": {
+    "source": "src:an-index-is-not-a-source",
+    "section": "Two Node Classes, Structurally Distinguished",
+    "quote": "**A node either asserts something or points at something, and a reader must always be able to tell which.**"
+   },
+   "live": [
+    "If the two are indistinguishable, every claim inherits the credibility of the weakest cache in the graph."
+   ]
+  },
+  {
+   "id": "agenda-is-context",
+   "family": "position",
+   "region": "provenance",
+   "label": "agenda is context, not a verdict",
+   "statement": "Every entity has objectives and recording them is legitimate; the discipline that stops it becoming ad hominem is disclosure rather than dismissal.",
+   "anchor": {
+    "source": "src:a-fact-in-a-vacuum",
+    "section": "Agenda Is Context, Not A Verdict",
+    "quote": "The discipline that solves this is well established outside this corpus and worth adopting explicitly: **disclosure rather than dismissal.**"
+   },
+   "live": [
+    "Applied to the estate itself: the graph has an agenda too, and every page carries a participant disclosure."
+   ]
+  },
+  {
+   "id": "provenance-chain",
+   "family": "concept",
+   "region": "provenance",
+   "label": "the chain of custody",
+   "statement": "Claim, graph node, file, commit, official source with the hash of the retrieved bytes: every link walkable by a reader holding nothing privileged.",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "provenance-chain",
+    "quote": "Claim, graph node, file, commit, official source with the hash of the retrieved bytes. Every link walkable by a reader who holds nothing privileged."
+   },
+   "live": [
+    "Running in the regulation graph vault: every element hash-verified to the official Formex XML it was parsed from."
+   ]
+  },
+  {
+   "id": "fractal-principle",
+   "family": "concept",
+   "region": "fractal",
+   "label": "fractal is a precise claim",
+   "statement": "Self-similarity, scale invariance, composition and recursion: zoom into any node and it expands into a graph obeying identical rules, with no new format and no special case.",
+   "anchor": {
+    "source": "src:fractal-semantic-graphs",
+    "section": "What Fractal Means Here",
+    "quote": "Fractal is a precise claim, not a decoration."
+   },
+   "also_anchored": [
+    {
+     "source": "src:fractal-semantic-graphs",
+     "section": "What Fractal Means Here",
+     "quote": "zoom into any node and it expands into a graph obeying the identical rules, with no new format and no special case.",
+     "was": "the falsifiable half"
+    }
+   ],
+   "live": [
+    "Falsifiable: if zooming in needs a different format, a different validator or a special case, the system is hierarchical rather than fractal."
+   ]
+  },
+  {
+   "id": "composition-with-local-override",
+   "family": "position",
+   "region": "fractal",
+   "label": "composition with local override",
+   "statement": "Fractal semantic graphs does not mean one grammar everywhere. It means graphs nested in graphs, with any scope free to override where it needs to, without asking the centre.",
+   "anchor": {
+    "source": "v2:brief-20",
+    "section": "The correction to fractal semantic graphs",
+    "quote": "Semantic graphs nested in a fractal way. Graphs of graphs of graphs. Ontologies of ontologies. A lexicon exists and is well connected, and any scope may extend, specialise or override it where it needs to, dynamically, without asking permission of the centre."
+   },
+   "live": [
+    "This is a correction, dated 23 August 2026: uniformity is the mechanism that makes an override safe, not the claim."
+   ]
+  },
+  {
+   "id": "graphs-of-graphs",
+   "family": "concept",
+   "region": "fractal",
+   "label": "graphs of graphs, ontologies of ontologies",
+   "statement": "The ecosystem is not one flat graph. It is graphs composed of graphs, navigated to assemble what is understood at this moment, and revised when the facts change.",
+   "anchor": {
+    "source": "src:graphs-of-graphs",
+    "section": "Graphs Of Graphs, Ontologies Of Ontologies",
+    "quote": "this is where the ontologies of ontologies of ontologies, the taxonomies of taxonomies, the graphs of graphs of graphs, are important, because for this to work we need to navigate all sorts of graphs, connect the dots, and create this ecosystem of what we understand at this moment in time"
+   },
+   "live": [
+    "The vault layer runs it: typed link files between vaults make a graph whose nodes are graphs."
+   ]
+  },
+  {
+   "id": "registers-of-registers",
+   "family": "example",
+   "region": "fractal",
+   "label": "a register for every accepting role",
+   "statement": "Wherever somebody accepts a risk, that entity needs a register, and the registers nest with the same grammar at every altitude.",
+   "anchor": {
+    "source": "src:fractal-risk-registers",
+    "section": "Fractal, In The Same Sense As The Graphs",
+    "quote": "Zoom in on any node in a company's register and it expands into the register of the role that owns it, obeying identical rules."
+   },
+   "live": [
+    "The relevance fade is the teaching move: a database administrator watches their own configuration light one entry on the board's register."
+   ]
+  },
+  {
+   "id": "graph-at-every-boundary",
+   "family": "position",
+   "region": "fractal",
+   "label": "a graph at every boundary",
+   "statement": "A conventional stack is glued with payloads and prompt text, and at every seam the structure of what was known is flattened and re-guessed. Emit a graph instead, and determinism, explainability, provenance, sovereignty and auditability stop being features and become consequences.",
+   "anchor": {
+    "source": "src:fractal-semantic-graphs",
+    "section": "The Stack: A Graph At Every Boundary",
+    "quote": "Nothing crosses a layer except a graph."
+   },
+   "also_anchored": [
+    {
+     "source": "src:fractal-semantic-graphs",
+     "section": "Provenance, Audit, And Explainability Fall Out",
+     "quote": "Three properties that are normally expensive features are, in this design, consequences.",
+     "was": "the properties fall out"
+    }
+   ],
+   "live": [
+    "Argued, not shipped. Nothing in this estate runs the stack this brief describes."
+   ]
+  },
+  {
+   "id": "model-proposes-engine-executes",
+   "family": "position",
+   "region": "fractal",
+   "label": "the model proposes, the engine executes",
+   "statement": "The model lives at the edge and its only job is translation into a proposed graph; a deterministic validator decides what is admissible.",
+   "anchor": {
+    "source": "src:fractal-semantic-graphs",
+    "section": "Where The Model Sits, And Where It Does Not",
+    "quote": "It proposes; it never executes."
+   },
+   "live": [
+    "The WCLM is the small, running demonstration of the second half: an engine where nothing is learned and every weight is a stated formula."
+   ]
+  },
+  {
+   "id": "untrusted-input-is-data",
+   "family": "claim",
+   "region": "fractal",
+   "label": "untrusted input is data, never instruction",
+   "statement": "Inbound content enters as nodes marked untrusted, and an untrusted node can be read, matched and referenced but can never become an instruction, so injection fails at the validator rather than at the model's discretion.",
+   "anchor": {
+    "source": "src:fractal-semantic-graphs",
+    "section": "Untrusted Input Is Data, Never Instruction",
+    "quote": "untrusted nodes are data: they can be read, matched, and referenced, and they can never become instruction nodes in a plan graph."
+   },
+   "live": [
+    "A reduction, not an elimination: what survives is a proposal that is structurally valid and semantically wrong, which is smaller and far more detectable."
+   ]
+  },
+  {
+   "id": "projection",
+   "family": "concept",
+   "region": "fractal",
+   "label": "documents are projections of graphs",
+   "statement": "The graph is the truth and the document is a view of it, rendered in the context of use. A skill file, a compliance standard and a consolidated legal text are the same problem.",
+   "anchor": {
+    "source": "v1:boundaries",
+    "section": "Documents are projections of graphs",
+    "quote": "the graph is the truth; the document is a **view** of it, generated in the context of use."
+   },
+   "live": [
+    "Running on this estate as a build pipeline: every page is generated from its markdown and a gate fails the build if the two disagree."
+   ]
+  },
+  {
+   "id": "every-paragraph-is-a-graph",
+   "family": "claim",
+   "region": "fractal",
+   "label": "every paragraph is a graph",
+   "statement": "Every paragraph was written for a reason, so every paragraph yields something: a fact, a risk, a control, a requirement, or work to be done.",
+   "anchor": {
+    "source": "src:every-paragraph-is-a-graph",
+    "section": "Every Paragraph Means Something, So Every Paragraph Yields Something",
+    "quote": "every part of the act means something, there's a reason why they wrote that paragraph."
+   },
+   "live": [
+    "The EU AI Act vault: 1,523 nodes and 1,944 edges, parsed deterministically from official Formex XML."
+   ]
+  },
+  {
+   "id": "decompilation",
+   "family": "concept",
+   "region": "fractal",
+   "label": "lifting text into a graph is decompilation",
+   "statement": "Going from concrete text to abstract structure runs the direction a decompiler runs, so it is ambiguous by nature and cannot be done reliably without help.",
+   "anchor": {
+    "source": "src:refactoring-meaning",
+    "section": "Source Maps Are The Two-Way Conversation",
+    "quote": "the span it was lifted from, at every level below it."
+   },
+   "live": [
+    "Which is why every node in the pilot extraction carries the byte range it came from, verified on every build."
+   ]
+  },
+  {
+   "id": "author-is-the-oracle",
+   "family": "position",
+   "region": "fractal",
+   "label": "the author is the only oracle",
+   "statement": "The goal is not absolute truth but the author's own meaning, confirmed by them. Is this true takes evidence and time; is this what you meant takes a glance.",
+   "anchor": {
+    "source": "src:refactoring-meaning",
+    "section": "The Author Is The Oracle",
+    "quote": "**Nobody but the author knows what the author meant**"
+   },
+   "live": [
+    "Which makes a reader saying that is not what I meant the elicitation working, not the extraction failing."
+   ]
+  },
+  {
+   "id": "disagreement-is-the-product",
+   "family": "claim",
+   "region": "fractal",
+   "label": "disagreement is the product",
+   "statement": "A summary the author agrees with has told them nothing. A structured reading they dispute has told them something about their own text.",
+   "anchor": {
+    "source": "src:refactoring-meaning",
+    "section": "Disagreement Is The Product",
+    "quote": "**A structured reading that the author disputes has told them something they did not know about their own text**"
+   },
+   "live": [
+    "The interaction has to make saying no easy: a system that only ever hears yes has learned nothing."
+   ]
+  },
+  {
+   "id": "altitude-and-query",
+   "family": "method",
+   "region": "fractal",
+   "label": "altitude is how much, query is which part",
+   "statement": "Two different controls, and a reader needs both. Altitude without query is the whole city in more detail; query without altitude is one building and no idea what it sits in.",
+   "anchor": {
+    "source": "src:refactoring-meaning",
+    "section": "Altitude Is How Much, Query Is Which Part",
+    "quote": "if you see something from a very high altitude you just see the city walls, and as you zoom in you start to see roads and buildings, and eventually people and cars."
+   },
+   "live": [
+    "The first edition's three altitudes; the second edition's five; the reader's degrees dial."
+   ]
+  },
+  {
+   "id": "map-is-a-graph-with-position",
+   "family": "claim",
+   "region": "fractal",
+   "label": "a map is a graph that gained position",
+   "statement": "Connectivity says what relates; position says what to do. A map has movement and time, which a plain graph struggles to carry, and a map of a map is the fractal claim at its most legible.",
+   "anchor": {
+    "source": "v2:brief-20",
+    "section": "The correction on Wardley maps",
+    "quote": "map is a graph that has gained position, movement and time."
+   },
+   "live": [
+    "Eight rendered strategy maps exist; the sharpest one, the air-gap map, is still unrendered."
+   ]
+  },
+  {
+   "id": "quote-anchored-extraction",
+   "family": "method",
+   "region": "machinery",
+   "label": "quote-anchored extraction",
+   "statement": "Every extracted node carries a verbatim quote at recorded byte offsets in a frozen source, and the build fails if the quote is not at its bytes.",
+   "anchor": {
+    "source": "v2:methods",
+    "section": "quote-anchored-extraction",
+    "quote": "Every extracted node carries a verbatim quote at recorded byte offsets in a frozen source; the build fails if the quote is not at its bytes, and every section with prose either yields nodes or is recorded empty with a reason."
+   },
+   "live": [
+    "Shipped at v0.4.5. It makes extraction hallucination build-detectable, and silence impossible."
+   ]
+  },
+  {
+   "id": "one-file-many-views",
+   "family": "method",
+   "region": "machinery",
+   "label": "one extraction, projected views",
+   "statement": "The dictionary, taxonomy, thesaurus and ontology of a document are projections of one file, never four authored artefacts, so they cannot disagree.",
+   "anchor": {
+    "source": "v2:methods",
+    "section": "one-file-many-views",
+    "quote": "The dictionary, taxonomy, thesaurus and ontology of a document are projections of one extraction file, never four authored artefacts, so they cannot disagree with each other."
+   },
+   "live": [
+    "The cure for the glossary-versus-concept-layer duplication the first edition carried."
+   ]
+  },
+  {
+   "id": "core-graph",
+   "family": "artefact",
+   "region": "machinery",
+   "label": "the core graph: document to word",
+   "statement": "Before a graph can carry meaning about a document it must first BE the document: every section, block, sentence and word a node, with the markdown rebuildable from the graph byte for byte.",
+   "anchor": {
+    "source": "v2:methods",
+    "section": "core-graph",
+    "quote": "the document transformed into a graph at every level of its own structure — document, section, block (paragraph, bullet item, code, quote, table), sentence, word"
+   },
+   "live": [
+    "The pilot: 39 sections, 186 blocks, 342 sentences, 4,221 words, guarded by six build gates."
+   ]
+  },
+  {
+   "id": "identity-ledger",
+   "family": "method",
+   "region": "machinery",
+   "label": "the identity ledger",
+   "statement": "Identity through change is what offsets and paths can never give: mint a short opaque id once, persist it, and make every rebuild prove it can carry the past forward.",
+   "anchor": {
+    "source": "v2:methods",
+    "section": "identity-ledger",
+    "quote": "the load-bearing insight that randomness was never the missing ingredient — persistence was"
+   },
+   "also_called": [
+    "match-then-mint"
+   ],
+   "live": [
+    "The ledger diff between two versions is change detection for free: untouched, edited, moved, new, retired."
+   ]
+  },
+  {
+   "id": "document-tokens",
+   "family": "method",
+   "region": "machinery",
+   "label": "the document as its own token universe",
+   "statement": "A tokeniser caps its vocabulary to bound the universe; a document needs no cap, so every word form is a token with full identity, and the statistics say where understanding should look first.",
+   "anchor": {
+    "source": "v2:methods",
+    "section": "document-tokens",
+    "quote": "the pilot: 45% of word use is padding, 505 forms appear once"
+   },
+   "live": [
+    "It volunteered the era's best moment: the two words with the highest different-meanings score are node and graph, the founder's own examples, derived independently by arithmetic."
+   ]
+  },
+  {
+   "id": "stability-principle",
+   "family": "position",
+   "region": "machinery",
+   "label": "every node move costs the reader their mental picture",
+   "statement": "When a view gains or loses elements, what was on the canvas holds still: removals move nothing, additions settle only the newcomers, and the viewport never re-fits uninvited.",
+   "anchor": {
+    "source": "v2:methods",
+    "section": "stable-add",
+    "quote": "every node move costs the reader their mental picture, so when the view gains or loses elements, what was on canvas holds still"
+   },
+   "live": [
+    "The era's deepest design law, and it applies to an agent reading a snapshot exactly as it applies to a person."
+   ]
+  },
+  {
+   "id": "pinned-peaks",
+   "family": "method",
+   "region": "machinery",
+   "label": "pinned peaks, free field",
+   "statement": "Fix a small set of structurally important nodes and let the force layout settle everything else around them; position then becomes information.",
+   "anchor": {
+    "source": "v2:methods",
+    "section": "pinned-nodes",
+    "quote": "spend a few nodes' freedom to buy meaning for every other node's position"
+   },
+   "live": [
+    "Landmarks are authored, not computed: the human places the few anchors that give the canvas a geography."
+   ]
+  },
+  {
+   "id": "explore-by-degrees",
+   "family": "method",
+   "region": "machinery",
+   "label": "price the next hop",
+   "statement": "Grow the view one ring at a time from a selection, and show what one more degree would bring in before it is paid for.",
+   "anchor": {
+    "source": "v2:methods",
+    "section": "explore-by-degrees",
+    "quote": "also prices the next hop: the families and edges one more degree would bring in, read before paying for it"
+   },
+   "live": [
+    "The answer to the dot-blob problem every graph visualisation hits as edges multiply."
+   ]
+  },
+  {
+   "id": "schema-view",
+   "family": "method",
+   "region": "machinery",
+   "label": "the schema is the graph's own review pack",
+   "statement": "One node per node type with its member count, one edge per typed relation labelled with its verb: a graph's quality is legible at the type level before it is legible anywhere else.",
+   "anchor": {
+    "source": "v2:methods",
+    "section": "schema-view",
+    "quote": "A graph's quality is legible at the type level before it is legible anywhere else; the schema is the graph's own review pack."
+   },
+   "live": [
+    "Day one on the pilot it showed claims reaching concepts through one relation used forty times, while concept-to-concept ran through seven verbs used once or twice each."
+   ]
+  },
+  {
+   "id": "file-system-is-the-source-of-truth",
+   "family": "position",
+   "region": "machinery",
+   "label": "the file system is the source of truth",
+   "statement": "No database means the durable store is a versioned file system, not that there are no databases: query engines are loaded on demand and thrown away, and an engine with no state of its own cannot drift.",
+   "anchor": {
+    "source": "src:the-browser-is-the-database",
+    "section": "No Database Means The File System Is The Source Of Truth",
+    "quote": "when I say we do not use databases, we use a file system as a database, it does not mean the system has no databases, it just means the source of data is the file system that gets loaded."
+   },
+   "also_called": [
+    "the browser is the database",
+    "ephemeral engines"
+   ],
+   "live": [
+    "Running: the vault commit DAG, and a read-only query API over it exposed to untrusted sandboxed apps."
+   ]
+  },
+  {
+   "id": "wclm",
+   "family": "artefact",
+   "region": "machinery",
+   "label": "the WCLM, a deterministic transformer",
+   "statement": "An engine in the shape of a transformer where nothing is learned and everything is named: tokens are content hashes, layers are pure functions, and every weight is a formula written in the world file.",
+   "anchor": {
+    "source": "v2:methods",
+    "section": "wclm",
+    "quote": "not a large language model but a words content language model"
+   },
+   "also_anchored": [
+    {
+     "source": "v2:methods",
+     "section": "wclm",
+     "quote": "training this model is editing graph inputs and meaning packs, never fitting numbers",
+     "was": "what training means here"
+    }
+   ],
+   "live": [
+    "The query flips from predict-the-next-word to what-does-this-mean, and the answer arrives with an attribution graph by construction."
+   ]
+  },
+  {
+   "id": "twelve-operators",
+   "family": "artefact",
+   "region": "machinery",
+   "label": "the operators, each a first-class folder",
+   "statement": "Twelve engines, each one a folder holding its code, its generated schema, its provenance-marked data, its replayed example vectors, its book page and its workbench.",
+   "anchor": {
+    "source": "v2:brief-36",
+    "section": "The memo, verbatim",
+    "quote": "Great, now I would like to work and fine tune each of those operators individually"
+   },
+   "live": [
+    "Four are core and fixed; the engine runs any legal subset, and an engine placed where its input type is unwritten is skipped with the type named."
+   ]
+  },
+  {
+   "id": "senses-and-analogies",
+   "family": "artefact",
+   "region": "machinery",
+   "label": "senses, and analogies for another world",
+   "statement": "Words have several meanings and audiences have their own concepts: the senses register splits a word by domain, and the analogies register restates a meaning in the listener's world with the reason carried.",
+   "anchor": {
+    "source": "v2:brief-35",
+    "section": "The memo, verbatim",
+    "quote": "spreadsheets of spreadsheets, right? Because actually, in the financial world, we do have spreadsheets of spreadsheets of spreadsheets of spreadsheets"
+   },
+   "live": [
+    "Switch graph to a chart of data and the engine names the claims that stop applying, including the fractal one."
+   ]
+  },
+  {
+   "id": "what-ships-what-is-argued",
+   "family": "position",
+   "region": "estate",
+   "label": "what ships, what is argued",
+   "statement": "This estate's subject matter is almost entirely design, and saying so is the reason the rest is worth reading.",
+   "anchor": {
+    "source": "v1:shipped",
+    "section": "What ships, what is argued",
+    "quote": "We ship a hand-written content-addressed object graph in the browser. We do not use a graph database, and we say so in our own architecture notes."
+   },
+   "live": [
+    "The shipped layer: the commit DAG, typed cross-vault edges, a read-only query API, and a 71-node, 141-edge issue graph. Everything else is proposed."
+   ]
+  },
+  {
+   "id": "published-vaults",
+   "family": "artefact",
+   "region": "estate",
+   "label": "the published vaults",
+   "statement": "Nineteen vaults whose read key has been deliberately published, each one auditable by anyone who opens the key.",
+   "anchor": {
+    "source": "ext:sgit-vaults",
+    "section": "Published vaults",
+    "quote": "Every vault whose read key this site has deliberately published"
+   },
+   "live": [
+    "Fetched 26 August 2026. Among them the EU AI Act regulation graph (207 files, 14.9 MB), Agentic Browser Isolation (104 files, 17 app entries) and the Risk Graph Explorer (33 files)."
+   ]
+  },
+  {
+   "id": "capability-scale",
+   "family": "artefact",
+   "region": "estate",
+   "label": "the capability scale",
+   "statement": "Five vaults' permission blocks line up into a scale with a floor, a hard middle and a ceiling, and the middle is hard for a modelling reason rather than a security one.",
+   "anchor": {
+    "source": "page:capability-scale",
+    "section": "What a component is, is what it can reach",
+    "quote": "two apps with identical code and different permission blocks are different things"
+   },
+   "live": [
+    "The clearest non-abstract statement of the thesis the estate contains, and it came from the comparison, not from any single vault."
+   ]
+  },
+  {
+   "id": "the-network",
+   "family": "artefact",
+   "region": "estate",
+   "label": "the network of sibling sites",
+   "statement": "Nineteen focused sites on the same domain, each taking one question further than a section could, sharing one discipline and publishing arguments before the things they describe exist.",
+   "anchor": {
+    "source": "ext:sgit-network",
+    "section": "The sgit.ai network",
+    "quote": "each taking one question further than a section here could"
+   },
+   "also_anchored": [
+    {
+     "source": "ext:sgit-network",
+     "section": "The sgit.ai network",
+     "quote": "18 live, 1 with the repository and subdomain in place but nothing published yet",
+     "was": "the count, on the day this was fetched"
+    }
+   ],
+   "live": [
+    "Fetched 26 August 2026. graphs.sgit.ai is the one that holds this argument; nhi, pki and sentinel each need it and are needed by it."
+   ]
+  },
+  {
+   "id": "projection-chain-with-gates",
+   "family": "method",
+   "region": "estate",
+   "label": "the projection chain, gated",
+   "statement": "Content lives in one source form and every published surface is generated from it, with a validator that fails the build on drift.",
+   "anchor": {
+    "source": "v2:methods",
+    "section": "projection-chain",
+    "quote": "A page cannot disagree with its source because the page is not authored."
+   },
+   "live": [
+    "Documents are projections of graphs, applied to publishing itself. This volume obeys it too."
+   ]
+  },
+  {
+   "id": "numbers-not-in-prose",
+   "family": "method",
+   "region": "estate",
+   "label": "the number nothing was checking",
+   "statement": "The single most repeated failure of the whole run: a count or a date written into prose that no gate covers, drifting silently. The standing answer is that prose does not quote computed numbers.",
+   "anchor": {
+    "source": "v2:methods",
+    "section": "numbers-not-in-prose",
+    "quote": "the standing answer is that prose does not quote computed numbers"
+   },
+   "live": [
+    "Every instance found became a gate. This volume's counts are computed at build and printed from the data."
+   ]
+  },
+  {
+   "id": "the-voice-memo-loop",
+   "family": "method",
+   "region": "estate",
+   "label": "the voice memo loop",
+   "statement": "A memo is transcribed verbatim, an agent's numbered reading is published beside it, the build follows, and the release row narrates what happened.",
+   "anchor": {
+    "source": "v2:retrospective",
+    "section": "Conclusions",
+    "quote": "the verbatim capture meant no instruction was ever paraphrased into something easier to build"
+   },
+   "also_anchored": [
+    {
+     "source": "v2:retrospective",
+     "section": "Conclusions",
+     "quote": "Gates buy speed, not caution.",
+     "was": "why forty-one releases in four days was possible"
+    }
+   ],
+   "live": [
+    "Nineteen founder memos are carried verbatim in the second edition, transcription artefacts and all."
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "from": "meaning-through-connectivity",
+   "verb": "departs-from",
+   "to": "declared-meaning",
+   "kind": "anchored",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Nodes Have No Obligation to Explain Themselves",
+    "quote": "This is a deliberate departure from schema-first thinking"
+   }
+  },
+  {
+   "from": "discovered-meaning",
+   "verb": "contradicts",
+   "to": "declared-meaning",
+   "kind": "anchored",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Meaning Is Not Declared — It Is Discovered",
+    "quote": "declared meaning is brittle and local"
+   }
+  },
+  {
+   "from": "node-alone-means-nothing",
+   "verb": "grounds",
+   "to": "meaning-through-connectivity",
+   "kind": "authored",
+   "note": "If a lone node meant something, the thesis would have nothing to explain. The negative case is what makes the positive one necessary."
+  },
+  {
+   "from": "the-difference-is-connectivity",
+   "verb": "demonstrates",
+   "to": "meaning-through-connectivity",
+   "kind": "authored",
+   "note": "Two variables holding 8080 is the thesis in six lines of real Python: identical values, different graphs, different meaning."
+  },
+  {
+   "from": "properties-carry-data-not-meaning",
+   "verb": "requires",
+   "to": "meaning-through-connectivity",
+   "kind": "authored",
+   "note": "If a property could carry meaning, the edges would be decoration. The prohibition is what forces meaning onto the edges."
+  },
+  {
+   "from": "meaning-through-connectivity",
+   "verb": "enables",
+   "to": "compatibility-computed",
+   "kind": "authored",
+   "note": "Once meaning is a function of edges, overlap between two subgraphs is arithmetic rather than negotiation."
+  },
+  {
+   "from": "five-reviews",
+   "verb": "demonstrates",
+   "to": "compatibility-computed",
+   "kind": "anchored",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Finding Common Ground Through Graph Analysis",
+    "quote": "The common ground was *discovered* in the graph, not *imposed* on it."
+   }
+  },
+  {
+   "from": "semantic-web-mistake",
+   "verb": "names",
+   "to": "declared-meaning",
+   "kind": "authored",
+   "note": "The mistake is not RDF; it is a self-describing node, which is declared meaning wearing graph syntax."
+  },
+  {
+   "from": "not-a-graph-database-pitch",
+   "verb": "bounds",
+   "to": "meaning-through-connectivity",
+   "kind": "authored",
+   "note": "The claim is about a grammar at a boundary, not about a store. The disclaimer is what keeps the claim falsifiable."
+  },
+  {
+   "from": "discovered-meaning",
+   "verb": "requires",
+   "to": "edge-is-a-verb",
+   "kind": "authored",
+   "note": "A traversal can only determine meaning if each hop says something. An unnamed edge discovers nothing."
+  },
+  {
+   "from": "compatibility-computed",
+   "verb": "requires",
+   "to": "anchor-node",
+   "kind": "authored",
+   "note": "Subgraphs overlap when traced toward common reference points, so there has to be something common to trace toward."
+  },
+  {
+   "from": "edge-is-a-verb",
+   "verb": "requires",
+   "to": "distinct-inverse",
+   "kind": "anchored",
+   "anchor": {
+    "source": "src:directed-edges-query-paths",
+    "section": "Naming the Inverses",
+    "quote": "Every edge needs a named inverse, or there is a direction the graph cannot be queried in"
+   }
+  },
+  {
+   "from": "edge-is-a-verb",
+   "verb": "refuses",
+   "to": "banned-generic-edge",
+   "kind": "anchored",
+   "anchor": {
+    "source": "src:avoid-the-blob",
+    "section": "Two-Way Verb Edges, And Never Relates-To",
+    "quote": "You can never have relates-to, because relates-to is meaningless, two things always relate to each other. The more granular the edge, the better the query you can write."
+   }
+  },
+  {
+   "from": "distinct-inverse",
+   "verb": "enables",
+   "to": "direction-bounds-fan-out",
+   "kind": "authored",
+   "note": "Because the two directions are different relationships, a hop can filter on one of them, and filtering is what collapses fan-out."
+  },
+  {
+   "from": "direction-bounds-fan-out",
+   "verb": "bounds",
+   "to": "the-blob",
+   "kind": "anchored",
+   "anchor": {
+    "source": "src:directed-edges-query-paths",
+    "section": "Why This Prevents the Explosion of Nodes",
+    "quote": "when a query is seeded in many places at once, every vulnerability, every asset, every actor, the upward paths from all those seeds converge on the same small set of natural peaks"
+   }
+  },
+  {
+   "from": "path-reads-as-a-sentence",
+   "verb": "measures",
+   "to": "edge-is-a-verb",
+   "kind": "authored",
+   "note": "Reading a path aloud is the cheapest test of whether its verbs are right; the bad edges announce themselves."
+  },
+  {
+   "from": "the-fifteen-edges",
+   "verb": "implements",
+   "to": "edge-is-a-verb",
+   "kind": "authored",
+   "note": "Fifteen directed verbs with their inverses: the abstract rule made into a vocabulary somebody can paste into a session and argue with."
+  },
+  {
+   "from": "node-type-formula",
+   "verb": "implements",
+   "to": "discovered-meaning",
+   "kind": "authored",
+   "note": "A type stops being a label somebody applied and becomes a query over paths, which is discovered meaning in its most testable form."
+  },
+  {
+   "from": "node-type-formula",
+   "verb": "requires",
+   "to": "distinct-inverse",
+   "kind": "authored",
+   "note": "A formula that says upward path to a risk is only expressible if up and down are different named relationships."
+  },
+  {
+   "from": "rich-nodes-are-good",
+   "verb": "contradicts",
+   "to": "the-blob",
+   "kind": "authored",
+   "note": "The blob tempts you to delete relationships. The correction is that the picture is the problem and the data is the asset."
+  },
+  {
+   "from": "build-wide-find-the-few-flip",
+   "verb": "remedies",
+   "to": "the-blob",
+   "kind": "authored",
+   "note": "Solve the render at query time: capture the universe, run the question, re-root at what it found."
+  },
+  {
+   "from": "render-the-query",
+   "verb": "remedies",
+   "to": "the-blob",
+   "kind": "authored",
+   "note": "The default view is never the graph. A diagram of everything is rarely useful; one node with its neighbours always is."
+  },
+  {
+   "from": "path-query-is-walked",
+   "verb": "implements",
+   "to": "render-the-query",
+   "kind": "authored",
+   "note": "If the reader's own navigation is the query, then what appears on the canvas is by construction the result of a query."
+  },
+  {
+   "from": "path-query-is-walked",
+   "verb": "extends",
+   "to": "build-wide-find-the-few-flip",
+   "kind": "authored",
+   "note": "The flip done one recorded hop at a time, with the trail kept so the route can be generalised and re-run."
+  },
+  {
+   "from": "banned-generic-edge",
+   "verb": "bounds",
+   "to": "direction-bounds-fan-out",
+   "kind": "authored",
+   "note": "A vague edge cannot narrow a traversal, so every generic edge added makes every query worse. It is a correctness problem, not a style problem."
+  },
+  {
+   "from": "lexicon",
+   "verb": "provides",
+   "to": "anchor-node",
+   "kind": "anchored",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "What the Lexicon Actually Provides",
+    "quote": "**A curated set of well-connected anchor nodes** for the issues domain"
+   }
+  },
+  {
+   "from": "anchor-node",
+   "verb": "enables",
+   "to": "compatibility-computed",
+   "kind": "anchored",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "What Anchor Nodes Actually Are",
+    "quote": "A node in a child scope that links to a Lexicon anchor node gains meaning by association."
+   }
+  },
+  {
+   "from": "cross-graph-edge",
+   "verb": "enables",
+   "to": "compatibility-computed",
+   "kind": "anchored",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Cross-Graph References",
+    "quote": "Cross-graph edges create interoperability without requiring any graph to change its internal structure."
+   }
+  },
+  {
+   "from": "scope-and-override",
+   "verb": "licenses",
+   "to": "name-clash",
+   "kind": "authored",
+   "note": "If every scope may name things its own way, two scopes will name things the same way. The clash is expected, not a defect."
+  },
+  {
+   "from": "name-clash",
+   "verb": "requires",
+   "to": "anchor-node",
+   "kind": "authored",
+   "note": "Resolution is structural: two labels resolve by what they connect to, and an anchor is what both can connect to."
+  },
+  {
+   "from": "lexicon",
+   "verb": "licenses",
+   "to": "scope-and-override",
+   "kind": "anchored",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "What Every Repo Can Do",
+    "quote": "**Override or specialise** bootstrap definitions by creating local nodes with different subgraphs"
+   }
+  },
+  {
+   "from": "dont-merge-vocabularies",
+   "verb": "requires",
+   "to": "bridge",
+   "kind": "authored",
+   "note": "If you refuse to merge, you need something else to carry compatibility. The bridge is that something."
+  },
+  {
+   "from": "three-layers",
+   "verb": "grounds",
+   "to": "dont-merge-vocabularies",
+   "kind": "authored",
+   "note": "Keep the facts shared, the formulas owned and the bridges declared, and disagreement about meaning stops being an obstacle to agreeing about facts."
+  },
+  {
+   "from": "bridge",
+   "verb": "implements",
+   "to": "meaning-travels-by-translation",
+   "kind": "authored",
+   "note": "A translator bridges two languages where the bridge holds and flags where it does not. A declared bridge is that, made data."
+  },
+  {
+   "from": "version-pinning",
+   "verb": "extends",
+   "to": "cross-graph-edge",
+   "kind": "authored",
+   "note": "A cross-graph edge that says which version it means is an edge that cannot silently follow a moving target."
+  },
+  {
+   "from": "concept-not-word",
+   "verb": "grounds",
+   "to": "meaning-travels-by-translation",
+   "kind": "authored",
+   "note": "Translation stops being word-to-word once meaning lives in a concept and words are labels attached to it."
+  },
+  {
+   "from": "divergence-is-the-finding",
+   "verb": "extends",
+   "to": "dont-merge-vocabularies",
+   "kind": "authored",
+   "note": "The same refusal one level down: do not smooth two languages' disagreement, because the divergence is the output."
+  },
+  {
+   "from": "junction-rule",
+   "verb": "implements",
+   "to": "meaning-through-connectivity",
+   "kind": "authored",
+   "note": "A document-to-document link is only as good as the sentence somebody wrote around it. Lift both sides into nodes and the join carries meaning."
+  },
+  {
+   "from": "anchor-node",
+   "verb": "refuses",
+   "to": "declared-meaning",
+   "kind": "authored",
+   "note": "An anchor is a reference point, not a gatekeeper: you point at it, you do not become it."
+  },
+  {
+   "from": "meaning-through-connectivity",
+   "verb": "determines",
+   "to": "confidence-ladder",
+   "kind": "anchored",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "What This Document Is",
+    "quote": "confidence in that meaning is proportional to how richly connected a node is"
+   }
+  },
+  {
+   "from": "enrichment-not-enforcement",
+   "verb": "remedies",
+   "to": "confidence-ladder",
+   "kind": "anchored",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Enrichment, Not Enforcement",
+    "quote": "When the system identifies low-confidence nodes, the response is not validation failure."
+   }
+  },
+  {
+   "from": "node-type-formula",
+   "verb": "generalises",
+   "to": "grounding-ladder",
+   "kind": "authored",
+   "note": "The ladder is one formula among possible others, and the source says so. A ladder presenting itself as the ladder would be the schema-first move at one remove."
+  },
+  {
+   "from": "two-directions",
+   "verb": "grounds",
+   "to": "grounding-ladder",
+   "kind": "authored",
+   "note": "Downward asks whether it is real, upward asks why it matters. Take either direction away and the ladder stops classifying."
+  },
+  {
+   "from": "the-floor",
+   "verb": "bounds",
+   "to": "grounding-ladder",
+   "kind": "authored",
+   "note": "Without a stopping condition the grounding chain recedes forever. The floor is a stated judgement that keeps it finite."
+  },
+  {
+   "from": "the-floor",
+   "verb": "requires",
+   "to": "twin",
+   "kind": "authored",
+   "note": "Grounding does not bottom out in a value; it bottoms out in a representation that touches the real world."
+  },
+  {
+   "from": "blast-radius",
+   "verb": "measures",
+   "to": "confidence-ladder",
+   "kind": "authored",
+   "note": "Confidence is not a feeling. It is how well you understand what a change will reach, which is a property of the graph around it."
+  },
+  {
+   "from": "map-the-gaps",
+   "verb": "measures",
+   "to": "named-absence",
+   "kind": "authored",
+   "note": "Counting what is missing turns an absence into a number, and a number into a business case."
+  },
+  {
+   "from": "named-absence",
+   "verb": "grounds",
+   "to": "honest-uncertainty",
+   "kind": "authored",
+   "note": "Three sentences, we know, we think, we cannot confirm, are only honest if the third one can be enumerated."
+  },
+  {
+   "from": "named-absence",
+   "verb": "generalises",
+   "to": "air-gap",
+   "kind": "anchored",
+   "anchor": {
+    "source": "v1:boundaries",
+    "section": "And where it cannot reach, name the gap",
+    "quote": "The air gap is the operational sibling of [map the gaps](../start/index.html#gaps)."
+   }
+  },
+  {
+   "from": "twin",
+   "verb": "bounds",
+   "to": "reality-discipline",
+   "kind": "authored",
+   "note": "A twin is where the model meets something real, so a graph made only of twins cannot fill with hypothetical risks."
+  },
+  {
+   "from": "reality-discipline",
+   "verb": "refuses",
+   "to": "the-blob",
+   "kind": "authored",
+   "note": "A graph in which everything must exist stays clean not because it is pruned but because nothing speculative gets in."
+  },
+  {
+   "from": "blast-radius",
+   "verb": "computes",
+   "to": "leverage-point",
+   "kind": "authored",
+   "note": "The node worth the money is the one whose change propagates widest, and propagation is what the blast radius measures."
+  },
+  {
+   "from": "enrichment-not-enforcement",
+   "verb": "contradicts",
+   "to": "declared-meaning",
+   "kind": "authored",
+   "note": "Validation is enforcement wearing a helpful name: it makes low confidence into a failure instead of an invitation."
+  },
+  {
+   "from": "honest-uncertainty",
+   "verb": "requires",
+   "to": "named-absence",
+   "kind": "authored",
+   "note": "A system that fills gaps with assumptions cannot say we cannot confirm, because it never notices that it could not."
+  },
+  {
+   "from": "supersede-never-delete",
+   "verb": "enables",
+   "to": "propagation-of-corrections",
+   "kind": "anchored",
+   "anchor": {
+    "source": "src:a-fact-in-a-vacuum",
+    "section": "Supersede, Do Not Delete",
+    "quote": "Anything citing the original still resolves, and now resolves to something that says it was superseded and by what."
+   }
+  },
+  {
+   "from": "ten-thousand-hours",
+   "verb": "demonstrates",
+   "to": "propagation-of-corrections",
+   "kind": "authored",
+   "note": "242 papers, more than 200,000 supporting paths, and a correction with nothing to attach to. The case is what makes the rule non-negotiable."
+  },
+  {
+   "from": "weight-by-independence",
+   "verb": "remedies",
+   "to": "ten-thousand-hours",
+   "kind": "authored",
+   "note": "Ten citations of one source are one source, which is precisely the arithmetic the citation network violates at scale."
+  },
+  {
+   "from": "contextual-validation",
+   "verb": "extends",
+   "to": "provenance-chain",
+   "kind": "authored",
+   "note": "A chain of custody proves where a claim came from. Contextual validation asks the next question: is this use of it one the source supports?"
+  },
+  {
+   "from": "index-is-not-a-source",
+   "verb": "bounds",
+   "to": "provenance-chain",
+   "kind": "authored",
+   "note": "If a pointer is indistinguishable from a claim, every claim in the graph inherits the credibility of the weakest cache in it."
+  },
+  {
+   "from": "agenda-is-context",
+   "verb": "extends",
+   "to": "provenance-chain",
+   "kind": "authored",
+   "note": "Who asserted it, who funded it and what they want are part of the custody record, and they inform weight without deciding truth."
+  },
+  {
+   "from": "provenance-chain",
+   "verb": "grounds",
+   "to": "confidence-ladder",
+   "kind": "authored",
+   "note": "A claim is worth its chain of custody: the ladder's upper rungs are exactly the rungs where the chain reaches something a third party can fetch."
+  },
+  {
+   "from": "supersede-never-delete",
+   "verb": "extends",
+   "to": "version-pinning",
+   "kind": "authored",
+   "note": "Both are answers to the same question: what did this mean at the time, and can I still ask?"
+  },
+  {
+   "from": "agenda-is-context",
+   "verb": "carries",
+   "to": "what-ships-what-is-argued",
+   "kind": "authored",
+   "note": "The estate applies the lens to itself: the graph has an agenda too, which is why the honesty chapter exists."
+  },
+  {
+   "from": "fractal-principle",
+   "verb": "licenses",
+   "to": "scope-and-override",
+   "kind": "anchored",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Every Scope Defines Its Own Vocabulary",
+    "quote": "Every level in this hierarchy can introduce its own nodes, edges, types, and definitions."
+   }
+  },
+  {
+   "from": "composition-with-local-override",
+   "verb": "replaces",
+   "to": "fractal-principle",
+   "kind": "authored",
+   "note": "Brief 20's correction, dated: uniformity is the mechanism that makes an override safe, not the claim. Both definitions are kept, one marked superseded."
+  },
+  {
+   "from": "composition-with-local-override",
+   "verb": "requires",
+   "to": "lexicon",
+   "kind": "authored",
+   "note": "A scope can only override something if there is a well-connected something to override."
+  },
+  {
+   "from": "graphs-of-graphs",
+   "verb": "generalises",
+   "to": "fractal-principle",
+   "kind": "anchored",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "The Recursive Structure",
+    "quote": "It is a graph of graphs, recursively"
+   }
+  },
+  {
+   "from": "registers-of-registers",
+   "verb": "demonstrates",
+   "to": "fractal-principle",
+   "kind": "authored",
+   "note": "One grammar of facts, evidence, risks and acceptances, from a database administrator's register to the board's, with no new format at any rung."
+  },
+  {
+   "from": "graph-at-every-boundary",
+   "verb": "implements",
+   "to": "fractal-principle",
+   "kind": "authored",
+   "note": "One grammar learned once serves every altitude, which is what makes a graph interface at every seam affordable rather than an integration tax."
+  },
+  {
+   "from": "model-proposes-engine-executes",
+   "verb": "grounds",
+   "to": "graph-at-every-boundary",
+   "kind": "authored",
+   "note": "Determinism is not asserted: it follows from a model that only proposes and a validator that decides."
+  },
+  {
+   "from": "untrusted-input-is-data",
+   "verb": "grounds",
+   "to": "graph-at-every-boundary",
+   "kind": "authored",
+   "note": "Injection fails at the validator rather than at the model's discretion, which is a structural property of the grammar rather than a filter."
+  },
+  {
+   "from": "projection",
+   "verb": "generalises",
+   "to": "every-paragraph-is-a-graph",
+   "kind": "authored",
+   "note": "If a document is a view of a graph, then reading one back into a graph is the same operation run in reverse."
+  },
+  {
+   "from": "decompilation",
+   "verb": "requires",
+   "to": "author-is-the-oracle",
+   "kind": "authored",
+   "note": "Lifting is one-to-many, so something has to resolve the ambiguity, and only the author holds the answer."
+  },
+  {
+   "from": "disagreement-is-the-product",
+   "verb": "extends",
+   "to": "author-is-the-oracle",
+   "kind": "authored",
+   "note": "A reader who says that is not what I meant has told you something no summariser could produce."
+  },
+  {
+   "from": "altitude-and-query",
+   "verb": "extends",
+   "to": "render-the-query",
+   "kind": "authored",
+   "note": "Altitude decides how much; the query decides which part. A reader needs both dials, and the canvas only ever shows the result of the second."
+  },
+  {
+   "from": "map-is-a-graph-with-position",
+   "verb": "extends",
+   "to": "graphs-of-graphs",
+   "kind": "authored",
+   "note": "A map of a map of a map is the fractal claim in its most legible form, and position is what makes a graph actionable."
+  },
+  {
+   "from": "every-paragraph-is-a-graph",
+   "verb": "requires",
+   "to": "grounding-ladder",
+   "kind": "authored",
+   "note": "A paragraph yields a fact, a risk, a control, a requirement or work to be done, and the first two are already rungs of the ladder."
+  },
+  {
+   "from": "projection",
+   "verb": "implements",
+   "to": "supersede-never-delete",
+   "kind": "authored",
+   "note": "Do not store the consolidated text: hold the base plus the amendments as data and compute the current version, so nothing has to be deleted to be corrected."
+  },
+  {
+   "from": "quote-anchored-extraction",
+   "verb": "implements",
+   "to": "provenance-chain",
+   "kind": "authored",
+   "note": "An anchor that must be at its bytes is a chain of custody the build can walk on every release."
+  },
+  {
+   "from": "quote-anchored-extraction",
+   "verb": "implements",
+   "to": "named-absence",
+   "kind": "authored",
+   "note": "Coverage is total by construction: a section either yields nodes or is recorded empty with a reason, so silence is impossible."
+  },
+  {
+   "from": "one-file-many-views",
+   "verb": "implements",
+   "to": "projection",
+   "kind": "authored",
+   "note": "Four authored artefacts would be four things that can disagree. One file with four views cannot."
+  },
+  {
+   "from": "core-graph",
+   "verb": "grounds",
+   "to": "quote-anchored-extraction",
+   "kind": "authored",
+   "note": "Before a graph can carry meaning about a document it has to be the document, addressably, so everything above it points at identities instead of offsets."
+  },
+  {
+   "from": "identity-ledger",
+   "verb": "remedies",
+   "to": "core-graph",
+   "kind": "authored",
+   "note": "Byte offsets break the moment the document changes. A minted identity carried forward by match-then-mint survives rename, edit and move."
+  },
+  {
+   "from": "document-tokens",
+   "verb": "measures",
+   "to": "core-graph",
+   "kind": "authored",
+   "note": "Read as its own token universe, a document measures itself: how much is padding, where meaning concentrates, which words secretly name two things."
+  },
+  {
+   "from": "stability-principle",
+   "verb": "enables",
+   "to": "explore-by-degrees",
+   "kind": "authored",
+   "note": "Exploration is only exploration if the map survives it; a view that rearranges itself on every hop costs more than the hop was worth."
+  },
+  {
+   "from": "pinned-peaks",
+   "verb": "implements",
+   "to": "stability-principle",
+   "kind": "authored",
+   "note": "Spend a few nodes' freedom to buy meaning for every other node's position, and the map stays recognisable across re-layouts."
+  },
+  {
+   "from": "explore-by-degrees",
+   "verb": "implements",
+   "to": "build-wide-find-the-few-flip",
+   "kind": "authored",
+   "note": "The flip with a price tag: grow one ring at a time and see what the next degree costs before paying it."
+  },
+  {
+   "from": "schema-view",
+   "verb": "measures",
+   "to": "edge-is-a-verb",
+   "kind": "authored",
+   "note": "One relation used forty times and seven verbs used once each is a legible statement about the quality of a graph's grammar."
+  },
+  {
+   "from": "wclm",
+   "verb": "implements",
+   "to": "model-proposes-engine-executes",
+   "kind": "authored",
+   "note": "An engine with the transformer's shape and none of its mystery: every layer a pure function, every weight a stated formula."
+  },
+  {
+   "from": "wclm",
+   "verb": "implements",
+   "to": "confidence-ladder",
+   "kind": "authored",
+   "note": "Every answer declares its anchoring: fact-anchored with a quoted section, a stated claim, an authored term, or a chosen sense."
+  },
+  {
+   "from": "twelve-operators",
+   "verb": "implements",
+   "to": "wclm",
+   "kind": "authored",
+   "note": "Each engine a folder with its own code, schema, provenance-marked data, replayed vectors, book page and workbench."
+  },
+  {
+   "from": "senses-and-analogies",
+   "verb": "implements",
+   "to": "name-clash",
+   "kind": "authored",
+   "note": "The clash inside a single word: switch a sense and the engine names the claims that stop applying."
+  },
+  {
+   "from": "senses-and-analogies",
+   "verb": "implements",
+   "to": "meaning-travels-by-translation",
+   "kind": "authored",
+   "note": "Do not repeat the words. Find the equivalent concept in the listener's world, and carry the why with it."
+  },
+  {
+   "from": "file-system-is-the-source-of-truth",
+   "verb": "grounds",
+   "to": "provenance-chain",
+   "kind": "authored",
+   "note": "An engine with no state of its own cannot drift, so a citation is to bytes in a versioned store rather than to a row somebody could have edited."
+  },
+  {
+   "from": "wclm",
+   "verb": "demonstrates",
+   "to": "graphs-of-graphs",
+   "kind": "authored",
+   "note": "Its fractal engine is a full instance of itself inside a layer: the winning meaning's own statement re-enters the pipeline, one zoom down."
+  },
+  {
+   "from": "what-ships-what-is-argued",
+   "verb": "bounds",
+   "to": "graph-at-every-boundary",
+   "kind": "authored",
+   "note": "The architecture is published as a design so it can be checked against whatever eventually ships. Saying so is what keeps the rest readable."
+  },
+  {
+   "from": "published-vaults",
+   "verb": "demonstrates",
+   "to": "what-ships-what-is-argued",
+   "kind": "authored",
+   "note": "Three of them are graph vaults anyone can open with the published read key and count for themselves."
+  },
+  {
+   "from": "capability-scale",
+   "verb": "demonstrates",
+   "to": "the-difference-is-connectivity",
+   "kind": "authored",
+   "note": "Two apps with identical code and different permission blocks are different things, and the difference is what each can reach."
+  },
+  {
+   "from": "published-vaults",
+   "verb": "computes",
+   "to": "capability-scale",
+   "kind": "authored",
+   "note": "No single vault analysis produced the scale. The comparison did, which is the flip applied to five artefacts."
+  },
+  {
+   "from": "the-network",
+   "verb": "carries",
+   "to": "meaning-through-connectivity",
+   "kind": "authored",
+   "note": "Nineteen sites, one argument between them: a key means nothing alone, and graphs need identities to say who asserted an edge."
+  },
+  {
+   "from": "projection-chain-with-gates",
+   "verb": "implements",
+   "to": "projection",
+   "kind": "authored",
+   "note": "Documents are projections of graphs, applied to publishing itself, with a validator that fails the build on drift."
+  },
+  {
+   "from": "numbers-not-in-prose",
+   "verb": "implements",
+   "to": "projection-chain-with-gates",
+   "kind": "authored",
+   "note": "Every count that drifted became a gate. The standing answer is that prose does not quote computed numbers."
+  },
+  {
+   "from": "the-voice-memo-loop",
+   "verb": "implements",
+   "to": "author-is-the-oracle",
+   "kind": "authored",
+   "note": "The founder's words are carried verbatim and the agent's reading is published beside them, marked as the agent's, for the author to correct."
+  },
+  {
+   "from": "the-voice-memo-loop",
+   "verb": "demonstrates",
+   "to": "disagreement-is-the-product",
+   "kind": "authored",
+   "note": "Brief 20 is the loop working: the pack's definition of fractal was wrong, the author said so, and the correction is dated and kept."
+  },
+  {
+   "from": "what-ships-what-is-argued",
+   "verb": "carries",
+   "to": "named-absence",
+   "kind": "authored",
+   "note": "A does-not-exist-anywhere list is a named absence about the estate itself, and it is the cheapest credibility in the book."
+  },
+  {
+   "from": "published-vaults",
+   "verb": "demonstrates",
+   "to": "capability-scale",
+   "kind": "authored",
+   "note": "Every vault declares what it may do inside itself, which is what makes the declarations comparable at all."
+  },
+  {
+   "from": "node-alone-means-nothing",
+   "verb": "grounds",
+   "to": "named-absence",
+   "kind": "authored",
+   "note": "A node with no edges cannot be distinguished from any other node carrying the same label, which is why an absence has to be drawn rather than left out."
+  },
+  {
+   "from": "node-alone-means-nothing",
+   "verb": "grounds",
+   "to": "rich-nodes-are-good",
+   "kind": "authored",
+   "note": "If meaning is proportional to connectivity, then a node with more edges is a better node, and pruning is destroying the asset."
+  },
+  {
+   "from": "properties-carry-data-not-meaning",
+   "verb": "refuses",
+   "to": "declared-meaning",
+   "kind": "anchored",
+   "anchor": {
+    "source": "src:digital-twins-of-anything",
+    "section": "The Twin Is the Endpoint of the Graph",
+    "quote": "properties do not have meaning, they are just words"
+   }
+  },
+  {
+   "from": "properties-carry-data-not-meaning",
+   "verb": "requires",
+   "to": "node-type-formula",
+   "kind": "authored",
+   "note": "If a property may not answer what kind of thing is this, something else has to, and a formula over paths is that something."
+  },
+  {
+   "from": "five-reviews",
+   "verb": "demonstrates",
+   "to": "dont-merge-vocabularies",
+   "kind": "authored",
+   "note": "Ask which of the five gets to be the definition and four organisations have to lie about their process. Nobody merges; the overlap is computed anyway."
+  },
+  {
+   "from": "five-reviews",
+   "verb": "demonstrates",
+   "to": "honest-uncertainty",
+   "kind": "authored",
+   "note": "Did somebody other than the author look at this? Four yes, one no, and the answer names which."
+  },
+  {
+   "from": "semantic-web-mistake",
+   "verb": "grounds",
+   "to": "anchor-node",
+   "kind": "authored",
+   "note": "The disagreement is with self-describing nodes, not with shared vocabularies. An anchor node is a shared vocabulary used correctly."
+  },
+  {
+   "from": "not-a-graph-database-pitch",
+   "verb": "carries",
+   "to": "what-ships-what-is-argued",
+   "kind": "authored",
+   "note": "The disclaimer and the honesty chapter are the same discipline: say what this is not, and say what is only designed."
+  },
+  {
+   "from": "path-reads-as-a-sentence",
+   "verb": "requires",
+   "to": "distinct-inverse",
+   "kind": "authored",
+   "note": "A path reads in both directions only if walking it the other way has its own sentence."
+  },
+  {
+   "from": "path-reads-as-a-sentence",
+   "verb": "grounds",
+   "to": "path-query-is-walked",
+   "kind": "authored",
+   "note": "If a walked trail is a query, then a query that reads as a sentence is a query somebody can check by ear."
+  },
+  {
+   "from": "path-reads-as-a-sentence",
+   "verb": "enables",
+   "to": "meaning-travels-by-translation",
+   "kind": "authored",
+   "note": "The sentence has to read in the reader's own language and business context, which is what makes a graph explain itself to whoever opens it."
+  },
+  {
+   "from": "the-fifteen-edges",
+   "verb": "carries",
+   "to": "named-absence",
+   "kind": "authored",
+   "note": "Nine of the inverse names are proposed rather than quoted, and the table says which. If that distinction did not survive, the estate would have done the thing it warns about."
+  },
+  {
+   "from": "the-fifteen-edges",
+   "verb": "refuses",
+   "to": "banned-generic-edge",
+   "kind": "authored",
+   "note": "One name is deliberately absent from the set, and its absence is a rule."
+  },
+  {
+   "from": "rich-nodes-are-good",
+   "verb": "requires",
+   "to": "render-the-query",
+   "kind": "authored",
+   "note": "Enriching only works if the render is a query. Otherwise every added edge makes the picture worse and the race to the bottom starts."
+  },
+  {
+   "from": "three-layers",
+   "verb": "generalises",
+   "to": "bridge",
+   "kind": "authored",
+   "note": "The bridge is the third layer made concrete: negotiated, declared, and owned by whoever declared it."
+  },
+  {
+   "from": "three-layers",
+   "verb": "enables",
+   "to": "node-type-formula",
+   "kind": "authored",
+   "note": "Per-party formulas over one shared factual graph is what lets a node be a vulnerability to one reader and a fact to another, both correctly."
+  },
+  {
+   "from": "concept-not-word",
+   "verb": "grounds",
+   "to": "divergence-is-the-finding",
+   "kind": "authored",
+   "note": "Once meaning lives in the concept, two languages' labels can be compared, and where the induced graphs differ there is something to report."
+  },
+  {
+   "from": "concept-not-word",
+   "verb": "grounds",
+   "to": "senses-and-analogies",
+   "kind": "authored",
+   "note": "One concept, several labels, chosen for the audience: the senses register and the analogies register are that idea, made data."
+  },
+  {
+   "from": "divergence-is-the-finding",
+   "verb": "extends",
+   "to": "disagreement-is-the-product",
+   "kind": "authored",
+   "note": "Two languages disagreeing and an author disagreeing are the same finding at different altitudes."
+  },
+  {
+   "from": "junction-rule",
+   "verb": "requires",
+   "to": "quote-anchored-extraction",
+   "kind": "authored",
+   "note": "You can only join two documents at the node layer if both have been lifted into nodes that point back at their own bytes."
+  },
+  {
+   "from": "junction-rule",
+   "verb": "demonstrates",
+   "to": "every-paragraph-is-a-graph",
+   "kind": "authored",
+   "note": "Two paragraphs, each lifted into typed nodes and joined through an intermediate layer, neither document citing the other."
+  },
+  {
+   "from": "two-directions",
+   "verb": "grounds",
+   "to": "node-type-formula",
+   "kind": "authored",
+   "note": "A type is a required pattern of paths, and the pattern has to say which way each path runs."
+  },
+  {
+   "from": "map-the-gaps",
+   "verb": "implements",
+   "to": "enrichment-not-enforcement",
+   "kind": "authored",
+   "note": "Naming the seven missing pieces tells you which edges to add, which is the remedy the rule prescribes."
+  },
+  {
+   "from": "map-the-gaps",
+   "verb": "grounds",
+   "to": "leverage-point",
+   "kind": "authored",
+   "note": "You cannot spend at the highest-leverage point until the missing dots have names."
+  },
+  {
+   "from": "air-gap",
+   "verb": "requires",
+   "to": "twin",
+   "kind": "authored",
+   "note": "An air gap is a twin that cannot reach its reality, recorded with an owner and a refresh frequency rather than drawn as a connection nobody has."
+  },
+  {
+   "from": "air-gap",
+   "verb": "demonstrates",
+   "to": "map-is-a-graph-with-position",
+   "kind": "authored",
+   "note": "A gap has no evolution, so what you plot is the labour that fills it, and once that is on a map a strategy can act on it."
+  },
+  {
+   "from": "leverage-point",
+   "verb": "extends",
+   "to": "direction-bounds-fan-out",
+   "kind": "authored",
+   "note": "Paths converge on peaks, and a peak that many paths run through is where a change is worth the most."
+  },
+  {
+   "from": "weight-by-independence",
+   "verb": "bounds",
+   "to": "confidence-ladder",
+   "kind": "authored",
+   "note": "The top rung is many INDEPENDENT paths. Counting paths without checking independence measures popularity instead."
+  },
+  {
+   "from": "weight-by-independence",
+   "verb": "refuses",
+   "to": "index-is-not-a-source",
+   "kind": "authored",
+   "note": "A hundred pointers to one cache are one source, which is exactly why a pointer must never be mistaken for a claim."
+  },
+  {
+   "from": "contextual-validation",
+   "verb": "demonstrates",
+   "to": "ten-thousand-hours",
+   "kind": "authored",
+   "note": "A true finding applied to a conclusion it never supported, sometimes one the original work contradicts. The canonical case."
+  },
+  {
+   "from": "contextual-validation",
+   "verb": "implements",
+   "to": "author-is-the-oracle",
+   "kind": "authored",
+   "note": "The person best placed to say whether this use is sound is the person who produced the finding."
+  },
+  {
+   "from": "index-is-not-a-source",
+   "verb": "extends",
+   "to": "supersede-never-delete",
+   "kind": "authored",
+   "note": "Assertions and their correction chains are never pruned; pointer nodes are, because re-running the lookup recovers them."
+  },
+  {
+   "from": "registers-of-registers",
+   "verb": "implements",
+   "to": "altitude-and-query",
+   "kind": "authored",
+   "note": "One register per accepting role, in that role's language, with the relevance fade showing the same object from two altitudes."
+  },
+  {
+   "from": "registers-of-registers",
+   "verb": "requires",
+   "to": "grounding-ladder",
+   "kind": "authored",
+   "note": "A register holds facts, evidence, vulnerabilities, risks, owners and acceptances, which is the ladder's own vocabulary at every rung."
+  },
+  {
+   "from": "untrusted-input-is-data",
+   "verb": "extends",
+   "to": "model-proposes-engine-executes",
+   "kind": "authored",
+   "note": "A proposal from an untrusted source is still only a proposal, so the validator is where the attack has to succeed and it does not read prose."
+  },
+  {
+   "from": "untrusted-input-is-data",
+   "verb": "demonstrates",
+   "to": "capability-scale",
+   "kind": "authored",
+   "note": "An action for which no grant exists is impossible rather than denied, which is the same argument the permission blocks make in another register."
+  },
+  {
+   "from": "decompilation",
+   "verb": "requires",
+   "to": "quote-anchored-extraction",
+   "kind": "authored",
+   "note": "Every node points at the span it was lifted from, at every level below it, which is what makes a correction cheap."
+  },
+  {
+   "from": "decompilation",
+   "verb": "grounds",
+   "to": "projection",
+   "kind": "authored",
+   "note": "A document is a projection of a graph; lifting the document back into a graph is that projection run in reverse, and reverse is the ambiguous direction."
+  },
+  {
+   "from": "altitude-and-query",
+   "verb": "grounds",
+   "to": "explore-by-degrees",
+   "kind": "authored",
+   "note": "Degrees is the altitude dial made mechanical, and the selection is the query."
+  },
+  {
+   "from": "map-is-a-graph-with-position",
+   "verb": "extends",
+   "to": "altitude-and-query",
+   "kind": "authored",
+   "note": "Position, movement and time are three things a map carries that a plain graph struggles to, and all three are answers to where am I and what changed."
+  },
+  {
+   "from": "one-file-many-views",
+   "verb": "implements",
+   "to": "numbers-not-in-prose",
+   "kind": "authored",
+   "note": "If every view is generated from one file, no view can quote a number the file does not hold."
+  },
+  {
+   "from": "one-file-many-views",
+   "verb": "requires",
+   "to": "quote-anchored-extraction",
+   "kind": "authored",
+   "note": "The four views are projections of the extraction, so the extraction has to be the thing that is right."
+  },
+  {
+   "from": "identity-ledger",
+   "verb": "implements",
+   "to": "supersede-never-delete",
+   "kind": "authored",
+   "note": "Whatever the document no longer has is retired, never deleted, and a uid is never reused."
+  },
+  {
+   "from": "identity-ledger",
+   "verb": "grounds",
+   "to": "provenance-chain",
+   "kind": "authored",
+   "note": "A citation to a persisted identity survives the edit that would have broken a citation to an offset."
+  },
+  {
+   "from": "document-tokens",
+   "verb": "demonstrates",
+   "to": "name-clash",
+   "kind": "authored",
+   "note": "The two words with the highest different-meanings score in the pilot are node and graph: a clash found inside one document, by arithmetic."
+  },
+  {
+   "from": "document-tokens",
+   "verb": "grounds",
+   "to": "senses-and-analogies",
+   "kind": "authored",
+   "note": "The statistics say where to look; the senses register is what you write once you have looked."
+  },
+  {
+   "from": "pinned-peaks",
+   "verb": "implements",
+   "to": "direction-bounds-fan-out",
+   "kind": "authored",
+   "note": "Peaks are where directed paths converge, so pinning them is pinning the places the graph already agrees are summits."
+  },
+  {
+   "from": "pinned-peaks",
+   "verb": "requires",
+   "to": "render-the-query",
+   "kind": "authored",
+   "note": "Landmarks only help if the view is small enough to have a geography."
+  },
+  {
+   "from": "schema-view",
+   "verb": "implements",
+   "to": "render-the-query",
+   "kind": "authored",
+   "note": "The schema is a query over the graph's own types, rendered instead of the instances."
+  },
+  {
+   "from": "schema-view",
+   "verb": "measures",
+   "to": "the-fifteen-edges",
+   "kind": "authored",
+   "note": "Counting how often each verb is used is how you find out whether a vocabulary is earning its size."
+  },
+  {
+   "from": "file-system-is-the-source-of-truth",
+   "verb": "enables",
+   "to": "published-vaults",
+   "kind": "authored",
+   "note": "A vault is a versioned file system with a read key, which is what makes publishing a graph a matter of handing over a capability."
+  },
+  {
+   "from": "file-system-is-the-source-of-truth",
+   "verb": "refuses",
+   "to": "not-a-graph-database-pitch",
+   "kind": "authored",
+   "note": "There is no graph database here, and the architecture note says so before anybody else can."
+  },
+  {
+   "from": "twelve-operators",
+   "verb": "implements",
+   "to": "projection-chain-with-gates",
+   "kind": "authored",
+   "note": "Each operator's schema is generated from its own code and gate-checked against it, so the file can never drift."
+  },
+  {
+   "from": "twelve-operators",
+   "verb": "demonstrates",
+   "to": "fractal-principle",
+   "kind": "authored",
+   "note": "One of the twelve is a complete instance of the whole engine, run one zoom down, with no new format and no special case."
+  },
+  {
+   "from": "the-network",
+   "verb": "demonstrates",
+   "to": "graphs-of-graphs",
+   "kind": "authored",
+   "note": "Nineteen sites, each its own graph, joined by an index that is itself a page in one of them."
+  },
+  {
+   "from": "the-network",
+   "verb": "carries",
+   "to": "what-ships-what-is-argued",
+   "kind": "authored",
+   "note": "They publish their arguments before the things they describe exist, so the commitments stay checkable afterwards."
+  },
+  {
+   "from": "numbers-not-in-prose",
+   "verb": "measures",
+   "to": "projection",
+   "kind": "authored",
+   "note": "A number in prose is a projection nobody generated, which is why it drifts."
+  },
+  {
+   "from": "the-voice-memo-loop",
+   "verb": "enables",
+   "to": "the-fifteen-edges",
+   "kind": "authored",
+   "note": "The vocabulary exists because somebody asked for a place to point people at, and the ask was captured verbatim."
+  },
+  {
+   "from": "stability-principle",
+   "verb": "extends",
+   "to": "render-the-query",
+   "kind": "authored",
+   "note": "Rendering the query is not enough if the answer rearranges the canvas each time it is asked."
+  },
+  {
+   "from": "explore-by-degrees",
+   "verb": "measures",
+   "to": "blast-radius",
+   "kind": "authored",
+   "note": "Pricing the next hop is measuring a blast radius before paying to enter it."
+  },
+  {
+   "from": "wclm",
+   "verb": "implements",
+   "to": "discovered-meaning",
+   "kind": "authored",
+   "note": "The query flips from predict the next word to what does this mean, and the answer is the concept its edges reach."
+  },
+  {
+   "from": "capability-scale",
+   "verb": "extends",
+   "to": "node-type-formula",
+   "kind": "authored",
+   "note": "What a component is, is what it can reach: a type computed from edges, wearing a security hat."
+  }
+ ],
+ "aliases": [
+  {
+   "a": "meaning-through-connectivity",
+   "b": "meaning comes from edges",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Summary: Core Principles",
+    "quote": "**Meaning comes from edges.** What a node \"is\" emerges from the graph relationships that can be traced from it."
+   }
+  },
+  {
+   "a": "fractal-principle",
+   "b": "graphs of graphs of graphs",
+   "anchor": {
+    "source": "src:thinking-in-graphs",
+    "section": "Every Scope Defines Its Own Vocabulary",
+    "quote": "It is graphs of graphs of graphs, at every level of scope"
+   }
+  },
+  {
+   "a": "wclm",
+   "b": "a words content language model",
+   "anchor": {
+    "source": "v2:methods",
+    "section": "wclm",
+    "quote": "not a large language model but a words content language model"
+   }
+  },
+  {
+   "a": "build-wide-find-the-few-flip",
+   "b": "multi-graph creation paths",
+   "anchor": {
+    "source": "src:path-properties",
+    "section": "Multi-Graph Creation Paths: Wide First, Then Narrow",
+    "quote": "I call this multi-graph creation paths"
+   }
+  },
+  {
+   "a": "named-absence",
+   "b": "mapping the gaps",
+   "anchor": {
+    "source": "src:confidence-through-evidence",
+    "section": "Map What You Have, And What Is Missing",
+    "quote": "we do not list what is missing, so we can have assurance of how confident we are"
+   }
+  },
+  {
+   "a": "twin",
+   "b": "the interface to reality",
+   "anchor": {
+    "source": "src:digital-twins-of-anything",
+    "section": "A Twin of Anything",
+    "quote": "a digital twin is, in essence, a system that has properties, behaviours, functions, and inputs and outputs"
+   }
+  }
+ ],
+ "near_but_not": [
+  {
+   "this": "meaning-through-connectivity",
+   "not": "semantic search, which infers meaning from similarity rather than deriving it from structure",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "meaning-through-connectivity",
+    "quote": "semantic search — which infers meaning from similarity rather than deriving it from structure"
+   }
+  },
+  {
+   "this": "node-alone-means-nothing",
+   "not": "an empty node, which has a type and a place, and is therefore not the same thing",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "node-alone-means-nothing",
+    "quote": "an empty node — which has a type and a place, and is therefore not the same thing"
+   }
+  },
+  {
+   "this": "confidence-ladder",
+   "not": "probability: the ladder is not a likelihood, it is a reachability measure",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "confidence-from-connectivity",
+    "quote": "probability — the ladder is not a likelihood, it is a reachability measure"
+   }
+  },
+  {
+   "this": "enrichment-not-enforcement",
+   "not": "validation, which is enforcement wearing a helpful name",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "enrichment-not-enforcement",
+    "quote": "validation — which is enforcement wearing a helpful name"
+   }
+  },
+  {
+   "this": "named-absence",
+   "not": "a missing value, which is the absence of a record rather than a recorded absence",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "named-absence",
+    "quote": "a missing value — which is the absence of a record, not a recorded absence"
+   }
+  },
+  {
+   "this": "edge-is-a-verb",
+   "not": "a labelled edge: a label is not yet a verb, and a verb without a distinct inverse is half an edge",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "edge-is-a-verb",
+    "quote": "a labelled edge — a label is not yet a verb, and a verb without a distinct inverse is half an edge"
+   }
+  },
+  {
+   "this": "banned-generic-edge",
+   "not": "a weak edge, which still says something, where a generic edge says nothing",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "banned-generic-edge",
+    "quote": "a weak edge — which still says something, where a generic edge says nothing"
+   }
+  },
+  {
+   "this": "render-the-query",
+   "not": "filtering, which hides what it does not show, where a query states what it asked",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "render-the-query",
+    "quote": "filtering — which hides what it does not show; a query states what it asked"
+   }
+  },
+  {
+   "this": "fractal-principle",
+   "not": "self-similar visuals: the claim is about rules, not about how the picture looks",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "fractal",
+    "quote": "self-similar visuals — the claim is about rules, not about how the picture looks"
+   }
+  },
+  {
+   "this": "anchor-node",
+   "not": "a canonical model, which is an anchor that acquired authority",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "anchor-nodes",
+    "quote": "a canonical model — which is an anchor that acquired authority"
+   }
+  },
+  {
+   "this": "compatibility-computed",
+   "not": "conformance testing, which asks whether one thing matches a fixed target",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "compatibility-computed",
+    "quote": "conformance testing — which asks whether one thing matches a fixed target"
+   }
+  },
+  {
+   "this": "node-type-formula",
+   "not": "tagging, which records a judgment instead of computing one",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "classification-as-query",
+    "quote": "tagging — which records a judgment instead of computing one"
+   }
+  },
+  {
+   "this": "supersede-never-delete",
+   "not": "versioning, which keeps the old text without keeping what depended on it",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "supersede-never-delete",
+    "quote": "versioning — which keeps the old text without keeping what depended on it"
+   }
+  },
+  {
+   "this": "provenance-chain",
+   "not": "a citation list, which names sources without making them checkable",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "provenance-chain",
+    "quote": "a citation list — which names sources without making them checkable"
+   }
+  },
+  {
+   "this": "projection",
+   "not": "export, which copies a document rather than deriving it",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "projection",
+    "quote": "export — which copies a document rather than deriving it"
+   }
+  },
+  {
+   "this": "properties-carry-data-not-meaning",
+   "not": "property graphs, which are a storage model rather than the objection",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "properties-carry-data-not-meaning",
+    "quote": "property graphs — which are a storage model, not the objection"
+   }
+  },
+  {
+   "this": "lexicon",
+   "not": "a glossary, which is one flat list with one author and no scopes",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "lexicon",
+    "quote": "a glossary, which is one flat list with one author and no scopes"
+   }
+  },
+  {
+   "this": "scope-and-override",
+   "not": "a namespace, which disambiguates names but carries no definitions",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "scope",
+    "quote": "a namespace, which disambiguates names but carries no definitions"
+   }
+  },
+  {
+   "this": "junction-rule",
+   "not": "a citation, which points at a document and stops",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "junction-rule",
+    "quote": "a citation — which points at a document and stops"
+   }
+  },
+  {
+   "this": "twin",
+   "not": "a control mapping, which attaches to a document about the thing",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "twin-attachment",
+    "quote": "a control mapping — which attaches to a document about the thing"
+   }
+  },
+  {
+   "this": "file-system-is-the-source-of-truth",
+   "not": "no databases at all: the corrected claim is narrower and stronger",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "ephemeral-engines",
+    "quote": "no databases at all — the corrected claim is narrower and stronger"
+   }
+  },
+  {
+   "this": "declared-meaning",
+   "not": "having a schema at all: the objection is to the direction of authority, not to structure",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "schema-first",
+    "quote": "having a schema at all — the objection is to the direction of authority, not to structure"
+   }
+  },
+  {
+   "this": "dont-merge-vocabularies",
+   "not": "translation, which produces one text where there were two positions",
+   "anchor": {
+    "source": "v2:lexicon",
+    "section": "dont-merge-vocabularies",
+    "quote": "translation — which produces one text where there were two positions"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "id": "time",
+   "title": "Time is asserted and never developed.",
+   "note": "Time is an event, things change is close to the whole treatment. The corpus repeatedly says the graph moves and never explains how.",
+   "anchor": {
+    "source": "v1:boundaries",
+    "section": "Two smaller notes, and one open question",
+    "quote": "**Open: time is asserted and never developed.**"
+   }
+  },
+  {
+   "id": "hypergraphs",
+   "title": "No position on hypergraphs, and none manufactured.",
+   "note": "The corpus does not contain the word, and the estate declines to invent a stance to look complete.",
+   "anchor": {
+    "source": "v1:why-graphs",
+    "section": "Hypergraphs",
+    "quote": "No position. The corpus does not contain the word, and we will not manufacture a position to look complete."
+   }
+  },
+  {
+   "id": "graphrag",
+   "title": "The position next to GraphRAG is written fresh, not carried.",
+   "note": "The corpus holds a strong implicit position and never engages the named field.",
+   "anchor": {
+    "source": "v1:why-graphs",
+    "section": "Where this sits next to GraphRAG, RDF and property graphs",
+    "quote": "It holds a strong implicit position and never engages the named field"
+   }
+  },
+  {
+   "id": "bridges",
+   "title": "Layer 2, the bridge layer, is not started.",
+   "note": "Cross-document edges, authored with a note, recording where documents name the same idea differently and where they disagree.",
+   "anchor": {
+    "source": "page:universe",
+    "section": "The layer model",
+    "quote": "the bridge layer, not started"
+   }
+  },
+  {
+   "id": "fan-out",
+   "title": "One document is extracted; twenty wait.",
+   "note": "Every mechanism of the working surface was designed to fan out without redesign, and the fan-out has not happened.",
+   "anchor": {
+    "source": "v2:retrospective",
+    "section": "Observations, held loosely",
+    "quote": "One document is extracted; twenty wait."
+   }
+  },
+  {
+   "id": "path-language",
+   "title": "Nothing executes the path query language.",
+   "note": "Seventeen queries across five tiers are written down, and no engine runs them.",
+   "anchor": {
+    "source": "v1:shipped",
+    "section": "Does not exist anywhere",
+    "quote": "Seventeen queries across five tiers are written down. Nothing executes them."
+   }
+  },
+  {
+   "id": "economics",
+   "title": "The feedback loop that makes a graph self-maintaining is named and barely carried.",
+   "note": "The founder asks for the economic argument: a system that keeps its graph current even when the people in it do not want to.",
+   "anchor": {
+    "source": "v2:brief-20",
+    "section": "What each instruction commits us to",
+    "quote": "A named thread that the current material barely carries. It is a hypothesis, and it is testable."
+   }
+  },
+  {
+   "id": "compatibility-testing",
+   "title": "The compatibility-testing design has zero downstream references.",
+   "note": "Prose, diagrams, code, config and runtime traces are five languages describing one system; extract a graph from each and ask whether they agree.",
+   "anchor": {
+    "source": "v1:origins",
+    "section": "Paths not taken",
+    "quote": "with **zero downstream references**"
+   }
+  },
+  {
+   "id": "routing",
+   "title": "A document that nothing links to does not exist for a reader who follows links.",
+   "note": "The philosophy documents were imported and the cross-reference that would make them findable was specified and never executed.",
+   "anchor": {
+    "source": "v1:origins",
+    "section": "The routing failure",
+    "quote": "Specified 11 June, never done. One edit, and the under-weighting stops."
+   }
+  }
+ ],
+ "contradictions": [
+  {
+   "between": [
+    "the-fifteen-edges",
+    "banned-generic-edge"
+   ],
+   "note": "One row of the published edge set is in tension with the estate's own first rule.",
+   "anchor": {
+    "source": "v1:edge-set",
+    "section": "One row is in tension with this book's own rule",
+    "quote": "Treat it as a last resort: wherever you can name what kind of connection it is, name it, and the query gets better."
+   }
+  },
+  {
+   "between": [
+    "banned-generic-edge",
+    "what-ships-what-is-argued"
+   ],
+   "note": "The rule is broken by the project's own shipped configuration, and named rather than quietly fixed.",
+   "anchor": {
+    "source": "v1:shipped",
+    "section": "Two corrections we inherit rather than repeat",
+    "quote": "Its own `link-types.json` ships one as a self-inverse pair, and a single edge instance uses it."
+   }
+  },
+  {
+   "between": [
+    "composition-with-local-override",
+    "fractal-principle"
+   ],
+   "note": "The first edition defined fractal as uniformity. Brief 20 says that is the mechanism, not the claim. Both are kept, one marked superseded from a date.",
+   "anchor": {
+    "source": "v2:brief-20",
+    "section": "The correction to fractal semantic graphs",
+    "quote": "Uniformity has not disappeared. It is a consequence: what makes the override safe is that the grammar for expressing an override is the same at every level. But it is the mechanism, not the claim, and the pack had them the wrong way round."
+   }
+  },
+  {
+   "between": [
+    "properties-carry-data-not-meaning",
+    "what-ships-what-is-argued"
+   ],
+   "note": "The rule says properties carry no meaning; the one graph actually running in the project is a typed property graph.",
+   "anchor": {
+    "source": "v1:why-graphs",
+    "section": "Property graphs",
+    "quote": "this book's core rule is that properties do not carry meaning, and the one graph in this project that is *actually running* is a typed property graph"
+   }
+  },
+  {
+   "between": [
+    "provenance-chain",
+    "what-ships-what-is-argued"
+   ],
+   "note": "A published skill file states object identifiers are the hash of the plaintext. They are not.",
+   "anchor": {
+    "source": "v1:shipped",
+    "section": "Object IDs are a hash of the ciphertext, not the plaintext",
+    "quote": "The code hashes the ciphertext."
+   }
+  },
+  {
+   "between": [
+    "render-the-query",
+    "the-blob"
+   ],
+   "note": "The estate holds the rule and says its own viewer has not yet met it.",
+   "anchor": {
+    "source": "v2:brief-28",
+    "section": "The memo, verbatim",
+    "quote": "we already are at that sort of dot slash blob of graph where it's actually interesting, but it's not that useful"
+   }
+  }
+ ],
+ "folded": [
+  {
+   "id": "everything-is-a-node",
+   "into": "node-alone-means-nothing",
+   "label": "everything is a node"
+  },
+  {
+   "id": "common-ground-discovered",
+   "into": "five-reviews",
+   "label": "common ground is discovered, not imposed"
+  },
+  {
+   "id": "anchors-have-no-authority",
+   "into": "anchor-node",
+   "label": "an anchor has no special authority"
+  },
+  {
+   "id": "no-registration",
+   "into": "scope-and-override",
+   "label": "no registration with the parent"
+  },
+  {
+   "id": "cheap-nodes",
+   "into": "anchor-node",
+   "label": "nodes are nearly free"
+  },
+  {
+   "id": "understanding-over-schema",
+   "into": "dont-merge-vocabularies",
+   "label": "understanding over a standardised schema"
+  },
+  {
+   "id": "visualisation-limit",
+   "into": "the-blob",
+   "label": "the visualisation limit"
+  },
+  {
+   "id": "absence-is-evidence",
+   "into": "named-absence",
+   "label": "the absence of evidence is evidence"
+  },
+  {
+   "id": "connectedness-is-measurable",
+   "into": "twin",
+   "label": "whether it reaches reality is a measurable fact"
+  }
+ ]
+}

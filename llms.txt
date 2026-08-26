@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.5.12 (26 August 2026). Published by the sgit project — participant
+Site version: v0.5.13 (26 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /v1/briefs/ is the source of truth and carries the same licence.
 
@@ -363,6 +363,23 @@ pages** so the two cannot drift
   argued is /v2/books/fsg/what-ships-what-is-argued.html, and the block written to be pasted into
   an agent session is /v2/books/fsg/reference-card.html. Books A (the universe atlas) and C (the
   making-of) are commissioned and not yet written.
+- https://graphs.sgit.ai/v2/books/fsg-universe/index.html — **the Universe volume of
+  *Fractal Semantic Graphs: Meaning Through Connectivity***, the companion to the book above:
+  read it for this estate's CONCEPTS rather than its argument. An ATLAS: 90 concepts in 8
+  regions of one graph, joined by 168 verb-named edges, drawn from 63 declared sources across
+  both editions, the 21 carried documents, the 19 founder memos, the registers, the WCLM and
+  two fetched sgit.ai indexes. Every entry carries a VERBATIM QUOTE with its source and
+  section, and a build gate re-reads all 165 quotes out of the sources they name. **Edges
+  declare how they were made**: 17 anchored in a quote the corpus states, 151 authored by the
+  writing session with their reasoning carried instead — do not treat the authored ones as
+  corpus positions. Two chapters carry findings rather than exposition: the peaks computed
+  from the graph (with the caveat that degree measures the volume's reading, not the corpus),
+  6 contradictions in the corpus with both sides quoted, and 9 named absences, of which the
+  largest is TIME, asserted everywhere and developed nowhere. Machine surface:
+  /v2/books/fsg-universe/data/universe.json, in the pilot extraction's shape (nodes with
+  statements and anchors, verb-named edges, aliases, near-but-nots, contradictions, gaps).
+  Print: /v2/books/fsg-universe/fsg-universe.pdf, 91 pages, self-contained. Written by an AI
+  system and disclosed as such in its front matter.
 - https://graphs.sgit.ai/v2/universe/index.html — layer 1 of the second edition's universe,
   built BOTTOM UP: one local graph per carried source document. Each document keeps its own
   vocabulary: its dictionary (terms in the document's own words, with used-but-undefined terms
