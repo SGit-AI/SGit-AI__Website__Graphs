@@ -184,6 +184,31 @@ export function renderBlock(key, s, world, ctx) {
     }).join('') || '<div class="dim small">no meaning found in this universe</div>';
   }
 
+  if (key === 'translate') {
+    const t = s.translated;
+    if (t) {
+      html = t.items.map((x, k) => {
+        byBind.set(x.id, 'tr' + k);
+        wire(last.byBind.get(x.id), 'tr' + k, 0.5, x.say ? '' : 'wc-dimline',
+          x.say ? 'the equivalence authored for ' + t.label : 'no analogy authored yet');
+        return x.say
+          ? chip('tr' + k, key, 'wc-tran', '<b>' + esc(x.from) + ' &rarr; ' + esc(x.say) + '</b>' +
+            '<span class="small">for ' + esc(t.label) + '</span>', x.from + ' → ' + x.say,
+            [['their concept', x.say], ['why it lands', x.why],
+             ['source', 'the analogies register — authored, reviewable, correctable']], x.id)
+          : chip('tr' + k, key, 'wc-tran dim', esc(x.from) + ' <span class="small">no analogy authored yet</span>', x.from,
+            [['status', 'the analogies register holds nothing for this concept and this audience — a correction opportunity']], x.id);
+      }).join('');
+    } else if (s.meaning) {
+      byBind.set(s.meaning.id, 'tr0');
+      wire(last.byBind.get(s.meaning.id), 'tr0', 0.4, '', 'passed through: no audience chosen');
+      html = chip('tr0', key, 'wc-pass', esc(s.meaning.label) + ' <span class="small">no audience chosen</span>',
+        s.meaning.label, [['status', 'no audience chosen — pick one above to restate the answer in their world']], s.meaning.id);
+    } else {
+      html = '<div class="dim small">nothing to translate</div>';
+    }
+  }
+
   if (key === 'fractal') {
     if (s.fractal && s.fractal.meaning) {
       const f = s.fractal;

@@ -48,7 +48,7 @@ function loadOff() {
     const o = JSON.parse(localStorage.getItem('wclm:off') || 'null');
     if (Array.isArray(o)) return new Set(o.filter((k) => BLOCKS.some((b) => b.key === k && !b.core)));
   } catch (e) { /* the default stands */ }
-  return new Set(['passthrough', 'fractal']);
+  return new Set(['passthrough', 'fractal', 'translate']);
 }
 
 function boot(world) {
@@ -57,14 +57,18 @@ function boot(world) {
   let pipe = loadPipe();
   if (!pipe.flat().includes('passthrough')) (pipe.find((L) => L.includes('operators')) || pipe[0]).push('passthrough');
   if (!pipe.flat().includes('fractal')) pipe.push(['fractal']);
+  if (!pipe.flat().includes('translate')) pipe.splice(pipe.findIndex((L) => L.includes('fractal')), 0, ['translate']);
   const off = loadOff();
   const chosen = {};
+  let audience = null;
   let prev = null;
 
   const bar = document.createElement('div');
   bar.className = 'wc-pipe';
   const picker = document.createElement('div');
   picker.className = 'wc-senses';
+  const aud = document.createElement('div');
+  aud.className = 'wc-senses wc-aud';
   const ex = document.createElement('div');
   ex.className = 'wc-ex';
   ex.innerHTML = '<span class="small dim">strong &rarr; weak:</span> ' + EXAMPLES.map((e) =>
@@ -72,6 +76,21 @@ function boot(world) {
   ask.after(bar);
   bar.after(ex);
   ex.after(picker);
+  picker.after(aud);
+  const audiences = world.analogies || {};
+  aud.innerHTML = Object.keys(audiences).length
+    ? '<span class="small dim">explain it to:</span> <button class="wc-so on" data-a="">this document</button>' +
+      Object.keys(audiences).map((k) =>
+        '<button class="wc-so" data-a="' + esc(k) + '">' + esc(audiences[k].label) + '</button>').join('')
+    : '';
+  aud.addEventListener('click', (e) => {
+    const b = e.target.closest('.wc-so');
+    if (!b) return;
+    audience = b.getAttribute('data-a') || null;
+    aud.querySelectorAll('.wc-so').forEach((x) => x.classList.toggle('on', x === b));
+    if (audience) off.delete('translate');   /* picking an audience wakes the engine */
+    go();
+  });
 
   const active = () => pipe.map((L) => L.filter((k) => !off.has(k))).filter((L) => L.length);
   const go = () => {
@@ -79,7 +98,7 @@ function boot(world) {
       localStorage.setItem('wclm:pipe', JSON.stringify(pipe));
       localStorage.setItem('wclm:off', JSON.stringify(Array.from(off)));
     } catch (e) { /* fine */ }
-    const R = runPipeline(q.value, world, active(), { senses: chosen });
+    const R = runPipeline(q.value, world, active(), { senses: chosen, audience });
     drawBar(bar, pipe, off, R);
     drawPicker(picker, R, chosen, go);
     draw(world, R, prev);
@@ -310,12 +329,14 @@ function meaningCard(R) {
     '<p class="wc-note">&#9888; ' + esc(n) + '</p>').join('');
   if (!m) return '<div class="wc-card">' + notes + '<p class="dim">This universe has nothing bound to that. Try a word the pilot document actually uses.</p></div>';
   const others = R.state.ranked.slice(1, 4);
+  const tr = R.state.translated && R.state.translated.items.find((x) => x.id === m.id);
   return '<div class="wc-card">' + notes +
     '<h3>the meaning: ' + esc(m.label) + ' <span class="small dim">score ' + m.total +
     ' · ' + (m.kind === 'pack' ? 'from a meaning pack' : m.kind === 'sense' ? 'from the senses register' : 'from the document') + '</span></h3>' +
     (m.def ? '<p>' + esc(m.def) + '</p>' : '') +
     (m.quote ? '<div class="ndoc-anchor">&sect; ' + esc(m.section) + '<blockquote>&ldquo;' + esc(m.quote) + '&rdquo;</blockquote></div>' : '') +
-    '<p class="small">bound via <b>' + m.via.map(esc).join(', ') + '</b> · blast radius <b>' + m.blast + '</b></p>' +
+    '<p class="small">bound via <b>' + m.via.map(esc).join(', ') + '</b> · blast radius <b>' + m.blast + '</b> · ' + esc(m.anchor) + '</p>' +
+    (tr && tr.say ? '<p class="small wc-tranline">for ' + esc(R.state.translated.label) + ': <b>' + esc(tr.say) + '</b> — ' + esc(tr.why) + '</p>' : '') +
     (others.length ? '<p class="small dim">also plausible: ' + others.map((o) => esc(o.label) + ' (' + o.total + ')').join(' · ') + '</p>' : '') +
     '</div>';
 }

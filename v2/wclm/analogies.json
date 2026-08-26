@@ -1,0 +1,53 @@
+{
+  "register": "analogies and equivalencies across audiences (brief 35)",
+  "note": "The memo's ask, by name: to explain this material to somebody from another world, find the equivalent concept in THEIRS — graphs of graphs is spreadsheets of spreadsheets in finance, because finance genuinely nests workbooks inside workbooks. Each entry connects one of this document's concepts to the audience's own concept, with the why carried. Authored by the agent for the founder's review, exactly like the meaning packs and the senses register: to train the model, edit this file.",
+  "audiences": {
+    "finance": {
+      "label": "somebody from finance",
+      "maps": [
+        { "for": "graphs-of-graphs", "say": "spreadsheets of spreadsheets",
+          "why": "finance nests workbooks inside workbooks inside consolidation packs — the same structure at every zoom, and everyone in the room has lived it" },
+        { "for": "node", "say": "a cell with a name",
+          "why": "a named cell means nothing alone; its formula references — what it reads, what reads it — are what make it matter" },
+        { "for": "meaning-through-connectivity", "say": "the consolidation trail",
+          "why": "a number in the group accounts IS its roll-up: subsidiary lines, eliminations, adjustments — remove the trail and the number is just ink" },
+        { "for": "anchor-node", "say": "the chart of accounts",
+          "why": "the shared reference everyone maps their local codes to, so two subsidiaries can disagree locally and still consolidate" },
+        { "for": "fractal-principle", "say": "the audit working-paper hierarchy",
+          "why": "every working paper can open into schedules with their own working papers — the same review structure repeats at every level" },
+        { "for": "cross-graph-edge", "say": "an intercompany reconciliation",
+          "why": "an explicit, checkable link between two entities' books — the connection is real only when both sides carry it" }
+      ]
+    },
+    "operations": {
+      "label": "somebody from operations",
+      "maps": [
+        { "for": "graphs-of-graphs", "say": "runbooks that call runbooks",
+          "why": "an incident runbook steps into service runbooks that step into host procedures — nested procedures with the same shape at every level" },
+        { "for": "node", "say": "a host behind a service name",
+          "why": "the box matters only through what routes to it and what it depends on; an unplugged host with no traffic is inventory, not infrastructure" },
+        { "for": "meaning-through-connectivity", "say": "the dependency map",
+          "why": "what a service IS operationally is what it calls and what calls it — the map, not the name, tells you the blast radius" },
+        { "for": "anchor-node", "say": "the service catalogue entry",
+          "why": "the agreed reference record every team points at, so local naming can vary without losing the thread" },
+        { "for": "confidence-spectrum", "say": "alert severity levels",
+          "why": "operations never pretends binary certainty: a page, a warning and an info line are graded confidence, and the grade is part of the signal" }
+      ]
+    },
+    "medicine": {
+      "label": "somebody from medicine",
+      "maps": [
+        { "for": "graphs-of-graphs", "say": "systems within systems",
+          "why": "a body is systems of organs of tissues of cells — clinicians reason at every level and switch zoom mid-sentence" },
+        { "for": "node", "say": "a symptom on its own",
+          "why": "a symptom means almost nothing in isolation; its connections — history, comorbidities, findings — are the diagnosis" },
+        { "for": "meaning-through-connectivity", "say": "the differential diagnosis",
+          "why": "meaning emerges by tracing what connects to what: the same fever means different things on different evidence trails" },
+        { "for": "anchor-node", "say": "the ICD code",
+          "why": "the shared classification everyone maps their local shorthand to, so two hospitals can exchange a diagnosis and mean the same thing" },
+        { "for": "honest-uncertainty", "say": "the provisional diagnosis",
+          "why": "medicine records what it does not yet know as a first-class state — 'query appendicitis' is honest, actionable uncertainty" }
+      ]
+    }
+  }
+}

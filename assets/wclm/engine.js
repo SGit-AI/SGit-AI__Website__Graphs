@@ -230,7 +230,13 @@ const BLOCKS_DEF = [
       ((world.pack || {}).terms || []).forEach((p) => { byId[p.id] = p; });
       s.ranked = base.map((b) => {
         const rec = byId[b.id] || {};
-        return { ...b, blast: b.degree,
+        /* the anchoring declaration (brief 35): fact, claim, or authored input */
+        const anchor = rec.quote ? 'fact-anchored: a quote in §' + rec.section
+          : rec.statement ? 'a stated claim: asserted in the document, not quoted'
+          : b.kind === 'pack' ? 'an authored term: proposed in a meaning pack'
+          : b.kind === 'sense' ? 'a chosen sense: from the senses register'
+          : 'unanchored: nothing in this universe vouches for it';
+        return { ...b, blast: b.degree, anchor,
           total: r3(2 * b.score + 0.1 * b.degree),   /* 2 and 0.1 are opinion */
           def: rec.statement || rec.def || b.def || null,
           section: rec.section || null, quote: rec.quote || null };
@@ -254,6 +260,24 @@ const BLOCKS_DEF = [
       });
     } },
 ];
+
+/* the translate engine (brief 35): analogies and equivalencies — the answer
+   restated in the listener's own concept, from the authored analogies
+   register. Explaining graphs of graphs to finance means saying
+   spreadsheets of spreadsheets, and the why travels with it. */
+BLOCKS_DEF.push({ key: 'translate', name: 'translate', core: false,
+  io: { reads: ['meanings'], writes: ['meanings'] },
+  role: 'analogies for an audience: the answer restated in the listener’s own concept, with the why carried',
+  run(s, world) {
+    const key = (s.opts || {}).audience;
+    const aud = (world.analogies || {})[key];
+    if (!aud) { s.translated = null; return; }
+    s.translated = { audience: key, label: aud.label,
+      items: (s.ranked || []).slice(0, 3).map((m) => {
+        const hit = (aud.maps || []).find((x) => x.for === m.id);
+        return { id: m.id, from: m.label, say: hit ? hit.say : null, why: hit ? hit.why : null };
+      }) };
+  } });
 
 /* the fractal engine (brief 34, second addendum): a full WCLM inside an
    engine — the winner's own statement re-enters the pipeline one zoom down.
@@ -330,6 +354,7 @@ const DELTA_KEYS = {
   bind: (s) => (s.bindings || []).map((b) => b.id),
   expand: (s) => (s.assembled || []).map((a) => a.id + ':' + a.degree),
   converge: (s) => (s.ranked || []).map((m) => m.id),
+  translate: (s) => (s.translated ? s.translated.items.filter((x) => x.say).map((x) => x.id + '>' + x.say) : []),
   fractal: (s) => (s.fractal && s.fractal.meaning ? [s.fractal.meaning.id] : []),
 };
 

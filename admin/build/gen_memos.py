@@ -23,6 +23,20 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "35__founder-memo__the-fractal-nature-of-the-wclm.md": (
+     "The fractal nature of the WCLM: world models, analogies, anchored facts",
+     "The engines are world-model transformations — every layer asks what does "
+     "this mean, expand it, contract it, give me more so the analysis continues. "
+     "The destination: ask a document, ask a paragraph — here's the graph of "
+     "where I'm going; does it agree, provide evidence, reach the same "
+     "conclusion? New and named: ANALOGIES — to explain this to somebody from "
+     "finance, graphs of graphs must become spreadsheets of spreadsheets, "
+     "because their world really nests them. Corrections are the training "
+     "(better meaning, missing nodes, manual overrides — what pre-training is "
+     "to an LLM). The LLM layer-warming picture, redone with determinism: our "
+     "lines are exact, so facts and hypotheses can anchor to them. And some "
+     "layers may one day need an LLM — acceptable, because graph in and graph "
+     "out are both kept as evidence."),
  "34__founder-memo__words-have-many-meanings.md": (
      "Words have many meanings: senses, number, and the world model per word",
      "Each word needs a world model: singular is not plural (graph is not graphs, "

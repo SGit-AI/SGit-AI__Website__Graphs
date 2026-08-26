@@ -716,7 +716,8 @@ const WC_WORLD = {
   concepts: [
     { id: 'mtc', label: 'meaning through connectivity', family: 'concept',
       statement: 'What a thing is emerges from its edges.', forms: ['meaning', 'connectivity'] },
-    { id: 'con', label: 'connectivity', family: 'concept', forms: ['connectivity'] },
+    { id: 'con', label: 'connectivity', family: 'concept', forms: ['connectivity'],
+      statement: 'Connectivity is the substrate.', section: 'Part 1', quote: 'meaning lives in the connections' },
     { id: 'edg', label: 'edges', family: 'concept', forms: ['edges'] }],
   edges: [{ from: 'c1', verb: 'about', to: 'mtc' }],
   pack: { terms: [{ id: 'pk:meaning', label: 'meaning', def: 'What a thing is.',
@@ -818,6 +819,28 @@ test('wclm: every engine declares its schema, and fractal runs a WCLM inside', (
     [['tokenise'], ['fractal'], ['resolve'], ['bind'], ['converge']]);
   assert.ok(early.steps.find((x) => x.key === 'fractal').skipped.includes('needs meanings'));
   assert.ok(early.meaning);                                     /* the rest still runs */
+});
+test('wclm: translate speaks the audience’s concept, and honesty survives a gap', () => {
+  const WC_ANA = { ...WC_WORLD, analogies: { finance: { label: 'somebody from finance',
+    maps: [{ for: 'mtc', say: 'the consolidation trail', why: 'a number IS its roll-up' }] } } };
+  const pipe = [['tokenise'], ['resolve'], ['bind'], ['converge'], ['translate']];
+  const R = runPipeline('meaning through connectivity', WC_ANA, pipe, { audience: 'finance' });
+  assert.equal(R.state.translated.items[0].id, 'mtc');
+  assert.equal(R.state.translated.items[0].say, 'the consolidation trail');
+  const gap = runPipeline('connectivity', WC_ANA, pipe, { audience: 'finance' });
+  assert.equal(gap.state.translated.items[0].say, null);        /* no analogy authored: said, not hidden */
+  assert.equal(runPipeline('meaning', WC_ANA, pipe).state.translated, null);   /* no audience chosen */
+  const early = runPipeline('meaning', WC_ANA, [['tokenise'], ['translate'], ['resolve'], ['bind'], ['converge']], { audience: 'finance' });
+  assert.ok(early.steps.find((x) => x.key === 'translate').skipped.includes('needs meanings'));
+});
+test('wclm: every answer declares its anchoring', () => {
+  const R = runPipeline('connectivity', WC_WORLD);
+  assert.ok(R.meaning.anchor.includes('fact-anchored'));        /* con carries a quote */
+  assert.ok(R.meaning.anchor.includes('Part 1'));
+  const claim = runPipeline('meaning through connectivity', WC_WORLD);
+  assert.ok(claim.meaning.anchor.includes('a stated claim'));   /* statement, no quote */
+  const authored = runPipeline('meaning', WC_SENSE, null, { senses: { meaning: 'legal' } });
+  assert.ok(authored.meaning.anchor.includes('a chosen sense'));
 });
 test('wclm: a sense switch is measured by the delta and replays deterministically', () => {
   const a = runPipeline('meaning connectivity', WC_SENSE);

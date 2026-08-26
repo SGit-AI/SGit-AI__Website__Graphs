@@ -121,3 +121,6 @@
 .wc-col-multi .wc-eng + .wc-eng { margin-top: .8rem; padding-top: .6rem;
   border-top: 1px dashed rgba(42,157,143,.4); }
 .wc-frac { border-left: 4px solid #2a6db5; background: rgba(42,109,181,.07); }
+.wc-tran { border-left: 4px solid #b0761f; background: rgba(176,118,31,.06); }
+.wc-tranline { border-left: 3px solid #b0761f; padding-left: .5rem; }
+.wc-aud { margin-top: -.25rem; }
