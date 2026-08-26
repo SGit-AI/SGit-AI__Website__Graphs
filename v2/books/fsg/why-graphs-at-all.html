@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>2 · Why graphs at all &mdash; graphs.sgit.ai</title>
+<meta name="description" content="Three things people mean by graph and why this is the third; the positions on GraphRAG, RDF, property graphs and vector search; and the four situations where this argument is the wrong one.">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/books/fsg/why-graphs-at-all.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="graphs.sgit.ai">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/books/fsg/why-graphs-at-all.html">
+<meta property="og:title" content="2 · Why graphs at all">
+<meta property="og:description" content="Three things people mean by graph and why this is the third; the positions on GraphRAG, RDF, property graphs and vector search; and the four situations where this argument is the wrong one.">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="text/markdown" href="content/02__why-graphs-at-all.md" title="The raw markdown, which is the source of truth">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row"></div></nav>
+
+<main class="doc">
+<div class="crumb"><a href="../../../index.html">graphs.sgit.ai</a> &rarr; <a href="../../index.html">the second edition</a> &rarr; <a href="index.html">Fractal Semantic Graphs</a> &rarr; <b>2 · Why graphs at all</b></div>
+<h1>2 · Why graphs at all</h1>
+<p class="lead">Three things people mean by graph and why this is the third; the positions on GraphRAG, RDF, property graphs and vector search; and the four situations where this argument is the wrong one.</p>
+
+<div class="docmeta">
+  <span class="k">Book</span><span class="v">Fractal Semantic Graphs: Meaning Through Connectivity &middot; Part one: The claim</span>
+  <span class="k">Read offline</span><span class="v"><a href="fsg.pdf">the whole book as one PDF</a></span>
+  <span class="k">Licence</span><span class="v">CC BY 4.0</span>
+  <span class="k">Source</span><span class="v"><a href="content/02__why-graphs-at-all.md">raw markdown</a> &middot; <a href="https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/books/fsg/content/02__why-graphs-at-all.md">view on GitHub</a></span>
+</div>
+
+<div class="mdread-label">&#128196; Rendered from the <a href="content/02__why-graphs-at-all.md">raw markdown</a>, which is the source of truth. This page is presentation.</div>
+<div class="mdread" id="mdread" data-src="content/02__why-graphs-at-all.md"><noscript><p class="dim">In-page rendering needs JavaScript &mdash; <a href="content/02__why-graphs-at-all.md">open the raw markdown</a>.</p></noscript></div>
+
+<div class="pagenav">
+  <span>&larr; <a href="a-node-is-just-a-node.html">1 · A node is just a node</a></span>
+  <span><a href="every-edge-is-a-verb.html">3 · Every edge is a verb</a> &rarr;</span>
+</div>
+</main>
+
+<footer class="site"><div class="cols"></div></footer>
+<script src="../../../assets/vendor/marked.min.js"></script>
+<script src="../../../assets/mdreader.js" defer></script>
+<script>
+/* The markdown is the source of truth and lives in content/, so its figure paths are
+   ../figures/... — correct for that file, and wrong for this page, which sits one level
+   up. mdreader renders the markdown into this page, so the paths are re-based here
+   rather than bent in the source. Watches, because the render is asynchronous. */
+(function () {
+  var el = document.getElementById('mdread');
+  if (!el) return;
+  function fix() {
+    el.querySelectorAll('img[src*="/figures/"]').forEach(function (i) {
+      var s = i.getAttribute('src');
+      if (s.indexOf('../figures/') === 0) i.setAttribute('src', s.slice(3));
+    });
+  }
+  new MutationObserver(fix).observe(el, { childList: true, subtree: true });
+  fix();
+})();
+</script>
+</body>
+</html>
