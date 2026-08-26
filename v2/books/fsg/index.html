@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fractal Semantic Graphs: Meaning Through Connectivity &mdash; graphs.sgit.ai</title>
+<meta name="description" content="The second edition of the argument: meaning through connectivity, from first principles and from the running system. Fifteen chapters in five parts, and one PDF that reads start to finish offline.">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/books/fsg/index.html">
+<meta property="og:type" content="book">
+<meta property="og:site_name" content="graphs.sgit.ai">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/books/fsg/index.html">
+<meta property="og:title" content="Fractal Semantic Graphs: Meaning Through Connectivity">
+<meta property="og:description" content="A node connected to nothing means nothing. The edition that argues from first principles AND from the running system.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../../index.html">graphs<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
+  <span class="stage-pill">reference draft</span>
+  <a class="ver" href="../../../admin/versions.html" title="Site release history">v0.5.14</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/start/index.html">Start here<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/start/index.html">The five-minute version</a>
+      <a class="sl" href="../../../v1/why-graphs/index.html">Why graphs at all</a>
+      <a class="sl" href="../../../v1/glossary/index.html">Glossary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../../../v2/index.html">The book<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v2/index.html">The second edition &middot; current</a>
+      <a class="sl" href="../../../v2/dev-pack/index.html">&hellip; the dev pack: the plan</a>
+      <a class="sl" href="../../../v2/packs/index.html">&hellip; the review packs</a>
+      <a class="sl here" href="../../../v2/books/fsg/index.html">Fractal Semantic Graphs &middot; the second book</a>
+      <a class="sl" href="../../../v2/books/fsg/fsg.pdf">&hellip; read it as one PDF</a>
+      <a class="sl" href="../../../v2/books/fsg-universe/index.html">&hellip; the Universe volume: the atlas</a>
+      <a class="sl" href="../../../v2/books/fsg-universe/fsg-universe.pdf">&hellip; &hellip; read it as one PDF</a>
+      <a class="sl" href="../../../v1/book/index.html">The first edition &middot; frozen</a>
+      <a class="sl" href="../../../v1/book/single.html">&hellip; read it in one page</a>
+      <a class="sl" href="../../../v1/book/changes.html">&hellip; what changed between versions</a>
+      <a class="sl" href="../../../v1/reviews/index.html">&hellip; the reviews</a>
+      <a class="sl" href="../../../v1/docs/index.html">&hellip; the sources it came from</a>
+      <a class="sl" href="../../../v1/altitudes/index.html">&hellip; the altitude ladder</a>
+      <a class="sl" href="../../../v1/book/meaning-through-connectivity.pdf">&hellip; the print PDF (6&times;9)</a>
+      <a class="sl" href="../../../v1/book/meaning-through-connectivity-screen.pdf">&hellip; the screen PDF (tablet)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v2/universe/index.html">The universe<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v2/universe/index.html">Layer 1: the documents, extracted</a>
+      <a class="sl" href="../../../v2/universe/thinking-in-graphs.html">&hellip; the pilot: Thinking in Graphs</a>
+      <a class="sl" href="../../../v2/universe/thinking-in-graphs.graph.html">&hellip; its graph, standalone &middot; phone-friendly</a>
+      <a class="sl" href="../../../v2/universe/thinking-in-graphs.files.html">&hellip; its files, raw and viewed</a>
+      <a class="sl" href="../../../v2/memos/index.html">The founder&rsquo;s memos, verbatim</a>
+      <a class="sl" href="../../../v2/methods/index.html">The methods register</a>
+      <a class="sl" href="../../../v2/lexicon/index.html">The lexicon, in scopes</a>
+      <a class="sl" href="../../../v2/artefacts/index.html">The artefact catalogue</a>
+      <a class="sl" href="../../../decisions/index.html">The open decisions</a>
+      <a class="sl" href="../../../v2/dev-pack/design-00-the-victor-register.html">The immediate-connection register</a>
+      <a class="sl" href="../../../v2/dev-pack/retro-00-the-v04-retrospective.html">The v0.4 retrospective</a>
+      <a class="sl" href="../../../v2/wclm/index.html">The WCLM &middot; a deterministic transformer</a>
+      <a class="sl" href="../../../v2/wclm/operators/index.html">&hellip; its operators, each in its folder</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/grammar/index.html">The grammar<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/grammar/index.html">The rules you can apply tomorrow</a>
+      <a class="sl" href="../../../v1/grammar/edge-set.html">The edge set</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/depth/index.html">Depth<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/depth/index.html">The full argument</a>
+      <a class="sl" href="../../../v1/depth/boundaries.html">A graph at every boundary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/vaults/index.html">The vaults<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/vaults/index.html">The vaults, opened</a>
+      <a class="sl" href="../../../v1/vaults/voice-debrief/index.html">VoiceDebrief</a>
+      <a class="sl" href="../../../v1/vaults/voice-debrief/junction.html">&hellip; the junction rule</a>
+      <a class="sl" href="../../../v1/vaults/voice-debrief/absence.html">&hellip; the empty layer</a>
+      <a class="sl" href="../../../v1/vaults/regulation-graph/index.html">Regulation Graph</a>
+      <a class="sl" href="../../../v1/vaults/regulation-graph/provenance.html">&hellip; the provenance chain</a>
+      <a class="sl" href="../../../v1/vaults/regulation-graph/engines.html">&hellip; the query engines</a>
+      <a class="sl" href="../../../v1/vaults/risk-mandate/index.html">Risk Mandate</a>
+      <a class="sl" href="../../../v1/vaults/agentic-browser-isolation/index.html">Agentic Browser Isolation</a>
+      <a class="sl" href="../../../v1/vaults/agentic-browser-isolation/acceptance.html">&hellip; the acceptance mechanism</a>
+      <a class="sl" href="../../../v1/vaults/risk-graph-explorer/index.html">Risk Graph Explorer</a>
+      <a class="sl" href="../../../v1/vaults/capability-scale.html">The capability scale</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/examples/index.html">Examples<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/examples/index.html">Worked graphs, with real numbers</a>
+      <a class="sl" href="../../../v1/examples/browser-isolation.html">Browser isolation</a>
+      <a class="sl" href="../../../v1/examples/2fa.html">The 2FA graph</a>
+      <a class="sl" href="../../../v1/examples/article-26-5.html">Article 26(5), end to end</a>
+      <a class="sl" href="../../../v1/maps/index.html">Wardley maps as graphs</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/shipped/index.html">Reality<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/shipped/index.html">What ships, what is argued</a>
+      <a class="sl" href="../../../v1/origins/index.html">Origins: 2026</a>
+      <a class="sl" href="../../../v1/network/index.html">The network</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/documents/index.html">Site<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/documents/index.html">The documents</a>
+      <a class="sl" href="../../../v1/documents/what-the-graphs-found.html">&hellip; what the graphs found</a>
+      <a class="sl" href="../../../v2/memos/index.html">The memos</a>
+      <a class="sl" href="../../../v2/packs/index.html">The review packs</a>
+      <a class="sl" href="../../../v2/dev-pack/index.html">The dev pack: the second book</a>
+      <a class="sl" href="../../../admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl" href="../../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../../admin/publishing.html">Publishing the book</a>
+      <a class="sl" href="../../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../../v1/about/participant.html">Where we lose</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Graphs">★ GitHub</a>
+  <script src="../../../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+<div class="crumb"><a href="../../../index.html">graphs.sgit.ai</a> &rarr; <a href="../../index.html">the second edition</a> &rarr; <b>Fractal Semantic Graphs</b></div>
+<h1>Fractal Semantic Graphs: Meaning Through Connectivity</h1>
+<p class="lead">A node connected to nothing means nothing. What a thing is emerges from the edges traceable from it, and how much you can rely on that meaning is a function of how richly and how independently it is connected. This is the edition that argues that from first principles <b>and</b> from the running system.</p>
+
+<div class="docmeta">
+  <span class="k">Shape</span><span class="v">15 chapters in five parts, plus front matter, a colophon and a reference card &middot; 38,029 words</span>
+  <span class="k">Offline</span><span class="v"><a href="fsg.pdf"><b>the whole book as one PDF</b></a> &middot; 119 pages &middot; reads start to finish with no link followed</span>
+  <span class="k">Source</span><span class="v">the markdown under <a href="content/">content/</a> is the source of truth; every page renders its own file</span>
+  <span class="k">Machine</span><span class="v"><a href="book.json">book.json</a> &middot; every chapter with its part, word count and SHA-256</span>
+  <span class="k">Licence</span><span class="v">CC BY 4.0 &middot; v0.5.12 &middot; 26 August 2026</span>
+</div>
+
+<div class="note"><b>Written by Dinis Cruz together with a team of AI agents.</b> This book was written by an AI agent working from a written commission, reading the corpus directly and anchoring every claim to it. The agent chose the structure, the chapter count, the voice and the figures, and recorded those choices in the front matter. <a href="../../../v1/about/participant.html">The full participant disclosure</a>, including the four situations in which this book's argument is the wrong one, applies here unchanged.</div>
+
+<h2 id="front">Front matter</h2>
+<div class="tablewrap"><table><thead><tr><th>Chapter</th><th>What it gives you</th></tr></thead><tbody>
+<tr><td><a href="front-matter.html"><b>Fractal Semantic Graphs: Meaning Through Connectivity</b></a><br><span class="small dim">1,666 words</span></td><td>What this book is, what you will know at the end, the editorial choices recorded, and the disclosure.</td></tr>
+</tbody></table></div>
+<h2 id="the-claim">Part one: The claim</h2>
+<p>Meaning through connectivity, from first principles, with no jargon before it is earned.</p>
+<div class="tablewrap"><table><thead><tr><th>Chapter</th><th>What it gives you</th></tr></thead><tbody>
+<tr><td><a href="a-node-is-just-a-node.html"><b>1 · A node is just a node</b></a><br><span class="small dim">2,554 words</span></td><td>The two 8080s, the five Reviews, the confidence ladder, and why a named absence beats a hidden one.</td></tr>
+<tr><td><a href="why-graphs-at-all.html"><b>2 · Why graphs at all</b></a><br><span class="small dim">2,633 words</span></td><td>Three things people mean by graph and why this is the third; the positions on GraphRAG, RDF, property graphs and vector search; and the four situations where this argument is the wrong one.</td></tr>
+</tbody></table></div>
+<h2 id="semantic">Part two: Semantic</h2>
+<p>What makes a graph semantic rather than merely a network: a grammar of verbs, anchors instead of standards, and types that are computed paths rather than applied labels.</p>
+<div class="tablewrap"><table><thead><tr><th>Chapter</th><th>What it gives you</th></tr></thead><tbody>
+<tr><td><a href="every-edge-is-a-verb.html"><b>3 · Every edge is a verb</b></a><br><span class="small dim">2,508 words</span></td><td>Five rules you can apply tomorrow, the banned edge, the fifteen verbs, and the register that makes the inverse rule machine-checkable.</td></tr>
+<tr><td><a href="anchors-not-standards.html"><b>4 · Anchors, not standards</b></a><br><span class="small dim">2,433 words</span></td><td>Why merging two vocabularies destroys the finding, the three-layer arrangement that replaces it, and two bridge registers you can watch being used.</td></tr>
+<tr><td><a href="a-type-is-a-path.html"><b>5 · A type is a path, not a label</b></a><br><span class="small dim">1,754 words</span></td><td>Node type formulas, the grounding ladder, supersede-never-delete, and a compliance finding that is arithmetic.</td></tr>
+</tbody></table></div>
+<h2 id="fractal">Part three: Fractal</h2>
+<p>What the middle word of the title commits you to, how to falsify it, and what happens at every boundary and every zoom level once you take it seriously.</p>
+<div class="tablewrap"><table><thead><tr><th>Chapter</th><th>What it gives you</th></tr></thead><tbody>
+<tr><td><a href="fractal-is-a-testable-claim.html"><b>6 · Fractal is a testable claim</b></a><br><span class="small dim">2,152 words</span></td><td>The zoom test, applied to this estate&#x27;s own two zooms, including the row where it fails.</td></tr>
+<tr><td><a href="a-graph-at-every-boundary.html"><b>7 · A graph at every boundary</b></a><br><span class="small dim">2,152 words</span></td><td>Where determinism, explainability and provenance actually die, the security property stated narrowly, twins, and the air gap.</td></tr>
+<tr><td><a href="documents-are-projections.html"><b>8 · Documents are projections</b></a><br><span class="small dim">1,796 words</span></td><td>The projection claim, and the build gate that rebuilds the document from the graph and fails unless the bytes match.</td></tr>
+</tbody></table></div>
+<h2 id="computed">Part four: Computed</h2>
+<p>The half the first edition could not write: how a document becomes a graph anchored to bytes, what identity means when a document changes, an engine that computes meaning deterministically, and why an explanation is a path rather than a narration.</p>
+<div class="tablewrap"><table><thead><tr><th>Chapter</th><th>What it gives you</th></tr></thead><tbody>
+<tr><td><a href="the-universe-method.html"><b>9 · The universe method</b></a><br><span class="small dim">2,211 words</span></td><td>How a raw document becomes a graph anchored to exact bytes, coverage total by construction, and the usage rating that caught the first edition misreading its own source.</td></tr>
+<tr><td><a href="two-kinds-of-address.html"><b>10 · Two kinds of address</b></a><br><span class="small dim">1,701 words</span></td><td>Content address versus identity address, and a working algorithm for keeping identity stable across edits.</td></tr>
+<tr><td><a href="meaning-computed.html"><b>11 · Meaning, computed</b></a><br><span class="small dim">2,911 words</span></td><td>An engine in the shape of a transformer where nothing is learned and everything is named, with its formulas in the open and its limits stated.</td></tr>
+<tr><td><a href="every-box-explains-itself.html"><b>12 · Every box explains itself</b></a><br><span class="small dim">1,704 words</span></td><td>Four properties an explanation must have to be checkable, and what happens when a diagram of a system is enforced by a test.</td></tr>
+</tbody></table></div>
+<h2 id="in-practice">Part five: In practice</h2>
+<p>Where this runs today, what ships and what is argued, and how to build your own first graph tomorrow.</p>
+<div class="tablewrap"><table><thead><tr><th>Chapter</th><th>What it gives you</th></tr></thead><tbody>
+<tr><td><a href="the-fractal-in-production.html"><b>13 · The fractal in production</b></a><br><span class="small dim">2,297 words</span></td><td>Twenty published vaults, the worked graphs with real numbers, and what a network of nineteen sites does and does not demonstrate.</td></tr>
+<tr><td><a href="what-ships-what-is-argued.html"><b>14 · What ships, what is argued</b></a><br><span class="small dim">2,002 words</span></td><td>What is running and checkable, what is a design, what does not exist anywhere, and four corrections this book carries.</td></tr>
+<tr><td><a href="your-first-graph.html"><b>15 · Your first graph, tomorrow</b></a><br><span class="small dim">2,098 words</span></td><td>An afternoon, a week and a month of instructions, ten rules on one page, and six ways this goes wrong.</td></tr>
+</tbody></table></div>
+<h2 id="back">Back matter</h2>
+<div class="tablewrap"><table><thead><tr><th>Chapter</th><th>What it gives you</th></tr></thead><tbody>
+<tr><td><a href="colophon.html"><b>Colophon: what was cut, and what remains open</b></a><br><span class="small dim">1,818 words</span></td><td>How the book was made, what was cut, what remains open, where it might be wrong, and every figure with its source.</td></tr>
+<tr><td><a href="reference-card.html"><b>Reference card</b></a><br><span class="small dim">1,639 words</span></td><td>The thesis, the ten rules, the edge set, the two ladders, the vocabulary, and the block to paste into an agent session.</td></tr>
+</tbody></table></div>
+
+<div class="agent">
+  <h4>For an agent</h4>
+  <p>The markdown under <code>content/</code> is the source of truth and carries the same CC BY 4.0 licence as everything else here; every page on this hub renders its own file client-side, so a page can never describe a chapter it did not render. <a href="book.json">book.json</a> carries every chapter with its part, its word count and the SHA-256 of its markdown, so a quotation can be checked against the build it came from. If you are summarising this book: it is <b>not a graph database pitch</b> and it says so; the semantic layer is <b>designed, not shipped</b>; and the chapter that separates the two is <a href="what-ships-what-is-argued.html">What ships, what is argued</a>. The block written to be pasted into an agent session is in <a href="reference-card.html">the reference card</a>.</p>
+</div>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">graphs<span>.sgit.ai</span></div>
+    <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
+    <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
+    <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../../../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../../admin/versions.html">v0.5.14</a> · <a href="../../../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>Start here</h4>
+    <a href="../../../v1/start/index.html">&#8594; The five-minute version</a>
+    <a href="../../../v1/why-graphs/index.html">Why graphs at all</a>
+    <a href="../../../v1/glossary/index.html">Glossary</a>
+    <a href="../../../v1/book/index.html">The book</a>
+    <a href="../../../v1/book/single.html">&nbsp;&nbsp;&hellip; in one page</a>
+    <a href="../../../v1/book/meaning-through-connectivity.pdf">&nbsp;&nbsp;&hellip; as a print PDF</a>
+    <a href="../../../v1/book/meaning-through-connectivity-screen.pdf">&nbsp;&nbsp;&hellip; as a screen PDF</a>
+  </div>
+  <div>
+    <h4>The grammar</h4>
+    <a href="../../../v1/grammar/index.html">The rules</a>
+    <a href="../../../v1/grammar/edge-set.html">The edge set</a>
+    <a href="../../../v1/depth/index.html">The full argument</a>
+    <a href="../../../v1/depth/boundaries.html">A graph at every boundary</a>
+  </div>
+  <div>
+    <h4>Worked graphs</h4>
+    <a href="../../../v1/examples/index.html">All of them</a>
+    <a href="../../../v1/examples/browser-isolation.html">Browser isolation</a>
+    <a href="../../../v1/examples/2fa.html">The 2FA graph</a>
+    <a href="../../../v1/examples/article-26-5.html">Article 26(5)</a>
+    <a href="../../../v1/maps/index.html">Wardley maps</a>
+  </div>
+  <div>
+    <h4>Reality &amp; site</h4>
+    <a href="../../../v1/shipped/index.html">What ships, what is argued</a>
+    <a href="../../../v1/origins/index.html">Origins: 2026</a>
+    <a href="../../../v1/network/index.html">The network</a>
+    <a href="../../../v1/documents/index.html">The documents</a>
+    <a href="../../../admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="../../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

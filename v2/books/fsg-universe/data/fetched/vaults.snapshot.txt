@@ -1,0 +1,175 @@
+<!-- SNAPSHOT, REDACTED. Fetched from https://sgit.ai/demos/vaults/index.html on
+     26 August 2026 and kept so the two phrases this volume quotes from it can be
+     checked. The 19 published read keys have been replaced with
+     sgit_rk1_<read-key-redacted>:<vault-id>. They are deliberately published on
+     that page and carry no write capability, but a credential travels with every
+     copy of it, and this repository is not where they are published from. The
+     redaction is stated here rather than done quietly, and nothing this volume
+     quotes touches a key. Everything else is the page's exact bytes. -->
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Published vaults — sgit.ai</title>
+<meta name="description" content="Every vault whose read key sgit.ai has deliberately published: what each does, the features it uses, and the vault running live in the page. A read key is the complete credential — no account, no write capability.">
+<link rel="canonical" href="https://sgit.ai/demos/vaults/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="sgit.ai">
+<meta property="og:url" content="https://sgit.ai/demos/vaults/index.html">
+<meta property="og:title" content="Published vaults — sgit.ai">
+<meta property="og:description" content="Every vault whose read key sgit.ai has deliberately published: what each does, the features it uses, and the vault running live in the page. A read key is the complete credential — no account, no write capability.">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="text/markdown" href="index.md" title="This page as markdown">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "name": "Published vaults — sgit.ai", "headline": "Published vaults — sgit.ai", "description": "Every vault whose read key sgit.ai has deliberately published: what each does, the features it uses, and the vault running live in the page. A read key is the complete credential — no account, no write capability.", "url": "https://sgit.ai/demos/vaults/index.html", "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "sgit.ai", "url": "https://sgit.ai"}, "about": {"@type": "SoftwareApplication", "name": "sgit", "sameAs": "https://pypi.org/project/sgit-ai/"}}</script>
+<style>html{background:#faf9f5}body{margin:0;background:#faf9f5;color:#1c1d21;font-family:ui-sans-serif,system-ui,sans-serif;opacity:0;transition:opacity .25s;animation:sg-reveal 0s linear 1.6s forwards}html.ready body{opacity:1;animation:none}@keyframes sg-reveal{to{opacity:1}}</style><noscript><style>body{opacity:1;animation:none}</style></noscript>
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../index.html">sgit<span>.ai</span></a>
+  <span class="stage-pill">beta</span>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.2.45</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+  <div class="ni"><a class="nl" href="../../why/index.html">Why</a></div>
+  <div class="ni"><a class="nl" href="../../try/index.html">Try</a></div>
+  <div class="ni ni-has">
+    <a class="nl" href="../../docs/index.html">Docs<span class="caret">&#9662;</span></a>
+    <div class="sub">
+      <a class="sl" href="../../docs/index.html">Documentation</a>
+      <a class="sl" href="../../api/index.html">HTTP API</a>
+      <a class="sl" href="../../vault/index.html">SG/Vault</a>
+      <a class="sl" href="../../deploy/index.html">Deploy</a>
+      <a class="sl" href="../../skills/index.html">Skills</a>
+    </div>
+  </div>
+  <div class="ni ni-has">
+    <a class="nl here" href="../../demos/vaults/index.html">Vaults<span class="caret">&#9662;</span></a>
+    <div class="sub">
+      <a class="sl here" href="../../demos/vaults/index.html">Published vaults</a>
+      <a class="sl" href="../../catalogue/index.html">Catalogue</a>
+      <a class="sl" href="../../demos/index.html">Demos</a>
+    </div>
+  </div>
+  <div class="ni ni-has">
+    <a class="nl" href="../../compare/index.html">Evidence<span class="caret">&#9662;</span></a>
+    <div class="sub">
+      <a class="sl" href="../../compare/index.html">Comparisons</a>
+      <a class="sl" href="../../case-studies/index.html">Case studies</a>
+      <a class="sl" href="../../use-cases/index.html">Use cases</a>
+      <a class="sl" href="../../briefs/index.html">Briefs</a>
+    </div>
+  </div>
+  <div class="ni ni-has">
+    <a class="nl" href="../../updates/index.html">Updates<span class="caret">&#9662;</span></a>
+    <div class="sub">
+      <a class="sl" href="../../updates/index.html">Updates</a>
+      <a class="sl" href="../../articles/index.html">Articles</a>
+      <a class="sl" href="../../admin/versions.html">Version log</a>
+    </div>
+  </div>
+  <div class="ni ni-has">
+    <a class="nl" href="../../network/index.html">Network<span class="caret">&#9662;</span></a>
+    <div class="sub">
+      <a class="sl" href="../../network/index.html">All sites</a>
+      <a class="sl" href="../../network/nhi.html">nhi</a>
+      <a class="sl" href="../../network/pki.html">pki</a>
+      <a class="sl" href="../../network/graphs.html">graphs</a>
+      <a class="sl" href="../../network/sg-sentinel.html">sg-sentinel</a>
+    </div>
+  </div>
+  <div class="ni"><a class="nl" href="../../security/index.html">Security</a></div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__CLI">&#9733; GitHub</a>
+</div></nav>
+
+<main class="doc" style="max-width:var(--wide)">
+  <p class="crumb"><a href="../../index.html">Home</a> / Vaults</p>
+  <h1>Published vaults</h1>
+  <p class="lead">Every vault whose read key this site has deliberately published — with, for each one, a page describing what it does, the features it uses, what the shape is good for, and the vault itself running live inside the page. The keys below are the complete credential: no account, no token, and no write capability anywhere in them.</p>
+  <div class="note"><b>Publishing one of your own?</b> <a href="publishing.html"><b>The method is written down</b></a> — the seven steps behind every row below, the tools that do each one, and the mistakes that produced each rule. Written to be followed by another site's agent.</div>
+
+  <div class="note"><b>Intake, since it nearly went wrong.</b> A credential submitted for publication here was once a <b>vault key</b> described as a read key — a legacy <code>passphrase:vault_id</code> form with no prefix to give it away. It was caught, only the derived read key was published, and nothing leaked; but the catch depended on somebody looking. Every submission now runs through <code>admin/build/check_credential.py</code> first, which refuses a write credential by <b>prefix</b> (<code>sgit_vk1_</code>, which new vaults emit) or, for anything older, by <b>shape</b> — a read key is 64 hex characters, and anything else before the colon is a passphrase. Prefixes are the better answer; the shape check covers the years of keys created before them.</div>
+
+  <div class="note"><b>The two rules, applied to every row.</b> Read keys yes, vault keys never — a read key is a capability we hand out on purpose, and it cannot become write access. And every vault is audited before its key appears here, because content travels with the key forever; findings are published on the vault’s page, not filed away.</div>
+  <div class="tablewrap"><table>
+    <tr><th>Vault</th><th>Id</th><th>Shape</th><th>Contents</th><th>Published read key</th><th></th></tr>
+    <tr><td><a href="field-notes/index.html">Field Notes</a></td><td><code>4bshby5n</code></td><td>application (vault app)</td><td>4 files · 11 KB · 2 commits · app entry <code>index.html</code></td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:4bshby5n</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_2848993a68c02a33ea5582902c391901191e53680d35b36c0e76185d4107ad81%3A4bshby5n" rel="noopener" target="_blank">open live ↗</a></td></tr>
+    <tr><td><a href="strategy-maps/index.html">Strategy Maps</a></td><td><code>ookq4mn4</code></td><td>structured analysis (two apps, one vault)</td><td>33 files · 830 KB · 3 commits · app entries <code>index.html</code> and <code>sgit-maps.html</code></td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:ookq4mn4</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_451c4c1e28fbb24a7f350bb3f107b2c103d69ed363167029ef9c9000ff76c07b%3Aookq4mn4" rel="noopener" target="_blank">open live ↗</a></td></tr>
+    <tr><td><a href="deploy-docs/index.html">Deploy Docs</a></td><td><code>fyofmkvr</code></td><td>record-keeping (live markdown)</td><td>17 files · 25 KB · 2 commits · markdown, no app</td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:fyofmkvr</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_8d01421290efc3fa03205eced0534335a06ae209d627555b3dde136b878e3de1%3Afyofmkvr" rel="noopener" target="_blank">open live ↗</a></td></tr>
+    <tr><td><a href="catalogue/index.html">The Vault Catalogue</a></td><td><code>kc67yhgw</code></td><td>record-keeping (an index of vaults)</td><td>9 files · 11 KB · 2 commits · markdown, no app</td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:kc67yhgw</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_fd71e4bde7232498e43a5da869b1501260d9d403031b20af87b5bc801bdf6280%3Akc67yhgw" rel="noopener" target="_blank">open live ↗</a></td></tr>
+    <tr><td><a href="algarve-may-2026/index.html">Algarve · May 2026</a></td><td><code>3d04e6b9ca98</code></td><td>gallery (photo story)</td><td>71 files · 29 MB · 36 commits · app entry <code>index.html</code></td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:3d04e6b9ca98</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_0a0f34839d737eef0f8f66e5236990b1f397af064763e3f71dca2717015f9d15%3A3d04e6b9ca98" rel="noopener" target="_blank">open live ↗</a></td></tr>
+    <tr><td><a href="supplement-stack/index.html">Supplement Stack</a></td><td><code>r7zes477</code></td><td>record-keeping (patient-held health record)</td><td>23 files · 2.3 MB · 5 commits · app entry <code>index.html</code></td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:r7zes477</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_047186b559528058c66d1792b7345639b1238cb95c166d1d5f5b65c59813c2ee%3Ar7zes477" rel="noopener" target="_blank">open live ↗</a></td></tr>
+    <tr><td><a href="risk-mandate/index.html">Risk Mandate</a></td><td><code>4zf6pf2z</code></td><td>application (a software project in a vault)</td><td>124 files · 1.9 MB · 98 commits · 8 app entries</td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:4zf6pf2z</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_a702fba803faac4369eb5d5a320b4dfa017af62bd2425fb298aac4b99e95c0ae%3A4zf6pf2z" rel="noopener" target="_blank">open live ↗</a></td></tr>
+    <tr><td><a href="agentic-browser-isolation/index.html">Agentic Browser Isolation</a></td><td><code>0610gsp9</code></td><td>structured analysis (a living risk graph)</td><td>104 files · 2.4 MB · 4 commits · 17 app entries</td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:0610gsp9</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_92cad4cea8f58c55f59b686c71c935225a1ba7c41ecb6922a8aa570467604f6e%3A0610gsp9" rel="noopener" target="_blank">open live ↗</a></td></tr>
+    <tr><td><a href="risk-graph-explorer/index.html">Risk Graph Explorer</a></td><td><code>3simlnqe</code></td><td>application (public by design)</td><td>33 files · 428 KB · 7 commits · 1 app entry</td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:3simlnqe</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_1c1b95f5903e35850a9bc0541ffa09c6b5d4017cbf18817d2ad6f894127e5638%3A3simlnqe" rel="noopener" target="_blank">open live ↗</a></td></tr>
+    <tr><td><a href="vault-app-pocs/index.html">Vault App Mode</a></td><td><code>xth1xt78</code></td><td>developer reference (nine POCs and a demo)</td><td>57 files &middot; 251 KB &middot; 8 commits &middot; app entry <code>_poc-hub/index.html</code></td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:xth1xt78</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_05f2391f22e4135ea27bca6b697dca18c54ab91b046325bef74f62f5324b8bc8%3Axth1xt78" rel="noopener" target="_blank">open live &#8599;</a></td></tr>
+    <tr><td><a href="health-score/index.html">Private Health Score</a></td><td><code>zc6abngv</code></td><td>application (a clinical workflow, sanitised republication)</td><td>35 files &middot; 1.2 MB &middot; 3 commits &middot; app entry <code>home/index.html</code></td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:zc6abngv</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_a76f327fb602f1619a67a15a0b756d69e82a1f7fa48438d4b6ecbebae2dc3d40%3Azc6abngv" rel="noopener" target="_blank">open live &#8599;</a></td></tr>
+    <tr><td><a href="voice-debrief/index.html">VoiceDebrief</a></td><td><code>k6xy9z4d</code></td><td>structured analysis (four apps, one vault)</td><td>92 files &middot; 1.2 MB &middot; 18 commits &middot; app entry <code>part-4/index.html</code></td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:k6xy9z4d</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_31e8196d3e83b37277083c29f105b8310dbac4569e22715b5e0f85d46878eec1%3Ak6xy9z4d" rel="noopener" target="_blank">open live &#8599;</a></td></tr>
+    <tr><td><a href="regulation-graph/index.html">Regulation Graph</a></td><td><code>73heuprz</code></td><td>reference data (regulation as an evidence graph)</td><td>207 files &middot; 14.9 MB &middot; 2 commits &middot; 11 app views</td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:73heuprz</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_c004daae386e8d17fa648884acc527018bd4ea1116ad673fb2f1b068011695c9%3A73heuprz" rel="noopener" target="_blank">open live &#8599;</a></td></tr>
+    <tr><td><a href="payments-brief-pack/index.html">SG/Payments Brief Pack</a></td><td><code>o3m0sz3q</code></td><td>briefing pack (PROPOSED)</td><td>18 files &middot; 224 KB &middot; app entry <code>index.html</code></td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:o3m0sz3q</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_cd1987b87f719c2ff6da51128200665312afaeeadcbf7a1a20f870f03f9959f8%3Ao3m0sz3q" rel="noopener" target="_blank">open live &#8599;</a></td></tr>
+    <tr><td><a href="commercialisation/index.html">SG Commercialisation</a></td><td><code>haeu7p1e</code></td><td>commercial operating model</td><td>78 files &middot; 536 KB &middot; register deliberately empty</td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:haeu7p1e</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_3c8cba7edd2f14e63d0b0f0da4d513430e3eea06f364baefaf8b22d85e151da6%3Ahaeu7p1e" rel="noopener" target="_blank">open live &#8599;</a></td></tr>
+    <tr><td><a href="riskmandate-file-security/index.html">RiskMandate &middot; File security</a></td><td><code>wu365g94</code></td><td>risk-acceptance walk (11 steps)</td><td>71 files &middot; 2.7 MB &middot; SQLite in the browser</td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:wu365g94</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_e8a1e664b9f984b0d8df442f463231077d455d7cbaa3e336610b14f9a1e1dc77%3Awu365g94" rel="noopener" target="_blank">open live &#8599;</a></td></tr>
+    <tr><td><a href="standards-atlas-gdpr/index.html">Standards Atlas &mdash; GDPR</a></td><td><code>4zv4bvmu</code></td><td>standard as a semantic graph</td><td>116 files &middot; 6.3 MB &middot; writes scoped to <code>feedback/</code></td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:4zv4bvmu</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_439ca57ab9e53b4edfa67e99da1b70948c297d323376c890292dc2f0876aa15c%3A4zv4bvmu" rel="noopener" target="_blank">open live &#8599;</a></td></tr>
+    <tr><td><a href="content-transformation-proxy/index.html">Content-Transformation Proxy</a></td><td><code>3c90c2bff2b1</code></td><td>as-built engineering brief</td><td>140 files &middot; 63 MB &middot; slides, diagrams and source PDFs</td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:3c90c2bff2b1</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_18bf8b2aa558fec879edb39c79ee66d6b9594ada2dff71039b3f66f5b14e4839%3A3c90c2bff2b1" rel="noopener" target="_blank">open live &#8599;</a></td></tr>
+    <tr><td><a href="pentest-report/index.html">Penetration Test Report</a></td><td><code>o4lrwx02</code></td><td>security report (fictional)</td><td>93 files &middot; 6.4 MB &middot; retest script per finding</td><td><code style="word-break:break-all;font-size:.72rem">sgit_rk1_<read-key-redacted>:o4lrwx02</code></td><td><a href="https://dev.vault.sgraph.ai/#sgit_rk1_14042259ecbec2d0c7c4e68963695c4ceeeeb652767d25b777024a4f05ccd025%3Ao4lrwx02" rel="noopener" target="_blank">open live &#8599;</a></td></tr>
+  </table></div>
+  <p>The machine-first version of this list is <a href="../../catalogue/index.html">the catalogue</a> — an index of vaults that is itself a vault, updated by an sgit push with no site deploy. New entries start there: a read key and one line, the rest derived. The walkthrough of how a vault gets published at all — creation, audit, deliberate key publication, embed — is on <a href="../vault-app-embed.html">the embed demo page</a>.</p>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">sgit<span>.ai</span></div>
+    <p>sgit is git for encrypted vaults — clone, commit, branch and merge files that are encrypted with AES-256-GCM before they leave your machine. Open source, Apache-2.0, in beta and powering production workflows.</p>
+    <p class="vaultnote">🔒 This site is itself served from an encrypted SG/Send vault — the page you are reading was decrypted in your browser. The medium is the message.</p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.2.45</a> · <a href="../../admin/index.html">engineering</a> · <a href="index.md" title="The same page as plain markdown — for agents, and for reading without the styling">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>Docs</h4>
+    <a href="../../docs/what-is-sgit.html">What is sgit</a>
+    <a href="../../docs/installation.html">Installation</a>
+    <a href="../../docs/quickstart.html">Quickstart</a>
+    <a href="../../docs/sgit-for-git-users.html">sgit for git users</a>
+    <a href="../../docs/agents.html">Working with AI agents</a>
+    <a href="../../docs/limitations.html">When NOT to use sgit</a>
+  </div>
+  <div>
+    <h4>SG/Vault platform</h4>
+    <a href="../../vault/index.html">SG/Vault &amp; the platform</a>
+    <a href="../../vault/vault-apps.html">Building vault apps</a>
+    <a href="../../vault/sg-bridge.html">The window.sg bridge</a>
+    <a href="../../vault/content-authoring.html">Content authoring</a>
+    <a href="../../vault/sub-vaults.html">Sub-vaults</a>
+    <a href="../../vault/git-and-vaults.html">Git repos inside vaults</a>
+    <a href="../../vault/static-hosting.html">Static hosting</a>
+    <a href="https://sgraph.ai">More at sgraph.ai</a>
+  </div>
+  <div>
+    <h4>Project</h4>
+    <a href="https://github.com/SGit-AI/SGit-AI__CLI">GitHub</a>
+    <a href="../../security/index.html">Security</a>
+    <a href="../../why/index.html">Why does this exist?</a>
+    <a href="../../use-cases/index.html">Use cases</a>
+    <a href="../../case-studies/index.html">Case studies</a>
+    <a href="../../skills/index.html">Skills for AI agents</a>
+    <a href="../../briefs/index.html">Cross-team briefs</a>
+    <a href="../../llms.txt">llms.txt</a>
+    <a href="../../llms-full.txt">llms-full.txt</a>
+    <a href="../../admin/index.html">Admin &amp; engineering</a>
+    <a href="../../admin/versions.html">Release history</a>
+  </div>
+</div></footer>
+
+<script>
+(function(){var R=document.documentElement.getAttribute('data-root')||'';var V='?v=' + 'v0.2.45';var C=[R,'','../','/'].filter(function(v,i,a){return a.indexOf(v)===i});
+function wait(ms){return new Promise(function(res){var t=Date.now();(function p(){if(window.sg)return res(window.sg);if(Date.now()-t>ms)return res(null);setTimeout(p,60)})()})}
+function grab(sg,p){return new Promise(function(res){(async function(){if(sg&&sg.vfs&&sg.vfs.readText){try{var t=await sg.vfs.readText(p);if(t)return res(t)}catch(e){}}try{var r=await fetch(p+V);if(r.ok)return res(await r.text())}catch(e){}res(null)})()})}
+async function css(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/site.css';if(sg&&sg.loadCss){try{await sg.loadCss(p);return}catch(e){}}var t=await grab(sg,p);if(t){var s=document.createElement('style');s.textContent=t;document.head.appendChild(s);return}}}
+async function js(sg){for(var i=0;i<C.length;i++){var p=C[i]+'assets/site.js';if(sg&&sg.loadJs){try{await sg.loadJs(p);return}catch(e){}}var t=await grab(sg,p);if(t){try{(0,eval)(t)}catch(e){console.error('[site] js failed',e)}return}}}
+async function boot(){var inVault=false;try{inVault=(window!==window.parent)||location.protocol==='blob:'}catch(e){inVault=true}
+var sg=inVault?await wait(2500):null;await css(sg);await js(sg);document.documentElement.classList.add('ready');try{window.parent&&window.parent.postMessage({type:'sg-app-ready'},'*')}catch(e){}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();})();
+</script>
+</body>
+</html>

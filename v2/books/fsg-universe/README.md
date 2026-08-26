@@ -1,3 +1,24 @@
+> ## Status: the book is written
+>
+> A complete draft of the Universe volume is in this folder, built on branch
+> `claude/fsg-universe-book-ggt29z`.
+>
+> | | |
+> |---|---|
+> | **The book, in print** | [`fsg-universe.pdf`](fsg-universe.pdf) — 91 pages, self-contained, reads offline start to finish |
+> | **The book, on the web** | [`index.html`](index.html) — the hub, plus one page per chapter, each rendering its own markdown |
+> | **The text** | `content/*.md` — twelve chapters. The prose is authored; every entry, table and count is generated |
+> | **The machine twin** | [`data/universe.json`](data/universe.json) — 90 concepts, 168 verb-named edges, 63 declared sources |
+> | **The gate** | `build/validate.py` — re-reads every quote out of the source it names; `build/gen_chapters.py --check` fails if a chapter lags the data |
+> | **The whole chain** | `build/build.sh` (add `--figures` to re-photograph the pages) |
+>
+> **Not yet done: the release to `dev`.** The pages are not in `sitemap.xml` or the nav, and
+> `admin/build/version.txt` has not been bumped. `admin/build/validate.js` therefore reports
+> the thirteen new pages as missing from the sitemap, which is exactly what it should say
+> until the release ritual runs.
+>
+> The initial prompt this session was given follows, unchanged.
+
 # Book A — the Universe volume · start here
 
 You are the writing session for **the Universe volume of "Fractal Semantic Graphs:

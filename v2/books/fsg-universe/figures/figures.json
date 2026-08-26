@@ -1,0 +1,88 @@
+{
+ "note": "Screenshots of the real pages, served from this repository at the commit that built this book. A figure that could not be captured is recorded below with the reason, rather than shipped as a blank.",
+ "estate_version": "v0.5.11",
+ "captured": "2026-08-26",
+ "figures": [
+  {
+   "name": "universe-reader",
+   "path": "/v2/universe/thinking-in-graphs.html",
+   "caption": "The anchored reader. The document's extraction on the left, the frozen source and its local graph on the right, with anchor highlights driven by the byte offsets a build gate verifies rather than by re-searching the text.",
+   "viewport": [
+    1440,
+    1000
+   ],
+   "file": "universe-reader.png"
+  },
+  {
+   "name": "universe-graph",
+   "path": "/v2/universe/thinking-in-graphs.graph.html",
+   "caption": "The same document's graph on its own page, with the pinned summits framing the canvas and the free nodes settled between them.",
+   "viewport": [
+    1440,
+    1000
+   ],
+   "file": "universe-graph.png"
+  },
+  {
+   "name": "universe-files",
+   "path": "/v2/universe/thinking-in-graphs.files.html",
+   "caption": "The document's folder, raw and viewed: the authored artefacts and the generated core data, every file readable as exact bytes or as a data-driven view.",
+   "viewport": [
+    1440,
+    950
+   ],
+   "file": "universe-files.png"
+  },
+  {
+   "name": "wclm",
+   "path": "/v2/wclm/index.html",
+   "caption": "The deterministic transformer. The layers as columns, attention drawn as weighted arcs between them, and the winning meaning lit with the arithmetic that produced it.",
+   "viewport": [
+    1440,
+    1000
+   ],
+   "file": "wclm.png"
+  },
+  {
+   "name": "wclm-operator",
+   "path": "/v2/wclm/operators/bind/index.html",
+   "caption": "One engine as a first-class folder: its book page, its generated schema, its provenance-marked data, its replayed example vectors and its workbench.",
+   "viewport": [
+    1440,
+    1000
+   ],
+   "file": "wclm-operator.png"
+  },
+  {
+   "name": "methods",
+   "path": "/v2/methods/index.html",
+   "caption": "The methods register. Every technique used in earnest before being written down, each naming the release where it first shipped.",
+   "viewport": [
+    1280,
+    950
+   ],
+   "file": "methods.png"
+  },
+  {
+   "name": "lexicon",
+   "path": "/v2/lexicon/index.html",
+   "caption": "The scoped lexicon. Each term with what it is near but is not, and every override recorded with its authority and the superseded definition kept visible.",
+   "viewport": [
+    1280,
+    950
+   ],
+   "file": "lexicon.png"
+  },
+  {
+   "name": "capability-scale",
+   "path": "/v1/vaults/capability-scale.html",
+   "caption": "The capability scale. Five vaults' permission blocks lined up into a floor, a hard middle and a ceiling, which is this book's thesis in a security register.",
+   "viewport": [
+    1280,
+    950
+   ],
+   "file": "capability-scale.png"
+  }
+ ],
+ "missing": []
+}

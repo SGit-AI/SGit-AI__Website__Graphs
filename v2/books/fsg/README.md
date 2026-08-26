@@ -42,3 +42,28 @@ initial prompt.
 
 The title is locked. Everything else — structure, voice, chapter count, figures — is
 yours: decide confidently and record your choices in the book's front matter.
+
+---
+
+## Status: written
+
+The book exists. Written in one session on branch `claude/fsg-book-writing-uy6thv`
+(the session's designated branch; the pack named `claude/book-b-fsg`).
+
+- **The markdown is the source of truth**: `content/00__front-matter.md` through
+  `content/17__reference-card.md`. Nothing else in this folder is authored.
+- **The web pages**: `index.html` plus one page per chapter, each rendering its own
+  markdown client-side, per the estate's convention.
+- **The PDF**: `fsg.pdf`, 119 pages, 4.7 MB, built by `build.py` (weasyprint), sent to the
+  founder when the draft was complete.
+- **The machine surface**: `book.json`, every chapter with its part, word count and the
+  SHA-256 of its markdown.
+- **Rebuild everything**: `python3 v2/books/fsg/build.py`.
+
+Fifteen chapters in five parts, plus front matter, a colophon and a reference card;
+38,000 words; 38 figures, 17 of them screenshots, the screenshots taken from the real pages at v0.5.11 with the
+repository's own headless-browser harness.
+
+**Not yet done:** the release to `dev` (version bump, versions row, generator chain,
+`validate.js`, nav and sitemap wiring). The writing session held it for an explicit
+go-ahead rather than pushing to a shared branch on its own.
