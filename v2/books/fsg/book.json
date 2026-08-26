@@ -1,7 +1,7 @@
 {
  "title": "Fractal Semantic Graphs: Meaning Through Connectivity",
  "slug": "fsg",
- "version": "v0.5.11",
+ "version": "v0.5.12",
  "date": "26 August 2026",
  "licence": "CC BY 4.0",
  "words": 38029,
@@ -9,7 +9,7 @@
   "file": "fsg.pdf",
   "pages": 119,
   "engine": "weasyprint 69.0",
-  "bytes": 4681420
+  "bytes": 4681556
  },
  "parts": [
   {

@@ -327,16 +327,22 @@ h1, h2, h3, h4 { font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-ser
                  font-weight: 600; color: #111; text-align: left; hyphens: none; }
 
 /* ---- cover ---- */
+/* Light on purpose: a cover that prints on an ordinary printer without laying down
+   a full page of ink, and photocopies without going grey. The colour is carried by the
+   rules and the kicker, not by the ground. */
 .cover { page: cover; height: 240mm; padding: 30mm 18mm 16mm 18mm; box-sizing: border-box;
-         background: #0f2a2a; color: #f4f1ea; break-after: page; }
+         background: #faf8f3; color: #1b1b1b; break-after: page;
+         border-top: 6mm solid #17423a; }
 .cover .kicker { font-family: "Source Sans 3", sans-serif; font-size: 8.5pt; letter-spacing: .18em;
-                 text-transform: uppercase; color: #7fbfae; }
-.cover h1 { font-size: 27pt; line-height: 1.1; margin: 10mm 0 0; color: #fff; }
-.cover .sub { font-size: 15pt; margin: 5mm 0 0; color: #a9d6c8; font-style: italic; }
-.cover .rule { height: 2px; background: #2f5a52; margin: 12mm 0 8mm; }
-.cover p { font-size: 9.5pt; color: #cfe3dc; text-align: left; margin: 0 0 3mm; }
-.cover .foot { position: absolute; bottom: 18mm; left: 18mm; right: 18mm;
-               font-family: "Source Sans 3", sans-serif; font-size: 8pt; color: #8fb9ae; }
+                 text-transform: uppercase; color: #2f7a68; }
+.cover h1 { font-size: 27pt; line-height: 1.1; margin: 10mm 0 0; color: #11332c; }
+.cover .sub { font-size: 15pt; margin: 5mm 0 0; color: #2f5a52; font-style: italic; }
+.cover .rule { height: 2px; background: #17423a; margin: 12mm 0 8mm; }
+.cover p { font-size: 9.5pt; color: #33413d; text-align: left; margin: 0 0 3mm; }
+.cover p b { color: #11332c; }
+.cover .foot { position: absolute; bottom: 18mm; left: 18mm; right: 18mm; padding-top: 3mm;
+               border-top: 1px solid #d7d3c8;
+               font-family: "Source Sans 3", sans-serif; font-size: 8pt; color: #5c6a66; }
 
 /* ---- part title pages ---- */
 .part { page: part; break-before: page; break-after: page; padding-top: 42mm; }

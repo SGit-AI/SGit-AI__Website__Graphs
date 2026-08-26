@@ -45,6 +45,8 @@ NAV = [
         ("The second edition &middot; current", "v2/index.html"),
         ("&hellip; the dev pack: the plan", "v2/dev-pack/index.html"),
         ("&hellip; the review packs", "v2/packs/index.html"),
+        ("Fractal Semantic Graphs &middot; the second book", "v2/books/fsg/index.html"),
+        ("&hellip; read it as one PDF", "v2/books/fsg/fsg.pdf"),
         ("The first edition &middot; frozen", "v1/book/index.html"),
         ("&hellip; read it in one page", "v1/book/single.html"),
         ("&hellip; what changed between versions", "v1/book/changes.html"),
@@ -53,8 +55,8 @@ NAV = [
         ("&hellip; the altitude ladder", "v1/altitudes/index.html"),
         ("&hellip; the print PDF (6&times;9)", "v1/book/meaning-through-connectivity.pdf"),
         ("&hellip; the screen PDF (tablet)", "v1/book/meaning-through-connectivity-screen.pdf"),
-    ], ("v2/index", "v2/dev-pack/", "v2/packs/", "book/", "v1/book/", "v1/altitudes/",
-        "v1/reviews/", "v1/docs/")),
+    ], ("v2/index", "v2/dev-pack/", "v2/packs/", "v2/books/", "book/", "v1/book/",
+        "v1/altitudes/", "v1/reviews/", "v1/docs/")),
     # the v0.4 era built the second edition's working surface; it gets its own menu
     ("The universe", "v2/universe/index.html", [
         ("Layer 1: the documents, extracted", "v2/universe/index.html"),

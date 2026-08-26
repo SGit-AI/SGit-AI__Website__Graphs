@@ -1,7 +1,10 @@
 # The second edition
 
 This directory is where the second edition of the book is being made, from the top down,
-as a graph. **No book text exists yet.** What lives here is everything *about* making it:
+as a graph. **The second edition's own text does not exist yet.** What lives here is
+everything *about* making it, and, since v0.5.12, a bookshelf: `books/` holds the books
+commissioned from this estate, of which `books/fsg/` (*Fractal Semantic Graphs: Meaning
+Through Connectivity*) is written. What lives here otherwise:
 the plan ([the dev pack](dev-pack/index.html), raw under `dev-packs/`), the founder's
 memos (raw under `briefs/`, read at [memos/](memos/index.html)), the review packs
 ([packs/](packs/index.html)), and, as they arrive, the project management, the universe

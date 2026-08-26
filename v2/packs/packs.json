@@ -1,5 +1,5 @@
 {
- "version": "v0.5.11",
+ "version": "v0.5.12",
  "date": "26 August 2026",
  "packs": [
   {
@@ -9,7 +9,7 @@
    "built": "every release",
    "who": "The author, an editor, or a reviewing agent who has read nothing else",
    "lead": "The vocabulary this book is being built out of, what the twenty-one carried source documents actually say about it, where the material contradicts itself, and what is still unanswered. Assembled in one sequence so that none of it depends on clicking through a website.",
-   "version": "v0.5.11",
+   "version": "v0.5.12",
    "date": "26 August 2026",
    "pages": 22,
    "engine": "weasyprint 69.0",
@@ -28,7 +28,7 @@
     }
    ],
    "bytes": 44033,
-   "pdf_bytes": 625762
+   "pdf_bytes": 625748
   }
  ]
 }
