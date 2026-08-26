@@ -49,6 +49,8 @@ NAV = [
         ("&hellip; read it as one PDF", "v2/books/fsg/fsg.pdf"),
         ("&hellip; the Universe volume: the atlas", "v2/books/fsg-universe/index.html"),
         ("&hellip; &hellip; read it as one PDF", "v2/books/fsg-universe/fsg-universe.pdf"),
+        ("&hellip; the making-of: creating a book this way", "v2/books/making-a-book/index.html"),
+        ("&hellip; &hellip; read it as one PDF", "v2/books/making-a-book/making-a-book.pdf"),
         ("The first edition &middot; frozen", "v1/book/index.html"),
         ("&hellip; read it in one page", "v1/book/single.html"),
         ("&hellip; what changed between versions", "v1/book/changes.html"),
