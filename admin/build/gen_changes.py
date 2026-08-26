@@ -95,8 +95,9 @@ tags = sorted((t for t in git("tag").stdout.split() if re.fullmatch(r"v\d+\.\d+\
 # diff that is silently missing releases, which is exactly what happened before v0.3.26 —
 # fifteen tags present, thirty-three releases published, and nothing checking. The release
 # history in admin/versions.html is the authority, so compare against it and fail loudly.
-rows = re.findall(r'class="vnum">(v\d+\.\d+\.\d+)<',
-                  (ROOT / "admin/versions.html").read_text())
+rows = []
+for page in sorted(ROOT.glob("admin/versions*.html")):
+    rows += re.findall(r'class="vnum">(v\d+\.\d+\.\d+)<', page.read_text())
 absent = [v for v in rows if v != VERSION and v not in tags]
 if absent:
     raise SystemExit(

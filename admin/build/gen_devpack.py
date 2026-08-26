@@ -41,6 +41,12 @@ BLURB = {
 # the working packs: everything under dev-packs/ that is not the main pack.
 # short: the url prefix for the rendered pages. label: how the hub names the pack.
 SIDE = [
+ {"dir": "v0.5.0__the-v04-retrospective", "short": "retro", "label": "The v0.4 retrospective",
+  "packline": "v0.5.0 &middot; closing the v0.4 era",
+  "statusline": "RETROSPECTIVE &mdash; the era is closed; the judgements are the agent's",
+  "blurbs": {
+   "00__the-v04-retrospective.md": "Forty-one releases in four days, weighed: the seven achievements that compounded, the conclusions, the transferable learnings (persistence makes identity; fit is a decision; the measurement is the discovery), and what v0.5 opens.",
+  }},
  {"dir": "design__immediate-connection", "short": "design", "label": "The immediate-connection register",
   "packline": "design &middot; immediate connection",
   "statusline": "STANDING &mdash; updated as patterns land and gaps close",

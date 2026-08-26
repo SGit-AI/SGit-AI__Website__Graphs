@@ -36,9 +36,13 @@ TURNS = {
 
 
 def releases():
-    t = (ROOT / "admin/versions.html").read_text()
-    rows = re.findall(r'class="vnum">(v\d+\.\d+\.\d+)</td>\s*<td>([^<]+)</td>', t)
-    return list(reversed(rows))          # oldest first
+    """All releases across the era pages (the history is split by era since v0.5.0)."""
+    rows = []
+    for page in sorted(ROOT.glob("admin/versions*.html")):
+        rows += re.findall(r'class="vnum">(v\d+\.\d+\.\d+)</td>\s*<td>([^<]+)</td>',
+                           page.read_text())
+    rows.sort(key=lambda r: [int(x) for x in r[0][1:].split(".")])
+    return rows                          # oldest first
 
 
 def first_edition_index():
@@ -78,7 +82,7 @@ HEAD = """<!doctype html>
 
 <main class="doc">
   <h1>graphs.sgit.ai</h1>
-  <p class="lead">A reference site about one use of graphs: <b>meaning through connectivity</b>. A node carries no inherent meaning, and what a thing <em>is</em> emerges from the edges traceable from it. There are now <b>two editions</b> of the book that argues this. The first is finished and frozen. The second is being written from the top down, as a graph, and does not exist yet.</p>
+  <p class="lead">A reference site about one use of graphs: <b>meaning through connectivity</b>. A node carries no inherent meaning, and what a thing <em>is</em> emerges from the edges traceable from it. There are now <b>two editions</b> of the book that argues this. The first is finished and frozen. The second is being written from the top down, as a graph &mdash; and while its text does not exist yet, <b>its working surface does</b>: an interactive reader that joins a document&rsquo;s extraction, its frozen bytes and its live graph, built release by release through the <a href="admin/versions-v0.4.html">v0.4 era</a>.</p>
 
   <div class="tablewrap">
   <table>
@@ -91,17 +95,24 @@ HEAD = """<!doctype html>
       </tr>
       <tr>
         <td><b>The second edition</b><br><span class="small dim">Fractal Semantic Graphs: Meaning Through Connectivity</span></td>
-        <td><span class="rstate rs-open">in preparation &middot; the plan and its scaffolding</span></td>
+        <td><span class="rstate rs-open">in construction &middot; the working surface is live</span></td>
         <td><a href="v2/index.html">Its front page</a> &middot; <a href="v2/dev-pack/index.html">the plan</a> &middot; <a href="v2/memos/index.html">the memos</a> &middot; <a href="v2/packs/index.html">the review packs</a></td>
+      </tr>
+      <tr>
+        <td><b>The universe</b><br><span class="small dim">the second edition&rsquo;s working surface</span></td>
+        <td><span class="rstate rs-applied">live &middot; the pilot document, extracted to the word</span></td>
+        <td><a href="v2/universe/thinking-in-graphs.html">The reader</a> &middot; <a href="v2/universe/thinking-in-graphs.graph.html">the graph, standalone</a> &middot; <a href="v2/methods/index.html">34 methods</a> &middot; <a href="v2/dev-pack/retro-00-the-v04-retrospective.html">the v0.4 retrospective</a></td>
       </tr>
     </tbody>
   </table>
   </div>
 
+  <div class="note"><b>What the working surface is.</b> One pilot document, <em>Thinking in Graphs</em>, carried whole and extracted twice over: a layer 1 graph of what it says (57 anchored nodes, every quote byte-verified on every build) and a core graph of what it <em>is</em> (every section, block, sentence and word a node with a stable identity, the markdown rebuildable from the graph byte-for-byte). Around them, an instrument: pinned summits, stable-add layouts that never scramble the mental map, path queries you write by walking, a token analysis that knows 45% of the document is padding, and a <a href="v2/universe/thinking-in-graphs.graph.html">standalone graph page</a> that fits a phone. The <a href="v2/dev-pack/retro-00-the-v04-retrospective.html">retrospective</a> weighs all of it.</div>
+
   <div class="note"><b>Why there are two, and why the first one is frozen.</b> The first edition was written the way books usually are: prose first, structure discovered along the way, graphs added afterwards as illustration. It works, and it argues <em>up</em> to its thesis, which means a reader who stops at chapter three never reaches the claim the book is named after. The second edition starts at the claim and descends, so that a reader who stops at any altitude has a complete book. The first edition is not deleted or improved: it is the record of how this was worked out, including three corrections it made to itself, and it is <b>hashed and gated so the build fails if a byte of it changes</b>.</div>
 
   <h2 id="sequence">The sequence of events</h2>
-  <p>Thirty-plus releases in three days, which is what happens when the projection chain is gated and a release costs a commit. The full table is <a href="admin/versions.html">the release history</a>, with a paragraph on each. The turns that changed the method rather than adding to it:</p>
+  <p>Seventy-plus releases across three eras, which is what happens when the projection chain is gated and a release costs a commit. The history is kept whole by era: <a href="admin/versions.html">current (v0.5)</a> &middot; <a href="admin/versions-v0.4.html">the v0.4 era</a> (the working surface, 41 releases) &middot; <a href="admin/versions-earlier.html">the beginnings</a>. The turns that changed the method rather than adding to it:</p>
   <div class="tablewrap">
   <table class="frontrel">
     <thead><tr><th>Release</th><th>Date</th><th>What turned</th></tr></thead>
@@ -110,7 +121,7 @@ HEAD = """<!doctype html>
     </tbody>
   </table>
   </div>
-  <p class="small dim">Generated from <a href="admin/versions.html">the release table</a> on every build, so it cannot drift from it.</p>
+  <p class="small dim">Generated from <a href="admin/versions.html">the release tables</a> (all eras) on every build, so it cannot drift from them.</p>
 
   <h2 id="estate">What else is here</h2>
   <p>Some of this belongs to the first edition and moved with it. Some belongs to the site and spans both editions.</p>
