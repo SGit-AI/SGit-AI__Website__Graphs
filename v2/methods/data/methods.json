@@ -372,6 +372,19 @@
    ],
    "status": "in use",
    "for_the_book": "Design taste can be captured as an executable register: when the target experience is written down as patterns plus a checklist, every future contributor (human or agent) extends the instinct on purpose instead of by luck."
+  },
+  {
+   "id": "core-graph",
+   "name": "The core graph: document to word",
+   "what": "Brief 29's foundational move: the document transformed into a graph at every level of its own structure — document, section, block (paragraph, bullet item, code, quote, table), sentence, word — each level a node with an ID linked to its parent, like an AST driven by the content. Inline markup becomes span nodes covering the word instances they mark, and every distinct word gets a form node carrying its count and every instance, so emphasis and repetition are queryable structure. IDs are the reference currency at every level; byte ranges are kept only as build-time verification metadata, because pointing at character offsets breaks the moment the document changes. Storage answers the one-big-file question with shards: an index with the section skeleton, one shard per section fetched only when a viewer expands it, and the word-form index. Four build gates prove the transform is lossless: block ranges reassemble each section, sentences reassemble each block, form totals equal instance totals, and every span covers the words it claims.",
+   "born": "v0.4.37",
+   "implemented_in": [
+    "admin/build/gen_coregraph.py",
+    "assets/universe/core/coretree.js",
+    "assets/universe/components/core-tree.js"
+   ],
+   "status": "in use",
+   "for_the_book": "Before a graph can carry meaning about a document it must first BE the document: a lossless, ID-addressed transform of every structural level, so that everything built above it points at stable identities instead of fragile offsets."
   }
  ]
 }

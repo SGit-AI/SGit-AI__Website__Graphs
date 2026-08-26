@@ -6,8 +6,14 @@
 import { PRESET_VIEWS } from '../core/views.js';
 import { neighbourhoodIds, graphStats, statsText } from '../core/explore.js';
 
-/** The strip: presets, layout, labels, physics, node-pack sources, view, explore. */
+/** The strip, in two tabs (brief 29: the controls were outgrowing one row):
+    canvas holds how the graph looks, content holds what it shows and how it
+    is walked. The mini graph bypasses the tabs and keeps its two groups. */
 export const STRIP_HTML =
+  '<div class="gtabs">' +
+  '  <button data-gtab="canvas">canvas</button>' +
+  '  <button data-gtab="content">content</button></div>' +
+  '<div class="gtabpane" data-gtabpane="canvas">' +
   '<div class="grow" data-g="views"><span class="glab">views</span>' +
   PRESET_VIEWS.map((v) => '  <button data-gview="' + v.key + '">' + v.label + '</button>').join('') +
   '</div>' +
@@ -22,6 +28,8 @@ export const STRIP_HTML =
   '  <span class="gval">string</span><input type="range" id="uni-glen" min="40" max="280" step="10">' +
   '  <span class="gval">pull</span><input type="range" id="uni-gpull" min="10" max="300" step="10">' +
   '  <span class="small dim">(cose)</span></div>' +
+  '</div>' +
+  '<div class="gtabpane" data-gtabpane="content">' +
   '<div class="grow" data-g="sources"><span class="glab">sources</span>' +
   '  <button data-gdoc="1">document</button>' +
   '  <button data-gtree="1">doc tree</button>' +
@@ -41,8 +49,10 @@ export const STRIP_HTML =
   '  <button data-gboard="1" title="Drag the peaks between the four border areas">peak board</button>' +
   '  <button data-galshow="1" title="Reveal the invisible alignment lines">align lines</button>' +
   '  <button data-gpaths="1">paths to peaks</button>' +
+  '  <button data-gcore="1" title="Brief 29: the document expanded bit by bit, all the way to the word">core tree</button>' +
   '  <button data-gfit="1">fit</button>' +
-  '  <button data-gclear="1">clear focus</button></div>';
+  '  <button data-gclear="1">clear focus</button></div>' +
+  '</div>';
 
 /**
  * Apply a preset view: merge its preference bundle and emit each change so the
@@ -70,6 +80,9 @@ export function applyPresetView(host, prefs, key) {
  * @param {object} p - the graph preferences
  */
 export function reflectStrip(root, p) {
+  const tab = p.gtab || 'content';
+  root.querySelectorAll('[data-gtab]').forEach((x) => x.classList.toggle('on', x.getAttribute('data-gtab') === tab));
+  root.querySelectorAll('[data-gtabpane]').forEach((x) => x.classList.toggle('on', x.getAttribute('data-gtabpane') === tab));
   root.querySelectorAll('[data-glay]').forEach((x) => x.classList.toggle('on', x.getAttribute('data-glay') === p.glay));
   root.querySelectorAll('[data-gsize]').forEach((x) => x.classList.toggle('on', x.getAttribute('data-gsize') === p.gsize));
   const flags = { glabels: p.labels, gboxed: p.gboxed, gdoc: p.gdoc, gtree: p.gtree,

@@ -1,0 +1,485 @@
+{
+ "version": "v0.4.37",
+ "slug": "thinking-in-graphs",
+ "doc": "doc:thinking-in-graphs",
+ "title": "Thinking in Graphs: Meaning Through Connectivity",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 186,
+  "sentences": 342,
+  "words": 4221,
+  "spans": 143
+ },
+ "forms": "words.json",
+ "sections": [
+  {
+   "id": "doc:thinking-in-graphs",
+   "title": "Thinking in Graphs: Meaning Through Connectivity",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 19
+   },
+   "shard": "sec-01.json"
+  },
+  {
+   "id": "sec:What This Document Is",
+   "title": "What This Document Is",
+   "level": 2,
+   "parent": "doc:thinking-in-graphs",
+   "counts": {
+    "blocks": 4,
+    "sentences": 6,
+    "words": 123
+   },
+   "shard": "sec-02.json"
+  },
+  {
+   "id": "sec:Part 1: Everything Is a Node",
+   "title": "Part 1: Everything Is a Node",
+   "level": 2,
+   "parent": "doc:thinking-in-graphs",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   }
+  },
+  {
+   "id": "sec:Nodes Have No Obligation to Explain Themselves",
+   "title": "Nodes Have No Obligation to Explain Themselves",
+   "level": 3,
+   "parent": "sec:Part 1: Everything Is a Node",
+   "counts": {
+    "blocks": 3,
+    "sentences": 10,
+    "words": 134
+   },
+   "shard": "sec-03.json"
+  },
+  {
+   "id": "sec:The Safe_UInt__Port Example",
+   "title": "The Safe_UInt__Port Example",
+   "level": 3,
+   "parent": "sec:Part 1: Everything Is a Node",
+   "counts": {
+    "blocks": 11,
+    "sentences": 23,
+    "words": 242
+   },
+   "shard": "sec-04.json"
+  },
+  {
+   "id": "sec:This Applies to Everything",
+   "title": "This Applies to Everything",
+   "level": 3,
+   "parent": "sec:Part 1: Everything Is a Node",
+   "counts": {
+    "blocks": 6,
+    "sentences": 12,
+    "words": 187
+   },
+   "shard": "sec-05.json"
+  },
+  {
+   "id": "sec:Part 2: Meaning Through Connectivity",
+   "title": "Part 2: Meaning Through Connectivity",
+   "level": 2,
+   "parent": "doc:thinking-in-graphs",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   }
+  },
+  {
+   "id": "sec:Meaning Is Not Declared — It Is Discovered",
+   "title": "Meaning Is Not Declared — It Is Discovered",
+   "level": 3,
+   "parent": "sec:Part 2: Meaning Through Connectivity",
+   "counts": {
+    "blocks": 4,
+    "sentences": 16,
+    "words": 197
+   },
+   "shard": "sec-06.json"
+  },
+  {
+   "id": "sec:The Review Example",
+   "title": "The Review Example",
+   "level": 3,
+   "parent": "sec:Part 2: Meaning Through Connectivity",
+   "counts": {
+    "blocks": 12,
+    "sentences": 9,
+    "words": 88
+   },
+   "shard": "sec-07.json"
+  },
+  {
+   "id": "sec:Finding Common Ground Through Graph Analysis",
+   "title": "Finding Common Ground Through Graph Analysis",
+   "level": 3,
+   "parent": "sec:Part 2: Meaning Through Connectivity",
+   "counts": {
+    "blocks": 8,
+    "sentences": 14,
+    "words": 168
+   },
+   "shard": "sec-08.json"
+  },
+  {
+   "id": "sec:Compatibility Is a Graph Computation",
+   "title": "Compatibility Is a Graph Computation",
+   "level": 3,
+   "parent": "sec:Part 2: Meaning Through Connectivity",
+   "counts": {
+    "blocks": 3,
+    "sentences": 4,
+    "words": 114
+   },
+   "shard": "sec-09.json"
+  },
+  {
+   "id": "sec:Part 3: The Fractal Principle",
+   "title": "Part 3: The Fractal Principle",
+   "level": 2,
+   "parent": "doc:thinking-in-graphs",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   }
+  },
+  {
+   "id": "sec:Every Scope Defines Its Own Vocabulary",
+   "title": "Every Scope Defines Its Own Vocabulary",
+   "level": 3,
+   "parent": "sec:Part 3: The Fractal Principle",
+   "counts": {
+    "blocks": 8,
+    "sentences": 18,
+    "words": 244
+   },
+   "shard": "sec-10.json"
+  },
+  {
+   "id": "sec:Name Clashes Are Normal",
+   "title": "Name Clashes Are Normal",
+   "level": 3,
+   "parent": "sec:Part 3: The Fractal Principle",
+   "counts": {
+    "blocks": 3,
+    "sentences": 14,
+    "words": 159
+   },
+   "shard": "sec-11.json"
+  },
+  {
+   "id": "sec:Incompatibility and Missing Pieces Are Expected",
+   "title": "Incompatibility and Missing Pieces Are Expected",
+   "level": 3,
+   "parent": "sec:Part 3: The Fractal Principle",
+   "counts": {
+    "blocks": 6,
+    "sentences": 13,
+    "words": 155
+   },
+   "shard": "sec-12.json"
+  },
+  {
+   "id": "sec:Part 4: Anchor Nodes and Reference Graphs",
+   "title": "Part 4: Anchor Nodes and Reference Graphs",
+   "level": 2,
+   "parent": "doc:thinking-in-graphs",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   }
+  },
+  {
+   "id": "sec:The Semantic Web's Insight (and Mistake)",
+   "title": "The Semantic Web's Insight (and Mistake)",
+   "level": 3,
+   "parent": "sec:Part 4: Anchor Nodes and Reference Graphs",
+   "counts": {
+    "blocks": 5,
+    "sentences": 13,
+    "words": 132
+   },
+   "shard": "sec-13.json"
+  },
+  {
+   "id": "sec:The Graph-First Correction",
+   "title": "The Graph-First Correction",
+   "level": 3,
+   "parent": "sec:Part 4: Anchor Nodes and Reference Graphs",
+   "counts": {
+    "blocks": 5,
+    "sentences": 16,
+    "words": 184
+   },
+   "shard": "sec-14.json"
+  },
+  {
+   "id": "sec:What Anchor Nodes Actually Are",
+   "title": "What Anchor Nodes Actually Are",
+   "level": 3,
+   "parent": "sec:Part 4: Anchor Nodes and Reference Graphs",
+   "counts": {
+    "blocks": 8,
+    "sentences": 13,
+    "words": 158
+   },
+   "shard": "sec-15.json"
+  },
+  {
+   "id": "sec:Part 5: Confidence as a Function of Connectivity",
+   "title": "Part 5: Confidence as a Function of Connectivity",
+   "level": 2,
+   "parent": "doc:thinking-in-graphs",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   }
+  },
+  {
+   "id": "sec:The Confidence Spectrum",
+   "title": "The Confidence Spectrum",
+   "level": 3,
+   "parent": "sec:Part 5: Confidence as a Function of Connectivity",
+   "counts": {
+    "blocks": 3,
+    "sentences": 3,
+    "words": 57
+   },
+   "shard": "sec-16.json"
+  },
+  {
+   "id": "sec:Honest Uncertainty Is the Default",
+   "title": "Honest Uncertainty Is the Default",
+   "level": 3,
+   "parent": "sec:Part 5: Confidence as a Function of Connectivity",
+   "counts": {
+    "blocks": 5,
+    "sentences": 15,
+    "words": 171
+   },
+   "shard": "sec-17.json"
+  },
+  {
+   "id": "sec:Enrichment, Not Enforcement",
+   "title": "Enrichment, Not Enforcement",
+   "level": 3,
+   "parent": "sec:Part 5: Confidence as a Function of Connectivity",
+   "counts": {
+    "blocks": 4,
+    "sentences": 7,
+    "words": 104
+   },
+   "shard": "sec-18.json"
+  },
+  {
+   "id": "sec:Part 6: Graphs of Graphs",
+   "title": "Part 6: Graphs of Graphs",
+   "level": 2,
+   "parent": "doc:thinking-in-graphs",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   }
+  },
+  {
+   "id": "sec:The Recursive Structure",
+   "title": "The Recursive Structure",
+   "level": 3,
+   "parent": "sec:Part 6: Graphs of Graphs",
+   "counts": {
+    "blocks": 7,
+    "sentences": 13,
+    "words": 162
+   },
+   "shard": "sec-19.json"
+  },
+  {
+   "id": "sec:Cross-Graph References",
+   "title": "Cross-Graph References",
+   "level": 3,
+   "parent": "sec:Part 6: Graphs of Graphs",
+   "counts": {
+    "blocks": 3,
+    "sentences": 8,
+    "words": 145
+   },
+   "shard": "sec-20.json"
+  },
+  {
+   "id": "sec:Versioning and Temporal Graphs",
+   "title": "Versioning and Temporal Graphs",
+   "level": 3,
+   "parent": "sec:Part 6: Graphs of Graphs",
+   "counts": {
+    "blocks": 4,
+    "sentences": 10,
+    "words": 153
+   },
+   "shard": "sec-21.json"
+  },
+  {
+   "id": "sec:Part 7: Practical Implications for Issues-FS",
+   "title": "Part 7: Practical Implications for Issues-FS",
+   "level": 2,
+   "parent": "doc:thinking-in-graphs",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   }
+  },
+  {
+   "id": "sec:What the Lexicon Actually Provides",
+   "title": "What the Lexicon Actually Provides",
+   "level": 3,
+   "parent": "sec:Part 7: Practical Implications for Issues-FS",
+   "counts": {
+    "blocks": 5,
+    "sentences": 7,
+    "words": 106
+   },
+   "shard": "sec-22.json"
+  },
+  {
+   "id": "sec:What Every Repo Can Do",
+   "title": "What Every Repo Can Do",
+   "level": 3,
+   "parent": "sec:Part 7: Practical Implications for Issues-FS",
+   "counts": {
+    "blocks": 6,
+    "sentences": 6,
+    "words": 72
+   },
+   "shard": "sec-23.json"
+  },
+  {
+   "id": "sec:What the System Can Observe",
+   "title": "What the System Can Observe",
+   "level": 3,
+   "parent": "sec:Part 7: Practical Implications for Issues-FS",
+   "counts": {
+    "blocks": 7,
+    "sentences": 11,
+    "words": 84
+   },
+   "shard": "sec-24.json"
+  },
+  {
+   "id": "sec:What the System Never Does",
+   "title": "What the System Never Does",
+   "level": 3,
+   "parent": "sec:Part 7: Practical Implications for Issues-FS",
+   "counts": {
+    "blocks": 8,
+    "sentences": 7,
+    "words": 60
+   },
+   "shard": "sec-25.json"
+  },
+  {
+   "id": "sec:Part 8: A Worked Example — End to End",
+   "title": "Part 8: A Worked Example — End to End",
+   "level": 2,
+   "parent": "doc:thinking-in-graphs",
+   "counts": {
+    "blocks": 1,
+    "sentences": 1,
+    "words": 27
+   },
+   "shard": "sec-26.json"
+  },
+  {
+   "id": "sec:The Setup",
+   "title": "The Setup",
+   "level": 3,
+   "parent": "sec:Part 8: A Worked Example — End to End",
+   "counts": {
+    "blocks": 5,
+    "sentences": 6,
+    "words": 43
+   },
+   "shard": "sec-27.json"
+  },
+  {
+   "id": "sec:The Graph",
+   "title": "The Graph",
+   "level": 3,
+   "parent": "sec:Part 8: A Worked Example — End to End",
+   "counts": {
+    "blocks": 8,
+    "sentences": 9,
+    "words": 139
+   },
+   "shard": "sec-28.json"
+  },
+  {
+   "id": "sec:The QA Engineer in Tokyo",
+   "title": "The QA Engineer in Tokyo",
+   "level": 3,
+   "parent": "sec:Part 8: A Worked Example — End to End",
+   "counts": {
+    "blocks": 7,
+    "sentences": 9,
+    "words": 84
+   },
+   "shard": "sec-29.json"
+  },
+  {
+   "id": "sec:The Compliance Officer in Frankfurt",
+   "title": "The Compliance Officer in Frankfurt",
+   "level": 3,
+   "parent": "sec:Part 8: A Worked Example — End to End",
+   "counts": {
+    "blocks": 6,
+    "sentences": 10,
+    "words": 107
+   },
+   "shard": "sec-30.json"
+  },
+  {
+   "id": "sec:The Open Source Contributor in Nairobi",
+   "title": "The Open Source Contributor in Nairobi",
+   "level": 3,
+   "parent": "sec:Part 8: A Worked Example — End to End",
+   "counts": {
+    "blocks": 7,
+    "sentences": 10,
+    "words": 122
+   },
+   "shard": "sec-31.json"
+  },
+  {
+   "id": "sec:Summary: Core Principles",
+   "title": "Summary: Core Principles",
+   "level": 2,
+   "parent": "doc:thinking-in-graphs",
+   "counts": {
+    "blocks": 12,
+    "sentences": 28,
+    "words": 281
+   },
+   "shard": "sec-32.json"
+  }
+ ]
+}

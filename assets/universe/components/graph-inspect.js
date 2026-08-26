@@ -55,7 +55,31 @@ function linkRows(ins, U, d) {
   return h;
 }
 
-/** Render the tapped node: details, quote, and its links both ways. */
+/* Everything on record for a node, flattened (brief 29: the inspector stops
+   mirroring the canvas's view and shows all it knows): every data field, the
+   degree both ways, and whatever extra fields the extraction carries. */
+function everythingRows(ins, d, extra) {
+  const evr = (k, v) => '<div class="ev-row"><span class="dim">' + esc(k) + '</span> ' +
+    esc(typeof v === 'object' ? JSON.stringify(v) : v) + '</div>';
+  const skip = { label: 1, family: 1 };
+  const rows = [evr('id', d.id)].concat(Object.keys(d).sort()
+    .filter((k) => k !== 'id' && !skip[k] && d[k] != null && d[k] !== '')
+    .map((k) => evr(k, d[k])));
+  const n = ins.host.cy.$id(d.id);
+  if (n.nonempty()) {
+    const eds = n.connectedEdges().filter((e) =>
+      e.data('kind') !== 'align' && e.data('kind') !== 'schema');
+    rows.push(evr('degree', eds.filter((e) => e.data('source') === d.id).length + ' out · ' +
+      eds.filter((e) => e.data('source') !== d.id).length + ' in'));
+  }
+  Object.keys(extra || {}).sort().forEach((k) => {
+    if (!(k in d) && !skip[k] && extra[k] != null && extra[k] !== '') rows.push(evr(k, extra[k]));
+  });
+  return '<h6>everything on record</h6>' + rows.join('');
+}
+
+/** Render the tapped node: details, quote, its links both ways, and the
+    full record of everything the build knows about it. */
 export function inspectNode(ins, U, d) {
   const fam = d.family || 'node';
   const head = '<span class="ndoc-fam ndoc-f-' + esc(fam) + '">' + esc(fam) + '</span> ' +
@@ -63,7 +87,8 @@ export function inspectNode(ins, U, d) {
   const links = linkRows(ins, U, d);
   if (SYNTH[fam]) {
     ins.node.innerHTML = head + '<p class="dim small">' + SYNTH[fam] +
-      (d.count ? ' · ' + d.count + ' member' + (d.count === 1 ? '' : 's') : '') + '</p>' + links;
+      (d.count ? ' · ' + d.count + ' member' + (d.count === 1 ? '' : 's') : '') + '</p>' +
+      links + everythingRows(ins, d);
     return;
   }
   ins.node.innerHTML = head + '<p class="dim small">loading the record…</p>';
@@ -74,8 +99,20 @@ export function inspectNode(ins, U, d) {
       (n.statement ? '<p>' + esc(n.statement) + '</p>' : '') +
       (n.support ? '<p class="small">support: <b>' + esc(n.support) + '</b></p>' : '') +
       (n.anchor ? '<div class="ndoc-anchor">&sect; ' + esc(n.anchor.section) +
-        '<blockquote>&ldquo;' + esc(n.anchor.quote) + '&rdquo;</blockquote></div>' : '')) + links;
-  }).catch(() => { ins.node.innerHTML = head + links; });
+        '<blockquote>&ldquo;' + esc(n.anchor.quote) + '&rdquo;</blockquote></div>' : '')) +
+      links + everythingRows(ins, d, n && { ...n, statement: null, support: null, anchor: null });
+  }).catch(() => { ins.node.innerHTML = head + links + everythingRows(ins, d); });
+}
+
+/** A core-tree pick: the node's place in the document and all the core
+    model knows about it (brief 29's show-me-everything, for core nodes). */
+export function inspectCoreRecord(ins, rec) {
+  const cut = (s, n) => (s.length > n ? s.slice(0, n) + '…' : s);
+  ins.node.innerHTML = '<span class="ndoc-fam ndoc-f-core">core</span> ' +
+    '<b>' + esc(cut(rec.label || rec.id, 90)) + '</b>' +
+    '<p class="small dim">' + rec.path.map((p) => esc(cut(p.label, 36))).join(' › ') + '</p>' +
+    rec.rows.map(([k, v]) => '<div class="ev-row"><span class="dim">' + esc(k) + '</span> ' +
+      esc(v) + '</div>').join('');
 }
 
 /** A hop taken by following a link row: the path query grows by one step.

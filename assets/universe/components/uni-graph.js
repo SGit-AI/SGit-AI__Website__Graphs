@@ -31,6 +31,8 @@ import { inspectInit, inspectNode, inspectLegend, inspectHop, inspectTrailStart 
   from './graph-inspect.js';
 import { toggleBoard } from './pin-board.js';
 import { toggleTrailBoard } from './trail-board.js';
+import { toggleCoreTree } from './core-tree.js';
+import { inspectCoreRecord } from './graph-inspect.js';
 
 /** The visibility toggles; gdoc makes the document a source like any other,
     so all sources off means an empty canvas; gschema shows only the schema. */
@@ -134,6 +136,11 @@ export class UniGraph extends HTMLElement {
     const b = e.target.closest('button');
     if (!b) return;
     if (b.classList.contains('uni-gcog')) { this._gopts.hidden = !this._gopts.hidden; return; }
+    if (b.hasAttribute('data-gtab')) {
+      this._p.gtab = b.getAttribute('data-gtab');
+      this._emitPref('gtab', this._p.gtab); this._applyLook(); return;
+    }
+    if (b.hasAttribute('data-gcore')) { toggleCoreTree(this, this._coreOpts); return; }
     if (b.hasAttribute('data-gmax')) {
       const on = this.querySelector('.uni-graphbox').classList.toggle('uni-gmax');
       /* the reader hides the page chrome (nav, splitters) while maximised */
@@ -324,6 +331,19 @@ export class UniGraph extends HTMLElement {
   /** The inspector's container: where the reader mounts the blast-radius
       mini graph, beside the details the inspector already renders. */
   get inspectorEl() { return this._inspect.el; }
+
+  /** Where the core tree finds its data: { base } (the doc's core folder). */
+  set coreOptions(opts) { this._coreOpts = opts; }
+
+  /** Select id if the canvas has it; the core tree lights the nearest level. */
+  trySelect(id) {
+    if (!this.cy || this.cy.$id(id).empty()) return false;
+    this.selected = id;
+    return true;
+  }
+
+  /** Everything the core model knows about one node, into the inspector. */
+  inspectCore(payload) { inspectCoreRecord(this._inspect, payload); }
 
   /** Drop the focus ring and dimming. */
   clearFocus() { if (this.cy) this.cy.elements().removeClass('uni-focus uni-dim'); }

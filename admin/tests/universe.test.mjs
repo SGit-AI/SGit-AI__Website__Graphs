@@ -6,6 +6,8 @@ import assert from 'node:assert/strict';
 import { elementarySegments } from '../../assets/universe/core/segments.js';
 import { spliceMarkers, tokensToMarks, escAttr } from '../../assets/universe/core/markup.js';
 import { docTreeElements, headingChain, DOC_ROOT_ID } from '../../assets/universe/core/doctree.js';
+import { coreState, mergeShard, childrenOf, breadcrumb, loadForms, formOf, coreRecord }
+  from '../../assets/universe/core/coretree.js';
 import { layoutOptions, graphStyle } from '../../assets/universe/core/cystyle.js';
 
 let pass = 0, fail = 0;
@@ -577,6 +579,60 @@ test('chat-core: tool results are bounded', () => {
   assert.equal(truncateToolResult(undefined), 'null');
   const big = truncateToolResult({ s: 'x'.repeat(30000) }, 100);
   assert.ok(big.length < 130 && big.endsWith('…(truncated)'));
+});
+
+/* ---- coretree: the document-to-word model over a known shard -------------- */
+const CT_INDEX = {
+  doc: 'doc:d', slug: 'd', title: 'The Doc',
+  ladder: { doc: 'document', sec: 'section', blk: 'block', sen: 'sentence', wrd: 'word' },
+  totals: { blocks: 1, sentences: 2, words: 5 },
+  forms: 'words.json',
+  sections: [
+    { id: 'doc:d', title: 'The Doc', level: 1, parent: null, counts: { blocks: 0, sentences: 0, words: 0 } },
+    { id: 'sec:A', title: 'A', level: 2, parent: 'doc:d', shard: 'sec-01.json',
+      counts: { blocks: 1, sentences: 2, words: 5 } },
+    { id: 'sec:A1', title: 'A1', level: 3, parent: 'sec:A', counts: { blocks: 0, sentences: 0, words: 0 } }],
+};
+const CT_SHARD = { sec: 'sec:A', blocks: [
+  { id: 'blk:A/1', kind: 'para', range: [10, 60], text: 'Graphs win. Nodes carry graphs.',
+    sentences: [
+      { n: 1, text: 'Graphs win.', words: ['Graphs', 'win'] },
+      { n: 2, text: 'Nodes carry graphs.', words: ['Nodes', 'carry', 'graphs'] }],
+    spans: [{ id: 'mk:A/1.1', kind: 'bold', covers: ['wrd:A/1.2.1'] }] }] };
+const CT_WORDS = { doc: 'doc:d', forms: [
+  { form: 'graphs', count: 2, instances: ['wrd:A/1.1.1', 'wrd:A/1.2.3'] }] };
+
+test('coretree: skeleton, lazy shard, and minted ids', () => {
+  const st = coreState(CT_INDEX);
+  assert.deepEqual(childrenOf(st, 'doc:d'), ['sec:A']);
+  assert.equal(childrenOf(st, 'sec:A'), null);            /* shard not loaded yet */
+  mergeShard(st, 'sec:A', CT_SHARD);
+  assert.deepEqual(childrenOf(st, 'sec:A'), ['blk:A/1', 'sec:A1']);
+  assert.deepEqual(childrenOf(st, 'blk:A/1'), ['sen:A/1.1', 'sen:A/1.2']);
+  assert.deepEqual(childrenOf(st, 'sen:A/1.2'), ['wrd:A/1.2.1', 'wrd:A/1.2.2', 'wrd:A/1.2.3']);
+  assert.equal(st.nodes.get('wrd:A/1.2.1').label, 'Nodes');
+  assert.deepEqual(st.nodes.get('wrd:A/1.2.1').marks, ['bold']);   /* the span marks it */
+  assert.deepEqual(childrenOf(st, 'sec:A1'), []);          /* no shard means no blocks */
+});
+test('coretree: breadcrumb walks parents root-first', () => {
+  const st = coreState(CT_INDEX);
+  mergeShard(st, 'sec:A', CT_SHARD);
+  assert.deepEqual(breadcrumb(st, 'wrd:A/1.2.3').map((x) => x.id),
+    ['doc:d', 'sec:A', 'blk:A/1', 'sen:A/1.2', 'wrd:A/1.2.3']);
+});
+test('coretree: forms count instances and the record says so', () => {
+  const st = coreState(CT_INDEX);
+  mergeShard(st, 'sec:A', CT_SHARD);
+  loadForms(st, CT_WORDS);
+  assert.equal(formOf(st, 'Graphs').count, 2);             /* case-folded lookup */
+  const rows = Object.fromEntries(coreRecord(st, 'wrd:A/1.2.3'));
+  assert.equal(rows.level, 'word');
+  assert.ok(rows.appears.startsWith('2×'));
+  const wordRows = Object.fromEntries(coreRecord(st, 'wrd:A/1.2.1'));
+  assert.equal(wordRows.marked, 'bold');
+  const secRows = Object.fromEntries(coreRecord(st, 'sec:A'));
+  assert.ok(secRows.holds.includes('5 words'));
+  assert.ok(Object.fromEntries(coreRecord(st, 'blk:A/1')).bytes.includes('verification only'));
 });
 
 console.log(`universe tests: ${pass} passed, ${fail} failed`);

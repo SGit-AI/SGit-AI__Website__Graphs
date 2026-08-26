@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.36</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.37</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -131,6 +131,11 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.4.37</td>
+        <td>26 August 2026</td>
+        <td><b>The core graph: the document transformed all the way to the word.</b> Brief 29, the founder's morning memo, built the same day. The experiment it asks for: stop treating the section as the floor and transform the document like an AST driven by the content, every level a node with an ID linked to its parent. <b>The generator</b> (<code>gen_coregraph.py</code>, a separate tool exactly as the memo asks): the pilot document becomes 39 sections, 186 blocks (paragraphs, bullet items, code, quotes, tables, rules), 342 sentences and 4,221 words across 951 distinct forms, with 143 markup spans. <b>Bold is structure now</b>: each inline span (bold, italic, code, link) is a node covering the word instances it marks, so emphasis is queryable rather than lost formatting. <b>Every distinct word is a form node</b> with its count and every instance, so "how many times does this word appear" is a lookup, not a search. <b>IDs are the reference currency</b>, the memo's sharpest point taken literally: pointing at "character 256 to 259" breaks the moment the document changes, so cross-references now have <code>sec:</code>, <code>blk:</code>, <code>sen:</code> and <code>wrd:</code> identities to hold instead, and byte ranges survive only as build-time verification metadata. Four gates prove the transform is lossless: block ranges reassemble every section body, sentences reassemble every block, form totals equal instance totals, spans cover the words they claim. <b>The graphs-of-graphs storage answer</b>: an index with the skeleton, one shard per section fetched only when opened, and the word index; 32 shards, 407KB total, nothing loaded until asked for. <b>The tree view</b>: a resizable pane on the canvas where the document expands bit by bit — section, block, sentence, word — each expansion fetching only its shard; bold words render bold; clicking any row shows its record and lights the nearest node the canvas has. <b>The strip in two tabs</b>, because the controls outgrew one row: canvas (views, layout, labels, physics) and content (sources, explore, view), persisted like every preference; the blast-radius mini bypasses the tabs and keeps its two groups. <b>The inspector answers the memo's last ask</b>: alongside statement, quote and links it now shows everything on record — every data field, the degree both ways, the extraction's extra fields — and a core-tree pick shows its level, its place in the document (the breadcrumb from the document down), its marks, and how often its form appears. Three new gate-27 vectors (60 tests); the whole flow verified in headless Chromium down to a word whose record reads "appears 56× in this document". The round also burned an hour on a lesson worth recording: a zombie headless Chromium from a crashed test run held the debug port and served stale modules to every later test on that port, making a working feature look broken; the fix was <code>kill</code>, not code. Brief 29 carries the memo verbatim with eleven instructions mapped and four questions back (sentence heuristics, word-ID fragility scoped to the sentence, migrating extraction anchors to core IDs, code blocks staying whole). Recorded debt: <code>uni-graph.js</code> is at 434 lines against the 250 budget; the split remains owed. No book content changed.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.4.36</td>
         <td>25 August 2026</td>
@@ -516,7 +521,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.4.36</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.37</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

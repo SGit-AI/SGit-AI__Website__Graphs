@@ -23,6 +23,14 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "29__founder-memo__the-core-graph-document-to-word.md": (
+     "The core graph: document to word",
+     "The foundational graph under everything else: transform the document all the way "
+     "down — sections, paragraphs, sentences, words — like an AST driven by the content, "
+     "every level a node with an ID, because pointing at character 256 breaks the moment "
+     "the document changes. Bold and links become span nodes, every distinct word gets a "
+     "counted form node, the tree expands bit by bit from sharded files, the controls "
+     "move into tabs, and the inspector shows everything known about a node."),
  "28__founder-memo__node-navigation-and-path-queries.md": (
      "Node navigation, reverse verbs, and the path query",
      "Click a node and see its whole universe on the right: every link out with its "

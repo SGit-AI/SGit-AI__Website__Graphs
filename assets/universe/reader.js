@@ -269,8 +269,11 @@ function boot() {
     gdeg: (() => { const v = pref('gdeg', '1'); return v === 'max' ? 'max' : (parseInt(v, 10) || 0); })(),
     gpaths: prefBool('gpaths', false),
     glen: parseInt(pref('glen', '90'), 10), gpull: parseInt(pref('gpull', '90'), 10),
+    gtab: pref('gtab', 'content'),
     kinds: state.kinds,
   });
+  /* brief 29: where the core tree fetches the document's shards from */
+  graph.coreOptions = { base: 'data/core/' + U.slug + '/' };
   graph.inspectorEl.insertBefore(mini, graph.inspectorEl.querySelector('.uni-insp-legend'));
   mini.init(U, { glay: 'cose', gsize: 's', gboxed: false, gtree: false, gpeaks: false,
     gpin: false, gstable: false, gschema: false, galign: false, galshow: false,

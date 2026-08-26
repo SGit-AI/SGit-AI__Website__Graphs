@@ -339,3 +339,38 @@ uni-graph[mini] .uni-gstats { height: 1.2rem; font-size: .6rem; }
 
 /* the peak board is now resizable (brief 28's aside) */
 .uni-pinboard { resize: both; overflow: auto; min-width: 380px; min-height: 300px; }
+
+/* ---- the strip in two tabs (brief 29: the controls outgrew one row) ------- */
+.uni-gopts .gtabs { display: flex; gap: .3rem; margin-bottom: .25rem; }
+.uni-gopts .gtabs button { font-size: .66rem; padding: .1rem .55rem; opacity: .6; }
+.uni-gopts .gtabs button.on { opacity: 1; font-weight: 700; border-bottom: 2px solid #2a9d8f; }
+.uni-gopts .gtabpane { display: none; }
+.uni-gopts .gtabpane.on { display: block; }
+uni-graph[mini] .uni-gopts .gtabs { display: none; }
+uni-graph[mini] .uni-gopts .gtabpane { display: contents; }
+
+/* ---- the core tree (brief 29): the document expanded to the word ---------- */
+.uni-coretree { position: absolute; left: .6rem; top: 3rem; bottom: 1.8rem; z-index: 30;
+  width: 460px; max-width: 44%; min-width: 320px; min-height: 260px;
+  resize: both; overflow: auto; background: rgba(255,255,255,.96);
+  border: 1px solid var(--line2, #ccc); border-radius: 8px; padding: .5rem .6rem;
+  box-shadow: 0 6px 24px rgba(0,0,0,.14); }
+.uni-gmax .uni-coretree { top: 3.4rem; }
+.uni-coretree .ct-rows { margin-top: .35rem; font-size: .74rem; line-height: 1.45; }
+.ct-row { cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  border-radius: 4px; padding: 0 .25rem; }
+.ct-row:hover { background: rgba(42,157,143,.1); }
+.ct-row.on { background: rgba(42,157,143,.22); }
+.ct-exp { display: inline-block; width: .95em; color: #8a8f98; cursor: pointer; }
+.ct-n { font-size: .62rem; color: #8a8f98; }
+.ct-bold .ct-lab { font-weight: 700; }
+.ct-ital .ct-lab { font-style: italic; }
+.ct-code .ct-lab { font-family: ui-monospace, monospace; font-size: .95em; }
+.ct-link .ct-lab { text-decoration: underline; }
+
+/* ---- everything on record (brief 29's inspector ask) ---------------------- */
+.ev-row { display: flex; gap: .45rem; font-size: .72rem; line-height: 1.5;
+  border-top: 1px dotted #e2e4e9; }
+.ev-row .dim { flex: 0 0 5.4rem; }
+.ev-row span + * { min-width: 0; }
+.ndoc-f-core { background: #5a5f6a; }
