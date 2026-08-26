@@ -60,6 +60,7 @@ NAV = [
         ("Layer 1: the documents, extracted", "v2/universe/index.html"),
         ("&hellip; the pilot: Thinking in Graphs", "v2/universe/thinking-in-graphs.html"),
         ("&hellip; its graph, standalone &middot; phone-friendly", "v2/universe/thinking-in-graphs.graph.html"),
+        ("&hellip; its files, raw and viewed", "v2/universe/thinking-in-graphs.files.html"),
         ("The founder&rsquo;s memos, verbatim", "v2/memos/index.html"),
         ("The methods register", "v2/methods/index.html"),
         ("The lexicon, in scopes", "v2/lexicon/index.html"),

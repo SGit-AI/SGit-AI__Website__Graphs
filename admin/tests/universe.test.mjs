@@ -8,6 +8,7 @@ import { spliceMarkers, tokensToMarks, escAttr } from '../../assets/universe/cor
 import { docTreeElements, headingChain, DOC_ROOT_ID } from '../../assets/universe/core/doctree.js';
 import { coreState, mergeShard, childrenOf, breadcrumb, loadForms, formOf, coreRecord,
   loadTokens, formRecord } from '../../assets/universe/core/coretree.js';
+import { viewOf, rawJsonHtml, rawMdHtml, buildView } from '../../assets/universe/core/fileview.js';
 import { layoutOptions, graphStyle } from '../../assets/universe/core/cystyle.js';
 
 let pass = 0, fail = 0;
@@ -658,6 +659,40 @@ test('coretree: the token analysis reads back into form records', () => {
   assert.equal(rows.gravity, 'nodes ×2, win ×1');
   assert.ok(rows.spread.includes('candidate') === false);      /* count 2 < 10 stays unflagged */
   assert.deepEqual(formRecord(st, 'absent'), []);
+});
+
+/* ---- fileview: the explorer's colorizers and data views ------------------- */
+test('fileview: file names route to their views', () => {
+  assert.equal(viewOf('ids.json'), 'ledger');
+  assert.equal(viewOf('sec-07.json'), 'shard');
+  assert.equal(viewOf('source.md'), 'rendered');
+  assert.equal(viewOf('universe.json'), null);
+});
+test('fileview: raw JSON colorizes and escapes', () => {
+  const h = rawJsonHtml('{"a": "x<y", "n": 3, "ok": true}');
+  assert.ok(h.includes('fv-key') && h.includes('fv-str') && h.includes('fv-num') && h.includes('fv-kw'));
+  assert.ok(h.includes('x&lt;y'));                        /* escaped inside a token */
+  assert.ok(!h.includes('x<y'));
+  assert.ok(rawJsonHtml('not json').includes('not json')); /* falls back to plain */
+});
+test('fileview: raw markdown tints lines without eating them', () => {
+  const h = rawMdHtml('# Title\n> quote\n- item one\n```\ncode<tag>\n```');
+  assert.ok(h.includes('fv-h') && h.includes('fv-q') && h.includes('fv-li') && h.includes('fv-code'));
+  assert.ok(h.includes('code&lt;tag&gt;'));
+});
+test('fileview: the ledger and token views build from real shapes', () => {
+  const ledger = buildView('ledger', { prefix: 'd', minted: { b: 2 }, ids: [
+    { uid: 'd:b1', level: 'blk', locator: 'blk:A/1', status: 'live' },
+    { uid: 'd:b2', level: 'blk', locator: 'blk:A/2', status: 'retired' }] });
+  assert.ok(ledger.includes('d:b1') && ledger.includes('retired') && ledger.includes('1</b> live'));
+  const tokens = buildView('tokens', {
+    stats: { instances: 10, forms: 3, by_class: { content: 2, padding: 1 },
+      padding_share: 0.4, hapax: 1 },
+    forms: [{ form: 'graph', count: 6, class: 'content', spread: 0.95 },
+      { form: 'the', count: 4, class: 'padding' }] });
+  assert.ok(tokens.includes('fv-bar') && tokens.includes('padding 40%'));
+  assert.ok(!tokens.includes(' ◊</b>'), 'count 6 < 10 stays unflagged in the bars');
+  assert.equal(buildView('nope', {}), null);
 });
 
 console.log(`universe tests: ${pass} passed, ${fail} failed`);

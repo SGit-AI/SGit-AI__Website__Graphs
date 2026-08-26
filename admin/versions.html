@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.1</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -53,6 +53,7 @@
       <a class="sl" href="../v2/universe/index.html">Layer 1: the documents, extracted</a>
       <a class="sl" href="../v2/universe/thinking-in-graphs.html">&hellip; the pilot: Thinking in Graphs</a>
       <a class="sl" href="../v2/universe/thinking-in-graphs.graph.html">&hellip; its graph, standalone &middot; phone-friendly</a>
+      <a class="sl" href="../v2/universe/thinking-in-graphs.files.html">&hellip; its files, raw and viewed</a>
       <a class="sl" href="../v2/memos/index.html">The founder&rsquo;s memos, verbatim</a>
       <a class="sl" href="../v2/methods/index.html">The methods register</a>
       <a class="sl" href="../v2/lexicon/index.html">The lexicon, in scopes</a>
@@ -141,6 +142,11 @@
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
       <tr>
+        <td class="vnum">v0.5.1</td>
+        <td>26 August 2026</td>
+        <td><b>The file explorer: the document's artefacts, raw and viewed.</b> The founder's observation driving it: as the cross-references grow, the site needs an honest window onto the data underneath the pages, not just the pages. Every document now gets <code>{slug}.files.html</code> — a file tree on the left (the authored folder: source, extraction, cross-references, identity ledger, README; and the generated core data: the index, thirty-two shards, the tokens, the word forms, the formatting graph — forty-one files for the pilot), the file on the right. <b>Raw mode</b> is exactly what was asked: minimal formatting, just colours and alignment — JSON pretty-printed with keys, strings, numbers and keywords tinted; markdown line-tinted (headings, quotes, list markers, fences) without touching a byte of it. <b>Every file the build understands also carries its own data-driven view</b>: the extraction as family-chipped node and edge tables, the ledger as a live/retired identity table, the cross-references as a rated-uses table, the tokens as a ranked bar chart with the ◊ candidates, the core index as a per-section table, each shard as its blocks with their uids, and markdown rendered. Raw is always one tab away, and every file deep-links (<code>#docs/&lt;slug&gt;/ids.json</code>) and opens directly as a plain URL. The pure logic (colorizers and all nine view builders) lives in <code>core/fileview.js</code> under gate 27 (65 tests); the shell is under 100 lines; the manifest is generated at build so a new artefact appears in the tree without anyone remembering to list it. Verified in headless Chromium on desktop and iPhone (stacked layout, no horizontal scroll, deep links on fresh loads). Linked from the document page, and the universe menu gains "its files, raw and viewed". No book content changed.</td>
+      </tr>
+      <tr>
         <td class="vnum">v0.5.0</td>
         <td>26 August 2026</td>
         <td><b>The v0.4 era closes, and the site catches up with what it built.</b> Three moves, all asked for by the founder in one message. <b>The top menu tells the truth now</b>: the second edition's working surface — the universe with its reader and standalone graph page, the founder's memos, the methods register (34 techniques), the lexicon, the artefact catalogue, the open decisions, the immediate-connection register — was buried as sub-items of "The book"; it is now a first-class <b>The universe</b> menu, and "The book" returns to being about the two editions. The front page stops describing the second edition as "the plan and its scaffolding" and shows what four days actually built. <b>The retrospective</b>: forty-one releases weighed in <a href="../v2/dev-pack/retro-00-the-v04-retrospective.html">the v0.4 retrospective</a> — the seven achievements that compounded (extraction discipline, the instrument reader, the stability principle, navigation-as-query, the core graph, the component proof, the working-pack culture), the conclusions (the voice-memo loop works; gates buy speed; two agents can share a repo politely; honest debt beats hidden debt), the transferable learnings (persistence makes identity; fit is a decision; the measurement is the discovery; test the harness too; screenshots need state in the pixels), and what v0.5 opens. <b>And the history is kept whole but shelved</b>: the forty-one v0.4.x entries — a great historical view, as the founder called them — moved intact to <a href="versions-v0.4.html">the v0.4 era</a>, the thirty-five earliest to <a href="versions-earlier.html">the beginnings</a>, and this page starts clean for v0.5.x. The generators that read the release table (the front-page timeline, the changes data) now read every era page, so nothing computed from history lost a byte of it. No book content changed; no viewer behaviour changed.</td>
@@ -170,7 +176,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.5.0</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.5.1</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

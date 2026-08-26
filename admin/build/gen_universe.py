@@ -412,7 +412,7 @@ DOC_PAGE = """<!doctype html>
   <span class="k">Layer</span><span class="v">1 &middot; per-document local graph &middot; <b>the pilot</b>, 1 of {total} sources</span>
   <span class="k">Source</span><span class="v"><a href="../../{source}">{source}</a> &middot; frozen, SHA-256 <code>{sha12}&hellip;</code></span>
   <span class="k">Extraction</span><span class="v"><a href="docs/{slug}/extraction.json">docs/{slug}/extraction.json</a> &middot; authored by the agent, {extracted} &middot; every anchor build-verified against the frozen bytes</span>
-  <span class="k">The folder</span><span class="v"><a href="docs/{slug}/index.html">docs/{slug}/</a> &middot; the document's standalone home: the source copy, the extraction, the cross-references &middot; portable between repositories</span>
+  <span class="k">The folder</span><span class="v"><a href="docs/{slug}/index.html">docs/{slug}/</a> &middot; the document's standalone home: the source copy, the extraction, the cross-references &middot; portable between repositories &middot; <a href="{slug}.files.html"><b>browse every file, raw and viewed &rarr;</b></a></span>
   <span class="k">Used by</span><span class="v"><a href="docs/{slug}/index.html#crossrefs">{n_refs} known uses</a>, rated against <a href="usage-model.json">the usage model</a>: {refs_line}</span>
   <span class="k">Yield</span><span class="v">{n_concepts} concepts ({n_undefined} used-but-undefined) &middot; {n_claims} claims &middot; {n_hyp} hypotheses &middot; {n_obj} objective &middot; {n_ex} examples &middot; {n_edges} asserted edges</span>
   <span class="k">PDF</span><span class="v"><a href="{slug}.pdf">the extraction, printable</a> &middot; {pdf_pages} pages, for review with nothing else open</span>
@@ -519,6 +519,42 @@ GRAPH_PAGE = """<!doctype html>
 <script>window.UNIVERSE = {unidata};</script>
 <script src="../../assets/vendor/cytoscape.min.js"></script>
 <script type="module" src="../../assets/universe-graph.js"></script>
+</body>
+</html>
+"""
+
+FILES_PAGE = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{title} &mdash; the files &mdash; graphs.sgit.ai</title>
+<meta name="description" content="Every artefact of {title}, browsable: the authored folder and the generated core data, raw with minimal formatting or through each file's own data view.">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/universe/{slug}.files.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="graphs.sgit.ai">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/universe/{slug}.files.html">
+<meta property="og:title" content="{title} &mdash; the files">
+<meta property="og:description" content="The document's artefacts, raw and viewed.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/universe.css">
+</head>
+<body>
+
+<nav class="site"><div class="row"></div></nav>
+
+<main class="doc uni-full">
+<div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="index.html">the universe</a> &rarr; <a href="{slug}.html">{slug}</a> &rarr; <b>the files</b></div>
+<h1>The files of <em>{title}</em></h1>
+<p class="lead">Everything the document owns and everything the build derived from it, in one explorer: the authored folder (source, extraction, cross-references, identity ledger) and the generated core data (the index, the shards, the tokens, the formatting graph). <b>Raw</b> shows each file with minimal formatting; files the build understands also carry their <b>own view</b>. As the cross-references grow, this is the honest window onto the data underneath the pages.</p>
+<div id="filex" class="fx"></div>
+</main>
+
+<footer class="site"><div class="cols"></div></footer>
+<script>window.FILEX = {manifest};</script>
+<script src="../../assets/vendor/marked.min.js"></script>
+<script type="module" src="../../assets/universe-files.js"></script>
 </body>
 </html>
 """
@@ -730,6 +766,21 @@ def main():
         # the standalone graph page: the same component, no reader around it
         (OUT / f'{d["slug"]}.graph.html').write_text(GRAPH_PAGE.format(
             title=esc(d["title"]), slug=d["slug"], unidata=unidata))
+
+        # the file explorer: the folder's artefacts plus the generated core data
+        def _mf(base):
+            p = OUT / base
+            return [{"n": f.name, "b": f.stat().st_size}
+                    for f in sorted(p.iterdir())
+                    if f.is_file() and f.name != "index.html"] if p.is_dir() else []
+        manifest = json.dumps({"slug": d["slug"], "folders": [
+            {"label": f'docs/{d["slug"]}', "base": f'docs/{d["slug"]}',
+             "files": _mf(f'docs/{d["slug"]}')},
+            {"label": f'data/core/{d["slug"]}', "base": f'data/core/{d["slug"]}',
+             "files": _mf(f'data/core/{d["slug"]}')},
+        ]}, ensure_ascii=False)
+        (OUT / f'{d["slug"]}.files.html').write_text(FILES_PAGE.format(
+            title=esc(d["title"]), slug=d["slug"], manifest=manifest))
 
         # the folder page: files with their integrity, the crossrefs, the model
         label = {n["id"]: n["label"] for n in ex["nodes"]}
