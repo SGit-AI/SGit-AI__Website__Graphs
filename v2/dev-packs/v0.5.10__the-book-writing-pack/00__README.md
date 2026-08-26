@@ -39,14 +39,20 @@
 
 ## How to use this pack
 
-Open three fresh Claude Code sessions on this repository, one per book. In each, paste
-the ENTRY PROMPT from the top of the matching entry file:
+Open three fresh Claude Code sessions on this repository, one per book. Each book has a
+HOME FOLDER under `v2/books/` whose README is the complete initial prompt, so starting a
+session is one line: **"hi, you are going to focus on writing this book:
+`v2/books/<folder>/README.md`"**.
 
-| Book | Entry file | Deliverable |
-|---|---|---|
-| A — the Universe volume | `03__entry-a-the-universe.md` | the atlas: the concept graph of Fractal Semantic Graphs, as a readable book |
-| B — the book itself | `04__entry-b-the-book.md` | *Fractal Semantic Graphs: Meaning Through Connectivity* |
-| C — the making-of | `05__entry-c-the-making-of.md` | *Creating a Book Using Fractal Semantic Graphs* |
+| Book | Home folder | Charter in this pack | Deliverable |
+|---|---|---|---|
+| A — the Universe volume | `v2/books/fsg-universe/` | `03__entry-a-the-universe.md` | the atlas: the concept graph of Fractal Semantic Graphs, as a readable book |
+| B — the book itself | `v2/books/fsg/` | `04__entry-b-the-book.md` | *Fractal Semantic Graphs: Meaning Through Connectivity* |
+| C — the making-of | `v2/books/making-a-book/` | `05__entry-c-the-making-of.md` | *Creating a Book Using Fractal Semantic Graphs* |
+
+The founder has answered the pack's two held questions: book B does NOT wait for book A,
+and the finished books DO ship on the site — each writing session releases its own book
+to `dev` through the full release ritual once it is complete.
 
 Every entry prompt tells its session to read, in order: this README, `01__the-corpus.md`
 (what to read and where it lives), `02__shared-conventions.md` (the rules all three books

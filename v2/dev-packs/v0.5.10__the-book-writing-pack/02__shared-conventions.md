@@ -48,14 +48,16 @@ Each book lands three ways, all from one markdown source of truth:
 
 ## Repository discipline (three sessions in parallel)
 
-- Each session works on ITS OWN branch: `claude/book-a-<suffix>`, `claude/book-b-…`,
-  `claude/book-c-…`. Push the branch; NEVER push to `dev` from a book session without
-  running the estate's full release ritual (version bump, versions row, generator chain,
-  `validate.js` green — the rules are at the bottom of `admin/versions.html`). The
-  recommended path: finish the book on the branch, push it, and hand the founder the PDF;
-  integration into `dev` is a separate, single-session step afterwards.
-- Do not modify anything outside `v2/books/<slug>/` except where a generator hookup is
-  genuinely needed — and if you hook into the chain, the whole ritual applies.
+- Each session works on ITS OWN branch (named in its book's README). Push the branch
+  early and often.
+- **Shipping on the site is in scope** (the founder's decision): when your book is
+  complete, release it to `dev` YOURSELF through the estate's full ritual — fetch `dev`
+  and tags FIRST, bump `admin/build/version.txt`, add a narrated versions row, run the
+  generator chain, `validate.js` green, commit `site vX.Y.Z: …`, push. Up to four agents
+  share this repo; on any version collision, fetch, renumber, retry — and take
+  generated-file conflicts by regenerating, never by hand-merging.
+- Outside your release, do not modify anything beyond `v2/books/<your-folder>/`; wire
+  navigation, sitemap or llms.txt entries only as part of your release, minimally.
 - The PDF is also SENT to the founder directly (SendUserFile or the session's file
   surface) the moment a complete draft exists — the flight does not wait for a merge.
 

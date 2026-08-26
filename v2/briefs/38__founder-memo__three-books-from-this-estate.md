@@ -100,3 +100,29 @@ itself is at `v2/dev-packs/v0.5.10__the-book-writing-pack/` and is rendered unde
 - **Question — where the books ship.** The pack proposes `v2/books/<slug>/` and leaves
   site navigation and llms.txt entries to the integration step, deliberately outside
   the three writing sessions' scope.
+
+---
+
+## Addendum — the founder's answers (typed, same evening)
+
+> Yes the book B should not wait for A and yes put the 3 books on the site, since I will
+> give those agents write access to the repo, in fact why don’t you create the folders
+> for those books, with the place holder to put the markdown and pdf? This way you could
+> put the link an initial prompt inside each folder which would make my initial prompt
+> even easier : “hi, you are are going to focus on writing this book: {path to folder /
+> readme.md}”
+
+The agent's reading, built as v0.5.11:
+
+8. **Both held questions answered.** B does not wait for A (the pack now states it as
+   the founder's decision, and book B's README repeats it). The books ship on the site:
+   each writing session releases its own book to `dev` through the full release ritual,
+   and the collision discipline is restated for up to four agents sharing the repo.
+
+9. **The folders exist, and each carries its own initial prompt.** `v2/books/` is the
+   bookshelf: `fsg-universe/`, `fsg/`, `making-a-book/`, each with a README that IS the
+   complete initial prompt (the reading order into the pack, the branch, the contract,
+   the placeholder map), `content/` placeholders for the chapter markdown, `data/` (book
+   A) and `figures/` (book C) placeholders, and the expected PDF filename beside the
+   README. Starting a session is now one line: "hi, you are going to focus on writing
+   this book: `v2/books/<folder>/README.md`".

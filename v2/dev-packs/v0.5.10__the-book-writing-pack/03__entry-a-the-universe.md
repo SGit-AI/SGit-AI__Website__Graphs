@@ -2,6 +2,10 @@
 
 ## The entry prompt (paste this into a fresh session on this repository)
 
+> The one-line form now works too: this book's home folder is `v2/books/fsg-universe/`,
+> and its README carries this same prompt — "hi, you are going to focus on writing this
+> book: `v2/books/fsg-universe/README.md`".
+
 > You are writing book A of a three-book commission. Read, in order:
 > `v2/dev-packs/v0.5.10__the-book-writing-pack/00__README.md`, `01__the-corpus.md`,
 > `02__shared-conventions.md`, and then this file, `03__entry-a-the-universe.md`, in
