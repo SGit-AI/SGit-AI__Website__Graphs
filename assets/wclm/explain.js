@@ -5,12 +5,12 @@
    what it feeds downstream, and every entry is itself clickable, so the why
    can be walked in both directions. A part of the wclm page. */
 'use strict';
-import { LAYERS } from './engine.js';
+import { BLOCKS } from './engine.js';
 
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g,
   (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-const layerName = (key) => (LAYERS.find((l) => l.key === key) || { name: key }).name;
+const layerName = (key) => (BLOCKS.find((l) => l.key === key) || { name: key }).name;
 
 function hopRows(list, dir) {
   if (!list.length) return '<p class="small dim">nothing ' + (dir === 'up' ? 'upstream: this is an input' : 'downstream: a dead end this run') + '</p>';
@@ -39,13 +39,14 @@ export function renderExplain(pane, id, ctx) {
 
 /** Explain one layer: its role, what it reads, what it writes, this run's count. */
 export function renderLayerCard(pane, key, count) {
-  const l = LAYERS.find((x) => x.key === key);
-  const idx = LAYERS.indexOf(l);
-  const reads = idx === 0 ? 'the prompt text' : LAYERS[idx - 1].name + '&rsquo;s output';
-  const writes = idx === LAYERS.length - 1 ? 'the answer: meaning, provenance, blast radius' : LAYERS[idx + 1].name + '&rsquo;s input';
+  const l = BLOCKS.find((x) => x.key === key);
+  const idx = BLOCKS.indexOf(l);
+  const reads = idx === 0 ? 'the prompt text' : 'the previous executed block&rsquo;s output — never anything further back';
+  const writes = key === 'converge' ? 'the answer: meaning, provenance, blast radius, contradictions' : 'the next block&rsquo;s input';
   pane.innerHTML = '<div class="wc-sh"><b>' + esc(l.name) + '</b>' +
-    '<span class="small dim">a deterministic transformation</span></div>' +
+    '<span class="small dim">a reusable deterministic block' + (l.core ? '' : ' · optional: toggle it in the pipeline bar') + '</span></div>' +
     '<p>' + esc(l.role) + '.</p>' +
+    (l.needs.length ? '<div class="ev-row"><span class="dim">needs</span> ' + l.needs.join(', ') + '</div>' : '') +
     '<div class="ev-row"><span class="dim">reads</span> ' + reads + '</div>' +
     '<div class="ev-row"><span class="dim">writes</span> ' + writes + '</div>' +
     '<div class="ev-row"><span class="dim">this run</span> ' + count + ' item(s)</div>' +

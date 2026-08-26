@@ -23,6 +23,17 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "33__founder-review__the-detective-playbook.md": (
+     "The detective playbook: a narrated review of the WCLM",
+     "Eight narrated moments over the deterministic transformer, and the finding "
+     "that restructured it: layers must not be jumped — every layer adds or drops "
+     "evidence, and clicking the answer must show every piece of evidence that got "
+     "there, transitively. Plus the live experiment that became a block: 'meaning "
+     "without connectivity' returned the same winner and rightly should not — so "
+     "operators (without, not, no) now flip binding and surface contradictions. "
+     "The dictionary and thesaurus move into the early layers, the layers become "
+     "reusable mix-and-match blocks with a drag-to-order bar, and every weight is "
+     "labelled opinion or evidence."),
  "32__founder-memo__every-box-explains-itself.md": (
      "Every box explains itself, both ways",
      "The WCLM verdict (it worked) and the next rounds: every chip at every layer "

@@ -85,3 +85,22 @@
   .wc-wrap { flex-direction: column; }
   .wc-side { flex: none; max-height: 40vh; }
 }
+
+/* ---- brief 33: the detective playbook ------------------------------------- */
+.wc-pipe { display: flex; gap: .3rem; align-items: center; flex-wrap: wrap; margin: -.3rem 0 .5rem; }
+.wc-blk { font-size: .68rem; padding: .14rem .5rem; border-radius: 7px; cursor: pointer;
+  border: 1px solid #2a9d8f; background: rgba(42,157,143,.12); user-select: none; }
+.wc-blk-core { cursor: default; border-style: solid; font-weight: 600; }
+.wc-blk-off { opacity: .4; border-color: var(--line2, #ccc); background: #fff; text-decoration: line-through; }
+.wc-blk-skip { border-color: #c58f00; background: rgba(240,180,41,.15); }
+.wc-pass { font-size: .68rem; padding: .12rem .5rem; opacity: .75; }
+.wc-fix { border-left: 4px solid #2a9d8f; background: rgba(42,157,143,.08); }
+.wc-op { border-left: 4px solid #b06060; }
+.wc-neg { border-left-color: #b06060 !important; }
+.wc-att { border-left: 4px solid #c58f00; }
+.wc-asm { border-left: 4px solid #8fa7e0; }
+.wc-asm.wc-pack { border-left-color: #9b59b6; }
+.wc-chip.wc-fade { opacity: .25; }
+.wc-wires .wc-pairline { stroke: rgba(197, 143, 0, .55); }
+.wc-note { border-left: 3px solid #b06060; background: rgba(176, 96, 96, .08);
+  padding: .35rem .6rem; border-radius: 4px; font-size: .84rem; }

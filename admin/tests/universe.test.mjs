@@ -9,7 +9,7 @@ import { docTreeElements, headingChain, DOC_ROOT_ID } from '../../assets/univers
 import { coreState, mergeShard, childrenOf, breadcrumb, loadForms, formOf, coreRecord,
   loadTokens, formRecord } from '../../assets/universe/core/coretree.js';
 import { viewOf, rawJsonHtml, rawMdHtml, buildView } from '../../assets/universe/core/fileview.js';
-import { fnv64, runEngine, runDelta } from '../../assets/wclm/engine.js';
+import { fnv64, runPipeline, runDelta, BLOCKS } from '../../assets/wclm/engine.js';
 import { layoutOptions, graphStyle } from '../../assets/universe/core/cystyle.js';
 
 let pass = 0, fail = 0;
@@ -707,7 +707,9 @@ const WC_WORLD = {
     [fnv64('meaning')]: { n: 0, form: 'meaning', count: 20, class: 'content', w: 0.2, top: [['connectivity', 5]] },
     [fnv64('connectivity')]: { n: 1, form: 'connectivity', count: 15, class: 'content', w: 0.25, top: [['meaning', 5]] },
     [fnv64('the')]: { n: 2, form: 'the', count: 99, class: 'padding', w: 0.01 },
+    [fnv64('without')]: { n: 3, form: 'without', count: 5, class: 'padding', w: 0.02 },
   },
+  stems: { meaning: ['meaning', 'meanings'] },
   cooc: [['meaning', 'connectivity', 5]],
   concepts: [
     { id: 'mtc', label: 'meaning through connectivity', family: 'concept',
@@ -717,33 +719,51 @@ const WC_WORLD = {
   pack: { terms: [{ id: 'pk:meaning', label: 'meaning', def: 'What a thing is.',
     forms: ['meaning'], edges: [['about', 'pk:connectivity']] }] },
 };
-test('wclm: six layers run and the exact concept out-binds its members', () => {
-  const R = runEngine('the meaning through connectivity', WC_WORLD);
-  assert.equal(R.layers.tokenise.length, 4);
-  assert.equal(R.layers.resolve.filter((t) => t.known).length, 3);   /* through unknown */
-  assert.equal(R.layers.attend.pairs.length, 1);
-  assert.equal(R.layers.attend.pairs[0].w, 5);
-  const ids = R.layers.bind.map((b) => b.id);
-  assert.ok(ids.includes('mtc') && ids.includes('con') && ids.includes('pk:meaning'));
-  assert.equal(R.meaning.id, 'mtc');            /* specificity beats the one-worders */
+test('wclm: the pipeline runs strictly and the exact concept out-binds its members', () => {
+  const R = runPipeline('the meaning through connectivity', WC_WORLD);
+  assert.equal(R.steps.filter((x) => !x.skipped).length, BLOCKS.length);
+  assert.equal(R.state.tokens.length, 4);
+  assert.equal(R.state.resolved.filter((t) => t.known).length, 3);
+  assert.equal(R.state.attention.profiles.length, 2);           /* padding dropped */
+  assert.equal(R.state.attention.profiles[0].pairs[0].w, 5);
+  assert.equal(R.meaning.id, 'mtc');
   assert.equal(R.meaning.def, 'What a thing is emerges from its edges.');
-  assert.ok(R.meaning.blast >= 1);              /* the about-edge counts */
+  assert.ok(R.meaning.blast >= 1);
 });
-test('wclm: the run delta measures the impact of a changed prompt', () => {
-  const a = runEngine('meaning', WC_WORLD);
-  const b = runEngine('meaning connectivity', WC_WORLD);
+test('wclm: negation changes the answer and surfaces the contradiction', () => {
+  const thru = runPipeline('meaning through connectivity', WC_WORLD);
+  const sans = runPipeline('meaning without connectivity', WC_WORLD);
+  assert.notEqual(thru.meaning.id, sans.meaning.id);            /* the founder's finding, fixed */
+  assert.ok(sans.notes[0].includes('negates "connectivity"'));
+  assert.ok(sans.notes[0].includes('contradicts the world'));
+  assert.ok(thru.notes.length === 0);
+});
+test('wclm: normalise repairs by dictionary and thesaurus, and says how', () => {
+  const R = runPipeline('meaninged and connectivvity', WC_WORLD);
+  const fixed = R.state.tokens.filter((t) => t.fix);
+  assert.equal(fixed.length, 2);
+  assert.equal(fixed[0].form, 'meaning');                       /* stem family (thesaurus) */
+  assert.ok(fixed[0].fix.how.includes('stem family'));
+  assert.equal(fixed[1].form, 'connectivity');                  /* edit distance (dictionary) */
+  assert.ok(fixed[1].fix.how.includes('edit distance'));
+});
+test('wclm: blocks mix and match, illegal orders skip with a reason', () => {
+  const min = runPipeline('meaning connectivity', WC_WORLD, ['tokenise', 'resolve', 'bind', 'converge']);
+  assert.equal(min.meaning.id, 'mtc');
+  const bad = runPipeline('meaning', WC_WORLD, ['expand', 'tokenise', 'resolve', 'bind', 'converge']);
+  assert.equal(bad.steps.find((x) => x.key === 'expand').skipped, 'needs bind');
+  assert.ok(bad.meaning);                                       /* the rest still runs */
+});
+test('wclm: the run delta measures impact, deterministic replay holds', () => {
+  const a = runPipeline('meaning', WC_WORLD);
+  const b = runPipeline('meaning connectivity', WC_WORLD);
   const d = runDelta(a, b);
   assert.deepEqual(d.layers.tokenise.added, ['connectivity']);
-  assert.deepEqual(d.layers.tokenise.removed, []);
-  assert.ok(d.layers.bind.added.includes('con'));      /* the new word's concept arrives */
-  assert.ok(d.winner.changed);                          /* pk:meaning -> mtc on specificity */
-  assert.equal(runDelta(null, b), null);                /* first run has no baseline */
-});
-test('wclm: deterministic replay, and an empty universe answers honestly', () => {
-  const a = runEngine('meaning connectivity', WC_WORLD);
-  const b = runEngine('meaning connectivity', WC_WORLD);
-  assert.deepEqual(a, b);
-  assert.equal(runEngine('zebra quantum', WC_WORLD).meaning, null);
+  assert.ok(d.layers.bind.added.includes('con'));
+  assert.ok(d.winner.changed);
+  assert.equal(runDelta(null, b), null);
+  assert.deepEqual(runPipeline('meaning connectivity', WC_WORLD), b);
+  assert.equal(runPipeline('zebra quantum', WC_WORLD).meaning, null);
 });
 
 console.log(`universe tests: ${pass} passed, ${fail} failed`);
