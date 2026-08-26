@@ -45,3 +45,38 @@ file is your initial prompt.
 Your audience is authors, not graph specialists. Every scene in this book must be
 checkable at the tag its caption names — that is the book's own thesis applied to
 itself.
+
+---
+
+## Delivered
+
+**Status:** COMPLETE DRAFT, written against graphs.sgit.ai v0.5.11, 26 August 2026.
+
+| | |
+|---|---|
+| The book | twelve chapters, three appendices and a colophon, ~31,000 words, in `content/` |
+| The print PDF | `making-a-book.pdf` — 92 pages, A4, self-contained, figures embedded, reads offline |
+| The web edition | `index.html` plus one page per chapter, each rendering its own markdown client-side |
+| The figures | twenty, in `figures/`, each re-taken from the git tag its caption names |
+| The builders | `build.py` (markdown → print HTML → PDF, weasyprint) and `gen_pages.py` (the web edition) |
+
+**Rebuilding.** `python3 v2/books/making-a-book/build.py` then
+`python3 v2/books/making-a-book/gen_pages.py` then `python3 admin/build/chrome.py`.
+`build.py` needs `markdown` and `weasyprint` (`pip install markdown weasyprint`); the
+latter is the same engine `admin/build/gen_packs.py` uses for the review packs. The
+print HTML is written outside the repository, because the estate's rule is that print
+sources carry no site chrome and a chrome-less page inside the tree would fail the gate.
+
+**Two notes for whoever releases this.**
+
+1. `v2/books/index.html` does not exist yet, so the bookshelf is not in the crumb trail of
+   these pages. When the shelf gets a rendered hub, the crumbs in `gen_pages.py` should
+   gain it back.
+2. The eighteen new pages need sitemap entries (`gen_sitemap.py` picks them up) before
+   `validate.js` will pass, and the book wants a line in `llms.txt` and one nav entry.
+   None of that has been done here, because it belongs to the release rather than to the
+   book.
+
+**Figure paths.** The chapter markdown points at `figures/…`, which is relative to this
+folder rather than to `content/`, because the client-side reader resolves an image against
+the page that renders it and the rendered pages live here. The colophon says so too.

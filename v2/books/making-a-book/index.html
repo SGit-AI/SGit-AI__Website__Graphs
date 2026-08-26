@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Creating a Book Using Fractal Semantic Graphs &mdash; graphs.sgit.ai</title>
+<meta name="description" content="The making-of: how the second book is being built with AI agents, in six days and eighty-eight releases. Twelve chapters, three appendices, twenty figures re-taken from git tags.">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/books/making-a-book/index.html">
+<meta property="og:type" content="book">
+<meta property="og:site_name" content="graphs.sgit.ai">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/books/making-a-book/index.html">
+<meta property="og:title" content="Creating a Book Using Fractal Semantic Graphs">
+<meta property="og:description" content="The true story of how the second book is being built, for authors who want to use similar agentic workflows.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../../index.html">graphs<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
+  <span class="stage-pill">reference draft</span>
+  <a class="ver" href="../../../admin/versions.html" title="Site release history">v0.5.11</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/start/index.html">Start here<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/start/index.html">The five-minute version</a>
+      <a class="sl" href="../../../v1/why-graphs/index.html">Why graphs at all</a>
+      <a class="sl" href="../../../v1/glossary/index.html">Glossary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v2/index.html">The book<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v2/index.html">The second edition &middot; current</a>
+      <a class="sl" href="../../../v2/dev-pack/index.html">&hellip; the dev pack: the plan</a>
+      <a class="sl" href="../../../v2/packs/index.html">&hellip; the review packs</a>
+      <a class="sl" href="../../../v1/book/index.html">The first edition &middot; frozen</a>
+      <a class="sl" href="../../../v1/book/single.html">&hellip; read it in one page</a>
+      <a class="sl" href="../../../v1/book/changes.html">&hellip; what changed between versions</a>
+      <a class="sl" href="../../../v1/reviews/index.html">&hellip; the reviews</a>
+      <a class="sl" href="../../../v1/docs/index.html">&hellip; the sources it came from</a>
+      <a class="sl" href="../../../v1/altitudes/index.html">&hellip; the altitude ladder</a>
+      <a class="sl" href="../../../v1/book/meaning-through-connectivity.pdf">&hellip; the print PDF (6&times;9)</a>
+      <a class="sl" href="../../../v1/book/meaning-through-connectivity-screen.pdf">&hellip; the screen PDF (tablet)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v2/universe/index.html">The universe<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v2/universe/index.html">Layer 1: the documents, extracted</a>
+      <a class="sl" href="../../../v2/universe/thinking-in-graphs.html">&hellip; the pilot: Thinking in Graphs</a>
+      <a class="sl" href="../../../v2/universe/thinking-in-graphs.graph.html">&hellip; its graph, standalone &middot; phone-friendly</a>
+      <a class="sl" href="../../../v2/universe/thinking-in-graphs.files.html">&hellip; its files, raw and viewed</a>
+      <a class="sl" href="../../../v2/memos/index.html">The founder&rsquo;s memos, verbatim</a>
+      <a class="sl" href="../../../v2/methods/index.html">The methods register</a>
+      <a class="sl" href="../../../v2/lexicon/index.html">The lexicon, in scopes</a>
+      <a class="sl" href="../../../v2/artefacts/index.html">The artefact catalogue</a>
+      <a class="sl" href="../../../decisions/index.html">The open decisions</a>
+      <a class="sl" href="../../../v2/dev-pack/design-00-the-victor-register.html">The immediate-connection register</a>
+      <a class="sl" href="../../../v2/dev-pack/retro-00-the-v04-retrospective.html">The v0.4 retrospective</a>
+      <a class="sl" href="../../../v2/wclm/index.html">The WCLM &middot; a deterministic transformer</a>
+      <a class="sl" href="../../../v2/wclm/operators/index.html">&hellip; its operators, each in its folder</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/grammar/index.html">The grammar<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/grammar/index.html">The rules you can apply tomorrow</a>
+      <a class="sl" href="../../../v1/grammar/edge-set.html">The edge set</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/depth/index.html">Depth<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/depth/index.html">The full argument</a>
+      <a class="sl" href="../../../v1/depth/boundaries.html">A graph at every boundary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/vaults/index.html">The vaults<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/vaults/index.html">The vaults, opened</a>
+      <a class="sl" href="../../../v1/vaults/voice-debrief/index.html">VoiceDebrief</a>
+      <a class="sl" href="../../../v1/vaults/voice-debrief/junction.html">&hellip; the junction rule</a>
+      <a class="sl" href="../../../v1/vaults/voice-debrief/absence.html">&hellip; the empty layer</a>
+      <a class="sl" href="../../../v1/vaults/regulation-graph/index.html">Regulation Graph</a>
+      <a class="sl" href="../../../v1/vaults/regulation-graph/provenance.html">&hellip; the provenance chain</a>
+      <a class="sl" href="../../../v1/vaults/regulation-graph/engines.html">&hellip; the query engines</a>
+      <a class="sl" href="../../../v1/vaults/risk-mandate/index.html">Risk Mandate</a>
+      <a class="sl" href="../../../v1/vaults/agentic-browser-isolation/index.html">Agentic Browser Isolation</a>
+      <a class="sl" href="../../../v1/vaults/agentic-browser-isolation/acceptance.html">&hellip; the acceptance mechanism</a>
+      <a class="sl" href="../../../v1/vaults/risk-graph-explorer/index.html">Risk Graph Explorer</a>
+      <a class="sl" href="../../../v1/vaults/capability-scale.html">The capability scale</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/examples/index.html">Examples<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/examples/index.html">Worked graphs, with real numbers</a>
+      <a class="sl" href="../../../v1/examples/browser-isolation.html">Browser isolation</a>
+      <a class="sl" href="../../../v1/examples/2fa.html">The 2FA graph</a>
+      <a class="sl" href="../../../v1/examples/article-26-5.html">Article 26(5), end to end</a>
+      <a class="sl" href="../../../v1/maps/index.html">Wardley maps as graphs</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/shipped/index.html">Reality<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/shipped/index.html">What ships, what is argued</a>
+      <a class="sl" href="../../../v1/origins/index.html">Origins: 2026</a>
+      <a class="sl" href="../../../v1/network/index.html">The network</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../v1/documents/index.html">Site<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../v1/documents/index.html">The documents</a>
+      <a class="sl" href="../../../v1/documents/what-the-graphs-found.html">&hellip; what the graphs found</a>
+      <a class="sl" href="../../../v2/memos/index.html">The memos</a>
+      <a class="sl" href="../../../v2/packs/index.html">The review packs</a>
+      <a class="sl" href="../../../v2/dev-pack/index.html">The dev pack: the second book</a>
+      <a class="sl" href="../../../admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl" href="../../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../../admin/publishing.html">Publishing the book</a>
+      <a class="sl" href="../../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../../v1/about/participant.html">Where we lose</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Graphs">★ GitHub</a>
+  <script src="../../../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+<div class="crumb"><a href="../../../index.html">graphs.sgit.ai</a> &rarr; <a href="../../index.html">the second edition</a> &rarr; <b>Creating a book</b></div>
+<h1>Creating a Book Using Fractal Semantic Graphs</h1>
+<p class="lead">The true story of how the second edition of <i>Fractal Semantic Graphs: Meaning Through Connectivity</i> is being built: one person talking into a phone, a set of AI agents, and eighty-eight tagged releases in six days. Written for authors who want to work this way, not for graph specialists. Every scene in it is checkable at the git tag its caption names.</p>
+
+<div class="docmeta">
+  <span class="k">Read it</span><span class="v"><a href="making-a-book.pdf"><b>the print PDF</b></a> &middot; 92 pages, self-contained, reads offline &middot; or chapter by chapter below</span>
+  <span class="k">Written</span><span class="v">against graphs.sgit.ai v0.5.11, 26 August 2026, by an AI agent on the repository it describes</span>
+  <span class="k">Covers</span><span class="v">v0.1.0 (21 August 2026) to v0.5.11 (26 August 2026) &middot; 88 tagged releases &middot; 6 days</span>
+  <span class="k">Source</span><span class="v">markdown in <a href="https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/books/making-a-book/content">content/</a> &middot; figures in <a href="https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/books/making-a-book/figures">figures/</a> &middot; built by <a href="https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/books/making-a-book/build.py">build.py</a></span>
+  <span class="k">Licence</span><span class="v">CC BY 4.0</span>
+</div>
+
+<div class="note"><b>Not a graph database pitch.</b> This position travels with everything on this site and with everything in this book: there is no graph database in the system described here, and no RDF, SPARQL or Cypher in its code. The graphs are JSON files in a git repository. The book is about a way of working, not a product.</div>
+
+<h2 id="what">What it is</h2>
+<p>An expansion of <a href="../../dev-pack/retro-00-the-v04-retrospective.html">the v0.4 retrospective</a> into a full book, carried through the v0.5 era, and aimed at a different reader: not a graph specialist, but somebody with a book in them and an AI agent at hand. It is the third of <a href="../../dev-pack/book-pack-00-README.html">three books commissioned from this estate</a>, and the only one about the making rather than the material.</p>
+<p>The promise: here is a working loop for writing a book with agents, demonstrated end to end on a real one, failures included. Every claim is checkable in the repository it describes, which is the loop's whole point.</p>
+
+<h2 id="chapters">The book</h2>
+<div class="tablewrap">
+<table>
+  <thead><tr><th>#</th><th>Chapter</th><th>What it gives you</th><th>Raw</th></tr></thead>
+  <tbody>
+      <tr><td class="dpnum">00</td><td><a href="00-front-matter.html"><b>Creating a Book Using Fractal Semantic Graphs</b></a></td><td>What the book is, who it is for, what you will know at the end, how to check any claim in it, and the AI-authorship disclosure.</td><td><a href="content/00__front-matter.md">.md</a></td></tr>
+      <tr><td class="dpnum">01</td><td><a href="01-the-loop.html"><b>1 · The loop</b></a></td><td>Voice memo, verbatim brief, build, release, live review, usually inside an hour. The four numbers that tell you whether the loop is running.</td><td><a href="content/01__the-loop.md">.md</a></td></tr>
+      <tr><td class="dpnum">02</td><td><a href="02-the-pivot.html"><b>2 · The first book, and the pivot that saved the second</b></a></td><td>A book written in three days, and then the memo that cancelled the plan for the second one: build the universe first, find the plot afterwards.</td><td><a href="content/02__the-pivot.md">.md</a></td></tr>
+      <tr><td class="dpnum">03</td><td><a href="03-briefs-as-the-contract.html"><b>3 · Briefs as the contract</b></a></td><td>Why the raw transcript goes above the tidy summary rather than instead of it, and the three-part shape every brief in this corpus has.</td><td><a href="content/03__briefs-as-the-contract.md">.md</a></td></tr>
+      <tr><td class="dpnum">04</td><td><a href="04-gates-buy-speed.html"><b>4 · Gates buy speed</b></a></td><td>Why automated checks make an agentic project faster. The seven checks to start with, the unit suite from 13 tests to 84, and the release note as a gate.</td><td><a href="content/04__gates-buy-speed.md">.md</a></td></tr>
+      <tr><td class="dpnum">05</td><td><a href="05-the-instrument.html"><b>5 · From a page to an instrument</b></a></td><td>Five screenshots from five points in history, and the design law underneath them: every node move costs the viewer their mental picture.</td><td><a href="content/05__the-instrument.md">.md</a></td></tr>
+      <tr><td class="dpnum">06</td><td><a href="06-two-agents-one-repo.html"><b>6 · Two agents, one repository</b></a></td><td>Two Claude sessions, one repository, three merge commits. The four-note exchange, the bug neither could see alone, and the four rules that held.</td><td><a href="content/06__two-agents-one-repo.md">.md</a></td></tr>
+      <tr><td class="dpnum">07</td><td><a href="07-the-failures.html"><b>7 · The failures, lovingly</b></a></td><td>Nine failures with the cost attached: the iPad round, the wire that jumped a layer, the negation that was not there, and the hour lost to a zombie browser.</td><td><a href="content/07__the-failures.md">.md</a></td></tr>
+      <tr><td class="dpnum">08</td><td><a href="08-reviewing-out-loud.html"><b>8 · Reviewing out loud</b></a></td><td>Ten screenshots and three and a half minutes of talking produced six findings. And the inversion that followed: pages that broadcast their own state.</td><td><a href="content/08__reviewing-out-loud.md">.md</a></td></tr>
+      <tr><td class="dpnum">09</td><td><a href="09-the-experiments.html"><b>9 · The experiments</b></a></td><td>A crazy experiment from voice memo to tested, folder-structured subsystem in eight releases across one afternoon, with its exit named before it started.</td><td><a href="content/09__the-experiments.md">.md</a></td></tr>
+      <tr><td class="dpnum">10</td><td><a href="10-the-founders-craft.html"><b>10 · The founder's craft</b></a></td><td>Five habits from a person who steered eleven build rounds in six days without writing a line of code, and the five things he did not do.</td><td><a href="content/10__the-founders-craft.md">.md</a></td></tr>
+      <tr><td class="dpnum">11</td><td><a href="11-the-playbook.html"><b>11 · The playbook</b></a></td><td>The chapter that stands alone. What to set up on day zero, what to say in your first memo, what to expect to go wrong, and the honest costs.</td><td><a href="content/11__the-playbook.md">.md</a></td></tr>
+      <tr><td class="dpnum">12</td><td><a href="12-what-it-costs.html"><b>12 · What it costs, and where it loses</b></a></td><td>What the six days did not produce, the costs nobody mentions, and four situations where this method is the wrong one.</td><td><a href="content/12__what-it-costs.md">.md</a></td></tr>
+      <tr><td class="dpnum">13</td><td><a href="13-appendix-a-one-brief-annotated.html"><b>Appendix A · One brief, annotated</b></a></td><td>One complete brief, verbatim, annotated segment by segment, with the release it produced thirty-three minutes later.</td><td><a href="content/13__appendix-a-one-brief-annotated.md">.md</a></td></tr>
+      <tr><td class="dpnum">14</td><td><a href="14-appendix-b-the-chronology.html"><b>Appendix B · The chronology</b></a></td><td>All eighty-eight releases in order, by day, with timestamps and the opening of each release note.</td><td><a href="content/14__appendix-b-the-chronology.md">.md</a></td></tr>
+      <tr><td class="dpnum">15</td><td><a href="15-appendix-c-the-harness.html"><b>Appendix C · The harness</b></a></td><td>The scripts: time travel by git tag, the screenshot harness and its port rule, and every command that produced a number in this book.</td><td><a href="content/15__appendix-c-the-harness.md">.md</a></td></tr>
+      <tr><td class="dpnum">16</td><td><a href="16-colophon.html"><b>Colophon</b></a></td><td>How the book was made, what was cut, what remains open, and the honesty positions carried from the corpus.</td><td><a href="content/16__colophon.md">.md</a></td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="checking">How to check any of it</h2>
+<p>The repository carries a git tag for every one of the eighty-eight releases. Every figure in this book was taken by checking out the tag its caption names into a temporary worktree, serving it, and photographing the page as it actually was. None is a reconstruction, and any of them can be re-taken with the two scripts in <a href="15-appendix-c-the-harness.html">Appendix C</a>. Every number was computed from the repository rather than recalled, and the commands are in the same appendix. Every founder quotation is verbatim and was already published at <a href="../../memos/index.html">the memos hub</a> before this book was started.</p>
+
+<h2 id="figures">The twenty figures</h2>
+<p>Each one re-taken from the tag in its caption. In the order they appear in the book.</p>
+<div class="dpfigs">
+  <figure class="dpfig"><img src="figures/01__v0.4.5__pilot-extraction.png" alt="pilot extraction at v0.4.5" loading="lazy"><figcaption><b>v0.4.5</b> &middot; pilot extraction</figcaption></figure>
+  <figure class="dpfig"><img src="figures/02__v0.4.8__reader-side-panel.png" alt="reader side panel at v0.4.8" loading="lazy"><figcaption><b>v0.4.8</b> &middot; reader side panel</figcaption></figure>
+  <figure class="dpfig"><img src="figures/03__v0.4.11__graph-as-instrument.png" alt="graph as instrument at v0.4.11" loading="lazy"><figcaption><b>v0.4.11</b> &middot; graph as instrument</figcaption></figure>
+  <figure class="dpfig"><img src="figures/04__v0.4.16__the-instrument-panel-grows.png" alt="the instrument panel grows at v0.4.16" loading="lazy"><figcaption><b>v0.4.16</b> &middot; the instrument panel grows</figcaption></figure>
+  <figure class="dpfig"><img src="figures/05__v0.4.31__after-the-narrated-review.png" alt="after the narrated review at v0.4.31" loading="lazy"><figcaption><b>v0.4.31</b> &middot; after the narrated review</figcaption></figure>
+  <figure class="dpfig"><img src="figures/06__v0.4.34__links-panel-and-path-query.png" alt="links panel and path query at v0.4.34" loading="lazy"><figcaption><b>v0.4.34</b> &middot; links panel and path query</figcaption></figure>
+  <figure class="dpfig"><img src="figures/07__v0.4.39__standalone-graph-phone-landscape.png" alt="standalone graph phone landscape at v0.4.39" loading="lazy"><figcaption><b>v0.4.39</b> &middot; standalone graph phone landscape</figcaption></figure>
+  <figure class="dpfig"><img src="figures/08__v0.5.1__file-explorer-raw-and-rendered.png" alt="file explorer raw and rendered at v0.5.1" loading="lazy"><figcaption><b>v0.5.1</b> &middot; file explorer raw and rendered</figcaption></figure>
+  <figure class="dpfig"><img src="figures/09__v0.5.2__the-wclm-six-layers.png" alt="the wclm six layers at v0.5.2" loading="lazy"><figcaption><b>v0.5.2</b> &middot; the wclm six layers</figcaption></figure>
+  <figure class="dpfig"><img src="figures/10__v0.5.4__strict-layers-and-the-pipeline-bar.png" alt="strict layers and the pipeline bar at v0.5.4" loading="lazy"><figcaption><b>v0.5.4</b> &middot; strict layers and the pipeline bar</figcaption></figure>
+  <figure class="dpfig"><img src="figures/11__v0.5.7__the-operator-explorer.png" alt="the operator explorer at v0.5.7" loading="lazy"><figcaption><b>v0.5.7</b> &middot; the operator explorer</figcaption></figure>
+  <figure class="dpfig"><img src="figures/12__v0.5.7__the-operator-workbench.png" alt="the operator workbench at v0.5.7" loading="lazy"><figcaption><b>v0.5.7</b> &middot; the operator workbench</figcaption></figure>
+  <figure class="dpfig"><img src="figures/13__v0.5.9__the-wclm-today.png" alt="the wclm today at v0.5.9" loading="lazy"><figcaption><b>v0.5.9</b> &middot; the wclm today</figcaption></figure>
+  <figure class="dpfig"><img src="figures/14__v0.5.9__the-code-anatomy-view.png" alt="the code anatomy view at v0.5.9" loading="lazy"><figcaption><b>v0.5.9</b> &middot; the code anatomy view</figcaption></figure>
+  <figure class="dpfig"><img src="figures/15__v0.2.0__the-first-book.png" alt="the first book at v0.2.0" loading="lazy"><figcaption><b>v0.2.0</b> &middot; the first book</figcaption></figure>
+  <figure class="dpfig"><img src="figures/16__v0.3.15__the-altitude-ladder.png" alt="the altitude ladder at v0.3.15" loading="lazy"><figcaption><b>v0.3.15</b> &middot; the altitude ladder</figcaption></figure>
+  <figure class="dpfig"><img src="figures/17__v0.5.11__the-front-page.png" alt="the front page at v0.5.11" loading="lazy"><figcaption><b>v0.5.11</b> &middot; the front page</figcaption></figure>
+  <figure class="dpfig"><img src="figures/18__v0.5.11__the-release-history.png" alt="the release history at v0.5.11" loading="lazy"><figcaption><b>v0.5.11</b> &middot; the release history</figcaption></figure>
+  <figure class="dpfig"><img src="figures/19__v0.5.11__the-memos-hub.png" alt="the memos hub at v0.5.11" loading="lazy"><figcaption><b>v0.5.11</b> &middot; the memos hub</figcaption></figure>
+  <figure class="dpfig"><img src="figures/20__v0.5.11__the-reader-today.png" alt="the reader today at v0.5.11" loading="lazy"><figcaption><b>v0.5.11</b> &middot; the reader today</figcaption></figure>
+</div>
+
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">graphs<span>.sgit.ai</span></div>
+    <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
+    <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
+    <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../../../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../../admin/versions.html">v0.5.11</a> · <a href="../../../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>Start here</h4>
+    <a href="../../../v1/start/index.html">&#8594; The five-minute version</a>
+    <a href="../../../v1/why-graphs/index.html">Why graphs at all</a>
+    <a href="../../../v1/glossary/index.html">Glossary</a>
+    <a href="../../../v1/book/index.html">The book</a>
+    <a href="../../../v1/book/single.html">&nbsp;&nbsp;&hellip; in one page</a>
+    <a href="../../../v1/book/meaning-through-connectivity.pdf">&nbsp;&nbsp;&hellip; as a print PDF</a>
+    <a href="../../../v1/book/meaning-through-connectivity-screen.pdf">&nbsp;&nbsp;&hellip; as a screen PDF</a>
+  </div>
+  <div>
+    <h4>The grammar</h4>
+    <a href="../../../v1/grammar/index.html">The rules</a>
+    <a href="../../../v1/grammar/edge-set.html">The edge set</a>
+    <a href="../../../v1/depth/index.html">The full argument</a>
+    <a href="../../../v1/depth/boundaries.html">A graph at every boundary</a>
+  </div>
+  <div>
+    <h4>Worked graphs</h4>
+    <a href="../../../v1/examples/index.html">All of them</a>
+    <a href="../../../v1/examples/browser-isolation.html">Browser isolation</a>
+    <a href="../../../v1/examples/2fa.html">The 2FA graph</a>
+    <a href="../../../v1/examples/article-26-5.html">Article 26(5)</a>
+    <a href="../../../v1/maps/index.html">Wardley maps</a>
+  </div>
+  <div>
+    <h4>Reality &amp; site</h4>
+    <a href="../../../v1/shipped/index.html">What ships, what is argued</a>
+    <a href="../../../v1/origins/index.html">Origins: 2026</a>
+    <a href="../../../v1/network/index.html">The network</a>
+    <a href="../../../v1/documents/index.html">The documents</a>
+    <a href="../../../admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="../../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

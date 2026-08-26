@@ -1,0 +1,163 @@
+# Appendix B · The chronology
+
+*Every release from v0.1.0 to v0.5.11, in order, with its timestamp and the opening of its
+own release note. The full paragraph for each is at `/admin/versions.html` and its two
+archive pages. The timestamps are the author dates of the tagged commits, in UTC, read
+from the repository's git history.*
+
+---
+
+## Friday 21 August 2026
+
+*13 releases*
+
+| Version | UTC | The release note's opening |
+|---|---|---|
+| **v0.1.0** | 14:47 | First cut. The pipeline before the prose: validate → tag → deploy on every push to dev, with a seven-check pre-release gate and automatic minor tagging verified against the … |
+| **v0.2.0** | 17:43 | The book. A new /book/ section — the site's content as a book, Meaning Through Connectivity: sixteen chapters in six parts, in three reading modes — chapter pages with a … |
+| **v0.2.1** | 18:05 | The print edition. The book's PDF is no longer a printout of the web pages — it is a print interior in the standard technical-book format, following a format review against … |
+| **v0.2.2** | 18:10 | Two PDF editions, one source. The screen-styled PDF returns alongside the print interior — founder request: the site-design edition reads well on a tablet, so both now ship. |
+| **v0.2.3** | 19:43 | Print-edition fix: the title pages are now centred. |
+| **v0.2.4** | 20:00 | Print-edition fix: tables typeset properly. Founder-reported from the print PDF: cramped cells, stretched word-gaps, and mid-word breaks ("cent-rally") in narrow columns. |
+| **v0.2.5** | 20:08 | Chapter 1 editorial fix, and self-references made projection-aware. |
+| **v0.3.0** | 20:25 | The chapter text moves to markdown — a major, because the authoring model changed. |
+| **v0.3.1** | 20:40 | The cover — generated, in SVG, from the book's own vocabulary. |
+| **v0.3.2** | 20:56 | The publication pass: book-first prose, expanded shorthand, and the author's method stated with numbers. |
+| **v0.3.3** | 21:04 | The licence on the cover, the edition on the cover, and a lesson the gate taught us. |
+| **v0.3.4** | 21:35 | The book now opens at the front door. Founder request: the front page's framing (the 8080 hero, the epigraph and the not-a-pitch note, the 10,000-hours story, the three … |
+| **v0.3.5** | 21:39 | The back cover breathes. Founder call: the italic sentence under the edition line ("The first of many: a new edition is published each time…") comes off the back cover — … |
+
+## Saturday 22 August 2026
+
+*16 releases*
+
+| Version | UTC | The release note's opening |
+|---|---|---|
+| **v0.3.6** | 09:53 | The publishing pages. Founder ask N8: research publishing in detail and put it on the site. |
+| **v0.3.7** | 12:38 | The version diff view: the foundation of the review workflow. |
+| **v0.3.8** | 13:08 | Review r001, and the reviews section. The workflow's first full turn, run on the founder's first-reading memo (preserved verbatim as brief 11). |
+| **v0.3.9** | 14:28 | Review r002: a book for humans and agents. The second review through the workflow, hours after the first (verbatim memo as brief 12, normalised with comments and proposals as … |
+| **v0.3.10** | 14:59 | The reviews gain their threads: the librarian answers. |
+| **v0.3.11** | 15:04 | A third estate joins the threads: sgraph.ai. A founder pointer, explored and verified: sgraph.ai's library is itself the pattern this book argues for, a production website … |
+| **v0.3.12** | 15:10 | The reviewer calibrates the librarian. A founder correction lands in review r001 item 2's thread, verbatim: the librarian's G³ finding leaned on docs.diniscruz.ai, which was … |
+| **v0.3.13** | 16:03 | Review r003, and the decisions register. The founder's third memo, preserved verbatim as brief 14 and normalised into review r003, six items: decouple the book from the … |
+| **v0.3.14** | 16:09 | The librarian corrects the librarian. Nudged by the founder's calibration (v0.3.12), the librarian re-ran its source resolution with the __Send and Issues-FS corpora restored … |
+| **v0.3.15** | 16:51 | The altitude ladder: one book at five altitudes. |
+| **v0.3.16** | 17:18 | A fifth estate, read and threaded: issues-fs.sgit.ai. |
+| **v0.3.17** | 18:09 | The ladder becomes columns, and every level gets an ontology. |
+| **v0.3.18** | 18:28 | The flicker, fixed; and the ladder drawn as one graph. |
+| **v0.3.19** | 22:55 | The title is decided, and the vault analyses begin. |
+| **v0.3.20** | 23:24 | The concept layer, and a graph you can explore from anywhere. |
+| **v0.3.21** | 23:40 | The path query, and contradictions as measurements. |
+
+## Sunday 23 August 2026
+
+*14 releases*
+
+| Version | UTC | The release note's opening |
+|---|---|---|
+| **v0.3.22** | 00:17 | Three risk vaults, the first cross-vault finding, and the decisions register as a graph. |
+| **v0.3.23** | 00:21 | The date on the agent surface was three releases stale, and nothing was watching it. |
+| **v0.3.24** | 09:32 | The sources this book was built from, carried whole. |
+| **v0.3.25** | 11:18 | Six more sources, and the growth immediately broke the section's neatest claim. |
+| **v0.3.26** | 11:51 | What the graphs found, written down before the refactor moves the code. |
+| **v0.3.27** | 12:08 | The plan to write the book again, from the top down. |
+| **v0.4.0** | 13:19 | The first edition moves to /v1/ and freezes. The second edition begins, empty. |
+| **v0.4.1** | 13:56 | The title and the subtitle are two fields, not one string. |
+| **v0.4.2** | 14:41 | The dev pack was defining answers before the questions were known, and the founder caught it at section 5. |
+| **v0.4.3** | 15:47 | Review packs: documents that control the sequence, which a website cannot. |
+| **v0.4.4** | 21:57 | The second edition gathers everything it owns into /v2/, and /book/ becomes a pointer. |
+| **v0.4.5** | 22:09 | The universe begins, bottom up: the pilot extraction of Thinking in Graphs. |
+| **v0.4.6** | 22:23 | The lexicon in scopes, the methods register, and the artefact catalogue. |
+| **v0.4.7** | 22:25 | The redirect stubs are retired: 108 pages deleted, and the root is now exactly the model. |
+
+## Monday 24 August 2026
+
+*20 releases*
+
+| Version | UTC | The release note's opening |
+|---|---|---|
+| **v0.4.8** | 13:05 | The universe reader: the source, the extraction and the graph on one screen. |
+| **v0.4.9** | 13:34 | The reader grows up: selection, the trail, the stepper, the tempo, and the whole width. |
+| **v0.4.10** | 13:45 | The document folder, the usage ledger, and the reader's data mode. |
+| **v0.4.11** | 14:15 | The graph becomes an instrument, and the document climbs into it. |
+| **v0.4.12** | 14:23 | The graph options are reachable from anywhere on the page. |
+| **v0.4.13** | 14:49 | The reader refactored: zero visible change, and the tool is now portable across all twenty-one documents. |
+| **v0.4.14** | 15:58 | The graph learns to be explored: node packs, peaks, the explore view, and one toggle set for both panes. |
+| **v0.4.15** | 16:08 | The document of one node: brief 24's experiment, programmatic phase. |
+| **v0.4.16** | 17:08 | Pinned peaks: the summits hold still and the universe arranges itself around them. |
+| **v0.4.17** | 17:22 | The universe pages gain a JavaScript API and a chat panel that drives it. |
+| **v0.4.18** | 19:10 | The chat gains a vault: sessions that survive the refresh, and a two-way channel to the agents. |
+| **v0.4.19** | 20:11 | The pinned-nodes technique, debriefed. The founder asked for a document on the technique v0.4.16 shipped and the problems it solves; it lives at … |
+| **v0.4.20** | 20:23 | The chat learns to listen and to draw: voice notes and infographics, both landing in the vault. |
+| **v0.4.21** | 20:34 | A brief from one agent to the other: the chat's next power-ups. |
+| **v0.4.22** | 20:38 | The persona round: one document, many readers, and the feedback ledger the personalised book grows from. |
+| **v0.4.23** | 21:02 | The reader agent's brief, executed in full: the model can now see, pin, walk and listen for the pointing finger — and the chat's engine moved into its own parts. |
+| **v0.4.24** | 21:21 | Custom pins join the one layout pipeline, and the chat agent's execution is verified. |
+| **v0.4.25** | 21:31 | pin_nodes joins the one layout pipeline: the model's arrangement now survives the founder's next touch. |
+| **v0.4.26** | 23:00 | The iPad round: the founder's first live session found the two things headless Chromium never would. |
+| **v0.4.27** | 23:03 | The close button now says so. The founder asked how to close the chat panel — which means the bare ✕ among nine header buttons did not read as "close the panel" on a wrapped … |
+
+## Tuesday 25 August 2026
+
+*9 releases*
+
+| Version | UTC | The release note's opening |
+|---|---|---|
+| **v0.4.28** | 11:48 | The graph holds still, the peaks get a geography, and the schema judges the whole thing. |
+| **v0.4.29** | 12:04 | The founder's four answers, applied: seven slots, the invisible rails, and the verbs register. |
+| **v0.4.30** | 13:10 | The families get their rows, and the schema becomes a subset instrument. |
+| **v0.4.31** | 15:56 | The narrated review lands: six findings, each fixed where its screenshot pointed. |
+| **v0.4.32** | 16:04 | The state pane: the page broadcasts its state into the pixels a recording captures. |
+| **v0.4.33** | 16:55 | Click a node and see its universe: the links panel, the reverse verbs, and the path trail. |
+| **v0.4.34** | 17:48 | The path query arrives: walked, edited, run, and projected forward. |
+| **v0.4.35** | 18:59 | The immediate-connection register: the experience target, written down for every agent that follows. |
+| **v0.4.36** | 20:12 | Every working pack gets its rendered page, starting with the register that had none. |
+
+## Wednesday 26 August 2026
+
+*16 releases*
+
+| Version | UTC | The release note's opening |
+|---|---|---|
+| **v0.4.37** | 09:22 | The core graph: the document transformed all the way to the word. |
+| **v0.4.38** | 10:40 | Words as tokens, and the transform that goes both ways. |
+| **v0.4.39** | 11:02 | The graph gets its own page, and fits in your pocket. |
+| **v0.4.40** | 12:03 | The identity ledger: IDs that survive refactoring. |
+| **v0.5.0** | 12:08 | The v0.4 era closes, and the site catches up with what it built. |
+| **v0.5.1** | 12:26 | The file explorer: the document's artefacts, raw and viewed. |
+| **v0.5.2** | 13:44 | The WCLM: a deterministic transformer over our graphs. |
+| **v0.5.3** | 14:17 | Every box explains itself, both ways. Brief 32, recorded through the viewer's own loop after the founder tried the WCLM ("this WORKED really WELL"), built the same hour. |
+| **v0.5.4** | 15:35 | The detective playbook: strict layers, honest operators, reusable blocks. |
+| **v0.5.5** | 16:10 | Words have many meanings: senses, number, schemas, and a WCLM inside a WCLM. |
+| **v0.5.6** | 16:27 | The fractal nature: analogies for other worlds, and every answer declares its anchoring. |
+| **v0.5.7** | 17:20 | The operators become first-class folders: tune each one individually. |
+| **v0.5.8** | 18:08 | The explorer earns its screen: an overview, real renders, and the docs-files treatment for json. |
+| **v0.5.9** | 18:47 | Keep zooming: the code itself gets the graph treatment. |
+| **v0.5.10** | 20:58 | The book-writing pack: three books, three sessions, one pack. |
+| **v0.5.11** | 21:09 | The bookshelf: three folders, each carrying its own initial prompt. |
+
+---
+
+## The shape of it
+
+| | |
+|---|---|
+| First release | v0.1.0, 21 August 2026, 14:47 UTC |
+| Last release covered | v0.5.11, 26 August 2026, 21:09 UTC |
+| Releases | 88 |
+| Calendar days | 6 |
+| Median gap between consecutive releases | 31.2 minutes |
+| Median gap within a working session (under 10 hours) | 29.3 minutes |
+| Gaps under 30 minutes | 42 of 87 |
+| Commits in the repository at v0.5.11 | 97 |
+| Commits whose subject begins `site v` | 89 |
+| Merge commits | 3 |
+| Releases whose note ends "No book content changed" | 66 |
+| Unit tests at v0.4.13, the suite's first release | 13 |
+| Unit tests at v0.5.11 | 84 |
+| Validator checks at v0.1.0 | 7 |
+| Validator checks at v0.5.11 | 16 |
+
+*Computed from the repository's git history and release tables at v0.5.11. The commands
+are in Appendix C.*
