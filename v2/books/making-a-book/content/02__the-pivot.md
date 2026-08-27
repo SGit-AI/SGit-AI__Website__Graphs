@@ -45,12 +45,12 @@ five levels of compression, from one paragraph to full prose.
 
 *Figure 3. The altitude ladder at tag `v0.3.15`, 22 August 2026.*
 
-By the end of the third day the chapters had moved to markdown, twenty-two source
+By the end of the third day the chapters had moved to markdown, twenty-one source
 documents had been carried into the repository whole, concept graphs had been computed
 per document, and the first edition was complete enough to freeze.
 
-Sixteen chapters in six parts, 20,838 words of page markdown, thirty-five releases,
-three days.
+Sixteen chapters in six parts, 20,838 words of page markdown, thirty-four releases to
+the freeze at v0.3.26, three days.
 
 That is the part that looks impressive and is actually the easy part.
 
@@ -124,7 +124,7 @@ otter.ai mishearing something, and "the the" doubled four times. Nobody cleaned 
 Chapter 3 is about why.
 
 The consequence of brief 20 is the entire second half of this book. Because the
-construction order inverted, the next thirty-four releases went into building the
+construction order inverted, the fifty releases that followed it went into building the
 machinery for decomposing documents into graphs, rather than into writing chapters. The
 book you would expect to have been written in that time does not exist. What exists
 instead is a working surface for writing it, and a lot more confidence about what it

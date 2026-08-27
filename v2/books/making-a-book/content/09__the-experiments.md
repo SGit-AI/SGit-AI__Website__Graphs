@@ -89,7 +89,8 @@ is a text edit.
 
 **v0.5.3, 14:17.** Thirty-three minutes later, every box on the page is clickable and
 explains itself in both directions: what produced it, with the reason on each wire, and
-what it feeds. Chapter 3's appendix reproduces the memo that asked for this.
+what it feeds. Appendix A reproduces the memo that asked for this and annotates it
+segment by segment.
 
 **v0.5.4, 15:35.** The detective playbook. Strict layer adjacency after the founder caught
 a wire jumping (Chapter 7), negation handling after he ran "meaning without connectivity"
@@ -137,7 +138,8 @@ workbench for execute and test and debug, and visual representations of the arch
 What shipped at v0.5.7 is a real restructure, not a presentational one. The twelve
 operators moved into twelve folders, and the file in each folder is the code the engine
 actually imports. The shared engine file went from 374 lines to 161. The diff is 159 files
-changed and 12,705 lines added. Eighty-six files now live under the operators directory.
+changed and 12,705 lines added. Seventy-four files live under the operators directory at
+that release, and eighty-six by v0.5.11.
 
 Each folder holds six kinds of artefact, and the six are worth listing because they are a
 template:

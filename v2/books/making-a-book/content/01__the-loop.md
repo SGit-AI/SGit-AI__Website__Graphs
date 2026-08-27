@@ -69,9 +69,11 @@ four below are computed from the repository's own git history; the commands are 
 Appendix C.
 
 **Releases per day.** Thirteen, sixteen, fourteen, twenty, nine, sixteen. Eighty-eight
-in six days, an average of 14.7 a day. The dip to nine on 25 August is not a slow day;
-it is the day the two hardest design problems of the whole period were solved, and each
-release that day carried more than the ones around it.
+in six days, an average of 14.7 a day. The dip to nine on 25 August is worth reading
+before you conclude it was a slow day: this book's judgement, and it is a judgement, is
+that it is the day the two hardest design problems of the period were worked (the
+stability principle of Chapter 5, and navigation as query), and that each release that
+day carried more than the ones around it.
 
 **The gap between releases.** The median gap between two consecutive tags is 31.2
 minutes. If you exclude the overnight gaps and look only at pairs less than ten hours

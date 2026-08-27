@@ -80,7 +80,7 @@ hardening:
 | v0.5.7 | 26 Aug | 82 |
 | v0.5.9 | 26 Aug | 84 |
 
-Thirteen to eighty-four in two and a half days. Every one of those tests is a
+Thirteen to eighty-four in a little over two days. Every one of those tests is a
 known-answer vector over a pure function: given this input, the function must produce
 exactly this output. There is no mocking and no test framework beyond what Node ships
 with.

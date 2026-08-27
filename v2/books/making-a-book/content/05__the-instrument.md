@@ -120,7 +120,7 @@ map has fixed landmarks between runs. This one has its own debrief document beca
 founder asked for a written account of the technique.
 
 **Alignment rails.** Invisible ties that pull related nodes into rows without being part
-of the content. They are layout physics, not data, and Chapter 7 tells the story of what
+of the content. They are layout physics, not data, and Chapter 8 tells the story of what
 happened when the two were confused.
 
 ## What it is for
