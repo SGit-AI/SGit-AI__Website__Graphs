@@ -12,10 +12,13 @@
 'use strict';
 import { viewOf, rawJsonHtml, rawMdHtml, rawJsHtml, buildView } from '../universe/core/fileview.js';
 import { bookViewOf, buildBookView, binaryKind, rawPyHtml } from './bookview.js';
+import { issueViewOf, issueHtml, statusSummary } from './issueview.js';
 
-/* Book views are asked first: only they claim a name the document views would
-   otherwise take (a book's graph/index.json is not a core index). */
-const resolve = (name, base) => bookViewOf(name, base) || viewOf(name);
+/* The view modules are asked in order of how specific their claim is. An issue
+   is a .md that the document views would render as plain markdown, and a book's
+   graph/index.json is not a document's core index, so both are asked before the
+   general ones. */
+const resolve = (name, base) => issueViewOf(name, base) || bookViewOf(name, base) || viewOf(name);
 const build = (view, d) => buildBookView(view, d) || buildView(view, d);
 
 const FX = window.FILEX;
@@ -31,6 +34,13 @@ function boot() {
     '<a class="fx-open small" target="_blank" rel="noopener">open file &nearr;</a></div>' +
     '<div class="fx-body"><p class="dim">Pick a file on the left. Raw is always there; ' +
     'files the build understands also get their own view.</p></div></section>';
+  if (FX.kind === 'issues') {
+    const files = FX.folders.flatMap((f) => f.files.map((x) => ({ path: f.base + '/' + x.n })));
+    const sum = document.createElement('div');
+    sum.className = 'iv-summary';
+    sum.innerHTML = '<h3>Who is carrying what</h3>' + statusSummary(files);
+    root.parentNode.insertBefore(sum, root);
+  }
   const tree = root.querySelector('.fx-tree');
   const head = root.querySelector('.fx-head');
   const body = root.querySelector('.fx-body');
@@ -66,6 +76,11 @@ function boot() {
           : n.endsWith('.js') ? rawJsHtml(cur.text)
             : n.endsWith('.html') ? '<pre class="fv-raw">' + escHtml(cur.text) + '</pre>'
               : rawMdHtml(cur.text);
+      return;
+    }
+    if (cur.view === 'issue') {
+      body.innerHTML = issueHtml(cur.text, cur.path,
+        window.marked ? (md) => window.marked.parse(md) : null);
       return;
     }
     if (cur.view === 'rendered') {

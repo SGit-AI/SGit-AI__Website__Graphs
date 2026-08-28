@@ -163,51 +163,79 @@ OTHER = [
      ]},
 ]
 
-ISSUES = [
-    {"id": "MAB-01", "title": "Authored prose has no verbatim gate",
-     "status": "open", "priority": "high", "owner": "@qa",
-     "description": "An extraction cannot cite words that are not in the source; authored prose "
-                    "can. Eighteen of twenty-five founder quotations in the workflow document "
-                    "had been smoothed into readability before a script caught them.",
-     "href": "../../dev-pack/mab-workflow-00-the-record.html"},
-    {"id": "MAB-02", "title": "File paths named in prose are not checked",
-     "status": "open", "priority": "high", "owner": "@qa",
-     "description": "Chapters 4 and 15 named a test file the day it was deleted. The "
-                    "researcher's first debrief named a brief path renamed four releases "
-                    "earlier. Both found by reading.",
-     "href": "../../dev-pack/mab-naming-00-the-record.html"},
-    {"id": "MAB-03", "title": "The title is not yet earned by the body",
-     "status": "open", "priority": "high", "owner": "@editor",
-     "description": "The book is called Creating a Book Using Agentic Workflows and its own "
-                    "graph counts workflow six times in 27,002 words. Closing this is what "
-                    "part one and the vocabulary pass are for.",
-     "href": "../../universe/agentic-workflows.html"},
-    {"id": "MAB-04", "title": "Does the cover name Claude?",
-     "status": "blocked", "priority": "medium", "owner": "@founder",
-     "description": "Brief 40 said 'writing a book with Claude'; brief 41 said 'making a book "
-                    "with agents'. The book names Claude four times. The two memos point "
-                    "different ways and it has not been decided.",
-     "href": "../../dev-pack/mab-naming-00-the-record.html"},
-    {"id": "MAB-05", "title": "A graph diff needs a graph per book version",
-     "status": "open", "priority": "medium", "owner": "@developer",
-     "description": "Only the current version has a graph, so the diff the founder asked for "
-                    "cannot be computed backwards yet. A text diff is available from the tags "
-                    "today and should not be mistaken for the answer."},
-    {"id": "MAB-06", "title": "Issues-FS is missing from the network page",
-     "status": "open", "priority": "low", "owner": "@librarian",
-     "description": "Logged as task T31 in the v0.3.27 pack and still open. Their site cites "
-                    "this one for the philosophy; this one does not list them at all."},
-    {"id": "MAB-07", "title": "The fractal principle's February origin is not credited in prose",
-     "status": "open", "priority": "medium", "owner": "@researcher",
-     "description": "Part 3 of Thinking in Graphs, written for Issues-FS on 5 February 2026, "
-                    "names and works through the fractal principle five months before the "
-                    "document called Fractal Semantic Graphs. The anchored extraction holds it; "
-                    "the timeline in origins.md does not say it."},
-    {"id": "MAB-08", "title": "Per-agent task folders are not built",
-     "status": "open", "priority": "medium", "owner": "@developer",
-     "description": "The board shows the workstreams. The day-to-day list each agent owns, on "
-                    "the Issues-FS-lite pattern with the writer rule, does not exist yet."},
-]
+# The issues are NOT authored here. They are the markdown files under
+# v2/team/<role>/issues/{open,blocked,done}/, on the Issues-FS-lite pattern, and
+# the folder a file sits in IS its status. See v2/team/ISSUES.md.
+ISSUE_ROOT = TEAM
+FOLDER_STATUS = {"open": "open", "blocked": "blocked", "done": "resolved"}
+REQUIRED_FRONT = ("created", "priority")
+PRIORITIES = {"high", "medium", "low"}
+
+
+def front_matter(text):
+    """The leading --- block, as flat key/value pairs. Deliberately not a YAML
+    parser: the spec's front matter is flat, and a dependency for four keys
+    would be a dependency for four keys."""
+    if not text.startswith("---"):
+        return {}, text
+    end = text.find("\n---", 3)
+    if end == -1:
+        return {}, text
+    head, body = text[3:end], text[end + 4:]
+    fm = {}
+    for line in head.splitlines():
+        line = line.split("#")[0].rstrip() if not line.strip().startswith("#") else ""
+        if ":" not in line:
+            continue
+        k, v = line.split(":", 1)
+        fm[k.strip()] = v.strip()
+    return fm, body.lstrip("\n")
+
+
+def issues():
+    """Every issue file, read from the folder that is its status."""
+    out, errors = [], []
+    for role in sorted(d for d in ISSUE_ROOT.iterdir() if d.is_dir()):
+        for folder, status in FOLDER_STATUS.items():
+            d = role / "issues" / folder
+            if not d.is_dir():
+                continue
+            for f in sorted(d.glob("*.md")):
+                if not re.match(r"^\d{3}-[a-z0-9-]+\.md$", f.name):
+                    errors.append(f"{f.relative_to(ROOT)}: name must be NNN-kebab-slug.md")
+                    continue
+                fm, body = front_matter(f.read_text())
+                where = f.relative_to(ROOT)
+                for k in REQUIRED_FRONT:
+                    if k not in fm:
+                        errors.append(f"{where}: front matter has no {k!r}")
+                if fm.get("priority") and fm["priority"] not in PRIORITIES:
+                    errors.append(f"{where}: priority {fm['priority']!r} is not high/medium/low")
+                if folder == "blocked" and "blocked_on" not in fm:
+                    errors.append(f"{where}: is in blocked/ and does not say blocked_on what")
+                if folder == "done" and "closed" not in fm:
+                    errors.append(f"{where}: is in done/ and has no closed date")
+                if folder != "blocked" and "blocked_on" in fm:
+                    errors.append(f"{where}: says blocked_on but is not in blocked/")
+                m = re.search(r"^#\s+(.+)$", body, re.M)
+                if not m:
+                    errors.append(f"{where}: has no title heading")
+                out.append({
+                    "id": f'@{role.name}-{f.name[:3]}',
+                    "title": m.group(1) if m else f.name,
+                    "status": status,
+                    "priority": fm.get("priority", "low"),
+                    "owner": "@" + role.name,
+                    "description": (fm.get("blocked_on") and f'blocked on {fm["blocked_on"]}. ' or "")
+                                   + (fm.get("source") and f'From {fm["source"]}.' or ""),
+                    "href": f"../../../{where.as_posix()}",
+                })
+    if errors:
+        for e in errors:
+            print("  \u2717 " + e)
+        raise SystemExit(f"gen_board: {len(errors)} issue file(s) do not hold to "
+                         f"v2/team/ISSUES.md \u2014 nothing written")
+    return out
 
 
 def esc(s):
@@ -362,6 +390,7 @@ PAGE = """<!doctype html>
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     meta = json.loads((BOOK / "book.json").read_text())
+    ISSUE_LIST = issues()
     ws = control_workstreams() + [dict(p) for p in PLANS] + OTHER
     boards = {
         "workstreams": {"schema": "project-workstreams-v2", "version": VERSION,
@@ -370,8 +399,9 @@ def main():
                                 "its tasks. Click a card for the stages.",
                         "workstreams": ws},
         "issues": {"schema": "project-issues-v1", "version": VERSION,
-                   "note": "What is outstanding on this book, each with where it is argued.",
-                   "issues": ISSUES},
+                   "note": "Read from v2/team/<role>/issues/, where the folder a file sits in "
+                           "IS its status. Not authored here: to move one, git mv it.",
+                   "issues": ISSUE_LIST},
         "agents": {"schema": "project-agents-v2", "version": VERSION,
                    "note": "Computed from v2/team/ and the debriefs each role has produced for "
                            "this book. Active means it has worked at the book's current version.",
@@ -381,7 +411,7 @@ def main():
                      "releases": releases()},
     }
     check(boards)
-    counts = {"workstreams": len(ws), "issues": len(ISSUES),
+    counts = {"workstreams": len(ws), "issues": len(ISSUE_LIST),
               "agents": len(boards["agents"]["agents"]),
               "releases": len(boards["releases"]["releases"])}
     for name, data in boards.items():
@@ -396,7 +426,7 @@ def main():
     (BOOK / "board.html").write_text(PAGE.format(
         slug=BOOK.name, title=esc(meta["title"]), short=esc(meta["title"].split(":")[0]),
         bookver=esc(meta["version"]), ws=len(ws), tasks=n_tasks,
-        issues=sum(1 for i in ISSUES if i["status"] != "resolved"),
+        issues=sum(1 for i in ISSUE_LIST if i["status"] != "resolved"),
         manifest=json.dumps(manifest)))
     blocked = [w["id"] for w in ws if any(t["status"] == "blocked" for t in w["tasks"])]
     print(f'gen_board: making-a-book — {len(ws)} workstream(s), {n_tasks} task(s), '

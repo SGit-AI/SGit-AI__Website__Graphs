@@ -72,3 +72,16 @@
 @media (max-width: 560px) {
   .bd-kanban { grid-template-columns: 1fr; }
 }
+
+/* the issue tree: the summary above it, and one issue rendered */
+.iv-summary { margin: 1rem 0 .4rem; }
+.iv-summary h3 { font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; color: #667; margin: 0 0 .4rem; }
+.iv-sum { font-size: .8rem; }
+.iv-sum td, .iv-sum th { padding: .22rem .7rem; }
+.iv-sum tr.iv-tot td { border-top: 2px solid var(--line2, #ddd); }
+.iv-head { margin: 0 0 .6rem; display: flex; gap: .5rem; align-items: baseline; flex-wrap: wrap; }
+.iv-fm { font-size: .76rem; margin-bottom: .8rem; }
+.iv-fm th { text-align: left; width: 10rem; color: #667; font-weight: 600;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .72rem; }
+.iv-fm td, .iv-fm th { padding: .18rem .5rem; vertical-align: top; }
+.iv .mdread { border-top: 1px solid var(--line2, #eee); padding-top: .7rem; }

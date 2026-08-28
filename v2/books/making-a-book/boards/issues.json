@@ -1,75 +1,142 @@
 {
  "schema": "project-issues-v1",
- "version": "v0.6.13",
- "note": "What is outstanding on this book, each with where it is argued.",
+ "version": "v0.6.14",
+ "note": "Read from v2/team/<role>/issues/, where the folder a file sits in IS its status. Not authored here: to move one, git mv it.",
  "issues": [
   {
-   "id": "MAB-01",
-   "title": "Authored prose has no verbatim gate",
+   "id": "@developer-001",
+   "title": "A graph diff needs a graph stored per book version",
    "status": "open",
-   "priority": "high",
-   "owner": "@qa",
-   "description": "An extraction cannot cite words that are not in the source; authored prose can. Eighteen of twenty-five founder quotations in the workflow document had been smoothed into readability before a script caught them.",
-   "href": "../../dev-pack/mab-workflow-00-the-record.html"
+   "priority": "medium",
+   "owner": "@developer",
+   "description": "From brief 45 — the diff the founder asked for.",
+   "href": "../../../v2/team/developer/issues/open/001-a-graph-per-book-version.md"
   },
   {
-   "id": "MAB-02",
-   "title": "File paths named in prose are not checked",
+   "id": "@developer-002",
+   "title": "uni-graph.js is over the size guideline, and has been for two eras",
    "status": "open",
-   "priority": "high",
-   "owner": "@qa",
-   "description": "Chapters 4 and 15 named a test file the day it was deleted. The researcher's first debrief named a brief path renamed four releases earlier. Both found by reading.",
-   "href": "../../dev-pack/mab-naming-00-the-record.html"
+   "priority": "low",
+   "owner": "@developer",
+   "description": "From v0.4.13 — named then, still open.",
+   "href": "../../../v2/team/developer/issues/open/002-uni-graph-is-435-lines-against-a-250-budget.md"
   },
   {
-   "id": "MAB-03",
+   "id": "@developer-003",
+   "title": "Per-agent issue folders, on the Issues-FS-lite pattern",
+   "status": "resolved",
+   "priority": "medium",
+   "owner": "@developer",
+   "description": "From MAB-08 on the project board; the founder's ask after reading issues-fs.sgit.ai.",
+   "href": "../../../v2/team/developer/issues/done/003-per-agent-issue-folders.md"
+  },
+  {
+   "id": "@editor-001",
    "title": "The title is not yet earned by the body",
    "status": "open",
    "priority": "high",
    "owner": "@editor",
-   "description": "The book is called Creating a Book Using Agentic Workflows and its own graph counts workflow six times in 27,002 words. Closing this is what part one and the vocabulary pass are for.",
-   "href": "../../universe/agentic-workflows.html"
+   "description": "From v0.6.9 — the retitle, shipped with this caveat on the record.",
+   "href": "../../../v2/team/editor/issues/open/001-the-title-is-not-yet-earned-by-the-body.md"
   },
   {
-   "id": "MAB-04",
-   "title": "Does the cover name Claude?",
+   "id": "@editor-002",
+   "title": "Does the cover name Claude, or agents?",
    "status": "blocked",
    "priority": "medium",
-   "owner": "@founder",
-   "description": "Brief 40 said 'writing a book with Claude'; brief 41 said 'making a book with agents'. The book names Claude four times. The two memos point different ways and it has not been decided.",
-   "href": "../../dev-pack/mab-naming-00-the-record.html"
+   "owner": "@editor",
+   "description": "blocked on the founder. From v0.6.3 — the naming question, still open at stage 5.",
+   "href": "../../../v2/team/editor/issues/blocked/002-does-the-cover-name-claude.md"
   },
   {
-   "id": "MAB-05",
-   "title": "A graph diff needs a graph per book version",
-   "status": "open",
-   "priority": "medium",
-   "owner": "@developer",
-   "description": "Only the current version has a graph, so the diff the founder asked for cannot be computed backwards yet. A text diff is available from the tags today and should not be mistaken for the answer."
-  },
-  {
-   "id": "MAB-06",
+   "id": "@librarian-002",
    "title": "Issues-FS is missing from the network page",
    "status": "open",
    "priority": "low",
    "owner": "@librarian",
-   "description": "Logged as task T31 in the v0.3.27 pack and still open. Their site cites this one for the philosophy; this one does not list them at all."
+   "description": "From task T31 in the v0.3.27 pack; confirmed still open on 28 August 2026.",
+   "href": "../../../v2/team/librarian/issues/open/002-issues-fs-is-missing-from-the-network-page.md"
   },
   {
-   "id": "MAB-07",
-   "title": "The fractal principle's February origin is not credited in prose",
+   "id": "@librarian-001",
+   "title": "The process that turns a document into its folder of graph materials has no name",
+   "status": "blocked",
+   "priority": "medium",
+   "owner": "@librarian",
+   "description": "blocked on the founder. From brief 45 — \"we also need a name for this process\".",
+   "href": "../../../v2/team/librarian/issues/blocked/001-the-process-needs-a-name.md"
+  },
+  {
+   "id": "@publisher-001",
+   "title": "The Leanpub upload, held on purpose",
+   "status": "blocked",
+   "priority": "medium",
+   "owner": "@publisher",
+   "description": "blocked on part one landing, which is blocked on the founder. From v0.5.18, the Leanpub pack; held deliberately since.",
+   "href": "../../../v2/team/publisher/issues/blocked/001-the-leanpub-upload.md"
+  },
+  {
+   "id": "@publisher-002",
+   "title": "Covers, metadata, samples, landing pages, LinkedIn",
+   "status": "resolved",
+   "priority": "medium",
+   "owner": "@publisher",
+   "description": "From v0.5.19.",
+   "href": "../../../v2/team/publisher/issues/done/002-the-five-publishing-items.md"
+  },
+  {
+   "id": "@qa-001",
+   "title": "Authored prose has no verbatim gate",
+   "status": "open",
+   "priority": "high",
+   "owner": "@qa",
+   "description": "From v0.6.11 — writing the workflow document.",
+   "href": "../../../v2/team/qa/issues/open/001-verbatim-gate-for-authored-quotations.md"
+  },
+  {
+   "id": "@qa-002",
+   "title": "File paths named in prose are not checked",
+   "status": "open",
+   "priority": "high",
+   "owner": "@qa",
+   "description": "From v0.6.3 — the naming question, QA's opinion.",
+   "href": "../../../v2/team/qa/issues/open/002-file-paths-named-in-prose-must-exist.md"
+  },
+  {
+   "id": "@qa-003",
+   "title": "A book must be called the same thing in all three places",
+   "status": "resolved",
+   "priority": "high",
+   "owner": "@qa",
+   "description": "From v0.6.3 — requested before the rename, to protect the rename.",
+   "href": "../../../v2/team/qa/issues/done/003-a-book-is-called-the-same-thing-everywhere.md"
+  },
+  {
+   "id": "@researcher-001",
+   "title": "The fractal principle's February origin is not credited anywhere in prose",
    "status": "open",
    "priority": "medium",
    "owner": "@researcher",
-   "description": "Part 3 of Thinking in Graphs, written for Issues-FS on 5 February 2026, names and works through the fractal principle five months before the document called Fractal Semantic Graphs. The anchored extraction holds it; the timeline in origins.md does not say it."
+   "description": "From the founder, 28 August 2026 — \"that is where a lot of the fractal ideas were first created and explored\".",
+   "href": "../../../v2/team/researcher/issues/open/001-the-fractal-origin-is-not-credited-in-prose.md"
   },
   {
-   "id": "MAB-08",
-   "title": "Per-agent task folders are not built",
+   "id": "@researcher-002",
+   "title": "The fan-out is two documents, not twenty-one, and one of them was written here",
    "status": "open",
-   "priority": "medium",
-   "owner": "@developer",
-   "description": "The board shows the workstreams. The day-to-day list each agent owns, on the Issues-FS-lite pattern with the writer rule, does not exist yet."
+   "priority": "low",
+   "owner": "@researcher",
+   "description": "From the book's colophon, and the v0.4 retrospective before it.",
+   "href": "../../../v2/team/researcher/issues/open/002-the-fan-out-is-still-one-document-of-twenty-one.md"
+  },
+  {
+   "id": "@writer-001",
+   "title": "Part one: the art of the possible",
+   "status": "blocked",
+   "priority": "high",
+   "owner": "@writer",
+   "description": "blocked on the founder, on which book part one opens. From briefs 42, 44 and 45 — all three ask for it.",
+   "href": "../../../v2/team/writer/issues/blocked/001-part-one-the-art-of-the-possible.md"
   }
  ]
 }

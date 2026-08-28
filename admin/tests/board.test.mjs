@@ -12,6 +12,9 @@ import { test, report } from './harness.mjs';
 import {
   COLUMNS, statusOf, progressOf, safeColour, renderBoard, workstreamDetail,
 } from '../../assets/board/core/board.js';
+import {
+  issueViewOf, statusFromPath, ownerFromPath, splitFront, issueHtml, statusSummary,
+} from '../../assets/explorer/issueview.js';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const BOOK = path.join(ROOT, 'v2/books/making-a-book');
@@ -122,6 +125,92 @@ test('board: every issue says where it is argued, or says nothing at all', () =>
       const page = path.join(ROOT, 'v2', i.href.replace(/^\.\.\/\.\.\//, ''));
       assert.ok(existsSync(page), `${i.id} links ${i.href}, which is not built`);
     }
+  }
+});
+
+/* ---- the issue folders: Issues-FS-lite (v0.6.14) ------------------------- */
+const TEAM = path.join(ROOT, 'v2/team');
+const roleDirs = () => readdirSync(TEAM, { withFileTypes: true })
+  .filter((d) => d.isDirectory() && existsSync(path.join(TEAM, d.name, 'role.md')))
+  .map((d) => d.name);
+const allIssues = () => roleDirs().flatMap((r) => ['open', 'blocked', 'done'].flatMap((s) => {
+  const dir = path.join(TEAM, r, 'issues', s);
+  return existsSync(dir) ? readdirSync(dir).filter((f) => f.endsWith('.md'))
+    .map((f) => ({ role: r, state: s, name: f, path: path.join(dir, f) })) : [];
+}));
+
+test('issues: the folder is the status, and only the folder', () => {
+  assert.equal(statusFromPath('qa/issues/open/001-x.md'), 'open');
+  assert.equal(statusFromPath('v2/team/qa/issues/blocked/001-x.md'), 'blocked');
+  assert.equal(statusFromPath('qa/issues/done/001-x.md'), 'resolved');
+  assert.equal(statusFromPath('qa/briefs/001-x.md'), 'unknown');
+  /* the owner is read from the path too, wherever the path is rooted */
+  assert.equal(ownerFromPath('qa/issues/open/001-x.md'), 'qa');
+  assert.equal(ownerFromPath('v2/team/librarian/issues/blocked/001-x.md'), 'librarian');
+  assert.equal(ownerFromPath('v2/team/qa/debriefs/x.md'), null);
+});
+
+test('issues: only a numbered issue file claims the issue view', () => {
+  assert.equal(issueViewOf('001-a-thing.md', 'qa/issues/open'), 'issue');
+  assert.equal(issueViewOf('ISSUES.md', ''), null);
+  assert.equal(issueViewOf('001-a-thing.md', 'qa/briefs'), null, 'a brief is not an issue');
+  assert.equal(issueViewOf('notes.md', 'qa/issues/open'), null, 'unnumbered is not an issue');
+});
+
+test('issues: the front matter splits, and the rendered issue escapes', () => {
+  const { fields, body } = splitFront('---\ncreated: 2026-01-01T00:00:00Z\npriority: high\n---\n# T\n\nbody');
+  assert.deepEqual(fields, [['created', '2026-01-01T00:00:00Z'], ['priority', 'high']]);
+  assert.equal(body, '# T\n\nbody');
+  assert.deepEqual(splitFront('no front matter').fields, []);
+  const h = issueHtml('---\npriority: <img src=x onerror=alert(1)>\n---\n# T', 'qa/issues/open/001-x.md', null);
+  assert.ok(!h.includes('<img'), 'a field value cannot inject markup');
+  assert.ok(h.includes('bd-open') && h.includes('@qa'));
+});
+
+test('issues: the summary is the find command, counted', () => {
+  const h = statusSummary([
+    { path: 'qa/issues/open/001-a.md' }, { path: 'qa/issues/open/002-b.md' },
+    { path: 'writer/issues/blocked/001-c.md' }, { path: 'qa/issues/done/003-d.md' },
+    { path: 'qa/briefs/not-an-issue.md' },
+  ]);
+  assert.ok(h.includes('@qa') && h.includes('@writer'));
+  assert.ok(!h.includes('@?'), 'a non-issue path is skipped, not bucketed as unknown');
+});
+
+test('issues: every file on disk holds to the pattern', () => {
+  const files = allIssues();
+  assert.ok(files.length >= 10, 'the roles have work plans');
+  for (const f of files) {
+    assert.match(f.name, /^\d{3}-[a-z0-9-]+\.md$/, `${f.role}/${f.name} is NNN-kebab-slug.md`);
+    const { fields, body } = splitFront(readFileSync(f.path, 'utf8'));
+    const fm = Object.fromEntries(fields);
+    for (const k of ['created', 'priority']) {
+      assert.ok(fm[k], `${f.role}/${f.name} has no ${k}`);
+    }
+    assert.ok(['high', 'medium', 'low'].includes(fm.priority), `${f.role}/${f.name} priority`);
+    assert.match(body, /^#\s+\S/m, `${f.role}/${f.name} has a title heading`);
+    if (f.state === 'blocked') assert.ok(fm.blocked_on, `${f.role}/${f.name} must say blocked_on what`);
+    else assert.ok(!fm.blocked_on, `${f.role}/${f.name} says blocked_on but is not in blocked/`);
+    if (f.state === 'done') assert.ok(fm.closed, `${f.role}/${f.name} is done with no closed date`);
+  }
+  /* numbers are per role, so two roles sharing 001 is fine; one role must not */
+  for (const r of roleDirs()) {
+    const ns = files.filter((f) => f.role === r).map((f) => f.name.slice(0, 3));
+    assert.equal(new Set(ns).size, ns.length, `${r} reuses an issue number`);
+  }
+});
+
+test('issues: the board reads the folders rather than holding a copy', () => {
+  const onBoard = load('issues').issues;
+  const onDisk = allIssues();
+  assert.equal(onBoard.length, onDisk.length,
+    'the issues board is derived from the files — rerun gen_board.py');
+  const want = { open: 'open', blocked: 'blocked', done: 'resolved' };
+  for (const f of onDisk) {
+    const row = onBoard.find((i) => i.id === `@${f.role}-${f.name.slice(0, 3)}`);
+    assert.ok(row, `${f.role}/${f.name} is missing from the board`);
+    assert.equal(row.status, want[f.state], `${f.role}/${f.name} status follows its folder`);
+    assert.equal(row.owner, `@${f.role}`);
   }
 });
 

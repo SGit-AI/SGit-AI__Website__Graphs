@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.13</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.14</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -154,6 +154,16 @@
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
       <tr>
+        <td class="vnum">v0.6.14</td>
+        <td>28 August 2026</td>
+        <td><b>Every agent gets its own work plan as files, and the status is the folder.</b> MAB-08 from the board, and the coordination layer under it. Each of the seven roles now carries <code>issues/open/</code>, <code>issues/blocked/</code> and <code>issues/done/</code> on the <a href="https://issues-fs.sgit.ai/lite/index.html">Issues-FS-lite</a> pattern &mdash; the specification from the project the three February 2026 documents in this corpus were written for, which is complete and needs no implementation, which is why there is none here either.
+        <b>There is no status field.</b> A status change is a <code>git mv</code>, and there are exactly four operations: OPEN, BLOCK, UNBLOCK, CLOSE. A field is a second place the truth can live and the two disagree the first time somebody edits one; a folder cannot disagree with itself. The cost is that a status change shows in a diff as a move, which is the point. <b>Fifteen issues</b> to start: 8 open, 4 blocked, 3 done, every one real and traced to the release or review that raised it.
+        <b>The writer rule, written down:</b> you may READ another role's folder, you must NOT write into it. Tasks arrive by request, and a role that edits another's work plan has taken a decision that was not its to take. No build can check that; the diff can, which is how branch discipline is already enforced here.
+        <b>The board now reads the folders rather than holding a copy.</b> The issues board was authored in <code>gen_board.py</code> for one release; it is now derived, so there is one source of truth and the folder is it. A test pins both directions: every file on disk is on the board, at the status its folder says.
+        <b>The explorer, and a renderer for an issue.</b> <a href="../v2/team/issues.html">The issue tree</a> uses the shell promoted at v0.6.12, with a third pure view module: the front matter as a field table, the body rendered, and the status badge read from the <em>path</em>, because a renderer that showed only fields would hide the one thing that matters by not being a field. Above the tree is <code>find v2/team -path '*/issues/open/*.md'</code>, rendered: who is carrying what, which the layout gives away for free.
+        <b>Five gate rules, each run red before it was trusted:</b> no <code>created</code> or <code>priority</code>, a priority outside high/medium/low, a file in <code>blocked/</code> that does not say what it waits on, a file in <code>done/</code> with no closed date, and a <code>blocked_on</code> on a file that is not blocked. 122 tests.</td>
+      </tr>
+      <tr>
         <td class="vnum">v0.6.13</td>
         <td>28 August 2026</td>
         <td><b>The work around the making-of book gets a Kanban board, and the two things blocked on the same person for the same reason are finally on one screen.</b>
@@ -266,7 +276,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.6.13</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.14</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

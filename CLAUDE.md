@@ -53,6 +53,13 @@ That shape is inherited from `the-cyber-boardroom/SGraph-AI__App__Send`, which b
 names as the reference. Do not reinvent it; if a convention is missing here, look there
 first.
 
+Each role also owns `issues/open|blocked|done/` — its own work plan, on the Issues-FS-lite
+pattern. **The folder is the status**; a status change is a `git mv`, and there are four
+operations and no tool. **The writer rule: you may READ another role's issues folder, you
+must NOT write into it.** Tasks arrive by request. `v2/team/ISSUES.md` is the whole
+specification; the build refuses a file that does not hold to it. Commit an issue change in
+the same commit as the work that caused it.
+
 If you are working as one of these roles, **read that `role.md` first** — it is the
 definition, and the rendered page is only presentation. Two rules the gate enforces: every
 role names what it REFUSES, and no role may read the way it would in any other repository.
