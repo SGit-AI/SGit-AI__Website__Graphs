@@ -73,6 +73,12 @@ SIDE = [
   "blurbs": {
    "00__the-v04-retrospective.md": "Forty-one releases in four days, weighed: the seven achievements that compounded, the conclusions, the transferable learnings (persistence makes identity; fit is a decision; the measurement is the discovery), and what v0.5 opens.",
   }},
+ {"dir": "v0.5.23__the-v05-retrospective", "short": "retro5", "label": "The v0.5 retrospective",
+  "packline": "v0.5.23 &middot; closing the v0.5 era",
+  "statusline": "RETROSPECTIVE &mdash; the era is closed; the judgements are the agent's",
+  "blurbs": {
+   "00__the-v05-retrospective.md": "Twenty-three releases in three days, weighed: the six achievements that compounded, the six things got wrong and how each was found (four by gates built in the same era), and the estate's weakest remaining point — prose has no freshness gate, which is why the front page denied the books existed for ten releases.",
+  }},
  {"dir": "design__immediate-connection", "short": "design", "label": "The immediate-connection register",
   "packline": "design &middot; immediate connection",
   "statusline": "STANDING &mdash; updated as patterns land and gaps close",
