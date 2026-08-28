@@ -51,6 +51,9 @@ from glob import glob
 from pathlib import Path
 from posixpath import dirname as pdirname, join as pjoin, normpath
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from bookkit import page_count  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[2]
 VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
 HOST = "https://graphs.sgit.ai"
@@ -686,25 +689,12 @@ print(f"gen_book: {len(CHAPTERS)} chapters, index.html, single.html, manifest.js
 # gate's freshness check forces this script to rerun on every release, so
 # neither edition can lag the content or the version.
 
-def pdf_pages(path):
-    """Count pages in either PDF flavour: Chromium writes plain object headers,
-    WeasyPrint (pydyf) packs the object tree into compressed object streams."""
-    import zlib
-    d = path.read_bytes()
-    n = len(re.findall(rb"/Type\s*/Page[^s]", d))
-    for s in re.findall(rb"stream\r?\n(.*?)endstream", d, re.S):
-        try:
-            n += len(re.findall(rb"/Type\s*/Page[^s]", zlib.decompress(s)))
-        except Exception:
-            continue
-    return n
-
 manifest["pdfs"] = []
 
 def record(path, edition, typesetter):
     manifest["pdfs"].append({
         "file": path.name, "edition": edition, "version": VERSION,
-        "pages": pdf_pages(path), "typesetter": typesetter,
+        "pages": page_count(path), "typesetter": typesetter,
     })
     (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     print(f"gen_book: {path.name} — {manifest['pdfs'][-1]['pages']} pages, "

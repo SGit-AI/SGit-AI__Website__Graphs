@@ -114,6 +114,11 @@ def main(check_only=False):
 
         words = sum(len(md.read_text().split()) for md in sorted((folder / "content").glob("*.md")))
         pdf = next((p.name for p in folder.glob("*.pdf")), None)
+        # a book's own builder writes build.json (its pages, its parts, its figures).
+        # It is folded in here rather than merged key-by-key, because book.json has one
+        # writer and this is where the two halves meet.
+        build_path = folder / "build.json"
+        build = json.loads(build_path.read_text()) if build_path.exists() else None
         meta = {
             "title": spec["title"],
             "slug": slug,
@@ -129,11 +134,11 @@ def main(check_only=False):
                            "site's version moves on every push. v1.0.0 is reserved for "
                            "the actual final release."),
             "content_hashes": now,
+            "build": build,
         }
-        # keep anything the book's own builder wrote that we do not own
-        for k, v in prev.items():
-            if k not in meta and k != "content_hashes":
-                meta[k] = v
+        # Nothing is carried over from the previous file. It used to be, back when the
+        # book's builder wrote here too and its keys had to survive; build.json ended
+        # that, and carrying keys forward only preserves stale ones forever.
         if not check_only:
             meta_path.write_text(json.dumps(meta, indent=1, ensure_ascii=False) + "\n")
         lines.append(f"{slug} {spec['version']} ({len(now)} chapters, {words:,} words, {spec['status']})")

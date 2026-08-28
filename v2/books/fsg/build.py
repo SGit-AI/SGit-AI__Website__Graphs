@@ -17,20 +17,22 @@ The page skeleton is cribbed from admin/build/gen_devpack.py's PAGE template; th
 empty <nav class="site"> and <footer class="site"> shells are stamped by chrome.py
 at release time.
 
-Also writes book.json: the machine surface (every chapter with its part, its word
-count and the SHA-256 of its markdown), so a reader can check that a page or the
-PDF describes the build it names.
+Also writes build.json: this build's machine surface (every chapter with its part, its
+word count and the SHA-256 of its markdown), so a reader can check that a page or the PDF
+describes the build it names. gen_bookmeta.py folds it into book.json, which it alone
+writes because it owns the book's own version and the hashes the version gate reads.
 """
-import hashlib
-import html as html_mod
 import json
 import re
-import shutil
+import sys
 from datetime import date
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
+sys.path.insert(0, str(ROOT / "admin" / "build"))
+from bookkit import (esc, render, emphasis_classes, load_chapters,   # noqa: E402
+                     print_figures, build_pdf)
 CONTENT = HERE / "content"
 FIGURES = HERE / "figures"
 SLUG = "fsg"
@@ -124,45 +126,13 @@ PART_OF = {s: (p, sub) for p, sub, _, ss in PARTS for s in ss}
 
 
 # ------------------------------------------------------------------ helpers --
-def slug_of(stem):
-    """01__a-node-is-just-a-node -> a-node-is-just-a-node"""
-    return stem.split("__", 1)[1]
-
-
-def read(stem):
-    return (CONTENT / f"{stem}.md").read_text()
-
-
-def title_of(md):
-    m = re.search(r"^#\s+(.+)$", md, re.M)
-    return m.group(1).strip() if m else "Untitled"
-
-
-def esc(t):
-    return html_mod.escape(str(t), quote=True)
+# Markdown extensions this book's prose uses. md_in_html is the one beyond the kit's
+# default: the argument chapters wrap markdown inside the note / claim divs.
+EXTENSIONS = ["tables", "fenced_code", "attr_list", "md_in_html", "sane_lists"]
 
 
 def to_html(md):
-    """Markdown -> HTML with the extensions this book's prose uses. Raw HTML
-    (the note / warn / claim divs) passes through untouched, which is why the
-    same markdown renders identically in the browser through marked."""
-    import markdown
-    h = markdown.markdown(
-        md, extensions=["tables", "fenced_code", "attr_list", "md_in_html", "sane_lists"])
-    return classify(h)
-
-
-def classify(h):
-    """A paragraph that is entirely one emphasis run is either a figure caption
-    (it starts "Figure") or the chapter's promise line. Both want their own
-    styling in print, and neither should turn every inline emphasis into a block,
-    which is what a bare p > em:only-child selector does."""
-    def repl(m):
-        inner = m.group(1)
-        text = re.sub(r"<[^>]+>", "", inner).strip()
-        cls = "figcap" if text.startswith("Figure") else "promise"
-        return f'<p class="{cls}"><em>{inner}</em></p>'
-    return re.sub(r"<p><em>(.*?)</em></p>", repl, h, flags=re.S)
+    return emphasis_classes(render(md, EXTENSIONS))
 
 
 # --------------------------------------------------------------- web pages ---
@@ -467,44 +437,11 @@ def pdf_part(pnum, part, sub, promise, cs):
             f'<h1>{esc(sub)}</h1><p>{esc(promise)}</p><ol>{items}</ol></section>')
 
 
-PRINT_FIGS = HERE / "_printfigs"
-
-
-def print_figures():
-    """The web keeps crisp palette PNGs. The PDF gets JPEGs of the same pixels,
-    written to a scratch directory that is removed after the build: weasyprint
-    re-encodes a PNG into a flate stream of raw pixels, which triples the file, and
-    a book meant to be downloaded before a flight should not be ten megabytes.
-    Nothing about the figures changes, only how they are carried into the PDF."""
-    from PIL import Image
-    PRINT_FIGS.mkdir(exist_ok=True)
-    for src in sorted(FIGURES.glob("*.png")):
-        im = Image.open(src).convert("RGB")
-        if im.width > 1500:
-            im = im.resize((1500, round(im.height * 1500 / im.width)), Image.LANCZOS)
-        im.save(PRINT_FIGS / (src.stem + ".jpg"), quality=86, optimize=True,
-                progressive=True, subsampling=0)
-
-
-def figure_paths(h):
-    """Point the print HTML at the scratch JPEGs, by absolute path so weasyprint
-    resolves them wherever the build runs from."""
-    h = re.sub(r'src="\.\./figures/([^"]+)\.png"',
-               lambda m: f'src="{PRINT_FIGS.as_posix()}/{m.group(1)}.jpg"', h)
-    return h
-
-
 # -------------------------------------------------------------------- main ---
 def main():
-    print_figures()
-    chapters = []
-    for stem in ORDER:
-        md = read(stem)
-        chapters.append(dict(
-            stem=stem, slug=slug_of(stem), title=title_of(md),
-            blurb=BLURB[stem], words=len(md.split()),
-            sha256=hashlib.sha256((CONTENT / f"{stem}.md").read_bytes()).hexdigest(),
-            md=md))
+    # JPEGs of the figures in a scratch dir, plus the rewriter that points print at them.
+    figure_paths, drop_figures = print_figures(FIGURES)
+    chapters = load_chapters(CONTENT, order=ORDER, blurbs=BLURB)
 
     # --- 1. the web pages -------------------------------------------------
     for i, c in enumerate(chapters):
@@ -538,19 +475,11 @@ def main():
         for c in chapters if c["stem"] in FRONT)
     doc = PDF_SHELL.format(title=esc(TITLE), css=PDF_CSS, cover=pdf_cover() + front,
                            toc=pdf_toc(chapters), body="\n".join(body))
-    tmp = HERE / "_print.html"
-    tmp.write_text(doc)
     pdf = HERE / f"{SLUG}.pdf"
-    pages = None
     try:
-        import weasyprint
-        weasyprint.HTML(filename=str(tmp)).write_pdf(str(pdf))
-        pages = pdf_page_count(pdf)
-        engine = f"weasyprint {weasyprint.__version__}"
-    except ImportError:
-        engine = "not built (WeasyPrint unavailable)"
-    tmp.unlink(missing_ok=True)
-    shutil.rmtree(PRINT_FIGS, ignore_errors=True)
+        pages, engine, _ = build_pdf(doc, pdf)
+    finally:
+        drop_figures()
 
     # --- 3. the hub and the machine surface -------------------------------
     total = sum(c["words"] for c in chapters)
@@ -558,8 +487,13 @@ def main():
         site=SITE, body=build_pages(chapters), nch=15, words=total,
         pages=pages or "?", version=VERSION, today=TODAY))
 
-    (HERE / "book.json").write_text(json.dumps(dict(
-        title=TITLE, slug=SLUG, version=VERSION, date=TODAY, licence="CC BY 4.0",
+    # build.json, NOT book.json. book.json has exactly one writer — gen_bookmeta.py,
+    # which owns the book's own version and the chapter hashes the version gate reads —
+    # and it folds this file in under "build". Two writers on one file is how `pdf` came
+    # to mean a filename to the shelf and a dict to this builder.
+    (HERE / "build.json").write_text(json.dumps(dict(
+        title=TITLE, slug=SLUG, built_at_site_version=VERSION, date=TODAY,
+        licence="CC BY 4.0",
         words=total, pdf=dict(file=f"{SLUG}.pdf", pages=pages, engine=engine,
                               bytes=pdf.stat().st_size if pdf.exists() else None),
         parts=[dict(part=p, subtitle=s, promise=pr, chapters=ss) for p, s, pr, ss in PARTS],
@@ -575,21 +509,6 @@ def main():
           f"{len(list(FIGURES.glob('*.png')))} figures")
     print(f"fsg: pdf {pdf.stat().st_size:,}b, {pages} pages ({engine})")
     return pages
-
-
-def pdf_page_count(path):
-    """Count pages in either PDF flavour. Lifted from gen_packs.py, which learnt it
-    the hard way: WeasyPrint packs the object tree into compressed object streams
-    and the naive count returns zero."""
-    import zlib
-    d = path.read_bytes()
-    n = len(re.findall(rb"/Type\s*/Page[^s]", d))
-    for st in re.findall(rb"stream\r?\n(.*?)endstream", d, re.S):
-        try:
-            n += len(re.findall(rb"/Type\s*/Page[^s]", zlib.decompress(st)))
-        except Exception:
-            continue
-    return n or None
 
 
 if __name__ == "__main__":

@@ -1,7 +1,8 @@
 # The Leanpub release — two books, one pair
 
-**Status:** PREPARED — everything up to the account is buildable here; the account is the
-founder's hands
+**Status:** ⏸ **WAITING ON THE FOUNDER** — every agent-buildable piece is done (v0.5.19).
+What remains is account work only, listed under "the upload-day checklist" below. Nothing
+in the repository blocks it, and no agent should start it.
 **Date:** 27 August 2026
 **Commissioned by:** brief 39 ("release the two books we have all the way to Leanpub…
 because shipping is one of the most important things you can do")

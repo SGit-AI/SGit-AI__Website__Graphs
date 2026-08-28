@@ -8,7 +8,7 @@
  "chapters": 12,
  "words": 30696,
  "pdf": "fsg-universe.pdf",
- "built_at_site_version": "v0.5.19",
+ "built_at_site_version": "v0.5.20",
  "versioning": "This book's version moves only when its content moves; the site's version moves on every push. v1.0.0 is reserved for the actual final release.",
  "content_hashes": {
   "00__front-matter.md": "4e12f62e581a9c9b30c166b6f96eb3d84f1480b0b430f4590d859d54cec61846",
@@ -23,5 +23,6 @@
   "09__the-estate-and-the-network.md": "3c2f2b107b1078b0c4a62da73730380b79c970f8b3ff9522a6f90197dea14ef9",
   "10__what-the-atlas-found.md": "8c4163a0a29cfafe87a35ea86164bef1b3a2ed1911894a332e247ba244486fb5",
   "11__colophon.md": "1894f28677ad945ddc437a1b8f9cbef5ce7654c6d685c27f7827b6919b14cf2b"
- }
+ },
+ "build": null
 }

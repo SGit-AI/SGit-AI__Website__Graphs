@@ -27,7 +27,7 @@
     "stemKey": "a form's stem, using the vocab to disambiguate -ing/-ed"
    },
    "feeds": [
-    "run"
+    "run-setup"
    ],
    "lines": [
     6,
@@ -41,7 +41,7 @@
    "label": "the pipeline contract",
    "does": "Optional (toggleable); reads tokens and writes tokens — a rewriting stage, not a new type.",
    "feeds": [
-    "run"
+    "run-setup"
    ],
    "lines": [
     9,

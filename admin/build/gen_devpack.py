@@ -43,7 +43,7 @@ BLURB = {
 SIDE = [
  {"dir": "v0.5.18__the-leanpub-release", "short": "leanpub", "label": "The Leanpub release",
   "packline": "v0.5.18 &middot; shipping the pair",
-  "statusline": "PREPARED &mdash; the agent work is listed; the account is the founder's hands",
+  "statusline": "&#9208; WAITING ON THE FOUNDER &mdash; every agent-buildable piece shipped at v0.5.19; only the account work remains",
   "blurbs": {
    "00__the-release.md": "What ships (two books, at v0.2.0 and v0.1.0, the Universe held back), the account as it actually stands, the method already written in admin/publishing.html, the five things still to build, and the upload-day checklist.",
    "01__the-copy.md": "One set of words: what is ready to upload, what each cover draws and why, the LinkedIn post in full draft with notes on what to cut, the short blurbs, and the bio line that needs replacing.",
@@ -54,6 +54,7 @@ SIDE = [
   "blurbs": {
    "00__the-audit.md": "The measured state of the estate at v0.5.16: eight findings with real counts, from a README documenting nine paths that moved a month ago to a test surface that stops at the v2 core, and an honest list of what is already healthy.",
    "01__the-plan.md": "Three passes, sized and ordered by what the review era needs first: the documents an agent reads, then the builders and gates, then the modules and components. Includes the call to wrap in 5.x and open 6.x with the review machinery.",
+   "02__pass-two.md": "Pass two, done: the test harness that was swallowing async failures (and the real bug it was hiding), one test file split into six suites and a runner, a self-test for validate.js, the three book builders folded into admin/build/bookkit/ with both PDFs verified page-for-page, and the two writers that were fighting over book.json.",
   }},
  {"dir": "v0.5.10__the-book-writing-pack", "short": "book-pack", "label": "The book-writing pack",
   "packline": "v0.5.10 &middot; three books, three sessions",

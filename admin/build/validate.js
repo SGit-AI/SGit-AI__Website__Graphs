@@ -36,7 +36,12 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = path.resolve(__dirname, '..', '..');
+// The tree to check. Defaults to this repository; an argument points it at a copy,
+// which is how the gate gets a gate of its own — validate.test.mjs breaks a fixture
+// tree on purpose and asserts that the right error comes back.
+const ROOT = process.argv[2]
+  ? path.resolve(process.argv[2])
+  : path.resolve(__dirname, '..', '..');
 const errors = [];
 
 function walk(dir, out = []) {
@@ -413,16 +418,25 @@ if (fs.existsSync(catPath)) {
   }
 }
 
-// --- 4h. the universe reader's unit suite is green ---------------------------
-// Gate 27. The reader's pure core (segments, markup, doc tree, styles) carries
+// --- 4h. the unit suites are green -------------------------------------------
+// Gate 27. The pure cores (reader, graph furniture, chat, core tree, WCLM) carry
 // known-answer vectors; a refactor that changes behaviour fails the release
-// rather than shipping silently different highlights.
-{
+// rather than shipping silently different output. The runner is the gate, not one
+// file, so a suite added later is covered the moment it lands.
+// Skipped when checking a tree other than this repository: the suites gate the CODE,
+// which lives here, and running the copy's runner from inside the copy's own self-test
+// is an infinite recursion — validate -> run.mjs -> build.test.mjs -> validate.
+if (ROOT === path.resolve(__dirname, '..', '..')) {
   const { execSync } = require('child_process');
   try {
-    execSync('node ' + path.join(ROOT, 'admin/tests/universe.test.mjs'), { stdio: 'pipe' });
+    execSync('node ' + path.join(ROOT, 'admin/tests/run.mjs'), { stdio: 'pipe' });
   } catch (e) {
-    errors.push('universe unit suite failed — run: node admin/tests/universe.test.mjs');
+    // Name the failing tests here. A gate that only says "the suite failed" costs
+    // whoever reads the CI log a second run to learn anything.
+    const out = ((e.stdout || '') + (e.stderr || '')).toString();
+    const named = out.split('\n').filter((l) => l.includes('FAIL ')).slice(0, 8);
+    errors.push('unit suites failed — run: node admin/tests/run.mjs'
+      + (named.length ? '\n      ' + named.map((l) => l.trim()).join('\n      ') : ''));
   }
 }
 

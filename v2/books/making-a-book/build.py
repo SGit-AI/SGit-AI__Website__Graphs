@@ -20,12 +20,15 @@ uses for the review packs. Install with: pip install markdown weasyprint
 import datetime
 import html
 import re
+import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 CONTENT = HERE / "content"
 FIGURES = HERE / "figures"
 ROOT = HERE.parents[2]
+sys.path.insert(0, str(ROOT / "admin" / "build"))
+from bookkit import render as md_render, pair_figures, absolutise, build_pdf  # noqa: E402
 
 TITLE = "Creating a Book Using Fractal Semantic Graphs"
 SUBTITLE = "How one book was built with an agent, in six days and eighty-eight releases"
@@ -33,41 +36,13 @@ VERSION = (ROOT / "admin" / "build" / "version.txt").read_text().strip()
 BUILT = datetime.date(2026, 8, 26).strftime("%-d %B %Y")
 
 # ---------------------------------------------------------------- markdown
+# smarty is this book's one addition to the kit's default set: the narrative wants
+# typographic quotes and dashes, which the argument book deliberately does not use.
+EXTENSIONS = ["tables", "fenced_code", "attr_list", "sane_lists", "smarty"]
+
 
 def render(md_text):
-    import markdown
-    return markdown.markdown(
-        md_text,
-        extensions=["tables", "fenced_code", "attr_list", "sane_lists", "smarty"],
-        output_format="html5",
-    )
-
-
-def absolute_images(h):
-    """Figure paths in the chapter markdown are relative to the BOOK FOLDER, not to
-    content/, because that is where the rendered pages live and mdreader.js resolves an
-    image against the page that renders it, never against the markdown file. The print
-    HTML is rendered from a string, so every figure is resolved to an absolute path and
-    its existence checked here rather than discovered as a blank box in the PDF."""
-    def sub(m):
-        src = m.group(2)
-        p = (HERE / src).resolve()
-        if not p.exists():
-            raise SystemExit(f"build: figure not found: {src}")
-        return f'<img alt="{m.group(1)}" src="{p.as_uri()}">'
-    return re.sub(r'<img alt="([^"]*)" src="([^"]+)"\s*/?>', sub, h)
-
-
-FIGPAIR = re.compile(
-    r'<p>(<img\b[^>]*>)</p>\s*<p><em>(Figure \d+\..*?)</em></p>', re.S)
-
-
-def pair_figures(h):
-    """<p><img></p> + <p><em>Figure N. …</em></p> becomes one <figure>."""
-    def sub(m):
-        return (f'<figure>{m.group(1)}'
-                f'<figcaption>{m.group(2)}</figcaption></figure>')
-    return FIGPAIR.sub(sub, h)
+    return md_render(md_text, EXTENSIONS, output_format="html5")
 
 
 def slugify(s):
@@ -125,37 +100,19 @@ def main():
     body += "".join(parts)
 
     doc = SHELL.format(title=html.escape(TITLE), css=CSS, body=body)
-    doc = absolute_images(doc)
+    doc = absolutise(doc, HERE)
 
-    import sys
+    # The print HTML is a published artefact for this book, so it is kept — outside the
+    # repository, because a print source carries no site chrome and the chrome gate is
+    # right to fail one found inside v2/.
     import tempfile
     out_html = Path(sys.argv[1]) if len(sys.argv) > 1 else (
         Path(tempfile.gettempdir()) / "making-a-book.print.html")
-    out_html.write_text(doc, encoding="utf-8")
-
-    import weasyprint
     pdf = HERE / "making-a-book.pdf"
-    weasyprint.HTML(string=doc, base_url=str(HERE)).write_pdf(str(pdf))
-    pages = page_count(pdf)
+    pages, engine, size = build_pdf(doc, pdf, keep_html=out_html)
     print(f"build: {out_html.name} {out_html.stat().st_size:,}b · "
-          f"{pdf.name} {pdf.stat().st_size:,}b · {pages} pages · "
-          f"weasyprint {weasyprint.__version__}")
+          f"{pdf.name} {size:,}b · {pages} pages · {engine}")
     return pages
-
-
-def page_count(path):
-    """Counts pages in a WeasyPrint PDF, whose object tree is inside compressed
-    object streams (the naive /Type /Page count returns zero). Lifted from
-    admin/build/gen_packs.py, which learnt it the hard way."""
-    import zlib
-    d = path.read_bytes()
-    n = len(re.findall(rb"/Type\s*/Page[^s]", d))
-    for st in re.findall(rb"stream\r?\n(.*?)endstream", d, re.S):
-        try:
-            n += len(re.findall(rb"/Type\s*/Page[^s]", zlib.decompress(st)))
-        except Exception:
-            pass
-    return n
 
 
 # ---------------------------------------------------------------- templates

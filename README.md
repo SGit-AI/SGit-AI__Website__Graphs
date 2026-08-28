@@ -28,7 +28,8 @@ every page honest about the markdown behind it.
 ```
 admin/          the build: generators, validator, tests, release history
   build/        gen_*.py (the chain), chrome.py (nav/footer), validate.js (the gate)
-  tests/        universe.test.mjs — 84 tests over the pure core
+    bookkit/    what every book build shares: markdown, print figures, weasyprint
+  tests/        run.mjs (the runner) + <area>.test.mjs — 94 tests, six suites
   versions.html + versions-v0.4.html + versions-earlier.html — every release, narrated
 assets/         all client-side code and styling (no build step, no bundler)
   universe/     the document reader: core/ (pure, tested), components/ (custom elements)
@@ -62,8 +63,9 @@ error. Everything else is live.
 3. **Claims are anchored.** A quote names its source; a number is computed, not remembered.
    The generators enforce this where they can (byte-identical rebuilds, anchor verification,
    drift gates).
-4. **Gates before speed.** `node admin/tests/universe.test.mjs` and `node admin/build/validate.js`
-   are green before anything is pushed.
+4. **Gates before speed.** `node admin/tests/run.mjs` and `node admin/build/validate.js`
+   are green before anything is pushed. (validate.js runs the suites too, so the second
+   covers the first; run them separately when you want the failing test named.)
 
 ## Building
 
@@ -77,7 +79,7 @@ python3 admin/build/gen_changes.py       # the version diff data (needs tags fet
 python3 admin/build/gen_sitemap.py
 python3 admin/build/gen_llms_full.py
 python3 admin/build/chrome.py            # stamps nav, footer and the version badge
-node admin/tests/universe.test.mjs       # the unit gate
+node admin/tests/run.mjs                 # the unit gate (add a name to run one suite)
 node admin/build/validate.js             # the site gate
 ```
 

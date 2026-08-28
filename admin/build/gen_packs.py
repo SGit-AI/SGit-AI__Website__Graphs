@@ -18,8 +18,12 @@ Adding a pack: write a build_<slug>() returning (meta, body_html), add it to PAC
 import hashlib
 import json
 import subprocess
+import sys
 from datetime import date
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from bookkit import page_count  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
@@ -364,7 +368,7 @@ def main():
         try:
             import weasyprint
             weasyprint.HTML(filename=str(page)).write_pdf(str(pdf))
-            pages = pdf_page_count(pdf)
+            pages = page_count(pdf)
             engine = f"weasyprint {weasyprint.__version__}"
         except ImportError:
             engine = "not built (WeasyPrint unavailable)"
@@ -387,22 +391,6 @@ def main():
     (OUT / "packs.json").write_text(json.dumps(
         dict(version=VERSION, date=TODAY, packs=index), indent=1) + "\n")
     return index
-
-
-def pdf_page_count(path):
-    """Count pages in either PDF flavour. Lifted from gen_book.py, which learnt it the hard
-    way: Chromium writes plain object headers, WeasyPrint packs the object tree into
-    compressed object streams and the naive count returns zero."""
-    import re
-    import zlib
-    d = path.read_bytes()
-    n = len(re.findall(rb"/Type\s*/Page[^s]", d))
-    for st in re.findall(rb"stream\r?\n(.*?)endstream", d, re.S):
-        try:
-            n += len(re.findall(rb"/Type\s*/Page[^s]", zlib.decompress(st)))
-        except Exception:
-            continue
-    return n or None
 
 
 if __name__ == "__main__":

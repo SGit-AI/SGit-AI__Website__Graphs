@@ -34,7 +34,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from gen_packs import pdf_page_count, esc, fmt  # noqa: E402
+from gen_packs import esc, fmt  # noqa: E402
+from bookkit import page_count  # noqa: E402
 
 VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
 DOCS = ROOT / "v2" / "universe" / "docs"
@@ -726,7 +727,7 @@ def main():
             title=esc(d["title"]), lead=esc(lead), source=d["source"], sha=d["sha256"],
             extracted=d["extracted"], version=VERSION, body=doc_body(ex, for_print=True)),
             base_url=str(OUT) + "/").write_pdf(str(pdf))
-        pages = pdf_page_count(pdf)
+        pages = page_count(pdf)
 
         # the reader's data: every anchor with the row it belongs to, so the panel's
         # highlights are driven by the same offsets gate 23 verifies

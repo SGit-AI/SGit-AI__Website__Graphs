@@ -8,7 +8,7 @@
  "chapters": 18,
  "words": 38029,
  "pdf": "fsg.pdf",
- "built_at_site_version": "v0.5.19",
+ "built_at_site_version": "v0.5.20",
  "versioning": "This book's version moves only when its content moves; the site's version moves on every push. v1.0.0 is reserved for the actual final release.",
  "content_hashes": {
   "00__front-matter.md": "d818dc0dddc764268c15d49370b6e6d8761e1c7ae32d1b0967d00575090eec83",
@@ -30,77 +30,289 @@
   "16__colophon.md": "519ffb4a610545c573b492083c72fac69fc5e872295522272d6842050c64270d",
   "17__reference-card.md": "33bed2804252afe05a46190043d07bd2108b051dc270364a590c8a4ae19f5156"
  },
- "date": "26 August 2026",
- "licence": "CC BY 4.0",
- "parts": [
-  {
-   "part": "Part one",
-   "subtitle": "The claim",
-   "promise": "Meaning through connectivity, from first principles, with no jargon before it is earned.",
-   "chapters": [
-    "01__a-node-is-just-a-node",
-    "02__why-graphs-at-all"
-   ]
+ "build": {
+  "title": "Fractal Semantic Graphs: Meaning Through Connectivity",
+  "slug": "fsg",
+  "built_at_site_version": "v0.5.19",
+  "date": "28 August 2026",
+  "licence": "CC BY 4.0",
+  "words": 38029,
+  "pdf": {
+   "file": "fsg.pdf",
+   "pages": 119,
+   "engine": "weasyprint 69.0",
+   "bytes": 4681558
   },
-  {
-   "part": "Part two",
-   "subtitle": "Semantic",
-   "promise": "What makes a graph semantic rather than merely a network: a grammar of verbs, anchors instead of standards, and types that are computed paths rather than applied labels.",
-   "chapters": [
-    "03__every-edge-is-a-verb",
-    "04__anchors-not-standards",
-    "05__a-type-is-a-path"
-   ]
-  },
-  {
-   "part": "Part three",
-   "subtitle": "Fractal",
-   "promise": "What the middle word of the title commits you to, how to falsify it, and what happens at every boundary and every zoom level once you take it seriously.",
-   "chapters": [
-    "06__fractal-is-a-testable-claim",
-    "07__a-graph-at-every-boundary",
-    "08__documents-are-projections"
-   ]
-  },
-  {
-   "part": "Part four",
-   "subtitle": "Computed",
-   "promise": "The half the first edition could not write: how a document becomes a graph anchored to bytes, what identity means when a document changes, an engine that computes meaning deterministically, and why an explanation is a path rather than a narration.",
-   "chapters": [
-    "09__the-universe-method",
-    "10__two-kinds-of-address",
-    "11__meaning-computed",
-    "12__every-box-explains-itself"
-   ]
-  },
-  {
-   "part": "Part five",
-   "subtitle": "In practice",
-   "promise": "Where this runs today, what ships and what is argued, and how to build your own first graph tomorrow.",
-   "chapters": [
-    "13__the-fractal-in-production",
-    "14__what-ships-what-is-argued",
-    "15__your-first-graph"
-   ]
-  }
- ],
- "figures": [
-  "02__positioning.png",
-  "03__edge-set.png",
-  "04__sense-switch.png",
-  "05__2fa.png",
-  "05b__claims.png",
-  "06__files-explorer.png",
-  "06b__code-anatomy.png",
-  "07b__typed-boundary.png",
-  "08__core-graph.png",
-  "09__universe-reader.png",
-  "10__ids-ledger.png",
-  "11__wclm-layers.png",
-  "11b__operators.png",
-  "12__evidence-trail.png",
-  "13b__vaults.png",
-  "14__shipped.png",
-  "15__rules.png"
- ]
+  "parts": [
+   {
+    "part": "Part one",
+    "subtitle": "The claim",
+    "promise": "Meaning through connectivity, from first principles, with no jargon before it is earned.",
+    "chapters": [
+     "01__a-node-is-just-a-node",
+     "02__why-graphs-at-all"
+    ]
+   },
+   {
+    "part": "Part two",
+    "subtitle": "Semantic",
+    "promise": "What makes a graph semantic rather than merely a network: a grammar of verbs, anchors instead of standards, and types that are computed paths rather than applied labels.",
+    "chapters": [
+     "03__every-edge-is-a-verb",
+     "04__anchors-not-standards",
+     "05__a-type-is-a-path"
+    ]
+   },
+   {
+    "part": "Part three",
+    "subtitle": "Fractal",
+    "promise": "What the middle word of the title commits you to, how to falsify it, and what happens at every boundary and every zoom level once you take it seriously.",
+    "chapters": [
+     "06__fractal-is-a-testable-claim",
+     "07__a-graph-at-every-boundary",
+     "08__documents-are-projections"
+    ]
+   },
+   {
+    "part": "Part four",
+    "subtitle": "Computed",
+    "promise": "The half the first edition could not write: how a document becomes a graph anchored to bytes, what identity means when a document changes, an engine that computes meaning deterministically, and why an explanation is a path rather than a narration.",
+    "chapters": [
+     "09__the-universe-method",
+     "10__two-kinds-of-address",
+     "11__meaning-computed",
+     "12__every-box-explains-itself"
+    ]
+   },
+   {
+    "part": "Part five",
+    "subtitle": "In practice",
+    "promise": "Where this runs today, what ships and what is argued, and how to build your own first graph tomorrow.",
+    "chapters": [
+     "13__the-fractal-in-production",
+     "14__what-ships-what-is-argued",
+     "15__your-first-graph"
+    ]
+   }
+  ],
+  "chapters": [
+   {
+    "stem": "00__front-matter",
+    "slug": "front-matter",
+    "title": "Fractal Semantic Graphs: Meaning Through Connectivity",
+    "blurb": "What this book is, what you will know at the end, the editorial choices recorded, and the disclosure.",
+    "part": "front/back matter",
+    "words": 1666,
+    "sha256": "d818dc0dddc764268c15d49370b6e6d8761e1c7ae32d1b0967d00575090eec83",
+    "markdown": "content/00__front-matter.md",
+    "page": "front-matter.html"
+   },
+   {
+    "stem": "01__a-node-is-just-a-node",
+    "slug": "a-node-is-just-a-node",
+    "title": "1 · A node is just a node",
+    "blurb": "The two 8080s, the five Reviews, the confidence ladder, and why a named absence beats a hidden one.",
+    "part": "Part one",
+    "words": 2554,
+    "sha256": "83ac93490e78a273ae5d95cf348b23a522f562283e5488d40981fc9ab0a650eb",
+    "markdown": "content/01__a-node-is-just-a-node.md",
+    "page": "a-node-is-just-a-node.html"
+   },
+   {
+    "stem": "02__why-graphs-at-all",
+    "slug": "why-graphs-at-all",
+    "title": "2 · Why graphs at all",
+    "blurb": "Three things people mean by graph and why this is the third; the positions on GraphRAG, RDF, property graphs and vector search; and the four situations where this argument is the wrong one.",
+    "part": "Part one",
+    "words": 2633,
+    "sha256": "0c2b071c0bd5131985824bae282b06b8c1cad140e7bbb29f22ac50318607fcec",
+    "markdown": "content/02__why-graphs-at-all.md",
+    "page": "why-graphs-at-all.html"
+   },
+   {
+    "stem": "03__every-edge-is-a-verb",
+    "slug": "every-edge-is-a-verb",
+    "title": "3 · Every edge is a verb",
+    "blurb": "Five rules you can apply tomorrow, the banned edge, the fifteen verbs, and the register that makes the inverse rule machine-checkable.",
+    "part": "Part two",
+    "words": 2508,
+    "sha256": "306e498f4f666d085fa64b98faff8734ea231437070fbac98352e9971c82ef75",
+    "markdown": "content/03__every-edge-is-a-verb.md",
+    "page": "every-edge-is-a-verb.html"
+   },
+   {
+    "stem": "04__anchors-not-standards",
+    "slug": "anchors-not-standards",
+    "title": "4 · Anchors, not standards",
+    "blurb": "Why merging two vocabularies destroys the finding, the three-layer arrangement that replaces it, and two bridge registers you can watch being used.",
+    "part": "Part two",
+    "words": 2433,
+    "sha256": "859f2c78093fea5bb9003942bd50f62cfcebe071eea93052f46933ef659b4f8e",
+    "markdown": "content/04__anchors-not-standards.md",
+    "page": "anchors-not-standards.html"
+   },
+   {
+    "stem": "05__a-type-is-a-path",
+    "slug": "a-type-is-a-path",
+    "title": "5 · A type is a path, not a label",
+    "blurb": "Node type formulas, the grounding ladder, supersede-never-delete, and a compliance finding that is arithmetic.",
+    "part": "Part two",
+    "words": 1754,
+    "sha256": "29157cff8acb765764db4e9a421703966b0f45faae9df5422f60b2477682db3f",
+    "markdown": "content/05__a-type-is-a-path.md",
+    "page": "a-type-is-a-path.html"
+   },
+   {
+    "stem": "06__fractal-is-a-testable-claim",
+    "slug": "fractal-is-a-testable-claim",
+    "title": "6 · Fractal is a testable claim",
+    "blurb": "The zoom test, applied to this estate's own two zooms, including the row where it fails.",
+    "part": "Part three",
+    "words": 2152,
+    "sha256": "e0a214c48ebed5f7008ba3d49bca941f2750050fc80760e260c13208f3340611",
+    "markdown": "content/06__fractal-is-a-testable-claim.md",
+    "page": "fractal-is-a-testable-claim.html"
+   },
+   {
+    "stem": "07__a-graph-at-every-boundary",
+    "slug": "a-graph-at-every-boundary",
+    "title": "7 · A graph at every boundary",
+    "blurb": "Where determinism, explainability and provenance actually die, the security property stated narrowly, twins, and the air gap.",
+    "part": "Part three",
+    "words": 2152,
+    "sha256": "d0ee726f5231663bdcf906ac349be7658b604a6ba0ef678eb85197d5fc8655f0",
+    "markdown": "content/07__a-graph-at-every-boundary.md",
+    "page": "a-graph-at-every-boundary.html"
+   },
+   {
+    "stem": "08__documents-are-projections",
+    "slug": "documents-are-projections",
+    "title": "8 · Documents are projections",
+    "blurb": "The projection claim, and the build gate that rebuilds the document from the graph and fails unless the bytes match.",
+    "part": "Part three",
+    "words": 1796,
+    "sha256": "cd0511959a80d3ef82223a869748f2730a10fea7e6681f62e1845dc4ad1e8264",
+    "markdown": "content/08__documents-are-projections.md",
+    "page": "documents-are-projections.html"
+   },
+   {
+    "stem": "09__the-universe-method",
+    "slug": "the-universe-method",
+    "title": "9 · The universe method",
+    "blurb": "How a raw document becomes a graph anchored to exact bytes, coverage total by construction, and the usage rating that caught the first edition misreading its own source.",
+    "part": "Part four",
+    "words": 2211,
+    "sha256": "759549e973f4471c84e966d4c98f62298614ddac84c3449cb89dd9bf100de28d",
+    "markdown": "content/09__the-universe-method.md",
+    "page": "the-universe-method.html"
+   },
+   {
+    "stem": "10__two-kinds-of-address",
+    "slug": "two-kinds-of-address",
+    "title": "10 · Two kinds of address",
+    "blurb": "Content address versus identity address, and a working algorithm for keeping identity stable across edits.",
+    "part": "Part four",
+    "words": 1701,
+    "sha256": "caff4b26f61c12abeab943fd7cc7660bbad2b6266d77be644b3690c18f3f42a2",
+    "markdown": "content/10__two-kinds-of-address.md",
+    "page": "two-kinds-of-address.html"
+   },
+   {
+    "stem": "11__meaning-computed",
+    "slug": "meaning-computed",
+    "title": "11 · Meaning, computed",
+    "blurb": "An engine in the shape of a transformer where nothing is learned and everything is named, with its formulas in the open and its limits stated.",
+    "part": "Part four",
+    "words": 2911,
+    "sha256": "fca8616a779cebbbd24092110bdfd508b1c2a829cf54d6905322692c3df429bb",
+    "markdown": "content/11__meaning-computed.md",
+    "page": "meaning-computed.html"
+   },
+   {
+    "stem": "12__every-box-explains-itself",
+    "slug": "every-box-explains-itself",
+    "title": "12 · Every box explains itself",
+    "blurb": "Four properties an explanation must have to be checkable, and what happens when a diagram of a system is enforced by a test.",
+    "part": "Part four",
+    "words": 1704,
+    "sha256": "fa7a69e92cadd4f185513bf8bd7faa5ea9533fbf7a9f72c2bbb4d3ca0cbdf6e1",
+    "markdown": "content/12__every-box-explains-itself.md",
+    "page": "every-box-explains-itself.html"
+   },
+   {
+    "stem": "13__the-fractal-in-production",
+    "slug": "the-fractal-in-production",
+    "title": "13 · The fractal in production",
+    "blurb": "Twenty published vaults, the worked graphs with real numbers, and what a network of nineteen sites does and does not demonstrate.",
+    "part": "Part five",
+    "words": 2297,
+    "sha256": "af312f5e4c81b408b3c0cbee20505ad3c7965b85e2b4e5c797de961d9a5eac2a",
+    "markdown": "content/13__the-fractal-in-production.md",
+    "page": "the-fractal-in-production.html"
+   },
+   {
+    "stem": "14__what-ships-what-is-argued",
+    "slug": "what-ships-what-is-argued",
+    "title": "14 · What ships, what is argued",
+    "blurb": "What is running and checkable, what is a design, what does not exist anywhere, and four corrections this book carries.",
+    "part": "Part five",
+    "words": 2002,
+    "sha256": "1f8695d3754d4143e112a58e30bc50220974852ebf3d72a36b61a88401c2ee51",
+    "markdown": "content/14__what-ships-what-is-argued.md",
+    "page": "what-ships-what-is-argued.html"
+   },
+   {
+    "stem": "15__your-first-graph",
+    "slug": "your-first-graph",
+    "title": "15 · Your first graph, tomorrow",
+    "blurb": "An afternoon, a week and a month of instructions, ten rules on one page, and six ways this goes wrong.",
+    "part": "Part five",
+    "words": 2098,
+    "sha256": "c16b0843ca45a969166af58189ba4a3babf66162f19cbeb38a36d425239e83b6",
+    "markdown": "content/15__your-first-graph.md",
+    "page": "your-first-graph.html"
+   },
+   {
+    "stem": "16__colophon",
+    "slug": "colophon",
+    "title": "Colophon: what was cut, and what remains open",
+    "blurb": "How the book was made, what was cut, what remains open, where it might be wrong, and every figure with its source.",
+    "part": "front/back matter",
+    "words": 1818,
+    "sha256": "519ffb4a610545c573b492083c72fac69fc5e872295522272d6842050c64270d",
+    "markdown": "content/16__colophon.md",
+    "page": "colophon.html"
+   },
+   {
+    "stem": "17__reference-card",
+    "slug": "reference-card",
+    "title": "Reference card",
+    "blurb": "The thesis, the ten rules, the edge set, the two ladders, the vocabulary, and the block to paste into an agent session.",
+    "part": "front/back matter",
+    "words": 1639,
+    "sha256": "33bed2804252afe05a46190043d07bd2108b051dc270364a590c8a4ae19f5156",
+    "markdown": "content/17__reference-card.md",
+    "page": "reference-card.html"
+   }
+  ],
+  "figures": [
+   "02__positioning.png",
+   "03__edge-set.png",
+   "04__sense-switch.png",
+   "05__2fa.png",
+   "05b__claims.png",
+   "06__files-explorer.png",
+   "06b__code-anatomy.png",
+   "07b__typed-boundary.png",
+   "08__core-graph.png",
+   "09__universe-reader.png",
+   "10__ids-ledger.png",
+   "11__wclm-layers.png",
+   "11b__operators.png",
+   "12__evidence-trail.png",
+   "13b__vaults.png",
+   "14__shipped.png",
+   "15__rules.png"
+  ]
+ }
 }

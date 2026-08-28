@@ -22,7 +22,7 @@ Follow all of it, in order. Skipping a step breaks the estate for everyone else.
 3. Add a row to `admin/versions.html` saying, in substance, what changed and why. Not a
    commit log: a reader should understand the change without opening the diff.
 4. Run the generator chain (see `README.md`), ending with `chrome.py`.
-5. `node admin/tests/universe.test.mjs` and `node admin/build/validate.js` — both green.
+5. `node admin/tests/run.mjs` and `node admin/build/validate.js` — both green.
 6. Commit with the version in the subject: `site vX.Y.Z: what changed`.
 7. Push your branch, then push to `dev`. CI validates, tags and deploys.
 
@@ -36,11 +36,24 @@ Work on your own branch (`claude/<what-you-are-doing>-<suffix>`). Push it early 
 Only push to `dev` as part of a complete release. Do not rewrite history on a branch
 another agent may have checked out.
 
+## Building a book
+
+Each book under `v2/books/<slug>/` owns its shape, its cover and its CSS in its own
+`build.py`. What every book build shares — markdown rendering, print figures, weasyprint,
+counting the pages that came out — lives in `admin/build/bookkit/`. Import it; do not
+copy it. The rule for adding to the kit: it must already exist twice.
+
+`book.json` has exactly ONE writer, `admin/build/gen_bookmeta.py`, which owns each book's
+own version and the chapter hashes the version gate reads. A book's builder writes
+`build.json` and gen_bookmeta folds it in. A book's version moves only when its content
+moves; the site's version moves on every push; `v1.0.0` is reserved for a final release.
+
 ## Code guidelines
 
 - **Pure core, then components, then shell.** Logic that can be tested without a browser
-  lives in a `core/` module with no DOM access, and is tested in
-  `admin/tests/universe.test.mjs`. Components own their element. Shells wire them together.
+  lives in a `core/` module with no DOM access, and is tested in the suite for its area
+  (`admin/tests/<area>.test.mjs`; `run.mjs <area>` runs just that one). Components own
+  their element. Shells wire them together.
 - **Size**: parts ≤200 lines, sections ≤250. Over that, split — or record the deviation in
   the module header and in the release note. Unstated debt is the thing to avoid, not debt.
 - **Every module carries a `@module` header** stating its single responsibility in one or
