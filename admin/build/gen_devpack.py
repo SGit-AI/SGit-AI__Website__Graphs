@@ -74,6 +74,13 @@ SIDE = [
   "blurbs": {
    "00__the-v04-retrospective.md": "Forty-one releases in four days, weighed: the seven achievements that compounded, the conclusions, the transferable learnings (persistence makes identity; fit is a decision; the measurement is the discovery), and what v0.5 opens.",
   }},
+ {"dir": "v0.6.6__the-structure-refactor", "short": "structure",
+  "label": "The structure refactor", "packline": "v0.6.6 &middot; reviewed, not executed",
+  "statusline": "PROPOSED &mdash; nothing here has been moved",
+  "blurbs": {
+   "00__the-review.md": "Brief 41 asks for the tree to be restructured around books. The principle and the publishing order are endorsed; one part is pushed back on with measurements, because v1/ and v2/ are timestamps rather than types \u2014 72 of 94 pages in v1 are not the book, and 172 of the 200 frozen files sit outside v1/book/. A four-zone shape is proposed, the cost is counted (236 of 258 URLs change, every frozen path moves), three things that break are named, and the work is phased into four releases.",
+   "01__the-workflows.md": "The five workflows this estate actually runs, written down for the first time: the memo-to-release loop, the release ritual, changing a book (which moves two versions), the seven-stage change control, and turning an escaped defect into a gate. Each with its trigger, its steps, which steps are machine-enforced and which are only habit, and its done test \u2014 plus the three things that are not yet workflows because they have never been run.",
+  }},
  {"dir": "making-a-book__v0.1.0__the-naming-question", "short": "mab-naming",
   "label": "The naming question", "book": "making-a-book",
   "packline": "the first run of the seven-stage workflow",

@@ -23,6 +23,19 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "41__founder-memo__refactor-the-structure-and-the-workflows.md": (
+     "Refactor the structure, and formalise the workflows",
+     "Three things at once. The publishing order flips \u2014 the making-of "
+     "book goes FIRST, because it is more mature, has a market now, and "
+     "carries the workflow ideas, while the graph book \u201cneeds the "
+     "technology advancements that we're going to do in the making-a-book\u201d. "
+     "A restructure is proposed around books at the top level, with v1 and v2 "
+     "renamed v0.1 and v0.2 as versions of the graph book. And the beginning "
+     "of a compatibility model for technology shared between books. The "
+     "agent's reading agrees with the principle and disagrees with the "
+     "restructure on measured grounds: v1 and v2 are timestamps, not types, "
+     "and 172 of the 200 frozen files sit outside the book folder.")
+,
  "40__founder-memo__the-agentic-team-and-who-the-book-is-for.md": (
      "The agentic team, and who the making-of book is for",
      "The first memo of the v0.6 era, and it opens with a verdict rather than "
