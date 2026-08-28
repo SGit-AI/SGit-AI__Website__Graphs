@@ -8,6 +8,11 @@
    and the focus ring. Visibility flows through one pipeline so every filter
    composes. Renders from properties and emits; the add-on surfaces (board,
    inspector) live in parts so the core element stays legible.
+
+   Over the size guideline at 435 lines, and long-recorded debt: the element is the
+   composition point for six node-pack sources and four add-on surfaces, so the split
+   worth making is by SOURCE (each pack builder into core/packs) rather than by line
+   count. Scheduled in pass three of the v0.5.17 non-functional plan.
    Light DOM; the host is display:contents so layout CSS is untouched.
    @fires uni:node-tap  detail {id, label}  a node was tapped
    @fires uni:gpref     detail {key, value}  a persistable graph pref changed

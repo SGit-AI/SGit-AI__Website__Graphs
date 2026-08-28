@@ -1,8 +1,11 @@
 /* @module altitudes
    Single responsibility: the altitude-ladder page's shell — the three
    altitudes, the descent between them, and the controls that move a reader
-   up and down. The graph itself belongs to altitudes-graph.js. Above the size
-   guideline at 409 lines; the split is planned in the v0.5.17 pass. */
+   up and down. The graph itself belongs to altitudes-graph.js. Above the size guideline.
+   NOT SPLIT, on purpose. Its only consumer page is in the frozen first edition
+   (v1/altitudes/index.html), so no second <script src> tag can be added; splitting
+   would mean dynamic import() and an async start on a page that is evidence, for no
+   benefit to anything anyone still edits. Measured and recorded in the v0.5.17 pass, pass three. */
 /* The altitude ladder (altitudes/data/altitudes.json), consumed as columns.
 
    Clicking a descending phrase does NOT replace the view: it opens the next

@@ -45,12 +45,34 @@ The work the review era leans on hardest, because it will run these paths consta
 - **Split the test file**: 942 lines and 84 tests in one file becomes a small runner plus
   `admin/tests/<area>.test.mjs`, so a content agent can run only what it touched.
 
-## Pass three — the modules and the components (proposed, v0.5.19)
+## Pass three — the modules and the components (proposed, after v0.5.20)
 
-- **Split the four oversized modules** that are genuinely ours to split:
-  `altitudes-graph.js` (787), `decisions.js` (484), `altitudes.js` (409),
-  `wclm-page.js` (342) — plus the long-recorded `uni-graph.js` debt (434). Leave
-  `universe-chat/chat.js` (756) to the chat agent and `universe-api.js` (408) as it is: an
+### Correction: three of the modules cannot be split, and the reason is the freeze
+
+This pass was planned before anyone checked WHO LOADS each oversized module. Measured
+against `v1/MANIFEST.json`, every consumer page of three of them is frozen:
+
+| Module | Lines | Consumer pages | Frozen |
+|---|---|---|---|
+| `assets/altitudes-graph.js` | 795 | `v1/altitudes/graph.html` | **1 of 1** |
+| `assets/altitudes.js` | 415 | `v1/altitudes/index.html` | **1 of 1** |
+| `assets/docs.js` | 298 | 22 pages under `v1/docs/` | **22 of 22** |
+| `assets/decisions.js` | 491 | `decisions/index.html` | none |
+| `assets/universe/components/uni-graph.js` | 435 | ESM imports only | none |
+| `assets/wclm/wclm-page.js` | 343 | ESM imports only | none |
+
+A frozen page cannot gain a second `<script src>` tag, so those three cannot be split into
+additional files the ordinary way. Dynamic `import()` inside the existing script would
+work without touching the HTML — and would make initialisation async on pages that are
+frozen evidence, for no benefit to anything anyone is still editing.
+
+So the call is: **leave the three, and say why.** Each carries the reason in its
+`@module` header, where the next agent will actually read it. 1,508 lines stay long on
+purpose. That is stated debt, which is the kind this estate allows.
+
+- **Split the modules that are actually live**: `decisions.js` (491),
+  `wclm-page.js` (343), and the long-recorded `uni-graph.js` debt (435). Leave
+  `universe-chat/chat.js` (757) to the chat agent and `universe-api.js` (409) as it is: an
   API surface is allowed to be a list.
 - **Promote the four real widgets to web components**: the altitudes graph, the file
   explorer, the operator workbench, and the chip-and-wire renderer. Each gets a tag, an

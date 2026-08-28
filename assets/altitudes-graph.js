@@ -2,9 +2,12 @@
    Single responsibility: the altitude ladder's graph instrument — build the
    element set from the generated altitude data, lay it out, and handle
    selection, focus and the descent animation between altitudes. The largest
-   hand-written module in the estate at 787 lines and the clearest split
-   candidate (graph build / layout / interaction); recorded as debt in the
-   v0.5.17 non-functional pass rather than left unstated. */
+   hand-written module in the estate, and the clearest split candidate on shape
+   (graph build / layout / interaction).
+   NOT SPLIT, on purpose. Its only consumer page is in the frozen first edition
+   (v1/altitudes/graph.html), so no second <script src> tag can be added; splitting
+   would mean dynamic import() and an async start on a page that is evidence, for no
+   benefit to anything anyone still edits. Measured and recorded in the v0.5.17 pass, pass three. */
 /* The ladder, the concepts and the findings as one explorable graph.
 
    Cytoscape.js, vendored. Four ideas drive the controls:

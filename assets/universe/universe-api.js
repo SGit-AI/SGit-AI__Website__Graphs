@@ -6,6 +6,11 @@
    the chat panel. The command table and the LLM tool schemas live in
    core/commands.js (pure, gate-27-tested); this module binds implementations.
 
+   Over the size guideline at 409 lines, on purpose: an API surface is allowed to be a
+   list. The logic behind each command is in core/; what is long here is one binding per
+   published command, and grouping those into files would hide the surface, not clarify
+   it. Recorded in pass three of the v0.5.17 non-functional plan as a deliberate keep.
+
    The adapter drives the reader ONLY through surfaces the reader already
    publishes: its uni:* CustomEvents, its option buttons, and the public
    methods of its custom elements. reader.js and the components are untouched

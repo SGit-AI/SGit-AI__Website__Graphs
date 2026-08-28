@@ -3,7 +3,11 @@
    preferences and the one selection, wires the components together (data down
    as properties and method calls, events up as uni:* CustomEvents), and does
    the window-side scrolling. All rendering lives in the components; all pure
-   logic lives in core/. */
+   logic lives in core/.
+
+   Over the size guideline at 310 lines. It is a shell: almost all of it is wiring one
+   component's events to another's properties, which is exactly the code that gets harder
+   to follow when it is spread across files. Split scheduled in pass three, by pane. */
 'use strict';
 import { allKinds } from './core/kinds.js';
 import './components/uni-options.js';

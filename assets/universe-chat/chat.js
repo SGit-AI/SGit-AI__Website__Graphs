@@ -9,6 +9,10 @@
    one public element method (uni-graph.resize()) to nudge the canvas after
    the panel changes the viewport. It imports none of the page's modules.
 
+   Over the size guideline at 757 lines. Deliberately not split from this side: it is the
+   chat agent's module, reached only through the published API, and a split imposed from
+   outside that contract would be a change to someone else's half of the boundary.
+
    The OpenRouter workflow: the user's own key, pasted once into
    sg-llm-connection, stored in localStorage['sg-llm-config'] only, and per
    that component's invariant never sent to any *.sgraph.ai domain. Default

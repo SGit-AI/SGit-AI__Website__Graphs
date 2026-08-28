@@ -2,7 +2,11 @@
    Single responsibility: the first edition's source-document pages — the
    per-document concept graph, the influence measures, and the switch between
    the rendered document and its raw markdown. Every number it shows was
-   computed by gen_docs.py at build time; this module only draws. */
+   computed by gen_docs.py at build time; this module only draws.
+   NOT SPLIT, on purpose. Its only consumer pages are in the frozen first edition
+   (22 pages under v1/docs/), so no second <script src> tag can be added; splitting
+   would mean dynamic import() and an async start on a page that is evidence, for no
+   benefit to anything anyone still edits. Measured and recorded in the v0.5.17 pass, pass three. */
 /* The fifteen source documents, and where each one lands on this site.
 
    Two graphs live here. On a document's own page, the document is the peak and below

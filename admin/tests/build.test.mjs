@@ -170,4 +170,30 @@ test('validate: a broken tree fails, and the error names what broke', () => {
   }
 });
 
+/* ---- the size rule, made enforceable --------------------------------------- */
+test('modules: every one over the size guideline states why in its header', () => {
+  /* CLAUDE.md: "parts <= 200 lines, sections <= 250. Over that, split — or record the
+     deviation in the module header and in the release note. Unstated debt is the thing to
+     avoid, not debt." That was a convention anyone could forget. This makes it a gate:
+     go long if you must, but say so where the next reader will see it. */
+  const LIMIT = 250;
+  const walk = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
+    const full = path.join(dir, e.name);
+    if (e.isDirectory()) return e.name === 'vendor' ? [] : walk(full);
+    return e.name.endsWith('.js') ? [full] : [];
+  });
+  const unstated = [];
+  for (const f of walk(path.join(ROOT, 'assets'))) {
+    const src = rf(f);
+    const lines = src.split('\n').length;
+    if (lines <= LIMIT) continue;
+    const head = src.slice(0, src.indexOf('*/') + 2);
+    const states = /NOT SPLIT|size guideline|split is planned|allowed to be a list|recorded as debt/i.test(head);
+    if (!states) unstated.push(`${path.relative(ROOT, f)} (${lines} lines)`);
+  }
+  assert.deepEqual(unstated, [],
+    'over the guideline with nothing said about it in the @module header — '
+    + 'split it, or record the deviation where the next reader will see it');
+});
+
 await report('build');

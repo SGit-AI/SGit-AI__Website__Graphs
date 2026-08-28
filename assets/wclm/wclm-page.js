@@ -5,7 +5,10 @@
    column via render.js, offer a sense picker for every prompt word the senses
    register knows, trace the FULL evidence path on click (transitive, both
    directions), measure run-to-run impact, and answer with meaning, provenance
-   and contradictions. Computation lives in engine.js and senses.js, pure. */
+   and contradictions. Computation lives in engine.js and senses.js, pure.
+
+   Over the size guideline at 343 lines. The split worth making is bar / draw / paint, as
+   the v0.5.17 audit recorded; it is scheduled in pass three of that plan. */
 'use strict';
 import { runPipeline, runDelta, BLOCKS, DEFAULT_PIPELINE } from './engine.js';
 import { renderBlock, openLayer } from './render.js';
