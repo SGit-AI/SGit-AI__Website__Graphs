@@ -23,7 +23,11 @@ Follow all of it, in order. Skipping a step breaks the estate for everyone else.
    commit log: a reader should understand the change without opening the diff.
 4. Run the generator chain (see `README.md`), ending with `chrome.py`.
 5. `node admin/tests/run.mjs` and `node admin/build/validate.js` — both green.
-6. Commit with the version in the subject: `site vX.Y.Z: what changed`.
+6. Commit with the version in the subject, in **exactly** this form:
+   `site vX.Y.Z: what changed` — the colon comes straight after the version, because CI
+   parses it and refuses a release whose `version.txt` disagrees. **A book's version goes
+   in the BODY, never the subject.** A subject reading `site v0.6.9 / making-a-book
+   v0.2.0: …` cost a failed release and a hand-made tag; a test now checks the form.
 7. Push your branch, then push to `dev`. CI validates, tags and deploys.
 
 **On a version collision** (someone else took your number): fetch, renumber, re-run the

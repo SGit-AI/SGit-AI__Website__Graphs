@@ -238,6 +238,36 @@ test('validate: a broken tree fails, and the error names what broke', () => {
   }
 });
 
+/* ---- the release commit subject -------------------------------------------- */
+test('releases: every release commit subject is in the form CI can parse', () => {
+  /* CI reads the version out of the commit subject and refuses a release whose
+     version.txt disagrees with it. The parser wants "site vX.Y.Z:" with the colon
+     immediately after the version.
+
+     At v0.6.9 a subject was written "site v0.6.9 / making-a-book v0.2.0: ..." to show
+     both clocks moving. The release was sound; the format was not. CI could not find the
+     version, reported that version.txt disagreed with the history, and failed — and
+     because the backfill used the same strict pattern, that release became permanently
+     untaggable, which blocks the version diff for every release after it.
+
+     The backfill is tolerant now, so history can heal. This keeps the convention honest
+     going forward: the book's version belongs in the BODY, never in the subject. */
+  /* History cannot be rewritten, so the one subject that broke the rule is named here
+     with its reason rather than silently tolerated by a loosened pattern. */
+  const KNOWN = [
+    'site v0.6.9 / making-a-book v0.2.0: the book is renamed under its own change control',
+  ];
+  const out = spawnSync('git', ['log', '-40', '--format=%s'], { cwd: ROOT, encoding: 'utf8' });
+  assert.equal(out.status, 0, 'could not read the commit log');
+  const bad = out.stdout.split('\n')
+    .filter((s) => s.startsWith('site v'))
+    .filter((s) => !KNOWN.includes(s))
+    .filter((s) => !/^site v\d+\.\d+\.\d+: \S/.test(s));
+  assert.deepEqual(bad, [],
+    'release subject(s) CI cannot parse — the form is "site vX.Y.Z: what changed", and a '
+    + "book's version goes in the body");
+});
+
 /* ---- the book graph ------------------------------------------------------- */
 test('bookgraph: the book decomposes, and every chapter rebuilds byte-identical', () => {
   /* Brief 43, activity A2. The claim that makes brief 42's restructure possible is that a
