@@ -1,0 +1,400 @@
+{
+ "doc": "doc:02__the-pivot",
+ "prefix": "mab-02",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 5,
+  "b": 42
+ },
+ "ids": [
+  {
+   "uid": "mab-02:d1",
+   "level": "doc",
+   "locator": "doc:02__the-pivot",
+   "hash": "9b2d2a873f6a",
+   "head": "2 · The first book, and the pivot that saved the second",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:s1",
+   "level": "sec",
+   "locator": "sec:Three days to a book",
+   "hash": "45c0755fd809",
+   "head": "2|Three days to a book",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:s2",
+   "level": "sec",
+   "locator": "sec:The plan for the second book, and the memo that stopped it",
+   "hash": "a80cbeb6d428",
+   "head": "2|The plan for the second book, and the memo that stopped it",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:s3",
+   "level": "sec",
+   "locator": "sec:Why this is the most valuable move in the book",
+   "hash": "1b24dccb9b53",
+   "head": "2|Why this is the most valuable move in the book",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:s4",
+   "level": "sec",
+   "locator": "sec:Freezing the first edition",
+   "hash": "491a6efcb2c9",
+   "head": "2|Freezing the first edition",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:s5",
+   "level": "sec",
+   "locator": "sec:The empty second edition",
+   "hash": "68df244662c0",
+   "head": "2|The empty second edition",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b1",
+   "level": "blk",
+   "locator": "blk:2 · The first book, and the pivot that saved the second/1",
+   "hash": "6c73d04ddb9b",
+   "head": "*After this chapter you will know how a book gets written in three days and why ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b2",
+   "level": "blk",
+   "locator": "blk:2 · The first book, and the pivot that saved the second/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b3",
+   "level": "blk",
+   "locator": "blk:Three days to a book/1",
+   "hash": "b2aa9ce71ff8",
+   "head": "The repository's first release, v0.1.0, is dated 21 August 2026 at 14:47 UTC. It",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b4",
+   "level": "blk",
+   "locator": "blk:Three days to a book/2",
+   "hash": "7bb351c84244",
+   "head": "> First cut. The pipeline before the prose: validate → tag → deploy on every pus",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b5",
+   "level": "blk",
+   "locator": "blk:Three days to a book/3",
+   "hash": "201cc0cb4f7f",
+   "head": "The pipeline came before the prose. Before there was a single chapter, there was",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b6",
+   "level": "blk",
+   "locator": "blk:Three days to a book/4",
+   "hash": "0035e9774b12",
+   "head": "Two hours and fifty-six minutes later, v0.2.0:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b7",
+   "level": "blk",
+   "locator": "blk:Three days to a book/5",
+   "hash": "c0948333a91a",
+   "head": "> The book. A new /book/ section — the site's content as a book, Meaning Through",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b8",
+   "level": "blk",
+   "locator": "blk:Three days to a book/6",
+   "hash": "fbd094cbe98e",
+   "head": "![The first edition at v0.2.0, roughly three hours after the repository's first ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b9",
+   "level": "blk",
+   "locator": "blk:Three days to a book/7",
+   "hash": "e680ce61aee2",
+   "head": "*Figure 2. The book section at tag `v0.2.0`, 21 August 2026.*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b10",
+   "level": "blk",
+   "locator": "blk:Three days to a book/8",
+   "hash": "6e7513f60700",
+   "head": "By the end of that first day the book had a print PDF in a standard technical-bo",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b11",
+   "level": "blk",
+   "locator": "blk:Three days to a book/9",
+   "hash": "77e027a5c923",
+   "head": "By the end of the second day it had a cover generated as SVG from the book's own",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b12",
+   "level": "blk",
+   "locator": "blk:Three days to a book/10",
+   "hash": "66d5dceecaa4",
+   "head": "![The altitude ladder at v0.3.15: one book, five altitudes, built as an experime",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b13",
+   "level": "blk",
+   "locator": "blk:Three days to a book/11",
+   "hash": "1fd13a0fc535",
+   "head": "*Figure 3. The altitude ladder at tag `v0.3.15`, 22 August 2026.*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b14",
+   "level": "blk",
+   "locator": "blk:Three days to a book/12",
+   "hash": "04d91ca6d613",
+   "head": "By the end of the third day the chapters had moved to markdown, twenty-one sourc",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b15",
+   "level": "blk",
+   "locator": "blk:Three days to a book/13",
+   "hash": "3f72e0d4e7f7",
+   "head": "Sixteen chapters in six parts, 20,838 words of page markdown, thirty-four releas",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b16",
+   "level": "blk",
+   "locator": "blk:Three days to a book/14",
+   "hash": "bd5a32a6ee3c",
+   "head": "That is the part that looks impressive and is actually the easy part.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b17",
+   "level": "blk",
+   "locator": "blk:The plan for the second book, and the memo that stopped it/1",
+   "hash": "095abc301f9b",
+   "head": "On 23 August the repository shipped v0.3.27, a large planning document:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b18",
+   "level": "blk",
+   "locator": "blk:The plan for the second book, and the memo that stopped it/2",
+   "hash": "9793efe711a4",
+   "head": "> The plan to write the book again, from the top down. Two founder voice memos o",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b19",
+   "level": "blk",
+   "locator": "blk:The plan for the second book, and the memo that stopped it/3",
+   "hash": "8c326d14c8b6",
+   "head": "The plan was ten files. It audited every unit of the first edition and gave each",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b20",
+   "level": "blk",
+   "locator": "blk:The plan for the second book, and the memo that stopped it/4",
+   "hash": "7f75b10b9704",
+   "head": "Then, reading section 5, he recorded a voice memo that cancelled most of it. It ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b21",
+   "level": "blk",
+   "locator": "blk:The plan for the second book, and the memo that stopped it/5",
+   "hash": "580808fe192e",
+   "head": "> the brief is amazing, right? Like it's really cool. I'm really good. I'm I'm o",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b22",
+   "level": "blk",
+   "locator": "blk:The plan for the second book, and the memo that stopped it/6",
+   "hash": "ea2f6892ab2e",
+   "head": "And a little later, the sentence that reordered the whole project:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b23",
+   "level": "blk",
+   "locator": "blk:The plan for the second book, and the memo that stopped it/7",
+   "hash": "05d19f07d8bf",
+   "head": "> I feel, if you think about it, that we cannot know what each of the levels, le",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b24",
+   "level": "blk",
+   "locator": "blk:The plan for the second book, and the memo that stopped it/8",
+   "hash": "34913e994a43",
+   "head": "The instruction that came out of it inverts the normal construction order for a ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b25",
+   "level": "blk",
+   "locator": "blk:The plan for the second book, and the memo that stopped it/9",
+   "hash": "a07eea18f53a",
+   "head": "> the construction order inverts: not spine first and evidence attached to it, b",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b26",
+   "level": "blk",
+   "locator": "blk:Why this is the most valuable move in the book/1",
+   "hash": "7beeed540b9d",
+   "head": "Four things are worth pulling out of that moment, because each one generalises.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b27",
+   "level": "blk",
+   "locator": "blk:Why this is the most valuable move in the book/2",
+   "hash": "f3f23be9e360",
+   "head": "**He stopped it at section 5, not at the end.** He was reading the plan, noticed",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b28",
+   "level": "blk",
+   "locator": "blk:Why this is the most valuable move in the book/3",
+   "hash": "d39ee9c8e88f",
+   "head": "**He named where the fault was.** \"Section two, where you say what exists today,",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b29",
+   "level": "blk",
+   "locator": "blk:Why this is the most valuable move in the book/4",
+   "hash": "884d60286bdf",
+   "head": "**He praised the part that was right.** \"The most amazing things we've done when",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b30",
+   "level": "blk",
+   "locator": "blk:Why this is the most valuable move in the book/5",
+   "hash": "8ef70c42c648",
+   "head": "**The memo went into the repository unedited.** Including \"I'm really good\", whi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b31",
+   "level": "blk",
+   "locator": "blk:Why this is the most valuable move in the book/6",
+   "hash": "60689cbbf9ff",
+   "head": "The consequence of brief 20 is the entire second half of this book. Because the\n",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b32",
+   "level": "blk",
+   "locator": "blk:Freezing the first edition/1",
+   "hash": "84e7cc838d82",
+   "head": "Before the new order could start, the old one had to be put out of reach. v0.4.0",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b33",
+   "level": "blk",
+   "locator": "blk:Freezing the first edition/2",
+   "hash": "34ee7e4880f8",
+   "head": "> The first edition moves to /v1/ and freezes. The second edition begins, empty.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b34",
+   "level": "blk",
+   "locator": "blk:Freezing the first edition/3",
+   "hash": "b5b69b3e3186",
+   "head": "That parenthesis is worth a paragraph of its own. The plan proposed copying the ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b35",
+   "level": "blk",
+   "locator": "blk:Freezing the first edition/4",
+   "hash": "e8b6f72e9e88",
+   "head": "The move cost something immediately: every URL of the first edition changed. The",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b36",
+   "level": "blk",
+   "locator": "blk:Freezing the first edition/5",
+   "hash": "6caafdc7bd4f",
+   "head": "> The redirect stubs are retired: 108 pages deleted, and the root is now exactly",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b37",
+   "level": "blk",
+   "locator": "blk:Freezing the first edition/6",
+   "hash": "7f73fa011226",
+   "head": "Two decisions, four days apart, both of which trade a small amount of user-facin",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b38",
+   "level": "blk",
+   "locator": "blk:The empty second edition/1",
+   "hash": "1790e79e87cd",
+   "head": "What v0.4.0 created was a directory called `/v2/` with nothing in it. Not a draf",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b39",
+   "level": "blk",
+   "locator": "blk:The empty second edition/2",
+   "hash": "8c1d052bd367",
+   "head": "Five days later that empty space held: an extraction pipeline, a document reader",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b40",
+   "level": "blk",
+   "locator": "blk:The empty second edition/3",
+   "hash": "f37d9b486d59",
+   "head": "It still holds no chapters of the second book. That is not a failure of the meth",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b41",
+   "level": "blk",
+   "locator": "blk:The empty second edition/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-02:b42",
+   "level": "blk",
+   "locator": "blk:The empty second edition/5",
+   "hash": "0fa6bf67e3da",
+   "head": "**Where the live estate shows this.** The frozen first edition is at `/v1/`, its",
+   "status": "live"
+  }
+ ]
+}

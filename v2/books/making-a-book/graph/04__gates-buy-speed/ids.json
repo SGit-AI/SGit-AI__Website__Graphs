@@ -1,0 +1,472 @@
+{
+ "doc": "doc:04__gates-buy-speed",
+ "prefix": "mab-04",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 7,
+  "b": 49
+ },
+ "ids": [
+  {
+   "uid": "mab-04:d1",
+   "level": "doc",
+   "locator": "doc:04__gates-buy-speed",
+   "hash": "441cc1fcf7ca",
+   "head": "4 · Gates buy speed",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:s1",
+   "level": "sec",
+   "locator": "sec:The counterintuitive claim",
+   "hash": "acfb936f70f9",
+   "head": "2|The counterintuitive claim",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:s2",
+   "level": "sec",
+   "locator": "sec:The seven checks that came first",
+   "hash": "a5b396cd96b6",
+   "head": "2|The seven checks that came first",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:s3",
+   "level": "sec",
+   "locator": "sec:The unit suite",
+   "hash": "e2abe6d59357",
+   "head": "2|The unit suite",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:s4",
+   "level": "sec",
+   "locator": "sec:The gates that check the content, not the code",
+   "hash": "47a9b9781e20",
+   "head": "2|The gates that check the content, not the code",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:s5",
+   "level": "sec",
+   "locator": "sec:The release note as a gate",
+   "hash": "d43b491ae8d3",
+   "head": "2|The release note as a gate",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:s6",
+   "level": "sec",
+   "locator": "sec:Automating the release itself",
+   "hash": "66b4636dfc91",
+   "head": "2|Automating the release itself",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:s7",
+   "level": "sec",
+   "locator": "sec:The arithmetic",
+   "hash": "5a94ab7c363c",
+   "head": "2|The arithmetic",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b1",
+   "level": "blk",
+   "locator": "blk:4 · Gates buy speed/1",
+   "hash": "aeed3b6c5e60",
+   "head": "*After this chapter you will understand why adding automated checks makes an age",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b2",
+   "level": "blk",
+   "locator": "blk:4 · Gates buy speed/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b3",
+   "level": "blk",
+   "locator": "blk:The counterintuitive claim/1",
+   "hash": "ba07451b1e50",
+   "head": "Eighty-eight releases in six days sounds like a project with no safety rails. It",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b4",
+   "level": "blk",
+   "locator": "blk:The counterintuitive claim/2",
+   "hash": "a64d507089f3",
+   "head": "> **Gates buy speed, not caution.** Forty-one releases in four days was possible",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b5",
+   "level": "blk",
+   "locator": "blk:The counterintuitive claim/3",
+   "hash": "1eb90719ae8a",
+   "head": "The mechanism is worth spelling out, because it is not obvious.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b6",
+   "level": "blk",
+   "locator": "blk:The counterintuitive claim/4",
+   "hash": "20d69e3b9d08",
+   "head": "At thirty minutes per release, nobody can manually check a site of 176 pages. No",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b7",
+   "level": "blk",
+   "locator": "blk:The counterintuitive claim/5",
+   "hash": "a40759b5ae9a",
+   "head": "And an unchecked release is not fast. It is fast until it is not, and then it co",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b8",
+   "level": "blk",
+   "locator": "blk:The seven checks that came first/1",
+   "hash": "339fd97fea3a",
+   "head": "The repository's first release, before there was any content, shipped a pre-rele",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b9",
+   "level": "blk",
+   "locator": "blk:The seven checks that came first/2",
+   "hash": "63a73faa8940",
+   "head": "1. **Version agreement.** One file owns the version number. Every page's version",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b10",
+   "level": "blk",
+   "locator": "blk:The seven checks that came first/3",
+   "hash": "2f0d5ed8718b",
+   "head": "2. **Internal links.** Every relative link and image source in every HTML file h",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b11",
+   "level": "blk",
+   "locator": "blk:The seven checks that came first/4",
+   "hash": "7c06734144cf",
+   "head": "3. **Canonical host.** Every page declares exactly one canonical URL, and it poi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b12",
+   "level": "blk",
+   "locator": "blk:The seven checks that came first/5",
+   "hash": "a280b6655365",
+   "head": "4. **The agent surface.** Every section of the site is named in `llms.txt`, and ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b13",
+   "level": "blk",
+   "locator": "blk:The seven checks that came first/6",
+   "hash": "8fe2a9626b1a",
+   "head": "5. **Edge grammar.** The book bans a particular sloppy relationship name, `relat",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b14",
+   "level": "blk",
+   "locator": "blk:The seven checks that came first/7",
+   "hash": "7e76b92dd708",
+   "head": "6. **Key leak.** Nothing in the tree may look like a vault key.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b15",
+   "level": "blk",
+   "locator": "blk:The seven checks that came first/8",
+   "hash": "2a4cd8960e6f",
+   "head": "7. **Div balance.** Every page opens and closes the same number of `<div>` eleme",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b16",
+   "level": "blk",
+   "locator": "blk:The seven checks that came first/9",
+   "hash": "b3591d46de51",
+   "head": "That last one has a story attached, and the validator records it in a comment:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b17",
+   "level": "blk",
+   "locator": "blk:The seven checks that came first/10",
+   "hash": "d2c106c484ec",
+   "head": "> Added after four pages shipped a `<div class=\"note\">` closed with `</p>`, whic",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b18",
+   "level": "blk",
+   "locator": "blk:The seven checks that came first/11",
+   "hash": "a463d9c71493",
+   "head": "That is the general pattern for how gates get added here. Something goes wrong. ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b19",
+   "level": "blk",
+   "locator": "blk:The unit suite/1",
+   "hash": "53d4f5e6acb2",
+   "head": "The second gate is a plain Node test suite, run by the validator on every releas",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b20",
+   "level": "blk",
+   "locator": "blk:The unit suite/2",
+   "hash": "8c08b3c22f2c",
+   "head": "| Release | Date | Tests |\n|---|---|---|\n| v0.4.13 | 24 Aug | 13 |\n| v0.4.16 | 2",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b21",
+   "level": "blk",
+   "locator": "blk:The unit suite/3",
+   "hash": "f1b2a6f1886c",
+   "head": "Thirteen to eighty-four in a little over two days. Every one of those tests is a",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b22",
+   "level": "blk",
+   "locator": "blk:The unit suite/4",
+   "hash": "dfcfef9f1835",
+   "head": "The suite appeared at v0.4.13, and the release that created it is worth reading ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b23",
+   "level": "blk",
+   "locator": "blk:The unit suite/5",
+   "hash": "8ae363b166e6",
+   "head": "> The reader refactored: zero visible change, and the tool is now portable acros",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b24",
+   "level": "blk",
+   "locator": "blk:The unit suite/6",
+   "hash": "54e125b79a64",
+   "head": "One script of 703 lines became a core tier that is pure and testable with no bro",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b25",
+   "level": "blk",
+   "locator": "blk:The unit suite/7",
+   "hash": "3315c177f965",
+   "head": "The reason this matters for the argument of the chapter: the thirteen tests coul",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b26",
+   "level": "blk",
+   "locator": "blk:The gates that check the content, not the code/1",
+   "hash": "9bb8dab8f484",
+   "head": "Three of this project's gates check things most projects never check, and they a",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b27",
+   "level": "blk",
+   "locator": "blk:The gates that check the content, not the code/2",
+   "hash": "8016d1a1e719",
+   "head": "**Every quotation is verified against the source bytes.** The extraction of the ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b28",
+   "level": "blk",
+   "locator": "blk:The gates that check the content, not the code/3",
+   "hash": "d3dcf73ae68d",
+   "head": "For a book, this is the gate. It means no claim attributed to a source can drift",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b29",
+   "level": "blk",
+   "locator": "blk:The gates that check the content, not the code/4",
+   "hash": "2650b2a7f3aa",
+   "head": "**Every rendered page is checked against the markdown it claims to render.** The",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b30",
+   "level": "blk",
+   "locator": "blk:The gates that check the content, not the code/5",
+   "hash": "646173cc3a73",
+   "head": "The site's own name for this is a projection chain, and the validator's header s",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b31",
+   "level": "blk",
+   "locator": "blk:The gates that check the content, not the code/6",
+   "hash": "cf16d1d5d940",
+   "head": "**Rebuilding must produce identical bytes.** By v0.4.38 the core graph could reb",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b32",
+   "level": "blk",
+   "locator": "blk:The gates that check the content, not the code/7",
+   "hash": "afc4dfa4734e",
+   "head": "That last pattern, run it twice and demand no change, is cheap to implement and ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b33",
+   "level": "blk",
+   "locator": "blk:The release note as a gate/1",
+   "hash": "a452dcce4363",
+   "head": "The third mechanism is not automated at all. Every release ships with a paragrap",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b34",
+   "level": "blk",
+   "locator": "blk:The release note as a gate/2",
+   "hash": "48802a8ec927",
+   "head": "They are long. The twelve v0.5 notes average 365 words each; across all eighty-e",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b35",
+   "level": "blk",
+   "locator": "blk:The release note as a gate/3",
+   "hash": "a6a13d3b85d9",
+   "head": "**They record the verification.** Almost every note in this period ends with a s",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b36",
+   "level": "blk",
+   "locator": "blk:The release note as a gate/4",
+   "hash": "ad5094561281",
+   "head": "**They record the debt.** The component that draws the graph, `uni-graph.js`, is",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b37",
+   "level": "blk",
+   "locator": "blk:The release note as a gate/5",
+   "hash": "2e307abd17df",
+   "head": "> **Honest debt beats hidden debt.** `uni-graph.js` sits at ~450 lines against a",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b38",
+   "level": "blk",
+   "locator": "blk:The release note as a gate/6",
+   "hash": "f3ca9907941c",
+   "head": "**They record what did not change.** Almost every note in this period ends with ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b39",
+   "level": "blk",
+   "locator": "blk:The release note as a gate/7",
+   "hash": "c62f8ed4c4da",
+   "head": "![The release history at v0.5.11. Every row is a paragraph, not a commit message",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b40",
+   "level": "blk",
+   "locator": "blk:The release note as a gate/8",
+   "hash": "9e2298880b29",
+   "head": "*Figure 5. The release table at tag `v0.5.11`. The v0.4 era's forty-one rows mov",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b41",
+   "level": "blk",
+   "locator": "blk:Automating the release itself/1",
+   "hash": "0b3589d621a7",
+   "head": "The last piece is that no human runs the release. A push to the `dev` branch tri",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b42",
+   "level": "blk",
+   "locator": "blk:Automating the release itself/2",
+   "hash": "5f3174d337c2",
+   "head": "The consequence, computed from the git history, is the ratio quoted in Chapter 1",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b43",
+   "level": "blk",
+   "locator": "blk:The arithmetic/1",
+   "hash": "8ba344562743",
+   "head": "Here is the trade in plain numbers, using this project's own history.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b44",
+   "level": "blk",
+   "locator": "blk:The arithmetic/2",
+   "hash": "02f5853dd0af",
+   "head": "The gates cost, roughly: one release out of eighty-eight spent entirely on makin",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b45",
+   "level": "blk",
+   "locator": "blk:The arithmetic/3",
+   "hash": "76cd3c68a712",
+   "head": "They buy: eighty-seven releases that could be shipped without a manual regressio",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b46",
+   "level": "blk",
+   "locator": "blk:The arithmetic/4",
+   "hash": "6ce489c821f0",
+   "head": "That last one is the real product of a test suite in an agentic project. You are",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b47",
+   "level": "blk",
+   "locator": "blk:The arithmetic/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b48",
+   "level": "blk",
+   "locator": "blk:The arithmetic/6",
+   "hash": "15f7cf5cd150",
+   "head": "**Where the live estate shows this.** The validator is `admin/build/validate.js`",
+   "status": "live"
+  },
+  {
+   "uid": "mab-04:b49",
+   "level": "blk",
+   "locator": "blk:The arithmetic/7",
+   "hash": "8734ac3ac142",
+   "head": "An added paragraph to prove the graph notices.",
+   "status": "retired"
+  }
+ ]
+}

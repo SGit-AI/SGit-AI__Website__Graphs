@@ -1,0 +1,130 @@
+{
+ "version": "v0.6.10",
+ "slug": "04__gates-buy-speed",
+ "doc": "doc:04__gates-buy-speed",
+ "title": "4 · Gates buy speed",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 48,
+  "sentences": 118,
+  "words": 1922,
+  "spans": 35
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:04__gates-buy-speed",
+   "title": "4 · Gates buy speed",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 45
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-04:d1"
+  },
+  {
+   "id": "sec:The counterintuitive claim",
+   "title": "The counterintuitive claim",
+   "level": 2,
+   "parent": "doc:04__gates-buy-speed",
+   "counts": {
+    "blocks": 5,
+    "sentences": 14,
+    "words": 168
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-04:s1"
+  },
+  {
+   "id": "sec:The seven checks that came first",
+   "title": "The seven checks that came first",
+   "level": 2,
+   "parent": "doc:04__gates-buy-speed",
+   "counts": {
+    "blocks": 11,
+    "sentences": 30,
+    "words": 368
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-04:s2"
+  },
+  {
+   "id": "sec:The unit suite",
+   "title": "The unit suite",
+   "level": 2,
+   "parent": "doc:04__gates-buy-speed",
+   "counts": {
+    "blocks": 7,
+    "sentences": 14,
+    "words": 301
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-04:s3"
+  },
+  {
+   "id": "sec:The gates that check the content, not the code",
+   "title": "The gates that check the content, not the code",
+   "level": 2,
+   "parent": "doc:04__gates-buy-speed",
+   "counts": {
+    "blocks": 7,
+    "sentences": 17,
+    "words": 323
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-04:s4"
+  },
+  {
+   "id": "sec:The release note as a gate",
+   "title": "The release note as a gate",
+   "level": 2,
+   "parent": "doc:04__gates-buy-speed",
+   "counts": {
+    "blocks": 8,
+    "sentences": 24,
+    "words": 371
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-04:s5"
+  },
+  {
+   "id": "sec:Automating the release itself",
+   "title": "Automating the release itself",
+   "level": 2,
+   "parent": "doc:04__gates-buy-speed",
+   "counts": {
+    "blocks": 2,
+    "sentences": 8,
+    "words": 146
+   },
+   "shard": "sec-07.json",
+   "uid": "mab-04:s6"
+  },
+  {
+   "id": "sec:The arithmetic",
+   "title": "The arithmetic",
+   "level": 2,
+   "parent": "doc:04__gates-buy-speed",
+   "counts": {
+    "blocks": 6,
+    "sentences": 10,
+    "words": 200
+   },
+   "shard": "sec-08.json",
+   "uid": "mab-04:s7"
+  }
+ ]
+}

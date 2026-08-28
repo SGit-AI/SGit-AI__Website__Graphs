@@ -1,0 +1,808 @@
+{
+ "doc": "doc:11__the-playbook",
+ "prefix": "mab-11",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 14,
+  "b": 84
+ },
+ "ids": [
+  {
+   "uid": "mab-11:d1",
+   "level": "doc",
+   "locator": "doc:11__the-playbook",
+   "hash": "82ead522d1c2",
+   "head": "11 · The playbook",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:s1",
+   "level": "sec",
+   "locator": "sec:Before you start: what this is and is not",
+   "hash": "a098a507c52f",
+   "head": "2|Before you start: what this is and is not",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:s2",
+   "level": "sec",
+   "locator": "sec:Day 0: set up five things",
+   "hash": "59acfbdb894f",
+   "head": "2|Day 0: set up five things",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:s3",
+   "level": "sec",
+   "locator": "sec:1. A repository with one release branch",
+   "hash": "fa5e161daa5d",
+   "head": "3|1. A repository with one release branch",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:s4",
+   "level": "sec",
+   "locator": "sec:2. Automatic validate, tag and deploy",
+   "hash": "353b25884dba",
+   "head": "3|2. Automatic validate, tag and deploy",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:s5",
+   "level": "sec",
+   "locator": "sec:3. Seven checks to start with",
+   "hash": "d904ba9de29e",
+   "head": "3|3. Seven checks to start with",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:s6",
+   "level": "sec",
+   "locator": "sec:4. A briefs folder",
+   "hash": "d93adfb07387",
+   "head": "3|4. A briefs folder",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:s7",
+   "level": "sec",
+   "locator": "sec:5. A release table",
+   "hash": "b9e2022922eb",
+   "head": "3|5. A release table",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:s8",
+   "level": "sec",
+   "locator": "sec:Day 1: your first memo",
+   "hash": "f21080250f45",
+   "head": "2|Day 1: your first memo",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:s9",
+   "level": "sec",
+   "locator": "sec:The loop, in five steps",
+   "hash": "bc1c9e428a9b",
+   "head": "2|The loop, in five steps",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:s10",
+   "level": "sec",
+   "locator": "sec:Rules that make it work",
+   "hash": "f93b0a3a37ae",
+   "head": "2|Rules that make it work",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:s11",
+   "level": "sec",
+   "locator": "sec:What to expect to go wrong",
+   "hash": "524b3fe36f81",
+   "head": "2|What to expect to go wrong",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:s12",
+   "level": "sec",
+   "locator": "sec:Signs the loop has stalled",
+   "hash": "e208f0574e8c",
+   "head": "2|Signs the loop has stalled",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:s13",
+   "level": "sec",
+   "locator": "sec:The honest costs",
+   "hash": "183b2d7d14e9",
+   "head": "2|The honest costs",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:s14",
+   "level": "sec",
+   "locator": "sec:The one-page version",
+   "hash": "fbbb7e1cb05c",
+   "head": "2|The one-page version",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b1",
+   "level": "blk",
+   "locator": "blk:11 · The playbook/1",
+   "hash": "12de149a95b0",
+   "head": "*This chapter stands alone. It is written so it can be torn out, printed, or pin",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b2",
+   "level": "blk",
+   "locator": "blk:11 · The playbook/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b3",
+   "level": "blk",
+   "locator": "blk:Before you start: what this is and is not/1",
+   "hash": "e7241e485fd5",
+   "head": "This is a way of writing a book, or any large structured document, in which an A",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b4",
+   "level": "blk",
+   "locator": "blk:Before you start: what this is and is not/2",
+   "hash": "c479644b63ba",
+   "head": "- you are willing to run a git repository, or to let the agent run one for you;",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b5",
+   "level": "blk",
+   "locator": "blk:Before you start: what this is and is not/3",
+   "hash": "7a2f9ec7844b",
+   "head": "- you can review a working artefact rather than a draft;",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b6",
+   "level": "blk",
+   "locator": "blk:Before you start: what this is and is not/4",
+   "hash": "b2ddbf1c8ad9",
+   "head": "- you want the process to leave a record you can check afterwards.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b7",
+   "level": "blk",
+   "locator": "blk:Before you start: what this is and is not/5",
+   "hash": "3ef59f2b1b3e",
+   "head": "It does not assume you can program. It does not require a graph database, or any",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b8",
+   "level": "blk",
+   "locator": "blk:Before you start: what this is and is not/6",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b9",
+   "level": "blk",
+   "locator": "blk:Day 0: set up five things/1",
+   "hash": "d21cb8e4bb0e",
+   "head": "Set these up before you write anything. In the project this book describes, the ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b10",
+   "level": "blk",
+   "locator": "blk:1. A repository with one release branch/1",
+   "hash": "bb4b6a42cc00",
+   "head": "One branch that is the published one. Every change lands there. No long-lived fe",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b11",
+   "level": "blk",
+   "locator": "blk:2. Automatic validate, tag and deploy/1",
+   "hash": "2da0175a5fb9",
+   "head": "A push to the release branch should run your checks, and only if they pass, tag ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b12",
+   "level": "blk",
+   "locator": "blk:3. Seven checks to start with/1",
+   "hash": "6e6923011eb0",
+   "head": "Do not design a test strategy. Copy these, adapt the ones that apply:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b13",
+   "level": "blk",
+   "locator": "blk:3. Seven checks to start with/2",
+   "hash": "78a48b2493f7",
+   "head": "1. **Version agreement.** One file owns the version number; everything that disp",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b14",
+   "level": "blk",
+   "locator": "blk:3. Seven checks to start with/3",
+   "hash": "3edc71293bf4",
+   "head": "2. **Internal links.** Every link and image path resolves to a file that exists.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b15",
+   "level": "blk",
+   "locator": "blk:3. Seven checks to start with/4",
+   "hash": "0c9c1c843609",
+   "head": "3. **Canonical addresses.** Every page declares one canonical URL and it is righ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b16",
+   "level": "blk",
+   "locator": "blk:3. Seven checks to start with/5",
+   "hash": "78d49acdd071",
+   "head": "4. **Structural completeness.** Every section of your work is listed in whatever",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b17",
+   "level": "blk",
+   "locator": "blk:3. Seven checks to start with/6",
+   "hash": "b107d6bc39c3",
+   "head": "5. **A vocabulary tripwire.** Pick the one word or construction your project has",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b18",
+   "level": "blk",
+   "locator": "blk:3. Seven checks to start with/7",
+   "hash": "40ba377284f7",
+   "head": "6. **A secret tripwire.** Nothing in the tree may look like a key or a token.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b19",
+   "level": "blk",
+   "locator": "blk:3. Seven checks to start with/8",
+   "hash": "4738aa5ccebb",
+   "head": "7. **A structural balance check.** Something cheap that catches the class of err",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b20",
+   "level": "blk",
+   "locator": "blk:3. Seven checks to start with/9",
+   "hash": "1c346d5b254e",
+   "head": "Add the eighth check the first time something goes wrong. That is how this proje",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b21",
+   "level": "blk",
+   "locator": "blk:4. A briefs folder/1",
+   "hash": "1f37a7ed0f88",
+   "head": "`briefs/`, numbered files, one per instruction round. See Day 1.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b22",
+   "level": "blk",
+   "locator": "blk:5. A release table/1",
+   "hash": "8a31f50d2631",
+   "head": "A page listing every release: version, date, and a paragraph on what changed. Pr",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b23",
+   "level": "blk",
+   "locator": "blk:5. A release table/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b24",
+   "level": "blk",
+   "locator": "blk:Day 1: your first memo/1",
+   "hash": "1505d9f0129d",
+   "head": "Talk, do not type. The nineteen briefs behind this book are mostly transcribed v",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b25",
+   "level": "blk",
+   "locator": "blk:Day 1: your first memo/2",
+   "hash": "48aaef1e8514",
+   "head": "Record while using the thing, not while thinking about it. Every memo in this co",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b26",
+   "level": "blk",
+   "locator": "blk:Day 1: your first memo/3",
+   "hash": "8ce930ed0adc",
+   "head": "**What to say, in this order:**",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b27",
+   "level": "blk",
+   "locator": "blk:Day 1: your first memo/4",
+   "hash": "d71154e6bfee",
+   "head": "1. **The verdict, first.** \"This worked really well\" or \"this is not right\". Say",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b28",
+   "level": "blk",
+   "locator": "blk:Day 1: your first memo/5",
+   "hash": "841acb5813dd",
+   "head": "2. **The specific complaints, each attached to an object.** \"When I open X, Y do",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b29",
+   "level": "blk",
+   "locator": "blk:Day 1: your first memo/6",
+   "hash": "c2191aa94d81",
+   "head": "3. **The principle behind the complaint, if you have one.** \"Every node move cos",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b30",
+   "level": "blk",
+   "locator": "blk:Day 1: your first memo/7",
+   "hash": "180e5ff22658",
+   "head": "4. **The direction, marked as direction.** Say out loud the things you are think",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b31",
+   "level": "blk",
+   "locator": "blk:Day 1: your first memo/8",
+   "hash": "33cb4f0cb77d",
+   "head": "5. **The question.** \"Does this make sense, any questions?\" Ask every time.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b32",
+   "level": "blk",
+   "locator": "blk:Day 1: your first memo/9",
+   "hash": "e4cfa6ed10f6",
+   "head": "**What to do with the recording:**",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b33",
+   "level": "blk",
+   "locator": "blk:Day 1: your first memo/10",
+   "hash": "b30920b495f2",
+   "head": "Have the agent write a file, `briefs/NN__whatever.md`, with three parts in this ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b34",
+   "level": "blk",
+   "locator": "blk:Day 1: your first memo/11",
+   "hash": "7fbc0d7e4dff",
+   "head": "- the transcript, verbatim, including the transcription errors, never edited aft",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b35",
+   "level": "blk",
+   "locator": "blk:Day 1: your first memo/12",
+   "hash": "d78bdd78c651",
+   "head": "- the agent's reading: a numbered table of every instruction and, in the second ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b36",
+   "level": "blk",
+   "locator": "blk:Day 1: your first memo/13",
+   "hash": "d1af11ae02d7",
+   "head": "- the questions the agent could not answer, and the defaults it took anyway, eac",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b37",
+   "level": "blk",
+   "locator": "blk:Day 1: your first memo/14",
+   "hash": "9f067ed4b489",
+   "head": "Then reference the brief number in the release note when the work ships.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b38",
+   "level": "blk",
+   "locator": "blk:Day 1: your first memo/15",
+   "hash": "232241f57012",
+   "head": "Ten minutes per round. It is the highest-return habit in this book.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b39",
+   "level": "blk",
+   "locator": "blk:Day 1: your first memo/16",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b40",
+   "level": "blk",
+   "locator": "blk:The loop, in five steps/1",
+   "hash": "0b19dd28c378",
+   "head": "Run this as often as you can stand.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b41",
+   "level": "blk",
+   "locator": "blk:The loop, in five steps/2",
+   "hash": "3d6412fb4e04",
+   "head": "1. **Record a memo while using the current version.**",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b42",
+   "level": "blk",
+   "locator": "blk:The loop, in five steps/3",
+   "hash": "fa9aff216de6",
+   "head": "2. **The agent publishes it verbatim, with its reading and its questions.**",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b43",
+   "level": "blk",
+   "locator": "blk:The loop, in five steps/4",
+   "hash": "be0102e672e5",
+   "head": "3. **The agent builds, and writes the release note as part of the build.**",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b44",
+   "level": "blk",
+   "locator": "blk:The loop, in five steps/5",
+   "hash": "77b46b969626",
+   "head": "4. **The push runs the gates; if they pass, a machine tags and deploys.**",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b45",
+   "level": "blk",
+   "locator": "blk:The loop, in five steps/6",
+   "hash": "630c4179c60f",
+   "head": "5. **You open the deployed thing and start again at 1.**",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b46",
+   "level": "blk",
+   "locator": "blk:The loop, in five steps/7",
+   "hash": "22fecbbd5c42",
+   "head": "Target: one round in under an hour. This project's median gap between releases w",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b47",
+   "level": "blk",
+   "locator": "blk:The loop, in five steps/8",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b48",
+   "level": "blk",
+   "locator": "blk:Rules that make it work/1",
+   "hash": "6fb4049c8de4",
+   "head": "**Never edit a transcript.** Add to the file. Do not rewrite it. The transcript ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b49",
+   "level": "blk",
+   "locator": "blk:Rules that make it work/2",
+   "hash": "8a2548b5fe15",
+   "head": "**Every bug you find becomes a test before the release ships.** When the founder",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b50",
+   "level": "blk",
+   "locator": "blk:Rules that make it work/3",
+   "hash": "2679754c9eaa",
+   "head": "**Corrections get a release, not a silent edit.** When something in your publish",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b51",
+   "level": "blk",
+   "locator": "blk:Rules that make it work/4",
+   "hash": "f32628fa91da",
+   "head": "**Record debt in public.** One component in this project grew from 202 lines to ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b52",
+   "level": "blk",
+   "locator": "blk:Rules that make it work/5",
+   "hash": "0e8f6ecbf417",
+   "head": "**State the third category.** Built, not-mentioned, and *recorded as direction*.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b53",
+   "level": "blk",
+   "locator": "blk:Rules that make it work/6",
+   "hash": "22fb6c0bc782",
+   "head": "**Give experiments their own folder.** And name the exit at the start: \"do this ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b54",
+   "level": "blk",
+   "locator": "blk:Rules that make it work/7",
+   "hash": "7d4e11ccbb70",
+   "head": "**Put the state in the pixels.** Every interactive page should have a switchable",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b55",
+   "level": "blk",
+   "locator": "blk:Rules that make it work/8",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b56",
+   "level": "blk",
+   "locator": "blk:What to expect to go wrong/1",
+   "hash": "0e5db45a95da",
+   "head": "From Chapter 7, in the order you will meet them.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b57",
+   "level": "blk",
+   "locator": "blk:What to expect to go wrong/2",
+   "hash": "668434601605",
+   "head": "**Your agent's tests will pass and the thing will still be broken.** Automated\nv",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b58",
+   "level": "blk",
+   "locator": "blk:What to expect to go wrong/3",
+   "hash": "fbbf06238e55",
+   "head": "**Your verification tools will lie to you.** A stale process holding a port cost",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b59",
+   "level": "blk",
+   "locator": "blk:What to expect to go wrong/4",
+   "hash": "3d2c79ed510d",
+   "head": "**Your agent will write clean generalisations that more data breaks.** The remed",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b60",
+   "level": "blk",
+   "locator": "blk:What to expect to go wrong/5",
+   "hash": "15bfccb430e3",
+   "head": "**Your agent will build the thing you were musing about.** Hence the third categ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b61",
+   "level": "blk",
+   "locator": "blk:What to expect to go wrong/6",
+   "hash": "5596141d7dd4",
+   "head": "**Two agents will collide.** Give each one a tree of files it owns and forbid it",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b62",
+   "level": "blk",
+   "locator": "blk:What to expect to go wrong/7",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b63",
+   "level": "blk",
+   "locator": "blk:Signs the loop has stalled/1",
+   "hash": "949e0d61d2f8",
+   "head": "- **The gap between releases is growing.** Something has become expensive. Usual",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b64",
+   "level": "blk",
+   "locator": "blk:Signs the loop has stalled/2",
+   "hash": "4da443563d9c",
+   "head": "- **Your memos are getting longer and less specific.** You have stopped using th",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b65",
+   "level": "blk",
+   "locator": "blk:Signs the loop has stalled/3",
+   "hash": "d157f91e231e",
+   "head": "- **The agent has stopped asking questions.** It is guessing. Ask for the questi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b66",
+   "level": "blk",
+   "locator": "blk:Signs the loop has stalled/4",
+   "hash": "0e53ad8b2ed4",
+   "head": "- **Release notes have become one line.** Nobody will be able to reconstruct thi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b67",
+   "level": "blk",
+   "locator": "blk:Signs the loop has stalled/5",
+   "hash": "33379e295dcb",
+   "head": "- **You are reviewing plans rather than software.** The plan is not the product,",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b68",
+   "level": "blk",
+   "locator": "blk:Signs the loop has stalled/6",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b69",
+   "level": "blk",
+   "locator": "blk:The honest costs/1",
+   "hash": "3f176579879c",
+   "head": "Read Chapter 12 for the full version. In brief:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b70",
+   "level": "blk",
+   "locator": "blk:The honest costs/2",
+   "hash": "8559e47d934d",
+   "head": "- **This is not passive.** Two of the six days behind this book ran past fourtee",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b71",
+   "level": "blk",
+   "locator": "blk:The honest costs/3",
+   "hash": "73ecaa34eb5f",
+   "head": "- **You will ship things you have not fully read.** That is what the gates are f",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b72",
+   "level": "blk",
+   "locator": "blk:The honest costs/4",
+   "hash": "c125317428fe",
+   "head": "- **You will produce more infrastructure than book.** In six days this project p",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b73",
+   "level": "blk",
+   "locator": "blk:The honest costs/5",
+   "hash": "ebb0aba65e1e",
+   "head": "- **The record is public and permanent.** Everything in this playbook assumes yo",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b74",
+   "level": "blk",
+   "locator": "blk:The honest costs/6",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b75",
+   "level": "blk",
+   "locator": "blk:The one-page version/1",
+   "hash": "fa6d91ab91fe",
+   "head": "1. Pipeline before prose: repository, gates, automatic tag and deploy, on day ze",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b76",
+   "level": "blk",
+   "locator": "blk:The one-page version/2",
+   "hash": "6aebb5fd00e9",
+   "head": "2. Talk while using the thing. Point at objects. Give the principle.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b77",
+   "level": "blk",
+   "locator": "blk:The one-page version/3",
+   "hash": "383282df1838",
+   "head": "3. Transcript verbatim, then the agent's reading, then the questions. Never edit",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b78",
+   "level": "blk",
+   "locator": "blk:The one-page version/4",
+   "hash": "bc0ca5c33bad",
+   "head": "4. Ship small and often. Every release gets a paragraph saying what changed and ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b79",
+   "level": "blk",
+   "locator": "blk:The one-page version/5",
+   "hash": "65e8ff7707c1",
+   "head": "5. Every bug a human finds becomes a test that day.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b80",
+   "level": "blk",
+   "locator": "blk:The one-page version/6",
+   "hash": "f8be37a4b229",
+   "head": "6. Record debt, corrections, and directions-not-built in public.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b81",
+   "level": "blk",
+   "locator": "blk:The one-page version/7",
+   "hash": "c3885d744ee7",
+   "head": "7. Experiments get their own folder and a named exit.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b82",
+   "level": "blk",
+   "locator": "blk:The one-page version/8",
+   "hash": "88ed68721c4e",
+   "head": "8. Suspect your harness as much as your code.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b83",
+   "level": "blk",
+   "locator": "blk:The one-page version/9",
+   "hash": "390cec267b89",
+   "head": "9. Ask \"any questions?\" every round, and answer them in batches.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-11:b84",
+   "level": "blk",
+   "locator": "blk:The one-page version/10",
+   "hash": "dd50315eba1c",
+   "head": "10. Keep the tags. They are how you check, later, that any of this was true.",
+   "status": "live"
+  }
+ ]
+}

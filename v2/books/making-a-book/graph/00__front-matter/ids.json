@@ -1,0 +1,328 @@
+{
+ "doc": "doc:00__front-matter",
+ "prefix": "mab-00",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 6,
+  "b": 32
+ },
+ "ids": [
+  {
+   "uid": "mab-00:d1",
+   "level": "doc",
+   "locator": "doc:00__front-matter",
+   "hash": "f3acc0e5a759",
+   "head": "Creating a Book Using Agentic Workflows",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:s1",
+   "level": "sec",
+   "locator": "sec:What this book is",
+   "hash": "0d60a41c6b14",
+   "head": "2|What this book is",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:s2",
+   "level": "sec",
+   "locator": "sec:Who it is for",
+   "hash": "baced35192da",
+   "head": "2|Who it is for",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:s3",
+   "level": "sec",
+   "locator": "sec:What you will know at the end that you do not know now",
+   "hash": "aa817d34e7e6",
+   "head": "2|What you will know at the end that you do not know now",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:s4",
+   "level": "sec",
+   "locator": "sec:How to check anything in this book",
+   "hash": "470bbfdd8186",
+   "head": "2|How to check anything in this book",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:s5",
+   "level": "sec",
+   "locator": "sec:Disclosure",
+   "hash": "4e9d61cde673",
+   "head": "2|Disclosure",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:s6",
+   "level": "sec",
+   "locator": "sec:What is locked and what is not",
+   "hash": "3aaf9df8d379",
+   "head": "2|What is locked and what is not",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b1",
+   "level": "blk",
+   "locator": "blk:Creating a Book Using Agentic Workflows/1",
+   "hash": "c507b3242327",
+   "head": "**How one book was built with an agent, in six days and eighty-eight releases**",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b2",
+   "level": "blk",
+   "locator": "blk:Creating a Book Using Agentic Workflows/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b3",
+   "level": "blk",
+   "locator": "blk:What this book is/1",
+   "hash": "9087b5a968df",
+   "head": "This is the true story of how a second book got built, told for people who want ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b4",
+   "level": "blk",
+   "locator": "blk:What this book is/2",
+   "hash": "87c9efdc857b",
+   "head": "The book being built is *Fractal Semantic Graphs: Meaning Through Connectivity*.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b5",
+   "level": "blk",
+   "locator": "blk:What this book is/3",
+   "hash": "c351198d2223",
+   "head": "Everything in this book happened between the morning of 21 August 2026 and the e",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b6",
+   "level": "blk",
+   "locator": "blk:What this book is/4",
+   "hash": "dd19c9f5e895",
+   "head": "The story stops at v0.5.11 because that is where the repository was when this bo",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b7",
+   "level": "blk",
+   "locator": "blk:Who it is for/1",
+   "hash": "1e08cea3c58a",
+   "head": "You have a book in you. You have an AI agent at hand. You suspect the two facts ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b8",
+   "level": "blk",
+   "locator": "blk:Who it is for/2",
+   "hash": "ca7841913a78",
+   "head": "That is the reader this book is written for. You do not need to know what a grap",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b9",
+   "level": "blk",
+   "locator": "blk:Who it is for/3",
+   "hash": "b96ae7aa669a",
+   "head": "What you do need is the willingness to run a repository, ship small, and be told",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b10",
+   "level": "blk",
+   "locator": "blk:What you will know at the end that you do not know now/1",
+   "hash": "276e51df2e86",
+   "head": "1. **The shape of the working day.** A loop that runs voice memo, verbatim brief",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b11",
+   "level": "blk",
+   "locator": "blk:What you will know at the end that you do not know now/2",
+   "hash": "664ded15820c",
+   "head": "2. **Why verbatim beats paraphrase.** The single highest-leverage habit in the w",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b12",
+   "level": "blk",
+   "locator": "blk:What you will know at the end that you do not know now/3",
+   "hash": "0d4d298a87b2",
+   "head": "3. **Why gates make you faster.** Eighty-eight releases in six days was possible",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b13",
+   "level": "blk",
+   "locator": "blk:What you will know at the end that you do not know now/4",
+   "hash": "c4bc8a614d5d",
+   "head": "4. **What failure looks like here.** Six real failures, told with the cost attac",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b14",
+   "level": "blk",
+   "locator": "blk:What you will know at the end that you do not know now/5",
+   "hash": "ea73f86b2e65",
+   "head": "5. **How to steer an agent.** What the memos actually contain, why the good ones",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b15",
+   "level": "blk",
+   "locator": "blk:What you will know at the end that you do not know now/6",
+   "hash": "fd851dc477a3",
+   "head": "6. **A playbook you can start on Monday.** Chapter 11 stands alone. Tear it out.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b16",
+   "level": "blk",
+   "locator": "blk:How to check anything in this book/1",
+   "hash": "d012004f8088",
+   "head": "Every scene here can be re-opened.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b17",
+   "level": "blk",
+   "locator": "blk:How to check anything in this book/2",
+   "hash": "4a4b4c9e6139",
+   "head": "The repository carries a git tag for every one of the eighty-eight releases. Eve",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b18",
+   "level": "blk",
+   "locator": "blk:How to check anything in this book/3",
+   "hash": "8920fd9635d1",
+   "head": "Every number was computed, not remembered. Where a number comes from the release",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b19",
+   "level": "blk",
+   "locator": "blk:How to check anything in this book/4",
+   "hash": "943fe6e7d1bd",
+   "head": "Every quotation from the founder is verbatim, including the transcription errors",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b20",
+   "level": "blk",
+   "locator": "blk:Disclosure/1",
+   "hash": "9bd92a2150ba",
+   "head": "This book was written by an AI agent (a Claude Code session) working from a writ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b21",
+   "level": "blk",
+   "locator": "blk:Disclosure/2",
+   "hash": "825a0e21af9a",
+   "head": "Three things are done about it.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b22",
+   "level": "blk",
+   "locator": "blk:Disclosure/3",
+   "hash": "ba08bd9c0a03",
+   "head": "The judgements are marked as judgements. Where this book says a thing worked, th",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b23",
+   "level": "blk",
+   "locator": "blk:Disclosure/4",
+   "hash": "0162c604e1a0",
+   "head": "The failures get real space. Chapter 7 is the longest chapter for a reason.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b24",
+   "level": "blk",
+   "locator": "blk:Disclosure/5",
+   "hash": "b41df1785011",
+   "head": "The costs are stated. Chapter 12 is about what this method does not buy, what it",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b25",
+   "level": "blk",
+   "locator": "blk:Disclosure/6",
+   "hash": "3d67d35cf8eb",
+   "head": "The wider disclosure the estate already publishes applies here too. The people w",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b26",
+   "level": "blk",
+   "locator": "blk:What is locked and what is not/1",
+   "hash": "eb95a5135b58",
+   "head": "The title of the book being written, *Fractal Semantic Graphs: Meaning Through\nC",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b27",
+   "level": "blk",
+   "locator": "blk:What is locked and what is not/2",
+   "hash": "ce2d46fe4355",
+   "head": "The title of *this* book was not. It was set in the commission as *Creating a Bo",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b28",
+   "level": "blk",
+   "locator": "blk:What is locked and what is not/3",
+   "hash": "6ee8f7e41498",
+   "head": "The rename is recorded here rather than quietly applied, because a book about be",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b29",
+   "level": "blk",
+   "locator": "blk:What is locked and what is not/4",
+   "hash": "c99e2f7e55a3",
+   "head": "Everything else here — structure, chapter count, voice, which figures to take an",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b30",
+   "level": "blk",
+   "locator": "blk:What is locked and what is not/5",
+   "hash": "58de1a4c4726",
+   "head": "One position from the corpus travels with everything in this book, because the c",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b31",
+   "level": "blk",
+   "locator": "blk:What is locked and what is not/6",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-00:b32",
+   "level": "blk",
+   "locator": "blk:What is locked and what is not/7",
+   "hash": "a4c2eba6dd9f",
+   "head": "**Version** written against graphs.sgit.ai at v0.5.11, 26 August 2026.\n**Licence",
+   "status": "live"
+  }
+ ]
+}

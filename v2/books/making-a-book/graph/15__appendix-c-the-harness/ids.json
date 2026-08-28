@@ -1,0 +1,472 @@
+{
+ "doc": "doc:15__appendix-c-the-harness",
+ "prefix": "mab-15",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 15,
+  "b": 41
+ },
+ "ids": [
+  {
+   "uid": "mab-15:d1",
+   "level": "doc",
+   "locator": "doc:15__appendix-c-the-harness",
+   "hash": "6a1f450023b6",
+   "head": "Appendix C · The harness",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:s1",
+   "level": "sec",
+   "locator": "sec:1 · Time travel: photographing a page as it was",
+   "hash": "4baa9a1921fc",
+   "head": "2|1 · Time travel: photographing a page as it was",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:s2",
+   "level": "sec",
+   "locator": "sec:The rule learned the hard way",
+   "hash": "f695c771b3de",
+   "head": "3|The rule learned the hard way",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:s3",
+   "level": "sec",
+   "locator": "sec:The shell script",
+   "hash": "36455a77261b",
+   "head": "3|The shell script",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:s4",
+   "level": "sec",
+   "locator": "sec:The screenshot script",
+   "hash": "04ea027040c5",
+   "head": "3|The screenshot script",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:s5",
+   "level": "sec",
+   "locator": "sec:Verifying a figure is not blank",
+   "hash": "5202337e2063",
+   "head": "3|Verifying a figure is not blank",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:s6",
+   "level": "sec",
+   "locator": "sec:2 · The numbers",
+   "hash": "8e82935cdd08",
+   "head": "2|2 · The numbers",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:s7",
+   "level": "sec",
+   "locator": "sec:Release cadence",
+   "hash": "f7dd63a904ab",
+   "head": "3|Release cadence",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:s8",
+   "level": "sec",
+   "locator": "sec:Commits and merges",
+   "hash": "a6cbe6aa02ff",
+   "head": "3|Commits and merges",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:s9",
+   "level": "sec",
+   "locator": "sec:Tests and gates over time",
+   "hash": "6297ae4dbde0",
+   "head": "3|Tests and gates over time",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:s10",
+   "level": "sec",
+   "locator": "sec:Refactor sizes",
+   "hash": "af0f062bb867",
+   "head": "3|Refactor sizes",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:s11",
+   "level": "sec",
+   "locator": "sec:Component growth against its budget",
+   "hash": "63eb311f0ae8",
+   "head": "3|Component growth against its budget",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:s12",
+   "level": "sec",
+   "locator": "sec:Corpus size",
+   "hash": "702e64534569",
+   "head": "3|Corpus size",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:s13",
+   "level": "sec",
+   "locator": "sec:Reading the release table as data",
+   "hash": "4419bad16c5a",
+   "head": "3|Reading the release table as data",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:s14",
+   "level": "sec",
+   "locator": "sec:3 · One caution about your own history",
+   "hash": "2fcc79c16da3",
+   "head": "2|3 · One caution about your own history",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:s15",
+   "level": "sec",
+   "locator": "sec:4 · The figures in this book",
+   "hash": "3c00c1f22a12",
+   "head": "2|4 · The figures in this book",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b1",
+   "level": "blk",
+   "locator": "blk:Appendix C · The harness/1",
+   "hash": "8b72704fe0a2",
+   "head": "*Every number and every figure in this book was produced by one of the scripts b",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b2",
+   "level": "blk",
+   "locator": "blk:Appendix C · The harness/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b3",
+   "level": "blk",
+   "locator": "blk:1 · Time travel: photographing a page as it was/1",
+   "hash": "410148b52bca",
+   "head": "The repository carries a git tag for every release. A tag plus a worktree plus a",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b4",
+   "level": "blk",
+   "locator": "blk:1 · Time travel: photographing a page as it was/2",
+   "hash": "e9e2ae42e176",
+   "head": "Every figure in this book was taken this way. None is a reconstruction.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b5",
+   "level": "blk",
+   "locator": "blk:The rule learned the hard way/1",
+   "hash": "13a85739405f",
+   "head": "From the v0.4.37 release note, quoted in Chapter 7:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b6",
+   "level": "blk",
+   "locator": "blk:The rule learned the hard way/2",
+   "hash": "a6a349a91fc7",
+   "head": "> a zombie headless Chromium from a crashed test run held the debug port and ser",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b7",
+   "level": "blk",
+   "locator": "blk:The rule learned the hard way/3",
+   "hash": "a61694d3e076",
+   "head": "Two operational rules follow, and they are not optional:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b8",
+   "level": "blk",
+   "locator": "blk:The rule learned the hard way/4",
+   "hash": "e52dedfee617",
+   "head": "- **Never reuse a port.** Not the browser's debug port, not the web server's por",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b9",
+   "level": "blk",
+   "locator": "blk:The rule learned the hard way/5",
+   "hash": "baf81faad878",
+   "head": "- **Always kill what you spawned**, in a block that runs whether the work succee",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b10",
+   "level": "blk",
+   "locator": "blk:The rule learned the hard way/6",
+   "hash": "dfd6ad48b3ef",
+   "head": "The twenty figures in this book used twenty distinct server ports and twenty sep",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b11",
+   "level": "blk",
+   "locator": "blk:The shell script/1",
+   "hash": "d0bb82c43662",
+   "head": "```bash\n#!/bin/bash\n# travel.sh <tag> <port> <jobs.json>\n# Creates a worktree at",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b12",
+   "level": "blk",
+   "locator": "blk:The shell script/2",
+   "hash": "c07bba6e68fb",
+   "head": "`git worktree` is the piece that makes this cheap. It checks out a second workin",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b13",
+   "level": "blk",
+   "locator": "blk:The screenshot script/1",
+   "hash": "6e5126b48565",
+   "head": "```js\n/* shot.mjs — usage: node shot.mjs <port> <jobs.json>\n   jobs.json is an a",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b14",
+   "level": "blk",
+   "locator": "blk:The screenshot script/2",
+   "hash": "f3ff51149acf",
+   "head": "Four details that matter:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b15",
+   "level": "blk",
+   "locator": "blk:The screenshot script/3",
+   "hash": "53202db52152",
+   "head": "**`settle`.** A graph laid out by a physics simulation is still moving when the ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b16",
+   "level": "blk",
+   "locator": "blk:The screenshot script/4",
+   "hash": "b175eb344b30",
+   "head": "**`script`.** An optional snippet evaluated in the page, used to open a panel or",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b17",
+   "level": "blk",
+   "locator": "blk:The screenshot script/5",
+   "hash": "a3586b1a3a12",
+   "head": "**`pageerror`.** Console errors are collected and printed beside the result. A s",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b18",
+   "level": "blk",
+   "locator": "blk:The screenshot script/6",
+   "hash": "d2337934f0f4",
+   "head": "**`deviceScaleFactor`.** Set to 2 or 3, so figures are legible when printed.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b19",
+   "level": "blk",
+   "locator": "blk:Verifying a figure is not blank/1",
+   "hash": "fcb2a4b92082",
+   "head": "A screenshot of a page whose script failed is a white rectangle, and white recta",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b20",
+   "level": "blk",
+   "locator": "blk:Verifying a figure is not blank/2",
+   "hash": "be0ee5b1e536",
+   "head": "```python\nfrom PIL import Image\nimport glob\nfor f in sorted(glob.glob('figures/*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b21",
+   "level": "blk",
+   "locator": "blk:Verifying a figure is not blank/3",
+   "hash": "9a3ba132e91a",
+   "head": "Anything under about 3 per cent is worth opening.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b22",
+   "level": "blk",
+   "locator": "blk:Verifying a figure is not blank/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b23",
+   "level": "blk",
+   "locator": "blk:2 · The numbers/1",
+   "hash": "3e0fb958b6fb",
+   "head": "Every number in this book came from one of these.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b24",
+   "level": "blk",
+   "locator": "blk:Release cadence/1",
+   "hash": "3f844c220969",
+   "head": "```bash\n# every tag with the author date of its tagged commit\nfor t in $(git tag",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b25",
+   "level": "blk",
+   "locator": "blk:Release cadence/2",
+   "hash": "9150536a63e0",
+   "head": "```python\n# median gap, gaps under thirty minutes, the daily working window\nimpo",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b26",
+   "level": "blk",
+   "locator": "blk:Commits and merges/1",
+   "hash": "d629870cc304",
+   "head": "```bash\ngit rev-list --count v0.5.11                       # 97\ngit log v0.5.11 ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b27",
+   "level": "blk",
+   "locator": "blk:Tests and gates over time/1",
+   "hash": "965a9de626a9",
+   "head": "```bash\n# unit tests at any tag. The suite was one file until v0.5.20, when it w",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b28",
+   "level": "blk",
+   "locator": "blk:Tests and gates over time/2",
+   "hash": "29f71acbd31d",
+   "head": "The `-1` is because the file's report section carries the same comment shape as ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b29",
+   "level": "blk",
+   "locator": "blk:Refactor sizes/1",
+   "hash": "78874ec0c130",
+   "head": "```bash\ngit diff --shortstat v0.5.6 v0.5.7            # the operator split\ngit s",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b30",
+   "level": "blk",
+   "locator": "blk:Component growth against its budget/1",
+   "hash": "83f22955914d",
+   "head": "```bash\nfor t in v0.4.13 v0.4.16 v0.4.25 v0.4.31 v0.4.40 v0.5.11; do\n  printf \"%",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b31",
+   "level": "blk",
+   "locator": "blk:Corpus size/1",
+   "hash": "3655bc64a746",
+   "head": "```bash\nls v2/briefs/*.md | wc -l          # 19\ncat v2/briefs/*.md   | wc -w    ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b32",
+   "level": "blk",
+   "locator": "blk:Reading the release table as data/1",
+   "hash": "e26fd4f0dc9e",
+   "head": "The release notes live in HTML tables across three pages. Parsing them into\n`ver",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b33",
+   "level": "blk",
+   "locator": "blk:Reading the release table as data/2",
+   "hash": "be8a51e2005c",
+   "head": "```python\nimport re, sys\nfrom html.parser import HTMLParser\n\nclass T(HTMLParser)",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b34",
+   "level": "blk",
+   "locator": "blk:Reading the release table as data/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b35",
+   "level": "blk",
+   "locator": "blk:3 · One caution about your own history/1",
+   "hash": "655240133ac7",
+   "head": "A repository cloned with `--depth` (a shallow clone, which many automated enviro",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b36",
+   "level": "blk",
+   "locator": "blk:3 · One caution about your own history/2",
+   "hash": "120407030e6c",
+   "head": "```bash\ngit fetch --unshallow origin    # if the clone is shallow\ngit fetch --ta",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b37",
+   "level": "blk",
+   "locator": "blk:3 · One caution about your own history/3",
+   "hash": "08a517576ac4",
+   "head": "This book's own writing session started against a shallow clone with zero tags, ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b38",
+   "level": "blk",
+   "locator": "blk:3 · One caution about your own history/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b39",
+   "level": "blk",
+   "locator": "blk:4 · The figures in this book/1",
+   "hash": "184517ceb89d",
+   "head": "Twenty figures, each captioned in the text with the page it shows and the tag it",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b40",
+   "level": "blk",
+   "locator": "blk:4 · The figures in this book/2",
+   "hash": "2fbdbb67871a",
+   "head": "| # | Tag | Page |\n|---|---|---|\n| 1 | v0.5.11 | `/index.html` |\n| 2 | v0.2.0 | ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-15:b41",
+   "level": "blk",
+   "locator": "blk:4 · The figures in this book/3",
+   "hash": "2e35d83152bd",
+   "head": "Every one of them can be re-taken, by anybody, with the two scripts at the top o",
+   "status": "live"
+  }
+ ]
+}

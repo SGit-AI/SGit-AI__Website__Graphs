@@ -1,0 +1,488 @@
+{
+ "doc": "doc:12__what-it-costs",
+ "prefix": "mab-12",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 15,
+  "b": 43
+ },
+ "ids": [
+  {
+   "uid": "mab-12:d1",
+   "level": "doc",
+   "locator": "doc:12__what-it-costs",
+   "hash": "ee7702681991",
+   "head": "12 · What it costs, and where it loses",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:s1",
+   "level": "sec",
+   "locator": "sec:What was not produced",
+   "hash": "2faeb45aaa6f",
+   "head": "2|What was not produced",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:s2",
+   "level": "sec",
+   "locator": "sec:What was extracted",
+   "hash": "efa49bea5aa4",
+   "head": "2|What was extracted",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:s3",
+   "level": "sec",
+   "locator": "sec:The costs nobody mentions",
+   "hash": "19321d1de1fc",
+   "head": "2|The costs nobody mentions",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:s4",
+   "level": "sec",
+   "locator": "sec:Attention, not time",
+   "hash": "c774618ca896",
+   "head": "3|Attention, not time",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:s5",
+   "level": "sec",
+   "locator": "sec:You will ship things you have not read",
+   "hash": "392758d5aaa9",
+   "head": "3|You will ship things you have not read",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:s6",
+   "level": "sec",
+   "locator": "sec:The record has to be public to be worth anything",
+   "hash": "ddce3cbff282",
+   "head": "3|The record has to be public to be worth anything",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:s7",
+   "level": "sec",
+   "locator": "sec:Debt accumulates in the open, which is not the same as not accumulating",
+   "hash": "6d644699f56a",
+   "head": "3|Debt accumulates in the open, which is not the same as not accumulating",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:s8",
+   "level": "sec",
+   "locator": "sec:The version number is not a measure of anything",
+   "hash": "08deebf30c95",
+   "head": "3|The version number is not a measure of anything",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:s9",
+   "level": "sec",
+   "locator": "sec:Four situations where you should do something else",
+   "hash": "db85a0f037c0",
+   "head": "2|Four situations where you should do something else",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:s10",
+   "level": "sec",
+   "locator": "sec:1. Your book has a fixed, known shape",
+   "hash": "1bffe7ea2433",
+   "head": "3|1. Your book has a fixed, known shape",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:s11",
+   "level": "sec",
+   "locator": "sec:2. You cannot publish the working record",
+   "hash": "f8f151af4a75",
+   "head": "3|2. You cannot publish the working record",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:s12",
+   "level": "sec",
+   "locator": "sec:3. You are not going to look at the output every round",
+   "hash": "5ed2e637f589",
+   "head": "3|3. You are not going to look at the output every round",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:s13",
+   "level": "sec",
+   "locator": "sec:4. The work is mostly a single act of judgement",
+   "hash": "97e50495c839",
+   "head": "3|4. The work is mostly a single act of judgement",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:s14",
+   "level": "sec",
+   "locator": "sec:What it does buy",
+   "hash": "c387404a62e0",
+   "head": "2|What it does buy",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:s15",
+   "level": "sec",
+   "locator": "sec:The honest summary",
+   "hash": "a356c4576672",
+   "head": "2|The honest summary",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b1",
+   "level": "blk",
+   "locator": "blk:12 · What it costs, and where it loses/1",
+   "hash": "0609bd150bf4",
+   "head": "*After this chapter you will know four situations in which the method in this bo",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b2",
+   "level": "blk",
+   "locator": "blk:12 · What it costs, and where it loses/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b3",
+   "level": "blk",
+   "locator": "blk:What was not produced/1",
+   "hash": "cebb7dcfe1a6",
+   "head": "Start with the largest fact, because it is the one most likely to be glossed ove",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b4",
+   "level": "blk",
+   "locator": "blk:What was not produced/2",
+   "hash": "edad056014db",
+   "head": "In six days and eighty-eight releases, this project did not write any of the sec",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b5",
+   "level": "blk",
+   "locator": "blk:What was not produced/3",
+   "hash": "1694bbff10da",
+   "head": "Not one chapter. The `/v2/` tree at v0.5.11 contains an extraction pipeline, a d",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b6",
+   "level": "blk",
+   "locator": "blk:What was not produced/4",
+   "hash": "cd430189ad23",
+   "head": "This is not a hidden failure. It is what the founder asked for on day three, in ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b7",
+   "level": "blk",
+   "locator": "blk:What was not produced/5",
+   "hash": "6e373174a5d6",
+   "head": "But it is a cost, and it is the cost you should weigh first. If your deadline is",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b8",
+   "level": "blk",
+   "locator": "blk:What was extracted/1",
+   "hash": "1780942f44ce",
+   "head": "The second fact of the same shape. The universe names twenty-one source document",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b9",
+   "level": "blk",
+   "locator": "blk:What was extracted/2",
+   "hash": "a0f33378ca8e",
+   "head": "The retrospective says so plainly, under a heading that reads \"Observations, hel",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b10",
+   "level": "blk",
+   "locator": "blk:What was extracted/3",
+   "hash": "a2555419edab",
+   "head": "> One document is extracted; twenty wait. Every mechanism built this era (folder",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b11",
+   "level": "blk",
+   "locator": "blk:What was extracted/4",
+   "hash": "e6d70ba938a1",
+   "head": "At v0.5.11, v0.5 still has not found out. The fan-out has not happened. Everythi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b12",
+   "level": "blk",
+   "locator": "blk:What was extracted/5",
+   "hash": "60e81bc3867c",
+   "head": "Where the corpus is silent, this book says so, and here it is silent.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b13",
+   "level": "blk",
+   "locator": "blk:Attention, not time/1",
+   "hash": "8f69b7811918",
+   "head": "The obvious cost is hours, and the hours were real: two of the six days ran past",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b14",
+   "level": "blk",
+   "locator": "blk:Attention, not time/2",
+   "hash": "0a5e9b6bf46a",
+   "head": "The less obvious cost is the shape of the attention. Every thirty minutes, somet",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b15",
+   "level": "blk",
+   "locator": "blk:Attention, not time/3",
+   "hash": "b37b7be73434",
+   "head": "The method does not require this pace. Nothing in the loop breaks if a round tak",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b16",
+   "level": "blk",
+   "locator": "blk:You will ship things you have not read/1",
+   "hash": "3d4d457d7c1d",
+   "head": "At twenty releases a day, nobody reads every line. This project's answer is the ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b17",
+   "level": "blk",
+   "locator": "blk:You will ship things you have not read/2",
+   "hash": "1702eb80231b",
+   "head": "They do not catch everything, and the honest statement is that this method invol",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b18",
+   "level": "blk",
+   "locator": "blk:The record has to be public to be worth anything/1",
+   "hash": "f3422c58eec2",
+   "head": "Most of the value in this book comes from the record: the verbatim briefs, the h",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b19",
+   "level": "blk",
+   "locator": "blk:The record has to be public to be worth anything/2",
+   "hash": "a6ff2a4960ab",
+   "head": "That record is only useful if it is honest, and it is only reliably honest if it",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b20",
+   "level": "blk",
+   "locator": "blk:The record has to be public to be worth anything/3",
+   "hash": "f18801ce6e87",
+   "head": "If you are not willing to publish the failures, you will get a much weaker versi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b21",
+   "level": "blk",
+   "locator": "blk:Debt accumulates in the open, which is not the same as not accumulating/1",
+   "hash": "1373732137e4",
+   "head": "The component that draws the graph went from 202 lines to 434 against a stated b",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b22",
+   "level": "blk",
+   "locator": "blk:Debt accumulates in the open, which is not the same as not accumulating/2",
+   "hash": "ac640dbf6155",
+   "head": "The retrospective's framing is \"honest debt beats hidden debt\", which is true. I",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b23",
+   "level": "blk",
+   "locator": "blk:The version number is not a measure of anything/1",
+   "hash": "ac551de6d364",
+   "head": "Eighty-eight releases sounds like a lot, and some of them are one button label. ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b24",
+   "level": "blk",
+   "locator": "blk:The version number is not a measure of anything/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b25",
+   "level": "blk",
+   "locator": "blk:Four situations where you should do something else/1",
+   "hash": "eb5ebd8b622e",
+   "head": "The first edition of the book this project is writing has a page about where its",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b26",
+   "level": "blk",
+   "locator": "blk:1. Your book has a fixed, known shape/1",
+   "hash": "a40758f5d7fc",
+   "head": "If you already know the chapters, the order, and roughly what each says, the who",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b27",
+   "level": "blk",
+   "locator": "blk:1. Your book has a fixed, known shape/2",
+   "hash": "9478c779759b",
+   "head": "The tell: if brief 20's complaint, \"we are already defining the answer before we",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b28",
+   "level": "blk",
+   "locator": "blk:2. You cannot publish the working record/1",
+   "hash": "7df19abbdcf0",
+   "head": "Confidential material, an unfinished argument you are not ready to be seen holdi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b29",
+   "level": "blk",
+   "locator": "blk:3. You are not going to look at the output every round/1",
+   "hash": "90b2c40bf857",
+   "head": "The loop's quality comes entirely from step 5. An agent shipping every thirty mi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b30",
+   "level": "blk",
+   "locator": "blk:3. You are not going to look at the output every round/2",
+   "hash": "4d92695c9255",
+   "head": "If you can only review once a week, slow the loop to once a week. Do not let it ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b31",
+   "level": "blk",
+   "locator": "blk:4. The work is mostly a single act of judgement/1",
+   "hash": "abdd8e26e0ec",
+   "head": "Some books are one argument, made once, that either lands or does not. Poetry. A",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b32",
+   "level": "blk",
+   "locator": "blk:4. The work is mostly a single act of judgement/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b33",
+   "level": "blk",
+   "locator": "blk:What it does buy/1",
+   "hash": "5bb3464d6b50",
+   "head": "Against all of that, the honest positive case, stated in the terms this book has",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b34",
+   "level": "blk",
+   "locator": "blk:What it does buy/2",
+   "hash": "b0ddfa10d363",
+   "head": "**Six days of work with a complete, checkable record.** Every claim in this book",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b35",
+   "level": "blk",
+   "locator": "blk:What it does buy/3",
+   "hash": "7df10233b200",
+   "head": "**A rate of correction that changes what you can attempt.** When being wrong abo",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b36",
+   "level": "blk",
+   "locator": "blk:What it does buy/4",
+   "hash": "312bead392fd",
+   "head": "**Judgement concentrated where it belongs.** The founder spent six days deciding",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b37",
+   "level": "blk",
+   "locator": "blk:What it does buy/5",
+   "hash": "e4d61d87b0a1",
+   "head": "**Infrastructure that compounds.** Thirty-five techniques, each used in earnest ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b38",
+   "level": "blk",
+   "locator": "blk:What it does buy/6",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b39",
+   "level": "blk",
+   "locator": "blk:The honest summary/1",
+   "hash": "9be6086405d1",
+   "head": "This method produced, in six days: a working surface for writing a book, an unus",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b40",
+   "level": "blk",
+   "locator": "blk:The honest summary/2",
+   "hash": "e3925bad1210",
+   "head": "Whether that is a success depends entirely on whether you agree with the decisio",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b41",
+   "level": "blk",
+   "locator": "blk:The honest summary/3",
+   "hash": "ab9673f6772e",
+   "head": "This book's own position, marked as the writing agent's judgement: the bet is so",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b42",
+   "level": "blk",
+   "locator": "blk:The honest summary/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-12:b43",
+   "level": "blk",
+   "locator": "blk:The honest summary/5",
+   "hash": "825626a03e5b",
+   "head": "**Where the live estate shows this.** The first edition's own account of where i",
+   "status": "live"
+  }
+ ]
+}

@@ -1,0 +1,130 @@
+{
+ "version": "v0.6.10",
+ "slug": "08__reviewing-out-loud",
+ "doc": "doc:08__reviewing-out-loud",
+ "title": "8 · Reviewing out loud",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 51,
+  "sentences": 105,
+  "words": 1619,
+  "spans": 15
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:08__reviewing-out-loud",
+   "title": "8 · Reviewing out loud",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 40
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-08:d1"
+  },
+  {
+   "id": "sec:The problem with written feedback about visual things",
+   "title": "The problem with written feedback about visual things",
+   "level": 2,
+   "parent": "doc:08__reviewing-out-loud",
+   "counts": {
+    "blocks": 5,
+    "sentences": 10,
+    "words": 148
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-08:s1"
+  },
+  {
+   "id": "sec:What the transcript actually looks like",
+   "title": "What the transcript actually looks like",
+   "level": 2,
+   "parent": "doc:08__reviewing-out-loud",
+   "counts": {
+    "blocks": 4,
+    "sentences": 16,
+    "words": 184
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-08:s2"
+  },
+  {
+   "id": "sec:What the tool got right",
+   "title": "What the tool got right",
+   "level": 2,
+   "parent": "doc:08__reviewing-out-loud",
+   "counts": {
+    "blocks": 8,
+    "sentences": 15,
+    "words": 268
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-08:s3"
+  },
+  {
+   "id": "sec:The finding that mattered",
+   "title": "The finding that mattered",
+   "level": 2,
+   "parent": "doc:08__reviewing-out-loud",
+   "counts": {
+    "blocks": 11,
+    "sentences": 23,
+    "words": 311
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-08:s4"
+  },
+  {
+   "id": "sec:The inversion: pages that broadcast their own state",
+   "title": "The inversion: pages that broadcast their own state",
+   "level": 2,
+   "parent": "doc:08__reviewing-out-loud",
+   "counts": {
+    "blocks": 12,
+    "sentences": 22,
+    "words": 360
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-08:s5"
+  },
+  {
+   "id": "sec:The rule for anyone building anything an agent must diagnose",
+   "title": "The rule for anyone building anything an agent must diagnose",
+   "level": 2,
+   "parent": "doc:08__reviewing-out-loud",
+   "counts": {
+    "blocks": 3,
+    "sentences": 6,
+    "words": 105
+   },
+   "shard": "sec-07.json",
+   "uid": "mab-08:s6"
+  },
+  {
+   "id": "sec:Why this is easier than writing a specification",
+   "title": "Why this is easier than writing a specification",
+   "level": 2,
+   "parent": "doc:08__reviewing-out-loud",
+   "counts": {
+    "blocks": 6,
+    "sentences": 12,
+    "words": 203
+   },
+   "shard": "sec-08.json",
+   "uid": "mab-08:s7"
+  }
+ ]
+}

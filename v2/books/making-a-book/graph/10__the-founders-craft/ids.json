@@ -1,0 +1,440 @@
+{
+ "doc": "doc:10__the-founders-craft",
+ "prefix": "mab-10",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 7,
+  "b": 45
+ },
+ "ids": [
+  {
+   "uid": "mab-10:d1",
+   "level": "doc",
+   "locator": "doc:10__the-founders-craft",
+   "hash": "c883abad4aab",
+   "head": "10 · The founder's craft",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:s1",
+   "level": "sec",
+   "locator": "sec:1. Point at a thing, then say what is wrong with it",
+   "hash": "3d098221a35e",
+   "head": "2|1. Point at a thing, then say what is wrong with it",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:s2",
+   "level": "sec",
+   "locator": "sec:2. Say the principle, not only the fix",
+   "hash": "f2e7973b2568",
+   "head": "2|2. Say the principle, not only the fix",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:s3",
+   "level": "sec",
+   "locator": "sec:3. Name the reference",
+   "hash": "01562459e162",
+   "head": "2|3. Name the reference",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:s4",
+   "level": "sec",
+   "locator": "sec:4. Ask \"does this make sense, any questions?\"",
+   "hash": "0e5857631254",
+   "head": "2|4. Ask \"does this make sense, any questions?\"",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:s5",
+   "level": "sec",
+   "locator": "sec:5. Praise the specific thing, then correct",
+   "hash": "cfaa919bcbea",
+   "head": "2|5. Praise the specific thing, then correct",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:s6",
+   "level": "sec",
+   "locator": "sec:What he did not do",
+   "hash": "1f855c93c2c5",
+   "head": "2|What he did not do",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:s7",
+   "level": "sec",
+   "locator": "sec:The trade this represents",
+   "hash": "afaf1e2b04af",
+   "head": "2|The trade this represents",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b1",
+   "level": "blk",
+   "locator": "blk:10 · The founder's craft/1",
+   "hash": "0946e4bb19a6",
+   "head": "*After this chapter you will know what to say to an agent, in what shape, and yo",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b2",
+   "level": "blk",
+   "locator": "blk:10 · The founder's craft/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b3",
+   "level": "blk",
+   "locator": "blk:10 · The founder's craft/3",
+   "hash": "6194d3a0ca4c",
+   "head": "This chapter is the one that transfers most directly, because it is about the ha",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b4",
+   "level": "blk",
+   "locator": "blk:10 · The founder's craft/4",
+   "hash": "6ecc8c1d1917",
+   "head": "Nineteen briefs and eighty-eight release notes are a large sample of one person\n",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b5",
+   "level": "blk",
+   "locator": "blk:10 · The founder's craft/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b6",
+   "level": "blk",
+   "locator": "blk:1. Point at a thing, then say what is wrong with it/1",
+   "hash": "c330466b1e7a",
+   "head": "Almost every instruction in this corpus is attached to a specific object on a sp",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b7",
+   "level": "blk",
+   "locator": "blk:1. Point at a thing, then say what is wrong with it/2",
+   "hash": "de259a64f423",
+   "head": "> when I open up the the tignogen graphs, the graph it doesn't fit. It's not in ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b8",
+   "level": "blk",
+   "locator": "blk:1. Point at a thing, then say what is wrong with it/3",
+   "hash": "3e65ef80de50",
+   "head": "> the graph options gear was only visible after scrolling to the very top",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b9",
+   "level": "blk",
+   "locator": "blk:1. Point at a thing, then say what is wrong with it/4",
+   "hash": "a31e4e44f921",
+   "head": "> The screenshot shows the wire running from L2 resolve straight to L4 bind",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b10",
+   "level": "blk",
+   "locator": "blk:1. Point at a thing, then say what is wrong with it/5",
+   "hash": "0e8a1d704540",
+   "head": "Compare that with the kind of instruction that produces nothing useful: \"the gra",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b11",
+   "level": "blk",
+   "locator": "blk:1. Point at a thing, then say what is wrong with it/6",
+   "hash": "3895c0b5c8aa",
+   "head": "The strongest form is a screenshot plus a sentence, which is exactly what the na",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b12",
+   "level": "blk",
+   "locator": "blk:2. Say the principle, not only the fix/1",
+   "hash": "539cc5821f05",
+   "head": "The most valuable memos in this corpus contain a rule alongside the request. Bri",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b13",
+   "level": "blk",
+   "locator": "blk:2. Say the principle, not only the fix/2",
+   "hash": "a127bebc29fa",
+   "head": "> Every node move costs the viewer their mental picture",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b14",
+   "level": "blk",
+   "locator": "blk:2. Say the principle, not only the fix/3",
+   "hash": "6aa44ca1b5b4",
+   "head": "That sentence is not an instruction. It is a principle from which a dozen instru",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b15",
+   "level": "blk",
+   "locator": "blk:2. Say the principle, not only the fix/4",
+   "hash": "9478225b65f5",
+   "head": "The same shape appears elsewhere. Brief 22's instruction 4, in the founder's own",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b16",
+   "level": "blk",
+   "locator": "blk:2. Say the principle, not only the fix/5",
+   "hash": "709ac69cec4e",
+   "head": "> I want you to start thinking in terms of sources of nodes to add. So it's almo",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b17",
+   "level": "blk",
+   "locator": "blk:2. Say the principle, not only the fix/6",
+   "hash": "316a05abe45b",
+   "head": "That is a reframing, not a feature request. \"Views\" and \"sources\" imply complete",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b18",
+   "level": "blk",
+   "locator": "blk:2. Say the principle, not only the fix/7",
+   "hash": "b8a669ef6cc4",
+   "head": "An agent will implement a feature request accurately and narrowly. Give it the p",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b19",
+   "level": "blk",
+   "locator": "blk:3. Name the reference/1",
+   "hash": "7b9c24dde421",
+   "head": "Twice in this period the founder handed the agent a name instead of a specificat",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b20",
+   "level": "blk",
+   "locator": "blk:3. Name the reference/2",
+   "hash": "4fe0004f3a20",
+   "head": "At v0.4.35 he named Bret Victor's talk *Inventing on Principle* as the experienc",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b21",
+   "level": "blk",
+   "locator": "blk:3. Name the reference/3",
+   "hash": "f8bb05f1520b",
+   "head": "At v0.5.9, in brief 37, he wrote:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b22",
+   "level": "blk",
+   "locator": "blk:3. Name the reference/4",
+   "hash": "ba6fa541ac79",
+   "head": "> Basically think : what would Brett victor do to explain and visualise what thi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b23",
+   "level": "blk",
+   "locator": "blk:3. Name the reference/5",
+   "hash": "72d81cb41071",
+   "head": "Two useful things in one bullet: a reference for the standard, and a statement o",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b24",
+   "level": "blk",
+   "locator": "blk:3. Name the reference/6",
+   "hash": "43dc827c2440",
+   "head": "Naming a reference is high-bandwidth. It transfers taste, which is the thing har",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b25",
+   "level": "blk",
+   "locator": "blk:4. Ask \"does this make sense, any questions?\"/1",
+   "hash": "d36e3dcf8175",
+   "head": "The corpus is full of the agent's questions, because the founder keeps asking fo",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b26",
+   "level": "blk",
+   "locator": "blk:4. Ask \"does this make sense, any questions?\"/2",
+   "hash": "f882d975bc9e",
+   "head": "This matters more than it sounds. An agent that is never asked for questions wil",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b27",
+   "level": "blk",
+   "locator": "blk:4. Ask \"does this make sense, any questions?\"/3",
+   "hash": "423a936ba456",
+   "head": "The founder's answering pattern is also worth copying: he answers in batches, on",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b28",
+   "level": "blk",
+   "locator": "blk:4. Ask \"does this make sense, any questions?\"/4",
+   "hash": "894b35bce270",
+   "head": "The queue works because the questions are written down in a file with a URL, rat",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b29",
+   "level": "blk",
+   "locator": "blk:5. Praise the specific thing, then correct/1",
+   "hash": "b3e313dcb3d6",
+   "head": "The corpus's verdicts are recorded before the corrections, deliberately. Brief 3",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b30",
+   "level": "blk",
+   "locator": "blk:5. Praise the specific thing, then correct/2",
+   "hash": "69eaa609e261",
+   "head": "The praise is not decoration and it is not, in any meaningful sense, for the age",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b31",
+   "level": "blk",
+   "locator": "blk:5. Praise the specific thing, then correct/3",
+   "hash": "2f425fa23c96",
+   "head": "An agent given only corrections will over-rotate, because it cannot tell which p",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b32",
+   "level": "blk",
+   "locator": "blk:5. Praise the specific thing, then correct/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b33",
+   "level": "blk",
+   "locator": "blk:What he did not do/1",
+   "hash": "96c9736dd752",
+   "head": "Five absences from this corpus are as instructive as the habits.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b34",
+   "level": "blk",
+   "locator": "blk:What he did not do/2",
+   "hash": "e877906b67eb",
+   "head": "**He did not write code.** The record contains no instance of the founder editin",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b35",
+   "level": "blk",
+   "locator": "blk:What he did not do/3",
+   "hash": "0e5c1f4d3c95",
+   "head": "**He did not write specifications.** There is not one document in the second edi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b36",
+   "level": "blk",
+   "locator": "blk:What he did not do/4",
+   "hash": "f0f43f27c5a6",
+   "head": "**He did not review code.** He reviewed running software, on his own devices, wi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b37",
+   "level": "blk",
+   "locator": "blk:What he did not do/5",
+   "hash": "3dff6cb78190",
+   "head": "**He did not accumulate feedback.** Twenty releases on 24 August means feedback ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b38",
+   "level": "blk",
+   "locator": "blk:What he did not do/6",
+   "hash": "66df410d27ae",
+   "head": "**He did not mediate between the two agents.** He commissioned the exchange in C",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b39",
+   "level": "blk",
+   "locator": "blk:What he did not do/7",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b40",
+   "level": "blk",
+   "locator": "blk:The trade this represents/1",
+   "hash": "ac2a8cdfd761",
+   "head": "Put the five habits together and the founder's job is: decide what matters, look",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b41",
+   "level": "blk",
+   "locator": "blk:The trade this represents/2",
+   "hash": "15ef9a004ac2",
+   "head": "That is a substantial job and it is not a passive one. Two of the six days ran p",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b42",
+   "level": "blk",
+   "locator": "blk:The trade this represents/3",
+   "hash": "bd4fd3793348",
+   "head": "The parts of writing a book that a person is uniquely good at, deciding what the",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b43",
+   "level": "blk",
+   "locator": "blk:The trade this represents/4",
+   "hash": "7245b66c5dc8",
+   "head": "That is the case for the method, stated as strongly as the evidence allows. Chap",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b44",
+   "level": "blk",
+   "locator": "blk:The trade this represents/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-10:b45",
+   "level": "blk",
+   "locator": "blk:The trade this represents/6",
+   "hash": "58a1d2f1cb1f",
+   "head": "**Where the live estate shows this.** All nineteen memos are at `/v2/memos/`, ea",
+   "status": "live"
+  }
+ ]
+}

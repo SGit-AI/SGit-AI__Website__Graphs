@@ -1,0 +1,1 @@
+{"sec": "sec:Corpus size", "blocks": [{"id": "blk:Corpus size/1", "kind": "code", "range": [7921, 8145], "text": "```bash\nls v2/briefs/*.md | wc -l          # 19\ncat v2/briefs/*.md   | wc -w       # 37,808\nls v1/content/*.md | grep -v STYLE | xargs cat | wc -w   # 20,838\nfind . -name '*.html' -not -path './.git/*' | wc -l      # 176\n```", "uid": "mab-15:b31"}]}

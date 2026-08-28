@@ -238,6 +238,39 @@ test('validate: a broken tree fails, and the error names what broke', () => {
   }
 });
 
+/* ---- the book graph ------------------------------------------------------- */
+test('bookgraph: the book decomposes, and every chapter rebuilds byte-identical', () => {
+  /* Brief 43, activity A2. The claim that makes brief 42's restructure possible is that a
+     chapter can be taken apart and put back together exactly. gen_bookgraph asserts it per
+     chapter at build time; this checks the artefact it left behind, so a stale or partial
+     graph cannot pass as a fresh one. */
+  const idx = path.join(ROOT, 'v2/books/making-a-book/graph/index.json');
+  assert.ok(existsSync(idx), 'the book graph has not been built');
+  const g = JSON.parse(rf(idx));
+  const meta = JSON.parse(rf(path.join(ROOT, 'v2/books/making-a-book/book.json')));
+
+  assert.equal(g.book_version, meta.version,
+    `the graph was built at ${g.book_version} but the book is at ${meta.version}`);
+  assert.deepEqual(g.ladder, ['book', 'chapter', 'section', 'block', 'sentence', 'word'],
+    'the ladder is not book to word');
+  assert.equal(g.chapters.length, Object.keys(meta.content_hashes).length,
+    'the graph and book.json disagree about how many chapters the book has');
+
+  for (const ch of g.chapters) {
+    const dir = path.join(ROOT, 'v2/books/making-a-book/graph', ch.stem);
+    assert.ok(existsSync(path.join(dir, 'index.json')), `${ch.stem}: no chapter index`);
+    /* fmt.json is the half that makes the rebuild possible; without it the chapter is
+       decomposed but not reassemblable, which is the useless half of the pair. */
+    assert.ok(existsSync(path.join(dir, 'fmt.json')), `${ch.stem}: no formatting graph`);
+    assert.ok(existsSync(path.join(dir, 'ids.json')), `${ch.stem}: no identity ledger`);
+    assert.ok(ch.blocks > 0, `${ch.stem}: decomposed to zero blocks`);
+    assert.ok(ch.uids >= ch.blocks, `${ch.stem}: fewer uids than blocks — identity is short`);
+  }
+
+  const summed = g.chapters.reduce((n, c) => n + c.blocks, 0);
+  assert.equal(summed, g.totals.blocks, 'the book total does not equal its chapters');
+});
+
 /* ---- the version streams stay separate ------------------------------------ */
 test('versions: every stamped artefact says which stream its number belongs to', () => {
   /* Three streams run here: the site's, which moves on every push, and one per book,

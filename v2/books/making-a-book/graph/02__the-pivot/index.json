@@ -1,0 +1,104 @@
+{
+ "version": "v0.6.10",
+ "slug": "02__the-pivot",
+ "doc": "doc:02__the-pivot",
+ "title": "2 · The first book, and the pivot that saved the second",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 42,
+  "sentences": 103,
+  "words": 1757,
+  "spans": 17
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:02__the-pivot",
+   "title": "2 · The first book, and the pivot that saved the second",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 50
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-02:d1"
+  },
+  {
+   "id": "sec:Three days to a book",
+   "title": "Three days to a book",
+   "level": 2,
+   "parent": "doc:02__the-pivot",
+   "counts": {
+    "blocks": 14,
+    "sentences": 23,
+    "words": 427
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-02:s1"
+  },
+  {
+   "id": "sec:The plan for the second book, and the memo that stopped it",
+   "title": "The plan for the second book, and the memo that stopped it",
+   "level": 2,
+   "parent": "doc:02__the-pivot",
+   "counts": {
+    "blocks": 9,
+    "sentences": 27,
+    "words": 436
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-02:s2"
+  },
+  {
+   "id": "sec:Why this is the most valuable move in the book",
+   "title": "Why this is the most valuable move in the book",
+   "level": 2,
+   "parent": "doc:02__the-pivot",
+   "counts": {
+    "blocks": 6,
+    "sentences": 23,
+    "words": 329
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-02:s3"
+  },
+  {
+   "id": "sec:Freezing the first edition",
+   "title": "Freezing the first edition",
+   "level": 2,
+   "parent": "doc:02__the-pivot",
+   "counts": {
+    "blocks": 6,
+    "sentences": 17,
+    "words": 324
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-02:s4"
+  },
+  {
+   "id": "sec:The empty second edition",
+   "title": "The empty second edition",
+   "level": 2,
+   "parent": "doc:02__the-pivot",
+   "counts": {
+    "blocks": 5,
+    "sentences": 12,
+    "words": 191
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-02:s5"
+  }
+ ]
+}

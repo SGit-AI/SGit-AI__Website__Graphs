@@ -1,0 +1,488 @@
+{
+ "doc": "doc:08__reviewing-out-loud",
+ "prefix": "mab-08",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 7,
+  "b": 51
+ },
+ "ids": [
+  {
+   "uid": "mab-08:d1",
+   "level": "doc",
+   "locator": "doc:08__reviewing-out-loud",
+   "hash": "6f158e0e1df8",
+   "head": "8 · Reviewing out loud",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:s1",
+   "level": "sec",
+   "locator": "sec:The problem with written feedback about visual things",
+   "hash": "37a3f75b633f",
+   "head": "2|The problem with written feedback about visual things",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:s2",
+   "level": "sec",
+   "locator": "sec:What the transcript actually looks like",
+   "hash": "ae31ddfa2b8b",
+   "head": "2|What the transcript actually looks like",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:s3",
+   "level": "sec",
+   "locator": "sec:What the tool got right",
+   "hash": "e7599c4a5753",
+   "head": "2|What the tool got right",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:s4",
+   "level": "sec",
+   "locator": "sec:The finding that mattered",
+   "hash": "63746ea884ee",
+   "head": "2|The finding that mattered",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:s5",
+   "level": "sec",
+   "locator": "sec:The inversion: pages that broadcast their own state",
+   "hash": "c6106982457f",
+   "head": "2|The inversion: pages that broadcast their own state",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:s6",
+   "level": "sec",
+   "locator": "sec:The rule for anyone building anything an agent must diagnose",
+   "hash": "89bef8d8bd2a",
+   "head": "2|The rule for anyone building anything an agent must diagnose",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:s7",
+   "level": "sec",
+   "locator": "sec:Why this is easier than writing a specification",
+   "hash": "2ddb7c147373",
+   "head": "2|Why this is easier than writing a specification",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b1",
+   "level": "blk",
+   "locator": "blk:8 · Reviewing out loud/1",
+   "hash": "35ded47125bd",
+   "head": "*After this chapter you will know how to give an agent feedback about something ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b2",
+   "level": "blk",
+   "locator": "blk:8 · Reviewing out loud/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b3",
+   "level": "blk",
+   "locator": "blk:The problem with written feedback about visual things/1",
+   "hash": "1f21b95574d6",
+   "head": "Writing down what is wrong with a screen is slow and lossy. \"The panel covers th",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b4",
+   "level": "blk",
+   "locator": "blk:The problem with written feedback about visual things/2",
+   "hash": "cc548897ae07",
+   "head": "On 25 August the founder tried a different approach. He recorded his screen whil",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b5",
+   "level": "blk",
+   "locator": "blk:The problem with written feedback about visual things/3",
+   "hash": "e3149504120f",
+   "head": "The result was v0.4.31:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b6",
+   "level": "blk",
+   "locator": "blk:The problem with written feedback about visual things/4",
+   "hash": "d89648d91a36",
+   "head": "> The narrated review lands: six findings, each fixed where its screenshot point",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b7",
+   "level": "blk",
+   "locator": "blk:The problem with written feedback about visual things/5",
+   "hash": "6ed9eba2b16a",
+   "head": "Six actionable findings from three and a half minutes of talking. Compare that t",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b8",
+   "level": "blk",
+   "locator": "blk:What the transcript actually looks like/1",
+   "hash": "620e0e2471ca",
+   "head": "It is not tidy. Here is moment 6 in full, exactly as published in brief 27:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b9",
+   "level": "blk",
+   "locator": "blk:What the transcript actually looks like/2",
+   "hash": "4663260357e9",
+   "head": "> On... oh, sorry. It was working, I was just not seeing the the option there. U",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b10",
+   "level": "blk",
+   "locator": "blk:What the transcript actually looks like/3",
+   "hash": "5aa58ec76527",
+   "head": "The words \"this\", \"here\", \"the option there\" and \"these node types\" are doing mo",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b11",
+   "level": "blk",
+   "locator": "blk:What the transcript actually looks like/4",
+   "hash": "e51f56b96fa4",
+   "head": "That is the whole mechanism: deixis plus pixels. The founder can point instead o",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b12",
+   "level": "blk",
+   "locator": "blk:What the tool got right/1",
+   "hash": "4a5cb796fe2e",
+   "head": "The agent was asked for a verdict on the review tool itself and gave one, record",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b13",
+   "level": "blk",
+   "locator": "blk:What the tool got right/2",
+   "hash": "04c2dc2252e0",
+   "head": "> It works, and the alignment layer is what makes it: the bundle's `session.json",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b14",
+   "level": "blk",
+   "locator": "blk:What the tool got right/3",
+   "hash": "31c34b5d3082",
+   "head": "Three properties, all of which are the same properties a good brief has:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b15",
+   "level": "blk",
+   "locator": "blk:What the tool got right/4",
+   "hash": "4c5fd6f42260",
+   "head": "**The words are joined to the evidence.** Each sentence knows which screenshot i",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b16",
+   "level": "blk",
+   "locator": "blk:What the tool got right/5",
+   "hash": "f7288fb24bde",
+   "head": "**The raw text survives the cleanup.** A model tidies the recogniser output into",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b17",
+   "level": "blk",
+   "locator": "blk:What the tool got right/6",
+   "hash": "461a7ab85e88",
+   "head": "**Uncertainty is surfaced, not resolved.** The brief carries a list at the end o",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b18",
+   "level": "blk",
+   "locator": "blk:What the tool got right/7",
+   "hash": "d7ca2ce4f63e",
+   "head": "> - Moment 7: \"peak board\" — Corrected 'pasteboard' to 'peak board' based on the",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b19",
+   "level": "blk",
+   "locator": "blk:What the tool got right/8",
+   "hash": "ee360c0f0307",
+   "head": "A model looked at a screenshot, saw a button labelled \"peak board\", and used it ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b20",
+   "level": "blk",
+   "locator": "blk:The finding that mattered/1",
+   "hash": "f8a33b31782e",
+   "head": "Five of the six findings were interface problems: the legend rows should be clic",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b21",
+   "level": "blk",
+   "locator": "blk:The finding that mattered/2",
+   "hash": "1f64ac8abf6c",
+   "head": "The sixth was a genuine bug, and the founder found it without knowing it was a b",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b22",
+   "level": "blk",
+   "locator": "blk:The finding that mattered/3",
+   "hash": "06d46a1564e2",
+   "head": "> I need a way to remove everything else from here, right? So, I only see the se",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b23",
+   "level": "blk",
+   "locator": "blk:The finding that mattered/4",
+   "hash": "7c3670744551",
+   "head": "There was already a control for that, called focus on selection. It was on. It w",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b24",
+   "level": "blk",
+   "locator": "blk:The finding that mattered/5",
+   "hash": "ffe11a8cd1ee",
+   "head": "> The real bug: the alignment rails' invisible ties had joined the explore walk,",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b25",
+   "level": "blk",
+   "locator": "blk:The finding that mattered/6",
+   "hash": "e6f314df9448",
+   "head": "Recall from Chapter 5 that alignment rails are invisible ties that pull related ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b26",
+   "level": "blk",
+   "locator": "blk:The finding that mattered/7",
+   "hash": "397770eb53de",
+   "head": "The fix separates the two categories properly:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b27",
+   "level": "blk",
+   "locator": "blk:The finding that mattered/8",
+   "hash": "060ed1c97743",
+   "head": "> The rails and their ties are now excluded from the explore walk, the stats bar",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b28",
+   "level": "blk",
+   "locator": "blk:The finding that mattered/9",
+   "hash": "728496ead6e7",
+   "head": "The release note adds the number: seven nodes of ninety-eight.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b29",
+   "level": "blk",
+   "locator": "blk:The finding that mattered/10",
+   "hash": "262a56016b5f",
+   "head": "![After the narrated review: the maximised graph with a clickable legend on the ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b30",
+   "level": "blk",
+   "locator": "blk:The finding that mattered/11",
+   "hash": "5805c3cfdff1",
+   "head": "*Figure 15. `/v2/universe/thinking-in-graphs.html#graph` at tag `v0.4.31`, 25 Au",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b31",
+   "level": "blk",
+   "locator": "blk:The inversion: pages that broadcast their own state/1",
+   "hash": "63f4eccfdea9",
+   "head": "The founder's follow-up message, sent in chat the same day and recorded verbatim",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b32",
+   "level": "blk",
+   "locator": "blk:The inversion: pages that broadcast their own state/2",
+   "hash": "a2981c41ec3a",
+   "head": "> great, so how can we add some more info that is useful to you? (since the prob",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b33",
+   "level": "blk",
+   "locator": "blk:The inversion: pages that broadcast their own state/3",
+   "hash": "a66be0c97ef1",
+   "head": "The recorder cannot see inside the page. It only captures pixels. So instead of ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b34",
+   "level": "blk",
+   "locator": "blk:The inversion: pages that broadcast their own state/4",
+   "hash": "5db7c00bd982",
+   "head": "Eight minutes later, v0.4.32:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b35",
+   "level": "blk",
+   "locator": "blk:The inversion: pages that broadcast their own state/5",
+   "hash": "0d74a2f1b6ad",
+   "head": "> The state pane: the page broadcasts its state into the pixels a recording capt",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b36",
+   "level": "blk",
+   "locator": "blk:The inversion: pages that broadcast their own state/6",
+   "hash": "f26b3cc3eadf",
+   "head": "Two details make this more than a debug overlay.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b37",
+   "level": "blk",
+   "locator": "blk:The inversion: pages that broadcast their own state/7",
+   "hash": "7cc7f5fd693e",
+   "head": "**The clock.** Every screenshot carries a running clock, which means every scree",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b38",
+   "level": "blk",
+   "locator": "blk:The inversion: pages that broadcast their own state/8",
+   "hash": "f95d1bd83555",
+   "head": "**The last action.** \"last: gpeaks→1\". When a narrator says \"I just did this and",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b39",
+   "level": "blk",
+   "locator": "blk:The inversion: pages that broadcast their own state/9",
+   "hash": "936d82b926a4",
+   "head": "The release note also says who the text is written for: \"Short high-contrast mon",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b40",
+   "level": "blk",
+   "locator": "blk:The inversion: pages that broadcast their own state/10",
+   "hash": "cd90df5de247",
+   "head": "And it closes the loop back to programmatic access rather than replacing it:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b41",
+   "level": "blk",
+   "locator": "blk:The inversion: pages that broadcast their own state/11",
+   "hash": "518bc22103e5",
+   "head": "> The same truth is published as window.__uniState(), so a tool that does gain\n>",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b42",
+   "level": "blk",
+   "locator": "blk:The inversion: pages that broadcast their own state/12",
+   "hash": "68954ea16bdd",
+   "head": "One source of truth, two readers. The pane and the API cannot disagree, because ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b43",
+   "level": "blk",
+   "locator": "blk:The rule for anyone building anything an agent must diagnose/1",
+   "hash": "816c9f1052f2",
+   "head": "The retrospective states it as a transferable learning:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b44",
+   "level": "blk",
+   "locator": "blk:The rule for anyone building anything an agent must diagnose/2",
+   "hash": "9bba140e49da",
+   "head": "> **Screenshots need state in the pixels.** The narrated-review round exposed th",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b45",
+   "level": "blk",
+   "locator": "blk:The rule for anyone building anything an agent must diagnose/3",
+   "hash": "0cd6296991fa",
+   "head": "If you take one thing from this chapter into your own project: **put a small, sw",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b46",
+   "level": "blk",
+   "locator": "blk:Why this is easier than writing a specification/1",
+   "hash": "67517f5b8d3d",
+   "head": "The narrated review is faster than written feedback, but the deeper reason it wo",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b47",
+   "level": "blk",
+   "locator": "blk:Why this is easier than writing a specification/2",
+   "hash": "f034ee38b804",
+   "head": "A written bug report is a claim about a system. A narrated review is a recording",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b48",
+   "level": "blk",
+   "locator": "blk:Why this is easier than writing a specification/3",
+   "hash": "119f17352543",
+   "head": "The brief's own summary of the trade:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b49",
+   "level": "blk",
+   "locator": "blk:Why this is easier than writing a specification/4",
+   "hash": "11ed86c66c93",
+   "head": "> Ten moments took three and a half minutes to record and carried six actionable",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b50",
+   "level": "blk",
+   "locator": "blk:Why this is easier than writing a specification/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-08:b51",
+   "level": "blk",
+   "locator": "blk:Why this is easier than writing a specification/6",
+   "hash": "35507b3a19c2",
+   "head": "**Where the live estate shows this.** The narrated review is published at\n`/v2/m",
+   "status": "live"
+  }
+ ]
+}

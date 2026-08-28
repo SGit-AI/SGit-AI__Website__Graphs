@@ -1,0 +1,117 @@
+{
+ "version": "v0.6.10",
+ "slug": "09__the-experiments",
+ "doc": "doc:09__the-experiments",
+ "title": "9 · The experiments",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 69,
+  "sentences": 139,
+  "words": 2238,
+  "spans": 43
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:09__the-experiments",
+   "title": "9 · The experiments",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 49
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-09:d1"
+  },
+  {
+   "id": "sec:Building a lab",
+   "title": "Building a lab",
+   "level": 2,
+   "parent": "doc:09__the-experiments",
+   "counts": {
+    "blocks": 10,
+    "sentences": 19,
+    "words": 343
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-09:s1"
+  },
+  {
+   "id": "sec:What the experiment was",
+   "title": "What the experiment was",
+   "level": 2,
+   "parent": "doc:09__the-experiments",
+   "counts": {
+    "blocks": 6,
+    "sentences": 13,
+    "words": 219
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-09:s2"
+  },
+  {
+   "id": "sec:What shipped, in one afternoon",
+   "title": "What shipped, in one afternoon",
+   "level": 2,
+   "parent": "doc:09__the-experiments",
+   "counts": {
+    "blocks": 12,
+    "sentences": 35,
+    "words": 482
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-09:s3"
+  },
+  {
+   "id": "sec:The restructure: twelve folders",
+   "title": "The restructure: twelve folders",
+   "level": 2,
+   "parent": "doc:09__the-experiments",
+   "counts": {
+    "blocks": 21,
+    "sentences": 34,
+    "words": 574
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-09:s4"
+  },
+  {
+   "id": "sec:Keeping zooming",
+   "title": "Keeping zooming",
+   "level": 2,
+   "parent": "doc:09__the-experiments",
+   "counts": {
+    "blocks": 10,
+    "sentences": 20,
+    "words": 375
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-09:s5"
+  },
+  {
+   "id": "sec:How to run experiments this way",
+   "title": "How to run experiments this way",
+   "level": 2,
+   "parent": "doc:09__the-experiments",
+   "counts": {
+    "blocks": 8,
+    "sentences": 17,
+    "words": 196
+   },
+   "shard": "sec-07.json",
+   "uid": "mab-09:s6"
+  }
+ ]
+}

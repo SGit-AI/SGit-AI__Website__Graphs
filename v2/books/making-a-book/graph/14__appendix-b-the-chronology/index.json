@@ -1,0 +1,130 @@
+{
+ "version": "v0.6.10",
+ "slug": "14__appendix-b-the-chronology",
+ "doc": "doc:14__appendix-b-the-chronology",
+ "title": "Appendix B · The chronology",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 17,
+  "sentences": 11,
+  "words": 87,
+  "spans": 7
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:14__appendix-b-the-chronology",
+   "title": "Appendix B · The chronology",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 3,
+    "words": 56
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-14:d1"
+  },
+  {
+   "id": "sec:Friday 21 August 2026",
+   "title": "Friday 21 August 2026",
+   "level": 2,
+   "parent": "doc:14__appendix-b-the-chronology",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 2
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-14:s1"
+  },
+  {
+   "id": "sec:Saturday 22 August 2026",
+   "title": "Saturday 22 August 2026",
+   "level": 2,
+   "parent": "doc:14__appendix-b-the-chronology",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 2
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-14:s2"
+  },
+  {
+   "id": "sec:Sunday 23 August 2026",
+   "title": "Sunday 23 August 2026",
+   "level": 2,
+   "parent": "doc:14__appendix-b-the-chronology",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 2
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-14:s3"
+  },
+  {
+   "id": "sec:Monday 24 August 2026",
+   "title": "Monday 24 August 2026",
+   "level": 2,
+   "parent": "doc:14__appendix-b-the-chronology",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 2
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-14:s4"
+  },
+  {
+   "id": "sec:Tuesday 25 August 2026",
+   "title": "Tuesday 25 August 2026",
+   "level": 2,
+   "parent": "doc:14__appendix-b-the-chronology",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 2
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-14:s5"
+  },
+  {
+   "id": "sec:Wednesday 26 August 2026",
+   "title": "Wednesday 26 August 2026",
+   "level": 2,
+   "parent": "doc:14__appendix-b-the-chronology",
+   "counts": {
+    "blocks": 3,
+    "sentences": 1,
+    "words": 2
+   },
+   "shard": "sec-07.json",
+   "uid": "mab-14:s6"
+  },
+  {
+   "id": "sec:The shape of it",
+   "title": "The shape of it",
+   "level": 2,
+   "parent": "doc:14__appendix-b-the-chronology",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 19
+   },
+   "shard": "sec-08.json",
+   "uid": "mab-14:s7"
+  }
+ ]
+}

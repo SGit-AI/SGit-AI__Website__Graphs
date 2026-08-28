@@ -1,0 +1,130 @@
+{
+ "version": "v0.6.10",
+ "slug": "03__briefs-as-the-contract",
+ "doc": "doc:03__briefs-as-the-contract",
+ "title": "3 · Briefs as the contract",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 51,
+  "sentences": 134,
+  "words": 1829,
+  "spans": 24
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:03__briefs-as-the-contract",
+   "title": "3 · Briefs as the contract",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 36
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-03:d1"
+  },
+  {
+   "id": "sec:The rule",
+   "title": "The rule",
+   "level": 2,
+   "parent": "doc:03__briefs-as-the-contract",
+   "counts": {
+    "blocks": 7,
+    "sentences": 17,
+    "words": 176
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-03:s1"
+  },
+  {
+   "id": "sec:What a brief actually looks like",
+   "title": "What a brief actually looks like",
+   "level": 2,
+   "parent": "doc:03__briefs-as-the-contract",
+   "counts": {
+    "blocks": 9,
+    "sentences": 25,
+    "words": 330
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-03:s2"
+  },
+  {
+   "id": "sec:Why verbatim",
+   "title": "Why verbatim",
+   "level": 2,
+   "parent": "doc:03__briefs-as-the-contract",
+   "counts": {
+    "blocks": 8,
+    "sentences": 32,
+    "words": 414
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-03:s3"
+  },
+  {
+   "id": "sec:The reading is not optional either",
+   "title": "The reading is not optional either",
+   "level": 2,
+   "parent": "doc:03__briefs-as-the-contract",
+   "counts": {
+    "blocks": 5,
+    "sentences": 15,
+    "words": 178
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-03:s4"
+  },
+  {
+   "id": "sec:The questions are where the trust lives",
+   "title": "The questions are where the trust lives",
+   "level": 2,
+   "parent": "doc:03__briefs-as-the-contract",
+   "counts": {
+    "blocks": 5,
+    "sentences": 18,
+    "words": 246
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-03:s5"
+  },
+  {
+   "id": "sec:The failure mode nobody warns you about",
+   "title": "The failure mode nobody warns you about",
+   "level": 2,
+   "parent": "doc:03__briefs-as-the-contract",
+   "counts": {
+    "blocks": 6,
+    "sentences": 11,
+    "words": 232
+   },
+   "shard": "sec-07.json",
+   "uid": "mab-03:s6"
+  },
+  {
+   "id": "sec:What to copy",
+   "title": "What to copy",
+   "level": 2,
+   "parent": "doc:03__briefs-as-the-contract",
+   "counts": {
+    "blocks": 9,
+    "sentences": 15,
+    "words": 217
+   },
+   "shard": "sec-08.json",
+   "uid": "mab-03:s7"
+  }
+ ]
+}

@@ -1,0 +1,696 @@
+{
+ "doc": "doc:07__the-failures",
+ "prefix": "mab-07",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 14,
+  "b": 70
+ },
+ "ids": [
+  {
+   "uid": "mab-07:d1",
+   "level": "doc",
+   "locator": "doc:07__the-failures",
+   "hash": "21f63ae8a636",
+   "head": "7 · The failures, lovingly",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:s1",
+   "level": "sec",
+   "locator": "sec:Failures only a person using the thing could find",
+   "hash": "3b643e114c10",
+   "head": "2|Failures only a person using the thing could find",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:s2",
+   "level": "sec",
+   "locator": "sec:1. The iPad round",
+   "hash": "fcc018a40623",
+   "head": "3|1. The iPad round",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:s3",
+   "level": "sec",
+   "locator": "sec:2. The button that did not say what it did",
+   "hash": "43a492e42bf5",
+   "head": "3|2. The button that did not say what it did",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:s4",
+   "level": "sec",
+   "locator": "sec:3. The wires that moved when the page scrolled",
+   "hash": "de25d70739a4",
+   "head": "3|3. The wires that moved when the page scrolled",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:s5",
+   "level": "sec",
+   "locator": "sec:Failures the picture itself revealed",
+   "hash": "90d169830b4b",
+   "head": "2|Failures the picture itself revealed",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:s6",
+   "level": "sec",
+   "locator": "sec:4. The wire that jumped a layer",
+   "hash": "cf36dab1f866",
+   "head": "3|4. The wire that jumped a layer",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:s7",
+   "level": "sec",
+   "locator": "sec:5. The negation that was not there",
+   "hash": "b96dedb36720",
+   "head": "3|5. The negation that was not there",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:s8",
+   "level": "sec",
+   "locator": "sec:Failures where the agent's own tools lied",
+   "hash": "16e306c5ac0e",
+   "head": "2|Failures where the agent's own tools lied",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:s9",
+   "level": "sec",
+   "locator": "sec:6. The zombie browser that cost an hour",
+   "hash": "cf1285e02072",
+   "head": "3|6. The zombie browser that cost an hour",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:s10",
+   "level": "sec",
+   "locator": "sec:7. When your own tests were the wrong shape",
+   "hash": "64f9edae712b",
+   "head": "3|7. When your own tests were the wrong shape",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:s11",
+   "level": "sec",
+   "locator": "sec:Failures of claim, not of code",
+   "hash": "8801fda5fce4",
+   "head": "2|Failures of claim, not of code",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:s12",
+   "level": "sec",
+   "locator": "sec:8. The neatest claim, broken by more data",
+   "hash": "c2c126d409cd",
+   "head": "3|8. The neatest claim, broken by more data",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:s13",
+   "level": "sec",
+   "locator": "sec:9. The correction the agent owed",
+   "hash": "05dc93820bd2",
+   "head": "3|9. The correction the agent owed",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:s14",
+   "level": "sec",
+   "locator": "sec:What the pattern is",
+   "hash": "5eb2579c231b",
+   "head": "2|What the pattern is",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b1",
+   "level": "blk",
+   "locator": "blk:7 · The failures, lovingly/1",
+   "hash": "581e272faba0",
+   "head": "*After this chapter you will recognise nine specific ways an agentic project goe",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b2",
+   "level": "blk",
+   "locator": "blk:7 · The failures, lovingly/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b3",
+   "level": "blk",
+   "locator": "blk:7 · The failures, lovingly/3",
+   "hash": "553a67093102",
+   "head": "Nothing in this chapter is a confession. Every failure below was published in th",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b4",
+   "level": "blk",
+   "locator": "blk:7 · The failures, lovingly/4",
+   "hash": "5f3a62ae5ca2",
+   "head": "They are grouped by who could have caught them, because that turns out to be the",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b5",
+   "level": "blk",
+   "locator": "blk:7 · The failures, lovingly/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b6",
+   "level": "blk",
+   "locator": "blk:1. The iPad round/1",
+   "hash": "533569b2bfe0",
+   "head": "For nineteen releases the chat panel had been verified in headless Chromium and ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b7",
+   "level": "blk",
+   "locator": "blk:1. The iPad round/2",
+   "hash": "66e2d1c22405",
+   "head": "> The iPad round: the founder's first live session found the two things headless",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b8",
+   "level": "blk",
+   "locator": "blk:1. The iPad round/3",
+   "hash": "f1ea893ecfef",
+   "head": "Neither bug is subtle. Both are invisible to an automated test. The first only a",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b9",
+   "level": "blk",
+   "locator": "blk:1. The iPad round/4",
+   "hash": "741377a0eb21",
+   "head": "What is worth copying is the ending:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b10",
+   "level": "blk",
+   "locator": "blk:1. The iPad round/5",
+   "hash": "ea2c166e6a94",
+   "head": "> The suite grew seven checks that would have caught both: usage hidden by defau",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b11",
+   "level": "blk",
+   "locator": "blk:1. The iPad round/6",
+   "hash": "62ea27d99cad",
+   "head": "Seven tests, written after the fact, that convert two lessons from a human sessi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b12",
+   "level": "blk",
+   "locator": "blk:2. The button that did not say what it did/1",
+   "hash": "622f68da3aed",
+   "head": "Three minutes and eleven seconds after v0.4.26, the founder asked how to close t",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b13",
+   "level": "blk",
+   "locator": "blk:2. The button that did not say what it did/2",
+   "hash": "f04f2fa9913e",
+   "head": "> The close button now says so. The founder asked how to close the chat panel — ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b14",
+   "level": "blk",
+   "locator": "blk:2. The button that did not say what it did/3",
+   "hash": "33da84a47204",
+   "head": "Read the second clause carefully, because it contains a small piece of craft. Th",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b15",
+   "level": "blk",
+   "locator": "blk:2. The button that did not say what it did/4",
+   "hash": "f19c4af6b1d4",
+   "head": "That translation is a judgement, and it could be wrong. It is also the kind of j",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b16",
+   "level": "blk",
+   "locator": "blk:3. The wires that moved when the page scrolled/1",
+   "hash": "dc807a46997d",
+   "head": "On 26 August, at v0.5.4, a page drew a set of chips connected by curved wires. T",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b17",
+   "level": "blk",
+   "locator": "blk:3. The wires that moved when the page scrolled/2",
+   "hash": "ea947226b492",
+   "head": "> Also fixed from the founder's live catch on v0.5.4: wires drawn after scrollin",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b18",
+   "level": "blk",
+   "locator": "blk:3. The wires that moved when the page scrolled/3",
+   "hash": "a0c49a4ede04",
+   "head": "Two coordinate systems, one missing addition. A classic. It is in this chapter b",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b19",
+   "level": "blk",
+   "locator": "blk:3. The wires that moved when the page scrolled/4",
+   "hash": "1129f3c7565f",
+   "head": "Automated verification tests what you thought to test. A person using the thing ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b20",
+   "level": "blk",
+   "locator": "blk:3. The wires that moved when the page scrolled/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b21",
+   "level": "blk",
+   "locator": "blk:4. The wire that jumped a layer/1",
+   "hash": "43c4eaf850c0",
+   "head": "This is the best failure in the whole period, and it is worth telling slowly.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b22",
+   "level": "blk",
+   "locator": "blk:4. The wire that jumped a layer/2",
+   "hash": "98f0662e5f54",
+   "head": "The WCLM, built at v0.5.2, is an engine with six named layers. Its central archi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b23",
+   "level": "blk",
+   "locator": "blk:4. The wire that jumped a layer/3",
+   "hash": "2948077d689f",
+   "head": "At v0.5.3 the page drew all six layers as columns with wires between them. It lo",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b24",
+   "level": "blk",
+   "locator": "blk:4. The wire that jumped a layer/4",
+   "hash": "537531e9e46a",
+   "head": "From brief 33:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b25",
+   "level": "blk",
+   "locator": "blk:4. The wire that jumped a layer/5",
+   "hash": "2f6cc4be8f5c",
+   "head": "> **Layers must not be jumped** (moment 2, the connectivity click). The screensh",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b26",
+   "level": "blk",
+   "locator": "blk:4. The wire that jumped a layer/6",
+   "hash": "bfe3030a87b9",
+   "head": "![The WCLM at v0.5.2, before the finding. Some wires run from L2 straight past L",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b27",
+   "level": "blk",
+   "locator": "blk:4. The wire that jumped a layer/7",
+   "hash": "e4100f386e28",
+   "head": "*Figure 13. `/v2/wclm/` at tag `v0.5.2`, 26 August 2026.*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b28",
+   "level": "blk",
+   "locator": "blk:4. The wire that jumped a layer/8",
+   "hash": "03a995d74a25",
+   "head": "The engine was not wrong in its arithmetic. It was wrong in its structure, in a ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b29",
+   "level": "blk",
+   "locator": "blk:4. The wire that jumped a layer/9",
+   "hash": "93cd8cd01476",
+   "head": "The fix, in v0.5.4, is not a rendering change. Two real stages were added, becau",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b30",
+   "level": "blk",
+   "locator": "blk:4. The wire that jumped a layer/10",
+   "hash": "9baba27dbcf8",
+   "head": "Then the fix was made permanent by measurement, which is the part to steal:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b31",
+   "level": "blk",
+   "locator": "blk:4. The wire that jumped a layer/11",
+   "hash": "13c8a799bcb9",
+   "head": "> This is machine-checked: 500 wires across five pipeline shapes and six prompts",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b32",
+   "level": "blk",
+   "locator": "blk:4. The wire that jumped a layer/12",
+   "hash": "d45b508ca58e",
+   "head": "By v0.5.5 the same proof ran over the new layered shapes at 547 wires, and by v0",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b33",
+   "level": "blk",
+   "locator": "blk:4. The wire that jumped a layer/13",
+   "hash": "99dbb6bfb74b",
+   "head": "![The same page at v0.5.4, with eight reorderable blocks and strict adjacency.](",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b34",
+   "level": "blk",
+   "locator": "blk:4. The wire that jumped a layer/14",
+   "hash": "16d43d1a1e03",
+   "head": "*Figure 14. `/v2/wclm/` at tag `v0.5.4`, 26 August 2026.*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b35",
+   "level": "blk",
+   "locator": "blk:4. The wire that jumped a layer/15",
+   "hash": "66ab1f89210c",
+   "head": "The general lesson: **draw your architecture and then check the drawing against ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b36",
+   "level": "blk",
+   "locator": "blk:5. The negation that was not there/1",
+   "hash": "2c7da77f7469",
+   "head": "The same review contained a second finding, and it is a lovely one because the f",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b37",
+   "level": "blk",
+   "locator": "blk:5. The negation that was not there/2",
+   "hash": "f78ecc389f5c",
+   "head": "He typed \"meaning without connectivity\" into an engine whose universe asserts th",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b38",
+   "level": "blk",
+   "locator": "blk:5. The negation that was not there/3",
+   "hash": "e42ebd64c15c",
+   "head": "> He ran the negated phrase and got the same winner — rightly called wrong.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b39",
+   "level": "blk",
+   "locator": "blk:5. The negation that was not there/4",
+   "hash": "55cab34a4413",
+   "head": "The reason is almost funny. The engine classified small words as padding. \"Throu",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b40",
+   "level": "blk",
+   "locator": "blk:5. The negation that was not there/5",
+   "hash": "34bac8d7388b",
+   "head": "The fix at v0.5.4 added an operators stage: without, not, no, never and versus m",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b41",
+   "level": "blk",
+   "locator": "blk:5. The negation that was not there/6",
+   "hash": "e3f1a53367c2",
+   "head": "> the answer now carries the warning that the prompt negates connectivity while ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b42",
+   "level": "blk",
+   "locator": "blk:5. The negation that was not there/7",
+   "hash": "2a62ba47bd7c",
+   "head": "Two things to take from it. First, a system that ignores what it does not unders",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b43",
+   "level": "blk",
+   "locator": "blk:5. The negation that was not there/8",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b44",
+   "level": "blk",
+   "locator": "blk:6. The zombie browser that cost an hour/1",
+   "hash": "cade3cb84eaf",
+   "head": "From the v0.4.37 release note, published the day it happened:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b45",
+   "level": "blk",
+   "locator": "blk:6. The zombie browser that cost an hour/2",
+   "hash": "b09d5f44c159",
+   "head": "> The round also burned an hour on a lesson worth recording: a zombie headless C",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b46",
+   "level": "blk",
+   "locator": "blk:6. The zombie browser that cost an hour/3",
+   "hash": "2a055cb56e4d",
+   "head": "Read the failure mode again, because it is the nastiest one in the chapter. A fe",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b47",
+   "level": "blk",
+   "locator": "blk:6. The zombie browser that cost an hour/4",
+   "hash": "9a072911e835",
+   "head": "Deterministic is the key word. A flaky failure gets suspected quickly. A failure",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b48",
+   "level": "blk",
+   "locator": "blk:6. The zombie browser that cost an hour/5",
+   "hash": "d568ea7b7a26",
+   "head": "The retrospective turns it into a rule:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b49",
+   "level": "blk",
+   "locator": "blk:6. The zombie browser that cost an hour/6",
+   "hash": "7cf2ee3442c4",
+   "head": "> **Test the harness too.** An hour went to a zombie headless Chromium holding a",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b50",
+   "level": "blk",
+   "locator": "blk:6. The zombie browser that cost an hour/7",
+   "hash": "e55d536711b7",
+   "head": "The operational habits that came out of it are in this book's own harness, in Ap",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b51",
+   "level": "blk",
+   "locator": "blk:7. When your own tests were the wrong shape/1",
+   "hash": "2530c458d7c1",
+   "head": "The pin_nodes defect from Chapter 6 belongs in this chapter too, and it is the p",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b52",
+   "level": "blk",
+   "locator": "blk:7. When your own tests were the wrong shape/2",
+   "hash": "d3976266892b",
+   "head": "The chat agent's tests passed. The reader agent's tests passed. The behaviour wa",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b53",
+   "level": "blk",
+   "locator": "blk:7. When your own tests were the wrong shape/3",
+   "hash": "e236cf595212",
+   "head": "It was found by one agent pulling the other's release and running its own suite ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b54",
+   "level": "blk",
+   "locator": "blk:7. When your own tests were the wrong shape/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b55",
+   "level": "blk",
+   "locator": "blk:8. The neatest claim, broken by more data/1",
+   "hash": "03ee5c9dc6ec",
+   "head": "On 23 August the project had fifteen source documents carried into it, and the a",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b56",
+   "level": "blk",
+   "locator": "blk:8. The neatest claim, broken by more data/2",
+   "hash": "4a10be5edf3a",
+   "head": "> Six more sources, and the growth immediately broke the section's neatest claim",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b57",
+   "level": "blk",
+   "locator": "blk:8. The neatest claim, broken by more data/3",
+   "hash": "1946a2da0986",
+   "head": "The claim went from universal to twenty out of twenty-one in one release, and th",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b58",
+   "level": "blk",
+   "locator": "blk:8. The neatest claim, broken by more data/4",
+   "hash": "e12bc201c840",
+   "head": "An agent generating prose about a corpus will produce clean generalisations, bec",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b59",
+   "level": "blk",
+   "locator": "blk:9. The correction the agent owed/1",
+   "hash": "7dc501c56e8c",
+   "head": "The last one is the smallest and the least like a bug. From v0.4.3:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b60",
+   "level": "blk",
+   "locator": "blk:9. The correction the agent owed/2",
+   "hash": "11e81facf79b",
+   "head": "> And a correction I owed. The retrospective said every aggregate view produced ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b61",
+   "level": "blk",
+   "locator": "blk:9. The correction the agent owed/3",
+   "hash": "3b0e695db34d",
+   "head": "The numbers were right. The interpretation was condescending to half the evidenc",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b62",
+   "level": "blk",
+   "locator": "blk:9. The correction the agent owed/4",
+   "hash": "38bbc4c391be",
+   "head": "There is a related house rule the first edition already had, quoted in the v0.2.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b63",
+   "level": "blk",
+   "locator": "blk:9. The correction the agent owed/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b64",
+   "level": "blk",
+   "locator": "blk:What the pattern is/1",
+   "hash": "2d05de6c0ba1",
+   "head": "Nine failures, three shapes.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b65",
+   "level": "blk",
+   "locator": "blk:What the pattern is/2",
+   "hash": "a71291866967",
+   "head": "**Things only a human can find** live in touch, in real data, in the sequence of",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b66",
+   "level": "blk",
+   "locator": "blk:What the pattern is/3",
+   "hash": "d7d52c5f0e2a",
+   "head": "**Things the picture reveals** live in the gap between what a system claims abou",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b67",
+   "level": "blk",
+   "locator": "blk:What the pattern is/4",
+   "hash": "2863aabfcff8",
+   "head": "**Things your tools hide** live in the verification layer, which is code, which ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b68",
+   "level": "blk",
+   "locator": "blk:What the pattern is/5",
+   "hash": "3be209b9a331",
+   "head": "And one meta-pattern, which is the reason this chapter could be written at all: ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b69",
+   "level": "blk",
+   "locator": "blk:What the pattern is/6",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-07:b70",
+   "level": "blk",
+   "locator": "blk:What the pattern is/7",
+   "hash": "d0c5a3fec222",
+   "head": "**Where the live estate shows this.** The narrated review that produced failures",
+   "status": "live"
+  }
+ ]
+}

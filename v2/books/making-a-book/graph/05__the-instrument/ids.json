@@ -1,0 +1,528 @@
+{
+ "doc": "doc:05__the-instrument",
+ "prefix": "mab-05",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 7,
+  "b": 56
+ },
+ "ids": [
+  {
+   "uid": "mab-05:d1",
+   "level": "doc",
+   "locator": "doc:05__the-instrument",
+   "hash": "8ce16bef5ca8",
+   "head": "5 · From a page to an instrument",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:s1",
+   "level": "sec",
+   "locator": "sec:Where it starts",
+   "hash": "6f9ac0b69506",
+   "head": "2|Where it starts",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:s2",
+   "level": "sec",
+   "locator": "sec:The reader arrives",
+   "hash": "e1e6188ca2f2",
+   "head": "2|The reader arrives",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:s3",
+   "level": "sec",
+   "locator": "sec:Options as an instrument panel",
+   "hash": "61e4d73dc29d",
+   "head": "2|Options as an instrument panel",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:s4",
+   "level": "sec",
+   "locator": "sec:The design law",
+   "hash": "bca99e839816",
+   "head": "2|The design law",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:s5",
+   "level": "sec",
+   "locator": "sec:What it is for",
+   "hash": "67cd303ba33f",
+   "head": "2|What it is for",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:s6",
+   "level": "sec",
+   "locator": "sec:The component proof",
+   "hash": "e1b01a1fca16",
+   "head": "2|The component proof",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:s7",
+   "level": "sec",
+   "locator": "sec:Where it lands",
+   "hash": "16caded8757c",
+   "head": "2|Where it lands",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b1",
+   "level": "blk",
+   "locator": "blk:5 · From a page to an instrument/1",
+   "hash": "439d78dfa48e",
+   "head": "*After this chapter you will be able to see, in five screenshots taken from five",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b2",
+   "level": "blk",
+   "locator": "blk:5 · From a page to an instrument/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b3",
+   "level": "blk",
+   "locator": "blk:Where it starts/1",
+   "hash": "d18cb0e97ed6",
+   "head": "On 23 August, release v0.4.5 put the first document into the second edition's un",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b4",
+   "level": "blk",
+   "locator": "blk:Where it starts/2",
+   "hash": "f753afbbf041",
+   "head": "The page that showed it looked like this.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b5",
+   "level": "blk",
+   "locator": "blk:Where it starts/3",
+   "hash": "9349e7e0f4f9",
+   "head": "![The pilot extraction at v0.4.5: a document about a graph, rendered as a docume",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b6",
+   "level": "blk",
+   "locator": "blk:Where it starts/4",
+   "hash": "a413d21668c2",
+   "head": "*Figure 6. `/v2/universe/thinking-in-graphs.html` at tag `v0.4.5`, 23 August 202",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b7",
+   "level": "blk",
+   "locator": "blk:Where it starts/5",
+   "hash": "590c30e3fdd4",
+   "head": "It is a good page. It is also, in the terms this project cares about, a failure:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b8",
+   "level": "blk",
+   "locator": "blk:Where it starts/6",
+   "hash": "b8a4612fb171",
+   "head": "The single most important rule in this whole part of the project is stated on th",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b9",
+   "level": "blk",
+   "locator": "blk:The reader arrives/1",
+   "hash": "f2f81ff772af",
+   "head": "Fourteen hours and thirty-nine minutes later, v0.4.8:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b10",
+   "level": "blk",
+   "locator": "blk:The reader arrives/2",
+   "hash": "912f3b6ec820",
+   "head": "> The universe reader: the source, the extraction and the graph on one screen. F",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b11",
+   "level": "blk",
+   "locator": "blk:The reader arrives/3",
+   "hash": "d6ac18cbb461",
+   "head": "![The same page at v0.4.8: a resizable side panel with the live graph above the ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b12",
+   "level": "blk",
+   "locator": "blk:The reader arrives/4",
+   "hash": "2bf314c0841c",
+   "head": "*Figure 7. The same URL at tag `v0.4.8`, 24 August 2026.*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b13",
+   "level": "blk",
+   "locator": "blk:The reader arrives/5",
+   "hash": "0611e20612d0",
+   "head": "Same document, same extraction, same URL. The graph is now live, sitting above t",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b14",
+   "level": "blk",
+   "locator": "blk:The reader arrives/6",
+   "hash": "af0c39f88fb4",
+   "head": "The next release, twenty-nine minutes later, is the one that tells you what kind",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b15",
+   "level": "blk",
+   "locator": "blk:The reader arrives/7",
+   "hash": "5aea18a8fcdd",
+   "head": "> The reader grows up: selection, the trail, the stepper, the tempo, and the who",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b16",
+   "level": "blk",
+   "locator": "blk:Options as an instrument panel/1",
+   "hash": "48d0b31dd475",
+   "head": "By v0.4.11, three releases later, the graph has controls, and the controls are g",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b17",
+   "level": "blk",
+   "locator": "blk:Options as an instrument panel/2",
+   "hash": "eee5203720db",
+   "head": "![The graph options at v0.4.11: layout, labels, physics, view.](figures/03__v0.4",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b18",
+   "level": "blk",
+   "locator": "blk:Options as an instrument panel/3",
+   "hash": "caab2549ff79",
+   "head": "*Figure 8. The reader's graph options at tag `v0.4.11`, 24 August 2026.*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b19",
+   "level": "blk",
+   "locator": "blk:Options as an instrument panel/4",
+   "hash": "1134940d4150",
+   "head": "Four rows. Layout picks the arrangement algorithm. Labels controls what text app",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b20",
+   "level": "blk",
+   "locator": "blk:Options as an instrument panel/5",
+   "hash": "f3765ba5dd64",
+   "head": "Five releases later, on the same day, the same panel looks like this.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b21",
+   "level": "blk",
+   "locator": "blk:Options as an instrument panel/6",
+   "hash": "3afcd9f9bcdb",
+   "head": "![The graph options at v0.4.16, five releases later on the same day.](figures/04",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b22",
+   "level": "blk",
+   "locator": "blk:Options as an instrument panel/7",
+   "hash": "4c7f61158033",
+   "head": "*Figure 9. The same panel at tag `v0.4.16`, 24 August 2026.*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b23",
+   "level": "blk",
+   "locator": "blk:Options as an instrument panel/8",
+   "hash": "496ef66c90ee",
+   "head": "Three new rows have appeared and they are the interesting ones.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b24",
+   "level": "blk",
+   "locator": "blk:Options as an instrument panel/9",
+   "hash": "36532f83a90f",
+   "head": "**Views** offers four named arrangements: overview, reading map, pyramids, conce",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b25",
+   "level": "blk",
+   "locator": "blk:Options as an instrument panel/10",
+   "hash": "461da0d3ecf2",
+   "head": "**Sources** is the row that came straight out of brief 22. The founder's instruc",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b26",
+   "level": "blk",
+   "locator": "blk:Options as an instrument panel/11",
+   "hash": "17d9ec99eb59",
+   "head": "**Explore** has focus on selection, a grow control with plus and minus, and to p",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b27",
+   "level": "blk",
+   "locator": "blk:Options as an instrument panel/12",
+   "hash": "2924500d8437",
+   "head": "And **View** has gained pin peaks and paths to peaks.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b28",
+   "level": "blk",
+   "locator": "blk:Options as an instrument panel/13",
+   "hash": "6f4700d5d734",
+   "head": "Between figure 8 and figure 9 there are five releases and about three hours. Not",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b29",
+   "level": "blk",
+   "locator": "blk:The design law/1",
+   "hash": "8189e4ae967f",
+   "head": "At v0.4.28, two days later, the founder sent brief 26, about fixed nodes, and it",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b30",
+   "level": "blk",
+   "locator": "blk:The design law/2",
+   "hash": "1823b398bd44",
+   "head": "> **The stability principle** (v0.4.28–v0.4.31, brief 26). \"Every node move cost",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b31",
+   "level": "blk",
+   "locator": "blk:The design law/3",
+   "hash": "b0f921aea340",
+   "head": "Four mechanisms, one principle. Say the principle out loud because it generalise",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b32",
+   "level": "blk",
+   "locator": "blk:The design law/4",
+   "hash": "d432604c2ffb",
+   "head": "The four mechanisms:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b33",
+   "level": "blk",
+   "locator": "blk:The design law/5",
+   "hash": "e2df984b5a1b",
+   "head": "**Stable add.** When new nodes join the graph, everything already placed stays w",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b34",
+   "level": "blk",
+   "locator": "blk:The design law/6",
+   "hash": "4097830b05dd",
+   "head": "**Never move the viewport uninvited.** Half the era's viewport bugs traced to on",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b35",
+   "level": "blk",
+   "locator": "blk:The design law/7",
+   "hash": "44fb0a654d6b",
+   "head": "**Pinned summits.** The most important nodes are placed deliberately and locked,",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b36",
+   "level": "blk",
+   "locator": "blk:The design law/8",
+   "hash": "693c899a294e",
+   "head": "**Alignment rails.** Invisible ties that pull related nodes into rows without be",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b37",
+   "level": "blk",
+   "locator": "blk:What it is for/1",
+   "hash": "d029ab66f515",
+   "head": "The instrument is not decoration. Two releases in the same period turned it into",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b38",
+   "level": "blk",
+   "locator": "blk:What it is for/2",
+   "hash": "a8d86b35f2dd",
+   "head": "At v0.4.33 clicking a node started showing its universe in plain English, in bot",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b39",
+   "level": "blk",
+   "locator": "blk:What it is for/3",
+   "hash": "9d4351adb5ba",
+   "head": "![The links panel and the recorded path at v0.4.34.](figures/06__v0.4.34__links-",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b40",
+   "level": "blk",
+   "locator": "blk:What it is for/4",
+   "hash": "2ed52dc0afcf",
+   "head": "*Figure 10. `/v2/universe/thinking-in-graphs.html#graph` at tag `v0.4.34`, 25 Au",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b41",
+   "level": "blk",
+   "locator": "blk:What it is for/5",
+   "hash": "c70a17ec9a42",
+   "head": "Look at the right-hand panel. The node's statement, then its anchored quote from",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b42",
+   "level": "blk",
+   "locator": "blk:What it is for/6",
+   "hash": "4eaf4b7d6ab3",
+   "head": "Above it, a bar: `path: connectivity edit / run clear`. Walking from node to nod",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b43",
+   "level": "blk",
+   "locator": "blk:What it is for/7",
+   "hash": "cd515ed29c10",
+   "head": "The estate is honest about a limitation here, and the honesty is worth carrying:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b44",
+   "level": "blk",
+   "locator": "blk:The component proof/1",
+   "hash": "f1667f57f161",
+   "head": "On 26 August, v0.4.39 did something small that is worth more than it looks.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b45",
+   "level": "blk",
+   "locator": "blk:The component proof/2",
+   "hash": "daaed377bc8b",
+   "head": "Since the v0.4.13 refactor, the graph had been a reusable custom element, `<uni-",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b46",
+   "level": "blk",
+   "locator": "blk:The component proof/3",
+   "hash": "578e2e7b95a9",
+   "head": "![The standalone graph page at v0.4.39, on a phone in landscape.](figures/07__v0",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b47",
+   "level": "blk",
+   "locator": "blk:The component proof/4",
+   "hash": "8ec58005ef6d",
+   "head": "*Figure 11. `/v2/universe/thinking-in-graphs.graph.html` at tag `v0.4.39`, taken",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b48",
+   "level": "blk",
+   "locator": "blk:The component proof/5",
+   "hash": "623d897b91e0",
+   "head": "The release note draws the moral itself: \"Claims about architecture are cheap; s",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b49",
+   "level": "blk",
+   "locator": "blk:The component proof/6",
+   "hash": "25265c2b4ba8",
+   "head": "For an author, the transferable version is: if you have built a tool for your bo",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b50",
+   "level": "blk",
+   "locator": "blk:Where it lands/1",
+   "hash": "09adaf57206a",
+   "head": "![The reader today, at v0.5.11.](figures/20__v0.5.11__the-reader-today.png)",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b51",
+   "level": "blk",
+   "locator": "blk:Where it lands/2",
+   "hash": "471c91ad22a6",
+   "head": "*Figure 12. The same URL at tag `v0.5.11`, 26 August 2026, in its maximised grap",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b52",
+   "level": "blk",
+   "locator": "blk:Where it lands/3",
+   "hash": "27fad97ed43f",
+   "head": "Forty-seven releases from figure 6 to figure 12. Same document, same fifty-seven",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b53",
+   "level": "blk",
+   "locator": "blk:Where it lands/4",
+   "hash": "e5600bece5ca",
+   "head": "The retrospective's judgement on the whole arc, which is the agent's and marked ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b54",
+   "level": "blk",
+   "locator": "blk:Where it lands/5",
+   "hash": "b8d3b1121aec",
+   "head": "> The founder's feedback rounds drove every step, voice memo in, release out, us",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b55",
+   "level": "blk",
+   "locator": "blk:Where it lands/6",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-05:b56",
+   "level": "blk",
+   "locator": "blk:Where it lands/7",
+   "hash": "c8ff37555930",
+   "head": "**Where the live estate shows this.** The reader is at\n`/v2/universe/thinking-in",
+   "status": "live"
+  }
+ ]
+}

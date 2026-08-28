@@ -1,0 +1,376 @@
+{
+ "doc": "doc:01__the-loop",
+ "prefix": "mab-01",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 6,
+  "b": 38
+ },
+ "ids": [
+  {
+   "uid": "mab-01:d1",
+   "level": "doc",
+   "locator": "doc:01__the-loop",
+   "hash": "c351f5bf5133",
+   "head": "1 · The loop",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:s1",
+   "level": "sec",
+   "locator": "sec:One hour, start to finish",
+   "hash": "2170a20eab2a",
+   "head": "2|One hour, start to finish",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:s2",
+   "level": "sec",
+   "locator": "sec:The five steps",
+   "hash": "129793271619",
+   "head": "2|The five steps",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:s3",
+   "level": "sec",
+   "locator": "sec:The four numbers",
+   "hash": "ec5d5b0575db",
+   "head": "2|The four numbers",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:s4",
+   "level": "sec",
+   "locator": "sec:Why an hour and not a week",
+   "hash": "8f5a9ef9c690",
+   "head": "2|Why an hour and not a week",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:s5",
+   "level": "sec",
+   "locator": "sec:What holds it together",
+   "hash": "8874ce2fccbc",
+   "head": "2|What holds it together",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:s6",
+   "level": "sec",
+   "locator": "sec:The loop is not new; the cost of it is",
+   "hash": "1893df35f738",
+   "head": "2|The loop is not new; the cost of it is",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b1",
+   "level": "blk",
+   "locator": "blk:1 · The loop/1",
+   "hash": "144010f594ca",
+   "head": "*After this chapter you will be able to describe, in one diagram, the working cy",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b2",
+   "level": "blk",
+   "locator": "blk:1 · The loop/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b3",
+   "level": "blk",
+   "locator": "blk:One hour, start to finish/1",
+   "hash": "b098a6b7b19e",
+   "head": "At 13:44 on 26 August 2026 the repository behind graphs.sgit.ai was tagged v0.5.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b4",
+   "level": "blk",
+   "locator": "blk:One hour, start to finish/2",
+   "hash": "928e3cf9c59d",
+   "head": "> The WCLM: a deterministic transformer over our graphs. Brief 31, the founder's",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b5",
+   "level": "blk",
+   "locator": "blk:One hour, start to finish/3",
+   "hash": "6a1c37599687",
+   "head": "Thirty-three minutes later the repository was tagged v0.5.3, and its note opens:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b6",
+   "level": "blk",
+   "locator": "blk:One hour, start to finish/4",
+   "hash": "dd9eb1aa9945",
+   "head": "> Every box explains itself, both ways. Brief 32, recorded through the viewer's ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b7",
+   "level": "blk",
+   "locator": "blk:One hour, start to finish/5",
+   "hash": "f8f8a476b139",
+   "head": "Between those two timestamps a person opened a page that had existed for half an",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b8",
+   "level": "blk",
+   "locator": "blk:One hour, start to finish/6",
+   "hash": "7a4ca5078b82",
+   "head": "That is the loop. It is not a metaphor for the process. It is the process, and i",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b9",
+   "level": "blk",
+   "locator": "blk:The five steps/1",
+   "hash": "74c9cbbc3982",
+   "head": "**1. The founder records a voice memo.** Usually while using the thing that ship",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b10",
+   "level": "blk",
+   "locator": "blk:The five steps/2",
+   "hash": "dc65de309b8b",
+   "head": "**2. The memo is published verbatim as a brief.** Not summarised. Not cleaned up",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b11",
+   "level": "blk",
+   "locator": "blk:The five steps/3",
+   "hash": "61838647ac35",
+   "head": "**3. The agent builds.** Code, data, generated pages, the release note, the test",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b12",
+   "level": "blk",
+   "locator": "blk:The five steps/4",
+   "hash": "ebef5ca73755",
+   "head": "**4. The release ships itself.** A push to the `dev` branch runs a pre-release\nv",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b13",
+   "level": "blk",
+   "locator": "blk:The five steps/5",
+   "hash": "853ec76ae492",
+   "head": "**5. The founder looks at the live site and starts again at step 1.** Often with",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b14",
+   "level": "blk",
+   "locator": "blk:The five steps/6",
+   "hash": "12c5210d8861",
+   "head": "![The front page of graphs.sgit.ai at v0.5.11, the last release this book covers",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b15",
+   "level": "blk",
+   "locator": "blk:The five steps/7",
+   "hash": "044b39385694",
+   "head": "*Figure 1. The front page at v0.5.11, re-taken from the tag `v0.5.11` on a local",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b16",
+   "level": "blk",
+   "locator": "blk:The four numbers/1",
+   "hash": "eb02aebd6f06",
+   "head": "The loop either runs or it does not, and you can tell which from four measuremen",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b17",
+   "level": "blk",
+   "locator": "blk:The four numbers/2",
+   "hash": "d53adbebad30",
+   "head": "**Releases per day.** Thirteen, sixteen, fourteen, twenty, nine, sixteen. Eighty",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b18",
+   "level": "blk",
+   "locator": "blk:The four numbers/3",
+   "hash": "8b4e727b9e9e",
+   "head": "**The gap between releases.** The median gap between two consecutive tags is 31.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b19",
+   "level": "blk",
+   "locator": "blk:The four numbers/4",
+   "hash": "3cc9ab4815a1",
+   "head": "**The working window.** The first and last release of each day, in UTC:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b20",
+   "level": "blk",
+   "locator": "blk:The four numbers/5",
+   "hash": "edde24200d95",
+   "head": "| Date | Releases | First to last | Span |\n|---|---|---|---|\n| 21 Aug | 13 | 14:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b21",
+   "level": "blk",
+   "locator": "blk:The four numbers/6",
+   "hash": "8b4f8a23b1a5",
+   "head": "Two of these days are longer than any reasonable person should work. That is wor",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b22",
+   "level": "blk",
+   "locator": "blk:The four numbers/7",
+   "hash": "4bc47bd8105e",
+   "head": "**The ratio of releases to commits.** The repository contains 97 commits up to\nv",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b23",
+   "level": "blk",
+   "locator": "blk:The four numbers/8",
+   "hash": "3b5702bc8be4",
+   "head": "That last ratio is the one that surprised me most when I computed it. Ninety-two",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b24",
+   "level": "blk",
+   "locator": "blk:Why an hour and not a week/1",
+   "hash": "0d2e72f8d4de",
+   "head": "The obvious objection to a thirty-minute release cadence is that it produces chu",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b25",
+   "level": "blk",
+   "locator": "blk:Why an hour and not a week/2",
+   "hash": "7f35fe83a1d5",
+   "head": "**A release is small enough to hold in one head.** Each of the eighty-eight rele",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b26",
+   "level": "blk",
+   "locator": "blk:Why an hour and not a week/3",
+   "hash": "22c29a0876fd",
+   "head": "> The close button now says so. The founder asked how to close the chat panel — ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b27",
+   "level": "blk",
+   "locator": "blk:Why an hour and not a week/4",
+   "hash": "eba892fca75f",
+   "head": "That entire release is one button label, one keyboard shortcut and three tests. ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b28",
+   "level": "blk",
+   "locator": "blk:Why an hour and not a week/5",
+   "hash": "df15800da932",
+   "head": "**A short loop turns opinion into evidence.** When the founder said, at v0.5.4, ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b29",
+   "level": "blk",
+   "locator": "blk:Why an hour and not a week/6",
+   "hash": "fb943fe20afd",
+   "head": "**The reviewer is reviewing the real thing.** Every one of the founder's memos i",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b30",
+   "level": "blk",
+   "locator": "blk:What holds it together/1",
+   "hash": "767c6e3bacf5",
+   "head": "Speed like this normally breaks something. Three mechanisms stop it, and each ge",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b31",
+   "level": "blk",
+   "locator": "blk:What holds it together/2",
+   "hash": "849e4e42f590",
+   "head": "**The brief** (Chapter 3) fixes the instruction. Because the founder's words are",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b32",
+   "level": "blk",
+   "locator": "blk:What holds it together/3",
+   "hash": "394ec08d3a30",
+   "head": "**The gates** (Chapter 4) fix the quality. The pre-release validator grew from s",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b33",
+   "level": "blk",
+   "locator": "blk:What holds it together/4",
+   "hash": "697b3ed28457",
+   "head": "**The release note** (Chapter 4 again) fixes the memory. Every release note in t",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b34",
+   "level": "blk",
+   "locator": "blk:The loop is not new; the cost of it is/1",
+   "hash": "924c66c2cde1",
+   "head": "None of the five steps above is an invention. Recording what a stakeholder actua",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b35",
+   "level": "blk",
+   "locator": "blk:The loop is not new; the cost of it is/2",
+   "hash": "810c6b19ffa7",
+   "head": "What changed is the cost of step 3. When the build step takes an agent twenty mi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b36",
+   "level": "blk",
+   "locator": "blk:The loop is not new; the cost of it is/3",
+   "hash": "753fc6fa67a6",
+   "head": "That is the whole method. The rest of this book is what it looks like in practic",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b37",
+   "level": "blk",
+   "locator": "blk:The loop is not new; the cost of it is/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-01:b38",
+   "level": "blk",
+   "locator": "blk:The loop is not new; the cost of it is/5",
+   "hash": "d31647b20556",
+   "head": "**Where the live estate shows this.** The release table at `/admin/versions.html",
+   "status": "live"
+  }
+ ]
+}

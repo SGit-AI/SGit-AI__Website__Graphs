@@ -1,0 +1,234 @@
+{
+ "version": "v0.6.10",
+ "slug": "15__appendix-c-the-harness",
+ "doc": "doc:15__appendix-c-the-harness",
+ "title": "Appendix C · The harness",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 41,
+  "sentences": 44,
+  "words": 607,
+  "spans": 12
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:15__appendix-c-the-harness",
+   "title": "Appendix C · The harness",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 52
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-15:d1"
+  },
+  {
+   "id": "sec:1 · Time travel: photographing a page as it was",
+   "title": "1 · Time travel: photographing a page as it was",
+   "level": 2,
+   "parent": "doc:15__appendix-c-the-harness",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 52
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-15:s1"
+  },
+  {
+   "id": "sec:The rule learned the hard way",
+   "title": "The rule learned the hard way",
+   "level": 3,
+   "parent": "sec:1 · Time travel: photographing a page as it was",
+   "counts": {
+    "blocks": 6,
+    "sentences": 8,
+    "words": 112
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-15:s2"
+  },
+  {
+   "id": "sec:The shell script",
+   "title": "The shell script",
+   "level": 3,
+   "parent": "sec:1 · Time travel: photographing a page as it was",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 38
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-15:s3"
+  },
+  {
+   "id": "sec:The screenshot script",
+   "title": "The screenshot script",
+   "level": 3,
+   "parent": "sec:1 · Time travel: photographing a page as it was",
+   "counts": {
+    "blocks": 6,
+    "sentences": 13,
+    "words": 123
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-15:s4"
+  },
+  {
+   "id": "sec:Verifying a figure is not blank",
+   "title": "Verifying a figure is not blank",
+   "level": 3,
+   "parent": "sec:1 · Time travel: photographing a page as it was",
+   "counts": {
+    "blocks": 4,
+    "sentences": 3,
+    "words": 36
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-15:s5"
+  },
+  {
+   "id": "sec:2 · The numbers",
+   "title": "2 · The numbers",
+   "level": 2,
+   "parent": "doc:15__appendix-c-the-harness",
+   "counts": {
+    "blocks": 1,
+    "sentences": 1,
+    "words": 10
+   },
+   "shard": "sec-07.json",
+   "uid": "mab-15:s6"
+  },
+  {
+   "id": "sec:Release cadence",
+   "title": "Release cadence",
+   "level": 3,
+   "parent": "sec:2 · The numbers",
+   "counts": {
+    "blocks": 2,
+    "sentences": 0,
+    "words": 0
+   },
+   "shard": "sec-08.json",
+   "uid": "mab-15:s7"
+  },
+  {
+   "id": "sec:Commits and merges",
+   "title": "Commits and merges",
+   "level": 3,
+   "parent": "sec:2 · The numbers",
+   "counts": {
+    "blocks": 1,
+    "sentences": 0,
+    "words": 0
+   },
+   "shard": "sec-09.json",
+   "uid": "mab-15:s8"
+  },
+  {
+   "id": "sec:Tests and gates over time",
+   "title": "Tests and gates over time",
+   "level": 3,
+   "parent": "sec:2 · The numbers",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 32
+   },
+   "shard": "sec-10.json",
+   "uid": "mab-15:s9"
+  },
+  {
+   "id": "sec:Refactor sizes",
+   "title": "Refactor sizes",
+   "level": 3,
+   "parent": "sec:2 · The numbers",
+   "counts": {
+    "blocks": 1,
+    "sentences": 0,
+    "words": 0
+   },
+   "shard": "sec-11.json",
+   "uid": "mab-15:s10"
+  },
+  {
+   "id": "sec:Component growth against its budget",
+   "title": "Component growth against its budget",
+   "level": 3,
+   "parent": "sec:2 · The numbers",
+   "counts": {
+    "blocks": 1,
+    "sentences": 0,
+    "words": 0
+   },
+   "shard": "sec-12.json",
+   "uid": "mab-15:s11"
+  },
+  {
+   "id": "sec:Corpus size",
+   "title": "Corpus size",
+   "level": 3,
+   "parent": "sec:2 · The numbers",
+   "counts": {
+    "blocks": 1,
+    "sentences": 0,
+    "words": 0
+   },
+   "shard": "sec-13.json",
+   "uid": "mab-15:s12"
+  },
+  {
+   "id": "sec:Reading the release table as data",
+   "title": "Reading the release table as data",
+   "level": 3,
+   "parent": "sec:2 · The numbers",
+   "counts": {
+    "blocks": 3,
+    "sentences": 2,
+    "words": 31
+   },
+   "shard": "sec-14.json",
+   "uid": "mab-15:s13"
+  },
+  {
+   "id": "sec:3 · One caution about your own history",
+   "title": "3 · One caution about your own history",
+   "level": 2,
+   "parent": "doc:15__appendix-c-the-harness",
+   "counts": {
+    "blocks": 4,
+    "sentences": 3,
+    "words": 58
+   },
+   "shard": "sec-15.json",
+   "uid": "mab-15:s14"
+  },
+  {
+   "id": "sec:4 · The figures in this book",
+   "title": "4 · The figures in this book",
+   "level": 2,
+   "parent": "doc:15__appendix-c-the-harness",
+   "counts": {
+    "blocks": 3,
+    "sentences": 4,
+    "words": 63
+   },
+   "shard": "sec-16.json",
+   "uid": "mab-15:s15"
+  }
+ ]
+}

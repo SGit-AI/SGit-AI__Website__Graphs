@@ -1,0 +1,130 @@
+{
+ "version": "v0.6.10",
+ "slug": "16__colophon",
+ "doc": "doc:16__colophon",
+ "title": "Colophon",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 32,
+  "sentences": 88,
+  "words": 1331,
+  "spans": 39
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:16__colophon",
+   "title": "Colophon",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 13
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-16:d1"
+  },
+  {
+   "id": "sec:How it was made",
+   "title": "How it was made",
+   "level": 2,
+   "parent": "doc:16__colophon",
+   "counts": {
+    "blocks": 6,
+    "sentences": 16,
+    "words": 247
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-16:s1"
+  },
+  {
+   "id": "sec:The structure, and why",
+   "title": "The structure, and why",
+   "level": 2,
+   "parent": "doc:16__colophon",
+   "counts": {
+    "blocks": 5,
+    "sentences": 16,
+    "words": 236
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-16:s2"
+  },
+  {
+   "id": "sec:What was cut",
+   "title": "What was cut",
+   "level": 2,
+   "parent": "doc:16__colophon",
+   "counts": {
+    "blocks": 5,
+    "sentences": 18,
+    "words": 270
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-16:s3"
+  },
+  {
+   "id": "sec:What remains open",
+   "title": "What remains open",
+   "level": 2,
+   "parent": "doc:16__colophon",
+   "counts": {
+    "blocks": 5,
+    "sentences": 17,
+    "words": 239
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-16:s4"
+  },
+  {
+   "id": "sec:Honesty positions carried from the corpus",
+   "title": "Honesty positions carried from the corpus",
+   "level": 2,
+   "parent": "doc:16__colophon",
+   "counts": {
+    "blocks": 4,
+    "sentences": 7,
+    "words": 103
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-16:s5"
+  },
+  {
+   "id": "sec:Disclosure",
+   "title": "Disclosure",
+   "level": 2,
+   "parent": "doc:16__colophon",
+   "counts": {
+    "blocks": 1,
+    "sentences": 3,
+    "words": 56
+   },
+   "shard": "sec-07.json",
+   "uid": "mab-16:s6"
+  },
+  {
+   "id": "sec:Licence and provenance",
+   "title": "Licence and provenance",
+   "level": 2,
+   "parent": "doc:16__colophon",
+   "counts": {
+    "blocks": 4,
+    "sentences": 10,
+    "words": 167
+   },
+   "shard": "sec-08.json",
+   "uid": "mab-16:s7"
+  }
+ ]
+}

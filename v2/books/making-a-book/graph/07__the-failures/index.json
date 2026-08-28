@@ -1,0 +1,217 @@
+{
+ "version": "v0.6.10",
+ "slug": "07__the-failures",
+ "doc": "doc:07__the-failures",
+ "title": "7 · The failures, lovingly",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 70,
+  "sentences": 146,
+  "words": 2427,
+  "spans": 13
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:07__the-failures",
+   "title": "7 · The failures, lovingly",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 5,
+    "sentences": 5,
+    "words": 125
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-07:d1"
+  },
+  {
+   "id": "sec:Failures only a person using the thing could find",
+   "title": "Failures only a person using the thing could find",
+   "level": 2,
+   "parent": "doc:07__the-failures",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "mab-07:s1"
+  },
+  {
+   "id": "sec:1. The iPad round",
+   "title": "1. The iPad round",
+   "level": 3,
+   "parent": "sec:Failures only a person using the thing could find",
+   "counts": {
+    "blocks": 6,
+    "sentences": 13,
+    "words": 286
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-07:s2"
+  },
+  {
+   "id": "sec:2. The button that did not say what it did",
+   "title": "2. The button that did not say what it did",
+   "level": 3,
+   "parent": "sec:Failures only a person using the thing could find",
+   "counts": {
+    "blocks": 4,
+    "sentences": 10,
+    "words": 157
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-07:s3"
+  },
+  {
+   "id": "sec:3. The wires that moved when the page scrolled",
+   "title": "3. The wires that moved when the page scrolled",
+   "level": 3,
+   "parent": "sec:Failures only a person using the thing could find",
+   "counts": {
+    "blocks": 5,
+    "sentences": 9,
+    "words": 146
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-07:s4"
+  },
+  {
+   "id": "sec:Failures the picture itself revealed",
+   "title": "Failures the picture itself revealed",
+   "level": 2,
+   "parent": "doc:07__the-failures",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "mab-07:s5"
+  },
+  {
+   "id": "sec:4. The wire that jumped a layer",
+   "title": "4. The wire that jumped a layer",
+   "level": 3,
+   "parent": "sec:Failures the picture itself revealed",
+   "counts": {
+    "blocks": 15,
+    "sentences": 28,
+    "words": 450
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-07:s6"
+  },
+  {
+   "id": "sec:5. The negation that was not there",
+   "title": "5. The negation that was not there",
+   "level": 3,
+   "parent": "sec:Failures the picture itself revealed",
+   "counts": {
+    "blocks": 8,
+    "sentences": 15,
+    "words": 242
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-07:s7"
+  },
+  {
+   "id": "sec:Failures where the agent's own tools lied",
+   "title": "Failures where the agent's own tools lied",
+   "level": 2,
+   "parent": "doc:07__the-failures",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "mab-07:s8"
+  },
+  {
+   "id": "sec:6. The zombie browser that cost an hour",
+   "title": "6. The zombie browser that cost an hour",
+   "level": 3,
+   "parent": "sec:Failures where the agent's own tools lied",
+   "counts": {
+    "blocks": 7,
+    "sentences": 18,
+    "words": 267
+   },
+   "shard": "sec-07.json",
+   "uid": "mab-07:s9"
+  },
+  {
+   "id": "sec:7. When your own tests were the wrong shape",
+   "title": "7. When your own tests were the wrong shape",
+   "level": 3,
+   "parent": "sec:Failures where the agent's own tools lied",
+   "counts": {
+    "blocks": 4,
+    "sentences": 7,
+    "words": 114
+   },
+   "shard": "sec-08.json",
+   "uid": "mab-07:s10"
+  },
+  {
+   "id": "sec:Failures of claim, not of code",
+   "title": "Failures of claim, not of code",
+   "level": 2,
+   "parent": "doc:07__the-failures",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "mab-07:s11"
+  },
+  {
+   "id": "sec:8. The neatest claim, broken by more data",
+   "title": "8. The neatest claim, broken by more data",
+   "level": 3,
+   "parent": "sec:Failures of claim, not of code",
+   "counts": {
+    "blocks": 4,
+    "sentences": 13,
+    "words": 187
+   },
+   "shard": "sec-09.json",
+   "uid": "mab-07:s12"
+  },
+  {
+   "id": "sec:9. The correction the agent owed",
+   "title": "9. The correction the agent owed",
+   "level": 3,
+   "parent": "sec:Failures of claim, not of code",
+   "counts": {
+    "blocks": 5,
+    "sentences": 12,
+    "words": 167
+   },
+   "shard": "sec-10.json",
+   "uid": "mab-07:s13"
+  },
+  {
+   "id": "sec:What the pattern is",
+   "title": "What the pattern is",
+   "level": 2,
+   "parent": "doc:07__the-failures",
+   "counts": {
+    "blocks": 7,
+    "sentences": 16,
+    "words": 286
+   },
+   "shard": "sec-11.json",
+   "uid": "mab-07:s14"
+  }
+ ]
+}

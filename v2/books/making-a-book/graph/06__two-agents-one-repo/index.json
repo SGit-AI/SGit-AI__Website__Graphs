@@ -1,0 +1,117 @@
+{
+ "version": "v0.6.10",
+ "slug": "06__two-agents-one-repo",
+ "doc": "doc:06__two-agents-one-repo",
+ "title": "6 · Two agents, one repository",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 46,
+  "sentences": 96,
+  "words": 1549,
+  "spans": 19
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:06__two-agents-one-repo",
+   "title": "6 · Two agents, one repository",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 36
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-06:d1"
+  },
+  {
+   "id": "sec:The situation",
+   "title": "The situation",
+   "level": 2,
+   "parent": "doc:06__two-agents-one-repo",
+   "counts": {
+    "blocks": 4,
+    "sentences": 9,
+    "words": 140
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-06:s1"
+  },
+  {
+   "id": "sec:The four notes",
+   "title": "The four notes",
+   "level": 2,
+   "parent": "doc:06__two-agents-one-repo",
+   "counts": {
+    "blocks": 21,
+    "sentences": 31,
+    "words": 610
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-06:s2"
+  },
+  {
+   "id": "sec:What the collisions actually were",
+   "title": "What the collisions actually were",
+   "level": 2,
+   "parent": "doc:06__two-agents-one-repo",
+   "counts": {
+    "blocks": 7,
+    "sentences": 14,
+    "words": 205
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-06:s3"
+  },
+  {
+   "id": "sec:The four rules",
+   "title": "The four rules",
+   "level": 2,
+   "parent": "doc:06__two-agents-one-repo",
+   "counts": {
+    "blocks": 5,
+    "sentences": 23,
+    "words": 259
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-06:s4"
+  },
+  {
+   "id": "sec:The rule that generalises past agents",
+   "title": "The rule that generalises past agents",
+   "level": 2,
+   "parent": "doc:06__two-agents-one-repo",
+   "counts": {
+    "blocks": 3,
+    "sentences": 8,
+    "words": 161
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-06:s5"
+  },
+  {
+   "id": "sec:The founder's part in it",
+   "title": "The founder's part in it",
+   "level": 2,
+   "parent": "doc:06__two-agents-one-repo",
+   "counts": {
+    "blocks": 4,
+    "sentences": 10,
+    "words": 138
+   },
+   "shard": "sec-07.json",
+   "uid": "mab-06:s6"
+  }
+ ]
+}

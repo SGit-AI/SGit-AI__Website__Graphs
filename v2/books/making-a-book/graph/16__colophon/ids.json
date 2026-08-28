@@ -1,0 +1,336 @@
+{
+ "doc": "doc:16__colophon",
+ "prefix": "mab-16",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 7,
+  "b": 32
+ },
+ "ids": [
+  {
+   "uid": "mab-16:d1",
+   "level": "doc",
+   "locator": "doc:16__colophon",
+   "hash": "40c03cd19641",
+   "head": "Colophon",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:s1",
+   "level": "sec",
+   "locator": "sec:How it was made",
+   "hash": "452b956cf994",
+   "head": "2|How it was made",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:s2",
+   "level": "sec",
+   "locator": "sec:The structure, and why",
+   "hash": "99b314c62624",
+   "head": "2|The structure, and why",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:s3",
+   "level": "sec",
+   "locator": "sec:What was cut",
+   "hash": "68235ed4a5f7",
+   "head": "2|What was cut",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:s4",
+   "level": "sec",
+   "locator": "sec:What remains open",
+   "hash": "032e94e02415",
+   "head": "2|What remains open",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:s5",
+   "level": "sec",
+   "locator": "sec:Honesty positions carried from the corpus",
+   "hash": "db971cdead91",
+   "head": "2|Honesty positions carried from the corpus",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:s6",
+   "level": "sec",
+   "locator": "sec:Disclosure",
+   "hash": "4e9d61cde673",
+   "head": "2|Disclosure",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:s7",
+   "level": "sec",
+   "locator": "sec:Licence and provenance",
+   "hash": "1b853d4b5b59",
+   "head": "2|Licence and provenance",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b1",
+   "level": "blk",
+   "locator": "blk:Colophon/1",
+   "hash": "4989b8a5a3a3",
+   "head": "*How this book was made, what was cut, and what is still open.*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b2",
+   "level": "blk",
+   "locator": "blk:Colophon/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b3",
+   "level": "blk",
+   "locator": "blk:How it was made/1",
+   "hash": "47c73971fed1",
+   "head": "This book was written by a Claude Code session working on the repository it desc",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b4",
+   "level": "blk",
+   "locator": "blk:How it was made/2",
+   "hash": "ae29aa60c9fd",
+   "head": "The reading order was the one the commission specified: the pack's README, its c",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b5",
+   "level": "blk",
+   "locator": "blk:How it was made/3",
+   "hash": "776f659de704",
+   "head": "**What was read.** The three release tables (88 rows across `/admin/versions.htm",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b6",
+   "level": "blk",
+   "locator": "blk:How it was made/4",
+   "hash": "91d180264e45",
+   "head": "**What was computed.** Every number in this book came from a script run against ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b7",
+   "level": "blk",
+   "locator": "blk:How it was made/5",
+   "hash": "96899f04fbed",
+   "head": "**What was photographed.** Twenty figures, each taken by checking out the tag it",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b8",
+   "level": "blk",
+   "locator": "blk:How it was made/6",
+   "hash": "16fdfff6cfe3",
+   "head": "**Length.** Twelve chapters, three appendices and this colophon.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b9",
+   "level": "blk",
+   "locator": "blk:The structure, and why/1",
+   "hash": "509e4c90ac03",
+   "head": "The commission proposed an eight-part spine and marked it \"proposals, not orders",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b10",
+   "level": "blk",
+   "locator": "blk:The structure, and why/2",
+   "hash": "5bd7226f59dd",
+   "head": "**The failures got their own chapter and it is the longest.** The proposal liste",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b11",
+   "level": "blk",
+   "locator": "blk:The structure, and why/3",
+   "hash": "3a3eb7630f77",
+   "head": "**A chapter was added on the founder's craft.** The proposal mentioned it. Readi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b12",
+   "level": "blk",
+   "locator": "blk:The structure, and why/4",
+   "hash": "739bdc643f02",
+   "head": "**A chapter was added on costs.** The commission's honesty gates require the cor",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b13",
+   "level": "blk",
+   "locator": "blk:The structure, and why/5",
+   "hash": "7ccb32615762",
+   "head": "**The chronology became an appendix rather than a chapter.** Eighty-eight releas",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b14",
+   "level": "blk",
+   "locator": "blk:What was cut/1",
+   "hash": "410b8dd54675",
+   "head": "**The first edition's argument.** This book is about how the second edition is b",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b15",
+   "level": "blk",
+   "locator": "blk:What was cut/2",
+   "hash": "9842d62c2be6",
+   "head": "**The chat panel, mostly.** Three releases (v0.4.17, v0.4.18, v0.4.20) built a c",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b16",
+   "level": "blk",
+   "locator": "blk:What was cut/3",
+   "hash": "95213102a36a",
+   "head": "**The technical detail of the core graph and the identity ledger.** The transfor",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b17",
+   "level": "blk",
+   "locator": "blk:What was cut/4",
+   "hash": "4792f05ca892",
+   "head": "**Every worked example from the first edition.** The vault analyses, the EU AI A",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b18",
+   "level": "blk",
+   "locator": "blk:What was cut/5",
+   "hash": "f40097a3d76e",
+   "head": "**The external network.** The commission's corpus file names two live indexes ou",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b19",
+   "level": "blk",
+   "locator": "blk:What remains open/1",
+   "hash": "c13b49209a09",
+   "head": "**The fan-out has not happened.** One document of twenty-one is extracted. Every",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b20",
+   "level": "blk",
+   "locator": "blk:What remains open/2",
+   "hash": "71a16deb5c1c",
+   "head": "**The debt is still there.** `uni-graph.js` was at 434 lines against a 250-line ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b21",
+   "level": "blk",
+   "locator": "blk:What remains open/3",
+   "hash": "c767c62a9563",
+   "head": "**The second book was not written when this one was.** No chapter of *Fractal Se",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b22",
+   "level": "blk",
+   "locator": "blk:What remains open/4",
+   "hash": "f763a7512a9d",
+   "head": "**Two of this book's judgements are contestable and are marked as judgements.** ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b23",
+   "level": "blk",
+   "locator": "blk:What remains open/5",
+   "hash": "5688ccd28f29",
+   "head": "**This book stops at v0.5.11.** The commission told it to, and to say so. The re",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b24",
+   "level": "blk",
+   "locator": "blk:Honesty positions carried from the corpus/1",
+   "hash": "a0b931b09d7d",
+   "head": "Three positions from the estate travel with everything here, in the estate's own",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b25",
+   "level": "blk",
+   "locator": "blk:Honesty positions carried from the corpus/2",
+   "hash": "5891df438d8f",
+   "head": "- **This is not a graph database pitch.** There is no graph database in the syst",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b26",
+   "level": "blk",
+   "locator": "blk:Honesty positions carried from the corpus/3",
+   "hash": "279a17e2af22",
+   "head": "- **Nine of the fifteen inverse edge names in the book's grammar are proposals**",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b27",
+   "level": "blk",
+   "locator": "blk:Honesty positions carried from the corpus/4",
+   "hash": "1d5bd50c8f42",
+   "head": "- **The people who built this have an interest in the argument being right.** Th",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b28",
+   "level": "blk",
+   "locator": "blk:Disclosure/1",
+   "hash": "dfa099b0d1b2",
+   "head": "Written by an AI agent, from a written commission, on the repository it describe",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b29",
+   "level": "blk",
+   "locator": "blk:Licence and provenance/1",
+   "hash": "20e51029bd39",
+   "head": "Released under the Creative Commons Attribution 4.0 International licence (CC BY",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b30",
+   "level": "blk",
+   "locator": "blk:Licence and provenance/2",
+   "hash": "f39818ee76dd",
+   "head": "**Source of truth.** The markdown chapters at `v2/books/making-a-book/content/`.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b31",
+   "level": "blk",
+   "locator": "blk:Licence and provenance/3",
+   "hash": "02ffcee40832",
+   "head": "**One convention worth stating.** Figure paths in the chapter markdown are relat",
+   "status": "live"
+  },
+  {
+   "uid": "mab-16:b32",
+   "level": "blk",
+   "locator": "blk:Licence and provenance/4",
+   "hash": "e7eec7329b37",
+   "head": "**Version.** Written against graphs.sgit.ai at v0.5.11, 26 August 2026.",
+   "status": "live"
+  }
+ ]
+}

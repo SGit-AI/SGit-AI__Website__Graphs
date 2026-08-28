@@ -1,0 +1,624 @@
+{
+ "doc": "doc:09__the-experiments",
+ "prefix": "mab-09",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 6,
+  "b": 69
+ },
+ "ids": [
+  {
+   "uid": "mab-09:d1",
+   "level": "doc",
+   "locator": "doc:09__the-experiments",
+   "hash": "5dadfe98cfd0",
+   "head": "9 · The experiments",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:s1",
+   "level": "sec",
+   "locator": "sec:Building a lab",
+   "hash": "58b3f28cf5fc",
+   "head": "2|Building a lab",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:s2",
+   "level": "sec",
+   "locator": "sec:What the experiment was",
+   "hash": "74dab5d4f19f",
+   "head": "2|What the experiment was",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:s3",
+   "level": "sec",
+   "locator": "sec:What shipped, in one afternoon",
+   "hash": "58208d7fe249",
+   "head": "2|What shipped, in one afternoon",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:s4",
+   "level": "sec",
+   "locator": "sec:The restructure: twelve folders",
+   "hash": "8c6ae06057bd",
+   "head": "2|The restructure: twelve folders",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:s5",
+   "level": "sec",
+   "locator": "sec:Keeping zooming",
+   "hash": "d63362b1061f",
+   "head": "2|Keeping zooming",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:s6",
+   "level": "sec",
+   "locator": "sec:How to run experiments this way",
+   "hash": "848e5cfad2d6",
+   "head": "2|How to run experiments this way",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b1",
+   "level": "blk",
+   "locator": "blk:9 · The experiments/1",
+   "hash": "efbec058bd3a",
+   "head": "*After this chapter you will know how a \"crazy experiment\" travelled from a voic",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b2",
+   "level": "blk",
+   "locator": "blk:9 · The experiments/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b3",
+   "level": "blk",
+   "locator": "blk:Building a lab/1",
+   "hash": "f0008c11775b",
+   "head": "Every project of this kind acquires a graveyard of half-finished ideas. This one",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b4",
+   "level": "blk",
+   "locator": "blk:Building a lab/2",
+   "hash": "2b3158696718",
+   "head": "Brief 31, 26 August, the founder's voice memo:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b5",
+   "level": "blk",
+   "locator": "blk:Building a lab/3",
+   "hash": "e6a67356dac0",
+   "head": "> Okay, so using the artefacts that we've created, but I think you probably want",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b6",
+   "level": "blk",
+   "locator": "blk:Building a lab/4",
+   "hash": "46ca7f77c6b5",
+   "head": "And a little later, twice more:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b7",
+   "level": "blk",
+   "locator": "blk:Building a lab/5",
+   "hash": "9ebdf0d2a0a8",
+   "head": "> So what I would like to kind of create is a mini engine again. Do this in sepa",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b8",
+   "level": "blk",
+   "locator": "blk:Building a lab/6",
+   "hash": "97ee25a7874c",
+   "head": "Three constraints in one breath: **separate folder, separate code, separate page",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b9",
+   "level": "blk",
+   "locator": "blk:Building a lab/7",
+   "hash": "b80189916740",
+   "head": "This is the pattern. An experiment gets its own address so that it can be abando",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b10",
+   "level": "blk",
+   "locator": "blk:Building a lab/8",
+   "hash": "5ea0c309392e",
+   "head": "Six releases later, at v0.5.9, the founder wrote the frame down completely:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b11",
+   "level": "blk",
+   "locator": "blk:Building a lab/9",
+   "hash": "c8e9fcc8325a",
+   "head": "> in fact view the development of these minor data/operators visualizations as a",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b12",
+   "level": "blk",
+   "locator": "blk:Building a lab/10",
+   "hash": "ee92d21cabd0",
+   "head": "A small problem space is a lab. Try things there where the blast radius is small",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b13",
+   "level": "blk",
+   "locator": "blk:What the experiment was/1",
+   "hash": "8a8346f9f726",
+   "head": "The idea in brief 31 is a good one to explain because it is not really about lan",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b14",
+   "level": "blk",
+   "locator": "blk:What the experiment was/2",
+   "hash": "a50fd30d0750",
+   "head": "The founder's argument: a language model is not picking the next word at random.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b15",
+   "level": "blk",
+   "locator": "blk:What the experiment was/3",
+   "hash": "7275b0c60422",
+   "head": "> the main thing I want to map and visualise is the look back and the attention,",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b16",
+   "level": "blk",
+   "locator": "blk:What the experiment was/4",
+   "hash": "87163b830c47",
+   "head": "And the query flips. Not \"what word comes next\" but:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b17",
+   "level": "blk",
+   "locator": "blk:What the experiment was/5",
+   "hash": "3e28490d543c",
+   "head": "> instead of maybe that's a better analogy, but this is not about about creating",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b18",
+   "level": "blk",
+   "locator": "blk:What the experiment was/6",
+   "hash": "b2fb9e0a1aa8",
+   "head": "He also named it. Not a large language model but, in his words, \"a words content",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b19",
+   "level": "blk",
+   "locator": "blk:What shipped, in one afternoon/1",
+   "hash": "771c058175d5",
+   "head": "**v0.5.2, 13:44.** Six layers, each a pure deterministic function: tokenise, res",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b20",
+   "level": "blk",
+   "locator": "blk:What shipped, in one afternoon/2",
+   "hash": "7d785eb03552",
+   "head": "One detail from that note is the best small story in the release table:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b21",
+   "level": "blk",
+   "locator": "blk:What shipped, in one afternoon/3",
+   "hash": "f37fdf114215",
+   "head": "> one ranking bug in this very build was fixed by editing the bind formula, the ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b22",
+   "level": "blk",
+   "locator": "blk:What shipped, in one afternoon/4",
+   "hash": "4af224da2444",
+   "head": "The engine ranked something wrongly. The fix was to edit a formula in a data fil",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b23",
+   "level": "blk",
+   "locator": "blk:What shipped, in one afternoon/5",
+   "hash": "4bd3a474e57e",
+   "head": "**v0.5.3, 14:17.** Thirty-three minutes later, every box on the page is clickabl",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b24",
+   "level": "blk",
+   "locator": "blk:What shipped, in one afternoon/6",
+   "hash": "037644dd4339",
+   "head": "**v0.5.4, 15:35.** The detective playbook. Strict layer adjacency after the foun",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b25",
+   "level": "blk",
+   "locator": "blk:What shipped, in one afternoon/7",
+   "hash": "991141990fed",
+   "head": "**v0.5.5, 16:10.** Three separate instructions that arrived across one afternoon",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b26",
+   "level": "blk",
+   "locator": "blk:What shipped, in one afternoon/8",
+   "hash": "a2670b67b732",
+   "head": "**v0.5.6, 16:27.** Analogies. The memo's ask, in the founder's words: to explain",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b27",
+   "level": "blk",
+   "locator": "blk:What shipped, in one afternoon/9",
+   "hash": "7d2a37c0611c",
+   "head": "**v0.5.7, 17:20.** The restructure, which gets its own section below.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b28",
+   "level": "blk",
+   "locator": "blk:What shipped, in one afternoon/10",
+   "hash": "93e2b047ed7e",
+   "head": "**v0.5.8, 18:08.** An iPad review of v0.5.7 with four screenshots and four findi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b29",
+   "level": "blk",
+   "locator": "blk:What shipped, in one afternoon/11",
+   "hash": "01866512c447",
+   "head": "**v0.5.9, 18:47.** The code itself gets the graph treatment.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b30",
+   "level": "blk",
+   "locator": "blk:What shipped, in one afternoon/12",
+   "hash": "6ae85faf74de",
+   "head": "Eight releases. Five hours and four minutes from the first to the last.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b31",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/1",
+   "hash": "1bf29fb432ea",
+   "head": "Brief 36 is a typed message, not a voice memo, and it is short. It points at a f",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b32",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/2",
+   "hash": "84a604f3aba2",
+   "head": "> Great, now I would like to work and fine tune each of those operators individu",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b33",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/3",
+   "hash": "7a990847a47d",
+   "head": "Then a list: put them in a dedicated folder, create a view of the files, create ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b34",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/4",
+   "hash": "0fb2221f2aa4",
+   "head": "What shipped at v0.5.7 is a real restructure, not a presentational one. The twel",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b35",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/5",
+   "hash": "b56bacb462cc",
+   "head": "Each folder holds six kinds of artefact, and the six are worth listing because t",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b36",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/6",
+   "hash": "5edbf5c9ee87",
+   "head": "- **the code** the engine really imports, not a copy;",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b37",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/7",
+   "hash": "e4e8ad8e9b3e",
+   "head": "- **the book page**, markdown, explaining what it does and walking through the\n ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b38",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/8",
+   "hash": "032e0325805c",
+   "head": "- **the schema**, generated from the code's own declaration and gate-checked aga",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b39",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/9",
+   "hash": "70e1ba57aba7",
+   "head": "- **the official data**, with the provenance of each item as a field rather than",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b40",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/10",
+   "hash": "be5a98dc7021",
+   "head": "- **the example vectors**, real input and output slices captured by running the ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b41",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/11",
+   "hash": "41cf000fcb3e",
+   "head": "- **the workbench**, a reusable page shell with execute, test and debug, which e",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b42",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/12",
+   "hash": "83d299404aa9",
+   "head": "The model for it had shipped five releases earlier, at v0.5.1, for the pilot doc",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b43",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/13",
+   "hash": "df90db7f78e9",
+   "head": "![The document's file explorer at v0.5.1, showing the identity ledger rendered a",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b44",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/14",
+   "hash": "192febefeed2",
+   "head": "*Figure 16. `/v2/universe/thinking-in-graphs.files.html` at tag `v0.5.1`, 26 Aug",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b45",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/15",
+   "hash": "3f1e3d94cf1c",
+   "head": "![The operator explorer at v0.5.7: twelve folders, every file readable raw or re",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b46",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/16",
+   "hash": "2fa63d502418",
+   "head": "*Figure 17. `/v2/wclm/operators/` at tag `v0.5.7`, 26 August 2026.*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b47",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/17",
+   "hash": "1404bbcfdc57",
+   "head": "![The workbench for one operator: input, transformation, output.](figures/12__v0",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b48",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/18",
+   "hash": "3c87a628091d",
+   "head": "*Figure 18. `/v2/wclm/operators/tokenise/` at tag `v0.5.7`, 26 August 2026.*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b49",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/19",
+   "hash": "c29745feb5e0",
+   "head": "Two things about this restructure are worth an author's attention even if they n",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b50",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/20",
+   "hash": "450a5cbe497c",
+   "head": "**The schema is generated from the code and gate-checked against it.** A descrip",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b51",
+   "level": "blk",
+   "locator": "blk:The restructure: twelve folders/21",
+   "hash": "6819cef866e0",
+   "head": "**Every example is replayed on every build.** Thirty-nine captured input-output ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b52",
+   "level": "blk",
+   "locator": "blk:Keeping zooming/1",
+   "hash": "2d5a7bdb7fa2",
+   "head": "Brief 37 arrived minutes after v0.5.8 went live, and it is four bullet points lo",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b53",
+   "level": "blk",
+   "locator": "blk:Keeping zooming/2",
+   "hash": "7f6729c8f525",
+   "head": "> on the JavaScript pages, can you add a couple views that explain in a graph an",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b54",
+   "level": "blk",
+   "locator": "blk:Keeping zooming/3",
+   "hash": "67aa844ad583",
+   "head": "The ask is: apply the project's own extraction discipline one zoom further in, t",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b55",
+   "level": "blk",
+   "locator": "blk:Keeping zooming/4",
+   "hash": "a0f2e8a9b49a",
+   "head": "What shipped is the same discipline exactly. Each operator's code is sliced into",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b56",
+   "level": "blk",
+   "locator": "blk:Keeping zooming/5",
+   "hash": "446721029723",
+   "head": "![The anatomy view: the flow diagram, the segmented code, and the explanation pa",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b57",
+   "level": "blk",
+   "locator": "blk:Keeping zooming/6",
+   "hash": "1dbad7bfb1df",
+   "head": "*Figure 19. `/v2/wclm/operators/index.html#tokenise/tokenise.js` at tag `v0.5.9`",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b58",
+   "level": "blk",
+   "locator": "blk:Keeping zooming/7",
+   "hash": "1c0bb41c91ed",
+   "head": "Click a box in the flow, a block of code, or an entry in the explanation, and th",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b59",
+   "level": "blk",
+   "locator": "blk:Keeping zooming/8",
+   "hash": "30193f7ebdf3",
+   "head": "Notice that the mechanism is the one from v0.4.5, unchanged: anchor an assertion",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b60",
+   "level": "blk",
+   "locator": "blk:Keeping zooming/9",
+   "hash": "47806971c6ef",
+   "head": "![The WCLM at v0.5.9, after eight releases in one afternoon.](figures/13__v0.5.9",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b61",
+   "level": "blk",
+   "locator": "blk:Keeping zooming/10",
+   "hash": "b880c05eb1a1",
+   "head": "*Figure 20. `/v2/wclm/` at tag `v0.5.9`, 26 August 2026.*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b62",
+   "level": "blk",
+   "locator": "blk:How to run experiments this way/1",
+   "hash": "e241bbae826b",
+   "head": "Four rules, each of which the corpus states in its own words:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b63",
+   "level": "blk",
+   "locator": "blk:How to run experiments this way/2",
+   "hash": "c60c7f74f1e2",
+   "head": "1. **Separate folder, separate code, separate page.** So it can be abandoned wit",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b64",
+   "level": "blk",
+   "locator": "blk:How to run experiments this way/3",
+   "hash": "749928de0b54",
+   "head": "2. **Name the exit at the start.** \"So that we can then figure out how to bring ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b65",
+   "level": "blk",
+   "locator": "blk:How to run experiments this way/4",
+   "hash": "4670b79d965d",
+   "head": "3. **Register it honestly.** The methods register carries thirty-five techniques",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b66",
+   "level": "blk",
+   "locator": "blk:How to run experiments this way/5",
+   "hash": "5b596593402f",
+   "head": "4. **Promote what worked, and say which.** The v0.5.9 note names the promotion c",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b67",
+   "level": "blk",
+   "locator": "blk:How to run experiments this way/6",
+   "hash": "11848f93fd9f",
+   "head": "An experiment nobody promotes is a hobby. An experiment nobody scopes is a rewri",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b68",
+   "level": "blk",
+   "locator": "blk:How to run experiments this way/7",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-09:b69",
+   "level": "blk",
+   "locator": "blk:How to run experiments this way/8",
+   "hash": "caed2f3c4f32",
+   "head": "**Where the live estate shows this.** The WCLM is at `/v2/wclm/`, the twelve ope",
+   "status": "live"
+  }
+ ]
+}

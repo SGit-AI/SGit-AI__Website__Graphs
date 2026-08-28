@@ -1,0 +1,1 @@
+{"sec": "sec:Component growth against its budget", "blocks": [{"id": "blk:Component growth against its budget/1", "kind": "code", "range": [7722, 7902], "text": "```bash\nfor t in v0.4.13 v0.4.16 v0.4.25 v0.4.31 v0.4.40 v0.5.11; do\n  printf \"%-9s %s lines\\n\" \"$t\" \\\n    \"$(git show $t:assets/universe/components/uni-graph.js | wc -l)\"\ndone\n```", "uid": "mab-15:b30"}]}

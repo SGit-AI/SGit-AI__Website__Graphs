@@ -1,0 +1,576 @@
+{
+ "doc": "doc:13__appendix-a-one-brief-annotated",
+ "prefix": "mab-13",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 12,
+  "b": 57
+ },
+ "ids": [
+  {
+   "uid": "mab-13:d1",
+   "level": "doc",
+   "locator": "doc:13__appendix-a-one-brief-annotated",
+   "hash": "b87e8f8518a6",
+   "head": "Appendix A · One brief, annotated",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:s1",
+   "level": "sec",
+   "locator": "sec:The header the brief carries",
+   "hash": "7b46280d3ed6",
+   "head": "2|The header the brief carries",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:s2",
+   "level": "sec",
+   "locator": "sec:Segment 1 · The praise, and the thing that worked",
+   "hash": "0bcd65e18977",
+   "head": "2|Segment 1 · The praise, and the thing that worked",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:s3",
+   "level": "sec",
+   "locator": "sec:Segment 2 · The central ask",
+   "hash": "3238ec0c0435",
+   "head": "2|Segment 2 · The central ask",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:s4",
+   "level": "sec",
+   "locator": "sec:Segment 3 · The principle, stated",
+   "hash": "3cb66b9584b8",
+   "head": "2|Segment 3 · The principle, stated",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:s5",
+   "level": "sec",
+   "locator": "sec:Segment 4 · The direction, not the ask",
+   "hash": "d22f24a66b63",
+   "head": "2|Segment 4 · The direction, not the ask",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:s6",
+   "level": "sec",
+   "locator": "sec:Segment 5 · Where it is all going",
+   "hash": "e34d5f2b8a76",
+   "head": "2|Segment 5 · Where it is all going",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:s7",
+   "level": "sec",
+   "locator": "sec:Segment 6 · The measurable ask",
+   "hash": "03b89100d8f3",
+   "head": "2|Segment 6 · The measurable ask",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:s8",
+   "level": "sec",
+   "locator": "sec:Segment 7 · The small, concrete last request",
+   "hash": "d17563041b8e",
+   "head": "2|Segment 7 · The small, concrete last request",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:s9",
+   "level": "sec",
+   "locator": "sec:The agent's reading, as published",
+   "hash": "bf83a619d03f",
+   "head": "2|The agent's reading, as published",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:s10",
+   "level": "sec",
+   "locator": "sec:The questions, as published",
+   "hash": "e58fe9dd5d34",
+   "head": "2|The questions, as published",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:s11",
+   "level": "sec",
+   "locator": "sec:What shipped, thirty-three minutes later",
+   "hash": "7e1301d7be1b",
+   "head": "2|What shipped, thirty-three minutes later",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:s12",
+   "level": "sec",
+   "locator": "sec:The whole loop, in timestamps",
+   "hash": "ea6542bd5058",
+   "head": "2|The whole loop, in timestamps",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b1",
+   "level": "blk",
+   "locator": "blk:Appendix A · One brief, annotated/1",
+   "hash": "3b1ec5e6e4d7",
+   "head": "*This appendix reproduces one complete brief and annotates it. Brief 32 was chos",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b2",
+   "level": "blk",
+   "locator": "blk:Appendix A · One brief, annotated/2",
+   "hash": "e68e95197a18",
+   "head": "*The memo is reproduced exactly as it is published at\n`v2/briefs/32__founder-mem",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b3",
+   "level": "blk",
+   "locator": "blk:Appendix A · One brief, annotated/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b4",
+   "level": "blk",
+   "locator": "blk:The header the brief carries/1",
+   "hash": "32f9ba48725b",
+   "head": "> **Date:** 26 August 2026\n> **Source:** a voice memo recorded by the founder th",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b5",
+   "level": "blk",
+   "locator": "blk:The header the brief carries/2",
+   "hash": "92a8fb478ba1",
+   "head": "**Annotation.** Four things are fixed before a word of the memo appears: when it",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b6",
+   "level": "blk",
+   "locator": "blk:The header the brief carries/3",
+   "hash": "18dd4b0745e0",
+   "head": "Note also that the source line records the two screenshots and what they showed.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b7",
+   "level": "blk",
+   "locator": "blk:The header the brief carries/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b8",
+   "level": "blk",
+   "locator": "blk:Segment 1 · The praise, and the thing that worked/1",
+   "hash": "889d7be648e6",
+   "head": "> what also worked really well is the ability to put multiple works and phases w",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b9",
+   "level": "blk",
+   "locator": "blk:Segment 1 · The praise, and the thing that worked/2",
+   "hash": "e32915abdd62",
+   "head": "**Annotation.** \"Works\" is the transcriber's rendering of \"words\", twice. It is ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b10",
+   "level": "blk",
+   "locator": "blk:Segment 1 · The praise, and the thing that worked/3",
+   "hash": "063fe57e7ee3",
+   "head": "The substance is a report of a discovery: running the same engine on a longer ph",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b11",
+   "level": "blk",
+   "locator": "blk:Segment 1 · The praise, and the thing that worked/4",
+   "hash": "a6b222e8a2e0",
+   "head": "This is the most under-rated kind of instruction. It is not \"add X\". It is \"the ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b12",
+   "level": "blk",
+   "locator": "blk:Segment 1 · The praise, and the thing that worked/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b13",
+   "level": "blk",
+   "locator": "blk:Segment 2 · The central ask/1",
+   "hash": "3b39d7f9dded",
+   "head": "> First of all, every single box at every single layer needs to be clickable so ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b14",
+   "level": "blk",
+   "locator": "blk:Segment 2 · The central ask/2",
+   "hash": "095b7d8c216f",
+   "head": "**Annotation.** The instruction is one clause: every box clickable. The justific",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b15",
+   "level": "blk",
+   "locator": "blk:Segment 2 · The central ask/3",
+   "hash": "c4622cbc9086",
+   "head": "\"So we can zoom in into why that's there because that's kind of the point\" tells",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b16",
+   "level": "blk",
+   "locator": "blk:Segment 2 · The central ask/4",
+   "hash": "fefc78e812eb",
+   "head": "The trailing \"you know, basically, Yeah\" is left in. It carries no information a",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b17",
+   "level": "blk",
+   "locator": "blk:Segment 2 · The central ask/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b18",
+   "level": "blk",
+   "locator": "blk:Segment 3 · The principle, stated/1",
+   "hash": "f1d7be7b6df5",
+   "head": "> Right? So... and then let's start thinking about... I think you probably maybe",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b19",
+   "level": "blk",
+   "locator": "blk:Segment 3 · The principle, stated/2",
+   "hash": "b9634abf6f55",
+   "head": "**Annotation.** Two different kinds of content in one breath.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b20",
+   "level": "blk",
+   "locator": "blk:Segment 3 · The principle, stated/3",
+   "hash": "51faeef274eb",
+   "head": "\"Maybe below or maybe add to the right, or let's find a good place to put it\" is",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b21",
+   "level": "blk",
+   "locator": "blk:Segment 3 · The principle, stated/4",
+   "hash": "47a37264b541",
+   "head": "\"It's graphs of graphs\" is the principle, and it is the reason this is a design ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b22",
+   "level": "blk",
+   "locator": "blk:Segment 3 · The principle, stated/5",
+   "hash": "941b62ab858f",
+   "head": "\"Caused by downstream but also upstream\" is, strictly, back to front: an item is",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b23",
+   "level": "blk",
+   "locator": "blk:Segment 3 · The principle, stated/6",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b24",
+   "level": "blk",
+   "locator": "blk:Segment 4 · The direction, not the ask/1",
+   "hash": "3f2348ea1bb3",
+   "head": "> And what we now need to do is start looking at abstractions concepts and and t",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b25",
+   "level": "blk",
+   "locator": "blk:Segment 4 · The direction, not the ask/2",
+   "hash": "20a74fb04f9f",
+   "head": "**Annotation.** Nothing here is buildable this round, and none of it was built. ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b26",
+   "level": "blk",
+   "locator": "blk:Segment 4 · The direction, not the ask/3",
+   "hash": "8ee8ee734f08",
+   "head": "The agent's instruction table has this as row 6, and marks it: \"Read as the dire",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b27",
+   "level": "blk",
+   "locator": "blk:Segment 4 · The direction, not the ask/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b28",
+   "level": "blk",
+   "locator": "blk:Segment 5 · Where it is all going/1",
+   "hash": "72a8175d21df",
+   "head": "> importantly, what we now have here is a great way to have a rational explanati",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b29",
+   "level": "blk",
+   "locator": "blk:Segment 5 · Where it is all going/2",
+   "hash": "72cfe6d5a962",
+   "head": "**Annotation.** \"Obstruction\" is \"abstraction\". Left in.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b30",
+   "level": "blk",
+   "locator": "blk:Segment 5 · Where it is all going/3",
+   "hash": "77083271d56b",
+   "head": "This is the paragraph that connects a side experiment to the book it is supposed",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b31",
+   "level": "blk",
+   "locator": "blk:Segment 5 · Where it is all going/4",
+   "hash": "5cc177aa58fb",
+   "head": "It is the most ambitious idea in the memo and it is also not an instruction. Sam",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b32",
+   "level": "blk",
+   "locator": "blk:Segment 5 · Where it is all going/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b33",
+   "level": "blk",
+   "locator": "blk:Segment 6 · The measurable ask/1",
+   "hash": "88b6eac33bae",
+   "head": "> I think the next fundamental part is make sure that every part of this is a gr",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b34",
+   "level": "blk",
+   "locator": "blk:Segment 6 · The measurable ask/2",
+   "hash": "0f62542744cd",
+   "head": "**Annotation.** \"How much that impact\" is the ask, and the two screenshots are t",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b35",
+   "level": "blk",
+   "locator": "blk:Segment 6 · The measurable ask/3",
+   "hash": "fbf9de7a71bf",
+   "head": "What shipped is a diff between consecutive runs: the engine compares each layer ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b36",
+   "level": "blk",
+   "locator": "blk:Segment 6 · The measurable ask/4",
+   "hash": "20a4a11cad77",
+   "head": "That line is the memo's \"it made a massive difference\" turned into a number, whi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b37",
+   "level": "blk",
+   "locator": "blk:Segment 6 · The measurable ask/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b38",
+   "level": "blk",
+   "locator": "blk:Segment 7 · The small, concrete last request/1",
+   "hash": "7fd8fa01b27b",
+   "head": "> Also, can you also create a bunch of examples at the top. So little buttons I ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b39",
+   "level": "blk",
+   "locator": "blk:Segment 7 · The small, concrete last request/2",
+   "hash": "fb835afb548d",
+   "head": "**Annotation.** \"Loss of connectivity\" is \"lots of connectivity\". The agent read",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b40",
+   "level": "blk",
+   "locator": "blk:Segment 7 · The small, concrete last request/3",
+   "hash": "2a5220eb6d1d",
+   "head": "Two things worth noticing about this request. It is the smallest thing in the me",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b41",
+   "level": "blk",
+   "locator": "blk:Segment 7 · The small, concrete last request/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b42",
+   "level": "blk",
+   "locator": "blk:The agent's reading, as published/1",
+   "hash": "17fe7ae6029a",
+   "head": "The brief then carries a seven-row table. Its column headings are \"The founder's",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b43",
+   "level": "blk",
+   "locator": "blk:The agent's reading, as published/2",
+   "hash": "7df9df4c69dc",
+   "head": "> | 2 | \"every item of every one of those layers had the reason to be there, whi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b44",
+   "level": "blk",
+   "locator": "blk:The agent's reading, as published/3",
+   "hash": "2a64065978f5",
+   "head": "> | 6 | \"we're probably gonna have multiple of these … in between abstraction le",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b45",
+   "level": "blk",
+   "locator": "blk:The agent's reading, as published/4",
+   "hash": "ff52d978eb9c",
+   "head": "**Annotation.** The left column is quoted, not paraphrased, even in the reading ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b46",
+   "level": "blk",
+   "locator": "blk:The agent's reading, as published/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b47",
+   "level": "blk",
+   "locator": "blk:The questions, as published/1",
+   "hash": "2bf67a6b6d0b",
+   "head": "> 1. **Placement**: right-side pane on desktop, below the columns on a phone — t",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b48",
+   "level": "blk",
+   "locator": "blk:The questions, as published/2",
+   "hash": "d18e9b969b3c",
+   "head": "**Annotation.** Three decisions the founder never made, each shipped, each discl",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b49",
+   "level": "blk",
+   "locator": "blk:The questions, as published/3",
+   "hash": "2e9fbadd2313",
+   "head": "The pattern is: decide, disclose, offer the undo. It costs three sentences and i",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b50",
+   "level": "blk",
+   "locator": "blk:The questions, as published/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b51",
+   "level": "blk",
+   "locator": "blk:What shipped, thirty-three minutes later/1",
+   "hash": "f570a43f1472",
+   "head": "Release v0.5.3, from the release table:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b52",
+   "level": "blk",
+   "locator": "blk:What shipped, thirty-three minutes later/2",
+   "hash": "b8c33394db6c",
+   "head": "> Every box explains itself, both ways. Brief 32, recorded through the viewer's ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b53",
+   "level": "blk",
+   "locator": "blk:What shipped, thirty-three minutes later/3",
+   "hash": "a8db38adfe85",
+   "head": "**Annotation.** Read the release note against the memo and the mapping is one to",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b54",
+   "level": "blk",
+   "locator": "blk:What shipped, thirty-three minutes later/4",
+   "hash": "db7cbd20d9d5",
+   "head": "Also note the last sentence. Sixty-nine unit tests, and a specific claim about w",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b55",
+   "level": "blk",
+   "locator": "blk:What shipped, thirty-three minutes later/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b56",
+   "level": "blk",
+   "locator": "blk:The whole loop, in timestamps/1",
+   "hash": "cf200e6a4419",
+   "head": "| | |\n|---|---|\n| v0.5.2 tagged | 26 August 2026, 13:44 UTC |\n| The founder uses",
+   "status": "live"
+  },
+  {
+   "uid": "mab-13:b57",
+   "level": "blk",
+   "locator": "blk:The whole loop, in timestamps/2",
+   "hash": "17e96cd17257",
+   "head": "Thirty-three minutes from a working page to a memo about it to a rebuilt page, w",
+   "status": "live"
+  }
+ ]
+}

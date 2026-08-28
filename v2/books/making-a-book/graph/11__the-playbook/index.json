@@ -1,0 +1,221 @@
+{
+ "version": "v0.6.10",
+ "slug": "11__the-playbook",
+ "doc": "doc:11__the-playbook",
+ "title": "11 · The playbook",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 84,
+  "sentences": 164,
+  "words": 1795,
+  "spans": 46
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:11__the-playbook",
+   "title": "11 · The playbook",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 3,
+    "words": 48
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-11:d1"
+  },
+  {
+   "id": "sec:Before you start: what this is and is not",
+   "title": "Before you start: what this is and is not",
+   "level": 2,
+   "parent": "doc:11__the-playbook",
+   "counts": {
+    "blocks": 6,
+    "sentences": 8,
+    "words": 103
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-11:s1"
+  },
+  {
+   "id": "sec:Day 0: set up five things",
+   "title": "Day 0: set up five things",
+   "level": 2,
+   "parent": "doc:11__the-playbook",
+   "counts": {
+    "blocks": 1,
+    "sentences": 2,
+    "words": 39
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-11:s2"
+  },
+  {
+   "id": "sec:1. A repository with one release branch",
+   "title": "1. A repository with one release branch",
+   "level": 3,
+   "parent": "sec:Day 0: set up five things",
+   "counts": {
+    "blocks": 1,
+    "sentences": 3,
+    "words": 27
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-11:s3"
+  },
+  {
+   "id": "sec:2. Automatic validate, tag and deploy",
+   "title": "2. Automatic validate, tag and deploy",
+   "level": 3,
+   "parent": "sec:Day 0: set up five things",
+   "counts": {
+    "blocks": 1,
+    "sentences": 4,
+    "words": 53
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-11:s4"
+  },
+  {
+   "id": "sec:3. Seven checks to start with",
+   "title": "3. Seven checks to start with",
+   "level": 3,
+   "parent": "sec:Day 0: set up five things",
+   "counts": {
+    "blocks": 9,
+    "sentences": 20,
+    "words": 185
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-11:s5"
+  },
+  {
+   "id": "sec:4. A briefs folder",
+   "title": "4. A briefs folder",
+   "level": 3,
+   "parent": "sec:Day 0: set up five things",
+   "counts": {
+    "blocks": 1,
+    "sentences": 2,
+    "words": 10
+   },
+   "shard": "sec-07.json",
+   "uid": "mab-11:s6"
+  },
+  {
+   "id": "sec:5. A release table",
+   "title": "5. A release table",
+   "level": 3,
+   "parent": "sec:Day 0: set up five things",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 51
+   },
+   "shard": "sec-08.json",
+   "uid": "mab-11:s7"
+  },
+  {
+   "id": "sec:Day 1: your first memo",
+   "title": "Day 1: your first memo",
+   "level": 2,
+   "parent": "doc:11__the-playbook",
+   "counts": {
+    "blocks": 16,
+    "sentences": 30,
+    "words": 301
+   },
+   "shard": "sec-09.json",
+   "uid": "mab-11:s8"
+  },
+  {
+   "id": "sec:The loop, in five steps",
+   "title": "The loop, in five steps",
+   "level": 2,
+   "parent": "doc:11__the-playbook",
+   "counts": {
+    "blocks": 8,
+    "sentences": 10,
+    "words": 114
+   },
+   "shard": "sec-10.json",
+   "uid": "mab-11:s9"
+  },
+  {
+   "id": "sec:Rules that make it work",
+   "title": "Rules that make it work",
+   "level": 2,
+   "parent": "doc:11__the-playbook",
+   "counts": {
+    "blocks": 8,
+    "sentences": 22,
+    "words": 261
+   },
+   "shard": "sec-11.json",
+   "uid": "mab-11:s10"
+  },
+  {
+   "id": "sec:What to expect to go wrong",
+   "title": "What to expect to go wrong",
+   "level": 2,
+   "parent": "doc:11__the-playbook",
+   "counts": {
+    "blocks": 7,
+    "sentences": 15,
+    "words": 217
+   },
+   "shard": "sec-12.json",
+   "uid": "mab-11:s11"
+  },
+  {
+   "id": "sec:Signs the loop has stalled",
+   "title": "Signs the loop has stalled",
+   "level": 2,
+   "parent": "doc:11__the-playbook",
+   "counts": {
+    "blocks": 6,
+    "sentences": 12,
+    "words": 98
+   },
+   "shard": "sec-13.json",
+   "uid": "mab-11:s12"
+  },
+  {
+   "id": "sec:The honest costs",
+   "title": "The honest costs",
+   "level": 2,
+   "parent": "doc:11__the-playbook",
+   "counts": {
+    "blocks": 6,
+    "sentences": 13,
+    "words": 177
+   },
+   "shard": "sec-14.json",
+   "uid": "mab-11:s13"
+  },
+  {
+   "id": "sec:The one-page version",
+   "title": "The one-page version",
+   "level": 2,
+   "parent": "doc:11__the-playbook",
+   "counts": {
+    "blocks": 10,
+    "sentences": 16,
+    "words": 111
+   },
+   "shard": "sec-15.json",
+   "uid": "mab-11:s14"
+  }
+ ]
+}

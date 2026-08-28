@@ -1,0 +1,117 @@
+{
+ "version": "v0.6.10",
+ "slug": "01__the-loop",
+ "doc": "doc:01__the-loop",
+ "title": "1 · The loop",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 38,
+  "sentences": 115,
+  "words": 1689,
+  "spans": 27
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:01__the-loop",
+   "title": "1 · The loop",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 40
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-01:d1"
+  },
+  {
+   "id": "sec:One hour, start to finish",
+   "title": "One hour, start to finish",
+   "level": 2,
+   "parent": "doc:01__the-loop",
+   "counts": {
+    "blocks": 6,
+    "sentences": 11,
+    "words": 177
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-01:s1"
+  },
+  {
+   "id": "sec:The five steps",
+   "title": "The five steps",
+   "level": 2,
+   "parent": "doc:01__the-loop",
+   "counts": {
+    "blocks": 7,
+    "sentences": 30,
+    "words": 356
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-01:s2"
+  },
+  {
+   "id": "sec:The four numbers",
+   "title": "The four numbers",
+   "level": 2,
+   "parent": "doc:01__the-loop",
+   "counts": {
+    "blocks": 8,
+    "sentences": 24,
+    "words": 353
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-01:s3"
+  },
+  {
+   "id": "sec:Why an hour and not a week",
+   "title": "Why an hour and not a week",
+   "level": 2,
+   "parent": "doc:01__the-loop",
+   "counts": {
+    "blocks": 6,
+    "sentences": 24,
+    "words": 335
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-01:s4"
+  },
+  {
+   "id": "sec:What holds it together",
+   "title": "What holds it together",
+   "level": 2,
+   "parent": "doc:01__the-loop",
+   "counts": {
+    "blocks": 4,
+    "sentences": 13,
+    "words": 226
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-01:s5"
+  },
+  {
+   "id": "sec:The loop is not new; the cost of it is",
+   "title": "The loop is not new; the cost of it is",
+   "level": 2,
+   "parent": "doc:01__the-loop",
+   "counts": {
+    "blocks": 5,
+    "sentences": 12,
+    "words": 202
+   },
+   "shard": "sec-07.json",
+   "uid": "mab-01:s6"
+  }
+ ]
+}

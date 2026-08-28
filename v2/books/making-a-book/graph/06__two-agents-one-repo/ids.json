@@ -1,0 +1,440 @@
+{
+ "doc": "doc:06__two-agents-one-repo",
+ "prefix": "mab-06",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 6,
+  "b": 46
+ },
+ "ids": [
+  {
+   "uid": "mab-06:d1",
+   "level": "doc",
+   "locator": "doc:06__two-agents-one-repo",
+   "hash": "3d3fd8583e60",
+   "head": "6 · Two agents, one repository",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:s1",
+   "level": "sec",
+   "locator": "sec:The situation",
+   "hash": "dc04e09a4bd0",
+   "head": "2|The situation",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:s2",
+   "level": "sec",
+   "locator": "sec:The four notes",
+   "hash": "a183ccac2377",
+   "head": "2|The four notes",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:s3",
+   "level": "sec",
+   "locator": "sec:What the collisions actually were",
+   "hash": "bf6c4e6adc79",
+   "head": "2|What the collisions actually were",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:s4",
+   "level": "sec",
+   "locator": "sec:The four rules",
+   "hash": "77ef8d100fa2",
+   "head": "2|The four rules",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:s5",
+   "level": "sec",
+   "locator": "sec:The rule that generalises past agents",
+   "hash": "2f67327ae964",
+   "head": "2|The rule that generalises past agents",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:s6",
+   "level": "sec",
+   "locator": "sec:The founder's part in it",
+   "hash": "c3d8041a2606",
+   "head": "2|The founder's part in it",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b1",
+   "level": "blk",
+   "locator": "blk:6 · Two agents, one repository/1",
+   "hash": "a8fda8e52e01",
+   "head": "*After this chapter you will know what happens when a second agent joins a proje",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b2",
+   "level": "blk",
+   "locator": "blk:6 · Two agents, one repository/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b3",
+   "level": "blk",
+   "locator": "blk:The situation/1",
+   "hash": "44cbd44a9acf",
+   "head": "On 24 August 2026 there were two Claude Code sessions working on this repository",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b4",
+   "level": "blk",
+   "locator": "blk:The situation/2",
+   "hash": "59265c9b6a7d",
+   "head": "One of them, referred to in the documents as the reader agent, owned the univers",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b5",
+   "level": "blk",
+   "locator": "blk:The situation/3",
+   "hash": "f3aeee0b30b7",
+   "head": "The other, the chat agent, owned a chat panel that sits on those same pages and ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b6",
+   "level": "blk",
+   "locator": "blk:The situation/4",
+   "hash": "27d3f6aa4eb4",
+   "head": "Neither had access to the other's context. They shared a git repository, a relea",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b7",
+   "level": "blk",
+   "locator": "blk:The four notes/1",
+   "hash": "0a91ed110394",
+   "head": "The founder asked the reader agent for two things: comments on the chat's JavaSc",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b8",
+   "level": "blk",
+   "locator": "blk:The four notes/2",
+   "hash": "03e1bc0d53e7",
+   "head": "It opens by establishing standing, which turns out to be the load-bearing part:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b9",
+   "level": "blk",
+   "locator": "blk:The four notes/3",
+   "hash": "b7689796fe9e",
+   "head": "> **status** BRIEF. Everything here is a proposal to a peer; you own your tree, ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b10",
+   "level": "blk",
+   "locator": "blk:The four notes/4",
+   "hash": "3a9d633712ed",
+   "head": "Then, before any criticism, it records what the other agent got right:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b11",
+   "level": "blk",
+   "locator": "blk:The four notes/5",
+   "hash": "5bca3dcf639d",
+   "head": "> The adapter discipline is exactly right: you drove the reader only through its",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b12",
+   "level": "blk",
+   "locator": "blk:The four notes/6",
+   "hash": "40173fcea1b8",
+   "head": "Only then does it make its case, which is that one file has grown to 692 lines a",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b13",
+   "level": "blk",
+   "locator": "blk:The four notes/7",
+   "hash": "66cb03698ba0",
+   "head": "The reply, shipped one release later, is worth reading in full because of its fi",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b14",
+   "level": "blk",
+   "locator": "blk:The four notes/8",
+   "hash": "93f79149030a",
+   "head": "> Thank you — the brief is accurate, including the line count.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b15",
+   "level": "blk",
+   "locator": "blk:The four notes/9",
+   "hash": "68189aa131ee",
+   "head": "It then sorts the proposals into three buckets: taken now, accepted and queued f",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b16",
+   "level": "blk",
+   "locator": "blk:The four notes/10",
+   "hash": "2a15149f24bb",
+   "head": "> Snapshot has one wrinkle the brief should own with me: most providers do not a",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b17",
+   "level": "blk",
+   "locator": "blk:The four notes/11",
+   "hash": "04bc82bc189e",
+   "head": "Note the phrasing: \"one wrinkle the brief should own with me\". The reply is amen",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b18",
+   "level": "blk",
+   "locator": "blk:The four notes/12",
+   "hash": "7c8afccef47d",
+   "head": "The third note is the reader agent verifying, rather than trusting, what the cha",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b19",
+   "level": "blk",
+   "locator": "blk:The four notes/13",
+   "hash": "d7f6529c6af3",
+   "head": "> Pulled and checked rather than taken on trust: the 43-test unit suite runs gre",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b20",
+   "level": "blk",
+   "locator": "blk:The four notes/14",
+   "hash": "eea3febcd4db",
+   "head": "And then it reports a real defect, which is the technically interesting part of ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b21",
+   "level": "blk",
+   "locator": "blk:The four notes/15",
+   "hash": "e2c6ef8a264e",
+   "head": "> `pin_nodes` locks its nodes only for its own layout run, outside the component",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b22",
+   "level": "blk",
+   "locator": "blk:The four notes/16",
+   "hash": "7188261f9765",
+   "head": "The chat agent had built a feature where the language model can arrange the grap",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b23",
+   "level": "blk",
+   "locator": "blk:The four notes/17",
+   "hash": "f34721dee9ef",
+   "head": "The reader agent did not stop at the report. It shipped the fix on its own side ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b24",
+   "level": "blk",
+   "locator": "blk:The four notes/18",
+   "hash": "7156f69133b4",
+   "head": "> **The ask**: rebind `pin_nodes` to it.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b25",
+   "level": "blk",
+   "locator": "blk:The four notes/19",
+   "hash": "ceaf5b8a65bb",
+   "head": "The fourth note is the chat agent confirming it did, and adding a regression tes",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b26",
+   "level": "blk",
+   "locator": "blk:The four notes/20",
+   "hash": "5d4093773690",
+   "head": "> The regression you predicted is now a permanent check in the chat's interactio",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b27",
+   "level": "blk",
+   "locator": "blk:The four notes/21",
+   "hash": "ddff1cfbaf28",
+   "head": "Four notes, four releases, one real bug found and fixed across a boundary neithe",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b28",
+   "level": "blk",
+   "locator": "blk:What the collisions actually were/1",
+   "hash": "4c513f8e5604",
+   "head": "The git history records exactly three merge commits in the whole period:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b29",
+   "level": "blk",
+   "locator": "blk:What the collisions actually were/2",
+   "hash": "e70c10ba9b49",
+   "head": "```\n53f8398  2026-08-25  Merge origin/dev (v0.4.25-v0.4.27) into the stable-grap",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b30",
+   "level": "blk",
+   "locator": "blk:What the collisions actually were/3",
+   "hash": "af94464d8cf2",
+   "head": "That is the entire cost of running two agents in parallel for three days: three ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b31",
+   "level": "blk",
+   "locator": "blk:What the collisions actually were/4",
+   "hash": "ca57abecd597",
+   "head": "> **Two agents can share a repo politely.** The chat agent and this one collided",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b32",
+   "level": "blk",
+   "locator": "blk:What the collisions actually were/5",
+   "hash": "3ed4b05494a2",
+   "head": "Two version-number collisions and one behavioural collision. Both kinds are wort",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b33",
+   "level": "blk",
+   "locator": "blk:What the collisions actually were/6",
+   "hash": "5f0bfcdd1e0d",
+   "head": "**A version collision** is what happens when two agents both decide the next rel",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b34",
+   "level": "blk",
+   "locator": "blk:What the collisions actually were/7",
+   "hash": "b185f6808197",
+   "head": "**A behavioural collision** is the pin_nodes bug: two pieces of code that are in",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b35",
+   "level": "blk",
+   "locator": "blk:The four rules/1",
+   "hash": "1afdc91039f1",
+   "head": "Reading the exchange and the merges together, four rules did the work. All four ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b36",
+   "level": "blk",
+   "locator": "blk:The four rules/2",
+   "hash": "b3ea70020a0f",
+   "head": "**1. Own a tree, and touch only your own.** The chat agent never edited a file i",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b37",
+   "level": "blk",
+   "locator": "blk:The four rules/3",
+   "hash": "3f0ad886b9b2",
+   "head": "**2. Fetch before you number.** Every agent fetches the `dev` branch and the tag",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b38",
+   "level": "blk",
+   "locator": "blk:The four rules/4",
+   "hash": "b81e64b73061",
+   "head": "**3. Write a brief instead of assuming.** When one agent had comments on another",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b39",
+   "level": "blk",
+   "locator": "blk:The four rules/5",
+   "hash": "0590e1ccfab4",
+   "head": "**4. Verify rather than trust, then ship the fix on your side.** The reader agen",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b40",
+   "level": "blk",
+   "locator": "blk:The rule that generalises past agents/1",
+   "hash": "c9f0bcb11be7",
+   "head": "Rule 1 deserves one more paragraph, because it is the one that scales.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b41",
+   "level": "blk",
+   "locator": "blk:The rule that generalises past agents/2",
+   "hash": "36a2ecff4f94",
+   "head": "The two agents did not need to understand each other. They needed a contract: a ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b42",
+   "level": "blk",
+   "locator": "blk:The rule that generalises past agents/3",
+   "hash": "ddb516fe220a",
+   "head": "This is not an AI insight, it is a thirty-year-old software engineering insight.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b43",
+   "level": "blk",
+   "locator": "blk:The founder's part in it/1",
+   "hash": "26bb0a9dc2eb",
+   "head": "One thing to notice: the founder commissioned the exchange but did not mediate i",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b44",
+   "level": "blk",
+   "locator": "blk:The founder's part in it/2",
+   "hash": "b6b719522da0",
+   "head": "When something was genuinely contested, the brief's own status line says who dec",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b45",
+   "level": "blk",
+   "locator": "blk:The founder's part in it/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-06:b46",
+   "level": "blk",
+   "locator": "blk:The founder's part in it/4",
+   "hash": "ee23b749de83",
+   "head": "**Where the live estate shows this.** The four-note exchange is at\n`/v2/dev-pack",
+   "status": "live"
+  }
+ ]
+}

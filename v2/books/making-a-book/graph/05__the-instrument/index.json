@@ -1,0 +1,130 @@
+{
+ "version": "v0.6.10",
+ "slug": "05__the-instrument",
+ "doc": "doc:05__the-instrument",
+ "title": "5 · From a page to an instrument",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 56,
+  "sentences": 113,
+  "words": 1558,
+  "spans": 36
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:05__the-instrument",
+   "title": "5 · From a page to an instrument",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 40
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-05:d1"
+  },
+  {
+   "id": "sec:Where it starts",
+   "title": "Where it starts",
+   "level": 2,
+   "parent": "doc:05__the-instrument",
+   "counts": {
+    "blocks": 6,
+    "sentences": 14,
+    "words": 217
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-05:s1"
+  },
+  {
+   "id": "sec:The reader arrives",
+   "title": "The reader arrives",
+   "level": 2,
+   "parent": "doc:05__the-instrument",
+   "counts": {
+    "blocks": 7,
+    "sentences": 15,
+    "words": 167
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-05:s2"
+  },
+  {
+   "id": "sec:Options as an instrument panel",
+   "title": "Options as an instrument panel",
+   "level": 2,
+   "parent": "doc:05__the-instrument",
+   "counts": {
+    "blocks": 13,
+    "sentences": 26,
+    "words": 302
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-05:s3"
+  },
+  {
+   "id": "sec:The design law",
+   "title": "The design law",
+   "level": 2,
+   "parent": "doc:05__the-instrument",
+   "counts": {
+    "blocks": 8,
+    "sentences": 19,
+    "words": 265
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-05:s4"
+  },
+  {
+   "id": "sec:What it is for",
+   "title": "What it is for",
+   "level": 2,
+   "parent": "doc:05__the-instrument",
+   "counts": {
+    "blocks": 7,
+    "sentences": 17,
+    "words": 221
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-05:s5"
+  },
+  {
+   "id": "sec:The component proof",
+   "title": "The component proof",
+   "level": 2,
+   "parent": "doc:05__the-instrument",
+   "counts": {
+    "blocks": 6,
+    "sentences": 10,
+    "words": 184
+   },
+   "shard": "sec-07.json",
+   "uid": "mab-05:s6"
+  },
+  {
+   "id": "sec:Where it lands",
+   "title": "Where it lands",
+   "level": 2,
+   "parent": "doc:05__the-instrument",
+   "counts": {
+    "blocks": 7,
+    "sentences": 11,
+    "words": 162
+   },
+   "shard": "sec-08.json",
+   "uid": "mab-05:s7"
+  }
+ ]
+}

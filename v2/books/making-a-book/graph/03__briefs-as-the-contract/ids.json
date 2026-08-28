@@ -1,0 +1,488 @@
+{
+ "doc": "doc:03__briefs-as-the-contract",
+ "prefix": "mab-03",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 7,
+  "b": 51
+ },
+ "ids": [
+  {
+   "uid": "mab-03:d1",
+   "level": "doc",
+   "locator": "doc:03__briefs-as-the-contract",
+   "hash": "4820d13475e0",
+   "head": "3 · Briefs as the contract",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:s1",
+   "level": "sec",
+   "locator": "sec:The rule",
+   "hash": "0bbc1167d6e6",
+   "head": "2|The rule",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:s2",
+   "level": "sec",
+   "locator": "sec:What a brief actually looks like",
+   "hash": "9d4e7266eb44",
+   "head": "2|What a brief actually looks like",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:s3",
+   "level": "sec",
+   "locator": "sec:Why verbatim",
+   "hash": "c813af3e8fa9",
+   "head": "2|Why verbatim",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:s4",
+   "level": "sec",
+   "locator": "sec:The reading is not optional either",
+   "hash": "ec4799429422",
+   "head": "2|The reading is not optional either",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:s5",
+   "level": "sec",
+   "locator": "sec:The questions are where the trust lives",
+   "hash": "c23484f74332",
+   "head": "2|The questions are where the trust lives",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:s6",
+   "level": "sec",
+   "locator": "sec:The failure mode nobody warns you about",
+   "hash": "9f65aa496409",
+   "head": "2|The failure mode nobody warns you about",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:s7",
+   "level": "sec",
+   "locator": "sec:What to copy",
+   "hash": "85eacd8075ca",
+   "head": "2|What to copy",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b1",
+   "level": "blk",
+   "locator": "blk:3 · Briefs as the contract/1",
+   "hash": "7887d0f1d777",
+   "head": "*After this chapter you will know exactly what to put in the file you write afte",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b2",
+   "level": "blk",
+   "locator": "blk:3 · Briefs as the contract/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b3",
+   "level": "blk",
+   "locator": "blk:The rule/1",
+   "hash": "54a9172add18",
+   "head": "When the founder of this project says something, the exact words go into the rep",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b4",
+   "level": "blk",
+   "locator": "blk:The rule/2",
+   "hash": "644b3554a380",
+   "head": "Underneath the transcript, the agent writes its reading: a numbered table of wha",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b5",
+   "level": "blk",
+   "locator": "blk:The rule/3",
+   "hash": "c283927e6359",
+   "head": "That structure has three parts and the order is the whole trick:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b6",
+   "level": "blk",
+   "locator": "blk:The rule/4",
+   "hash": "6b85ef5ba19b",
+   "head": "1. **The source.** Verbatim, immutable, wrong in places.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b7",
+   "level": "blk",
+   "locator": "blk:The rule/5",
+   "hash": "698a55eaba58",
+   "head": "2. **The reading.** The agent's interpretation, clearly attributed to the agent.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b8",
+   "level": "blk",
+   "locator": "blk:The rule/6",
+   "hash": "9ae619ff0292",
+   "head": "3. **The questions.** What the agent guessed at, flagged so the guess can be cor",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b9",
+   "level": "blk",
+   "locator": "blk:The rule/7",
+   "hash": "0da2374cd5ed",
+   "head": "Nineteen of these exist for the second edition, briefs 20 to 38, running to 37,8",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b10",
+   "level": "blk",
+   "locator": "blk:What a brief actually looks like/1",
+   "hash": "b5aebed8a488",
+   "head": "Here is the header of brief 22, which is a voice memo about the graph viewer:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b11",
+   "level": "blk",
+   "locator": "blk:What a brief actually looks like/2",
+   "hash": "19d0751f3162",
+   "head": "> **date** 24 August 2026 · **kind** founder voice memo, transcribed by otter.ai",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b12",
+   "level": "blk",
+   "locator": "blk:What a brief actually looks like/3",
+   "hash": "336b693fad89",
+   "head": "Then about 2,700 words of unbroken speech. Here is a representative sentence, ex",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b13",
+   "level": "blk",
+   "locator": "blk:What a brief actually looks like/4",
+   "hash": "ef63a27db2b3",
+   "head": "> A couple of little bugs is what I meant by the the box, and it's you know make",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b14",
+   "level": "blk",
+   "locator": "blk:What a brief actually looks like/5",
+   "hash": "b69fef6dfba9",
+   "head": "Then the agent's table, whose second row reads:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b15",
+   "level": "blk",
+   "locator": "blk:What a brief actually looks like/6",
+   "hash": "7ffdfd56f697",
+   "head": "> | 2 | Boxed labels: not a box under the dot; **replace the shape**: the node b",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b16",
+   "level": "blk",
+   "locator": "blk:What a brief actually looks like/7",
+   "hash": "5aeda5612e65",
+   "head": "And then, in the same file, four questions the agent could not resolve. Question",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b17",
+   "level": "blk",
+   "locator": "blk:What a brief actually looks like/8",
+   "hash": "1812219e8661",
+   "head": "> **The exhibits edge.** The extraction records `graphs-of-graphs exhibits\n> fra",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b18",
+   "level": "blk",
+   "locator": "blk:What a brief actually looks like/9",
+   "hash": "4bec3bd49507",
+   "head": "Notice what that question does. The founder said an edge read wrongly. There are",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b19",
+   "level": "blk",
+   "locator": "blk:Why verbatim/1",
+   "hash": "d18b4ec67564",
+   "head": "The obvious objection is that a transcript is worse than a summary. It is longer",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b20",
+   "level": "blk",
+   "locator": "blk:Why verbatim/2",
+   "hash": "ba0bbbb8d386",
+   "head": "**It preserves the correction.** Read the quote above again. \"It just maybe my b",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b21",
+   "level": "blk",
+   "locator": "blk:Why verbatim/3",
+   "hash": "35877601fcd2",
+   "head": "**It preserves the reasoning you did not know was reasoning.** In brief 34, expl",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b22",
+   "level": "blk",
+   "locator": "blk:Why verbatim/4",
+   "hash": "1d006e5c1efa",
+   "head": "**It makes paraphrase drift visible.** This is the important one. If the only re",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b23",
+   "level": "blk",
+   "locator": "blk:Why verbatim/5",
+   "hash": "5fe34f6cced5",
+   "head": "**It stops the instruction getting easier.** An agent that has interpreted a har",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b24",
+   "level": "blk",
+   "locator": "blk:Why verbatim/6",
+   "hash": "cd67ebee4f47",
+   "head": "> the verbatim capture meant no instruction was ever paraphrased into something ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b25",
+   "level": "blk",
+   "locator": "blk:Why verbatim/7",
+   "hash": "7d05a25e9f57",
+   "head": "![The memos hub at v0.5.11: nineteen founder memos, each rendering its own raw m",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b26",
+   "level": "blk",
+   "locator": "blk:Why verbatim/8",
+   "hash": "6e6c07bbdcf4",
+   "head": "*Figure 4. `/v2/memos/` at tag `v0.5.11`, 26 August 2026.*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b27",
+   "level": "blk",
+   "locator": "blk:The reading is not optional either/1",
+   "hash": "83ba73461cad",
+   "head": "Verbatim capture on its own is a pile of transcripts. What makes a brief usable ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b28",
+   "level": "blk",
+   "locator": "blk:The reading is not optional either/2",
+   "hash": "df76e523b79f",
+   "head": "Two columns: what was said, and **what it commits the work to**. Not \"what to do",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b29",
+   "level": "blk",
+   "locator": "blk:The reading is not optional either/3",
+   "hash": "496db7c9ccc0",
+   "head": "The table also lets the agent be honest about scale. Brief 22's row 11 ends:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b30",
+   "level": "blk",
+   "locator": "blk:The reading is not optional either/4",
+   "hash": "c13ab1cb8260",
+   "head": "> **Needs the founder's confirmation of the semantics before building** (questio",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b31",
+   "level": "blk",
+   "locator": "blk:The reading is not optional either/5",
+   "hash": "64123ec725a7",
+   "head": "One of twelve rows is marked as blocked. The other eleven were built the same da",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b32",
+   "level": "blk",
+   "locator": "blk:The questions are where the trust lives/1",
+   "hash": "3f321b2bfd16",
+   "head": "Every brief in this corpus ends with the questions the agent owes answers on, an",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b33",
+   "level": "blk",
+   "locator": "blk:The questions are where the trust lives/2",
+   "hash": "5fd7c0f8aed3",
+   "head": "Brief 32, which is reproduced complete and annotated in Appendix A, ends like th",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b34",
+   "level": "blk",
+   "locator": "blk:The questions are where the trust lives/3",
+   "hash": "658376dd77e0",
+   "head": "> 1. **Placement**: right-side pane on desktop, below the columns on a phone — t",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b35",
+   "level": "blk",
+   "locator": "blk:The questions are where the trust lives/4",
+   "hash": "c58d7b4d1b42",
+   "head": "Three decisions the founder never made, each shipped, each labelled, each with t",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b36",
+   "level": "blk",
+   "locator": "blk:The questions are where the trust lives/5",
+   "hash": "bf0869ab3f58",
+   "head": "The founder does answer, eventually and in bulk. Brief 26's four questions came ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b37",
+   "level": "blk",
+   "locator": "blk:The failure mode nobody warns you about/1",
+   "hash": "e0ec57694c92",
+   "head": "There is a specific way this goes wrong, and it is visible in the corpus.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b38",
+   "level": "blk",
+   "locator": "blk:The failure mode nobody warns you about/2",
+   "hash": "5bfc2196b7a9",
+   "head": "A voice memo is a stream. It contains instructions, asides, jokes, corrections o",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b39",
+   "level": "blk",
+   "locator": "blk:The failure mode nobody warns you about/3",
+   "hash": "b15305d2444f",
+   "head": "The corpus handles this by having a third category. Here is the release note for",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b40",
+   "level": "blk",
+   "locator": "blk:The failure mode nobody warns you about/4",
+   "hash": "e3930961928b",
+   "head": "> The rest of the memo is recorded in the brief as direction with questions back",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b41",
+   "level": "blk",
+   "locator": "blk:The failure mode nobody warns you about/5",
+   "hash": "97cbf3505fbf",
+   "head": "Four ideas from one memo, all interesting, none built, all recorded as direction",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b42",
+   "level": "blk",
+   "locator": "blk:The failure mode nobody warns you about/6",
+   "hash": "c1631210d131",
+   "head": "If your brief only has two categories, built and not-mentioned, then every idea ",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b43",
+   "level": "blk",
+   "locator": "blk:What to copy/1",
+   "hash": "9acdd0ce4c3e",
+   "head": "If you do one thing from this book, do this:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b44",
+   "level": "blk",
+   "locator": "blk:What to copy/2",
+   "hash": "530f0b86a556",
+   "head": "- After every conversation with your agent about what to build, put the raw text",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b45",
+   "level": "blk",
+   "locator": "blk:What to copy/3",
+   "hash": "0dd02f0bdcd8",
+   "head": "- Have the agent write, in the same file and under a heading that says whose rea",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b46",
+   "level": "blk",
+   "locator": "blk:What to copy/4",
+   "hash": "703f9cb580d0",
+   "head": "- Have it list, in the same file, every question it could not answer and every d",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b47",
+   "level": "blk",
+   "locator": "blk:What to copy/5",
+   "hash": "e673902daafc",
+   "head": "- Never edit the transcript. Add to the file, never rewrite it.",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b48",
+   "level": "blk",
+   "locator": "blk:What to copy/6",
+   "hash": "6cac9c984e9e",
+   "head": "- Reference the brief number in whatever your release note is. The corpus does t",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b49",
+   "level": "blk",
+   "locator": "blk:What to copy/7",
+   "hash": "bec4092e4708",
+   "head": "The cost is about ten minutes per round. The return is that six days later someb",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b50",
+   "level": "blk",
+   "locator": "blk:What to copy/8",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-03:b51",
+   "level": "blk",
+   "locator": "blk:What to copy/9",
+   "hash": "9a15b6480cbe",
+   "head": "**Where the live estate shows this.** Nineteen briefs at `/v2/memos/`, each rend",
+   "status": "live"
+  }
+ ]
+}

@@ -1,0 +1,216 @@
+{
+ "doc": "doc:14__appendix-b-the-chronology",
+ "prefix": "mab-14",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 7,
+  "b": 17
+ },
+ "ids": [
+  {
+   "uid": "mab-14:d1",
+   "level": "doc",
+   "locator": "doc:14__appendix-b-the-chronology",
+   "hash": "cc50c912ca78",
+   "head": "Appendix B · The chronology",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:s1",
+   "level": "sec",
+   "locator": "sec:Friday 21 August 2026",
+   "hash": "fdd103937625",
+   "head": "2|Friday 21 August 2026",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:s2",
+   "level": "sec",
+   "locator": "sec:Saturday 22 August 2026",
+   "hash": "1fb5eaa9aea2",
+   "head": "2|Saturday 22 August 2026",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:s3",
+   "level": "sec",
+   "locator": "sec:Sunday 23 August 2026",
+   "hash": "95fcb836a783",
+   "head": "2|Sunday 23 August 2026",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:s4",
+   "level": "sec",
+   "locator": "sec:Monday 24 August 2026",
+   "hash": "d86a92f7821f",
+   "head": "2|Monday 24 August 2026",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:s5",
+   "level": "sec",
+   "locator": "sec:Tuesday 25 August 2026",
+   "hash": "657187e351aa",
+   "head": "2|Tuesday 25 August 2026",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:s6",
+   "level": "sec",
+   "locator": "sec:Wednesday 26 August 2026",
+   "hash": "6ec112e14fe9",
+   "head": "2|Wednesday 26 August 2026",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:s7",
+   "level": "sec",
+   "locator": "sec:The shape of it",
+   "hash": "1c267ab09db4",
+   "head": "2|The shape of it",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b1",
+   "level": "blk",
+   "locator": "blk:Appendix B · The chronology/1",
+   "hash": "afa1c9017497",
+   "head": "*Every release from v0.1.0 to v0.5.11, in order, with its timestamp and the open",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b2",
+   "level": "blk",
+   "locator": "blk:Appendix B · The chronology/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b3",
+   "level": "blk",
+   "locator": "blk:Friday 21 August 2026/1",
+   "hash": "42c73055a7c4",
+   "head": "*13 releases*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b4",
+   "level": "blk",
+   "locator": "blk:Friday 21 August 2026/2",
+   "hash": "3acc4e973e2b",
+   "head": "| Version | UTC | The release note's opening |\n|---|---|---|\n| **v0.1.0** | 14:4",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b5",
+   "level": "blk",
+   "locator": "blk:Saturday 22 August 2026/1",
+   "hash": "008540dbd8c7",
+   "head": "*16 releases*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b6",
+   "level": "blk",
+   "locator": "blk:Saturday 22 August 2026/2",
+   "hash": "0f4e2f16168e",
+   "head": "| Version | UTC | The release note's opening |\n|---|---|---|\n| **v0.3.6** | 09:5",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b7",
+   "level": "blk",
+   "locator": "blk:Sunday 23 August 2026/1",
+   "hash": "3bcf61f9708d",
+   "head": "*14 releases*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b8",
+   "level": "blk",
+   "locator": "blk:Sunday 23 August 2026/2",
+   "hash": "82bf35a9db96",
+   "head": "| Version | UTC | The release note's opening |\n|---|---|---|\n| **v0.3.22** | 00:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b9",
+   "level": "blk",
+   "locator": "blk:Monday 24 August 2026/1",
+   "hash": "f99b023898c3",
+   "head": "*20 releases*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b10",
+   "level": "blk",
+   "locator": "blk:Monday 24 August 2026/2",
+   "hash": "69d3087d021d",
+   "head": "| Version | UTC | The release note's opening |\n|---|---|---|\n| **v0.4.8** | 13:0",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b11",
+   "level": "blk",
+   "locator": "blk:Tuesday 25 August 2026/1",
+   "hash": "e68f5c4f7d2b",
+   "head": "*9 releases*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b12",
+   "level": "blk",
+   "locator": "blk:Tuesday 25 August 2026/2",
+   "hash": "926a65986162",
+   "head": "| Version | UTC | The release note's opening |\n|---|---|---|\n| **v0.4.28** | 11:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b13",
+   "level": "blk",
+   "locator": "blk:Wednesday 26 August 2026/1",
+   "hash": "008540dbd8c7",
+   "head": "*16 releases*",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b14",
+   "level": "blk",
+   "locator": "blk:Wednesday 26 August 2026/2",
+   "hash": "bf82ad4e27a8",
+   "head": "| Version | UTC | The release note's opening |\n|---|---|---|\n| **v0.4.37** | 09:",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b15",
+   "level": "blk",
+   "locator": "blk:Wednesday 26 August 2026/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b16",
+   "level": "blk",
+   "locator": "blk:The shape of it/1",
+   "hash": "c9a42e7564f2",
+   "head": "| | |\n|---|---|\n| First release | v0.1.0, 21 August 2026, 14:47 UTC |\n| Last rel",
+   "status": "live"
+  },
+  {
+   "uid": "mab-14:b17",
+   "level": "blk",
+   "locator": "blk:The shape of it/2",
+   "hash": "a34c792dc1e0",
+   "head": "*Computed from the repository's git history and release tables at v0.5.11. The c",
+   "status": "live"
+  }
+ ]
+}

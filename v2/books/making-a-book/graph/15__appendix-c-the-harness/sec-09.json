@@ -1,0 +1,1 @@
+{"sec": "sec:Commits and merges", "blocks": [{"id": "blk:Commits and merges/1", "kind": "code", "range": [6429, 6628], "text": "```bash\ngit rev-list --count v0.5.11                       # 97\ngit log v0.5.11 --format=%s | grep -c '^site v'    # 89\ngit log v0.5.11 --merges --format='%h %ad %s' --date=short   # the 3 merges\n```", "uid": "mab-15:b26"}]}

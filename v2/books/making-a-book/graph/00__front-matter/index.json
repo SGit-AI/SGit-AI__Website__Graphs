@@ -1,0 +1,117 @@
+{
+ "version": "v0.6.10",
+ "slug": "00__front-matter",
+ "doc": "doc:00__front-matter",
+ "title": "Creating a Book Using Agentic Workflows",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 32,
+  "sentences": 75,
+  "words": 1183,
+  "spans": 19
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:00__front-matter",
+   "title": "Creating a Book Using Agentic Workflows",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 14
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-00:d1"
+  },
+  {
+   "id": "sec:What this book is",
+   "title": "What this book is",
+   "level": 2,
+   "parent": "doc:00__front-matter",
+   "counts": {
+    "blocks": 4,
+    "sentences": 10,
+    "words": 205
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-00:s1"
+  },
+  {
+   "id": "sec:Who it is for",
+   "title": "Who it is for",
+   "level": 2,
+   "parent": "doc:00__front-matter",
+   "counts": {
+    "blocks": 3,
+    "sentences": 8,
+    "words": 117
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-00:s2"
+  },
+  {
+   "id": "sec:What you will know at the end that you do not know now",
+   "title": "What you will know at the end that you do not know now",
+   "level": 2,
+   "parent": "doc:00__front-matter",
+   "counts": {
+    "blocks": 6,
+    "sentences": 17,
+    "words": 186
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-00:s3"
+  },
+  {
+   "id": "sec:How to check anything in this book",
+   "title": "How to check anything in this book",
+   "level": 2,
+   "parent": "doc:00__front-matter",
+   "counts": {
+    "blocks": 4,
+    "sentences": 10,
+    "words": 148
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-00:s4"
+  },
+  {
+   "id": "sec:Disclosure",
+   "title": "Disclosure",
+   "level": 2,
+   "parent": "doc:00__front-matter",
+   "counts": {
+    "blocks": 6,
+    "sentences": 13,
+    "words": 205
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-00:s5"
+  },
+  {
+   "id": "sec:What is locked and what is not",
+   "title": "What is locked and what is not",
+   "level": 2,
+   "parent": "doc:00__front-matter",
+   "counts": {
+    "blocks": 7,
+    "sentences": 16,
+    "words": 308
+   },
+   "shard": "sec-07.json",
+   "uid": "mab-00:s6"
+  }
+ ]
+}

@@ -342,7 +342,7 @@ def token_analysis(forms, sen_forms, form_sens):
             "near": sorted(near), "edges": edges[:400]}
 
 
-def assign_ids(current, ledger):
+def assign_ids(current, ledger, doc_id=None, prefix=None):
     """The identity ledger's match-then-mint pass (the founder's IDs question,
     answered): a short opaque uid (tig:b42) is minted once and carried forward
     across edits, so cross-references hold the identity while the locator (the
@@ -403,7 +403,7 @@ def assign_ids(current, ledger):
         else:
             k = lv[level]
             minted[k] = minted.get(k, 0) + 1
-            uid = f'{ledger.get("prefix", PREFIX)}:{k}{minted[k]}'
+            uid = f'{ledger.get("prefix") or prefix or PREFIX}:{k}{minted[k]}'
             live_rows.append({"uid": uid, "level": level, "locator": locator,
                               "hash": h, "head": head, "status": "live"})
             uid_by_loc[locator] = uid
@@ -411,17 +411,31 @@ def assign_ids(current, ledger):
         [{**e, "status": "retired"} for e in unclaimed.values()]
         + [e for e in prev.values() if e["status"] == "retired"],
         key=lambda e: e["uid"])
-    return uid_by_loc, {"doc": f"doc:{SLUG}", "prefix": ledger.get("prefix", PREFIX),
+    return uid_by_loc, {"doc": doc_id or f"doc:{SLUG}",
+                        "prefix": ledger.get("prefix") or prefix or PREFIX,
                         "levels": ["doc", "sec", "blk"], "minted": minted,
                         "ids": live_rows + retired}
 
 
-def main():
-    raw = SRC.read_bytes()
+def build(slug, src, out, ledger_path, prefix, quiet=False):
+    """Decompose ONE markdown document into the core graph, with all seven gates.
+
+    Parameterised at v0.6.10 (activity A1 of the book-as-a-graph plan). It was hardcoded
+    to the pilot document, which was correct while there was one; a book is seventeen of
+    these and the machinery is the same machinery.
+
+    @param slug: the document's slug, used for ids and the index
+    @param src: the markdown file
+    @param out: the directory the shards are written to
+    @param ledger_path: this document's ids.json
+    @param prefix: the short uid prefix (tig:b42)
+    @returns a summary dict, so a caller building a book can aggregate
+    """
+    raw = src.read_bytes()
     heads = headings(raw)
     title = heads[0][0]
-    doc_id = f"doc:{SLUG}"
-    OUT.mkdir(parents=True, exist_ok=True)
+    doc_id = f"doc:{slug}"
+    out.mkdir(parents=True, exist_ok=True)
 
     stack, secs = [], []
     for i, (t, lv, start) in enumerate(heads):
@@ -533,25 +547,25 @@ def main():
             totals[k] += counts[k]
 
     # the identity ledger (v0.4.40): stable uids beside the structural locators
-    old = json.loads(LEDGER.read_text()) if LEDGER.exists() else {}
+    old = json.loads(ledger_path.read_text()) if ledger_path.exists() else {}
     current = ([("doc", doc_id, title)]
                + [("sec", s["id"], f'{s["level"]}|{s["title"]}') for s in secs[1:]]
                + [("blk", bid, md) for bid, md in fmt_blocks.items()])
-    uid_by_loc, new_ledger = assign_ids(current, old)
+    uid_by_loc, new_ledger = assign_ids(current, old, f"doc:{slug}", prefix)
     # gate 7: full coverage, unique uids, and an idempotent second pass
     live = [e for e in new_ledger["ids"] if e["status"] == "live"]
     if len(live) != len(current) or len({e["uid"] for e in new_ledger["ids"]}) != len(new_ledger["ids"]):
         raise SystemExit("gen_coregraph: the ledger lost coverage or minted a duplicate uid")
-    again_uid, again = assign_ids(current, new_ledger)
+    again_uid, again = assign_ids(current, new_ledger, f"doc:{slug}", prefix)
     if again != new_ledger or again_uid != uid_by_loc:
         raise SystemExit("gen_coregraph: the ledger is not idempotent — carry-forward is unstable")
-    LEDGER.write_text(json.dumps(new_ledger, ensure_ascii=False, indent=1) + "\n")
+    ledger_path.write_text(json.dumps(new_ledger, ensure_ascii=False, indent=1) + "\n")
     for entry in index_secs:
         entry["uid"] = uid_by_loc[entry["id"]]
     for fname, payload in pending_shards:
         for b in payload["blocks"]:
             b["uid"] = uid_by_loc[b["id"]]
-        (OUT / fname).write_text(json.dumps(payload, ensure_ascii=False) + "\n")
+        (out / fname).write_text(json.dumps(payload, ensure_ascii=False) + "\n")
 
     # the formatting graph, and gate 5: the document rebuilds byte-identical
     if raw[fcur:].strip():
@@ -577,35 +591,41 @@ def main():
                 raise SystemExit(f"gen_coregraph: {blk_id} does not re-derive from fmt.json")
         elif p2.strip() != text:
             raise SystemExit(f"gen_coregraph: {blk_id} does not re-derive from fmt.json")
-    (OUT / "fmt.json").write_text(json.dumps(
+    (out / "fmt.json").write_text(json.dumps(
         {"doc": doc_id, "pieces": fmt_pieces, "blocks": fmt_blocks},
         ensure_ascii=False) + "\n")
 
     # the token analysis (brief 30)
     tokens = token_analysis(forms, sen_forms, form_sens)
-    (OUT / "tokens.json").write_text(json.dumps(
+    (out / "tokens.json").write_text(json.dumps(
         {"doc": doc_id, "version": VERSION, **tokens}, ensure_ascii=False) + "\n")
 
     # gate 3: form totals equal instance total
     n_instances = sum(len(v) for v in forms.values())
     if n_instances != totals["words"]:
         raise SystemExit(f"gen_coregraph: form total {n_instances} != word total {totals['words']}")
-    (OUT / "words.json").write_text(json.dumps({"doc": doc_id, "forms": [
+    (out / "words.json").write_text(json.dumps({"doc": doc_id, "forms": [
         {"form": f, "count": len(ids), "instances": ids}
         for f, ids in sorted(forms.items(), key=lambda kv: (-len(kv[1]), kv[0]))
     ]}, ensure_ascii=False) + "\n")
-    (OUT / "index.json").write_text(json.dumps({
-        "version": VERSION, "slug": SLUG, "doc": doc_id, "title": title,
+    (out / "index.json").write_text(json.dumps({
+        "version": VERSION, "slug": slug, "doc": doc_id, "title": title,
         "ladder": LADDER, "totals": totals, "forms": "words.json",
         "fmt": "fmt.json", "tokens": "tokens.json",
         "sections": index_secs}, ensure_ascii=False, indent=1) + "\n")
-    size = sum(f.stat().st_size for f in OUT.glob("*.json"))
+    size = sum(f.stat().st_size for f in out.glob("*.json"))
     st = tokens["stats"]
     n_ret = sum(1 for e in new_ledger["ids"] if e["status"] == "retired")
+    summary = {"slug": slug, "sections": len(index_secs), "blocks": totals["blocks"],
+               "sentences": totals["sentences"], "words": totals["words"],
+               "forms": len(forms), "spans": totals["spans"], "shards": shard_n,
+               "bytes": size, "title": title, "uids": len(live)}
+    if quiet:
+        return summary
     print(f"gen_coregraph: ledger {new_ledger['prefix']}: {len(live)} live uid(s), "
           f"{n_ret} retired, minted d{new_ledger['minted'].get('d', 0)}/"
           f"s{new_ledger['minted'].get('s', 0)}/b{new_ledger['minted'].get('b', 0)}")
-    print(f"gen_coregraph: {SLUG} — {len(index_secs)} sections, {totals['blocks']} blocks, "
+    print(f"gen_coregraph: {slug} — {len(index_secs)} sections, {totals['blocks']} blocks, "
           f"{totals['sentences']} sentences, {totals['words']} words ({len(forms)} forms), "
           f"{totals['spans']} spans, {shard_n} shard(s), {size:,} bytes; "
           f"rebuild byte-identical; tokens: {st['by_class']['content']} content / "
@@ -613,6 +633,12 @@ def main():
           f"padding {round(st['padding_share']*100)}% of instances, "
           f"{st['stem_families']} stem families, {len(tokens['near'])} near-miss pair(s), "
           f"{len(tokens['edges'])} co-occurrence edge(s)")
+    return summary
+
+
+def main():
+    """The pilot document, unchanged. build() is the reusable half."""
+    build(SLUG, SRC, OUT, LEDGER, PREFIX)
 
 
 if __name__ == "__main__":

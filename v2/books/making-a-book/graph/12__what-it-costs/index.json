@@ -1,0 +1,233 @@
+{
+ "version": "v0.6.10",
+ "slug": "12__what-it-costs",
+ "doc": "doc:12__what-it-costs",
+ "title": "12 · What it costs, and where it loses",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 43,
+  "sentences": 96,
+  "words": 1636,
+  "spans": 9
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:12__what-it-costs",
+   "title": "12 · What it costs, and where it loses",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 33
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-12:d1"
+  },
+  {
+   "id": "sec:What was not produced",
+   "title": "What was not produced",
+   "level": 2,
+   "parent": "doc:12__what-it-costs",
+   "counts": {
+    "blocks": 5,
+    "sentences": 10,
+    "words": 188
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-12:s1"
+  },
+  {
+   "id": "sec:What was extracted",
+   "title": "What was extracted",
+   "level": 2,
+   "parent": "doc:12__what-it-costs",
+   "counts": {
+    "blocks": 5,
+    "sentences": 11,
+    "words": 124
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-12:s2"
+  },
+  {
+   "id": "sec:The costs nobody mentions",
+   "title": "The costs nobody mentions",
+   "level": 2,
+   "parent": "doc:12__what-it-costs",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "mab-12:s3"
+  },
+  {
+   "id": "sec:Attention, not time",
+   "title": "Attention, not time",
+   "level": 3,
+   "parent": "sec:The costs nobody mentions",
+   "counts": {
+    "blocks": 3,
+    "sentences": 8,
+    "words": 144
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-12:s4"
+  },
+  {
+   "id": "sec:You will ship things you have not read",
+   "title": "You will ship things you have not read",
+   "level": 3,
+   "parent": "sec:The costs nobody mentions",
+   "counts": {
+    "blocks": 2,
+    "sentences": 5,
+    "words": 85
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-12:s5"
+  },
+  {
+   "id": "sec:The record has to be public to be worth anything",
+   "title": "The record has to be public to be worth anything",
+   "level": 3,
+   "parent": "sec:The costs nobody mentions",
+   "counts": {
+    "blocks": 3,
+    "sentences": 5,
+    "words": 123
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-12:s6"
+  },
+  {
+   "id": "sec:Debt accumulates in the open, which is not the same as not accumulating",
+   "title": "Debt accumulates in the open, which is not the same as not accumulating",
+   "level": 3,
+   "parent": "sec:The costs nobody mentions",
+   "counts": {
+    "blocks": 2,
+    "sentences": 6,
+    "words": 104
+   },
+   "shard": "sec-07.json",
+   "uid": "mab-12:s7"
+  },
+  {
+   "id": "sec:The version number is not a measure of anything",
+   "title": "The version number is not a measure of anything",
+   "level": 3,
+   "parent": "sec:The costs nobody mentions",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 73
+   },
+   "shard": "sec-08.json",
+   "uid": "mab-12:s8"
+  },
+  {
+   "id": "sec:Four situations where you should do something else",
+   "title": "Four situations where you should do something else",
+   "level": 2,
+   "parent": "doc:12__what-it-costs",
+   "counts": {
+    "blocks": 1,
+    "sentences": 2,
+    "words": 24
+   },
+   "shard": "sec-09.json",
+   "uid": "mab-12:s9"
+  },
+  {
+   "id": "sec:1. Your book has a fixed, known shape",
+   "title": "1. Your book has a fixed, known shape",
+   "level": 3,
+   "parent": "sec:Four situations where you should do something else",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 106
+   },
+   "shard": "sec-10.json",
+   "uid": "mab-12:s10"
+  },
+  {
+   "id": "sec:2. You cannot publish the working record",
+   "title": "2. You cannot publish the working record",
+   "level": 3,
+   "parent": "sec:Four situations where you should do something else",
+   "counts": {
+    "blocks": 1,
+    "sentences": 2,
+    "words": 49
+   },
+   "shard": "sec-11.json",
+   "uid": "mab-12:s11"
+  },
+  {
+   "id": "sec:3. You are not going to look at the output every round",
+   "title": "3. You are not going to look at the output every round",
+   "level": 3,
+   "parent": "sec:Four situations where you should do something else",
+   "counts": {
+    "blocks": 2,
+    "sentences": 5,
+    "words": 67
+   },
+   "shard": "sec-12.json",
+   "uid": "mab-12:s12"
+  },
+  {
+   "id": "sec:4. The work is mostly a single act of judgement",
+   "title": "4. The work is mostly a single act of judgement",
+   "level": 3,
+   "parent": "sec:Four situations where you should do something else",
+   "counts": {
+    "blocks": 2,
+    "sentences": 6,
+    "words": 83
+   },
+   "shard": "sec-13.json",
+   "uid": "mab-12:s13"
+  },
+  {
+   "id": "sec:What it does buy",
+   "title": "What it does buy",
+   "level": 2,
+   "parent": "doc:12__what-it-costs",
+   "counts": {
+    "blocks": 6,
+    "sentences": 16,
+    "words": 220
+   },
+   "shard": "sec-14.json",
+   "uid": "mab-12:s14"
+  },
+  {
+   "id": "sec:The honest summary",
+   "title": "The honest summary",
+   "level": 2,
+   "parent": "doc:12__what-it-costs",
+   "counts": {
+    "blocks": 5,
+    "sentences": 11,
+    "words": 213
+   },
+   "shard": "sec-15.json",
+   "uid": "mab-12:s15"
+  }
+ ]
+}

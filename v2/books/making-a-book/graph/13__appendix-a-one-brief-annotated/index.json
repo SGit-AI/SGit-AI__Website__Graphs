@@ -1,0 +1,195 @@
+{
+ "version": "v0.6.10",
+ "slug": "13__appendix-a-one-brief-annotated",
+ "doc": "doc:13__appendix-a-one-brief-annotated",
+ "title": "Appendix A · One brief, annotated",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 57,
+  "sentences": 149,
+  "words": 2351,
+  "spans": 21
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:13__appendix-a-one-brief-annotated",
+   "title": "Appendix A · One brief, annotated",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 3,
+    "sentences": 6,
+    "words": 94
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-13:d1"
+  },
+  {
+   "id": "sec:The header the brief carries",
+   "title": "The header the brief carries",
+   "level": 2,
+   "parent": "doc:13__appendix-a-one-brief-annotated",
+   "counts": {
+    "blocks": 4,
+    "sentences": 10,
+    "words": 202
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-13:s1"
+  },
+  {
+   "id": "sec:Segment 1 · The praise, and the thing that worked",
+   "title": "Segment 1 · The praise, and the thing that worked",
+   "level": 2,
+   "parent": "doc:13__appendix-a-one-brief-annotated",
+   "counts": {
+    "blocks": 5,
+    "sentences": 9,
+    "words": 148
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-13:s2"
+  },
+  {
+   "id": "sec:Segment 2 · The central ask",
+   "title": "Segment 2 · The central ask",
+   "level": 2,
+   "parent": "doc:13__appendix-a-one-brief-annotated",
+   "counts": {
+    "blocks": 5,
+    "sentences": 11,
+    "words": 185
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-13:s3"
+  },
+  {
+   "id": "sec:Segment 3 · The principle, stated",
+   "title": "Segment 3 · The principle, stated",
+   "level": 2,
+   "parent": "doc:13__appendix-a-one-brief-annotated",
+   "counts": {
+    "blocks": 6,
+    "sentences": 24,
+    "words": 337
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-13:s4"
+  },
+  {
+   "id": "sec:Segment 4 · The direction, not the ask",
+   "title": "Segment 4 · The direction, not the ask",
+   "level": 2,
+   "parent": "doc:13__appendix-a-one-brief-annotated",
+   "counts": {
+    "blocks": 4,
+    "sentences": 10,
+    "words": 152
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-13:s5"
+  },
+  {
+   "id": "sec:Segment 5 · Where it is all going",
+   "title": "Segment 5 · Where it is all going",
+   "level": 2,
+   "parent": "doc:13__appendix-a-one-brief-annotated",
+   "counts": {
+    "blocks": 5,
+    "sentences": 15,
+    "words": 230
+   },
+   "shard": "sec-07.json",
+   "uid": "mab-13:s6"
+  },
+  {
+   "id": "sec:Segment 6 · The measurable ask",
+   "title": "Segment 6 · The measurable ask",
+   "level": 2,
+   "parent": "doc:13__appendix-a-one-brief-annotated",
+   "counts": {
+    "blocks": 5,
+    "sentences": 12,
+    "words": 181
+   },
+   "shard": "sec-08.json",
+   "uid": "mab-13:s7"
+  },
+  {
+   "id": "sec:Segment 7 · The small, concrete last request",
+   "title": "Segment 7 · The small, concrete last request",
+   "level": 2,
+   "parent": "doc:13__appendix-a-one-brief-annotated",
+   "counts": {
+    "blocks": 4,
+    "sentences": 10,
+    "words": 159
+   },
+   "shard": "sec-09.json",
+   "uid": "mab-13:s8"
+  },
+  {
+   "id": "sec:The agent's reading, as published",
+   "title": "The agent's reading, as published",
+   "level": 2,
+   "parent": "doc:13__appendix-a-one-brief-annotated",
+   "counts": {
+    "blocks": 5,
+    "sentences": 11,
+    "words": 216
+   },
+   "shard": "sec-10.json",
+   "uid": "mab-13:s9"
+  },
+  {
+   "id": "sec:The questions, as published",
+   "title": "The questions, as published",
+   "level": 2,
+   "parent": "doc:13__appendix-a-one-brief-annotated",
+   "counts": {
+    "blocks": 4,
+    "sentences": 12,
+    "words": 146
+   },
+   "shard": "sec-11.json",
+   "uid": "mab-13:s10"
+  },
+  {
+   "id": "sec:What shipped, thirty-three minutes later",
+   "title": "What shipped, thirty-three minutes later",
+   "level": 2,
+   "parent": "doc:13__appendix-a-one-brief-annotated",
+   "counts": {
+    "blocks": 5,
+    "sentences": 18,
+    "words": 277
+   },
+   "shard": "sec-12.json",
+   "uid": "mab-13:s11"
+  },
+  {
+   "id": "sec:The whole loop, in timestamps",
+   "title": "The whole loop, in timestamps",
+   "level": 2,
+   "parent": "doc:13__appendix-a-one-brief-annotated",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 24
+   },
+   "shard": "sec-13.json",
+   "uid": "mab-13:s12"
+  }
+ ]
+}

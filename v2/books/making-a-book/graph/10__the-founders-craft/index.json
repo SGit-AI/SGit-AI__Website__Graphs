@@ -1,0 +1,130 @@
+{
+ "version": "v0.6.10",
+ "slug": "10__the-founders-craft",
+ "doc": "doc:10__the-founders-craft",
+ "title": "10 · The founder's craft",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 45,
+  "sentences": 86,
+  "words": 1424,
+  "spans": 10
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:10__the-founders-craft",
+   "title": "10 · The founder's craft",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 5,
+    "sentences": 5,
+    "words": 96
+   },
+   "shard": "sec-01.json",
+   "uid": "mab-10:d1"
+  },
+  {
+   "id": "sec:1. Point at a thing, then say what is wrong with it",
+   "title": "1. Point at a thing, then say what is wrong with it",
+   "level": 2,
+   "parent": "doc:10__the-founders-craft",
+   "counts": {
+    "blocks": 6,
+    "sentences": 12,
+    "words": 170
+   },
+   "shard": "sec-02.json",
+   "uid": "mab-10:s1"
+  },
+  {
+   "id": "sec:2. Say the principle, not only the fix",
+   "title": "2. Say the principle, not only the fix",
+   "level": 2,
+   "parent": "doc:10__the-founders-craft",
+   "counts": {
+    "blocks": 7,
+    "sentences": 14,
+    "words": 183
+   },
+   "shard": "sec-03.json",
+   "uid": "mab-10:s2"
+  },
+  {
+   "id": "sec:3. Name the reference",
+   "title": "3. Name the reference",
+   "level": 2,
+   "parent": "doc:10__the-founders-craft",
+   "counts": {
+    "blocks": 6,
+    "sentences": 9,
+    "words": 185
+   },
+   "shard": "sec-04.json",
+   "uid": "mab-10:s3"
+  },
+  {
+   "id": "sec:4. Ask \"does this make sense, any questions?\"",
+   "title": "4. Ask \"does this make sense, any questions?\"",
+   "level": 2,
+   "parent": "doc:10__the-founders-craft",
+   "counts": {
+    "blocks": 4,
+    "sentences": 9,
+    "words": 181
+   },
+   "shard": "sec-05.json",
+   "uid": "mab-10:s4"
+  },
+  {
+   "id": "sec:5. Praise the specific thing, then correct",
+   "title": "5. Praise the specific thing, then correct",
+   "level": 2,
+   "parent": "doc:10__the-founders-craft",
+   "counts": {
+    "blocks": 4,
+    "sentences": 10,
+    "words": 154
+   },
+   "shard": "sec-06.json",
+   "uid": "mab-10:s5"
+  },
+  {
+   "id": "sec:What he did not do",
+   "title": "What he did not do",
+   "level": 2,
+   "parent": "doc:10__the-founders-craft",
+   "counts": {
+    "blocks": 7,
+    "sentences": 16,
+    "words": 244
+   },
+   "shard": "sec-07.json",
+   "uid": "mab-10:s6"
+  },
+  {
+   "id": "sec:The trade this represents",
+   "title": "The trade this represents",
+   "level": 2,
+   "parent": "doc:10__the-founders-craft",
+   "counts": {
+    "blocks": 6,
+    "sentences": 11,
+    "words": 211
+   },
+   "shard": "sec-08.json",
+   "uid": "mab-10:s7"
+  }
+ ]
+}
