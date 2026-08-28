@@ -72,6 +72,20 @@ There is the **site's** version, which moves on every push, and one version **pe
 which moves only when that book's content moves. They are independent of each other, and
 `v1.0.0` is reserved for a book's final release.
 
+**A change to a book therefore moves TWO versions**, and both must be recorded:
+
+- the **book's** version, in `gen_bookmeta.REGISTER`;
+- the **site's** version, in `admin/build/version.txt` and a narrated row, as for any push.
+
+The pair identifies the change: *this went into v0.1.15 of the book, which shipped in
+v0.6.7 of the repo.* That pairing lives in each book's **`changelog`**, authored in
+`gen_bookmeta.REGISTER` alongside the version. It is authored and not derived, because a
+version move is a decision: an earlier generator appended to a derived list on every run,
+and a sixty-second experiment left behind an entry for a version the book was never at.
+
+The build refuses a book whose last changelog entry is not its current version, and refuses
+a changelog naming a site release that does not exist in `admin/versions*.html`.
+
 So **a file or folder name carrying a version must say which stream it belongs to**:
 
 | The work is about | The name | Example |

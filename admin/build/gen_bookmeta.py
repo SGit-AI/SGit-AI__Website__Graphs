@@ -39,6 +39,12 @@ REGISTER = {
     "fsg": {
         "title": "Fractal Semantic Graphs: Meaning Through Connectivity",
         "version": "v0.2.0",
+        "changelog": [
+            ("v0.2.0", "v0.5.18", "Adopted into per-book versioning. The book was written "
+                                  "at site v0.5.12 and self-reviewed at v0.5.15; v0.2.0 "
+                                  "was chosen because it succeeds the frozen first "
+                                  "edition rather than starting again."),
+        ],
         "status": "under review",
         "release": "the Leanpub pair",
         "note": "The second edition of the argument the frozen first book made.",
@@ -46,6 +52,12 @@ REGISTER = {
     "making-a-book": {
         "title": "Creating a Book Using Fractal Semantic Graphs",
         "version": "v0.1.0",
+        "changelog": [
+            ("v0.1.0", "v0.5.18", "Adopted into per-book versioning. The book was written "
+                                  "at site v0.5.13 and self-reviewed at v0.5.16, which "
+                                  "corrected eight numbers it had got wrong about this "
+                                  "repository."),
+        ],
         "status": "under review",
         "release": "the Leanpub pair",
         "note": "The making-of, for authors who want to use the same agentic workflow.",
@@ -58,6 +70,10 @@ REGISTER = {
         # declared here as data instead of hidden as a special case in a test.
         "front_matter_title": "Fractal Semantic Graphs: Meaning Through Connectivity",
         "version": "v0.1.0",
+        "changelog": [
+            ("v0.1.0", "v0.5.18", "Adopted into per-book versioning and held back from "
+                                  "the release (brief 39)."),
+        ],
         "status": "held",
         "release": "not in this release",
         "note": "Stays on the site; returned to later (brief 39).",
@@ -65,6 +81,12 @@ REGISTER = {
 }
 
 SEMVER = re.compile(r"^v(\d+)\.(\d+)\.(\d+)$")
+
+# Every narrated site release, across all era pages. A book's changelog pairs its own
+# version with the SITE release that carried it, and that release has to be a real one.
+SITE_RELEASES = set()
+for _page in sorted(ROOT.glob("admin/versions*.html")):
+    SITE_RELEASES.update(re.findall(r'class="vnum">(v\d+\.\d+\.\d+)<', _page.read_text()))
 
 
 def chapter_hashes(folder):
@@ -97,13 +119,28 @@ def main(check_only=False):
 
         prev_hashes = prev.get("content_hashes") or {}
         prev_version = prev.get("version")
-        # Supersede, never delete, applied to versions. Artefacts are stamped with the
-        # version they REVIEWED (`<book>__vX.Y.Z__<slug>`), so when a book moves, the
-        # versions it has been at must stay on the record or every artefact stamped with
-        # an earlier one becomes unverifiable.
-        former = list(prev.get("former_versions") or [])
-        if prev_version and prev_version != spec["version"] and prev_version not in former:
-            former.append(prev_version)
+
+        # The changelog is AUTHORED in the register above, not derived from the previous
+        # file. An earlier version of this generator appended to a derived list on every
+        # run, and a sixty-second experiment that bumped a version to prove a gate left
+        # two entries behind, one of them a version the book was never really at. A record
+        # of decisions has to be written by whoever made the decision.
+        changelog = [{"version": v, "site": s, "note": n} for v, s, n in spec["changelog"]]
+        if not changelog:
+            problems.append(f"{slug}: no changelog entries")
+        elif changelog[-1]["version"] != spec["version"]:
+            problems.append(
+                f"{slug}: the register says {spec['version']} but the last changelog entry "
+                f"is {changelog[-1]['version']} — a version move is a decision and must be "
+                f"recorded with the site release that carried it")
+        for e in changelog:
+            if not SEMVER.match(e["version"]) or not SEMVER.match(e["site"]):
+                problems.append(f"{slug}: changelog entry {e['version']}/{e['site']} is not vN.N.N")
+            if e["site"] not in SITE_RELEASES:
+                problems.append(
+                    f"{slug}: changelog says {e['version']} shipped at site {e['site']}, "
+                    f"which is not a release in admin/versions*.html")
+        former = [e["version"] for e in changelog[:-1]]
         # a book.json written before this generator carried the SITE version in
         # `version`; that is the confusion this generator exists to end.
         if prev_version and not SEMVER.match(str(prev_version)):
@@ -156,6 +193,7 @@ def main(check_only=False):
                            "the actual final release."),
             "front_matter_title": spec.get("front_matter_title", spec["title"]),
             "former_versions": former,
+            "changelog": changelog,
             "content_hashes": now,
             "build": build,
         }
@@ -237,6 +275,9 @@ CARD = """<div class="ov-card" style="margin:.7rem 0">
 <a href="{slug}/{pdf}">the print PDF</a> &middot;
 <a href="{slug}/content/">the markdown</a> &middot;
 <a href="{slug}/book.json">book.json</a></p>
+<div class="tablewrap"><table><thead><tr><th>This book</th><th>Shipped in site release</th><th>What moved it</th></tr></thead><tbody>
+{log}
+</tbody></table></div>
 </div>
 """
 
@@ -250,6 +291,11 @@ def write_shelf(check_only=False):
         about = (f'\n<a href="{slug}/about.html">about this book</a> &middot;'
                  if (BOOKS / slug / "about.html").exists() else "")
         cards.append(CARD.format(
+            log="\n".join(
+                f'<tr><td class="vnum">{e["version"]}</td>'
+                f'<td><a href="../../admin/versions.html">{e["site"]}</a></td>'
+                f'<td class="small">{e["note"]}</td></tr>'
+                for e in reversed(meta["changelog"])),
             slug=slug, title=meta["title"], version=meta["version"],
             status=meta["status"], note=meta["note"], chapters=meta["chapters"],
             words=meta["words"], pdf=meta["pdf"] or "", about=about))

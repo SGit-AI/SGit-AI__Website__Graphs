@@ -143,6 +143,43 @@ test('books: every chapter hash in book.json matches the file on disk', () => {
   }
 });
 
+test('books: every book version is paired with the site release that carried it', () => {
+  /* A change to a book moves TWO versions, and the pair is what identifies the change:
+     "v0.1.15 of the book, which shipped in v0.6.7 of the repo". Either number alone leaves
+     a reader unable to place it. The changelog holds the pairing; this checks it is whole
+     and ordered, which the generator cannot judge on its own. */
+  const releases = new Set();
+  for (const f of readdirSync(path.join(ROOT, 'admin'))) {
+    if (/^versions.*\.html$/.test(f)) {
+      for (const m of rf(path.join(ROOT, 'admin', f)).matchAll(/class="vnum">(v[\d.]+)</g)) {
+        releases.add(m[1]);
+      }
+    }
+  }
+  const key = (v) => v.slice(1).split('.').map(Number);
+  for (const slug of BOOKS) {
+    const meta = JSON.parse(rf(path.join(ROOT, 'v2/books', slug, 'book.json')));
+    const log = meta.changelog;
+    assert.ok(Array.isArray(log) && log.length, `${slug}: no changelog`);
+    assert.equal(log[log.length - 1].version, meta.version,
+      `${slug}: at ${meta.version} but the changelog ends at ${log[log.length - 1].version}`);
+    let prev = null;
+    for (const e of log) {
+      assert.ok(releases.has(e.site),
+        `${slug}: ${e.version} claims site release ${e.site}, which was never narrated`);
+      assert.ok(e.note && e.note.length > 30,
+        `${slug}: ${e.version} has no note saying what moved it`);
+      if (prev) {
+        assert.ok(key(e.version) > key(prev.version),
+          `${slug}: changelog is not in ascending order at ${e.version}`);
+        assert.ok(key(e.site) >= key(prev.site),
+          `${slug}: ${e.version} claims an earlier site release than ${prev.version} did`);
+      }
+      prev = e;
+    }
+  }
+});
+
 test('books: a book version is its own, never the site\'s', () => {
   const site = rf(path.join(ROOT, 'admin/build/version.txt')).trim();
   for (const slug of BOOKS) {

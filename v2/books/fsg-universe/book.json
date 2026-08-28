@@ -9,10 +9,17 @@
  "words": 30696,
  "pdf": "fsg-universe.pdf",
  "pdf_pages": 91,
- "built_at_site_version": "v0.6.4",
+ "built_at_site_version": "v0.6.5",
  "versioning": "This book's version moves only when its content moves; the site's version moves on every push. v1.0.0 is reserved for the actual final release.",
  "front_matter_title": "Fractal Semantic Graphs: Meaning Through Connectivity",
  "former_versions": [],
+ "changelog": [
+  {
+   "version": "v0.1.0",
+   "site": "v0.5.18",
+   "note": "Adopted into per-book versioning and held back from the release (brief 39)."
+  }
+ ],
  "content_hashes": {
   "00__front-matter.md": "4e12f62e581a9c9b30c166b6f96eb3d84f1480b0b430f4590d859d54cec61846",
   "01__how-to-read-this-atlas.md": "7663a00d7f48c2a467a5c6dc60669429359523d965c3aca3cdf167ee58f61cc5",

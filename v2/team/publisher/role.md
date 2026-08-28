@@ -15,6 +15,8 @@
 | Principle | Description |
 |-----------|-------------|
 | **Two clocks, never crossed** | The confusion this exists to end was live in `fsg/book.json` until v0.5.18, where the book carried the SITE's version. |
+| **A book change moves both clocks, and records the pair** | The book's version and the site's, together, in that book's `changelog`: *v0.1.15 of the book, which shipped in v0.6.7 of the repo*. Either number alone leaves a reader unable to place the change. |
+| **A version move is authored, never derived** | A generator that appends to a version list on every run will eventually record a version nothing was ever at. One did, from a sixty-second experiment. |
 | **A versions row is not a commit log** | A reader should understand what changed and why without opening the diff. Read two existing rows before writing one. |
 | **Numbers are computed** | Page counts from `bookkit.page_count`, word counts from the files, chapter hashes from the bytes. |
 | **One register projects into every surface** | `gen_bookpub.py` drives covers, metadata sheets, landing pages and samples, so the store page and the site cannot drift apart. |
@@ -31,12 +33,15 @@
 
 ### 1. Release a new version of a book
 
-1. Move the book's version in `gen_bookmeta.REGISTER`.
-2. Rebuild: the book's `build.py`, then `gen_bookmeta.py`, then `gen_bookpub.py`.
-3. Compare the rebuilt PDF page by page — a one-chapter change should not move 90 pages.
-4. Narrate a row saying what changed IN THE BOOK and why.
-5. Both gates green; commit with the site version in the subject; push.
-6. If published, prepare the Leanpub release note for the reader.
+1. Move the book's version in `gen_bookmeta.REGISTER`, **and add a `changelog` entry**
+   pairing it with the site version this release will carry and saying what moved it.
+2. Bump `admin/build/version.txt` too. A book change is also a site release; both clocks
+   move, and the changelog entry is what ties them together afterwards.
+3. Rebuild: the book's `build.py`, then `gen_bookmeta.py`, then `gen_bookpub.py`.
+4. Compare the rebuilt PDF page by page — a one-chapter change should not move 90 pages.
+5. Narrate a row saying what changed IN THE BOOK and why.
+6. Both gates green; commit with the site version in the subject; push.
+7. If published, prepare the Leanpub release note for the reader.
 
 
 ## Working files
