@@ -74,6 +74,12 @@ SIDE = [
   "blurbs": {
    "00__the-v04-retrospective.md": "Forty-one releases in four days, weighed: the seven achievements that compounded, the conclusions, the transferable learnings (persistence makes identity; fit is a decision; the measurement is the discovery), and what v0.5 opens.",
   }},
+ {"dir": "v0.6.7__the-feature-tour", "short": "features",
+  "label": "The feature tour", "packline": "v0.6.7 &middot; measured, not yet written",
+  "statusline": "MEASURED &mdash; the count that part one has to be written from",
+  "blurbs": {
+   "00__the-capability-register.md": "Brief 42 asks for part one of the making-of book to be a feature tour of what writing a book here actually gets you. A tour written from memory would break the estate's own rule, so this is the count first: what exists, measured on the day \u2014 3 books built from markdown, byte-identical document rebuild, 72 failure conditions in the release gate, 101 tests, 101 narrated releases, 35 named techniques. Plus the four claims that would be false if made, and the two things part one cannot be written without: screenshots of the workflow, and the founder's own Leanpub failure story.",
+  }},
  {"dir": "v0.6.6__the-structure-refactor", "short": "structure",
   "label": "The structure refactor", "packline": "v0.6.6 &middot; reviewed, not executed",
   "statusline": "PROPOSED &mdash; nothing here has been moved",

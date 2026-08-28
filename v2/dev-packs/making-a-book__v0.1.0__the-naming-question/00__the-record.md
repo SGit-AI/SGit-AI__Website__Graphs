@@ -1,6 +1,7 @@
 # The naming question — the change-control record
 
-**Status** ⏸ **WAITING ON THE FOUNDER at stage 5 of 7 (approve).**
+**Status** ⏸ **WAITING ON THE FOUNDER at stage 5 of 7 — one of the three questions is now
+answered, two remain.**
 **Opened by** brief 40: *"one of the first interesting questions to ask is, is the name of
 the book correct? And I don't think it is."*
 **Subject** *Creating a Book Using Fractal Semantic Graphs*, **v0.1.0** — the book's own
@@ -94,15 +95,45 @@ times in the book. They are the right ideas with the wrong evidence.
 
 ## 5. Approve — the founder's, and open
 
-Three questions, in the order they change the work:
+### Answered by brief 42: it is a revision
 
-1. **A or C?** Which is the same as asking: is the next edition a **rename** or a
-   **revision**?
-2. **Does the cover name Claude?** Brief 40 says the book is *"more about writing a book
-   with Claude"*. The book names it four times in 31,221 words. If yes, candidate A takes
-   it most easily as *Writing a Book with Claude*.
-3. **The map's disagreement:** the body reads villager, the founder reads explorer. Retitle
-   to match what it is, or revise to match what it should be?
+The editor's first question was *"A or C — is the next edition a rename or a revision?"*
+Brief 42 answers **revision**, and specifies its shape rather than leaving it open:
+
+> The first part of the making the book should almost be a feature[s section]… literally
+> describe, screenshot features, and basically say: here is what writing a book in 2026
+> looks like… The current book is really cool at providing how we got there, but for a lot
+> of people we need to show what THERE looks like. We need to show them what is the art of
+> the possible. Then we show how we got there, because then they're motivated.
+
+**Art of the possible first, history second.** That is a bigger change than either candidate
+assumed: not a new opening chapter but a new opening *part*, and a reordering of what the
+book is for. The writer's estimate of two to three thousand words was for putting the
+scaffolding argument into the body; this is more.
+
+It also moves the editor's recommendation. **C — *Gates Buy Speed*** was ruled second
+because it promised an argument the body only half made. With part one written, the body
+makes it. The map's finding stands though, and now cuts the other way: the book measured
+**one code block across twelve chapters**, and a feature tour is where code and screenshots
+belong. A revision that adds part one moves the book toward the explorer audience the
+founder said it already served.
+
+Nothing has been written. [The capability register](../v0.6.7__the-feature-tour/00__the-capability-register.md)
+counts what part one could truthfully show, and names two things it cannot be written
+without: **screenshots that show the workflow** (the 45 existing figures show the reader and
+the engine, not the process) and **the founder's Leanpub failure story**, which is the
+book's most persuasive evidence and cannot come from this repository.
+
+### Still open
+
+1. **The title itself.** Brief 41 offers ***Making a Book with Agents*** as *"a temporary
+   hold"*. It is close to candidate A and says **agents**, not Claude. Is the hold the
+   decision, or a placeholder while part one is written?
+2. **Does the cover name Claude?** Brief 40 said *"writing a book with Claude"*; brief 41
+   said *"making a book with agents"*. The book names Claude four times in 31,221 words.
+   The two memos point different ways and the founder has not chosen.
+3. ~~**Retitle to match what it is, or revise to match what it should be?**~~ **Answered:
+   revise.** Brief 42 settles it.
 
 ## 6-7. Implement, and approve the implementation
 

@@ -23,6 +23,20 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "42__founder-memo__the-craftsman-makes-the-tools.md": (
+     "The craftsman makes the tools, and the book should lead with them",
+     "The making-of book's thesis, stated outright: you cannot separate the "
+     "creator from the technology, workflows and scaffolding they use. Brian "
+     "May built his own guitar because craftsmen always did. The founder is "
+     "never a passive consumer \u2014 the power of generative AI here is not "
+     "writing words but building the environment that makes the writing "
+     "possible. With the cost named honestly (\u201cyou still need really good "
+     "engineering\u201d) and a limit placed on the method (\u201cI don't think it's "
+     "realistic to say that somebody without programming experience could "
+     "provide the prompts I do\u201d). Then the instruction: part one of the book "
+     "becomes a feature tour \u2014 the art of the possible FIRST, the history "
+     "second, because that is the order that motivates a reader. Plus a new "
+     "requirement: pages designed for agents to consume."),
  "41__founder-memo__refactor-the-structure-and-the-workflows.md": (
      "Refactor the structure, and formalise the workflows",
      "Three things at once. The publishing order flips \u2014 the making-of "
