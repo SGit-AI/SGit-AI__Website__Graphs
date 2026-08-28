@@ -21,6 +21,7 @@
   <url><loc>https://graphs.sgit.ai/v2/books/fsg/a-graph-at-every-boundary.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/books/fsg/a-node-is-just-a-node.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/books/fsg/a-type-is-a-path.html</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/books/fsg/about.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/books/fsg/anchors-not-standards.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/books/fsg/colophon.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/books/fsg/documents-are-projections.html</loc><lastmod>2026-08-28</lastmod></url>
@@ -31,6 +32,7 @@
   <url><loc>https://graphs.sgit.ai/v2/books/fsg/fsg.pdf</loc><lastmod>2026-08-26</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/books/fsg/index.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/books/fsg/meaning-computed.html</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/books/fsg/publish/sample.pdf</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/books/fsg/reference-card.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/books/fsg/the-fractal-in-production.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/books/fsg/the-universe-method.html</loc><lastmod>2026-08-28</lastmod></url>
@@ -56,8 +58,10 @@
   <url><loc>https://graphs.sgit.ai/v2/books/making-a-book/14-appendix-b-the-chronology.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/books/making-a-book/15-appendix-c-the-harness.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/books/making-a-book/16-colophon.html</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/books/making-a-book/about.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/books/making-a-book/index.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/books/making-a-book/making-a-book.pdf</loc><lastmod>2026-08-27</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/books/making-a-book/publish/sample.pdf</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/dev-pack/00-README.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/dev-pack/01-the-memos.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/dev-pack/02-what-exists-today.html</loc><lastmod>2026-08-28</lastmod></url>
@@ -81,6 +85,7 @@
   <url><loc>https://graphs.sgit.ai/v2/dev-pack/design-00-the-victor-register.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/dev-pack/index.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/dev-pack/leanpub-00-the-release.html</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/dev-pack/leanpub-01-the-copy.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/dev-pack/nfr-00-the-audit.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/dev-pack/nfr-01-the-plan.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/dev-pack/pinned-nodes-00-debrief.html</loc><lastmod>2026-08-28</lastmod></url>

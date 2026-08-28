@@ -46,6 +46,7 @@ SIDE = [
   "statusline": "PREPARED &mdash; the agent work is listed; the account is the founder's hands",
   "blurbs": {
    "00__the-release.md": "What ships (two books, at v0.2.0 and v0.1.0, the Universe held back), the account as it actually stands, the method already written in admin/publishing.html, the five things still to build, and the upload-day checklist.",
+   "01__the-copy.md": "One set of words: what is ready to upload, what each cover draws and why, the LinkedIn post in full draft with notes on what to cut, the short blurbs, and the bio line that needs replacing.",
   }},
  {"dir": "v0.5.17__the-non-functional-pass", "short": "nfr", "label": "The non-functional pass",
   "packline": "v0.5.17 &middot; before the review era",

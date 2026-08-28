@@ -204,7 +204,7 @@ CARD = """<div class="ov-card" style="margin:.7rem 0">
 <h3 style="margin:0 0 .2rem"><a href="{slug}/index.html">{title}</a>
 <span class="small dim">{version} &middot; {status}</span></h3>
 <p class="small">{note}</p>
-<p class="small">{chapters} chapters &middot; {words:,} words &middot;
+<p class="small">{chapters} chapters &middot; {words:,} words &middot;{about}
 <a href="{slug}/{pdf}">the print PDF</a> &middot;
 <a href="{slug}/content/">the markdown</a> &middot;
 <a href="{slug}/book.json">book.json</a></p>
@@ -217,10 +217,13 @@ def write_shelf(check_only=False):
     cards = []
     for slug in ("fsg", "making-a-book", "fsg-universe"):
         meta = json.loads((BOOKS / slug / "book.json").read_text())
+        # only the books being published have a landing page; the held one does not
+        about = (f'\n<a href="{slug}/about.html">about this book</a> &middot;'
+                 if (BOOKS / slug / "about.html").exists() else "")
         cards.append(CARD.format(
             slug=slug, title=meta["title"], version=meta["version"],
             status=meta["status"], note=meta["note"], chapters=meta["chapters"],
-            words=meta["words"], pdf=meta["pdf"] or ""))
+            words=meta["words"], pdf=meta["pdf"] or "", about=about))
     if not check_only:
         (BOOKS / "index.html").write_text(SHELF.format(cards="\n".join(cards)))
 

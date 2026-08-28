@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2400" viewBox="0 0 1600 2400">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7"
+ orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2a7f76"/></marker></defs>
+<rect width="1600" height="2400" fill="#f7f4ec"/>
+<rect x="0" y="0" width="1600" height="18" fill="#2a7f76"/>
+<text x="110" y="300" font-family="Georgia, 'Liberation Serif', serif" font-size="118" font-weight="700" fill="#1a1f24">Fractal Semantic</text><text x="110" y="432" font-family="Georgia, 'Liberation Serif', serif" font-size="118" font-weight="700" fill="#1a1f24">Graphs</text>
+<text x="114" y="584" font-family="Georgia, 'Liberation Serif', serif" font-size="52" fill="#2a7f76">Meaning Through Connectivity</text>
+<line x1="110" y1="690" x2="1490" y2="690" stroke="#1a1f24" stroke-width="2" opacity="0.25"/>
+<circle cx="430" cy="1340" r="21" fill="#f7f4ec" stroke="#c07a1f" stroke-width="3.5" stroke-dasharray="7 7"/><text x="430" y="1300" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="35" fill="#1a1f24">8080</text>
+<text x="430" y="1406" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="27" fill="#c07a1f" font-style="italic">reaches nothing</text>
+<line x1="790" y1="960" x2="790" y2="1760" stroke="#1a1f24" stroke-width="1" opacity="0.18"/>
+<line x1="1130" y1="1034" x2="1130" y2="1199" stroke="#2a7f76" stroke-width="3" marker-end="url(#ar)"/><text x="1160" y="1126" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="27" fill="#2a7f76" font-style="italic">backed_by</text>
+<line x1="1130" y1="1254" x2="1130" y2="1419" stroke="#2a7f76" stroke-width="3" marker-end="url(#ar)"/><text x="1160" y="1346" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="27" fill="#2a7f76" font-style="italic">observed_on</text>
+<line x1="1130" y1="1474" x2="1130" y2="1639" stroke="#2a7f76" stroke-width="3" marker-end="url(#ar)"/><text x="1160" y="1566" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="27" fill="#2a7f76" font-style="italic">protected_by</text>
+<circle cx="1130" cy="1010" r="21" fill="#f7f4ec" stroke="#2a7f76" stroke-width="3.5"/><text x="1090" y="1022" text-anchor="end" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="35" fill="#1a1f24">8080</text>
+<circle cx="1130" cy="1230" r="21" fill="#f7f4ec" stroke="#2a7f76" stroke-width="3.5"/><text x="1090" y="1242" text-anchor="end" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="35" fill="#1a1f24">Port</text>
+<circle cx="1130" cy="1450" r="21" fill="#f7f4ec" stroke="#2a7f76" stroke-width="3.5"/><text x="1090" y="1462" text-anchor="end" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="35" fill="#1a1f24">Service</text>
+<circle cx="1130" cy="1670" r="21" fill="#f7f4ec" stroke="#2a7f76" stroke-width="3.5"/><text x="1090" y="1682" text-anchor="end" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="35" fill="#1a1f24">Policy</text>
+<text x="800.0" y="1830" text-anchor="middle" font-family="Georgia, 'Liberation Serif', serif" font-size="34" fill="#1a1f24" opacity="0.72" font-style="italic">the same value, differently connected</text>
+<text x="110" y="2150" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="46" fill="#1a1f24">Dinis Cruz</text>
+<text x="110" y="2210" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="30" fill="#1a1f24" opacity="0.6">v0.2.0 &#183; graphs.sgit.ai</text>
+<text x="1490" y="2210" text-anchor="end" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="28" fill="#c07a1f">under review</text>
+<rect x="0" y="2382" width="1600" height="18" fill="#c07a1f"/>
+</svg>
