@@ -8,6 +8,7 @@ import assert from 'node:assert/strict';
 import { coreState, mergeShard, childrenOf, breadcrumb, loadForms, formOf, coreRecord,
   loadTokens, formRecord } from '../../assets/universe/core/coretree.js';
 import { viewOf, rawJsonHtml, rawMdHtml, buildView } from '../../assets/universe/core/fileview.js';
+import { bookViewOf, buildBookView, binaryKind, rawPyHtml } from '../../assets/explorer/bookview.js';
 
 import { test, report } from './harness.mjs';
 
@@ -122,6 +123,46 @@ test('fileview: the ledger and token views build from real shapes', () => {
   assert.ok(tokens.includes('fv-bar') && tokens.includes('padding 40%'));
   assert.ok(!tokens.includes(' ◊</b>'), 'count 6 < 10 stays unflagged in the bars');
   assert.equal(buildView('nope', {}), null);
+});
+
+/* ---- bookview: the explorer over a book's folder (v0.6.12) ---------------- */
+test('bookview: a book graph index is not a document core index', () => {
+  /* the collision the base disambiguates: both files are called index.json */
+  assert.equal(bookViewOf('index.json', 'graph'), 'bookindex');
+  assert.equal(bookViewOf('index.json', 'v2/books/making-a-book/graph'), 'bookindex');
+  assert.equal(bookViewOf('index.json', 'graph/01__the-loop'), null);
+  assert.equal(viewOf('index.json'), 'coreindex');
+  assert.equal(bookViewOf('book.json'), 'bookmeta');
+  assert.equal(bookViewOf('00__front-matter.md', 'content'), null);  /* falls through */
+});
+test('bookview: media is never fetched as text', () => {
+  assert.equal(binaryKind('cover.png'), 'image');
+  assert.equal(binaryKind('cover.svg'), 'image');
+  assert.equal(binaryKind('making-a-book.pdf'), 'pdf');
+  assert.equal(binaryKind('book.json'), null);
+});
+test('bookview: the book views build from the real files', async () => {
+  const fs = await import('node:fs');
+  const url = await import('node:url');
+  const path = await import('node:path');
+  const root = path.join(path.dirname(url.fileURLToPath(import.meta.url)), '..', '..');
+  const book = path.join(root, 'v2/books/making-a-book');
+  const meta = JSON.parse(fs.readFileSync(path.join(book, 'book.json'), 'utf8'));
+  const h = buildBookView('bookmeta', meta);
+  assert.ok(h.includes(meta.title) && h.includes(meta.version));
+  assert.ok(h.includes('two clocks'), 'the changelog pairs the book with its site release');
+  meta.changelog.forEach((c) => assert.ok(h.includes(c.site), 'names site release ' + c.site));
+  const gi = JSON.parse(fs.readFileSync(path.join(book, 'graph/index.json'), 'utf8'));
+  const g = buildBookView('bookindex', gi);
+  assert.ok(g.includes(String(gi.totals.words)) && g.includes(gi.book_version));
+  assert.equal(gi.chapters.length, 17);
+  gi.chapters.forEach((c) => assert.ok(g.includes(c.stem), 'lists ' + c.stem));
+  assert.equal(buildBookView('coreindex', {}), null, 'leaves document views alone');
+});
+test('bookview: python tints comments, strings and keywords', () => {
+  const h = rawPyHtml('# a note\ndef go(x):\n    return "a<b"');
+  assert.ok(h.includes('fv-com') && h.includes('fv-kw') && h.includes('fv-str'));
+  assert.ok(h.includes('a&lt;b'));
 });
 
 await report('coretree');

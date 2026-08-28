@@ -8,7 +8,7 @@
 
    Plain node:assert, no framework. Run alone, or with `node admin/tests/run.mjs`. */
 import assert from 'node:assert/strict';
-import { readFileSync, readdirSync, existsSync, mkdtempSync, cpSync, writeFileSync, rmSync }
+import { readFileSync, readdirSync, existsSync, statSync, mkdtempSync, cpSync, writeFileSync, rmSync }
   from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
@@ -455,6 +455,39 @@ test('modules: every one over the size guideline states why in its header', () =
   assert.deepEqual(unstated, [],
     'over the guideline with nothing said about it in the @module header — '
     + 'split it, or record the deviation where the next reader will see it');
+});
+
+test('bookfiles: every book has an explorer, and its manifest matches the disk', () => {
+  /* The manifest is generated so a new artefact appears without anyone listing
+     it. This checks that promise: what the page claims is what is on disk. */
+  for (const slug of readdirSync(path.join(ROOT, 'v2/books'))) {
+    const book = path.join(ROOT, 'v2/books', slug);
+    if (!existsSync(path.join(book, 'book.json'))) continue;
+    const page = path.join(book, 'files.html');
+    assert.ok(existsSync(page), `${slug} has no files.html — run gen_bookfiles.py`);
+    const html = readFileSync(page, 'utf8');
+    const m = html.match(/window\.FILEX = (\{.*\});/);
+    assert.ok(m, `${slug}: no manifest on the explorer page`);
+    const fx = JSON.parse(m[1]);
+    assert.equal(fx.slug, slug);
+    for (const folder of fx.folders) {
+      const dir = folder.base ? path.join(book, folder.base) : book;
+      assert.ok(existsSync(dir), `${slug}: manifest names a missing folder ${folder.base}`);
+      for (const f of folder.files) {
+        const onDisk = path.join(dir, f.n);
+        assert.ok(existsSync(onDisk), `${slug}: manifest lists ${folder.base}/${f.n}, not on disk`);
+        assert.equal(statSync(onDisk).size, f.b,
+          `${slug}: ${folder.base}/${f.n} changed size — rerun gen_bookfiles.py`);
+      }
+    }
+    /* and nothing on disk is missing from it: the content folder is the test
+       that matters, because a chapter absent from the tree is invisible */
+    const listed = new Set((fx.folders.find((f) => f.base === 'content') || { files: [] })
+      .files.map((f) => f.n));
+    for (const f of readdirSync(path.join(book, 'content'))) {
+      assert.ok(listed.has(f), `${slug}: ${f} is in content/ and not in the explorer`);
+    }
+  }
 });
 
 await report('build');

@@ -79,6 +79,7 @@ python3 admin/build/gen_memos.py         # the briefs, rendered
 python3 admin/build/gen_team.py          # the agentic team, one folder per role
 python3 admin/build/gen_bookmeta.py      # book.json: each book's own version and chapter hashes
 python3 admin/build/gen_bookgraph.py     # a book decomposed to the word (book -> chapter -> ... -> word)
+python3 admin/build/gen_bookfiles.py     # each book's file explorer (files.html)
 python3 admin/build/gen_devpack.py       # the dev packs, rendered
 python3 admin/build/gen_changes.py       # the version diff data (needs tags fetched)
 python3 admin/build/gen_sitemap.py

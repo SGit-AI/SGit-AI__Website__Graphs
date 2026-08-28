@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.11</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.12</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -154,6 +154,15 @@
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
       <tr>
+        <td class="vnum">v0.6.12</td>
+        <td>28 August 2026</td>
+        <td><b>The book gets the file explorer the pilot document has had since v0.5.1.</b> The founder&rsquo;s question, and the answer was no: there was a window onto one document&rsquo;s artefacts and none onto a book&rsquo;s. Now every book has one at <code>files.html</code>, and for the making-of that is <b>24 folders and 313 files</b> in one tree: the seventeen markdown chapters that are the source of truth, the Leanpub source material behind them, <code>book.json</code> and <code>build.py</code>, the twenty figures, the publishing artefacts, the graph one folder per chapter, and the generated pages.
+        <b>Raw is the exact bytes; the files the build understands carry their own view.</b> Markdown renders. <code>book.json</code> becomes the two-clock changelog with the site release beside each book version, and the chapter hashes the version gate reads. The graph index becomes the chapter table with sections, blocks, words and forms per chapter. Each chapter&rsquo;s shards become their blocks with the uids that survive an edit. Python is tinted; images are shown rather than read into a <code>&lt;pre&gt;</code>; the 9MB PDF is a link, not a fetch. Every file deep-links, and a deep link opens the folder it lands in.
+        <b>The explorer became shared machinery rather than a second copy.</b> It existed once, for a document; a book made it twice, which is this estate&rsquo;s rule for promoting something into the kit. The shell moved to <code>assets/explorer/</code> and now asks two pure view modules in turn, so a third subject brings its views and not a copy of the shell. The document explorer&rsquo;s published URL is unchanged and its behaviour is byte-identical.
+        <b>One collision the design had to answer:</b> a book&rsquo;s <code>graph/index.json</code> and a document&rsquo;s <code>index.json</code> have the same name and different shapes, so the view now resolves on the folder as well as the name, and a test pins both directions.
+        <b>Folders collapse</b>, because two folders want to be open and twenty-four do not, and which start open is set by the generator rather than guessed. <b>The manifest is generated at build</b>, so a new chapter appears in the tree without anyone listing it, and a new gate checks that promise both ways: every file the page claims is on disk at the size it claims, and every file in <code>content/</code> is in the tree. 107 tests.</td>
+      </tr>
+      <tr>
         <td class="vnum">v0.6.11</td>
         <td>28 August 2026</td>
         <td><b>The estate writes down what a workflow is, and puts the question of whether it belongs in the book to the founder rather than answering it.</b>
@@ -246,7 +255,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.6.11</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.12</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

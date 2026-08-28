@@ -419,7 +419,15 @@ body.uni-standalone { margin: 0; overflow: hidden; background: #fff; }
 .fx-tree { flex: 0 0 280px; overflow: auto; border-right: 1px solid var(--line2, #ddd);
   background: var(--panel2, #fafafa); padding: .5rem 0; font-size: .78rem; }
 .fx-folder { padding: .45rem .7rem .2rem; font-weight: 700; font-size: .68rem;
-  letter-spacing: .04em; color: #667; text-transform: none; }
+  letter-spacing: .04em; color: #667; text-transform: none;
+  cursor: pointer; user-select: none; display: flex; gap: .35rem; align-items: baseline; }
+.fx-folder:hover { color: #2a9d8f; }
+.fx-caret { display: inline-block; transition: transform .12s ease; font-size: .6rem; opacity: .6; }
+.fx-folder.fx-op .fx-caret { transform: rotate(90deg); }
+.fx-fc { margin-left: auto; font-weight: 400; font-size: .62rem; }
+.fx-img { text-align: center; }
+.fx-img img { max-width: 100%; height: auto; border: 1px solid var(--line2, #ddd); border-radius: 6px; }
+.fv-com { color: #6b6f78; font-style: italic; }
 .fx-file { display: flex; gap: .5rem; align-items: baseline; padding: .16rem .7rem .16rem 1.1rem;
   cursor: pointer; white-space: nowrap; }
 .fx-file:hover { background: rgba(42,157,143,.08); }

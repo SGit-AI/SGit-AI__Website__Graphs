@@ -137,6 +137,7 @@ HUB = """<!doctype html>
   <span class="k">Written</span><span class="v">against graphs.sgit.ai v0.5.11, 26 August 2026, by an AI agent on the repository it describes</span>
   <span class="k">Covers</span><span class="v">v0.1.0 (21 August 2026) to v0.5.11 (26 August 2026) &middot; 88 tagged releases &middot; 6 days</span>
   <span class="k">Source</span><span class="v">markdown in <a href="{gh}/content">content/</a> &middot; figures in <a href="{gh}/figures">figures/</a> &middot; built by <a href="{gh}/build.py">build.py</a></span>
+  <span class="k">Inspect it</span><span class="v"><a href="files.html"><b>every file, raw and viewed &rarr;</b></a> &middot; the markdown, the source materials, the figures, the graph one folder per chapter, and the generated pages &middot; or read <a href="graph/index.html">the book as a graph</a></span>
   <span class="k">Licence</span><span class="v">CC BY 4.0</span>
 </div>
 
