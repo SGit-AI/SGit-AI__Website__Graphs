@@ -95,6 +95,37 @@ test('books: book.json has one writer, and the builder writes build.json', () =>
   }
 });
 
+test('books: a book is called the same thing everywhere it is named', () => {
+  /* Asked for by QA before the making-of book is retitled (brief 40). The title is not
+     derived from one place: gen_bookmeta.REGISTER is the authority, but each book's
+     build.py carries its own TITLE constant and the front matter carries it as an H1.
+     Nothing checked they agree, which makes a rename the change most likely to leave one
+     of them behind. */
+  for (const slug of BOOKS) {
+    const dir = path.join(ROOT, 'v2/books', slug);
+    const registered = JSON.parse(rf(path.join(dir, 'book.json'))).title;
+
+    const buildPy = path.join(dir, 'build.py');
+    if (existsSync(buildPy)) {
+      const m = rf(buildPy).match(/^TITLE = "([^"]+)"/m);
+      assert.ok(m, `${slug}/build.py declares no TITLE`);
+      assert.equal(m[1], registered,
+        `${slug}: build.py says "${m[1]}", the register says "${registered}"`);
+    }
+
+    /* A volume may head its front matter with the series name and put its own name
+       below; where that is so, the register declares it. */
+    const expected = JSON.parse(rf(path.join(dir, 'book.json'))).front_matter_title
+                     || registered;
+    const front = readdirSync(path.join(dir, 'content')).sort()[0];
+    const h1 = rf(path.join(dir, 'content', front)).match(/^#\s+(.+)$/m);
+    assert.ok(h1, `${slug}/content/${front} has no H1`);
+    assert.equal(h1[1].trim(), expected,
+      `${slug}: the front matter is headed "${h1[1].trim()}", the register expects `
+      + `"${expected}" — a reader opening the book sees a different name from the shelf`);
+  }
+});
+
 test('books: every chapter hash in book.json matches the file on disk', () => {
   for (const slug of BOOKS) {
     const dir = path.join(ROOT, 'v2/books', slug);

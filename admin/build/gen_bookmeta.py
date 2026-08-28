@@ -52,6 +52,11 @@ REGISTER = {
     },
     "fsg-universe": {
         "title": "The Universe Volume for Fractal Semantic Graphs",
+        # This volume heads its front matter with the SERIES name and puts its own name
+        # below it, which is a normal thing for a volume to do and is not a mistake. The
+        # title gate compares against this rather than against `title`, so the exception is
+        # declared here as data instead of hidden as a special case in a test.
+        "front_matter_title": "Fractal Semantic Graphs: Meaning Through Connectivity",
         "version": "v0.1.0",
         "status": "held",
         "release": "not in this release",
@@ -142,6 +147,7 @@ def main(check_only=False):
             "versioning": ("This book's version moves only when its content moves; the "
                            "site's version moves on every push. v1.0.0 is reserved for "
                            "the actual final release."),
+            "front_matter_title": spec.get("front_matter_title", spec["title"]),
             "content_hashes": now,
             "build": build,
         }

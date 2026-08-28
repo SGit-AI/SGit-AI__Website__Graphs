@@ -73,6 +73,12 @@ SIDE = [
   "blurbs": {
    "00__the-v04-retrospective.md": "Forty-one releases in four days, weighed: the seven achievements that compounded, the conclusions, the transferable learnings (persistence makes identity; fit is a decision; the measurement is the discovery), and what v0.5 opens.",
   }},
+ {"dir": "v0.6.3__the-naming-question", "short": "naming", "label": "The naming question",
+  "packline": "v0.6.3 &middot; the first run of the seven-stage workflow",
+  "statusline": "\u23f8 WAITING ON THE FOUNDER &mdash; stage 5 of 7, approve",
+  "blurbs": {
+   "00__the-record.md": "The first real use of the team and of change control, on a deliberately small question: is the making-of book's title right? The map is computed rather than argued (fractal appears 9 times in 31,221 words, six of them naming the other book), four candidates are built only from words the book actually uses, four roles give opinions from their own centres of gravity, and the map disagrees with the founder about who the book is for. Waiting on three decisions.",
+  }},
  {"dir": "v0.5.23__the-v05-retrospective", "short": "retro5", "label": "The v0.5 retrospective",
   "packline": "v0.5.23 &middot; closing the v0.5 era",
   "statusline": "RETROSPECTIVE &mdash; the era is closed; the judgements are the agent's",
