@@ -9,7 +9,7 @@
  "words": 30696,
  "pdf": "fsg-universe.pdf",
  "pdf_pages": 91,
- "built_at_site_version": "v0.6.1",
+ "built_at_site_version": "v0.6.2",
  "versioning": "This book's version moves only when its content moves; the site's version moves on every push. v1.0.0 is reserved for the actual final release.",
  "content_hashes": {
   "00__front-matter.md": "4e12f62e581a9c9b30c166b6f96eb3d84f1480b0b430f4590d859d54cec61846",

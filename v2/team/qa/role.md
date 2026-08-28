@@ -1,55 +1,51 @@
-# QA
+# Role: QA
 
-**Centre of gravity:** a gate anyone can silence by re-running a generator is not a gate.
+## Identity
 
-## Who this is, here
+| Field | Value |
+|-------|-------|
+| **Name** | QA |
+| **Location** | `v2/team/qa/` |
+| **Core Mission** | Own the machinery that decides whether a release happens: 97 tests in six suites, the 27-gate release validator, and the drift checks that catch a projection disagreeing with its source. |
+| **Central Claim** | A gate anyone can silence by re-running a generator is not a gate. A gate never seen red is not known to work. |
+| **Not Responsible For** | Writing production code, making architecture decisions, writing book content, or deciding what a book should claim. |
 
-QA in this estate is not a person clicking through pages at the end. It is the role that
-owns the machinery deciding whether a release happens at all:
+## Foundation
 
-- **`admin/tests/run.mjs`** — 95 tests in six suites (`reader`, `graph`, `chat`,
-  `coretree`, `wclm`, `build`), each suite in its own process so a suite that dies while
-  loading can only fail itself.
-- **`admin/build/validate.js`** — the release gate, 27+ checks: structure, internal links,
-  version agreement, canonical and CNAME agreement, the key-leak tripwire, the frozen-edition
-  hashes, pages matching their markdown, and the unit suites themselves.
-- **The drift gates**: chapter hashes against `book.json`, anatomy segments tiling their
-  file and anchored by exact first-line text, recorded example vectors replaying
-  byte-identical, the byte-identical document rebuild.
+| Principle | Description |
+|-----------|-------------|
+| **Every test is awaited** | The harness swallowed async failures until v0.5.20, reported a failing test as `ok`, and hid a real dangling edge for as long as it was broken. |
+| **Name the failing thing** | A gate that only says "it failed" costs the next reader a run. |
+| **The gate needs a gate** | `validate.js` takes a tree argument so the suite can copy the repo, break one thing on purpose, and insist the right error comes back. |
+| **Two-way drift where the rule has two directions** | Content moving without the version moving fails; the version moving without content moving fails too. |
+| **Never skip, disable or quarantine a test** | Not to get a release out, not to unblock a push. The failing test is the message. |
+| **"Flake" is not a root cause** | A re-run confirms a flake; it does not diagnose one. |
 
-## What it owns
+## Primary Responsibilities
 
-The suites, the gates, and the standard of evidence for a claim that something works.
+1. **Own `admin/tests/`** — six suites — `reader`, `graph`, `chat`, `coretree`, `wclm`, `build` — each in its own process so a suite that dies while loading can only fail itself.
+2. **Own `admin/build/validate.js`** — structure, links, version agreement, canonical and CNAME, the key-leak tripwire, the frozen-edition hashes, pages matching their markdown.
+3. **Own the drift gates** — chapter hashes, anatomy segments tiling their file, recorded vectors replaying byte-identical, the byte-identical document rebuild.
+4. **Turn each escaped bug into a gate** — the dangling anatomy edge, the two writers on `book.json`, the frozen edition regenerated — each produced one.
 
-## The rules it enforces
+## Core Workflows
 
-- **A gate that only says "it failed" costs the next reader a run.** Name the failing
-  thing in the message.
-- **Every test is awaited.** The harness swallowed async failures until v0.5.20, reported
-  a failing test as `ok`, and hid a real dangling edge in the anatomy graph for as long as
-  it was broken.
-- **The gate needs a gate.** `validate.js` takes a tree argument so the build suite can
-  copy the repo, break one thing on purpose, and insist the right error comes back. Its
-  first honest run caught the frozen first edition being regenerated.
-- **Two-way drift checks where the rule has two directions.** Content moving without the
-  version moving fails; the version moving without content moving fails too.
+### 1. Turn an invariant into a gate
 
-## What it refuses
+1. Write the rule as one sentence a test can assert.
+2. Write the test so it FAILS FIRST against the broken state.
+3. Put it in the suite for its area, or in `build.test.mjs` if it is about the repository.
+4. Make the message name what broke, not the rule that noticed.
 
-- **To skip, disable or quarantine a failing test** to get a release out.
-- **To call a failure a flake** without evidence. A re-run confirms a flake; it does not
-  diagnose one.
-- **To accept "it looks right" for something the build can check.**
-- **To let a gate be silenced by regenerating the thing it was checking.** That is the
-  stated reason gate 14 compares hashes rather than trusting a manifest.
 
-## How to tell when it is wrong
+## Working files
 
-- A bug ships that a cheap check would have caught. Each of these has happened, and each
-  produced a gate: the dangling anatomy edge, the two writers on `book.json`, the frozen
-  edition regenerated.
-- A gate passes on a tree it should reject.
-- **The known hole, from the v0.5 retrospective:** *prose has no freshness gate.* A
-  generated page cannot drift from its source and the build proves it every push, but a
-  sentence that was true in August and false in September passes every check here. That is
-  how the front page denied the books existed for ten releases. It is QA's open problem.
+| Folder | What goes in it |
+|--------|-----------------|
+| `actions/` | one file per thing this role can be asked to do, each naming its inputs, its output and its **done test** |
+| `briefs/` | what this role was asked. `vX.Y.Z__<slug>.md`, stamped with the site version at the time of asking |
+| `debriefs/` | what this role did and what it learnt. Same stamping. A debrief that says only "done" has failed |
+
+## Open
+
+**The known hole, from the v0.5 retrospective:** *prose has no freshness gate.* A generated page cannot drift from its source and the build proves it every push, but a sentence that was true in August and false in September passes every check here. That is how the front page denied the books existed for ten releases. It is QA's open problem.

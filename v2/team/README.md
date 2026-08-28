@@ -22,21 +22,53 @@ practical: a role spun up on its own carries only its own context.
 
 ```
 v2/team/<role>/
-  role.md        who this role is HERE, its centre of gravity, what it owns,
-                 what it refuses, and how to tell when it is wrong
-  actions/       the things this role can be asked to do, one file each,
-                 each naming its inputs, its output and its done test
-  briefs/        what the role was asked, newest highest — the incoming record
-  debriefs/      what the role did and what it learnt — the outgoing record
+  role.md        Identity, Foundation, Primary Responsibilities, Core Workflows
+  actions/       one file per thing the role can be asked to do, each naming
+                 its inputs, its output and its done test
+  briefs/        what the role was asked      — vX.Y.Z__<slug>.md
+  debriefs/      what it did and what it learnt — vX.Y.Z__<slug>.md
 ```
 
 `briefs/` and `debriefs/` start empty. They are the work environment, and they fill up as
 the role is actually used; an empty debriefs folder is an honest statement that the role
-has not run yet.
+has not run yet. **Outputs are stamped with the site version at the time of writing**, so a
+debrief can be placed against the release history without opening it.
+
+### The role definition itself
+
+`role.md` carries four sections, and the first two are where the work is:
+
+- **Identity** — a table with the role's **Core Mission**, its **Central Claim** (the thing
+  it can be held to), and its **Not Responsible For** (the boundary that stops it drifting
+  into another role's territory).
+- **Foundation** — the principles it works under, each with the reason it exists here.
+  Most of these were learnt by getting something wrong.
+- **Primary Responsibilities** — what it owns, concretely, naming real paths.
+- **Core Workflows** — numbered steps for the things it does repeatedly.
+
+## Where this shape came from
+
+The founder pointed at an existing team in the memo: *"We already have good definitions and
+good examples from other projects, especially the Send project."* That is
+[`the-cyber-boardroom/SGraph-AI__App__Send`](https://github.com/the-cyber-boardroom/SGraph-AI__App__Send),
+whose `team/` folder carries seventeen roles under the same discipline.
+
+**Inherited from it**, because it is proven and reinventing it would be worse: the Identity
+table with Core Mission, Central Claim and Not Responsible For; the principles table; the
+numbered Core Workflows; and version-stamped outputs.
+
+**Not inherited**, because this estate is a different job: its role list (seventeen roles
+including AppSec, DevOps, GRC and a DPO, which a three-book publishing estate does not
+need), its Issues FS, and its Wardley tier folders (`town-planner/`, `villager/`) which
+split roles by evolution stage. Brief 40 names two audiences in those terms but does not
+ask for the roles to be split that way, so they are not.
+
+**Kept from brief 40 over Send's convention**: the file is `role.md`, lowercase, because
+the memo says so directly — *"every role has a role.md"*. Send uses `ROLE.md`.
 
 ## The roles
 
-| Role | Centre of gravity | Owns |
+| Role | Central claim, in short | Owns |
 |---|---|---|
 | [librarian](librarian/role.md) | Nothing is lost and everything is findable | the indexes, the registers, the naming |
 | [researcher](researcher/role.md) | No claim without an anchor | the questions, the evidence, the corpus |

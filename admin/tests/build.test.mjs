@@ -171,26 +171,36 @@ test('validate: a broken tree fails, and the error names what broke', () => {
 });
 
 /* ---- the team: a role is defined or it is not there ----------------------- */
-test('team: every role folder is complete, and every role says what it refuses', () => {
+test('team: every role folder is complete, and every role states its limits', () => {
   /* A half-defined role is worse than no role: an agent handed it reads it as
      authoritative and it is not. gen_team.py fails on a missing part; this checks the
-     parts have CONTENT, which a generator cannot judge. */
+     parts have CONTENT, which a generator cannot judge.
+
+     The required shape is inherited from the-cyber-boardroom/SGraph-AI__App__Send, whose
+     team folder brief 40 names as the reference. Two of its fields do most of the work and
+     are required here: a Central Claim the role can be held to, and a Not Responsible For
+     that stops it drifting into another role's territory. */
   const TEAM = path.join(ROOT, 'v2/team');
   const roles = readdirSync(TEAM, { withFileTypes: true })
     .filter((e) => e.isDirectory()).map((e) => e.name).sort();
   assert.ok(roles.length >= 7, `only ${roles.length} roles defined`);
   for (const r of roles) {
     const role = rf(path.join(TEAM, r, 'role.md'));
-    assert.match(role, /\*\*Centre of gravity:\*\*/,
-      `${r}/role.md declares no centre of gravity`);
-    for (const heading of ['What it owns', 'What it refuses', 'How to tell when it is wrong']) {
+    for (const field of ['**Core Mission**', '**Central Claim**', '**Not Responsible For**']) {
+      assert.ok(role.includes(field), `${r}/role.md has no ${field} in its Identity table`);
+    }
+    for (const heading of ['## Identity', '## Foundation', '## Primary Responsibilities',
+                           '## Core Workflows']) {
       assert.ok(role.includes(heading), `${r}/role.md has no "${heading}" section`);
     }
+    /* A Not Responsible For that says nothing is the same as not having one. */
+    const nrf = role.match(/\*\*Not Responsible For\*\* \| ([^|]+)\|/);
+    assert.ok(nrf && nrf[1].trim().length > 40,
+      `${r}/role.md's Not Responsible For is too vague to keep it out of another role's work`);
     const acts = readdirSync(path.join(TEAM, r, 'actions')).filter((f) => f.endsWith('.md'));
     assert.ok(acts.length >= 1, `${r} has no actions, so it cannot be asked for anything`);
     for (const a of acts) {
-      const src = rf(path.join(TEAM, r, 'actions', a));
-      assert.match(src, /\*\*Done test\*\*/,
+      assert.match(rf(path.join(TEAM, r, 'actions', a)), /\*\*Done test\*\*/,
         `${r}/actions/${a} has no done test, so nobody can tell when it is finished`);
     }
     for (const w of ['briefs', 'debriefs']) {

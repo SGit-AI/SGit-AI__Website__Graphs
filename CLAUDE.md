@@ -39,15 +39,21 @@ another agent may have checked out.
 ## The team
 
 `v2/team/` holds seven roles, one folder each (brief 40): librarian, researcher, writer,
-editor, developer, QA, publisher. Each has a `role.md` stating its centre of gravity, what
-it owns, what it refuses and how to tell when it is wrong; an `actions/` folder of things
-it can be asked to do, each with a done test; and `briefs/` and `debriefs/` as its work
-environment.
+editor, developer, QA, publisher. Each has a `role.md` with four sections — Identity (core
+mission, **central claim**, **not responsible for**), Foundation (the principles, each with
+the reason it exists here), Primary Responsibilities, and numbered Core Workflows; an
+`actions/` folder, each action naming its done test; and `briefs/` and `debriefs/` as its
+work environment, with outputs stamped `vX.Y.Z__<slug>.md`.
+
+That shape is inherited from `the-cyber-boardroom/SGraph-AI__App__Send`, which brief 40
+names as the reference. Do not reinvent it; if a convention is missing here, look there
+first.
 
 If you are working as one of these roles, **read that `role.md` first** — it is the
 definition, and the rendered page is only presentation. Two rules the gate enforces: every
 role names what it REFUSES, and no role may read the way it would in any other repository.
-A generic role definition has failed the brief that asked for it.
+A generic role definition has failed the brief that asked for it, and the gate was run red
+against a deliberately generic definition before being trusted.
 
 ## Building a book
 

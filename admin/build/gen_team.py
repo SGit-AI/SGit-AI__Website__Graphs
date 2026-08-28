@@ -152,13 +152,16 @@ HUB = """<!doctype html>
 
 <h2 id="shape">The shape of a role folder</h2>
 <pre><code>v2/team/&lt;role&gt;/
-  role.md        who this role is HERE, its centre of gravity, what it owns,
-                 what it refuses, and how to tell when it is wrong
-  actions/       the things this role can be asked to do, one file each,
-                 each naming its inputs, its output and its done test
-  briefs/        what the role was asked, newest highest
-  debriefs/      what the role did and what it learnt</code></pre>
-<p><code>briefs/</code> and <code>debriefs/</code> start empty. They are the work environment, and they fill as a role is used; an empty <code>debriefs/</code> is an honest statement that the role has not run yet.</p>
+  role.md        Identity, Foundation, Primary Responsibilities, Core Workflows
+  actions/       one file per thing the role can be asked to do, each naming
+                 its inputs, its output and its done test
+  briefs/        what the role was asked      &mdash; vX.Y.Z__&lt;slug&gt;.md
+  debriefs/      what it did and what it learnt &mdash; vX.Y.Z__&lt;slug&gt;.md</code></pre>
+<p><code>briefs/</code> and <code>debriefs/</code> start empty. They are the work environment, and they fill as a role is used; an empty <code>debriefs/</code> is an honest statement that the role has not run yet. Outputs are <b>stamped with the site version at the time of writing</b>, so a debrief can be placed against the release history without opening it.</p>
+
+<p>The definition itself carries four sections, and the first two are where the work is. <b>Identity</b> gives the role&rsquo;s core mission, its <b>central claim</b> (the thing it can be held to) and its <b>not responsible for</b> (the boundary that stops it drifting into another role&rsquo;s territory). <b>Foundation</b> gives the principles it works under, each with the reason it exists here &mdash; most were learnt by getting something wrong. Then the responsibilities, naming real paths, and the workflows as numbered steps.</p>
+
+<div class="note"><b>Where this shape came from.</b> The founder pointed at an existing team: <em>&ldquo;we already have good definitions and good examples from other projects, especially the Send project.&rdquo;</em> That is <a href="https://github.com/the-cyber-boardroom/SGraph-AI__App__Send">the-cyber-boardroom/SGraph-AI__App__Send</a>, whose team folder carries seventeen roles under the same discipline. <b>Inherited</b>, because it is proven: the identity table with its central claim and its boundary, the principles table, the numbered workflows, and version-stamped outputs. <b>Not inherited</b>, because this is a different job: its seventeen roles (AppSec, DevOps, GRC, a DPO &mdash; which a three-book publishing estate does not need), its issues filesystem, and its Wardley tier folders that split roles by evolution stage. Brief 40 names two <em>audiences</em> in those terms but does not ask for the roles to be split that way. <b>Kept from brief 40 over Send&rsquo;s convention:</b> the file is <code>role.md</code>, lowercase, because the memo says so directly.</div>
 
 <div class="mdread-label">&#128196; The rest of this page is rendered from <a href="README.md">the raw markdown</a>, which is the source of truth.</div>
 <div class="mdread" id="mdread" data-src="README.md"><noscript><p class="dim">In-page rendering needs JavaScript &mdash; <a href="README.md">open the raw markdown</a>.</p></noscript></div>

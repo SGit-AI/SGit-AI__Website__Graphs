@@ -21,7 +21,7 @@
   <a class="brand" href="../../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.6.1</a>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.6.2</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -156,13 +156,13 @@
 <table>
   <thead><tr><th>Role</th><th>Centre of gravity</th><th>What it is for</th></tr></thead>
   <tbody>
-    <tr><td><a href="librarian.html"><b>The librarian</b></a></td><td>Nothing is lost, and everything is findable</td><td>Keeps the registers agreeing with each other: the briefs, the methods, the lexicon, the dev packs, the decisions and their amendments, and the names of things.<br><span class="small dim">actions: <a href="librarian/actions/index-a-new-artefact.md">index a new artefact</a></span></td></tr>
-    <tr><td><a href="researcher.html"><b>The researcher</b></a></td><td>No claim without an anchor</td><td>Answers questions from the closed local corpus and refuses to answer from anywhere else. Owns the anchors, and the honesty of a section that yields nothing.<br><span class="small dim">actions: <a href="researcher/actions/answer-from-the-corpus.md">answer a question from the corpus</a> &middot; <a href="researcher/actions/map-a-book.md">map a book</a></span></td></tr>
-    <tr><td><a href="writer.html"><b>The writer</b></a></td><td>A reader who stops early still gets a whole book</td><td>Owns the chapter markdown, and nothing else. Computes or quotes every number that enters the prose.<br><span class="small dim">actions: <a href="writer/actions/revise-a-chapter.md">revise a chapter</a></span></td></tr>
-    <tr><td><a href="editor.html"><b>The editor</b></a></td><td>The book's voice, and what it refuses to claim</td><td>Reads as a reader rather than an author. Owns structure, voice, and the refusals that travel with every idea this estate publishes.<br><span class="small dim">actions: <a href="editor/actions/scope-a-structural-change.md">scope a structural change to a book</a></span></td></tr>
-    <tr><td><a href="developer.html"><b>The developer</b></a></td><td>The scaffolding is more important than the code</td><td>A developer for THIS stack: no bundler, 24 Python generators, a projection chain, and a frozen first edition that fails the build if a byte moves.<br><span class="small dim">actions: <a href="developer/actions/build-a-tool.md">build a tool</a></span></td></tr>
-    <tr><td><a href="qa.html"><b>QA</b></a></td><td>A gate anyone can silence is not a gate</td><td>Owns the suites and the release gate, and the standard of evidence for a claim that something works. Carries the estate's known hole: prose has no freshness gate.<br><span class="small dim">actions: <a href="qa/actions/gate-a-new-invariant.md">turn an invariant into a gate</a></span></td></tr>
-    <tr><td><a href="publisher.html"><b>The publisher</b></a></td><td>A version is a promise to a reader</td><td>Owns two clocks and the rule that keeps them apart: the site's version moves every push, a book's version moves only when its content does.<br><span class="small dim">actions: <a href="publisher/actions/release-a-book-version.md">release a new version of a book</a></span></td></tr>
+    <tr><td><a href="librarian.html"><b>Role: Librarian</b></a></td><td>Nothing is lost, and everything is findable</td><td>Keeps the registers agreeing with each other: the briefs, the methods, the lexicon, the dev packs, the decisions and their amendments, and the names of things.<br><span class="small dim">actions: <a href="librarian/actions/index-a-new-artefact.md">index a new artefact</a></span></td></tr>
+    <tr><td><a href="researcher.html"><b>Role: Researcher</b></a></td><td>No claim without an anchor</td><td>Answers questions from the closed local corpus and refuses to answer from anywhere else. Owns the anchors, and the honesty of a section that yields nothing.<br><span class="small dim">actions: <a href="researcher/actions/answer-from-the-corpus.md">answer a question from the corpus</a> &middot; <a href="researcher/actions/map-a-book.md">map a book</a></span></td></tr>
+    <tr><td><a href="writer.html"><b>Role: Writer</b></a></td><td>A reader who stops early still gets a whole book</td><td>Owns the chapter markdown, and nothing else. Computes or quotes every number that enters the prose.<br><span class="small dim">actions: <a href="writer/actions/revise-a-chapter.md">revise a chapter</a></span></td></tr>
+    <tr><td><a href="editor.html"><b>Role: Editor</b></a></td><td>The book's voice, and what it refuses to claim</td><td>Reads as a reader rather than an author. Owns structure, voice, and the refusals that travel with every idea this estate publishes.<br><span class="small dim">actions: <a href="editor/actions/scope-a-structural-change.md">scope a structural change to a book</a></span></td></tr>
+    <tr><td><a href="developer.html"><b>Role: Developer</b></a></td><td>The scaffolding is more important than the code</td><td>A developer for THIS stack: no bundler, 24 Python generators, a projection chain, and a frozen first edition that fails the build if a byte moves.<br><span class="small dim">actions: <a href="developer/actions/build-a-tool.md">build a tool</a></span></td></tr>
+    <tr><td><a href="qa.html"><b>Role: QA</b></a></td><td>A gate anyone can silence is not a gate</td><td>Owns the suites and the release gate, and the standard of evidence for a claim that something works. Carries the estate's known hole: prose has no freshness gate.<br><span class="small dim">actions: <a href="qa/actions/gate-a-new-invariant.md">turn an invariant into a gate</a></span></td></tr>
+    <tr><td><a href="publisher.html"><b>Role: Publisher</b></a></td><td>A version is a promise to a reader</td><td>Owns two clocks and the rule that keeps them apart: the site's version moves every push, a book's version moves only when its content does.<br><span class="small dim">actions: <a href="publisher/actions/release-a-book-version.md">release a new version of a book</a></span></td></tr>
   </tbody>
 </table>
 </div>
@@ -173,13 +173,16 @@
 
 <h2 id="shape">The shape of a role folder</h2>
 <pre><code>v2/team/&lt;role&gt;/
-  role.md        who this role is HERE, its centre of gravity, what it owns,
-                 what it refuses, and how to tell when it is wrong
-  actions/       the things this role can be asked to do, one file each,
-                 each naming its inputs, its output and its done test
-  briefs/        what the role was asked, newest highest
-  debriefs/      what the role did and what it learnt</code></pre>
-<p><code>briefs/</code> and <code>debriefs/</code> start empty. They are the work environment, and they fill as a role is used; an empty <code>debriefs/</code> is an honest statement that the role has not run yet.</p>
+  role.md        Identity, Foundation, Primary Responsibilities, Core Workflows
+  actions/       one file per thing the role can be asked to do, each naming
+                 its inputs, its output and its done test
+  briefs/        what the role was asked      &mdash; vX.Y.Z__&lt;slug&gt;.md
+  debriefs/      what it did and what it learnt &mdash; vX.Y.Z__&lt;slug&gt;.md</code></pre>
+<p><code>briefs/</code> and <code>debriefs/</code> start empty. They are the work environment, and they fill as a role is used; an empty <code>debriefs/</code> is an honest statement that the role has not run yet. Outputs are <b>stamped with the site version at the time of writing</b>, so a debrief can be placed against the release history without opening it.</p>
+
+<p>The definition itself carries four sections, and the first two are where the work is. <b>Identity</b> gives the role&rsquo;s core mission, its <b>central claim</b> (the thing it can be held to) and its <b>not responsible for</b> (the boundary that stops it drifting into another role&rsquo;s territory). <b>Foundation</b> gives the principles it works under, each with the reason it exists here &mdash; most were learnt by getting something wrong. Then the responsibilities, naming real paths, and the workflows as numbered steps.</p>
+
+<div class="note"><b>Where this shape came from.</b> The founder pointed at an existing team: <em>&ldquo;we already have good definitions and good examples from other projects, especially the Send project.&rdquo;</em> That is <a href="https://github.com/the-cyber-boardroom/SGraph-AI__App__Send">the-cyber-boardroom/SGraph-AI__App__Send</a>, whose team folder carries seventeen roles under the same discipline. <b>Inherited</b>, because it is proven: the identity table with its central claim and its boundary, the principles table, the numbered workflows, and version-stamped outputs. <b>Not inherited</b>, because this is a different job: its seventeen roles (AppSec, DevOps, GRC, a DPO &mdash; which a three-book publishing estate does not need), its issues filesystem, and its Wardley tier folders that split roles by evolution stage. Brief 40 names two <em>audiences</em> in those terms but does not ask for the roles to be split that way. <b>Kept from brief 40 over Send&rsquo;s convention:</b> the file is <code>role.md</code>, lowercase, because the memo says so directly.</div>
 
 <div class="mdread-label">&#128196; The rest of this page is rendered from <a href="README.md">the raw markdown</a>, which is the source of truth.</div>
 <div class="mdread" id="mdread" data-src="README.md"><noscript><p class="dim">In-page rendering needs JavaScript &mdash; <a href="README.md">open the raw markdown</a>.</p></noscript></div>
@@ -191,7 +194,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../../admin/versions.html">v0.6.1</a> · <a href="../../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.6.2</a> · <a href="../../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
