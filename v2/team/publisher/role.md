@@ -44,8 +44,14 @@
 | Folder | What goes in it |
 |--------|-----------------|
 | `actions/` | one file per thing this role can be asked to do, each naming its inputs, its output and its **done test** |
-| `briefs/` | what this role was asked. `vX.Y.Z__<slug>.md`, stamped with the site version at the time of asking |
-| `debriefs/` | what this role did and what it learnt. Same stamping. A debrief that says only "done" has failed |
+| `briefs/` | what this role was asked |
+| `debriefs/` | what this role did and what it learnt. A debrief that says only "done" has failed |
+
+**Stamping.** Three version streams run here and a file name must say which one its number
+belongs to. Work on the **site** is `vX.Y.Z__<slug>.md`. Work on a **book** is
+`<book-slug>__vX.Y.Z__<slug>.md`, carrying **that book's** version, which is the version the
+work reviewed. `making-a-book__v0.1.0__map-the-book.md` is unambiguous;
+`v0.6.3__map-the-book.md` is not, because no book has ever been at v0.6.3.
 
 ## Open
 

@@ -201,6 +201,78 @@ test('validate: a broken tree fails, and the error names what broke', () => {
   }
 });
 
+/* ---- the version streams stay separate ------------------------------------ */
+test('versions: every stamped artefact says which stream its number belongs to', () => {
+  /* Three streams run here: the site's, which moves on every push, and one per book,
+     which moves only when that book's content moves. Before this gate, book-scoped work
+     was stamped with the SITE version, so a pack about a book at v0.1.0 was called
+     v0.6.3 — a version that book has never had. A number with no stream is a guess.
+
+     Site work:  vX.Y.Z__<slug>
+     Book work:  <book-slug>__vX.Y.Z__<slug>, where the version is a real one of that book */
+  const SITE = /^v\d+\.\d+\.\d+__/;
+  const BOOK = /^([a-z0-9-]+)__v(\d+\.\d+\.\d+)__/;
+  const booksDir = path.join(ROOT, 'v2/books');
+  const known = new Set(readdirSync(booksDir, { withFileTypes: true })
+    .filter((e) => e.isDirectory()).map((e) => e.name));
+
+  const checkStamp = (name, where) => {
+    const b = name.match(BOOK);
+    if (b) {
+      assert.ok(known.has(b[1]),
+        `${where}/${name} is stamped for book "${b[1]}", which is not a book here`);
+      return;
+    }
+    assert.match(name, SITE,
+      `${where}/${name} carries no version stream — use vX.Y.Z__ for site work `
+      + 'or <book-slug>__vX.Y.Z__ for work on a book');
+  };
+
+  for (const d of readdirSync(path.join(ROOT, 'v2/dev-packs'), { withFileTypes: true })) {
+    if (!d.isDirectory() || !/^v\d|__v\d/.test(d.name)) continue;   /* unstamped packs opt out */
+    checkStamp(d.name, 'v2/dev-packs');
+  }
+  for (const role of readdirSync(path.join(ROOT, 'v2/team'), { withFileTypes: true })) {
+    if (!role.isDirectory()) continue;
+    for (const kind of ['briefs', 'debriefs']) {
+      for (const f of readdirSync(path.join(ROOT, 'v2/team', role.name, kind))) {
+        if (f === 'README.md' || !f.endsWith('.md')) continue;
+        checkStamp(f, `v2/team/${role.name}/${kind}`);
+      }
+    }
+  }
+});
+
+test('versions: a book-stamped artefact names a version that book actually has', () => {
+  /* The stamp records the version REVIEWED, so it must be a version that existed. An
+     artefact stamped with a version the book has never reached is the confusion this
+     convention exists to end. */
+  const BOOK = /^([a-z0-9-]+)__v(\d+\.\d+\.\d+)__/;
+  const seen = [];
+  const walk = (dir, label) => {
+    for (const e of readdirSync(dir, { withFileTypes: true })) {
+      const m = e.name.match(BOOK);
+      if (m) seen.push({ book: m[1], ver: 'v' + m[2], where: `${label}/${e.name}` });
+    }
+  };
+  walk(path.join(ROOT, 'v2/dev-packs'), 'v2/dev-packs');
+  for (const role of readdirSync(path.join(ROOT, 'v2/team'), { withFileTypes: true })) {
+    if (!role.isDirectory()) continue;
+    for (const kind of ['briefs', 'debriefs']) {
+      walk(path.join(ROOT, 'v2/team', role.name, kind), `v2/team/${role.name}/${kind}`);
+    }
+  }
+  assert.ok(seen.length, 'no book-stamped artefacts found — has the convention been dropped?');
+  for (const s of seen) {
+    const meta = JSON.parse(rf(path.join(ROOT, 'v2/books', s.book, 'book.json')));
+    const history = [meta.version, ...(meta.former_versions || [])];
+    assert.ok(history.includes(s.ver),
+      `${s.where} is stamped ${s.ver}, but ${s.book} is at ${meta.version} and has no `
+      + `record of ${s.ver} — either the stamp is wrong, or the book moved and the `
+      + 'artefact was not carried forward');
+  }
+});
+
 /* ---- the team: a role is defined or it is not there ----------------------- */
 test('team: every role folder is complete, and every role states its limits', () => {
   /* A half-defined role is worse than no role: an agent handed it reads it as

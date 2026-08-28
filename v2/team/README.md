@@ -25,14 +25,25 @@ v2/team/<role>/
   role.md        Identity, Foundation, Primary Responsibilities, Core Workflows
   actions/       one file per thing the role can be asked to do, each naming
                  its inputs, its output and its done test
-  briefs/        what the role was asked      — vX.Y.Z__<slug>.md
-  debriefs/      what it did and what it learnt — vX.Y.Z__<slug>.md
+  briefs/        what the role was asked
+  debriefs/      what it did and what it learnt
 ```
 
 `briefs/` and `debriefs/` start empty. They are the work environment, and they fill up as
 the role is actually used; an empty debriefs folder is an honest statement that the role
-has not run yet. **Outputs are stamped with the site version at the time of writing**, so a
-debrief can be placed against the release history without opening it.
+has not run yet.
+
+**Outputs are stamped with the stream they belong to**, because three version streams run
+in this repository and a bare number does not say which:
+
+| The work is about | The stamp | Example |
+|---|---|---|
+| the site | `vX.Y.Z__<slug>.md` | `v0.5.20__the-harness-hole.md` |
+| a book | `<book-slug>__vX.Y.Z__<slug>.md` | `making-a-book__v0.1.0__map-the-book.md` |
+
+A book stamp carries **that book's** version, which is the version the work reviewed, not
+the site version at the time. The site was at v0.6.3 when the making-of book was mapped;
+stamping the map `v0.6.3` implied a version of that book which has never existed.
 
 ### The role definition itself
 

@@ -12,6 +12,7 @@ exchange while building — render beside them, and the hub's working-packs tabl
 regenerated between markers on every build. A pack or file that arrives unregistered
 fails the build, so nothing under dev-packs/ can exist without a rendered page.
 """
+import json
 import re
 from pathlib import Path
 
@@ -73,8 +74,9 @@ SIDE = [
   "blurbs": {
    "00__the-v04-retrospective.md": "Forty-one releases in four days, weighed: the seven achievements that compounded, the conclusions, the transferable learnings (persistence makes identity; fit is a decision; the measurement is the discovery), and what v0.5 opens.",
   }},
- {"dir": "v0.6.3__the-naming-question", "short": "naming", "label": "The naming question",
-  "packline": "v0.6.3 &middot; the first run of the seven-stage workflow",
+ {"dir": "making-a-book__v0.1.0__the-naming-question", "short": "mab-naming",
+  "label": "The naming question", "book": "making-a-book",
+  "packline": "the first run of the seven-stage workflow",
   "statusline": "\u23f8 WAITING ON THE FOUNDER &mdash; stage 5 of 7, approve",
   "blurbs": {
    "00__the-record.md": "The first real use of the team and of change control, on a deliberately small question: is the making-of book's title right? The map is computed rather than argued (fractal appears 9 times in 31,221 words, six of them naming the other book), four candidates are built only from words the book actually uses, four roles give opinions from their own centres of gravity, and the map disagrees with the founder about who the book is for. Waiting on three decisions.",
@@ -193,6 +195,31 @@ def render_pack(pack, files, blurbs, packline, statusline, prefix, home):
     return rows
 
 
+# Three version streams run here: the site's, which moves on every push, and one per book,
+# which moves only when that book's content moves. A pack folder therefore has to say WHICH
+# stream its number belongs to, or a reader cannot tell whether "v0.6.3" is a site release
+# or a book that has no such version. Site packs are `vX.Y.Z__<slug>`; book packs are
+# `<book-slug>__vX.Y.Z__<slug>` and declare `book` in the register.
+SITE_STAMP = re.compile(r"^v\d+\.\d+\.\d+__")
+BOOK_STAMP = re.compile(r"^([a-z0-9-]+)__v(\d+\.\d+\.\d+)__")
+
+
+def scope_of(spec):
+    """(kind, book slug or None, version or None) for a registered pack."""
+    d = spec["dir"]
+    m = BOOK_STAMP.match(d)
+    if m:
+        if spec.get("book") != m.group(1):
+            raise SystemExit(f'gen_devpack: {d} is stamped for book {m.group(1)!r} but the '
+                             f'register says {spec.get("book")!r}')
+        return "book", m.group(1), "v" + m.group(2)
+    if SITE_STAMP.match(d):
+        if spec.get("book"):
+            raise SystemExit(f'gen_devpack: {d} declares a book but is stamped as site work')
+        return "site", None, d.split("__")[0]
+    return "unstamped", None, None
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     known = {PACK} | {s["dir"] for s in SIDE}
@@ -218,7 +245,20 @@ def main():
         missing = [f for f in files if f not in s["blurbs"]]
         if missing:
             raise SystemExit(f'gen_devpack: {s["dir"]} files with no blurb: ' + ", ".join(missing))
-        rows = render_pack(s["dir"], files, s["blurbs"], s["packline"], s["statusline"],
+        kind, book, ver = scope_of(s)
+        if kind == "book":
+            meta = json.loads((ROOT / "v2" / "books" / book / "book.json").read_text())
+            if meta["version"] != ver:
+                raise SystemExit(
+                    f'gen_devpack: {s["dir"]} is stamped {ver} but {book} is at '
+                    f'{meta["version"]} — a pack names the version it REVIEWED, so either '
+                    f'the stamp is wrong or this pack belongs to an earlier version')
+            packline = (f'<b>{meta["title"]}</b> {ver} &middot; {s["packline"]} '
+                        f'<span class="small dim">(the book\u2019s version, not the '
+                        f'site\u2019s)</span>')
+        else:
+            packline = s["packline"]
+        rows = render_pack(s["dir"], files, s["blurbs"], packline, s["statusline"],
                            s["short"], "index.html#packs")
         total += len(rows)
         for j, (num, slug, title, desc, f) in enumerate(rows):

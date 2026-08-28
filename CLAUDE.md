@@ -64,8 +64,30 @@ copy it. The rule for adding to the kit: it must already exist twice.
 
 `book.json` has exactly ONE writer, `admin/build/gen_bookmeta.py`, which owns each book's
 own version and the chapter hashes the version gate reads. A book's builder writes
-`build.json` and gen_bookmeta folds it in. A book's version moves only when its content
-moves; the site's version moves on every push; `v1.0.0` is reserved for a final release.
+`build.json` and gen_bookmeta folds it in.
+
+## Three version streams, and naming that says which
+
+There is the **site's** version, which moves on every push, and one version **per book**,
+which moves only when that book's content moves. They are independent of each other, and
+`v1.0.0` is reserved for a book's final release.
+
+So **a file or folder name carrying a version must say which stream it belongs to**:
+
+| The work is about | The name | Example |
+|---|---|---|
+| the site | `vX.Y.Z__<slug>` | `v0.5.17__the-non-functional-pass` |
+| a book | `<book-slug>__vX.Y.Z__<slug>` | `making-a-book__v0.1.0__the-naming-question` |
+
+A book stamp carries **that book's** version, which is the version the work reviewed. This
+is enforced: a book-stamped artefact must name a real book at a version that book has
+actually been at (its current one or one in `former_versions`), and a pack declaring a
+`book` in `gen_devpack` must agree with its folder name. Book-scoped pages state the book
+and its version on every rendered surface, so a reader never has to guess.
+
+The rule exists because it was broken: the first change-control pack was named
+`v0.6.3__the-naming-question` — the site's version — for work reviewing a book at v0.1.0,
+a version that book has never had.
 
 ## Code guidelines
 

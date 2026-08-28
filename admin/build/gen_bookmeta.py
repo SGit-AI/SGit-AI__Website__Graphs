@@ -97,6 +97,13 @@ def main(check_only=False):
 
         prev_hashes = prev.get("content_hashes") or {}
         prev_version = prev.get("version")
+        # Supersede, never delete, applied to versions. Artefacts are stamped with the
+        # version they REVIEWED (`<book>__vX.Y.Z__<slug>`), so when a book moves, the
+        # versions it has been at must stay on the record or every artefact stamped with
+        # an earlier one becomes unverifiable.
+        former = list(prev.get("former_versions") or [])
+        if prev_version and prev_version != spec["version"] and prev_version not in former:
+            former.append(prev_version)
         # a book.json written before this generator carried the SITE version in
         # `version`; that is the confusion this generator exists to end.
         if prev_version and not SEMVER.match(str(prev_version)):
@@ -148,6 +155,7 @@ def main(check_only=False):
                            "site's version moves on every push. v1.0.0 is reserved for "
                            "the actual final release."),
             "front_matter_title": spec.get("front_matter_title", spec["title"]),
+            "former_versions": former,
             "content_hashes": now,
             "build": build,
         }

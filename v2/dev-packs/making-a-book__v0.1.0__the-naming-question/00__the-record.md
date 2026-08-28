@@ -3,11 +3,19 @@
 **Status** ⏸ **WAITING ON THE FOUNDER at stage 5 of 7 (approve).**
 **Opened by** brief 40: *"one of the first interesting questions to ask is, is the name of
 the book correct? And I don't think it is."*
-**Subject** *Creating a Book Using Fractal Semantic Graphs*, v0.1.0
+**Subject** *Creating a Book Using Fractal Semantic Graphs*, **v0.1.0** — the book's own
+version, not the site's
 
 This is the first run of the seven-stage workflow brief 39 asked for, and the first time
 the team defined in brief 40 has been used. It is deliberately a small question, because
 the point of a first run is to find out whether the machinery works.
+
+> **This pack was renamed at v0.6.4.** It shipped as `v0.6.3__the-naming-question`, stamped
+> with the *site's* version, for work reviewing a book at **v0.1.0** — a version that book
+> has never had. The founder caught it: *"the url that you used for that name review is
+> then confusing, what book is it about, and we didn't have v1 of the making book."* Three
+> version streams run in this repository and a bare number does not say which. Book work is
+> now stamped `<book-slug>__vX.Y.Z__<slug>`, and a gate enforces it.
 
 ---
 

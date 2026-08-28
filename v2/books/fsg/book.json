@@ -9,9 +9,10 @@
  "words": 38029,
  "pdf": "fsg.pdf",
  "pdf_pages": 119,
- "built_at_site_version": "v0.6.3",
+ "built_at_site_version": "v0.6.4",
  "versioning": "This book's version moves only when its content moves; the site's version moves on every push. v1.0.0 is reserved for the actual final release.",
  "front_matter_title": "Fractal Semantic Graphs: Meaning Through Connectivity",
+ "former_versions": [],
  "content_hashes": {
   "00__front-matter.md": "d818dc0dddc764268c15d49370b6e6d8761e1c7ae32d1b0967d00575090eec83",
   "01__a-node-is-just-a-node.md": "83ac93490e78a273ae5d95cf348b23a522f562283e5488d40981fc9ab0a650eb",
