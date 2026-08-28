@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.12</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.13</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -154,6 +154,17 @@
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
       <tr>
+        <td class="vnum">v0.6.13</td>
+        <td>28 August 2026</td>
+        <td><b>The work around the making-of book gets a Kanban board, and the two things blocked on the same person for the same reason are finally on one screen.</b>
+        The founder&rsquo;s framing: Issues-FS for the <em>management</em> of the tasks around the book &mdash; the coordination and sync of several agents, and the reviews &mdash; not for the book&rsquo;s content, with Kanban to see the flows. The reference is sgraph.ai&rsquo;s dev dashboard, and its <a href="https://sgraph.ai/en-gb/library/guides/dev-board-system.md">own guide</a> documents the system in full.
+        <b>The four schemas are adopted verbatim</b> &mdash; <code>project-workstreams-v2</code>, <code>project-issues-v1</code>, <code>project-agents-v2</code>, <code>project-releases-v1</code> &mdash; so a board here reads on that dashboard and the reverse. <b>The renderer is this estate&rsquo;s own, for a stated reason:</b> that guide publishes a defect where card helpers interpolate <code>title</code> and <code>description</code> as raw strings. Every value here is escaped, a colour must match a hex pattern before it reaches a style attribute, and four tests pin it with a payload.
+        <b>The mapping that earns the board.</b> A change-control pack is a workstream and its <b>seven stages are its tasks</b>, so <em>&ldquo;waiting at stage 5 of 7&rdquo;</em> stops being a sentence in a record and becomes a progress bar. Eight workstreams, 39 tasks, 8 issues, 7 agents. The naming question and the workflow document both sit at 4 of 7, both blocked on the founder, for decisions of the same kind &mdash; true before this page existed and visible nowhere.
+        <b>The board is a projection and cannot be edited in the browser.</b> The workstreams and issues are authored once in <code>gen_board.py</code>, because a stage&rsquo;s status is a judgement in the same way a version move is, and this estate has held since v0.6.5 that a judgement is written down rather than inferred from prose. <b>The roster is computed</b> from <code>v2/team/</code>: a role is active if it has produced a debrief at the book&rsquo;s current version, idle if it has only worked at an earlier one, and an empty debriefs folder still says honestly that a role has never run. <b>The release log is the book&rsquo;s own two-clock changelog.</b>
+        <b>One deliberate deviation from the reference, recorded.</b> Its four columns have no Blocked one, so a pack with four stages done and a blocked fifth fell through to Queued and read as not started. Started-and-stalled now renders as In Progress with the block named on the card; anything else understates work already done.
+        <b>The gate found something on its first run</b>, which is the point of writing it first: it refused the build because <code>making-a-book__v0.1.0__the-book-as-a-graph</code> was not on the board. Three packs, three workstreams, checked by name on every release. <b>Two stale numbers corrected in passing</b>, both in role definitions the board now puts on a public page: QA claimed 97 tests in six suites and a 27-gate validator (it is 116 in seven, and 72 failure conditions), and the developer claimed 24 generators and 64 client modules (28 and 71). Neither would have been noticed if the roster had not been rendered. 116 tests.</td>
+      </tr>
+      <tr>
         <td class="vnum">v0.6.12</td>
         <td>28 August 2026</td>
         <td><b>The book gets the file explorer the pilot document has had since v0.5.1.</b> The founder&rsquo;s question, and the answer was no: there was a window onto one document&rsquo;s artefacts and none onto a book&rsquo;s. Now every book has one at <code>files.html</code>, and for the making-of that is <b>24 folders and 313 files</b> in one tree: the seventeen markdown chapters that are the source of truth, the Leanpub source material behind them, <code>book.json</code> and <code>build.py</code>, the twenty figures, the publishing artefacts, the graph one folder per chapter, and the generated pages.
@@ -255,7 +266,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.6.12</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.13</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

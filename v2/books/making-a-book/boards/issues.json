@@ -1,0 +1,75 @@
+{
+ "schema": "project-issues-v1",
+ "version": "v0.6.13",
+ "note": "What is outstanding on this book, each with where it is argued.",
+ "issues": [
+  {
+   "id": "MAB-01",
+   "title": "Authored prose has no verbatim gate",
+   "status": "open",
+   "priority": "high",
+   "owner": "@qa",
+   "description": "An extraction cannot cite words that are not in the source; authored prose can. Eighteen of twenty-five founder quotations in the workflow document had been smoothed into readability before a script caught them.",
+   "href": "../../dev-pack/mab-workflow-00-the-record.html"
+  },
+  {
+   "id": "MAB-02",
+   "title": "File paths named in prose are not checked",
+   "status": "open",
+   "priority": "high",
+   "owner": "@qa",
+   "description": "Chapters 4 and 15 named a test file the day it was deleted. The researcher's first debrief named a brief path renamed four releases earlier. Both found by reading.",
+   "href": "../../dev-pack/mab-naming-00-the-record.html"
+  },
+  {
+   "id": "MAB-03",
+   "title": "The title is not yet earned by the body",
+   "status": "open",
+   "priority": "high",
+   "owner": "@editor",
+   "description": "The book is called Creating a Book Using Agentic Workflows and its own graph counts workflow six times in 27,002 words. Closing this is what part one and the vocabulary pass are for.",
+   "href": "../../universe/agentic-workflows.html"
+  },
+  {
+   "id": "MAB-04",
+   "title": "Does the cover name Claude?",
+   "status": "blocked",
+   "priority": "medium",
+   "owner": "@founder",
+   "description": "Brief 40 said 'writing a book with Claude'; brief 41 said 'making a book with agents'. The book names Claude four times. The two memos point different ways and it has not been decided.",
+   "href": "../../dev-pack/mab-naming-00-the-record.html"
+  },
+  {
+   "id": "MAB-05",
+   "title": "A graph diff needs a graph per book version",
+   "status": "open",
+   "priority": "medium",
+   "owner": "@developer",
+   "description": "Only the current version has a graph, so the diff the founder asked for cannot be computed backwards yet. A text diff is available from the tags today and should not be mistaken for the answer."
+  },
+  {
+   "id": "MAB-06",
+   "title": "Issues-FS is missing from the network page",
+   "status": "open",
+   "priority": "low",
+   "owner": "@librarian",
+   "description": "Logged as task T31 in the v0.3.27 pack and still open. Their site cites this one for the philosophy; this one does not list them at all."
+  },
+  {
+   "id": "MAB-07",
+   "title": "The fractal principle's February origin is not credited in prose",
+   "status": "open",
+   "priority": "medium",
+   "owner": "@researcher",
+   "description": "Part 3 of Thinking in Graphs, written for Issues-FS on 5 February 2026, names and works through the fractal principle five months before the document called Fractal Semantic Graphs. The anchored extraction holds it; the timeline in origins.md does not say it."
+  },
+  {
+   "id": "MAB-08",
+   "title": "Per-agent task folders are not built",
+   "status": "open",
+   "priority": "medium",
+   "owner": "@developer",
+   "description": "The board shows the workstreams. The day-to-day list each agent owns, on the Issues-FS-lite pattern with the writer rule, does not exist yet."
+  }
+ ]
+}

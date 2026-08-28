@@ -476,8 +476,13 @@ test('bookfiles: every book has an explorer, and its manifest matches the disk',
       for (const f of folder.files) {
         const onDisk = path.join(dir, f.n);
         assert.ok(existsSync(onDisk), `${slug}: manifest lists ${folder.base}/${f.n}, not on disk`);
-        assert.equal(statSync(onDisk).size, f.b,
-          `${slug}: ${folder.base}/${f.n} changed size — rerun gen_bookfiles.py`);
+        /* Sizes are pinned for sources and data. NOT for .html: chrome.py stamps
+           nav and footer into every page AFTER the manifest is written, so a
+           rendered page's size is expected to differ by the size of the chrome. */
+        if (!f.n.endsWith('.html')) {
+          assert.equal(statSync(onDisk).size, f.b,
+            `${slug}: ${folder.base}/${f.n} changed size — rerun gen_bookfiles.py`);
+        }
       }
     }
     /* and nothing on disk is missing from it: the content folder is the test

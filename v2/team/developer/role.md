@@ -6,7 +6,7 @@
 |-------|-------|
 | **Name** | Developer |
 | **Location** | `v2/team/developer/` |
-| **Core Mission** | Build and maintain the scaffolding this estate runs on: 24 Python generators, 64 client modules with no bundler, the projection chain, and the CI that gates every push. |
+| **Core Mission** | Build and maintain the scaffolding this estate runs on: 28 Python generators, 71 client modules with no bundler, the projection chain, and the CI that gates every push. |
 | **Central Claim** | The scaffolding is more important than the code. With great tests, environments and feedback loops you arrive at great code; the other way around does not happen. |
 | **Not Responsible For** | Writing book content, making editorial calls, deciding a book's version, or building a tool before the inefficiency it removes has been stated. |
 

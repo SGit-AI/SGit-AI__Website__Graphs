@@ -101,7 +101,7 @@ PAGE = """<!doctype html>
 <div class="crumb"><a href="../../../index.html">graphs.sgit.ai</a> &rarr; <a href="../index.html">the books</a> &rarr; <a href="index.html">{short}</a> &rarr; <b>the files</b></div>
 <h1>The files of <em>{title}</em></h1>
 <p class="lead"><b>{bookver}</b> &middot; {nfolders} folders, {nfiles} files. Everything this book is made of and everything the build derived from it, in one explorer. <b>Raw</b> is the exact bytes with minimal formatting; files the build understands also carry <b>their own view</b> &mdash; the markdown rendered, <code>book.json</code> as the two-clock changelog and the chapter hashes the version gate reads, the graph index as the chapter table, each chapter's shards as their blocks with uids. The markdown under <code>content/</code> is the source of truth: every rendered page and the PDF are projections of it.</p>
-<div class="note"><b>Where the versions come from.</b> This book is at <b>{bookver}</b> and the site is at <b>{siteversion}</b>. Two clocks: the book's moves only when its content moves, the site's on every push. <a href="../../../admin/versions.html#rules">The rules</a>{graphlink} &middot; <a href="index.html">read the book</a></div>
+<div class="note"><b>Where the versions come from.</b> This book is at <b>{bookver}</b> and the site is at <b>{siteversion}</b>. Two clocks: the book's moves only when its content moves, the site's on every push. <a href="../../../admin/versions.html#rules">The rules</a>{graphlink}{boardlink} &middot; <a href="index.html">read the book</a></div>
 <div id="filex" class="fx"></div>
 </main>
 
@@ -130,6 +130,8 @@ def main():
             nfolders=len(folders), nfiles=n_files,
             graphlink=(' &middot; <a href="graph/index.html">the book as a graph</a>'
                        if (book / "graph" / "index.html").exists() else ''),
+            boardlink=(' &middot; <a href="board.html">the project board</a>'
+                       if (book / "board.html").exists() else ''),
             manifest=json.dumps({"slug": book.name, "kind": "book", "folders": folders})))
         done.append(f'{book.name} {len(folders)} folder(s) / {n_files} file(s)')
     print("gen_bookfiles: " + " · ".join(done))

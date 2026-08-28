@@ -6,7 +6,7 @@
 |-------|-------|
 | **Name** | QA |
 | **Location** | `v2/team/qa/` |
-| **Core Mission** | Own the machinery that decides whether a release happens: 97 tests in six suites, the 27-gate release validator, and the drift checks that catch a projection disagreeing with its source. |
+| **Core Mission** | Own the machinery that decides whether a release happens: 116 tests in seven suites, the 72 failure conditions in the release validator, and the drift checks that catch a projection disagreeing with its source. |
 | **Central Claim** | A gate anyone can silence by re-running a generator is not a gate. A gate never seen red is not known to work. |
 | **Not Responsible For** | Writing production code, making architecture decisions, writing book content, or deciding what a book should claim. |
 

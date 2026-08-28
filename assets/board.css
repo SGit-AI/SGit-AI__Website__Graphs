@@ -1,0 +1,74 @@
+/* The project board: the Kanban columns, the cards, and the three list views.
+   Loaded only by a book's board page. Colours come from the board JSON through
+   a validated hex check, never as free text. */
+@import url("site.css");
+
+.bd { margin: 1.2rem 0 2rem; }
+.bd-tabs { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .3rem; }
+.bd-tab { font: inherit; font-size: .78rem; padding: .3rem .8rem; cursor: pointer;
+  border: 1px solid var(--line2, #ddd); background: transparent; border-radius: 999px;
+  opacity: .72; display: inline-flex; gap: .4rem; align-items: center; }
+.bd-tab:hover { opacity: 1; }
+.bd-tab.on { opacity: 1; font-weight: 700; border-color: #2a9d8f; background: rgba(42,157,143,.1); }
+.bd-n { font-size: .64rem; opacity: .65; font-weight: 400; }
+.bd-note { font-size: .78rem; color: #667; margin: .5rem 0 .9rem; }
+
+.bd-kanban { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .7rem; }
+.bd-col { background: rgba(0,0,0,.02); border: 1px solid var(--line2, #e5e5e5);
+  border-radius: 10px; padding: .5rem; min-width: 0; }
+.bd-col h3 { font-size: .68rem; letter-spacing: .05em; text-transform: uppercase;
+  color: #667; margin: .1rem 0 .55rem; display: flex; justify-content: space-between; }
+.bd-empty { font-size: .72rem; color: #99a; margin: .3rem 0; }
+
+.bd-card { background: #fff; border: 1px solid var(--line2, #e5e5e5); border-left: 4px solid #8b93a7;
+  border-radius: 8px; padding: .5rem .6rem; margin-bottom: .5rem; cursor: pointer; }
+.bd-card:hover, .bd-card:focus { border-color: #2a9d8f; outline: none;
+  box-shadow: 0 1px 6px rgba(0,0,0,.08); }
+.bd-card h4 { font-size: .82rem; margin: 0 0 .25rem; line-height: 1.25; }
+.bd-desc { font-size: .72rem; color: #556; margin: .2rem 0; line-height: 1.4; }
+/* the card is a summary; the whole description is in the drill-down */
+.bd-card .bd-desc { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;
+  overflow: hidden; }
+.bd-meta { font-size: .68rem; color: #778; margin: .35rem 0 0; }
+.bd-bar { height: .3rem; background: rgba(0,0,0,.07); border-radius: 3px; overflow: hidden; margin: .4rem 0 .1rem; }
+.bd-bar i { display: block; height: 100%; }
+
+.bd-badge { display: inline-block; font-size: .62rem; padding: .05rem .38rem; border-radius: 999px;
+  border: 1px solid currentColor; text-transform: uppercase; letter-spacing: .03em; }
+.bd-done, .bd-released, .bd-resolved, .bd-active { color: #1a7f5a; }
+.bd-in-progress, .bd-current { color: #1d6fa5; }
+.bd-next { color: #a15c00; }
+.bd-queued, .bd-idle, .bd-open { color: #6b6f78; }
+.bd-blocked, .bd-p-high { color: #b3261e; }
+.bd-p-medium { color: #a15c00; }
+.bd-p-low { color: #6b6f78; }
+.bd-owner { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .66rem; color: #557; }
+
+.bd-detail { border: 1px solid var(--line2, #e5e5e5); border-radius: 10px; padding: .9rem 1rem; }
+.bd-detail h3 { margin: .4rem 0 .5rem; padding-bottom: .35rem; border-bottom: 2px solid #8b93a7; }
+.bd-back { font: inherit; font-size: .72rem; padding: .18rem .6rem; cursor: pointer;
+  border: 1px solid var(--line2, #ddd); background: transparent; border-radius: 6px; }
+.bd-tasks, .bd-agents { font-size: .78rem; width: 100%; }
+.bd-tasks td, .bd-tasks th, .bd-agents td, .bd-agents th { padding: .28rem .5rem; vertical-align: top; }
+.bd-tasks tr.bd-t-done td { opacity: .62; }
+.bd-tasks td:first-child, .bd-agents td:first-child { white-space: nowrap; }
+
+.bd-issues { display: grid; grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); gap: .7rem; }
+.bd-issue { border: 1px solid var(--line2, #e5e5e5); border-left: 4px solid #6b6f78;
+  border-radius: 8px; padding: .6rem .7rem; }
+.bd-issue.bd-p-high { border-left-color: #b3261e; }
+.bd-issue.bd-p-medium { border-left-color: #a15c00; }
+.bd-issue h4 { font-size: .84rem; margin: 0 0 .2rem; }
+
+.bd-releases { display: grid; gap: .6rem; }
+.bd-rel { border: 1px solid var(--line2, #e5e5e5); border-radius: 8px; padding: .6rem .8rem; }
+.bd-rel h4 { font-size: .9rem; margin: 0 0 .3rem; display: flex; gap: .5rem; align-items: baseline; }
+.bd-when { margin-left: auto; font-size: .7rem; color: #778; font-weight: 400; }
+.bd-shipped { font-size: .74rem; margin: .3rem 0 0; padding-left: 1.1rem; }
+
+@media (max-width: 900px) {
+  .bd-kanban { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .bd-kanban { grid-template-columns: 1fr; }
+}

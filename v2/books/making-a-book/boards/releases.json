@@ -1,0 +1,35 @@
+{
+ "schema": "project-releases-v1",
+ "version": "v0.6.13",
+ "note": "The book's own clock, paired with the site release that carried it.",
+ "releases": [
+  {
+   "version": "v0.2.0",
+   "site": "v0.6.9",
+   "status": "current",
+   "date": "",
+   "note": "Retitled from 'Creating a Book Using Fractal Semantic Graphs' after the founder read it and the review found the old name unearned: 'fractal' appeared nine times in 31,221 words, six of them quoting the other book. Front matter rewritten to record the rename rather than hide it. Two corrections carried in the same pass: the colophon's claim that the second book was unwritten is now scoped to when it was true, and three references to a test file split at v0.5.20 are corrected.",
+   "tasks": [
+    {
+     "id": "v0.6.9",
+     "title": "shipped in site v0.6.9",
+     "owner": "@publisher"
+    }
+   ]
+  },
+  {
+   "version": "v0.1.0",
+   "site": "v0.5.18",
+   "status": "released",
+   "date": "",
+   "note": "Adopted into per-book versioning. The book was written at site v0.5.13 and self-reviewed at v0.5.16, which corrected eight numbers it had got wrong about this repository.",
+   "tasks": [
+    {
+     "id": "v0.5.18",
+     "title": "shipped in site v0.5.18",
+     "owner": "@publisher"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "schema": "project-agents-v2",
+ "version": "v0.6.13",
+ "note": "Computed from v2/team/ and the debriefs each role has produced for this book. Active means it has worked at the book's current version.",
+ "agents": [
+  {
+   "alias": "@developer",
+   "id": "developer.making-a-book",
+   "session_status": "active",
+   "model": "agent",
+   "role": "Build and maintain the scaffolding this estate runs on: 28 Python generators, 71 client modules with no bundler, the projection chain, and the CI that gates every push.",
+   "location": "v2/team/developer/",
+   "output": "1 debrief(s) on this book, 1 at v0.2.0"
+  },
+  {
+   "alias": "@editor",
+   "id": "editor.making-a-book",
+   "session_status": "active",
+   "model": "agent",
+   "role": "Hold the books' voice and, more importantly, hold what they refuse to claim.",
+   "location": "v2/team/editor/",
+   "output": "2 debrief(s) on this book, 1 at v0.2.0"
+  },
+  {
+   "alias": "@librarian",
+   "id": "librarian.making-a-book",
+   "session_status": "active",
+   "model": "agent",
+   "role": "Keep every register in this estate agreeing with every other one, and keep everything findable by the name a person would actually reach for.",
+   "location": "v2/team/librarian/",
+   "output": "2 debrief(s) on this book, 1 at v0.2.0"
+  },
+  {
+   "alias": "@publisher",
+   "id": "publisher.making-a-book",
+   "session_status": "active",
+   "model": "agent",
+   "role": "Run two clocks and the rule that keeps them apart: the site's version, which moves on every push, and each book's version, which moves only when that book's content moves.",
+   "location": "v2/team/publisher/",
+   "output": "2 debrief(s) on this book, 1 at v0.2.0"
+  },
+  {
+   "alias": "@qa",
+   "id": "qa.making-a-book",
+   "session_status": "active",
+   "model": "agent",
+   "role": "Own the machinery that decides whether a release happens: 116 tests in seven suites, the 72 failure conditions in the release validator, and the drift checks that catch a projection disagreeing with its source.",
+   "location": "v2/team/qa/",
+   "output": "2 debrief(s) on this book, 1 at v0.2.0"
+  },
+  {
+   "alias": "@researcher",
+   "id": "researcher.making-a-book",
+   "session_status": "active",
+   "model": "agent",
+   "role": "Answer questions from this estate's closed local corpus, with every claim anchored to bytes that can be checked, and refuse to answer from anywhere else.",
+   "location": "v2/team/researcher/",
+   "output": "2 debrief(s) on this book, 1 at v0.2.0"
+  },
+  {
+   "alias": "@writer",
+   "id": "writer.making-a-book",
+   "session_status": "active",
+   "model": "agent",
+   "role": "Write the chapter markdown for three books whose reader may stop at any point and must still have a whole book.",
+   "location": "v2/team/writer/",
+   "output": "2 debrief(s) on this book, 1 at v0.2.0"
+  }
+ ]
+}

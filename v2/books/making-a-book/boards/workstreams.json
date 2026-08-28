@@ -1,0 +1,356 @@
+{
+ "schema": "project-workstreams-v2",
+ "version": "v0.6.13",
+ "title": "Workstreams and tasks",
+ "note": "A change-control pack is a workstream and its seven stages are its tasks. Click a card for the stages.",
+ "workstreams": [
+  {
+   "id": "WS-01",
+   "title": "The naming question",
+   "description": "Is the book's title right? The first run of the seven-stage workflow, on a deliberately small question. The title was decided at v0.6.9; the cover and the audience are still open.",
+   "color": "#6366f1",
+   "waiting_on": "the founder",
+   "pack": "making-a-book__v0.1.0__the-naming-question",
+   "href": "../../dev-pack/mab-naming-00-the-record.html",
+   "tasks": [
+    {
+     "id": "WS-01-s1",
+     "title": "1. plan",
+     "status": "done",
+     "owner": "@team",
+     "note": ""
+    },
+    {
+     "id": "WS-01-s2",
+     "title": "2. map",
+     "status": "done",
+     "owner": "@team",
+     "note": ""
+    },
+    {
+     "id": "WS-01-s3",
+     "title": "3. define",
+     "status": "done",
+     "owner": "@team",
+     "note": ""
+    },
+    {
+     "id": "WS-01-s4",
+     "title": "4. review",
+     "status": "done",
+     "owner": "@team",
+     "note": ""
+    },
+    {
+     "id": "WS-01-s5",
+     "title": "5. approve",
+     "status": "blocked",
+     "owner": "@founder",
+     "note": "Two of three questions still open: does the cover name Claude, and is 'Making a Book with Agents' the decision or a placeholder"
+    },
+    {
+     "id": "WS-01-s6",
+     "title": "6. implement",
+     "status": "queued",
+     "owner": "@team",
+     "note": ""
+    },
+    {
+     "id": "WS-01-s7",
+     "title": "7. approve the implementation",
+     "status": "queued",
+     "owner": "@founder",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "WS-02",
+   "title": "The workflow document",
+   "description": "Brief 45: write a source document about workflows and connect it to the book. The document shipped at v0.6.11; connecting it changes the book, so it is in front of the founder.",
+   "color": "#0d9488",
+   "waiting_on": "the founder",
+   "pack": "making-a-book__v0.2.0__the-workflow-document",
+   "href": "../../dev-pack/mab-workflow-00-the-record.html",
+   "tasks": [
+    {
+     "id": "WS-02-s1",
+     "title": "1. plan",
+     "status": "done",
+     "owner": "@team",
+     "note": ""
+    },
+    {
+     "id": "WS-02-s2",
+     "title": "2. map",
+     "status": "done",
+     "owner": "@team",
+     "note": ""
+    },
+    {
+     "id": "WS-02-s3",
+     "title": "3. define",
+     "status": "done",
+     "owner": "@team",
+     "note": ""
+    },
+    {
+     "id": "WS-02-s4",
+     "title": "4. review",
+     "status": "done",
+     "owner": "@team",
+     "note": ""
+    },
+    {
+     "id": "WS-02-s5",
+     "title": "5. approve",
+     "status": "blocked",
+     "owner": "@founder",
+     "note": "Four questions: connect it (book moves to v0.3.0), name the process, which book gets part one, build QA's quotation gate"
+    },
+    {
+     "id": "WS-02-s6",
+     "title": "6. implement",
+     "status": "queued",
+     "owner": "@team",
+     "note": "3,500 to 4,500 words: a new chapter plus a vocabulary pass"
+    },
+    {
+     "id": "WS-02-s7",
+     "title": "7. approve the implementation",
+     "status": "queued",
+     "owner": "@founder",
+     "note": ""
+    }
+   ]
+  },
+  {
+   "id": "WS-08",
+   "pack": "making-a-book__v0.1.0__the-book-as-a-graph",
+   "title": "The book as a graph",
+   "color": "#be185d",
+   "description": "Brief 43: put the whole book through the decomposition built for one pilot document, so JSON becomes the source of truth. Seven activities, each naming what it produces and how it is checked.",
+   "href": "../../dev-pack/bookgraph-00-the-plan.html",
+   "tasks": [
+    {
+     "id": "WS-08-A1",
+     "title": "A1 — parameterise the decomposition",
+     "status": "done",
+     "owner": "@developer",
+     "note": "v0.6.10; the pilot's output byte-identical afterwards"
+    },
+    {
+     "id": "WS-08-A2",
+     "title": "A2 — add the book level",
+     "status": "done",
+     "owner": "@developer",
+     "note": "v0.6.10; 17 chapters, 27,002 words, every chapter byte-identical"
+    },
+    {
+     "id": "WS-08-A3",
+     "title": "A3 — run the book and let the gates find the strains",
+     "status": "done",
+     "owner": "@qa",
+     "note": "ran clean in A2; the strains did not appear"
+    },
+    {
+     "id": "WS-08-A4",
+     "title": "A4 — the five levels",
+     "status": "queued",
+     "owner": "@researcher",
+     "note": "the pack marks the table a proposal, not a result"
+    },
+    {
+     "id": "WS-08-A5",
+     "title": "A5 — the observability brief 43 ranks above the output",
+     "status": "next",
+     "owner": "@developer",
+     "note": "the file explorer at v0.6.12 is the first half of this"
+    },
+    {
+     "id": "WS-08-A6",
+     "title": "A6 — the restructure, as a transformation",
+     "status": "queued",
+     "owner": "@developer",
+     "note": "depends on part one being decided"
+    },
+    {
+     "id": "WS-08-A7",
+     "title": "A7 — the five samples",
+     "status": "queued",
+     "owner": "@writer"
+    }
+   ]
+  },
+  {
+   "id": "WS-03",
+   "title": "Part one: the art of the possible",
+   "color": "#d97706",
+   "status": "queued",
+   "description": "Briefs 42, 44 and 45 all ask the book to open by showing what writing a book here gets you, before telling the story of getting there.",
+   "href": "../../dev-pack/features-00-the-capability-register.html",
+   "tasks": [
+    {
+     "id": "WS-03a",
+     "title": "Count what part one could truthfully show",
+     "status": "done",
+     "owner": "@researcher",
+     "note": "the capability register, v0.6.7"
+    },
+    {
+     "id": "WS-03b",
+     "title": "The founder's Leanpub failure story as source material",
+     "status": "done",
+     "owner": "@founder",
+     "note": "sources/the-leanpub-years.md, v0.6.9"
+    },
+    {
+     "id": "WS-03c",
+     "title": "Confirm the screenshots that show the workflow",
+     "status": "done",
+     "owner": "@qa",
+     "note": "figures 08, 17, 18, 19 already show it; the earlier claim was wrong"
+    },
+    {
+     "id": "WS-03d",
+     "title": "Decide which book part one opens",
+     "status": "blocked",
+     "owner": "@founder",
+     "note": "brief 45 says 'the first book'; read here as the making-of"
+    },
+    {
+     "id": "WS-03e",
+     "title": "Write it",
+     "status": "queued",
+     "owner": "@writer"
+    }
+   ]
+  },
+  {
+   "id": "WS-04",
+   "title": "The version diff",
+   "color": "#9333ea",
+   "status": "next",
+   "description": "Brief 45 asks to read the changes between two versions of the book, and sets the bar at a diff computed from the graphs rather than the markdown: 'that would be the really test measurement of our success here'.",
+   "tasks": [
+    {
+     "id": "WS-04a",
+     "title": "A book graph per chapter, with identities that survive an edit",
+     "status": "done",
+     "owner": "@developer",
+     "note": "v0.6.10"
+    },
+    {
+     "id": "WS-04b",
+     "title": "Text diff between two book versions from the tags",
+     "status": "next",
+     "owner": "@developer",
+     "note": "the mechanism exists for the first edition at /v1/book/changes.html"
+    },
+    {
+     "id": "WS-04c",
+     "title": "Store a graph per book version",
+     "status": "queued",
+     "owner": "@developer",
+     "note": "only the current version has one; this is the gap"
+    },
+    {
+     "id": "WS-04d",
+     "title": "Diff the graphs, not the markdown",
+     "status": "queued",
+     "owner": "@developer",
+     "note": "the measure of success the memo names"
+    }
+   ]
+  },
+  {
+   "id": "WS-05",
+   "title": "The gates the reviews asked for",
+   "color": "#dc2626",
+   "status": "next",
+   "description": "Two gates QA has requested and neither is built. Both protect claims the book makes about itself.",
+   "tasks": [
+    {
+     "id": "WS-05a",
+     "title": "Quoted founder text must be verbatim in the brief it cites",
+     "status": "next",
+     "owner": "@qa",
+     "note": "earned at v0.6.11: 18 of 25 quotations had been smoothed before a script caught them"
+    },
+    {
+     "id": "WS-05b",
+     "title": "File paths named in prose must exist",
+     "status": "next",
+     "owner": "@qa",
+     "note": "asked at v0.6.3; two instances of the defect found by reading since"
+    },
+    {
+     "id": "WS-05c",
+     "title": "A book is called the same thing everywhere",
+     "status": "done",
+     "owner": "@qa",
+     "note": "built at v0.6.3, run red against a half-finished rename first"
+    }
+   ]
+  },
+  {
+   "id": "WS-06",
+   "title": "Publishing",
+   "color": "#0891b2",
+   "status": "queued",
+   "description": "The book is built and waiting. The publisher's position is to hold the upload until the restructure lands rather than put a superseded version on a store.",
+   "tasks": [
+    {
+     "id": "WS-06a",
+     "title": "Cover, metadata, sample, landing page",
+     "status": "done",
+     "owner": "@publisher",
+     "note": "v0.5.19"
+    },
+    {
+     "id": "WS-06b",
+     "title": "Leanpub upload",
+     "status": "blocked",
+     "owner": "@founder",
+     "note": "held deliberately until part one lands"
+    }
+   ]
+  },
+  {
+   "id": "WS-07",
+   "title": "The project board",
+   "color": "#65a30d",
+   "status": "in-progress",
+   "description": "This board. Issues-FS for the coordination around the book, sgraph.ai's board schemas for seeing it.",
+   "tasks": [
+    {
+     "id": "WS-07a",
+     "title": "Read the reference dashboard and its schemas",
+     "status": "done",
+     "owner": "@developer",
+     "note": "sgraph.ai/en-gb/library/guides/dev-board-system.md"
+    },
+    {
+     "id": "WS-07b",
+     "title": "Adopt the four schemas verbatim, write our own renderer",
+     "status": "done",
+     "owner": "@developer",
+     "note": "their guide publishes an unescaped-interpolation defect; ours escapes everything"
+    },
+    {
+     "id": "WS-07c",
+     "title": "Derive the board from the packs, the team and the changelog",
+     "status": "done",
+     "owner": "@developer"
+    },
+    {
+     "id": "WS-07d",
+     "title": "Per-agent task folders on the Issues-FS-lite pattern",
+     "status": "queued",
+     "owner": "@developer",
+     "note": "issues/open|blocked|done per agent, four mv operations, the writer rule"
+    }
+   ]
+  }
+ ]
+}
