@@ -5,7 +5,7 @@
 > Properties are "just words"; connections are meaning. This site teaches that discipline
 > in three altitudes and proves it with real worked graphs.
 
-Site version: v0.5.17 (27 August 2026). Published by the sgit project — participant
+Site version: v0.5.18 (27 August 2026). Published by the sgit project — participant
 disclosure at /about/participant.html. All content on this site is released under CC BY
 4.0. The raw markdown under /v1/briefs/ is the source of truth and carries the same licence.
 
@@ -412,6 +412,14 @@ pages** so the two cannot drift
   it is true is judged at layer 3, the book's universe, which connects to these nodes rather
   than absorbing them. Machine surface: /v2/universe/data/universe.json (nodes, edges, offsets,
   hashes). Each document also ships as a printable PDF for review with nothing else open; the web page carries an interactive reader (side panel: the local graph and the rendered frozen source, highlights driven by the gate-verified byte offsets, three-way jumps between tables, graph and source).
+- https://graphs.sgit.ai/v2/books/index.html — the books this estate has produced, each
+  versioned on its own content rather than on the site's releases: *Fractal Semantic
+  Graphs: Meaning Through Connectivity* (v0.2.0), *Creating a Book Using Fractal Semantic
+  Graphs* (v0.1.0) and the Universe volume (v0.1.0, held). Markdown is the source of truth
+  in every case, the web edition renders it, and one print PDF carries each book offline.
+  v1.0.0 is reserved for a book's actual final release, so a lower number states honestly
+  that the book is still under review. Machine surface: /v2/books/<slug>/book.json — the
+  version, the chapter list and the SHA-256 of every chapter markdown.
 - https://graphs.sgit.ai/v2/wclm/index.html — the WCLM (words content language model), an
   experiment: a deterministic transformer over the site's own graphs. Tokens are content
   hashes (FNV-1a 64), six named layers (tokenise, resolve, attend, bind, expand, converge)

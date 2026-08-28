@@ -235,3 +235,45 @@ cleanest possible meaning, and leaves the v0.5 retrospective a complete arc to n
 - **Recorded, not asked:** the Universe volume stays published on the site and simply is
   not part of this release; the making-of book keeps its current title until the founder
   revises it.
+
+---
+
+## Addendum — the founder's answers (typed, same night)
+
+> 1. So the v1.0.0 will be the actual final release, so for Fractal Semantic Graphs it
+> should be v0.2.0 and Creating a Book should be v0.1.0
+> 2. It will be voice memos, or in some cases I will use a modified version of the
+> Narration tool (which supports screenshots)
+> 3. Yes, you can see it here https://leanpub.com/u/diniscruz where I published a good
+> number of books several years ago
+>
+> Yes, let's keep the Universe where it is (we'll come back to this book later on)
+
+The agent's reading, built as v0.5.18:
+
+11. **The version scheme is settled, and it says something.** `v1.0.0` is reserved for the
+    ACTUAL final release, so a book below 1.0 is openly a book still under review:
+    *Fractal Semantic Graphs* starts at **v0.2.0** (it has a first edition behind it),
+    *Creating a Book Using Fractal Semantic Graphs* at **v0.1.0**, and the Universe volume
+    takes **v0.1.0** as a held draft. Leanpub readers see the number, so the number is a
+    promise: this is in progress, you get every update, 1.0 is the finished thing. *Built:
+    every book carries a `book.json` with its OWN version and a per-chapter content hash;
+    a gate fails any content change that does not move the book's version, and any version
+    move that changes no content.*
+
+12. **The review notes arrive as voice memos or narrated-review exports with screenshots.**
+    Both are formats this estate already handles — every brief in `v2/briefs/` is a
+    transcribed memo, and briefs 27 and 33 came from narrated reviews with paired
+    screenshots. *Recorded as the review machinery's day-one input contract; the v0.6.0
+    memo will say what it does with them.*
+
+13. **The Leanpub account is real and has history**: ten published books, one unpublished,
+    and a published bundle (`All Books`) at `leanpub.com/u/diniscruz`. Two consequences
+    recorded rather than assumed: there is a bundle precedent, so the two books can ship as
+    a pair; and the author bio on the profile is years stale (it still reads "CISO of the
+    Photobox Group"), so updating it belongs to the release checklist rather than to
+    marketing copy written fresh.
+
+14. **The Universe volume stays where it is** — published on the site, out of this release,
+    returned to later. It takes a version like the others so its state is legible, but it
+    is not part of the Leanpub pair.

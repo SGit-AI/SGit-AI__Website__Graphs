@@ -41,6 +41,12 @@ BLURB = {
 # the working packs: everything under dev-packs/ that is not the main pack.
 # short: the url prefix for the rendered pages. label: how the hub names the pack.
 SIDE = [
+ {"dir": "v0.5.18__the-leanpub-release", "short": "leanpub", "label": "The Leanpub release",
+  "packline": "v0.5.18 &middot; shipping the pair",
+  "statusline": "PREPARED &mdash; the agent work is listed; the account is the founder's hands",
+  "blurbs": {
+   "00__the-release.md": "What ships (two books, at v0.2.0 and v0.1.0, the Universe held back), the account as it actually stands, the method already written in admin/publishing.html, the five things still to build, and the upload-day checklist.",
+  }},
  {"dir": "v0.5.17__the-non-functional-pass", "short": "nfr", "label": "The non-functional pass",
   "packline": "v0.5.17 &middot; before the review era",
   "statusline": "IN PROGRESS &mdash; pass one shipped; passes two and three planned",

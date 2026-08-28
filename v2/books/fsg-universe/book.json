@@ -1,0 +1,27 @@
+{
+ "title": "The Universe Volume for Fractal Semantic Graphs",
+ "slug": "fsg-universe",
+ "version": "v0.1.0",
+ "status": "held",
+ "release": "not in this release",
+ "note": "Stays on the site; returned to later (brief 39).",
+ "chapters": 12,
+ "words": 30696,
+ "pdf": "fsg-universe.pdf",
+ "built_at_site_version": "v0.5.18",
+ "versioning": "This book's version moves only when its content moves; the site's version moves on every push. v1.0.0 is reserved for the actual final release.",
+ "content_hashes": {
+  "00__front-matter.md": "4e12f62e581a9c9b30c166b6f96eb3d84f1480b0b430f4590d859d54cec61846",
+  "01__how-to-read-this-atlas.md": "7663a00d7f48c2a467a5c6dc60669429359523d965c3aca3cdf167ee58f61cc5",
+  "02__the-meaning-core.md": "723ef4427938494bcee2ea6d5507d90246299b4b79c4f2248b8cf0ee6619481b",
+  "03__the-grammar-of-edges.md": "03912899d7b655eb51c8f7122c74e245decb2e3ef69b103b3fea0b0e4b650023",
+  "04__anchors-scopes-and-bridges.md": "bcd06cc2fba8f05ddff7ad07d9e03403da54c03d24dca3a6c6228aaeff73aea5",
+  "05__confidence-evidence-and-reality.md": "f0c70e1f02ce03c17e9677f3eb56ba560c20b49a36e2563d571dbb42c4c101b2",
+  "06__provenance-correction-and-time.md": "49bf7ce0175cbc478368cea48e1ba97a6b48f10cbcb92fb6e3cb9d73cdb48edc",
+  "07__the-fractal-principle.md": "e4d908c67872f2dedb110da83c1ea479d0a664c8c64774ceb4c5dcfd2b315a96",
+  "08__the-machinery.md": "e770df1212eeea86289666c71235c36edc9c196e891f336292be02f3dd198168",
+  "09__the-estate-and-the-network.md": "3c2f2b107b1078b0c4a62da73730380b79c970f8b3ff9522a6f90197dea14ef9",
+  "10__what-the-atlas-found.md": "8c4163a0a29cfafe87a35ea86164bef1b3a2ed1911894a332e247ba244486fb5",
+  "11__colophon.md": "1894f28677ad945ddc437a1b8f9cbef5ce7654c6d685c27f7827b6919b14cf2b"
+ }
+}

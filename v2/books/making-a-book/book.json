@@ -1,0 +1,32 @@
+{
+ "title": "Creating a Book Using Fractal Semantic Graphs",
+ "slug": "making-a-book",
+ "version": "v0.1.0",
+ "status": "under review",
+ "release": "the Leanpub pair",
+ "note": "The making-of, for authors who want to use the same agentic workflow.",
+ "chapters": 17,
+ "words": 31221,
+ "pdf": "making-a-book.pdf",
+ "built_at_site_version": "v0.5.18",
+ "versioning": "This book's version moves only when its content moves; the site's version moves on every push. v1.0.0 is reserved for the actual final release.",
+ "content_hashes": {
+  "00__front-matter.md": "dcbe0f9062c7c905eedebc6802c1451417d80937a4f20518a14577a73eba06f0",
+  "01__the-loop.md": "f2c9edbc51faddc7aa1fd5af8a9357ae24ba61bc6d3620d9d0b8fedfaa7ce122",
+  "02__the-pivot.md": "95c19ea539652ed0ce310fd6973dee040578fdcfc4e26ffad1cacee469983243",
+  "03__briefs-as-the-contract.md": "aca5749ce723292582932df5320688e694b83facd861f7047c3b4978cf85a423",
+  "04__gates-buy-speed.md": "8841b19e3381721227b173fa0c059c80caaf75e099bb91ce93161ff9bcda3c1c",
+  "05__the-instrument.md": "f4d66877b640e1df657820070e05f031b5f3225186f76053f4c2416826f9543d",
+  "06__two-agents-one-repo.md": "936f7c7cbbeba2fe7e6bf716839c0425dac73574a5bb61a32c851edbf0250a6e",
+  "07__the-failures.md": "e723cf60b3ae8ab2f17ca2f46c05f524def9541afc6eacd8c0dc5d478a6fd810",
+  "08__reviewing-out-loud.md": "5b5c57cc71bb11d90d3b9729be5e2af529a91883b1f0581cc7b34cd6debdd20a",
+  "09__the-experiments.md": "b6fc40566047394538e9e491271348355db6f7e643d28419d04fcd82e4109d9e",
+  "10__the-founders-craft.md": "48b2377cd0495377fad18013035e94cf29303773ecee291b36e778cdfefb3ad9",
+  "11__the-playbook.md": "d1b1686943ac7b8936e4f5e23ed3f4e555db3d9965b35f948c81db4569f1be8a",
+  "12__what-it-costs.md": "e88bede19565bae6ce61a524ef6de14c3e8b1ebafa49e06de4eef393be3512f6",
+  "13__appendix-a-one-brief-annotated.md": "f81d36c141447a0b48f215752bf088363cb79d58252431c1ebadeb86e1ab83ef",
+  "14__appendix-b-the-chronology.md": "845d1440f43b4d738375e07638ee53833909369ac9fd874d951abf70b74e158e",
+  "15__appendix-c-the-harness.md": "990c37e80f42fdffc72c41fa57a2ded61019e7832a3163c3ae8b8b91b1f05e3d",
+  "16__colophon.md": "b856bcd9a664129f9dbb79cb5d286f3106d5c372486e230323d4fc28619df69e"
+ }
+}

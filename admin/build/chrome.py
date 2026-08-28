@@ -45,6 +45,7 @@ NAV = [
         ("The second edition &middot; current", "v2/index.html"),
         ("&hellip; the dev pack: the plan", "v2/dev-pack/index.html"),
         ("&hellip; the review packs", "v2/packs/index.html"),
+        ("The books &middot; all three, each with its own version", "v2/books/index.html"),
         ("Fractal Semantic Graphs &middot; the second book", "v2/books/fsg/index.html"),
         ("&hellip; read it as one PDF", "v2/books/fsg/fsg.pdf"),
         ("&hellip; the Universe volume: the atlas", "v2/books/fsg-universe/index.html"),

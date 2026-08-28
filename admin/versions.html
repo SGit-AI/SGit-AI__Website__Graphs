@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.17</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.5.18</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -37,6 +37,7 @@
       <a class="sl" href="../v2/index.html">The second edition &middot; current</a>
       <a class="sl" href="../v2/dev-pack/index.html">&hellip; the dev pack: the plan</a>
       <a class="sl" href="../v2/packs/index.html">&hellip; the review packs</a>
+      <a class="sl" href="../v2/books/index.html">The books &middot; all three, each with its own version</a>
       <a class="sl" href="../v2/books/fsg/index.html">Fractal Semantic Graphs &middot; the second book</a>
       <a class="sl" href="../v2/books/fsg/fsg.pdf">&hellip; read it as one PDF</a>
       <a class="sl" href="../v2/books/fsg-universe/index.html">&hellip; the Universe volume: the atlas</a>
@@ -149,6 +150,11 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.5.18</td>
+        <td>27 August 2026</td>
+        <td><b>Each book gets its own version, and a gate that keeps the two clocks honest.</b> The founder answered the three questions brief 39 held open, and the answers settle the publishing shape. <b>v1.0.0 is reserved for a book&rsquo;s actual final release</b>, so the pair ships openly unfinished: <em>Fractal Semantic Graphs</em> at <b>v0.2.0</b>, <em>Creating a Book Using Fractal Semantic Graphs</em> at <b>v0.1.0</b>, the Universe volume held at v0.1.0 and out of the release. Review notes will arrive as voice memos or as narrated-review exports with screenshots &mdash; both formats this estate already reads, since every brief is a transcribed memo and briefs 27 and 33 came from narrated reviews. And the Leanpub account is real, with history: ten published books, one unpublished, and a bundle, which is a precedent for shipping the two as a pair. <b>Per-book versioning is now machinery, not a convention</b> (<code>admin/build/gen_bookmeta.py</code>): every book carries a <code>book.json</code> with its own version and the SHA-256 of every chapter, and the founder&rsquo;s rule is enforced in both directions &mdash; content that moves without the version moving fails the build, and a version that moves without content moving fails it too, because a book&rsquo;s version tracks its content and the site&rsquo;s tracks every push. The gate earned its keep on its first run by catching that <code>fsg/book.json</code> was carrying <em>the site&rsquo;s</em> version (v0.5.12) in its version field, which is precisely the confusion it exists to end. <b>The bookshelf hub finally exists</b> at <a href="../v2/books/index.html">/v2/books/</a> &mdash; flagged as missing by book C&rsquo;s own release notes &mdash; generated from the same register that versions the books, so the shelf cannot disagree with them; it is named in the nav and in <code>llms.txt</code> with the versioning rule stated for agents. <b>The Leanpub release is prepared</b> (<a href="../v2/dev-pack/leanpub-00-the-release.html">the pack</a>): what ships, the account as it actually stands (including an author bio years out of date, still naming Photobox), the method already decided in <code>admin/publishing.html</code> from the first book (upload our own PDF, the screen edition is the book, EPUB slot empty for now, cover at 1600&times;2400, one set of words everywhere), the five things still to build here (covers, a metadata sheet per book, sample PDFs, landing pages, the LinkedIn draft), and the upload-day checklist that is the founder&rsquo;s hands. 84 tests green; no book content changed, and the gate proves it.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.5.17</td>
         <td>27 August 2026</td>
@@ -264,7 +270,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.5.17</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.5.18</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
