@@ -9,7 +9,7 @@
  "words": 38029,
  "pdf": "fsg.pdf",
  "pdf_pages": 119,
- "built_at_site_version": "v0.5.23",
+ "built_at_site_version": "v0.6.0",
  "versioning": "This book's version moves only when its content moves; the site's version moves on every push. v1.0.0 is reserved for the actual final release.",
  "content_hashes": {
   "00__front-matter.md": "d818dc0dddc764268c15d49370b6e6d8761e1c7ae32d1b0967d00575090eec83",
