@@ -28,6 +28,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from bookkit import page_count  # noqa: E402
 BOOKS = ROOT / "v2" / "books"
 SITE_VERSION = (ROOT / "admin" / "build" / "version.txt").read_text().strip()
 
@@ -113,7 +115,13 @@ def main(check_only=False):
                 f"chapter changed — a book's version tracks its content, not the site's")
 
         words = sum(len(md.read_text().split()) for md in sorted((folder / "content").glob("*.md")))
-        pdf = next((p.name for p in folder.glob("*.pdf")), None)
+        pdf = next((p for p in folder.glob("*.pdf")), None)
+        # Counted from the file, for every book — not read back from whatever the book's
+        # own builder happened to record. Only one of the three writes a build.json, and a
+        # page count that exists for one book and not the others is a number nobody can
+        # use. Anything quoting these (the front page, the shelf) then quotes a
+        # measurement rather than a memory.
+        pages = page_count(pdf) if pdf else None
         # a book's own builder writes build.json (its pages, its parts, its figures).
         # It is folded in here rather than merged key-by-key, because book.json has one
         # writer and this is where the two halves meet.
@@ -128,7 +136,8 @@ def main(check_only=False):
             "note": spec["note"],
             "chapters": len(now),
             "words": words,
-            "pdf": pdf,
+            "pdf": pdf.name if pdf else None,
+            "pdf_pages": pages,
             "built_at_site_version": SITE_VERSION,
             "versioning": ("This book's version moves only when its content moves; the "
                            "site's version moves on every push. v1.0.0 is reserved for "
@@ -141,7 +150,8 @@ def main(check_only=False):
         # that, and carrying keys forward only preserves stale ones forever.
         if not check_only:
             meta_path.write_text(json.dumps(meta, indent=1, ensure_ascii=False) + "\n")
-        lines.append(f"{slug} {spec['version']} ({len(now)} chapters, {words:,} words, {spec['status']})")
+        lines.append(f"{slug} {spec['version']} ({len(now)} chapters, {words:,} words, "
+                     f"{pages or '?'}pp, {spec['status']})")
 
     write_shelf(check_only)
 

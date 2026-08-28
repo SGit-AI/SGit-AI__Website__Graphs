@@ -8,7 +8,8 @@
  "chapters": 17,
  "words": 31221,
  "pdf": "making-a-book.pdf",
- "built_at_site_version": "v0.5.21",
+ "pdf_pages": 92,
+ "built_at_site_version": "v0.5.22",
  "versioning": "This book's version moves only when its content moves; the site's version moves on every push. v1.0.0 is reserved for the actual final release.",
  "content_hashes": {
   "00__front-matter.md": "dcbe0f9062c7c905eedebc6802c1451417d80937a4f20518a14577a73eba06f0",
