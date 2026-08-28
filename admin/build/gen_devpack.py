@@ -74,6 +74,13 @@ SIDE = [
   "blurbs": {
    "00__the-v04-retrospective.md": "Forty-one releases in four days, weighed: the seven achievements that compounded, the conclusions, the transferable learnings (persistence makes identity; fit is a decision; the measurement is the discovery), and what v0.5 opens.",
   }},
+ {"dir": "making-a-book__v0.1.0__the-book-as-a-graph", "short": "bookgraph",
+  "label": "The book as a graph", "book": "making-a-book",
+  "packline": "the activities brief 43 asks for",
+  "statusline": "PROPOSED &mdash; the probe is done, no code is written",
+  "blurbs": {
+   "00__the-plan.md": "Brief 43 asks for the whole book to go through the decomposition built for one pilot document, so JSON becomes the source of truth. The claim was probed first: the machinery does run over all 17 chapters (165 sections, 819 blocks, 26,118 words, 4 to 6 times the pilot), vocabulary saturates in a way that will change the token analysis, and three strains are visible including a book level the generator does not have. Seven activities, each naming what it produces and how it is checked \u2014 and the output named before anything is built, because the WCLM taught that a tool without a clear output is a cool idea.",
+  }},
  {"dir": "v0.6.7__the-feature-tour", "short": "features",
   "label": "The feature tour", "packline": "v0.6.7 &middot; measured, not yet written",
   "statusline": "MEASURED &mdash; the count that part one has to be written from",

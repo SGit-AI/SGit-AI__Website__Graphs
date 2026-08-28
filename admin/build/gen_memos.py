@@ -23,6 +23,20 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "43__founder-memo__everything-is-a-graph.md": (
+     "Everything is a graph, so put the book through the same machine",
+     "The philosophy stated at full strength \u2014 everything is a graph, the "
+     "unit is whatever you choose, even an air gap is representable, and a "
+     "graph's maturity is how easily it links, changes and transforms. Nature "
+     "is the model, and the point is aggregation blindness: an atom does not "
+     "know it is made into molecules. Then the instruction: take the "
+     "decomposition built for one pilot document and run the whole book "
+     "through it, so JSON becomes the source of truth and everything else is "
+     "a transformation. The agent probed that claim before answering \u2014 the "
+     "machinery does run over all 17 chapters (165 sections, 819 blocks, "
+     "26,118 words) and three strains are already visible, including a level "
+     "the generator does not have. Ends with the constraint the WCLM taught: "
+     "no technology without a named output."),
  "42__founder-memo__the-craftsman-makes-the-tools.md": (
      "The craftsman makes the tools, and the book should lead with them",
      "The making-of book's thesis, stated outright: you cannot separate the "
