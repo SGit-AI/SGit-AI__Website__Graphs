@@ -1,0 +1,1168 @@
+{
+ "doc": {
+  "slug": "agentic-workflows",
+  "title": "Agentic Workflows: How You Operate",
+  "source": "v2/universe/docs/agentic-workflows/source.md",
+  "sha256": "ee23f994ec57ec0939c20c46e8df58fe85e1089b46e794597f4ed895b6a74eeb",
+  "dated": "2026-08-28",
+  "extracted": "2026-08-28",
+  "extractor": "agent",
+  "born": "v2",
+  "note": "This document was written in v2 rather than carried from the frozen v1 estate, so its folder copy is the original and there is no separate layer 0 file. The hash still pins this extraction to exact bytes: editing the prose without re-extracting fails the build. The prose itself is a one-way projection of the founder's memo of 28 August 2026, published verbatim at v2/briefs/45__founder-memo__what-a-workflow-is.md, and the document says so about itself in the section 'Where This Document Sits'.",
+  "blurb": "born in v2, projected from brief 45; the reference for what a workflow is here",
+  "state": "extracted &middot; projected"
+ },
+ "nodes": [
+  {
+   "id": "workflow",
+   "family": "concept",
+   "defined": true,
+   "label": "workflow",
+   "statement": "A workflow is the set of steps you actually take to get something done, written down or not.",
+   "anchor": {
+    "section": "The Definition",
+    "quote": "A workflow is the set of steps you actually take to get something done."
+   }
+  },
+  {
+   "id": "how-you-operate",
+   "family": "concept",
+   "defined": true,
+   "label": "how you operate",
+   "statement": "The founder's own phrasing of what a workflow is, and the definition this document adopts.",
+   "anchor": {
+    "section": "The Definition",
+    "quote": "what I call a workflow is fundamentally is how you operate. You know, is the the\nsteps that you have"
+   }
+  },
+  {
+   "id": "agentic-workflow",
+   "family": "concept",
+   "defined": true,
+   "label": "agentic workflow",
+   "statement": "A workflow in which part of the work is done by something that interprets rather than replays.",
+   "anchor": {
+    "section": "Agentic Is Not the Same as Automated",
+    "quote": "An agentic workflow is one where part of the work is done by something that\ninterprets."
+   }
+  },
+  {
+   "id": "automated-workflow",
+   "family": "concept",
+   "defined": true,
+   "label": "automated workflow",
+   "statement": "A workflow that does the same thing every time, and is valuable because it does.",
+   "anchor": {
+    "section": "Agentic Is Not the Same as Automated",
+    "quote": "An automated workflow does the same thing every time and is valuable exactly because it\ndoes."
+   }
+  },
+  {
+   "id": "tooling",
+   "family": "concept",
+   "defined": true,
+   "label": "tooling",
+   "statement": "The scripts, generators and gates that do the work; the first of the four changeable things.",
+   "anchor": {
+    "section": "Four Things a Workflow Can Now Change",
+    "quote": "**Tooling** is the scripts, generators and gates that do the work."
+   }
+  },
+  {
+   "id": "visualisation",
+   "family": "concept",
+   "defined": true,
+   "label": "visualisation",
+   "statement": "How the work is shown back to you; an instrument rather than an output.",
+   "anchor": {
+    "section": "Four Things a Workflow Can Now Change",
+    "quote": "**Visualisation** is how the work is shown back to you."
+   }
+  },
+  {
+   "id": "comprehension",
+   "family": "concept",
+   "defined": true,
+   "label": "comprehension",
+   "statement": "What the system can be asked to understand rather than merely transform.",
+   "anchor": {
+    "section": "Four Things a Workflow Can Now Change",
+    "quote": "**Comprehension** is what the system can be asked to understand rather than merely\ntransform."
+   }
+  },
+  {
+   "id": "context",
+   "family": "concept",
+   "defined": true,
+   "label": "context",
+   "statement": "What the worker, human or agent, has in front of them at the moment of deciding.",
+   "anchor": {
+    "section": "Four Things a Workflow Can Now Change",
+    "quote": "**Context** is what the worker, human or agent, has in front of them at the moment of\ndeciding."
+   }
+  },
+  {
+   "id": "the-zone",
+   "family": "concept",
+   "defined": true,
+   "label": "the zone",
+   "statement": "The state of attention a workflow exists to protect; the stated purpose of changing the four things.",
+   "anchor": {
+    "section": "The Purpose Is the Zone",
+    "quote": "The goal the founder names is a state of attention: to\n\"allow the author to stay in the zone\"."
+   }
+  },
+  {
+   "id": "villager-phase",
+   "family": "concept",
+   "defined": true,
+   "label": "villager phase",
+   "statement": "The phase in which a person consumes a workflow rather than changing it.",
+   "anchor": {
+    "section": "Two Phases, Not Two Kinds of Person",
+    "quote": "The villager phase consumes stuff."
+   }
+  },
+  {
+   "id": "explorer-phase",
+   "family": "concept",
+   "defined": true,
+   "label": "explorer phase",
+   "statement": "The phase in which a person creates, customises and fine-tunes workflows.",
+   "anchor": {
+    "section": "Two Phases, Not Two Kinds of Person",
+    "quote": "The explorer also will create workflows. Will\ncustomise workflows. Will fine-tune the workflows"
+   }
+  },
+  {
+   "id": "reach",
+   "family": "concept",
+   "defined": true,
+   "label": "reach",
+   "statement": "How far into a workflow a person can change things; what experience alters, as against the route.",
+   "anchor": {
+    "section": "Skill Changes Reach, Not Route",
+    "quote": "What experience changes is how far into the workflow you can reach"
+   }
+  },
+  {
+   "id": "manual-step-trigger",
+   "family": "concept",
+   "defined": true,
+   "label": "the manual-step trigger",
+   "statement": "The signal that licenses explorer mode: a step done by hand that should not be.",
+   "anchor": {
+    "section": "The Explorer Trigger Is a Manual Step",
+    "quote": "the\nsignal is a specific felt thing, a step done by hand that should not be"
+   }
+  },
+  {
+   "id": "diminishing-returns",
+   "family": "concept",
+   "defined": true,
+   "label": "the point of diminishing returns",
+   "statement": "The bound on a tooling detour, applying in both directions.",
+   "anchor": {
+    "section": "The Point of Diminishing Returns",
+    "quote": "Every detour is bounded by cost on both sides"
+   }
+  },
+  {
+   "id": "payback-period",
+   "family": "concept",
+   "defined": true,
+   "label": "payback period",
+   "statement": "The horizon over which a tooling detour repays itself; hours or days is acceptable, years is a different project.",
+   "anchor": {
+    "section": "The Point of Diminishing Returns",
+    "quote": "A tooling detour that pays back in two days\nis worth taking mid-project."
+   }
+  },
+  {
+   "id": "maturity",
+   "family": "concept",
+   "defined": true,
+   "label": "maturity",
+   "statement": "The state in which running a workflow does not tempt you to change it.",
+   "anchor": {
+    "section": "The Measure of Success",
+    "quote": "A workflow is mature when running it does not tempt you to change it."
+   }
+  },
+  {
+   "id": "parked",
+   "family": "concept",
+   "defined": true,
+   "label": "parked",
+   "statement": "A stop with a reason attached and parts already reused; a legitimate state, distinct from abandoned.",
+   "anchor": {
+    "section": "Maturing Is Not Finishing",
+    "quote": "Parked is a legitimate state and is not the same as abandoned."
+   }
+  },
+  {
+   "id": "reusable-piece",
+   "family": "concept",
+   "defined": true,
+   "label": "reusable piece",
+   "statement": "A step that can be lifted out of the workflow that grew it.",
+   "anchor": {
+    "section": "Reusable Pieces Are the Unit",
+    "quote": "The test for a reusable piece is whether it can be lifted out."
+   }
+  },
+  {
+   "id": "source-materials",
+   "family": "concept",
+   "defined": true,
+   "label": "source materials",
+   "statement": "The things a human authored or a machine captured; the inputs everything else is computed from.",
+   "anchor": {
+    "section": "The Distinction",
+    "quote": "Source materials are the things a human authored or a machine captured."
+   }
+  },
+  {
+   "id": "projection",
+   "family": "concept",
+   "defined": true,
+   "label": "projection",
+   "statement": "Anything computed from source materials: rendered pages, PDFs, indexes, graphs, summaries.",
+   "anchor": {
+    "section": "The Distinction",
+    "quote": "Projections are\neverything computed from them"
+   }
+  },
+  {
+   "id": "transformation",
+   "family": "concept",
+   "defined": false,
+   "label": "transformation",
+   "statement": "Used throughout as the operation that turns sources into projections, and never defined in its own right.",
+   "anchor": {
+    "section": "The Distinction",
+    "quote": "what is a\ntransformation and a projection of those source materials"
+   }
+  },
+  {
+   "id": "two-way-door",
+   "family": "concept",
+   "defined": true,
+   "label": "two-way door",
+   "statement": "A deterministic projection: one you can walk back from, or at least rebuild exactly.",
+   "anchor": {
+    "section": "Two-Way Doors and One-Way Doors",
+    "quote": "A projection is a two-way door when it is deterministic."
+   }
+  },
+  {
+   "id": "one-way-door",
+   "family": "concept",
+   "defined": true,
+   "label": "one-way door",
+   "statement": "A projection produced by interpretation, which cannot be reversed and whose property everything downstream inherits.",
+   "anchor": {
+    "section": "Two-Way Doors and One-Way Doors",
+    "quote": "A projection is a one-way door when something interpreted it."
+   }
+  },
+  {
+   "id": "deterministic-layer",
+   "family": "concept",
+   "defined": true,
+   "label": "the deterministic layer",
+   "statement": "The side of the boundary the sources must stay on, so that the workflow has a floor.",
+   "anchor": {
+    "section": "Keep the Sources on the Deterministic Side",
+    "quote": "the source materials and the source data is all in the sort of the\ndeterministic layer of this"
+   }
+  },
+  {
+   "id": "folder-as-unit",
+   "family": "concept",
+   "defined": true,
+   "label": "the folder as the unit",
+   "statement": "The convention that a subject gets a folder holding everything about it, tested by portability.",
+   "anchor": {
+    "section": "Everything Gets a Folder",
+    "quote": "a subject gets a folder and the folder\nholds everything about it"
+   }
+  },
+  {
+   "id": "the-chain",
+   "family": "concept",
+   "defined": true,
+   "label": "the chain",
+   "statement": "Sources plus chained transformations, which becomes the deliverable in place of any single output.",
+   "anchor": {
+    "section": "The Chain Is the Product",
+    "quote": "the chain itself becomes the deliverable"
+   }
+  },
+  {
+   "id": "named-process",
+   "family": "concept",
+   "defined": true,
+   "label": "a named process",
+   "statement": "A step given a name, so it can be asked for, stamped onto a folder and checked by a gate.",
+   "anchor": {
+    "section": "A Named Process Is Repeatable; a Described One Is Not",
+    "quote": "the name becomes something a person can be asked for, a folder can be\nstamped with, and a gate can check"
+   }
+  },
+  {
+   "id": "text-diff",
+   "family": "concept",
+   "defined": true,
+   "label": "text diff",
+   "statement": "A comparison of lines; immediately available and fragile under reflow, rename and move.",
+   "anchor": {
+    "section": "Why a Graph Diff Beats a Text Diff",
+    "quote": "A text diff compares lines."
+   }
+  },
+  {
+   "id": "graph-diff",
+   "family": "concept",
+   "defined": true,
+   "label": "graph diff",
+   "statement": "A comparison of identified things, able to tell a reworded sentence from a replaced one and to report a move as a move.",
+   "anchor": {
+    "section": "Why a Graph Diff Beats a Text Diff",
+    "quote": "A graph diff compares identified things."
+   }
+  },
+  {
+   "id": "identity",
+   "family": "concept",
+   "defined": false,
+   "label": "identity",
+   "statement": "Used as the property that lets a sentence survive editing and makes a graph diff possible; never defined here.",
+   "anchor": {
+    "section": "Why a Graph Diff Beats a Text Diff",
+    "quote": "If a sentence has an identity that survives\nediting"
+   }
+  },
+  {
+   "id": "the-loop",
+   "family": "concept",
+   "defined": true,
+   "label": "the loop",
+   "statement": "The round this document was produced by: memo, verbatim brief, reading, work, gates, narrated release, live page.",
+   "anchor": {
+    "section": "One Round",
+    "quote": "The workflow this document was produced by is small enough to state completely."
+   }
+  },
+  {
+   "id": "gate",
+   "family": "concept",
+   "defined": false,
+   "label": "gate",
+   "statement": "Used throughout as the thing that makes small changes safe enough to be frequent, and never defined here.",
+   "anchor": {
+    "section": "What Each Step Buys",
+    "quote": "The gates buy speed rather than costing it"
+   }
+  },
+  {
+   "id": "everyone-has-one",
+   "family": "claim",
+   "support": "argued",
+   "label": "everyone already has a workflow",
+   "statement": "Reserving the word for automated pipelines hides the fact that everyone has one, and hides the question of whether it is the one you would choose.",
+   "anchor": {
+    "section": "The Definition",
+    "quote": "Reserving the word for\nautomated pipelines hides the fact that everyone already has one"
+   }
+  },
+  {
+   "id": "questions-not-speed",
+   "family": "claim",
+   "support": "argued",
+   "label": "a workflow is judged by which questions it makes cheap",
+   "statement": "The interesting property of a workflow is the set of questions it makes cheap, not its speed.",
+   "anchor": {
+    "section": "The Workflow Decides What Questions You Can Ask",
+    "quote": "The interesting property of a workflow is not its speed. It is the set of questions it\nmakes cheap."
+   }
+  },
+  {
+   "id": "habit-of-asking",
+   "family": "claim",
+   "support": "declared",
+   "label": "the workflow shapes what you notice about your own work",
+   "statement": "Choosing a workflow is choosing the questions you get in the habit of asking, which over months decides what you notice.",
+   "anchor": {
+    "section": "The Workflow Decides What Questions You Can Ask",
+    "quote": "Choosing a workflow is therefore choosing which questions you will get in the habit of\nasking"
+   }
+  },
+  {
+   "id": "ability-not-effort",
+   "family": "claim",
+   "support": "demonstrated",
+   "label": "the three workflows differ in ability, not effort",
+   "statement": "All three authors work hard; only the third can ask what changed between two versions and get an answer.",
+   "anchor": {
+    "section": "Three Workflows for Writing a Book",
+    "quote": "The three differ in ability, not in effort. All three authors work hard."
+   }
+  },
+  {
+   "id": "four-things",
+   "family": "claim",
+   "support": "declared",
+   "label": "four things a workflow can now change",
+   "statement": "The tooling, the visualisation, the comprehension and the context: the founder's claim about what is newly changeable.",
+   "anchor": {
+    "section": "Four Things a Workflow Can Now Change",
+    "quote": "which is the workflows\nthat allows us to change the tooling and to change the visualisation and to change the\ncomprehension and to change the context"
+   }
+  },
+  {
+   "id": "tooling-cost-fell",
+   "family": "claim",
+   "support": "argued",
+   "label": "the cost of a one-off tool has fallen below doing the task by hand once",
+   "statement": "Tooling has been changeable for decades; what changed is how cheap a throwaway script became.",
+   "anchor": {
+    "section": "Four Things a Workflow Can Now Change",
+    "quote": "writing a throwaway script is now cheaper than doing the task by hand\nonce"
+   }
+  },
+  {
+   "id": "view-is-an-instrument",
+   "family": "claim",
+   "support": "argued",
+   "label": "a view is an instrument, not an output",
+   "statement": "A new view routinely finds an error nobody was looking for, which is why visualisation is underestimated.",
+   "anchor": {
+    "section": "Four Things a Workflow Can Now Change",
+    "quote": "a view is not an output: it is an\ninstrument, and a new instrument routinely finds an error nobody was looking for"
+   }
+  },
+  {
+   "id": "speed-is-a-poor-measure",
+   "family": "claim",
+   "support": "argued",
+   "label": "speed alone is a poor measure of a workflow",
+   "statement": "A pipeline that halves the clock but demands attention at three new points is worse for an author.",
+   "anchor": {
+    "section": "The Purpose Is the Zone",
+    "quote": "A pipeline that halves the wall-clock time but\ndemands attention at three new points is a worse workflow for an author"
+   }
+  },
+  {
+   "id": "kind-not-degree",
+   "family": "claim",
+   "support": "argued",
+   "label": "agentic and automated differ in kind",
+   "statement": "An automated step can be verified by replaying it and an interpreting step cannot.",
+   "anchor": {
+    "section": "Agentic Is Not the Same as Automated",
+    "quote": "an automated step can be verified by\nreplaying it, and an interpreting step cannot"
+   }
+  },
+  {
+   "id": "phases-not-people",
+   "family": "claim",
+   "support": "argued",
+   "label": "villager and explorer are phases, not kinds of person",
+   "statement": "The founder says phase both times; the same person moves between producing and sharpening.",
+   "anchor": {
+    "section": "Two Phases, Not Two Kinds of Person",
+    "quote": "The same person is a villager on the days they are producing and an explorer on\nthe days they are sharpening."
+   }
+  },
+  {
+   "id": "no-lesser-version",
+   "family": "claim",
+   "support": "argued",
+   "label": "treating the pair as a personality type produces a lesser version for some readers",
+   "statement": "The wrong conclusion the taxonomy reading leads to.",
+   "anchor": {
+    "section": "Two Phases, Not Two Kinds of Person",
+    "quote": "Treating it as a personality type produces the wrong\nconclusion, which is that some readers should be given a lesser version."
+   }
+  },
+  {
+   "id": "same-steps",
+   "family": "claim",
+   "support": "declared",
+   "label": "the steps are the same for everyone; experience changes reading speed",
+   "statement": "The founder's statement that more or less experienced people go through the same steps at different speeds.",
+   "anchor": {
+    "section": "Skill Changes Reach, Not Route",
+    "quote": "sometimes the difference between somebody with more or less experience is just\nthat they consume materials faster, but they still go to the same steps"
+   }
+  },
+  {
+   "id": "one-account",
+   "family": "claim",
+   "support": "argued",
+   "label": "one account of the work serves both audiences",
+   "statement": "Writing a simple version and a real version solves a problem that was not there.",
+   "anchor": {
+    "section": "Skill Changes Reach, Not Route",
+    "quote": "Writing two versions, a simple one\nand a real one, solves a problem that was not there."
+   }
+  },
+  {
+   "id": "default-is-no",
+   "family": "claim",
+   "support": "declared",
+   "label": "the default is not to change the workflow",
+   "statement": "The founder's instinct is to be productive rather than to improve the tooling, and the detour is allowed rather than sought.",
+   "anchor": {
+    "section": "The Instinct Is Not to Change the Workflow",
+    "quote": "my\ninstinct is always not to change the workflow. My instinct is always, I want to be\nproductive"
+   }
+  },
+  {
+   "id": "defence-is-the-trigger",
+   "family": "claim",
+   "support": "argued",
+   "label": "the defence against tinkering is a specific trigger, not willpower",
+   "statement": "An author who enjoys improving tools will do that instead of writing unless the trigger is specific enough to be absent most of the time.",
+   "anchor": {
+    "section": "The Instinct Is Not to Change the Workflow",
+    "quote": "The defence is not willpower, it is having a trigger specific enough to be absent most of\nthe time."
+   }
+  },
+  {
+   "id": "hours-or-days",
+   "family": "claim",
+   "support": "argued",
+   "label": "a tooling detour should pay back in hours or days",
+   "statement": "The spoken correction lands on hours and days; a two-year payback is a different project.",
+   "anchor": {
+    "section": "The Point of Diminishing Returns",
+    "quote": "One that pays back in two years is a different project and\nshould be recognised as one."
+   }
+  },
+  {
+   "id": "maturity-test",
+   "family": "claim",
+   "support": "declared",
+   "label": "the measure of success is doing a process without changing the workflow",
+   "statement": "The founder's stated metric for maturity, and his test for something having been productised or commoditised.",
+   "anchor": {
+    "section": "The Measure of Success",
+    "quote": "the ultimate measure of\nsuccess is: Can I do a process without making any changes to the workflow?"
+   }
+  },
+  {
+   "id": "not-complete-elegant",
+   "family": "claim",
+   "support": "argued",
+   "label": "maturity is not completeness, elegance, documentation or speed",
+   "statement": "The test is only that the workflow survived a real piece of work without needing to be touched.",
+   "anchor": {
+    "section": "The Measure of Success",
+    "quote": "It is not that the workflow is complete, elegant, documented or fast."
+   }
+  },
+  {
+   "id": "changes-are-the-price",
+   "family": "claim",
+   "support": "argued",
+   "label": "machinery changes are the price, not the achievement",
+   "statement": "A stretch of releases that each changed the machinery is the cost; the achievement is the run where it was left alone.",
+   "anchor": {
+    "section": "The Consequence for How Progress Is Read",
+    "quote": "A stretch of releases that each\nchanged the machinery is not the achievement; it is the price."
+   }
+  },
+  {
+   "id": "report-the-quiet",
+   "family": "claim",
+   "support": "argued",
+   "label": "an honest account should report the stretches where nothing was improved",
+   "statement": "The changes are visible and the not-changing is invisible, so the quiet stretches have to be stated deliberately.",
+   "anchor": {
+    "section": "The Consequence for How Progress Is Read",
+    "quote": "Any honest account of a workflow should\ntherefore report the stretches where nothing was improved"
+   }
+  },
+  {
+   "id": "unlabelled-stop",
+   "family": "claim",
+   "support": "argued",
+   "label": "an unlabelled stop reads as a failure later",
+   "statement": "Why parked has to be recorded explicitly, including for the author's own benefit.",
+   "anchor": {
+    "section": "Maturing Is Not Finishing",
+    "quote": "an unlabelled stop looks like a failure\nto anyone reading later, including the author"
+   }
+  },
+  {
+   "id": "used-not-matured",
+   "family": "claim",
+   "support": "argued",
+   "label": "a step that only works where it grew has been used, not matured",
+   "statement": "The liftability test applied in the negative.",
+   "anchor": {
+    "section": "Reusable Pieces Are the Unit",
+    "quote": "A step that only works\ninside the workflow that grew it has not been matured, it has only been used."
+   }
+  },
+  {
+   "id": "scaling-rule",
+   "family": "claim",
+   "support": "declared",
+   "label": "projections are created from source materials plus transformation",
+   "statement": "The founder's rule for how a workflow scales.",
+   "anchor": {
+    "section": "The Distinction",
+    "quote": "you always have a workflow where your source... your projections\nare created from source materials plus transformation"
+   }
+  },
+  {
+   "id": "prose-is-one-way",
+   "family": "claim",
+   "support": "declared",
+   "label": "the creation of prose is a one-way door",
+   "statement": "The clearest case of an irreversible projection, in the founder's words.",
+   "anchor": {
+    "section": "Two-Way Doors and One-Way Doors",
+    "quote": "if you think about the creation of pros, it's a one way door"
+   }
+  },
+  {
+   "id": "inherit-one-way",
+   "family": "claim",
+   "support": "argued",
+   "label": "everything downstream of an interpreted step inherits its one-way property",
+   "statement": "Once a model enters the chain, the reversibility of everything after it is gone.",
+   "anchor": {
+    "section": "Two-Way Doors and One-Way Doors",
+    "quote": "Every\ntime a model enters the chain, that step becomes one-way, and everything downstream of it\ninherits the property."
+   }
+  },
+  {
+   "id": "sources-deterministic",
+   "family": "claim",
+   "support": "declared",
+   "label": "the sources must stay in the deterministic layer",
+   "statement": "The founder's rule for laying a workflow out.",
+   "anchor": {
+    "section": "Keep the Sources on the Deterministic Side",
+    "quote": "it's very critical that,\nfor example, the source materials and the source data is all in the sort of the\ndeterministic layer of this"
+   }
+  },
+  {
+   "id": "no-floor",
+   "family": "claim",
+   "support": "argued",
+   "label": "a workflow whose graph is generated from prose has no floor",
+   "statement": "If prose comes from a graph the graph survives; if the graph comes from prose nothing upstream is recoverable.",
+   "anchor": {
+    "section": "Keep the Sources on the Deterministic Side",
+    "quote": "If the graph is generated\nfrom prose, nothing upstream is recoverable, and the workflow has no floor."
+   }
+  },
+  {
+   "id": "this-doc-is-one-way",
+   "family": "claim",
+   "support": "declared",
+   "label": "this document is itself a one-way projection, declared",
+   "statement": "The document places itself on the interpreted side of the boundary and says so.",
+   "anchor": {
+    "section": "Where This Document Sits",
+    "quote": "This document is on the wrong side of that boundary, and says so rather than hiding it."
+   }
+  },
+  {
+   "id": "portability-test",
+   "family": "claim",
+   "support": "argued",
+   "label": "the test of a folder is whether it can be copied elsewhere and still make sense",
+   "statement": "If it cannot, the workflow is entangled with the place it grew.",
+   "anchor": {
+    "section": "Everything Gets a Folder",
+    "quote": "If the folder can be copied into another repository and still\nmake sense, the workflow that produced it can be run somewhere else."
+   }
+  },
+  {
+   "id": "rebuild-not-written",
+   "family": "claim",
+   "support": "argued",
+   "label": "the chain turns a product from a file into something reproducible",
+   "statement": "The difference between having written a book and being able to rebuild one.",
+   "anchor": {
+    "section": "The Chain Is the Product",
+    "quote": "That is the difference between having written a\nbook and being able to rebuild one."
+   }
+  },
+  {
+   "id": "naming-is-cheapest",
+   "family": "claim",
+   "support": "argued",
+   "label": "naming a step is the cheapest reliable improvement to a workflow",
+   "statement": "A described step is done slightly differently each time; a named one can be asked for, stamped and checked.",
+   "anchor": {
+    "section": "A Named Process Is Repeatable; a Described One Is Not",
+    "quote": "This is the smallest and most reliable improvement available to any workflow, and it costs\none decision."
+   }
+  },
+  {
+   "id": "diff-is-a-step",
+   "family": "claim",
+   "support": "argued",
+   "label": "a diff is part of how you operate, not an extra feature",
+   "statement": "Without one, review means rereading everything, so reviews stop happening.",
+   "anchor": {
+    "section": "A Diff Is a Workflow Step, Not a Feature",
+    "quote": "Without it, a\nreview means rereading everything, which means reviews stop happening."
+   }
+  },
+  {
+   "id": "text-diff-fragile",
+   "family": "claim",
+   "support": "declared",
+   "label": "comparing markdown is fragile",
+   "statement": "Reflow, rename and move all read as large changes when nothing was said differently.",
+   "anchor": {
+    "section": "Why a Graph Diff Beats a Text Diff",
+    "quote": "a reflowed paragraph, a renamed heading or a moved section all read as large\nchanges when nothing was said differently"
+   }
+  },
+  {
+   "id": "graph-diff-is-the-bar",
+   "family": "claim",
+   "support": "declared",
+   "label": "the real measure of success is diffing graphs rather than markdown",
+   "statement": "The founder sets the graph diff as the test of whether this work succeeded.",
+   "anchor": {
+    "section": "Why a Graph Diff Beats a Text Diff",
+    "quote": "you should be delting the diffs of the graphs, not of the markdown. That\nwould be the really test measurement of our success here"
+   }
+  },
+  {
+   "id": "diff-exposes-three",
+   "family": "claim",
+   "support": "argued",
+   "label": "a graph diff exposes whether three earlier things were done",
+   "statement": "It is only possible if the decomposition is stable, the identities carry across versions, and each version's graph was kept.",
+   "anchor": {
+    "section": "Why a Graph Diff Beats a Text Diff",
+    "quote": "a graph diff is only possible if the decomposition is\nstable, the identities carry across versions, and the graph for each version was kept"
+   }
+  },
+  {
+   "id": "formatting-is-a-finding",
+   "family": "claim",
+   "support": "argued",
+   "label": "a formatting-only change is a finding in both directions",
+   "statement": "It tells a reviewer what to skip, and catches a change meant to be presentational that was not.",
+   "anchor": {
+    "section": "Formatting Changes Are Findings",
+    "quote": "It tells a reviewer what to skip, and it catches a change that\nwas supposed to be presentational and was not."
+   }
+  },
+  {
+   "id": "gates-buy-speed",
+   "family": "claim",
+   "support": "argued",
+   "label": "gates buy speed rather than costing it",
+   "statement": "They make small changes safe enough to be frequent.",
+   "anchor": {
+    "section": "What Each Step Buys",
+    "quote": "because they make small changes safe enough to\nbe frequent"
+   }
+  },
+  {
+   "id": "versioning-buys-review",
+   "family": "claim",
+   "support": "argued",
+   "label": "versioning buys the diff, which is what makes review possible",
+   "statement": "And review is what lets work be corrected rather than defended.",
+   "anchor": {
+    "section": "What Each Step Buys",
+    "quote": "The versioning buys the diff, which is what makes review possible at all"
+   }
+  },
+  {
+   "id": "no-quality-of-thought",
+   "family": "claim",
+   "support": "argued",
+   "label": "the workflow does not buy quality of thought",
+   "statement": "A workflow of this shape will ship a bad idea quickly, with a good release row and a green suite.",
+   "anchor": {
+    "section": "What It Does Not Buy",
+    "quote": "A workflow of this shape will ship a bad idea\nquickly, with a well-narrated release row and a green test suite."
+   }
+  },
+  {
+   "id": "machinery-does-not-reach-inside",
+   "family": "claim",
+   "support": "argued",
+   "label": "no amount of machinery changes what happens inside the interpreted step",
+   "statement": "The one-way door stays where it is.",
+   "anchor": {
+    "section": "What It Does Not Buy",
+    "quote": "no amount of machinery around it changes what happens inside it"
+   }
+  },
+  {
+   "id": "lego-of-questions",
+   "family": "hypothesis",
+   "label": "the questions a workflow makes cheap decide, over months, what an author notices",
+   "statement": "Stated as a consequence rather than shown; no evidence is offered for the timescale.",
+   "anchor": {
+    "section": "The Workflow Decides What Questions You Can Ask",
+    "quote": "which over months decides what you notice about your own work"
+   }
+  },
+  {
+   "id": "boundary-through-agentic",
+   "family": "hypothesis",
+   "label": "an agentic workflow needs a boundary drawn through it",
+   "statement": "Asserted here and argued in Part 5; whether every agentic workflow needs one is untested.",
+   "anchor": {
+    "section": "Agentic Is Not the Same as Automated",
+    "quote": "agentic workflows need a boundary drawn through them"
+   }
+  },
+  {
+   "id": "late-interpretation",
+   "family": "hypothesis",
+   "label": "putting the interpreted step as late as possible is the right general rule",
+   "statement": "Argued from one direction of the graph-and-prose case; not shown across other workflows.",
+   "anchor": {
+    "section": "Keep the Sources on the Deterministic Side",
+    "quote": "Put the interpreted step as late as possible."
+   }
+  },
+  {
+   "id": "stay-in-the-zone",
+   "family": "objective",
+   "label": "allow the author to stay in the zone",
+   "statement": "The purpose the four changeable things serve, and the standard a new step has to pay for itself against.",
+   "anchor": {
+    "section": "The Purpose Is the Zone",
+    "quote": "A workflow earns its keep when it removes the\ninterruptions that break concentration"
+   }
+  },
+  {
+   "id": "argue-with-it",
+   "family": "objective",
+   "label": "state the principles plainly enough to be argued with",
+   "statement": "The document's own stated aim, which is why the principles are numbered at the end.",
+   "anchor": {
+    "section": "What This Document Is",
+    "quote": "states the\nprinciples plainly enough to be argued with"
+   }
+  },
+  {
+   "id": "three-workflows",
+   "family": "example",
+   "label": "three workflows for writing a book",
+   "statement": "The word processor, markdown with a build, and this repository: the same task done three ways.",
+   "demonstrates": [
+    "workflow",
+    "ability-not-effort"
+   ],
+   "anchor": {
+    "section": "Three Workflows for Writing a Book",
+    "quote": "The same task, done three ways, shows how much of the outcome the workflow decides."
+   }
+  },
+  {
+   "id": "the-bridge-and-the-saw",
+   "family": "example",
+   "label": "the bridge and the saw",
+   "statement": "The founder's analogy for taking a tooling detour, carrying the payback period inside it.",
+   "demonstrates": [
+    "payback-period",
+    "diminishing-returns"
+   ],
+   "anchor": {
+    "section": "The Point of Diminishing Returns",
+    "quote": "I need a better tool to build this. I go, okay, let me go and build the tool.\nLet me sharpen the saw"
+   }
+  },
+  {
+   "id": "one-round",
+   "family": "example",
+   "label": "one round of the loop, end to end",
+   "statement": "Memo, verbatim brief, reading, branch work against gates, version, narrated row, validated deploy, live page.",
+   "demonstrates": [
+    "the-loop"
+   ],
+   "anchor": {
+    "section": "One Round",
+    "quote": "A memo is spoken. It is transcribed and published verbatim, transcription artefacts\nincluded"
+   }
+  },
+  {
+   "id": "this-folder",
+   "family": "example",
+   "label": "this document's own folder",
+   "statement": "The document is an instance of the convention it describes: source, decomposition, extraction and views in one portable folder.",
+   "demonstrates": [
+    "folder-as-unit",
+    "one-way-door"
+   ],
+   "anchor": {
+    "section": "Where This Document Sits",
+    "quote": "this document is a one-way projection of it, and its own decomposition into a\ngraph is a two-way projection of the prose"
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "agentic-workflow",
+   "verb": "departs-from",
+   "to": "automated-workflow",
+   "anchor": {
+    "section": "Agentic Is Not the Same as Automated",
+    "quote": "The difference is not degree, it is kind"
+   }
+  },
+  {
+   "from": "the-zone",
+   "verb": "determines",
+   "to": "tooling",
+   "anchor": {
+    "section": "The Purpose Is the Zone",
+    "quote": "None of the four is the goal."
+   }
+  },
+  {
+   "from": "manual-step-trigger",
+   "verb": "licenses",
+   "to": "explorer-phase",
+   "anchor": {
+    "section": "The Explorer Trigger Is a Manual Step",
+    "quote": "so I allow myself to go into that explorer mode"
+   }
+  },
+  {
+   "from": "diminishing-returns",
+   "verb": "determines",
+   "to": "payback-period",
+   "anchor": {
+    "section": "The Point of Diminishing Returns",
+    "quote": "The bridge analogy names the payback period the founder finds\nacceptable"
+   }
+  },
+  {
+   "from": "maturity",
+   "verb": "exhibits",
+   "to": "workflow",
+   "anchor": {
+    "section": "The Measure of Success",
+    "quote": "It is that\nit survived a real piece of work without needing to be touched."
+   }
+  },
+  {
+   "from": "parked",
+   "verb": "departs-from",
+   "to": "maturity",
+   "anchor": {
+    "section": "Maturing Is Not Finishing",
+    "quote": "Work can be left in a useful state without being complete"
+   }
+  },
+  {
+   "from": "reusable-piece",
+   "verb": "provides",
+   "to": "the-chain",
+   "anchor": {
+    "section": "Reusable Pieces Are the Unit",
+    "quote": "The founder's own analogy for how the pieces accumulate is a developer's"
+   }
+  },
+  {
+   "from": "transformation",
+   "verb": "provides",
+   "to": "projection",
+   "anchor": {
+    "section": "The Distinction",
+    "quote": "your projections\nare created from source materials plus transformation"
+   }
+  },
+  {
+   "from": "source-materials",
+   "verb": "provides",
+   "to": "projection",
+   "anchor": {
+    "section": "The Distinction",
+    "quote": "Projections are\neverything computed from them: rendered pages, PDFs, indexes, graphs, summaries."
+   }
+  },
+  {
+   "from": "one-way-door",
+   "verb": "departs-from",
+   "to": "two-way-door",
+   "anchor": {
+    "section": "Two-Way Doors and One-Way Doors",
+    "quote": "A projection is a one-way door when something interpreted it."
+   }
+  },
+  {
+   "from": "deterministic-layer",
+   "verb": "enables",
+   "to": "two-way-door",
+   "anchor": {
+    "section": "Keep the Sources on the Deterministic Side",
+    "quote": "If prose is generated from a graph, the\ngraph is recoverable and the prose is not, which is survivable."
+   }
+  },
+  {
+   "from": "folder-as-unit",
+   "verb": "enables",
+   "to": "reusable-piece",
+   "anchor": {
+    "section": "Everything Gets a Folder",
+    "quote": "A workflow that produces scattered outputs cannot be reused, because there is nothing to\nlift."
+   }
+  },
+  {
+   "from": "named-process",
+   "verb": "remedies",
+   "to": "workflow",
+   "anchor": {
+    "section": "A Named Process Is Repeatable; a Described One Is Not",
+    "quote": "A step that is only ever described in sentences gets done slightly differently each time."
+   }
+  },
+  {
+   "from": "graph-diff",
+   "verb": "departs-from",
+   "to": "text-diff",
+   "anchor": {
+    "section": "Why a Graph Diff Beats a Text Diff",
+    "quote": "A graph diff compares identified things."
+   }
+  },
+  {
+   "from": "identity",
+   "verb": "enables",
+   "to": "graph-diff",
+   "anchor": {
+    "section": "Why a Graph Diff Beats a Text Diff",
+    "quote": "the identities carry across versions"
+   }
+  },
+  {
+   "from": "graph-diff",
+   "verb": "provides",
+   "to": "the-zone",
+   "anchor": {
+    "section": "A Diff Is a Workflow Step, Not a Feature",
+    "quote": "The ability to see what changed is part of how you operate, not an extra."
+   }
+  },
+  {
+   "from": "gate",
+   "verb": "enables",
+   "to": "the-loop",
+   "anchor": {
+    "section": "What Each Step Buys",
+    "quote": "The gates buy speed rather than costing it"
+   }
+  },
+  {
+   "from": "the-loop",
+   "verb": "exhibits",
+   "to": "workflow",
+   "anchor": {
+    "section": "One Round",
+    "quote": "The workflow this document was produced by is small enough to state completely."
+   }
+  }
+ ],
+ "near_but_not": [
+  {
+   "this": "workflow",
+   "not": "a diagram, a product category or an automation platform",
+   "anchor": {
+    "section": "What This Document Is",
+    "quote": "A workflow here is not a diagram,\na product category or an automation platform."
+   }
+  },
+  {
+   "this": "agentic-workflow",
+   "not": "an automated workflow",
+   "anchor": {
+    "section": "Agentic Is Not the Same as Automated",
+    "quote": "The difference is not degree, it is kind"
+   }
+  },
+  {
+   "this": "villager-phase",
+   "not": "a kind of person",
+   "anchor": {
+    "section": "Two Phases, Not Two Kinds of Person",
+    "quote": "This is not a taxonomy of\npeople."
+   }
+  },
+  {
+   "this": "maturity",
+   "not": "completeness",
+   "anchor": {
+    "section": "The Measure of Success",
+    "quote": "It is not that the workflow is complete, elegant, documented or fast."
+   }
+  },
+  {
+   "this": "parked",
+   "not": "abandoned",
+   "anchor": {
+    "section": "Maturing Is Not Finishing",
+    "quote": "Parked is a legitimate state and is not the same as abandoned."
+   }
+  },
+  {
+   "this": "visualisation",
+   "not": "an output of the work",
+   "anchor": {
+    "section": "Four Things a Workflow Can Now Change",
+    "quote": "a view is not an output: it is an\ninstrument"
+   }
+  }
+ ],
+ "aliases": [
+  {
+   "a": "workflow",
+   "b": "how you operate",
+   "anchor": {
+    "section": "The Definition",
+    "quote": "what I call a workflow is fundamentally is how you operate"
+   }
+  },
+  {
+   "a": "maturity",
+   "b": "productized or commoditized",
+   "anchor": {
+    "section": "The Measure of Success",
+    "quote": "that's how I know something's been productized or commoditized"
+   }
+  },
+  {
+   "a": "villager-phase",
+   "b": "consuming",
+   "anchor": {
+    "section": "Two Phases, Not Two Kinds of Person",
+    "quote": "The same person is a villager on the days they are producing"
+   }
+  },
+  {
+   "a": "explorer-phase",
+   "b": "sharpening",
+   "anchor": {
+    "section": "Two Phases, Not Two Kinds of Person",
+    "quote": "an explorer on\nthe days they are sharpening"
+   }
+  }
+ ],
+ "empty_sections": [
+  {
+   "section": "Summary: Core Principles",
+   "why": "A restatement of the fifteen principles established above; every one of them is anchored at the section that argues it, so anchoring the summary as well would double-count."
+  }
+ ]
+}

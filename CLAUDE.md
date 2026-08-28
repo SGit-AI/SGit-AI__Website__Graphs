@@ -167,9 +167,9 @@ explicit instruction; do not delete them either.
 
 | You want | Read |
 |---|---|
-| Why something is the way it is | `v2/briefs/` — 39 memos, verbatim, newest highest |
-| What happened and when | `admin/versions.html` (v0.5), `versions-v0.4.html` (41 rows) |
-| The techniques in use | `/v2/methods/` — 35+ named techniques |
+| Why something is the way it is | `v2/briefs/` — 26 memos since the freeze, verbatim, newest highest; briefs 00 to 19 are at `v1/briefs/` |
+| What happened and when | `admin/versions.html` (v0.6), then `versions-v0.5.html`, `versions-v0.4.html`, `versions-earlier.html` |
+| The techniques in use | `/v2/methods/` — 35 named techniques |
 | A plan an agent was given | `v2/dev-packs/` |
 | The rules for versions | `admin/versions.html#rules` |
 | The interaction principles | `v2/dev-packs/design__immediate-connection/` |

@@ -228,7 +228,7 @@ def load_and_verify(folder):
     if errors:
         for e in errors:
             print("  ✗ " + e, file=sys.stderr)
-        raise SystemExit(f"gen_universe: {len(errors)} error(s) in {path.name} — nothing written")
+        raise SystemExit(f"gen_universe: {len(errors)} error(s) in {folder.name} — nothing written")
 
     ex["taxonomy"] = [{"title": t, "level": lv} for t, lv, _ in heads]
     ex["coverage"] = {
@@ -410,8 +410,8 @@ DOC_PAGE = """<!doctype html>
 <p class="lead">{lead}</p>
 
 <div class="docmeta">
-  <span class="k">Layer</span><span class="v">1 &middot; per-document local graph &middot; <b>the pilot</b>, 1 of {total} sources</span>
-  <span class="k">Source</span><span class="v"><a href="../../{source}">{source}</a> &middot; frozen, SHA-256 <code>{sha12}&hellip;</code></span>
+  <span class="k">Layer</span><span class="v">1 &middot; per-document local graph &middot; <b>{origin}</b></span>
+  <span class="k">Source</span><span class="v"><a href="../../{source}">{source}</a> &middot; {pinned}, SHA-256 <code>{sha12}&hellip;</code></span>
   <span class="k">Extraction</span><span class="v"><a href="docs/{slug}/extraction.json">docs/{slug}/extraction.json</a> &middot; authored by the agent, {extracted} &middot; every anchor build-verified against the frozen bytes</span>
   <span class="k">The folder</span><span class="v"><a href="docs/{slug}/index.html">docs/{slug}/</a> &middot; the document's standalone home: the source copy, the extraction, the cross-references &middot; portable between repositories &middot; <a href="{slug}.files.html"><b>browse every file, raw and viewed &rarr;</b></a></span>
   <span class="k">Used by</span><span class="v"><a href="docs/{slug}/index.html#crossrefs">{n_refs} known uses</a>, rated against <a href="usage-model.json">the usage model</a>: {refs_line}</span>
@@ -439,7 +439,7 @@ HUB = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The universe &mdash; graphs.sgit.ai</title>
-<meta name="description" content="Layer 1 of the second edition's universe: one local graph per carried source document, every node anchored to the frozen bytes that carry it, every anchor verified on every build.">
+<meta name="description" content="Layer 1 of the second edition's universe: one local graph per source document, every node anchored to the bytes that carry it, every anchor verified on every build.">
 <link rel="canonical" href="https://graphs.sgit.ai/v2/universe/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="graphs.sgit.ai">
@@ -456,10 +456,10 @@ HUB = """<!doctype html>
 <main class="doc">
   <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="../index.html">the second edition</a> &rarr; <b>The universe</b></div>
   <h1>The universe, built bottom up</h1>
-  <p class="lead">The second edition is written from a universe of concepts, claims and evidence, and the universe is built <b>bottom up</b>: one local graph per carried source document, each document keeping its own vocabulary, with bridges between them added later as authored decisions. Nothing here is book text. This is the material the book's own graph will connect to.</p>
+  <p class="lead">The second edition is written from a universe of concepts, claims and evidence, and the universe is built <b>bottom up</b>: one local graph per source document, carried from the frozen estate or written here, each document keeping its own vocabulary, with bridges between them added later as authored decisions. Nothing here is book text. This is the material the book's own graph will connect to.</p>
 
   <div class="note"><b>The layer model.</b><br>
-  <b>Layer 0</b> &middot; the frozen bytes: the {total} carried sources under <code>/v1/docs/sources/</code>, each hashed in the freeze manifest, so an anchor into one is stable forever.<br>
+  <b>Layer 0</b> &middot; the frozen bytes: the {total} carried sources under <code>/v1/docs/sources/</code>, each hashed in the freeze manifest, so an anchor into one is stable forever. A document written here rather than carried has no separate frozen original; its folder copy is the original, and the extraction pins it by hash all the same, so editing the prose without re-extracting fails the build.<br>
   <b>Layer 1</b> &middot; per-document local graphs, this section: the document's own dictionary, claims with their support state, hypotheses, objectives, demonstrations and asserted relations, every one anchored to a verbatim quote. <b>The build refuses to ship an anchor whose quote is not found in the frozen bytes</b>, so extraction cannot cite words that are not there. Every layer 1 node means only: <em>this document says this, here</em>.<br>
   <b>Layer 2</b> &middot; the bridge layer, not started: cross-document edges, authored with a note, recording where documents name the same idea differently and where they disagree. Divergence is preserved as a finding, never merged away.<br>
   <b>Layer 3</b> &middot; the book's universe, not started: the six node families of the dev pack's ADR-3, connecting down into layers 1 and 2 as evidence.</div>
@@ -719,6 +719,11 @@ def main():
         desc = (f'The per-document local graph of {d["title"]}: dictionary, claims with support states, '
                 f'hypotheses, demonstrations and asserted edges, every node anchored to the frozen source and build-verified.')
         body = doc_body(ex)
+        # where the document came from: one of the carried estate, or written here
+        carried = d["source"].startswith("v1/docs/sources/")
+        origin = (f'the pilot, 1 of {TOTAL_SOURCES} carried sources' if carried
+                  else 'born in v2 &middot; its folder copy is the original')
+        pinned = "frozen" if carried else "pinned by hash"
 
         # PDF first (chrome-free print form), so the page can state its page count
         pdf = OUT / f'{d["slug"]}.pdf'
@@ -760,7 +765,7 @@ def main():
         (OUT / f'{d["slug"]}.html').write_text(DOC_PAGE.format(
             title=esc(d["title"]), slug=d["slug"], desc=esc(desc), lead=lead,
             source=d["source"], sha12=d["sha256"][:12], extracted=d["extracted"],
-            total=TOTAL_SOURCES, body=body, pdf_pages=pages or "?",
+            total=TOTAL_SOURCES, body=body, pdf_pages=pages or "?", origin=origin, pinned=pinned,
             unidata=unidata, refs_line=refs_line,
             **stats))
 
@@ -825,8 +830,8 @@ def main():
 
         rows.append(
             f'      <tr><td><a href="{d["slug"]}.html"><b>{esc(d["title"])}</b></a>'
-            f'<div class="small dim">dated {d["dated"]} &middot; the cornerstone; the book\'s subtitle is this document\'s subtitle</div></td>'
-            f'<td><span class="rstate rs-applied">extracted &middot; pilot</span></td>'
+            f'<div class="small dim">dated {d["dated"]} &middot; {esc(d.get("blurb", ""))}</div></td>'
+            f'<td><span class="rstate rs-applied">{d.get("state", "extracted")}</span></td>'
             f'<td class="small">{stats["n_concepts"]} concepts &middot; {stats["n_claims"]} claims &middot; '
             f'{stats["n_edges"]} edges &middot; {stats["n_refs"]} known uses &middot; '
             f'<a href="docs/{d["slug"]}/index.html">the folder</a> &middot; '
@@ -843,11 +848,13 @@ def main():
         print(f'gen_universe: {d["slug"]} — {len(ex["nodes"])} nodes, {len(ex["edges"])} edges, '
               f'all anchors verified against {d["sha256"][:12]}…, PDF {pages}pp')
 
+    n_carried = sum(1 for s in published["sources"]
+                    if s["source"].startswith("v1/docs/sources/"))
     (OUT / "index.html").write_text(HUB.format(rows="\n".join(rows), total=TOTAL_SOURCES,
-                                               remaining=TOTAL_SOURCES - len(rows)))
+                                               remaining=TOTAL_SOURCES - n_carried))
     (OUT / "node-doc.html").write_text(NODEDOC_PAGE)
     (DATA / "universe.json").write_text(json.dumps(published, indent=1, ensure_ascii=False) + "\n")
-    print(f'gen_universe: {len(rows)} of {TOTAL_SOURCES} source(s) extracted, hub and data written')
+    print(f'gen_universe: {len(rows)} document(s) extracted ({n_carried} of {TOTAL_SOURCES} carried, {len(rows) - n_carried} born here), hub and data written')
 
 
 if __name__ == "__main__":

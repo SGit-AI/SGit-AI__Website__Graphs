@@ -1,6 +1,6 @@
 # Debrief: the making-of book, mapped
 
-**Brief** `briefs/v0.6.3__map-the-making-of-book.md`
+**Brief** `briefs/making-a-book__v0.1.0__map-the-making-of-book.md`
 **Subject** *Creating a Book Using Fractal Semantic Graphs*, v0.1.0 — 17 chapters, 31,221
 words, 92 PDF pages
 **Method** every count below is reproducible from `v2/books/making-a-book/content/*.md`.

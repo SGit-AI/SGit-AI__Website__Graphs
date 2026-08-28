@@ -90,6 +90,7 @@
   <url><loc>https://graphs.sgit.ai/v2/dev-pack/leanpub-00-the-release.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/dev-pack/leanpub-01-the-copy.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/dev-pack/mab-naming-00-the-record.html</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/dev-pack/mab-workflow-00-the-record.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/dev-pack/nfr-00-the-audit.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/dev-pack/nfr-01-the-plan.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/dev-pack/nfr-02-pass-two.html</loc><lastmod>2026-08-28</lastmod></url>
@@ -126,6 +127,7 @@
   <url><loc>https://graphs.sgit.ai/v2/memos/42-founder-memo-the-craftsman-makes-the-tools.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/memos/43-founder-memo-everything-is-a-graph.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/memos/44-founder-memo-the-leanpub-story-and-the-determinism-boundary.html</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/memos/45-founder-memo-what-a-workflow-is.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/memos/index.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/methods/index.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/packs/concepts-and-evidence.html</loc><lastmod>2026-08-28</lastmod></url>
@@ -139,6 +141,11 @@
   <url><loc>https://graphs.sgit.ai/v2/team/qa.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/team/researcher.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/team/writer.html</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/universe/agentic-workflows.files.html</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/universe/agentic-workflows.graph.html</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/universe/agentic-workflows.html</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/universe/agentic-workflows.pdf</loc><lastmod>2026-08-28</lastmod></url>
+  <url><loc>https://graphs.sgit.ai/v2/universe/docs/agentic-workflows/index.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/universe/docs/thinking-in-graphs/index.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/universe/index.html</loc><lastmod>2026-08-28</lastmod></url>
   <url><loc>https://graphs.sgit.ai/v2/universe/node-doc.html</loc><lastmod>2026-08-28</lastmod></url>

@@ -1,0 +1,1000 @@
+{
+ "doc": "doc:agentic-workflows",
+ "prefix": "aw",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 38,
+  "b": 84
+ },
+ "ids": [
+  {
+   "uid": "aw:d1",
+   "level": "doc",
+   "locator": "doc:agentic-workflows",
+   "hash": "c2823900795a",
+   "head": "Agentic Workflows: How You Operate",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s1",
+   "level": "sec",
+   "locator": "sec:What This Document Is",
+   "hash": "ab4e184c4ec7",
+   "head": "2|What This Document Is",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s2",
+   "level": "sec",
+   "locator": "sec:Part 1: A Workflow Is How You Operate",
+   "hash": "a7f639526728",
+   "head": "2|Part 1: A Workflow Is How You Operate",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s3",
+   "level": "sec",
+   "locator": "sec:The Definition",
+   "hash": "481ff2e2ed43",
+   "head": "3|The Definition",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s4",
+   "level": "sec",
+   "locator": "sec:Three Workflows for Writing a Book",
+   "hash": "7f4229dec1fe",
+   "head": "3|Three Workflows for Writing a Book",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s5",
+   "level": "sec",
+   "locator": "sec:The Workflow Decides What Questions You Can Ask",
+   "hash": "fa4f3054e539",
+   "head": "3|The Workflow Decides What Questions You Can Ask",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s6",
+   "level": "sec",
+   "locator": "sec:Part 2: What Changed in 2026",
+   "hash": "5460666f75e5",
+   "head": "2|Part 2: What Changed in 2026",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s7",
+   "level": "sec",
+   "locator": "sec:Four Things a Workflow Can Now Change",
+   "hash": "2a5c74bce130",
+   "head": "3|Four Things a Workflow Can Now Change",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s8",
+   "level": "sec",
+   "locator": "sec:The Purpose Is the Zone",
+   "hash": "b49bbd037a43",
+   "head": "3|The Purpose Is the Zone",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s9",
+   "level": "sec",
+   "locator": "sec:Agentic Is Not the Same as Automated",
+   "hash": "dc8f6bbea273",
+   "head": "3|Agentic Is Not the Same as Automated",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s10",
+   "level": "sec",
+   "locator": "sec:Part 3: The Villager and the Explorer",
+   "hash": "e491424925d3",
+   "head": "2|Part 3: The Villager and the Explorer",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s11",
+   "level": "sec",
+   "locator": "sec:Two Phases, Not Two Kinds of Person",
+   "hash": "5583da02de9b",
+   "head": "3|Two Phases, Not Two Kinds of Person",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s12",
+   "level": "sec",
+   "locator": "sec:Skill Changes Reach, Not Route",
+   "hash": "b5565f72c1c3",
+   "head": "3|Skill Changes Reach, Not Route",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s13",
+   "level": "sec",
+   "locator": "sec:The Explorer Trigger Is a Manual Step",
+   "hash": "b25cc8464035",
+   "head": "3|The Explorer Trigger Is a Manual Step",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s14",
+   "level": "sec",
+   "locator": "sec:The Instinct Is Not to Change the Workflow",
+   "hash": "bda32d3128d6",
+   "head": "3|The Instinct Is Not to Change the Workflow",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s15",
+   "level": "sec",
+   "locator": "sec:The Point of Diminishing Returns",
+   "hash": "175352784df4",
+   "head": "3|The Point of Diminishing Returns",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s16",
+   "level": "sec",
+   "locator": "sec:Part 4: Maturity Is When You Stop Changing It",
+   "hash": "749eb4f7e0da",
+   "head": "2|Part 4: Maturity Is When You Stop Changing It",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s17",
+   "level": "sec",
+   "locator": "sec:The Measure of Success",
+   "hash": "079bc3868b0d",
+   "head": "3|The Measure of Success",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s18",
+   "level": "sec",
+   "locator": "sec:The Consequence for How Progress Is Read",
+   "hash": "fcf9995f766e",
+   "head": "3|The Consequence for How Progress Is Read",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s19",
+   "level": "sec",
+   "locator": "sec:Maturing Is Not Finishing",
+   "hash": "beabb1bc6452",
+   "head": "3|Maturing Is Not Finishing",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s20",
+   "level": "sec",
+   "locator": "sec:Reusable Pieces Are the Unit",
+   "hash": "a4ae025f2787",
+   "head": "3|Reusable Pieces Are the Unit",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s21",
+   "level": "sec",
+   "locator": "sec:Part 5: Source Materials and Projections",
+   "hash": "55f4041d03f2",
+   "head": "2|Part 5: Source Materials and Projections",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s22",
+   "level": "sec",
+   "locator": "sec:The Distinction",
+   "hash": "3f4f606df65a",
+   "head": "3|The Distinction",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s23",
+   "level": "sec",
+   "locator": "sec:Two-Way Doors and One-Way Doors",
+   "hash": "729ab1f7fafd",
+   "head": "3|Two-Way Doors and One-Way Doors",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s24",
+   "level": "sec",
+   "locator": "sec:Keep the Sources on the Deterministic Side",
+   "hash": "46122256b57a",
+   "head": "3|Keep the Sources on the Deterministic Side",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s25",
+   "level": "sec",
+   "locator": "sec:Where This Document Sits",
+   "hash": "0d66ce725ffa",
+   "head": "3|Where This Document Sits",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s26",
+   "level": "sec",
+   "locator": "sec:Part 6: A Workflow Leaves Artefacts",
+   "hash": "de671d9a5cc7",
+   "head": "2|Part 6: A Workflow Leaves Artefacts",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s27",
+   "level": "sec",
+   "locator": "sec:Everything Gets a Folder",
+   "hash": "562cea8be1c8",
+   "head": "3|Everything Gets a Folder",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s28",
+   "level": "sec",
+   "locator": "sec:The Chain Is the Product",
+   "hash": "e85e14e50996",
+   "head": "3|The Chain Is the Product",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s29",
+   "level": "sec",
+   "locator": "sec:A Named Process Is Repeatable; a Described One Is Not",
+   "hash": "2f119f2f4f3e",
+   "head": "3|A Named Process Is Repeatable; a Described One Is Not",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s30",
+   "level": "sec",
+   "locator": "sec:Part 7: Reading the Work Back",
+   "hash": "4c1f77bda7c6",
+   "head": "2|Part 7: Reading the Work Back",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s31",
+   "level": "sec",
+   "locator": "sec:A Diff Is a Workflow Step, Not a Feature",
+   "hash": "7bb07e96bbb1",
+   "head": "3|A Diff Is a Workflow Step, Not a Feature",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s32",
+   "level": "sec",
+   "locator": "sec:Why a Graph Diff Beats a Text Diff",
+   "hash": "7988dd522d48",
+   "head": "3|Why a Graph Diff Beats a Text Diff",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s33",
+   "level": "sec",
+   "locator": "sec:Formatting Changes Are Findings",
+   "hash": "da34fe137231",
+   "head": "3|Formatting Changes Are Findings",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s34",
+   "level": "sec",
+   "locator": "sec:Part 8: The Loop, End to End",
+   "hash": "dc8cf6c13ea4",
+   "head": "2|Part 8: The Loop, End to End",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s35",
+   "level": "sec",
+   "locator": "sec:One Round",
+   "hash": "74897e6e2a42",
+   "head": "3|One Round",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s36",
+   "level": "sec",
+   "locator": "sec:What Each Step Buys",
+   "hash": "5e2375d10330",
+   "head": "3|What Each Step Buys",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s37",
+   "level": "sec",
+   "locator": "sec:What It Does Not Buy",
+   "hash": "bec4633b39d6",
+   "head": "3|What It Does Not Buy",
+   "status": "live"
+  },
+  {
+   "uid": "aw:s38",
+   "level": "sec",
+   "locator": "sec:Summary: Core Principles",
+   "hash": "1cfd3a1b87c7",
+   "head": "2|Summary: Core Principles",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b1",
+   "level": "blk",
+   "locator": "blk:Agentic Workflows: How You Operate/1",
+   "hash": "a37fccee70c6",
+   "head": "**A reference document on what a workflow is, what changed in 2026, and how to t",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b2",
+   "level": "blk",
+   "locator": "blk:Agentic Workflows: How You Operate/2",
+   "hash": "bbdb0cdce52a",
+   "head": "Written from the founder's memo of 28 August 2026, published verbatim in this re",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b3",
+   "level": "blk",
+   "locator": "blk:What This Document Is/1",
+   "hash": "517dddb46d74",
+   "head": "This is a source document, and it is a projection of a spoken memo rather than a",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b4",
+   "level": "blk",
+   "locator": "blk:What This Document Is/2",
+   "hash": "787e6a6fdf98",
+   "head": "That makes its provenance worth stating before anything else. The memo is the so",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b5",
+   "level": "blk",
+   "locator": "blk:What This Document Is/3",
+   "hash": "c7952617eee7",
+   "head": "The document is deliberately mundane about its subject. A workflow here is not a",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b6",
+   "level": "blk",
+   "locator": "blk:The Definition/1",
+   "hash": "1640934fc81d",
+   "head": "A workflow is the set of steps you actually take to get something done. In the f",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b7",
+   "level": "blk",
+   "locator": "blk:The Definition/2",
+   "hash": "29410dcac303",
+   "head": "This is a deliberately low bar, and the low bar is the point. Reserving the word",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b8",
+   "level": "blk",
+   "locator": "blk:Three Workflows for Writing a Book/1",
+   "hash": "a851ed9d531a",
+   "head": "The same task, done three ways, shows how much of the outcome the workflow decid",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b9",
+   "level": "blk",
+   "locator": "blk:Three Workflows for Writing a Book/2",
+   "hash": "316ebfe5a8b3",
+   "head": "The first is the ordinary one. You open a word processor, you write, you save, y",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b10",
+   "level": "blk",
+   "locator": "blk:Three Workflows for Writing a Book/3",
+   "hash": "1d7152c214f4",
+   "head": "The second is markdown with a build attached. You edit plain text, you press sav",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b11",
+   "level": "blk",
+   "locator": "blk:Three Workflows for Writing a Book/4",
+   "hash": "d1dfe45174ef",
+   "head": "The third is the one this repository runs. A spoken memo becomes a verbatim brie",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b12",
+   "level": "blk",
+   "locator": "blk:Three Workflows for Writing a Book/5",
+   "hash": "dd0398cf3541",
+   "head": "The three differ in ability, not in effort. All three authors work hard. Only th",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b13",
+   "level": "blk",
+   "locator": "blk:The Workflow Decides What Questions You Can Ask/1",
+   "hash": "80ca6a81c420",
+   "head": "The interesting property of a workflow is not its speed. It is the set of questi",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b14",
+   "level": "blk",
+   "locator": "blk:The Workflow Decides What Questions You Can Ask/2",
+   "hash": "cb8ad1d0640e",
+   "head": "Choosing a workflow is therefore choosing which questions you will get in the ha",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b15",
+   "level": "blk",
+   "locator": "blk:Four Things a Workflow Can Now Change/1",
+   "hash": "c00780c9c1c1",
+   "head": "The founder's claim about this moment is narrow and testable: \"the power in 2026",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b16",
+   "level": "blk",
+   "locator": "blk:Four Things a Workflow Can Now Change/2",
+   "hash": "069ee75ca9ba",
+   "head": "Four things, and they are worth separating because they fail differently.",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b17",
+   "level": "blk",
+   "locator": "blk:Four Things a Workflow Can Now Change/3",
+   "hash": "dd5e40dbfe6a",
+   "head": "**Tooling** is the scripts, generators and gates that do the work. This has been",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b18",
+   "level": "blk",
+   "locator": "blk:Four Things a Workflow Can Now Change/4",
+   "hash": "94eb14257316",
+   "head": "**Visualisation** is how the work is shown back to you. A table, a graph, a diff",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b19",
+   "level": "blk",
+   "locator": "blk:Four Things a Workflow Can Now Change/5",
+   "hash": "21d4dc50673a",
+   "head": "**Comprehension** is what the system can be asked to understand rather than mere",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b20",
+   "level": "blk",
+   "locator": "blk:Four Things a Workflow Can Now Change/6",
+   "hash": "c21c8292cb3d",
+   "head": "**Context** is what the worker, human or agent, has in front of them at the mome",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b21",
+   "level": "blk",
+   "locator": "blk:The Purpose Is the Zone/1",
+   "hash": "2eadd942601b",
+   "head": "None of the four is the goal. The goal the founder names is a state of attention",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b22",
+   "level": "blk",
+   "locator": "blk:The Purpose Is the Zone/2",
+   "hash": "92b922ec2cca",
+   "head": "This is why speed alone is a poor measure. A pipeline that halves the wall-clock",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b23",
+   "level": "blk",
+   "locator": "blk:Agentic Is Not the Same as Automated/1",
+   "hash": "a1f9a407f204",
+   "head": "An automated workflow does the same thing every time and is valuable exactly bec",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b24",
+   "level": "blk",
+   "locator": "blk:Agentic Is Not the Same as Automated/2",
+   "hash": "4f54aabd98cb",
+   "head": "The practical consequence is that agentic workflows need a boundary drawn throug",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b25",
+   "level": "blk",
+   "locator": "blk:Two Phases, Not Two Kinds of Person/1",
+   "hash": "1ea06464b0c7",
+   "head": "The founder distinguishes the person consuming a workflow from the person changi",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b26",
+   "level": "blk",
+   "locator": "blk:Two Phases, Not Two Kinds of Person/2",
+   "hash": "2191284bf438",
+   "head": "He says *phase* both times, and the word is load-bearing. This is not a taxonomy",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b27",
+   "level": "blk",
+   "locator": "blk:Skill Changes Reach, Not Route/1",
+   "hash": "713e4b529506",
+   "head": "What experience changes is how far into the workflow you can reach: \"depending o",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b28",
+   "level": "blk",
+   "locator": "blk:Skill Changes Reach, Not Route/2",
+   "hash": "886492fb7638",
+   "head": "It does not change the route. The founder is explicit that the steps are the sam",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b29",
+   "level": "blk",
+   "locator": "blk:Skill Changes Reach, Not Route/3",
+   "hash": "aa74c0f807e8",
+   "head": "This has a direct consequence for anything written to teach a workflow. One acco",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b30",
+   "level": "blk",
+   "locator": "blk:The Explorer Trigger Is a Manual Step/1",
+   "hash": "4431edcb41d0",
+   "head": "Nobody should be looking for workflow improvements continuously; that is its own",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b31",
+   "level": "blk",
+   "locator": "blk:The Explorer Trigger Is a Manual Step/2",
+   "hash": "e86cd9fcda08",
+   "head": "Two words in that sentence carry the discipline. *Allow* means the default is no",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b32",
+   "level": "blk",
+   "locator": "blk:The Instinct Is Not to Change the Workflow/1",
+   "hash": "a8202b9a2e6b",
+   "head": "Stated plainly, and it is the opposite of how tool-building is usually described",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b33",
+   "level": "blk",
+   "locator": "blk:The Instinct Is Not to Change the Workflow/2",
+   "hash": "365b05e15a87",
+   "head": "An author who enjoys improving their tools will improve their tools instead of w",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b34",
+   "level": "blk",
+   "locator": "blk:The Point of Diminishing Returns/1",
+   "hash": "880f1367a297",
+   "head": "Every detour is bounded by cost on both sides: \"there's there's always a point o",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b35",
+   "level": "blk",
+   "locator": "blk:The Point of Diminishing Returns/2",
+   "hash": "0f54bc8199e5",
+   "head": "The spoken correction lands on hours and days. A tooling detour that pays back i",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b36",
+   "level": "blk",
+   "locator": "blk:The Measure of Success/1",
+   "hash": "c0e38d9b5b76",
+   "head": "This is the sharpest idea in the memo and it is stated as a test: \"the ultimate ",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b37",
+   "level": "blk",
+   "locator": "blk:The Measure of Success/2",
+   "hash": "349ed6b013cb",
+   "head": "A workflow is mature when running it does not tempt you to change it. Note what ",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b38",
+   "level": "blk",
+   "locator": "blk:The Consequence for How Progress Is Read/1",
+   "hash": "3e093191ad16",
+   "head": "The test inverts the natural reading of a busy period. A stretch of releases tha",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b39",
+   "level": "blk",
+   "locator": "blk:The Consequence for How Progress Is Read/2",
+   "hash": "403afc0a921f",
+   "head": "This is uncomfortable for anybody narrating their own tooling, because the chang",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b40",
+   "level": "blk",
+   "locator": "blk:Maturing Is Not Finishing/1",
+   "hash": "4b829404ed1a",
+   "head": "Work can be left in a useful state without being complete: \"we didn't finish all",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b41",
+   "level": "blk",
+   "locator": "blk:Maturing Is Not Finishing/2",
+   "hash": "3ef9b46361af",
+   "head": "Parked is a legitimate state and is not the same as abandoned. A parked workflow",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b42",
+   "level": "blk",
+   "locator": "blk:Reusable Pieces Are the Unit/1",
+   "hash": "f579336c7869",
+   "head": "The founder's own analogy for how the pieces accumulate is a developer's: \"If yo",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b43",
+   "level": "blk",
+   "locator": "blk:Reusable Pieces Are the Unit/2",
+   "hash": "cf983f17abed",
+   "head": "The test for a reusable piece is whether it can be lifted out. A step that only ",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b44",
+   "level": "blk",
+   "locator": "blk:The Distinction/1",
+   "hash": "21b66bd076d6",
+   "head": "The founder holds one distinction above the others, stated in his memo of 27 Aug",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b45",
+   "level": "blk",
+   "locator": "blk:The Distinction/2",
+   "hash": "8b3f61a40332",
+   "head": "Source materials are the things a human authored or a machine captured. Projecti",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b46",
+   "level": "blk",
+   "locator": "blk:Two-Way Doors and One-Way Doors/1",
+   "hash": "297180cea0cb",
+   "head": "A projection is a two-way door when it is deterministic. Given the transformatio",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b47",
+   "level": "blk",
+   "locator": "blk:Two-Way Doors and One-Way Doors/2",
+   "hash": "5a740b1b180b",
+   "head": "A projection is a one-way door when something interpreted it. Prose written from",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b48",
+   "level": "blk",
+   "locator": "blk:Two-Way Doors and One-Way Doors/3",
+   "hash": "18beeb51219f",
+   "head": "The question to ask at every boundary is therefore not whether a step is automat",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b49",
+   "level": "blk",
+   "locator": "blk:Keep the Sources on the Deterministic Side/1",
+   "hash": "6d2cbdd81676",
+   "head": "The rule that follows governs how a workflow should be laid out: \"it's very crit",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b50",
+   "level": "blk",
+   "locator": "blk:Keep the Sources on the Deterministic Side/2",
+   "hash": "fc8d2d1aea70",
+   "head": "Put the interpreted step as late as possible. If prose is generated from a graph",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b51",
+   "level": "blk",
+   "locator": "blk:Where This Document Sits/1",
+   "hash": "45f9ef9e940b",
+   "head": "This document is on the wrong side of that boundary, and says so rather than hid",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b52",
+   "level": "blk",
+   "locator": "blk:Where This Document Sits/2",
+   "hash": "1f274882379a",
+   "head": "That is the honest arrangement available: a one-way step, declared, with a deter",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b53",
+   "level": "blk",
+   "locator": "blk:Everything Gets a Folder/1",
+   "hash": "9090895da160",
+   "head": "A workflow that produces scattered outputs cannot be reused, because there is no",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b54",
+   "level": "blk",
+   "locator": "blk:Everything Gets a Folder/2",
+   "hash": "94d5e141e932",
+   "head": "The test is portability. If the folder can be copied into another repository and",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b55",
+   "level": "blk",
+   "locator": "blk:The Chain Is the Product/1",
+   "hash": "877e20c80d53",
+   "head": "When projections are built from sources by transformations, and transformations ",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b56",
+   "level": "blk",
+   "locator": "blk:The Chain Is the Product/2",
+   "hash": "cd9d50bcc9d1",
+   "head": "The consequence is that the final product stops being a file somebody produced a",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b57",
+   "level": "blk",
+   "locator": "blk:A Named Process Is Repeatable; a Described One Is Not/1",
+   "hash": "e0431de3834c",
+   "head": "A step that is only ever described in sentences gets done slightly differently e",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b58",
+   "level": "blk",
+   "locator": "blk:A Named Process Is Repeatable; a Described One Is Not/2",
+   "hash": "9247a9e884c6",
+   "head": "This is the smallest and most reliable improvement available to any workflow, an",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b59",
+   "level": "blk",
+   "locator": "blk:A Diff Is a Workflow Step, Not a Feature/1",
+   "hash": "b5c006da7f82",
+   "head": "The ability to see what changed is part of how you operate, not an extra. Withou",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b60",
+   "level": "blk",
+   "locator": "blk:Why a Graph Diff Beats a Text Diff/1",
+   "hash": "a5f3bef07b91",
+   "head": "A text diff compares lines. It is available immediately and it is \"much more fra",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b61",
+   "level": "blk",
+   "locator": "blk:Why a Graph Diff Beats a Text Diff/2",
+   "hash": "a50de2cc1560",
+   "head": "A graph diff compares identified things. If a sentence has an identity that surv",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b62",
+   "level": "blk",
+   "locator": "blk:Why a Graph Diff Beats a Text Diff/3",
+   "hash": "072a2e085da8",
+   "head": "The test is well chosen, because a graph diff is only possible if the decomposit",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b63",
+   "level": "blk",
+   "locator": "blk:Formatting Changes Are Findings/1",
+   "hash": "e20c75c23ced",
+   "head": "One benefit is named explicitly: working on the JSON structure \"also allows to d",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b64",
+   "level": "blk",
+   "locator": "blk:One Round/1",
+   "hash": "57a3d26b870f",
+   "head": "The workflow this document was produced by is small enough to state completely.",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b65",
+   "level": "blk",
+   "locator": "blk:One Round/2",
+   "hash": "ad9adefebfdf",
+   "head": "A memo is spoken. It is transcribed and published verbatim, transcription artefa",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b66",
+   "level": "blk",
+   "locator": "blk:What Each Step Buys/1",
+   "hash": "0a1a835ffdf6",
+   "head": "The verbatim brief buys the ability to check a later claim against what was actu",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b67",
+   "level": "blk",
+   "locator": "blk:What Each Step Buys/2",
+   "hash": "bc7a87d37802",
+   "head": "The versioning buys the diff, which is what makes review possible at all, which ",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b68",
+   "level": "blk",
+   "locator": "blk:What It Does Not Buy/1",
+   "hash": "96a5c55c4ac1",
+   "head": "It does not buy quality of thought. Every step above is about the handling of ma",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b69",
+   "level": "blk",
+   "locator": "blk:What It Does Not Buy/2",
+   "hash": "26c2b1c5f5e3",
+   "head": "It also does not remove the interpreted step. The one-way door is still there, i",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b70",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/1",
+   "hash": "1007956276df",
+   "head": "1. **A workflow is how you operate.** It is the steps you actually take, whether",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b71",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/2",
+   "hash": "2c810361037b",
+   "head": "2. **The workflow decides which questions are cheap**, and over time that decide",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b72",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/3",
+   "hash": "8c4d6a0e873a",
+   "head": "3. **Four things a workflow can now change**: the tooling, the visualisation, th",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b73",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/4",
+   "hash": "f801ca45f3f2",
+   "head": "4. **The purpose is the zone.** A workflow earns its keep by removing interrupti",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b74",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/5",
+   "hash": "cae336b50685",
+   "head": "5. **Villager and explorer are phases, not people.** Consuming and improving are",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b75",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/6",
+   "hash": "c2b0c1dee325",
+   "head": "6. **Experience changes reach, not route.** The steps are the same; skill decide",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b76",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/7",
+   "hash": "a569e0039216",
+   "head": "7. **The explorer trigger is a manual step**, noticed. The default is not to cha",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b77",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/8",
+   "hash": "e2c79f6f7fa8",
+   "head": "8. **Detours are bounded by payback.** Hours or days is a tooling detour; years ",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b78",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/9",
+   "hash": "2c45973cf1e5",
+   "head": "9. **Maturity is measured by not changing it.** A workflow that survived real wo",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b79",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/10",
+   "hash": "3c3198993aa1",
+   "head": "10. **Parked is not abandoned.** A stop with a reason and reusable parts is a re",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b80",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/11",
+   "hash": "e0a67c055559",
+   "head": "11. **Projections come from sources plus transformations**, and sources stay in ",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b81",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/12",
+   "hash": "78f1ceab6cd7",
+   "head": "12. **Interpretation is a one-way door.** Put it as late in the chain as possibl",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b82",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/13",
+   "hash": "2e826201cb04",
+   "head": "13. **Everything gets a folder**, and the test of the folder is whether it can b",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b83",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/14",
+   "hash": "dff159403741",
+   "head": "14. **A named process is repeatable.** Naming is the cheapest improvement availa",
+   "status": "live"
+  },
+  {
+   "uid": "aw:b84",
+   "level": "blk",
+   "locator": "blk:Summary: Core Principles/15",
+   "hash": "6015debdb34c",
+   "head": "15. **A diff is a step, not a feature.** Diff the graphs, not the markdown, and ",
+   "status": "live"
+  }
+ ]
+}

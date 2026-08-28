@@ -23,6 +23,20 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "45__founder-memo__what-a-workflow-is.md": (
+     "What a workflow is, and the measure of success he judges maturity by",
+     "The definition, stated plainly: a workflow is \u201chow you operate\u201d, the steps "
+     "you actually take, and opening a word processor is one. What changed in "
+     "2026 is that a workflow can now change its own tooling, visualisation, "
+     "comprehension and context, and the purpose of changing them is to \u201callow "
+     "the author to stay in the zone\u201d. Villager and explorer are phases rather "
+     "than kinds of person: experience changes how deep you can reach into a "
+     "workflow and how fast you read, not the steps you take. And the metric he "
+     "uses for maturity, which inverts how a busy week reads: \u201ccan I do a "
+     "process without making any changes to the workflow?\u201d The memo also sets "
+     "the phased experiment this document came out of, and asks for a diff "
+     "between two versions of a book that is computed from the graphs rather "
+     "than the markdown."),
  "44__founder-memo__the-leanpub-story-and-the-determinism-boundary.md": (
      "The Leanpub story, the title, and the determinism boundary",
      "Answers three things at once and adds a concept. The Leanpub story the "

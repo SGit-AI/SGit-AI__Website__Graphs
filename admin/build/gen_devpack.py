@@ -94,6 +94,13 @@ SIDE = [
    "00__the-review.md": "Brief 41 asks for the tree to be restructured around books. The principle and the publishing order are endorsed; one part is pushed back on with measurements, because v1/ and v2/ are timestamps rather than types \u2014 72 of 94 pages in v1 are not the book, and 172 of the 200 frozen files sit outside v1/book/. A four-zone shape is proposed, the cost is counted (236 of 258 URLs change, every frozen path moves), three things that break are named, and the work is phased into four releases.",
    "01__the-workflows.md": "The five workflows this estate actually runs, written down for the first time: the memo-to-release loop, the release ritual, changing a book (which moves two versions), the seven-stage change control, and turning an escaped defect into a gate. Each with its trigger, its steps, which steps are machine-enforced and which are only habit, and its done test \u2014 plus the three things that are not yet workflows because they have never been run.",
   }},
+ {"dir": "making-a-book__v0.2.0__the-workflow-document", "short": "mab-workflow",
+  "label": "The workflow document", "book": "making-a-book",
+  "packline": "the second run of the seven-stage workflow",
+  "statusline": "\u23f8 WAITING ON THE FOUNDER \u2014 stage 5 of 7; the document is shipped, the book is untouched",
+  "blurbs": {
+   "00__the-record.md": "Brief 45 asks for a source document about workflows, and for it to be connected to the book. The first three phases are additive and were done; the fourth changes a book and is in front of the founder with the cost counted. The map is computed: workflow appears 6 times in the book\u2019s 27,002 words and 64 times across the memos, and every other word in the founder\u2019s account \u2014 villager, zone, maturity, pacing \u2014 appears zero times. The document ships with 81 anchored nodes and declares itself a one-way projection. Four candidate names for the process, built from counted vocabulary. And the finding that earns a gate: eighteen of twenty-five founder quotations had been smoothed into readability before a script caught them.",
+  }},
  {"dir": "making-a-book__v0.1.0__the-naming-question", "short": "mab-naming",
   "label": "The naming question", "book": "making-a-book",
   "packline": "the first run of the seven-stage workflow",

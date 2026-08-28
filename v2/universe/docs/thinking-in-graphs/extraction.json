@@ -7,7 +7,9 @@
   "dated": "2026-02-05",
   "extracted": "2026-08-23",
   "extractor": "agent",
-  "note": "Every node below is a record that this document says something, at a named anchor. Whether what it says is true is not evaluated at this layer; that judgement belongs to the book's universe, which connects to these nodes."
+  "note": "Every node below is a record that this document says something, at a named anchor. Whether what it says is true is not evaluated at this layer; that judgement belongs to the book's universe, which connects to these nodes.",
+  "blurb": "the cornerstone; the book's subtitle is this document's subtitle",
+  "state": "extracted &middot; pilot"
  },
  "nodes": [
   {

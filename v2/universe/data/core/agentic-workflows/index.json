@@ -1,0 +1,525 @@
+{
+ "version": "v0.6.11",
+ "slug": "agentic-workflows",
+ "doc": "doc:agentic-workflows",
+ "title": "Agentic Workflows: How You Operate",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 84,
+  "sentences": 203,
+  "words": 3365,
+  "spans": 26
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:agentic-workflows",
+   "title": "Agentic Workflows: How You Operate",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 65
+   },
+   "shard": "sec-01.json",
+   "uid": "aw:d1"
+  },
+  {
+   "id": "sec:What This Document Is",
+   "title": "What This Document Is",
+   "level": 2,
+   "parent": "doc:agentic-workflows",
+   "counts": {
+    "blocks": 3,
+    "sentences": 10,
+    "words": 150
+   },
+   "shard": "sec-02.json",
+   "uid": "aw:s1"
+  },
+  {
+   "id": "sec:Part 1: A Workflow Is How You Operate",
+   "title": "Part 1: A Workflow Is How You Operate",
+   "level": 2,
+   "parent": "doc:agentic-workflows",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "aw:s2"
+  },
+  {
+   "id": "sec:The Definition",
+   "title": "The Definition",
+   "level": 3,
+   "parent": "sec:Part 1: A Workflow Is How You Operate",
+   "counts": {
+    "blocks": 2,
+    "sentences": 7,
+    "words": 110
+   },
+   "shard": "sec-03.json",
+   "uid": "aw:s3"
+  },
+  {
+   "id": "sec:Three Workflows for Writing a Book",
+   "title": "Three Workflows for Writing a Book",
+   "level": 3,
+   "parent": "sec:Part 1: A Workflow Is How You Operate",
+   "counts": {
+    "blocks": 5,
+    "sentences": 14,
+    "words": 224
+   },
+   "shard": "sec-04.json",
+   "uid": "aw:s4"
+  },
+  {
+   "id": "sec:The Workflow Decides What Questions You Can Ask",
+   "title": "The Workflow Decides What Questions You Can Ask",
+   "level": 3,
+   "parent": "sec:Part 1: A Workflow Is How You Operate",
+   "counts": {
+    "blocks": 2,
+    "sentences": 6,
+    "words": 88
+   },
+   "shard": "sec-05.json",
+   "uid": "aw:s5"
+  },
+  {
+   "id": "sec:Part 2: What Changed in 2026",
+   "title": "Part 2: What Changed in 2026",
+   "level": 2,
+   "parent": "doc:agentic-workflows",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "aw:s6"
+  },
+  {
+   "id": "sec:Four Things a Workflow Can Now Change",
+   "title": "Four Things a Workflow Can Now Change",
+   "level": 3,
+   "parent": "sec:Part 2: What Changed in 2026",
+   "counts": {
+    "blocks": 6,
+    "sentences": 12,
+    "words": 230
+   },
+   "shard": "sec-06.json",
+   "uid": "aw:s7"
+  },
+  {
+   "id": "sec:The Purpose Is the Zone",
+   "title": "The Purpose Is the Zone",
+   "level": 3,
+   "parent": "sec:Part 2: What Changed in 2026",
+   "counts": {
+    "blocks": 2,
+    "sentences": 5,
+    "words": 98
+   },
+   "shard": "sec-07.json",
+   "uid": "aw:s8"
+  },
+  {
+   "id": "sec:Agentic Is Not the Same as Automated",
+   "title": "Agentic Is Not the Same as Automated",
+   "level": 3,
+   "parent": "sec:Part 2: What Changed in 2026",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 76
+   },
+   "shard": "sec-08.json",
+   "uid": "aw:s9"
+  },
+  {
+   "id": "sec:Part 3: The Villager and the Explorer",
+   "title": "Part 3: The Villager and the Explorer",
+   "level": 2,
+   "parent": "doc:agentic-workflows",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "aw:s10"
+  },
+  {
+   "id": "sec:Two Phases, Not Two Kinds of Person",
+   "title": "Two Phases, Not Two Kinds of Person",
+   "level": 3,
+   "parent": "sec:Part 3: The Villager and the Explorer",
+   "counts": {
+    "blocks": 2,
+    "sentences": 8,
+    "words": 90
+   },
+   "shard": "sec-09.json",
+   "uid": "aw:s11"
+  },
+  {
+   "id": "sec:Skill Changes Reach, Not Route",
+   "title": "Skill Changes Reach, Not Route",
+   "level": 3,
+   "parent": "sec:Part 3: The Villager and the Explorer",
+   "counts": {
+    "blocks": 3,
+    "sentences": 6,
+    "words": 128
+   },
+   "shard": "sec-10.json",
+   "uid": "aw:s12"
+  },
+  {
+   "id": "sec:The Explorer Trigger Is a Manual Step",
+   "title": "The Explorer Trigger Is a Manual Step",
+   "level": 3,
+   "parent": "sec:Part 3: The Villager and the Explorer",
+   "counts": {
+    "blocks": 2,
+    "sentences": 5,
+    "words": 98
+   },
+   "shard": "sec-11.json",
+   "uid": "aw:s13"
+  },
+  {
+   "id": "sec:The Instinct Is Not to Change the Workflow",
+   "title": "The Instinct Is Not to Change the Workflow",
+   "level": 3,
+   "parent": "sec:Part 3: The Villager and the Explorer",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 64
+   },
+   "shard": "sec-12.json",
+   "uid": "aw:s14"
+  },
+  {
+   "id": "sec:The Point of Diminishing Returns",
+   "title": "The Point of Diminishing Returns",
+   "level": 3,
+   "parent": "sec:Part 3: The Villager and the Explorer",
+   "counts": {
+    "blocks": 2,
+    "sentences": 7,
+    "words": 140
+   },
+   "shard": "sec-13.json",
+   "uid": "aw:s15"
+  },
+  {
+   "id": "sec:Part 4: Maturity Is When You Stop Changing It",
+   "title": "Part 4: Maturity Is When You Stop Changing It",
+   "level": 2,
+   "parent": "doc:agentic-workflows",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "aw:s16"
+  },
+  {
+   "id": "sec:The Measure of Success",
+   "title": "The Measure of Success",
+   "level": 3,
+   "parent": "sec:Part 4: Maturity Is When You Stop Changing It",
+   "counts": {
+    "blocks": 2,
+    "sentences": 6,
+    "words": 114
+   },
+   "shard": "sec-14.json",
+   "uid": "aw:s17"
+  },
+  {
+   "id": "sec:The Consequence for How Progress Is Read",
+   "title": "The Consequence for How Progress Is Read",
+   "level": 3,
+   "parent": "sec:Part 4: Maturity Is When You Stop Changing It",
+   "counts": {
+    "blocks": 2,
+    "sentences": 5,
+    "words": 81
+   },
+   "shard": "sec-15.json",
+   "uid": "aw:s18"
+  },
+  {
+   "id": "sec:Maturing Is Not Finishing",
+   "title": "Maturing Is Not Finishing",
+   "level": 3,
+   "parent": "sec:Part 4: Maturity Is When You Stop Changing It",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 92
+   },
+   "shard": "sec-16.json",
+   "uid": "aw:s19"
+  },
+  {
+   "id": "sec:Reusable Pieces Are the Unit",
+   "title": "Reusable Pieces Are the Unit",
+   "level": 3,
+   "parent": "sec:Part 4: Maturity Is When You Stop Changing It",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 80
+   },
+   "shard": "sec-17.json",
+   "uid": "aw:s20"
+  },
+  {
+   "id": "sec:Part 5: Source Materials and Projections",
+   "title": "Part 5: Source Materials and Projections",
+   "level": 2,
+   "parent": "doc:agentic-workflows",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "aw:s21"
+  },
+  {
+   "id": "sec:The Distinction",
+   "title": "The Distinction",
+   "level": 3,
+   "parent": "sec:Part 5: Source Materials and Projections",
+   "counts": {
+    "blocks": 2,
+    "sentences": 5,
+    "words": 111
+   },
+   "shard": "sec-18.json",
+   "uid": "aw:s22"
+  },
+  {
+   "id": "sec:Two-Way Doors and One-Way Doors",
+   "title": "Two-Way Doors and One-Way Doors",
+   "level": 3,
+   "parent": "sec:Part 5: Source Materials and Projections",
+   "counts": {
+    "blocks": 3,
+    "sentences": 8,
+    "words": 121
+   },
+   "shard": "sec-19.json",
+   "uid": "aw:s23"
+  },
+  {
+   "id": "sec:Keep the Sources on the Deterministic Side",
+   "title": "Keep the Sources on the Deterministic Side",
+   "level": 3,
+   "parent": "sec:Part 5: Source Materials and Projections",
+   "counts": {
+    "blocks": 2,
+    "sentences": 5,
+    "words": 88
+   },
+   "shard": "sec-20.json",
+   "uid": "aw:s24"
+  },
+  {
+   "id": "sec:Where This Document Sits",
+   "title": "Where This Document Sits",
+   "level": 3,
+   "parent": "sec:Part 5: Source Materials and Projections",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 73
+   },
+   "shard": "sec-21.json",
+   "uid": "aw:s25"
+  },
+  {
+   "id": "sec:Part 6: A Workflow Leaves Artefacts",
+   "title": "Part 6: A Workflow Leaves Artefacts",
+   "level": 2,
+   "parent": "doc:agentic-workflows",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "aw:s26"
+  },
+  {
+   "id": "sec:Everything Gets a Folder",
+   "title": "Everything Gets a Folder",
+   "level": 3,
+   "parent": "sec:Part 6: A Workflow Leaves Artefacts",
+   "counts": {
+    "blocks": 2,
+    "sentences": 5,
+    "words": 83
+   },
+   "shard": "sec-22.json",
+   "uid": "aw:s27"
+  },
+  {
+   "id": "sec:The Chain Is the Product",
+   "title": "The Chain Is the Product",
+   "level": 3,
+   "parent": "sec:Part 6: A Workflow Leaves Artefacts",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 74
+   },
+   "shard": "sec-23.json",
+   "uid": "aw:s28"
+  },
+  {
+   "id": "sec:A Named Process Is Repeatable; a Described One Is Not",
+   "title": "A Named Process Is Repeatable; a Described One Is Not",
+   "level": 3,
+   "parent": "sec:Part 6: A Workflow Leaves Artefacts",
+   "counts": {
+    "blocks": 2,
+    "sentences": 3,
+    "words": 57
+   },
+   "shard": "sec-24.json",
+   "uid": "aw:s29"
+  },
+  {
+   "id": "sec:Part 7: Reading the Work Back",
+   "title": "Part 7: Reading the Work Back",
+   "level": 2,
+   "parent": "doc:agentic-workflows",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "aw:s30"
+  },
+  {
+   "id": "sec:A Diff Is a Workflow Step, Not a Feature",
+   "title": "A Diff Is a Workflow Step, Not a Feature",
+   "level": 3,
+   "parent": "sec:Part 7: Reading the Work Back",
+   "counts": {
+    "blocks": 1,
+    "sentences": 3,
+    "words": 66
+   },
+   "shard": "sec-25.json",
+   "uid": "aw:s31"
+  },
+  {
+   "id": "sec:Why a Graph Diff Beats a Text Diff",
+   "title": "Why a Graph Diff Beats a Text Diff",
+   "level": 3,
+   "parent": "sec:Part 7: Reading the Work Back",
+   "counts": {
+    "blocks": 3,
+    "sentences": 9,
+    "words": 167
+   },
+   "shard": "sec-26.json",
+   "uid": "aw:s32"
+  },
+  {
+   "id": "sec:Formatting Changes Are Findings",
+   "title": "Formatting Changes Are Findings",
+   "level": 3,
+   "parent": "sec:Part 7: Reading the Work Back",
+   "counts": {
+    "blocks": 1,
+    "sentences": 3,
+    "words": 56
+   },
+   "shard": "sec-27.json",
+   "uid": "aw:s33"
+  },
+  {
+   "id": "sec:Part 8: The Loop, End to End",
+   "title": "Part 8: The Loop, End to End",
+   "level": 2,
+   "parent": "doc:agentic-workflows",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "aw:s34"
+  },
+  {
+   "id": "sec:One Round",
+   "title": "One Round",
+   "level": 3,
+   "parent": "sec:Part 8: The Loop, End to End",
+   "counts": {
+    "blocks": 2,
+    "sentences": 7,
+    "words": 95
+   },
+   "shard": "sec-28.json",
+   "uid": "aw:s35"
+  },
+  {
+   "id": "sec:What Each Step Buys",
+   "title": "What Each Step Buys",
+   "level": 3,
+   "parent": "sec:Part 8: The Loop, End to End",
+   "counts": {
+    "blocks": 2,
+    "sentences": 5,
+    "words": 93
+   },
+   "shard": "sec-29.json",
+   "uid": "aw:s36"
+  },
+  {
+   "id": "sec:What It Does Not Buy",
+   "title": "What It Does Not Buy",
+   "level": 3,
+   "parent": "sec:Part 8: The Loop, End to End",
+   "counts": {
+    "blocks": 2,
+    "sentences": 5,
+    "words": 75
+   },
+   "shard": "sec-30.json",
+   "uid": "aw:s37"
+  },
+  {
+   "id": "sec:Summary: Core Principles",
+   "title": "Summary: Core Principles",
+   "level": 2,
+   "parent": "doc:agentic-workflows",
+   "counts": {
+    "blocks": 15,
+    "sentences": 26,
+    "words": 278
+   },
+   "shard": "sec-31.json",
+   "uid": "aw:s38"
+  }
+ ]
+}

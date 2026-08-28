@@ -41,6 +41,35 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+
+# Every document under v2/universe/docs/ that carries a source.md is decomposed.
+# The uid prefix is the slug's initials (thinking-in-graphs -> tig), which is why
+# a new document must not share initials with an existing one; the check below
+# refuses that rather than letting two ledgers collide.
+DOCS = ROOT / "v2" / "universe" / "docs"
+
+
+def registered():
+    """(slug, src, out, ledger, prefix) for every document folder with a source."""
+    out = []
+    for folder in sorted(d for d in DOCS.iterdir() if d.is_dir()):
+        src = folder / "source.md"
+        if not src.exists():
+            continue
+        slug = folder.name
+        out.append((slug, src,
+                    ROOT / "v2" / "universe" / "data" / "core" / slug,
+                    folder / "ids.json",
+                    "".join(w[0] for w in slug.split("-"))))
+    seen = {}
+    for slug, _, _, _, prefix in out:
+        if prefix in seen:
+            raise SystemExit(f"gen_coregraph: {slug} and {seen[prefix]} both take the uid "
+                             f"prefix {prefix!r} — rename one slug")
+        seen[prefix] = slug
+    return out
+
+
 SLUG = "thinking-in-graphs"
 SRC = ROOT / "v2" / "universe" / "docs" / SLUG / "source.md"
 OUT = ROOT / "v2" / "universe" / "data" / "core" / SLUG
@@ -637,8 +666,9 @@ def build(slug, src, out, ledger_path, prefix, quiet=False):
 
 
 def main():
-    """The pilot document, unchanged. build() is the reusable half."""
-    build(SLUG, SRC, OUT, LEDGER, PREFIX)
+    """Every registered document. build() is the reusable half."""
+    for slug, src, out, ledger, prefix in registered():
+        build(slug, src, out, ledger, prefix)
 
 
 if __name__ == "__main__":
