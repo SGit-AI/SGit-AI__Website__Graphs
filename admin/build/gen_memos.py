@@ -23,6 +23,20 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "44__founder-memo__the-leanpub-story-and-the-determinism-boundary.md": (
+     "The Leanpub story, the title, and the determinism boundary",
+     "Answers three things at once and adds a concept. The Leanpub story the "
+     "agent asked for turns out sharper than expected: the earlier workflow "
+     "was already good \u2014 markdown, GitHub, reuse of his own blogs \u2014 and what "
+     "failed was not the writing but everything after it, because \u201cyou "
+     "almost start to be locked by the first version of the content, because "
+     "making changes becomes quite painful\u201d. The title is decided: Creating "
+     "a Book Using Agentic Workflows. Restructure before publishing. And the "
+     "concept the founder says he has not explained well \u2014 source materials "
+     "versus projections of them, two-way doors against one-way ones, prose "
+     "being a one-way door because a model wrote it, and the rule that "
+     "follows: keep the sources in the deterministic layer so the outputs can "
+     "be destroyed and rebuilt without losing the core."),
  "43__founder-memo__everything-is-a-graph.md": (
      "Everything is a graph, so put the book through the same machine",
      "The philosophy stated at full strength \u2014 everything is a graph, the "

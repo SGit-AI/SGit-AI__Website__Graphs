@@ -1,4 +1,4 @@
-# Creating a Book Using Fractal Semantic Graphs
+# Creating a Book Using Agentic Workflows
 
 **How one book was built with an agent, in six days and eighty-eight releases**
 
@@ -100,10 +100,23 @@ story is elegant.
 ## What is locked and what is not
 
 The title of the book being written, *Fractal Semantic Graphs: Meaning Through
-Connectivity*, is the founder's and is fixed. The title of this book, *Creating a Book
-Using Fractal Semantic Graphs*, was set in the commission. Everything else here,
-structure, chapter count, voice, which figures to take and which stories to tell, was
-the writing agent's call, made confidently, and is recorded as such.
+Connectivity*, is the founder's and is fixed.
+
+The title of *this* book was not. It was set in the commission as *Creating a Book Using
+Fractal Semantic Graphs*, and it was wrong: this book does not use the fractal element it
+named. That was established by counting rather than arguing. In 31,221 words the word
+*fractal* appeared nine times, six of them quoting the other book's title, and exactly once
+about anything this book does. The founder read the book, said the name did not hold, and
+the review that followed proposed alternatives built only from words the book actually
+uses. He chose **Creating a Book Using Agentic Workflows**.
+
+The rename is recorded here rather than quietly applied, because a book about being able to
+change things should show itself being changed. It moved this book from v0.1.0 to v0.2.0,
+and the repository from v0.6.8 to v0.6.9 — two clocks, because a book's version tracks its
+content and the repository's tracks every push.
+
+Everything else here — structure, chapter count, voice, which figures to take and which
+stories to tell — was the writing agent's call, made confidently, and is recorded as such.
 
 One position from the corpus travels with everything in this book, because the corpus
 insists on it and would be misrepresented without it: **this is not a graph database

@@ -185,7 +185,8 @@ git log v0.5.11 --merges --format='%h %ad %s' --date=short   # the 3 merges
 ### Tests and gates over time
 
 ```bash
-# unit tests at any tag
+# unit tests at any tag. The suite was one file until v0.5.20, when it was split
+# into six; for tags after that, count across admin/tests/*.test.mjs instead.
 for t in v0.4.13 v0.4.20 v0.4.31 v0.4.40 v0.5.4 v0.5.9 v0.5.11; do
   printf "%-9s %s\n" "$t" "$(git show $t:admin/tests/universe.test.mjs | grep -c '^test(')"
 done

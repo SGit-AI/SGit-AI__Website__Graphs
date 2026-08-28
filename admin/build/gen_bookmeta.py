@@ -50,13 +50,22 @@ REGISTER = {
         "note": "The second edition of the argument the frozen first book made.",
     },
     "making-a-book": {
-        "title": "Creating a Book Using Fractal Semantic Graphs",
-        "version": "v0.1.0",
+        "title": "Creating a Book Using Agentic Workflows",
+        "version": "v0.2.0",
         "changelog": [
             ("v0.1.0", "v0.5.18", "Adopted into per-book versioning. The book was written "
                                   "at site v0.5.13 and self-reviewed at v0.5.16, which "
                                   "corrected eight numbers it had got wrong about this "
                                   "repository."),
+            ("v0.2.0", "v0.6.9", "Retitled from 'Creating a Book Using Fractal Semantic "
+                                 "Graphs' after the founder read it and the review found "
+                                 "the old name unearned: 'fractal' appeared nine times in "
+                                 "31,221 words, six of them quoting the other book. Front "
+                                 "matter rewritten to record the rename rather than hide "
+                                 "it. Two corrections carried in the same pass: the "
+                                 "colophon's claim that the second book was unwritten is "
+                                 "now scoped to when it was true, and three references to "
+                                 "a test file split at v0.5.20 are corrected."),
         ],
         "status": "under review",
         "release": "the Leanpub pair",
@@ -220,7 +229,7 @@ SHELF = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The books &mdash; graphs.sgit.ai</title>
-<meta name="description" content="The books this estate has produced: Fractal Semantic Graphs: Meaning Through Connectivity, Creating a Book Using Fractal Semantic Graphs, and the Universe volume. Each with its own version, its markdown, its web edition and one print PDF.">
+<meta name="description" content="The books this estate has produced: Fractal Semantic Graphs: Meaning Through Connectivity, Creating a Book Using Agentic Workflows, and the Universe volume. Each with its own version, its markdown, its web edition and one print PDF.">
 <link rel="canonical" href="https://graphs.sgit.ai/v2/books/index.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="graphs.sgit.ai">

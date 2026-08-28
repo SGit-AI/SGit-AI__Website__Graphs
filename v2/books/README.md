@@ -9,7 +9,7 @@ finished print PDF lands beside them.
 |---|---|---|
 | `fsg-universe/` | the Universe volume for *Fractal Semantic Graphs: Meaning Through Connectivity* | `claude/book-a-universe` |
 | `fsg/` | *Fractal Semantic Graphs: Meaning Through Connectivity* | `claude/book-b-fsg` |
-| `making-a-book/` | *Creating a Book Using Fractal Semantic Graphs* | `claude/book-c-making-of` |
+| `making-a-book/` | *Creating a Book Using Agentic Workflows* | `claude/book-c-making-of` |
 
 To start a session: "hi, you are going to focus on writing this book:
 `v2/books/<folder>/README.md`" — the README takes it from there.

@@ -96,10 +96,11 @@ this book repeats it in Chapter 12.
 **The debt is still there.** `uni-graph.js` was at 434 lines against a 250-line budget at
 v0.4.40 and was still at 434 at v0.5.11. The remedy was named at v0.4.13.
 
-**The second book is not written.** No chapter of *Fractal Semantic Graphs: Meaning
-Through Connectivity* exists in the second edition at the version this book covers. That is
-the deliberate consequence of the decision described in Chapter 2, and whether it was the
-right decision is not yet knowable.
+**The second book was not written when this one was.** No chapter of *Fractal Semantic
+Graphs: Meaning Through Connectivity* existed at the version this book covers. That was the
+deliberate consequence of the decision described in Chapter 2. It has since been written —
+eighteen chapters, at v0.2.0 of that book — which answers the question this paragraph
+originally left open, and does not change what was true here.
 
 **Two of this book's judgements are contestable and are marked as judgements.** That the
 build-the-universe-first bet is sound for a book of this kind and unsound for most books

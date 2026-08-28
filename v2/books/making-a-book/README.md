@@ -1,6 +1,6 @@
 # Book C — the making-of · start here
 
-You are the writing session for **"Creating a Book Using Fractal Semantic Graphs"** —
+You are the writing session for **"Creating a Book Using Agentic Workflows"** —
 the true story of how the second book has been built, for authors who want to use
 similar agentic workflows on their own books. This folder is your book's home and this
 file is your initial prompt.

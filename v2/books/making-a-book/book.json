@@ -1,31 +1,38 @@
 {
- "title": "Creating a Book Using Fractal Semantic Graphs",
+ "title": "Creating a Book Using Agentic Workflows",
  "slug": "making-a-book",
- "version": "v0.1.0",
+ "version": "v0.2.0",
  "status": "under review",
  "release": "the Leanpub pair",
  "note": "The making-of, for authors who want to use the same agentic workflow.",
  "chapters": 17,
- "words": 31221,
+ "words": 31435,
  "pdf": "making-a-book.pdf",
  "pdf_pages": 92,
- "built_at_site_version": "v0.6.8",
+ "built_at_site_version": "v0.6.9",
  "versioning": "This book's version moves only when its content moves; the site's version moves on every push. v1.0.0 is reserved for the actual final release.",
- "front_matter_title": "Creating a Book Using Fractal Semantic Graphs",
- "former_versions": [],
+ "front_matter_title": "Creating a Book Using Agentic Workflows",
+ "former_versions": [
+  "v0.1.0"
+ ],
  "changelog": [
   {
    "version": "v0.1.0",
    "site": "v0.5.18",
    "note": "Adopted into per-book versioning. The book was written at site v0.5.13 and self-reviewed at v0.5.16, which corrected eight numbers it had got wrong about this repository."
+  },
+  {
+   "version": "v0.2.0",
+   "site": "v0.6.9",
+   "note": "Retitled from 'Creating a Book Using Fractal Semantic Graphs' after the founder read it and the review found the old name unearned: 'fractal' appeared nine times in 31,221 words, six of them quoting the other book. Front matter rewritten to record the rename rather than hide it. Two corrections carried in the same pass: the colophon's claim that the second book was unwritten is now scoped to when it was true, and three references to a test file split at v0.5.20 are corrected."
   }
  ],
  "content_hashes": {
-  "00__front-matter.md": "dcbe0f9062c7c905eedebc6802c1451417d80937a4f20518a14577a73eba06f0",
+  "00__front-matter.md": "1d1e0ba0b31763af0b324c3f0dced0ed3866144a05191558fab7c8f163bcdf6d",
   "01__the-loop.md": "f2c9edbc51faddc7aa1fd5af8a9357ae24ba61bc6d3620d9d0b8fedfaa7ce122",
   "02__the-pivot.md": "95c19ea539652ed0ce310fd6973dee040578fdcfc4e26ffad1cacee469983243",
   "03__briefs-as-the-contract.md": "aca5749ce723292582932df5320688e694b83facd861f7047c3b4978cf85a423",
-  "04__gates-buy-speed.md": "8841b19e3381721227b173fa0c059c80caaf75e099bb91ce93161ff9bcda3c1c",
+  "04__gates-buy-speed.md": "618061a9018f723cab97e82d67ee606e828884630051500e4e902803d7744a2f",
   "05__the-instrument.md": "f4d66877b640e1df657820070e05f031b5f3225186f76053f4c2416826f9543d",
   "06__two-agents-one-repo.md": "936f7c7cbbeba2fe7e6bf716839c0425dac73574a5bb61a32c851edbf0250a6e",
   "07__the-failures.md": "e723cf60b3ae8ab2f17ca2f46c05f524def9541afc6eacd8c0dc5d478a6fd810",
@@ -36,8 +43,8 @@
   "12__what-it-costs.md": "e88bede19565bae6ce61a524ef6de14c3e8b1ebafa49e06de4eef393be3512f6",
   "13__appendix-a-one-brief-annotated.md": "f81d36c141447a0b48f215752bf088363cb79d58252431c1ebadeb86e1ab83ef",
   "14__appendix-b-the-chronology.md": "845d1440f43b4d738375e07638ee53833909369ac9fd874d951abf70b74e158e",
-  "15__appendix-c-the-harness.md": "990c37e80f42fdffc72c41fa57a2ded61019e7832a3163c3ae8b8b91b1f05e3d",
-  "16__colophon.md": "b856bcd9a664129f9dbb79cb5d286f3106d5c372486e230323d4fc28619df69e"
+  "15__appendix-c-the-harness.md": "60ad7d1e1cb6d4fb48f489eee271a4877c9aaa6bc6bdbfa5487672a63e55421e",
+  "16__colophon.md": "1e03042b96e441df501851f2d88dbb7d595155a7ce368c285d483f6c08ed5c4f"
  },
  "build": null
 }

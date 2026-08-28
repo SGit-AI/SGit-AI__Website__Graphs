@@ -62,9 +62,10 @@ v0.5 era, because the newer guarantees moved into the unit suite instead.
 
 ## The unit suite
 
-The second gate is a plain Node test file, `admin/tests/universe.test.mjs`, run by the
-validator on every release. Its growth is the clearest single measure of the project
-hardening:
+The second gate is a plain Node test suite, run by the validator on every release. At the
+version this chapter describes it was one file, `admin/tests/universe.test.mjs`; at v0.5.20
+it was split into six suites and a runner, `admin/tests/run.mjs`, after the single file
+passed 900 lines. Its growth is the clearest single measure of the project hardening:
 
 | Release | Date | Tests |
 |---|---|---|
@@ -206,6 +207,6 @@ what makes that safe enough to be worth doing.
 ---
 
 **Where the live estate shows this.** The validator is `admin/build/validate.js`, the
-unit suite is `admin/tests/universe.test.mjs`, and the pipeline is
+unit suites are under `admin/tests/` behind `run.mjs`, and the pipeline is
 `.github/workflows/deploy-pages.yml`, all readable in the repository. The rules for how a
 version is decided are published at the bottom of `/admin/versions.html`.

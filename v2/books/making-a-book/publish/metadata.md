@@ -1,4 +1,4 @@
-# Creating a Book Using Fractal Semantic Graphs — the publishing metadata sheet
+# Creating a Book Using Agentic Workflows — the publishing metadata sheet
 
 **One source of words.** Everything below is generated from
 `admin/build/gen_bookpub.py`'s register. Paste it into Leanpub unchanged; the landing page
@@ -6,11 +6,11 @@ on this site is built from the same lines, so the store and the site cannot drif
 
 | | |
 |---|---|
-| Title | Creating a Book Using Fractal Semantic Graphs |
+| Title | Creating a Book Using Agentic Workflows |
 | Subtitle | An agentic workflow, told from the inside |
 | Author | Dinis Cruz |
-| Version | **v0.1.0** (under review) |
-| Length | 17 chapters · 31,221 words · 92 pages |
+| Version | **v0.2.0** (under review) |
+| Length | 17 chapters · 31,435 words · 92 pages |
 | Licence | CC BY 4.0 — the text is free to share and adapt with attribution. |
 | Site | https://graphs.sgit.ai/v2/books/making-a-book/ |
 

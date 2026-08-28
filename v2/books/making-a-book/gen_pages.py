@@ -20,7 +20,7 @@ GH = ("https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/"
       "v2/books/making-a-book")
 CANON = "https://graphs.sgit.ai/v2/books/making-a-book"
 
-TITLE = "Creating a Book Using Fractal Semantic Graphs"
+TITLE = "Creating a Book Using Agentic Workflows"
 LEAD = ("The true story of how the second edition of <i>Fractal Semantic Graphs: Meaning "
         "Through Connectivity</i> is being built: one person talking into a phone, a set "
         "of AI agents, and eighty-eight tagged releases in six days. Written for authors "
@@ -85,7 +85,7 @@ PAGE = """<!doctype html>
 <p class="lead">{desc}</p>
 
 <div class="docmeta">
-  <span class="k">Book</span><span class="v"><a href="index.html">Creating a Book Using Fractal Semantic Graphs</a> &middot; written against v0.5.11</span>
+  <span class="k">Book</span><span class="v"><a href="index.html">Creating a Book Using Agentic Workflows</a> &middot; written against v0.5.11</span>
   <span class="k">Print</span><span class="v"><a href="making-a-book.pdf">the whole book as one PDF</a> &middot; 92 pages, reads offline</span>
   <span class="k">Licence</span><span class="v">CC BY 4.0</span>
   <span class="k">Source</span><span class="v"><a href="content/{src}">raw markdown</a> &middot; <a href="{gh}/content/{src}">view on GitHub</a></span>
@@ -112,13 +112,13 @@ HUB = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Creating a Book Using Fractal Semantic Graphs &mdash; graphs.sgit.ai</title>
+<title>Creating a Book Using Agentic Workflows &mdash; graphs.sgit.ai</title>
 <meta name="description" content="The making-of: how the second book is being built with AI agents, in six days and eighty-eight releases. Twelve chapters, three appendices, twenty figures re-taken from git tags.">
 <link rel="canonical" href="{canon}/index.html">
 <meta property="og:type" content="book">
 <meta property="og:site_name" content="graphs.sgit.ai">
 <meta property="og:url" content="{canon}/index.html">
-<meta property="og:title" content="Creating a Book Using Fractal Semantic Graphs">
+<meta property="og:title" content="Creating a Book Using Agentic Workflows">
 <meta property="og:description" content="The true story of how the second book is being built, for authors who want to use similar agentic workflows.">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../../../assets/site.css">
@@ -129,7 +129,7 @@ HUB = """<!doctype html>
 
 <main class="doc">
 <div class="crumb"><a href="../../../index.html">graphs.sgit.ai</a> &rarr; <a href="../../index.html">the second edition</a> &rarr; <b>Creating a book</b></div>
-<h1>Creating a Book Using Fractal Semantic Graphs</h1>
+<h1>Creating a Book Using Agentic Workflows</h1>
 <p class="lead">{lead}</p>
 
 <div class="docmeta">

@@ -30,7 +30,7 @@ ROOT = HERE.parents[2]
 sys.path.insert(0, str(ROOT / "admin" / "build"))
 from bookkit import render as md_render, pair_figures, absolutise, build_pdf  # noqa: E402
 
-TITLE = "Creating a Book Using Fractal Semantic Graphs"
+TITLE = "Creating a Book Using Agentic Workflows"
 SUBTITLE = "How one book was built with an agent, in six days and eighty-eight releases"
 VERSION = (ROOT / "admin" / "build" / "version.txt").read_text().strip()
 BUILT = datetime.date(2026, 8, 26).strftime("%-d %B %Y")

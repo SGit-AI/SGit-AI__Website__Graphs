@@ -3,7 +3,7 @@
  orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2a7f76"/></marker></defs>
 <rect width="1600" height="2400" fill="#f7f4ec"/>
 <rect x="0" y="0" width="1600" height="18" fill="#2a7f76"/>
-<text x="110" y="300" font-family="Georgia, 'Liberation Serif', serif" font-size="118" font-weight="700" fill="#1a1f24">Creating a Book</text><text x="110" y="432" font-family="Georgia, 'Liberation Serif', serif" font-size="118" font-weight="700" fill="#1a1f24">Using Fractal</text><text x="110" y="564" font-family="Georgia, 'Liberation Serif', serif" font-size="118" font-weight="700" fill="#1a1f24">Semantic Graphs</text>
+<text x="110" y="300" font-family="Georgia, 'Liberation Serif', serif" font-size="118" font-weight="700" fill="#1a1f24">Creating a Book</text><text x="110" y="432" font-family="Georgia, 'Liberation Serif', serif" font-size="118" font-weight="700" fill="#1a1f24">Using Agentic</text><text x="110" y="564" font-family="Georgia, 'Liberation Serif', serif" font-size="118" font-weight="700" fill="#1a1f24">Workflows</text>
 <text x="114" y="716" font-family="Georgia, 'Liberation Serif', serif" font-size="52" fill="#2a7f76">An agentic workflow, told from</text><text x="114" y="782" font-family="Georgia, 'Liberation Serif', serif" font-size="52" fill="#2a7f76">the inside</text>
 <line x1="110" y1="888" x2="1490" y2="888" stroke="#1a1f24" stroke-width="2" opacity="0.25"/>
 <line x1="821" y1="1052" x2="1059" y2="1190" stroke="#2a7f76" stroke-width="3" marker-end="url(#ar)"/><text x="955" y="1104" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="27" fill="#2a7f76" font-style="italic">becomes</text>
@@ -20,7 +20,7 @@
 <circle cx="514.2116167511352" cy="1205.0" r="21" fill="#f7f4ec" stroke="#2a7f76" stroke-width="3.5"/><text x="514.2116167511352" y="1165.0" text-anchor="middle" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="35" fill="#1a1f24">review</text>
 <text x="800.0" y="1830" text-anchor="middle" font-family="Georgia, 'Liberation Serif', serif" font-size="34" fill="#1a1f24" opacity="0.72" font-style="italic">the loop, and it closes</text>
 <text x="110" y="2150" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="46" fill="#1a1f24">Dinis Cruz</text>
-<text x="110" y="2210" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="30" fill="#1a1f24" opacity="0.6">v0.1.0 &#183; graphs.sgit.ai</text>
+<text x="110" y="2210" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="30" fill="#1a1f24" opacity="0.6">v0.2.0 &#183; graphs.sgit.ai</text>
 <text x="1490" y="2210" text-anchor="end" font-family="'Helvetica Neue', 'Liberation Sans', Arial, sans-serif" font-size="28" fill="#c07a1f">under review</text>
 <rect x="0" y="2382" width="1600" height="18" fill="#c07a1f"/>
 </svg>

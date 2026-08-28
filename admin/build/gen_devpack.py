@@ -268,14 +268,22 @@ def main():
         kind, book, ver = scope_of(s)
         if kind == "book":
             meta = json.loads((ROOT / "v2" / "books" / book / "book.json").read_text())
-            if meta["version"] != ver:
+            # A pack names the version it REVIEWED, which goes historical the moment the
+            # book moves. So the stamp must be a version the book has ACTUALLY BEEN AT,
+            # not its current one. The first version of this check demanded the current
+            # version and fired the moment a book was retitled, which would have meant
+            # rewriting the record of a review to match a book it did not review.
+            history = [e["version"] for e in meta["changelog"]]
+            if ver not in history:
                 raise SystemExit(
-                    f'gen_devpack: {s["dir"]} is stamped {ver} but {book} is at '
-                    f'{meta["version"]} — a pack names the version it REVIEWED, so either '
-                    f'the stamp is wrong or this pack belongs to an earlier version')
+                    f'gen_devpack: {s["dir"]} is stamped {ver}, which {book} has never '
+                    f'been at (it has been at {", ".join(history)})')
+            current = ver == meta["version"]
             packline = (f'<b>{meta["title"]}</b> {ver} &middot; {s["packline"]} '
                         f'<span class="small dim">(the book\u2019s version, not the '
-                        f'site\u2019s)</span>')
+                        f'site\u2019s'
+                        + ('' if current else f'; the book is now at {meta["version"]}')
+                        + ')</span>')
         else:
             packline = s["packline"]
         rows = render_pack(s["dir"], files, s["blurbs"], packline, s["statusline"],
