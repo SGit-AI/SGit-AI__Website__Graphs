@@ -51,6 +51,7 @@ NAV = [
         ("&hellip; read it as one PDF", "v2/books/making-a-book/making-a-book.pdf"),
         ("The Universe volume &middot; the atlas, held", "v2/books/fsg-universe/index.html"),
         ("&hellip; read it as one PDF", "v2/books/fsg-universe/fsg-universe.pdf"),
+        ("The team &middot; seven roles, one folder each", "v2/team/index.html"),
         ("How they were built &middot; the second edition", "v2/index.html"),
         ("&hellip; the dev pack: the plan", "v2/dev-pack/index.html"),
         ("&hellip; the review packs", "v2/packs/index.html"),
@@ -62,7 +63,7 @@ NAV = [
         ("&hellip; the altitude ladder", "v1/altitudes/index.html"),
         ("&hellip; the print PDF (6&times;9)", "v1/book/meaning-through-connectivity.pdf"),
         ("&hellip; the screen PDF (tablet)", "v1/book/meaning-through-connectivity-screen.pdf"),
-    ], ("v2/index", "v2/dev-pack/", "v2/packs/", "v2/books/", "book/", "v1/book/",
+    ], ("v2/index", "v2/dev-pack/", "v2/packs/", "v2/books/", "v2/team/", "book/", "v1/book/",
         "v1/altitudes/", "v1/reviews/", "v1/docs/")),
     # the v0.4 era built the second edition's working surface; it gets its own menu
     ("The universe", "v2/universe/index.html", [

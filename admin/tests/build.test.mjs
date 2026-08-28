@@ -170,6 +170,54 @@ test('validate: a broken tree fails, and the error names what broke', () => {
   }
 });
 
+/* ---- the team: a role is defined or it is not there ----------------------- */
+test('team: every role folder is complete, and every role says what it refuses', () => {
+  /* A half-defined role is worse than no role: an agent handed it reads it as
+     authoritative and it is not. gen_team.py fails on a missing part; this checks the
+     parts have CONTENT, which a generator cannot judge. */
+  const TEAM = path.join(ROOT, 'v2/team');
+  const roles = readdirSync(TEAM, { withFileTypes: true })
+    .filter((e) => e.isDirectory()).map((e) => e.name).sort();
+  assert.ok(roles.length >= 7, `only ${roles.length} roles defined`);
+  for (const r of roles) {
+    const role = rf(path.join(TEAM, r, 'role.md'));
+    assert.match(role, /\*\*Centre of gravity:\*\*/,
+      `${r}/role.md declares no centre of gravity`);
+    for (const heading of ['What it owns', 'What it refuses', 'How to tell when it is wrong']) {
+      assert.ok(role.includes(heading), `${r}/role.md has no "${heading}" section`);
+    }
+    const acts = readdirSync(path.join(TEAM, r, 'actions')).filter((f) => f.endsWith('.md'));
+    assert.ok(acts.length >= 1, `${r} has no actions, so it cannot be asked for anything`);
+    for (const a of acts) {
+      const src = rf(path.join(TEAM, r, 'actions', a));
+      assert.match(src, /\*\*Done test\*\*/,
+        `${r}/actions/${a} has no done test, so nobody can tell when it is finished`);
+    }
+    for (const w of ['briefs', 'debriefs']) {
+      assert.ok(existsSync(path.join(TEAM, r, w, 'README.md')),
+        `${r}/${w}/ does not say what belongs in it`);
+    }
+  }
+});
+
+test('team: no role reads like it would in any other repository', () => {
+  /* Brief 40's central requirement: "It\u2019s not just a writer. It\u2019s a writer for this
+     type of book." A role that never names something only this estate has is generic, and
+     generic was the thing the brief refused. */
+  const TEAM = path.join(ROOT, 'v2/team');
+  /* things that exist nowhere else */
+  const OURS = ['v2/books', 'gen_', 'validate.js', 'admin/tests', 'book.json', 'v1/',
+                'mdreader', 'WCLM', 'bookkit', 'graphs.sgit.ai', 'admin/versions',
+                'anchor', 'brief 40', 'Leanpub', 'CLAUDE.md', 'chapter'];
+  for (const r of readdirSync(TEAM, { withFileTypes: true }).filter((e) => e.isDirectory())) {
+    const role = rf(path.join(TEAM, r.name, 'role.md'));
+    const hits = OURS.filter((k) => role.includes(k));
+    assert.ok(hits.length >= 3,
+      `${r.name}/role.md names only ${hits.length} thing(s) specific to this estate `
+      + `(${hits.join(', ') || 'none'}) — it would read the same in any repository`);
+  }
+});
+
 /* ---- the size rule, made enforceable --------------------------------------- */
 test('modules: every one over the size guideline states why in its header', () => {
   /* CLAUDE.md: "parts <= 200 lines, sections <= 250. Over that, split — or record the

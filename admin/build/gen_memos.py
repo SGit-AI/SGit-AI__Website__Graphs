@@ -23,6 +23,25 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "40__founder-memo__the-agentic-team-and-who-the-book-is-for.md": (
+     "The agentic team, and who the making-of book is for",
+     "The first memo of the v0.6 era, and it opens with a verdict rather than "
+     "a complaint: the making-of book's content, voicing and pacing are right, "
+     "and what follows is a change of FRAME, not a rewrite. Then the "
+     "machinery: an agentic team as folders, one per role, each with a "
+     "role.md, actions, briefs, debriefs and a work environment, so personas "
+     "can be spun up in parallel and kept isolated \u2014 not for throughput but "
+     "for judgement, because \u201cagents advocating for certain things, who have "
+     "specific centres of gravity\u201d give better decisions than one generalist. "
+     "Seven roles named, every one of them customised to THIS estate rather "
+     "than generic. The first question put to the team is the book's own "
+     "title, which the founder judges wrong: the making-of does not use the "
+     "fractal element, it is about the workflows. And underneath it, the two "
+     "audiences in Wardley's terms \u2014 the villager who wants to write a book "
+     "with productised tools, and the explorer who wants to see how the "
+     "sausage was made and change it \u2014 plus the thesis the book may really "
+     "be about: the scaffolding matters more than the code, and you build the "
+     "ship while preparing to fly."),
  "39__founder-memo__the-review-era-opens.md": (
      "Park the engine, ship the books, open the review era",
      "Recorded after reading the books on the flight, and it opens with a "

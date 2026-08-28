@@ -74,6 +74,7 @@ python3 admin/build/gen_coregraph.py     # the core graph: document -> word
 python3 admin/build/gen_wclm.py          # the WCLM world + the operator folders
 python3 admin/build/gen_universe.py      # the document universe
 python3 admin/build/gen_memos.py         # the briefs, rendered
+python3 admin/build/gen_team.py          # the agentic team, one folder per role
 python3 admin/build/gen_devpack.py       # the dev packs, rendered
 python3 admin/build/gen_changes.py       # the version diff data (needs tags fetched)
 python3 admin/build/gen_sitemap.py

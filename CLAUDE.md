@@ -36,6 +36,19 @@ Work on your own branch (`claude/<what-you-are-doing>-<suffix>`). Push it early 
 Only push to `dev` as part of a complete release. Do not rewrite history on a branch
 another agent may have checked out.
 
+## The team
+
+`v2/team/` holds seven roles, one folder each (brief 40): librarian, researcher, writer,
+editor, developer, QA, publisher. Each has a `role.md` stating its centre of gravity, what
+it owns, what it refuses and how to tell when it is wrong; an `actions/` folder of things
+it can be asked to do, each with a done test; and `briefs/` and `debriefs/` as its work
+environment.
+
+If you are working as one of these roles, **read that `role.md` first** — it is the
+definition, and the rendered page is only presentation. Two rules the gate enforces: every
+role names what it REFUSES, and no role may read the way it would in any other repository.
+A generic role definition has failed the brief that asked for it.
+
 ## Building a book
 
 Each book under `v2/books/<slug>/` owns its shape, its cover and its CSS in its own
