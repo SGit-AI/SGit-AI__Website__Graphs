@@ -85,3 +85,33 @@
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .72rem; }
 .iv-fm td, .iv-fm th { padding: .18rem .5rem; vertical-align: top; }
 .iv .mdread { border-top: 1px solid var(--line2, #eee); padding-top: .7rem; }
+
+/* the figure gallery and the one-figure view */
+.fg-filters { display: flex; flex-wrap: wrap; gap: .35rem; align-items: center; margin-bottom: .4rem; }
+.fg-lab { font-size: .64rem; letter-spacing: .05em; text-transform: uppercase; color: #889;
+  margin-right: .3rem; flex: 0 0 5.2rem; }
+.fg-chip { font: inherit; font-size: .72rem; padding: .16rem .6rem; cursor: pointer;
+  border: 1px solid var(--line2, #ddd); background: transparent; border-radius: 999px;
+  opacity: .72; display: inline-flex; gap: .35rem; align-items: center; }
+.fg-chip:hover { opacity: 1; }
+.fg-chip.on { opacity: 1; font-weight: 700; border-color: #2a9d8f; background: rgba(42,157,143,.1); }
+.fg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: .9rem; margin-top: 1rem; }
+.fg-card { margin: 0; border: 1px solid var(--line2, #e5e5e5); border-radius: 8px;
+  overflow: hidden; cursor: pointer; background: #fff; }
+.fg-card:hover, .fg-card:focus { border-color: #2a9d8f; outline: none; box-shadow: 0 1px 8px rgba(0,0,0,.09); }
+.fg-card img { width: 100%; height: 9.5rem; object-fit: cover; object-position: top left; display: block;
+  border-bottom: 1px solid var(--line2, #eee); }
+.fg-card figcaption { font-size: .7rem; padding: .45rem .6rem .55rem; color: #667; }
+.fg-cap { display: block; color: #445; margin-top: .25rem; line-height: 1.35;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.fg-detail { border: 1px solid var(--line2, #e5e5e5); border-radius: 10px; padding: .9rem 1.1rem 1.1rem; }
+.fg-back { font: inherit; font-size: .72rem; padding: .18rem .6rem; cursor: pointer;
+  border: 1px solid var(--line2, #ddd); background: transparent; border-radius: 6px; }
+.fg-detail h3 { margin: .5rem 0 .3rem; }
+.fg-quote { font-size: .84rem; color: #445; margin: 0 0 .7rem; font-style: italic; }
+.fg-full img { max-width: 100%; height: auto; border: 1px solid var(--line2, #ddd); border-radius: 6px; }
+.fg-meta { font-size: .78rem; margin-top: .9rem; }
+.fg-meta th { text-align: left; width: 11rem; color: #667; font-weight: 600; font-size: .72rem;
+  letter-spacing: .02em; text-transform: uppercase; }
+.fg-meta td, .fg-meta th { padding: .28rem .5rem; vertical-align: top; }

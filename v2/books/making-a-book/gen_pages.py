@@ -136,7 +136,7 @@ HUB = """<!doctype html>
   <span class="k">Read it</span><span class="v"><a href="making-a-book.pdf"><b>the print PDF</b></a> &middot; 92 pages, self-contained, reads offline &middot; or chapter by chapter below</span>
   <span class="k">Written</span><span class="v">against graphs.sgit.ai v0.5.11, 26 August 2026, by an AI agent on the repository it describes</span>
   <span class="k">Covers</span><span class="v">v0.1.0 (21 August 2026) to v0.5.11 (26 August 2026) &middot; 88 tagged releases &middot; 6 days</span>
-  <span class="k">Source</span><span class="v">markdown in <a href="{gh}/content">content/</a> &middot; figures in <a href="{gh}/figures">figures/</a> &middot; built by <a href="{gh}/build.py">build.py</a></span>
+  <span class="k">Source</span><span class="v">markdown in <a href="{gh}/content">content/</a> &middot; figures in <a href="figures.html"><b>the figure viewer</b></a> (or <a href="{gh}/figures">raw on GitHub</a>) &middot; built by <a href="{gh}/build.py">build.py</a></span>
   <span class="k">The work</span><span class="v"><a href="board.html"><b>the project board &rarr;</b></a> &middot; the workstreams, what is blocked and on whom, the agent roster and the two-clock release log &mdash; the coordination around the book, not its structure</span>
   <span class="k">Inspect it</span><span class="v"><a href="files.html"><b>every file, raw and viewed &rarr;</b></a> &middot; the markdown, the source materials, the figures, the graph one folder per chapter, and the generated pages &middot; or read <a href="graph/index.html">the book as a graph</a></span>
   <span class="k">Licence</span><span class="v">CC BY 4.0</span>
@@ -162,7 +162,7 @@ HUB = """<!doctype html>
 <p>The repository carries a git tag for every one of the eighty-eight releases. Every figure in this book was taken by checking out the tag its caption names into a temporary worktree, serving it, and photographing the page as it actually was. None is a reconstruction, and any of them can be re-taken with the two scripts in <a href="15-appendix-c-the-harness.html">Appendix C</a>. Every number was computed from the repository rather than recalled, and the commands are in the same appendix. Every founder quotation is verbatim and was already published at <a href="../../memos/index.html">the memos hub</a> before this book was started.</p>
 
 <h2 id="figures">The twenty figures</h2>
-<p>Each one re-taken from the tag in its caption. In the order they appear in the book.</p>
+<p>Each one re-taken from the tag in its caption. In the order they appear in the book. <a href="figures.html"><b>The figure viewer &rarr;</b></a> carries each one's provenance: the release tag it was photographed at, what shipped in that release, and the chapter and section that use it &mdash; all derived, and gated, so the claim that none is a reconstruction is checkable rather than asserted.</p>
 <div class="dpfigs">
 {figs}
 </div>

@@ -102,8 +102,14 @@ function boot() {
     head.querySelector('.fx-size').textContent = '';
     head.querySelector('.fx-open').href = path;
     head.querySelectorAll('.fx-tab').forEach((b) => { b.hidden = true; });
+    /* a book figure has a provenance entry; say so rather than showing pixels alone */
+    const fig = /^figures\//.test(path) && FX.kind === 'book'
+      ? '<p class="small">Figure <code>' + escHtml(name) + '</code> &middot; ' +
+        '<a href="figures.html#fig-' + escHtml(name.slice(0, 2)) + '">its release tag, its chapter ' +
+        'and what shipped in it &rarr;</a></p>'
+      : '';
     body.innerHTML = kind === 'image'
-      ? '<div class="fx-img"><img src="' + path + '" alt="' + escHtml(name) + '" loading="lazy"></div>'
+      ? fig + '<div class="fx-img"><img src="' + path + '" alt="' + escHtml(name) + '" loading="lazy"></div>'
       : '<p>' + escHtml(name) + ' is a PDF. <a href="' + path + '" target="_blank" rel="noopener">Open it &nearr;</a></p>';
     cur = null;
   }

@@ -15,6 +15,9 @@ import {
 import {
   issueViewOf, statusFromPath, ownerFromPath, splitFront, issueHtml, statusSummary,
 } from '../../assets/explorer/issueview.js';
+import {
+  byTag, byChapter, galleryHtml, figureHtml, filtersHtml, kb,
+} from '../../assets/figures/core/figureview.js';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const BOOK = path.join(ROOT, 'v2/books/making-a-book');
@@ -212,6 +215,68 @@ test('issues: the board reads the folders rather than holding a copy', () => {
     assert.equal(row.status, want[f.state], `${f.role}/${f.name} status follows its folder`);
     assert.equal(row.owner, `@${f.role}`);
   }
+});
+
+/* ---- the figure graph and its viewer (v0.6.15) --------------------------- */
+const figs = () => JSON.parse(readFileSync(path.join(BOOK, 'figures/index.json'), 'utf8'));
+
+test('figures: every figure is on disk, used once, and names a real tag', () => {
+  const d = figs();
+  assert.equal(d.schema, 'book-figures-v1');
+  const onDisk = readdirSync(path.join(BOOK, 'figures')).filter((f) => f.endsWith('.png'));
+  assert.equal(d.figures.length, onDisk.length, 'one entry per image — rerun gen_figures.py');
+  const ns = new Set();
+  for (const f of d.figures) {
+    assert.ok(onDisk.includes(f.file), `${f.file} is not on disk`);
+    assert.match(f.file, /^\d{2}__v\d+\.\d+\.\d+__[a-z0-9-]+\.png$/, f.file);
+    assert.ok(f.width > 0 && f.height > 0 && f.bytes > 0, `${f.file} has no dimensions`);
+    assert.match(f.sha256, /^[0-9a-f]{64}$/, `${f.file} sha`);
+    assert.ok(f.used_by.length >= 1, `${f.file} is used by no chapter`);
+    assert.ok(!ns.has(f.n), `two figures numbered ${f.n}`);
+    ns.add(f.n);
+    /* the tag is in the filename AND in the field: they must agree */
+    assert.equal(f.tag, f.file.split('__')[1], `${f.file} tag disagrees with its name`);
+    /* the chapter it claims must exist, and must actually reference it */
+    for (const u of f.used_by) {
+      const md = path.join(BOOK, 'content', u.chapter);
+      assert.ok(existsSync(md), `${f.file} names ${u.chapter}, which does not exist`);
+      assert.ok(readFileSync(md, 'utf8').includes(`figures/${f.file}`),
+        `${u.chapter} does not reference ${f.file} — rerun gen_figures.py`);
+    }
+  }
+});
+
+test('figures: every figure the chapters reference has an entry', () => {
+  const d = figs();
+  const known = new Set(d.figures.map((f) => f.file));
+  for (const md of readdirSync(path.join(BOOK, 'content'))) {
+    const text = readFileSync(path.join(BOOK, 'content', md), 'utf8');
+    for (const m of text.matchAll(/\]\(figures\/([^)]+)\)/g)) {
+      assert.ok(known.has(m[1]), `${md} references ${m[1]}, which has no figure entry`);
+    }
+  }
+});
+
+test('figures: the gallery, the filters and the detail render and escape', () => {
+  const d = figs();
+  const gallery = galleryHtml(d, '');
+  assert.equal((gallery.match(/fg-card/g) || []).length, d.figures.length);
+  const one = d.figures[0];
+  assert.equal((galleryHtml(d, one.tag).match(/class="fg-card"/g) || []).length,
+    d.figures.filter((f) => f.tag === one.tag).length, 'filtering by tag narrows the gallery');
+  const detail = figureHtml(d, one.id);
+  assert.ok(detail.includes(one.tag) && detail.includes(String(one.width)));
+  assert.equal(figureHtml(d, 'fig-99'), null, 'an unknown figure renders nothing');
+  assert.ok(filtersHtml(d, '').includes('fg-chip'));
+  /* the counts are the data, not a claim about it */
+  assert.equal(byTag(d).reduce((a, t) => a + t.n, 0), d.figures.length);
+  assert.equal(byChapter(d).length, d.totals.chapters);
+  const nasty = { schema: 'x', figures: [{ id: 'f', n: 1, tag: '<img src=x onerror=alert(1)>',
+    file: 'a.png', slug: 's', caption: '<script>bad()</script>', width: 1, height: 1, bytes: 1,
+    sha256: 'a', used_by: [] }] };
+  assert.ok(!galleryHtml(nasty, '').includes('<img src=x'), 'the gallery escapes');
+  assert.ok(!figureHtml(nasty, 'f').includes('<script>bad'), 'the detail escapes');
+  assert.equal(kb(500000), '488 KB');
 });
 
 await report('board');

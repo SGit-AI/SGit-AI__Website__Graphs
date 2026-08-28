@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.14</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.15</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -154,6 +154,14 @@
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
       <tr>
+        <td class="vnum">v0.6.15</td>
+        <td>28 August 2026</td>
+        <td><b>Every figure gets a JSON entry, its provenance and its cross-links, and the book&rsquo;s loudest claim about its own screenshots becomes checkable.</b> The link on the book page pointed at a GitHub folder listing. It now points at <a href="../v2/books/making-a-book/figures.html">a viewer</a>: twenty figures across fifteen release tags, filterable by release or by chapter, each one opening on where it came from and where it is used.
+        <b>Every field is derived, and that is the whole design.</b> The figure number, the release tag it was photographed at and its slug come from the filename; the width, height and SHA-256 from the file; the caption, the chapter, the section and the line from the markdown that references it; what shipped in the release it shows from the narrated version table; and the date from the tag&rsquo;s own commit. <b>Nothing is typed in</b>, because a figure&rsquo;s provenance is a fact about the repository and a fact should not be re-entered by hand where it can drift.
+        <b>The book has always said none of its figures is a reconstruction.</b> That was a sentence in a colophon. It is now three gates: a figure whose tag is not in this repository fails the build, a figure no chapter uses fails the build, and a chapter referencing a figure that is not on disk fails the build. All three were run red before being trusted &mdash; renaming a figure to a v9.9.9 tag, adding an orphan, and pointing a chapter at a file that is not there.
+        <b>The cross-links go both ways.</b> A figure names its chapter, its section and the line that uses it; the chapter filter is built by inverting that. The machine surface is <code>figures/index.json</code>, one entry per image, and the file explorer now links a figure straight through to its provenance rather than showing pixels alone. 125 tests.</td>
+      </tr>
+      <tr>
         <td class="vnum">v0.6.14</td>
         <td>28 August 2026</td>
         <td><b>Every agent gets its own work plan as files, and the status is the folder.</b> MAB-08 from the board, and the coordination layer under it. Each of the seven roles now carries <code>issues/open/</code>, <code>issues/blocked/</code> and <code>issues/done/</code> on the <a href="https://issues-fs.sgit.ai/lite/index.html">Issues-FS-lite</a> pattern &mdash; the specification from the project the three February 2026 documents in this corpus were written for, which is complete and needs no implementation, which is why there is none here either.
@@ -276,7 +284,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.6.14</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.15</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

@@ -9,7 +9,7 @@
  "words": 31435,
  "pdf": "making-a-book.pdf",
  "pdf_pages": 92,
- "built_at_site_version": "v0.6.14",
+ "built_at_site_version": "v0.6.15",
  "versioning": "This book's version moves only when its content moves; the site's version moves on every push. v1.0.0 is reserved for the actual final release.",
  "front_matter_title": "Creating a Book Using Agentic Workflows",
  "former_versions": [
