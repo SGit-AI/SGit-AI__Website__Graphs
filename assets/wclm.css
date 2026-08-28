@@ -225,3 +225,7 @@
   .an-cols { flex-direction: column; }
   .an-pane { position: static; flex: none; max-height: none; }
 }
+
+/* the parked notice (brief 39): a paused experiment says so on its own page */
+.wc-parked { border-left: 4px solid #c58f00; background: rgba(240,180,41,.09);
+  padding: .5rem .8rem; border-radius: 6px; font-size: .9rem; }

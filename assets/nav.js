@@ -1,3 +1,8 @@
+/* @module nav
+   Single responsibility: the site navigation's only behaviour — the mobile
+   menu toggle and the aria-expanded state that goes with it. Everything else
+   about the nav is stamped into every page by chrome.py at build time, so
+   this file stays the size of the one thing that genuinely needs a browser. */
 /* graphs.sgit.ai — nav interaction, the same component sgit.ai runs.
    Two jobs, and only one of them needs JavaScript on desktop: hover and :focus-within
    open a dropdown in CSS alone. This handles the rest — the phone menu button, and the

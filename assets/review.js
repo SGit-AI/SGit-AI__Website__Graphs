@@ -1,3 +1,7 @@
+/* @module review
+   Single responsibility: the review-pack pages' reading aids — the section
+   jump list and the state that keeps a reviewer's place. A first-edition
+   surface, kept working, not extended: the v0.6 review era supersedes it. */
 /* Renders a review object (reviews/rNNN.json) onto its page. The JSON is the
    review: this script is only a projection of it, the same relationship the
    book has to the site. Plain text with **bold**; everything else escaped. */

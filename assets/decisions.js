@@ -1,3 +1,9 @@
+/* @module decisions
+   Single responsibility: the open-decisions register — load the decision
+   records, render them as a filterable table with their status, owner and
+   consequences, and deep-link a single decision. Above the size guideline at
+   484 lines; the split (data load / table / filters) is planned in the
+   v0.5.17 non-functional pass. */
 /* The decisions register, drawn as graphs.
 
    Each open decision is the peak of its own small graph: below it hang the options,

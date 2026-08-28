@@ -1,3 +1,8 @@
+/* @module changes
+   Single responsibility: the version-diff reader — load the per-version
+   snapshots gen_changes.py writes, let the reader pick two versions, and show
+   what changed between them unit by unit. The diff data is generated; this
+   module is the instrument for reading it. */
 /* The version diff view for book/changes.html.
    Data: book/changes/data/index.json lists every release; one JSON per
    release holds the book's units (introduction + chapters) as plain text

@@ -41,6 +41,13 @@ BLURB = {
 # the working packs: everything under dev-packs/ that is not the main pack.
 # short: the url prefix for the rendered pages. label: how the hub names the pack.
 SIDE = [
+ {"dir": "v0.5.17__the-non-functional-pass", "short": "nfr", "label": "The non-functional pass",
+  "packline": "v0.5.17 &middot; before the review era",
+  "statusline": "IN PROGRESS &mdash; pass one shipped; passes two and three planned",
+  "blurbs": {
+   "00__the-audit.md": "The measured state of the estate at v0.5.16: eight findings with real counts, from a README documenting nine paths that moved a month ago to a test surface that stops at the v2 core, and an honest list of what is already healthy.",
+   "01__the-plan.md": "Three passes, sized and ordered by what the review era needs first: the documents an agent reads, then the builders and gates, then the modules and components. Includes the call to wrap in 5.x and open 6.x with the review machinery.",
+  }},
  {"dir": "v0.5.10__the-book-writing-pack", "short": "book-pack", "label": "The book-writing pack",
   "packline": "v0.5.10 &middot; three books, three sessions",
   "statusline": "COMMISSIONED &mdash; paste an entry prompt into a fresh session; one book each",

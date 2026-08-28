@@ -6,109 +6,91 @@ are "just words"; connections are meaning.
 
 **Not a graph database pitch.** The claim is that one grammar is the interface at every
 boundary — not that things are stored in a graph. There is no graph database anywhere in the
-work behind this site, and the site says so on its own page.
+work behind this site, and the site says so on its own page (`/v1/shipped/`).
 
-Live site: https://graphs.sgit.ai (GitHub Pages, deployed from `dev`).
+Live site: https://graphs.sgit.ai — static HTML on GitHub Pages, deployed from `dev`.
 
-## Structure
+## What is here
 
-- `index.html` — the front page: the epigraph, the 10,000-hours story, three altitude doors,
-  the proof strip, and the what-ships-what-is-argued split
-- `index.md` — the markdown twin of the front page
-- `start/` — **altitude 1**, the city walls: a node is just a node; the same value differently
-  connected; the five Reviews; the confidence ladder; map the gaps
-- `grammar/` — **altitude 2**, the rules you can apply tomorrow; `edge-set.html` publishes the
-  edge vocabulary the corpus cites but never wrote
-- `depth/` — **altitude 3**: against schema-first, ontologies of ontologies, node type
-  formulas, the grounding ladder, supersede-never-delete, concepts-not-words; `boundaries.html`
-  carries fractality, a graph at every boundary, projections, twins and the air gap
-- `why-graphs/` — the page for a sceptic, and the GraphRAG / RDF / property-graph positioning
-- `examples/` — worked graphs with real numbers; three have their own pages
-- `maps/` — Wardley maps as graphs, and the `[visibility, evolution]` coordinate trap
-- `content/` — **the chapter text, in markdown — the source of truth.** One file per
-  chapter; edited here, never in the rendered pages. `gen_pages.py` renders them into the
-  site pages (CommonMark + `:::` directives for the house components, a ` ```path ` fence
-  for pathlines, ` ```mermaid ` for diagrams, embedded HTML as the escape hatch); the book
-  is then generated from those pages. One chain, gate-checked at both links
-- `book/` — **the site as a book**, *Meaning Through Connectivity*: sixteen chapters in six
-  parts, generated from the site's own pages by `gen_book.py`, in three reading modes —
-  chapter pages with a left table of contents, one single page, and two PDF editions
-  regenerated together from the same chapters: a print interior (6″×9″, mirrored gutters,
-  folios, paginated contents — typeset by WeasyPrint from `book/print.html`; KDP-ready,
-  cover included) and a screen edition (Chromium's print of `single.html` at US Letter,
-  in the site's own design). Each carries the site version on its cover.
-  `book/manifest.json` records source hashes; the gate fails if the book goes stale
-- `glossary/` — every technical term with a plain-English alternative beside it
-- `shipped/` — what is built, what is argued, and what does not exist anywhere
-- `origins/` — ten phases, February to August 2026, and the paths not taken
-- `network/` — why the graph argument bears on each sibling site
-- `documents/` — reader pages for the source documents (raw markdown is the source of truth)
-- `briefs/` — those source documents, verbatim, with three redactions recorded in `PUBLIC.md`
-- `about/participant.html` — the participant disclosure, the site-wide licence, and where our
-  approach loses
-- `admin/` — engineering: comms (asks & tasks), versions, build tooling
-- `admin/build/chrome.py` — the single definition of nav and footer, applied across every page
-- `admin/build/gen_documents.py` — generates the `documents/` reader pages from `briefs/`
-- `admin/build/gen_llms_full.py` — generates `llms-full.txt`
-- `admin/build/gen_book.py` — generates `book/` and its PDFs
-- `admin/build/gen_cover.py` — generates the cover: `book/cover/front.svg` (web-reusable)
-  and the full KDP wrap PDF, spine width computed from the interior's page count
-- `admin/build/validate.js` — the pre-release gate
-- `assets/site.css` — shared stylesheet (sgit.ai design language)
+Three books, a working surface that produced two of them, and the machinery that keeps
+every page honest about the markdown behind it.
 
-Content is built from the **graphs.sgit.ai brief pack v1.0** (21 August 2026), prepared
-against `the-cyber-boardroom/SGraph-AI__App__Send` at v0.33.62. The pack is published in full
-under `briefs/`.
+| | |
+|---|---|
+| **The books** | `v2/books/` — three, each with its markdown, its web edition and one print PDF |
+| **The first edition** | `v1/` — frozen at v0.3.26: the chapters, the sources, the vaults, the examples |
+| **The second edition's surface** | `v2/universe/`, `v2/wclm/` — the document universe and the deterministic transformer |
+| **The record** | `v2/briefs/` (39 founder memos, verbatim), `admin/versions*.html` (every release, narrated) |
+| **The build** | `admin/build/` — 20 generators, the validator, the test suite |
 
-## Release process
+## The layout
 
-1. Edit chapter text in `content/*.md` (never in the rendered pages), then
-   `python3 admin/build/gen_pages.py`.
-2. Bump `admin/build/version.txt` (vX.Y.Z, exactly once per release), add a row to
-   `admin/versions.html`, update `admin/comms.html`.
-3. `python3 admin/build/gen_documents.py` — if a document was added.
-4. `python3 admin/build/gen_llms_full.py` — if a document or `llms.txt` changed.
-5. `python3 admin/build/gen_book.py` — always: the gate fails on a stale book. Also
-   retypesets both PDFs (`pip install weasyprint`; falls back to Chromium at the same trim
-   size, minus folios and contents page numbers).
-6. `python3 admin/build/gen_cover.py` — after gen_book: recomputes the spine from the
-   interior's page count and re-prints the cover wrap. The gate fails if they disagree.
-7. `python3 admin/build/chrome.py` — propagates the version badge and any nav/footer change to
-   every page, and stamps the version into `llms.txt`, `llms-full.txt` and `index.md`.
-8. `node admin/build/validate.js`
-9. `git commit -am "site vX.Y.Z: ..." && git push origin dev`
+```
+admin/          the build: generators, validator, tests, release history
+  build/        gen_*.py (the chain), chrome.py (nav/footer), validate.js (the gate)
+  tests/        universe.test.mjs — 84 tests over the pure core
+  versions.html + versions-v0.4.html + versions-earlier.html — every release, narrated
+assets/         all client-side code and styling (no build step, no bundler)
+  universe/     the document reader: core/ (pure, tested), components/ (custom elements)
+  wclm/         the deterministic transformer: engine, renderers, workbench shells
+  universe-chat/ the chat agent's panel
+book/           the first edition's reading modes and version-diff data
+decisions/      the open decisions register
+v1/             THE FIRST EDITION, FROZEN — start/, grammar/, depth/, why-graphs/,
+                examples/, maps/, vaults/, docs/, briefs/, content/ (chapter markdown),
+                book/ (three reading modes + print PDFs)
+v2/             the second edition and everything since
+  books/        fsg/ · fsg-universe/ · making-a-book/ — a folder per book
+  briefs/       the founder's memos, verbatim, with the agent's numbered reading
+  dev-packs/    the plans and working packs agents exchange
+  universe/     the document universe: per-document folders, the core graph, the reader
+  wclm/         the words content language model and its twelve operator folders
+  memos/ methods/ lexicon/ artefacts/ packs/ dev-pack/   the rendered registers
+```
 
-Every push to `dev` runs `.github/workflows/deploy-pages.yml`: validate → auto-tag (`vX.Y.Z`,
-verified against `version.txt` and the commit subject, next-minor enforced) → deploy to GitHub
-Pages. Pull requests run validation only. Same pipeline as
-[SGit-AI__Website](https://github.com/SGit-AI/SGit-AI__Website),
-[SGit-AI__Website__NHI](https://github.com/SGit-AI/SGit-AI__Website__NHI) and
-[SGit-AI__Website__PKI](https://github.com/SGit-AI/SGit-AI__Website__PKI).
+Note the v1/v2 split: **anything under `v1/` is frozen** and changes only to fix a factual
+error. Everything else is live.
 
-### What the gate checks
+## The rules that hold it together
 
-1. **Version agreement** — `version.txt` against every page badge, the release table,
-   `llms.txt`, `llms-full.txt` and `index.md`; and no version listed twice.
-2. **Internal links** — every relative `href`, `src` and `data-src` resolves.
-3. **Canonical host** — every page declares a canonical, and every canonical and `og:url`
-   points at the host in `CNAME`.
-4. **The agent surface** — every section hub is named in `llms.txt`, and the sitemap and the
-   tree agree in both directions. For an agent, a page missing from `llms.txt` is a page that
-   does not exist.
-5. **Edge-grammar tripwire** — no page uses the banned generic association edge as a live edge
-   name; quoting the ban requires a `data-banned-verb` attribute.
-6. **Block balance** — every page closes every `<div>` it opens. Added after four pages
-   shipped a note box closed with `</p>`, which browsers accept silently.
-7. **The pages are projections of markdown** — `content/manifest.json` records the hash
-   of each markdown chapter and of the page it rendered; either side drifting fails the
-   build.
-8. **The book is a projection** — `book/manifest.json` must carry this release's version
-   and every chapter's source page must hash to what it recorded at generation. A source
-   edited without regenerating the book fails the build.
-9. **Key-leak tripwire** — nothing in the tree may look like a vault key.
+1. **Markdown is the source of truth.** Every rendered document fetches and renders its own
+   markdown client-side (`assets/mdreader.js`), so a page cannot silently drift from the
+   file it claims to render. `validate.js` fails the build if one does.
+2. **Every release is narrated.** A push to `dev` is a release: bump `admin/build/version.txt`,
+   add a row to `admin/versions.html` saying what changed in substance, put the version in
+   the commit subject (`site vX.Y.Z: …`). CI validates, tags and deploys.
+3. **Claims are anchored.** A quote names its source; a number is computed, not remembered.
+   The generators enforce this where they can (byte-identical rebuilds, anchor verification,
+   drift gates).
+4. **Gates before speed.** `node admin/tests/universe.test.mjs` and `node admin/build/validate.js`
+   are green before anything is pushed.
+
+## Building
+
+```bash
+python3 admin/build/gen_coregraph.py     # the core graph: document -> word
+python3 admin/build/gen_wclm.py          # the WCLM world + the operator folders
+python3 admin/build/gen_universe.py      # the document universe
+python3 admin/build/gen_memos.py         # the briefs, rendered
+python3 admin/build/gen_devpack.py       # the dev packs, rendered
+python3 admin/build/gen_changes.py       # the version diff data (needs tags fetched)
+python3 admin/build/gen_sitemap.py
+python3 admin/build/gen_llms_full.py
+python3 admin/build/chrome.py            # stamps nav, footer and the version badge
+node admin/tests/universe.test.mjs       # the unit gate
+node admin/build/validate.js             # the site gate
+```
+
+`admin/index.html` documents the pipeline in full, and `admin/versions.html#rules`
+documents how a version is decided.
+
+## Working here as an agent
+
+Read `CLAUDE.md` first. It carries the release ritual, the discipline for several agents
+sharing this repository, the code guidelines, and the conventions that are not obvious from
+the tree.
 
 ## Licence
 
-**Code** in this repository is licensed under the Apache License 2.0 (see `LICENSE`).
-**Documentation and written content** — everything under `briefs/`, the HTML pages, `index.md`,
-`llms.txt` and `llms-full.txt` — is licensed under CC BY 4.0. See `LICENSES.md`.
+Content is CC BY 4.0; see `LICENSES.md`. The raw markdown under `v1/briefs/` and `v2/briefs/`
+is the source of truth and carries the same licence.

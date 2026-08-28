@@ -1,3 +1,8 @@
+/* @module concepts
+   Single responsibility: the concept chips and cross-reference lists on the
+   first edition's document pages — load the measured concept data, render the
+   chips, and filter the page's sections as the reader picks one. Reads data
+   computed by gen_docs.py; computes nothing itself. */
 /* The concept map: a dictionary crossed with a thesaurus, entered from any concept.
 
    Every concept shows what it rests on, what rests on it, what it is called, what it

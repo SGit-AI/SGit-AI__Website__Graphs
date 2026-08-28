@@ -1,3 +1,10 @@
+/* @module altitudes-graph
+   Single responsibility: the altitude ladder's graph instrument — build the
+   element set from the generated altitude data, lay it out, and handle
+   selection, focus and the descent animation between altitudes. The largest
+   hand-written module in the estate at 787 lines and the clearest split
+   candidate (graph build / layout / interaction); recorded as debt in the
+   v0.5.17 non-functional pass rather than left unstated. */
 /* The ladder, the concepts and the findings as one explorable graph.
 
    Cytoscape.js, vendored. Four ideas drive the controls:

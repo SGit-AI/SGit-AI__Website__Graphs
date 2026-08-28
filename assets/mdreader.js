@@ -1,3 +1,8 @@
+/* @module mdreader
+   Single responsibility: render a page's own markdown into the page. Every
+   rendered document on this site fetches the source file named in its
+   data-src, hands it to marked, and drops the result in — which is the whole
+   reason a page can never drift from the markdown it claims to render. */
 /* graphs.sgit.ai — in-page markdown reader.
    Renders the raw markdown file named by #mdread[data-src] into the page using
    marked (loaded from CDN before this script). The raw file stays the source of

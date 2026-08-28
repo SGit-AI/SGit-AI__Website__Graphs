@@ -23,6 +23,21 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "39__founder-memo__the-review-era-opens.md": (
+     "Park the engine, ship the books, open the review era",
+     "Recorded after reading the books on the flight, and it opens with a "
+     "finding: the making-of book's alignment is stronger by orders of "
+     "magnitude than the FSG book's, which is the power of good source "
+     "material. Then the turn: a proper non-functional pass over the code, "
+     "the tests and the harness; the WCLM and its operators PARKED, because "
+     "the experiment needed a better target; the two books shipped all the "
+     "way to Leanpub, because shipping is one of the most important things "
+     "you can do; the site refactored as the home of two books; and then the "
+     "real work — the review process itself, run as change control with human "
+     "AND agentic reviewers (plan, map, define, review, approve, implement, "
+     "approve the implementation). Plus per-book versioning: the repo's "
+     "version moves on every push, a book's version moves only when its "
+     "content changes."),
  "38__founder-memo__three-books-from-this-estate.md": (
      "Three books from this estate: the book-writing pack",
      "Something a little bit different: not a build round but a writing round. "
