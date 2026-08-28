@@ -1,6 +1,6 @@
 {
  "schema": "project-agents-v2",
- "version": "v0.6.15",
+ "version": "v0.6.16",
  "note": "Computed from v2/team/ and the debriefs each role has produced for this book. Active means it has worked at the book's current version.",
  "agents": [
   {

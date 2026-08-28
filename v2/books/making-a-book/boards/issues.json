@@ -1,6 +1,6 @@
 {
  "schema": "project-issues-v1",
- "version": "v0.6.15",
+ "version": "v0.6.16",
  "note": "Read from v2/team/<role>/issues/, where the folder a file sits in IS its status. Not authored here: to move one, git mv it.",
  "issues": [
   {
@@ -29,6 +29,15 @@
    "owner": "@developer",
    "description": "From MAB-08 on the project board; the founder's ask after reading issues-fs.sgit.ai.",
    "href": "../../../v2/team/developer/issues/done/003-per-agent-issue-folders.md"
+  },
+  {
+   "id": "@developer-004",
+   "title": "The sticky nav hid the content the page had just scrolled to",
+   "status": "resolved",
+   "priority": "high",
+   "owner": "@developer",
+   "description": "From the founder, reading a screenshot taken at v0.6.15 — \"can you see the bug\".",
+   "href": "../../../v2/team/developer/issues/done/004-the-sticky-nav-hid-content-it-scrolled-to.md"
   },
   {
    "id": "@editor-001",

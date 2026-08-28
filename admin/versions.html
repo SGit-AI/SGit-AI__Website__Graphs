@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.15</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.16</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -154,6 +154,15 @@
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
       <tr>
+        <td class="vnum">v0.6.16</td>
+        <td>28 August 2026</td>
+        <td><b>The sticky banner was hiding the content the page had just scrolled to, everywhere, and had been for a long time.</b> The founder spotted it in a screenshot from the release before, where the banner sat in the middle of the page. The agent's first reading was that this was an artefact of photographing a sticky header full-page. <b>That reading was wrong</b>, and measuring it took two minutes where explaining it away took longer.
+        <b>The nav row wraps</b>, so its height is <b>104px</b> on a wide desktop, <b>92px</b> on a phone and <b>55px</b> on an iPad. The site's convention for scrolling around it was two hard-coded numbers, 64px and 70px, so it was wrong at two of those three widths: <b>every in-page anchor on the site landed 34px under the banner</b> &mdash; <code>#rules</code>, <code>#figures</code>, every <code>h2</code> link. The figure viewer shipped at v0.6.15 had no offset at all, which is why it showed up there first and hid <b>87px</b> of the figure it had just opened.
+        <b>One rule fixes all of it.</b> <code>nav.js</code> now measures the nav and publishes <code>--navh</code>, refreshed by a <code>ResizeObserver</code> on the nav itself so a wrap updates it, and <code>site.css</code> sets <code>html{scroll-padding-top:var(--navh)}</code>, which corrects every anchor jump <em>and</em> every <code>scrollIntoView</code> at once. Measured after: 16 to 17px of clearance at all three widths, and 0px hidden on the anchor jumps that were 34px under. The fallback is the tallest height, because over-scrolling leaves a gap and under-scrolling hides content, and only one of those is a bug.
+        <b>A gate now refuses a hard-coded nav offset</b> anywhere in the stylesheet, and requires <code>nav.js</code> to publish the variable. Run red against the old 64px before it was trusted.
+        <b>The finding is filed rather than absorbed</b>, in the developer's issue folder, including the part that reflects badly: a screenshot is evidence, and an agent looked at one, saw something wrong, and explained it away as noise from its own tooling. Two of this estate's rules cover exactly that. 126 tests.</td>
+      </tr>
+      <tr>
         <td class="vnum">v0.6.15</td>
         <td>28 August 2026</td>
         <td><b>Every figure gets a JSON entry, its provenance and its cross-links, and the book&rsquo;s loudest claim about its own screenshots becomes checkable.</b> The link on the book page pointed at a GitHub folder listing. It now points at <a href="../v2/books/making-a-book/figures.html">a viewer</a>: twenty figures across fifteen release tags, filterable by release or by chapter, each one opening on where it came from and where it is used.
@@ -284,7 +293,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.6.15</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.16</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

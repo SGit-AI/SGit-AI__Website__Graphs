@@ -27,6 +27,13 @@ p code,li code,td code,.note code{overflow-wrap:anywhere;background:var(--panel2
 .dim{color:var(--dim)} .small{font-size:.85rem}
 
 /* ---------- top nav ---------- */
+/* The sticky nav's height, measured and published by assets/nav.js as --navh,
+   because the row wraps and CSS cannot know it: 104px wide, 92px on a phone,
+   55px on an iPad. scroll-padding-top on the scroll container corrects EVERY
+   anchor jump and every scrollIntoView on the site at once. The fallback is the
+   tallest of the three, because over-scrolling leaves a gap and under-scrolling
+   hides content, and only one of those is a bug. */
+html{scroll-padding-top:var(--navh,104px)}
 nav.site{position:sticky;top:0;z-index:50;background:rgba(250,249,245,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 nav.site .row{max-width:var(--wide);margin:0 auto;display:flex;align-items:center;gap:1.1rem;padding:.7rem 1.1rem;flex-wrap:wrap}
 nav.site .brand{font-weight:800;font-size:1.05rem;color:var(--fg);letter-spacing:-.02em;white-space:nowrap}
@@ -100,7 +107,7 @@ header.hero .sub{color:var(--dim);font-size:1.05rem;max-width:680px;margin:0 aut
 .cta2{color:var(--accent-dk);font-size:.9rem;font-weight:600}
 
 /* ---------- sections ---------- */
-section.band{padding:3rem 0;scroll-margin-top:64px}
+section.band{padding:3rem 0;scroll-margin-top:var(--navh,104px)}
 section.band.alt{background:var(--panel2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 section.band h2{font-family:var(--serif);font-size:1.9rem;color:#101114;text-align:center;margin:0 0 .6rem}
 section.band .blurb{color:var(--dim);text-align:center;max-width:660px;margin:0 auto 1.8rem;font-size:.95rem}
@@ -134,7 +141,7 @@ main.doc{max-width:var(--measure);margin:0 auto;padding:2.4rem 1.4rem 3.5rem}
 main.doc .crumb{font-size:.75rem;color:var(--dim2);margin-bottom:1rem}
 main.doc .crumb a{color:var(--dim)}
 main.doc h1{font-family:var(--serif);font-size:2.1rem;color:#101114;margin:.2rem 0 .9rem}
-main.doc h2{font-family:var(--serif);font-size:1.4rem;color:#101114;margin:2.2rem 0 .7rem;scroll-margin-top:70px}
+main.doc h2{font-family:var(--serif);font-size:1.4rem;color:#101114;margin:2.2rem 0 .7rem;scroll-margin-top:var(--navh,104px)}
 main.doc h3{font-size:1.02rem;color:#101114;margin:1.7rem 0 .5rem}
 main.doc .lead{color:#34363c;font-size:1.12rem}
 main.doc p, main.doc li{color:#34363c;font-size:.98rem}

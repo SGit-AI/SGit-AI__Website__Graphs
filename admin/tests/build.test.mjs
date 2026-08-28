@@ -495,4 +495,23 @@ test('bookfiles: every book has an explorer, and its manifest matches the disk',
   }
 });
 
+test('chrome: nothing hard-codes the sticky nav height', () => {
+  /* The nav row WRAPS: 104px on a wide desktop, 92px on a phone, 55px on an
+     iPad. A hard-coded offset was wrong at two of those three widths and hid up
+     to 87px of content under the banner. nav.js measures it and publishes
+     --navh; every scroll offset must read that, never a number. */
+  const css = readFileSync(path.join(ROOT, 'assets/site.css'), 'utf8');
+  assert.match(css, /html\{scroll-padding-top:var\(--navh/,
+    'the scroll container must inset by the measured nav height');
+  const offsets = css.match(/scroll-(?:margin|padding)-top:[^;}]+/g) || [];
+  assert.ok(offsets.length >= 3, 'the offsets are still declared');
+  for (const o of offsets) {
+    assert.ok(o.includes('var(--navh'),
+      `hard-coded nav offset "${o}" — use var(--navh, …), which nav.js measures`);
+  }
+  const nav = readFileSync(path.join(ROOT, 'assets/nav.js'), 'utf8');
+  assert.ok(nav.includes("setProperty('--navh'"), 'nav.js must publish --navh');
+  assert.ok(nav.includes('ResizeObserver'), 'and refresh it when the row wraps');
+});
+
 await report('build');
