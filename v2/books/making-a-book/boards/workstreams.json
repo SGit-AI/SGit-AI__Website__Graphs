@@ -1,6 +1,6 @@
 {
  "schema": "project-workstreams-v2",
- "version": "v0.6.16",
+ "version": "v0.6.17",
  "title": "Workstreams and tasks",
  "note": "A change-control pack is a workstream and its seven stages are its tasks. Click a card for the stages.",
  "workstreams": [
@@ -243,9 +243,9 @@
     {
      "id": "WS-04b",
      "title": "Text diff between two book versions from the tags",
-     "status": "next",
+     "status": "done",
      "owner": "@developer",
-     "note": "the mechanism exists for the first edition at /v1/book/changes.html"
+     "note": "v0.6.17; per BOOK version, from the markdown, reusing the v1 differ"
     },
     {
      "id": "WS-04c",
@@ -260,6 +260,13 @@
      "status": "queued",
      "owner": "@developer",
      "note": "the measure of success the memo names"
+    },
+    {
+     "id": "WS-04e",
+     "title": "A review register, so a reading survives its consequence",
+     "status": "done",
+     "owner": "@librarian",
+     "note": "v0.6.17; the brief 40 reading recorded as r001, two items still open"
     }
    ]
   },

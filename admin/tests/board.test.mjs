@@ -279,4 +279,64 @@ test('figures: the gallery, the filters and the detail render and escape', () =>
   assert.equal(kb(500000), '488 KB');
 });
 
+/* ---- the reviews and the version diff (v0.6.17) -------------------------- */
+test('reviews: a review names a version the book has actually been at', () => {
+  const d = JSON.parse(readFileSync(path.join(BOOK, 'reviews/index.json'), 'utf8'));
+  const meta = JSON.parse(readFileSync(path.join(BOOK, 'book.json'), 'utf8'));
+  const history = new Set([...(meta.former_versions || []), meta.version]);
+  assert.ok(d.reviews.length >= 1, 'the book has at least one recorded reading');
+  const seen = new Set();
+  for (const r of d.reviews) {
+    assert.ok(history.has(r.book_version),
+      `${r.review} reviews ${r.book_version}, which this book has never been at`);
+    assert.ok(['open', 'actioned', 'superseded'].includes(r.state), r.review);
+    assert.ok(!seen.has(r.review), `two reviews numbered ${r.review}`);
+    seen.add(r.review);
+    assert.ok(r.items.length >= 1, `${r.review} has no items`);
+    for (const i of r.items) {
+      assert.ok(['open', 'actioned', 'declined', 'superseded'].includes(i.state),
+        `${r.review} item ${i.n}: ${i.state}`);
+      assert.ok(i.title.length > 5, `${r.review} item ${i.n} has no finding`);
+    }
+    /* the reading it cites must be a brief that exists */
+    if (r.source) {
+      assert.ok(existsSync(path.join(ROOT, r.source)),
+        `${r.review} cites ${r.source}, which does not exist`);
+    }
+  }
+  /* every review file on disk is in the index */
+  const files = readdirSync(path.join(BOOK, 'reviews')).filter((f) => /^r\d{3}__/.test(f));
+  assert.equal(d.reviews.length, files.length, 'a review on disk is missing from the index');
+});
+
+test('diff: one snapshot per book version, keyed the way the differ reads', () => {
+  const dir = path.join(BOOK, 'changes/data');
+  const idx = JSON.parse(readFileSync(path.join(dir, 'index.json'), 'utf8'));
+  const meta = JSON.parse(readFileSync(path.join(BOOK, 'book.json'), 'utf8'));
+  assert.equal(idx.versions.length, meta.changelog.length,
+    'one snapshot per book version — rerun gen_bookdiff.py');
+  for (const v of idx.versions) {
+    /* assets/changes.js reads `v` and `date`; both must be there */
+    assert.ok(v.v && v.date, `${v.version} is missing the keys the differ reads`);
+    const snap = JSON.parse(readFileSync(path.join(dir, `${v.v}.json`), 'utf8'));
+    assert.equal(snap.version, v.v);
+    assert.ok(snap.date, 'a snapshot must carry its date, or the summary line breaks');
+    const keys = Object.keys(snap.units);
+    assert.ok(keys.includes('intro'), 'the front matter is the differ\'s intro unit');
+    for (const k of keys) {
+      assert.match(k, /^(intro|ch\d{2})$/, `unit key ${k} will not sort in the differ`);
+      assert.ok(snap.units[k].blocks.length > 0, `${v.v}/${k} has no blocks`);
+      assert.ok(snap.units[k].title, `${v.v}/${k} has no title`);
+    }
+    assert.equal(keys.length, v.units);
+  }
+  /* the pair the founder asked for is really different, and only where expected */
+  const a = JSON.parse(readFileSync(path.join(dir, 'v0.1.0.json'), 'utf8'));
+  const b = JSON.parse(readFileSync(path.join(dir, 'v0.2.0.json'), 'utf8'));
+  const changed = Object.keys(b.units).filter((k) =>
+    JSON.stringify(a.units[k].blocks) !== JSON.stringify(b.units[k].blocks));
+  assert.equal(changed.length, 4, `v0.1.0 to v0.2.0 changed 4 chapters, found ${changed.length}`);
+  assert.ok(changed.includes('intro'), 'the retitle changed the front matter');
+});
+
 await report('board');

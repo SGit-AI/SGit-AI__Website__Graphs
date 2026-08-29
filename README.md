@@ -82,6 +82,8 @@ python3 admin/build/gen_bookgraph.py     # a book decomposed to the word (book -
 python3 admin/build/gen_board.py         # the making-of book's project board (board.html)
 python3 admin/build/gen_issues.py        # the team's issue tree explorer (v2/team/issues.html)
 python3 admin/build/gen_figures.py       # the figure graph and viewer (figures/index.json + figures.html)
+python3 admin/build/gen_reviews.py       # the book's review register (reviews.html)
+python3 admin/build/gen_bookdiff.py      # the book's version diff (needs tags fetched)
 python3 admin/build/gen_bookfiles.py     # each book's file explorer (files.html; run after gen_board)
 python3 admin/build/gen_devpack.py       # the dev packs, rendered
 python3 admin/build/gen_changes.py       # the version diff data (needs tags fetched)

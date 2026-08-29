@@ -137,6 +137,7 @@ HUB = """<!doctype html>
   <span class="k">Written</span><span class="v">against graphs.sgit.ai v0.5.11, 26 August 2026, by an AI agent on the repository it describes</span>
   <span class="k">Covers</span><span class="v">v0.1.0 (21 August 2026) to v0.5.11 (26 August 2026) &middot; 88 tagged releases &middot; 6 days</span>
   <span class="k">Source</span><span class="v">markdown in <a href="{gh}/content">content/</a> &middot; figures in <a href="figures.html"><b>the figure viewer</b></a> (or <a href="{gh}/figures">raw on GitHub</a>) &middot; built by <a href="{gh}/build.py">build.py</a></span>
+  <span class="k">Reviews</span><span class="v"><a href="reviews.html"><b>what readers found &rarr;</b></a> &middot; each reading item by item, with what is still open &middot; and <a href="changes.html"><b>what changed between versions</b></a>, block by block</span>
   <span class="k">The work</span><span class="v"><a href="board.html"><b>the project board &rarr;</b></a> &middot; the workstreams, what is blocked and on whom, the agent roster and the two-clock release log &mdash; the coordination around the book, not its structure</span>
   <span class="k">Inspect it</span><span class="v"><a href="files.html"><b>every file, raw and viewed &rarr;</b></a> &middot; the markdown, the source materials, the figures, the graph one folder per chapter, and the generated pages &middot; or read <a href="graph/index.html">the book as a graph</a></span>
   <span class="k">Licence</span><span class="v">CC BY 4.0</span>

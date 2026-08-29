@@ -1,0 +1,56 @@
+{
+ "schema": "book-reviews-v1",
+ "version": "v0.6.17",
+ "book": "making-a-book",
+ "book_version": "v0.2.0",
+ "title": "Creating a Book Using Agentic Workflows",
+ "totals": {
+  "reviews": 1,
+  "items": 5,
+  "open": 2
+ },
+ "reviews": [
+  {
+   "review": "r001",
+   "book_version": "v0.1.0",
+   "reviewed": "2026-08-28",
+   "reviewer": "the founder",
+   "state": "actioned",
+   "file": "r001__the-title-does-not-hold.md",
+   "title": "r001 — the title does not hold, and the reading that says so was not on the record",
+   "source": "v2/briefs/40__founder-memo__the-agentic-team-and-who-the-book-is-for.md",
+   "items": [
+    {
+     "n": 1,
+     "title": "the title names the two rarest things in the book",
+     "state": "actioned",
+     "outcome": "retitled to *Creating a Book Using Agentic Workflows* at v0.6.9, book v0.2.0."
+    },
+    {
+     "n": 2,
+     "title": "the new title is not earned by the body either",
+     "state": "open",
+     "outcome": "open. Tracked as `@editor/issues/open/001` and WS-02 on the board."
+    },
+    {
+     "n": 3,
+     "title": "does the cover name Claude, or agents?",
+     "state": "open",
+     "outcome": "open, and blocked on the founder. `@editor/issues/blocked/002`."
+    },
+    {
+     "n": 4,
+     "title": "the book leans villager, and brief 40 read it as explorer",
+     "state": "superseded",
+     "outcome": "superseded by brief 45. Neither reading was right."
+    },
+    {
+     "n": 5,
+     "title": "the colophon claimed the second book was unwritten",
+     "state": "actioned",
+     "outcome": "corrected at v0.6.9, in the same pass as the retitle."
+    }
+   ]
+  }
+ ]
+}
