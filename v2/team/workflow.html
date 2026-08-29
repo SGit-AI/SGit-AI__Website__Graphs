@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Agentic Workflows: How You Operate &mdash; the files &mdash; graphs.sgit.ai</title>
-<meta name="description" content="Every artefact of Agentic Workflows: How You Operate, browsable: the authored folder and the generated core data, raw with minimal formatting or through each file's own data view.">
-<link rel="canonical" href="https://graphs.sgit.ai/v2/universe/agentic-workflows.files.html">
+<title>The state map &mdash; the team &mdash; graphs.sgit.ai</title>
+<meta name="description" content="The states a change moves through here, each naming the one role that can advance it and the door the next role will not take the work without. 1 door(s) currently shut.">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/team/workflow.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="graphs.sgit.ai">
-<meta property="og:url" content="https://graphs.sgit.ai/v2/universe/agentic-workflows.files.html">
-<meta property="og:title" content="Agentic Workflows: How You Operate &mdash; the files">
-<meta property="og:description" content="The document's artefacts, raw and viewed.">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/team/workflow.html">
+<meta property="og:title" content="The state map">
+<meta property="og:description" content="Nine states, each with the door it must pass, and which doors are shut.">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../../assets/site.css">
-<link rel="stylesheet" href="../../assets/universe.css">
+<link rel="stylesheet" href="../../assets/board.css">
 </head>
 <body>
 
@@ -33,7 +33,7 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl" href="../../v2/books/index.html">The books<span class="caret">&#9662;</span></a>
+      <a class="nl here" href="../../v2/books/index.html">The books<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../../v2/books/index.html">The shelf &middot; all three, each with its own version</a>
       <a class="sl" href="../../v2/books/fsg/index.html">Fractal Semantic Graphs &middot; the argument whole</a>
@@ -59,7 +59,7 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl here" href="../../v2/universe/index.html">The universe<span class="caret">&#9662;</span></a>
+      <a class="nl" href="../../v2/universe/index.html">The universe<span class="caret">&#9662;</span></a>
       <div class="sub">
       <a class="sl" href="../../v2/universe/index.html">Layer 1: the documents, extracted</a>
       <a class="sl" href="../../v2/universe/thinking-in-graphs.html">&hellip; the pilot: Thinking in Graphs</a>
@@ -146,10 +146,29 @@
 </div></nav>
 
 <main class="doc uni-full">
-<div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="index.html">the universe</a> &rarr; <a href="agentic-workflows.html">agentic-workflows</a> &rarr; <b>the files</b></div>
-<h1>The files of <em>Agentic Workflows: How You Operate</em></h1>
-<p class="lead">Everything the document owns and everything the build derived from it, in one explorer: the authored folder (source, extraction, cross-references, identity ledger) and the generated core data (the index, the shards, the tokens, the formatting graph). <b>Raw</b> shows each file with minimal formatting; files the build understands also carry their <b>own view</b>. As the cross-references grow, this is the honest window onto the data underneath the pages.</p>
-<div id="filex" class="fx"></div>
+<div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rarr; <a href="../index.html">the second edition</a> &rarr; <a href="index.html">the team</a> &rarr; <b>the state map</b></div>
+<h1>The state map</h1>
+<p class="lead">The states a change moves through here. Each names the <b>one role that can advance it</b> and the <b>door</b>: the condition the next role will not take the work without. Nine states, 7 of them a stage of the seven-stage change control, and <b>1 door currently shut</b>.</p>
+
+<div class="note"><b>Which doors are shut is counted, not written down.</b> A door is shut when work is waiting at it and nothing has ever gone through, and both halves are read off <a href="../books/making-a-book/board.html">the board</a> on every build. The meanings and the doors are authored in <a href="workflow.json">workflow.json</a>, because what a state <em>means</em> is a judgement; what is sitting in it is not.<br>
+<b>A gate compares the drawing to the declaration.</b> This page draws an order, so the seven stage-bearing states must match, in sequence, the stages <code>admin/build/gen_board.py</code> declares. Reorder one and forget the other and the build fails, rather than the map going on confidently drawing last month's process. Borrowed, with the reasoning, from <a href="https://newsroom.sgit.ai/briefs/10__the-newsroom-floor.md">newsroom.sgit.ai's brief 10</a>.</div>
+
+<div class="wf-finding"><h3>The shut door</h3><p><b>Approved</b> has <b>2</b> item(s) waiting at it and <b>nothing has ever passed through it</b>. It is advanced by <b>the founder</b>, and its door is: The founder answers. There is no substitute, no timeout and no default, which is the point of separating proposing from choosing.</p><p class="small">Waiting: <code>WS-01</code>, <code>WS-02</code>. Everything downstream of it &mdash; <b>Implemented</b>, <b>Accepted</b> &mdash; has therefore never been entered by any pack, which does not mean nothing has shipped: it means what shipped went around the workflow rather than through it.</p></div>
+
+<section class="wf-lane"><h3 style="border-bottom-color:#6366f1">Propose</h3><div class="wf-cards"><article class="wf-state" id="raised" style="border-left-color:#6366f1"><h4>Raised <span class="bd-badge bd-queued">nothing yet</span></h4><p class="wf-meta"><span class="wf-stage dim">outside the seven</span> &middot; advanced by <b>@librarian</b></p><p class="bd-desc">A memo, a reading or a gate failure has named something that might change.</p><p class="wf-door"><span class="wf-dl">the door</span> It is written down verbatim where it can be checked: a brief, a review item or an issue file. A thing said in passing has not been raised.</p></article><article class="wf-state" id="planned" style="border-left-color:#6366f1"><h4>Planned <span class="bd-badge bd-done">2 through</span></h4><p class="wf-meta"><span class="wf-stage">stage 1</span> &middot; advanced by <b>@librarian</b></p><p class="bd-desc">Which roles have a voice on this, and which are only asked for an opinion.</p><p class="wf-door"><span class="wf-dl">the door</span> The split is recorded BEFORE any opinion is written. Deciding afterwards who had a voice is deciding the answer.</p></article></div></section>
+<section class="wf-lane"><h3 style="border-bottom-color:#0d9488">Establish</h3><div class="wf-cards"><article class="wf-state" id="mapped" style="border-left-color:#0d9488"><h4>Mapped <span class="bd-badge bd-done">2 through</span></h4><p class="wf-meta"><span class="wf-stage">stage 2</span> &middot; advanced by <b>@researcher</b></p><p class="bd-desc">What the thing actually is, counted rather than argued.</p><p class="wf-door"><span class="wf-dl">the door</span> Every claim anchored to bytes or to a computation that can be re-run. A map that agrees with everyone has not been made.</p></article><article class="wf-state" id="defined" style="border-left-color:#0d9488"><h4>Defined <span class="bd-badge bd-done">2 through</span></h4><p class="wf-meta"><span class="wf-stage">stage 3</span> &middot; advanced by <b>@editor</b></p><p class="bd-desc">The candidates, or the deliverable itself, exist.</p><p class="wf-door"><span class="wf-dl">the door</span> Built only from the estate's own counted vocabulary, with what each option costs stated beside it.</p></article><article class="wf-state" id="reviewed" style="border-left-color:#0d9488"><h4>Reviewed <span class="bd-badge bd-done">2 through</span></h4><p class="wf-meta"><span class="wf-stage">stage 4</span> &middot; advanced by <b>@qa</b></p><p class="bd-desc">The opinions are in, each from its role's own centre of gravity.</p><p class="wf-door"><span class="wf-dl">the door</span> Every role with a voice has spoken, and each has said what it would refuse. A round of agreement is not a review.</p></article></div></section>
+<section class="wf-lane"><h3 style="border-bottom-color:#d97706">Decide</h3><div class="wf-cards"><article class="wf-state wf-shut" id="approved" style="border-left-color:#d97706"><h4>Approved <span class="bd-badge bd-blocked">door shut</span></h4><p class="wf-meta"><span class="wf-stage">stage 5</span> &middot; advanced by <b>the founder</b></p><p class="bd-desc">The founder has decided. No role approves; the team proposes and the founder chooses.</p><p class="wf-door"><span class="wf-dl">the door</span> The founder answers. There is no substitute, no timeout and no default, which is the point of separating proposing from choosing.</p><p class="wf-at"><b>2</b> waiting: <code>WS-01</code>, <code>WS-02</code></p></article></div></section>
+<section class="wf-lane"><h3 style="border-bottom-color:#65a30d">Ship</h3><div class="wf-cards"><article class="wf-state" id="implemented" style="border-left-color:#65a30d"><h4>Implemented <span class="bd-badge bd-queued">nothing yet</span></h4><p class="wf-meta"><span class="wf-stage">stage 6</span> &middot; advanced by <b>@writer</b></p><p class="bd-desc">The change is made, in the source of truth rather than in a projection of it.</p><p class="wf-door"><span class="wf-dl">the door</span> Both gates green: the unit suite and the release validator. Neither is advisory.</p></article><article class="wf-state" id="accepted" style="border-left-color:#65a30d"><h4>Accepted <span class="bd-badge bd-queued">nothing yet</span></h4><p class="wf-meta"><span class="wf-stage">stage 7</span> &middot; advanced by <b>the founder</b></p><p class="bd-desc">The founder confirms that what was built is what was approved.</p><p class="wf-door"><span class="wf-dl">the door</span> The founder reads the result on the live site, not the description of it.</p></article><article class="wf-state" id="shipped" style="border-left-color:#65a30d"><h4>Shipped <span class="bd-badge bd-queued">nothing yet</span></h4><p class="wf-meta"><span class="wf-stage dim">outside the seven</span> &middot; advanced by <b>@publisher</b></p><p class="bd-desc">Narrated, tagged, deployed, and readable by anyone.</p><p class="wf-door"><span class="wf-dl">the door</span> A row in the version table saying what changed and why, and green CI. Terminal.</p></article></div></section>
+
+<h2 id="reading">How to read a shut door</h2>
+<p>A door with nothing through it is not a criticism of whoever owns it. It is the honest shape of the process at this moment, and it is worth drawing for the reason the sibling site gives: before their state map existed, one shut door was four separate caveats on four separate pages. Ours was the same &mdash; the same fact was stated on the board, in two pack records, in the issue tree and in four replies.</p>
+<p><b>What a shut door does NOT mean is that nothing downstream has happened.</b> It means nothing has passed <em>through the workflow</em>. Work can and does go around a shut door, and when it does, the map shows the door still shut while the release table shows the change shipped. That gap is the useful part: it says the process and the practice have diverged, and which of the two to fix is a decision rather than a bug.</p>
+
+<div class="agent">
+<h4>For an agent</h4>
+<p><a href="workflow.json">workflow.json</a> is the machine surface: <code>id</code>, <code>label</code>, <code>lane</code>, <code>seq</code>, <code>stage</code>, <code>owner</code>, <code>means</code>, <code>door</code> and <code>exits</code>. The occupancy fields on this page (<code>at</code>, <code>passed</code>, <code>shut</code>) are computed at build time from the board and are not in the file &mdash; read them from the board rather than caching them here. To add a state, add it to <code>workflow.json</code> with its door and its exits; the build refuses a state with no door, an exit that names nothing, or a stage sequence that disagrees with the declared workflow.</p>
+</div>
+
 </main>
 
 <footer class="site"><div class="cols">
@@ -195,8 +214,5 @@
     <a href="../../llms.txt">llms.txt</a>
   </div>
 </div></footer>
-<script>window.FILEX = {"slug": "agentic-workflows", "folders": [{"label": "docs/agentic-workflows", "base": "docs/agentic-workflows", "files": [{"n": "README.md", "b": 2270}, {"n": "crossrefs.json", "b": 4407}, {"n": "extraction.json", "b": 41408}, {"n": "ids.json", "b": 28201}, {"n": "source.md", "b": 20910}]}, {"label": "data/core/agentic-workflows", "base": "data/core/agentic-workflows", "files": [{"n": "fmt.json", "b": 30745}, {"n": "index.json", "b": 11516}, {"n": "sec-01.json", "b": 2168}, {"n": "sec-02.json", "b": 3804}, {"n": "sec-03.json", "b": 2675}, {"n": "sec-04.json", "b": 5454}, {"n": "sec-05.json", "b": 3787}, {"n": "sec-06.json", "b": 6473}, {"n": "sec-07.json", "b": 2299}, {"n": "sec-08.json", "b": 2020}, {"n": "sec-09.json", "b": 2656}, {"n": "sec-10.json", "b": 3348}, {"n": "sec-11.json", "b": 2627}, {"n": "sec-12.json", "b": 1811}, {"n": "sec-13.json", "b": 3187}, {"n": "sec-14.json", "b": 2630}, {"n": "sec-15.json", "b": 2232}, {"n": "sec-16.json", "b": 2290}, {"n": "sec-17.json", "b": 2035}, {"n": "sec-18.json", "b": 3208}, {"n": "sec-19.json", "b": 3233}, {"n": "sec-20.json", "b": 2303}, {"n": "sec-21.json", "b": 1956}, {"n": "sec-22.json", "b": 2216}, {"n": "sec-23.json", "b": 2039}, {"n": "sec-24.json", "b": 1645}, {"n": "sec-25.json", "b": 1634}, {"n": "sec-26.json", "b": 4154}, {"n": "sec-27.json", "b": 1469}, {"n": "sec-28.json", "b": 2482}, {"n": "sec-29.json", "b": 2307}, {"n": "sec-30.json", "b": 1933}, {"n": "sec-31.json", "b": 13127}, {"n": "tokens.json", "b": 66920}, {"n": "words.json", "b": 189281}]}]};</script>
-<script src="../../assets/vendor/marked.min.js"></script>
-<script type="module" src="../../assets/universe-files.js"></script>
 </body>
 </html>

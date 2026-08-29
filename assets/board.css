@@ -115,3 +115,26 @@
 .fg-meta th { text-align: left; width: 11rem; color: #667; font-weight: 600; font-size: .72rem;
   letter-spacing: .02em; text-transform: uppercase; }
 .fg-meta td, .fg-meta th { padding: .28rem .5rem; vertical-align: top; }
+
+/* the state map: lanes of states, each with its door */
+.wf-lane { margin: 1.4rem 0; }
+.wf-lane h3 { font-size: .8rem; letter-spacing: .05em; text-transform: uppercase; color: #556;
+  margin: 0 0 .6rem; padding-bottom: .3rem; border-bottom: 2px solid #ccc; }
+.wf-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr)); gap: .7rem; }
+.wf-state { border: 1px solid var(--line2, #e5e5e5); border-left: 4px solid #8b93a7;
+  border-radius: 8px; padding: .6rem .75rem; background: #fff; }
+.wf-state.wf-shut { background: rgba(179,38,30,.035); border-color: rgba(179,38,30,.3); }
+.wf-state h4 { font-size: .88rem; margin: 0 0 .2rem; display: flex; gap: .5rem;
+  align-items: baseline; flex-wrap: wrap; }
+.wf-meta { font-size: .68rem; color: #778; margin: 0 0 .4rem; }
+.wf-stage { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .64rem;
+  background: rgba(0,0,0,.05); padding: .05rem .35rem; border-radius: 4px; }
+.wf-door { font-size: .74rem; color: #445; margin: .45rem 0 0; line-height: 1.45;
+  border-top: 1px dashed var(--line2, #ddd); padding-top: .4rem; }
+.wf-dl { font-size: .6rem; letter-spacing: .06em; text-transform: uppercase; color: #a15c00;
+  margin-right: .35rem; font-weight: 700; }
+.wf-at { font-size: .72rem; color: #b3261e; margin: .4rem 0 0; }
+.wf-finding { border: 1px solid rgba(179,38,30,.35); background: rgba(179,38,30,.04);
+  border-radius: 10px; padding: .8rem 1rem; margin: 1.2rem 0; }
+.wf-finding h3 { margin: 0 0 .4rem; font-size: 1rem; color: #8c1d18; }
+.wf-finding p { margin: .3rem 0; }

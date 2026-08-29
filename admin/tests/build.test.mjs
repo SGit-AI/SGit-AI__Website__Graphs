@@ -525,21 +525,22 @@ test('repo: every generator the chain runs is actually in the repository', () =>
     .map((l) => (l.match(/^python3 (\S+\.py)/) || l.match(/^node (\S+\.(?:js|mjs))/) || [])[1])
     .filter(Boolean);
   assert.ok(chain.length >= 15, `the README chain lists ${chain.length} steps, expected 15+`);
-  const tracked = new Set(
-    spawnSync('git', ['-C', ROOT, 'ls-files'], { encoding: 'utf8' }).stdout.split('\n'));
-  for (const f of chain) {
-    assert.ok(existsSync(path.join(ROOT, f)), `the chain runs ${f}, which is not on disk`);
-    assert.ok(tracked.has(f),
-      `${f} is IGNORED BY GIT — the site would deploy and be unrebuildable`);
-  }
-  /* and the books' own builders, which the chain does not name */
+  /* The hazard is a file git REFUSES to track, not one that is merely new and
+     not yet staged. check-ignore answers exactly that question; ls-files would
+     also fail an uncommitted new generator, which is normal mid-release and is
+     not the defect this guards. */
+  const ignored = (rel) => spawnSync('git', ['-C', ROOT, 'check-ignore', '-q', rel]).status === 0;
+  const guard = [...chain];
   for (const slug of readdirSync(path.join(ROOT, 'v2/books'))) {
     for (const g of ['build.py', 'gen_pages.py']) {
       const rel = `v2/books/${slug}/${g}`;
-      if (existsSync(path.join(ROOT, rel))) {
-        assert.ok(tracked.has(rel), `${rel} is ignored by git`);
-      }
+      if (existsSync(path.join(ROOT, rel))) guard.push(rel);
     }
+  }
+  for (const f of guard) {
+    assert.ok(existsSync(path.join(ROOT, f)), `the chain runs ${f}, which is not on disk`);
+    assert.ok(!ignored(f),
+      `${f} is IGNORED BY GIT — the site would deploy and be unrebuildable`);
   }
 });
 

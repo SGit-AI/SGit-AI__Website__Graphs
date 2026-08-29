@@ -1,0 +1,142 @@
+{
+ "note": "The states a change moves through here, each naming the ONE role that can advance it and the DOOR the next role will not take the work without. Authored: a state's meaning and its door are judgements. NOT authored: which states are occupied, which have ever been passed, and therefore which doors are shut — those are counted from the board on every build. Seven of the nine states carry a stage of the seven-stage change control declared in admin/build/gen_board.py, and a gate refuses a build where the two disagree.",
+ "lanes": [
+  {
+   "id": "propose",
+   "label": "Propose",
+   "colour": "#6366f1"
+  },
+  {
+   "id": "establish",
+   "label": "Establish",
+   "colour": "#0d9488"
+  },
+  {
+   "id": "decide",
+   "label": "Decide",
+   "colour": "#d97706"
+  },
+  {
+   "id": "ship",
+   "label": "Ship",
+   "colour": "#65a30d"
+  }
+ ],
+ "states": [
+  {
+   "id": "raised",
+   "label": "Raised",
+   "lane": "propose",
+   "seq": 0,
+   "stage": null,
+   "owner": "@librarian",
+   "means": "A memo, a reading or a gate failure has named something that might change.",
+   "door": "It is written down verbatim where it can be checked: a brief, a review item or an issue file. A thing said in passing has not been raised.",
+   "exits": [
+    "planned"
+   ]
+  },
+  {
+   "id": "planned",
+   "label": "Planned",
+   "lane": "propose",
+   "seq": 1,
+   "stage": "plan",
+   "owner": "@librarian",
+   "means": "Which roles have a voice on this, and which are only asked for an opinion.",
+   "door": "The split is recorded BEFORE any opinion is written. Deciding afterwards who had a voice is deciding the answer.",
+   "exits": [
+    "mapped"
+   ]
+  },
+  {
+   "id": "mapped",
+   "label": "Mapped",
+   "lane": "establish",
+   "seq": 2,
+   "stage": "map",
+   "owner": "@researcher",
+   "means": "What the thing actually is, counted rather than argued.",
+   "door": "Every claim anchored to bytes or to a computation that can be re-run. A map that agrees with everyone has not been made.",
+   "exits": [
+    "defined"
+   ]
+  },
+  {
+   "id": "defined",
+   "label": "Defined",
+   "lane": "establish",
+   "seq": 3,
+   "stage": "define",
+   "owner": "@editor",
+   "means": "The candidates, or the deliverable itself, exist.",
+   "door": "Built only from the estate's own counted vocabulary, with what each option costs stated beside it.",
+   "exits": [
+    "reviewed"
+   ]
+  },
+  {
+   "id": "reviewed",
+   "label": "Reviewed",
+   "lane": "establish",
+   "seq": 4,
+   "stage": "review",
+   "owner": "@qa",
+   "means": "The opinions are in, each from its role's own centre of gravity.",
+   "door": "Every role with a voice has spoken, and each has said what it would refuse. A round of agreement is not a review.",
+   "exits": [
+    "approved"
+   ]
+  },
+  {
+   "id": "approved",
+   "label": "Approved",
+   "lane": "decide",
+   "seq": 5,
+   "stage": "approve",
+   "owner": "the founder",
+   "means": "The founder has decided. No role approves; the team proposes and the founder chooses.",
+   "door": "The founder answers. There is no substitute, no timeout and no default, which is the point of separating proposing from choosing.",
+   "exits": [
+    "implemented"
+   ]
+  },
+  {
+   "id": "implemented",
+   "label": "Implemented",
+   "lane": "ship",
+   "seq": 6,
+   "stage": "implement",
+   "owner": "@writer",
+   "means": "The change is made, in the source of truth rather than in a projection of it.",
+   "door": "Both gates green: the unit suite and the release validator. Neither is advisory.",
+   "exits": [
+    "accepted"
+   ]
+  },
+  {
+   "id": "accepted",
+   "label": "Accepted",
+   "lane": "ship",
+   "seq": 7,
+   "stage": "approve the implementation",
+   "owner": "the founder",
+   "means": "The founder confirms that what was built is what was approved.",
+   "door": "The founder reads the result on the live site, not the description of it.",
+   "exits": [
+    "shipped"
+   ]
+  },
+  {
+   "id": "shipped",
+   "label": "Shipped",
+   "lane": "ship",
+   "seq": 8,
+   "stage": null,
+   "owner": "@publisher",
+   "means": "Narrated, tagged, deployed, and readable by anyone.",
+   "door": "A row in the version table saying what changed and why, and green CI. Terminal.",
+   "exits": []
+  }
+ ]
+}

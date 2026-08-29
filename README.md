@@ -81,6 +81,7 @@ python3 admin/build/gen_bookmeta.py      # book.json: each book's own version an
 python3 admin/build/gen_bookgraph.py     # a book decomposed to the word (book -> chapter -> ... -> word)
 python3 admin/build/gen_board.py         # the making-of book's project board (board.html)
 python3 admin/build/gen_issues.py        # the team's issue tree explorer (v2/team/issues.html)
+python3 admin/build/gen_workflow.py      # the state map (v2/team/workflow.html; run after gen_board)
 python3 admin/build/gen_figures.py       # the figure graph and viewer (figures/index.json + figures.html)
 python3 admin/build/gen_reviews.py       # the book's review register (reviews.html)
 python3 admin/build/gen_bookdiff.py      # the book's version diff (needs tags fetched)

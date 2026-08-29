@@ -80,7 +80,7 @@ PAGE = """<!doctype html>
 <p class="lead">Each role's own work plan, kept as files it owns: <b>{open} open, {blocked} blocked, {done} done</b> across {roles} roles. <b>The status is the folder.</b> There is no status field to forget, and moving an issue is <code>git mv</code>. Four operations, no tool, and none needed: this is the <a href="https://issues-fs.sgit.ai/lite/index.html">Issues-FS-lite</a> pattern, from the project the three February 2026 documents in this estate's corpus were written for.</p>
 
 <div class="note"><b>The writer rule.</b> You may <em>read</em> another role's folder. You must <b>not write into it</b>. Tasks arrive by request, not by being filed on someone else's behalf, and a role that edits another's work plan has taken a decision that was not its to take. No build can check this; the diff can. <br>
-<b>What the layout gives away for free.</b> <code>find v2/team -path '*/issues/open/*.md'</code> is a whole-team status view with no tooling at all. The table below is that command, rendered. The counts feed the making-of book's <a href="../books/making-a-book/board.html">project board</a>, which reads these files rather than holding its own copy.</div>
+<b>What the layout gives away for free.</b> <code>find v2/team -path '*/issues/open/*.md'</code> is a whole-team status view with no tooling at all. The table below is that command, rendered. The counts feed the making-of book's <a href="../books/making-a-book/board.html">project board</a>, which reads these files rather than holding its own copy, and <a href="workflow.html">the state map</a> shows the doors this work has to pass.</div>
 
 <div id="filex" class="fx"></div>
 

@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.18</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.19</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -153,6 +153,16 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.6.19</td>
+        <td>29 August 2026</td>
+        <td><b>The state map, and the door nothing has ever passed.</b> Borrowed from <a href="https://newsroom.sgit.ai/briefs/10__the-newsroom-floor.md">newsroom.sgit.ai's brief 10</a> &sect;8, which reports that the state map turned out more useful than the room it was built beside, for a reason worth repeating: <b>modelling doors makes one fact impossible to keep soft</b>.
+        <b><a href="../v2/team/workflow.html">Nine states</a></b>, each naming the one role that can advance it and the <b>door</b> the next role will not take the work without. Seven carry a stage of the seven-stage change control; <em>raised</em> and <em>shipped</em> sit outside it, because work exists before the workflow starts and after it ends.
+        <b>The finding, computed rather than written down: <em>approved</em> has two items waiting and nothing has ever passed through it.</b> A door is shut when work is waiting at it and nothing has gone through, and both halves are read off the board on every build. Everything downstream &mdash; <em>implemented</em>, <em>accepted</em> &mdash; has therefore never been entered by any pack. <b>That does not mean nothing has shipped.</b> The retitle shipped at v0.6.9 while its pack sat at stage 5, which means it went <em>around</em> the workflow rather than through it, and the map says so: the gap between the process and the practice is the useful part, and which of the two to fix is a decision rather than a bug. Before this page, that fact was stated on the board, in two pack records, in the issue tree and in four replies.
+        <b>The gate is the brief's &sect;7, generalised:</b> every visual claim needs a check that re-derives it from the source. This page draws an order, so the seven stage-bearing states must match, in sequence, the stages <code>gen_board.py</code> declares. Reorder one and forget the other and the build fails. Three more ran red first: an exit naming nothing, a state with no door, and an owner who is not a role.
+        <b>And a hazard found while building it, worth its own line.</b> This is the estate's first cross-generator import, and a plain <code>import gen_board</code> read a <b>stale <code>__pycache__</code></b> and passed the gate against a declaration no longer on disk. <b>A gate that can be fed yesterday's constants is not a gate.</b> It now loads the declaration from source on every run and writes no bytecode.
+        <b>And yesterday's gate caught this release's own generator</b>, correctly in spirit and imprecisely in fact: it compared against <code>git ls-files</code>, which fails a new file that is simply not staged yet. It now asks <code>git check-ignore</code>, which is the actual hazard &mdash; a file git <em>refuses</em> to track, not one that is merely new. Re-proved by ignoring the new generator by name. 132 tests.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.6.18</td>
         <td>29 August 2026</td>
@@ -309,7 +319,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.6.18</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.19</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

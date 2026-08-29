@@ -339,4 +339,76 @@ test('diff: one snapshot per book version, keyed the way the differ reads', () =
   assert.ok(changed.includes('intro'), 'the retitle changed the front matter');
 });
 
+/* ---- the state map (v0.6.19) --------------------------------------------- */
+test('workflow: the state machine is closed and every state has a door', () => {
+  const wf = JSON.parse(readFileSync(path.join(ROOT, 'v2/team/workflow.json'), 'utf8'));
+  const ids = new Set(wf.states.map((s) => s.id));
+  const lanes = new Set(wf.lanes.map((l) => l.id));
+  const last = Math.max(...wf.states.map((s) => s.seq));
+  const seqs = new Set();
+  for (const s of wf.states) {
+    assert.ok(s.door && s.door.length > 20, `${s.id}: a state nobody has to pass is a label`);
+    assert.ok(s.means, `${s.id}: has no meaning`);
+    assert.ok(lanes.has(s.lane), `${s.id}: lane ${s.lane} is not declared`);
+    assert.ok(!seqs.has(s.seq), `two states at seq ${s.seq}`);
+    seqs.add(s.seq);
+    for (const e of s.exits) assert.ok(ids.has(e), `${s.id} exits to ${e}, which is not a state`);
+    if (s.seq !== last) assert.ok(s.exits.length > 0, `${s.id} is not terminal and has no exit`);
+    /* every owner is a real role folder, or the founder, who is not a role */
+    if (s.owner !== 'the founder') {
+      assert.ok(existsSync(path.join(TEAM, s.owner.slice(1), 'role.md')),
+        `${s.id}: owner ${s.owner} is not a role`);
+    }
+  }
+  /* every state is reachable from the first */
+  const seen = new Set(['raised']);
+  let grew = true;
+  while (grew) {
+    grew = false;
+    for (const s of wf.states) {
+      if (!seen.has(s.id)) continue;
+      for (const e of s.exits) if (!seen.has(e)) { seen.add(e); grew = true; }
+    }
+  }
+  assert.equal(seen.size, wf.states.length, 'a state is unreachable from raised');
+});
+
+test('workflow: the drawing matches the declared pipeline', () => {
+  /* newsroom brief 10 §7 generalised: every visual claim needs a check that
+     re-derives it from the source. This map draws an order; the change-control
+     workflow declares one; they must be the same order. */
+  const wf = JSON.parse(readFileSync(path.join(ROOT, 'v2/team/workflow.json'), 'utf8'));
+  const drawn = wf.states.slice().sort((a, b) => a.seq - b.seq)
+    .map((s) => s.stage).filter(Boolean);
+  const src = readFileSync(path.join(ROOT, 'admin/build/gen_board.py'), 'utf8');
+  const m = src.match(/STAGES = \[([\s\S]*?)\]/);
+  assert.ok(m, 'gen_board.py no longer declares STAGES');
+  const declared = [...m[1].matchAll(/"([^"]+)"/g)].map((x) => x[1]);
+  assert.deepEqual(drawn, declared,
+    'the state map draws a process the change-control workflow does not declare');
+});
+
+test('workflow: the shut door is counted from the board, not asserted', () => {
+  /* the page says a door is shut; this re-derives it the same way the page did */
+  const wf = JSON.parse(readFileSync(path.join(ROOT, 'v2/team/workflow.json'), 'utf8'));
+  const stages = wf.states.filter((s) => s.stage).sort((a, b) => a.seq - b.seq);
+  const board = load('workstreams');
+  const stageTitles = new Set(stages.map((s) => s.stage));
+  let waiting = 0, through = 0;
+  for (const w of board.workstreams) {
+    const its = w.tasks.filter((t) => stageTitles.has(t.title.split('. ').pop()));
+    if (its.length !== stages.length) continue;           /* not a seven-stage pack */
+    const approve = its.find((t) => t.title.endsWith('approve'));
+    const after = its.filter((t) => t.title.match(/^[67]\./));
+    if (approve.status !== 'done') waiting += 1;
+    if (after.some((t) => t.status === 'done')) through += 1;
+  }
+  assert.ok(waiting > 0, 'no pack is waiting at approve — the finding has changed, regenerate');
+  assert.equal(through, 0, 'something has passed approve — the page must stop saying it is shut');
+  const html = readFileSync(path.join(TEAM, 'workflow.html'), 'utf8');
+  assert.ok(html.includes('nothing has ever passed through it'), 'the page states the finding');
+  assert.ok(html.includes(`<b>${waiting}</b> item(s) waiting`),
+    `the page must say ${waiting} waiting — rerun gen_workflow.py`);
+});
+
 await report('board');
