@@ -514,4 +514,33 @@ test('chrome: nothing hard-codes the sticky nav height', () => {
   assert.ok(nav.includes('ResizeObserver'), 'and refresh it when the row wraps');
 });
 
+test('repo: every generator the chain runs is actually in the repository', () => {
+  /* A generated site can be green, deployed and completely unrebuildable at the
+     same time, and nothing in a normal build will tell you: a bare `build/` in a
+     Python .gitignore matches at every depth. It hit admin/build/ here once and
+     took a sibling site's entire generator with it. The rule is anchored to the
+     root now; this checks the outcome rather than the rule. */
+  const chain = readFileSync(path.join(ROOT, 'README.md'), 'utf8')
+    .split('\n')
+    .map((l) => (l.match(/^python3 (\S+\.py)/) || l.match(/^node (\S+\.(?:js|mjs))/) || [])[1])
+    .filter(Boolean);
+  assert.ok(chain.length >= 15, `the README chain lists ${chain.length} steps, expected 15+`);
+  const tracked = new Set(
+    spawnSync('git', ['-C', ROOT, 'ls-files'], { encoding: 'utf8' }).stdout.split('\n'));
+  for (const f of chain) {
+    assert.ok(existsSync(path.join(ROOT, f)), `the chain runs ${f}, which is not on disk`);
+    assert.ok(tracked.has(f),
+      `${f} is IGNORED BY GIT — the site would deploy and be unrebuildable`);
+  }
+  /* and the books' own builders, which the chain does not name */
+  for (const slug of readdirSync(path.join(ROOT, 'v2/books'))) {
+    for (const g of ['build.py', 'gen_pages.py']) {
+      const rel = `v2/books/${slug}/${g}`;
+      if (existsSync(path.join(ROOT, rel))) {
+        assert.ok(tracked.has(rel), `${rel} is ignored by git`);
+      }
+    }
+  }
+});
+
 await report('build');

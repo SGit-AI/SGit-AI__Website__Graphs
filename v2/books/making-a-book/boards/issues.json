@@ -1,6 +1,6 @@
 {
  "schema": "project-issues-v1",
- "version": "v0.6.17",
+ "version": "v0.6.18",
  "note": "Read from v2/team/<role>/issues/, where the folder a file sits in IS its status. Not authored here: to move one, git mv it.",
  "issues": [
   {
@@ -38,6 +38,15 @@
    "owner": "@developer",
    "description": "From the founder, reading a screenshot taken at v0.6.15 — \"can you see the bug\".",
    "href": "../../../v2/team/developer/issues/done/004-the-sticky-nav-hid-content-it-scrolled-to.md"
+  },
+  {
+   "id": "@developer-005",
+   "title": "A bare `build/` in .gitignore matches at every depth",
+   "status": "resolved",
+   "priority": "high",
+   "owner": "@developer",
+   "description": "From newsroom.sgit.ai brief 10 §11, which lost its entire generator to this line.",
+   "href": "../../../v2/team/developer/issues/done/005-a-bare-build-rule-matches-at-every-depth.md"
   },
   {
    "id": "@editor-001",

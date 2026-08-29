@@ -1,6 +1,6 @@
 {
  "schema": "project-workstreams-v2",
- "version": "v0.6.17",
+ "version": "v0.6.18",
  "title": "Workstreams and tasks",
  "note": "A change-control pack is a workstream and its seven stages are its tasks. Click a card for the stages.",
  "workstreams": [

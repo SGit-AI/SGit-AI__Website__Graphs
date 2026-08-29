@@ -8,7 +8,14 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+# A BARE `build/` MATCHES AT EVERY DEPTH. This line is here for Python packaging
+# artefacts, which appear at the repository root and nowhere else, so it is anchored
+# to the root. Left unanchored it silently excluded admin/build/ once already, which
+# is why the re-include below exists; a sibling site lost its ENTIRE generator to the
+# same line and did not notice, because the generated HTML was committed and kept
+# deploying. Anchoring it fixes the class rather than one more instance. The
+# re-include stays as belt and braces, and a test checks every generator is tracked.
+/build/
 # ...but the site build tooling is versioned (validate.js, chrome.py, version.txt)
 !admin/build/
 develop-eggs/

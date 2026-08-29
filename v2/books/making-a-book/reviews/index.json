@@ -1,6 +1,6 @@
 {
  "schema": "book-reviews-v1",
- "version": "v0.6.17",
+ "version": "v0.6.18",
  "book": "making-a-book",
  "book_version": "v0.2.0",
  "title": "Creating a Book Using Agentic Workflows",
