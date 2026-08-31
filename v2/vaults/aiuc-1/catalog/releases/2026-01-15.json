@@ -17,7 +17,7 @@
   "release_id": "2026-01-15",
   "published_at": "2026-01-15",
   "published_label": "January 15, 2026",
-  "retrieved_at": "2026-08-31T23:03:23Z",
+  "retrieved_at": "2026-08-31T23:13:07Z",
   "status": "partial",
   "built_from": "official changelog repository only",
   "official_changelog_url": "https://www.aiuc-1.com/changelog/2026-01-15",
@@ -123,7 +123,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -205,7 +205,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -289,7 +289,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -374,7 +374,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -458,7 +458,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -542,7 +542,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -627,7 +627,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -713,7 +713,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -799,7 +799,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -883,7 +883,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -967,7 +967,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -1053,7 +1053,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -1135,7 +1135,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -1218,7 +1218,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -1303,7 +1303,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -1387,7 +1387,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -1471,7 +1471,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -1557,7 +1557,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -1642,7 +1642,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -1726,7 +1726,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -1811,7 +1811,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -1895,7 +1895,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -1979,7 +1979,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -2063,7 +2063,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -2148,7 +2148,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -2231,7 +2231,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -2314,7 +2314,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -2397,7 +2397,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -2481,7 +2481,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -2564,7 +2564,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -2650,7 +2650,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -2733,7 +2733,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -2817,7 +2817,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -2902,7 +2902,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -2987,7 +2987,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -3071,7 +3071,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -3154,7 +3154,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -3237,7 +3237,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -3318,7 +3318,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -3403,7 +3403,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -3485,7 +3485,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -3572,7 +3572,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -3656,7 +3656,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -3739,7 +3739,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -3825,7 +3825,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -3904,7 +3904,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -3988,7 +3988,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -4073,7 +4073,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -4158,7 +4158,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -4241,7 +4241,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -4324,7 +4324,7 @@
     "extraction": {
      "method": "official_changelog_markdown_parse",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:03:23Z",
+     "extracted_at": "2026-08-31T23:13:07Z",
      "confirmed_by_own_page": false,
      "review_status": "approved"
     }
@@ -5929,13 +5929,13 @@
  "provenance": {
   "generator_version": "0.1.0",
   "parser_version": "0.1.0",
-  "generated_at": "2026-08-31T23:03:23Z",
+  "generated_at": "2026-08-31T23:13:07Z",
   "source_manifest": "../../evidence/source-manifest.json",
   "source_refs": [
    "src_2026_08_31_page_changelog_2026_01_15",
    "git:3f3ad186a434fb4a444c737f5e265c6247831b42"
   ],
-  "content_hash": "sha256:203b6b6fc8275b02e4b022f888a2669adf4cc4d34a7de78f659bee4097bc7523"
+  "content_hash": "sha256:b1f812f4f82ce5eae3c39c26731abae944c732e2afccced9d1c27fe0d474e764"
  },
  "validation": {
   "schema_valid": true,

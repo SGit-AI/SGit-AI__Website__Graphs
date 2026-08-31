@@ -51,9 +51,18 @@ python3 src/drift.py        # re-fetch and report drift against the recorded man
 
 The chain is: `discover_sources` → `fetch_sources` → `parse_pages` →
 `parse_changelog` → `normalize_catalog` → `diff_releases` → `build_graph` →
-`validate`. Each stage runs on its own; `src/build.py` runs them in order. A
-rebuild from the same snapshots and the same generator version produces the same
-bytes.
+`validate`. Each stage runs on its own; `src/build.py` runs them in order.
+
+Rebuilds are reproducible, with one honest caveat: the artefacts carry the run's own
+timestamps, so two runs differ in those fields. Pin the clock and they do not:
+
+```bash
+SOURCE_DATE_EPOCH=1788214000 python3 src/build.py    # byte-stable from the same snapshots
+```
+
+The `content_hash` on every release and the `normalized_content_hash` on every control
+are computed over the substance and not the timestamps, so they are stable either way —
+that is what makes them worth comparing.
 
 ## Where the bytes live
 

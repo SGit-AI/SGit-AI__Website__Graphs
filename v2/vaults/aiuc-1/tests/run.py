@@ -181,6 +181,45 @@ def _():
     assert graph['node_count'] == len(nodes)
 
 
+@test('the clock can be pinned, so a rebuild can be byte-stable')
+def _():
+    before = os.environ.get('SOURCE_DATE_EPOCH')
+    try:
+        os.environ['SOURCE_DATE_EPOCH'] = '1788214000'
+        assert c.now_iso() == '2026-08-31T22:06:40Z', c.now_iso()
+        assert c.now_iso() == c.now_iso()
+    finally:
+        os.environ.pop('SOURCE_DATE_EPOCH', None)
+        if before is not None:
+            os.environ['SOURCE_DATE_EPOCH'] = before
+    assert c.now_iso().endswith('Z')
+
+
+@test('a release content hash recomputes from the release it is stored on')
+def _():
+    index = c.read_json('catalog/index.json')
+    for entry in index['releases']:
+        if entry['status'] == 'unbuilt':
+            continue
+        document = c.read_json('catalog/releases/%s.json' % entry['release_id'])
+        stored = document['provenance']['content_hash']
+        assert stored.startswith('sha256:') and len(stored) == 71, stored
+        document['provenance']['content_hash'] = None
+        recomputed = c.sha256_json(document)
+        assert recomputed == stored, \
+            'the stored content hash does not cover the release as published: %s' % entry['release_id']
+        assert entry['content_hash'] == stored, \
+            'the index and the release disagree about the content hash of %s' % entry['release_id']
+
+
+@test('the release directory holds exactly the releases the index claims')
+def _():
+    index = c.read_json('catalog/index.json')
+    wanted = {'%s.json' % e['release_id'] for e in index['releases'] if e['status'] != 'unbuilt'}
+    on_disk = {n for n in os.listdir(os.path.join(ROOT, 'catalog/releases')) if n.endswith('.json')}
+    assert on_disk == wanted, 'stale or missing release artefacts: %r' % (on_disk ^ wanted)
+
+
 @test('every release artefact names the sources it was built from')
 def _():
     index = c.read_json('catalog/index.json')

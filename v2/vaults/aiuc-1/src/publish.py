@@ -179,9 +179,14 @@ def build():
         if os.path.isdir(source):
             shutil.copytree(source, os.path.join(VAULT, tree),
                             ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
-    total = sum(os.path.getsize(os.path.join(root, f))
-                for root, _, files in os.walk(VAULT) for f in files)
-    count = sum(len(files) for _, _, files in os.walk(VAULT))
+    def content():
+        for root, dirs, files in os.walk(VAULT):
+            dirs[:] = [d for d in dirs if d != '.sg_vault']
+            for name in files:
+                yield os.path.join(root, name)
+
+    total = sum(os.path.getsize(f) for f in content())
+    count = sum(1 for _ in content())
     return {'path': VAULT, 'files': count, 'bytes': total, 'html_bytes': len(html)}
 
 

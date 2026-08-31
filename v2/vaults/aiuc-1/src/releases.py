@@ -239,6 +239,14 @@ def build_all(build_control):
                                            'repository_controls': len(repo_controls)}))
 
     index_entries.sort(key=lambda x: x['release_id'], reverse=True)
+    # A release that stops being built must not leave its artefact behind claiming
+    # provenance nothing points at any more.
+    wanted = {'%s.json' % e['release_id'] for e in index_entries if e['status'] != 'unbuilt'}
+    release_dir = c.path('catalog/releases')
+    for name in sorted(os.listdir(release_dir)) if os.path.isdir(release_dir) else []:
+        if name.endswith('.json') and name not in wanted:
+            os.remove(os.path.join(release_dir, name))
+            lines.append('removed stale artefact catalog/releases/%s' % name)
     c.write_json('catalog/index.json', {
         'catalog_id': 'aiuc-1-derived-catalog',
         'catalog_schema_version': c.CATALOG_SCHEMA_VERSION,

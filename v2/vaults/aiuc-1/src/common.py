@@ -51,7 +51,16 @@ def sha256_json(obj):
 
 
 def now_iso():
-    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
+    """The build's clock. SOURCE_DATE_EPOCH pins it, so a rebuild can be byte-stable.
+
+    Without it the timestamps are the run's own, which is what a reader wants from a
+    live build; with it the whole chain is reproducible down to the byte, which is
+    what a checker wants.
+    """
+    stamp = os.environ.get('SOURCE_DATE_EPOCH')
+    when = (datetime.fromtimestamp(int(stamp), timezone.utc) if stamp
+            else datetime.now(timezone.utc))
+    return when.replace(microsecond=0).isoformat().replace('+00:00', 'Z')
 
 
 def normalize_text(value):

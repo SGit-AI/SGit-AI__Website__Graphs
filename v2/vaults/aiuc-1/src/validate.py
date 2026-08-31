@@ -197,9 +197,16 @@ def run():
             e for e in release_errors if e['level'] == 'traceability']
         if release_errors and document['release']['status'] == 'validated':
             document['release']['status'] = 'needs_review'
+            entry['status'] = 'needs_review'
+        # The content hash is stamped last, over the finished artefact, so it covers the
+        # change events and the validation verdict rather than an earlier draft of them.
+        document['provenance']['content_hash'] = None
+        document['provenance']['content_hash'] = c.sha256_json(document)
+        entry['content_hash'] = document['provenance']['content_hash']
         c.write_json('catalog/releases/%s.json' % entry['release_id'], document)
         if entry['release_id'] == index['current_release']:
             c.write_json('catalog/current.json', document)
+    c.write_json('catalog/index.json', index)
     return report
 
 
