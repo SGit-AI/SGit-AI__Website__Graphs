@@ -1,0 +1,103 @@
+{
+ "version": "v0.6.19",
+ "slug": "aiuc1-notice",
+ "doc": "doc:aiuc1-notice",
+ "title": "NOTICE",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 10,
+  "sentences": 14,
+  "words": 253,
+  "spans": 9
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:aiuc1-notice",
+   "title": "NOTICE",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "nt:d1"
+  },
+  {
+   "id": "sec:What this is",
+   "title": "What this is",
+   "level": 2,
+   "parent": "doc:aiuc1-notice",
+   "counts": {
+    "blocks": 1,
+    "sentences": 1,
+    "words": 19
+   },
+   "shard": "sec-01.json",
+   "uid": "nt:s1"
+  },
+  {
+   "id": "sec:What this is not",
+   "title": "What this is not",
+   "level": 2,
+   "parent": "doc:aiuc1-notice",
+   "counts": {
+    "blocks": 4,
+    "sentences": 5,
+    "words": 55
+   },
+   "shard": "sec-02.json",
+   "uid": "nt:s2"
+  },
+  {
+   "id": "sec:The official sources",
+   "title": "The official sources",
+   "level": 2,
+   "parent": "doc:aiuc1-notice",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 13
+   },
+   "shard": "sec-03.json",
+   "uid": "nt:s3"
+  },
+  {
+   "id": "sec:How the sources were used",
+   "title": "How the sources were used",
+   "level": 2,
+   "parent": "doc:aiuc1-notice",
+   "counts": {
+    "blocks": 2,
+    "sentences": 5,
+    "words": 138
+   },
+   "shard": "sec-04.json",
+   "uid": "nt:s4"
+  },
+  {
+   "id": "sec:Contact",
+   "title": "Contact",
+   "level": 2,
+   "parent": "doc:aiuc1-notice",
+   "counts": {
+    "blocks": 1,
+    "sentences": 2,
+    "words": 28
+   },
+   "shard": "sec-05.json",
+   "uid": "nt:s5"
+  }
+ ]
+}

@@ -1,0 +1,727 @@
+{
+ "version": "v0.6.19",
+ "slug": "aiuc1-requirements",
+ "doc": "doc:aiuc1-requirements",
+ "title": "Requirements",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 105,
+  "sentences": 53,
+  "words": 864,
+  "spans": 0
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:aiuc1-requirements",
+   "title": "Requirements",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ar:d1"
+  },
+  {
+   "id": "sec:A001: Establish input data policy",
+   "title": "A001: Establish input data policy",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 25
+   },
+   "shard": "sec-01.json",
+   "uid": "ar:s1"
+  },
+  {
+   "id": "sec:A002: Establish output data policy",
+   "title": "A002: Establish output data policy",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 16
+   },
+   "shard": "sec-02.json",
+   "uid": "ar:s2"
+  },
+  {
+   "id": "sec:A003: Limit AI agent data access",
+   "title": "A003: Limit AI agent data access",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 17
+   },
+   "shard": "sec-03.json",
+   "uid": "ar:s3"
+  },
+  {
+   "id": "sec:A004: Protect IP & trade secrets",
+   "title": "A004: Protect IP & trade secrets",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 17
+   },
+   "shard": "sec-04.json",
+   "uid": "ar:s4"
+  },
+  {
+   "id": "sec:A005: Prevent cross-customer data exposure",
+   "title": "A005: Prevent cross-customer data exposure",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 7
+   },
+   "shard": "sec-05.json",
+   "uid": "ar:s5"
+  },
+  {
+   "id": "sec:A006: Prevent PII leakage",
+   "title": "A006: Prevent PII leakage",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 12
+   },
+   "shard": "sec-06.json",
+   "uid": "ar:s6"
+  },
+  {
+   "id": "sec:A007: Prevent IP violations",
+   "title": "A007: Prevent IP violations",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 19
+   },
+   "shard": "sec-07.json",
+   "uid": "ar:s7"
+  },
+  {
+   "id": "sec:A008: Prevent leakage of credentials and secrets",
+   "title": "A008: Prevent leakage of credentials and secrets",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 18
+   },
+   "shard": "sec-08.json",
+   "uid": "ar:s8"
+  },
+  {
+   "id": "sec:B001: Third-party testing of adversarial robustness",
+   "title": "B001: Third-party testing of adversarial robustness",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 21
+   },
+   "shard": "sec-09.json",
+   "uid": "ar:s9"
+  },
+  {
+   "id": "sec:B002: Detect adversarial input",
+   "title": "B002: Detect adversarial input",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 15
+   },
+   "shard": "sec-10.json",
+   "uid": "ar:s10"
+  },
+  {
+   "id": "sec:B003: Manage public release of technical details",
+   "title": "B003: Manage public release of technical details",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 19
+   },
+   "shard": "sec-11.json",
+   "uid": "ar:s11"
+  },
+  {
+   "id": "sec:B004: Prevent AI endpoint scraping",
+   "title": "B004: Prevent AI endpoint scraping",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 11
+   },
+   "shard": "sec-12.json",
+   "uid": "ar:s12"
+  },
+  {
+   "id": "sec:B005: Implement real-time input filtering",
+   "title": "B005: Implement real-time input filtering",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 8
+   },
+   "shard": "sec-13.json",
+   "uid": "ar:s13"
+  },
+  {
+   "id": "sec:B006: Prevent unauthorized AI agent actions",
+   "title": "B006: Prevent unauthorized AI agent actions",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 15
+   },
+   "shard": "sec-14.json",
+   "uid": "ar:s14"
+  },
+  {
+   "id": "sec:B007: Enforce user access privileges to AI systems",
+   "title": "B007: Enforce user access privileges to AI systems",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 16
+   },
+   "shard": "sec-15.json",
+   "uid": "ar:s15"
+  },
+  {
+   "id": "sec:B008: Protect AI system deployment environment",
+   "title": "B008: Protect AI system deployment environment",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 14
+   },
+   "shard": "sec-16.json",
+   "uid": "ar:s16"
+  },
+  {
+   "id": "sec:B009: Limit output over-exposure",
+   "title": "B009: Limit output over-exposure",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 11
+   },
+   "shard": "sec-17.json",
+   "uid": "ar:s17"
+  },
+  {
+   "id": "sec:B010: Promote secure patterns in generated code",
+   "title": "B010: Promote secure patterns in generated code",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 13
+   },
+   "shard": "sec-18.json",
+   "uid": "ar:s18"
+  },
+  {
+   "id": "sec:C001: Define AI risk taxonomy",
+   "title": "C001: Define AI risk taxonomy",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 11
+   },
+   "shard": "sec-19.json",
+   "uid": "ar:s19"
+  },
+  {
+   "id": "sec:C002: Conduct pre-deployment testing",
+   "title": "C002: Conduct pre-deployment testing",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 20
+   },
+   "shard": "sec-20.json",
+   "uid": "ar:s20"
+  },
+  {
+   "id": "sec:C003: Prevent harmful outputs",
+   "title": "C003: Prevent harmful outputs",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 21
+   },
+   "shard": "sec-21.json",
+   "uid": "ar:s21"
+  },
+  {
+   "id": "sec:C004: Prevent out-of-scope outputs",
+   "title": "C004: Prevent out-of-scope outputs",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 15
+   },
+   "shard": "sec-22.json",
+   "uid": "ar:s22"
+  },
+  {
+   "id": "sec:C005: Prevent agent-specific high risk outputs",
+   "title": "C005: Prevent agent-specific high risk outputs",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 15
+   },
+   "shard": "sec-23.json",
+   "uid": "ar:s23"
+  },
+  {
+   "id": "sec:C006: Prevent output vulnerabilities",
+   "title": "C006: Prevent output vulnerabilities",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 11
+   },
+   "shard": "sec-24.json",
+   "uid": "ar:s24"
+  },
+  {
+   "id": "sec:C007: Flag high risk outputs for human review",
+   "title": "C007: Flag high risk outputs for human review",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 11
+   },
+   "shard": "sec-25.json",
+   "uid": "ar:s25"
+  },
+  {
+   "id": "sec:C008: Monitor AI risk categories",
+   "title": "C008: Monitor AI risk categories",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 8
+   },
+   "shard": "sec-26.json",
+   "uid": "ar:s26"
+  },
+  {
+   "id": "sec:C009: Enable real-time feedback and intervention",
+   "title": "C009: Enable real-time feedback and intervention",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 12
+   },
+   "shard": "sec-27.json",
+   "uid": "ar:s27"
+  },
+  {
+   "id": "sec:C010: Third-party testing for harmful outputs",
+   "title": "C010: Third-party testing for harmful outputs",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 28
+   },
+   "shard": "sec-28.json",
+   "uid": "ar:s28"
+  },
+  {
+   "id": "sec:C011: Third-party testing for out-of-scope outputs",
+   "title": "C011: Third-party testing for out-of-scope outputs",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 22
+   },
+   "shard": "sec-29.json",
+   "uid": "ar:s29"
+  },
+  {
+   "id": "sec:C012: Third-party testing for customer-defined risk",
+   "title": "C012: Third-party testing for customer-defined risk",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 21
+   },
+   "shard": "sec-30.json",
+   "uid": "ar:s30"
+  },
+  {
+   "id": "sec:D001: Prevent hallucinated outputs",
+   "title": "D001: Prevent hallucinated outputs",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 9
+   },
+   "shard": "sec-31.json",
+   "uid": "ar:s31"
+  },
+  {
+   "id": "sec:D002: Third-party testing for hallucinations",
+   "title": "D002: Third-party testing for hallucinations",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 12
+   },
+   "shard": "sec-32.json",
+   "uid": "ar:s32"
+  },
+  {
+   "id": "sec:D003: Restrict unsafe tool calls",
+   "title": "D003: Restrict unsafe tool calls",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 26
+   },
+   "shard": "sec-33.json",
+   "uid": "ar:s33"
+  },
+  {
+   "id": "sec:D004: Third-party testing of tool calls",
+   "title": "D004: Third-party testing of tool calls",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 29
+   },
+   "shard": "sec-34.json",
+   "uid": "ar:s34"
+  },
+  {
+   "id": "sec:E001: AI failure plan for security breaches",
+   "title": "E001: AI failure plan for security breaches",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 28
+   },
+   "shard": "sec-35.json",
+   "uid": "ar:s35"
+  },
+  {
+   "id": "sec:E002: AI failure plan for harmful outputs",
+   "title": "E002: AI failure plan for harmful outputs",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 29
+   },
+   "shard": "sec-36.json",
+   "uid": "ar:s36"
+  },
+  {
+   "id": "sec:E003: AI failure plan for hallucinations",
+   "title": "E003: AI failure plan for hallucinations",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 30
+   },
+   "shard": "sec-37.json",
+   "uid": "ar:s37"
+  },
+  {
+   "id": "sec:E004: Assign accountability",
+   "title": "E004: Assign accountability",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 28
+   },
+   "shard": "sec-38.json",
+   "uid": "ar:s38"
+  },
+  {
+   "id": "sec:E005: Document data storage security",
+   "title": "E005: Document data storage security",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 15
+   },
+   "shard": "sec-39.json",
+   "uid": "ar:s39"
+  },
+  {
+   "id": "sec:E006: Conduct vendor due diligence",
+   "title": "E006: Conduct vendor due diligence",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 20
+   },
+   "shard": "sec-40.json",
+   "uid": "ar:s40"
+  },
+  {
+   "id": "sec:E007: [Retired] Document system change approvals",
+   "title": "E007: [Retired] Document system change approvals",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 8
+   },
+   "shard": "sec-41.json",
+   "uid": "ar:s41"
+  },
+  {
+   "id": "sec:E008: Review internal processes",
+   "title": "E008: Review internal processes",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 13
+   },
+   "shard": "sec-42.json",
+   "uid": "ar:s42"
+  },
+  {
+   "id": "sec:E009: Monitor third-party access",
+   "title": "E009: Monitor third-party access",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 13
+   },
+   "shard": "sec-43.json",
+   "uid": "ar:s43"
+  },
+  {
+   "id": "sec:E010: Establish AI acceptable use policy",
+   "title": "E010: Establish AI acceptable use policy",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 8
+   },
+   "shard": "sec-44.json",
+   "uid": "ar:s44"
+  },
+  {
+   "id": "sec:E011: Record processing locations",
+   "title": "E011: Record processing locations",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 5
+   },
+   "shard": "sec-45.json",
+   "uid": "ar:s45"
+  },
+  {
+   "id": "sec:E012: Document regulatory compliance",
+   "title": "E012: Document regulatory compliance",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 13
+   },
+   "shard": "sec-46.json",
+   "uid": "ar:s46"
+  },
+  {
+   "id": "sec:E013: Implement quality management system",
+   "title": "E013: Implement quality management system",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 15
+   },
+   "shard": "sec-47.json",
+   "uid": "ar:s47"
+  },
+  {
+   "id": "sec:E014: [Retired] Share transparency reports",
+   "title": "E014: [Retired] Share transparency reports",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 8
+   },
+   "shard": "sec-48.json",
+   "uid": "ar:s48"
+  },
+  {
+   "id": "sec:E015: Log AI system activity",
+   "title": "E015: Log AI system activity",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 23
+   },
+   "shard": "sec-49.json",
+   "uid": "ar:s49"
+  },
+  {
+   "id": "sec:E016: Implement AI disclosure mechanisms",
+   "title": "E016: Implement AI disclosure mechanisms",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 17
+   },
+   "shard": "sec-50.json",
+   "uid": "ar:s50"
+  },
+  {
+   "id": "sec:E017: Document system transparency policy",
+   "title": "E017: Document system transparency policy",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 19
+   },
+   "shard": "sec-51.json",
+   "uid": "ar:s51"
+  },
+  {
+   "id": "sec:F001: Prevent AI cyber misuse",
+   "title": "F001: Prevent AI cyber misuse",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 13
+   },
+   "shard": "sec-52.json",
+   "uid": "ar:s52"
+  },
+  {
+   "id": "sec:F002: Prevent catastrophic misuse",
+   "title": "F002: Prevent catastrophic misuse",
+   "level": 2,
+   "parent": "doc:aiuc1-requirements",
+   "counts": {
+    "blocks": 1,
+    "sentences": 1,
+    "words": 14
+   },
+   "shard": "sec-53.json",
+   "uid": "ar:s53"
+  }
+ ]
+}

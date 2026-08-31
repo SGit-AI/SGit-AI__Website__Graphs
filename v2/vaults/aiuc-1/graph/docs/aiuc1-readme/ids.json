@@ -1,0 +1,240 @@
+{
+ "doc": "doc:aiuc1-readme",
+ "prefix": "rd",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 7,
+  "b": 20
+ },
+ "ids": [
+  {
+   "uid": "rd:d1",
+   "level": "doc",
+   "locator": "doc:aiuc1-readme",
+   "hash": "db3ddc2c0767",
+   "head": "AIUC-1, as a graph you can cite",
+   "status": "live"
+  },
+  {
+   "uid": "rd:s1",
+   "level": "sec",
+   "locator": "sec:What is here",
+   "hash": "3601b3556df8",
+   "head": "2|What is here",
+   "status": "live"
+  },
+  {
+   "uid": "rd:s2",
+   "level": "sec",
+   "locator": "sec:The layout",
+   "hash": "f82d2dc67584",
+   "head": "2|The layout",
+   "status": "live"
+  },
+  {
+   "uid": "rd:s3",
+   "level": "sec",
+   "locator": "sec:Building it",
+   "hash": "dedef2ba8aae",
+   "head": "2|Building it",
+   "status": "live"
+  },
+  {
+   "uid": "rd:s4",
+   "level": "sec",
+   "locator": "sec:Where the bytes live",
+   "hash": "2b5930f9c792",
+   "head": "2|Where the bytes live",
+   "status": "live"
+  },
+  {
+   "uid": "rd:s5",
+   "level": "sec",
+   "locator": "sec:The rules this build holds to",
+   "hash": "2dd3a55a4873",
+   "head": "2|The rules this build holds to",
+   "status": "live"
+  },
+  {
+   "uid": "rd:s6",
+   "level": "sec",
+   "locator": "sec:The terminology inversion, stated once",
+   "hash": "0d6f1ccd86eb",
+   "head": "2|The terminology inversion, stated once",
+   "status": "live"
+  },
+  {
+   "uid": "rd:s7",
+   "level": "sec",
+   "locator": "sec:Licence and attribution",
+   "hash": "055d2dd0462a",
+   "head": "2|Licence and attribution",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b1",
+   "level": "blk",
+   "locator": "blk:AIUC-1, as a graph you can cite/1",
+   "hash": "6715ad41cc2f",
+   "head": "An **unofficial, derivative** machine-readable catalog of the public AIUC-1 agen",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b2",
+   "level": "blk",
+   "locator": "blk:AIUC-1, as a graph you can cite/2",
+   "hash": "34ae37c680bf",
+   "head": "**This is not AIUC-1.** It is not approved, certified or endorsed by AIUC, it is",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b3",
+   "level": "blk",
+   "locator": "blk:What is here/1",
+   "hash": "f058fb468c10",
+   "head": "| | |\n|---|---|\n| **5 releases** | 2025-10-01, 2026-01-15, 2026-04-15, 2026-07-1",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b4",
+   "level": "blk",
+   "locator": "blk:What is here/2",
+   "hash": "a19483957126",
+   "head": "Numbers are the build's own, from `catalog/index.json`, `graph/index.json` and\n`",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b5",
+   "level": "blk",
+   "locator": "blk:The layout/1",
+   "hash": "3d488a4c4604",
+   "head": "```\ncatalog/        current.json, index.json, releases/<release-id>.json\nsources",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b6",
+   "level": "blk",
+   "locator": "blk:Building it/1",
+   "hash": "98dfd95c0ac6",
+   "head": "```bash\npython3 src/build.py        # the whole chain, in order, ending at the g",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b7",
+   "level": "blk",
+   "locator": "blk:Building it/2",
+   "hash": "3df8aa13ebfc",
+   "head": "The chain is: `discover_sources` → `fetch_sources` → `parse_pages` →\n`parse_chan",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b8",
+   "level": "blk",
+   "locator": "blk:Building it/3",
+   "hash": "30bfe463f3cd",
+   "head": "Rebuilds are reproducible, with one honest caveat: the artefacts carry the run's",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b9",
+   "level": "blk",
+   "locator": "blk:Building it/4",
+   "hash": "f8dd209fdac7",
+   "head": "```bash\nSOURCE_DATE_EPOCH=1788214000 python3 src/build.py    # byte-stable from ",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b10",
+   "level": "blk",
+   "locator": "blk:Building it/5",
+   "hash": "ea08c3a8a85b",
+   "head": "The `content_hash` on every release and the `normalized_content_hash` on every c",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b11",
+   "level": "blk",
+   "locator": "blk:Where the bytes live/1",
+   "hash": "ba6a5be24cc5",
+   "head": "The retained response bodies — one gzipped copy of every page this catalog was r",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b12",
+   "level": "blk",
+   "locator": "blk:Where the bytes live/2",
+   "hash": "7b0aac02e890",
+   "head": "What the repository does carry is every snapshot's **path and SHA-256**, in\n`evi",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b13",
+   "level": "blk",
+   "locator": "blk:The rules this build holds to/1",
+   "hash": "ae822f44afa9",
+   "head": "1. **Evidence, not compliance.** Nothing here says an organisation passes, fails",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b14",
+   "level": "blk",
+   "locator": "blk:The rules this build holds to/2",
+   "hash": "a55f6418bd84",
+   "head": "2. **Every claim names its source.** A non-null canonical field carries at least",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b15",
+   "level": "blk",
+   "locator": "blk:The rules this build holds to/3",
+   "hash": "77d7acca7326",
+   "head": "3. **Conflicts are preserved, not resolved.** Where the website and the official",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b16",
+   "level": "blk",
+   "locator": "blk:The rules this build holds to/4",
+   "hash": "fc6320ca01bf",
+   "head": "4. **Nothing is invented.** An enum exists only where the source publishes a lab",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b17",
+   "level": "blk",
+   "locator": "blk:The rules this build holds to/5",
+   "hash": "9e01e241720a",
+   "head": "5. **A connection this build proposed says so.** Structural edges are read from ",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b20",
+   "level": "blk",
+   "locator": "blk:The rules this build holds to/6",
+   "hash": "9e1bcb118f42",
+   "head": "6. **The parser fails closed.** If a page stops yielding the model this build re",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b18",
+   "level": "blk",
+   "locator": "blk:The terminology inversion, stated once/1",
+   "hash": "84015dc266f7",
+   "head": "AIUC-1 calls a top-level item a **requirement** (`A001`) and its numbered childr",
+   "status": "live"
+  },
+  {
+   "uid": "rd:b19",
+   "level": "blk",
+   "locator": "blk:Licence and attribution/1",
+   "hash": "cb4543b8b414",
+   "head": "The AIUC-1 content quoted, hashed and linked here belongs to AIUC. See `NOTICE.m",
+   "status": "live"
+  }
+ ]
+}

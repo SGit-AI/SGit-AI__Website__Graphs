@@ -1,0 +1,3088 @@
+{
+ "doc": "doc:aiuc1-controls",
+ "prefix": "ac",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 144,
+  "b": 239
+ },
+ "ids": [
+  {
+   "uid": "ac:d1",
+   "level": "doc",
+   "locator": "doc:aiuc1-controls",
+   "hash": "799c26913574",
+   "head": "Controls",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s1",
+   "level": "sec",
+   "locator": "sec:A001: Establish input data policy",
+   "hash": "34d7a09c8bae",
+   "head": "2|A001: Establish input data policy",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s2",
+   "level": "sec",
+   "locator": "sec:Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s3",
+   "level": "sec",
+   "locator": "sec:Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s4",
+   "level": "sec",
+   "locator": "sec:A002: Establish output data policy",
+   "hash": "49d851e403c6",
+   "head": "2|A002: Establish output data policy",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s5",
+   "level": "sec",
+   "locator": "sec:A002: Establish output data policy / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s6",
+   "level": "sec",
+   "locator": "sec:A002: Establish output data policy / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s7",
+   "level": "sec",
+   "locator": "sec:A003: Limit AI agent data access",
+   "hash": "4ce2d4ffcd75",
+   "head": "2|A003: Limit AI agent data access",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s8",
+   "level": "sec",
+   "locator": "sec:A003: Limit AI agent data access / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s9",
+   "level": "sec",
+   "locator": "sec:A003: Limit AI agent data access / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s10",
+   "level": "sec",
+   "locator": "sec:A004: Protect IP & trade secrets",
+   "hash": "abc06e9b50d3",
+   "head": "2|A004: Protect IP & trade secrets",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s11",
+   "level": "sec",
+   "locator": "sec:A004: Protect IP & trade secrets / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s12",
+   "level": "sec",
+   "locator": "sec:A004: Protect IP & trade secrets / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s13",
+   "level": "sec",
+   "locator": "sec:A005: Prevent cross-customer data exposure",
+   "hash": "e3d6a212b752",
+   "head": "2|A005: Prevent cross-customer data exposure",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s14",
+   "level": "sec",
+   "locator": "sec:A005: Prevent cross-customer data exposure / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s15",
+   "level": "sec",
+   "locator": "sec:A005: Prevent cross-customer data exposure / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s16",
+   "level": "sec",
+   "locator": "sec:A006: Prevent PII leakage",
+   "hash": "9d2116c68ecd",
+   "head": "2|A006: Prevent PII leakage",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s17",
+   "level": "sec",
+   "locator": "sec:A006: Prevent PII leakage / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s18",
+   "level": "sec",
+   "locator": "sec:A006: Prevent PII leakage / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s19",
+   "level": "sec",
+   "locator": "sec:A007: Prevent IP violations",
+   "hash": "de12725c716f",
+   "head": "2|A007: Prevent IP violations",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s20",
+   "level": "sec",
+   "locator": "sec:A007: Prevent IP violations / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s21",
+   "level": "sec",
+   "locator": "sec:A007: Prevent IP violations / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s22",
+   "level": "sec",
+   "locator": "sec:A008: Prevent leakage of credentials and secrets",
+   "hash": "80f1d8577889",
+   "head": "2|A008: Prevent leakage of credentials and secrets",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s23",
+   "level": "sec",
+   "locator": "sec:A008: Prevent leakage of credentials and secrets / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s24",
+   "level": "sec",
+   "locator": "sec:A008: Prevent leakage of credentials and secrets / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s25",
+   "level": "sec",
+   "locator": "sec:B001: Third-party testing of adversarial robustness",
+   "hash": "48a7c196270f",
+   "head": "2|B001: Third-party testing of adversarial robustness",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s26",
+   "level": "sec",
+   "locator": "sec:B001: Third-party testing of adversarial robustness / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s27",
+   "level": "sec",
+   "locator": "sec:B001: Third-party testing of adversarial robustness / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s28",
+   "level": "sec",
+   "locator": "sec:B002: Detect adversarial input",
+   "hash": "d0acb51c19ea",
+   "head": "2|B002: Detect adversarial input",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s29",
+   "level": "sec",
+   "locator": "sec:B002: Detect adversarial input / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s30",
+   "level": "sec",
+   "locator": "sec:B002: Detect adversarial input / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s31",
+   "level": "sec",
+   "locator": "sec:B003: Manage public release of technical details",
+   "hash": "0b72cf968673",
+   "head": "2|B003: Manage public release of technical details",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s32",
+   "level": "sec",
+   "locator": "sec:B003: Manage public release of technical details / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s33",
+   "level": "sec",
+   "locator": "sec:B003: Manage public release of technical details / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s34",
+   "level": "sec",
+   "locator": "sec:B004: Prevent AI endpoint scraping",
+   "hash": "2e7b9617de05",
+   "head": "2|B004: Prevent AI endpoint scraping",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s35",
+   "level": "sec",
+   "locator": "sec:B004: Prevent AI endpoint scraping / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s36",
+   "level": "sec",
+   "locator": "sec:B005: Implement real-time input filtering",
+   "hash": "9dff9e3da4ff",
+   "head": "2|B005: Implement real-time input filtering",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s37",
+   "level": "sec",
+   "locator": "sec:B005: Implement real-time input filtering / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s38",
+   "level": "sec",
+   "locator": "sec:B005: Implement real-time input filtering / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s39",
+   "level": "sec",
+   "locator": "sec:B006: Prevent unauthorized AI agent actions",
+   "hash": "5f942ea1d577",
+   "head": "2|B006: Prevent unauthorized AI agent actions",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s40",
+   "level": "sec",
+   "locator": "sec:B006: Prevent unauthorized AI agent actions / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s41",
+   "level": "sec",
+   "locator": "sec:B006: Prevent unauthorized AI agent actions / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s42",
+   "level": "sec",
+   "locator": "sec:B007: Enforce user access privileges to AI systems",
+   "hash": "41cabecacaab",
+   "head": "2|B007: Enforce user access privileges to AI systems",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s43",
+   "level": "sec",
+   "locator": "sec:B007: Enforce user access privileges to AI systems / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s44",
+   "level": "sec",
+   "locator": "sec:B008: Protect AI system deployment environment",
+   "hash": "5496757de089",
+   "head": "2|B008: Protect AI system deployment environment",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s45",
+   "level": "sec",
+   "locator": "sec:B008: Protect AI system deployment environment / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s46",
+   "level": "sec",
+   "locator": "sec:B008: Protect AI system deployment environment / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s47",
+   "level": "sec",
+   "locator": "sec:B009: Limit output over-exposure",
+   "hash": "f1b5846b300f",
+   "head": "2|B009: Limit output over-exposure",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s48",
+   "level": "sec",
+   "locator": "sec:B009: Limit output over-exposure / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s49",
+   "level": "sec",
+   "locator": "sec:B009: Limit output over-exposure / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s50",
+   "level": "sec",
+   "locator": "sec:B010: Promote secure patterns in generated code",
+   "hash": "d07d40911b61",
+   "head": "2|B010: Promote secure patterns in generated code",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s51",
+   "level": "sec",
+   "locator": "sec:B010: Promote secure patterns in generated code / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s52",
+   "level": "sec",
+   "locator": "sec:B010: Promote secure patterns in generated code / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s53",
+   "level": "sec",
+   "locator": "sec:C001: Define AI risk taxonomy",
+   "hash": "662fd8729a3d",
+   "head": "2|C001: Define AI risk taxonomy",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s54",
+   "level": "sec",
+   "locator": "sec:C001: Define AI risk taxonomy / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s55",
+   "level": "sec",
+   "locator": "sec:C002: Conduct pre-deployment testing",
+   "hash": "eec845ef7656",
+   "head": "2|C002: Conduct pre-deployment testing",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s56",
+   "level": "sec",
+   "locator": "sec:C002: Conduct pre-deployment testing / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s57",
+   "level": "sec",
+   "locator": "sec:C002: Conduct pre-deployment testing / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s58",
+   "level": "sec",
+   "locator": "sec:C003: Prevent harmful outputs",
+   "hash": "605c589cb232",
+   "head": "2|C003: Prevent harmful outputs",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s59",
+   "level": "sec",
+   "locator": "sec:C003: Prevent harmful outputs / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s60",
+   "level": "sec",
+   "locator": "sec:C003: Prevent harmful outputs / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s61",
+   "level": "sec",
+   "locator": "sec:C004: Prevent out-of-scope outputs",
+   "hash": "deb05d9ba00d",
+   "head": "2|C004: Prevent out-of-scope outputs",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s62",
+   "level": "sec",
+   "locator": "sec:C004: Prevent out-of-scope outputs / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s63",
+   "level": "sec",
+   "locator": "sec:C004: Prevent out-of-scope outputs / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s64",
+   "level": "sec",
+   "locator": "sec:C005: Prevent agent-specific high risk outputs",
+   "hash": "a9ac3f36d6eb",
+   "head": "2|C005: Prevent agent-specific high risk outputs",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s65",
+   "level": "sec",
+   "locator": "sec:C005: Prevent agent-specific high risk outputs / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s66",
+   "level": "sec",
+   "locator": "sec:C005: Prevent agent-specific high risk outputs / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s67",
+   "level": "sec",
+   "locator": "sec:C006: Prevent output vulnerabilities",
+   "hash": "86f6977c1a7b",
+   "head": "2|C006: Prevent output vulnerabilities",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s68",
+   "level": "sec",
+   "locator": "sec:C006: Prevent output vulnerabilities / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s69",
+   "level": "sec",
+   "locator": "sec:C006: Prevent output vulnerabilities / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s70",
+   "level": "sec",
+   "locator": "sec:C007: Flag high risk outputs for human review",
+   "hash": "c1e6880bf797",
+   "head": "2|C007: Flag high risk outputs for human review",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s71",
+   "level": "sec",
+   "locator": "sec:C007: Flag high risk outputs for human review / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s72",
+   "level": "sec",
+   "locator": "sec:C007: Flag high risk outputs for human review / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s73",
+   "level": "sec",
+   "locator": "sec:C008: Monitor AI risk categories",
+   "hash": "956805db0add",
+   "head": "2|C008: Monitor AI risk categories",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s74",
+   "level": "sec",
+   "locator": "sec:C008: Monitor AI risk categories / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s75",
+   "level": "sec",
+   "locator": "sec:C008: Monitor AI risk categories / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s76",
+   "level": "sec",
+   "locator": "sec:C009: Enable real-time feedback and intervention",
+   "hash": "5692f32e57c5",
+   "head": "2|C009: Enable real-time feedback and intervention",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s77",
+   "level": "sec",
+   "locator": "sec:C009: Enable real-time feedback and intervention / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s78",
+   "level": "sec",
+   "locator": "sec:C009: Enable real-time feedback and intervention / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s79",
+   "level": "sec",
+   "locator": "sec:C010: Third-party testing for harmful outputs",
+   "hash": "66cd3a83cb79",
+   "head": "2|C010: Third-party testing for harmful outputs",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s80",
+   "level": "sec",
+   "locator": "sec:C010: Third-party testing for harmful outputs / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s81",
+   "level": "sec",
+   "locator": "sec:C011: Third-party testing for out-of-scope outputs",
+   "hash": "f0a90819ef31",
+   "head": "2|C011: Third-party testing for out-of-scope outputs",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s82",
+   "level": "sec",
+   "locator": "sec:C011: Third-party testing for out-of-scope outputs / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s83",
+   "level": "sec",
+   "locator": "sec:C012: Third-party testing for customer-defined risk",
+   "hash": "c7df169fc40c",
+   "head": "2|C012: Third-party testing for customer-defined risk",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s84",
+   "level": "sec",
+   "locator": "sec:C012: Third-party testing for customer-defined risk / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s85",
+   "level": "sec",
+   "locator": "sec:D001: Prevent hallucinated outputs",
+   "hash": "d948b379c33f",
+   "head": "2|D001: Prevent hallucinated outputs",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s86",
+   "level": "sec",
+   "locator": "sec:D001: Prevent hallucinated outputs / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s87",
+   "level": "sec",
+   "locator": "sec:D001: Prevent hallucinated outputs / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s88",
+   "level": "sec",
+   "locator": "sec:D002: Third-party testing for hallucinations",
+   "hash": "20616838bfbd",
+   "head": "2|D002: Third-party testing for hallucinations",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s89",
+   "level": "sec",
+   "locator": "sec:D002: Third-party testing for hallucinations / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s90",
+   "level": "sec",
+   "locator": "sec:D003: Restrict unsafe tool calls",
+   "hash": "d4c822f720b7",
+   "head": "2|D003: Restrict unsafe tool calls",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s91",
+   "level": "sec",
+   "locator": "sec:D003: Restrict unsafe tool calls / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s92",
+   "level": "sec",
+   "locator": "sec:D003: Restrict unsafe tool calls / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s93",
+   "level": "sec",
+   "locator": "sec:D004: Third-party testing of tool calls",
+   "hash": "3b421bf69b7e",
+   "head": "2|D004: Third-party testing of tool calls",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s94",
+   "level": "sec",
+   "locator": "sec:D004: Third-party testing of tool calls / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s95",
+   "level": "sec",
+   "locator": "sec:E001: AI failure plan for security breaches",
+   "hash": "472706254e91",
+   "head": "2|E001: AI failure plan for security breaches",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s96",
+   "level": "sec",
+   "locator": "sec:E001: AI failure plan for security breaches / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s97",
+   "level": "sec",
+   "locator": "sec:E002: AI failure plan for harmful outputs",
+   "hash": "3e31da9ad515",
+   "head": "2|E002: AI failure plan for harmful outputs",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s98",
+   "level": "sec",
+   "locator": "sec:E002: AI failure plan for harmful outputs / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s99",
+   "level": "sec",
+   "locator": "sec:E002: AI failure plan for harmful outputs / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s100",
+   "level": "sec",
+   "locator": "sec:E003: AI failure plan for hallucinations",
+   "hash": "611f067e7742",
+   "head": "2|E003: AI failure plan for hallucinations",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s101",
+   "level": "sec",
+   "locator": "sec:E003: AI failure plan for hallucinations / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s102",
+   "level": "sec",
+   "locator": "sec:E003: AI failure plan for hallucinations / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s103",
+   "level": "sec",
+   "locator": "sec:E004: Assign accountability",
+   "hash": "0178d8d4a7f1",
+   "head": "2|E004: Assign accountability",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s104",
+   "level": "sec",
+   "locator": "sec:E004: Assign accountability / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s105",
+   "level": "sec",
+   "locator": "sec:E004: Assign accountability / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s106",
+   "level": "sec",
+   "locator": "sec:E005: Document data storage security",
+   "hash": "068a4ed4cfd0",
+   "head": "2|E005: Document data storage security",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s107",
+   "level": "sec",
+   "locator": "sec:E005: Document data storage security / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s108",
+   "level": "sec",
+   "locator": "sec:E006: Conduct vendor due diligence",
+   "hash": "fd4b1f3d2b67",
+   "head": "2|E006: Conduct vendor due diligence",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s109",
+   "level": "sec",
+   "locator": "sec:E006: Conduct vendor due diligence / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s110",
+   "level": "sec",
+   "locator": "sec:E007: [Retired] Document system change approvals",
+   "hash": "8833f7901c17",
+   "head": "2|E007: [Retired] Document system change approvals",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s111",
+   "level": "sec",
+   "locator": "sec:E007: [Retired] Document system change approvals / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s112",
+   "level": "sec",
+   "locator": "sec:E008: Review internal processes",
+   "hash": "1a16eb154b27",
+   "head": "2|E008: Review internal processes",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s113",
+   "level": "sec",
+   "locator": "sec:E008: Review internal processes / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s114",
+   "level": "sec",
+   "locator": "sec:E008: Review internal processes / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s115",
+   "level": "sec",
+   "locator": "sec:E009: Monitor third-party access",
+   "hash": "76b6f3017f17",
+   "head": "2|E009: Monitor third-party access",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s116",
+   "level": "sec",
+   "locator": "sec:E009: Monitor third-party access / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s117",
+   "level": "sec",
+   "locator": "sec:E009: Monitor third-party access / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s118",
+   "level": "sec",
+   "locator": "sec:E010: Establish AI acceptable use policy",
+   "hash": "70a4bcd5507a",
+   "head": "2|E010: Establish AI acceptable use policy",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s119",
+   "level": "sec",
+   "locator": "sec:E010: Establish AI acceptable use policy / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s120",
+   "level": "sec",
+   "locator": "sec:E010: Establish AI acceptable use policy / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s121",
+   "level": "sec",
+   "locator": "sec:E011: Record processing locations",
+   "hash": "2ff66466d398",
+   "head": "2|E011: Record processing locations",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s122",
+   "level": "sec",
+   "locator": "sec:E011: Record processing locations / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s123",
+   "level": "sec",
+   "locator": "sec:E011: Record processing locations / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s124",
+   "level": "sec",
+   "locator": "sec:E012: Document regulatory compliance",
+   "hash": "2214d7efc997",
+   "head": "2|E012: Document regulatory compliance",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s125",
+   "level": "sec",
+   "locator": "sec:E012: Document regulatory compliance / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s126",
+   "level": "sec",
+   "locator": "sec:E013: Implement quality management system",
+   "hash": "8c9a5b61e995",
+   "head": "2|E013: Implement quality management system",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s127",
+   "level": "sec",
+   "locator": "sec:E013: Implement quality management system / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s128",
+   "level": "sec",
+   "locator": "sec:E013: Implement quality management system / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s129",
+   "level": "sec",
+   "locator": "sec:E014: [Retired] Share transparency reports",
+   "hash": "7867b6f6f1f5",
+   "head": "2|E014: [Retired] Share transparency reports",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s130",
+   "level": "sec",
+   "locator": "sec:E014: [Retired] Share transparency reports / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s131",
+   "level": "sec",
+   "locator": "sec:E015: Log AI system activity",
+   "hash": "6efbf1ef61ee",
+   "head": "2|E015: Log AI system activity",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s132",
+   "level": "sec",
+   "locator": "sec:E015: Log AI system activity / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s133",
+   "level": "sec",
+   "locator": "sec:E015: Log AI system activity / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s134",
+   "level": "sec",
+   "locator": "sec:E016: Implement AI disclosure mechanisms",
+   "hash": "9524c2e7e414",
+   "head": "2|E016: Implement AI disclosure mechanisms",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s135",
+   "level": "sec",
+   "locator": "sec:E016: Implement AI disclosure mechanisms / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s136",
+   "level": "sec",
+   "locator": "sec:E017: Document system transparency policy",
+   "hash": "f7a28d09be8d",
+   "head": "2|E017: Document system transparency policy",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s137",
+   "level": "sec",
+   "locator": "sec:E017: Document system transparency policy / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s138",
+   "level": "sec",
+   "locator": "sec:E017: Document system transparency policy / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s139",
+   "level": "sec",
+   "locator": "sec:F001: Prevent AI cyber misuse",
+   "hash": "a15effa72803",
+   "head": "2|F001: Prevent AI cyber misuse",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s140",
+   "level": "sec",
+   "locator": "sec:F001: Prevent AI cyber misuse / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s141",
+   "level": "sec",
+   "locator": "sec:F001: Prevent AI cyber misuse / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s142",
+   "level": "sec",
+   "locator": "sec:F002: Prevent catastrophic misuse",
+   "hash": "1ce7b0c76bc9",
+   "head": "2|F002: Prevent catastrophic misuse",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s143",
+   "level": "sec",
+   "locator": "sec:F002: Prevent catastrophic misuse / Control shoulds",
+   "hash": "c3f899240e70",
+   "head": "3|Control shoulds",
+   "status": "live"
+  },
+  {
+   "uid": "ac:s144",
+   "level": "sec",
+   "locator": "sec:F002: Prevent catastrophic misuse / Control mays",
+   "hash": "91378c53a855",
+   "head": "3|Control mays",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b1",
+   "level": "blk",
+   "locator": "blk:Control shoulds/1",
+   "hash": "cb3dbddf8088",
+   "head": "- Defining and communicating input data usage policies. Including specifying how",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b2",
+   "level": "blk",
+   "locator": "blk:Control shoulds/2",
+   "hash": "bf0ac409e35c",
+   "head": "- Implementing technical controls to enforce data retention and deletion policie",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b3",
+   "level": "blk",
+   "locator": "blk:Control mays/1",
+   "hash": "93051eeee355",
+   "head": "- Documenting processes for handling end-user data subject rights. For example, ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b4",
+   "level": "blk",
+   "locator": "blk:Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b5",
+   "level": "blk",
+   "locator": "blk:A002: Establish output data policy / Control shoulds/1",
+   "hash": "8920077e0378",
+   "head": "- Establishing output ownership and usage rights policies. For example, specifyi",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b6",
+   "level": "blk",
+   "locator": "blk:A002: Establish output data policy / Control shoulds/2",
+   "hash": "89d1ce5f3481",
+   "head": "- Disclosing opt-in/opt-out and deletion policies for AI outputs. For example, d",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b7",
+   "level": "blk",
+   "locator": "blk:A002: Establish output data policy / Control mays/1",
+   "hash": "fac859f8fa84",
+   "head": "- Implementing technical controls to enforce AI output opt-in/opt-out and deleti",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b8",
+   "level": "blk",
+   "locator": "blk:A002: Establish output data policy / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b9",
+   "level": "blk",
+   "locator": "blk:A003: Limit AI agent data access / Control shoulds/1",
+   "hash": "158561fc6585",
+   "head": "- Configuring data access limits to reduce data and privacy exposure. For exampl",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b10",
+   "level": "blk",
+   "locator": "blk:A003: Limit AI agent data access / Control mays/1",
+   "hash": "dea15d1ae206",
+   "head": "- Enabling agent identity management. For example, assigning each agent a unique",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b11",
+   "level": "blk",
+   "locator": "blk:A003: Limit AI agent data access / Control mays/2",
+   "hash": "4fad86c55aa4",
+   "head": "- Enabling agent access and governance through permission-ready architecture. Fo",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b12",
+   "level": "blk",
+   "locator": "blk:A003: Limit AI agent data access / Control mays/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b13",
+   "level": "blk",
+   "locator": "blk:A004: Protect IP & trade secrets / Control shoulds/1",
+   "hash": "277ba03d68f9",
+   "head": "- Providing user guidance on protecting confidential information. For example, i",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b14",
+   "level": "blk",
+   "locator": "blk:A004: Protect IP & trade secrets / Control mays/1",
+   "hash": "3514c1265f52",
+   "head": "- Leveraging foundation model provider protections. For example, using providers",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b15",
+   "level": "blk",
+   "locator": "blk:A004: Protect IP & trade secrets / Control mays/2",
+   "hash": "517187a13a50",
+   "head": "- Implementing technical controls to detect proprietary information in outputs.",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b16",
+   "level": "blk",
+   "locator": "blk:A004: Protect IP & trade secrets / Control mays/3",
+   "hash": "afb0e5496f36",
+   "head": "- Establishing output monitoring for high-risk IP scenarios. For example, loggin",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b17",
+   "level": "blk",
+   "locator": "blk:A004: Protect IP & trade secrets / Control mays/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b18",
+   "level": "blk",
+   "locator": "blk:A005: Prevent cross-customer data exposure / Control shoulds/1",
+   "hash": "b41379d76777",
+   "head": "- Establishing explicit consent and disclosure for combined data usage. For exam",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b19",
+   "level": "blk",
+   "locator": "blk:A005: Prevent cross-customer data exposure / Control shoulds/2",
+   "hash": "dab68d02b862",
+   "head": "- Implementing customer data isolation controls. For example, enforcing strict l",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b20",
+   "level": "blk",
+   "locator": "blk:A005: Prevent cross-customer data exposure / Control mays/1",
+   "hash": "bff4e0e6c0aa",
+   "head": "- Implementing specific privacy-enhancing technologies (PETs) to reduce competit",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b21",
+   "level": "blk",
+   "locator": "blk:A005: Prevent cross-customer data exposure / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b22",
+   "level": "blk",
+   "locator": "blk:A006: Prevent PII leakage / Control shoulds/1",
+   "hash": "65d604ec7146",
+   "head": "- Implementing safeguards to prevent personal data leakage through AI system out",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b23",
+   "level": "blk",
+   "locator": "blk:A006: Prevent PII leakage / Control mays/1",
+   "hash": "4afda17b780f",
+   "head": "- Integrating with existing data loss prevention (DLP) systems to monitor and bl",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b24",
+   "level": "blk",
+   "locator": "blk:A006: Prevent PII leakage / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b25",
+   "level": "blk",
+   "locator": "blk:A007: Prevent IP violations / Control shoulds/1",
+   "hash": "5dada38b7920",
+   "head": "- Documenting foundation model provider IP protections which may serve as primar",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b26",
+   "level": "blk",
+   "locator": "blk:A007: Prevent IP violations / Control mays/1",
+   "hash": "273ae2ea3980",
+   "head": "- Establishing supplementary content filtering mechanisms where provider protect",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b27",
+   "level": "blk",
+   "locator": "blk:A007: Prevent IP violations / Control mays/2",
+   "hash": "e20c523ceb5b",
+   "head": "- Implementing user guidance and guardrails to reduce IP risk. For example, usag",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b28",
+   "level": "blk",
+   "locator": "blk:A007: Prevent IP violations / Control mays/3",
+   "hash": "53c45f826cf7",
+   "head": "- Implementing restrictions in AI acceptable use policy.",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b29",
+   "level": "blk",
+   "locator": "blk:A007: Prevent IP violations / Control mays/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b30",
+   "level": "blk",
+   "locator": "blk:A008: Prevent leakage of credentials and secrets / Control shoulds/1",
+   "hash": "251b0d275213",
+   "head": "- Implementing safeguards to detect credentials in user inputs. For example, sca",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b31",
+   "level": "blk",
+   "locator": "blk:A008: Prevent leakage of credentials and secrets / Control shoulds/2",
+   "hash": "c58638d2be88",
+   "head": "- Implementing safeguards to keep secrets out of generated code artifacts. For e",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b32",
+   "level": "blk",
+   "locator": "blk:A008: Prevent leakage of credentials and secrets / Control shoulds/3",
+   "hash": "91fca7a66e6a",
+   "head": "- Implementing safeguards to securely store user-provided credentials to enable ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b33",
+   "level": "blk",
+   "locator": "blk:A008: Prevent leakage of credentials and secrets / Control mays/1",
+   "hash": "09aee9f8bdea",
+   "head": "- Implementing user-facing warnings when potential secrets are detected in user ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b34",
+   "level": "blk",
+   "locator": "blk:A008: Prevent leakage of credentials and secrets / Control mays/2",
+   "hash": "0f84b068f426",
+   "head": "- Implementing safeguards to prevent secrets from being retained in platform log",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b35",
+   "level": "blk",
+   "locator": "blk:A008: Prevent leakage of credentials and secrets / Control mays/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b36",
+   "level": "blk",
+   "locator": "blk:B001: Third-party testing of adversarial robustness / Control shoulds/1",
+   "hash": "e6f50a649274",
+   "head": "- Establishing a taxonomy for adversarial risks. For example, drawing on NIST's ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b37",
+   "level": "blk",
+   "locator": "blk:B001: Third-party testing of adversarial robustness / Control shoulds/2",
+   "hash": "d1180d4ce1ab",
+   "head": "- Conducting comprehensive adversarial testing at least quarterly. For example, ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b38",
+   "level": "blk",
+   "locator": "blk:B001: Third-party testing of adversarial robustness / Control shoulds/3",
+   "hash": "c3a7e326208e",
+   "head": "- Maintaining secure testing documentation. For example, recording test cases, m",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b39",
+   "level": "blk",
+   "locator": "blk:B001: Third-party testing of adversarial robustness / Control shoulds/4",
+   "hash": "5a99a9f22e78",
+   "head": "- Establishing improvement processes based on findings. For example, assigning o",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b40",
+   "level": "blk",
+   "locator": "blk:B001: Third-party testing of adversarial robustness / Control mays/1",
+   "hash": "03b6436e1c59",
+   "head": "- Aligning adversarial testing with broader security testing programs. For examp",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b41",
+   "level": "blk",
+   "locator": "blk:B001: Third-party testing of adversarial robustness / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b42",
+   "level": "blk",
+   "locator": "blk:B002: Detect adversarial input / Control shoulds/1",
+   "hash": "d329c7ba7da2",
+   "head": "- Establishing detection and alerting. For example, implementing monitoring for ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b43",
+   "level": "blk",
+   "locator": "blk:B002: Detect adversarial input / Control shoulds/2",
+   "hash": "3c24b8965faf",
+   "head": "- Implementing incident logging and response procedures. For example, logging su",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b44",
+   "level": "blk",
+   "locator": "blk:B002: Detect adversarial input / Control shoulds/3",
+   "hash": "83520e8c9846",
+   "head": "- Maintaining detection effectiveness through quarterly reviews. For example, up",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b45",
+   "level": "blk",
+   "locator": "blk:B002: Detect adversarial input / Control mays/1",
+   "hash": "7e0103fd1f97",
+   "head": "- Implementing adversarial input detection prior to AI model processing where fe",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b46",
+   "level": "blk",
+   "locator": "blk:B002: Detect adversarial input / Control mays/2",
+   "hash": "4f58219be1e3",
+   "head": "- Integrating adversarial input detection into existing security operations tool",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b47",
+   "level": "blk",
+   "locator": "blk:B002: Detect adversarial input / Control mays/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b48",
+   "level": "blk",
+   "locator": "blk:B003: Manage public release of technical details / Control shoulds/1",
+   "hash": "5fc62c2909ad",
+   "head": "- Documenting limitations on technical information release. For example, limitin",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b49",
+   "level": "blk",
+   "locator": "blk:B003: Manage public release of technical details / Control shoulds/2",
+   "hash": "5f45a6bf863b",
+   "head": "- Controlling organizational information to balance transparency with security. ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b50",
+   "level": "blk",
+   "locator": "blk:B003: Manage public release of technical details / Control mays/1",
+   "hash": "b246084c18f4",
+   "head": "- Establishing approval processes. For example, requiring designated review for ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b51",
+   "level": "blk",
+   "locator": "blk:B003: Manage public release of technical details / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b52",
+   "level": "blk",
+   "locator": "blk:B004: Prevent AI endpoint scraping / Control shoulds/1",
+   "hash": "f4cd50d32ce7",
+   "head": "- Implementing systems distinguishing between high-volume legitimate usage and a",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b53",
+   "level": "blk",
+   "locator": "blk:B004: Prevent AI endpoint scraping / Control shoulds/2",
+   "hash": "d41f2587f9a4",
+   "head": "- Implementing rate limiting and query restrictions. For example, establishing p",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b54",
+   "level": "blk",
+   "locator": "blk:B004: Prevent AI endpoint scraping / Control shoulds/3",
+   "hash": "7c07f053e89b",
+   "head": "- Conducting simulated external attack testing of AI endpoints. For example, per",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b55",
+   "level": "blk",
+   "locator": "blk:B004: Prevent AI endpoint scraping / Control shoulds/4",
+   "hash": "063cc9e0ee15",
+   "head": "- Maintaining endpoint security through remediation. For example, tracking ident",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b56",
+   "level": "blk",
+   "locator": "blk:B004: Prevent AI endpoint scraping / Control shoulds/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b57",
+   "level": "blk",
+   "locator": "blk:B005: Implement real-time input filtering / Control shoulds/1",
+   "hash": "79a345d07d0d",
+   "head": "- Integrating automated moderation tools to filter inputs before they reach the ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b58",
+   "level": "blk",
+   "locator": "blk:B005: Implement real-time input filtering / Control mays/1",
+   "hash": "b7f26ccbda1a",
+   "head": "- Documenting the moderation logic and rationale. For example, explaining chosen",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b59",
+   "level": "blk",
+   "locator": "blk:B005: Implement real-time input filtering / Control mays/2",
+   "hash": "d42f33209a16",
+   "head": "- Providing feedback to users when inputs are blocked.",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b60",
+   "level": "blk",
+   "locator": "blk:B005: Implement real-time input filtering / Control mays/3",
+   "hash": "6350acebf440",
+   "head": "- Logging flagged prompts for analysis and refinement of filters, while ensuring",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b61",
+   "level": "blk",
+   "locator": "blk:B005: Implement real-time input filtering / Control mays/4",
+   "hash": "6604b13a8a4a",
+   "head": "- Periodically evaluating filter performance and adjusting thresholds accordingl",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b62",
+   "level": "blk",
+   "locator": "blk:B005: Implement real-time input filtering / Control mays/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b63",
+   "level": "blk",
+   "locator": "blk:B006: Prevent unauthorized AI agent actions / Control shoulds/1",
+   "hash": "2488b725839a",
+   "head": "- Implementing technical restrictions that limit agent capabilities to authorize",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b64",
+   "level": "blk",
+   "locator": "blk:B006: Prevent unauthorized AI agent actions / Control shoulds/2",
+   "hash": "9545d1899352",
+   "head": "- Deploying monitoring and alerting for agent actions that exceed security bound",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b65",
+   "level": "blk",
+   "locator": "blk:B006: Prevent unauthorized AI agent actions / Control mays/1",
+   "hash": "784612ab835c",
+   "head": "- Implementing additional safeguards to contain runtime risk. For example, enabl",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b66",
+   "level": "blk",
+   "locator": "blk:B006: Prevent unauthorized AI agent actions / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b67",
+   "level": "blk",
+   "locator": "blk:B007: Enforce user access privileges to AI systems / Control shoulds/1",
+   "hash": "3b15bb87f2f0",
+   "head": "- Implementing system-level access controls tailored to AI systems. For example,",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b68",
+   "level": "blk",
+   "locator": "blk:B007: Enforce user access privileges to AI systems / Control shoulds/2",
+   "hash": "674b26d303fb",
+   "head": "- Restricting administrative and configuration privileges to authorized personne",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b69",
+   "level": "blk",
+   "locator": "blk:B007: Enforce user access privileges to AI systems / Control shoulds/3",
+   "hash": "e86314e0d8f6",
+   "head": "- Conducting access reviews and updates at least quarterly. For example, validat",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b70",
+   "level": "blk",
+   "locator": "blk:B007: Enforce user access privileges to AI systems / Control shoulds/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b71",
+   "level": "blk",
+   "locator": "blk:B008: Protect AI system deployment environment / Control shoulds/1",
+   "hash": "aa96cb723fd4",
+   "head": "- Enforcing caller authentication across API endpoints and agentic interfaces. F",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b72",
+   "level": "blk",
+   "locator": "blk:B008: Protect AI system deployment environment / Control shoulds/2",
+   "hash": "e13ac4c2f4e2",
+   "head": "- Securing data in transit across model API endpoints and agentic interfaces. Fo",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b73",
+   "level": "blk",
+   "locator": "blk:B008: Protect AI system deployment environment / Control mays/1",
+   "hash": "9a642bb4ed39",
+   "head": "- Enforcing data integrity across agentic interfaces. For example, implementing ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b74",
+   "level": "blk",
+   "locator": "blk:B008: Protect AI system deployment environment / Control mays/2",
+   "hash": "6342c8662f58",
+   "head": "- Securing model hosting environments. For example, using up-to-date and minimal",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b75",
+   "level": "blk",
+   "locator": "blk:B008: Protect AI system deployment environment / Control mays/3",
+   "hash": "cb46eeeaaaf1",
+   "head": "- Verifying model integrity before and during deployment. For example, using cry",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b76",
+   "level": "blk",
+   "locator": "blk:B008: Protect AI system deployment environment / Control mays/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b77",
+   "level": "blk",
+   "locator": "blk:B009: Limit output over-exposure / Control shoulds/1",
+   "hash": "e006be7cb3c1",
+   "head": "- Reducing or limiting the number of results shown in outputs to relevant only t",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b78",
+   "level": "blk",
+   "locator": "blk:B009: Limit output over-exposure / Control mays/1",
+   "hash": "ee4e795ac509",
+   "head": "- Providing user-facing notices or documentation about output limitations.",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b79",
+   "level": "blk",
+   "locator": "blk:B009: Limit output over-exposure / Control mays/2",
+   "hash": "649f4c602411",
+   "head": "- Limiting the fidelity of model outputs in certain use cases. For example, appl",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b80",
+   "level": "blk",
+   "locator": "blk:B009: Limit output over-exposure / Control mays/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b81",
+   "level": "blk",
+   "locator": "blk:B010: Promote secure patterns in generated code / Control shoulds/1",
+   "hash": "c9570312ac92",
+   "head": "- Implementing safeguards to promote secure patterns for common web vulnerabilit",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b82",
+   "level": "blk",
+   "locator": "blk:B010: Promote secure patterns in generated code / Control shoulds/2",
+   "hash": "c0015651914f",
+   "head": "- Implementing safeguards to promote secure patterns for authentication and auth",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b83",
+   "level": "blk",
+   "locator": "blk:B010: Promote secure patterns in generated code / Control shoulds/3",
+   "hash": "75afc3b502f1",
+   "head": "- Implementing safeguards to prevent dependency risks in generated code. For exa",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b84",
+   "level": "blk",
+   "locator": "blk:B010: Promote secure patterns in generated code / Control mays/1",
+   "hash": "f0ac487465f0",
+   "head": "- Implementing safeguards to promote secure defaults for session management in g",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b85",
+   "level": "blk",
+   "locator": "blk:B010: Promote secure patterns in generated code / Control mays/2",
+   "hash": "16c34784bdf8",
+   "head": "- Implementing safeguards to promote defensive programming patterns in generated",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b86",
+   "level": "blk",
+   "locator": "blk:B010: Promote secure patterns in generated code / Control mays/3",
+   "hash": "05d25b94aacc",
+   "head": "- Implementing safeguards to prevent generated logging code from capturing secre",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b87",
+   "level": "blk",
+   "locator": "blk:B010: Promote secure patterns in generated code / Control mays/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b88",
+   "level": "blk",
+   "locator": "blk:C001: Define AI risk taxonomy / Control shoulds/1",
+   "hash": "7d3837b378a9",
+   "head": "- Defining risk categories with severity levels and examples based on industry a",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b89",
+   "level": "blk",
+   "locator": "blk:C001: Define AI risk taxonomy / Control shoulds/2",
+   "hash": "6e8d825ee6d6",
+   "head": "- Aligning risk taxonomy with external frameworks and standards.",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b90",
+   "level": "blk",
+   "locator": "blk:C001: Define AI risk taxonomy / Control shoulds/3",
+   "hash": "055d51f6bbe7",
+   "head": "- Establishing severity grading appropriate to organizational context and risk t",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b91",
+   "level": "blk",
+   "locator": "blk:C001: Define AI risk taxonomy / Control shoulds/4",
+   "hash": "240f9c6e06db",
+   "head": "- Maintaining taxonomy currency with documented change management. For example, ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b92",
+   "level": "blk",
+   "locator": "blk:C001: Define AI risk taxonomy / Control shoulds/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b93",
+   "level": "blk",
+   "locator": "blk:C002: Conduct pre-deployment testing / Control shoulds/1",
+   "hash": "9e0d5193f244",
+   "head": "- Conducting pre-deployment testing with documented results and identified issue",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b94",
+   "level": "blk",
+   "locator": "blk:C002: Conduct pre-deployment testing / Control shoulds/2",
+   "hash": "b4666ba59910",
+   "head": "- Completing risk assessments of identified issues before system deployment. For",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b95",
+   "level": "blk",
+   "locator": "blk:C002: Conduct pre-deployment testing / Control shoulds/3",
+   "hash": "2800a178169c",
+   "head": "- Obtaining approval sign-offs from designated accountable. For example, documen",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b96",
+   "level": "blk",
+   "locator": "blk:C002: Conduct pre-deployment testing / Control mays/1",
+   "hash": "6864de563501",
+   "head": "- Integrating AI system testing into established software development lifecycle ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b97",
+   "level": "blk",
+   "locator": "blk:C002: Conduct pre-deployment testing / Control mays/2",
+   "hash": "692cfa875aa2",
+   "head": "- Implementing pre-deployment vulnerability scanning of AI artifacts and depende",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b98",
+   "level": "blk",
+   "locator": "blk:C002: Conduct pre-deployment testing / Control mays/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b99",
+   "level": "blk",
+   "locator": "blk:C003: Prevent harmful outputs / Control shoulds/1",
+   "hash": "adecb588a413",
+   "head": "- Implementing content filtering for harmful output types. For example, detectin",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b100",
+   "level": "blk",
+   "locator": "blk:C003: Prevent harmful outputs / Control shoulds/2",
+   "hash": "f5438b615168",
+   "head": "- Implementing guardrails for advice generation. For example, restricting high-r",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b101",
+   "level": "blk",
+   "locator": "blk:C003: Prevent harmful outputs / Control mays/1",
+   "hash": "9b053d02f52b",
+   "head": "- Implementing bias detection and mitigation controls. For example, monitoring f",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b102",
+   "level": "blk",
+   "locator": "blk:C003: Prevent harmful outputs / Control mays/2",
+   "hash": "71a22c1667c4",
+   "head": "- Evaluating harm mitigation controls using performance metrics.",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b103",
+   "level": "blk",
+   "locator": "blk:C003: Prevent harmful outputs / Control mays/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b104",
+   "level": "blk",
+   "locator": "blk:C004: Prevent out-of-scope outputs / Control shoulds/1",
+   "hash": "c9dbbb4815c6",
+   "head": "- Detecting and blocking out-of-scope requests. For example, detecting conversat",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b105",
+   "level": "blk",
+   "locator": "blk:C004: Prevent out-of-scope outputs / Control shoulds/2",
+   "hash": "cdc4cdf78ada",
+   "head": "- Tracking out-of-scope violations and updating boundaries. For example, logging",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b106",
+   "level": "blk",
+   "locator": "blk:C004: Prevent out-of-scope outputs / Control mays/1",
+   "hash": "80518acb41b8",
+   "head": "- Providing user guidance on system capabilities and limitations. For example, c",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b107",
+   "level": "blk",
+   "locator": "blk:C004: Prevent out-of-scope outputs / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b108",
+   "level": "blk",
+   "locator": "blk:C005: Prevent agent-specific high risk outputs / Control shoulds/1",
+   "hash": "41d954ccec15",
+   "head": "- Implementing detection and blocking mechanisms aligned with organizational ris",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b109",
+   "level": "blk",
+   "locator": "blk:C005: Prevent agent-specific high risk outputs / Control shoulds/2",
+   "hash": "a8869d766bcf",
+   "head": "- Implementing response actions for detected risks. For example, blocking high-s",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b110",
+   "level": "blk",
+   "locator": "blk:C005: Prevent agent-specific high risk outputs / Control mays/1",
+   "hash": "c3e06fd0ab19",
+   "head": "- Establishing escalation procedures for flagged high-risk content. For example,",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b111",
+   "level": "blk",
+   "locator": "blk:C005: Prevent agent-specific high risk outputs / Control mays/2",
+   "hash": "5e0678c91767",
+   "head": "- Implementing automated real-time interventions. For example, blocking or modif",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b112",
+   "level": "blk",
+   "locator": "blk:C005: Prevent agent-specific high risk outputs / Control mays/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b113",
+   "level": "blk",
+   "locator": "blk:C006: Prevent output vulnerabilities / Control shoulds/1",
+   "hash": "89c80e729a8e",
+   "head": "- Establishing output sanitization and validation procedures before presenting c",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b114",
+   "level": "blk",
+   "locator": "blk:C006: Prevent output vulnerabilities / Control shoulds/2",
+   "hash": "351d92563528",
+   "head": "- Implementing content handling and security labelling based on trust level. For",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b115",
+   "level": "blk",
+   "locator": "blk:C006: Prevent output vulnerabilities / Control mays/1",
+   "hash": "6aea80dfe0e3",
+   "head": "- Detecting advanced output-based attack patterns. For example, identifying prom",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b116",
+   "level": "blk",
+   "locator": "blk:C006: Prevent output vulnerabilities / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b117",
+   "level": "blk",
+   "locator": "blk:C007: Flag high risk outputs for human review / Control shoulds/1",
+   "hash": "130b07888add",
+   "head": "- Defining high-risk output criteria drawing on risk taxonomy.",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b118",
+   "level": "blk",
+   "locator": "blk:C007: Flag high risk outputs for human review / Control shoulds/2",
+   "hash": "06b1337b83d5",
+   "head": "- Implementing automated detection mechanisms for high-risk outputs. For example",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b119",
+   "level": "blk",
+   "locator": "blk:C007: Flag high risk outputs for human review / Control mays/1",
+   "hash": "c81ed17e82b2",
+   "head": "- Establishing human review workflows for flagged high-risk outputs. For example",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b120",
+   "level": "blk",
+   "locator": "blk:C007: Flag high risk outputs for human review / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b121",
+   "level": "blk",
+   "locator": "blk:C008: Monitor AI risk categories / Control shoulds/1",
+   "hash": "e78fe51533ad",
+   "head": "- Establishing ongoing monitoring of AI outputs across risk categories. For exam",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b122",
+   "level": "blk",
+   "locator": "blk:C008: Monitor AI risk categories / Control mays/1",
+   "hash": "f26ae9e4789c",
+   "head": "- Maintaining documentation. For example, recording identified scenarios with cl",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b123",
+   "level": "blk",
+   "locator": "blk:C008: Monitor AI risk categories / Control mays/2",
+   "hash": "50febac51aca",
+   "head": "- Integrating AI output monitoring with existing security tools. For example, fo",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b124",
+   "level": "blk",
+   "locator": "blk:C008: Monitor AI risk categories / Control mays/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b125",
+   "level": "blk",
+   "locator": "blk:C009: Enable real-time feedback and intervention / Control shoulds/1",
+   "hash": "bed69a6fe2d3",
+   "head": "- Enabling user intervention capabilities. For example, providing mechanisms for",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b126",
+   "level": "blk",
+   "locator": "blk:C009: Enable real-time feedback and intervention / Control shoulds/2",
+   "hash": "868e43f8bd2a",
+   "head": "- Ensuring accessibility of feedback and intervention mechanisms. For example, a",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b127",
+   "level": "blk",
+   "locator": "blk:C009: Enable real-time feedback and intervention / Control mays/1",
+   "hash": "9c953174f6e1",
+   "head": "- Reviewing user feedback and intervention logs at regular intervals, analyzing ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b128",
+   "level": "blk",
+   "locator": "blk:C009: Enable real-time feedback and intervention / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b129",
+   "level": "blk",
+   "locator": "blk:C010: Third-party testing for harmful outputs / Control shoulds/1",
+   "hash": "7cf102cbf959",
+   "head": "- Appointing qualified third-party assessors. Including selecting assessors with",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b130",
+   "level": "blk",
+   "locator": "blk:C010: Third-party testing for harmful outputs / Control shoulds/2",
+   "hash": "8e8ebf072205",
+   "head": "- Conducting regular testing. Including performing assessments of harmful output",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b131",
+   "level": "blk",
+   "locator": "blk:C010: Third-party testing for harmful outputs / Control shoulds/3",
+   "hash": "d48e1290bede",
+   "head": "- Maintaining documentation. Including testing scope, results, and remediation a",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b132",
+   "level": "blk",
+   "locator": "blk:C010: Third-party testing for harmful outputs / Control shoulds/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b133",
+   "level": "blk",
+   "locator": "blk:C011: Third-party testing for out-of-scope outputs / Control shoulds/1",
+   "hash": "7cf102cbf959",
+   "head": "- Appointing qualified third-party assessors. Including selecting assessors with",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b134",
+   "level": "blk",
+   "locator": "blk:C011: Third-party testing for out-of-scope outputs / Control shoulds/2",
+   "hash": "ccd2a00685c0",
+   "head": "- Conducting regular testing. Including defining testing scope and methodologies",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b135",
+   "level": "blk",
+   "locator": "blk:C011: Third-party testing for out-of-scope outputs / Control shoulds/3",
+   "hash": "d48e1290bede",
+   "head": "- Maintaining documentation. Including testing scope, results, and remediation a",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b136",
+   "level": "blk",
+   "locator": "blk:C011: Third-party testing for out-of-scope outputs / Control shoulds/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b137",
+   "level": "blk",
+   "locator": "blk:C012: Third-party testing for customer-defined risk / Control shoulds/1",
+   "hash": "7cf102cbf959",
+   "head": "- Appointing qualified third-party assessors. Including selecting assessors with",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b138",
+   "level": "blk",
+   "locator": "blk:C012: Third-party testing for customer-defined risk / Control shoulds/2",
+   "hash": "f16dbdc31fcb",
+   "head": "- Conducting regular testing. Including defining testing scope and methodologies",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b139",
+   "level": "blk",
+   "locator": "blk:C012: Third-party testing for customer-defined risk / Control shoulds/3",
+   "hash": "d48e1290bede",
+   "head": "- Maintaining documentation. Including testing scope, results, and remediation a",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b140",
+   "level": "blk",
+   "locator": "blk:C012: Third-party testing for customer-defined risk / Control shoulds/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b141",
+   "level": "blk",
+   "locator": "blk:D001: Prevent hallucinated outputs / Control shoulds/1",
+   "hash": "128d0946c1d3",
+   "head": "- Implementing factual accuracy controls. For example, deploying available fact-",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b142",
+   "level": "blk",
+   "locator": "blk:D001: Prevent hallucinated outputs / Control shoulds/2",
+   "hash": "fc1588a07632",
+   "head": "- Establishing information source validation. For example, requiring citations f",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b143",
+   "level": "blk",
+   "locator": "blk:D001: Prevent hallucinated outputs / Control mays/1",
+   "hash": "749555551a3f",
+   "head": "- Maintaining uncertainty communication. For example, displaying confidence leve",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b144",
+   "level": "blk",
+   "locator": "blk:D001: Prevent hallucinated outputs / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b145",
+   "level": "blk",
+   "locator": "blk:D002: Third-party testing for hallucinations / Control shoulds/1",
+   "hash": "7cf102cbf959",
+   "head": "- Appointing qualified third-party assessors. Including selecting assessors with",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b146",
+   "level": "blk",
+   "locator": "blk:D002: Third-party testing for hallucinations / Control shoulds/2",
+   "hash": "a7203b5656a0",
+   "head": "- Conducting regular testing. Including defining testing scope and methodologies",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b147",
+   "level": "blk",
+   "locator": "blk:D002: Third-party testing for hallucinations / Control shoulds/3",
+   "hash": "d48e1290bede",
+   "head": "- Maintaining documentation. Including testing scope, results, and remediation a",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b148",
+   "level": "blk",
+   "locator": "blk:D002: Third-party testing for hallucinations / Control shoulds/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b149",
+   "level": "blk",
+   "locator": "blk:D003: Restrict unsafe tool calls / Control shoulds/1",
+   "hash": "fa854ae06c2f",
+   "head": "- Implementing tool call validation and authorization. For example, restricting ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b150",
+   "level": "blk",
+   "locator": "blk:D003: Restrict unsafe tool calls / Control shoulds/2",
+   "hash": "e3dc64ab18a8",
+   "head": "- Enforcing rate limits and transaction caps for autonomous tool use.",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b151",
+   "level": "blk",
+   "locator": "blk:D003: Restrict unsafe tool calls / Control shoulds/3",
+   "hash": "5acc273c17a3",
+   "head": "- Establishing execution monitoring and logging. For example, tracking all tool ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b152",
+   "level": "blk",
+   "locator": "blk:D003: Restrict unsafe tool calls / Control mays/1",
+   "hash": "4cc28dad9efd",
+   "head": "- Requiring human approval for sensitive tool operations. For example, requiring",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b153",
+   "level": "blk",
+   "locator": "blk:D003: Restrict unsafe tool calls / Control mays/2",
+   "hash": "c58b3712df61",
+   "head": "- Reviewing patterns of AI tool usage. For example, identifying anomalies, updat",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b154",
+   "level": "blk",
+   "locator": "blk:D003: Restrict unsafe tool calls / Control mays/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b155",
+   "level": "blk",
+   "locator": "blk:D004: Third-party testing of tool calls / Control shoulds/1",
+   "hash": "7cf102cbf959",
+   "head": "- Appointing qualified third-party assessors. Including selecting assessors with",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b156",
+   "level": "blk",
+   "locator": "blk:D004: Third-party testing of tool calls / Control shoulds/2",
+   "hash": "f7a7f7055dcc",
+   "head": "- Conducting regular testing. Including defining testing scope and methodologies",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b157",
+   "level": "blk",
+   "locator": "blk:D004: Third-party testing of tool calls / Control shoulds/3",
+   "hash": "d48e1290bede",
+   "head": "- Maintaining documentation. Including testing scope, results, and remediation a",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b158",
+   "level": "blk",
+   "locator": "blk:D004: Third-party testing of tool calls / Control shoulds/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b159",
+   "level": "blk",
+   "locator": "blk:E001: AI failure plan for security breaches / Control shoulds/1",
+   "hash": "ec6bfa1c899d",
+   "head": "- Assigning a breach response lead from existing staff. For example, IT manager,",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b160",
+   "level": "blk",
+   "locator": "blk:E001: AI failure plan for security breaches / Control shoulds/2",
+   "hash": "30eb7874935c",
+   "head": "- Defining breach notification procedures. For example, customer communications,",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b161",
+   "level": "blk",
+   "locator": "blk:E001: AI failure plan for security breaches / Control shoulds/3",
+   "hash": "dc0d9cf0b937",
+   "head": "- Implementing security remediation measures. For example, system freeze capabil",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b162",
+   "level": "blk",
+   "locator": "blk:E001: AI failure plan for security breaches / Control shoulds/4",
+   "hash": "9b0643c5ebdb",
+   "head": "- Establishing evidence collection requirements with guidance on preserving evid",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b163",
+   "level": "blk",
+   "locator": "blk:E001: AI failure plan for security breaches / Control shoulds/5",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b164",
+   "level": "blk",
+   "locator": "blk:E002: AI failure plan for harmful outputs / Control shoulds/1",
+   "hash": "380023d3eba8",
+   "head": "- Implementing customer communication protocols. For example, disclosure procedu",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b165",
+   "level": "blk",
+   "locator": "blk:E002: AI failure plan for harmful outputs / Control shoulds/2",
+   "hash": "5fde22af1270",
+   "head": "- Establishing immediate mitigation steps with designated staff responsibilities",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b166",
+   "level": "blk",
+   "locator": "blk:E002: AI failure plan for harmful outputs / Control mays/1",
+   "hash": "e782ecb32e57",
+   "head": "- Defining harmful output categories with reference to risk taxonomy. For exampl",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b167",
+   "level": "blk",
+   "locator": "blk:E002: AI failure plan for harmful outputs / Control mays/2",
+   "hash": "aa2b8a17faea",
+   "head": "- Coordinating external support engagement. For example,  legal counsel consulta",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b168",
+   "level": "blk",
+   "locator": "blk:E002: AI failure plan for harmful outputs / Control mays/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b169",
+   "level": "blk",
+   "locator": "blk:E003: AI failure plan for hallucinations / Control shoulds/1",
+   "hash": "380023d3eba8",
+   "head": "- Implementing customer communication protocols. For example, disclosure procedu",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b170",
+   "level": "blk",
+   "locator": "blk:E003: AI failure plan for hallucinations / Control shoulds/2",
+   "hash": "b3bbd9beff84",
+   "head": "- Establishing immediate mitigation steps with designated staff responsibilities",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b171",
+   "level": "blk",
+   "locator": "blk:E003: AI failure plan for hallucinations / Control mays/1",
+   "hash": "fd0ec301de47",
+   "head": "- Defining hallucination incident types. ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b172",
+   "level": "blk",
+   "locator": "blk:E003: AI failure plan for hallucinations / Control mays/2",
+   "hash": "deed9077184f",
+   "head": "- Coordinating potential external support. For example, legal consultation for s",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b173",
+   "level": "blk",
+   "locator": "blk:E003: AI failure plan for hallucinations / Control mays/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b174",
+   "level": "blk",
+   "locator": "blk:E004: Assign accountability / Control shoulds/1",
+   "hash": "e3de825759cb",
+   "head": "- Defining AI system changes requiring approval including model selection, mater",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b175",
+   "level": "blk",
+   "locator": "blk:E004: Assign accountability / Control shoulds/2",
+   "hash": "711e85380342",
+   "head": "- Assigning an accountable lead as approver for each of these changes. Can follo",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b176",
+   "level": "blk",
+   "locator": "blk:E004: Assign accountability / Control mays/1",
+   "hash": "9bf646c0a073",
+   "head": "- Implementing code signing and verification processes for AI models, libraries,",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b177",
+   "level": "blk",
+   "locator": "blk:E004: Assign accountability / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b178",
+   "level": "blk",
+   "locator": "blk:E005: Document data storage security / Control shoulds/1",
+   "hash": "582560c541ce",
+   "head": "- Documenting data storage security. For example, assessments around cloud vs. o",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b179",
+   "level": "blk",
+   "locator": "blk:E005: Document data storage security / Control shoulds/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b180",
+   "level": "blk",
+   "locator": "blk:E006: Conduct vendor due diligence / Control shoulds/1",
+   "hash": "1c0608d8330f",
+   "head": "- Defining assessment criteria for foundational or upstream AI models. For examp",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b181",
+   "level": "blk",
+   "locator": "blk:E006: Conduct vendor due diligence / Control shoulds/2",
+   "hash": "64d5fbde0fb3",
+   "head": "- Conducting documented assessments. For example, scoring results, verification ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b182",
+   "level": "blk",
+   "locator": "blk:E006: Conduct vendor due diligence / Control shoulds/3",
+   "hash": "95ebc61aaf61",
+   "head": "- Maintaining assessment records with sufficient detail for audit purposes and r",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b183",
+   "level": "blk",
+   "locator": "blk:E006: Conduct vendor due diligence / Control shoulds/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b184",
+   "level": "blk",
+   "locator": "blk:E007: [Retired] Document system change approvals / Control shoulds/1",
+   "hash": "d66014b56287",
+   "head": "- Documenting formal review and approval decisions for changes defined in E004: ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b185",
+   "level": "blk",
+   "locator": "blk:E007: [Retired] Document system change approvals / Control shoulds/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b186",
+   "level": "blk",
+   "locator": "blk:E008: Review internal processes / Control shoulds/1",
+   "hash": "4fa2f4a71828",
+   "head": "- Reviewing decision processes every quarter including AI system changes, founda",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b187",
+   "level": "blk",
+   "locator": "blk:E008: Review internal processes / Control shoulds/2",
+   "hash": "ed1161f30843",
+   "head": "- Maintaining a centralized repository of decision records and internal review o",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b188",
+   "level": "blk",
+   "locator": "blk:E008: Review internal processes / Control shoulds/3",
+   "hash": "bfa8ffe8c72e",
+   "head": "- Documenting and tracking remediation of any risks identified.",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b189",
+   "level": "blk",
+   "locator": "blk:E008: Review internal processes / Control mays/1",
+   "hash": "d21549d32997",
+   "head": "- Collecting and implementing external feedback on AI systems. For example, syst",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b190",
+   "level": "blk",
+   "locator": "blk:E008: Review internal processes / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b191",
+   "level": "blk",
+   "locator": "blk:E009: Monitor third-party access / Control shoulds/1",
+   "hash": "15c452a51111",
+   "head": "- Configuring logging for third-party interactions. For example, capturing API c",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b192",
+   "level": "blk",
+   "locator": "blk:E009: Monitor third-party access / Control shoulds/2",
+   "hash": "b31cee4775b6",
+   "head": "- Capturing access metadata. For example, user identification, authentication ti",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b193",
+   "level": "blk",
+   "locator": "blk:E009: Monitor third-party access / Control mays/1",
+   "hash": "13fc141cf007",
+   "head": "- Generating alerts on anomalous third-party access patterns against defined det",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b194",
+   "level": "blk",
+   "locator": "blk:E009: Monitor third-party access / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b195",
+   "level": "blk",
+   "locator": "blk:E010: Establish AI acceptable use policy / Control shoulds/1",
+   "hash": "a7deb98488cf",
+   "head": "- Defining prohibited AI usage for end-users. For example, jailbreak attempts, m",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b196",
+   "level": "blk",
+   "locator": "blk:E010: Establish AI acceptable use policy / Control shoulds/2",
+   "hash": "4ac3b343e60c",
+   "head": "- Implementing detection and monitoring tools. For example, prompt analysis, out",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b197",
+   "level": "blk",
+   "locator": "blk:E010: Establish AI acceptable use policy / Control shoulds/3",
+   "hash": "4edb9a19e582",
+   "head": "- Implementing user feedback when policy is breached. For example, showing alert",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b198",
+   "level": "blk",
+   "locator": "blk:E010: Establish AI acceptable use policy / Control mays/1",
+   "hash": "18f410fbc716",
+   "head": "- Real-time monitoring, blocking, or alerting capabilities.",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b199",
+   "level": "blk",
+   "locator": "blk:E010: Establish AI acceptable use policy / Control mays/2",
+   "hash": "e74522916910",
+   "head": "- Maintaining logging and tracking systems. For example, incident creation, viol",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b200",
+   "level": "blk",
+   "locator": "blk:E010: Establish AI acceptable use policy / Control mays/3",
+   "hash": "2fbec09c1886",
+   "head": "- Conducting regular effectiveness reviews. For example, quarterly analysis of v",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b201",
+   "level": "blk",
+   "locator": "blk:E010: Establish AI acceptable use policy / Control mays/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b202",
+   "level": "blk",
+   "locator": "blk:E011: Record processing locations / Control shoulds/1",
+   "hash": "3401ca4484a3",
+   "head": "- Maintaining AI infrastructure location documentation. For example, geographic ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b203",
+   "level": "blk",
+   "locator": "blk:E011: Record processing locations / Control shoulds/2",
+   "hash": "f5763644c4ea",
+   "head": "- Reviewing and updating documentation regularly.",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b204",
+   "level": "blk",
+   "locator": "blk:E011: Record processing locations / Control mays/1",
+   "hash": "1eb98dcb244c",
+   "head": "- Implementing transfer compliance procedures. For example, assessing data trans",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b205",
+   "level": "blk",
+   "locator": "blk:E011: Record processing locations / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b206",
+   "level": "blk",
+   "locator": "blk:E012: Document regulatory compliance / Control shoulds/1",
+   "hash": "523be64b81ad",
+   "head": "- Identifying relevant regulations. For example, data protection laws. For examp",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b207",
+   "level": "blk",
+   "locator": "blk:E012: Document regulatory compliance / Control shoulds/2",
+   "hash": "a2e3dc58941f",
+   "head": "- Documenting compliance procedures and strategies appropriate for company size ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b208",
+   "level": "blk",
+   "locator": "blk:E012: Document regulatory compliance / Control shoulds/3",
+   "hash": "6067bd950bec",
+   "head": "- Reviewing the repository every 6 months and when additional requirements may b",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b209",
+   "level": "blk",
+   "locator": "blk:E012: Document regulatory compliance / Control shoulds/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b210",
+   "level": "blk",
+   "locator": "blk:E013: Implement quality management system / Control shoulds/1",
+   "hash": "5f2033088e86",
+   "head": "- Defining quality objectives, metrics, and risk management approach for AI syst",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b211",
+   "level": "blk",
+   "locator": "blk:E013: Implement quality management system / Control shoulds/2",
+   "hash": "f69c91a3b99c",
+   "head": "- Establishing change management, approval processes, and documentation standard",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b212",
+   "level": "blk",
+   "locator": "blk:E013: Implement quality management system / Control shoulds/3",
+   "hash": "709efa998c19",
+   "head": "- Implementing defect tracking, continuous improvement, and post-market monitori",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b213",
+   "level": "blk",
+   "locator": "blk:E013: Implement quality management system / Control mays/1",
+   "hash": "195ff1c19e2d",
+   "head": "- Establishing data management and record-keeping systems. For example, document",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b214",
+   "level": "blk",
+   "locator": "blk:E013: Implement quality management system / Control mays/2",
+   "hash": "893ff9adee59",
+   "head": "- Documenting communication procedures with regulatory authorities and stakehold",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b215",
+   "level": "blk",
+   "locator": "blk:E013: Implement quality management system / Control mays/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b216",
+   "level": "blk",
+   "locator": "blk:E014: [Retired] Share transparency reports / Control mays/1",
+   "hash": "b67afeca0e63",
+   "head": "- This requirement was merged into E017 at the Q1, 2026 standard update. See aiu",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b217",
+   "level": "blk",
+   "locator": "blk:E014: [Retired] Share transparency reports / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b218",
+   "level": "blk",
+   "locator": "blk:E015: Log AI system activity / Control shoulds/1",
+   "hash": "8e64eebb5f05",
+   "head": "- Capturing system activity details to support incident investigation and behavi",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b219",
+   "level": "blk",
+   "locator": "blk:E015: Log AI system activity / Control shoulds/2",
+   "hash": "8415374c6d19",
+   "head": "- Implementing log storage with appropriate retention periods, access controls, ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b220",
+   "level": "blk",
+   "locator": "blk:E015: Log AI system activity / Control mays/1",
+   "hash": "313ca1dd8e5a",
+   "head": "- Capturing full execution chains of agentic workflows to support investigation ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b221",
+   "level": "blk",
+   "locator": "blk:E015: Log AI system activity / Control mays/2",
+   "hash": "0ebba832f775",
+   "head": "- Implementing technical controls to ensure logs are tamper-evident and independ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b222",
+   "level": "blk",
+   "locator": "blk:E015: Log AI system activity / Control mays/3",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b223",
+   "level": "blk",
+   "locator": "blk:E016: Implement AI disclosure mechanisms / Control shoulds/1",
+   "hash": "cadc5f028b15",
+   "head": "- Implementing AI disclosure for text-based interactions. For example, displayin",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b224",
+   "level": "blk",
+   "locator": "blk:E016: Implement AI disclosure mechanisms / Control shoulds/2",
+   "hash": "bab3d5b03296",
+   "head": "- Implementing AI disclosure for voice-based interactions. For example, providin",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b225",
+   "level": "blk",
+   "locator": "blk:E016: Implement AI disclosure mechanisms / Control shoulds/3",
+   "hash": "8fca319cb175",
+   "head": "- Labelling AI-generated media and documents in a machine-readable and detectabl",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b226",
+   "level": "blk",
+   "locator": "blk:E016: Implement AI disclosure mechanisms / Control shoulds/4",
+   "hash": "3b115430652e",
+   "head": "- Disclosing when autonomous AI agents or systems are performing actions. For ex",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b227",
+   "level": "blk",
+   "locator": "blk:E016: Implement AI disclosure mechanisms / Control shoulds/5",
+   "hash": "4617f05d99cd",
+   "head": "- Establishing reactive disclosure capabilities when users ask if they are inter",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b228",
+   "level": "blk",
+   "locator": "blk:E016: Implement AI disclosure mechanisms / Control shoulds/6",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b229",
+   "level": "blk",
+   "locator": "blk:E017: Document system transparency policy / Control shoulds/1",
+   "hash": "0382d3f2c75f",
+   "head": "- Creating transparency documentation for major AI systems. For example, documen",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b230",
+   "level": "blk",
+   "locator": "blk:E017: Document system transparency policy / Control mays/1",
+   "hash": "258746b6847a",
+   "head": "- Defining policies for sharing transparency documentation with external stakeho",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b231",
+   "level": "blk",
+   "locator": "blk:E017: Document system transparency policy / Control mays/2",
+   "hash": "dba687b48a3f",
+   "head": "- Documenting sharing procedures including approval workflows, version control, ",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b232",
+   "level": "blk",
+   "locator": "blk:E017: Document system transparency policy / Control mays/3",
+   "hash": "6da1c7e23729",
+   "head": "- Documenting platform-level and deployer-level security responsibilities for AI",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b233",
+   "level": "blk",
+   "locator": "blk:E017: Document system transparency policy / Control mays/4",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b234",
+   "level": "blk",
+   "locator": "blk:F001: Prevent AI cyber misuse / Control shoulds/1",
+   "hash": "3e173a73511f",
+   "head": "- Results of testing from foundation model developer on offensive cyber capabili",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b235",
+   "level": "blk",
+   "locator": "blk:F001: Prevent AI cyber misuse / Control mays/1",
+   "hash": "341684e30d9a",
+   "head": "- Implementing malicious use detection and blocking. For example, deploying avai",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b236",
+   "level": "blk",
+   "locator": "blk:F001: Prevent AI cyber misuse / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b237",
+   "level": "blk",
+   "locator": "blk:F002: Prevent catastrophic misuse / Control shoulds/1",
+   "hash": "890e26404c72",
+   "head": "- Results of testing from foundation model developer on CBRN capabilities and mi",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b238",
+   "level": "blk",
+   "locator": "blk:F002: Prevent catastrophic misuse / Control mays/1",
+   "hash": "46e3702754a1",
+   "head": "- Establishing catastrophic misuse monitoring. For example, monitoring AI system",
+   "status": "live"
+  },
+  {
+   "uid": "ac:b239",
+   "level": "blk",
+   "locator": "blk:F002: Prevent catastrophic misuse / Control mays/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  }
+ ]
+}

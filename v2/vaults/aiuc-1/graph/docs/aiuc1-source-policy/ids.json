@@ -1,0 +1,176 @@
+{
+ "doc": "doc:aiuc1-source-policy",
+ "prefix": "sp",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 4,
+  "b": 15
+ },
+ "ids": [
+  {
+   "uid": "sp:d1",
+   "level": "doc",
+   "locator": "doc:aiuc1-source-policy",
+   "hash": "fd33924c8182",
+   "head": "Source policy",
+   "status": "live"
+  },
+  {
+   "uid": "sp:s1",
+   "level": "sec",
+   "locator": "sec:Which source wins",
+   "hash": "867fe8e2f947",
+   "head": "2|Which source wins",
+   "status": "live"
+  },
+  {
+   "uid": "sp:s2",
+   "level": "sec",
+   "locator": "sec:What was retrieved, and how",
+   "hash": "e033e3c7d28e",
+   "head": "2|What was retrieved, and how",
+   "status": "live"
+  },
+  {
+   "uid": "sp:s3",
+   "level": "sec",
+   "locator": "sec:What is retained",
+   "hash": "8f029108ba26",
+   "head": "2|What is retained",
+   "status": "live"
+  },
+  {
+   "uid": "sp:s4",
+   "level": "sec",
+   "locator": "sec:The open question about redistribution",
+   "hash": "c77890af5076",
+   "head": "2|The open question about redistribution",
+   "status": "live"
+  },
+  {
+   "uid": "sp:b1",
+   "level": "blk",
+   "locator": "blk:Which source wins/1",
+   "hash": "f096d80e1c8f",
+   "head": "| Question | Source |\n|---|---|\n| What does the standard say now? | the website ",
+   "status": "live"
+  },
+  {
+   "uid": "sp:b2",
+   "level": "blk",
+   "locator": "blk:Which source wins/2",
+   "hash": "0da1c4322f30",
+   "head": "Where the website and the repository disagree, **neither wins**. Both readings a",
+   "status": "live"
+  },
+  {
+   "uid": "sp:b3",
+   "level": "blk",
+   "locator": "blk:What was retrieved, and how/1",
+   "hash": "4c13082d1ada",
+   "head": "- User agent: `sgit-ai-aiuc1-catalog/<version> (+https://graphs.sgit.ai; derived",
+   "status": "live"
+  },
+  {
+   "uid": "sp:b4",
+   "level": "blk",
+   "locator": "blk:What was retrieved, and how/2",
+   "hash": "d4834ca5b8e2",
+   "head": "- Rate: at most one request per second per host.",
+   "status": "live"
+  },
+  {
+   "uid": "sp:b5",
+   "level": "blk",
+   "locator": "blk:What was retrieved, and how/3",
+   "hash": "093276bc0fef",
+   "head": "- `robots.txt`: fetched before any page. At capture time `https://www.aiuc-1.com",
+   "status": "live"
+  },
+  {
+   "uid": "sp:b6",
+   "level": "blk",
+   "locator": "blk:What was retrieved, and how/4",
+   "hash": "d39dae616e14",
+   "head": "- No authentication, no private endpoints, no non-public APIs, no slug guessing.",
+   "status": "live"
+  },
+  {
+   "uid": "sp:b7",
+   "level": "blk",
+   "locator": "blk:What was retrieved, and how/5",
+   "hash": "b3dae15e50df",
+   "head": "- The GitHub repository was read as a public git clone.",
+   "status": "live"
+  },
+  {
+   "uid": "sp:b8",
+   "level": "blk",
+   "locator": "blk:What is retained/1",
+   "hash": "b8d5271e02a8",
+   "head": "Gzipped copies of the exact response bodies, inside the vault, under\n`evidence/s",
+   "status": "live"
+  },
+  {
+   "uid": "sp:b9",
+   "level": "blk",
+   "locator": "blk:The open question about redistribution/1",
+   "hash": "d6ffeba76958",
+   "head": "**Reuse rights for the full AIUC-1 control text have not been confirmed with AIU",
+   "status": "live"
+  },
+  {
+   "uid": "sp:b10",
+   "level": "blk",
+   "locator": "blk:The open question about redistribution/2",
+   "hash": "c056947bacda",
+   "head": "1. full control text may be republished, or only metadata, hashes and source lin",
+   "status": "live"
+  },
+  {
+   "uid": "sp:b11",
+   "level": "blk",
+   "locator": "blk:The open question about redistribution/3",
+   "hash": "0b71db8d5ee7",
+   "head": "2. an official export or API exists or is planned, so that this could become a\n ",
+   "status": "live"
+  },
+  {
+   "uid": "sp:b12",
+   "level": "blk",
+   "locator": "blk:The open question about redistribution/4",
+   "hash": "9571bd0462c9",
+   "head": "3. the website's control URLs are intended to be stable permalinks;",
+   "status": "live"
+  },
+  {
+   "uid": "sp:b13",
+   "level": "blk",
+   "locator": "blk:The open question about redistribution/5",
+   "hash": "231aeb598a25",
+   "head": "4. sub-controls are normative requirements, examples, or implementation guidance",
+   "status": "live"
+  },
+  {
+   "uid": "sp:b14",
+   "level": "blk",
+   "locator": "blk:The open question about redistribution/6",
+   "hash": "08d500b22d53",
+   "head": "5. what attribution, caching and redistribution terms apply.",
+   "status": "live"
+  },
+  {
+   "uid": "sp:b15",
+   "level": "blk",
+   "locator": "blk:The open question about redistribution/7",
+   "hash": "ba5016964f4a",
+   "head": "Until those are answered, the honest position is the one `NOTICE.md` takes: this",
+   "status": "live"
+  }
+ ]
+}

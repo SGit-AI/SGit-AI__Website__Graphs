@@ -1,0 +1,130 @@
+{
+ "version": "v0.6.19",
+ "slug": "aiuc1-readme",
+ "doc": "doc:aiuc1-readme",
+ "title": "AIUC-1, as a graph you can cite",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 20,
+  "sentences": 39,
+  "words": 621,
+  "spans": 45
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:aiuc1-readme",
+   "title": "AIUC-1, as a graph you can cite",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 5,
+    "words": 92
+   },
+   "shard": "sec-01.json",
+   "uid": "rd:d1"
+  },
+  {
+   "id": "sec:What is here",
+   "title": "What is here",
+   "level": 2,
+   "parent": "doc:aiuc1-readme",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 30
+   },
+   "shard": "sec-02.json",
+   "uid": "rd:s1"
+  },
+  {
+   "id": "sec:The layout",
+   "title": "The layout",
+   "level": 2,
+   "parent": "doc:aiuc1-readme",
+   "counts": {
+    "blocks": 1,
+    "sentences": 0,
+    "words": 0
+   },
+   "shard": "sec-03.json",
+   "uid": "rd:s2"
+  },
+  {
+   "id": "sec:Building it",
+   "title": "Building it",
+   "level": 2,
+   "parent": "doc:aiuc1-readme",
+   "counts": {
+    "blocks": 5,
+    "sentences": 5,
+    "words": 87
+   },
+   "shard": "sec-04.json",
+   "uid": "rd:s3"
+  },
+  {
+   "id": "sec:Where the bytes live",
+   "title": "Where the bytes live",
+   "level": 2,
+   "parent": "doc:aiuc1-readme",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 110
+   },
+   "shard": "sec-05.json",
+   "uid": "rd:s4"
+  },
+  {
+   "id": "sec:The rules this build holds to",
+   "title": "The rules this build holds to",
+   "level": 2,
+   "parent": "doc:aiuc1-readme",
+   "counts": {
+    "blocks": 6,
+    "sentences": 17,
+    "words": 198
+   },
+   "shard": "sec-06.json",
+   "uid": "rd:s5"
+  },
+  {
+   "id": "sec:The terminology inversion, stated once",
+   "title": "The terminology inversion, stated once",
+   "level": 2,
+   "parent": "doc:aiuc1-readme",
+   "counts": {
+    "blocks": 1,
+    "sentences": 3,
+    "words": 57
+   },
+   "shard": "sec-07.json",
+   "uid": "rd:s6"
+  },
+  {
+   "id": "sec:Licence and attribution",
+   "title": "Licence and attribution",
+   "level": 2,
+   "parent": "doc:aiuc1-readme",
+   "counts": {
+    "blocks": 1,
+    "sentences": 3,
+    "words": 47
+   },
+   "shard": "sec-08.json",
+   "uid": "rd:s7"
+  }
+ ]
+}

@@ -31,6 +31,17 @@ EDGE_KINDS = {
     'names': 'this official changelog row names this control',
     'superseded_by': 'this control was merged into that control',
     'follows': 'this release follows that one',
+    'has_section': 'the source document has this section',
+    'has_block': 'the section has this paragraph',
+    'states': 'this section of the official markdown states this control',
+    'in_section': 'this paragraph sits under that heading',
+    'wording_of': 'this paragraph is character-for-character this requirement',
+    'uses_term': 'this text uses this term',
+    'evidenced_crosswalk': 'AIUC publishes this crosswalk, and the two texts share '
+                           'distinctive vocabulary that is evidence for it',
+    'candidate_crosswalk': 'this build observed shared distinctive vocabulary where AIUC '
+                           'publishes no crosswalk; a candidate for review, not a mapping',
+    'anchors_to': 'the crosswalked clause, as an external anchor node',
 }
 
 
@@ -52,6 +63,61 @@ class Graph:
             return
         self.seen.add(key)
         self.edges.append({'from': source, 'type': kind, 'to': target, **props})
+
+
+def add_documents(graph):
+    """The source markdown, decomposed: document, section, paragraph."""
+    index = c.read_json('graph/docs/index.json', {})
+    for record in index.get('documents') or []:
+        doc = graph.node('document:%s' % record['slug'], 'document', record['slug'],
+                         title=record.get('title'), path=record['path'],
+                         origin=record.get('origin'), words=record.get('words'),
+                         blocks=record.get('blocks'),
+                         rebuilds_byte_identical=record.get('rebuilds_byte_identical'),
+                         source_sha256=record.get('source_sha256'),
+                         graph_path=record['graph_path'])
+        shape = c.read_json('%s/index.json' % record['graph_path'], {})
+        for section in shape.get('sections') or []:
+            if section['id'].startswith('doc:'):
+                continue
+            node = graph.node('docsec:%s:%s' % (record['slug'], section['id']),
+                              'doc_section', section['title'], uid=section.get('uid'),
+                              level=section.get('level'), document=record['slug'])
+            graph.edge(doc, 'has_section', node)
+            shard = section.get('shard')
+            if not shard:
+                continue
+            payload = c.read_json('%s/%s' % (record['graph_path'], shard), {})
+            for block in payload.get('blocks') or []:
+                block_node = graph.node('docblk:%s:%s' % (record['slug'], block['id']),
+                                        'doc_block', block['id'], uid=block.get('uid'),
+                                        block_kind=block['kind'], document=record['slug'],
+                                        text=block.get('text'))
+                graph.edge(node, 'has_block', block_node)
+
+
+def add_meaning(graph):
+    """The anchors, the terms, and the graded edges between them."""
+    meaning = c.read_json('graph/meaning/index.json', {})
+    if not meaning:
+        return
+    for anchor in meaning['anchors']:
+        graph.node(anchor['id'], 'anchor', anchor['reference'],
+                   framework=anchor['framework'], text=anchor.get('text'),
+                   article_number=anchor.get('article_number'),
+                   also_in=(anchor.get('also_in') or {}).get('vault'),
+                   authority=anchor['authority'])
+        crosswalk = 'crosswalk:%s:%s' % (c.slugify(anchor['framework']),
+                                         c.slugify(anchor['reference']))
+        graph.edge(crosswalk, 'anchors_to', anchor['id'])
+        graph.edge(anchor['id'], 'in_framework',
+                   'framework:%s' % c.slugify(anchor['framework']))
+    for term in meaning['terms']:
+        graph.node(term['id'], 'term', term['stem'], rarity=term['rarity'],
+                   bridges=term['bridges'], as_written=term['as_written'])
+    for edge in c.read_json('graph/meaning/edges.json', {}).get('edges') or []:
+        graph.edge(edge['from'], edge['type'], edge['to'], grade=edge['grade'],
+                   basis=edge.get('basis'), score=edge.get('score'))
 
 
 def build():
@@ -173,6 +239,9 @@ def build():
                 graph.edge(req, 'applies_to_capability',
                            graph.node('capability:%s' % c.slugify(capability),
                                       'capability', capability))
+
+    add_documents(graph)
+    add_meaning(graph)
 
     counts = {}
     for node in graph.nodes.values():

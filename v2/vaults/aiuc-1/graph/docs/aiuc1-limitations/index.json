@@ -1,0 +1,143 @@
+{
+ "version": "v0.6.19",
+ "slug": "aiuc1-limitations",
+ "doc": "doc:aiuc1-limitations",
+ "title": "Limitations",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 10,
+  "sentences": 27,
+  "words": 420,
+  "spans": 18
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:aiuc1-limitations",
+   "title": "Limitations",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 1,
+    "sentences": 2,
+    "words": 18
+   },
+   "shard": "sec-01.json",
+   "uid": "lm:d1"
+  },
+  {
+   "id": "sec:It is not the standard",
+   "title": "It is not the standard",
+   "level": 2,
+   "parent": "doc:aiuc1-limitations",
+   "counts": {
+    "blocks": 1,
+    "sentences": 3,
+    "words": 18
+   },
+   "shard": "sec-02.json",
+   "uid": "lm:s1"
+  },
+  {
+   "id": "sec:Historical releases are thinner than the current one",
+   "title": "Historical releases are thinner than the current one",
+   "level": 2,
+   "parent": "doc:aiuc1-limitations",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 87
+   },
+   "shard": "sec-03.json",
+   "uid": "lm:s2"
+  },
+  {
+   "id": "sec:One named release has no artefact",
+   "title": "One named release has no artefact",
+   "level": 2,
+   "parent": "doc:aiuc1-limitations",
+   "counts": {
+    "blocks": 1,
+    "sentences": 3,
+    "words": 52
+   },
+   "shard": "sec-04.json",
+   "uid": "lm:s3"
+  },
+  {
+   "id": "sec:The announced release is not built",
+   "title": "The announced release is not built",
+   "level": 2,
+   "parent": "doc:aiuc1-limitations",
+   "counts": {
+    "blocks": 1,
+    "sentences": 2,
+    "words": 30
+   },
+   "shard": "sec-05.json",
+   "uid": "lm:s4"
+  },
+  {
+   "id": "sec:Crosswalks are AIUC's, not this build's",
+   "title": "Crosswalks are AIUC's, not this build's",
+   "level": 2,
+   "parent": "doc:aiuc1-limitations",
+   "counts": {
+    "blocks": 1,
+    "sentences": 3,
+    "words": 53
+   },
+   "shard": "sec-06.json",
+   "uid": "lm:s5"
+  },
+  {
+   "id": "sec:Sub-control status is not stated by the source",
+   "title": "Sub-control status is not stated by the source",
+   "level": 2,
+   "parent": "doc:aiuc1-limitations",
+   "counts": {
+    "blocks": 1,
+    "sentences": 3,
+    "words": 47
+   },
+   "shard": "sec-07.json",
+   "uid": "lm:s6"
+  },
+  {
+   "id": "sec:Five differences are recorded and unresolved",
+   "title": "Five differences are recorded and unresolved",
+   "level": 2,
+   "parent": "doc:aiuc1-limitations",
+   "counts": {
+    "blocks": 1,
+    "sentences": 3,
+    "words": 58
+   },
+   "shard": "sec-08.json",
+   "uid": "lm:s7"
+  },
+  {
+   "id": "sec:Everything else is a snapshot in time",
+   "title": "Everything else is a snapshot in time",
+   "level": 2,
+   "parent": "doc:aiuc1-limitations",
+   "counts": {
+    "blocks": 1,
+    "sentences": 4,
+    "words": 57
+   },
+   "shard": "sec-09.json",
+   "uid": "lm:s8"
+  }
+ ]
+}

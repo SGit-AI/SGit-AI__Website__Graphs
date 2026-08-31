@@ -18,6 +18,8 @@ STAGES = (
     ('parse_changelog', 'read the official changelog repository and pages'),
     ('normalize_catalog', 'build one artefact per release'),
     ('diff_releases', 'turn release differences into change events'),
+    ('build_docgraph', 'decompose every source document to the word, and prove it rebuilds'),
+    ('build_meaning', 'connect the paragraphs and the words to external anchors'),
     ('build_graph', 'decompose the catalog into one graph'),
     ('validate', 'schema, traceability, semantic and inventory gates'),
 )

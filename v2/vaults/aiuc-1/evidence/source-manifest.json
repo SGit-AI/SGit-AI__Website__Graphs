@@ -1,7 +1,7 @@
 {
  "manifest_version": "1.0.0",
  "generator_version": "0.1.0",
- "generated_at": "2026-08-31T23:13:04Z",
+ "generated_at": "2026-08-31T23:55:41Z",
  "user_agent": "sgit-ai-aiuc1-catalog/0.1.0 (+https://graphs.sgit.ai; derived machine-readable catalog; contact via graphs.sgit.ai)",
  "rate_limit": "at most one request per second per host",
  "robots": {

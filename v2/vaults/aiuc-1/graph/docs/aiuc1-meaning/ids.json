@@ -1,0 +1,256 @@
+{
+ "doc": "doc:aiuc1-meaning",
+ "prefix": "mn",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 7,
+  "b": 22
+ },
+ "ids": [
+  {
+   "uid": "mn:d1",
+   "level": "doc",
+   "locator": "doc:aiuc1-meaning",
+   "hash": "f985e5591e9c",
+   "head": "Giving a paragraph and a word meaning",
+   "status": "live"
+  },
+  {
+   "uid": "mn:s1",
+   "level": "sec",
+   "locator": "sec:The three grades, never mixed",
+   "hash": "955a24fbe328",
+   "head": "2|The three grades, never mixed",
+   "status": "live"
+  },
+  {
+   "uid": "mn:s2",
+   "level": "sec",
+   "locator": "sec:Why the paragraph had to be nailed down first",
+   "hash": "e4769ee87709",
+   "head": "2|Why the paragraph had to be nailed down first",
+   "status": "live"
+  },
+  {
+   "uid": "mn:s3",
+   "level": "sec",
+   "locator": "sec:What a term is, and why rarity decides",
+   "hash": "6ffeb4c390b6",
+   "head": "2|What a term is, and why rarity decides",
+   "status": "live"
+  },
+  {
+   "uid": "mn:s4",
+   "level": "sec",
+   "locator": "sec:The gap is the honest half",
+   "hash": "32bdd7af8218",
+   "head": "2|The gap is the honest half",
+   "status": "live"
+  },
+  {
+   "uid": "mn:s5",
+   "level": "sec",
+   "locator": "sec:Anchor nodes",
+   "hash": "4ccb3068e47e",
+   "head": "2|Anchor nodes",
+   "status": "live"
+  },
+  {
+   "uid": "mn:s6",
+   "level": "sec",
+   "locator": "sec:What this does not do",
+   "hash": "f4f365844f9b",
+   "head": "2|What this does not do",
+   "status": "live"
+  },
+  {
+   "uid": "mn:s7",
+   "level": "sec",
+   "locator": "sec:Reading it",
+   "hash": "2ee1e4aad477",
+   "head": "2|Reading it",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b1",
+   "level": "blk",
+   "locator": "blk:Giving a paragraph and a word meaning/1",
+   "hash": "77424bae701b",
+   "head": "This vault started as a catalog: 53 controls, each with its fields and its sourc",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b2",
+   "level": "blk",
+   "locator": "blk:Giving a paragraph and a word meaning/2",
+   "hash": "1eb53680178b",
+   "head": "So the second half of this build adds no properties to any control. It adds edge",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b3",
+   "level": "blk",
+   "locator": "blk:The three grades, never mixed/1",
+   "hash": "bf28b96763c8",
+   "head": "| Grade | What it means | How it was arrived at |\n|---|---|---|\n| **structural**",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b4",
+   "level": "blk",
+   "locator": "blk:The three grades, never mixed/2",
+   "hash": "949dc0a1d2bf",
+   "head": "Every edge in `graph/meaning/edges.json` carries its grade. Nothing downstream t",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b5",
+   "level": "blk",
+   "locator": "blk:Why the paragraph had to be nailed down first/1",
+   "hash": "0ef7f4ef1b35",
+   "head": "An edge to a paragraph is worth what the paragraph's identity is worth. So befor",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b6",
+   "level": "blk",
+   "locator": "blk:Why the paragraph had to be nailed down first/2",
+   "hash": "af69b9d79e7c",
+   "head": "That is what makes `blk:A006: Prevent PII leakage / Control shoulds/1` a thing y",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b7",
+   "level": "blk",
+   "locator": "blk:Why the paragraph had to be nailed down first/3",
+   "hash": "57c736377524",
+   "head": "The counts live in `graph/docs/index.json` and are deliberately not repeated her",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b8",
+   "level": "blk",
+   "locator": "blk:What a term is, and why rarity decides/1",
+   "hash": "dc02cf3000fd",
+   "head": "A term here is a stem, not a word: `agent`, `agents` and `agent's` are one term.",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b9",
+   "level": "blk",
+   "locator": "blk:What a term is, and why rarity decides/2",
+   "hash": "3941652a5cd0",
+   "head": "A term is only evidence if it is **rare**. `data` appears in hundreds of clauses",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b10",
+   "level": "blk",
+   "locator": "blk:The gap is the honest half/1",
+   "hash": "18cd48423320",
+   "head": "For every published crosswalk this build reports two lists: the distinctive term",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b11",
+   "level": "blk",
+   "locator": "blk:The gap is the honest half/2",
+   "hash": "053b33cc2e2e",
+   "head": "**257 of the 1,126 crosswalks AIUC publishes share no distinctive vocabulary at ",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b12",
+   "level": "blk",
+   "locator": "blk:Anchor nodes/1",
+   "hash": "1b2e58613601",
+   "head": "An external clause is an anchor node in the sense that document gives the term: ",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b13",
+   "level": "blk",
+   "locator": "blk:Anchor nodes/2",
+   "hash": "2d8e2bff7781",
+   "head": "Where an EU AI Act anchor names an article, it also carries a pointer to the est",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b14",
+   "level": "blk",
+   "locator": "blk:What this does not do/1",
+   "hash": "4ac048b80a84",
+   "head": "- It does not propose a mapping AIUC should adopt. A candidate is a reason to lo",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b15",
+   "level": "blk",
+   "locator": "blk:What this does not do/2",
+   "hash": "0b384d899c3e",
+   "head": "- It does not score how *compliant* anything is. There is no such number here an",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b16",
+   "level": "blk",
+   "locator": "blk:What this does not do/3",
+   "hash": "08902759e360",
+   "head": "- It does not resolve the 257 wordless crosswalks. Resolving one means deciding ",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b17",
+   "level": "blk",
+   "locator": "blk:What this does not do/4",
+   "hash": "730fe3ef4334",
+   "head": "- It does not stem cleverly. `authorization` and `authorizing` land on different",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b18",
+   "level": "blk",
+   "locator": "blk:Reading it/1",
+   "hash": "1b9ec3891d5c",
+   "head": "- `graph/meaning/index.json` — the grades, the counts, every anchor, every bridg",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b19",
+   "level": "blk",
+   "locator": "blk:Reading it/2",
+   "hash": "f3ea9537c250",
+   "head": "- `graph/meaning/controls/<id>.json` — one control's evidence and candidates in ",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b20",
+   "level": "blk",
+   "locator": "blk:Reading it/3",
+   "hash": "9aa41acee360",
+   "head": "- `graph/meaning/edges.json` — every edge with its grade and the sentence that s",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b21",
+   "level": "blk",
+   "locator": "blk:Reading it/4",
+   "hash": "d5fad006da38",
+   "head": "- `graph/docs/<slug>/` — the decomposition each of those edges points into.",
+   "status": "live"
+  },
+  {
+   "uid": "mn:b22",
+   "level": "blk",
+   "locator": "blk:Reading it/5",
+   "hash": "058874d8b682",
+   "head": "Or open the vault's own page: a control's panel shows the shared words and the g",
+   "status": "live"
+  }
+ ]
+}

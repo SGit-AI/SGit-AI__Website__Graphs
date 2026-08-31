@@ -1,0 +1,296 @@
+{
+ "doc": "doc:aiuc1-methodology",
+ "prefix": "mt",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 9,
+  "b": 25
+ },
+ "ids": [
+  {
+   "uid": "mt:d1",
+   "level": "doc",
+   "locator": "doc:aiuc1-methodology",
+   "hash": "f26d07e6b71e",
+   "head": "Methodology",
+   "status": "live"
+  },
+  {
+   "uid": "mt:s1",
+   "level": "sec",
+   "locator": "sec:1. Discovery, from the site's own model",
+   "hash": "b56ac1e08222",
+   "head": "2|1. Discovery, from the site's own model",
+   "status": "live"
+  },
+  {
+   "uid": "mt:s2",
+   "level": "sec",
+   "locator": "sec:2. Capture, politely",
+   "hash": "29ea7d303abd",
+   "head": "2|2. Capture, politely",
+   "status": "live"
+  },
+  {
+   "uid": "mt:s3",
+   "level": "sec",
+   "locator": "sec:3. Extraction, structurally",
+   "hash": "80f6004bdd2a",
+   "head": "2|3. Extraction, structurally",
+   "status": "live"
+  },
+  {
+   "uid": "mt:s4",
+   "level": "sec",
+   "locator": "sec:4. History, from the official repository",
+   "hash": "7a8085f94670",
+   "head": "2|4. History, from the official repository",
+   "status": "live"
+  },
+  {
+   "uid": "mt:s5",
+   "level": "sec",
+   "locator": "sec:5. Matching a commit to a release, explicitly",
+   "hash": "a91e5c465bdb",
+   "head": "2|5. Matching a commit to a release, explicitly",
+   "status": "live"
+  },
+  {
+   "uid": "mt:s6",
+   "level": "sec",
+   "locator": "sec:6. Normalisation, without overwriting",
+   "hash": "5730c7abb64c",
+   "head": "2|6. Normalisation, without overwriting",
+   "status": "live"
+  },
+  {
+   "uid": "mt:s7",
+   "level": "sec",
+   "locator": "sec:7. Reconciliation",
+   "hash": "017f6d42db3f",
+   "head": "2|7. Reconciliation",
+   "status": "live"
+  },
+  {
+   "uid": "mt:s8",
+   "level": "sec",
+   "locator": "sec:8. The graph",
+   "hash": "b8123097781f",
+   "head": "2|8. The graph",
+   "status": "live"
+  },
+  {
+   "uid": "mt:s9",
+   "level": "sec",
+   "locator": "sec:9. The gate",
+   "hash": "64f5d49c8c9c",
+   "head": "2|9. The gate",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b1",
+   "level": "blk",
+   "locator": "blk:Methodology/1",
+   "hash": "cf2e84c3b200",
+   "head": "How a public AIUC-1 page becomes a catalog record, and what stops it becoming\nso",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b2",
+   "level": "blk",
+   "locator": "blk:1. Discovery, from the site's own model/1",
+   "hash": "d5e44f6516da",
+   "head": "The AIUC-1 site is a React application that ships its published control model in",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b3",
+   "level": "blk",
+   "locator": "blk:1. Discovery, from the site's own model/2",
+   "hash": "ecf38cafbf40",
+   "head": "Nothing is hardcoded. There is no control list in the code. A control that stops",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b4",
+   "level": "blk",
+   "locator": "blk:1. Discovery, from the site's own model/3",
+   "hash": "48dfbb8936db",
+   "head": "A second hop reads the changelog page for the per-release changelog pages it lin",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b5",
+   "level": "blk",
+   "locator": "blk:2. Capture, politely/1",
+   "hash": "77a067f71e29",
+   "head": "`src/fetch_sources.py` is the only place bytes enter the build.",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b6",
+   "level": "blk",
+   "locator": "blk:2. Capture, politely/2",
+   "hash": "f187c4ee28e6",
+   "head": "- One request per second per host, an explicit user agent naming this build.",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b7",
+   "level": "blk",
+   "locator": "blk:2. Capture, politely/3",
+   "hash": "bb3bd3440bee",
+   "head": "- `robots.txt` fetched and honoured; if it cannot be retrieved at all, the fetch",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b8",
+   "level": "blk",
+   "locator": "blk:2. Capture, politely/4",
+   "hash": "24896209ea38",
+   "head": "- Conditional requests when a prior snapshot carries an ETag.",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b9",
+   "level": "blk",
+   "locator": "blk:2. Capture, politely/5",
+   "hash": "9485baaba4e4",
+   "head": "- Bounded exponential backoff, transient status codes only.",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b10",
+   "level": "blk",
+   "locator": "blk:2. Capture, politely/6",
+   "hash": "b5e859f65a62",
+   "head": "- The exact received body saved gzipped under `evidence/snapshots/<day>/<ref>.ht",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b11",
+   "level": "blk",
+   "locator": "blk:3. Extraction, structurally/1",
+   "hash": "088ef05ea1d7",
+   "head": "`src/rsc.py` reads the payload format the site publishes: rows, length-prefixed\n",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b12",
+   "level": "blk",
+   "locator": "blk:3. Extraction, structurally/2",
+   "hash": "11ebd52a31a0",
+   "head": "- **Pruning before expansion.** Each control carries a back-reference to its dom",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b13",
+   "level": "blk",
+   "locator": "blk:3. Extraction, structurally/3",
+   "hash": "32829e2a2dfd",
+   "head": "- **Self-references resolved against the model itself.** Repeated objects — cros",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b14",
+   "level": "blk",
+   "locator": "blk:3. Extraction, structurally/4",
+   "hash": "aefe43f4bbba",
+   "head": "`src/parse_pages.py` then reads each control **from its own page**, not only fro",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b15",
+   "level": "blk",
+   "locator": "blk:4. History, from the official repository/1",
+   "hash": "dbfa9ffab4f6",
+   "head": "`src/parse_changelog.py` reads every commit in `aiunderwriting/AIUC-1-Changelog`",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b16",
+   "level": "blk",
+   "locator": "blk:5. Matching a commit to a release, explicitly/1",
+   "hash": "5e9566c41710",
+   "head": "The repository was created after the first releases and backfills them in order,",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b17",
+   "level": "blk",
+   "locator": "blk:6. Normalisation, without overwriting/1",
+   "hash": "b795fadfe160",
+   "head": "`src/normalize_catalog.py` builds the control records. Every mapped value sits b",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b18",
+   "level": "blk",
+   "locator": "blk:6. Normalisation, without overwriting/2",
+   "hash": "ab52518e3451",
+   "head": "```json\n\"frequency\": { \"value\": \"every_12_months\", \"raw_text\": \"Every 12 months\"",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b19",
+   "level": "blk",
+   "locator": "blk:6. Normalisation, without overwriting/3",
+   "hash": "233590eb2cd8",
+   "head": "A label with no unambiguous mapping produces `{\"value\": null, \"raw_text\": \"...\"}",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b20",
+   "level": "blk",
+   "locator": "blk:7. Reconciliation/1",
+   "hash": "33b24299f674",
+   "head": "`src/reconcile.py` compares the website's control set with the repository's mark",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b21",
+   "level": "blk",
+   "locator": "blk:7. Reconciliation/2",
+   "hash": "2421c9dca238",
+   "head": "- `title_conflict`, `summary_conflict`, `guidance_set_conflict` — **blocking**;",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b22",
+   "level": "blk",
+   "locator": "blk:7. Reconciliation/3",
+   "hash": "fb45a1c3c1cd",
+   "head": "- `guidance_order_difference`, `guidance_formatting_difference` — recorded, not\n",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b23",
+   "level": "blk",
+   "locator": "blk:7. Reconciliation/4",
+   "hash": "ca8d8f00167f",
+   "head": "At the 2026-07-15 release there are five findings, none blocking: three are mark",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b24",
+   "level": "blk",
+   "locator": "blk:8. The graph/1",
+   "hash": "b12882ae78c6",
+   "head": "`src/build_graph.py` decomposes the catalog into nodes and edges. Seventeen edge",
+   "status": "live"
+  },
+  {
+   "uid": "mt:b25",
+   "level": "blk",
+   "locator": "blk:9. The gate/1",
+   "hash": "1700b51e1d67",
+   "head": "`src/validate.py` runs four levels — schema, source traceability, semantic, and\n",
+   "status": "live"
+  }
+ ]
+}

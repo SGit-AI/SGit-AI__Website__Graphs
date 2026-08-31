@@ -113,7 +113,15 @@ INLINE_RE = re.compile(
 
 
 def headings(raw):
-    """(title, level, byte start) per heading, fences respected; duplicate titles fail."""
+    """(title, level, byte start) per heading, fences respected.
+
+    A repeated title used to fail the build, because a section's id is its title. That
+    held while every registered document was written to avoid the clash, and stopped
+    holding at the first document that was not: a standard with "### Control shoulds"
+    under each of its fifty-three controls is a perfectly ordinary document. Uniqueness
+    now belongs to `section_id`, which qualifies a repeat by its parent and never
+    changes the id of a title that appears once.
+    """
     heads, pos, fence = [], 0, False
     for ln in raw.split(b"\n"):
         if ln.strip().startswith(b"```"):
@@ -122,11 +130,24 @@ def headings(raw):
             heads.append((ln.lstrip(b"#").strip().decode("utf-8"),
                           len(ln) - len(ln.lstrip(b"#")), pos))
         pos += len(ln) + 1
-    titles = [t for t, _, _ in heads]
-    dupes = {t for t in titles if titles.count(t) > 1}
-    if dupes:
-        raise SystemExit(f"gen_coregraph: duplicate heading(s): {sorted(dupes)}")
     return heads
+
+
+def section_id(title, parent_title, taken):
+    """A section's id: `sec:<title>`, qualified by its parent only when it must be.
+
+    A title that appears once keeps the id it has always had, so every document built
+    before this existed rebuilds byte-identical. A repeat is qualified by its parent
+    heading, and an ordinal is the last resort rather than the first.
+    """
+    for candidate in (f"sec:{title}",
+                      f"sec:{parent_title} / {title}" if parent_title else None):
+        if candidate and candidate not in taken:
+            return candidate
+    n = 2
+    while f"sec:{parent_title} / {title} #{n}" in taken:
+        n += 1
+    return f"sec:{parent_title} / {title} #{n}"
 
 
 def blocks_of(body, base):
@@ -393,8 +414,6 @@ def assign_ids(current, ledger, doc_id=None, prefix=None):
 
     def claim(uid, level, locator, h, head):
         del unclaimed[uid]
-        live_rows.append({"uid": uid, "level": level, "locator": locator,
-                          "hash": h, "head": head, "status": "live"})
         uid_by_loc[locator] = uid
 
     staged = [(level, locator, text,
@@ -432,10 +451,15 @@ def assign_ids(current, ledger, doc_id=None, prefix=None):
         else:
             k = lv[level]
             minted[k] = minted.get(k, 0) + 1
-            uid = f'{ledger.get("prefix") or prefix or PREFIX}:{k}{minted[k]}'
-            live_rows.append({"uid": uid, "level": level, "locator": locator,
-                              "hash": h, "head": head, "status": "live"})
-            uid_by_loc[locator] = uid
+            uid_by_loc[locator] = f'{ledger.get("prefix") or prefix or PREFIX}:{k}{minted[k]}'
+    # The live rows are emitted in DOCUMENT order, not in the order the three passes
+    # happened to claim them. Gate 7 compares two ledgers for equality, and a pass that
+    # matched everything by locator emits document order while a pass that fell through
+    # to hash or fuzzy matching emits claim order: the same ledger, refused as unstable.
+    # That made any document with a paragraph inserted mid-section unbuildable.
+    for level, locator, text, h, head in staged:
+        live_rows.append({"uid": uid_by_loc[locator], "level": level, "locator": locator,
+                          "hash": h, "head": head, "status": "live"})
     retired = sorted(
         [{**e, "status": "retired"} for e in unclaimed.values()]
         + [e for e in prev.values() if e["status"] == "retired"],
@@ -466,21 +490,25 @@ def build(slug, src, out, ledger_path, prefix, quiet=False):
     doc_id = f"doc:{slug}"
     out.mkdir(parents=True, exist_ok=True)
 
-    stack, secs = [], []
+    stack, secs, taken = [], [], set()
     for i, (t, lv, start) in enumerate(heads):
         end = heads[i + 1][2] if i + 1 < len(heads) else len(raw)
         if i == 0:
             # the H1 is the document itself; its own body (the header block) is kept too
             secs.append({"id": doc_id, "title": t, "level": lv, "parent": None,
                          "start": start, "end": end})
-            stack.append((lv, doc_id))
+            stack.append((lv, doc_id, t))
+            taken.add(doc_id)
             continue
         while stack and stack[-1][0] >= lv:
             stack.pop()
         parent = stack[-1][1] if stack else doc_id
-        secs.append({"id": f"sec:{t}", "title": t, "level": lv, "parent": parent,
+        parent_title = stack[-1][2] if stack else title
+        sid = section_id(t, parent_title, taken)
+        taken.add(sid)
+        secs.append({"id": sid, "title": t, "level": lv, "parent": parent,
                      "start": start, "end": end})
-        stack.append((lv, f"sec:{t}"))
+        stack.append((lv, sid, t))
 
     forms = {}
     totals = {"blocks": 0, "sentences": 0, "words": 0, "spans": 0}
@@ -512,6 +540,13 @@ def build(slug, src, out, ledger_path, prefix, quiet=False):
             raise SystemExit(f"gen_coregraph: unaccounted bytes at end of {s['id']}: {raw[cursor:s['end']][:60]!r}")
 
         blk_rows, counts = [], {"blocks": 0, "sentences": 0, "words": 0}
+        # A block is named after its section. That was the section's TITLE, which is the
+        # same string for every "### Control shoulds" in a standard with fifty-three of
+        # them: the ids collided, one block's raw text overwrote another's in the
+        # formatting graph, and the rebuild came back 5KB short. Naming it after the
+        # section's ID fixes that and changes nothing for a title that appears once,
+        # because there the id is `sec:` plus exactly that title.
+        blk_base = s["id"][4:] if s["id"].startswith("sec:") else s["title"]
         for bn, (kind, bs, be) in enumerate(blocks, 1):
             raw_text = raw[bs:be].decode("utf-8")
             if fcur < bs:
@@ -521,7 +556,7 @@ def build(slug, src, out, ledger_path, prefix, quiet=False):
                 plain = re.sub(r"^(\s*)(?:[-*+]|\d+\.)\s+", r"\1", plain)
             if kind == "quote":
                 plain = re.sub(r"^>\s?", "", plain, flags=re.M)
-            blk_id = f"blk:{s['title']}/{bn}"
+            blk_id = f"blk:{blk_base}/{bn}"
             fmt_pieces.append({"b": blk_id})
             fmt_blocks[blk_id] = raw_text
             fcur = be

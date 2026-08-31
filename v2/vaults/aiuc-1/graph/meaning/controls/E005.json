@@ -1,0 +1,2093 @@
+{
+ "control_id": "E005",
+ "title": "Document data storage security",
+ "published_crosswalks": 23,
+ "published_with_shared_vocabulary": 5,
+ "published_without_shared_vocabulary": [
+  "CSA AICM::DCS-01: Off-Site Equipment Disposal Policy and Procedures",
+  "CSA AICM::DCS-02: Off-Site Transfer Authorization Policy and Procedures",
+  "CSA AICM::DCS-03: Secure Area Policy and Procedures",
+  "CSA AICM::DCS-04: Secure Media Transportation Policy and Procedures",
+  "CSA AICM::DCS-05: Assets Classification",
+  "CSA AICM::DCS-06: Assets Cataloguing and Tracking",
+  "CSA AICM::DCS-08: Equipment Identification",
+  "CSA AICM::DCS-09: Secure Area Authorization",
+  "CSA AICM::DCS-10: Surveillance System",
+  "CSA AICM::DCS-11: Adverse Event Response Training",
+  "CSA AICM::DCS-13: Environmental Systems",
+  "CSA AICM::DCS-14: Secure Utilities",
+  "CSA AICM::DCS-15: Equipment Location",
+  "IBM AI Risk Atlas::IBM 36: Training Data - Data usage restrictions",
+  "IBM AI Risk Atlas::IBM 37: Training Data - Data transfer restrictions",
+  "NIST AI RMF::MAP 4.2: Internal risk controls",
+  "OWASP AIVSS::Agent Supply Chain and Dependency Risk",
+  "OWASP Top 10::LLM03:25 - Supply Chain"
+ ],
+ "candidates": 0,
+ "evidence": [
+  {
+   "clause": "MITRE ATLAS::AML-M0017: AI Model Distribution Methods",
+   "anchor": "anchor:mitre-atlas:aml-m0017-ai-model-distribution-methods",
+   "framework": "MITRE ATLAS",
+   "reference": "AML-M0017: AI Model Distribution Methods",
+   "shared_terms": [
+    {
+     "stem": "cloud",
+     "rarity": 0.7798,
+     "as_written": [
+      "cloud"
+     ]
+    },
+    {
+     "stem": "consider",
+     "rarity": 0.6697,
+     "as_written": [
+      "consider",
+      "considering"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "aml-m0017",
+     "rarity": 1.0,
+     "as_written": [
+      "aml-m0017"
+     ]
+    },
+    {
+     "stem": "gray-box",
+     "rarity": 1.0,
+     "as_written": [
+      "gray-box"
+     ]
+    },
+    {
+     "stem": "preproces",
+     "rarity": 1.0,
+     "as_written": [
+      "preprocessing"
+     ]
+    },
+    {
+     "stem": "surface",
+     "rarity": 1.0,
+     "as_written": [
+      "surface"
+     ]
+    },
+    {
+     "stem": "comput",
+     "rarity": 0.8899,
+     "as_written": [
+      "computing"
+     ]
+    },
+    {
+     "stem": "distribution",
+     "rarity": 0.8899,
+     "as_written": [
+      "distribution"
+     ]
+    },
+    {
+     "stem": "edge",
+     "rarity": 0.8899,
+     "as_written": [
+      "edge"
+     ]
+    },
+    {
+     "stem": "serv",
+     "rarity": 0.8899,
+     "as_written": [
+      "serving"
+     ]
+    },
+    {
+     "stem": "increase",
+     "rarity": 0.8255,
+     "as_written": [
+      "increase"
+     ]
+    },
+    {
+     "stem": "devic",
+     "rarity": 0.7798,
+     "as_written": [
+      "devices"
+     ]
+    },
+    {
+     "stem": "featur",
+     "rarity": 0.7798,
+     "as_written": [
+      "features"
+     ]
+    },
+    {
+     "stem": "has",
+     "rarity": 0.6909,
+     "as_written": [
+      "has"
+     ]
+    }
+   ],
+   "score": 0.0907,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DCS-07: Controlled Physical Access Points",
+   "anchor": "anchor:csa-aicm:dcs-07-controlled-physical-access-points",
+   "framework": "CSA AICM",
+   "reference": "DCS-07: Controlled Physical Access Points",
+   "shared_terms": [
+    {
+     "stem": "security",
+     "rarity": 0.3523,
+     "as_written": [
+      "security"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dcs-07",
+     "rarity": 1.0,
+     "as_written": [
+      "dcs-07"
+     ]
+    },
+    {
+     "stem": "perimeter",
+     "rarity": 0.8899,
+     "as_written": [
+      "perimeters"
+     ]
+    },
+    {
+     "stem": "personnel",
+     "rarity": 0.6697,
+     "as_written": [
+      "personnel"
+     ]
+    },
+    {
+     "stem": "physical",
+     "rarity": 0.6342,
+     "as_written": [
+      "physical"
+     ]
+    },
+    {
+     "stem": "point",
+     "rarity": 0.6342,
+     "as_written": [
+      "points"
+     ]
+    },
+    {
+     "stem": "safeguard",
+     "rarity": 0.5409,
+     "as_written": [
+      "safeguard"
+     ]
+    },
+    {
+     "stem": "design",
+     "rarity": 0.4887,
+     "as_written": [
+      "design"
+     ]
+    }
+   ],
+   "score": 0.0676,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-14.1: Unauthorized Access",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-14-1-unauthorized-access",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-14.1: Unauthorized Access",
+   "shared_terms": [
+    {
+     "stem": "cloud",
+     "rarity": 0.7798,
+     "as_written": [
+      "cloud"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "aitech-14",
+     "rarity": 0.8899,
+     "as_written": [
+      "aitech-14"
+     ]
+    },
+    {
+     "stem": "distinct",
+     "rarity": 0.8899,
+     "as_written": [
+      "distinct"
+     ]
+    },
+    {
+     "stem": "host",
+     "rarity": 0.8899,
+     "as_written": [
+      "hosting"
+     ]
+    },
+    {
+     "stem": "itself",
+     "rarity": 0.8899,
+     "as_written": [
+      "itself"
+     ]
+    },
+    {
+     "stem": "underly",
+     "rarity": 0.8899,
+     "as_written": [
+      "underlying"
+     ]
+    },
+    {
+     "stem": "account",
+     "rarity": 0.8255,
+     "as_written": [
+      "accounts"
+     ]
+    },
+    {
+     "stem": "gain",
+     "rarity": 0.7798,
+     "as_written": [
+      "gain"
+     ]
+    },
+    {
+     "stem": "server",
+     "rarity": 0.7443,
+     "as_written": [
+      "servers"
+     ]
+    },
+    {
+     "stem": "infrastructure",
+     "rarity": 0.7154,
+     "as_written": [
+      "infrastructure"
+     ]
+    },
+    {
+     "stem": "databas",
+     "rarity": 0.6697,
+     "as_written": [
+      "databases"
+     ]
+    },
+    {
+     "stem": "environment",
+     "rarity": 0.651,
+     "as_written": [
+      "environment"
+     ]
+    },
+    {
+     "stem": "exploitation",
+     "rarity": 0.6191,
+     "as_written": [
+      "exploitation"
+     ]
+    }
+   ],
+   "score": 0.0643,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DCS-12: Cabling Security",
+   "anchor": "anchor:csa-aicm:dcs-12-cabling-security",
+   "framework": "CSA AICM",
+   "reference": "DCS-12: Cabling Security",
+   "shared_terms": [
+    {
+     "stem": "security",
+     "rarity": 0.3523,
+     "as_written": [
+      "security"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "cabl",
+     "rarity": 1.0,
+     "as_written": [
+      "cables",
+      "cabling"
+     ]
+    },
+    {
+     "stem": "dcs-12",
+     "rarity": 1.0,
+     "as_written": [
+      "dcs-12"
+     ]
+    },
+    {
+     "stem": "interference",
+     "rarity": 1.0,
+     "as_written": [
+      "interference"
+     ]
+    },
+    {
+     "stem": "power",
+     "rarity": 1.0,
+     "as_written": [
+      "power"
+     ]
+    },
+    {
+     "stem": "telecommunication",
+     "rarity": 1.0,
+     "as_written": [
+      "telecommunication"
+     ]
+    },
+    {
+     "stem": "facility",
+     "rarity": 0.8899,
+     "as_written": [
+      "facilities"
+     ]
+    },
+    {
+     "stem": "interception",
+     "rarity": 0.8899,
+     "as_written": [
+      "interception"
+     ]
+    },
+    {
+     "stem": "offic",
+     "rarity": 0.8899,
+     "as_written": [
+      "offices"
+     ]
+    },
+    {
+     "stem": "room",
+     "rarity": 0.8899,
+     "as_written": [
+      "rooms"
+     ]
+    },
+    {
+     "stem": "damage",
+     "rarity": 0.8255,
+     "as_written": [
+      "damage"
+     ]
+    },
+    {
+     "stem": "risk-bas",
+     "rarity": 0.7154,
+     "as_written": [
+      "risk-based"
+     ]
+    },
+    {
+     "stem": "threat",
+     "rarity": 0.5409,
+     "as_written": [
+      "threat"
+     ]
+    }
+   ],
+   "score": 0.0287,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::AIS-05: Application Security Testing",
+   "anchor": "anchor:csa-aicm:ais-05-application-security-testing",
+   "framework": "CSA AICM",
+   "reference": "AIS-05: Application Security Testing",
+   "shared_terms": [
+    {
+     "stem": "security",
+     "rarity": 0.3523,
+     "as_written": [
+      "security"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "ais-05",
+     "rarity": 1.0,
+     "as_written": [
+      "ais-05"
+     ]
+    },
+    {
+     "stem": "delivery",
+     "rarity": 1.0,
+     "as_written": [
+      "delivery"
+     ]
+    },
+    {
+     "stem": "upgrad",
+     "rarity": 1.0,
+     "as_written": [
+      "upgrades"
+     ]
+    },
+    {
+     "stem": "acceptance",
+     "rarity": 0.8899,
+     "as_written": [
+      "acceptance"
+     ]
+    },
+    {
+     "stem": "automate",
+     "rarity": 0.8899,
+     "as_written": [
+      "automate"
+     ]
+    },
+    {
+     "stem": "assurance",
+     "rarity": 0.7443,
+     "as_written": [
+      "assurance"
+     ]
+    },
+    {
+     "stem": "version",
+     "rarity": 0.7443,
+     "as_written": [
+      "versions"
+     ]
+    },
+    {
+     "stem": "provid",
+     "rarity": 0.6909,
+     "as_written": [
+      "provides"
+     ]
+    },
+    {
+     "stem": "possible",
+     "rarity": 0.651,
+     "as_written": [
+      "possible"
+     ]
+    },
+    {
+     "stem": "strategy",
+     "rarity": 0.651,
+     "as_written": [
+      "strategy"
+     ]
+    },
+    {
+     "stem": "criteria",
+     "rarity": 0.6342,
+     "as_written": [
+      "criteria"
+     ]
+    },
+    {
+     "stem": "goal",
+     "rarity": 0.6342,
+     "as_written": [
+      "goals"
+     ]
+    }
+   ],
+   "score": 0.0253,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 36: Training Data - Data usage restrictions",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-36-training-data-data-usage-restrictions",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 36: Training Data - Data usage restrictions",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "prohibit",
+     "rarity": 0.7154,
+     "as_written": [
+      "prohibit"
+     ]
+    },
+    {
+     "stem": "specific",
+     "rarity": 0.6053,
+     "as_written": [
+      "specific"
+     ]
+    },
+    {
+     "stem": "restriction",
+     "rarity": 0.5926,
+     "as_written": [
+      "restrictions"
+     ]
+    },
+    {
+     "stem": "case",
+     "rarity": 0.5596,
+     "as_written": [
+      "cases"
+     ]
+    },
+    {
+     "stem": "usage",
+     "rarity": 0.509,
+     "as_written": [
+      "usage"
+     ]
+    },
+    {
+     "stem": "laws",
+     "rarity": 0.5019,
+     "as_written": [
+      "laws"
+     ]
+    },
+    {
+     "stem": "limit",
+     "rarity": 0.5019,
+     "as_written": [
+      "limit"
+     ]
+    },
+    {
+     "stem": "train",
+     "rarity": 0.4025,
+     "as_written": [
+      "training"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP Top 10::LLM03:25 - Supply Chain",
+   "anchor": "anchor:owasp-top-10:llm03-25-supply-chain",
+   "framework": "OWASP Top 10",
+   "reference": "LLM03:25 - Supply Chain",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "llm03",
+     "rarity": 1.0,
+     "as_written": [
+      "llm03"
+     ]
+    },
+    {
+     "stem": "pre-train",
+     "rarity": 0.8899,
+     "as_written": [
+      "pre-trained"
+     ]
+    },
+    {
+     "stem": "traditional",
+     "rarity": 0.8899,
+     "as_written": [
+      "traditional"
+     ]
+    },
+    {
+     "stem": "face",
+     "rarity": 0.8255,
+     "as_written": [
+      "face"
+     ]
+    },
+    {
+     "stem": "unlike",
+     "rarity": 0.8255,
+     "as_written": [
+      "unlike"
+     ]
+    },
+    {
+     "stem": "breach",
+     "rarity": 0.7443,
+     "as_written": [
+      "breaches"
+     ]
+    },
+    {
+     "stem": "platform",
+     "rarity": 0.7443,
+     "as_written": [
+      "platforms"
+     ]
+    },
+    {
+     "stem": "failur",
+     "rarity": 0.7154,
+     "as_written": [
+      "failures"
+     ]
+    },
+    {
+     "stem": "caus",
+     "rarity": 0.6697,
+     "as_written": [
+      "causing"
+     ]
+    },
+    {
+     "stem": "software",
+     "rarity": 0.6697,
+     "as_written": [
+      "software"
+     ]
+    },
+    {
+     "stem": "llm",
+     "rarity": 0.6342,
+     "as_written": [
+      "llm"
+     ]
+    },
+    {
+     "stem": "bias",
+     "rarity": 0.5698,
+     "as_written": [
+      "bias"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MAP 4.2: Internal risk controls",
+   "anchor": "anchor:nist-ai-rmf:map-4-2-internal-risk-controls",
+   "framework": "NIST AI RMF",
+   "reference": "MAP 4.2: Internal risk controls",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "component",
+     "rarity": 0.651,
+     "as_written": [
+      "components"
+     ]
+    },
+    {
+     "stem": "technology",
+     "rarity": 0.6191,
+     "as_written": [
+      "technologies"
+     ]
+    },
+    {
+     "stem": "internal",
+     "rarity": 0.5409,
+     "as_written": [
+      "internal"
+     ]
+    },
+    {
+     "stem": "third-party",
+     "rarity": 0.509,
+     "as_written": [
+      "third-party"
+     ]
+    },
+    {
+     "stem": "map",
+     "rarity": 0.5019,
+     "as_written": [
+      "map"
+     ]
+    },
+    {
+     "stem": "identifi",
+     "rarity": 0.4952,
+     "as_written": [
+      "identified"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DCS-01: Off-Site Equipment Disposal Policy and Procedures",
+   "anchor": "anchor:csa-aicm:dcs-01-off-site-equipment-disposal-policy-and-procedures",
+   "framework": "CSA AICM",
+   "reference": "DCS-01: Off-Site Equipment Disposal Policy and Procedures",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dcs-01",
+     "rarity": 1.0,
+     "as_written": [
+      "dcs-01"
+     ]
+    },
+    {
+     "stem": "impossible",
+     "rarity": 1.0,
+     "as_written": [
+      "impossible"
+     ]
+    },
+    {
+     "stem": "premis",
+     "rarity": 1.0,
+     "as_written": [
+      "premises"
+     ]
+    },
+    {
+     "stem": "destroy",
+     "rarity": 0.8899,
+     "as_written": [
+      "destroyed"
+     ]
+    },
+    {
+     "stem": "destruction",
+     "rarity": 0.8899,
+     "as_written": [
+      "destruction"
+     ]
+    },
+    {
+     "stem": "disposal",
+     "rarity": 0.8899,
+     "as_written": [
+      "disposal"
+     ]
+    },
+    {
+     "stem": "off-site",
+     "rarity": 0.8899,
+     "as_written": [
+      "off-site"
+     ]
+    },
+    {
+     "stem": "physically",
+     "rarity": 0.8899,
+     "as_written": [
+      "physically"
+     ]
+    },
+    {
+     "stem": "render",
+     "rarity": 0.8899,
+     "as_written": [
+      "renders"
+     ]
+    },
+    {
+     "stem": "equipment",
+     "rarity": 0.8255,
+     "as_written": [
+      "equipment"
+     ]
+    },
+    {
+     "stem": "recovery",
+     "rarity": 0.8255,
+     "as_written": [
+      "recovery"
+     ]
+    },
+    {
+     "stem": "outside",
+     "rarity": 0.7798,
+     "as_written": [
+      "outside"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DCS-02: Off-Site Transfer Authorization Policy and Procedures",
+   "anchor": "anchor:csa-aicm:dcs-02-off-site-transfer-authorization-policy-and-procedures",
+   "framework": "CSA AICM",
+   "reference": "DCS-02: Off-Site Transfer Authorization Policy and Procedures",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "alternate",
+     "rarity": 1.0,
+     "as_written": [
+      "alternate"
+     ]
+    },
+    {
+     "stem": "dcs-02",
+     "rarity": 1.0,
+     "as_written": [
+      "dcs-02"
+     ]
+    },
+    {
+     "stem": "hardware",
+     "rarity": 1.0,
+     "as_written": [
+      "hardware"
+     ]
+    },
+    {
+     "stem": "offsite",
+     "rarity": 1.0,
+     "as_written": [
+      "offsite"
+     ]
+    },
+    {
+     "stem": "relocation",
+     "rarity": 1.0,
+     "as_written": [
+      "relocation"
+     ]
+    },
+    {
+     "stem": "transferrequest",
+     "rarity": 1.0,
+     "as_written": [
+      "transferrequest"
+     ]
+    },
+    {
+     "stem": "off-site",
+     "rarity": 0.8899,
+     "as_written": [
+      "off-site"
+     ]
+    },
+    {
+     "stem": "cryptographically",
+     "rarity": 0.8255,
+     "as_written": [
+      "cryptographically"
+     ]
+    },
+    {
+     "stem": "verifiable",
+     "rarity": 0.8255,
+     "as_written": [
+      "verifiable"
+     ]
+    },
+    {
+     "stem": "written",
+     "rarity": 0.7798,
+     "as_written": [
+      "written"
+     ]
+    },
+    {
+     "stem": "location",
+     "rarity": 0.7154,
+     "as_written": [
+      "location"
+     ]
+    },
+    {
+     "stem": "maintainpolicy",
+     "rarity": 0.7154,
+     "as_written": [
+      "maintainpolicies"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DCS-03: Secure Area Policy and Procedures",
+   "anchor": "anchor:csa-aicm:dcs-03-secure-area-policy-and-procedures",
+   "framework": "CSA AICM",
+   "reference": "DCS-03: Secure Area Policy and Procedures",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dcs-03",
+     "rarity": 1.0,
+     "as_written": [
+      "dcs-03"
+     ]
+    },
+    {
+     "stem": "environmentin",
+     "rarity": 1.0,
+     "as_written": [
+      "environmentin"
+     ]
+    },
+    {
+     "stem": "facility",
+     "rarity": 0.8899,
+     "as_written": [
+      "facilities"
+     ]
+    },
+    {
+     "stem": "offic",
+     "rarity": 0.8899,
+     "as_written": [
+      "offices"
+     ]
+    },
+    {
+     "stem": "proceduresat",
+     "rarity": 0.8899,
+     "as_written": [
+      "proceduresat"
+     ]
+    },
+    {
+     "stem": "room",
+     "rarity": 0.8899,
+     "as_written": [
+      "rooms"
+     ]
+    },
+    {
+     "stem": "safe",
+     "rarity": 0.7798,
+     "as_written": [
+      "safe"
+     ]
+    },
+    {
+     "stem": "maintainpolicy",
+     "rarity": 0.7154,
+     "as_written": [
+      "maintainpolicies"
+     ]
+    },
+    {
+     "stem": "area",
+     "rarity": 0.6697,
+     "as_written": [
+      "area"
+     ]
+    },
+    {
+     "stem": "work",
+     "rarity": 0.6697,
+     "as_written": [
+      "working"
+     ]
+    },
+    {
+     "stem": "secure",
+     "rarity": 0.5499,
+     "as_written": [
+      "secure"
+     ]
+    },
+    {
+     "stem": "approve",
+     "rarity": 0.4952,
+     "as_written": [
+      "approve"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DCS-04: Secure Media Transportation Policy and Procedures",
+   "anchor": "anchor:csa-aicm:dcs-04-secure-media-transportation-policy-and-procedures",
+   "framework": "CSA AICM",
+   "reference": "DCS-04: Secure Media Transportation Policy and Procedures",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dcs-04",
+     "rarity": 1.0,
+     "as_written": [
+      "dcs-04"
+     ]
+    },
+    {
+     "stem": "transportation",
+     "rarity": 1.0,
+     "as_written": [
+      "transportation"
+     ]
+    },
+    {
+     "stem": "media",
+     "rarity": 0.7798,
+     "as_written": [
+      "media"
+     ]
+    },
+    {
+     "stem": "maintainpolicy",
+     "rarity": 0.7154,
+     "as_written": [
+      "maintainpolicies"
+     ]
+    },
+    {
+     "stem": "physical",
+     "rarity": 0.6342,
+     "as_written": [
+      "physical"
+     ]
+    },
+    {
+     "stem": "secure",
+     "rarity": 0.5499,
+     "as_written": [
+      "secure"
+     ]
+    },
+    {
+     "stem": "approve",
+     "rarity": 0.4952,
+     "as_written": [
+      "approve"
+     ]
+    },
+    {
+     "stem": "communicate",
+     "rarity": 0.4651,
+     "as_written": [
+      "communicate"
+     ]
+    },
+    {
+     "stem": "significant",
+     "rarity": 0.4446,
+     "as_written": [
+      "significant"
+     ]
+    },
+    {
+     "stem": "annually",
+     "rarity": 0.4264,
+     "as_written": [
+      "annually"
+     ]
+    },
+    {
+     "stem": "update",
+     "rarity": 0.4264,
+     "as_written": [
+      "update"
+     ]
+    },
+    {
+     "stem": "apply",
+     "rarity": 0.4222,
+     "as_written": [
+      "apply"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DCS-05: Assets Classification",
+   "anchor": "anchor:csa-aicm:dcs-05-assets-classification",
+   "framework": "CSA AICM",
+   "reference": "DCS-05: Assets Classification",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dcs-05",
+     "rarity": 1.0,
+     "as_written": [
+      "dcs-05"
+     ]
+    },
+    {
+     "stem": "classify",
+     "rarity": 0.8899,
+     "as_written": [
+      "classify"
+     ]
+    },
+    {
+     "stem": "logical",
+     "rarity": 0.7798,
+     "as_written": [
+      "logical"
+     ]
+    },
+    {
+     "stem": "classification",
+     "rarity": 0.7154,
+     "as_written": [
+      "classification"
+     ]
+    },
+    {
+     "stem": "asset",
+     "rarity": 0.651,
+     "as_written": [
+      "assets"
+     ]
+    },
+    {
+     "stem": "physical",
+     "rarity": 0.6342,
+     "as_written": [
+      "physical"
+     ]
+    },
+    {
+     "stem": "busines",
+     "rarity": 0.5698,
+     "as_written": [
+      "business"
+     ]
+    },
+    {
+     "stem": "application",
+     "rarity": 0.5019,
+     "as_written": [
+      "applications"
+     ]
+    },
+    {
+     "stem": "organizational",
+     "rarity": 0.4825,
+     "as_written": [
+      "organizational"
+     ]
+    },
+    {
+     "stem": "significant",
+     "rarity": 0.4446,
+     "as_written": [
+      "significant"
+     ]
+    },
+    {
+     "stem": "annually",
+     "rarity": 0.4264,
+     "as_written": [
+      "annually"
+     ]
+    },
+    {
+     "stem": "update",
+     "rarity": 0.4264,
+     "as_written": [
+      "update"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DCS-06: Assets Cataloguing and Tracking",
+   "anchor": "anchor:csa-aicm:dcs-06-assets-cataloguing-and-tracking",
+   "framework": "CSA AICM",
+   "reference": "DCS-06: Assets Cataloguing and Tracking",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "catalogu",
+     "rarity": 1.0,
+     "as_written": [
+      "cataloguing"
+     ]
+    },
+    {
+     "stem": "catalogue",
+     "rarity": 1.0,
+     "as_written": [
+      "catalogue"
+     ]
+    },
+    {
+     "stem": "dcs-06",
+     "rarity": 1.0,
+     "as_written": [
+      "dcs-06"
+     ]
+    },
+    {
+     "stem": "locatedat",
+     "rarity": 1.0,
+     "as_written": [
+      "locatedat"
+     ]
+    },
+    {
+     "stem": "site",
+     "rarity": 1.0,
+     "as_written": [
+      "sites"
+     ]
+    },
+    {
+     "stem": "secur",
+     "rarity": 0.8255,
+     "as_written": [
+      "secured"
+     ]
+    },
+    {
+     "stem": "logical",
+     "rarity": 0.7798,
+     "as_written": [
+      "logical"
+     ]
+    },
+    {
+     "stem": "asset",
+     "rarity": 0.651,
+     "as_written": [
+      "assets"
+     ]
+    },
+    {
+     "stem": "physical",
+     "rarity": 0.6342,
+     "as_written": [
+      "physical"
+     ]
+    },
+    {
+     "stem": "service",
+     "rarity": 0.5409,
+     "as_written": [
+      "service"
+     ]
+    },
+    {
+     "stem": "track",
+     "rarity": 0.509,
+     "as_written": [
+      "track",
+      "tracking"
+     ]
+    },
+    {
+     "stem": "provider",
+     "rarity": 0.5019,
+     "as_written": [
+      "providers"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DCS-08: Equipment Identification",
+   "anchor": "anchor:csa-aicm:dcs-08-equipment-identification",
+   "framework": "CSA AICM",
+   "reference": "DCS-08: Equipment Identification",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dcs-08",
+     "rarity": 1.0,
+     "as_written": [
+      "dcs-08"
+     ]
+    },
+    {
+     "stem": "equipment",
+     "rarity": 0.8255,
+     "as_written": [
+      "equipment"
+     ]
+    },
+    {
+     "stem": "connection",
+     "rarity": 0.7443,
+     "as_written": [
+      "connection"
+     ]
+    },
+    {
+     "stem": "authentication",
+     "rarity": 0.6697,
+     "as_written": [
+      "authentication"
+     ]
+    },
+    {
+     "stem": "method",
+     "rarity": 0.6342,
+     "as_written": [
+      "method"
+     ]
+    },
+    {
+     "stem": "identification",
+     "rarity": 0.5926,
+     "as_written": [
+      "identification"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DCS-09: Secure Area Authorization",
+   "anchor": "anchor:csa-aicm:dcs-09-secure-area-authorization",
+   "framework": "CSA AICM",
+   "reference": "DCS-09: Secure Area Authorization",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "allingres",
+     "rarity": 1.0,
+     "as_written": [
+      "allingress"
+     ]
+    },
+    {
+     "stem": "basisa",
+     "rarity": 1.0,
+     "as_written": [
+      "basisas"
+     ]
+    },
+    {
+     "stem": "dcs-09",
+     "rarity": 1.0,
+     "as_written": [
+      "dcs-09"
+     ]
+    },
+    {
+     "stem": "physicalacces",
+     "rarity": 1.0,
+     "as_written": [
+      "physicalaccess"
+     ]
+    },
+    {
+     "stem": "deem",
+     "rarity": 0.8899,
+     "as_written": [
+      "deemed"
+     ]
+    },
+    {
+     "stem": "egres",
+     "rarity": 0.8255,
+     "as_written": [
+      "egress"
+     ]
+    },
+    {
+     "stem": "periodic",
+     "rarity": 0.8255,
+     "as_written": [
+      "periodic"
+     ]
+    },
+    {
+     "stem": "retain",
+     "rarity": 0.7443,
+     "as_written": [
+      "retain"
+     ]
+    },
+    {
+     "stem": "allow",
+     "rarity": 0.6909,
+     "as_written": [
+      "allow"
+     ]
+    },
+    {
+     "stem": "area",
+     "rarity": 0.6697,
+     "as_written": [
+      "area",
+      "areas"
+     ]
+    },
+    {
+     "stem": "personnel",
+     "rarity": 0.6697,
+     "as_written": [
+      "personnel"
+     ]
+    },
+    {
+     "stem": "point",
+     "rarity": 0.6342,
+     "as_written": [
+      "points"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DCS-10: Surveillance System",
+   "anchor": "anchor:csa-aicm:dcs-10-surveillance-system",
+   "framework": "CSA AICM",
+   "reference": "DCS-10: Surveillance System",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dcs-10",
+     "rarity": 1.0,
+     "as_written": [
+      "dcs-10"
+     ]
+    },
+    {
+     "stem": "datacenter",
+     "rarity": 0.8899,
+     "as_written": [
+      "datacenter"
+     ]
+    },
+    {
+     "stem": "ingres",
+     "rarity": 0.8899,
+     "as_written": [
+      "ingress"
+     ]
+    },
+    {
+     "stem": "perimeter",
+     "rarity": 0.8899,
+     "as_written": [
+      "perimeter"
+     ]
+    },
+    {
+     "stem": "egres",
+     "rarity": 0.8255,
+     "as_written": [
+      "egress"
+     ]
+    },
+    {
+     "stem": "operate",
+     "rarity": 0.8255,
+     "as_written": [
+      "operate"
+     ]
+    },
+    {
+     "stem": "surveillance",
+     "rarity": 0.8255,
+     "as_written": [
+      "surveillance"
+     ]
+    },
+    {
+     "stem": "point",
+     "rarity": 0.6342,
+     "as_written": [
+      "points"
+     ]
+    },
+    {
+     "stem": "attempt",
+     "rarity": 0.5698,
+     "as_written": [
+      "attempts"
+     ]
+    },
+    {
+     "stem": "detect",
+     "rarity": 0.5164,
+     "as_written": [
+      "detect"
+     ]
+    },
+    {
+     "stem": "unauthoriz",
+     "rarity": 0.4887,
+     "as_written": [
+      "unauthorized"
+     ]
+    },
+    {
+     "stem": "external",
+     "rarity": 0.4825,
+     "as_written": [
+      "external"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DCS-11: Adverse Event Response Training",
+   "anchor": "anchor:csa-aicm:dcs-11-adverse-event-response-training",
+   "framework": "CSA AICM",
+   "reference": "DCS-11: Adverse Event Response Training",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dcs-11",
+     "rarity": 1.0,
+     "as_written": [
+      "dcs-11"
+     ]
+    },
+    {
+     "stem": "adverse",
+     "rarity": 0.8899,
+     "as_written": [
+      "adverse"
+     ]
+    },
+    {
+     "stem": "datacenter",
+     "rarity": 0.8899,
+     "as_written": [
+      "datacenter"
+     ]
+    },
+    {
+     "stem": "ingres",
+     "rarity": 0.8899,
+     "as_written": [
+      "ingress"
+     ]
+    },
+    {
+     "stem": "egres",
+     "rarity": 0.8255,
+     "as_written": [
+      "egress"
+     ]
+    },
+    {
+     "stem": "safely",
+     "rarity": 0.7798,
+     "as_written": [
+      "safely"
+     ]
+    },
+    {
+     "stem": "personnel",
+     "rarity": 0.6697,
+     "as_written": [
+      "personnel"
+     ]
+    },
+    {
+     "stem": "event",
+     "rarity": 0.6053,
+     "as_written": [
+      "event",
+      "events"
+     ]
+    },
+    {
+     "stem": "attempt",
+     "rarity": 0.5698,
+     "as_written": [
+      "attempts"
+     ]
+    },
+    {
+     "stem": "manage",
+     "rarity": 0.5241,
+     "as_written": [
+      "manage"
+     ]
+    },
+    {
+     "stem": "response",
+     "rarity": 0.5164,
+     "as_written": [
+      "response"
+     ]
+    },
+    {
+     "stem": "limit",
+     "rarity": 0.5019,
+     "as_written": [
+      "limited"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DCS-13: Environmental Systems",
+   "anchor": "anchor:csa-aicm:dcs-13-environmental-systems",
+   "framework": "CSA AICM",
+   "reference": "DCS-13: Environmental Systems",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "center",
+     "rarity": 1.0,
+     "as_written": [
+      "center"
+     ]
+    },
+    {
+     "stem": "dcs-13",
+     "rarity": 1.0,
+     "as_written": [
+      "dcs-13"
+     ]
+    },
+    {
+     "stem": "humidity",
+     "rarity": 1.0,
+     "as_written": [
+      "humidity"
+     ]
+    },
+    {
+     "stem": "temperatureand",
+     "rarity": 1.0,
+     "as_written": [
+      "temperatureand"
+     ]
+    },
+    {
+     "stem": "environmental",
+     "rarity": 0.8899,
+     "as_written": [
+      "environmental"
+     ]
+    },
+    {
+     "stem": "continual",
+     "rarity": 0.8255,
+     "as_written": [
+      "continual"
+     ]
+    },
+    {
+     "stem": "condition",
+     "rarity": 0.7154,
+     "as_written": [
+      "conditions"
+     ]
+    },
+    {
+     "stem": "accept",
+     "rarity": 0.6909,
+     "as_written": [
+      "accepted"
+     ]
+    },
+    {
+     "stem": "industry",
+     "rarity": 0.6342,
+     "as_written": [
+      "industry"
+     ]
+    },
+    {
+     "stem": "effectivenes",
+     "rarity": 0.5499,
+     "as_written": [
+      "effectiveness"
+     ]
+    },
+    {
+     "stem": "test",
+     "rarity": 0.4825,
+     "as_written": [
+      "test"
+     ]
+    },
+    {
+     "stem": "standard",
+     "rarity": 0.4707,
+     "as_written": [
+      "standards"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DCS-14: Secure Utilities",
+   "anchor": "anchor:csa-aicm:dcs-14-secure-utilities",
+   "framework": "CSA AICM",
+   "reference": "DCS-14: Secure Utilities",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "continualeffectivenes",
+     "rarity": 1.0,
+     "as_written": [
+      "continualeffectiveness"
+     ]
+    },
+    {
+     "stem": "dcs-14",
+     "rarity": 1.0,
+     "as_written": [
+      "dcs-14"
+     ]
+    },
+    {
+     "stem": "utility",
+     "rarity": 0.8899,
+     "as_written": [
+      "utilities"
+     ]
+    },
+    {
+     "stem": "interval",
+     "rarity": 0.6191,
+     "as_written": [
+      "intervals"
+     ]
+    },
+    {
+     "stem": "secure",
+     "rarity": 0.5499,
+     "as_written": [
+      "secure"
+     ]
+    },
+    {
+     "stem": "servic",
+     "rarity": 0.5323,
+     "as_written": [
+      "services"
+     ]
+    },
+    {
+     "stem": "test",
+     "rarity": 0.4825,
+     "as_written": [
+      "test"
+     ]
+    },
+    {
+     "stem": "plan",
+     "rarity": 0.4264,
+     "as_written": [
+      "planned"
+     ]
+    },
+    {
+     "stem": "monitor",
+     "rarity": 0.3786,
+     "as_written": [
+      "monitor"
+     ]
+    },
+    {
+     "stem": "maintain",
+     "rarity": 0.3523,
+     "as_written": [
+      "maintain"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DCS-15: Equipment Location",
+   "anchor": "anchor:csa-aicm:dcs-15-equipment-location",
+   "framework": "CSA AICM",
+   "reference": "DCS-15: Equipment Location",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "away",
+     "rarity": 1.0,
+     "as_written": [
+      "away"
+     ]
+    },
+    {
+     "stem": "business-critical",
+     "rarity": 1.0,
+     "as_written": [
+      "business-critical"
+     ]
+    },
+    {
+     "stem": "dcs-15",
+     "rarity": 1.0,
+     "as_written": [
+      "dcs-15"
+     ]
+    },
+    {
+     "stem": "probability",
+     "rarity": 1.0,
+     "as_written": [
+      "probability"
+     ]
+    },
+    {
+     "stem": "environmental",
+     "rarity": 0.8899,
+     "as_written": [
+      "environmental"
+     ]
+    },
+    {
+     "stem": "equipment",
+     "rarity": 0.8255,
+     "as_written": [
+      "equipment"
+     ]
+    },
+    {
+     "stem": "high",
+     "rarity": 0.7798,
+     "as_written": [
+      "high"
+     ]
+    },
+    {
+     "stem": "location",
+     "rarity": 0.7154,
+     "as_written": [
+      "location",
+      "locations"
+     ]
+    },
+    {
+     "stem": "subject",
+     "rarity": 0.651,
+     "as_written": [
+      "subject"
+     ]
+    },
+    {
+     "stem": "keep",
+     "rarity": 0.6342,
+     "as_written": [
+      "keep"
+     ]
+    },
+    {
+     "stem": "event",
+     "rarity": 0.6053,
+     "as_written": [
+      "events"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 37: Training Data - Data transfer restrictions",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-37-training-data-data-transfer-restrictions",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 37: Training Data - Data transfer restrictions",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "prohibit",
+     "rarity": 0.7154,
+     "as_written": [
+      "prohibit"
+     ]
+    },
+    {
+     "stem": "transfer",
+     "rarity": 0.6909,
+     "as_written": [
+      "transfer",
+      "transferring"
+     ]
+    },
+    {
+     "stem": "restriction",
+     "rarity": 0.5926,
+     "as_written": [
+      "restrictions"
+     ]
+    },
+    {
+     "stem": "laws",
+     "rarity": 0.5019,
+     "as_written": [
+      "laws"
+     ]
+    },
+    {
+     "stem": "limit",
+     "rarity": 0.5019,
+     "as_written": [
+      "limit"
+     ]
+    },
+    {
+     "stem": "train",
+     "rarity": 0.4025,
+     "as_written": [
+      "training"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP AIVSS::Agent Supply Chain and Dependency Risk",
+   "anchor": "anchor:owasp-aivss:agent-supply-chain-and-dependency-risk",
+   "framework": "OWASP AIVSS",
+   "reference": "Agent Supply Chain and Dependency Risk",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dependency",
+     "rarity": 0.7154,
+     "as_written": [
+      "dependency"
+     ]
+    },
+    {
+     "stem": "library",
+     "rarity": 0.6909,
+     "as_written": [
+      "libraries"
+     ]
+    },
+    {
+     "stem": "compromis",
+     "rarity": 0.6342,
+     "as_written": [
+      "compromised"
+     ]
+    },
+    {
+     "stem": "supply",
+     "rarity": 0.5409,
+     "as_written": [
+      "supply"
+     ]
+    },
+    {
+     "stem": "chain",
+     "rarity": 0.509,
+     "as_written": [
+      "chain"
+     ]
+    },
+    {
+     "stem": "third-party",
+     "rarity": 0.509,
+     "as_written": [
+      "third-party"
+     ]
+    },
+    {
+     "stem": "tool",
+     "rarity": 0.4352,
+     "as_written": [
+      "tools"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  }
+ ],
+ "candidate_crosswalks": []
+}

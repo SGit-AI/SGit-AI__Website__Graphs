@@ -1,0 +1,144 @@
+{
+ "doc": "doc:aiuc1-notice",
+ "prefix": "nt",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 5,
+  "b": 10
+ },
+ "ids": [
+  {
+   "uid": "nt:d1",
+   "level": "doc",
+   "locator": "doc:aiuc1-notice",
+   "hash": "dfb14fbb9e7d",
+   "head": "NOTICE",
+   "status": "live"
+  },
+  {
+   "uid": "nt:s1",
+   "level": "sec",
+   "locator": "sec:What this is",
+   "hash": "d1d1b811ea39",
+   "head": "2|What this is",
+   "status": "live"
+  },
+  {
+   "uid": "nt:s2",
+   "level": "sec",
+   "locator": "sec:What this is not",
+   "hash": "d8f5031b65f6",
+   "head": "2|What this is not",
+   "status": "live"
+  },
+  {
+   "uid": "nt:s3",
+   "level": "sec",
+   "locator": "sec:The official sources",
+   "hash": "999edc239911",
+   "head": "2|The official sources",
+   "status": "live"
+  },
+  {
+   "uid": "nt:s4",
+   "level": "sec",
+   "locator": "sec:How the sources were used",
+   "hash": "b3174cf1f7c4",
+   "head": "2|How the sources were used",
+   "status": "live"
+  },
+  {
+   "uid": "nt:s5",
+   "level": "sec",
+   "locator": "sec:Contact",
+   "hash": "58e9caeb49f3",
+   "head": "2|Contact",
+   "status": "live"
+  },
+  {
+   "uid": "nt:b1",
+   "level": "blk",
+   "locator": "blk:What this is/1",
+   "hash": "f444289925e8",
+   "head": "`aiuc-1` is an **unofficial, derivative, machine-readable representation** of th",
+   "status": "live"
+  },
+  {
+   "uid": "nt:b2",
+   "level": "blk",
+   "locator": "blk:What this is not/1",
+   "hash": "5c7ddcde0abe",
+   "head": "- It is **not** approved, certified, endorsed or reviewed by AIUC.",
+   "status": "live"
+  },
+  {
+   "uid": "nt:b3",
+   "level": "blk",
+   "locator": "blk:What this is not/2",
+   "hash": "bd9c6b287509",
+   "head": "- It is **not** an official AIUC API, export or data feed.",
+   "status": "live"
+  },
+  {
+   "uid": "nt:b4",
+   "level": "blk",
+   "locator": "blk:What this is not/3",
+   "hash": "a4319c66df3d",
+   "head": "- It is **not** a substitute for the standard. The official sources are canonica",
+   "status": "live"
+  },
+  {
+   "uid": "nt:b5",
+   "level": "blk",
+   "locator": "blk:What this is not/4",
+   "hash": "79780c30587d",
+   "head": "- It makes **no** compliance, certification, underwriting, insurance, legal, pri",
+   "status": "live"
+  },
+  {
+   "uid": "nt:b6",
+   "level": "blk",
+   "locator": "blk:The official sources/1",
+   "hash": "821736719d29",
+   "head": "| Source | What it is canonical for |\n|---|---|\n| <https://www.aiuc-1.com/> | th",
+   "status": "live"
+  },
+  {
+   "uid": "nt:b7",
+   "level": "blk",
+   "locator": "blk:The official sources/2",
+   "hash": "296cf2cf7c10",
+   "head": "If anything here disagrees with those, **those are right and this is wrong**.",
+   "status": "live"
+  },
+  {
+   "uid": "nt:b8",
+   "level": "blk",
+   "locator": "blk:How the sources were used/1",
+   "hash": "bd510471e203",
+   "head": "Public pages were retrieved with an explicit user agent identifying this build, ",
+   "status": "live"
+  },
+  {
+   "uid": "nt:b9",
+   "level": "blk",
+   "locator": "blk:How the sources were used/2",
+   "hash": "edb3c83a9545",
+   "head": "Retrieved bytes are retained inside this vault as gzipped snapshots so a reader ",
+   "status": "live"
+  },
+  {
+   "uid": "nt:b10",
+   "level": "blk",
+   "locator": "blk:Contact/1",
+   "hash": "3c79a17a2cb6",
+   "head": "If you are AIUC and want something here changed or removed, the fastest route is",
+   "status": "live"
+  }
+ ]
+}

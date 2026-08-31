@@ -1,0 +1,1923 @@
+{
+ "control_id": "A001",
+ "title": "Establish input data policy",
+ "published_crosswalks": 20,
+ "published_with_shared_vocabulary": 14,
+ "published_without_shared_vocabulary": [
+  "CO AI Act::6-1-1702: Developer Duties",
+  "CSA AICM::DSP-15: Limitation of Production Data Use",
+  "ISO 42001::A.7.2: Data for development and enhancement of AI system",
+  "ISO 42001::A.7.3: Acquisition of data",
+  "NIST AI RMF::MEASURE 2.10: Privacy risk assessment",
+  "NYC LL 144::5-302: Manage Audit Data"
+ ],
+ "candidates": 0,
+ "evidence": [
+  {
+   "clause": "CSA AICM::DSP-16: Data Retention and Deletion",
+   "anchor": "anchor:csa-aicm:dsp-16-data-retention-and-deletion",
+   "framework": "CSA AICM",
+   "reference": "DSP-16: Data Retention and Deletion",
+   "shared_terms": [
+    {
+     "stem": "deletion",
+     "rarity": 0.7443,
+     "as_written": [
+      "deletion"
+     ]
+    },
+    {
+     "stem": "retention",
+     "rarity": 0.6909,
+     "as_written": [
+      "retention"
+     ]
+    },
+    {
+     "stem": "manag",
+     "rarity": 0.5926,
+     "as_written": [
+      "managed",
+      "managing"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dsp-16",
+     "rarity": 1.0,
+     "as_written": [
+      "dsp-16"
+     ]
+    },
+    {
+     "stem": "withbusines",
+     "rarity": 1.0,
+     "as_written": [
+      "withbusiness"
+     ]
+    },
+    {
+     "stem": "archiv",
+     "rarity": 0.8899,
+     "as_written": [
+      "archiving"
+     ]
+    },
+    {
+     "stem": "accordance",
+     "rarity": 0.7443,
+     "as_written": [
+      "accordance"
+     ]
+    },
+    {
+     "stem": "regulation",
+     "rarity": 0.5164,
+     "as_written": [
+      "regulations"
+     ]
+    },
+    {
+     "stem": "applicable",
+     "rarity": 0.509,
+     "as_written": [
+      "applicable"
+     ]
+    },
+    {
+     "stem": "laws",
+     "rarity": 0.5019,
+     "as_written": [
+      "laws"
+     ]
+    }
+   ],
+   "score": 0.2821,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DSP-11: Personal Data Access, Reversal, Rectification and Deletion",
+   "anchor": "anchor:csa-aicm:dsp-11-personal-data-access-reversal-rectification-and-deletion",
+   "framework": "CSA AICM",
+   "reference": "DSP-11: Personal Data Access, Reversal, Rectification and Deletion",
+   "shared_terms": [
+    {
+     "stem": "deletion",
+     "rarity": 0.7443,
+     "as_written": [
+      "deletion"
+     ]
+    },
+    {
+     "stem": "subject",
+     "rarity": 0.651,
+     "as_written": [
+      "subject",
+      "subjects"
+     ]
+    },
+    {
+     "stem": "request",
+     "rarity": 0.5698,
+     "as_written": [
+      "request",
+      "requests"
+     ]
+    },
+    {
+     "stem": "technical",
+     "rarity": 0.355,
+     "as_written": [
+      "technical"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dsp-11",
+     "rarity": 1.0,
+     "as_written": [
+      "dsp-11"
+     ]
+    },
+    {
+     "stem": "rectification",
+     "rarity": 1.0,
+     "as_written": [
+      "rectification"
+     ]
+    },
+    {
+     "stem": "reversal",
+     "rarity": 1.0,
+     "as_written": [
+      "reversal"
+     ]
+    },
+    {
+     "stem": "modification",
+     "rarity": 0.6909,
+     "as_written": [
+      "modification"
+     ]
+    },
+    {
+     "stem": "enable",
+     "rarity": 0.6053,
+     "as_written": [
+      "enable"
+     ]
+    },
+    {
+     "stem": "accord",
+     "rarity": 0.5409,
+     "as_written": [
+      "according"
+     ]
+    },
+    {
+     "stem": "personal",
+     "rarity": 0.5409,
+     "as_written": [
+      "personal"
+     ]
+    },
+    {
+     "stem": "regulation",
+     "rarity": 0.5164,
+     "as_written": [
+      "regulations"
+     ]
+    },
+    {
+     "stem": "applicable",
+     "rarity": 0.509,
+     "as_written": [
+      "applicable"
+     ]
+    },
+    {
+     "stem": "laws",
+     "rarity": 0.5019,
+     "as_written": [
+      "laws"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    }
+   ],
+   "score": 0.2412,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 36: Training Data - Data usage restrictions",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-36-training-data-data-usage-restrictions",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 36: Training Data - Data usage restrictions",
+   "shared_terms": [
+    {
+     "stem": "usage",
+     "rarity": 0.509,
+     "as_written": [
+      "usage"
+     ]
+    },
+    {
+     "stem": "train",
+     "rarity": 0.4025,
+     "as_written": [
+      "training"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "prohibit",
+     "rarity": 0.7154,
+     "as_written": [
+      "prohibit"
+     ]
+    },
+    {
+     "stem": "specific",
+     "rarity": 0.6053,
+     "as_written": [
+      "specific"
+     ]
+    },
+    {
+     "stem": "restriction",
+     "rarity": 0.5926,
+     "as_written": [
+      "restrictions"
+     ]
+    },
+    {
+     "stem": "case",
+     "rarity": 0.5596,
+     "as_written": [
+      "cases"
+     ]
+    },
+    {
+     "stem": "laws",
+     "rarity": 0.5019,
+     "as_written": [
+      "laws"
+     ]
+    },
+    {
+     "stem": "limit",
+     "rarity": 0.5019,
+     "as_written": [
+      "limit"
+     ]
+    }
+   ],
+   "score": 0.2077,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DSP-12: Limitation of Purpose in Personal Data Processing",
+   "anchor": "anchor:csa-aicm:dsp-12-limitation-of-purpose-in-personal-data-processing",
+   "framework": "CSA AICM",
+   "reference": "DSP-12: Limitation of Purpose in Personal Data Processing",
+   "shared_terms": [
+    {
+     "stem": "subject",
+     "rarity": 0.651,
+     "as_written": [
+      "subject"
+     ]
+    },
+    {
+     "stem": "proces",
+     "rarity": 0.5808,
+     "as_written": [
+      "processed",
+      "processing"
+     ]
+    },
+    {
+     "stem": "technical",
+     "rarity": 0.355,
+     "as_written": [
+      "technical"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dsp-12",
+     "rarity": 1.0,
+     "as_written": [
+      "dsp-12"
+     ]
+    },
+    {
+     "stem": "declar",
+     "rarity": 0.8255,
+     "as_written": [
+      "declared"
+     ]
+    },
+    {
+     "stem": "purpos",
+     "rarity": 0.6697,
+     "as_written": [
+      "purposes"
+     ]
+    },
+    {
+     "stem": "purpose",
+     "rarity": 0.651,
+     "as_written": [
+      "purpose"
+     ]
+    },
+    {
+     "stem": "limitation",
+     "rarity": 0.6053,
+     "as_written": [
+      "limitation"
+     ]
+    },
+    {
+     "stem": "accord",
+     "rarity": 0.5409,
+     "as_written": [
+      "according"
+     ]
+    },
+    {
+     "stem": "personal",
+     "rarity": 0.5409,
+     "as_written": [
+      "personal"
+     ]
+    },
+    {
+     "stem": "regulation",
+     "rarity": 0.5164,
+     "as_written": [
+      "regulations"
+     ]
+    },
+    {
+     "stem": "applicable",
+     "rarity": 0.509,
+     "as_written": [
+      "applicable"
+     ]
+    },
+    {
+     "stem": "laws",
+     "rarity": 0.5019,
+     "as_written": [
+      "laws"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    }
+   ],
+   "score": 0.1902,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 32: Training Data - Data privacy rights alignment",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-32-training-data-data-privacy-rights-alignment",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 32: Training Data - Data privacy rights alignment",
+   "shared_terms": [
+    {
+     "stem": "opt-out",
+     "rarity": 0.7798,
+     "as_written": [
+      "opt-out"
+     ]
+    },
+    {
+     "stem": "subject",
+     "rarity": 0.651,
+     "as_written": [
+      "subject"
+     ]
+    },
+    {
+     "stem": "right",
+     "rarity": 0.5698,
+     "as_written": [
+      "right",
+      "rights"
+     ]
+    },
+    {
+     "stem": "train",
+     "rarity": 0.4025,
+     "as_written": [
+      "training"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "anonymou",
+     "rarity": 1.0,
+     "as_written": [
+      "anonymous"
+     ]
+    },
+    {
+     "stem": "deriv",
+     "rarity": 1.0,
+     "as_written": [
+      "derived"
+     ]
+    },
+    {
+     "stem": "forgotten",
+     "rarity": 1.0,
+     "as_written": [
+      "forgotten"
+     ]
+    },
+    {
+     "stem": "raise",
+     "rarity": 1.0,
+     "as_written": [
+      "raise"
+     ]
+    },
+    {
+     "stem": "seemingly",
+     "rarity": 1.0,
+     "as_written": [
+      "seemingly"
+     ]
+    },
+    {
+     "stem": "reidentification",
+     "rarity": 0.8899,
+     "as_written": [
+      "reidentification"
+     ]
+    },
+    {
+     "stem": "alignment",
+     "rarity": 0.7798,
+     "as_written": [
+      "alignment"
+     ]
+    },
+    {
+     "stem": "concern",
+     "rarity": 0.7798,
+     "as_written": [
+      "concerns"
+     ]
+    },
+    {
+     "stem": "unique",
+     "rarity": 0.7798,
+     "as_written": [
+      "unique"
+     ]
+    },
+    {
+     "stem": "scenario",
+     "rarity": 0.7443,
+     "as_written": [
+      "scenarios"
+     ]
+    },
+    {
+     "stem": "synthetic",
+     "rarity": 0.6909,
+     "as_written": [
+      "synthetic"
+     ]
+    },
+    {
+     "stem": "privacy",
+     "rarity": 0.6053,
+     "as_written": [
+      "privacy"
+     ]
+    }
+   ],
+   "score": 0.1438,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DSP-14: Disclosure of Data Sub-processors",
+   "anchor": "anchor:csa-aicm:dsp-14-disclosure-of-data-sub-processors",
+   "framework": "CSA AICM",
+   "reference": "DSP-14: Disclosure of Data Sub-processors",
+   "shared_terms": [
+    {
+     "stem": "proces",
+     "rarity": 0.5808,
+     "as_written": [
+      "processing"
+     ]
+    },
+    {
+     "stem": "technical",
+     "rarity": 0.355,
+     "as_written": [
+      "technical"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dsp-14",
+     "rarity": 1.0,
+     "as_written": [
+      "dsp-14"
+     ]
+    },
+    {
+     "stem": "initiation",
+     "rarity": 1.0,
+     "as_written": [
+      "initiation"
+     ]
+    },
+    {
+     "stem": "sub-processor",
+     "rarity": 1.0,
+     "as_written": [
+      "sub-processors"
+     ]
+    },
+    {
+     "stem": "disclose",
+     "rarity": 0.8255,
+     "as_written": [
+      "disclose"
+     ]
+    },
+    {
+     "stem": "owner",
+     "rarity": 0.6697,
+     "as_written": [
+      "owner"
+     ]
+    },
+    {
+     "stem": "prior",
+     "rarity": 0.6697,
+     "as_written": [
+      "prior"
+     ]
+    },
+    {
+     "stem": "disclosure",
+     "rarity": 0.6053,
+     "as_written": [
+      "disclosure"
+     ]
+    },
+    {
+     "stem": "personal",
+     "rarity": 0.5409,
+     "as_written": [
+      "personal"
+     ]
+    },
+    {
+     "stem": "detail",
+     "rarity": 0.5323,
+     "as_written": [
+      "details"
+     ]
+    },
+    {
+     "stem": "sensitive",
+     "rarity": 0.4765,
+     "as_written": [
+      "sensitive"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    }
+   ],
+   "score": 0.1082,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DSP-23: Data Integrity Check",
+   "anchor": "anchor:csa-aicm:dsp-23-data-integrity-check",
+   "framework": "CSA AICM",
+   "reference": "DSP-23: Data Integrity Check",
+   "shared_terms": [
+    {
+     "stem": "enforce",
+     "rarity": 0.6342,
+     "as_written": [
+      "enforce"
+     ]
+    },
+    {
+     "stem": "train",
+     "rarity": 0.4025,
+     "as_written": [
+      "training"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "augmentation",
+     "rarity": 1.0,
+     "as_written": [
+      "augmentation"
+     ]
+    },
+    {
+     "stem": "consistency",
+     "rarity": 1.0,
+     "as_written": [
+      "consistency"
+     ]
+    },
+    {
+     "stem": "dsp-23",
+     "rarity": 1.0,
+     "as_written": [
+      "dsp-23"
+     ]
+    },
+    {
+     "stem": "traceability",
+     "rarity": 0.8255,
+     "as_written": [
+      "traceability"
+     ]
+    },
+    {
+     "stem": "fine-tun",
+     "rarity": 0.7443,
+     "as_written": [
+      "fine-tuning"
+     ]
+    },
+    {
+     "stem": "integrity",
+     "rarity": 0.7443,
+     "as_written": [
+      "integrity"
+     ]
+    },
+    {
+     "stem": "validate",
+     "rarity": 0.7443,
+     "as_written": [
+      "validate"
+     ]
+    },
+    {
+     "stem": "version",
+     "rarity": 0.7443,
+     "as_written": [
+      "versioning"
+     ]
+    },
+    {
+     "stem": "conformity",
+     "rarity": 0.7154,
+     "as_written": [
+      "conformity"
+     ]
+    },
+    {
+     "stem": "check",
+     "rarity": 0.6342,
+     "as_written": [
+      "check"
+     ]
+    },
+    {
+     "stem": "dataset",
+     "rarity": 0.6191,
+     "as_written": [
+      "dataset"
+     ]
+    },
+    {
+     "stem": "restriction",
+     "rarity": 0.5926,
+     "as_written": [
+      "restrictions"
+     ]
+    }
+   ],
+   "score": 0.0846,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 35: Training Data - Data acquisition restrictions",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-35-training-data-data-acquisition-restrictions",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 35: Training Data - Data acquisition restrictions",
+   "shared_terms": [
+    {
+     "stem": "train",
+     "rarity": 0.4025,
+     "as_written": [
+      "training"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "acquisition",
+     "rarity": 0.8899,
+     "as_written": [
+      "acquisition"
+     ]
+    },
+    {
+     "stem": "collection",
+     "rarity": 0.7798,
+     "as_written": [
+      "collection"
+     ]
+    },
+    {
+     "stem": "specific",
+     "rarity": 0.6053,
+     "as_written": [
+      "specific"
+     ]
+    },
+    {
+     "stem": "restriction",
+     "rarity": 0.5926,
+     "as_written": [
+      "restrictions"
+     ]
+    },
+    {
+     "stem": "type",
+     "rarity": 0.5926,
+     "as_written": [
+      "types"
+     ]
+    },
+    {
+     "stem": "case",
+     "rarity": 0.5596,
+     "as_written": [
+      "cases"
+     ]
+    },
+    {
+     "stem": "certain",
+     "rarity": 0.5596,
+     "as_written": [
+      "certain"
+     ]
+    },
+    {
+     "stem": "regulation",
+     "rarity": 0.5164,
+     "as_written": [
+      "regulations"
+     ]
+    },
+    {
+     "stem": "laws",
+     "rarity": 0.5019,
+     "as_written": [
+      "laws"
+     ]
+    },
+    {
+     "stem": "limit",
+     "rarity": 0.5019,
+     "as_written": [
+      "limit"
+     ]
+    },
+    {
+     "stem": "might",
+     "rarity": 0.4597,
+     "as_written": [
+      "might"
+     ]
+    }
+   ],
+   "score": 0.0578,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NYC LL 144::5-304: Provide Notice",
+   "anchor": "anchor:nyc-ll-144:5-304-provide-notice",
+   "framework": "NYC LL 144",
+   "reference": "5-304: Provide Notice",
+   "shared_terms": [
+    {
+     "stem": "request",
+     "rarity": 0.5698,
+     "as_written": [
+      "request",
+      "requests"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "candidat",
+     "rarity": 1.0,
+     "as_written": [
+      "candidates"
+     ]
+    },
+    {
+     "stem": "notice",
+     "rarity": 1.0,
+     "as_written": [
+      "notice"
+     ]
+    },
+    {
+     "stem": "aedt",
+     "rarity": 0.8899,
+     "as_written": [
+      "aedt"
+     ]
+    },
+    {
+     "stem": "days",
+     "rarity": 0.8255,
+     "as_written": [
+      "days"
+     ]
+    },
+    {
+     "stem": "disclose",
+     "rarity": 0.8255,
+     "as_written": [
+      "disclose"
+     ]
+    },
+    {
+     "stem": "employe",
+     "rarity": 0.8255,
+     "as_written": [
+      "employees"
+     ]
+    },
+    {
+     "stem": "employer",
+     "rarity": 0.8255,
+     "as_written": [
+      "employers"
+     ]
+    },
+    {
+     "stem": "notify",
+     "rarity": 0.8255,
+     "as_written": [
+      "notify"
+     ]
+    },
+    {
+     "stem": "affect",
+     "rarity": 0.6342,
+     "as_written": [
+      "affected"
+     ]
+    },
+    {
+     "stem": "busines",
+     "rarity": 0.5698,
+     "as_written": [
+      "business"
+     ]
+    },
+    {
+     "stem": "practic",
+     "rarity": 0.5698,
+     "as_written": [
+      "practices"
+     ]
+    },
+    {
+     "stem": "requir",
+     "rarity": 0.4597,
+     "as_written": [
+      "requires"
+     ]
+    }
+   ],
+   "score": 0.0559,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 79: Non-Technical - Lack of data transparency",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-79-non-technical-lack-of-data-transparency",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 79: Non-Technical - Lack of data transparency",
+   "shared_terms": [
+    {
+     "stem": "train",
+     "rarity": 0.4025,
+     "as_written": [
+      "training"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "tuning",
+     "rarity": 0.8899,
+     "as_written": [
+      "tuning"
+     ]
+    },
+    {
+     "stem": "insufficient",
+     "rarity": 0.6909,
+     "as_written": [
+      "insufficient"
+     ]
+    },
+    {
+     "stem": "synthetic",
+     "rarity": 0.6909,
+     "as_written": [
+      "synthetic"
+     ]
+    },
+    {
+     "stem": "lack",
+     "rarity": 0.6697,
+     "as_written": [
+      "lack"
+     ]
+    },
+    {
+     "stem": "due",
+     "rarity": 0.651,
+     "as_written": [
+      "due"
+     ]
+    },
+    {
+     "stem": "non-technical",
+     "rarity": 0.6342,
+     "as_written": [
+      "non-technical"
+     ]
+    },
+    {
+     "stem": "dataset",
+     "rarity": 0.6191,
+     "as_written": [
+      "dataset"
+     ]
+    },
+    {
+     "stem": "transparency",
+     "rarity": 0.6053,
+     "as_written": [
+      "transparency"
+     ]
+    },
+    {
+     "stem": "generation",
+     "rarity": 0.5698,
+     "as_written": [
+      "generation"
+     ]
+    },
+    {
+     "stem": "detail",
+     "rarity": 0.5323,
+     "as_written": [
+      "details"
+     ]
+    },
+    {
+     "stem": "might",
+     "rarity": 0.4597,
+     "as_written": [
+      "might"
+     ]
+    },
+    {
+     "stem": "documentation",
+     "rarity": 0.418,
+     "as_written": [
+      "documentation"
+     ]
+    }
+   ],
+   "score": 0.0514,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DSP-09: Data Protection Impact Assessment",
+   "anchor": "anchor:csa-aicm:dsp-09-data-protection-impact-assessment",
+   "framework": "CSA AICM",
+   "reference": "DSP-09: Data Protection Impact Assessment",
+   "shared_terms": [
+    {
+     "stem": "proces",
+     "rarity": 0.5808,
+     "as_written": [
+      "processing"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dpia",
+     "rarity": 1.0,
+     "as_written": [
+      "dpia"
+     ]
+    },
+    {
+     "stem": "dsp-09",
+     "rarity": 1.0,
+     "as_written": [
+      "dsp-09"
+     ]
+    },
+    {
+     "stem": "industrybest",
+     "rarity": 1.0,
+     "as_written": [
+      "industrybest"
+     ]
+    },
+    {
+     "stem": "particularity",
+     "rarity": 1.0,
+     "as_written": [
+      "particularity"
+     ]
+    },
+    {
+     "stem": "nature",
+     "rarity": 0.8899,
+     "as_written": [
+      "nature"
+     ]
+    },
+    {
+     "stem": "origin",
+     "rarity": 0.8255,
+     "as_written": [
+      "origin"
+     ]
+    },
+    {
+     "stem": "severity",
+     "rarity": 0.651,
+     "as_written": [
+      "severity"
+     ]
+    },
+    {
+     "stem": "practic",
+     "rarity": 0.5698,
+     "as_written": [
+      "practices"
+     ]
+    },
+    {
+     "stem": "accord",
+     "rarity": 0.5409,
+     "as_written": [
+      "according"
+     ]
+    },
+    {
+     "stem": "personal",
+     "rarity": 0.5409,
+     "as_written": [
+      "personal"
+     ]
+    },
+    {
+     "stem": "protection",
+     "rarity": 0.5323,
+     "as_written": [
+      "protection"
+     ]
+    },
+    {
+     "stem": "conduct",
+     "rarity": 0.5164,
+     "as_written": [
+      "conduct"
+     ]
+    }
+   ],
+   "score": 0.0483,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DSP-13: Personal Data Sub-processing",
+   "anchor": "anchor:csa-aicm:dsp-13-personal-data-sub-processing",
+   "framework": "CSA AICM",
+   "reference": "DSP-13: Personal Data Sub-processing",
+   "shared_terms": [
+    {
+     "stem": "technical",
+     "rarity": 0.355,
+     "as_written": [
+      "technical"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dsp-13",
+     "rarity": 1.0,
+     "as_written": [
+      "dsp-13"
+     ]
+    },
+    {
+     "stem": "sub-proces",
+     "rarity": 1.0,
+     "as_written": [
+      "sub-processing"
+     ]
+    },
+    {
+     "stem": "transfer",
+     "rarity": 0.6909,
+     "as_written": [
+      "transfer"
+     ]
+    },
+    {
+     "stem": "accord",
+     "rarity": 0.5409,
+     "as_written": [
+      "according"
+     ]
+    },
+    {
+     "stem": "personal",
+     "rarity": 0.5409,
+     "as_written": [
+      "personal"
+     ]
+    },
+    {
+     "stem": "service",
+     "rarity": 0.5409,
+     "as_written": [
+      "service"
+     ]
+    },
+    {
+     "stem": "supply",
+     "rarity": 0.5409,
+     "as_written": [
+      "supply"
+     ]
+    },
+    {
+     "stem": "regulation",
+     "rarity": 0.5164,
+     "as_written": [
+      "regulations"
+     ]
+    },
+    {
+     "stem": "applicable",
+     "rarity": 0.509,
+     "as_written": [
+      "applicable"
+     ]
+    },
+    {
+     "stem": "chain",
+     "rarity": 0.509,
+     "as_written": [
+      "chain"
+     ]
+    },
+    {
+     "stem": "laws",
+     "rarity": 0.5019,
+     "as_written": [
+      "laws"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    }
+   ],
+   "score": 0.0465,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DSP-20: Data Provenance and Transparency",
+   "anchor": "anchor:csa-aicm:dsp-20-data-provenance-and-transparency",
+   "framework": "CSA AICM",
+   "reference": "DSP-20: Data Provenance and Transparency",
+   "shared_terms": [
+    {
+     "stem": "technical",
+     "rarity": 0.355,
+     "as_written": [
+      "technical"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dsp-20",
+     "rarity": 1.0,
+     "as_written": [
+      "dsp-20"
+     ]
+    },
+    {
+     "stem": "trace",
+     "rarity": 0.8899,
+     "as_written": [
+      "trace"
+     ]
+    },
+    {
+     "stem": "sourc",
+     "rarity": 0.6909,
+     "as_written": [
+      "sources"
+     ]
+    },
+    {
+     "stem": "provenance",
+     "rarity": 0.6697,
+     "as_written": [
+      "provenance"
+     ]
+    },
+    {
+     "stem": "available",
+     "rarity": 0.651,
+     "as_written": [
+      "available"
+     ]
+    },
+    {
+     "stem": "make",
+     "rarity": 0.651,
+     "as_written": [
+      "make"
+     ]
+    },
+    {
+     "stem": "transparency",
+     "rarity": 0.6053,
+     "as_written": [
+      "transparency"
+     ]
+    },
+    {
+     "stem": "source",
+     "rarity": 0.5926,
+     "as_written": [
+      "source"
+     ]
+    },
+    {
+     "stem": "regulatory",
+     "rarity": 0.5499,
+     "as_written": [
+      "regulatory"
+     ]
+    },
+    {
+     "stem": "accord",
+     "rarity": 0.5409,
+     "as_written": [
+      "according"
+     ]
+    },
+    {
+     "stem": "legal",
+     "rarity": 0.4765,
+     "as_written": [
+      "legal"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    }
+   ],
+   "score": 0.044,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "EU AI Act::Article 11: Technical Documentation",
+   "anchor": "anchor:eu-ai-act:article-11-technical-documentation",
+   "framework": "EU AI Act",
+   "reference": "Article 11: Technical Documentation",
+   "shared_terms": [
+    {
+     "stem": "cover",
+     "rarity": 0.7154,
+     "as_written": [
+      "covered",
+      "covering"
+     ]
+    },
+    {
+     "stem": "technical",
+     "rarity": 0.355,
+     "as_written": [
+      "technical"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "business",
+     "rarity": 1.0,
+     "as_written": [
+      "businesses"
+     ]
+    },
+    {
+     "stem": "law'",
+     "rarity": 1.0,
+     "as_written": [
+      "law's"
+     ]
+    },
+    {
+     "stem": "prepar",
+     "rarity": 1.0,
+     "as_written": [
+      "prepared"
+     ]
+    },
+    {
+     "stem": "simpler",
+     "rarity": 1.0,
+     "as_written": [
+      "simpler"
+     ]
+    },
+    {
+     "stem": "simplifi",
+     "rarity": 1.0,
+     "as_written": [
+      "simplified"
+     ]
+    },
+    {
+     "stem": "start-up",
+     "rarity": 1.0,
+     "as_written": [
+      "start-ups"
+     ]
+    },
+    {
+     "stem": "prove",
+     "rarity": 0.8899,
+     "as_written": [
+      "prove"
+     ]
+    },
+    {
+     "stem": "small",
+     "rarity": 0.8899,
+     "as_written": [
+      "small"
+     ]
+    },
+    {
+     "stem": "advanc",
+     "rarity": 0.8255,
+     "as_written": [
+      "advances"
+     ]
+    },
+    {
+     "stem": "element",
+     "rarity": 0.8255,
+     "as_written": [
+      "elements"
+     ]
+    },
+    {
+     "stem": "form",
+     "rarity": 0.8255,
+     "as_written": [
+      "form"
+     ]
+    },
+    {
+     "stem": "kept",
+     "rarity": 0.8255,
+     "as_written": [
+      "kept"
+     ]
+    }
+   ],
+   "score": 0.039,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CO AI Act::6-1-1702: Developer Duties",
+   "anchor": "anchor:co-ai-act:6-1-1702-developer-duties",
+   "framework": "CO AI Act",
+   "reference": "6-1-1702: Developer Duties",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "algorithmic",
+     "rarity": 1.0,
+     "as_written": [
+      "algorithmic"
+     ]
+    },
+    {
+     "stem": "discrimination",
+     "rarity": 1.0,
+     "as_written": [
+      "discrimination"
+     ]
+    },
+    {
+     "stem": "care",
+     "rarity": 0.8899,
+     "as_written": [
+      "care"
+     ]
+    },
+    {
+     "stem": "impos",
+     "rarity": 0.8899,
+     "as_written": [
+      "imposes"
+     ]
+    },
+    {
+     "stem": "reasonable",
+     "rarity": 0.8899,
+     "as_written": [
+      "reasonable"
+     ]
+    },
+    {
+     "stem": "duty",
+     "rarity": 0.8255,
+     "as_written": [
+      "duty"
+     ]
+    },
+    {
+     "stem": "duti",
+     "rarity": 0.7443,
+     "as_written": [
+      "duties"
+     ]
+    },
+    {
+     "stem": "developer",
+     "rarity": 0.7154,
+     "as_written": [
+      "developer",
+      "developers"
+     ]
+    },
+    {
+     "stem": "known",
+     "rarity": 0.6697,
+     "as_written": [
+      "known"
+     ]
+    },
+    {
+     "stem": "public",
+     "rarity": 0.6697,
+     "as_written": [
+      "public"
+     ]
+    },
+    {
+     "stem": "disclosure",
+     "rarity": 0.6053,
+     "as_written": [
+      "disclosure"
+     ]
+    },
+    {
+     "stem": "requir",
+     "rarity": 0.4597,
+     "as_written": [
+      "requires"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DSP-15: Limitation of Production Data Use",
+   "anchor": "anchor:csa-aicm:dsp-15-limitation-of-production-data-use",
+   "framework": "CSA AICM",
+   "reference": "DSP-15: Limitation of Production Data Use",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dsp-15",
+     "rarity": 1.0,
+     "as_written": [
+      "dsp-15"
+     ]
+    },
+    {
+     "stem": "non-production",
+     "rarity": 1.0,
+     "as_written": [
+      "non-production"
+     ]
+    },
+    {
+     "stem": "riskbefore",
+     "rarity": 1.0,
+     "as_written": [
+      "riskbefore"
+     ]
+    },
+    {
+     "stem": "obtain",
+     "rarity": 0.8255,
+     "as_written": [
+      "obtain"
+     ]
+    },
+    {
+     "stem": "replicat",
+     "rarity": 0.8255,
+     "as_written": [
+      "replicating"
+     ]
+    },
+    {
+     "stem": "production",
+     "rarity": 0.7154,
+     "as_written": [
+      "production"
+     ]
+    },
+    {
+     "stem": "owner",
+     "rarity": 0.6697,
+     "as_written": [
+      "owners"
+     ]
+    },
+    {
+     "stem": "environment",
+     "rarity": 0.651,
+     "as_written": [
+      "environments"
+     ]
+    },
+    {
+     "stem": "associat",
+     "rarity": 0.6191,
+     "as_written": [
+      "associated"
+     ]
+    },
+    {
+     "stem": "authorization",
+     "rarity": 0.6053,
+     "as_written": [
+      "authorization"
+     ]
+    },
+    {
+     "stem": "limitation",
+     "rarity": 0.6053,
+     "as_written": [
+      "limitation"
+     ]
+    },
+    {
+     "stem": "manage",
+     "rarity": 0.5241,
+     "as_written": [
+      "manage"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "ISO 42001::A.7.2: Data for development and enhancement of AI system",
+   "anchor": "anchor:iso-42001:a-7-2-data-for-development-and-enhancement-of-ai-system",
+   "framework": "ISO 42001",
+   "reference": "A.7.2: Data for development and enhancement of AI system",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "enhancement",
+     "rarity": 0.8899,
+     "as_written": [
+      "enhancement"
+     ]
+    },
+    {
+     "stem": "relat",
+     "rarity": 0.6697,
+     "as_written": [
+      "related"
+     ]
+    },
+    {
+     "stem": "development",
+     "rarity": 0.5241,
+     "as_written": [
+      "development"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "ISO 42001::A.7.3: Acquisition of data",
+   "anchor": "anchor:iso-42001:a-7-3-acquisition-of-data",
+   "framework": "ISO 42001",
+   "reference": "A.7.3: Acquisition of data",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "acquisition",
+     "rarity": 0.8899,
+     "as_written": [
+      "acquisition"
+     ]
+    },
+    {
+     "stem": "selection",
+     "rarity": 0.7154,
+     "as_written": [
+      "selection"
+     ]
+    },
+    {
+     "stem": "determine",
+     "rarity": 0.5596,
+     "as_written": [
+      "determine"
+     ]
+    },
+    {
+     "stem": "detail",
+     "rarity": 0.5323,
+     "as_written": [
+      "details"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MEASURE 2.10: Privacy risk assessment",
+   "anchor": "anchor:nist-ai-rmf:measure-2-10-privacy-risk-assessment",
+   "framework": "NIST AI RMF",
+   "reference": "MEASURE 2.10: Privacy risk assessment",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "examin",
+     "rarity": 0.8899,
+     "as_written": [
+      "examined"
+     ]
+    },
+    {
+     "stem": "privacy",
+     "rarity": 0.6053,
+     "as_written": [
+      "privacy"
+     ]
+    },
+    {
+     "stem": "function",
+     "rarity": 0.5241,
+     "as_written": [
+      "function"
+     ]
+    },
+    {
+     "stem": "measure",
+     "rarity": 0.5164,
+     "as_written": [
+      "measure"
+     ]
+    },
+    {
+     "stem": "map",
+     "rarity": 0.5019,
+     "as_written": [
+      "map"
+     ]
+    },
+    {
+     "stem": "identifi",
+     "rarity": 0.4952,
+     "as_written": [
+      "identified"
+     ]
+    },
+    {
+     "stem": "assessment",
+     "rarity": 0.4063,
+     "as_written": [
+      "assessment"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NYC LL 144::5-302: Manage Audit Data",
+   "anchor": "anchor:nyc-ll-144:5-302-manage-audit-data",
+   "framework": "NYC LL 144",
+   "reference": "5-302: Manage Audit Data",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "auditor",
+     "rarity": 1.0,
+     "as_written": [
+      "auditors"
+     ]
+    },
+    {
+     "stem": "real",
+     "rarity": 1.0,
+     "as_written": [
+      "real"
+     ]
+    },
+    {
+     "stem": "substitute",
+     "rarity": 1.0,
+     "as_written": [
+      "substitute"
+     ]
+    },
+    {
+     "stem": "condition",
+     "rarity": 0.7154,
+     "as_written": [
+      "conditions"
+     ]
+    },
+    {
+     "stem": "govern",
+     "rarity": 0.5499,
+     "as_written": [
+      "governs"
+     ]
+    },
+    {
+     "stem": "deployment",
+     "rarity": 0.5409,
+     "as_written": [
+      "deployment"
+     ]
+    },
+    {
+     "stem": "manage",
+     "rarity": 0.5241,
+     "as_written": [
+      "manage"
+     ]
+    },
+    {
+     "stem": "audit",
+     "rarity": 0.4825,
+     "as_written": [
+      "audit"
+     ]
+    },
+    {
+     "stem": "test",
+     "rarity": 0.4825,
+     "as_written": [
+      "test"
+     ]
+    },
+    {
+     "stem": "requir",
+     "rarity": 0.4597,
+     "as_written": [
+      "required"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  }
+ ],
+ "candidate_crosswalks": []
+}

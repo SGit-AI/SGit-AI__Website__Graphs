@@ -1,0 +1,90 @@
+{
+ "version": "v0.6.19",
+ "slug": "aiuc1-source-policy",
+ "doc": "doc:aiuc1-source-policy",
+ "title": "Source policy",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 15,
+  "sentences": 21,
+  "words": 312,
+  "spans": 7
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:aiuc1-source-policy",
+   "title": "Source policy",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "sp:d1"
+  },
+  {
+   "id": "sec:Which source wins",
+   "title": "Which source wins",
+   "level": 2,
+   "parent": "doc:aiuc1-source-policy",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 30
+   },
+   "shard": "sec-01.json",
+   "uid": "sp:s1"
+  },
+  {
+   "id": "sec:What was retrieved, and how",
+   "title": "What was retrieved, and how",
+   "level": 2,
+   "parent": "doc:aiuc1-source-policy",
+   "counts": {
+    "blocks": 5,
+    "sentences": 7,
+    "words": 92
+   },
+   "shard": "sec-02.json",
+   "uid": "sp:s2"
+  },
+  {
+   "id": "sec:What is retained",
+   "title": "What is retained",
+   "level": 2,
+   "parent": "doc:aiuc1-source-policy",
+   "counts": {
+    "blocks": 1,
+    "sentences": 3,
+    "words": 45
+   },
+   "shard": "sec-03.json",
+   "uid": "sp:s3"
+  },
+  {
+   "id": "sec:The open question about redistribution",
+   "title": "The open question about redistribution",
+   "level": 2,
+   "parent": "doc:aiuc1-source-policy",
+   "counts": {
+    "blocks": 7,
+    "sentences": 9,
+    "words": 145
+   },
+   "shard": "sec-04.json",
+   "uid": "sp:s4"
+  }
+ ]
+}

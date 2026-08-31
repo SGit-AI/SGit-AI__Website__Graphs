@@ -1,0 +1,2403 @@
+{
+ "control_id": "C010",
+ "title": "Third-party testing for harmful outputs",
+ "published_crosswalks": 23,
+ "published_with_shared_vocabulary": 21,
+ "published_without_shared_vocabulary": [
+  "ISO 42001::A.6.2.4: AI system verification and validation",
+  "NIST AI RMF::MANAGE 2.2: Deployed system value"
+ ],
+ "candidates": 3,
+ "evidence": [
+  {
+   "clause": "NIST AI RMF::MEASURE 2.11: Fairness and bias",
+   "anchor": "anchor:nist-ai-rmf:measure-2-11-fairness-and-bias",
+   "framework": "NIST AI RMF",
+   "reference": "MEASURE 2.11: Fairness and bias",
+   "shared_terms": [
+    {
+     "stem": "bias",
+     "rarity": 0.5698,
+     "as_written": [
+      "bias"
+     ]
+    },
+    {
+     "stem": "identifi",
+     "rarity": 0.4952,
+     "as_written": [
+      "identified"
+     ]
+    },
+    {
+     "stem": "result",
+     "rarity": 0.4707,
+     "as_written": [
+      "results"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "fairnes",
+     "rarity": 0.8255,
+     "as_written": [
+      "fairness"
+     ]
+    },
+    {
+     "stem": "evaluat",
+     "rarity": 0.6697,
+     "as_written": [
+      "evaluated"
+     ]
+    },
+    {
+     "stem": "function",
+     "rarity": 0.5241,
+     "as_written": [
+      "function"
+     ]
+    },
+    {
+     "stem": "measure",
+     "rarity": 0.5164,
+     "as_written": [
+      "measure"
+     ]
+    },
+    {
+     "stem": "map",
+     "rarity": 0.5019,
+     "as_written": [
+      "map"
+     ]
+    }
+   ],
+   "score": 0.3358,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::A&A-02: Independent Assessments",
+   "anchor": "anchor:csa-aicm:a-a-02-independent-assessments",
+   "framework": "CSA AICM",
+   "reference": "A&A-02: Independent Assessments",
+   "shared_terms": [
+    {
+     "stem": "conduct",
+     "rarity": 0.5164,
+     "as_written": [
+      "conduct",
+      "conducting"
+     ]
+    },
+    {
+     "stem": "assessment",
+     "rarity": 0.4063,
+     "as_written": [
+      "assessments"
+     ]
+    },
+    {
+     "stem": "relevant",
+     "rarity": 0.3884,
+     "as_written": [
+      "relevant"
+     ]
+    },
+    {
+     "stem": "least",
+     "rarity": 0.3754,
+     "as_written": [
+      "least"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "a-02",
+     "rarity": 1.0,
+     "as_written": [
+      "a-02"
+     ]
+    },
+    {
+     "stem": "independent",
+     "rarity": 0.7798,
+     "as_written": [
+      "independent"
+     ]
+    },
+    {
+     "stem": "assurance",
+     "rarity": 0.7443,
+     "as_written": [
+      "assurance"
+     ]
+    },
+    {
+     "stem": "accord",
+     "rarity": 0.5409,
+     "as_written": [
+      "according"
+     ]
+    },
+    {
+     "stem": "audit",
+     "rarity": 0.4825,
+     "as_written": [
+      "audit"
+     ]
+    },
+    {
+     "stem": "standard",
+     "rarity": 0.4707,
+     "as_written": [
+      "standards"
+     ]
+    },
+    {
+     "stem": "annually",
+     "rarity": 0.4264,
+     "as_written": [
+      "annually"
+     ]
+    }
+   ],
+   "score": 0.2751,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MEASURE 1.3: Independent assessment",
+   "anchor": "anchor:nist-ai-rmf:measure-1-3-independent-assessment",
+   "framework": "NIST AI RMF",
+   "reference": "MEASURE 1.3: Independent assessment",
+   "shared_terms": [
+    {
+     "stem": "assessor",
+     "rarity": 0.7154,
+     "as_written": [
+      "assessor",
+      "assessors"
+     ]
+    },
+    {
+     "stem": "expert",
+     "rarity": 0.6697,
+     "as_written": [
+      "expert",
+      "experts"
+     ]
+    },
+    {
+     "stem": "team",
+     "rarity": 0.651,
+     "as_written": [
+      "team",
+      "teams"
+     ]
+    },
+    {
+     "stem": "regular",
+     "rarity": 0.5808,
+     "as_written": [
+      "regular"
+     ]
+    },
+    {
+     "stem": "internal",
+     "rarity": 0.5409,
+     "as_written": [
+      "internal"
+     ]
+    },
+    {
+     "stem": "assessment",
+     "rarity": 0.4063,
+     "as_written": [
+      "assessment",
+      "assessments"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "front-line",
+     "rarity": 1.0,
+     "as_written": [
+      "front-line"
+     ]
+    },
+    {
+     "stem": "consult",
+     "rarity": 0.8899,
+     "as_written": [
+      "consulted"
+     ]
+    },
+    {
+     "stem": "did",
+     "rarity": 0.8899,
+     "as_written": [
+      "did"
+     ]
+    },
+    {
+     "stem": "serve",
+     "rarity": 0.8899,
+     "as_written": [
+      "serve"
+     ]
+    },
+    {
+     "stem": "independent",
+     "rarity": 0.7798,
+     "as_written": [
+      "independent"
+     ]
+    },
+    {
+     "stem": "involv",
+     "rarity": 0.7443,
+     "as_written": [
+      "involved"
+     ]
+    },
+    {
+     "stem": "community",
+     "rarity": 0.7154,
+     "as_written": [
+      "communities"
+     ]
+    },
+    {
+     "stem": "developer",
+     "rarity": 0.7154,
+     "as_written": [
+      "developers"
+     ]
+    },
+    {
+     "stem": "tolerance",
+     "rarity": 0.7154,
+     "as_written": [
+      "tolerance"
+     ]
+    },
+    {
+     "stem": "domain",
+     "rarity": 0.6909,
+     "as_written": [
+      "domain"
+     ]
+    },
+    {
+     "stem": "affect",
+     "rarity": 0.6342,
+     "as_written": [
+      "affected"
+     ]
+    },
+    {
+     "stem": "develop",
+     "rarity": 0.5926,
+     "as_written": [
+      "developed"
+     ]
+    }
+   ],
+   "score": 0.2065,
+   "shared_count": 6,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MEASURE 4.2: Trustworthiness validation",
+   "anchor": "anchor:nist-ai-rmf:measure-4-2-trustworthiness-validation",
+   "framework": "NIST AI RMF",
+   "reference": "MEASURE 4.2: Trustworthiness validation",
+   "shared_terms": [
+    {
+     "stem": "expert",
+     "rarity": 0.6697,
+     "as_written": [
+      "expert",
+      "experts"
+     ]
+    },
+    {
+     "stem": "perform",
+     "rarity": 0.5019,
+     "as_written": [
+      "performing"
+     ]
+    },
+    {
+     "stem": "result",
+     "rarity": 0.4707,
+     "as_written": [
+      "results"
+     ]
+    },
+    {
+     "stem": "relevant",
+     "rarity": 0.3884,
+     "as_written": [
+      "relevant"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "consistently",
+     "rarity": 0.8899,
+     "as_written": [
+      "consistently"
+     ]
+    },
+    {
+     "stem": "regard",
+     "rarity": 0.8899,
+     "as_written": [
+      "regarding"
+     ]
+    },
+    {
+     "stem": "measurement",
+     "rarity": 0.7443,
+     "as_written": [
+      "measurement"
+     ]
+    },
+    {
+     "stem": "validate",
+     "rarity": 0.7443,
+     "as_written": [
+      "validate"
+     ]
+    },
+    {
+     "stem": "trustworthines",
+     "rarity": 0.7154,
+     "as_written": [
+      "trustworthiness"
+     ]
+    },
+    {
+     "stem": "domain",
+     "rarity": 0.6909,
+     "as_written": [
+      "domain"
+     ]
+    },
+    {
+     "stem": "inform",
+     "rarity": 0.5926,
+     "as_written": [
+      "informed"
+     ]
+    },
+    {
+     "stem": "lifecycle",
+     "rarity": 0.5926,
+     "as_written": [
+      "lifecycle"
+     ]
+    },
+    {
+     "stem": "validation",
+     "rarity": 0.5499,
+     "as_written": [
+      "validation"
+     ]
+    },
+    {
+     "stem": "deployment",
+     "rarity": 0.5409,
+     "as_written": [
+      "deployment"
+     ]
+    },
+    {
+     "stem": "intend",
+     "rarity": 0.5323,
+     "as_written": [
+      "intended"
+     ]
+    },
+    {
+     "stem": "measure",
+     "rarity": 0.5164,
+     "as_written": [
+      "measure"
+     ]
+    }
+   ],
+   "score": 0.1801,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::TVM-06: Penetration Testing",
+   "anchor": "anchor:csa-aicm:tvm-06-penetration-testing",
+   "framework": "CSA AICM",
+   "reference": "TVM-06: Penetration Testing",
+   "shared_terms": [
+    {
+     "stem": "party",
+     "rarity": 0.5808,
+     "as_written": [
+      "parties"
+     ]
+    },
+    {
+     "stem": "test",
+     "rarity": 0.4825,
+     "as_written": [
+      "testing"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "independentthird",
+     "rarity": 1.0,
+     "as_written": [
+      "independentthird"
+     ]
+    },
+    {
+     "stem": "tvm-06",
+     "rarity": 1.0,
+     "as_written": [
+      "tvm-06"
+     ]
+    },
+    {
+     "stem": "penetration",
+     "rarity": 0.8899,
+     "as_written": [
+      "penetration"
+     ]
+    },
+    {
+     "stem": "periodic",
+     "rarity": 0.8255,
+     "as_written": [
+      "periodic"
+     ]
+    },
+    {
+     "stem": "technicalmeasur",
+     "rarity": 0.6191,
+     "as_written": [
+      "technicalmeasures"
+     ]
+    },
+    {
+     "stem": "performance",
+     "rarity": 0.509,
+     "as_written": [
+      "performance"
+     ]
+    }
+   ],
+   "score": 0.18,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 59: Output - Output bias",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-59-output-output-bias",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 59: Output - Output bias",
+   "shared_terms": [
+    {
+     "stem": "bias",
+     "rarity": 0.5698,
+     "as_written": [
+      "bias"
+     ]
+    },
+    {
+     "stem": "content",
+     "rarity": 0.4352,
+     "as_written": [
+      "content"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "represent",
+     "rarity": 1.0,
+     "as_written": [
+      "represent"
+     ]
+    },
+    {
+     "stem": "unfairly",
+     "rarity": 0.8899,
+     "as_written": [
+      "unfairly"
+     ]
+    },
+    {
+     "stem": "group",
+     "rarity": 0.7154,
+     "as_written": [
+      "groups"
+     ]
+    },
+    {
+     "stem": "individual",
+     "rarity": 0.5926,
+     "as_written": [
+      "individuals"
+     ]
+    },
+    {
+     "stem": "certain",
+     "rarity": 0.5596,
+     "as_written": [
+      "certain"
+     ]
+    },
+    {
+     "stem": "generat",
+     "rarity": 0.5164,
+     "as_written": [
+      "generated"
+     ]
+    },
+    {
+     "stem": "might",
+     "rarity": 0.4597,
+     "as_written": [
+      "might"
+     ]
+    }
+   ],
+   "score": 0.1751,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::GRC-11: Bias and Fairness Assessment",
+   "anchor": "anchor:csa-aicm:grc-11-bias-and-fairness-assessment",
+   "framework": "CSA AICM",
+   "reference": "GRC-11: Bias and Fairness Assessment",
+   "shared_terms": [
+    {
+     "stem": "bias",
+     "rarity": 0.5698,
+     "as_written": [
+      "bias"
+     ]
+    },
+    {
+     "stem": "assessment",
+     "rarity": 0.4063,
+     "as_written": [
+      "assessment",
+      "assessments"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "grc-11",
+     "rarity": 1.0,
+     "as_written": [
+      "grc-11"
+     ]
+    },
+    {
+     "stem": "fairnes",
+     "rarity": 0.8255,
+     "as_written": [
+      "fairness"
+     ]
+    },
+    {
+     "stem": "ethical",
+     "rarity": 0.7798,
+     "as_written": [
+      "ethical"
+     ]
+    },
+    {
+     "stem": "algorithm",
+     "rarity": 0.6697,
+     "as_written": [
+      "algorithms"
+     ]
+    },
+    {
+     "stem": "dataset",
+     "rarity": 0.6191,
+     "as_written": [
+      "datasets"
+     ]
+    },
+    {
+     "stem": "regularly",
+     "rarity": 0.5323,
+     "as_written": [
+      "regularly"
+     ]
+    },
+    {
+     "stem": "compliance",
+     "rarity": 0.5164,
+     "as_written": [
+      "compliance"
+     ]
+    },
+    {
+     "stem": "standard",
+     "rarity": 0.4707,
+     "as_written": [
+      "standards"
+     ]
+    }
+   ],
+   "score": 0.1528,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MEASURE 2.1: TEVV documentation",
+   "anchor": "anchor:nist-ai-rmf:measure-2-1-tevv-documentation",
+   "framework": "NIST AI RMF",
+   "reference": "MEASURE 2.1: TEVV documentation",
+   "shared_terms": [
+    {
+     "stem": "test",
+     "rarity": 0.4825,
+     "as_written": [
+      "test",
+      "testing"
+     ]
+    },
+    {
+     "stem": "documentation",
+     "rarity": 0.418,
+     "as_written": [
+      "documentation"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "sets",
+     "rarity": 0.8899,
+     "as_written": [
+      "sets"
+     ]
+    },
+    {
+     "stem": "tevv",
+     "rarity": 0.8255,
+     "as_written": [
+      "tevv"
+     ]
+    },
+    {
+     "stem": "verification",
+     "rarity": 0.6697,
+     "as_written": [
+      "verification"
+     ]
+    },
+    {
+     "stem": "evaluation",
+     "rarity": 0.5698,
+     "as_written": [
+      "evaluation"
+     ]
+    },
+    {
+     "stem": "metric",
+     "rarity": 0.5596,
+     "as_written": [
+      "metrics"
+     ]
+    },
+    {
+     "stem": "validation",
+     "rarity": 0.5499,
+     "as_written": [
+      "validation"
+     ]
+    },
+    {
+     "stem": "detail",
+     "rarity": 0.5323,
+     "as_written": [
+      "details"
+     ]
+    },
+    {
+     "stem": "measure",
+     "rarity": 0.5164,
+     "as_written": [
+      "measure"
+     ]
+    },
+    {
+     "stem": "tool",
+     "rarity": 0.4352,
+     "as_written": [
+      "tools"
+     ]
+    }
+   ],
+   "score": 0.1396,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NYC LL 144::5-301: Conduct Bias Audit",
+   "anchor": "anchor:nyc-ll-144:5-301-conduct-bias-audit",
+   "framework": "NYC LL 144",
+   "reference": "5-301: Conduct Bias Audit",
+   "shared_terms": [
+    {
+     "stem": "bias",
+     "rarity": 0.5698,
+     "as_written": [
+      "bias"
+     ]
+    },
+    {
+     "stem": "conduct",
+     "rarity": 0.5164,
+     "as_written": [
+      "conduct",
+      "conducting"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "annual",
+     "rarity": 1.0,
+     "as_written": [
+      "annual"
+     ]
+    },
+    {
+     "stem": "demographic",
+     "rarity": 1.0,
+     "as_written": [
+      "demographic"
+     ]
+    },
+    {
+     "stem": "disparate",
+     "rarity": 1.0,
+     "as_written": [
+      "disparate"
+     ]
+    },
+    {
+     "stem": "eeo",
+     "rarity": 1.0,
+     "as_written": [
+      "eeo"
+     ]
+    },
+    {
+     "stem": "employer",
+     "rarity": 0.8255,
+     "as_written": [
+      "employers"
+     ]
+    },
+    {
+     "stem": "independent",
+     "rarity": 0.7798,
+     "as_written": [
+      "independent"
+     ]
+    },
+    {
+     "stem": "commission",
+     "rarity": 0.7154,
+     "as_written": [
+      "commission"
+     ]
+    },
+    {
+     "stem": "category",
+     "rarity": 0.6191,
+     "as_written": [
+      "categories"
+     ]
+    },
+    {
+     "stem": "asses",
+     "rarity": 0.5596,
+     "as_written": [
+      "assessing"
+     ]
+    },
+    {
+     "stem": "audit",
+     "rarity": 0.4825,
+     "as_written": [
+      "audit"
+     ]
+    },
+    {
+     "stem": "impact",
+     "rarity": 0.4495,
+     "as_written": [
+      "impact"
+     ]
+    }
+   ],
+   "score": 0.1141,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 62: Output - Toxic output",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-62-output-toxic-output",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 62: Output - Toxic output",
+   "shared_terms": [
+    {
+     "stem": "like",
+     "rarity": 0.6697,
+     "as_written": [
+      "like"
+     ]
+    },
+    {
+     "stem": "content",
+     "rarity": 0.4352,
+     "as_written": [
+      "content"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "abusive",
+     "rarity": 1.0,
+     "as_written": [
+      "abusive"
+     ]
+    },
+    {
+     "stem": "bully",
+     "rarity": 1.0,
+     "as_written": [
+      "bullying"
+     ]
+    },
+    {
+     "stem": "hap",
+     "rarity": 1.0,
+     "as_written": [
+      "hap"
+     ]
+    },
+    {
+     "stem": "hateful",
+     "rarity": 1.0,
+     "as_written": [
+      "hateful"
+     ]
+    },
+    {
+     "stem": "obscene",
+     "rarity": 1.0,
+     "as_written": [
+      "obscene"
+     ]
+    },
+    {
+     "stem": "profane",
+     "rarity": 1.0,
+     "as_written": [
+      "profane"
+     ]
+    },
+    {
+     "stem": "produc",
+     "rarity": 0.8255,
+     "as_written": [
+      "produces"
+     ]
+    },
+    {
+     "stem": "toxic",
+     "rarity": 0.8255,
+     "as_written": [
+      "toxic"
+     ]
+    },
+    {
+     "stem": "occur",
+     "rarity": 0.5409,
+     "as_written": [
+      "occurs"
+     ]
+    },
+    {
+     "stem": "behavior",
+     "rarity": 0.4765,
+     "as_written": [
+      "behaviors"
+     ]
+    }
+   ],
+   "score": 0.1131,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 58: Output - Decision bias",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-58-output-decision-bias",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 58: Output - Decision bias",
+   "shared_terms": [
+    {
+     "stem": "bias",
+     "rarity": 0.5698,
+     "as_written": [
+      "bias",
+      "biases"
+     ]
+    },
+    {
+     "stem": "result",
+     "rarity": 0.4707,
+     "as_written": [
+      "result",
+      "results"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "advantag",
+     "rarity": 1.0,
+     "as_written": [
+      "advantaged"
+     ]
+    },
+    {
+     "stem": "amplifi",
+     "rarity": 0.8899,
+     "as_written": [
+      "amplified"
+     ]
+    },
+    {
+     "stem": "unfairly",
+     "rarity": 0.8899,
+     "as_written": [
+      "unfairly"
+     ]
+    },
+    {
+     "stem": "another",
+     "rarity": 0.8255,
+     "as_written": [
+      "another"
+     ]
+    },
+    {
+     "stem": "group",
+     "rarity": 0.7154,
+     "as_written": [
+      "group"
+     ]
+    },
+    {
+     "stem": "one",
+     "rarity": 0.7154,
+     "as_written": [
+      "one"
+     ]
+    },
+    {
+     "stem": "caus",
+     "rarity": 0.6697,
+     "as_written": [
+      "caused"
+     ]
+    },
+    {
+     "stem": "due",
+     "rarity": 0.651,
+     "as_written": [
+      "due"
+     ]
+    },
+    {
+     "stem": "model'",
+     "rarity": 0.5698,
+     "as_written": [
+      "model's"
+     ]
+    },
+    {
+     "stem": "occur",
+     "rarity": 0.5409,
+     "as_written": [
+      "occurs"
+     ]
+    },
+    {
+     "stem": "decision",
+     "rarity": 0.509,
+     "as_written": [
+      "decision",
+      "decisions"
+     ]
+    },
+    {
+     "stem": "might",
+     "rarity": 0.4597,
+     "as_written": [
+      "might"
+     ]
+    }
+   ],
+   "score": 0.1053,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 84: Non-Technical - Unrepresentative risk testing",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-84-non-technical-unrepresentative-risk-testing",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 84: Non-Technical - Unrepresentative risk testing",
+   "shared_terms": [
+    {
+     "stem": "test",
+     "rarity": 0.4825,
+     "as_written": [
+      "test",
+      "testing"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "unrepresentative",
+     "rarity": 1.0,
+     "as_written": [
+      "unrepresentative"
+     ]
+    },
+    {
+     "stem": "mismatch",
+     "rarity": 0.8255,
+     "as_written": [
+      "mismatched"
+     ]
+    },
+    {
+     "stem": "expect",
+     "rarity": 0.7798,
+     "as_written": [
+      "expected"
+     ]
+    },
+    {
+     "stem": "non-technical",
+     "rarity": 0.6342,
+     "as_written": [
+      "non-technical"
+     ]
+    },
+    {
+     "stem": "deployment",
+     "rarity": 0.5409,
+     "as_written": [
+      "deployment"
+     ]
+    },
+    {
+     "stem": "input",
+     "rarity": 0.4025,
+     "as_written": [
+      "inputs"
+     ]
+    }
+   ],
+   "score": 0.1034,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::GOVERN 4.3: Testing and incident sharing",
+   "anchor": "anchor:nist-ai-rmf:govern-4-3-testing-and-incident-sharing",
+   "framework": "NIST AI RMF",
+   "reference": "GOVERN 4.3: Testing and incident sharing",
+   "shared_terms": [
+    {
+     "stem": "test",
+     "rarity": 0.4825,
+     "as_written": [
+      "testing"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "enable",
+     "rarity": 0.6053,
+     "as_written": [
+      "enable"
+     ]
+    },
+    {
+     "stem": "shar",
+     "rarity": 0.6053,
+     "as_written": [
+      "sharing"
+     ]
+    },
+    {
+     "stem": "identification",
+     "rarity": 0.5926,
+     "as_written": [
+      "identification"
+     ]
+    },
+    {
+     "stem": "place",
+     "rarity": 0.5698,
+     "as_written": [
+      "place"
+     ]
+    },
+    {
+     "stem": "practic",
+     "rarity": 0.5698,
+     "as_written": [
+      "practices"
+     ]
+    },
+    {
+     "stem": "govern",
+     "rarity": 0.5499,
+     "as_written": [
+      "govern"
+     ]
+    },
+    {
+     "stem": "incident",
+     "rarity": 0.4952,
+     "as_written": [
+      "incident",
+      "incidents"
+     ]
+    },
+    {
+     "stem": "organizational",
+     "rarity": 0.4825,
+     "as_written": [
+      "organizational"
+     ]
+    }
+   ],
+   "score": 0.0974,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MEASURE 4.1: Context-specific measurement",
+   "anchor": "anchor:nist-ai-rmf:measure-4-1-context-specific-measurement",
+   "framework": "NIST AI RMF",
+   "reference": "MEASURE 4.1: Context-specific measurement",
+   "shared_terms": [
+    {
+     "stem": "expert",
+     "rarity": 0.6697,
+     "as_written": [
+      "expert",
+      "experts"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "connect",
+     "rarity": 0.8899,
+     "as_written": [
+      "connected"
+     ]
+    },
+    {
+     "stem": "context-specific",
+     "rarity": 0.8899,
+     "as_written": [
+      "context-specific"
+     ]
+    },
+    {
+     "stem": "consultation",
+     "rarity": 0.7798,
+     "as_written": [
+      "consultation"
+     ]
+    },
+    {
+     "stem": "end",
+     "rarity": 0.7443,
+     "as_written": [
+      "end"
+     ]
+    },
+    {
+     "stem": "measurement",
+     "rarity": 0.7443,
+     "as_written": [
+      "measurement"
+     ]
+    },
+    {
+     "stem": "domain",
+     "rarity": 0.6909,
+     "as_written": [
+      "domain"
+     ]
+    },
+    {
+     "stem": "approach",
+     "rarity": 0.651,
+     "as_written": [
+      "approaches"
+     ]
+    },
+    {
+     "stem": "inform",
+     "rarity": 0.5926,
+     "as_written": [
+      "informed"
+     ]
+    },
+    {
+     "stem": "deployment",
+     "rarity": 0.5409,
+     "as_written": [
+      "deployment"
+     ]
+    },
+    {
+     "stem": "identify",
+     "rarity": 0.5164,
+     "as_written": [
+      "identifying"
+     ]
+    },
+    {
+     "stem": "measure",
+     "rarity": 0.5164,
+     "as_written": [
+      "measure"
+     ]
+    },
+    {
+     "stem": "context",
+     "rarity": 0.4651,
+     "as_written": [
+      "context"
+     ]
+    }
+   ],
+   "score": 0.0737,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NYC LL 144::5-302: Manage Audit Data",
+   "anchor": "anchor:nyc-ll-144:5-302-manage-audit-data",
+   "framework": "NYC LL 144",
+   "reference": "5-302: Manage Audit Data",
+   "shared_terms": [
+    {
+     "stem": "test",
+     "rarity": 0.4825,
+     "as_written": [
+      "test",
+      "testing"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "auditor",
+     "rarity": 1.0,
+     "as_written": [
+      "auditors"
+     ]
+    },
+    {
+     "stem": "real",
+     "rarity": 1.0,
+     "as_written": [
+      "real"
+     ]
+    },
+    {
+     "stem": "substitute",
+     "rarity": 1.0,
+     "as_written": [
+      "substitute"
+     ]
+    },
+    {
+     "stem": "condition",
+     "rarity": 0.7154,
+     "as_written": [
+      "conditions"
+     ]
+    },
+    {
+     "stem": "govern",
+     "rarity": 0.5499,
+     "as_written": [
+      "governs"
+     ]
+    },
+    {
+     "stem": "deployment",
+     "rarity": 0.5409,
+     "as_written": [
+      "deployment"
+     ]
+    },
+    {
+     "stem": "manage",
+     "rarity": 0.5241,
+     "as_written": [
+      "manage"
+     ]
+    },
+    {
+     "stem": "audit",
+     "rarity": 0.4825,
+     "as_written": [
+      "audit"
+     ]
+    },
+    {
+     "stem": "requir",
+     "rarity": 0.4597,
+     "as_written": [
+      "required"
+     ]
+    }
+   ],
+   "score": 0.0714,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-15.1: Harmful Content",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-15-1-harmful-content",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-15.1: Harmful Content",
+   "shared_terms": [
+    {
+     "stem": "harmful",
+     "rarity": 0.5323,
+     "as_written": [
+      "harmful"
+     ]
+    },
+    {
+     "stem": "content",
+     "rarity": 0.4352,
+     "as_written": [
+      "content"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "aitech-15",
+     "rarity": 1.0,
+     "as_written": [
+      "aitech-15"
+     ]
+    },
+    {
+     "stem": "speech",
+     "rarity": 1.0,
+     "as_written": [
+      "speech"
+     ]
+    },
+    {
+     "stem": "otherwise",
+     "rarity": 0.8899,
+     "as_written": [
+      "otherwise"
+     ]
+    },
+    {
+     "stem": "constraint",
+     "rarity": 0.8255,
+     "as_written": [
+      "constraints"
+     ]
+    },
+    {
+     "stem": "misinformation",
+     "rarity": 0.8255,
+     "as_written": [
+      "misinformation"
+     ]
+    },
+    {
+     "stem": "toxic",
+     "rarity": 0.8255,
+     "as_written": [
+      "toxic"
+     ]
+    },
+    {
+     "stem": "media",
+     "rarity": 0.7798,
+     "as_written": [
+      "media"
+     ]
+    },
+    {
+     "stem": "produce",
+     "rarity": 0.7798,
+     "as_written": [
+      "produce"
+     ]
+    },
+    {
+     "stem": "weakness",
+     "rarity": 0.7798,
+     "as_written": [
+      "weaknesses"
+     ]
+    },
+    {
+     "stem": "unsafe",
+     "rarity": 0.6697,
+     "as_written": [
+      "unsafe"
+     ]
+    },
+    {
+     "stem": "bypas",
+     "rarity": 0.651,
+     "as_written": [
+      "bypass"
+     ]
+    },
+    {
+     "stem": "generative",
+     "rarity": 0.651,
+     "as_written": [
+      "generative"
+     ]
+    }
+   ],
+   "score": 0.0595,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MEASURE 2.6: Safety evaluation",
+   "anchor": "anchor:nist-ai-rmf:measure-2-6-safety-evaluation",
+   "framework": "NIST AI RMF",
+   "reference": "MEASURE 2.6: Safety evaluation",
+   "shared_terms": [
+    {
+     "stem": "robustnes",
+     "rarity": 0.6909,
+     "as_written": [
+      "robustness"
+     ]
+    },
+    {
+     "stem": "identifi",
+     "rarity": 0.4952,
+     "as_written": [
+      "identified"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "implicate",
+     "rarity": 1.0,
+     "as_written": [
+      "implicate"
+     ]
+    },
+    {
+     "stem": "particularly",
+     "rarity": 1.0,
+     "as_written": [
+      "particularly"
+     ]
+    },
+    {
+     "stem": "demonstrat",
+     "rarity": 0.8255,
+     "as_written": [
+      "demonstrated"
+     ]
+    },
+    {
+     "stem": "does",
+     "rarity": 0.8255,
+     "as_written": [
+      "does"
+     ]
+    },
+    {
+     "stem": "exce",
+     "rarity": 0.8255,
+     "as_written": [
+      "exceed"
+     ]
+    },
+    {
+     "stem": "fail",
+     "rarity": 0.8255,
+     "as_written": [
+      "fail"
+     ]
+    },
+    {
+     "stem": "operate",
+     "rarity": 0.8255,
+     "as_written": [
+      "operate"
+     ]
+    },
+    {
+     "stem": "reliability",
+     "rarity": 0.8255,
+     "as_written": [
+      "reliability"
+     ]
+    },
+    {
+     "stem": "residual",
+     "rarity": 0.8255,
+     "as_written": [
+      "residual"
+     ]
+    },
+    {
+     "stem": "made",
+     "rarity": 0.7798,
+     "as_written": [
+      "made"
+     ]
+    },
+    {
+     "stem": "negative",
+     "rarity": 0.7798,
+     "as_written": [
+      "negative"
+     ]
+    },
+    {
+     "stem": "safe",
+     "rarity": 0.7798,
+     "as_written": [
+      "safe"
+     ]
+    }
+   ],
+   "score": 0.0524,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 60: Output - Harmful output",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-60-output-harmful-output",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 60: Output - Harmful output",
+   "shared_terms": [
+    {
+     "stem": "harmful",
+     "rarity": 0.5323,
+     "as_written": [
+      "harmful"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "covertly",
+     "rarity": 1.0,
+     "as_written": [
+      "covertly"
+     ]
+    },
+    {
+     "stem": "indirectly",
+     "rarity": 1.0,
+     "as_written": [
+      "indirectly"
+     ]
+    },
+    {
+     "stem": "overtly",
+     "rarity": 1.0,
+     "as_written": [
+      "overtly"
+     ]
+    },
+    {
+     "stem": "violent",
+     "rarity": 1.0,
+     "as_written": [
+      "violent"
+     ]
+    },
+    {
+     "stem": "otherwise",
+     "rarity": 0.8899,
+     "as_written": [
+      "otherwise"
+     ]
+    },
+    {
+     "stem": "statement",
+     "rarity": 0.8899,
+     "as_written": [
+      "statements"
+     ]
+    },
+    {
+     "stem": "dangerou",
+     "rarity": 0.8255,
+     "as_written": [
+      "dangerous"
+     ]
+    },
+    {
+     "stem": "lead",
+     "rarity": 0.7443,
+     "as_written": [
+      "leads"
+     ]
+    },
+    {
+     "stem": "language",
+     "rarity": 0.6909,
+     "as_written": [
+      "language"
+     ]
+    },
+    {
+     "stem": "unsafe",
+     "rarity": 0.6697,
+     "as_written": [
+      "unsafe"
+     ]
+    },
+    {
+     "stem": "physical",
+     "rarity": 0.6342,
+     "as_written": [
+      "physical"
+     ]
+    },
+    {
+     "stem": "harm",
+     "rarity": 0.6191,
+     "as_written": [
+      "harm"
+     ]
+    }
+   ],
+   "score": 0.046,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CO AI Act::6-1-1703: Deployer Duties",
+   "anchor": "anchor:co-ai-act:6-1-1703-deployer-duties",
+   "framework": "CO AI Act",
+   "reference": "6-1-1703: Deployer Duties",
+   "shared_terms": [
+    {
+     "stem": "assessment",
+     "rarity": 0.4063,
+     "as_written": [
+      "assessments"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "consumer",
+     "rarity": 1.0,
+     "as_written": [
+      "consumer"
+     ]
+    },
+    {
+     "stem": "care",
+     "rarity": 0.8899,
+     "as_written": [
+      "care"
+     ]
+    },
+    {
+     "stem": "disclosur",
+     "rarity": 0.8899,
+     "as_written": [
+      "disclosures"
+     ]
+    },
+    {
+     "stem": "impos",
+     "rarity": 0.8899,
+     "as_written": [
+      "imposes"
+     ]
+    },
+    {
+     "stem": "reasonable",
+     "rarity": 0.8899,
+     "as_written": [
+      "reasonable"
+     ]
+    },
+    {
+     "stem": "duty",
+     "rarity": 0.8255,
+     "as_written": [
+      "duty"
+     ]
+    },
+    {
+     "stem": "deployer",
+     "rarity": 0.7443,
+     "as_written": [
+      "deployer",
+      "deployers"
+     ]
+    },
+    {
+     "stem": "duti",
+     "rarity": 0.7443,
+     "as_written": [
+      "duties"
+     ]
+    },
+    {
+     "stem": "program",
+     "rarity": 0.7154,
+     "as_written": [
+      "program"
+     ]
+    },
+    {
+     "stem": "public",
+     "rarity": 0.6697,
+     "as_written": [
+      "public"
+     ]
+    },
+    {
+     "stem": "notification",
+     "rarity": 0.6191,
+     "as_written": [
+      "notifications"
+     ]
+    },
+    {
+     "stem": "requir",
+     "rarity": 0.4597,
+     "as_written": [
+      "requires"
+     ]
+    }
+   ],
+   "score": 0.0399,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP Agentic Top 10::ASI09 - Human-Agent Trust Exploitation",
+   "anchor": "anchor:owasp-agentic-top-10:asi09-human-agent-trust-exploitation",
+   "framework": "OWASP Agentic Top 10",
+   "reference": "ASI09 - Human-Agent Trust Exploitation",
+   "shared_terms": [
+    {
+     "stem": "harmful",
+     "rarity": 0.5323,
+     "as_written": [
+      "harmful"
+     ]
+    },
+    {
+     "stem": "action",
+     "rarity": 0.3884,
+     "as_written": [
+      "actions"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "ai-driven",
+     "rarity": 1.0,
+     "as_written": [
+      "ai-driven"
+     ]
+    },
+    {
+     "stem": "ai-power",
+     "rarity": 1.0,
+     "as_written": [
+      "ai-powered"
+     ]
+    },
+    {
+     "stem": "asi09",
+     "rarity": 1.0,
+     "as_written": [
+      "asi09"
+     ]
+    },
+    {
+     "stem": "confident",
+     "rarity": 1.0,
+     "as_written": [
+      "confident"
+     ]
+    },
+    {
+     "stem": "human-agent",
+     "rarity": 1.0,
+     "as_written": [
+      "human-agent"
+     ]
+    },
+    {
+     "stem": "invoice",
+     "rarity": 1.0,
+     "as_written": [
+      "invoice"
+     ]
+    },
+    {
+     "stem": "over-trust",
+     "rarity": 1.0,
+     "as_written": [
+      "over-trust"
+     ]
+    },
+    {
+     "stem": "phish",
+     "rarity": 1.0,
+     "as_written": [
+      "phishing"
+     ]
+    },
+    {
+     "stem": "polish",
+     "rarity": 1.0,
+     "as_written": [
+      "polished"
+     ]
+    },
+    {
+     "stem": "replac",
+     "rarity": 1.0,
+     "as_written": [
+      "replacing"
+     ]
+    },
+    {
+     "stem": "campaign",
+     "rarity": 0.8899,
+     "as_written": [
+      "campaigns"
+     ]
+    },
+    {
+     "stem": "covert",
+     "rarity": 0.8899,
+     "as_written": [
+      "covert"
+     ]
+    }
+   ],
+   "score": 0.0344,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "EU AI Act::Article 9: Risk Management System",
+   "anchor": "anchor:eu-ai-act:article-9-risk-management-system",
+   "framework": "EU AI Act",
+   "reference": "Article 9: Risk Management System",
+   "shared_terms": [
+    {
+     "stem": "test",
+     "rarity": 0.4825,
+     "as_written": [
+      "tested",
+      "testing"
+     ]
+    },
+    {
+     "stem": "high-risk",
+     "rarity": 0.4495,
+     "as_written": [
+      "high-risk"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "ai's",
+     "rarity": 1.0,
+     "as_written": [
+      "ai's"
+     ]
+    },
+    {
+     "stem": "eliminate",
+     "rarity": 1.0,
+     "as_written": [
+      "eliminate"
+     ]
+    },
+    {
+     "stem": "estimate",
+     "rarity": 1.0,
+     "as_written": [
+      "estimate"
+     ]
+    },
+    {
+     "stem": "fulfil",
+     "rarity": 1.0,
+     "as_written": [
+      "fulfilling"
+     ]
+    },
+    {
+     "stem": "minimiz",
+     "rarity": 1.0,
+     "as_written": [
+      "minimizing"
+     ]
+    },
+    {
+     "stem": "negatively",
+     "rarity": 1.0,
+     "as_written": [
+      "negatively"
+     ]
+    },
+    {
+     "stem": "adopt",
+     "rarity": 0.8899,
+     "as_written": [
+      "adopt"
+     ]
+    },
+    {
+     "stem": "analyze",
+     "rarity": 0.8899,
+     "as_written": [
+      "analyze"
+     ]
+    },
+    {
+     "stem": "vulnerable",
+     "rarity": 0.8899,
+     "as_written": [
+      "vulnerable"
+     ]
+    },
+    {
+     "stem": "balance",
+     "rarity": 0.8255,
+     "as_written": [
+      "balance"
+     ]
+    },
+    {
+     "stem": "fundamental",
+     "rarity": 0.8255,
+     "as_written": [
+      "fundamental"
+     ]
+    },
+    {
+     "stem": "health",
+     "rarity": 0.8255,
+     "as_written": [
+      "health"
+     ]
+    }
+   ],
+   "score": 0.0325,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "ISO 42001::A.6.2.4: AI system verification and validation",
+   "anchor": "anchor:iso-42001:a-6-2-4-ai-system-verification-and-validation",
+   "framework": "ISO 42001",
+   "reference": "A.6.2.4: AI system verification and validation",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "specify",
+     "rarity": 0.6909,
+     "as_written": [
+      "specify"
+     ]
+    },
+    {
+     "stem": "verification",
+     "rarity": 0.6697,
+     "as_written": [
+      "verification"
+     ]
+    },
+    {
+     "stem": "criteria",
+     "rarity": 0.6342,
+     "as_written": [
+      "criteria"
+     ]
+    },
+    {
+     "stem": "validation",
+     "rarity": 0.5499,
+     "as_written": [
+      "validation"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MANAGE 2.2: Deployed system value",
+   "anchor": "anchor:nist-ai-rmf:manage-2-2-deployed-system-value",
+   "framework": "NIST AI RMF",
+   "reference": "MANAGE 2.2: Deployed system value",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "sustain",
+     "rarity": 1.0,
+     "as_written": [
+      "sustain"
+     ]
+    },
+    {
+     "stem": "value",
+     "rarity": 0.8899,
+     "as_written": [
+      "value"
+     ]
+    },
+    {
+     "stem": "appli",
+     "rarity": 0.7443,
+     "as_written": [
+      "applied"
+     ]
+    },
+    {
+     "stem": "place",
+     "rarity": 0.5698,
+     "as_written": [
+      "place"
+     ]
+    },
+    {
+     "stem": "deploy",
+     "rarity": 0.5409,
+     "as_written": [
+      "deployed"
+     ]
+    },
+    {
+     "stem": "manage",
+     "rarity": 0.5241,
+     "as_written": [
+      "manage"
+     ]
+    },
+    {
+     "stem": "mechanism",
+     "rarity": 0.4952,
+     "as_written": [
+      "mechanisms"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  }
+ ],
+ "candidate_crosswalks": [
+  {
+   "clause": "ISO 42001::A.5.3: Documentation of AI system impact assessments",
+   "anchor": "anchor:iso-42001:a-5-3-documentation-of-ai-system-impact-assessments",
+   "framework": "ISO 42001",
+   "reference": "A.5.3: Documentation of AI system impact assessments",
+   "shared_terms": [
+    {
+     "stem": "result",
+     "rarity": 0.4707,
+     "as_written": [
+      "results"
+     ]
+    },
+    {
+     "stem": "defin",
+     "rarity": 0.4352,
+     "as_written": [
+      "defined",
+      "defining"
+     ]
+    },
+    {
+     "stem": "documentation",
+     "rarity": 0.418,
+     "as_written": [
+      "documentation"
+     ]
+    },
+    {
+     "stem": "assessment",
+     "rarity": 0.4063,
+     "as_written": [
+      "assessments"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "retain",
+     "rarity": 0.7443,
+     "as_written": [
+      "retain"
+     ]
+    },
+    {
+     "stem": "period",
+     "rarity": 0.7154,
+     "as_written": [
+      "period"
+     ]
+    },
+    {
+     "stem": "impact",
+     "rarity": 0.4495,
+     "as_written": [
+      "impact"
+     ]
+    }
+   ],
+   "score": 0.4754,
+   "shared_count": 4,
+   "grade": "proposed",
+   "relationship": "AIUC does NOT publish this crosswalk. This build observed shared distinctive vocabulary and proposes it as a candidate for review. It is not a mapping.",
+   "review_status": "needs_review"
+  },
+  {
+   "clause": "NIST AI RMF::MAP 4.2: Internal risk controls",
+   "anchor": "anchor:nist-ai-rmf:map-4-2-internal-risk-controls",
+   "framework": "NIST AI RMF",
+   "reference": "MAP 4.2: Internal risk controls",
+   "shared_terms": [
+    {
+     "stem": "internal",
+     "rarity": 0.5409,
+     "as_written": [
+      "internal"
+     ]
+    },
+    {
+     "stem": "third-party",
+     "rarity": 0.509,
+     "as_written": [
+      "third-party"
+     ]
+    },
+    {
+     "stem": "identifi",
+     "rarity": 0.4952,
+     "as_written": [
+      "identified"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "component",
+     "rarity": 0.651,
+     "as_written": [
+      "components"
+     ]
+    },
+    {
+     "stem": "technology",
+     "rarity": 0.6191,
+     "as_written": [
+      "technologies"
+     ]
+    },
+    {
+     "stem": "map",
+     "rarity": 0.5019,
+     "as_written": [
+      "map"
+     ]
+    }
+   ],
+   "score": 0.4658,
+   "shared_count": 3,
+   "grade": "proposed",
+   "relationship": "AIUC does NOT publish this crosswalk. This build observed shared distinctive vocabulary and proposes it as a candidate for review. It is not a mapping.",
+   "review_status": "needs_review"
+  },
+  {
+   "clause": "ISO 42001::9.3.3: Management review results",
+   "anchor": "anchor:iso-42001:9-3-3-management-review-results",
+   "framework": "ISO 42001",
+   "reference": "9.3.3: Management review results",
+   "shared_terms": [
+    {
+     "stem": "follow-up",
+     "rarity": 0.6697,
+     "as_written": [
+      "follow-up"
+     ]
+    },
+    {
+     "stem": "result",
+     "rarity": 0.4707,
+     "as_written": [
+      "results"
+     ]
+    },
+    {
+     "stem": "action",
+     "rarity": 0.3884,
+     "as_written": [
+      "actions"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "improvement",
+     "rarity": 0.651,
+     "as_written": [
+      "improvements"
+     ]
+    },
+    {
+     "stem": "objectiv",
+     "rarity": 0.6191,
+     "as_written": [
+      "objectives"
+     ]
+    },
+    {
+     "stem": "decision",
+     "rarity": 0.509,
+     "as_written": [
+      "decisions"
+     ]
+    },
+    {
+     "stem": "resourc",
+     "rarity": 0.5019,
+     "as_written": [
+      "resources"
+     ]
+    }
+   ],
+   "score": 0.4013,
+   "shared_count": 3,
+   "grade": "proposed",
+   "relationship": "AIUC does NOT publish this crosswalk. This build observed shared distinctive vocabulary and proposes it as a candidate for review. It is not a mapping.",
+   "review_status": "needs_review"
+  }
+ ]
+}

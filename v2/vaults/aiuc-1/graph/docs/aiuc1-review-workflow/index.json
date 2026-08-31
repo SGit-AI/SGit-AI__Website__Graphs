@@ -1,0 +1,91 @@
+{
+ "version": "v0.6.19",
+ "slug": "aiuc1-review-workflow",
+ "doc": "doc:aiuc1-review-workflow",
+ "title": "Review workflow",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 15,
+  "sentences": 18,
+  "words": 258,
+  "spans": 10
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:aiuc1-review-workflow",
+   "title": "Review workflow",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 1,
+    "sentences": 2,
+    "words": 15
+   },
+   "shard": "sec-01.json",
+   "uid": "rw:d1"
+  },
+  {
+   "id": "sec:What opens a review item",
+   "title": "What opens a review item",
+   "level": 2,
+   "parent": "doc:aiuc1-review-workflow",
+   "counts": {
+    "blocks": 5,
+    "sentences": 5,
+    "words": 72
+   },
+   "shard": "sec-02.json",
+   "uid": "rw:s1"
+  },
+  {
+   "id": "sec:What a review item carries",
+   "title": "What a review item carries",
+   "level": 2,
+   "parent": "doc:aiuc1-review-workflow",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 17
+   },
+   "shard": "sec-03.json",
+   "uid": "rw:s2"
+  },
+  {
+   "id": "sec:The loop",
+   "title": "The loop",
+   "level": 2,
+   "parent": "doc:aiuc1-review-workflow",
+   "counts": {
+    "blocks": 6,
+    "sentences": 7,
+    "words": 100
+   },
+   "shard": "sec-04.json",
+   "uid": "rw:s3"
+  },
+  {
+   "id": "sec:The rule about language models",
+   "title": "The rule about language models",
+   "level": 2,
+   "parent": "doc:aiuc1-review-workflow",
+   "counts": {
+    "blocks": 1,
+    "sentences": 3,
+    "words": 54
+   },
+   "shard": "sec-05.json",
+   "uid": "rw:s4"
+  }
+ ]
+}

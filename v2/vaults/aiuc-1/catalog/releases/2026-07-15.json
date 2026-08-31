@@ -17,7 +17,7 @@
   "release_id": "2026-07-15",
   "published_at": "2026-07-15",
   "published_label": "July 15, 2026",
-  "retrieved_at": "2026-08-31T23:13:08Z",
+  "retrieved_at": "2026-08-31T23:55:44Z",
   "status": "validated",
   "built_from": "official website and official changelog repository",
   "official_changelog_url": "https://www.aiuc-1.com/changelog",
@@ -729,7 +729,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -989,7 +989,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -1555,7 +1555,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -2143,7 +2143,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -2641,7 +2641,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -3150,7 +3150,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -3616,7 +3616,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -3897,7 +3897,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -4942,7 +4942,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -5977,7 +5977,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -6302,7 +6302,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -7026,7 +7026,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -7613,7 +7613,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -8229,7 +8229,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -8926,7 +8926,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -9992,7 +9992,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -10483,7 +10483,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -10801,7 +10801,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -11721,7 +11721,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -12391,7 +12391,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -13024,7 +13024,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -13457,7 +13457,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -13871,7 +13871,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -14274,7 +14274,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -14668,7 +14668,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -15300,7 +15300,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -15677,7 +15677,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -16213,7 +16213,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -16554,7 +16554,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -16978,7 +16978,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -17431,7 +17431,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -17892,7 +17892,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -18686,7 +18686,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -19195,7 +19195,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -19690,7 +19690,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -20121,7 +20121,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -20516,7 +20516,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -21096,7 +21096,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -21619,7 +21619,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -22130,7 +22130,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -22547,7 +22547,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -23298,7 +23298,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -23962,7 +23962,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -24534,7 +24534,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -24843,7 +24843,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -25474,7 +25474,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -26557,7 +26557,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -27026,7 +27026,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -27885,7 +27885,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -28371,7 +28371,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -29143,7 +29143,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -29609,7 +29609,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -29940,7 +29940,7 @@
     "extraction": {
      "method": "structural_read_of_published_control_model",
      "parser_version": "0.1.0",
-     "extracted_at": "2026-08-31T23:13:08Z",
+     "extracted_at": "2026-08-31T23:55:44Z",
      "confirmed_by_own_page": true,
      "review_status": "approved"
     }
@@ -32119,14 +32119,14 @@
  "provenance": {
   "generator_version": "0.1.0",
   "parser_version": "0.1.0",
-  "generated_at": "2026-08-31T23:13:08Z",
+  "generated_at": "2026-08-31T23:55:44Z",
   "source_manifest": "../../evidence/source-manifest.json",
   "source_refs": [
    "src_2026_08_31_page_changelog",
    "git:d407401393de5629745de6accb35e000e674043f",
    "src_2026_08_31_page_home"
   ],
-  "content_hash": "sha256:f041937cad234d27a592edbf0c9b4ee7ea1bbf7c4e20d19d035f73fb5afed6f8"
+  "content_hash": "sha256:709d23dd45129d1cbf383e40ea95891084f9fbecee81bb4696b073892d7dc50c"
  },
  "validation": {
   "schema_valid": true,

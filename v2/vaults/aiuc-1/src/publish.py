@@ -16,7 +16,7 @@ import common as c
 
 VAULT = c.path('build/vault')
 COPY_TREES = ('catalog', 'graph', 'changes', 'reports', 'schemas', 'docs', 'src', 'tests',
-              'evidence')
+              'evidence', 'sources')
 COPY_FILES = ('README.md', 'NOTICE.md')
 
 
@@ -28,6 +28,8 @@ def app_data():
     validation = c.read_json('reports/validation-latest.json')
     reconciliation = c.read_json('reports/reconciliation-latest.json')
     drift = c.read_json('reports/drift-latest.json', {})
+    docs = c.read_json('graph/docs/index.json', {})
+    meaning = c.read_json('graph/meaning/index.json', {})
 
     controls = []
     for control in current['controls']:
@@ -135,24 +137,147 @@ def app_data():
                     for o in manifest['observations']},
         'graph': {k: graph[k] for k in ('node_count', 'edge_count', 'nodes_by_type',
                                         'edges_by_type', 'edge_meanings', 'content_hash')},
+        'docs': {k: docs.get(k) for k in ('document_count', 'totals', 'ladder', 'gate',
+                                          'decomposer')} | {'documents': [
+            {k: doc.get(k) for k in ('slug', 'title', 'path', 'origin', 'graph_path',
+                                     'sections', 'blocks', 'sentences', 'words', 'forms',
+                                     'uid_prefix', 'source_sha256', 'commit_sha',
+                                     'rebuilds_byte_identical')}
+            for doc in docs.get('documents') or []]},
+        'meaning': {k: meaning.get(k) for k in ('method', 'grades', 'counts', 'corpus')}
+                   | {'top_terms': (meaning.get('terms') or [])[:40],
+                      'controls': meaning.get('controls') or {}},
     }
 
 
-def inject(data):
+VENDOR = ('cytoscape.min.js', 'marked.min.js')
+
+
+def vendored():
+    """The two libraries the page needs, inlined from the estate's assets/vendor/.
+
+    The vault's authoring contract forbids a <script src> against a vault path, so
+    they travel inside the page rather than beside it. They are read from the estate
+    and not copied into this folder, for the same reason gen_coregraph is imported
+    and not copied: one vendored copy, in the place the estate keeps them."""
+    estate = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(c.ROOT))),
+                          'assets', 'vendor')
+    out = []
+    for name in VENDOR:
+        path = os.path.join(estate, name)
+        if not os.path.exists(path):
+            raise SystemExit('publish: the vendored library %s is missing at %s'
+                             % (name, path))
+        with open(path, encoding='utf-8') as handle:
+            out.append('/* vendored: assets/vendor/%s */\n%s' % (name, handle.read()))
+    return '\n;\n'.join(out)
+
+
+def parts():
+    """The app's own modules, in order, concatenated into one script."""
+    folder = c.path('vault-app/parts')
+    out = []
+    for name in sorted(os.listdir(folder)):
+        if not name.endswith('.js'):
+            continue
+        with open(os.path.join(folder, name), encoding='utf-8') as handle:
+            out.append('/* --- vault-app/parts/%s --- */\n%s' % (name, handle.read()))
+    return '\n'.join(out)
+
+
+def compact_graph():
+    """The whole graph in an index-addressed form small enough to inline."""
+    nodes = c.read_json('graph/nodes.json')['nodes']
+    edges = c.read_json('graph/edges.json')['edges']
+    types = sorted({n['type'] for n in nodes})
+    edge_types = sorted({e['type'] for e in edges})
+    index = {n['id']: i for i, n in enumerate(nodes)}
+    return {
+        'types': types,
+        'etypes': edge_types,
+        'n': [[n['id'], types.index(n['type']), n['label']] for n in nodes],
+        'e': [[index[e['from']], edge_types.index(e['type']), index[e['to']]]
+              for e in edges if e['from'] in index and e['to'] in index],
+    }
+
+
+def file_manifest():
+    """Every file the vault will hold, foldered, for the file explorer."""
+    folders = {}
+    for tree in ('', 'catalog', 'catalog/releases', 'graph', 'graph/meaning',
+                 'graph/meaning/controls', 'graph/docs', 'changes', 'reports', 'schemas',
+                 'docs', 'src', 'tests', 'tests/fixtures', 'evidence', 'sources',
+                 'sources/standard'):
+        base = c.path(tree) if tree else c.ROOT
+        if not os.path.isdir(base):
+            continue
+        files = []
+        for name in sorted(os.listdir(base)):
+            full = os.path.join(base, name)
+            if not os.path.isfile(full) or name.startswith('.'):
+                continue
+            if name.endswith(('.pyc',)):
+                continue
+            files.append({'n': name, 'b': os.path.getsize(full)})
+        if files:
+            folders[tree] = {'label': tree or 'vault root', 'base': tree, 'files': files,
+                             'open': tree in ('', 'catalog', 'docs')}
+    for slug in sorted(os.listdir(c.path('graph/docs'))) if os.path.isdir(
+            c.path('graph/docs')) else []:
+        base = c.path('graph/docs/%s' % slug)
+        if not os.path.isdir(base):
+            continue
+        files = [{'n': n, 'b': os.path.getsize(os.path.join(base, n))}
+                 for n in sorted(os.listdir(base)) if os.path.isfile(os.path.join(base, n))]
+        folders['graph/docs/%s' % slug] = {
+            'label': 'graph/docs/%s' % slug, 'base': 'graph/docs/%s' % slug,
+            'files': files, 'open': False}
+    day_root = c.path('evidence/snapshots')
+    if os.path.isdir(day_root):
+        for day in sorted(os.listdir(day_root)):
+            base = os.path.join(day_root, day)
+            if not os.path.isdir(base):
+                continue
+            files = [{'n': n, 'b': os.path.getsize(os.path.join(base, n))}
+                     for n in sorted(os.listdir(base))
+                     if os.path.isfile(os.path.join(base, n))]
+            if files:
+                folders['evidence/snapshots/%s' % day] = {
+                    'label': 'evidence/snapshots/%s' % day,
+                    'base': 'evidence/snapshots/%s' % day, 'files': files, 'open': False}
+    ordered = [folders[k] for k in sorted(folders, key=lambda k: (k != '', k))]
+    return {'folder_count': len(ordered),
+            'file_count': sum(len(f['files']) for f in ordered),
+            'folders': ordered}
+
+
+def inject(data, graph):
     template = c.path('vault-app/index.html')
     with open(template, encoding='utf-8') as handle:
         html = handle.read()
-    compact = json.dumps(data, ensure_ascii=False, separators=(',', ':'))
-    assert '\n' not in compact, 'a raw newline leaked into the inlined data'
-    marker = 'const FALLBACK = /*__DATA__*/{};'
-    assert marker in html, 'the data placeholder is missing from vault-app/index.html'
-    return html.replace(marker, 'const FALLBACK = /*__DATA__*/%s;' % compact)
+    with open(c.path('vault-app/app.css'), encoding='utf-8') as handle:
+        css = handle.read()
+    for marker, value in (('const FALLBACK = /*__DATA__*/{};', 'data'),
+                          ('const GRAPHDATA = /*__GRAPH__*/{};', 'graph')):
+        assert marker in html, 'the %s placeholder is missing from vault-app/index.html' % value
+    for payload, marker, name in ((data, 'const FALLBACK = /*__DATA__*/{};', 'FALLBACK'),
+                                  (graph, 'const GRAPHDATA = /*__GRAPH__*/{};', 'GRAPHDATA')):
+        compact = json.dumps(payload, ensure_ascii=False, separators=(',', ':'))
+        assert '\n' not in compact, 'a raw newline leaked into the inlined %s' % name
+        html = html.replace(marker, 'const %s = %s;' % (name, compact))
+    html = html.replace('/*__CSS__*/', css)
+    html = html.replace('/*__VENDOR__*/', vendored())
+    html = html.replace('/*__PARTS__*/', parts())
+    return html
 
 
 def build():
     data = app_data()
+    data['files'] = file_manifest()
+    graph = compact_graph()
     c.write_json('vault-app/data.json', data)
-    html = inject(data)
+    c.write_json('vault-app/graph-compact.json', graph)
+    html = inject(data, graph)
 
     if os.path.isdir(VAULT):
         for name in os.listdir(VAULT):
@@ -164,13 +289,14 @@ def build():
 
     with open(os.path.join(VAULT, 'index.html'), 'w', encoding='utf-8') as handle:
         handle.write(html)
-    with open(os.path.join(VAULT, 'data.json'), 'w', encoding='utf-8') as handle:
-        json.dump(data, handle, ensure_ascii=False, indent=1)
-        handle.write('\n')
+    for name, payload in (('data.json', data), ('graph-compact.json', graph)):
+        with open(os.path.join(VAULT, name), 'w', encoding='utf-8') as handle:
+            json.dump(payload, handle, ensure_ascii=False, indent=1)
+            handle.write('\n')
     with open(os.path.join(VAULT, 'app.json'), 'w', encoding='utf-8') as handle:
         json.dump({'entry': 'index.html', 'present': True, 'auto_open': True,
                    'title': 'AIUC-1, as a graph you can cite',
-                   'hud': {'mode': 'default'}}, handle, indent=1)
+                   'hud': {'mode': 'minimal'}}, handle, indent=1)
         handle.write('\n')
     for name in COPY_FILES:
         shutil.copy2(c.path(name), os.path.join(VAULT, name))

@@ -1,0 +1,1857 @@
+{
+ "version": "v0.6.19",
+ "slug": "aiuc1-controls",
+ "doc": "doc:aiuc1-controls",
+ "title": "Controls",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 239,
+  "sentences": 349,
+  "words": 4831,
+  "spans": 0
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:aiuc1-controls",
+   "title": "Controls",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:d1"
+  },
+  {
+   "id": "sec:A001: Establish input data policy",
+   "title": "A001: Establish input data policy",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s1"
+  },
+  {
+   "id": "sec:Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:A001: Establish input data policy",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 55
+   },
+   "shard": "sec-01.json",
+   "uid": "ac:s2"
+  },
+  {
+   "id": "sec:Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:A001: Establish input data policy",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 23
+   },
+   "shard": "sec-02.json",
+   "uid": "ac:s3"
+  },
+  {
+   "id": "sec:A002: Establish output data policy",
+   "title": "A002: Establish output data policy",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s4"
+  },
+  {
+   "id": "sec:A002: Establish output data policy / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:A002: Establish output data policy",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 89
+   },
+   "shard": "sec-03.json",
+   "uid": "ac:s5"
+  },
+  {
+   "id": "sec:A002: Establish output data policy / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:A002: Establish output data policy",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 42
+   },
+   "shard": "sec-04.json",
+   "uid": "ac:s6"
+  },
+  {
+   "id": "sec:A003: Limit AI agent data access",
+   "title": "A003: Limit AI agent data access",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s7"
+  },
+  {
+   "id": "sec:A003: Limit AI agent data access / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:A003: Limit AI agent data access",
+   "counts": {
+    "blocks": 1,
+    "sentences": 2,
+    "words": 37
+   },
+   "shard": "sec-05.json",
+   "uid": "ac:s8"
+  },
+  {
+   "id": "sec:A003: Limit AI agent data access / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:A003: Limit AI agent data access",
+   "counts": {
+    "blocks": 3,
+    "sentences": 4,
+    "words": 94
+   },
+   "shard": "sec-06.json",
+   "uid": "ac:s9"
+  },
+  {
+   "id": "sec:A004: Protect IP & trade secrets",
+   "title": "A004: Protect IP & trade secrets",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s10"
+  },
+  {
+   "id": "sec:A004: Protect IP & trade secrets / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:A004: Protect IP & trade secrets",
+   "counts": {
+    "blocks": 1,
+    "sentences": 2,
+    "words": 48
+   },
+   "shard": "sec-07.json",
+   "uid": "ac:s11"
+  },
+  {
+   "id": "sec:A004: Protect IP & trade secrets / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:A004: Protect IP & trade secrets",
+   "counts": {
+    "blocks": 4,
+    "sentences": 5,
+    "words": 72
+   },
+   "shard": "sec-08.json",
+   "uid": "ac:s12"
+  },
+  {
+   "id": "sec:A005: Prevent cross-customer data exposure",
+   "title": "A005: Prevent cross-customer data exposure",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s13"
+  },
+  {
+   "id": "sec:A005: Prevent cross-customer data exposure / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:A005: Prevent cross-customer data exposure",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 65
+   },
+   "shard": "sec-09.json",
+   "uid": "ac:s14"
+  },
+  {
+   "id": "sec:A005: Prevent cross-customer data exposure / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:A005: Prevent cross-customer data exposure",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 9
+   },
+   "shard": "sec-10.json",
+   "uid": "ac:s15"
+  },
+  {
+   "id": "sec:A006: Prevent PII leakage",
+   "title": "A006: Prevent PII leakage",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s16"
+  },
+  {
+   "id": "sec:A006: Prevent PII leakage / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:A006: Prevent PII leakage",
+   "counts": {
+    "blocks": 1,
+    "sentences": 2,
+    "words": 51
+   },
+   "shard": "sec-11.json",
+   "uid": "ac:s17"
+  },
+  {
+   "id": "sec:A006: Prevent PII leakage / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:A006: Prevent PII leakage",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 20
+   },
+   "shard": "sec-12.json",
+   "uid": "ac:s18"
+  },
+  {
+   "id": "sec:A007: Prevent IP violations",
+   "title": "A007: Prevent IP violations",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s19"
+  },
+  {
+   "id": "sec:A007: Prevent IP violations / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:A007: Prevent IP violations",
+   "counts": {
+    "blocks": 1,
+    "sentences": 2,
+    "words": 21
+   },
+   "shard": "sec-13.json",
+   "uid": "ac:s20"
+  },
+  {
+   "id": "sec:A007: Prevent IP violations / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:A007: Prevent IP violations",
+   "counts": {
+    "blocks": 4,
+    "sentences": 5,
+    "words": 58
+   },
+   "shard": "sec-14.json",
+   "uid": "ac:s21"
+  },
+  {
+   "id": "sec:A008: Prevent leakage of credentials and secrets",
+   "title": "A008: Prevent leakage of credentials and secrets",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s22"
+  },
+  {
+   "id": "sec:A008: Prevent leakage of credentials and secrets / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:A008: Prevent leakage of credentials and secrets",
+   "counts": {
+    "blocks": 3,
+    "sentences": 6,
+    "words": 158
+   },
+   "shard": "sec-15.json",
+   "uid": "ac:s23"
+  },
+  {
+   "id": "sec:A008: Prevent leakage of credentials and secrets / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:A008: Prevent leakage of credentials and secrets",
+   "counts": {
+    "blocks": 3,
+    "sentences": 4,
+    "words": 68
+   },
+   "shard": "sec-16.json",
+   "uid": "ac:s24"
+  },
+  {
+   "id": "sec:B001: Third-party testing of adversarial robustness",
+   "title": "B001: Third-party testing of adversarial robustness",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s25"
+  },
+  {
+   "id": "sec:B001: Third-party testing of adversarial robustness / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:B001: Third-party testing of adversarial robustness",
+   "counts": {
+    "blocks": 4,
+    "sentences": 8,
+    "words": 108
+   },
+   "shard": "sec-17.json",
+   "uid": "ac:s26"
+  },
+  {
+   "id": "sec:B001: Third-party testing of adversarial robustness / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:B001: Third-party testing of adversarial robustness",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 34
+   },
+   "shard": "sec-18.json",
+   "uid": "ac:s27"
+  },
+  {
+   "id": "sec:B002: Detect adversarial input",
+   "title": "B002: Detect adversarial input",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s28"
+  },
+  {
+   "id": "sec:B002: Detect adversarial input / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:B002: Detect adversarial input",
+   "counts": {
+    "blocks": 3,
+    "sentences": 6,
+    "words": 82
+   },
+   "shard": "sec-19.json",
+   "uid": "ac:s29"
+  },
+  {
+   "id": "sec:B002: Detect adversarial input / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:B002: Detect adversarial input",
+   "counts": {
+    "blocks": 3,
+    "sentences": 4,
+    "words": 55
+   },
+   "shard": "sec-20.json",
+   "uid": "ac:s30"
+  },
+  {
+   "id": "sec:B003: Manage public release of technical details",
+   "title": "B003: Manage public release of technical details",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s31"
+  },
+  {
+   "id": "sec:B003: Manage public release of technical details / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:B003: Manage public release of technical details",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 64
+   },
+   "shard": "sec-21.json",
+   "uid": "ac:s32"
+  },
+  {
+   "id": "sec:B003: Manage public release of technical details / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:B003: Manage public release of technical details",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 29
+   },
+   "shard": "sec-22.json",
+   "uid": "ac:s33"
+  },
+  {
+   "id": "sec:B004: Prevent AI endpoint scraping",
+   "title": "B004: Prevent AI endpoint scraping",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s34"
+  },
+  {
+   "id": "sec:B004: Prevent AI endpoint scraping / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:B004: Prevent AI endpoint scraping",
+   "counts": {
+    "blocks": 5,
+    "sentences": 8,
+    "words": 117
+   },
+   "shard": "sec-23.json",
+   "uid": "ac:s35"
+  },
+  {
+   "id": "sec:B005: Implement real-time input filtering",
+   "title": "B005: Implement real-time input filtering",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s36"
+  },
+  {
+   "id": "sec:B005: Implement real-time input filtering / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:B005: Implement real-time input filtering",
+   "counts": {
+    "blocks": 1,
+    "sentences": 2,
+    "words": 41
+   },
+   "shard": "sec-24.json",
+   "uid": "ac:s37"
+  },
+  {
+   "id": "sec:B005: Implement real-time input filtering / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:B005: Implement real-time input filtering",
+   "counts": {
+    "blocks": 5,
+    "sentences": 6,
+    "words": 59
+   },
+   "shard": "sec-25.json",
+   "uid": "ac:s38"
+  },
+  {
+   "id": "sec:B006: Prevent unauthorized AI agent actions",
+   "title": "B006: Prevent unauthorized AI agent actions",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s39"
+  },
+  {
+   "id": "sec:B006: Prevent unauthorized AI agent actions / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:B006: Prevent unauthorized AI agent actions",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 73
+   },
+   "shard": "sec-26.json",
+   "uid": "ac:s40"
+  },
+  {
+   "id": "sec:B006: Prevent unauthorized AI agent actions / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:B006: Prevent unauthorized AI agent actions",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 69
+   },
+   "shard": "sec-27.json",
+   "uid": "ac:s41"
+  },
+  {
+   "id": "sec:B007: Enforce user access privileges to AI systems",
+   "title": "B007: Enforce user access privileges to AI systems",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s42"
+  },
+  {
+   "id": "sec:B007: Enforce user access privileges to AI systems / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:B007: Enforce user access privileges to AI systems",
+   "counts": {
+    "blocks": 4,
+    "sentences": 6,
+    "words": 97
+   },
+   "shard": "sec-28.json",
+   "uid": "ac:s43"
+  },
+  {
+   "id": "sec:B008: Protect AI system deployment environment",
+   "title": "B008: Protect AI system deployment environment",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s44"
+  },
+  {
+   "id": "sec:B008: Protect AI system deployment environment / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:B008: Protect AI system deployment environment",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 79
+   },
+   "shard": "sec-29.json",
+   "uid": "ac:s45"
+  },
+  {
+   "id": "sec:B008: Protect AI system deployment environment / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:B008: Protect AI system deployment environment",
+   "counts": {
+    "blocks": 4,
+    "sentences": 6,
+    "words": 92
+   },
+   "shard": "sec-30.json",
+   "uid": "ac:s46"
+  },
+  {
+   "id": "sec:B009: Limit output over-exposure",
+   "title": "B009: Limit output over-exposure",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s47"
+  },
+  {
+   "id": "sec:B009: Limit output over-exposure / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:B009: Limit output over-exposure",
+   "counts": {
+    "blocks": 1,
+    "sentences": 2,
+    "words": 26
+   },
+   "shard": "sec-31.json",
+   "uid": "ac:s48"
+  },
+  {
+   "id": "sec:B009: Limit output over-exposure / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:B009: Limit output over-exposure",
+   "counts": {
+    "blocks": 3,
+    "sentences": 3,
+    "words": 35
+   },
+   "shard": "sec-32.json",
+   "uid": "ac:s49"
+  },
+  {
+   "id": "sec:B010: Promote secure patterns in generated code",
+   "title": "B010: Promote secure patterns in generated code",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s50"
+  },
+  {
+   "id": "sec:B010: Promote secure patterns in generated code / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:B010: Promote secure patterns in generated code",
+   "counts": {
+    "blocks": 3,
+    "sentences": 6,
+    "words": 136
+   },
+   "shard": "sec-33.json",
+   "uid": "ac:s51"
+  },
+  {
+   "id": "sec:B010: Promote secure patterns in generated code / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:B010: Promote secure patterns in generated code",
+   "counts": {
+    "blocks": 4,
+    "sentences": 6,
+    "words": 107
+   },
+   "shard": "sec-34.json",
+   "uid": "ac:s52"
+  },
+  {
+   "id": "sec:C001: Define AI risk taxonomy",
+   "title": "C001: Define AI risk taxonomy",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s53"
+  },
+  {
+   "id": "sec:C001: Define AI risk taxonomy / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:C001: Define AI risk taxonomy",
+   "counts": {
+    "blocks": 5,
+    "sentences": 7,
+    "words": 95
+   },
+   "shard": "sec-35.json",
+   "uid": "ac:s54"
+  },
+  {
+   "id": "sec:C002: Conduct pre-deployment testing",
+   "title": "C002: Conduct pre-deployment testing",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s55"
+  },
+  {
+   "id": "sec:C002: Conduct pre-deployment testing / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:C002: Conduct pre-deployment testing",
+   "counts": {
+    "blocks": 3,
+    "sentences": 6,
+    "words": 61
+   },
+   "shard": "sec-36.json",
+   "uid": "ac:s56"
+  },
+  {
+   "id": "sec:C002: Conduct pre-deployment testing / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:C002: Conduct pre-deployment testing",
+   "counts": {
+    "blocks": 3,
+    "sentences": 4,
+    "words": 80
+   },
+   "shard": "sec-37.json",
+   "uid": "ac:s57"
+  },
+  {
+   "id": "sec:C003: Prevent harmful outputs",
+   "title": "C003: Prevent harmful outputs",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s58"
+  },
+  {
+   "id": "sec:C003: Prevent harmful outputs / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:C003: Prevent harmful outputs",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 40
+   },
+   "shard": "sec-38.json",
+   "uid": "ac:s59"
+  },
+  {
+   "id": "sec:C003: Prevent harmful outputs / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:C003: Prevent harmful outputs",
+   "counts": {
+    "blocks": 3,
+    "sentences": 3,
+    "words": 24
+   },
+   "shard": "sec-39.json",
+   "uid": "ac:s60"
+  },
+  {
+   "id": "sec:C004: Prevent out-of-scope outputs",
+   "title": "C004: Prevent out-of-scope outputs",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s61"
+  },
+  {
+   "id": "sec:C004: Prevent out-of-scope outputs / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:C004: Prevent out-of-scope outputs",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 48
+   },
+   "shard": "sec-40.json",
+   "uid": "ac:s62"
+  },
+  {
+   "id": "sec:C004: Prevent out-of-scope outputs / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:C004: Prevent out-of-scope outputs",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 30
+   },
+   "shard": "sec-41.json",
+   "uid": "ac:s63"
+  },
+  {
+   "id": "sec:C005: Prevent agent-specific high risk outputs",
+   "title": "C005: Prevent agent-specific high risk outputs",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s64"
+  },
+  {
+   "id": "sec:C005: Prevent agent-specific high risk outputs / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:C005: Prevent agent-specific high risk outputs",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 44
+   },
+   "shard": "sec-42.json",
+   "uid": "ac:s65"
+  },
+  {
+   "id": "sec:C005: Prevent agent-specific high risk outputs / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:C005: Prevent agent-specific high risk outputs",
+   "counts": {
+    "blocks": 3,
+    "sentences": 4,
+    "words": 35
+   },
+   "shard": "sec-43.json",
+   "uid": "ac:s66"
+  },
+  {
+   "id": "sec:C006: Prevent output vulnerabilities",
+   "title": "C006: Prevent output vulnerabilities",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s67"
+  },
+  {
+   "id": "sec:C006: Prevent output vulnerabilities / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:C006: Prevent output vulnerabilities",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 65
+   },
+   "shard": "sec-44.json",
+   "uid": "ac:s68"
+  },
+  {
+   "id": "sec:C006: Prevent output vulnerabilities / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:C006: Prevent output vulnerabilities",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 25
+   },
+   "shard": "sec-45.json",
+   "uid": "ac:s69"
+  },
+  {
+   "id": "sec:C007: Flag high risk outputs for human review",
+   "title": "C007: Flag high risk outputs for human review",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s70"
+  },
+  {
+   "id": "sec:C007: Flag high risk outputs for human review / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:C007: Flag high risk outputs for human review",
+   "counts": {
+    "blocks": 2,
+    "sentences": 3,
+    "words": 32
+   },
+   "shard": "sec-46.json",
+   "uid": "ac:s71"
+  },
+  {
+   "id": "sec:C007: Flag high risk outputs for human review / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:C007: Flag high risk outputs for human review",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 33
+   },
+   "shard": "sec-47.json",
+   "uid": "ac:s72"
+  },
+  {
+   "id": "sec:C008: Monitor AI risk categories",
+   "title": "C008: Monitor AI risk categories",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s73"
+  },
+  {
+   "id": "sec:C008: Monitor AI risk categories / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:C008: Monitor AI risk categories",
+   "counts": {
+    "blocks": 1,
+    "sentences": 2,
+    "words": 27
+   },
+   "shard": "sec-48.json",
+   "uid": "ac:s74"
+  },
+  {
+   "id": "sec:C008: Monitor AI risk categories / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:C008: Monitor AI risk categories",
+   "counts": {
+    "blocks": 3,
+    "sentences": 4,
+    "words": 51
+   },
+   "shard": "sec-49.json",
+   "uid": "ac:s75"
+  },
+  {
+   "id": "sec:C009: Enable real-time feedback and intervention",
+   "title": "C009: Enable real-time feedback and intervention",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s76"
+  },
+  {
+   "id": "sec:C009: Enable real-time feedback and intervention / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:C009: Enable real-time feedback and intervention",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 67
+   },
+   "shard": "sec-50.json",
+   "uid": "ac:s77"
+  },
+  {
+   "id": "sec:C009: Enable real-time feedback and intervention / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:C009: Enable real-time feedback and intervention",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 38
+   },
+   "shard": "sec-51.json",
+   "uid": "ac:s78"
+  },
+  {
+   "id": "sec:C010: Third-party testing for harmful outputs",
+   "title": "C010: Third-party testing for harmful outputs",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s79"
+  },
+  {
+   "id": "sec:C010: Third-party testing for harmful outputs / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:C010: Third-party testing for harmful outputs",
+   "counts": {
+    "blocks": 4,
+    "sentences": 6,
+    "words": 72
+   },
+   "shard": "sec-52.json",
+   "uid": "ac:s80"
+  },
+  {
+   "id": "sec:C011: Third-party testing for out-of-scope outputs",
+   "title": "C011: Third-party testing for out-of-scope outputs",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s81"
+  },
+  {
+   "id": "sec:C011: Third-party testing for out-of-scope outputs / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:C011: Third-party testing for out-of-scope outputs",
+   "counts": {
+    "blocks": 4,
+    "sentences": 6,
+    "words": 61
+   },
+   "shard": "sec-53.json",
+   "uid": "ac:s82"
+  },
+  {
+   "id": "sec:C012: Third-party testing for customer-defined risk",
+   "title": "C012: Third-party testing for customer-defined risk",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s83"
+  },
+  {
+   "id": "sec:C012: Third-party testing for customer-defined risk / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:C012: Third-party testing for customer-defined risk",
+   "counts": {
+    "blocks": 4,
+    "sentences": 6,
+    "words": 61
+   },
+   "shard": "sec-54.json",
+   "uid": "ac:s84"
+  },
+  {
+   "id": "sec:D001: Prevent hallucinated outputs",
+   "title": "D001: Prevent hallucinated outputs",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s85"
+  },
+  {
+   "id": "sec:D001: Prevent hallucinated outputs / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:D001: Prevent hallucinated outputs",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 30
+   },
+   "shard": "sec-55.json",
+   "uid": "ac:s86"
+  },
+  {
+   "id": "sec:D001: Prevent hallucinated outputs / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:D001: Prevent hallucinated outputs",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 14
+   },
+   "shard": "sec-56.json",
+   "uid": "ac:s87"
+  },
+  {
+   "id": "sec:D002: Third-party testing for hallucinations",
+   "title": "D002: Third-party testing for hallucinations",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s88"
+  },
+  {
+   "id": "sec:D002: Third-party testing for hallucinations / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:D002: Third-party testing for hallucinations",
+   "counts": {
+    "blocks": 4,
+    "sentences": 6,
+    "words": 58
+   },
+   "shard": "sec-57.json",
+   "uid": "ac:s89"
+  },
+  {
+   "id": "sec:D003: Restrict unsafe tool calls",
+   "title": "D003: Restrict unsafe tool calls",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s90"
+  },
+  {
+   "id": "sec:D003: Restrict unsafe tool calls / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:D003: Restrict unsafe tool calls",
+   "counts": {
+    "blocks": 3,
+    "sentences": 5,
+    "words": 50
+   },
+   "shard": "sec-58.json",
+   "uid": "ac:s91"
+  },
+  {
+   "id": "sec:D003: Restrict unsafe tool calls / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:D003: Restrict unsafe tool calls",
+   "counts": {
+    "blocks": 3,
+    "sentences": 4,
+    "words": 49
+   },
+   "shard": "sec-59.json",
+   "uid": "ac:s92"
+  },
+  {
+   "id": "sec:D004: Third-party testing of tool calls",
+   "title": "D004: Third-party testing of tool calls",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s93"
+  },
+  {
+   "id": "sec:D004: Third-party testing of tool calls / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:D004: Third-party testing of tool calls",
+   "counts": {
+    "blocks": 4,
+    "sentences": 6,
+    "words": 61
+   },
+   "shard": "sec-60.json",
+   "uid": "ac:s94"
+  },
+  {
+   "id": "sec:E001: AI failure plan for security breaches",
+   "title": "E001: AI failure plan for security breaches",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s95"
+  },
+  {
+   "id": "sec:E001: AI failure plan for security breaches / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:E001: AI failure plan for security breaches",
+   "counts": {
+    "blocks": 5,
+    "sentences": 8,
+    "words": 94
+   },
+   "shard": "sec-61.json",
+   "uid": "ac:s96"
+  },
+  {
+   "id": "sec:E002: AI failure plan for harmful outputs",
+   "title": "E002: AI failure plan for harmful outputs",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s97"
+  },
+  {
+   "id": "sec:E002: AI failure plan for harmful outputs / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:E002: AI failure plan for harmful outputs",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 41
+   },
+   "shard": "sec-62.json",
+   "uid": "ac:s98"
+  },
+  {
+   "id": "sec:E002: AI failure plan for harmful outputs / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:E002: AI failure plan for harmful outputs",
+   "counts": {
+    "blocks": 3,
+    "sentences": 4,
+    "words": 36
+   },
+   "shard": "sec-63.json",
+   "uid": "ac:s99"
+  },
+  {
+   "id": "sec:E003: AI failure plan for hallucinations",
+   "title": "E003: AI failure plan for hallucinations",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s100"
+  },
+  {
+   "id": "sec:E003: AI failure plan for hallucinations / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:E003: AI failure plan for hallucinations",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 44
+   },
+   "shard": "sec-64.json",
+   "uid": "ac:s101"
+  },
+  {
+   "id": "sec:E003: AI failure plan for hallucinations / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:E003: AI failure plan for hallucinations",
+   "counts": {
+    "blocks": 3,
+    "sentences": 3,
+    "words": 23
+   },
+   "shard": "sec-65.json",
+   "uid": "ac:s102"
+  },
+  {
+   "id": "sec:E004: Assign accountability",
+   "title": "E004: Assign accountability",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s103"
+  },
+  {
+   "id": "sec:E004: Assign accountability / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:E004: Assign accountability",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 57
+   },
+   "shard": "sec-66.json",
+   "uid": "ac:s104"
+  },
+  {
+   "id": "sec:E004: Assign accountability / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:E004: Assign accountability",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 24
+   },
+   "shard": "sec-67.json",
+   "uid": "ac:s105"
+  },
+  {
+   "id": "sec:E005: Document data storage security",
+   "title": "E005: Document data storage security",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s106"
+  },
+  {
+   "id": "sec:E005: Document data storage security / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:E005: Document data storage security",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 12
+   },
+   "shard": "sec-68.json",
+   "uid": "ac:s107"
+  },
+  {
+   "id": "sec:E006: Conduct vendor due diligence",
+   "title": "E006: Conduct vendor due diligence",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s108"
+  },
+  {
+   "id": "sec:E006: Conduct vendor due diligence / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:E006: Conduct vendor due diligence",
+   "counts": {
+    "blocks": 4,
+    "sentences": 5,
+    "words": 59
+   },
+   "shard": "sec-69.json",
+   "uid": "ac:s109"
+  },
+  {
+   "id": "sec:E007: [Retired] Document system change approvals",
+   "title": "E007: [Retired] Document system change approvals",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s110"
+  },
+  {
+   "id": "sec:E007: [Retired] Document system change approvals / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:E007: [Retired] Document system change approvals",
+   "counts": {
+    "blocks": 2,
+    "sentences": 1,
+    "words": 13
+   },
+   "shard": "sec-70.json",
+   "uid": "ac:s111"
+  },
+  {
+   "id": "sec:E008: Review internal processes",
+   "title": "E008: Review internal processes",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s112"
+  },
+  {
+   "id": "sec:E008: Review internal processes / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:E008: Review internal processes",
+   "counts": {
+    "blocks": 3,
+    "sentences": 4,
+    "words": 42
+   },
+   "shard": "sec-71.json",
+   "uid": "ac:s113"
+  },
+  {
+   "id": "sec:E008: Review internal processes / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:E008: Review internal processes",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 18
+   },
+   "shard": "sec-72.json",
+   "uid": "ac:s114"
+  },
+  {
+   "id": "sec:E009: Monitor third-party access",
+   "title": "E009: Monitor third-party access",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s115"
+  },
+  {
+   "id": "sec:E009: Monitor third-party access / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:E009: Monitor third-party access",
+   "counts": {
+    "blocks": 2,
+    "sentences": 4,
+    "words": 38
+   },
+   "shard": "sec-73.json",
+   "uid": "ac:s116"
+  },
+  {
+   "id": "sec:E009: Monitor third-party access / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:E009: Monitor third-party access",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 46
+   },
+   "shard": "sec-74.json",
+   "uid": "ac:s117"
+  },
+  {
+   "id": "sec:E010: Establish AI acceptable use policy",
+   "title": "E010: Establish AI acceptable use policy",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s118"
+  },
+  {
+   "id": "sec:E010: Establish AI acceptable use policy / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:E010: Establish AI acceptable use policy",
+   "counts": {
+    "blocks": 3,
+    "sentences": 6,
+    "words": 62
+   },
+   "shard": "sec-75.json",
+   "uid": "ac:s119"
+  },
+  {
+   "id": "sec:E010: Establish AI acceptable use policy / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:E010: Establish AI acceptable use policy",
+   "counts": {
+    "blocks": 4,
+    "sentences": 5,
+    "words": 47
+   },
+   "shard": "sec-76.json",
+   "uid": "ac:s120"
+  },
+  {
+   "id": "sec:E011: Record processing locations",
+   "title": "E011: Record processing locations",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s121"
+  },
+  {
+   "id": "sec:E011: Record processing locations / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:E011: Record processing locations",
+   "counts": {
+    "blocks": 2,
+    "sentences": 3,
+    "words": 31
+   },
+   "shard": "sec-77.json",
+   "uid": "ac:s122"
+  },
+  {
+   "id": "sec:E011: Record processing locations / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:E011: Record processing locations",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 36
+   },
+   "shard": "sec-78.json",
+   "uid": "ac:s123"
+  },
+  {
+   "id": "sec:E012: Document regulatory compliance",
+   "title": "E012: Document regulatory compliance",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s124"
+  },
+  {
+   "id": "sec:E012: Document regulatory compliance / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:E012: Document regulatory compliance",
+   "counts": {
+    "blocks": 4,
+    "sentences": 7,
+    "words": 57
+   },
+   "shard": "sec-79.json",
+   "uid": "ac:s125"
+  },
+  {
+   "id": "sec:E013: Implement quality management system",
+   "title": "E013: Implement quality management system",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s126"
+  },
+  {
+   "id": "sec:E013: Implement quality management system / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:E013: Implement quality management system",
+   "counts": {
+    "blocks": 3,
+    "sentences": 6,
+    "words": 83
+   },
+   "shard": "sec-80.json",
+   "uid": "ac:s127"
+  },
+  {
+   "id": "sec:E013: Implement quality management system / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:E013: Implement quality management system",
+   "counts": {
+    "blocks": 3,
+    "sentences": 4,
+    "words": 50
+   },
+   "shard": "sec-81.json",
+   "uid": "ac:s128"
+  },
+  {
+   "id": "sec:E014: [Retired] Share transparency reports",
+   "title": "E014: [Retired] Share transparency reports",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s129"
+  },
+  {
+   "id": "sec:E014: [Retired] Share transparency reports / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:E014: [Retired] Share transparency reports",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 19
+   },
+   "shard": "sec-82.json",
+   "uid": "ac:s130"
+  },
+  {
+   "id": "sec:E015: Log AI system activity",
+   "title": "E015: Log AI system activity",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s131"
+  },
+  {
+   "id": "sec:E015: Log AI system activity / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:E015: Log AI system activity",
+   "counts": {
+    "blocks": 2,
+    "sentences": 3,
+    "words": 41
+   },
+   "shard": "sec-83.json",
+   "uid": "ac:s132"
+  },
+  {
+   "id": "sec:E015: Log AI system activity / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:E015: Log AI system activity",
+   "counts": {
+    "blocks": 3,
+    "sentences": 4,
+    "words": 81
+   },
+   "shard": "sec-84.json",
+   "uid": "ac:s133"
+  },
+  {
+   "id": "sec:E016: Implement AI disclosure mechanisms",
+   "title": "E016: Implement AI disclosure mechanisms",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s134"
+  },
+  {
+   "id": "sec:E016: Implement AI disclosure mechanisms / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:E016: Implement AI disclosure mechanisms",
+   "counts": {
+    "blocks": 6,
+    "sentences": 9,
+    "words": 111
+   },
+   "shard": "sec-85.json",
+   "uid": "ac:s135"
+  },
+  {
+   "id": "sec:E017: Document system transparency policy",
+   "title": "E017: Document system transparency policy",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s136"
+  },
+  {
+   "id": "sec:E017: Document system transparency policy / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:E017: Document system transparency policy",
+   "counts": {
+    "blocks": 1,
+    "sentences": 2,
+    "words": 22
+   },
+   "shard": "sec-86.json",
+   "uid": "ac:s137"
+  },
+  {
+   "id": "sec:E017: Document system transparency policy / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:E017: Document system transparency policy",
+   "counts": {
+    "blocks": 4,
+    "sentences": 6,
+    "words": 83
+   },
+   "shard": "sec-87.json",
+   "uid": "ac:s138"
+  },
+  {
+   "id": "sec:F001: Prevent AI cyber misuse",
+   "title": "F001: Prevent AI cyber misuse",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s139"
+  },
+  {
+   "id": "sec:F001: Prevent AI cyber misuse / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:F001: Prevent AI cyber misuse",
+   "counts": {
+    "blocks": 1,
+    "sentences": 1,
+    "words": 13
+   },
+   "shard": "sec-88.json",
+   "uid": "ac:s140"
+  },
+  {
+   "id": "sec:F001: Prevent AI cyber misuse / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:F001: Prevent AI cyber misuse",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 39
+   },
+   "shard": "sec-89.json",
+   "uid": "ac:s141"
+  },
+  {
+   "id": "sec:F002: Prevent catastrophic misuse",
+   "title": "F002: Prevent catastrophic misuse",
+   "level": 2,
+   "parent": "doc:aiuc1-controls",
+   "counts": {
+    "blocks": 0,
+    "sentences": 0,
+    "words": 0
+   },
+   "uid": "ac:s142"
+  },
+  {
+   "id": "sec:F002: Prevent catastrophic misuse / Control shoulds",
+   "title": "Control shoulds",
+   "level": 3,
+   "parent": "sec:F002: Prevent catastrophic misuse",
+   "counts": {
+    "blocks": 1,
+    "sentences": 1,
+    "words": 12
+   },
+   "shard": "sec-90.json",
+   "uid": "ac:s143"
+  },
+  {
+   "id": "sec:F002: Prevent catastrophic misuse / Control mays",
+   "title": "Control mays",
+   "level": 3,
+   "parent": "sec:F002: Prevent catastrophic misuse",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 33
+   },
+   "shard": "sec-91.json",
+   "uid": "ac:s144"
+  }
+ ]
+}

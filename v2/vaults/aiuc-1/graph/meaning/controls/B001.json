@@ -1,0 +1,5592 @@
+{
+ "control_id": "B001",
+ "title": "Third-party testing of adversarial robustness",
+ "published_crosswalks": 51,
+ "published_with_shared_vocabulary": 47,
+ "published_without_shared_vocabulary": [
+  "CSA AICM::TVM-08: Vulnerability Prioritization",
+  "OWASP AIVSS::Agent Cascading Failures",
+  "OWASP Top 10::LLM04:25 - Data and Model Poisoning",
+  "OWASP Top 10::LLM05:25 - Improper Output Handling"
+ ],
+ "candidates": 1,
+ "evidence": [
+  {
+   "clause": "IBM AI Risk Atlas::IBM 43: Inference - Jailbreaking",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-43-inference-jailbreaking",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 43: Inference - Jailbreaking",
+   "shared_terms": [
+    {
+     "stem": "jailbreak",
+     "rarity": 0.7154,
+     "as_written": [
+      "jailbreaking"
+     ]
+    },
+    {
+     "stem": "attempt",
+     "rarity": 0.5698,
+     "as_written": [
+      "attempts"
+     ]
+    },
+    {
+     "stem": "restrict",
+     "rarity": 0.5409,
+     "as_written": [
+      "restricted"
+     ]
+    },
+    {
+     "stem": "perform",
+     "rarity": 0.5019,
+     "as_written": [
+      "perform",
+      "performing"
+     ]
+    },
+    {
+     "stem": "attack",
+     "rarity": 0.4101,
+     "as_written": [
+      "attack"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "break",
+     "rarity": 1.0,
+     "as_written": [
+      "break"
+     ]
+    },
+    {
+     "stem": "guardrail",
+     "rarity": 0.6191,
+     "as_written": [
+      "guardrails"
+     ]
+    },
+    {
+     "stem": "inference",
+     "rarity": 0.509,
+     "as_written": [
+      "inference"
+     ]
+    },
+    {
+     "stem": "action",
+     "rarity": 0.3884,
+     "as_written": [
+      "actions"
+     ]
+    }
+   ],
+   "score": 0.5211,
+   "shared_count": 5,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP AIVSS::Agent Goal and Instruction Manipulation",
+   "anchor": "anchor:owasp-aivss:agent-goal-and-instruction-manipulation",
+   "framework": "OWASP AIVSS",
+   "reference": "Agent Goal and Instruction Manipulation",
+   "shared_terms": [
+    {
+     "stem": "semantic",
+     "rarity": 0.8899,
+     "as_written": [
+      "semantic"
+     ]
+    },
+    {
+     "stem": "manipulation",
+     "rarity": 0.6053,
+     "as_written": [
+      "manipulation"
+     ]
+    },
+    {
+     "stem": "injection",
+     "rarity": 0.5164,
+     "as_written": [
+      "injection"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "hijack",
+     "rarity": 0.8255,
+     "as_written": [
+      "hijacking"
+     ]
+    },
+    {
+     "stem": "goal",
+     "rarity": 0.6342,
+     "as_written": [
+      "goal"
+     ]
+    },
+    {
+     "stem": "objectiv",
+     "rarity": 0.6191,
+     "as_written": [
+      "objectives"
+     ]
+    },
+    {
+     "stem": "instruction",
+     "rarity": 0.5241,
+     "as_written": [
+      "instruction"
+     ]
+    }
+   ],
+   "score": 0.4808,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::MDS-07: Robustness against Adversarial Attack / Model Hardening",
+   "anchor": "anchor:csa-aicm:mds-07-robustness-against-adversarial-attack-model-hardening",
+   "framework": "CSA AICM",
+   "reference": "MDS-07: Robustness against Adversarial Attack / Model Hardening",
+   "shared_terms": [
+    {
+     "stem": "robustnes",
+     "rarity": 0.6909,
+     "as_written": [
+      "robustness"
+     ]
+    },
+    {
+     "stem": "adversarial",
+     "rarity": 0.5499,
+     "as_written": [
+      "adversarial"
+     ]
+    },
+    {
+     "stem": "threat",
+     "rarity": 0.5409,
+     "as_written": [
+      "threat"
+     ]
+    },
+    {
+     "stem": "attack",
+     "rarity": 0.4101,
+     "as_written": [
+      "attack",
+      "attacks"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "mds-07",
+     "rarity": 1.0,
+     "as_written": [
+      "mds-07"
+     ]
+    },
+    {
+     "stem": "harden",
+     "rarity": 0.8899,
+     "as_written": [
+      "hardening"
+     ]
+    },
+    {
+     "stem": "mitigate",
+     "rarity": 0.7443,
+     "as_written": [
+      "mitigate"
+     ]
+    },
+    {
+     "stem": "technicalmeasur",
+     "rarity": 0.6191,
+     "as_written": [
+      "technicalmeasures"
+     ]
+    },
+    {
+     "stem": "analysi",
+     "rarity": 0.5596,
+     "as_written": [
+      "analysis"
+     ]
+    },
+    {
+     "stem": "identifi",
+     "rarity": 0.4952,
+     "as_written": [
+      "identified"
+     ]
+    },
+    {
+     "stem": "relevant",
+     "rarity": 0.3884,
+     "as_written": [
+      "relevant"
+     ]
+    }
+   ],
+   "score": 0.3182,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::MDS-06: Adversarial Attack Analysis",
+   "anchor": "anchor:csa-aicm:mds-06-adversarial-attack-analysis",
+   "framework": "CSA AICM",
+   "reference": "MDS-06: Adversarial Attack Analysis",
+   "shared_terms": [
+    {
+     "stem": "adversarial",
+     "rarity": 0.5499,
+     "as_written": [
+      "adversarial"
+     ]
+    },
+    {
+     "stem": "threat",
+     "rarity": 0.5409,
+     "as_written": [
+      "threat",
+      "threats"
+     ]
+    },
+    {
+     "stem": "attack",
+     "rarity": 0.4101,
+     "as_written": [
+      "attack"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "mds-06",
+     "rarity": 1.0,
+     "as_written": [
+      "mds-06"
+     ]
+    },
+    {
+     "stem": "specific",
+     "rarity": 0.6053,
+     "as_written": [
+      "specific"
+     ]
+    },
+    {
+     "stem": "analysi",
+     "rarity": 0.5596,
+     "as_written": [
+      "analysis"
+     ]
+    },
+    {
+     "stem": "asses",
+     "rarity": 0.5596,
+     "as_written": [
+      "assess"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    },
+    {
+     "stem": "technical",
+     "rarity": 0.355,
+     "as_written": [
+      "technical"
+     ]
+    }
+   ],
+   "score": 0.3016,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MEASURE 2.7: Security and resilience",
+   "anchor": "anchor:nist-ai-rmf:measure-2-7-security-and-resilience",
+   "framework": "NIST AI RMF",
+   "reference": "MEASURE 2.7: Security and resilience",
+   "shared_terms": [
+    {
+     "stem": "resilience",
+     "rarity": 0.7798,
+     "as_written": [
+      "resilience"
+     ]
+    },
+    {
+     "stem": "security",
+     "rarity": 0.3523,
+     "as_written": [
+      "security"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "evaluat",
+     "rarity": 0.6697,
+     "as_written": [
+      "evaluated"
+     ]
+    },
+    {
+     "stem": "function",
+     "rarity": 0.5241,
+     "as_written": [
+      "function"
+     ]
+    },
+    {
+     "stem": "measure",
+     "rarity": 0.5164,
+     "as_written": [
+      "measure"
+     ]
+    },
+    {
+     "stem": "map",
+     "rarity": 0.5019,
+     "as_written": [
+      "map"
+     ]
+    },
+    {
+     "stem": "identifi",
+     "rarity": 0.4952,
+     "as_written": [
+      "identified"
+     ]
+    }
+   ],
+   "score": 0.2949,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::TVM-06: Penetration Testing",
+   "anchor": "anchor:csa-aicm:tvm-06-penetration-testing",
+   "framework": "CSA AICM",
+   "reference": "TVM-06: Penetration Testing",
+   "shared_terms": [
+    {
+     "stem": "penetration",
+     "rarity": 0.8899,
+     "as_written": [
+      "penetration"
+     ]
+    },
+    {
+     "stem": "test",
+     "rarity": 0.4825,
+     "as_written": [
+      "test",
+      "testing"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "independentthird",
+     "rarity": 1.0,
+     "as_written": [
+      "independentthird"
+     ]
+    },
+    {
+     "stem": "tvm-06",
+     "rarity": 1.0,
+     "as_written": [
+      "tvm-06"
+     ]
+    },
+    {
+     "stem": "periodic",
+     "rarity": 0.8255,
+     "as_written": [
+      "periodic"
+     ]
+    },
+    {
+     "stem": "technicalmeasur",
+     "rarity": 0.6191,
+     "as_written": [
+      "technicalmeasures"
+     ]
+    },
+    {
+     "stem": "party",
+     "rarity": 0.5808,
+     "as_written": [
+      "parties"
+     ]
+    },
+    {
+     "stem": "performance",
+     "rarity": 0.509,
+     "as_written": [
+      "performance"
+     ]
+    }
+   ],
+   "score": 0.2323,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-9.1: Model or Agentic System Manipulation",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-9-1-model-or-agentic-system-manipulation",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-9.1: Model or Agentic System Manipulation",
+   "shared_terms": [
+    {
+     "stem": "manipulation",
+     "rarity": 0.6053,
+     "as_written": [
+      "manipulation"
+     ]
+    },
+    {
+     "stem": "adversarial",
+     "rarity": 0.5499,
+     "as_written": [
+      "adversarial"
+     ]
+    },
+    {
+     "stem": "behavior",
+     "rarity": 0.4765,
+     "as_written": [
+      "behaviors"
+     ]
+    },
+    {
+     "stem": "maliciou",
+     "rarity": 0.4707,
+     "as_written": [
+      "malicious"
+     ]
+    },
+    {
+     "stem": "input",
+     "rarity": 0.4025,
+     "as_written": [
+      "inputs"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "coerc",
+     "rarity": 1.0,
+     "as_written": [
+      "coerces"
+     ]
+    },
+    {
+     "stem": "itself",
+     "rarity": 0.8899,
+     "as_written": [
+      "itself"
+     ]
+    },
+    {
+     "stem": "aitech-9",
+     "rarity": 0.8255,
+     "as_written": [
+      "aitech-9"
+     ]
+    },
+    {
+     "stem": "produc",
+     "rarity": 0.8255,
+     "as_written": [
+      "producing"
+     ]
+    },
+    {
+     "stem": "directly",
+     "rarity": 0.7798,
+     "as_written": [
+      "directly"
+     ]
+    },
+    {
+     "stem": "modify",
+     "rarity": 0.7154,
+     "as_written": [
+      "modifying"
+     ]
+    },
+    {
+     "stem": "manipulat",
+     "rarity": 0.6697,
+     "as_written": [
+      "manipulates"
+     ]
+    },
+    {
+     "stem": "mislead",
+     "rarity": 0.6697,
+     "as_written": [
+      "misleading"
+     ]
+    },
+    {
+     "stem": "false",
+     "rarity": 0.651,
+     "as_written": [
+      "false"
+     ]
+    },
+    {
+     "stem": "agentic",
+     "rarity": 0.4825,
+     "as_written": [
+      "agentic"
+     ]
+    },
+    {
+     "stem": "exploit",
+     "rarity": 0.4765,
+     "as_written": [
+      "exploiting"
+     ]
+    },
+    {
+     "stem": "context",
+     "rarity": 0.4651,
+     "as_written": [
+      "context"
+     ]
+    }
+   ],
+   "score": 0.221,
+   "shared_count": 5,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::GOVERN 4.3: Testing and incident sharing",
+   "anchor": "anchor:nist-ai-rmf:govern-4-3-testing-and-incident-sharing",
+   "framework": "NIST AI RMF",
+   "reference": "GOVERN 4.3: Testing and incident sharing",
+   "shared_terms": [
+    {
+     "stem": "shar",
+     "rarity": 0.6053,
+     "as_written": [
+      "sharing"
+     ]
+    },
+    {
+     "stem": "test",
+     "rarity": 0.4825,
+     "as_written": [
+      "test",
+      "testing"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "enable",
+     "rarity": 0.6053,
+     "as_written": [
+      "enable"
+     ]
+    },
+    {
+     "stem": "identification",
+     "rarity": 0.5926,
+     "as_written": [
+      "identification"
+     ]
+    },
+    {
+     "stem": "place",
+     "rarity": 0.5698,
+     "as_written": [
+      "place"
+     ]
+    },
+    {
+     "stem": "practic",
+     "rarity": 0.5698,
+     "as_written": [
+      "practices"
+     ]
+    },
+    {
+     "stem": "govern",
+     "rarity": 0.5499,
+     "as_written": [
+      "govern"
+     ]
+    },
+    {
+     "stem": "incident",
+     "rarity": 0.4952,
+     "as_written": [
+      "incident",
+      "incidents"
+     ]
+    },
+    {
+     "stem": "organizational",
+     "rarity": 0.4825,
+     "as_written": [
+      "organizational"
+     ]
+    }
+   ],
+   "score": 0.2196,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MEASURE 2.1: TEVV documentation",
+   "anchor": "anchor:nist-ai-rmf:measure-2-1-tevv-documentation",
+   "framework": "NIST AI RMF",
+   "reference": "MEASURE 2.1: TEVV documentation",
+   "shared_terms": [
+    {
+     "stem": "test",
+     "rarity": 0.4825,
+     "as_written": [
+      "test",
+      "testing"
+     ]
+    },
+    {
+     "stem": "tool",
+     "rarity": 0.4352,
+     "as_written": [
+      "tool",
+      "tools"
+     ]
+    },
+    {
+     "stem": "documentation",
+     "rarity": 0.418,
+     "as_written": [
+      "documentation"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "sets",
+     "rarity": 0.8899,
+     "as_written": [
+      "sets"
+     ]
+    },
+    {
+     "stem": "tevv",
+     "rarity": 0.8255,
+     "as_written": [
+      "tevv"
+     ]
+    },
+    {
+     "stem": "verification",
+     "rarity": 0.6697,
+     "as_written": [
+      "verification"
+     ]
+    },
+    {
+     "stem": "evaluation",
+     "rarity": 0.5698,
+     "as_written": [
+      "evaluation"
+     ]
+    },
+    {
+     "stem": "metric",
+     "rarity": 0.5596,
+     "as_written": [
+      "metrics"
+     ]
+    },
+    {
+     "stem": "validation",
+     "rarity": 0.5499,
+     "as_written": [
+      "validation"
+     ]
+    },
+    {
+     "stem": "detail",
+     "rarity": 0.5323,
+     "as_written": [
+      "details"
+     ]
+    },
+    {
+     "stem": "measure",
+     "rarity": 0.5164,
+     "as_written": [
+      "measure"
+     ]
+    }
+   ],
+   "score": 0.2071,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::AIS-07: Application Vulnerability Remediation",
+   "anchor": "anchor:csa-aicm:ais-07-application-vulnerability-remediation",
+   "framework": "CSA AICM",
+   "reference": "AIS-07: Application Vulnerability Remediation",
+   "shared_terms": [
+    {
+     "stem": "remediation",
+     "rarity": 0.5323,
+     "as_written": [
+      "remediation"
+     ]
+    },
+    {
+     "stem": "security",
+     "rarity": 0.3523,
+     "as_written": [
+      "security"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "ais-07",
+     "rarity": 1.0,
+     "as_written": [
+      "ais-07"
+     ]
+    },
+    {
+     "stem": "remediate",
+     "rarity": 0.8255,
+     "as_written": [
+      "remediate"
+     ]
+    },
+    {
+     "stem": "possible",
+     "rarity": 0.651,
+     "as_written": [
+      "possible"
+     ]
+    },
+    {
+     "stem": "automat",
+     "rarity": 0.5698,
+     "as_written": [
+      "automating"
+     ]
+    },
+    {
+     "stem": "application",
+     "rarity": 0.5019,
+     "as_written": [
+      "application"
+     ]
+    },
+    {
+     "stem": "vulnerability",
+     "rarity": 0.4707,
+     "as_written": [
+      "vulnerabilities",
+      "vulnerability"
+     ]
+    }
+   ],
+   "score": 0.1804,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 41: Inference - Evasion attack",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-41-inference-evasion-attack",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 41: Inference - Evasion attack",
+   "shared_terms": [
+    {
+     "stem": "attempt",
+     "rarity": 0.5698,
+     "as_written": [
+      "attempt",
+      "attempts"
+     ]
+    },
+    {
+     "stem": "attack",
+     "rarity": 0.4101,
+     "as_written": [
+      "attack",
+      "attacks"
+     ]
+    },
+    {
+     "stem": "input",
+     "rarity": 0.4025,
+     "as_written": [
+      "input",
+      "inputs"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "perturb",
+     "rarity": 1.0,
+     "as_written": [
+      "perturbing"
+     ]
+    },
+    {
+     "stem": "slightly",
+     "rarity": 1.0,
+     "as_written": [
+      "slightly"
+     ]
+    },
+    {
+     "stem": "evasion",
+     "rarity": 0.7798,
+     "as_written": [
+      "evasion"
+     ]
+    },
+    {
+     "stem": "sent",
+     "rarity": 0.7798,
+     "as_written": [
+      "sent"
+     ]
+    },
+    {
+     "stem": "incorrect",
+     "rarity": 0.7154,
+     "as_written": [
+      "incorrect"
+     ]
+    },
+    {
+     "stem": "make",
+     "rarity": 0.651,
+     "as_written": [
+      "make"
+     ]
+    },
+    {
+     "stem": "inference",
+     "rarity": 0.509,
+     "as_written": [
+      "inference"
+     ]
+    },
+    {
+     "stem": "result",
+     "rarity": 0.4707,
+     "as_written": [
+      "results"
+     ]
+    },
+    {
+     "stem": "train",
+     "rarity": 0.4025,
+     "as_written": [
+      "trained"
+     ]
+    }
+   ],
+   "score": 0.1798,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::TVM-01: Threat and Vulnerability Management Policy and Procedures",
+   "anchor": "anchor:csa-aicm:tvm-01-threat-and-vulnerability-management-policy-and-procedures",
+   "framework": "CSA AICM",
+   "reference": "TVM-01: Threat and Vulnerability Management Policy and Procedures",
+   "shared_terms": [
+    {
+     "stem": "threat",
+     "rarity": 0.5409,
+     "as_written": [
+      "threat",
+      "threats"
+     ]
+    },
+    {
+     "stem": "remediation",
+     "rarity": 0.5323,
+     "as_written": [
+      "remediation"
+     ]
+    },
+    {
+     "stem": "least",
+     "rarity": 0.3754,
+     "as_written": [
+      "least"
+     ]
+    },
+    {
+     "stem": "maintain",
+     "rarity": 0.3523,
+     "as_written": [
+      "maintain",
+      "maintaining"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "tvm-01",
+     "rarity": 1.0,
+     "as_written": [
+      "tvm-01"
+     ]
+    },
+    {
+     "stem": "prioritize",
+     "rarity": 0.8899,
+     "as_written": [
+      "prioritize"
+     ]
+    },
+    {
+     "stem": "order",
+     "rarity": 0.7798,
+     "as_written": [
+      "order"
+     ]
+    },
+    {
+     "stem": "exploitation",
+     "rarity": 0.6191,
+     "as_written": [
+      "exploitation"
+     ]
+    },
+    {
+     "stem": "protect",
+     "rarity": 0.5808,
+     "as_written": [
+      "protect"
+     ]
+    },
+    {
+     "stem": "identify",
+     "rarity": 0.5164,
+     "as_written": [
+      "identify"
+     ]
+    },
+    {
+     "stem": "approve",
+     "rarity": 0.4952,
+     "as_written": [
+      "approve"
+     ]
+    },
+    {
+     "stem": "vulnerability",
+     "rarity": 0.4707,
+     "as_written": [
+      "vulnerabilities",
+      "vulnerability"
+     ]
+    },
+    {
+     "stem": "communicate",
+     "rarity": 0.4651,
+     "as_written": [
+      "communicate"
+     ]
+    },
+    {
+     "stem": "report",
+     "rarity": 0.4545,
+     "as_written": [
+      "report"
+     ]
+    },
+    {
+     "stem": "significant",
+     "rarity": 0.4446,
+     "as_written": [
+      "significant"
+     ]
+    },
+    {
+     "stem": "annually",
+     "rarity": 0.4264,
+     "as_written": [
+      "annually"
+     ]
+    }
+   ],
+   "score": 0.1774,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "MITRE ATLAS::AML-M0004: Restrict Number of AI Model Queries",
+   "anchor": "anchor:mitre-atlas:aml-m0004-restrict-number-of-ai-model-queries",
+   "framework": "MITRE ATLAS",
+   "reference": "AML-M0004: Restrict Number of AI Model Queries",
+   "shared_terms": [
+    {
+     "stem": "restrict",
+     "rarity": 0.5409,
+     "as_written": [
+      "restrict",
+      "restricted"
+     ]
+    },
+    {
+     "stem": "perform",
+     "rarity": 0.5019,
+     "as_written": [
+      "perform",
+      "performing"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "aml-m0004",
+     "rarity": 1.0,
+     "as_written": [
+      "aml-m0004"
+     ]
+    },
+    {
+     "stem": "total",
+     "rarity": 1.0,
+     "as_written": [
+      "total"
+     ]
+    },
+    {
+     "stem": "rate",
+     "rarity": 0.7443,
+     "as_written": [
+      "rate"
+     ]
+    },
+    {
+     "stem": "number",
+     "rarity": 0.7154,
+     "as_written": [
+      "number"
+     ]
+    },
+    {
+     "stem": "query",
+     "rarity": 0.6697,
+     "as_written": [
+      "queries"
+     ]
+    },
+    {
+     "stem": "limit",
+     "rarity": 0.5019,
+     "as_written": [
+      "limit"
+     ]
+    },
+    {
+     "stem": "user",
+     "rarity": 0.3953,
+     "as_written": [
+      "user"
+     ]
+    }
+   ],
+   "score": 0.1718,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-1.1: Direct Prompt Injection",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-1-1-direct-prompt-injection",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-1.1: Direct Prompt Injection",
+   "shared_terms": [
+    {
+     "stem": "program",
+     "rarity": 0.7154,
+     "as_written": [
+      "program",
+      "programming",
+      "programs"
+     ]
+    },
+    {
+     "stem": "injection",
+     "rarity": 0.5164,
+     "as_written": [
+      "injection"
+     ]
+    },
+    {
+     "stem": "behavior",
+     "rarity": 0.4765,
+     "as_written": [
+      "behavior",
+      "behaviors"
+     ]
+    },
+    {
+     "stem": "maliciou",
+     "rarity": 0.4707,
+     "as_written": [
+      "malicious"
+     ]
+    },
+    {
+     "stem": "input",
+     "rarity": 0.4025,
+     "as_written": [
+      "input",
+      "inputs"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "attacker-control",
+     "rarity": 1.0,
+     "as_written": [
+      "attacker-controlled"
+     ]
+    },
+    {
+     "stem": "instead",
+     "rarity": 1.0,
+     "as_written": [
+      "instead"
+     ]
+    },
+    {
+     "stem": "preserv",
+     "rarity": 0.8899,
+     "as_written": [
+      "preserves"
+     ]
+    },
+    {
+     "stem": "intent",
+     "rarity": 0.8255,
+     "as_written": [
+      "intent"
+     ]
+    },
+    {
+     "stem": "original",
+     "rarity": 0.8255,
+     "as_written": [
+      "original"
+     ]
+    },
+    {
+     "stem": "override",
+     "rarity": 0.8255,
+     "as_written": [
+      "override"
+     ]
+    },
+    {
+     "stem": "aitech-1",
+     "rarity": 0.7798,
+     "as_written": [
+      "aitech-1"
+     ]
+    },
+    {
+     "stem": "subvert",
+     "rarity": 0.7798,
+     "as_written": [
+      "subvert"
+     ]
+    },
+    {
+     "stem": "direct",
+     "rarity": 0.7154,
+     "as_written": [
+      "direct"
+     ]
+    },
+    {
+     "stem": "inject",
+     "rarity": 0.7154,
+     "as_written": [
+      "injected"
+     ]
+    },
+    {
+     "stem": "alter",
+     "rarity": 0.6909,
+     "as_written": [
+      "alter"
+     ]
+    },
+    {
+     "stem": "execute",
+     "rarity": 0.6697,
+     "as_written": [
+      "execute"
+     ]
+    }
+   ],
+   "score": 0.1572,
+   "shared_count": 6,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-9.2: Detection Evasion",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-9-2-detection-evasion",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-9.2: Detection Evasion",
+   "shared_terms": [
+    {
+     "stem": "behavior",
+     "rarity": 0.4765,
+     "as_written": [
+      "behaviors"
+     ]
+    },
+    {
+     "stem": "attack",
+     "rarity": 0.4101,
+     "as_written": [
+      "attack"
+     ]
+    },
+    {
+     "stem": "input",
+     "rarity": 0.4025,
+     "as_written": [
+      "input",
+      "inputs"
+     ]
+    },
+    {
+     "stem": "security",
+     "rarity": 0.3523,
+     "as_written": [
+      "security"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "moderation",
+     "rarity": 0.8899,
+     "as_written": [
+      "moderation"
+     ]
+    },
+    {
+     "stem": "aitech-9",
+     "rarity": 0.8255,
+     "as_written": [
+      "aitech-9"
+     ]
+    },
+    {
+     "stem": "evasion",
+     "rarity": 0.7798,
+     "as_written": [
+      "evasion"
+     ]
+    },
+    {
+     "stem": "anomaly",
+     "rarity": 0.7154,
+     "as_written": [
+      "anomaly"
+     ]
+    },
+    {
+     "stem": "intentionally",
+     "rarity": 0.7154,
+     "as_written": [
+      "intentionally"
+     ]
+    },
+    {
+     "stem": "alter",
+     "rarity": 0.6909,
+     "as_written": [
+      "alter"
+     ]
+    },
+    {
+     "stem": "bypas",
+     "rarity": 0.651,
+     "as_written": [
+      "bypass"
+     ]
+    },
+    {
+     "stem": "manipulate",
+     "rarity": 0.6342,
+     "as_written": [
+      "manipulate"
+     ]
+    },
+    {
+     "stem": "safety",
+     "rarity": 0.5698,
+     "as_written": [
+      "safety"
+     ]
+    },
+    {
+     "stem": "detection",
+     "rarity": 0.5323,
+     "as_written": [
+      "detection"
+     ]
+    },
+    {
+     "stem": "pattern",
+     "rarity": 0.509,
+     "as_written": [
+      "patterns"
+     ]
+    },
+    {
+     "stem": "mechanism",
+     "rarity": 0.4952,
+     "as_written": [
+      "mechanisms"
+     ]
+    }
+   ],
+   "score": 0.1514,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::AIS-08: Input Validation",
+   "anchor": "anchor:csa-aicm:ais-08-input-validation",
+   "framework": "CSA AICM",
+   "reference": "AIS-08: Input Validation",
+   "shared_terms": [
+    {
+     "stem": "validate",
+     "rarity": 0.7443,
+     "as_written": [
+      "validate"
+     ]
+    },
+    {
+     "stem": "adversarial",
+     "rarity": 0.5499,
+     "as_written": [
+      "adversarial"
+     ]
+    },
+    {
+     "stem": "input",
+     "rarity": 0.4025,
+     "as_written": [
+      "input",
+      "inputs"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "ais-08",
+     "rarity": 1.0,
+     "as_written": [
+      "ais-08"
+     ]
+    },
+    {
+     "stem": "behaviour",
+     "rarity": 0.8899,
+     "as_written": [
+      "behaviour"
+     ]
+    },
+    {
+     "stem": "organisational",
+     "rarity": 0.8899,
+     "as_written": [
+      "organisational"
+     ]
+    },
+    {
+     "stem": "unwant",
+     "rarity": 0.8255,
+     "as_written": [
+      "unwanted"
+     ]
+    },
+    {
+     "stem": "failure",
+     "rarity": 0.7154,
+     "as_written": [
+      "failure"
+     ]
+    },
+    {
+     "stem": "modify",
+     "rarity": 0.7154,
+     "as_written": [
+      "modify"
+     ]
+    },
+    {
+     "stem": "block",
+     "rarity": 0.5926,
+     "as_written": [
+      "block"
+     ]
+    },
+    {
+     "stem": "necessary",
+     "rarity": 0.5698,
+     "as_written": [
+      "necessary"
+     ]
+    },
+    {
+     "stem": "filter",
+     "rarity": 0.5596,
+     "as_written": [
+      "filter"
+     ]
+    },
+    {
+     "stem": "validation",
+     "rarity": 0.5499,
+     "as_written": [
+      "validation"
+     ]
+    },
+    {
+     "stem": "accord",
+     "rarity": 0.5409,
+     "as_written": [
+      "according"
+     ]
+    },
+    {
+     "stem": "regulation",
+     "rarity": 0.5164,
+     "as_written": [
+      "regulations"
+     ]
+    }
+   ],
+   "score": 0.1465,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "MITRE ATLAS::AML-M0003: Model Hardening",
+   "anchor": "anchor:mitre-atlas:aml-m0003-model-hardening",
+   "framework": "MITRE ATLAS",
+   "reference": "AML-M0003: Model Hardening",
+   "shared_terms": [
+    {
+     "stem": "adversarial",
+     "rarity": 0.5499,
+     "as_written": [
+      "adversarial"
+     ]
+    },
+    {
+     "stem": "input",
+     "rarity": 0.4025,
+     "as_written": [
+      "inputs"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "aml-m0003",
+     "rarity": 1.0,
+     "as_written": [
+      "aml-m0003"
+     ]
+    },
+    {
+     "stem": "distillation",
+     "rarity": 1.0,
+     "as_written": [
+      "distillation"
+     ]
+    },
+    {
+     "stem": "harden",
+     "rarity": 0.8899,
+     "as_written": [
+      "hardening"
+     ]
+    },
+    {
+     "stem": "robust",
+     "rarity": 0.8899,
+     "as_written": [
+      "robust"
+     ]
+    },
+    {
+     "stem": "network",
+     "rarity": 0.7154,
+     "as_written": [
+      "network"
+     ]
+    },
+    {
+     "stem": "make",
+     "rarity": 0.651,
+     "as_written": [
+      "make"
+     ]
+    },
+    {
+     "stem": "techniqu",
+     "rarity": 0.651,
+     "as_written": [
+      "techniques"
+     ]
+    },
+    {
+     "stem": "train",
+     "rarity": 0.4025,
+     "as_written": [
+      "training"
+     ]
+    }
+   ],
+   "score": 0.1332,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-4.3: Protocol Manipulation",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-4-3-protocol-manipulation",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-4.3: Protocol Manipulation",
+   "shared_terms": [
+    {
+     "stem": "structur",
+     "rarity": 0.6909,
+     "as_written": [
+      "structured"
+     ]
+    },
+    {
+     "stem": "manipulation",
+     "rarity": 0.6053,
+     "as_written": [
+      "manipulation"
+     ]
+    },
+    {
+     "stem": "adversarial",
+     "rarity": 0.5499,
+     "as_written": [
+      "adversarial"
+     ]
+    },
+    {
+     "stem": "input",
+     "rarity": 0.4025,
+     "as_written": [
+      "inputs"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "ambiguity",
+     "rarity": 1.0,
+     "as_written": [
+      "ambiguities"
+     ]
+    },
+    {
+     "stem": "pars",
+     "rarity": 1.0,
+     "as_written": [
+      "parsing"
+     ]
+    },
+    {
+     "stem": "xml",
+     "rarity": 1.0,
+     "as_written": [
+      "xml"
+     ]
+    },
+    {
+     "stem": "yaml",
+     "rarity": 1.0,
+     "as_written": [
+      "yaml"
+     ]
+    },
+    {
+     "stem": "assumption",
+     "rarity": 0.8899,
+     "as_written": [
+      "assumptions"
+     ]
+    },
+    {
+     "stem": "interpretation",
+     "rarity": 0.8899,
+     "as_written": [
+      "interpretation"
+     ]
+    },
+    {
+     "stem": "json",
+     "rarity": 0.8899,
+     "as_written": [
+      "json"
+     ]
+    },
+    {
+     "stem": "aitech-4",
+     "rarity": 0.8255,
+     "as_written": [
+      "aitech-4"
+     ]
+    },
+    {
+     "stem": "custom",
+     "rarity": 0.8255,
+     "as_written": [
+      "custom"
+     ]
+    },
+    {
+     "stem": "introduc",
+     "rarity": 0.8255,
+     "as_written": [
+      "introducing"
+     ]
+    },
+    {
+     "stem": "schema",
+     "rarity": 0.8255,
+     "as_written": [
+      "schemas"
+     ]
+    },
+    {
+     "stem": "protocol",
+     "rarity": 0.7443,
+     "as_written": [
+      "protocol",
+      "protocols"
+     ]
+    }
+   ],
+   "score": 0.1291,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-12.2: Insecure Output Handling",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-12-2-insecure-output-handling",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-12.2: Insecure Output Handling",
+   "shared_terms": [
+    {
+     "stem": "broader",
+     "rarity": 0.8255,
+     "as_written": [
+      "broader"
+     ]
+    },
+    {
+     "stem": "injection",
+     "rarity": 0.5164,
+     "as_written": [
+      "injection"
+     ]
+    },
+    {
+     "stem": "attack",
+     "rarity": 0.4101,
+     "as_written": [
+      "attack",
+      "attacks"
+     ]
+    },
+    {
+     "stem": "security",
+     "rarity": 0.3523,
+     "as_written": [
+      "security"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "aitech-12",
+     "rarity": 0.8899,
+     "as_written": [
+      "aitech-12"
+     ]
+    },
+    {
+     "stem": "pas",
+     "rarity": 0.8899,
+     "as_written": [
+      "passed"
+     ]
+    },
+    {
+     "stem": "inadequate",
+     "rarity": 0.8255,
+     "as_written": [
+      "inadequate"
+     ]
+    },
+    {
+     "stem": "sanitization",
+     "rarity": 0.8255,
+     "as_written": [
+      "sanitization"
+     ]
+    },
+    {
+     "stem": "insecure",
+     "rarity": 0.7798,
+     "as_written": [
+      "insecure"
+     ]
+    },
+    {
+     "stem": "appli",
+     "rarity": 0.7443,
+     "as_written": [
+      "applied"
+     ]
+    },
+    {
+     "stem": "compromise",
+     "rarity": 0.6909,
+     "as_written": [
+      "compromise"
+     ]
+    },
+    {
+     "stem": "insufficient",
+     "rarity": 0.6909,
+     "as_written": [
+      "insufficient"
+     ]
+    },
+    {
+     "stem": "apis",
+     "rarity": 0.6697,
+     "as_written": [
+      "apis"
+     ]
+    },
+    {
+     "stem": "databas",
+     "rarity": 0.6697,
+     "as_written": [
+      "databases"
+     ]
+    },
+    {
+     "stem": "downstream",
+     "rarity": 0.6697,
+     "as_written": [
+      "downstream"
+     ]
+    },
+    {
+     "stem": "component",
+     "rarity": 0.651,
+     "as_written": [
+      "components"
+     ]
+    }
+   ],
+   "score": 0.1282,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 46: Inference - Prompt injection attack",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-46-inference-prompt-injection-attack",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 46: Inference - Prompt injection attack",
+   "shared_terms": [
+    {
+     "stem": "injection",
+     "rarity": 0.5164,
+     "as_written": [
+      "injection"
+     ]
+    },
+    {
+     "stem": "attack",
+     "rarity": 0.4101,
+     "as_written": [
+      "attack",
+      "attacks"
+     ]
+    },
+    {
+     "stem": "input",
+     "rarity": 0.4025,
+     "as_written": [
+      "input",
+      "inputs"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "forc",
+     "rarity": 1.0,
+     "as_written": [
+      "forces"
+     ]
+    },
+    {
+     "stem": "table",
+     "rarity": 1.0,
+     "as_written": [
+      "table"
+     ]
+    },
+    {
+     "stem": "describ",
+     "rarity": 0.8899,
+     "as_written": [
+      "described"
+     ]
+    },
+    {
+     "stem": "many",
+     "rarity": 0.8899,
+     "as_written": [
+      "many"
+     ]
+    },
+    {
+     "stem": "section",
+     "rarity": 0.8899,
+     "as_written": [
+      "section"
+     ]
+    },
+    {
+     "stem": "structure",
+     "rarity": 0.8899,
+     "as_written": [
+      "structure"
+     ]
+    },
+    {
+     "stem": "produce",
+     "rarity": 0.7798,
+     "as_written": [
+      "produce"
+     ]
+    },
+    {
+     "stem": "unexpect",
+     "rarity": 0.7443,
+     "as_written": [
+      "unexpected"
+     ]
+    },
+    {
+     "stem": "contain",
+     "rarity": 0.6697,
+     "as_written": [
+      "contained"
+     ]
+    },
+    {
+     "stem": "manipulat",
+     "rarity": 0.6697,
+     "as_written": [
+      "manipulating"
+     ]
+    },
+    {
+     "stem": "generative",
+     "rarity": 0.651,
+     "as_written": [
+      "generative"
+     ]
+    },
+    {
+     "stem": "take",
+     "rarity": 0.651,
+     "as_written": [
+      "takes"
+     ]
+    }
+   ],
+   "score": 0.1263,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::TVM-13: Threat Response",
+   "anchor": "anchor:csa-aicm:tvm-13-threat-response",
+   "framework": "CSA AICM",
+   "reference": "TVM-13: Threat Response",
+   "shared_terms": [
+    {
+     "stem": "method",
+     "rarity": 0.6342,
+     "as_written": [
+      "method",
+      "methods"
+     ]
+    },
+    {
+     "stem": "threat",
+     "rarity": 0.5409,
+     "as_written": [
+      "threat",
+      "threats"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "industry-recogniz",
+     "rarity": 1.0,
+     "as_written": [
+      "industry-recognized"
+     ]
+    },
+    {
+     "stem": "tvm-13",
+     "rarity": 1.0,
+     "as_written": [
+      "tvm-13"
+     ]
+    },
+    {
+     "stem": "leverag",
+     "rarity": 0.8255,
+     "as_written": [
+      "leveraging"
+     ]
+    },
+    {
+     "stem": "prioritization",
+     "rarity": 0.8255,
+     "as_written": [
+      "prioritization"
+     ]
+    },
+    {
+     "stem": "guide",
+     "rarity": 0.7443,
+     "as_written": [
+      "guide"
+     ]
+    },
+    {
+     "stem": "risk-bas",
+     "rarity": 0.7154,
+     "as_written": [
+      "risk-based"
+     ]
+    },
+    {
+     "stem": "framework",
+     "rarity": 0.6909,
+     "as_written": [
+      "framework"
+     ]
+    },
+    {
+     "stem": "decision-mak",
+     "rarity": 0.651,
+     "as_written": [
+      "decision-making"
+     ]
+    },
+    {
+     "stem": "mitigation",
+     "rarity": 0.6342,
+     "as_written": [
+      "mitigation"
+     ]
+    },
+    {
+     "stem": "protection",
+     "rarity": 0.5323,
+     "as_written": [
+      "protection"
+     ]
+    },
+    {
+     "stem": "response",
+     "rarity": 0.5164,
+     "as_written": [
+      "response"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    }
+   ],
+   "score": 0.1211,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::TVM-07: Vulnerability Remediation Schedule",
+   "anchor": "anchor:csa-aicm:tvm-07-vulnerability-remediation-schedule",
+   "framework": "CSA AICM",
+   "reference": "TVM-07: Vulnerability Remediation Schedule",
+   "shared_terms": [
+    {
+     "stem": "remediation",
+     "rarity": 0.5323,
+     "as_written": [
+      "remediation"
+     ]
+    },
+    {
+     "stem": "based",
+     "rarity": 0.4101,
+     "as_written": [
+      "based"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "tvm-07",
+     "rarity": 1.0,
+     "as_written": [
+      "tvm-07"
+     ]
+    },
+    {
+     "stem": "schedule",
+     "rarity": 0.8899,
+     "as_written": [
+      "schedule"
+     ]
+    },
+    {
+     "stem": "emergency",
+     "rarity": 0.8255,
+     "as_written": [
+      "emergency"
+     ]
+    },
+    {
+     "stem": "schedul",
+     "rarity": 0.7443,
+     "as_written": [
+      "scheduled"
+     ]
+    },
+    {
+     "stem": "identification",
+     "rarity": 0.5926,
+     "as_written": [
+      "identification"
+     ]
+    },
+    {
+     "stem": "support",
+     "rarity": 0.5698,
+     "as_written": [
+      "support"
+     ]
+    },
+    {
+     "stem": "respons",
+     "rarity": 0.5596,
+     "as_written": [
+      "responses"
+     ]
+    },
+    {
+     "stem": "identifi",
+     "rarity": 0.4952,
+     "as_written": [
+      "identified"
+     ]
+    },
+    {
+     "stem": "vulnerability",
+     "rarity": 0.4707,
+     "as_written": [
+      "vulnerability"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    },
+    {
+     "stem": "technical",
+     "rarity": 0.355,
+     "as_written": [
+      "technical"
+     ]
+    }
+   ],
+   "score": 0.1202,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::TVM-03: Vulnerability Remediation Schedule",
+   "anchor": "anchor:csa-aicm:tvm-03-vulnerability-remediation-schedule",
+   "framework": "CSA AICM",
+   "reference": "TVM-03: Vulnerability Remediation Schedule",
+   "shared_terms": [
+    {
+     "stem": "remediation",
+     "rarity": 0.5323,
+     "as_written": [
+      "remediation"
+     ]
+    },
+    {
+     "stem": "based",
+     "rarity": 0.4101,
+     "as_written": [
+      "based"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "tvm-03",
+     "rarity": 1.0,
+     "as_written": [
+      "tvm-03"
+     ]
+    },
+    {
+     "stem": "schedule",
+     "rarity": 0.8899,
+     "as_written": [
+      "schedule"
+     ]
+    },
+    {
+     "stem": "emergency",
+     "rarity": 0.8255,
+     "as_written": [
+      "emergency"
+     ]
+    },
+    {
+     "stem": "schedul",
+     "rarity": 0.7443,
+     "as_written": [
+      "scheduled"
+     ]
+    },
+    {
+     "stem": "enable",
+     "rarity": 0.6053,
+     "as_written": [
+      "enable"
+     ]
+    },
+    {
+     "stem": "identification",
+     "rarity": 0.5926,
+     "as_written": [
+      "identifications"
+     ]
+    },
+    {
+     "stem": "respons",
+     "rarity": 0.5596,
+     "as_written": [
+      "responses"
+     ]
+    },
+    {
+     "stem": "identifi",
+     "rarity": 0.4952,
+     "as_written": [
+      "identified"
+     ]
+    },
+    {
+     "stem": "vulnerability",
+     "rarity": 0.4707,
+     "as_written": [
+      "vulnerability"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    },
+    {
+     "stem": "technical",
+     "rarity": 0.355,
+     "as_written": [
+      "technical"
+     ]
+    }
+   ],
+   "score": 0.1197,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-7.4: Token Manipulation",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-7-4-token-manipulation",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-7.4: Token Manipulation",
+   "shared_terms": [
+    {
+     "stem": "manipulation",
+     "rarity": 0.6053,
+     "as_written": [
+      "manipulation"
+     ]
+    },
+    {
+     "stem": "security",
+     "rarity": 0.3523,
+     "as_written": [
+      "security"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "encode",
+     "rarity": 1.0,
+     "as_written": [
+      "encode"
+     ]
+    },
+    {
+     "stem": "model-specific",
+     "rarity": 0.8899,
+     "as_written": [
+      "model-specific"
+     ]
+    },
+    {
+     "stem": "tamper",
+     "rarity": 0.8255,
+     "as_written": [
+      "tamper"
+     ]
+    },
+    {
+     "stem": "aitech-7",
+     "rarity": 0.7798,
+     "as_written": [
+      "aitech-7"
+     ]
+    },
+    {
+     "stem": "token",
+     "rarity": 0.7798,
+     "as_written": [
+      "token",
+      "tokens"
+     ]
+    },
+    {
+     "stem": "misuse",
+     "rarity": 0.6697,
+     "as_written": [
+      "misuse"
+     ]
+    },
+    {
+     "stem": "poison",
+     "rarity": 0.651,
+     "as_written": [
+      "poison"
+     ]
+    },
+    {
+     "stem": "interaction",
+     "rarity": 0.5698,
+     "as_written": [
+      "interactions"
+     ]
+    },
+    {
+     "stem": "manage",
+     "rarity": 0.5241,
+     "as_written": [
+      "manage"
+     ]
+    },
+    {
+     "stem": "agentic",
+     "rarity": 0.4825,
+     "as_written": [
+      "agentic"
+     ]
+    },
+    {
+     "stem": "actor",
+     "rarity": 0.3786,
+     "as_written": [
+      "actors"
+     ]
+    }
+   ],
+   "score": 0.1125,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 50: Inference - Direct instructions attack",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-50-inference-direct-instructions-attack",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 50: Inference - Direct instructions attack",
+   "shared_terms": [
+    {
+     "stem": "behavior",
+     "rarity": 0.4765,
+     "as_written": [
+      "behavior",
+      "behaviors"
+     ]
+    },
+    {
+     "stem": "attack",
+     "rarity": 0.4101,
+     "as_written": [
+      "attack"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt",
+      "prompts"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "question",
+     "rarity": 0.8899,
+     "as_written": [
+      "questions"
+     ]
+    },
+    {
+     "stem": "undesirable",
+     "rarity": 0.8899,
+     "as_written": [
+      "undesirable"
+     ]
+    },
+    {
+     "stem": "elicit",
+     "rarity": 0.8255,
+     "as_written": [
+      "elicit"
+     ]
+    },
+    {
+     "stem": "engage",
+     "rarity": 0.8255,
+     "as_written": [
+      "engage"
+     ]
+    },
+    {
+     "stem": "instruct",
+     "rarity": 0.8255,
+     "as_written": [
+      "instructs"
+     ]
+    },
+    {
+     "stem": "directly",
+     "rarity": 0.7798,
+     "as_written": [
+      "directly"
+     ]
+    },
+    {
+     "stem": "undesir",
+     "rarity": 0.7798,
+     "as_written": [
+      "undesired"
+     ]
+    },
+    {
+     "stem": "direct",
+     "rarity": 0.7154,
+     "as_written": [
+      "direct"
+     ]
+    },
+    {
+     "stem": "approach",
+     "rarity": 0.651,
+     "as_written": [
+      "approach"
+     ]
+    },
+    {
+     "stem": "request",
+     "rarity": 0.5698,
+     "as_written": [
+      "requests"
+     ]
+    },
+    {
+     "stem": "respons",
+     "rarity": 0.5596,
+     "as_written": [
+      "responses"
+     ]
+    },
+    {
+     "stem": "instruction",
+     "rarity": 0.5241,
+     "as_written": [
+      "instructions"
+     ]
+    }
+   ],
+   "score": 0.1106,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP Top 10::LLM01:25 - Prompt Injection",
+   "anchor": "anchor:owasp-top-10:llm01-25-prompt-injection",
+   "framework": "OWASP Top 10",
+   "reference": "LLM01:25 - Prompt Injection",
+   "shared_terms": [
+    {
+     "stem": "injection",
+     "rarity": 0.5164,
+     "as_written": [
+      "injection",
+      "injections"
+     ]
+    },
+    {
+     "stem": "input",
+     "rarity": 0.4025,
+     "as_written": [
+      "inputs"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt",
+      "prompts"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "crafty",
+     "rarity": 1.0,
+     "as_written": [
+      "crafty"
+     ]
+    },
+    {
+     "stem": "llm01",
+     "rarity": 1.0,
+     "as_written": [
+      "llm01"
+     ]
+    },
+    {
+     "stem": "ones",
+     "rarity": 1.0,
+     "as_written": [
+      "ones"
+     ]
+    },
+    {
+     "stem": "overwrite",
+     "rarity": 1.0,
+     "as_written": [
+      "overwrite"
+     ]
+    },
+    {
+     "stem": "indirect",
+     "rarity": 0.8255,
+     "as_written": [
+      "indirect"
+     ]
+    },
+    {
+     "stem": "large",
+     "rarity": 0.7798,
+     "as_written": [
+      "large"
+     ]
+    },
+    {
+     "stem": "unintend",
+     "rarity": 0.7798,
+     "as_written": [
+      "unintended"
+     ]
+    },
+    {
+     "stem": "direct",
+     "rarity": 0.7154,
+     "as_written": [
+      "direct"
+     ]
+    },
+    {
+     "stem": "language",
+     "rarity": 0.6909,
+     "as_written": [
+      "language"
+     ]
+    },
+    {
+     "stem": "sourc",
+     "rarity": 0.6909,
+     "as_written": [
+      "sources"
+     ]
+    },
+    {
+     "stem": "caus",
+     "rarity": 0.6697,
+     "as_written": [
+      "causing"
+     ]
+    },
+    {
+     "stem": "manipulat",
+     "rarity": 0.6697,
+     "as_written": [
+      "manipulates"
+     ]
+    }
+   ],
+   "score": 0.0992,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-7.2: Memory System Corruption",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-7-2-memory-system-corruption",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-7.2: Memory System Corruption",
+   "shared_terms": [
+    {
+     "stem": "adversarial",
+     "rarity": 0.5499,
+     "as_written": [
+      "adversarial"
+     ]
+    },
+    {
+     "stem": "maliciou",
+     "rarity": 0.4707,
+     "as_written": [
+      "malicious"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "corruption",
+     "rarity": 0.8899,
+     "as_written": [
+      "corruption"
+     ]
+    },
+    {
+     "stem": "degrad",
+     "rarity": 0.8255,
+     "as_written": [
+      "degraded"
+     ]
+    },
+    {
+     "stem": "functionality",
+     "rarity": 0.8255,
+     "as_written": [
+      "functionality"
+     ]
+    },
+    {
+     "stem": "aitech-7",
+     "rarity": 0.7798,
+     "as_written": [
+      "aitech-7"
+     ]
+    },
+    {
+     "stem": "immediate",
+     "rarity": 0.7798,
+     "as_written": [
+      "immediate"
+     ]
+    },
+    {
+     "stem": "inject",
+     "rarity": 0.7154,
+     "as_written": [
+      "inject"
+     ]
+    },
+    {
+     "stem": "cause",
+     "rarity": 0.6909,
+     "as_written": [
+      "cause"
+     ]
+    },
+    {
+     "stem": "memory",
+     "rarity": 0.6697,
+     "as_written": [
+      "memory"
+     ]
+    },
+    {
+     "stem": "false",
+     "rarity": 0.651,
+     "as_written": [
+      "false"
+     ]
+    },
+    {
+     "stem": "agent'",
+     "rarity": 0.6342,
+     "as_written": [
+      "agent's"
+     ]
+    },
+    {
+     "stem": "harmful",
+     "rarity": 0.5323,
+     "as_written": [
+      "harmful"
+     ]
+    },
+    {
+     "stem": "decision",
+     "rarity": 0.509,
+     "as_written": [
+      "decisions"
+     ]
+    }
+   ],
+   "score": 0.098,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-5.2: Configuration Persistence",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-5-2-configuration-persistence",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-5.2: Configuration Persistence",
+   "shared_terms": [
+    {
+     "stem": "integrat",
+     "rarity": 0.5926,
+     "as_written": [
+      "integrated",
+      "integrating"
+     ]
+    },
+    {
+     "stem": "injection",
+     "rarity": 0.5164,
+     "as_written": [
+      "injection"
+     ]
+    },
+    {
+     "stem": "behavior",
+     "rarity": 0.4765,
+     "as_written": [
+      "behavior",
+      "behaviors"
+     ]
+    },
+    {
+     "stem": "maliciou",
+     "rarity": 0.4707,
+     "as_written": [
+      "malicious"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "config",
+     "rarity": 1.0,
+     "as_written": [
+      "config"
+     ]
+    },
+    {
+     "stem": "environment'",
+     "rarity": 1.0,
+     "as_written": [
+      "environment's"
+     ]
+    },
+    {
+     "stem": "initialization",
+     "rarity": 1.0,
+     "as_written": [
+      "initialization"
+     ]
+    },
+    {
+     "stem": "aitech-5",
+     "rarity": 0.8899,
+     "as_written": [
+      "aitech-5"
+     ]
+    },
+    {
+     "stem": "core",
+     "rarity": 0.8899,
+     "as_written": [
+      "core"
+     ]
+    },
+    {
+     "stem": "goes",
+     "rarity": 0.8899,
+     "as_written": [
+      "goes"
+     ]
+    },
+    {
+     "stem": "isolat",
+     "rarity": 0.8899,
+     "as_written": [
+      "isolated"
+     ]
+    },
+    {
+     "stem": "last",
+     "rarity": 0.8899,
+     "as_written": [
+      "lasting"
+     ]
+    },
+    {
+     "stem": "persistence",
+     "rarity": 0.8255,
+     "as_written": [
+      "persistence"
+     ]
+    },
+    {
+     "stem": "setting",
+     "rarity": 0.8255,
+     "as_written": [
+      "settings"
+     ]
+    },
+    {
+     "stem": "single",
+     "rarity": 0.8255,
+     "as_written": [
+      "single"
+     ]
+    },
+    {
+     "stem": "file",
+     "rarity": 0.7798,
+     "as_written": [
+      "files"
+     ]
+    }
+   ],
+   "score": 0.0978,
+   "shared_count": 5,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-19.2: Fusion Payload Split",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-19-2-fusion-payload-split",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-19.2: Fusion Payload Split",
+   "shared_terms": [
+    {
+     "stem": "injection",
+     "rarity": 0.5164,
+     "as_written": [
+      "injection"
+     ]
+    },
+    {
+     "stem": "behavior",
+     "rarity": 0.4765,
+     "as_written": [
+      "behavior",
+      "behaviors"
+     ]
+    },
+    {
+     "stem": "attack",
+     "rarity": 0.4101,
+     "as_written": [
+      "attack"
+     ]
+    },
+    {
+     "stem": "input",
+     "rarity": 0.4025,
+     "as_written": [
+      "inputs"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "arbitration",
+     "rarity": 1.0,
+     "as_written": [
+      "arbitration"
+     ]
+    },
+    {
+     "stem": "assemble",
+     "rarity": 1.0,
+     "as_written": [
+      "assemble"
+     ]
+    },
+    {
+     "stem": "final",
+     "rarity": 1.0,
+     "as_written": [
+      "final"
+     ]
+    },
+    {
+     "stem": "split",
+     "rarity": 1.0,
+     "as_written": [
+      "split"
+     ]
+    },
+    {
+     "stem": "aitech-19",
+     "rarity": 0.8899,
+     "as_written": [
+      "aitech-19"
+     ]
+    },
+    {
+     "stem": "fusion",
+     "rarity": 0.8899,
+     "as_written": [
+      "fusion"
+     ]
+    },
+    {
+     "stem": "multiple",
+     "rarity": 0.8899,
+     "as_written": [
+      "multiple"
+     ]
+    },
+    {
+     "stem": "combin",
+     "rarity": 0.8255,
+     "as_written": [
+      "combining"
+     ]
+    },
+    {
+     "stem": "deliver",
+     "rarity": 0.8255,
+     "as_written": [
+      "delivered"
+     ]
+    },
+    {
+     "stem": "system’",
+     "rarity": 0.8255,
+     "as_written": [
+      "system’s"
+     ]
+    },
+    {
+     "stem": "logic",
+     "rarity": 0.7798,
+     "as_written": [
+      "logic"
+     ]
+    },
+    {
+     "stem": "weakness",
+     "rarity": 0.7798,
+     "as_written": [
+      "weaknesses"
+     ]
+    }
+   ],
+   "score": 0.094,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP Agentic Top 10::ASI06 - Memory and Context Poisoning",
+   "anchor": "anchor:owasp-agentic-top-10:asi06-memory-and-context-poisoning",
+   "framework": "OWASP Agentic Top 10",
+   "reference": "ASI06 - Memory and Context Poisoning",
+   "shared_terms": [
+    {
+     "stem": "shar",
+     "rarity": 0.6053,
+     "as_written": [
+      "shared",
+      "sharing"
+     ]
+    },
+    {
+     "stem": "injection",
+     "rarity": 0.5164,
+     "as_written": [
+      "injection"
+     ]
+    },
+    {
+     "stem": "attack",
+     "rarity": 0.4101,
+     "as_written": [
+      "attack"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "asi06",
+     "rarity": 1.0,
+     "as_written": [
+      "asi06"
+     ]
+    },
+    {
+     "stem": "behave",
+     "rarity": 1.0,
+     "as_written": [
+      "behave"
+     ]
+    },
+    {
+     "stem": "gemini",
+     "rarity": 1.0,
+     "as_written": [
+      "gemini"
+     ]
+    },
+    {
+     "stem": "embedding",
+     "rarity": 0.8899,
+     "as_written": [
+      "embeddings"
+     ]
+    },
+    {
+     "stem": "gradual",
+     "rarity": 0.8899,
+     "as_written": [
+      "gradual"
+     ]
+    },
+    {
+     "stem": "incorrectly",
+     "rarity": 0.8899,
+     "as_written": [
+      "incorrectly"
+     ]
+    },
+    {
+     "stem": "continu",
+     "rarity": 0.8255,
+     "as_written": [
+      "continues"
+     ]
+    },
+    {
+     "stem": "persistent",
+     "rarity": 0.8255,
+     "as_written": [
+      "persistent"
+     ]
+    },
+    {
+     "stem": "rag",
+     "rarity": 0.8255,
+     "as_written": [
+      "rag"
+     ]
+    },
+    {
+     "stem": "stor",
+     "rarity": 0.8255,
+     "as_written": [
+      "stored"
+     ]
+    },
+    {
+     "stem": "unlike",
+     "rarity": 0.8255,
+     "as_written": [
+      "unlike"
+     ]
+    },
+    {
+     "stem": "long",
+     "rarity": 0.7798,
+     "as_written": [
+      "long"
+     ]
+    }
+   ],
+   "score": 0.0915,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP Top 10::LLM08:25 - Vector and Embedding Weaknesses",
+   "anchor": "anchor:owasp-top-10:llm08-25-vector-and-embedding-weaknesses",
+   "framework": "OWASP Top 10",
+   "reference": "LLM08:25 - Vector and Embedding Weaknesses",
+   "shared_terms": [
+    {
+     "stem": "storage",
+     "rarity": 0.6191,
+     "as_written": [
+      "storage"
+     ]
+    },
+    {
+     "stem": "sensitive",
+     "rarity": 0.4765,
+     "as_written": [
+      "sensitive"
+     ]
+    },
+    {
+     "stem": "security",
+     "rarity": 0.3523,
+     "as_written": [
+      "security"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "llm08",
+     "rarity": 1.0,
+     "as_written": [
+      "llm08"
+     ]
+    },
+    {
+     "stem": "posing",
+     "rarity": 1.0,
+     "as_written": [
+      "posing"
+     ]
+    },
+    {
+     "stem": "retrieval",
+     "rarity": 1.0,
+     "as_written": [
+      "retrieval"
+     ]
+    },
+    {
+     "stem": "vector",
+     "rarity": 1.0,
+     "as_written": [
+      "vector",
+      "vectors"
+     ]
+    },
+    {
+     "stem": "embedding",
+     "rarity": 0.8899,
+     "as_written": [
+      "embeddings"
+     ]
+    },
+    {
+     "stem": "weak",
+     "rarity": 0.8899,
+     "as_written": [
+      "weak"
+     ]
+    },
+    {
+     "stem": "expose",
+     "rarity": 0.8255,
+     "as_written": [
+      "expose"
+     ]
+    },
+    {
+     "stem": "rag",
+     "rarity": 0.8255,
+     "as_written": [
+      "rag"
+     ]
+    },
+    {
+     "stem": "llms",
+     "rarity": 0.7798,
+     "as_written": [
+      "llms"
+     ]
+    },
+    {
+     "stem": "weakness",
+     "rarity": 0.7798,
+     "as_written": [
+      "weaknesses"
+     ]
+    },
+    {
+     "stem": "inject",
+     "rarity": 0.7154,
+     "as_written": [
+      "inject"
+     ]
+    },
+    {
+     "stem": "allow",
+     "rarity": 0.6909,
+     "as_written": [
+      "allow"
+     ]
+    }
+   ],
+   "score": 0.0899,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-5.1: Memory System Persistence",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-5-1-memory-system-persistence",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-5.1: Memory System Persistence",
+   "shared_terms": [
+    {
+     "stem": "adversarial",
+     "rarity": 0.5499,
+     "as_written": [
+      "adversarial"
+     ]
+    },
+    {
+     "stem": "behavior",
+     "rarity": 0.4765,
+     "as_written": [
+      "behavior",
+      "behaviors"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "short-term",
+     "rarity": 1.0,
+     "as_written": [
+      "short-term"
+     ]
+    },
+    {
+     "stem": "aitech-5",
+     "rarity": 0.8899,
+     "as_written": [
+      "aitech-5"
+     ]
+    },
+    {
+     "stem": "extend",
+     "rarity": 0.8899,
+     "as_written": [
+      "extended"
+     ]
+    },
+    {
+     "stem": "long-term",
+     "rarity": 0.8899,
+     "as_written": [
+      "long-term"
+     ]
+    },
+    {
+     "stem": "persistence",
+     "rarity": 0.8255,
+     "as_written": [
+      "persistence"
+     ]
+    },
+    {
+     "stem": "insert",
+     "rarity": 0.7154,
+     "as_written": [
+      "insert"
+     ]
+    },
+    {
+     "stem": "period",
+     "rarity": 0.7154,
+     "as_written": [
+      "periods"
+     ]
+    },
+    {
+     "stem": "corrupt",
+     "rarity": 0.6697,
+     "as_written": [
+      "corrupt"
+     ]
+    },
+    {
+     "stem": "memory",
+     "rarity": 0.6697,
+     "as_written": [
+      "memory"
+     ]
+    },
+    {
+     "stem": "poison",
+     "rarity": 0.651,
+     "as_written": [
+      "poisoned"
+     ]
+    },
+    {
+     "stem": "time",
+     "rarity": 0.651,
+     "as_written": [
+      "time"
+     ]
+    },
+    {
+     "stem": "model'",
+     "rarity": 0.5698,
+     "as_written": [
+      "model's"
+     ]
+    }
+   ],
+   "score": 0.0885,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-1.4: Multi-Modal Injection and Manipulation",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-1-4-multi-modal-injection-and-manipulation",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-1.4: Multi-Modal Injection and Manipulation",
+   "shared_terms": [
+    {
+     "stem": "manipulation",
+     "rarity": 0.6053,
+     "as_written": [
+      "manipulation"
+     ]
+    },
+    {
+     "stem": "injection",
+     "rarity": 0.5164,
+     "as_written": [
+      "injection"
+     ]
+    },
+    {
+     "stem": "maliciou",
+     "rarity": 0.4707,
+     "as_written": [
+      "malicious"
+     ]
+    },
+    {
+     "stem": "attack",
+     "rarity": 0.4101,
+     "as_written": [
+      "attack",
+      "attacks"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "multi-modal",
+     "rarity": 1.0,
+     "as_written": [
+      "multi-modal"
+     ]
+    },
+    {
+     "stem": "stream",
+     "rarity": 1.0,
+     "as_written": [
+      "streams"
+     ]
+    },
+    {
+     "stem": "variou",
+     "rarity": 1.0,
+     "as_written": [
+      "various"
+     ]
+    },
+    {
+     "stem": "deliberately",
+     "rarity": 0.8899,
+     "as_written": [
+      "deliberately"
+     ]
+    },
+    {
+     "stem": "fusion",
+     "rarity": 0.8899,
+     "as_written": [
+      "fusion"
+     ]
+    },
+    {
+     "stem": "image",
+     "rarity": 0.8899,
+     "as_written": [
+      "image"
+     ]
+    },
+    {
+     "stem": "interpretation",
+     "rarity": 0.8899,
+     "as_written": [
+      "interpretation"
+     ]
+    },
+    {
+     "stem": "sensor",
+     "rarity": 0.8899,
+     "as_written": [
+      "sensor"
+     ]
+    },
+    {
+     "stem": "text",
+     "rarity": 0.8899,
+     "as_written": [
+      "text"
+     ]
+    },
+    {
+     "stem": "combin",
+     "rarity": 0.8255,
+     "as_written": [
+      "combined"
+     ]
+    },
+    {
+     "stem": "modality",
+     "rarity": 0.8255,
+     "as_written": [
+      "modalities"
+     ]
+    },
+    {
+     "stem": "aitech-1",
+     "rarity": 0.7798,
+     "as_written": [
+      "aitech-1"
+     ]
+    }
+   ],
+   "score": 0.0872,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-1.2: Indirect Prompt Injection",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-1-2-indirect-prompt-injection",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-1.2: Indirect Prompt Injection",
+   "shared_terms": [
+    {
+     "stem": "injection",
+     "rarity": 0.5164,
+     "as_written": [
+      "injection"
+     ]
+    },
+    {
+     "stem": "maliciou",
+     "rarity": 0.4707,
+     "as_written": [
+      "malicious"
+     ]
+    },
+    {
+     "stem": "attack",
+     "rarity": 0.4101,
+     "as_written": [
+      "attack"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "email",
+     "rarity": 1.0,
+     "as_written": [
+      "emails"
+     ]
+    },
+    {
+     "stem": "page",
+     "rarity": 1.0,
+     "as_written": [
+      "pages"
+     ]
+    },
+    {
+     "stem": "retriev",
+     "rarity": 1.0,
+     "as_written": [
+      "retrieves"
+     ]
+    },
+    {
+     "stem": "awarenes",
+     "rarity": 0.8899,
+     "as_written": [
+      "awareness"
+     ]
+    },
+    {
+     "stem": "inability",
+     "rarity": 0.8899,
+     "as_written": [
+      "inability"
+     ]
+    },
+    {
+     "stem": "user'",
+     "rarity": 0.8899,
+     "as_written": [
+      "user's"
+     ]
+    },
+    {
+     "stem": "web",
+     "rarity": 0.8899,
+     "as_written": [
+      "web"
+     ]
+    },
+    {
+     "stem": "hidden",
+     "rarity": 0.8255,
+     "as_written": [
+      "hidden"
+     ]
+    },
+    {
+     "stem": "indirect",
+     "rarity": 0.8255,
+     "as_written": [
+      "indirect"
+     ]
+    },
+    {
+     "stem": "untrust",
+     "rarity": 0.8255,
+     "as_written": [
+      "untrusted"
+     ]
+    },
+    {
+     "stem": "aitech-1",
+     "rarity": 0.7798,
+     "as_written": [
+      "aitech-1"
+     ]
+    },
+    {
+     "stem": "distinguish",
+     "rarity": 0.7798,
+     "as_written": [
+      "distinguish"
+     ]
+    }
+   ],
+   "score": 0.0826,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-1.3: Goal Manipulation",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-1-3-goal-manipulation",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-1.3: Goal Manipulation",
+   "shared_terms": [
+    {
+     "stem": "manipulation",
+     "rarity": 0.6053,
+     "as_written": [
+      "manipulation"
+     ]
+    },
+    {
+     "stem": "restrict",
+     "rarity": 0.5409,
+     "as_written": [
+      "restricted"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "bypass",
+     "rarity": 1.0,
+     "as_written": [
+      "bypasses"
+     ]
+    },
+    {
+     "stem": "legitimately",
+     "rarity": 1.0,
+     "as_written": [
+      "legitimately"
+     ]
+    },
+    {
+     "stem": "proper",
+     "rarity": 0.8899,
+     "as_written": [
+      "proper"
+     ]
+    },
+    {
+     "stem": "aitech-1",
+     "rarity": 0.7798,
+     "as_written": [
+      "aitech-1"
+     ]
+    },
+    {
+     "stem": "gain",
+     "rarity": 0.7798,
+     "as_written": [
+      "gain",
+      "gaining"
+     ]
+    },
+    {
+     "stem": "weakness",
+     "rarity": 0.7798,
+     "as_written": [
+      "weaknesses"
+     ]
+    },
+    {
+     "stem": "initial",
+     "rarity": 0.7154,
+     "as_written": [
+      "initial"
+     ]
+    },
+    {
+     "stem": "privilege",
+     "rarity": 0.7154,
+     "as_written": [
+      "privilege"
+     ]
+    },
+    {
+     "stem": "authentication",
+     "rarity": 0.6697,
+     "as_written": [
+      "authentication"
+     ]
+    },
+    {
+     "stem": "goal",
+     "rarity": 0.6342,
+     "as_written": [
+      "goal"
+     ]
+    },
+    {
+     "stem": "llm",
+     "rarity": 0.6342,
+     "as_written": [
+      "llm"
+     ]
+    },
+    {
+     "stem": "boundary",
+     "rarity": 0.6191,
+     "as_written": [
+      "boundaries"
+     ]
+    }
+   ],
+   "score": 0.0824,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-4.2: Context Boundary Attacks",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-4-2-context-boundary-attacks",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-4.2: Context Boundary Attacks",
+   "shared_terms": [
+    {
+     "stem": "tool",
+     "rarity": 0.4352,
+     "as_written": [
+      "tool"
+     ]
+    },
+    {
+     "stem": "attack",
+     "rarity": 0.4101,
+     "as_written": [
+      "attack",
+      "attacks"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt",
+      "prompts"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "description",
+     "rarity": 1.0,
+     "as_written": [
+      "descriptions"
+     ]
+    },
+    {
+     "stem": "misinterpret",
+     "rarity": 1.0,
+     "as_written": [
+      "misinterpret"
+     ]
+    },
+    {
+     "stem": "porou",
+     "rarity": 1.0,
+     "as_written": [
+      "porous"
+     ]
+    },
+    {
+     "stem": "sees",
+     "rarity": 1.0,
+     "as_written": [
+      "sees"
+     ]
+    },
+    {
+     "stem": "unclear",
+     "rarity": 1.0,
+     "as_written": [
+      "unclear"
+     ]
+    },
+    {
+     "stem": "contextual",
+     "rarity": 0.8899,
+     "as_written": [
+      "contextual"
+     ]
+    },
+    {
+     "stem": "segment",
+     "rarity": 0.8899,
+     "as_written": [
+      "segments"
+     ]
+    },
+    {
+     "stem": "transmit",
+     "rarity": 0.8899,
+     "as_written": [
+      "transmits"
+     ]
+    },
+    {
+     "stem": "aitech-4",
+     "rarity": 0.8255,
+     "as_written": [
+      "aitech-4"
+     ]
+    },
+    {
+     "stem": "intent",
+     "rarity": 0.8255,
+     "as_written": [
+      "intent"
+     ]
+    },
+    {
+     "stem": "statu",
+     "rarity": 0.7798,
+     "as_written": [
+      "status"
+     ]
+    },
+    {
+     "stem": "trustworthines",
+     "rarity": 0.7154,
+     "as_written": [
+      "trustworthiness"
+     ]
+    }
+   ],
+   "score": 0.0722,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-4.1: Agent Injection",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-4-1-agent-injection",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-4.1: Agent Injection",
+   "shared_terms": [
+    {
+     "stem": "injection",
+     "rarity": 0.5164,
+     "as_written": [
+      "injection"
+     ]
+    },
+    {
+     "stem": "maliciou",
+     "rarity": 0.4707,
+     "as_written": [
+      "malicious"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "fake",
+     "rarity": 0.8899,
+     "as_written": [
+      "fake"
+     ]
+    },
+    {
+     "stem": "instanc",
+     "rarity": 0.8899,
+     "as_written": [
+      "instances"
+     ]
+    },
+    {
+     "stem": "operat",
+     "rarity": 0.8899,
+     "as_written": [
+      "operating"
+     ]
+    },
+    {
+     "stem": "aitech-4",
+     "rarity": 0.8255,
+     "as_written": [
+      "aitech-4"
+     ]
+    },
+    {
+     "stem": "introduce",
+     "rarity": 0.8255,
+     "as_written": [
+      "introduce"
+     ]
+    },
+    {
+     "stem": "registration",
+     "rarity": 0.8255,
+     "as_written": [
+      "registration"
+     ]
+    },
+    {
+     "stem": "subvert",
+     "rarity": 0.7798,
+     "as_written": [
+      "subverting"
+     ]
+    },
+    {
+     "stem": "executive",
+     "rarity": 0.7443,
+     "as_written": [
+      "executive"
+     ]
+    },
+    {
+     "stem": "insert",
+     "rarity": 0.7154,
+     "as_written": [
+      "inserting"
+     ]
+    },
+    {
+     "stem": "execut",
+     "rarity": 0.6697,
+     "as_written": [
+      "executing"
+     ]
+    },
+    {
+     "stem": "legitimate",
+     "rarity": 0.6697,
+     "as_written": [
+      "legitimate"
+     ]
+    },
+    {
+     "stem": "mislead",
+     "rarity": 0.6697,
+     "as_written": [
+      "misleading"
+     ]
+    }
+   ],
+   "score": 0.0665,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 52: Inference - Indirect instructions attack",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-52-inference-indirect-instructions-attack",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 52: Inference - Indirect instructions attack",
+   "shared_terms": [
+    {
+     "stem": "attack",
+     "rarity": 0.4101,
+     "as_written": [
+      "attack",
+      "attacks"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt",
+      "prompts"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "question",
+     "rarity": 0.8899,
+     "as_written": [
+      "questions"
+     ]
+    },
+    {
+     "stem": "undesirable",
+     "rarity": 0.8899,
+     "as_written": [
+      "undesirable"
+     ]
+    },
+    {
+     "stem": "website",
+     "rarity": 0.8899,
+     "as_written": [
+      "website"
+     ]
+    },
+    {
+     "stem": "elicit",
+     "rarity": 0.8255,
+     "as_written": [
+      "elicit"
+     ]
+    },
+    {
+     "stem": "indirect",
+     "rarity": 0.8255,
+     "as_written": [
+      "indirect"
+     ]
+    },
+    {
+     "stem": "instruct",
+     "rarity": 0.8255,
+     "as_written": [
+      "instructed"
+     ]
+    },
+    {
+     "stem": "unlike",
+     "rarity": 0.8255,
+     "as_written": [
+      "unlike"
+     ]
+    },
+    {
+     "stem": "direct",
+     "rarity": 0.7154,
+     "as_written": [
+      "direct"
+     ]
+    },
+    {
+     "stem": "embed",
+     "rarity": 0.6909,
+     "as_written": [
+      "embedded"
+     ]
+    },
+    {
+     "stem": "like",
+     "rarity": 0.6697,
+     "as_written": [
+      "like"
+     ]
+    },
+    {
+     "stem": "request",
+     "rarity": 0.5698,
+     "as_written": [
+      "requests"
+     ]
+    },
+    {
+     "stem": "respons",
+     "rarity": 0.5596,
+     "as_written": [
+      "responses"
+     ]
+    }
+   ],
+   "score": 0.0648,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::TVM-05: External Library Vulnerabilities ",
+   "anchor": "anchor:csa-aicm:tvm-05-external-library-vulnerabilities",
+   "framework": "CSA AICM",
+   "reference": "TVM-05: External Library Vulnerabilities ",
+   "shared_terms": [
+    {
+     "stem": "updat",
+     "rarity": 0.5019,
+     "as_written": [
+      "updates"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "tvm-05",
+     "rarity": 1.0,
+     "as_written": [
+      "tvm-05"
+     ]
+    },
+    {
+     "stem": "open-source",
+     "rarity": 0.7798,
+     "as_written": [
+      "open-source"
+     ]
+    },
+    {
+     "stem": "library",
+     "rarity": 0.6909,
+     "as_written": [
+      "libraries",
+      "library"
+     ]
+    },
+    {
+     "stem": "third",
+     "rarity": 0.6909,
+     "as_written": [
+      "third"
+     ]
+    },
+    {
+     "stem": "organization'",
+     "rarity": 0.651,
+     "as_written": [
+      "organization's"
+     ]
+    },
+    {
+     "stem": "party",
+     "rarity": 0.5808,
+     "as_written": [
+      "party"
+     ]
+    },
+    {
+     "stem": "accord",
+     "rarity": 0.5409,
+     "as_written": [
+      "according"
+     ]
+    },
+    {
+     "stem": "identify",
+     "rarity": 0.5164,
+     "as_written": [
+      "identify"
+     ]
+    },
+    {
+     "stem": "application",
+     "rarity": 0.5019,
+     "as_written": [
+      "applications"
+     ]
+    },
+    {
+     "stem": "external",
+     "rarity": 0.4825,
+     "as_written": [
+      "external"
+     ]
+    },
+    {
+     "stem": "vulnerability",
+     "rarity": 0.4707,
+     "as_written": [
+      "vulnerabilities",
+      "vulnerability"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    }
+   ],
+   "score": 0.0615,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-11.2: Model-Selective Evasion",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-11-2-model-selective-evasion",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-11.2: Model-Selective Evasion",
+   "shared_terms": [
+    {
+     "stem": "maliciou",
+     "rarity": 0.4707,
+     "as_written": [
+      "malicious"
+     ]
+    },
+    {
+     "stem": "input",
+     "rarity": 0.4025,
+     "as_written": [
+      "input",
+      "inputs"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt",
+      "prompts"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "differenc",
+     "rarity": 1.0,
+     "as_written": [
+      "differences"
+     ]
+    },
+    {
+     "stem": "model-selective",
+     "rarity": 1.0,
+     "as_written": [
+      "model-selective"
+     ]
+    },
+    {
+     "stem": "particular",
+     "rarity": 1.0,
+     "as_written": [
+      "particular"
+     ]
+    },
+    {
+     "stem": "quirk",
+     "rarity": 1.0,
+     "as_written": [
+      "quirks"
+     ]
+    },
+    {
+     "stem": "refuse",
+     "rarity": 1.0,
+     "as_written": [
+      "refuse"
+     ]
+    },
+    {
+     "stem": "successfully",
+     "rarity": 1.0,
+     "as_written": [
+      "successfully"
+     ]
+    },
+    {
+     "stem": "variation",
+     "rarity": 1.0,
+     "as_written": [
+      "variations"
+     ]
+    },
+    {
+     "stem": "aitech-11",
+     "rarity": 0.8899,
+     "as_written": [
+      "aitech-11"
+     ]
+    },
+    {
+     "stem": "craft",
+     "rarity": 0.8899,
+     "as_written": [
+      "craft"
+     ]
+    },
+    {
+     "stem": "model-specific",
+     "rarity": 0.8899,
+     "as_written": [
+      "model-specific"
+     ]
+    },
+    {
+     "stem": "technique",
+     "rarity": 0.8899,
+     "as_written": [
+      "technique"
+     ]
+    },
+    {
+     "stem": "would",
+     "rarity": 0.8899,
+     "as_written": [
+      "would"
+     ]
+    }
+   ],
+   "score": 0.0546,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP Agentic Top 10::ASI01 - Agent Goal Hijack",
+   "anchor": "anchor:owasp-agentic-top-10:asi01-agent-goal-hijack",
+   "framework": "OWASP Agentic Top 10",
+   "reference": "ASI01 - Agent Goal Hijack",
+   "shared_terms": [
+    {
+     "stem": "injection",
+     "rarity": 0.5164,
+     "as_written": [
+      "injection"
+     ]
+    },
+    {
+     "stem": "maliciou",
+     "rarity": 0.4707,
+     "as_written": [
+      "malicious"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt",
+      "prompts"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "asi01",
+     "rarity": 1.0,
+     "as_written": [
+      "asi01"
+     ]
+    },
+    {
+     "stem": "copilot",
+     "rarity": 1.0,
+     "as_written": [
+      "copilots"
+     ]
+    },
+    {
+     "stem": "echoleak",
+     "rarity": 1.0,
+     "as_written": [
+      "echoleak"
+     ]
+    },
+    {
+     "stem": "engin",
+     "rarity": 1.0,
+     "as_written": [
+      "engines"
+     ]
+    },
+    {
+     "stem": "loop",
+     "rarity": 1.0,
+     "as_written": [
+      "loop"
+     ]
+    },
+    {
+     "stem": "reflection",
+     "rarity": 1.0,
+     "as_written": [
+      "reflection"
+     ]
+    },
+    {
+     "stem": "sub-goal",
+     "rarity": 1.0,
+     "as_written": [
+      "sub-goals"
+     ]
+    },
+    {
+     "stem": "subtle",
+     "rarity": 1.0,
+     "as_written": [
+      "subtle"
+     ]
+    },
+    {
+     "stem": "trap",
+     "rarity": 1.0,
+     "as_written": [
+      "traps"
+     ]
+    },
+    {
+     "stem": "gradual",
+     "rarity": 0.8899,
+     "as_written": [
+      "gradual"
+     ]
+    },
+    {
+     "stem": "path",
+     "rarity": 0.8899,
+     "as_written": [
+      "path"
+     ]
+    },
+    {
+     "stem": "silent",
+     "rarity": 0.8899,
+     "as_written": [
+      "silent"
+     ]
+    }
+   ],
+   "score": 0.0541,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::TVM-12: Threat Analysis and Modeling",
+   "anchor": "anchor:csa-aicm:tvm-12-threat-analysis-and-modeling",
+   "framework": "CSA AICM",
+   "reference": "TVM-12: Threat Analysis and Modeling",
+   "shared_terms": [
+    {
+     "stem": "threat",
+     "rarity": 0.5409,
+     "as_written": [
+      "threat"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "landscape",
+     "rarity": 1.0,
+     "as_written": [
+      "landscape"
+     ]
+    },
+    {
+     "stem": "tvm-12",
+     "rarity": 1.0,
+     "as_written": [
+      "tvm-12"
+     ]
+    },
+    {
+     "stem": "build",
+     "rarity": 0.7798,
+     "as_written": [
+      "build"
+     ]
+    },
+    {
+     "stem": "cloud",
+     "rarity": 0.7798,
+     "as_written": [
+      "cloud"
+     ]
+    },
+    {
+     "stem": "best",
+     "rarity": 0.7443,
+     "as_written": [
+      "best"
+     ]
+    },
+    {
+     "stem": "strategy",
+     "rarity": 0.651,
+     "as_written": [
+      "strategy"
+     ]
+    },
+    {
+     "stem": "industry",
+     "rarity": 0.6342,
+     "as_written": [
+      "industry"
+     ]
+    },
+    {
+     "stem": "mitigation",
+     "rarity": 0.6342,
+     "as_written": [
+      "mitigation"
+     ]
+    },
+    {
+     "stem": "inform",
+     "rarity": 0.5926,
+     "as_written": [
+      "inform"
+     ]
+    },
+    {
+     "stem": "practic",
+     "rarity": 0.5698,
+     "as_written": [
+      "practices"
+     ]
+    },
+    {
+     "stem": "analysi",
+     "rarity": 0.5596,
+     "as_written": [
+      "analysis"
+     ]
+    },
+    {
+     "stem": "asses",
+     "rarity": 0.5596,
+     "as_written": [
+      "assess"
+     ]
+    }
+   ],
+   "score": 0.0535,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-2.1: Jailbreak",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-2-1-jailbreak",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-2.1: Jailbreak",
+   "shared_terms": [
+    {
+     "stem": "jailbreak",
+     "rarity": 0.7154,
+     "as_written": [
+      "jailbreak",
+      "jailbreaking",
+      "jailbreaks"
+     ]
+    },
+    {
+     "stem": "adversarial",
+     "rarity": 0.5499,
+     "as_written": [
+      "adversarial"
+     ]
+    },
+    {
+     "stem": "attack",
+     "rarity": 0.4101,
+     "as_written": [
+      "attack",
+      "attacks"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt",
+      "prompts"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "aitech-2",
+     "rarity": 1.0,
+     "as_written": [
+      "aitech-2"
+     ]
+    },
+    {
+     "stem": "become",
+     "rarity": 1.0,
+     "as_written": [
+      "become"
+     ]
+    },
+    {
+     "stem": "circumvent",
+     "rarity": 1.0,
+     "as_written": [
+      "circumvented",
+      "circumvents"
+     ]
+    },
+    {
+     "stem": "defeat",
+     "rarity": 1.0,
+     "as_written": [
+      "defeats"
+     ]
+    },
+    {
+     "stem": "differently",
+     "rarity": 1.0,
+     "as_written": [
+      "differently"
+     ]
+    },
+    {
+     "stem": "ingest",
+     "rarity": 1.0,
+     "as_written": [
+      "ingested"
+     ]
+    },
+    {
+     "stem": "multi-turn",
+     "rarity": 1.0,
+     "as_written": [
+      "multi-turn"
+     ]
+    },
+    {
+     "stem": "whatever",
+     "rarity": 1.0,
+     "as_written": [
+      "whatever"
+     ]
+    },
+    {
+     "stem": "chatbot",
+     "rarity": 0.8899,
+     "as_written": [
+      "chatbot"
+     ]
+    },
+    {
+     "stem": "multiple",
+     "rarity": 0.8899,
+     "as_written": [
+      "multiple"
+     ]
+    },
+    {
+     "stem": "technique",
+     "rarity": 0.8899,
+     "as_written": [
+      "technique"
+     ]
+    },
+    {
+     "stem": "violat",
+     "rarity": 0.8899,
+     "as_written": [
+      "violates"
+     ]
+    }
+   ],
+   "score": 0.0523,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-17.1: Sensor Spoofing",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-17-1-sensor-spoofing",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-17.1: Sensor Spoofing",
+   "shared_terms": [
+    {
+     "stem": "input",
+     "rarity": 0.4025,
+     "as_written": [
+      "inputs"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "aitech-17",
+     "rarity": 1.0,
+     "as_written": [
+      "aitech-17"
+     ]
+    },
+    {
+     "stem": "falsifi",
+     "rarity": 1.0,
+     "as_written": [
+      "falsified"
+     ]
+    },
+    {
+     "stem": "highly-realistic",
+     "rarity": 1.0,
+     "as_written": [
+      "highly-realistic"
+     ]
+    },
+    {
+     "stem": "sensory",
+     "rarity": 1.0,
+     "as_written": [
+      "sensory"
+     ]
+    },
+    {
+     "stem": "deliberately",
+     "rarity": 0.8899,
+     "as_written": [
+      "deliberately"
+     ]
+    },
+    {
+     "stem": "sensor",
+     "rarity": 0.8899,
+     "as_written": [
+      "sensor"
+     ]
+    },
+    {
+     "stem": "signal",
+     "rarity": 0.8899,
+     "as_written": [
+      "signals"
+     ]
+    },
+    {
+     "stem": "spoof",
+     "rarity": 0.8255,
+     "as_written": [
+      "spoofing"
+     ]
+    },
+    {
+     "stem": "deceptive",
+     "rarity": 0.7443,
+     "as_written": [
+      "deceptive"
+     ]
+    },
+    {
+     "stem": "manipulat",
+     "rarity": 0.6697,
+     "as_written": [
+      "manipulating"
+     ]
+    },
+    {
+     "stem": "mislead",
+     "rarity": 0.6697,
+     "as_written": [
+      "mislead"
+     ]
+    },
+    {
+     "stem": "decision-mak",
+     "rarity": 0.651,
+     "as_written": [
+      "decision-making"
+     ]
+    }
+   ],
+   "score": 0.0366,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-3.1: Masquerading / Obfuscation / Impersonation",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-3-1-masquerading-obfuscation-impersonation",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-3.1: Masquerading / Obfuscation / Impersonation",
+   "shared_terms": [
+    {
+     "stem": "maliciou",
+     "rarity": 0.4707,
+     "as_written": [
+      "malicious"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "aitech-3",
+     "rarity": 1.0,
+     "as_written": [
+      "aitech-3"
+     ]
+    },
+    {
+     "stem": "authentic",
+     "rarity": 1.0,
+     "as_written": [
+      "authentic"
+     ]
+    },
+    {
+     "stem": "ecosystem",
+     "rarity": 1.0,
+     "as_written": [
+      "ecosystem"
+     ]
+    },
+    {
+     "stem": "masquerad",
+     "rarity": 1.0,
+     "as_written": [
+      "masquerading"
+     ]
+    },
+    {
+     "stem": "impersonat",
+     "rarity": 0.8899,
+     "as_written": [
+      "impersonates"
+     ]
+    },
+    {
+     "stem": "impersonation",
+     "rarity": 0.8899,
+     "as_written": [
+      "impersonation"
+     ]
+    },
+    {
+     "stem": "introduce",
+     "rarity": 0.8255,
+     "as_written": [
+      "introduce"
+     ]
+    },
+    {
+     "stem": "obfuscation",
+     "rarity": 0.8255,
+     "as_written": [
+      "obfuscation"
+     ]
+    },
+    {
+     "stem": "multi-agent",
+     "rarity": 0.7154,
+     "as_written": [
+      "multi-agent"
+     ]
+    },
+    {
+     "stem": "accept",
+     "rarity": 0.6909,
+     "as_written": [
+      "accept"
+     ]
+    },
+    {
+     "stem": "caus",
+     "rarity": 0.6697,
+     "as_written": [
+      "causes"
+     ]
+    },
+    {
+     "stem": "legitimate",
+     "rarity": 0.6697,
+     "as_written": [
+      "legitimate"
+     ]
+    }
+   ],
+   "score": 0.035,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MEASURE 2.6: Safety evaluation",
+   "anchor": "anchor:nist-ai-rmf:measure-2-6-safety-evaluation",
+   "framework": "NIST AI RMF",
+   "reference": "MEASURE 2.6: Safety evaluation",
+   "shared_terms": [
+    {
+     "stem": "robustnes",
+     "rarity": 0.6909,
+     "as_written": [
+      "robustness"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "implicate",
+     "rarity": 1.0,
+     "as_written": [
+      "implicate"
+     ]
+    },
+    {
+     "stem": "particularly",
+     "rarity": 1.0,
+     "as_written": [
+      "particularly"
+     ]
+    },
+    {
+     "stem": "demonstrat",
+     "rarity": 0.8255,
+     "as_written": [
+      "demonstrated"
+     ]
+    },
+    {
+     "stem": "does",
+     "rarity": 0.8255,
+     "as_written": [
+      "does"
+     ]
+    },
+    {
+     "stem": "exce",
+     "rarity": 0.8255,
+     "as_written": [
+      "exceed"
+     ]
+    },
+    {
+     "stem": "fail",
+     "rarity": 0.8255,
+     "as_written": [
+      "fail"
+     ]
+    },
+    {
+     "stem": "operate",
+     "rarity": 0.8255,
+     "as_written": [
+      "operate"
+     ]
+    },
+    {
+     "stem": "reliability",
+     "rarity": 0.8255,
+     "as_written": [
+      "reliability"
+     ]
+    },
+    {
+     "stem": "residual",
+     "rarity": 0.8255,
+     "as_written": [
+      "residual"
+     ]
+    },
+    {
+     "stem": "made",
+     "rarity": 0.7798,
+     "as_written": [
+      "made"
+     ]
+    },
+    {
+     "stem": "negative",
+     "rarity": 0.7798,
+     "as_written": [
+      "negative"
+     ]
+    },
+    {
+     "stem": "safe",
+     "rarity": 0.7798,
+     "as_written": [
+      "safe"
+     ]
+    }
+   ],
+   "score": 0.0305,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-19.1: Cross-Modal Inconsistency Exploits",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-19-1-cross-modal-inconsistency-exploits",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-19.1: Cross-Modal Inconsistency Exploits",
+   "shared_terms": [
+    {
+     "stem": "security",
+     "rarity": 0.3523,
+     "as_written": [
+      "security"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "conflict",
+     "rarity": 1.0,
+     "as_written": [
+      "conflicting"
+     ]
+    },
+    {
+     "stem": "confuse",
+     "rarity": 1.0,
+     "as_written": [
+      "confuse"
+     ]
+    },
+    {
+     "stem": "contradiction",
+     "rarity": 1.0,
+     "as_written": [
+      "contradictions"
+     ]
+    },
+    {
+     "stem": "cross-modal",
+     "rarity": 1.0,
+     "as_written": [
+      "cross-modal"
+     ]
+    },
+    {
+     "stem": "evade",
+     "rarity": 1.0,
+     "as_written": [
+      "evade"
+     ]
+    },
+    {
+     "stem": "inconsistency",
+     "rarity": 1.0,
+     "as_written": [
+      "inconsistencies",
+      "inconsistency"
+     ]
+    },
+    {
+     "stem": "reconcile",
+     "rarity": 1.0,
+     "as_written": [
+      "reconcile"
+     ]
+    },
+    {
+     "stem": "aitech-19",
+     "rarity": 0.8899,
+     "as_written": [
+      "aitech-19"
+     ]
+    },
+    {
+     "stem": "image",
+     "rarity": 0.8899,
+     "as_written": [
+      "image"
+     ]
+    },
+    {
+     "stem": "text",
+     "rarity": 0.8899,
+     "as_written": [
+      "text"
+     ]
+    },
+    {
+     "stem": "mismatch",
+     "rarity": 0.8255,
+     "as_written": [
+      "mismatches"
+     ]
+    },
+    {
+     "stem": "modality",
+     "rarity": 0.8255,
+     "as_written": [
+      "modalities"
+     ]
+    }
+   ],
+   "score": 0.0181,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP Top 10::LLM05:25 - Improper Output Handling",
+   "anchor": "anchor:owasp-top-10:llm05-25-improper-output-handling",
+   "framework": "OWASP Top 10",
+   "reference": "LLM05:25 - Improper Output Handling",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "differ",
+     "rarity": 1.0,
+     "as_written": [
+      "differs"
+     ]
+    },
+    {
+     "stem": "llm05",
+     "rarity": 1.0,
+     "as_written": [
+      "llm05"
+     ]
+    },
+    {
+     "stem": "overreliance",
+     "rarity": 1.0,
+     "as_written": [
+      "overreliance"
+     ]
+    },
+    {
+     "stem": "ssrf",
+     "rarity": 1.0,
+     "as_written": [
+      "ssrf"
+     ]
+    },
+    {
+     "stem": "xss",
+     "rarity": 1.0,
+     "as_written": [
+      "xss"
+     ]
+    },
+    {
+     "stem": "csrf",
+     "rarity": 0.8899,
+     "as_written": [
+      "csrf"
+     ]
+    },
+    {
+     "stem": "improper",
+     "rarity": 0.8899,
+     "as_written": [
+      "improper"
+     ]
+    },
+    {
+     "stem": "remote",
+     "rarity": 0.8899,
+     "as_written": [
+      "remote"
+     ]
+    },
+    {
+     "stem": "inadequate",
+     "rarity": 0.8255,
+     "as_written": [
+      "inadequate"
+     ]
+    },
+    {
+     "stem": "escalation",
+     "rarity": 0.7443,
+     "as_written": [
+      "escalation"
+     ]
+    },
+    {
+     "stem": "involv",
+     "rarity": 0.7443,
+     "as_written": [
+      "involves"
+     ]
+    },
+    {
+     "stem": "privilege",
+     "rarity": 0.7154,
+     "as_written": [
+      "privilege"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::TVM-08: Vulnerability Prioritization",
+   "anchor": "anchor:csa-aicm:tvm-08-vulnerability-prioritization",
+   "framework": "CSA AICM",
+   "reference": "TVM-08: Vulnerability Prioritization",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "effective",
+     "rarity": 1.0,
+     "as_written": [
+      "effective"
+     ]
+    },
+    {
+     "stem": "recogniz",
+     "rarity": 1.0,
+     "as_written": [
+      "recognized"
+     ]
+    },
+    {
+     "stem": "tvm-08",
+     "rarity": 1.0,
+     "as_written": [
+      "tvm-08"
+     ]
+    },
+    {
+     "stem": "vulnerabilityremediation",
+     "rarity": 1.0,
+     "as_written": [
+      "vulnerabilityremediation"
+     ]
+    },
+    {
+     "stem": "prioritization",
+     "rarity": 0.8255,
+     "as_written": [
+      "prioritization"
+     ]
+    },
+    {
+     "stem": "risk-bas",
+     "rarity": 0.7154,
+     "as_written": [
+      "risk-based"
+     ]
+    },
+    {
+     "stem": "framework",
+     "rarity": 0.6909,
+     "as_written": [
+      "framework"
+     ]
+    },
+    {
+     "stem": "industry",
+     "rarity": 0.6342,
+     "as_written": [
+      "industry"
+     ]
+    },
+    {
+     "stem": "vulnerability",
+     "rarity": 0.4707,
+     "as_written": [
+      "vulnerability"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP AIVSS::Agent Cascading Failures",
+   "anchor": "anchor:owasp-aivss:agent-cascading-failures",
+   "framework": "OWASP AIVSS",
+   "reference": "Agent Cascading Failures",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "propagat",
+     "rarity": 1.0,
+     "as_written": [
+      "propagates"
+     ]
+    },
+    {
+     "stem": "cross-system",
+     "rarity": 0.8899,
+     "as_written": [
+      "cross-system"
+     ]
+    },
+    {
+     "stem": "cascad",
+     "rarity": 0.8255,
+     "as_written": [
+      "cascading"
+     ]
+    },
+    {
+     "stem": "damage",
+     "rarity": 0.8255,
+     "as_written": [
+      "damage"
+     ]
+    },
+    {
+     "stem": "failur",
+     "rarity": 0.7154,
+     "as_written": [
+      "failures"
+     ]
+    },
+    {
+     "stem": "one",
+     "rarity": 0.7154,
+     "as_written": [
+      "one"
+     ]
+    },
+    {
+     "stem": "compromis",
+     "rarity": 0.6342,
+     "as_written": [
+      "compromised"
+     ]
+    },
+    {
+     "stem": "exploitation",
+     "rarity": 0.6191,
+     "as_written": [
+      "exploitation"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP Top 10::LLM04:25 - Data and Model Poisoning",
+   "anchor": "anchor:owasp-top-10:llm04-25-data-and-model-poisoning",
+   "framework": "OWASP Top 10",
+   "reference": "LLM04:25 - Data and Model Poisoning",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "llm04",
+     "rarity": 1.0,
+     "as_written": [
+      "llm04"
+     ]
+    },
+    {
+     "stem": "backdoor",
+     "rarity": 0.8899,
+     "as_written": [
+      "backdoors"
+     ]
+    },
+    {
+     "stem": "pre-train",
+     "rarity": 0.8899,
+     "as_written": [
+      "pre-training"
+     ]
+    },
+    {
+     "stem": "degrad",
+     "rarity": 0.8255,
+     "as_written": [
+      "degraded"
+     ]
+    },
+    {
+     "stem": "toxic",
+     "rarity": 0.8255,
+     "as_written": [
+      "toxic"
+     ]
+    },
+    {
+     "stem": "fine-tun",
+     "rarity": 0.7443,
+     "as_written": [
+      "fine-tuning"
+     ]
+    },
+    {
+     "stem": "embed",
+     "rarity": 0.6909,
+     "as_written": [
+      "embedding"
+     ]
+    },
+    {
+     "stem": "caus",
+     "rarity": 0.6697,
+     "as_written": [
+      "causing"
+     ]
+    },
+    {
+     "stem": "downstream",
+     "rarity": 0.6697,
+     "as_written": [
+      "downstream"
+     ]
+    },
+    {
+     "stem": "manipulat",
+     "rarity": 0.6697,
+     "as_written": [
+      "manipulates"
+     ]
+    },
+    {
+     "stem": "poison",
+     "rarity": 0.651,
+     "as_written": [
+      "poisoning"
+     ]
+    },
+    {
+     "stem": "compromis",
+     "rarity": 0.6342,
+     "as_written": [
+      "compromised"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  }
+ ],
+ "candidate_crosswalks": [
+  {
+   "clause": "CSA AICM::LOG-04: Audit Logs Access and Accountability",
+   "anchor": "anchor:csa-aicm:log-04-audit-logs-access-and-accountability",
+   "framework": "CSA AICM",
+   "reference": "LOG-04: Audit Logs Access and Accountability",
+   "shared_terms": [
+    {
+     "stem": "restrict",
+     "rarity": 0.5409,
+     "as_written": [
+      "restrict",
+      "restricted"
+     ]
+    },
+    {
+     "stem": "audit",
+     "rarity": 0.4825,
+     "as_written": [
+      "audit"
+     ]
+    },
+    {
+     "stem": "record",
+     "rarity": 0.4651,
+     "as_written": [
+      "recording",
+      "records"
+     ]
+    },
+    {
+     "stem": "maintain",
+     "rarity": 0.3523,
+     "as_written": [
+      "maintain",
+      "maintaining"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "log-04",
+     "rarity": 1.0,
+     "as_written": [
+      "log-04"
+     ]
+    },
+    {
+     "stem": "accountability",
+     "rarity": 0.6342,
+     "as_written": [
+      "accountability"
+     ]
+    },
+    {
+     "stem": "logs",
+     "rarity": 0.5499,
+     "as_written": [
+      "logs"
+     ]
+    }
+   ],
+   "score": 0.4574,
+   "shared_count": 4,
+   "grade": "proposed",
+   "relationship": "AIUC does NOT publish this crosswalk. This build observed shared distinctive vocabulary and proposes it as a candidate for review. It is not a mapping.",
+   "review_status": "needs_review"
+  }
+ ]
+}

@@ -1,0 +1,176 @@
+{
+ "doc": "doc:aiuc1-review-workflow",
+ "prefix": "rw",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 4,
+  "b": 15
+ },
+ "ids": [
+  {
+   "uid": "rw:d1",
+   "level": "doc",
+   "locator": "doc:aiuc1-review-workflow",
+   "hash": "04a7a468f22d",
+   "head": "Review workflow",
+   "status": "live"
+  },
+  {
+   "uid": "rw:s1",
+   "level": "sec",
+   "locator": "sec:What opens a review item",
+   "hash": "574c87a216fd",
+   "head": "2|What opens a review item",
+   "status": "live"
+  },
+  {
+   "uid": "rw:s2",
+   "level": "sec",
+   "locator": "sec:What a review item carries",
+   "hash": "c800035729b0",
+   "head": "2|What a review item carries",
+   "status": "live"
+  },
+  {
+   "uid": "rw:s3",
+   "level": "sec",
+   "locator": "sec:The loop",
+   "hash": "801e29e51778",
+   "head": "2|The loop",
+   "status": "live"
+  },
+  {
+   "uid": "rw:s4",
+   "level": "sec",
+   "locator": "sec:The rule about language models",
+   "hash": "5b13318e0f6f",
+   "head": "2|The rule about language models",
+   "status": "live"
+  },
+  {
+   "uid": "rw:b1",
+   "level": "blk",
+   "locator": "blk:Review workflow/1",
+   "hash": "c47f5d0e9014",
+   "head": "Automation here produces a queue, not a decision. Nothing ambiguous is resolved ",
+   "status": "live"
+  },
+  {
+   "uid": "rw:b2",
+   "level": "blk",
+   "locator": "blk:What opens a review item/1",
+   "hash": "c82d519783dd",
+   "head": "- A drift run finds a page whose **published control model** changed (a change i",
+   "status": "live"
+  },
+  {
+   "uid": "rw:b3",
+   "level": "blk",
+   "locator": "blk:What opens a review item/2",
+   "hash": "c661ef97faee",
+   "head": "- A page stops yielding a control model — the parser fails closed.",
+   "status": "live"
+  },
+  {
+   "uid": "rw:b4",
+   "level": "blk",
+   "locator": "blk:What opens a review item/3",
+   "hash": "96a3f74f92f6",
+   "head": "- The official changelog repository has a commit the catalog was not built from.",
+   "status": "live"
+  },
+  {
+   "uid": "rw:b5",
+   "level": "blk",
+   "locator": "blk:What opens a review item/4",
+   "hash": "fa43e2c07e27",
+   "head": "- A source label appears that no mapping table covers.",
+   "status": "live"
+  },
+  {
+   "uid": "rw:b6",
+   "level": "blk",
+   "locator": "blk:What opens a review item/5",
+   "hash": "0ee7dc780184",
+   "head": "- The website and the official repository disagree in a way that changes meaning",
+   "status": "live"
+  },
+  {
+   "uid": "rw:b7",
+   "level": "blk",
+   "locator": "blk:What a review item carries/1",
+   "hash": "f6fb7d8693ed",
+   "head": "```json\n{\n  \"review_id\": \"rev_2026_08_31_src_2026_08_31_control_b006\",\n  \"opened",
+   "status": "live"
+  },
+  {
+   "uid": "rw:b8",
+   "level": "blk",
+   "locator": "blk:What a review item carries/2",
+   "hash": "9199c88057ab",
+   "head": "Open items live in `reports/review-queue.json`; the run that opened them is in\n`",
+   "status": "live"
+  },
+  {
+   "uid": "rw:b9",
+   "level": "blk",
+   "locator": "blk:The loop/1",
+   "hash": "a4f2ee0b31e3",
+   "head": "1. A scheduled `src/drift.py` run re-fetches every discovered page and the repos",
+   "status": "live"
+  },
+  {
+   "uid": "rw:b10",
+   "level": "blk",
+   "locator": "blk:The loop/2",
+   "hash": "b60d52fd5fd7",
+   "head": "2. It classifies each difference as **known** (presentation only) or **unknown**",
+   "status": "live"
+  },
+  {
+   "uid": "rw:b11",
+   "level": "blk",
+   "locator": "blk:The loop/3",
+   "hash": "1ab369950c5b",
+   "head": "3. Every unknown difference becomes a review item, and its snapshot is retained;",
+   "status": "live"
+  },
+  {
+   "uid": "rw:b12",
+   "level": "blk",
+   "locator": "blk:The loop/4",
+   "hash": "fabb67c61239",
+   "head": "4. A human reads the retained snapshot beside the recorded one — both are comple",
+   "status": "live"
+  },
+  {
+   "uid": "rw:b13",
+   "level": "blk",
+   "locator": "blk:The loop/5",
+   "hash": "2a8ef9c1e291",
+   "head": "5. An approved correction becomes either a deterministic parser rule or an expli",
+   "status": "live"
+  },
+  {
+   "uid": "rw:b14",
+   "level": "blk",
+   "locator": "blk:The loop/6",
+   "hash": "0052ba39811a",
+   "head": "6. `src/build.py` reruns; `src/validate.py` decides whether the release may say\n",
+   "status": "live"
+  },
+  {
+   "uid": "rw:b15",
+   "level": "blk",
+   "locator": "blk:The rule about language models/1",
+   "hash": "8569e41dfcb1",
+   "head": "A language model may propose a label, explain what changed between two snapshots",
+   "status": "live"
+  }
+ ]
+}

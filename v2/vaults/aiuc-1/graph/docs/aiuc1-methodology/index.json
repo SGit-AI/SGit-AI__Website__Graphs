@@ -1,0 +1,156 @@
+{
+ "version": "v0.6.19",
+ "slug": "aiuc1-methodology",
+ "doc": "doc:aiuc1-methodology",
+ "title": "Methodology",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 25,
+  "sentences": 44,
+  "words": 754,
+  "spans": 36
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:aiuc1-methodology",
+   "title": "Methodology",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 1,
+    "sentences": 1,
+    "words": 20
+   },
+   "shard": "sec-01.json",
+   "uid": "mt:d1"
+  },
+  {
+   "id": "sec:1. Discovery, from the site's own model",
+   "title": "1. Discovery, from the site's own model",
+   "level": 2,
+   "parent": "doc:aiuc1-methodology",
+   "counts": {
+    "blocks": 3,
+    "sentences": 6,
+    "words": 103
+   },
+   "shard": "sec-02.json",
+   "uid": "mt:s1"
+  },
+  {
+   "id": "sec:2. Capture, politely",
+   "title": "2. Capture, politely",
+   "level": 2,
+   "parent": "doc:aiuc1-methodology",
+   "counts": {
+    "blocks": 6,
+    "sentences": 6,
+    "words": 88
+   },
+   "shard": "sec-03.json",
+   "uid": "mt:s2"
+  },
+  {
+   "id": "sec:3. Extraction, structurally",
+   "title": "3. Extraction, structurally",
+   "level": 2,
+   "parent": "doc:aiuc1-methodology",
+   "counts": {
+    "blocks": 4,
+    "sentences": 10,
+    "words": 128
+   },
+   "shard": "sec-04.json",
+   "uid": "mt:s3"
+  },
+  {
+   "id": "sec:4. History, from the official repository",
+   "title": "4. History, from the official repository",
+   "level": 2,
+   "parent": "doc:aiuc1-methodology",
+   "counts": {
+    "blocks": 1,
+    "sentences": 1,
+    "words": 46
+   },
+   "shard": "sec-05.json",
+   "uid": "mt:s4"
+  },
+  {
+   "id": "sec:5. Matching a commit to a release, explicitly",
+   "title": "5. Matching a commit to a release, explicitly",
+   "level": 2,
+   "parent": "doc:aiuc1-methodology",
+   "counts": {
+    "blocks": 1,
+    "sentences": 4,
+    "words": 97
+   },
+   "shard": "sec-06.json",
+   "uid": "mt:s5"
+  },
+  {
+   "id": "sec:6. Normalisation, without overwriting",
+   "title": "6. Normalisation, without overwriting",
+   "level": 2,
+   "parent": "doc:aiuc1-methodology",
+   "counts": {
+    "blocks": 3,
+    "sentences": 5,
+    "words": 53
+   },
+   "shard": "sec-07.json",
+   "uid": "mt:s6"
+  },
+  {
+   "id": "sec:7. Reconciliation",
+   "title": "7. Reconciliation",
+   "level": 2,
+   "parent": "doc:aiuc1-methodology",
+   "counts": {
+    "blocks": 4,
+    "sentences": 5,
+    "words": 79
+   },
+   "shard": "sec-08.json",
+   "uid": "mt:s7"
+  },
+  {
+   "id": "sec:8. The graph",
+   "title": "8. The graph",
+   "level": 2,
+   "parent": "doc:aiuc1-methodology",
+   "counts": {
+    "blocks": 1,
+    "sentences": 3,
+    "words": 86
+   },
+   "shard": "sec-09.json",
+   "uid": "mt:s8"
+  },
+  {
+   "id": "sec:9. The gate",
+   "title": "9. The gate",
+   "level": 2,
+   "parent": "doc:aiuc1-methodology",
+   "counts": {
+    "blocks": 1,
+    "sentences": 3,
+    "words": 54
+   },
+   "shard": "sec-10.json",
+   "uid": "mt:s9"
+  }
+ ]
+}

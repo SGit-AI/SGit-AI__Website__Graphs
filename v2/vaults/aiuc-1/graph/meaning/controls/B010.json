@@ -1,0 +1,190 @@
+{
+ "control_id": "B010",
+ "title": "Promote secure patterns in generated code",
+ "published_crosswalks": 0,
+ "published_with_shared_vocabulary": 0,
+ "published_without_shared_vocabulary": [],
+ "candidates": 2,
+ "evidence": [],
+ "candidate_crosswalks": [
+  {
+   "clause": "IBM AI Risk Atlas::IBM 55: Inference - Personal information in prompt",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-55-inference-personal-information-in-prompt",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 55: Inference - Personal information in prompt",
+   "shared_terms": [
+    {
+     "stem": "personal",
+     "rarity": 0.5409,
+     "as_written": [
+      "personal"
+     ]
+    },
+    {
+     "stem": "sensitive",
+     "rarity": 0.4765,
+     "as_written": [
+      "sensitive"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt",
+      "prompts"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "sent",
+     "rarity": 0.7798,
+     "as_written": [
+      "sent"
+     ]
+    },
+    {
+     "stem": "part",
+     "rarity": 0.5409,
+     "as_written": [
+      "part"
+     ]
+    },
+    {
+     "stem": "inference",
+     "rarity": 0.509,
+     "as_written": [
+      "inference"
+     ]
+    }
+   ],
+   "score": 0.4363,
+   "shared_count": 3,
+   "grade": "proposed",
+   "relationship": "AIUC does NOT publish this crosswalk. This build observed shared distinctive vocabulary and proposes it as a candidate for review. It is not a mapping.",
+   "review_status": "needs_review"
+  },
+  {
+   "clause": "MITRE ATLAS::AML-M0019: Control Access to AI Models and Data in Production",
+   "anchor": "anchor:mitre-atlas:aml-m0019-control-access-to-ai-models-and-data-in-production",
+   "framework": "MITRE ATLAS",
+   "reference": "AML-M0019: Control Access to AI Models and Data in Production",
+   "shared_terms": [
+    {
+     "stem": "authentication",
+     "rarity": 0.6697,
+     "as_written": [
+      "authentication"
+     ]
+    },
+    {
+     "stem": "query",
+     "rarity": 0.6697,
+     "as_written": [
+      "queries"
+     ]
+    },
+    {
+     "stem": "verify",
+     "rarity": 0.6697,
+     "as_written": [
+      "verify",
+      "verifying"
+     ]
+    },
+    {
+     "stem": "api",
+     "rarity": 0.6053,
+     "as_written": [
+      "api"
+     ]
+    },
+    {
+     "stem": "endpoint",
+     "rarity": 0.5596,
+     "as_written": [
+      "endpoints"
+     ]
+    },
+    {
+     "stem": "prevent",
+     "rarity": 0.4651,
+     "as_written": [
+      "prevent"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "aml-m0019",
+     "rarity": 1.0,
+     "as_written": [
+      "aml-m0019"
+     ]
+    },
+    {
+     "stem": "require",
+     "rarity": 0.8899,
+     "as_written": [
+      "require"
+     ]
+    },
+    {
+     "stem": "production",
+     "rarity": 0.7154,
+     "as_written": [
+      "production"
+     ]
+    },
+    {
+     "stem": "misuse",
+     "rarity": 0.6697,
+     "as_written": [
+      "misuse"
+     ]
+    },
+    {
+     "stem": "identity",
+     "rarity": 0.6053,
+     "as_written": [
+      "identities"
+     ]
+    },
+    {
+     "stem": "compliance",
+     "rarity": 0.5164,
+     "as_written": [
+      "compliance"
+     ]
+    },
+    {
+     "stem": "usage",
+     "rarity": 0.509,
+     "as_written": [
+      "usage"
+     ]
+    },
+    {
+     "stem": "user",
+     "rarity": 0.3953,
+     "as_written": [
+      "users"
+     ]
+    },
+    {
+     "stem": "monitor",
+     "rarity": 0.3786,
+     "as_written": [
+      "monitor"
+     ]
+    }
+   ],
+   "score": 0.3905,
+   "shared_count": 6,
+   "grade": "proposed",
+   "relationship": "AIUC does NOT publish this crosswalk. This build observed shared distinctive vocabulary and proposes it as a candidate for review. It is not a mapping.",
+   "review_status": "needs_review"
+  }
+ ]
+}

@@ -140,6 +140,53 @@ def semantic_errors():
     return errors
 
 
+def meaning_errors():
+    """The doc graphs and the meaning layer, gated on the same terms as the rest."""
+    errors = []
+    docs = c.read_json('graph/docs/index.json', {})
+    for record in docs.get('documents') or []:
+        where = record['slug']
+        if record.get('rebuilds_byte_identical') is not True:
+            errors.append(_err('semantic', 'document_not_reversible', where,
+                               'the document does not claim a byte-identical rebuild'))
+        for name in ('index.json', 'fmt.json', 'ids.json'):
+            if not os.path.exists(c.path('%s/%s' % (record['graph_path'], name))):
+                errors.append(_err('semantic', 'missing_decomposition', where,
+                                   'no %s beside the document graph' % name))
+        if not os.path.exists(c.path(record['path'])):
+            errors.append(_err('traceability', 'missing_source_document', where, record['path']))
+        if record.get('origin') == 'official_github_repository' and not record.get('commit_sha'):
+            errors.append(_err('traceability', 'official_document_without_commit', where,
+                               'an official source document names no commit'))
+
+    meaning = c.read_json('graph/meaning/index.json', {})
+    if not meaning:
+        return errors
+    grades = set(meaning.get('grades') or {})
+    anchors = {a['id'] for a in meaning.get('anchors') or []}
+    terms = {t['id'] for t in meaning.get('terms') or []}
+    for edge in c.read_json('graph/meaning/edges.json', {}).get('edges') or []:
+        where = '%s %s %s' % (edge['from'], edge['type'], edge['to'])
+        if edge.get('grade') not in grades:
+            errors.append(_err('semantic', 'ungraded_meaning_edge', where,
+                               'every meaning edge must carry a declared grade'))
+        if edge['type'] == 'candidate_crosswalk' and edge.get('grade') != 'proposed':
+            errors.append(_err('semantic', 'candidate_not_marked_proposed', where,
+                               'a candidate this build noticed is graded as something else'))
+        if edge['to'].startswith('anchor:') and edge['to'] not in anchors:
+            errors.append(_err('traceability', 'dangling_anchor', where, edge['to']))
+        if edge['to'].startswith('term:') and edge['to'] not in terms:
+            errors.append(_err('traceability', 'dangling_term', where, edge['to']))
+    for control_id in meaning.get('controls') or {}:
+        record = c.read_json('graph/meaning/controls/%s.json' % control_id, {})
+        for entry in record.get('candidate_crosswalks') or []:
+            if entry.get('review_status') != 'needs_review':
+                errors.append(_err('semantic', 'candidate_not_needing_review',
+                                   '%s %s' % (control_id, entry['clause']),
+                                   'a proposal was not marked for review'))
+    return errors
+
+
 def inventory_notes():
     index = c.read_json('catalog/index.json')
     built = [e for e in sorted(index['releases'], key=lambda x: x['release_id'])
@@ -165,7 +212,7 @@ def run():
     commits = {x['sha'] for x in history['commits']}
 
     errors = (schema_errors(validator) + traceability_errors(observations, commits)
-              + semantic_errors())
+              + semantic_errors() + meaning_errors())
     reconciliation = c.read_json('reports/reconciliation-latest.json', {})
     index = c.read_json('catalog/index.json')
     report = {
@@ -177,6 +224,9 @@ def run():
         'error_count': len(errors),
         'counts_by_level': {level: sum(1 for e in errors if e['level'] == level)
                             for level in ('schema', 'traceability', 'semantic')},
+        'documents': (c.read_json('graph/docs/index.json', {}) or {}).get('document_count', 0),
+        'meaning_edges': (c.read_json('graph/meaning/index.json', {}) or {})
+                         .get('counts', {}).get('total_edges', 0),
         'reconciliation_findings': reconciliation.get('finding_count', 0),
         'reconciliation_blocking': reconciliation.get('blocking_count', 0),
         'inventory': inventory_notes(),

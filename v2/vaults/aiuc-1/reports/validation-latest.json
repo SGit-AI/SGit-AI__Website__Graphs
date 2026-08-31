@@ -1,6 +1,6 @@
 {
  "report_version": "1.0.0",
- "generated_at": "2026-08-31T23:13:08Z",
+ "generated_at": "2026-08-31T23:55:51Z",
  "generator_version": "0.1.0",
  "catalog_schema_version": "1.0.0",
  "current_release": "2026-07-15",
@@ -10,6 +10,8 @@
   "traceability": 0,
   "semantic": 0
  },
+ "documents": 9,
+ "meaning_edges": 8370,
  "reconciliation_findings": 5,
  "reconciliation_blocking": 0,
  "inventory": [

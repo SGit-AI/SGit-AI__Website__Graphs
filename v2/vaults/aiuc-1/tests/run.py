@@ -16,6 +16,7 @@ import common as c
 import jsonschema_lite
 import parse_changelog
 import parse_pages
+import terms as T
 import reconcile
 import release_sources
 import rsc
@@ -244,6 +245,110 @@ def _():
     assert (kind, klass) == ('content_change', 'unknown')
     kind, klass, _ = drift.classify('sha256:a', 'sha256:b', 'm1', None)
     assert (kind, klass) == ('parse_failure', 'unknown')
+
+
+@test('a term is scored by how rare it is, and a common word is not evidence')
+def _():
+    corpus = T.Corpus(['data governance and retention', 'data quality and data lineage',
+                       'prompt injection against the model', 'data minimisation'])
+    assert T.stem_of('agents') == 'agent'
+    assert T.stem_of('policies') == 'policy'
+    assert T.stem_of('logging') == 'log'
+    assert corpus.rarity('data') < corpus.rarity('injection'), 'a common term outscored a rare one'
+    assert not corpus.distinctive('data'), 'a term in every text counted as evidence'
+    assert corpus.distinctive('injection')
+
+
+@test('comparing two texts reports the gap, not only the overlap')
+def _():
+    corpus = T.Corpus(['prompt injection and jailbreak attempts',
+                       'model provenance and signing', 'data retention schedules'])
+    result = T.compare('detect prompt injection attempts',
+                       'prompt injection and jailbreak attempts', corpus)
+    shared = [t['stem'] for t in result['shared']]
+    gap = [t['stem'] for t in result['only_right']]
+    assert 'injection' in shared and 'prompt' in shared, shared
+    assert 'jailbreak' in gap, 'the clause term the text never reaches was not reported'
+    assert 0 < result['score'] < 1, result['score']
+    none = T.compare('data retention schedules', 'model provenance and signing', corpus)
+    assert none['shared'] == [] and none['score'] == 0.0
+
+
+@test('every source document rebuilds byte-identical from its formatting graph')
+def _():
+    index = c.read_json('graph/docs/index.json')
+    assert index['document_count'] >= 2, index['document_count']
+    for record in index['documents']:
+        assert record['rebuilds_byte_identical'] is True, record['slug']
+        fmt = c.read_json(record['graph_path'] + '/fmt.json')
+        blocks = fmt['blocks']
+        rebuilt = ''.join(p.get('h') or p.get('g') or blocks[p['b']] for p in fmt['pieces'])
+        with open(os.path.join(ROOT, record['path']), encoding='utf-8') as handle:
+            source = handle.read()
+        assert rebuilt == source, '%s does not rebuild from its own formatting graph' % record['slug']
+
+
+@test('the official markdown in the vault is the bytes the release commit carries')
+def _():
+    index = c.read_json('graph/docs/index.json')
+    official = [d for d in index['documents'] if d.get('origin') == 'official_github_repository']
+    assert official, 'no official source document was staged'
+    for record in official:
+        with open(os.path.join(ROOT, record['path']), 'rb') as handle:
+            assert c.sha256_bytes(handle.read()) == record['source_sha256'], record['path']
+        assert record.get('commit_sha') and record.get('blob_sha'), record['path']
+
+
+@test('a connection this build proposed is never dressed as one AIUC publishes')
+def _():
+    meaning = c.read_json('graph/meaning/index.json')
+    edges = c.read_json('graph/meaning/edges.json')['edges']
+    assert set(meaning['grades']) == {'structural', 'published', 'proposed'}
+    for edge in edges:
+        assert edge['grade'] in meaning['grades'], edge
+        if edge['type'] == 'candidate_crosswalk':
+            assert edge['grade'] == 'proposed', edge
+        if edge['type'] == 'evidenced_crosswalk':
+            assert edge['grade'] == 'published', edge
+    published = set()
+    current = c.read_json('catalog/current.json')
+    for control in current['controls']:
+        for crosswalk in control['crosswalks']:
+            published.add((control['id'], crosswalk['framework'], crosswalk['reference']))
+    for control_id in meaning['controls']:
+        record = c.read_json('graph/meaning/controls/%s.json' % control_id)
+        for entry in record['evidence']:
+            assert (control_id, entry['framework'], entry['reference']) in published, \
+                'an evidence row names a crosswalk AIUC does not publish: %s' % entry['clause']
+        for entry in record['candidate_crosswalks']:
+            assert (control_id, entry['framework'], entry['reference']) not in published, \
+                'a candidate duplicates a published crosswalk: %s' % entry['clause']
+            assert entry['review_status'] == 'needs_review', entry['clause']
+            assert 'does NOT publish' in entry['relationship'], entry['relationship']
+
+
+@test('a paragraph said to be a requirement’s wording really is, character for character')
+def _():
+    edges = [e for e in c.read_json('graph/meaning/edges.json')['edges']
+             if e['type'] == 'wording_of']
+    assert edges, 'no paragraph was matched to a requirement'
+    current = c.read_json('catalog/current.json')
+    bullets = {}
+    for control in current['controls']:
+        for requirement in control['requirements']:
+            bullets[requirement['id']] = [c.normalize_text(b) for b in requirement['source_bullets']]
+    docs = {d['slug']: d for d in c.read_json('graph/docs/index.json')['documents']}
+    text_of = {}
+    for slug, record in docs.items():
+        shape = c.read_json(record['graph_path'] + '/index.json')
+        for section in shape['sections']:
+            if not section.get('shard'):
+                continue
+            for block in c.read_json(record['graph_path'] + '/' + section['shard'])['blocks']:
+                text_of['docblk:%s:%s' % (slug, block['id'])] = block.get('text') or ''
+    for edge in edges[:80]:
+        requirement_id = edge['to'].split(':', 1)[1]
+        assert c.normalize_text(text_of[edge['from']]) in bullets[requirement_id], edge['from']
 
 
 def main():

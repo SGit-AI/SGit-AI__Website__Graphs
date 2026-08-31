@@ -2,7 +2,7 @@
  "catalog_id": "aiuc-1-derived-catalog",
  "catalog_schema_version": "1.0.0",
  "generator_version": "0.1.0",
- "generated_at": "2026-08-31T23:13:08Z",
+ "generated_at": "2026-08-31T23:55:44Z",
  "disclaimer": "Unofficial, derivative machine-readable representation of AIUC-1, built by the sgit.ai graph estate. Not approved, certified or endorsed by AIUC. Verify every requirement against the official AIUC-1 sources.",
  "current_release": "2026-07-15",
  "current_release_stated_by": "'The most recent version of AIUC-1 was released on' on https://www.aiuc-1.com/changelog",
@@ -26,7 +26,7 @@
    "official_changelog_url": "https://www.aiuc-1.com/changelog",
    "official_change_rows": 22,
    "path": "releases/2026-07-15.json",
-   "content_hash": "sha256:f041937cad234d27a592edbf0c9b4ee7ea1bbf7c4e20d19d035f73fb5afed6f8"
+   "content_hash": "sha256:709d23dd45129d1cbf383e40ea95891084f9fbecee81bb4696b073892d7dc50c"
   },
   {
    "release_id": "2026-04-15",
@@ -39,7 +39,7 @@
    "official_changelog_url": "https://www.aiuc-1.com/changelog/2026-04-15",
    "official_change_rows": 38,
    "path": "releases/2026-04-15.json",
-   "content_hash": "sha256:0ad6d0bcfb10150860d49a483be6d0536c0c8e47da4c3d4adceab5e167e4222a"
+   "content_hash": "sha256:dfc2753be737c7b537673d0deb2c4d03a13b1ee39c820359bea92fe376cf9359"
   },
   {
    "release_id": "2026-01-15",
@@ -52,7 +52,7 @@
    "official_changelog_url": "https://www.aiuc-1.com/changelog/2026-01-15",
    "official_change_rows": 31,
    "path": "releases/2026-01-15.json",
-   "content_hash": "sha256:b1f812f4f82ce5eae3c39c26731abae944c732e2afccced9d1c27fe0d474e764"
+   "content_hash": "sha256:9bddfa803066cd375ebd19dd2a527815057e771d324d31fe63bcc9e27a628845"
   },
   {
    "release_id": "2025-10-01",
@@ -65,7 +65,7 @@
    "official_changelog_url": "https://www.aiuc-1.com/changelog/2025-10-01",
    "official_change_rows": 13,
    "path": "releases/2025-10-01.json",
-   "content_hash": "sha256:77bba8c12c8c9d26b6764b4feef48212c23bc1a15943b0e7b7b8d4d333b8c945"
+   "content_hash": "sha256:d72b9127dc3a538d1080e57c9d0d7eb30d75eb63d6c720f3c390e50b366f07ef"
   },
   {
    "release_id": "2025-07-22",

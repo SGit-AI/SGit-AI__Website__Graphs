@@ -1,0 +1,2801 @@
+{
+ "control_id": "B007",
+ "title": "Enforce user access privileges to AI systems",
+ "published_crosswalks": 31,
+ "published_with_shared_vocabulary": 26,
+ "published_without_shared_vocabulary": [
+  "CSA AICM::IAM-03: Identity Inventory",
+  "CSA AICM::IAM-04: Separation of Duties",
+  "CSA AICM::IAM-15: Passwords and Secrets Management",
+  "CSA AICM::LOG-09: Log Protection",
+  "Cisco AI Security Framework::AITech-14.1: Unauthorized Access"
+ ],
+ "candidates": 0,
+ "evidence": [
+  {
+   "clause": "CSA AICM::LOG-04: Audit Logs Access and Accountability",
+   "anchor": "anchor:csa-aicm:log-04-audit-logs-access-and-accountability",
+   "framework": "CSA AICM",
+   "reference": "LOG-04: Audit Logs Access and Accountability",
+   "shared_terms": [
+    {
+     "stem": "logs",
+     "rarity": 0.5499,
+     "as_written": [
+      "logs"
+     ]
+    },
+    {
+     "stem": "restrict",
+     "rarity": 0.5409,
+     "as_written": [
+      "restrict",
+      "restricting"
+     ]
+    },
+    {
+     "stem": "maintain",
+     "rarity": 0.3523,
+     "as_written": [
+      "maintain"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "log-04",
+     "rarity": 1.0,
+     "as_written": [
+      "log-04"
+     ]
+    },
+    {
+     "stem": "accountability",
+     "rarity": 0.6342,
+     "as_written": [
+      "accountability"
+     ]
+    },
+    {
+     "stem": "audit",
+     "rarity": 0.4825,
+     "as_written": [
+      "audit"
+     ]
+    },
+    {
+     "stem": "record",
+     "rarity": 0.4651,
+     "as_written": [
+      "records"
+     ]
+    }
+   ],
+   "score": 0.3585,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::IAM-09: Segregation of Privileged Access Roles",
+   "anchor": "anchor:csa-aicm:iam-09-segregation-of-privileged-access-roles",
+   "framework": "CSA AICM",
+   "reference": "IAM-09: Segregation of Privileged Access Roles",
+   "shared_terms": [
+    {
+     "stem": "privileg",
+     "rarity": 0.7443,
+     "as_written": [
+      "privileged",
+      "privileges"
+     ]
+    },
+    {
+     "stem": "role",
+     "rarity": 0.5596,
+     "as_written": [
+      "role",
+      "roles"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "iam-09",
+     "rarity": 1.0,
+     "as_written": [
+      "iam-09"
+     ]
+    },
+    {
+     "stem": "segregation",
+     "rarity": 0.8255,
+     "as_written": [
+      "segregation"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    },
+    {
+     "stem": "technical",
+     "rarity": 0.355,
+     "as_written": [
+      "technical"
+     ]
+    }
+   ],
+   "score": 0.3361,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::IAM-06: User Access Provisioning",
+   "anchor": "anchor:csa-aicm:iam-06-user-access-provisioning",
+   "framework": "CSA AICM",
+   "reference": "IAM-06: User Access Provisioning",
+   "shared_terms": [
+    {
+     "stem": "authoriz",
+     "rarity": 0.6191,
+     "as_written": [
+      "authorized",
+      "authorizes"
+     ]
+    },
+    {
+     "stem": "user",
+     "rarity": 0.3953,
+     "as_written": [
+      "user"
+     ]
+    },
+    {
+     "stem": "chang",
+     "rarity": 0.3606,
+     "as_written": [
+      "changes"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "iam-06",
+     "rarity": 1.0,
+     "as_written": [
+      "iam-06"
+     ]
+    },
+    {
+     "stem": "communicat",
+     "rarity": 0.7154,
+     "as_written": [
+      "communicates"
+     ]
+    },
+    {
+     "stem": "asset",
+     "rarity": 0.651,
+     "as_written": [
+      "assets"
+     ]
+    },
+    {
+     "stem": "identity",
+     "rarity": 0.6053,
+     "as_written": [
+      "identity"
+     ]
+    },
+    {
+     "stem": "provision",
+     "rarity": 0.5808,
+     "as_written": [
+      "provisioning"
+     ]
+    },
+    {
+     "stem": "record",
+     "rarity": 0.4651,
+     "as_written": [
+      "records"
+     ]
+    }
+   ],
+   "score": 0.255,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::IAM-16: Authorization Mechanisms",
+   "anchor": "anchor:csa-aicm:iam-16-authorization-mechanisms",
+   "framework": "CSA AICM",
+   "reference": "IAM-16: Authorization Mechanisms",
+   "shared_terms": [
+    {
+     "stem": "authoriz",
+     "rarity": 0.6191,
+     "as_written": [
+      "authorized"
+     ]
+    },
+    {
+     "stem": "function",
+     "rarity": 0.5241,
+     "as_written": [
+      "function",
+      "functions"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "iam-16",
+     "rarity": 1.0,
+     "as_written": [
+      "iam-16"
+     ]
+    },
+    {
+     "stem": "verify",
+     "rarity": 0.6697,
+     "as_written": [
+      "verify"
+     ]
+    },
+    {
+     "stem": "technicalmeasur",
+     "rarity": 0.6191,
+     "as_written": [
+      "technicalmeasures"
+     ]
+    },
+    {
+     "stem": "authorization",
+     "rarity": 0.6053,
+     "as_written": [
+      "authorization"
+     ]
+    },
+    {
+     "stem": "mechanism",
+     "rarity": 0.4952,
+     "as_written": [
+      "mechanisms"
+     ]
+    }
+   ],
+   "score": 0.2522,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::IAM-18: Output Modification and Special Authorization",
+   "anchor": "anchor:csa-aicm:iam-18-output-modification-and-special-authorization",
+   "framework": "CSA AICM",
+   "reference": "IAM-18: Output Modification and Special Authorization",
+   "shared_terms": [
+    {
+     "stem": "authoriz",
+     "rarity": 0.6191,
+     "as_written": [
+      "authorized"
+     ]
+    },
+    {
+     "stem": "role",
+     "rarity": 0.5596,
+     "as_written": [
+      "role"
+     ]
+    },
+    {
+     "stem": "chang",
+     "rarity": 0.3606,
+     "as_written": [
+      "changes"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "iam-18",
+     "rarity": 1.0,
+     "as_written": [
+      "iam-18"
+     ]
+    },
+    {
+     "stem": "special",
+     "rarity": 0.8899,
+     "as_written": [
+      "special"
+     ]
+    },
+    {
+     "stem": "allow",
+     "rarity": 0.6909,
+     "as_written": [
+      "allow",
+      "allowing"
+     ]
+    },
+    {
+     "stem": "modification",
+     "rarity": 0.6909,
+     "as_written": [
+      "modification"
+     ]
+    },
+    {
+     "stem": "authorization",
+     "rarity": 0.6053,
+     "as_written": [
+      "authorization"
+     ]
+    },
+    {
+     "stem": "identity",
+     "rarity": 0.6053,
+     "as_written": [
+      "identities"
+     ]
+    },
+    {
+     "stem": "generat",
+     "rarity": 0.5164,
+     "as_written": [
+      "generated"
+     ]
+    }
+   ],
+   "score": 0.2354,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "MITRE ATLAS::AML-M0005: Control Access to AI Models and Data at Rest",
+   "anchor": "anchor:mitre-atlas:aml-m0005-control-access-to-ai-models-and-data-at-rest",
+   "framework": "MITRE ATLAS",
+   "reference": "AML-M0005: Control Access to AI Models and Data at Rest",
+   "shared_terms": [
+    {
+     "stem": "limit",
+     "rarity": 0.5019,
+     "as_written": [
+      "limit",
+      "limiting"
+     ]
+    },
+    {
+     "stem": "train",
+     "rarity": 0.4025,
+     "as_written": [
+      "training"
+     ]
+    },
+    {
+     "stem": "user",
+     "rarity": 0.3953,
+     "as_written": [
+      "user",
+      "users"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "aml-m0005",
+     "rarity": 1.0,
+     "as_written": [
+      "aml-m0005"
+     ]
+    },
+    {
+     "stem": "registry",
+     "rarity": 0.8899,
+     "as_written": [
+      "registries"
+     ]
+    },
+    {
+     "stem": "rest",
+     "rarity": 0.8899,
+     "as_written": [
+      "rest"
+     ]
+    },
+    {
+     "stem": "production",
+     "rarity": 0.7154,
+     "as_written": [
+      "production"
+     ]
+    },
+    {
+     "stem": "approv",
+     "rarity": 0.6342,
+     "as_written": [
+      "approved"
+     ]
+    },
+    {
+     "stem": "internal",
+     "rarity": 0.5409,
+     "as_written": [
+      "internal"
+     ]
+    }
+   ],
+   "score": 0.2177,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::IAM-10: Management of Privileged Access Roles",
+   "anchor": "anchor:csa-aicm:iam-10-management-of-privileged-access-roles",
+   "framework": "CSA AICM",
+   "reference": "IAM-10: Management of Privileged Access Roles",
+   "shared_terms": [
+    {
+     "stem": "privileg",
+     "rarity": 0.7443,
+     "as_written": [
+      "privileged",
+      "privileges"
+     ]
+    },
+    {
+     "stem": "role",
+     "rarity": 0.5596,
+     "as_written": [
+      "role",
+      "roles"
+     ]
+    },
+    {
+     "stem": "limit",
+     "rarity": 0.5019,
+     "as_written": [
+      "limited",
+      "limiting"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "accessrol",
+     "rarity": 1.0,
+     "as_written": [
+      "accessroles"
+     ]
+    },
+    {
+     "stem": "accumulation",
+     "rarity": 1.0,
+     "as_written": [
+      "accumulation"
+     ]
+    },
+    {
+     "stem": "iam-10",
+     "rarity": 1.0,
+     "as_written": [
+      "iam-10"
+     ]
+    },
+    {
+     "stem": "segregat",
+     "rarity": 0.8899,
+     "as_written": [
+      "segregated"
+     ]
+    },
+    {
+     "stem": "grant",
+     "rarity": 0.8255,
+     "as_written": [
+      "granted"
+     ]
+    },
+    {
+     "stem": "period",
+     "rarity": 0.7154,
+     "as_written": [
+      "period"
+     ]
+    },
+    {
+     "stem": "time",
+     "rarity": 0.651,
+     "as_written": [
+      "time"
+     ]
+    },
+    {
+     "stem": "right",
+     "rarity": 0.5698,
+     "as_written": [
+      "rights"
+     ]
+    },
+    {
+     "stem": "prevent",
+     "rarity": 0.4651,
+     "as_written": [
+      "prevent"
+     ]
+    }
+   ],
+   "score": 0.2024,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::IAM-01: Identity and Access Management Policy and Procedures",
+   "anchor": "anchor:csa-aicm:iam-01-identity-and-access-management-policy-and-procedures",
+   "framework": "CSA AICM",
+   "reference": "IAM-01: Identity and Access Management Policy and Procedures",
+   "shared_terms": [
+    {
+     "stem": "least",
+     "rarity": 0.3754,
+     "as_written": [
+      "least"
+     ]
+    },
+    {
+     "stem": "chang",
+     "rarity": 0.3606,
+     "as_written": [
+      "changes"
+     ]
+    },
+    {
+     "stem": "maintain",
+     "rarity": 0.3523,
+     "as_written": [
+      "maintain"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "iam-01",
+     "rarity": 1.0,
+     "as_written": [
+      "iam-01"
+     ]
+    },
+    {
+     "stem": "reviewand",
+     "rarity": 1.0,
+     "as_written": [
+      "reviewand"
+     ]
+    },
+    {
+     "stem": "evaluateand",
+     "rarity": 0.8899,
+     "as_written": [
+      "evaluateand"
+     ]
+    },
+    {
+     "stem": "identity",
+     "rarity": 0.6053,
+     "as_written": [
+      "identity"
+     ]
+    },
+    {
+     "stem": "approve",
+     "rarity": 0.4952,
+     "as_written": [
+      "approve"
+     ]
+    },
+    {
+     "stem": "communicate",
+     "rarity": 0.4651,
+     "as_written": [
+      "communicate"
+     ]
+    },
+    {
+     "stem": "significant",
+     "rarity": 0.4446,
+     "as_written": [
+      "significant"
+     ]
+    },
+    {
+     "stem": "annually",
+     "rarity": 0.4264,
+     "as_written": [
+      "annually"
+     ]
+    },
+    {
+     "stem": "update",
+     "rarity": 0.4264,
+     "as_written": [
+      "update"
+     ]
+    },
+    {
+     "stem": "apply",
+     "rarity": 0.4222,
+     "as_written": [
+      "apply"
+     ]
+    }
+   ],
+   "score": 0.1498,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::LOG-12: Access Control Logs",
+   "anchor": "anchor:csa-aicm:log-12-access-control-logs",
+   "framework": "CSA AICM",
+   "reference": "LOG-12: Access Control Logs",
+   "shared_terms": [
+    {
+     "stem": "logs",
+     "rarity": 0.5499,
+     "as_written": [
+      "logs"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "auditable",
+     "rarity": 1.0,
+     "as_written": [
+      "auditable"
+     ]
+    },
+    {
+     "stem": "log-12",
+     "rarity": 1.0,
+     "as_written": [
+      "log-12"
+     ]
+    },
+    {
+     "stem": "physical",
+     "rarity": 0.6342,
+     "as_written": [
+      "physical"
+     ]
+    },
+    {
+     "stem": "log",
+     "rarity": 0.4952,
+     "as_written": [
+      "log"
+     ]
+    },
+    {
+     "stem": "monitor",
+     "rarity": 0.3786,
+     "as_written": [
+      "monitor"
+     ]
+    }
+   ],
+   "score": 0.1355,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::IAM-14: Strong Authentication",
+   "anchor": "anchor:csa-aicm:iam-14-strong-authentication",
+   "framework": "CSA AICM",
+   "reference": "IAM-14: Strong Authentication",
+   "shared_terms": [
+    {
+     "stem": "privileg",
+     "rarity": 0.7443,
+     "as_written": [
+      "privileged",
+      "privileges"
+     ]
+    },
+    {
+     "stem": "sensitive",
+     "rarity": 0.4765,
+     "as_written": [
+      "sensitive"
+     ]
+    },
+    {
+     "stem": "user",
+     "rarity": 0.3953,
+     "as_written": [
+      "user"
+     ]
+    },
+    {
+     "stem": "least",
+     "rarity": 0.3754,
+     "as_written": [
+      "least"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "alternativ",
+     "rarity": 1.0,
+     "as_written": [
+      "alternatives"
+     ]
+    },
+    {
+     "stem": "equivalent",
+     "rarity": 1.0,
+     "as_written": [
+      "equivalent"
+     ]
+    },
+    {
+     "stem": "iam-14",
+     "rarity": 1.0,
+     "as_written": [
+      "iam-14"
+     ]
+    },
+    {
+     "stem": "multifactor",
+     "rarity": 1.0,
+     "as_written": [
+      "multifactor"
+     ]
+    },
+    {
+     "stem": "adopt",
+     "rarity": 0.8899,
+     "as_written": [
+      "adopt"
+     ]
+    },
+    {
+     "stem": "authenticat",
+     "rarity": 0.8899,
+     "as_written": [
+      "authenticating"
+     ]
+    },
+    {
+     "stem": "certificat",
+     "rarity": 0.8899,
+     "as_written": [
+      "certificates"
+     ]
+    },
+    {
+     "stem": "strong",
+     "rarity": 0.8899,
+     "as_written": [
+      "strong"
+     ]
+    },
+    {
+     "stem": "digital",
+     "rarity": 0.8255,
+     "as_written": [
+      "digital"
+     ]
+    },
+    {
+     "stem": "achieve",
+     "rarity": 0.7443,
+     "as_written": [
+      "achieve"
+     ]
+    },
+    {
+     "stem": "authentication",
+     "rarity": 0.6697,
+     "as_written": [
+      "authentication"
+     ]
+    },
+    {
+     "stem": "asset",
+     "rarity": 0.651,
+     "as_written": [
+      "assets"
+     ]
+    }
+   ],
+   "score": 0.1311,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::IAM-08: User Access Review",
+   "anchor": "anchor:csa-aicm:iam-08-user-access-review",
+   "framework": "CSA AICM",
+   "reference": "IAM-08: User Access Review",
+   "shared_terms": [
+    {
+     "stem": "user",
+     "rarity": 0.3953,
+     "as_written": [
+      "user"
+     ]
+    },
+    {
+     "stem": "least",
+     "rarity": 0.3754,
+     "as_written": [
+      "least"
+     ]
+    },
+    {
+     "stem": "chang",
+     "rarity": 0.3606,
+     "as_written": [
+      "changes"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "commensurat",
+     "rarity": 1.0,
+     "as_written": [
+      "commensurated"
+     ]
+    },
+    {
+     "stem": "iam-08",
+     "rarity": 1.0,
+     "as_written": [
+      "iam-08"
+     ]
+    },
+    {
+     "stem": "revalidate",
+     "rarity": 1.0,
+     "as_written": [
+      "revalidate"
+     ]
+    },
+    {
+     "stem": "separationof",
+     "rarity": 1.0,
+     "as_written": [
+      "separationof"
+     ]
+    },
+    {
+     "stem": "frequency",
+     "rarity": 0.7798,
+     "as_written": [
+      "frequency"
+     ]
+    },
+    {
+     "stem": "duti",
+     "rarity": 0.7443,
+     "as_written": [
+      "duties"
+     ]
+    },
+    {
+     "stem": "privilege",
+     "rarity": 0.7154,
+     "as_written": [
+      "privilege"
+     ]
+    },
+    {
+     "stem": "tolerance",
+     "rarity": 0.7154,
+     "as_written": [
+      "tolerance"
+     ]
+    },
+    {
+     "stem": "organizational",
+     "rarity": 0.4825,
+     "as_written": [
+      "organizational"
+     ]
+    },
+    {
+     "stem": "significant",
+     "rarity": 0.4446,
+     "as_written": [
+      "significant"
+     ]
+    },
+    {
+     "stem": "annually",
+     "rarity": 0.4264,
+     "as_written": [
+      "annually"
+     ]
+    }
+   ],
+   "score": 0.1198,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::IAM-07: User Access Changes and Revocation",
+   "anchor": "anchor:csa-aicm:iam-07-user-access-changes-and-revocation",
+   "framework": "CSA AICM",
+   "reference": "IAM-07: User Access Changes and Revocation",
+   "shared_terms": [
+    {
+     "stem": "user",
+     "rarity": 0.3953,
+     "as_written": [
+      "user"
+     ]
+    },
+    {
+     "stem": "chang",
+     "rarity": 0.3606,
+     "as_written": [
+      "changes"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "de-provision",
+     "rarity": 1.0,
+     "as_written": [
+      "de-provision"
+     ]
+    },
+    {
+     "stem": "iam-07",
+     "rarity": 1.0,
+     "as_written": [
+      "iam-07"
+     ]
+    },
+    {
+     "stem": "revocation",
+     "rarity": 0.8899,
+     "as_written": [
+      "revocation"
+     ]
+    },
+    {
+     "stem": "manner",
+     "rarity": 0.8255,
+     "as_written": [
+      "manner"
+     ]
+    },
+    {
+     "stem": "timely",
+     "rarity": 0.8255,
+     "as_written": [
+      "timely"
+     ]
+    },
+    {
+     "stem": "modify",
+     "rarity": 0.7154,
+     "as_written": [
+      "modify"
+     ]
+    },
+    {
+     "stem": "identity",
+     "rarity": 0.6053,
+     "as_written": [
+      "identity"
+     ]
+    }
+   ],
+   "score": 0.1142,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::IAM-05: Least Privilege",
+   "anchor": "anchor:csa-aicm:iam-05-least-privilege",
+   "framework": "CSA AICM",
+   "reference": "IAM-05: Least Privilege",
+   "shared_terms": [
+    {
+     "stem": "least",
+     "rarity": 0.3754,
+     "as_written": [
+      "least"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "iam-05",
+     "rarity": 1.0,
+     "as_written": [
+      "iam-05"
+     ]
+    },
+    {
+     "stem": "principle",
+     "rarity": 0.7798,
+     "as_written": [
+      "principle"
+     ]
+    },
+    {
+     "stem": "employ",
+     "rarity": 0.7443,
+     "as_written": [
+      "employ"
+     ]
+    },
+    {
+     "stem": "privilege",
+     "rarity": 0.7154,
+     "as_written": [
+      "privilege"
+     ]
+    }
+   ],
+   "score": 0.1038,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::IAM-02: Strong Password Policy and Procedures",
+   "anchor": "anchor:csa-aicm:iam-02-strong-password-policy-and-procedures",
+   "framework": "CSA AICM",
+   "reference": "IAM-02: Strong Password Policy and Procedures",
+   "shared_terms": [
+    {
+     "stem": "least",
+     "rarity": 0.3754,
+     "as_written": [
+      "least"
+     ]
+    },
+    {
+     "stem": "maintain",
+     "rarity": 0.3523,
+     "as_written": [
+      "maintain"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "iam-02",
+     "rarity": 1.0,
+     "as_written": [
+      "iam-02"
+     ]
+    },
+    {
+     "stem": "thepolicy",
+     "rarity": 1.0,
+     "as_written": [
+      "thepolicies"
+     ]
+    },
+    {
+     "stem": "evaluateand",
+     "rarity": 0.8899,
+     "as_written": [
+      "evaluateand"
+     ]
+    },
+    {
+     "stem": "password",
+     "rarity": 0.8899,
+     "as_written": [
+      "password"
+     ]
+    },
+    {
+     "stem": "strong",
+     "rarity": 0.8899,
+     "as_written": [
+      "strong"
+     ]
+    },
+    {
+     "stem": "approve",
+     "rarity": 0.4952,
+     "as_written": [
+      "approve"
+     ]
+    },
+    {
+     "stem": "communicate",
+     "rarity": 0.4651,
+     "as_written": [
+      "communicate"
+     ]
+    },
+    {
+     "stem": "annually",
+     "rarity": 0.4264,
+     "as_written": [
+      "annually"
+     ]
+    },
+    {
+     "stem": "update",
+     "rarity": 0.4264,
+     "as_written": [
+      "update"
+     ]
+    },
+    {
+     "stem": "apply",
+     "rarity": 0.4222,
+     "as_written": [
+      "apply"
+     ]
+    }
+   ],
+   "score": 0.0953,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 8: Agentic AI - Exploit trust mismatch",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-8-agentic-ai-exploit-trust-mismatch",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 8: Agentic AI - Exploit trust mismatch",
+   "shared_terms": [
+    {
+     "stem": "line",
+     "rarity": 0.7798,
+     "as_written": [
+      "line"
+     ]
+    },
+    {
+     "stem": "boundary",
+     "rarity": 0.6191,
+     "as_written": [
+      "boundaries",
+      "boundary"
+     ]
+    },
+    {
+     "stem": "chang",
+     "rarity": 0.3606,
+     "as_written": [
+      "changes"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "background",
+     "rarity": 1.0,
+     "as_written": [
+      "background"
+     ]
+    },
+    {
+     "stem": "conceptual",
+     "rarity": 1.0,
+     "as_written": [
+      "conceptual"
+     ]
+    },
+    {
+     "stem": "initiate",
+     "rarity": 1.0,
+     "as_written": [
+      "initiate"
+     ]
+    },
+    {
+     "stem": "covert",
+     "rarity": 0.8899,
+     "as_written": [
+      "covert"
+     ]
+    },
+    {
+     "stem": "distinct",
+     "rarity": 0.8899,
+     "as_written": [
+      "distinct"
+     ]
+    },
+    {
+     "stem": "weak",
+     "rarity": 0.8899,
+     "as_written": [
+      "weak"
+     ]
+    },
+    {
+     "stem": "increas",
+     "rarity": 0.8255,
+     "as_written": [
+      "increases"
+     ]
+    },
+    {
+     "stem": "mismatch",
+     "rarity": 0.8255,
+     "as_written": [
+      "mismatch"
+     ]
+    },
+    {
+     "stem": "channel",
+     "rarity": 0.7798,
+     "as_written": [
+      "channels"
+     ]
+    },
+    {
+     "stem": "multi-agent",
+     "rarity": 0.7154,
+     "as_written": [
+      "multi-agent"
+     ]
+    },
+    {
+     "stem": "network",
+     "rarity": 0.7154,
+     "as_written": [
+      "network"
+     ]
+    },
+    {
+     "stem": "attacker",
+     "rarity": 0.651,
+     "as_written": [
+      "attackers"
+     ]
+    }
+   ],
+   "score": 0.0906,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::IAM-17: Knowledge Access Control - Need to Know",
+   "anchor": "anchor:csa-aicm:iam-17-knowledge-access-control-need-to-know",
+   "framework": "CSA AICM",
+   "reference": "IAM-17: Knowledge Access Control - Need to Know",
+   "shared_terms": [
+    {
+     "stem": "context",
+     "rarity": 0.4651,
+     "as_written": [
+      "context"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "iam-17",
+     "rarity": 1.0,
+     "as_written": [
+      "iam-17"
+     ]
+    },
+    {
+     "stem": "regulat",
+     "rarity": 1.0,
+     "as_written": [
+      "regulating"
+     ]
+    },
+    {
+     "stem": "know",
+     "rarity": 0.8899,
+     "as_written": [
+      "know"
+     ]
+    },
+    {
+     "stem": "appli",
+     "rarity": 0.7443,
+     "as_written": [
+      "applied"
+     ]
+    },
+    {
+     "stem": "knowledge",
+     "rarity": 0.6909,
+     "as_written": [
+      "knowledge"
+     ]
+    },
+    {
+     "stem": "procedure",
+     "rarity": 0.6909,
+     "as_written": [
+      "procedure"
+     ]
+    },
+    {
+     "stem": "need",
+     "rarity": 0.509,
+     "as_written": [
+      "need"
+     ]
+    },
+    {
+     "stem": "resourc",
+     "rarity": 0.5019,
+     "as_written": [
+      "resources"
+     ]
+    }
+   ],
+   "score": 0.0716,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP Top 10::LLM02:25 - Sensitive Information Disclosure",
+   "anchor": "anchor:owasp-top-10:llm02-25-sensitive-information-disclosure",
+   "framework": "OWASP Top 10",
+   "reference": "LLM02:25 - Sensitive Information Disclosure",
+   "shared_terms": [
+    {
+     "stem": "sensitive",
+     "rarity": 0.4765,
+     "as_written": [
+      "sensitive"
+     ]
+    },
+    {
+     "stem": "train",
+     "rarity": 0.4025,
+     "as_written": [
+      "training"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "clos",
+     "rarity": 1.0,
+     "as_written": [
+      "closed"
+     ]
+    },
+    {
+     "stem": "llm02",
+     "rarity": 1.0,
+     "as_written": [
+      "llm02"
+     ]
+    },
+    {
+     "stem": "info",
+     "rarity": 0.8899,
+     "as_written": [
+      "info"
+     ]
+    },
+    {
+     "stem": "face",
+     "rarity": 0.8255,
+     "as_written": [
+      "face"
+     ]
+    },
+    {
+     "stem": "health",
+     "rarity": 0.8255,
+     "as_written": [
+      "health"
+     ]
+    },
+    {
+     "stem": "llms",
+     "rarity": 0.7798,
+     "as_written": [
+      "llms"
+     ]
+    },
+    {
+     "stem": "proprietary",
+     "rarity": 0.7798,
+     "as_written": [
+      "proprietary"
+     ]
+    },
+    {
+     "stem": "unique",
+     "rarity": 0.7798,
+     "as_written": [
+      "unique"
+     ]
+    },
+    {
+     "stem": "pii",
+     "rarity": 0.7443,
+     "as_written": [
+      "pii"
+     ]
+    },
+    {
+     "stem": "financial",
+     "rarity": 0.7154,
+     "as_written": [
+      "financial"
+     ]
+    },
+    {
+     "stem": "critical",
+     "rarity": 0.6697,
+     "as_written": [
+      "critical"
+     ]
+    },
+    {
+     "stem": "foundation",
+     "rarity": 0.651,
+     "as_written": [
+      "foundation"
+     ]
+    }
+   ],
+   "score": 0.0614,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::IAM-13: Uniquely Identifiable Users",
+   "anchor": "anchor:csa-aicm:iam-13-uniquely-identifiable-users",
+   "framework": "CSA AICM",
+   "reference": "IAM-13: Uniquely Identifiable Users",
+   "shared_terms": [
+    {
+     "stem": "user",
+     "rarity": 0.3953,
+     "as_written": [
+      "user",
+      "users"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "iam-13",
+     "rarity": 1.0,
+     "as_written": [
+      "iam-13"
+     ]
+    },
+    {
+     "stem": "ids",
+     "rarity": 1.0,
+     "as_written": [
+      "ids"
+     ]
+    },
+    {
+     "stem": "uniquely",
+     "rarity": 1.0,
+     "as_written": [
+      "uniquely"
+     ]
+    },
+    {
+     "stem": "identifiable",
+     "rarity": 0.8255,
+     "as_written": [
+      "identifiable"
+     ]
+    },
+    {
+     "stem": "associat",
+     "rarity": 0.6191,
+     "as_written": [
+      "associated"
+     ]
+    },
+    {
+     "stem": "identity",
+     "rarity": 0.6053,
+     "as_written": [
+      "identities"
+     ]
+    },
+    {
+     "stem": "activity",
+     "rarity": 0.5164,
+     "as_written": [
+      "activities"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    },
+    {
+     "stem": "technical",
+     "rarity": 0.355,
+     "as_written": [
+      "technical"
+     ]
+    }
+   ],
+   "score": 0.0589,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP Top 10::LLM06:25 - Excessive Agency",
+   "anchor": "anchor:owasp-top-10:llm06-25-excessive-agency",
+   "framework": "OWASP Top 10",
+   "reference": "LLM06:25 - Excessive Agency",
+   "shared_terms": [
+    {
+     "stem": "tool",
+     "rarity": 0.4352,
+     "as_written": [
+      "tools"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt",
+      "prompts"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dynamically",
+     "rarity": 1.0,
+     "as_written": [
+      "dynamically"
+     ]
+    },
+    {
+     "stem": "llm06",
+     "rarity": 1.0,
+     "as_written": [
+      "llm06"
+     ]
+    },
+    {
+     "stem": "agency",
+     "rarity": 0.8899,
+     "as_written": [
+      "agency"
+     ]
+    },
+    {
+     "stem": "choose",
+     "rarity": 0.8899,
+     "as_written": [
+      "choose"
+     ]
+    },
+    {
+     "stem": "dynamic",
+     "rarity": 0.8899,
+     "as_written": [
+      "dynamic"
+     ]
+    },
+    {
+     "stem": "extension",
+     "rarity": 0.8899,
+     "as_written": [
+      "extensions"
+     ]
+    },
+    {
+     "stem": "subsequent",
+     "rarity": 0.8899,
+     "as_written": [
+      "subsequent"
+     ]
+    },
+    {
+     "stem": "excessive",
+     "rarity": 0.7798,
+     "as_written": [
+      "excessive"
+     ]
+    },
+    {
+     "stem": "gain",
+     "rarity": 0.7798,
+     "as_written": [
+      "gain"
+     ]
+    },
+    {
+     "stem": "repeat",
+     "rarity": 0.7798,
+     "as_written": [
+      "repeated"
+     ]
+    },
+    {
+     "stem": "guide",
+     "rarity": 0.7443,
+     "as_written": [
+      "guide"
+     ]
+    },
+    {
+     "stem": "plugin",
+     "rarity": 0.7443,
+     "as_written": [
+      "plugins"
+     ]
+    }
+   ],
+   "score": 0.0523,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DSP-07: Data Protection by Design and Default",
+   "anchor": "anchor:csa-aicm:dsp-07-data-protection-by-design-and-default",
+   "framework": "CSA AICM",
+   "reference": "DSP-07: Data Protection by Design and Default",
+   "shared_terms": [
+    {
+     "stem": "based",
+     "rarity": 0.4101,
+     "as_written": [
+      "based"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dsp-07",
+     "rarity": 1.0,
+     "as_written": [
+      "dsp-07"
+     ]
+    },
+    {
+     "stem": "default",
+     "rarity": 0.8255,
+     "as_written": [
+      "default"
+     ]
+    },
+    {
+     "stem": "principle",
+     "rarity": 0.7798,
+     "as_written": [
+      "principle"
+     ]
+    },
+    {
+     "stem": "best",
+     "rarity": 0.7443,
+     "as_written": [
+      "best"
+     ]
+    },
+    {
+     "stem": "industry",
+     "rarity": 0.6342,
+     "as_written": [
+      "industry"
+     ]
+    },
+    {
+     "stem": "product",
+     "rarity": 0.6191,
+     "as_written": [
+      "products"
+     ]
+    },
+    {
+     "stem": "develop",
+     "rarity": 0.5926,
+     "as_written": [
+      "develop"
+     ]
+    },
+    {
+     "stem": "busines",
+     "rarity": 0.5698,
+     "as_written": [
+      "business"
+     ]
+    },
+    {
+     "stem": "practic",
+     "rarity": 0.5698,
+     "as_written": [
+      "practices"
+     ]
+    },
+    {
+     "stem": "protection",
+     "rarity": 0.5323,
+     "as_written": [
+      "protection"
+     ]
+    },
+    {
+     "stem": "design",
+     "rarity": 0.4887,
+     "as_written": [
+      "design"
+     ]
+    },
+    {
+     "stem": "security",
+     "rarity": 0.3523,
+     "as_written": [
+      "security"
+     ]
+    }
+   ],
+   "score": 0.0505,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 7: Agentic AI - Unauthorized use",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-7-agentic-ai-unauthorized-use",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 7: Agentic AI - Unauthorized use",
+   "shared_terms": [
+    {
+     "stem": "capability",
+     "rarity": 0.4352,
+     "as_written": [
+      "capabilities",
+      "capability"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "depend",
+     "rarity": 0.8899,
+     "as_written": [
+      "depending"
+     ]
+    },
+    {
+     "stem": "gain",
+     "rarity": 0.7798,
+     "as_written": [
+      "gain"
+     ]
+    },
+    {
+     "stem": "has",
+     "rarity": 0.6909,
+     "as_written": [
+      "has"
+     ]
+    },
+    {
+     "stem": "different",
+     "rarity": 0.6697,
+     "as_written": [
+      "different"
+     ]
+    },
+    {
+     "stem": "attacker",
+     "rarity": 0.651,
+     "as_written": [
+      "attackers"
+     ]
+    },
+    {
+     "stem": "component",
+     "rarity": 0.651,
+     "as_written": [
+      "components"
+     ]
+    },
+    {
+     "stem": "have",
+     "rarity": 0.651,
+     "as_written": [
+      "have"
+     ]
+    },
+    {
+     "stem": "agent'",
+     "rarity": 0.6342,
+     "as_written": [
+      "agent's"
+     ]
+    },
+    {
+     "stem": "harm",
+     "rarity": 0.6191,
+     "as_written": [
+      "harm"
+     ]
+    },
+    {
+     "stem": "level",
+     "rarity": 0.5409,
+     "as_written": [
+      "levels"
+     ]
+    },
+    {
+     "stem": "perform",
+     "rarity": 0.5019,
+     "as_written": [
+      "perform"
+     ]
+    },
+    {
+     "stem": "unauthoriz",
+     "rarity": 0.4887,
+     "as_written": [
+      "unauthorized"
+     ]
+    }
+   ],
+   "score": 0.048,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "MITRE ATLAS::AML-M0019: Control Access to AI Models and Data in Production",
+   "anchor": "anchor:mitre-atlas:aml-m0019-control-access-to-ai-models-and-data-in-production",
+   "framework": "MITRE ATLAS",
+   "reference": "AML-M0019: Control Access to AI Models and Data in Production",
+   "shared_terms": [
+    {
+     "stem": "user",
+     "rarity": 0.3953,
+     "as_written": [
+      "user",
+      "users"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "aml-m0019",
+     "rarity": 1.0,
+     "as_written": [
+      "aml-m0019"
+     ]
+    },
+    {
+     "stem": "require",
+     "rarity": 0.8899,
+     "as_written": [
+      "require"
+     ]
+    },
+    {
+     "stem": "production",
+     "rarity": 0.7154,
+     "as_written": [
+      "production"
+     ]
+    },
+    {
+     "stem": "authentication",
+     "rarity": 0.6697,
+     "as_written": [
+      "authentication"
+     ]
+    },
+    {
+     "stem": "misuse",
+     "rarity": 0.6697,
+     "as_written": [
+      "misuse"
+     ]
+    },
+    {
+     "stem": "query",
+     "rarity": 0.6697,
+     "as_written": [
+      "queries"
+     ]
+    },
+    {
+     "stem": "verify",
+     "rarity": 0.6697,
+     "as_written": [
+      "verify"
+     ]
+    },
+    {
+     "stem": "api",
+     "rarity": 0.6053,
+     "as_written": [
+      "api"
+     ]
+    },
+    {
+     "stem": "identity",
+     "rarity": 0.6053,
+     "as_written": [
+      "identities"
+     ]
+    },
+    {
+     "stem": "endpoint",
+     "rarity": 0.5596,
+     "as_written": [
+      "endpoints"
+     ]
+    },
+    {
+     "stem": "compliance",
+     "rarity": 0.5164,
+     "as_written": [
+      "compliance"
+     ]
+    },
+    {
+     "stem": "usage",
+     "rarity": 0.509,
+     "as_written": [
+      "usage"
+     ]
+    }
+   ],
+   "score": 0.0424,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP Top 10::LLM10:25 - Unbounded Consumption",
+   "anchor": "anchor:owasp-top-10:llm10-25-unbounded-consumption",
+   "framework": "OWASP Top 10",
+   "reference": "LLM10:25 - Unbounded Consumption",
+   "shared_terms": [
+    {
+     "stem": "function",
+     "rarity": 0.5241,
+     "as_written": [
+      "function"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "consumption",
+     "rarity": 1.0,
+     "as_written": [
+      "consumption"
+     ]
+    },
+    {
+     "stem": "llm10",
+     "rarity": 1.0,
+     "as_written": [
+      "llm10"
+     ]
+    },
+    {
+     "stem": "unbound",
+     "rarity": 1.0,
+     "as_written": [
+      "unbounded"
+     ]
+    },
+    {
+     "stem": "prediction",
+     "rarity": 0.8899,
+     "as_written": [
+      "predictions"
+     ]
+    },
+    {
+     "stem": "rely",
+     "rarity": 0.8899,
+     "as_written": [
+      "relying"
+     ]
+    },
+    {
+     "stem": "learn",
+     "rarity": 0.8255,
+     "as_written": [
+      "learned"
+     ]
+    },
+    {
+     "stem": "llms",
+     "rarity": 0.7798,
+     "as_written": [
+      "llms"
+     ]
+    },
+    {
+     "stem": "making",
+     "rarity": 0.7154,
+     "as_written": [
+      "making"
+     ]
+    },
+    {
+     "stem": "knowledge",
+     "rarity": 0.6909,
+     "as_written": [
+      "knowledge"
+     ]
+    },
+    {
+     "stem": "generate",
+     "rarity": 0.6053,
+     "as_written": [
+      "generate"
+     ]
+    },
+    {
+     "stem": "respons",
+     "rarity": 0.5596,
+     "as_written": [
+      "responses"
+     ]
+    },
+    {
+     "stem": "occur",
+     "rarity": 0.5409,
+     "as_written": [
+      "occurs"
+     ]
+    }
+   ],
+   "score": 0.041,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DSP-08: Data Privacy by Design and Default",
+   "anchor": "anchor:csa-aicm:dsp-08-data-privacy-by-design-and-default",
+   "framework": "CSA AICM",
+   "reference": "DSP-08: Data Privacy by Design and Default",
+   "shared_terms": [
+    {
+     "stem": "based",
+     "rarity": 0.4101,
+     "as_written": [
+      "based"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dsp-08",
+     "rarity": 1.0,
+     "as_written": [
+      "dsp-08"
+     ]
+    },
+    {
+     "stem": "default",
+     "rarity": 0.8255,
+     "as_written": [
+      "default"
+     ]
+    },
+    {
+     "stem": "setting",
+     "rarity": 0.8255,
+     "as_written": [
+      "settings"
+     ]
+    },
+    {
+     "stem": "principle",
+     "rarity": 0.7798,
+     "as_written": [
+      "principle"
+     ]
+    },
+    {
+     "stem": "best",
+     "rarity": 0.7443,
+     "as_written": [
+      "best"
+     ]
+    },
+    {
+     "stem": "configur",
+     "rarity": 0.6909,
+     "as_written": [
+      "configured"
+     ]
+    },
+    {
+     "stem": "industry",
+     "rarity": 0.6342,
+     "as_written": [
+      "industry"
+     ]
+    },
+    {
+     "stem": "product",
+     "rarity": 0.6191,
+     "as_written": [
+      "products"
+     ]
+    },
+    {
+     "stem": "privacy",
+     "rarity": 0.6053,
+     "as_written": [
+      "privacy"
+     ]
+    },
+    {
+     "stem": "develop",
+     "rarity": 0.5926,
+     "as_written": [
+      "develop"
+     ]
+    },
+    {
+     "stem": "busines",
+     "rarity": 0.5698,
+     "as_written": [
+      "business"
+     ]
+    },
+    {
+     "stem": "practic",
+     "rarity": 0.5698,
+     "as_written": [
+      "practices"
+     ]
+    }
+   ],
+   "score": 0.0359,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP Agentic Top 10::ASI02 - Tool Misuse and Exploitation",
+   "anchor": "anchor:owasp-agentic-top-10:asi02-tool-misuse-and-exploitation",
+   "framework": "OWASP Agentic Top 10",
+   "reference": "ASI02 - Tool Misuse and Exploitation",
+   "shared_terms": [
+    {
+     "stem": "tool",
+     "rarity": 0.4352,
+     "as_written": [
+      "tool",
+      "tools"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt",
+      "prompts"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "amazon",
+     "rarity": 1.0,
+     "as_written": [
+      "amazon"
+     ]
+    },
+    {
+     "stem": "ambiguou",
+     "rarity": 1.0,
+     "as_written": [
+      "ambiguous"
+     ]
+    },
+    {
+     "stem": "asi02",
+     "rarity": 1.0,
+     "as_written": [
+      "asi02"
+     ]
+    },
+    {
+     "stem": "destructive",
+     "rarity": 1.0,
+     "as_written": [
+      "destructive"
+     ]
+    },
+    {
+     "stem": "pollution",
+     "rarity": 1.0,
+     "as_written": [
+      "pollution"
+     ]
+    },
+    {
+     "stem": "sequenc",
+     "rarity": 1.0,
+     "as_written": [
+      "sequences"
+     ]
+    },
+    {
+     "stem": "together",
+     "rarity": 1.0,
+     "as_written": [
+      "together"
+     ]
+    },
+    {
+     "stem": "misalignment",
+     "rarity": 0.8899,
+     "as_written": [
+      "misalignment"
+     ]
+    },
+    {
+     "stem": "grant",
+     "rarity": 0.8255,
+     "as_written": [
+      "granted"
+     ]
+    },
+    {
+     "stem": "ways",
+     "rarity": 0.8255,
+     "as_written": [
+      "ways"
+     ]
+    },
+    {
+     "stem": "exfiltration",
+     "rarity": 0.7798,
+     "as_written": [
+      "exfiltration"
+     ]
+    },
+    {
+     "stem": "lead",
+     "rarity": 0.7443,
+     "as_written": [
+      "leading"
+     ]
+    }
+   ],
+   "score": 0.0358,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP Agentic Top 10::ASI03 - Identity and Privilege Abuse",
+   "anchor": "anchor:owasp-agentic-top-10:asi03-identity-and-privilege-abuse",
+   "framework": "OWASP Agentic Top 10",
+   "reference": "ASI03 - Identity and Privilege Abuse",
+   "shared_terms": [
+    {
+     "stem": "user",
+     "rarity": 0.3953,
+     "as_written": [
+      "user"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "asi03",
+     "rarity": 1.0,
+     "as_written": [
+      "asi03"
+     ]
+    },
+    {
+     "stem": "far",
+     "rarity": 1.0,
+     "as_written": [
+      "far"
+     ]
+    },
+    {
+     "stem": "high-privilege",
+     "rarity": 1.0,
+     "as_written": [
+      "high-privilege"
+     ]
+    },
+    {
+     "stem": "inherit",
+     "rarity": 1.0,
+     "as_written": [
+      "inherit",
+      "inherits"
+     ]
+    },
+    {
+     "stem": "shadow",
+     "rarity": 1.0,
+     "as_written": [
+      "shadow"
+     ]
+    },
+    {
+     "stem": "cross-system",
+     "rarity": 0.8899,
+     "as_written": [
+      "cross-system"
+     ]
+    },
+    {
+     "stem": "dynamic",
+     "rarity": 0.8899,
+     "as_written": [
+      "dynamic"
+     ]
+    },
+    {
+     "stem": "inadequate",
+     "rarity": 0.8255,
+     "as_written": [
+      "inadequate"
+     ]
+    },
+    {
+     "stem": "operate",
+     "rarity": 0.8255,
+     "as_written": [
+      "operate"
+     ]
+    },
+    {
+     "stem": "opportunity",
+     "rarity": 0.8255,
+     "as_written": [
+      "opportunities"
+     ]
+    },
+    {
+     "stem": "leak",
+     "rarity": 0.7798,
+     "as_written": [
+      "leaked"
+     ]
+    },
+    {
+     "stem": "escalation",
+     "rarity": 0.7443,
+     "as_written": [
+      "escalation"
+     ]
+    }
+   ],
+   "score": 0.0185,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::IAM-03: Identity Inventory",
+   "anchor": "anchor:csa-aicm:iam-03-identity-inventory",
+   "framework": "CSA AICM",
+   "reference": "IAM-03: Identity Inventory",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "iam-03",
+     "rarity": 1.0,
+     "as_written": [
+      "iam-03"
+     ]
+    },
+    {
+     "stem": "inventory",
+     "rarity": 0.7443,
+     "as_written": [
+      "inventory"
+     ]
+    },
+    {
+     "stem": "store",
+     "rarity": 0.6697,
+     "as_written": [
+      "store"
+     ]
+    },
+    {
+     "stem": "identity",
+     "rarity": 0.6053,
+     "as_written": [
+      "identities",
+      "identity"
+     ]
+    },
+    {
+     "stem": "level",
+     "rarity": 0.5409,
+     "as_written": [
+      "level"
+     ]
+    },
+    {
+     "stem": "regularly",
+     "rarity": 0.5323,
+     "as_written": [
+      "regularly"
+     ]
+    },
+    {
+     "stem": "manage",
+     "rarity": 0.5241,
+     "as_written": [
+      "manage"
+     ]
+    },
+    {
+     "stem": "monitor",
+     "rarity": 0.3786,
+     "as_written": [
+      "monitor"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::IAM-04: Separation of Duties",
+   "anchor": "anchor:csa-aicm:iam-04-separation-of-duties",
+   "framework": "CSA AICM",
+   "reference": "IAM-04: Separation of Duties",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "iam-04",
+     "rarity": 1.0,
+     "as_written": [
+      "iam-04"
+     ]
+    },
+    {
+     "stem": "separation",
+     "rarity": 0.8255,
+     "as_written": [
+      "separation"
+     ]
+    },
+    {
+     "stem": "principle",
+     "rarity": 0.7798,
+     "as_written": [
+      "principle"
+     ]
+    },
+    {
+     "stem": "duti",
+     "rarity": 0.7443,
+     "as_written": [
+      "duties"
+     ]
+    },
+    {
+     "stem": "employ",
+     "rarity": 0.7443,
+     "as_written": [
+      "employ"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::IAM-15: Passwords and Secrets Management",
+   "anchor": "anchor:csa-aicm:iam-15-passwords-and-secrets-management",
+   "framework": "CSA AICM",
+   "reference": "IAM-15: Passwords and Secrets Management",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "iam-15",
+     "rarity": 1.0,
+     "as_written": [
+      "iam-15"
+     ]
+    },
+    {
+     "stem": "password",
+     "rarity": 0.8899,
+     "as_written": [
+      "passwords"
+     ]
+    },
+    {
+     "stem": "secret",
+     "rarity": 0.7154,
+     "as_written": [
+      "secrets"
+     ]
+    },
+    {
+     "stem": "secure",
+     "rarity": 0.5499,
+     "as_written": [
+      "secure"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    },
+    {
+     "stem": "technical",
+     "rarity": 0.355,
+     "as_written": [
+      "technical"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::LOG-09: Log Protection",
+   "anchor": "anchor:csa-aicm:log-09-log-protection",
+   "framework": "CSA AICM",
+   "reference": "LOG-09: Log Protection",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "log-09",
+     "rarity": 1.0,
+     "as_written": [
+      "log-09"
+     ]
+    },
+    {
+     "stem": "deletion",
+     "rarity": 0.7443,
+     "as_written": [
+      "deletion"
+     ]
+    },
+    {
+     "stem": "modification",
+     "rarity": 0.6909,
+     "as_written": [
+      "modification"
+     ]
+    },
+    {
+     "stem": "protect",
+     "rarity": 0.5808,
+     "as_written": [
+      "protect"
+     ]
+    },
+    {
+     "stem": "protection",
+     "rarity": 0.5323,
+     "as_written": [
+      "protection"
+     ]
+    },
+    {
+     "stem": "log",
+     "rarity": 0.4952,
+     "as_written": [
+      "log"
+     ]
+    },
+    {
+     "stem": "unauthoriz",
+     "rarity": 0.4887,
+     "as_written": [
+      "unauthorized"
+     ]
+    },
+    {
+     "stem": "audit",
+     "rarity": 0.4825,
+     "as_written": [
+      "audit"
+     ]
+    },
+    {
+     "stem": "record",
+     "rarity": 0.4651,
+     "as_written": [
+      "records"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-14.1: Unauthorized Access",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-14-1-unauthorized-access",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-14.1: Unauthorized Access",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "aitech-14",
+     "rarity": 0.8899,
+     "as_written": [
+      "aitech-14"
+     ]
+    },
+    {
+     "stem": "distinct",
+     "rarity": 0.8899,
+     "as_written": [
+      "distinct"
+     ]
+    },
+    {
+     "stem": "host",
+     "rarity": 0.8899,
+     "as_written": [
+      "hosting"
+     ]
+    },
+    {
+     "stem": "itself",
+     "rarity": 0.8899,
+     "as_written": [
+      "itself"
+     ]
+    },
+    {
+     "stem": "underly",
+     "rarity": 0.8899,
+     "as_written": [
+      "underlying"
+     ]
+    },
+    {
+     "stem": "account",
+     "rarity": 0.8255,
+     "as_written": [
+      "accounts"
+     ]
+    },
+    {
+     "stem": "cloud",
+     "rarity": 0.7798,
+     "as_written": [
+      "cloud"
+     ]
+    },
+    {
+     "stem": "gain",
+     "rarity": 0.7798,
+     "as_written": [
+      "gain"
+     ]
+    },
+    {
+     "stem": "server",
+     "rarity": 0.7443,
+     "as_written": [
+      "servers"
+     ]
+    },
+    {
+     "stem": "infrastructure",
+     "rarity": 0.7154,
+     "as_written": [
+      "infrastructure"
+     ]
+    },
+    {
+     "stem": "databas",
+     "rarity": 0.6697,
+     "as_written": [
+      "databases"
+     ]
+    },
+    {
+     "stem": "environment",
+     "rarity": 0.651,
+     "as_written": [
+      "environment"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  }
+ ],
+ "candidate_crosswalks": []
+}

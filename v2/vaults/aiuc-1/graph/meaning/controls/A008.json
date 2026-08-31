@@ -1,0 +1,10 @@
+{
+ "control_id": "A008",
+ "title": "Prevent leakage of credentials and secrets",
+ "published_crosswalks": 0,
+ "published_with_shared_vocabulary": 0,
+ "published_without_shared_vocabulary": [],
+ "candidates": 0,
+ "evidence": [],
+ "candidate_crosswalks": []
+}

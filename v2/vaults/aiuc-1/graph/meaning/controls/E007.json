@@ -1,0 +1,1523 @@
+{
+ "control_id": "E007",
+ "title": "[Retired] Document system change approvals",
+ "published_crosswalks": 17,
+ "published_with_shared_vocabulary": 12,
+ "published_without_shared_vocabulary": [
+  "ISO 42001::A.6.2.2: AI system requirements and specification",
+  "ISO 42001::A.6.2.4: AI system verification and validation",
+  "NIST AI RMF::GOVERN 2.1: Roles and responsibilities",
+  "NIST AI RMF::MANAGE 1.1: Purpose achievement",
+  "NIST AI RMF::MEASURE 4.3: Performance tracking"
+ ],
+ "candidates": 0,
+ "evidence": [
+  {
+   "clause": "ISO 42001::6.3: Planning of changes",
+   "anchor": "anchor:iso-42001:6-3-planning-of-changes",
+   "framework": "ISO 42001",
+   "reference": "6.3: Planning of changes",
+   "shared_terms": [
+    {
+     "stem": "chang",
+     "rarity": 0.3606,
+     "as_written": [
+      "changes"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "manner",
+     "rarity": 0.8255,
+     "as_written": [
+      "manner"
+     ]
+    },
+    {
+     "stem": "plan",
+     "rarity": 0.4264,
+     "as_written": [
+      "plan",
+      "planned",
+      "planning"
+     ]
+    }
+   ],
+   "score": 0.2236,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::CCC-06: Change Management Baseline",
+   "anchor": "anchor:csa-aicm:ccc-06-change-management-baseline",
+   "framework": "CSA AICM",
+   "reference": "CCC-06: Change Management Baseline",
+   "shared_terms": [
+    {
+     "stem": "change",
+     "rarity": 0.5241,
+     "as_written": [
+      "change"
+     ]
+    },
+    {
+     "stem": "update",
+     "rarity": 0.4264,
+     "as_written": [
+      "update"
+     ]
+    },
+    {
+     "stem": "chang",
+     "rarity": 0.3606,
+     "as_written": [
+      "changes"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "ccc-06",
+     "rarity": 1.0,
+     "as_written": [
+      "ccc-06"
+     ]
+    },
+    {
+     "stem": "baselin",
+     "rarity": 0.8899,
+     "as_written": [
+      "baselines"
+     ]
+    },
+    {
+     "stem": "baseline",
+     "rarity": 0.8255,
+     "as_written": [
+      "baseline"
+     ]
+    },
+    {
+     "stem": "asset",
+     "rarity": 0.651,
+     "as_written": [
+      "assets"
+     ]
+    },
+    {
+     "stem": "authoriz",
+     "rarity": 0.6191,
+     "as_written": [
+      "authorized"
+     ]
+    },
+    {
+     "stem": "significant",
+     "rarity": 0.4446,
+     "as_written": [
+      "significant"
+     ]
+    },
+    {
+     "stem": "annually",
+     "rarity": 0.4264,
+     "as_written": [
+      "annually"
+     ]
+    },
+    {
+     "stem": "relevant",
+     "rarity": 0.3884,
+     "as_written": [
+      "relevant"
+     ]
+    },
+    {
+     "stem": "least",
+     "rarity": 0.3754,
+     "as_written": [
+      "least"
+     ]
+    }
+   ],
+   "score": 0.1892,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::GOVERN 2.3: Executive accountability",
+   "anchor": "anchor:nist-ai-rmf:govern-2-3-executive-accountability",
+   "framework": "NIST AI RMF",
+   "reference": "GOVERN 2.3: Executive accountability",
+   "shared_terms": [
+    {
+     "stem": "accountability",
+     "rarity": 0.6342,
+     "as_written": [
+      "accountability"
+     ]
+    },
+    {
+     "stem": "decision",
+     "rarity": 0.509,
+     "as_written": [
+      "decisions"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "leadership",
+     "rarity": 0.8899,
+     "as_written": [
+      "leadership"
+     ]
+    },
+    {
+     "stem": "executive",
+     "rarity": 0.7443,
+     "as_written": [
+      "executive"
+     ]
+    },
+    {
+     "stem": "take",
+     "rarity": 0.651,
+     "as_written": [
+      "takes"
+     ]
+    },
+    {
+     "stem": "associat",
+     "rarity": 0.6191,
+     "as_written": [
+      "associated"
+     ]
+    },
+    {
+     "stem": "responsibility",
+     "rarity": 0.5698,
+     "as_written": [
+      "responsibility"
+     ]
+    },
+    {
+     "stem": "govern",
+     "rarity": 0.5499,
+     "as_written": [
+      "govern"
+     ]
+    },
+    {
+     "stem": "deployment",
+     "rarity": 0.5409,
+     "as_written": [
+      "deployment"
+     ]
+    },
+    {
+     "stem": "development",
+     "rarity": 0.5241,
+     "as_written": [
+      "development"
+     ]
+    }
+   ],
+   "score": 0.1834,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::CCC-01: Change Management Policy and Procedures",
+   "anchor": "anchor:csa-aicm:ccc-01-change-management-policy-and-procedures",
+   "framework": "CSA AICM",
+   "reference": "CCC-01: Change Management Policy and Procedures",
+   "shared_terms": [
+    {
+     "stem": "change",
+     "rarity": 0.5241,
+     "as_written": [
+      "change"
+     ]
+    },
+    {
+     "stem": "update",
+     "rarity": 0.4264,
+     "as_written": [
+      "update"
+     ]
+    },
+    {
+     "stem": "chang",
+     "rarity": 0.3606,
+     "as_written": [
+      "changes"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "ccc-01",
+     "rarity": 1.0,
+     "as_written": [
+      "ccc-01"
+     ]
+    },
+    {
+     "stem": "owned",
+     "rarity": 0.8255,
+     "as_written": [
+      "owned"
+     ]
+    },
+    {
+     "stem": "asset",
+     "rarity": 0.651,
+     "as_written": [
+      "assets"
+     ]
+    },
+    {
+     "stem": "associat",
+     "rarity": 0.6191,
+     "as_written": [
+      "associated"
+     ]
+    },
+    {
+     "stem": "manag",
+     "rarity": 0.5926,
+     "as_written": [
+      "managing"
+     ]
+    },
+    {
+     "stem": "approve",
+     "rarity": 0.4952,
+     "as_written": [
+      "approve"
+     ]
+    },
+    {
+     "stem": "communicate",
+     "rarity": 0.4651,
+     "as_written": [
+      "communicate"
+     ]
+    },
+    {
+     "stem": "significant",
+     "rarity": 0.4446,
+     "as_written": [
+      "significant"
+     ]
+    },
+    {
+     "stem": "annually",
+     "rarity": 0.4264,
+     "as_written": [
+      "annually"
+     ]
+    },
+    {
+     "stem": "apply",
+     "rarity": 0.4222,
+     "as_written": [
+      "apply",
+      "applying"
+     ]
+    },
+    {
+     "stem": "least",
+     "rarity": 0.3754,
+     "as_written": [
+      "least"
+     ]
+    },
+    {
+     "stem": "maintain",
+     "rarity": 0.3523,
+     "as_written": [
+      "maintain"
+     ]
+    }
+   ],
+   "score": 0.1643,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::CCC-03: Change Management Technology",
+   "anchor": "anchor:csa-aicm:ccc-03-change-management-technology",
+   "framework": "CSA AICM",
+   "reference": "CCC-03: Change Management Technology",
+   "shared_terms": [
+    {
+     "stem": "change",
+     "rarity": 0.5241,
+     "as_written": [
+      "change"
+     ]
+    },
+    {
+     "stem": "chang",
+     "rarity": 0.3606,
+     "as_written": [
+      "changes"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "ccc-03",
+     "rarity": 1.0,
+     "as_written": [
+      "ccc-03"
+     ]
+    },
+    {
+     "stem": "owned",
+     "rarity": 0.8255,
+     "as_written": [
+      "owned"
+     ]
+    },
+    {
+     "stem": "procedure",
+     "rarity": 0.6909,
+     "as_written": [
+      "procedure"
+     ]
+    },
+    {
+     "stem": "asset",
+     "rarity": 0.651,
+     "as_written": [
+      "assets"
+     ]
+    },
+    {
+     "stem": "associat",
+     "rarity": 0.6191,
+     "as_written": [
+      "associated"
+     ]
+    },
+    {
+     "stem": "technology",
+     "rarity": 0.6191,
+     "as_written": [
+      "technology"
+     ]
+    },
+    {
+     "stem": "manage",
+     "rarity": 0.5241,
+     "as_written": [
+      "manage"
+     ]
+    },
+    {
+     "stem": "apply",
+     "rarity": 0.4222,
+     "as_written": [
+      "applying"
+     ]
+    }
+   ],
+   "score": 0.1419,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MEASURE 2.8: Transparency and accountability",
+   "anchor": "anchor:nist-ai-rmf:measure-2-8-transparency-and-accountability",
+   "framework": "NIST AI RMF",
+   "reference": "MEASURE 2.8: Transparency and accountability",
+   "shared_terms": [
+    {
+     "stem": "accountability",
+     "rarity": 0.6342,
+     "as_written": [
+      "accountability"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "examin",
+     "rarity": 0.8899,
+     "as_written": [
+      "examined"
+     ]
+    },
+    {
+     "stem": "associat",
+     "rarity": 0.6191,
+     "as_written": [
+      "associated"
+     ]
+    },
+    {
+     "stem": "transparency",
+     "rarity": 0.6053,
+     "as_written": [
+      "transparency"
+     ]
+    },
+    {
+     "stem": "function",
+     "rarity": 0.5241,
+     "as_written": [
+      "function"
+     ]
+    },
+    {
+     "stem": "measure",
+     "rarity": 0.5164,
+     "as_written": [
+      "measure"
+     ]
+    },
+    {
+     "stem": "map",
+     "rarity": 0.5019,
+     "as_written": [
+      "map"
+     ]
+    },
+    {
+     "stem": "identifi",
+     "rarity": 0.4952,
+     "as_written": [
+      "identified"
+     ]
+    }
+   ],
+   "score": 0.1325,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::AIS-01: Application and Interface Security Policy and Procedures",
+   "anchor": "anchor:csa-aicm:ais-01-application-and-interface-security-policy-and-procedures",
+   "framework": "CSA AICM",
+   "reference": "AIS-01: Application and Interface Security Policy and Procedures",
+   "shared_terms": [
+    {
+     "stem": "update",
+     "rarity": 0.4264,
+     "as_written": [
+      "update"
+     ]
+    },
+    {
+     "stem": "chang",
+     "rarity": 0.3606,
+     "as_written": [
+      "changes"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "ais-01",
+     "rarity": 1.0,
+     "as_written": [
+      "ais-01"
+     ]
+    },
+    {
+     "stem": "interface",
+     "rarity": 1.0,
+     "as_written": [
+      "interface"
+     ]
+    },
+    {
+     "stem": "application",
+     "rarity": 0.5019,
+     "as_written": [
+      "application"
+     ]
+    },
+    {
+     "stem": "approve",
+     "rarity": 0.4952,
+     "as_written": [
+      "approve"
+     ]
+    },
+    {
+     "stem": "communicate",
+     "rarity": 0.4651,
+     "as_written": [
+      "communicate"
+     ]
+    },
+    {
+     "stem": "significant",
+     "rarity": 0.4446,
+     "as_written": [
+      "significant"
+     ]
+    },
+    {
+     "stem": "annually",
+     "rarity": 0.4264,
+     "as_written": [
+      "annually"
+     ]
+    },
+    {
+     "stem": "apply",
+     "rarity": 0.4222,
+     "as_written": [
+      "apply"
+     ]
+    },
+    {
+     "stem": "least",
+     "rarity": 0.3754,
+     "as_written": [
+      "least"
+     ]
+    },
+    {
+     "stem": "maintain",
+     "rarity": 0.3523,
+     "as_written": [
+      "maintain"
+     ]
+    },
+    {
+     "stem": "security",
+     "rarity": 0.3523,
+     "as_written": [
+      "security"
+     ]
+    }
+   ],
+   "score": 0.1188,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::CCC-04: Change Authorization",
+   "anchor": "anchor:csa-aicm:ccc-04-change-authorization",
+   "framework": "CSA AICM",
+   "reference": "CCC-04: Change Authorization",
+   "shared_terms": [
+    {
+     "stem": "change",
+     "rarity": 0.5241,
+     "as_written": [
+      "change"
+     ]
+    },
+    {
+     "stem": "update",
+     "rarity": 0.4264,
+     "as_written": [
+      "update"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "addition",
+     "rarity": 1.0,
+     "as_written": [
+      "addition"
+     ]
+    },
+    {
+     "stem": "authorize",
+     "rarity": 1.0,
+     "as_written": [
+      "authorize"
+     ]
+    },
+    {
+     "stem": "ccc-04",
+     "rarity": 1.0,
+     "as_written": [
+      "ccc-04"
+     ]
+    },
+    {
+     "stem": "owned",
+     "rarity": 0.8255,
+     "as_written": [
+      "owned"
+     ]
+    },
+    {
+     "stem": "removal",
+     "rarity": 0.8255,
+     "as_written": [
+      "removal"
+     ]
+    },
+    {
+     "stem": "procedure",
+     "rarity": 0.6909,
+     "as_written": [
+      "procedure"
+     ]
+    },
+    {
+     "stem": "asset",
+     "rarity": 0.651,
+     "as_written": [
+      "assets"
+     ]
+    },
+    {
+     "stem": "enforce",
+     "rarity": 0.6342,
+     "as_written": [
+      "enforce"
+     ]
+    },
+    {
+     "stem": "authorization",
+     "rarity": 0.6053,
+     "as_written": [
+      "authorization"
+     ]
+    }
+   ],
+   "score": 0.1162,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MAP 3.5: Human oversight",
+   "anchor": "anchor:nist-ai-rmf:map-3-5-human-oversight",
+   "framework": "NIST AI RMF",
+   "reference": "MAP 3.5: Human oversight",
+   "shared_terms": [
+    {
+     "stem": "defin",
+     "rarity": 0.4352,
+     "as_written": [
+      "defined"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "accordance",
+     "rarity": 0.7443,
+     "as_written": [
+      "accordance"
+     ]
+    },
+    {
+     "stem": "oversight",
+     "rarity": 0.6697,
+     "as_written": [
+      "oversight"
+     ]
+    },
+    {
+     "stem": "asses",
+     "rarity": 0.5596,
+     "as_written": [
+      "assessed"
+     ]
+    },
+    {
+     "stem": "govern",
+     "rarity": 0.5499,
+     "as_written": [
+      "govern"
+     ]
+    },
+    {
+     "stem": "human",
+     "rarity": 0.5323,
+     "as_written": [
+      "human"
+     ]
+    },
+    {
+     "stem": "function",
+     "rarity": 0.5241,
+     "as_written": [
+      "function"
+     ]
+    },
+    {
+     "stem": "map",
+     "rarity": 0.5019,
+     "as_written": [
+      "map"
+     ]
+    },
+    {
+     "stem": "organizational",
+     "rarity": 0.4825,
+     "as_written": [
+      "organizational"
+     ]
+    }
+   ],
+   "score": 0.087,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::CCC-05: Change Agreements",
+   "anchor": "anchor:csa-aicm:ccc-05-change-agreements",
+   "framework": "CSA AICM",
+   "reference": "CCC-05: Change Agreements",
+   "shared_terms": [
+    {
+     "stem": "change",
+     "rarity": 0.5241,
+     "as_written": [
+      "change"
+     ]
+    },
+    {
+     "stem": "chang",
+     "rarity": 0.3606,
+     "as_written": [
+      "changes"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "ccc-05",
+     "rarity": 1.0,
+     "as_written": [
+      "ccc-05"
+     ]
+    },
+    {
+     "stem": "explicitly",
+     "rarity": 1.0,
+     "as_written": [
+      "explicitly"
+     ]
+    },
+    {
+     "stem": "ownedenvironment",
+     "rarity": 1.0,
+     "as_written": [
+      "ownedenvironments"
+     ]
+    },
+    {
+     "stem": "tenant",
+     "rarity": 0.8899,
+     "as_written": [
+      "tenants"
+     ]
+    },
+    {
+     "stem": "directly",
+     "rarity": 0.7798,
+     "as_written": [
+      "directly"
+     ]
+    },
+    {
+     "stem": "agreement",
+     "rarity": 0.6697,
+     "as_written": [
+      "agreements"
+     ]
+    },
+    {
+     "stem": "customer",
+     "rarity": 0.6342,
+     "as_written": [
+      "customer"
+     ]
+    },
+    {
+     "stem": "authoriz",
+     "rarity": 0.6191,
+     "as_written": [
+      "authorized"
+     ]
+    },
+    {
+     "stem": "provision",
+     "rarity": 0.5808,
+     "as_written": [
+      "provisions"
+     ]
+    },
+    {
+     "stem": "request",
+     "rarity": 0.5698,
+     "as_written": [
+      "requests"
+     ]
+    },
+    {
+     "stem": "level",
+     "rarity": 0.5409,
+     "as_written": [
+      "level"
+     ]
+    },
+    {
+     "stem": "service",
+     "rarity": 0.5409,
+     "as_written": [
+      "service"
+     ]
+    }
+   ],
+   "score": 0.083,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "EU AI Act::Article 18: Documentation Keeping",
+   "anchor": "anchor:eu-ai-act:article-18-documentation-keeping",
+   "framework": "EU AI Act",
+   "reference": "Article 18: Documentation Keeping",
+   "shared_terms": [
+    {
+     "stem": "decision",
+     "rarity": 0.509,
+     "as_written": [
+      "decisions"
+     ]
+    },
+    {
+     "stem": "chang",
+     "rarity": 0.3606,
+     "as_written": [
+      "changes"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "bankrupt",
+     "rarity": 1.0,
+     "as_written": [
+      "bankrupt"
+     ]
+    },
+    {
+     "stem": "member",
+     "rarity": 1.0,
+     "as_written": [
+      "member"
+     ]
+    },
+    {
+     "stem": "releas",
+     "rarity": 1.0,
+     "as_written": [
+      "released"
+     ]
+    },
+    {
+     "stem": "decide",
+     "rarity": 0.8899,
+     "as_written": [
+      "decide"
+     ]
+    },
+    {
+     "stem": "goes",
+     "rarity": 0.8899,
+     "as_written": [
+      "goes"
+     ]
+    },
+    {
+     "stem": "notifi",
+     "rarity": 0.8899,
+     "as_written": [
+      "notified"
+     ]
+    },
+    {
+     "stem": "union",
+     "rarity": 0.8899,
+     "as_written": [
+      "union"
+     ]
+    },
+    {
+     "stem": "bodi",
+     "rarity": 0.8255,
+     "as_written": [
+      "bodies"
+     ]
+    },
+    {
+     "stem": "declaration",
+     "rarity": 0.8255,
+     "as_written": [
+      "declaration"
+     ]
+    },
+    {
+     "stem": "institution",
+     "rarity": 0.7798,
+     "as_written": [
+      "institutions"
+     ]
+    },
+    {
+     "stem": "stop",
+     "rarity": 0.7798,
+     "as_written": [
+      "stops"
+     ]
+    },
+    {
+     "stem": "year",
+     "rarity": 0.7443,
+     "as_written": [
+      "years"
+     ]
+    }
+   ],
+   "score": 0.0401,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "EU AI Act::Article 17: Quality Management System",
+   "anchor": "anchor:eu-ai-act:article-17-quality-management-system",
+   "framework": "EU AI Act",
+   "reference": "Article 17: Quality Management System",
+   "shared_terms": [
+    {
+     "stem": "accountability",
+     "rarity": 0.6342,
+     "as_written": [
+      "accountability"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "provider'",
+     "rarity": 1.0,
+     "as_written": [
+      "provider's"
+     ]
+    },
+    {
+     "stem": "already",
+     "rarity": 0.8899,
+     "as_written": [
+      "already"
+     ]
+    },
+    {
+     "stem": "aspect",
+     "rarity": 0.8899,
+     "as_written": [
+      "aspects"
+     ]
+    },
+    {
+     "stem": "proportionate",
+     "rarity": 0.8899,
+     "as_written": [
+      "proportionate"
+     ]
+    },
+    {
+     "stem": "union",
+     "rarity": 0.8899,
+     "as_written": [
+      "union"
+     ]
+    },
+    {
+     "stem": "post-market",
+     "rarity": 0.8255,
+     "as_written": [
+      "post-market"
+     ]
+    },
+    {
+     "stem": "record-keep",
+     "rarity": 0.8255,
+     "as_written": [
+      "record-keeping"
+     ]
+    },
+    {
+     "stem": "size",
+     "rarity": 0.8255,
+     "as_written": [
+      "size"
+     ]
+    },
+    {
+     "stem": "institution",
+     "rarity": 0.7798,
+     "as_written": [
+      "institutions"
+     ]
+    },
+    {
+     "stem": "implementation",
+     "rarity": 0.7443,
+     "as_written": [
+      "implementation"
+     ]
+    },
+    {
+     "stem": "comply",
+     "rarity": 0.7154,
+     "as_written": [
+      "complying"
+     ]
+    },
+    {
+     "stem": "financial",
+     "rarity": 0.7154,
+     "as_written": [
+      "financial"
+     ]
+    }
+   ],
+   "score": 0.0245,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "ISO 42001::A.6.2.4: AI system verification and validation",
+   "anchor": "anchor:iso-42001:a-6-2-4-ai-system-verification-and-validation",
+   "framework": "ISO 42001",
+   "reference": "A.6.2.4: AI system verification and validation",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "specify",
+     "rarity": 0.6909,
+     "as_written": [
+      "specify"
+     ]
+    },
+    {
+     "stem": "verification",
+     "rarity": 0.6697,
+     "as_written": [
+      "verification"
+     ]
+    },
+    {
+     "stem": "criteria",
+     "rarity": 0.6342,
+     "as_written": [
+      "criteria"
+     ]
+    },
+    {
+     "stem": "validation",
+     "rarity": 0.5499,
+     "as_written": [
+      "validation"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MANAGE 1.1: Purpose achievement",
+   "anchor": "anchor:nist-ai-rmf:manage-1-1-purpose-achievement",
+   "framework": "NIST AI RMF",
+   "reference": "MANAGE 1.1: Purpose achievement",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "achievement",
+     "rarity": 1.0,
+     "as_written": [
+      "achievement"
+     ]
+    },
+    {
+     "stem": "determination",
+     "rarity": 1.0,
+     "as_written": [
+      "determination"
+     ]
+    },
+    {
+     "stem": "proce",
+     "rarity": 1.0,
+     "as_written": [
+      "proceed"
+     ]
+    },
+    {
+     "stem": "achiev",
+     "rarity": 0.8899,
+     "as_written": [
+      "achieves"
+     ]
+    },
+    {
+     "stem": "made",
+     "rarity": 0.7798,
+     "as_written": [
+      "made"
+     ]
+    },
+    {
+     "stem": "purpose",
+     "rarity": 0.651,
+     "as_written": [
+      "purpose"
+     ]
+    },
+    {
+     "stem": "objectiv",
+     "rarity": 0.6191,
+     "as_written": [
+      "objectives"
+     ]
+    },
+    {
+     "stem": "deployment",
+     "rarity": 0.5409,
+     "as_written": [
+      "deployment"
+     ]
+    },
+    {
+     "stem": "intend",
+     "rarity": 0.5323,
+     "as_written": [
+      "intended"
+     ]
+    },
+    {
+     "stem": "development",
+     "rarity": 0.5241,
+     "as_written": [
+      "development"
+     ]
+    },
+    {
+     "stem": "manage",
+     "rarity": 0.5241,
+     "as_written": [
+      "manage"
+     ]
+    },
+    {
+     "stem": "stat",
+     "rarity": 0.5164,
+     "as_written": [
+      "stated"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MEASURE 4.3: Performance tracking",
+   "anchor": "anchor:nist-ai-rmf:measure-4-3-performance-tracking",
+   "framework": "NIST AI RMF",
+   "reference": "MEASURE 4.3: Performance tracking",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "context-relevant",
+     "rarity": 1.0,
+     "as_written": [
+      "context-relevant"
+     ]
+    },
+    {
+     "stem": "declin",
+     "rarity": 1.0,
+     "as_written": [
+      "declines"
+     ]
+    },
+    {
+     "stem": "field",
+     "rarity": 0.8899,
+     "as_written": [
+      "field"
+     ]
+    },
+    {
+     "stem": "measurable",
+     "rarity": 0.8899,
+     "as_written": [
+      "measurable"
+     ]
+    },
+    {
+     "stem": "consultation",
+     "rarity": 0.7798,
+     "as_written": [
+      "consultations"
+     ]
+    },
+    {
+     "stem": "characteristic",
+     "rarity": 0.7443,
+     "as_written": [
+      "characteristics"
+     ]
+    },
+    {
+     "stem": "community",
+     "rarity": 0.7154,
+     "as_written": [
+      "communities"
+     ]
+    },
+    {
+     "stem": "trustworthines",
+     "rarity": 0.7154,
+     "as_written": [
+      "trustworthiness"
+     ]
+    },
+    {
+     "stem": "improvement",
+     "rarity": 0.651,
+     "as_written": [
+      "improvements"
+     ]
+    },
+    {
+     "stem": "affect",
+     "rarity": 0.6342,
+     "as_written": [
+      "affected"
+     ]
+    },
+    {
+     "stem": "measure",
+     "rarity": 0.5164,
+     "as_written": [
+      "measure"
+     ]
+    },
+    {
+     "stem": "performance",
+     "rarity": 0.509,
+     "as_written": [
+      "performance"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "ISO 42001::A.6.2.2: AI system requirements and specification",
+   "anchor": "anchor:iso-42001:a-6-2-2-ai-system-requirements-and-specification",
+   "framework": "ISO 42001",
+   "reference": "A.6.2.2: AI system requirements and specification",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "enhancement",
+     "rarity": 0.8899,
+     "as_written": [
+      "enhancements"
+     ]
+    },
+    {
+     "stem": "specification",
+     "rarity": 0.7154,
+     "as_written": [
+      "specification"
+     ]
+    },
+    {
+     "stem": "specify",
+     "rarity": 0.6909,
+     "as_written": [
+      "specify"
+     ]
+    },
+    {
+     "stem": "new",
+     "rarity": 0.6342,
+     "as_written": [
+      "new"
+     ]
+    },
+    {
+     "stem": "exist",
+     "rarity": 0.6053,
+     "as_written": [
+      "existing"
+     ]
+    },
+    {
+     "stem": "material",
+     "rarity": 0.6053,
+     "as_written": [
+      "material"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::GOVERN 2.1: Roles and responsibilities",
+   "anchor": "anchor:nist-ai-rmf:govern-2-1-roles-and-responsibilities",
+   "framework": "NIST AI RMF",
+   "reference": "GOVERN 2.1: Roles and responsibilities",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "line",
+     "rarity": 0.7798,
+     "as_written": [
+      "lines"
+     ]
+    },
+    {
+     "stem": "clear",
+     "rarity": 0.6909,
+     "as_written": [
+      "clear"
+     ]
+    },
+    {
+     "stem": "relat",
+     "rarity": 0.6697,
+     "as_written": [
+      "related"
+     ]
+    },
+    {
+     "stem": "team",
+     "rarity": 0.651,
+     "as_written": [
+      "teams"
+     ]
+    },
+    {
+     "stem": "individual",
+     "rarity": 0.5926,
+     "as_written": [
+      "individuals"
+     ]
+    },
+    {
+     "stem": "manag",
+     "rarity": 0.5926,
+     "as_written": [
+      "managing"
+     ]
+    },
+    {
+     "stem": "responsibility",
+     "rarity": 0.5698,
+     "as_written": [
+      "responsibilities"
+     ]
+    },
+    {
+     "stem": "role",
+     "rarity": 0.5596,
+     "as_written": [
+      "roles"
+     ]
+    },
+    {
+     "stem": "govern",
+     "rarity": 0.5499,
+     "as_written": [
+      "govern"
+     ]
+    },
+    {
+     "stem": "communication",
+     "rarity": 0.5409,
+     "as_written": [
+      "communication"
+     ]
+    },
+    {
+     "stem": "map",
+     "rarity": 0.5019,
+     "as_written": [
+      "mapping"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measuring"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  }
+ ],
+ "candidate_crosswalks": []
+}

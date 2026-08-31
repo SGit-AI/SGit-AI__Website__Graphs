@@ -1,0 +1,1616 @@
+{
+ "control_id": "A007",
+ "title": "Prevent IP violations",
+ "published_crosswalks": 15,
+ "published_with_shared_vocabulary": 13,
+ "published_without_shared_vocabulary": [
+  "ISO 42001::A.7.5: Data provenance",
+  "OWASP Top 10::LLM05:25 - Improper Output Handling"
+ ],
+ "candidates": 1,
+ "evidence": [
+  {
+   "clause": "IBM AI Risk Atlas::IBM 44: Inference - IP information in prompt",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-44-inference-ip-information-in-prompt",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 44: Inference - IP information in prompt",
+   "shared_terms": [
+    {
+     "stem": "copyright",
+     "rarity": 0.8255,
+     "as_written": [
+      "copyright",
+      "copyrighted",
+      "copyrights"
+     ]
+    },
+    {
+     "stem": "intellectual",
+     "rarity": 0.6697,
+     "as_written": [
+      "intellectual"
+     ]
+    },
+    {
+     "stem": "property",
+     "rarity": 0.6697,
+     "as_written": [
+      "property"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "sent",
+     "rarity": 0.7798,
+     "as_written": [
+      "sent"
+     ]
+    },
+    {
+     "stem": "part",
+     "rarity": 0.5409,
+     "as_written": [
+      "part"
+     ]
+    },
+    {
+     "stem": "inference",
+     "rarity": 0.509,
+     "as_written": [
+      "inference"
+     ]
+    },
+    {
+     "stem": "might",
+     "rarity": 0.4597,
+     "as_written": [
+      "might"
+     ]
+    },
+    {
+     "stem": "prompt",
+     "rarity": 0.3989,
+     "as_written": [
+      "prompt"
+     ]
+    }
+   ],
+   "score": 0.4461,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::GOVERN 6.1: Third-party risk policies",
+   "anchor": "anchor:nist-ai-rmf:govern-6-1-third-party-risk-policies",
+   "framework": "NIST AI RMF",
+   "reference": "GOVERN 6.1: Third-party risk policies",
+   "shared_terms": [
+    {
+     "stem": "infringement",
+     "rarity": 0.7798,
+     "as_written": [
+      "infringement"
+     ]
+    },
+    {
+     "stem": "intellectual",
+     "rarity": 0.6697,
+     "as_written": [
+      "intellectual"
+     ]
+    },
+    {
+     "stem": "property",
+     "rarity": 0.6697,
+     "as_written": [
+      "property"
+     ]
+    },
+    {
+     "stem": "right",
+     "rarity": 0.5698,
+     "as_written": [
+      "rights"
+     ]
+    },
+    {
+     "stem": "third-party",
+     "rarity": 0.509,
+     "as_written": [
+      "third-party"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "party'",
+     "rarity": 1.0,
+     "as_written": [
+      "party's"
+     ]
+    },
+    {
+     "stem": "entity",
+     "rarity": 0.7798,
+     "as_written": [
+      "entities"
+     ]
+    },
+    {
+     "stem": "addres",
+     "rarity": 0.6909,
+     "as_written": [
+      "address"
+     ]
+    },
+    {
+     "stem": "third",
+     "rarity": 0.6909,
+     "as_written": [
+      "third"
+     ]
+    },
+    {
+     "stem": "associat",
+     "rarity": 0.6191,
+     "as_written": [
+      "associated"
+     ]
+    },
+    {
+     "stem": "place",
+     "rarity": 0.5698,
+     "as_written": [
+      "place"
+     ]
+    },
+    {
+     "stem": "govern",
+     "rarity": 0.5499,
+     "as_written": [
+      "govern"
+     ]
+    }
+   ],
+   "score": 0.3949,
+   "shared_count": 5,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 90: Non-Technical - Generated content ownership and IP",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-90-non-technical-generated-content-ownership-and-ip",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 90: Non-Technical - Generated content ownership and IP",
+   "shared_terms": [
+    {
+     "stem": "intellectual",
+     "rarity": 0.6697,
+     "as_written": [
+      "intellectual"
+     ]
+    },
+    {
+     "stem": "property",
+     "rarity": 0.6697,
+     "as_written": [
+      "property"
+     ]
+    },
+    {
+     "stem": "right",
+     "rarity": 0.5698,
+     "as_written": [
+      "rights"
+     ]
+    },
+    {
+     "stem": "content",
+     "rarity": 0.4352,
+     "as_written": [
+      "content"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "uncertainty",
+     "rarity": 0.8899,
+     "as_written": [
+      "uncertainty"
+     ]
+    },
+    {
+     "stem": "ai-generat",
+     "rarity": 0.8255,
+     "as_written": [
+      "ai-generated"
+     ]
+    },
+    {
+     "stem": "ownership",
+     "rarity": 0.7154,
+     "as_written": [
+      "ownership"
+     ]
+    },
+    {
+     "stem": "non-technical",
+     "rarity": 0.6342,
+     "as_written": [
+      "non-technical"
+     ]
+    },
+    {
+     "stem": "generat",
+     "rarity": 0.5164,
+     "as_written": [
+      "generated"
+     ]
+    },
+    {
+     "stem": "legal",
+     "rarity": 0.4765,
+     "as_written": [
+      "legal"
+     ]
+    }
+   ],
+   "score": 0.3662,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MAP 4.1: Legal risk mapping",
+   "anchor": "anchor:nist-ai-rmf:map-4-1-legal-risk-mapping",
+   "framework": "NIST AI RMF",
+   "reference": "MAP 4.1: Legal risk mapping",
+   "shared_terms": [
+    {
+     "stem": "infringement",
+     "rarity": 0.7798,
+     "as_written": [
+      "infringement"
+     ]
+    },
+    {
+     "stem": "intellectual",
+     "rarity": 0.6697,
+     "as_written": [
+      "intellectual"
+     ]
+    },
+    {
+     "stem": "property",
+     "rarity": 0.6697,
+     "as_written": [
+      "property"
+     ]
+    },
+    {
+     "stem": "right",
+     "rarity": 0.5698,
+     "as_written": [
+      "rights"
+     ]
+    },
+    {
+     "stem": "third-party",
+     "rarity": 0.509,
+     "as_written": [
+      "third-party"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "third-party'",
+     "rarity": 1.0,
+     "as_written": [
+      "third-party's"
+     ]
+    },
+    {
+     "stem": "software",
+     "rarity": 0.6697,
+     "as_written": [
+      "software"
+     ]
+    },
+    {
+     "stem": "approach",
+     "rarity": 0.651,
+     "as_written": [
+      "approaches"
+     ]
+    },
+    {
+     "stem": "component",
+     "rarity": 0.651,
+     "as_written": [
+      "components"
+     ]
+    },
+    {
+     "stem": "technology",
+     "rarity": 0.6191,
+     "as_written": [
+      "technology"
+     ]
+    },
+    {
+     "stem": "follow",
+     "rarity": 0.5808,
+     "as_written": [
+      "followed"
+     ]
+    },
+    {
+     "stem": "place",
+     "rarity": 0.5698,
+     "as_written": [
+      "place"
+     ]
+    },
+    {
+     "stem": "map",
+     "rarity": 0.5019,
+     "as_written": [
+      "map",
+      "mapping"
+     ]
+    },
+    {
+     "stem": "legal",
+     "rarity": 0.4765,
+     "as_written": [
+      "legal"
+     ]
+    }
+   ],
+   "score": 0.3586,
+   "shared_count": 5,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 88: Non-Technical - Model usage rights restrictions",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-88-non-technical-model-usage-rights-restrictions",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 88: Non-Technical - Model usage rights restrictions",
+   "shared_terms": [
+    {
+     "stem": "restriction",
+     "rarity": 0.5926,
+     "as_written": [
+      "restrictions"
+     ]
+    },
+    {
+     "stem": "right",
+     "rarity": 0.5698,
+     "as_written": [
+      "rights"
+     ]
+    },
+    {
+     "stem": "restrict",
+     "rarity": 0.5409,
+     "as_written": [
+      "restrict",
+      "restricting"
+     ]
+    },
+    {
+     "stem": "usage",
+     "rarity": 0.509,
+     "as_written": [
+      "usage"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "licens",
+     "rarity": 1.0,
+     "as_written": [
+      "licenses"
+     ]
+    },
+    {
+     "stem": "term",
+     "rarity": 0.7798,
+     "as_written": [
+      "terms"
+     ]
+    },
+    {
+     "stem": "rule",
+     "rarity": 0.6697,
+     "as_written": [
+      "rules"
+     ]
+    },
+    {
+     "stem": "non-technical",
+     "rarity": 0.6342,
+     "as_written": [
+      "non-technical"
+     ]
+    },
+    {
+     "stem": "certain",
+     "rarity": 0.5596,
+     "as_written": [
+      "certain"
+     ]
+    },
+    {
+     "stem": "service",
+     "rarity": 0.5409,
+     "as_written": [
+      "service"
+     ]
+    }
+   ],
+   "score": 0.3459,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 39: Training Data - Data usage rights restrictions",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-39-training-data-data-usage-rights-restrictions",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 39: Training Data - Data usage rights restrictions",
+   "shared_terms": [
+    {
+     "stem": "restriction",
+     "rarity": 0.5926,
+     "as_written": [
+      "restrictions"
+     ]
+    },
+    {
+     "stem": "right",
+     "rarity": 0.5698,
+     "as_written": [
+      "rights"
+     ]
+    },
+    {
+     "stem": "restrict",
+     "rarity": 0.5409,
+     "as_written": [
+      "restrict",
+      "restricting"
+     ]
+    },
+    {
+     "stem": "usage",
+     "rarity": 0.509,
+     "as_written": [
+      "usage"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "license",
+     "rarity": 0.8899,
+     "as_written": [
+      "license"
+     ]
+    },
+    {
+     "stem": "build",
+     "rarity": 0.7798,
+     "as_written": [
+      "building"
+     ]
+    },
+    {
+     "stem": "term",
+     "rarity": 0.7798,
+     "as_written": [
+      "terms"
+     ]
+    },
+    {
+     "stem": "ability",
+     "rarity": 0.6909,
+     "as_written": [
+      "ability"
+     ]
+    },
+    {
+     "stem": "issu",
+     "rarity": 0.6909,
+     "as_written": [
+      "issues"
+     ]
+    },
+    {
+     "stem": "certain",
+     "rarity": 0.5596,
+     "as_written": [
+      "certain"
+     ]
+    },
+    {
+     "stem": "service",
+     "rarity": 0.5409,
+     "as_written": [
+      "service"
+     ]
+    },
+    {
+     "stem": "compliance",
+     "rarity": 0.5164,
+     "as_written": [
+      "compliance"
+     ]
+    },
+    {
+     "stem": "train",
+     "rarity": 0.4025,
+     "as_written": [
+      "training"
+     ]
+    }
+   ],
+   "score": 0.2744,
+   "shared_count": 4,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 73: Output - Copyright infringement",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-73-output-copyright-infringement",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 73: Output - Copyright infringement",
+   "shared_terms": [
+    {
+     "stem": "copyright",
+     "rarity": 0.8255,
+     "as_written": [
+      "copyright",
+      "copyrighted",
+      "copyrights"
+     ]
+    },
+    {
+     "stem": "infringement",
+     "rarity": 0.7798,
+     "as_written": [
+      "infringement"
+     ]
+    },
+    {
+     "stem": "content",
+     "rarity": 0.4352,
+     "as_written": [
+      "content"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "identical",
+     "rarity": 1.0,
+     "as_written": [
+      "identical"
+     ]
+    },
+    {
+     "stem": "license",
+     "rarity": 0.8899,
+     "as_written": [
+      "license"
+     ]
+    },
+    {
+     "stem": "open-source",
+     "rarity": 0.7798,
+     "as_written": [
+      "open-source"
+     ]
+    },
+    {
+     "stem": "similar",
+     "rarity": 0.7798,
+     "as_written": [
+      "similar"
+     ]
+    },
+    {
+     "stem": "cover",
+     "rarity": 0.7154,
+     "as_written": [
+      "covered"
+     ]
+    },
+    {
+     "stem": "agreement",
+     "rarity": 0.6697,
+     "as_written": [
+      "agreement"
+     ]
+    },
+    {
+     "stem": "work",
+     "rarity": 0.6697,
+     "as_written": [
+      "work"
+     ]
+    },
+    {
+     "stem": "exist",
+     "rarity": 0.6053,
+     "as_written": [
+      "existing"
+     ]
+    },
+    {
+     "stem": "generate",
+     "rarity": 0.6053,
+     "as_written": [
+      "generate"
+     ]
+    },
+    {
+     "stem": "protect",
+     "rarity": 0.5808,
+     "as_written": [
+      "protected"
+     ]
+    },
+    {
+     "stem": "might",
+     "rarity": 0.4597,
+     "as_written": [
+      "might"
+     ]
+    }
+   ],
+   "score": 0.2083,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-8.4: Prompt/Meta Extraction",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-8-4-prompt-meta-extraction",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-8.4: Prompt/Meta Extraction",
+   "shared_terms": [
+    {
+     "stem": "intellectual",
+     "rarity": 0.6697,
+     "as_written": [
+      "intellectual"
+     ]
+    },
+    {
+     "stem": "property",
+     "rarity": 0.6697,
+     "as_written": [
+      "property"
+     ]
+    },
+    {
+     "stem": "mechanism",
+     "rarity": 0.4952,
+     "as_written": [
+      "mechanisms"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "meta-prompt",
+     "rarity": 1.0,
+     "as_written": [
+      "meta-prompts"
+     ]
+    },
+    {
+     "stem": "directiv",
+     "rarity": 0.8899,
+     "as_written": [
+      "directives"
+     ]
+    },
+    {
+     "stem": "constraint",
+     "rarity": 0.8255,
+     "as_written": [
+      "constraints"
+     ]
+    },
+    {
+     "stem": "expose",
+     "rarity": 0.8255,
+     "as_written": [
+      "expose"
+     ]
+    },
+    {
+     "stem": "extract",
+     "rarity": 0.8255,
+     "as_written": [
+      "extract"
+     ]
+    },
+    {
+     "stem": "hidden",
+     "rarity": 0.8255,
+     "as_written": [
+      "hidden"
+     ]
+    },
+    {
+     "stem": "meta",
+     "rarity": 0.8255,
+     "as_written": [
+      "meta"
+     ]
+    },
+    {
+     "stem": "reconstruct",
+     "rarity": 0.8255,
+     "as_written": [
+      "reconstruct"
+     ]
+    },
+    {
+     "stem": "aitech-8",
+     "rarity": 0.7798,
+     "as_written": [
+      "aitech-8"
+     ]
+    },
+    {
+     "stem": "logic",
+     "rarity": 0.7798,
+     "as_written": [
+      "logic"
+     ]
+    },
+    {
+     "stem": "extraction",
+     "rarity": 0.7154,
+     "as_written": [
+      "extraction"
+     ]
+    },
+    {
+     "stem": "initial",
+     "rarity": 0.7154,
+     "as_written": [
+      "initial"
+     ]
+    }
+   ],
+   "score": 0.1102,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "MITRE ATLAS::AML-M0020: Generative AI Guardrails",
+   "anchor": "anchor:mitre-atlas:aml-m0020-generative-ai-guardrails",
+   "framework": "MITRE ATLAS",
+   "reference": "AML-M0020: Generative AI Guardrails",
+   "shared_terms": [
+    {
+     "stem": "domain",
+     "rarity": 0.6909,
+     "as_written": [
+      "domain",
+      "domains"
+     ]
+    },
+    {
+     "stem": "reduce",
+     "rarity": 0.651,
+     "as_written": [
+      "reduce"
+     ]
+    },
+    {
+     "stem": "guardrail",
+     "rarity": 0.6191,
+     "as_written": [
+      "guardrails"
+     ]
+    },
+    {
+     "stem": "filter",
+     "rarity": 0.5596,
+     "as_written": [
+      "filtering",
+      "filters"
+     ]
+    },
+    {
+     "stem": "prevent",
+     "rarity": 0.4651,
+     "as_written": [
+      "prevent"
+     ]
+    },
+    {
+     "stem": "user",
+     "rarity": 0.3953,
+     "as_written": [
+      "user"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "ai-bas",
+     "rarity": 1.0,
+     "as_written": [
+      "ai-based"
+     ]
+    },
+    {
+     "stem": "aml-m0020",
+     "rarity": 1.0,
+     "as_written": [
+      "aml-m0020"
+     ]
+    },
+    {
+     "stem": "brand",
+     "rarity": 1.0,
+     "as_written": [
+      "brand"
+     ]
+    },
+    {
+     "stem": "etiquette",
+     "rarity": 1.0,
+     "as_written": [
+      "etiquette"
+     ]
+    },
+    {
+     "stem": "expression",
+     "rarity": 1.0,
+     "as_written": [
+      "expressions"
+     ]
+    },
+    {
+     "stem": "named",
+     "rarity": 1.0,
+     "as_written": [
+      "named"
+     ]
+    },
+    {
+     "stem": "ner",
+     "rarity": 1.0,
+     "as_written": [
+      "ner"
+     ]
+    },
+    {
+     "stem": "rule-bas",
+     "rarity": 1.0,
+     "as_written": [
+      "rule-based"
+     ]
+    },
+    {
+     "stem": "sql",
+     "rarity": 1.0,
+     "as_written": [
+      "sql"
+     ]
+    },
+    {
+     "stem": "validator",
+     "rarity": 1.0,
+     "as_written": [
+      "validators"
+     ]
+    },
+    {
+     "stem": "variety",
+     "rarity": 1.0,
+     "as_written": [
+      "variety"
+     ]
+    },
+    {
+     "stem": "classifier",
+     "rarity": 0.8899,
+     "as_written": [
+      "classifiers"
+     ]
+    }
+   ],
+   "score": 0.0982,
+   "shared_count": 6,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-15.1: Harmful Content",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-15-1-harmful-content",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-15.1: Harmful Content",
+   "shared_terms": [
+    {
+     "stem": "guardrail",
+     "rarity": 0.6191,
+     "as_written": [
+      "guardrails"
+     ]
+    },
+    {
+     "stem": "restrict",
+     "rarity": 0.5409,
+     "as_written": [
+      "restricted",
+      "restricting"
+     ]
+    },
+    {
+     "stem": "content",
+     "rarity": 0.4352,
+     "as_written": [
+      "content"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "aitech-15",
+     "rarity": 1.0,
+     "as_written": [
+      "aitech-15"
+     ]
+    },
+    {
+     "stem": "speech",
+     "rarity": 1.0,
+     "as_written": [
+      "speech"
+     ]
+    },
+    {
+     "stem": "otherwise",
+     "rarity": 0.8899,
+     "as_written": [
+      "otherwise"
+     ]
+    },
+    {
+     "stem": "constraint",
+     "rarity": 0.8255,
+     "as_written": [
+      "constraints"
+     ]
+    },
+    {
+     "stem": "misinformation",
+     "rarity": 0.8255,
+     "as_written": [
+      "misinformation"
+     ]
+    },
+    {
+     "stem": "toxic",
+     "rarity": 0.8255,
+     "as_written": [
+      "toxic"
+     ]
+    },
+    {
+     "stem": "media",
+     "rarity": 0.7798,
+     "as_written": [
+      "media"
+     ]
+    },
+    {
+     "stem": "produce",
+     "rarity": 0.7798,
+     "as_written": [
+      "produce"
+     ]
+    },
+    {
+     "stem": "weakness",
+     "rarity": 0.7798,
+     "as_written": [
+      "weaknesses"
+     ]
+    },
+    {
+     "stem": "unsafe",
+     "rarity": 0.6697,
+     "as_written": [
+      "unsafe"
+     ]
+    },
+    {
+     "stem": "bypas",
+     "rarity": 0.651,
+     "as_written": [
+      "bypass"
+     ]
+    },
+    {
+     "stem": "generative",
+     "rarity": 0.651,
+     "as_written": [
+      "generative"
+     ]
+    }
+   ],
+   "score": 0.098,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-8.2: Data Exfiltration / Exposure",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-8-2-data-exfiltration-exposure",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-8.2: Data Exfiltration / Exposure",
+   "shared_terms": [
+    {
+     "stem": "intellectual",
+     "rarity": 0.6697,
+     "as_written": [
+      "intellectual"
+     ]
+    },
+    {
+     "stem": "property",
+     "rarity": 0.6697,
+     "as_written": [
+      "property"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "unintentionally",
+     "rarity": 0.8255,
+     "as_written": [
+      "unintentionally"
+     ]
+    },
+    {
+     "stem": "aitech-8",
+     "rarity": 0.7798,
+     "as_written": [
+      "aitech-8"
+     ]
+    },
+    {
+     "stem": "exfiltration",
+     "rarity": 0.7798,
+     "as_written": [
+      "exfiltration"
+     ]
+    },
+    {
+     "stem": "proprietary",
+     "rarity": 0.7798,
+     "as_written": [
+      "proprietary"
+     ]
+    },
+    {
+     "stem": "exposure",
+     "rarity": 0.7154,
+     "as_written": [
+      "exposure"
+     ]
+    },
+    {
+     "stem": "intentionally",
+     "rarity": 0.7154,
+     "as_written": [
+      "intentionally"
+     ]
+    },
+    {
+     "stem": "cause",
+     "rarity": 0.6909,
+     "as_written": [
+      "cause"
+     ]
+    },
+    {
+     "stem": "expos",
+     "rarity": 0.6909,
+     "as_written": [
+      "exposed"
+     ]
+    },
+    {
+     "stem": "algorithm",
+     "rarity": 0.6697,
+     "as_written": [
+      "algorithms"
+     ]
+    },
+    {
+     "stem": "confidential",
+     "rarity": 0.651,
+     "as_written": [
+      "confidential"
+     ]
+    },
+    {
+     "stem": "leakage",
+     "rarity": 0.651,
+     "as_written": [
+      "leakage"
+     ]
+    },
+    {
+     "stem": "api",
+     "rarity": 0.6053,
+     "as_written": [
+      "api"
+     ]
+    }
+   ],
+   "score": 0.0934,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::AIS-09: Output Validation",
+   "anchor": "anchor:csa-aicm:ais-09-output-validation",
+   "framework": "CSA AICM",
+   "reference": "AIS-09: Output Validation",
+   "shared_terms": [
+    {
+     "stem": "filter",
+     "rarity": 0.5596,
+     "as_written": [
+      "filter",
+      "filtering"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "ais-09",
+     "rarity": 1.0,
+     "as_written": [
+      "ais-09"
+     ]
+    },
+    {
+     "stem": "behaviour",
+     "rarity": 0.8899,
+     "as_written": [
+      "behaviour"
+     ]
+    },
+    {
+     "stem": "organisational",
+     "rarity": 0.8899,
+     "as_written": [
+      "organisational"
+     ]
+    },
+    {
+     "stem": "unwant",
+     "rarity": 0.8255,
+     "as_written": [
+      "unwanted"
+     ]
+    },
+    {
+     "stem": "validate",
+     "rarity": 0.7443,
+     "as_written": [
+      "validate"
+     ]
+    },
+    {
+     "stem": "failure",
+     "rarity": 0.7154,
+     "as_written": [
+      "failure"
+     ]
+    },
+    {
+     "stem": "modify",
+     "rarity": 0.7154,
+     "as_written": [
+      "modify"
+     ]
+    },
+    {
+     "stem": "block",
+     "rarity": 0.5926,
+     "as_written": [
+      "block"
+     ]
+    },
+    {
+     "stem": "necessary",
+     "rarity": 0.5698,
+     "as_written": [
+      "necessary"
+     ]
+    },
+    {
+     "stem": "adversarial",
+     "rarity": 0.5499,
+     "as_written": [
+      "adversarial"
+     ]
+    },
+    {
+     "stem": "validation",
+     "rarity": 0.5499,
+     "as_written": [
+      "validation"
+     ]
+    },
+    {
+     "stem": "accord",
+     "rarity": 0.5409,
+     "as_written": [
+      "according"
+     ]
+    }
+   ],
+   "score": 0.0501,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP Top 10::LLM03:25 - Supply Chain",
+   "anchor": "anchor:owasp-top-10:llm03-25-supply-chain",
+   "framework": "OWASP Top 10",
+   "reference": "LLM03:25 - Supply Chain",
+   "shared_terms": [
+    {
+     "stem": "third-party",
+     "rarity": 0.509,
+     "as_written": [
+      "third-party"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "llm03",
+     "rarity": 1.0,
+     "as_written": [
+      "llm03"
+     ]
+    },
+    {
+     "stem": "pre-train",
+     "rarity": 0.8899,
+     "as_written": [
+      "pre-trained"
+     ]
+    },
+    {
+     "stem": "traditional",
+     "rarity": 0.8899,
+     "as_written": [
+      "traditional"
+     ]
+    },
+    {
+     "stem": "face",
+     "rarity": 0.8255,
+     "as_written": [
+      "face"
+     ]
+    },
+    {
+     "stem": "unlike",
+     "rarity": 0.8255,
+     "as_written": [
+      "unlike"
+     ]
+    },
+    {
+     "stem": "breach",
+     "rarity": 0.7443,
+     "as_written": [
+      "breaches"
+     ]
+    },
+    {
+     "stem": "platform",
+     "rarity": 0.7443,
+     "as_written": [
+      "platforms"
+     ]
+    },
+    {
+     "stem": "failur",
+     "rarity": 0.7154,
+     "as_written": [
+      "failures"
+     ]
+    },
+    {
+     "stem": "caus",
+     "rarity": 0.6697,
+     "as_written": [
+      "causing"
+     ]
+    },
+    {
+     "stem": "software",
+     "rarity": 0.6697,
+     "as_written": [
+      "software"
+     ]
+    },
+    {
+     "stem": "llm",
+     "rarity": 0.6342,
+     "as_written": [
+      "llm"
+     ]
+    },
+    {
+     "stem": "bias",
+     "rarity": 0.5698,
+     "as_written": [
+      "bias"
+     ]
+    }
+   ],
+   "score": 0.0438,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP Top 10::LLM05:25 - Improper Output Handling",
+   "anchor": "anchor:owasp-top-10:llm05-25-improper-output-handling",
+   "framework": "OWASP Top 10",
+   "reference": "LLM05:25 - Improper Output Handling",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "differ",
+     "rarity": 1.0,
+     "as_written": [
+      "differs"
+     ]
+    },
+    {
+     "stem": "llm05",
+     "rarity": 1.0,
+     "as_written": [
+      "llm05"
+     ]
+    },
+    {
+     "stem": "overreliance",
+     "rarity": 1.0,
+     "as_written": [
+      "overreliance"
+     ]
+    },
+    {
+     "stem": "ssrf",
+     "rarity": 1.0,
+     "as_written": [
+      "ssrf"
+     ]
+    },
+    {
+     "stem": "xss",
+     "rarity": 1.0,
+     "as_written": [
+      "xss"
+     ]
+    },
+    {
+     "stem": "csrf",
+     "rarity": 0.8899,
+     "as_written": [
+      "csrf"
+     ]
+    },
+    {
+     "stem": "improper",
+     "rarity": 0.8899,
+     "as_written": [
+      "improper"
+     ]
+    },
+    {
+     "stem": "remote",
+     "rarity": 0.8899,
+     "as_written": [
+      "remote"
+     ]
+    },
+    {
+     "stem": "inadequate",
+     "rarity": 0.8255,
+     "as_written": [
+      "inadequate"
+     ]
+    },
+    {
+     "stem": "escalation",
+     "rarity": 0.7443,
+     "as_written": [
+      "escalation"
+     ]
+    },
+    {
+     "stem": "involv",
+     "rarity": 0.7443,
+     "as_written": [
+      "involves"
+     ]
+    },
+    {
+     "stem": "privilege",
+     "rarity": 0.7154,
+     "as_written": [
+      "privilege"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "ISO 42001::A.7.5: Data provenance",
+   "anchor": "anchor:iso-42001:a-7-5-data-provenance",
+   "framework": "ISO 42001",
+   "reference": "A.7.5: Data provenance",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "cycl",
+     "rarity": 0.8899,
+     "as_written": [
+      "cycles"
+     ]
+    },
+    {
+     "stem": "provenance",
+     "rarity": 0.6697,
+     "as_written": [
+      "provenance"
+     ]
+    },
+    {
+     "stem": "life",
+     "rarity": 0.651,
+     "as_written": [
+      "life"
+     ]
+    },
+    {
+     "stem": "record",
+     "rarity": 0.4651,
+     "as_written": [
+      "recording"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  }
+ ],
+ "candidate_crosswalks": [
+  {
+   "clause": "IBM AI Risk Atlas::IBM 36: Training Data - Data usage restrictions",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-36-training-data-data-usage-restrictions",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 36: Training Data - Data usage restrictions",
+   "shared_terms": [
+    {
+     "stem": "prohibit",
+     "rarity": 0.7154,
+     "as_written": [
+      "prohibit",
+      "prohibited"
+     ]
+    },
+    {
+     "stem": "restriction",
+     "rarity": 0.5926,
+     "as_written": [
+      "restrictions"
+     ]
+    },
+    {
+     "stem": "usage",
+     "rarity": 0.509,
+     "as_written": [
+      "usage"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "specific",
+     "rarity": 0.6053,
+     "as_written": [
+      "specific"
+     ]
+    },
+    {
+     "stem": "case",
+     "rarity": 0.5596,
+     "as_written": [
+      "cases"
+     ]
+    },
+    {
+     "stem": "laws",
+     "rarity": 0.5019,
+     "as_written": [
+      "laws"
+     ]
+    },
+    {
+     "stem": "limit",
+     "rarity": 0.5019,
+     "as_written": [
+      "limit"
+     ]
+    },
+    {
+     "stem": "train",
+     "rarity": 0.4025,
+     "as_written": [
+      "training"
+     ]
+    }
+   ],
+   "score": 0.4141,
+   "shared_count": 3,
+   "grade": "proposed",
+   "relationship": "AIUC does NOT publish this crosswalk. This build observed shared distinctive vocabulary and proposes it as a candidate for review. It is not a mapping.",
+   "review_status": "needs_review"
+  }
+ ]
+}

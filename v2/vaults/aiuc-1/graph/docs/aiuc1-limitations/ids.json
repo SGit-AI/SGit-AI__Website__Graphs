@@ -1,0 +1,168 @@
+{
+ "doc": "doc:aiuc1-limitations",
+ "prefix": "lm",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 8,
+  "b": 10
+ },
+ "ids": [
+  {
+   "uid": "lm:d1",
+   "level": "doc",
+   "locator": "doc:aiuc1-limitations",
+   "hash": "69b1b67de5ef",
+   "head": "Limitations",
+   "status": "live"
+  },
+  {
+   "uid": "lm:s1",
+   "level": "sec",
+   "locator": "sec:It is not the standard",
+   "hash": "bcb93f9b87d0",
+   "head": "2|It is not the standard",
+   "status": "live"
+  },
+  {
+   "uid": "lm:s2",
+   "level": "sec",
+   "locator": "sec:Historical releases are thinner than the current one",
+   "hash": "29c11f0a8e4f",
+   "head": "2|Historical releases are thinner than the current one",
+   "status": "live"
+  },
+  {
+   "uid": "lm:s3",
+   "level": "sec",
+   "locator": "sec:One named release has no artefact",
+   "hash": "5b036b658bf6",
+   "head": "2|One named release has no artefact",
+   "status": "live"
+  },
+  {
+   "uid": "lm:s4",
+   "level": "sec",
+   "locator": "sec:The announced release is not built",
+   "hash": "a54b775411f6",
+   "head": "2|The announced release is not built",
+   "status": "live"
+  },
+  {
+   "uid": "lm:s5",
+   "level": "sec",
+   "locator": "sec:Crosswalks are AIUC's, not this build's",
+   "hash": "a05a97294ba2",
+   "head": "2|Crosswalks are AIUC's, not this build's",
+   "status": "live"
+  },
+  {
+   "uid": "lm:s6",
+   "level": "sec",
+   "locator": "sec:Sub-control status is not stated by the source",
+   "hash": "4bd850c0a94d",
+   "head": "2|Sub-control status is not stated by the source",
+   "status": "live"
+  },
+  {
+   "uid": "lm:s7",
+   "level": "sec",
+   "locator": "sec:Five differences are recorded and unresolved",
+   "hash": "798cc3e61a2c",
+   "head": "2|Five differences are recorded and unresolved",
+   "status": "live"
+  },
+  {
+   "uid": "lm:s8",
+   "level": "sec",
+   "locator": "sec:Everything else is a snapshot in time",
+   "hash": "7c16f9cae531",
+   "head": "2|Everything else is a snapshot in time",
+   "status": "live"
+  },
+  {
+   "uid": "lm:b1",
+   "level": "blk",
+   "locator": "blk:Limitations/1",
+   "hash": "8ba710497901",
+   "head": "What this catalog does not do, cannot do, or has not yet done. Read this before\n",
+   "status": "live"
+  },
+  {
+   "uid": "lm:b2",
+   "level": "blk",
+   "locator": "blk:It is not the standard/1",
+   "hash": "e31d0b1c3af8",
+   "head": "It is derived. AIUC has not reviewed it. Where it differs from\n[aiuc-1.com](http",
+   "status": "live"
+  },
+  {
+   "uid": "lm:b3",
+   "level": "blk",
+   "locator": "blk:Historical releases are thinner than the current one/1",
+   "hash": "45bc84aa92a8",
+   "head": "Only the current release (2026-07-15) is built from the website, so only it carr",
+   "status": "live"
+  },
+  {
+   "uid": "lm:b4",
+   "level": "blk",
+   "locator": "blk:Historical releases are thinner than the current one/2",
+   "hash": "2d5828580011",
+   "head": "The three earlier built releases (2026-04-15, 2026-01-15, 2025-10-01) come from ",
+   "status": "live"
+  },
+  {
+   "uid": "lm:b5",
+   "level": "blk",
+   "locator": "blk:One named release has no artefact/1",
+   "hash": "262256330560",
+   "head": "AIUC's standard-history table names a **July 22, 2025** version. No commit in th",
+   "status": "live"
+  },
+  {
+   "uid": "lm:b6",
+   "level": "blk",
+   "locator": "blk:The announced release is not built/1",
+   "hash": "2dc83a47ff23",
+   "head": "The changelog page announces **October 15, 2026**. Announced is not published: i",
+   "status": "live"
+  },
+  {
+   "uid": "lm:b7",
+   "level": "blk",
+   "locator": "blk:Crosswalks are AIUC's, not this build's/1",
+   "hash": "354c957e27d1",
+   "head": "The 1,126 crosswalk mappings to 13 external frameworks are **published by AIUC**",
+   "status": "live"
+  },
+  {
+   "uid": "lm:b8",
+   "level": "blk",
+   "locator": "blk:Sub-control status is not stated by the source/1",
+   "hash": "7f9266a9133f",
+   "head": "AIUC-1 publishes numbered sub-controls (`B006.1`) with an application of Core or",
+   "status": "live"
+  },
+  {
+   "uid": "lm:b9",
+   "level": "blk",
+   "locator": "blk:Five differences are recorded and unresolved/1",
+   "hash": "ee81fc08d06f",
+   "head": "At 2026-07-15 the website and the official repository differ in five places: thr",
+   "status": "live"
+  },
+  {
+   "uid": "lm:b10",
+   "level": "blk",
+   "locator": "blk:Everything else is a snapshot in time/1",
+   "hash": "934a813962e9",
+   "head": "The catalog is what the official sources said at the retrieval timestamps in\n`ev",
+   "status": "live"
+  }
+ ]
+}

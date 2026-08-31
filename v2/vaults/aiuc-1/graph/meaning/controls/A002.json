@@ -1,0 +1,580 @@
+{
+ "control_id": "A002",
+ "title": "Establish output data policy",
+ "published_crosswalks": 5,
+ "published_with_shared_vocabulary": 5,
+ "published_without_shared_vocabulary": [],
+ "candidates": 1,
+ "evidence": [
+  {
+   "clause": "IBM AI Risk Atlas::IBM 90: Non-Technical - Generated content ownership and IP",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-90-non-technical-generated-content-ownership-and-ip",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 90: Non-Technical - Generated content ownership and IP",
+   "shared_terms": [
+    {
+     "stem": "ai-generat",
+     "rarity": 0.8255,
+     "as_written": [
+      "ai-generated"
+     ]
+    },
+    {
+     "stem": "ownership",
+     "rarity": 0.7154,
+     "as_written": [
+      "ownership"
+     ]
+    },
+    {
+     "stem": "right",
+     "rarity": 0.5698,
+     "as_written": [
+      "rights"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "uncertainty",
+     "rarity": 0.8899,
+     "as_written": [
+      "uncertainty"
+     ]
+    },
+    {
+     "stem": "intellectual",
+     "rarity": 0.6697,
+     "as_written": [
+      "intellectual"
+     ]
+    },
+    {
+     "stem": "property",
+     "rarity": 0.6697,
+     "as_written": [
+      "property"
+     ]
+    },
+    {
+     "stem": "non-technical",
+     "rarity": 0.6342,
+     "as_written": [
+      "non-technical"
+     ]
+    },
+    {
+     "stem": "generat",
+     "rarity": 0.5164,
+     "as_written": [
+      "generated"
+     ]
+    },
+    {
+     "stem": "legal",
+     "rarity": 0.4765,
+     "as_written": [
+      "legal"
+     ]
+    },
+    {
+     "stem": "content",
+     "rarity": 0.4352,
+     "as_written": [
+      "content"
+     ]
+    }
+   ],
+   "score": 0.3297,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DSP-16: Data Retention and Deletion",
+   "anchor": "anchor:csa-aicm:dsp-16-data-retention-and-deletion",
+   "framework": "CSA AICM",
+   "reference": "DSP-16: Data Retention and Deletion",
+   "shared_terms": [
+    {
+     "stem": "deletion",
+     "rarity": 0.7443,
+     "as_written": [
+      "deletion"
+     ]
+    },
+    {
+     "stem": "retention",
+     "rarity": 0.6909,
+     "as_written": [
+      "retention"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dsp-16",
+     "rarity": 1.0,
+     "as_written": [
+      "dsp-16"
+     ]
+    },
+    {
+     "stem": "withbusines",
+     "rarity": 1.0,
+     "as_written": [
+      "withbusiness"
+     ]
+    },
+    {
+     "stem": "archiv",
+     "rarity": 0.8899,
+     "as_written": [
+      "archiving"
+     ]
+    },
+    {
+     "stem": "accordance",
+     "rarity": 0.7443,
+     "as_written": [
+      "accordance"
+     ]
+    },
+    {
+     "stem": "manag",
+     "rarity": 0.5926,
+     "as_written": [
+      "managed"
+     ]
+    },
+    {
+     "stem": "regulation",
+     "rarity": 0.5164,
+     "as_written": [
+      "regulations"
+     ]
+    },
+    {
+     "stem": "applicable",
+     "rarity": 0.509,
+     "as_written": [
+      "applicable"
+     ]
+    },
+    {
+     "stem": "laws",
+     "rarity": 0.5019,
+     "as_written": [
+      "laws"
+     ]
+    }
+   ],
+   "score": 0.1996,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 32: Training Data - Data privacy rights alignment",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-32-training-data-data-privacy-rights-alignment",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 32: Training Data - Data privacy rights alignment",
+   "shared_terms": [
+    {
+     "stem": "opt-out",
+     "rarity": 0.7798,
+     "as_written": [
+      "opt-out"
+     ]
+    },
+    {
+     "stem": "right",
+     "rarity": 0.5698,
+     "as_written": [
+      "right",
+      "rights"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "anonymou",
+     "rarity": 1.0,
+     "as_written": [
+      "anonymous"
+     ]
+    },
+    {
+     "stem": "deriv",
+     "rarity": 1.0,
+     "as_written": [
+      "derived"
+     ]
+    },
+    {
+     "stem": "forgotten",
+     "rarity": 1.0,
+     "as_written": [
+      "forgotten"
+     ]
+    },
+    {
+     "stem": "raise",
+     "rarity": 1.0,
+     "as_written": [
+      "raise"
+     ]
+    },
+    {
+     "stem": "seemingly",
+     "rarity": 1.0,
+     "as_written": [
+      "seemingly"
+     ]
+    },
+    {
+     "stem": "reidentification",
+     "rarity": 0.8899,
+     "as_written": [
+      "reidentification"
+     ]
+    },
+    {
+     "stem": "alignment",
+     "rarity": 0.7798,
+     "as_written": [
+      "alignment"
+     ]
+    },
+    {
+     "stem": "concern",
+     "rarity": 0.7798,
+     "as_written": [
+      "concerns"
+     ]
+    },
+    {
+     "stem": "unique",
+     "rarity": 0.7798,
+     "as_written": [
+      "unique"
+     ]
+    },
+    {
+     "stem": "scenario",
+     "rarity": 0.7443,
+     "as_written": [
+      "scenarios"
+     ]
+    },
+    {
+     "stem": "synthetic",
+     "rarity": 0.6909,
+     "as_written": [
+      "synthetic"
+     ]
+    },
+    {
+     "stem": "subject",
+     "rarity": 0.651,
+     "as_written": [
+      "subject"
+     ]
+    }
+   ],
+   "score": 0.0808,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::DSP-08: Data Privacy by Design and Default",
+   "anchor": "anchor:csa-aicm:dsp-08-data-privacy-by-design-and-default",
+   "framework": "CSA AICM",
+   "reference": "DSP-08: Data Privacy by Design and Default",
+   "shared_terms": [
+    {
+     "stem": "practic",
+     "rarity": 0.5698,
+     "as_written": [
+      "practices"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "dsp-08",
+     "rarity": 1.0,
+     "as_written": [
+      "dsp-08"
+     ]
+    },
+    {
+     "stem": "default",
+     "rarity": 0.8255,
+     "as_written": [
+      "default"
+     ]
+    },
+    {
+     "stem": "setting",
+     "rarity": 0.8255,
+     "as_written": [
+      "settings"
+     ]
+    },
+    {
+     "stem": "principle",
+     "rarity": 0.7798,
+     "as_written": [
+      "principle"
+     ]
+    },
+    {
+     "stem": "best",
+     "rarity": 0.7443,
+     "as_written": [
+      "best"
+     ]
+    },
+    {
+     "stem": "configur",
+     "rarity": 0.6909,
+     "as_written": [
+      "configured"
+     ]
+    },
+    {
+     "stem": "industry",
+     "rarity": 0.6342,
+     "as_written": [
+      "industry"
+     ]
+    },
+    {
+     "stem": "product",
+     "rarity": 0.6191,
+     "as_written": [
+      "products"
+     ]
+    },
+    {
+     "stem": "privacy",
+     "rarity": 0.6053,
+     "as_written": [
+      "privacy"
+     ]
+    },
+    {
+     "stem": "develop",
+     "rarity": 0.5926,
+     "as_written": [
+      "develop"
+     ]
+    },
+    {
+     "stem": "busines",
+     "rarity": 0.5698,
+     "as_written": [
+      "business"
+     ]
+    },
+    {
+     "stem": "accord",
+     "rarity": 0.5409,
+     "as_written": [
+      "according"
+     ]
+    }
+   ],
+   "score": 0.0499,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::STA-10: Primary Service and Contractual Agreement",
+   "anchor": "anchor:csa-aicm:sta-10-primary-service-and-contractual-agreement",
+   "framework": "CSA AICM",
+   "reference": "STA-10: Primary Service and Contractual Agreement",
+   "shared_terms": [
+    {
+     "stem": "right",
+     "rarity": 0.5698,
+     "as_written": [
+      "right",
+      "rights"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "interoperability",
+     "rarity": 1.0,
+     "as_written": [
+      "interoperability"
+     ]
+    },
+    {
+     "stem": "mutually-agre",
+     "rarity": 1.0,
+     "as_written": [
+      "mutually-agreed"
+     ]
+    },
+    {
+     "stem": "ssrm",
+     "rarity": 1.0,
+     "as_written": [
+      "ssrm"
+     ]
+    },
+    {
+     "stem": "sta-10",
+     "rarity": 1.0,
+     "as_written": [
+      "sta-10"
+     ]
+    },
+    {
+     "stem": "termination",
+     "rarity": 1.0,
+     "as_written": [
+      "termination"
+     ]
+    },
+    {
+     "stem": "offer",
+     "rarity": 0.8899,
+     "as_written": [
+      "offered"
+     ]
+    },
+    {
+     "stem": "portability",
+     "rarity": 0.8899,
+     "as_written": [
+      "portability"
+     ]
+    },
+    {
+     "stem": "incorporate",
+     "rarity": 0.8255,
+     "as_written": [
+      "incorporate"
+     ]
+    },
+    {
+     "stem": "primary",
+     "rarity": 0.8255,
+     "as_written": [
+      "primary"
+     ]
+    },
+    {
+     "stem": "term",
+     "rarity": 0.7798,
+     "as_written": [
+      "terms"
+     ]
+    },
+    {
+     "stem": "characteristic",
+     "rarity": 0.7443,
+     "as_written": [
+      "characteristics"
+     ]
+    },
+    {
+     "stem": "contractual",
+     "rarity": 0.7443,
+     "as_written": [
+      "contractual"
+     ]
+    }
+   ],
+   "score": 0.0246,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  }
+ ],
+ "candidate_crosswalks": [
+  {
+   "clause": "IBM AI Risk Atlas::IBM 36: Training Data - Data usage restrictions",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-36-training-data-data-usage-restrictions",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 36: Training Data - Data usage restrictions",
+   "shared_terms": [
+    {
+     "stem": "restriction",
+     "rarity": 0.5926,
+     "as_written": [
+      "restrictions"
+     ]
+    },
+    {
+     "stem": "case",
+     "rarity": 0.5596,
+     "as_written": [
+      "cases"
+     ]
+    },
+    {
+     "stem": "usage",
+     "rarity": 0.509,
+     "as_written": [
+      "usage"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "prohibit",
+     "rarity": 0.7154,
+     "as_written": [
+      "prohibit"
+     ]
+    },
+    {
+     "stem": "specific",
+     "rarity": 0.6053,
+     "as_written": [
+      "specific"
+     ]
+    },
+    {
+     "stem": "laws",
+     "rarity": 0.5019,
+     "as_written": [
+      "laws"
+     ]
+    },
+    {
+     "stem": "limit",
+     "rarity": 0.5019,
+     "as_written": [
+      "limit"
+     ]
+    },
+    {
+     "stem": "train",
+     "rarity": 0.4025,
+     "as_written": [
+      "training"
+     ]
+    }
+   ],
+   "score": 0.3786,
+   "shared_count": 3,
+   "grade": "proposed",
+   "relationship": "AIUC does NOT publish this crosswalk. This build observed shared distinctive vocabulary and proposes it as a candidate for review. It is not a mapping.",
+   "review_status": "needs_review"
+  }
+ ]
+}

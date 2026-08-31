@@ -1,17 +1,21 @@
 {
  "graph_id": "aiuc-1-derived-graph",
- "generated_at": "2026-08-31T23:13:08Z",
+ "generated_at": "2026-08-31T23:55:51Z",
  "generator_version": "0.1.0",
  "current_release": "2026-07-15",
  "disclaimer": "Unofficial, derivative machine-readable representation of AIUC-1, built by the sgit.ai graph estate. Not approved, certified or endorsed by AIUC. Verify every requirement against the official AIUC-1 sources.",
- "node_count": 1238,
- "edge_count": 3526,
+ "node_count": 2788,
+ "edge_count": 11610,
  "nodes_by_type": {
+  "anchor": 489,
   "capability": 7,
   "change_event": 194,
   "commit": 4,
   "control": 53,
   "crosswalk_entry": 489,
+  "doc_block": 454,
+  "doc_section": 241,
+  "document": 9,
   "domain": 6,
   "evidence_category": 4,
   "evidence_location": 18,
@@ -21,26 +25,36 @@
   "release": 5,
   "requirement": 144,
   "source_observation": 82,
-  "standard": 1
+  "standard": 1,
+  "term": 357
  },
  "edges_by_type": {
   "affects": 194,
+  "anchors_to": 489,
   "applies_to_capability": 272,
+  "candidate_crosswalk": 66,
   "derived_from": 4,
   "evidenced_by": 159,
+  "evidenced_crosswalk": 1126,
   "expects_evidence_in": 142,
   "follows": 4,
+  "has_block": 454,
   "has_control": 53,
   "has_domain": 6,
   "has_requirement": 144,
-  "in_framework": 489,
+  "has_section": 241,
+  "in_framework": 978,
   "in_release": 298,
+  "in_section": 344,
   "includes": 206,
   "maps_to": 1126,
   "names": 98,
+  "states": 197,
   "superseded_by": 1,
   "tagged": 159,
-  "typically_found_in": 171
+  "typically_found_in": 171,
+  "uses_term": 4453,
+  "wording_of": 225
  },
  "edge_meanings": {
   "has_domain": "the standard is organised into this domain",
@@ -59,7 +73,16 @@
   "in_release": "this change event belongs to this release",
   "names": "this official changelog row names this control",
   "superseded_by": "this control was merged into that control",
-  "follows": "this release follows that one"
+  "follows": "this release follows that one",
+  "has_section": "the source document has this section",
+  "has_block": "the section has this paragraph",
+  "states": "this section of the official markdown states this control",
+  "in_section": "this paragraph sits under that heading",
+  "wording_of": "this paragraph is character-for-character this requirement",
+  "uses_term": "this text uses this term",
+  "evidenced_crosswalk": "AIUC publishes this crosswalk, and the two texts share distinctive vocabulary that is evidence for it",
+  "candidate_crosswalk": "this build observed shared distinctive vocabulary where AIUC publishes no crosswalk; a candidate for review, not a mapping",
+  "anchors_to": "the crosswalked clause, as an external anchor node"
  },
- "content_hash": "sha256:03d57d7ed84886ddc126453f0d0abf0d13ef494bed23805cec132ead50b80acb"
+ "content_hash": "sha256:45bf676a490b172b0f14d4af0534feee9e328cf24cf039406508bf48c59588b5"
 }

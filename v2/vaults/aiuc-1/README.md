@@ -21,6 +21,8 @@ use any of it, and verify every requirement against
 | **194 change events** | derived from release-to-release differences, plus 104 change rows AIUC publishes itself |
 | **1,238 nodes, 3,526 edges** | the whole thing as one graph |
 | **82 source observations** | one per captured page, each with its URL, retrieval time, content hash and retained snapshot |
+| **9 documents to the word** | every source markdown decomposed to document, section, paragraph, sentence, word, each rebuilding byte-identical from its formatting graph. The counts are in `graph/docs/index.json`, and they move whenever this file does — which is why they are not repeated here |
+| **489 anchors, 357 bridging terms** | the external clauses as anchor nodes, and the distinctive vocabulary that carries a control out to them |
 
 Numbers are the build's own, from `catalog/index.json`, `graph/index.json` and
 `evidence/source-manifest.json`. They are computed, not remembered: rerun
@@ -30,7 +32,11 @@ Numbers are the build's own, from `catalog/index.json`, `graph/index.json` and
 
 ```
 catalog/        current.json, index.json, releases/<release-id>.json
+sources/        the official markdown at the release commit, as it was decomposed
 graph/          nodes.json, edges.json, index.json (the edge vocabulary and its meanings)
+  docs/         one folder per source document: the core graph, the formatting graph,
+                the identity ledger, the token analysis
+  meaning/      the anchors, the terms, and the graded edges between them
 changes/        <release-id>.json — derived change events and the official change rows
 evidence/       source-manifest.json, discovery-manifest.json, snapshots/<day>/<ref>.html.gz
                 (the snapshots live in the vault, not in the public repository — see below)
@@ -50,8 +56,8 @@ python3 src/drift.py        # re-fetch and report drift against the recorded man
 ```
 
 The chain is: `discover_sources` → `fetch_sources` → `parse_pages` →
-`parse_changelog` → `normalize_catalog` → `diff_releases` → `build_graph` →
-`validate`. Each stage runs on its own; `src/build.py` runs them in order.
+`parse_changelog` → `normalize_catalog` → `diff_releases` → `build_docgraph` →
+`build_meaning` → `build_graph` → `validate`. Each stage runs on its own; `src/build.py` runs them in order.
 
 Rebuilds are reproducible, with one honest caveat: the artefacts carry the run's own
 timestamps, so two runs differ in those fields. Pin the clock and they do not:
@@ -90,7 +96,11 @@ that the hash of those bytes is the one the catalog was built from.
 4. **Nothing is invented.** An enum exists only where the source publishes a label
    that maps unambiguously. Anything else is null beside its raw text, with a
    finding attached.
-5. **The parser fails closed.** If a page stops yielding the model this build reads,
+5. **A connection this build proposed says so.** Structural edges are read from the
+   sources; published crosswalks are AIUC's; a candidate this build noticed is graded
+   `proposed` and marked `needs_review` on every surface it appears on. `docs/meaning.md`
+   is the whole story.
+6. **The parser fails closed.** If a page stops yielding the model this build reads,
    the run opens a review item rather than emitting a guess.
 
 ## The terminology inversion, stated once

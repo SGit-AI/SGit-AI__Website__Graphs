@@ -1,0 +1,1288 @@
+{
+ "doc": "doc:aiuc1-requirements",
+ "prefix": "ar",
+ "levels": [
+  "doc",
+  "sec",
+  "blk"
+ ],
+ "minted": {
+  "d": 1,
+  "s": 53,
+  "b": 105
+ },
+ "ids": [
+  {
+   "uid": "ar:d1",
+   "level": "doc",
+   "locator": "doc:aiuc1-requirements",
+   "hash": "e0cdd07f6a27",
+   "head": "Requirements",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s1",
+   "level": "sec",
+   "locator": "sec:A001: Establish input data policy",
+   "hash": "34d7a09c8bae",
+   "head": "2|A001: Establish input data policy",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s2",
+   "level": "sec",
+   "locator": "sec:A002: Establish output data policy",
+   "hash": "49d851e403c6",
+   "head": "2|A002: Establish output data policy",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s3",
+   "level": "sec",
+   "locator": "sec:A003: Limit AI agent data access",
+   "hash": "4ce2d4ffcd75",
+   "head": "2|A003: Limit AI agent data access",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s4",
+   "level": "sec",
+   "locator": "sec:A004: Protect IP & trade secrets",
+   "hash": "abc06e9b50d3",
+   "head": "2|A004: Protect IP & trade secrets",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s5",
+   "level": "sec",
+   "locator": "sec:A005: Prevent cross-customer data exposure",
+   "hash": "e3d6a212b752",
+   "head": "2|A005: Prevent cross-customer data exposure",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s6",
+   "level": "sec",
+   "locator": "sec:A006: Prevent PII leakage",
+   "hash": "9d2116c68ecd",
+   "head": "2|A006: Prevent PII leakage",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s7",
+   "level": "sec",
+   "locator": "sec:A007: Prevent IP violations",
+   "hash": "de12725c716f",
+   "head": "2|A007: Prevent IP violations",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s8",
+   "level": "sec",
+   "locator": "sec:A008: Prevent leakage of credentials and secrets",
+   "hash": "80f1d8577889",
+   "head": "2|A008: Prevent leakage of credentials and secrets",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s9",
+   "level": "sec",
+   "locator": "sec:B001: Third-party testing of adversarial robustness",
+   "hash": "48a7c196270f",
+   "head": "2|B001: Third-party testing of adversarial robustness",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s10",
+   "level": "sec",
+   "locator": "sec:B002: Detect adversarial input",
+   "hash": "d0acb51c19ea",
+   "head": "2|B002: Detect adversarial input",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s11",
+   "level": "sec",
+   "locator": "sec:B003: Manage public release of technical details",
+   "hash": "0b72cf968673",
+   "head": "2|B003: Manage public release of technical details",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s12",
+   "level": "sec",
+   "locator": "sec:B004: Prevent AI endpoint scraping",
+   "hash": "2e7b9617de05",
+   "head": "2|B004: Prevent AI endpoint scraping",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s13",
+   "level": "sec",
+   "locator": "sec:B005: Implement real-time input filtering",
+   "hash": "9dff9e3da4ff",
+   "head": "2|B005: Implement real-time input filtering",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s14",
+   "level": "sec",
+   "locator": "sec:B006: Prevent unauthorized AI agent actions",
+   "hash": "5f942ea1d577",
+   "head": "2|B006: Prevent unauthorized AI agent actions",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s15",
+   "level": "sec",
+   "locator": "sec:B007: Enforce user access privileges to AI systems",
+   "hash": "41cabecacaab",
+   "head": "2|B007: Enforce user access privileges to AI systems",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s16",
+   "level": "sec",
+   "locator": "sec:B008: Protect AI system deployment environment",
+   "hash": "5496757de089",
+   "head": "2|B008: Protect AI system deployment environment",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s17",
+   "level": "sec",
+   "locator": "sec:B009: Limit output over-exposure",
+   "hash": "f1b5846b300f",
+   "head": "2|B009: Limit output over-exposure",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s18",
+   "level": "sec",
+   "locator": "sec:B010: Promote secure patterns in generated code",
+   "hash": "d07d40911b61",
+   "head": "2|B010: Promote secure patterns in generated code",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s19",
+   "level": "sec",
+   "locator": "sec:C001: Define AI risk taxonomy",
+   "hash": "662fd8729a3d",
+   "head": "2|C001: Define AI risk taxonomy",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s20",
+   "level": "sec",
+   "locator": "sec:C002: Conduct pre-deployment testing",
+   "hash": "eec845ef7656",
+   "head": "2|C002: Conduct pre-deployment testing",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s21",
+   "level": "sec",
+   "locator": "sec:C003: Prevent harmful outputs",
+   "hash": "605c589cb232",
+   "head": "2|C003: Prevent harmful outputs",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s22",
+   "level": "sec",
+   "locator": "sec:C004: Prevent out-of-scope outputs",
+   "hash": "deb05d9ba00d",
+   "head": "2|C004: Prevent out-of-scope outputs",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s23",
+   "level": "sec",
+   "locator": "sec:C005: Prevent agent-specific high risk outputs",
+   "hash": "a9ac3f36d6eb",
+   "head": "2|C005: Prevent agent-specific high risk outputs",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s24",
+   "level": "sec",
+   "locator": "sec:C006: Prevent output vulnerabilities",
+   "hash": "86f6977c1a7b",
+   "head": "2|C006: Prevent output vulnerabilities",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s25",
+   "level": "sec",
+   "locator": "sec:C007: Flag high risk outputs for human review",
+   "hash": "c1e6880bf797",
+   "head": "2|C007: Flag high risk outputs for human review",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s26",
+   "level": "sec",
+   "locator": "sec:C008: Monitor AI risk categories",
+   "hash": "956805db0add",
+   "head": "2|C008: Monitor AI risk categories",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s27",
+   "level": "sec",
+   "locator": "sec:C009: Enable real-time feedback and intervention",
+   "hash": "5692f32e57c5",
+   "head": "2|C009: Enable real-time feedback and intervention",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s28",
+   "level": "sec",
+   "locator": "sec:C010: Third-party testing for harmful outputs",
+   "hash": "66cd3a83cb79",
+   "head": "2|C010: Third-party testing for harmful outputs",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s29",
+   "level": "sec",
+   "locator": "sec:C011: Third-party testing for out-of-scope outputs",
+   "hash": "f0a90819ef31",
+   "head": "2|C011: Third-party testing for out-of-scope outputs",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s30",
+   "level": "sec",
+   "locator": "sec:C012: Third-party testing for customer-defined risk",
+   "hash": "c7df169fc40c",
+   "head": "2|C012: Third-party testing for customer-defined risk",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s31",
+   "level": "sec",
+   "locator": "sec:D001: Prevent hallucinated outputs",
+   "hash": "d948b379c33f",
+   "head": "2|D001: Prevent hallucinated outputs",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s32",
+   "level": "sec",
+   "locator": "sec:D002: Third-party testing for hallucinations",
+   "hash": "20616838bfbd",
+   "head": "2|D002: Third-party testing for hallucinations",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s33",
+   "level": "sec",
+   "locator": "sec:D003: Restrict unsafe tool calls",
+   "hash": "d4c822f720b7",
+   "head": "2|D003: Restrict unsafe tool calls",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s34",
+   "level": "sec",
+   "locator": "sec:D004: Third-party testing of tool calls",
+   "hash": "3b421bf69b7e",
+   "head": "2|D004: Third-party testing of tool calls",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s35",
+   "level": "sec",
+   "locator": "sec:E001: AI failure plan for security breaches",
+   "hash": "472706254e91",
+   "head": "2|E001: AI failure plan for security breaches",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s36",
+   "level": "sec",
+   "locator": "sec:E002: AI failure plan for harmful outputs",
+   "hash": "3e31da9ad515",
+   "head": "2|E002: AI failure plan for harmful outputs",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s37",
+   "level": "sec",
+   "locator": "sec:E003: AI failure plan for hallucinations",
+   "hash": "611f067e7742",
+   "head": "2|E003: AI failure plan for hallucinations",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s38",
+   "level": "sec",
+   "locator": "sec:E004: Assign accountability",
+   "hash": "0178d8d4a7f1",
+   "head": "2|E004: Assign accountability",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s39",
+   "level": "sec",
+   "locator": "sec:E005: Document data storage security",
+   "hash": "068a4ed4cfd0",
+   "head": "2|E005: Document data storage security",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s40",
+   "level": "sec",
+   "locator": "sec:E006: Conduct vendor due diligence",
+   "hash": "fd4b1f3d2b67",
+   "head": "2|E006: Conduct vendor due diligence",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s41",
+   "level": "sec",
+   "locator": "sec:E007: [Retired] Document system change approvals",
+   "hash": "8833f7901c17",
+   "head": "2|E007: [Retired] Document system change approvals",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s42",
+   "level": "sec",
+   "locator": "sec:E008: Review internal processes",
+   "hash": "1a16eb154b27",
+   "head": "2|E008: Review internal processes",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s43",
+   "level": "sec",
+   "locator": "sec:E009: Monitor third-party access",
+   "hash": "76b6f3017f17",
+   "head": "2|E009: Monitor third-party access",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s44",
+   "level": "sec",
+   "locator": "sec:E010: Establish AI acceptable use policy",
+   "hash": "70a4bcd5507a",
+   "head": "2|E010: Establish AI acceptable use policy",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s45",
+   "level": "sec",
+   "locator": "sec:E011: Record processing locations",
+   "hash": "2ff66466d398",
+   "head": "2|E011: Record processing locations",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s46",
+   "level": "sec",
+   "locator": "sec:E012: Document regulatory compliance",
+   "hash": "2214d7efc997",
+   "head": "2|E012: Document regulatory compliance",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s47",
+   "level": "sec",
+   "locator": "sec:E013: Implement quality management system",
+   "hash": "8c9a5b61e995",
+   "head": "2|E013: Implement quality management system",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s48",
+   "level": "sec",
+   "locator": "sec:E014: [Retired] Share transparency reports",
+   "hash": "7867b6f6f1f5",
+   "head": "2|E014: [Retired] Share transparency reports",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s49",
+   "level": "sec",
+   "locator": "sec:E015: Log AI system activity",
+   "hash": "6efbf1ef61ee",
+   "head": "2|E015: Log AI system activity",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s50",
+   "level": "sec",
+   "locator": "sec:E016: Implement AI disclosure mechanisms",
+   "hash": "9524c2e7e414",
+   "head": "2|E016: Implement AI disclosure mechanisms",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s51",
+   "level": "sec",
+   "locator": "sec:E017: Document system transparency policy",
+   "hash": "f7a28d09be8d",
+   "head": "2|E017: Document system transparency policy",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s52",
+   "level": "sec",
+   "locator": "sec:F001: Prevent AI cyber misuse",
+   "hash": "a15effa72803",
+   "head": "2|F001: Prevent AI cyber misuse",
+   "status": "live"
+  },
+  {
+   "uid": "ar:s53",
+   "level": "sec",
+   "locator": "sec:F002: Prevent catastrophic misuse",
+   "hash": "1ce7b0c76bc9",
+   "head": "2|F002: Prevent catastrophic misuse",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b1",
+   "level": "blk",
+   "locator": "blk:A001: Establish input data policy/1",
+   "hash": "e421149f9123",
+   "head": "Establish and communicate AI input data policies covering how customer data is u",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b2",
+   "level": "blk",
+   "locator": "blk:A001: Establish input data policy/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b3",
+   "level": "blk",
+   "locator": "blk:A002: Establish output data policy/1",
+   "hash": "59ff970f786e",
+   "head": "Establish AI output ownership, usage, opt-in/out and deletion policies to custom",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b4",
+   "level": "blk",
+   "locator": "blk:A002: Establish output data policy/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b5",
+   "level": "blk",
+   "locator": "blk:A003: Limit AI agent data access/1",
+   "hash": "1330ddba8d33",
+   "head": "Implement safeguards to limit AI agent data access based on task, user role, age",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b6",
+   "level": "blk",
+   "locator": "blk:A003: Limit AI agent data access/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b7",
+   "level": "blk",
+   "locator": "blk:A004: Protect IP & trade secrets/1",
+   "hash": "6195d1bb7b83",
+   "head": "Implement safeguards or technical controls to prevent AI systems from leaking co",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b8",
+   "level": "blk",
+   "locator": "blk:A004: Protect IP & trade secrets/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b9",
+   "level": "blk",
+   "locator": "blk:A005: Prevent cross-customer data exposure/1",
+   "hash": "eb356815ed90",
+   "head": "Implement safeguards to prevent cross-customer data exposure.",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b10",
+   "level": "blk",
+   "locator": "blk:A005: Prevent cross-customer data exposure/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b11",
+   "level": "blk",
+   "locator": "blk:A006: Prevent PII leakage/1",
+   "hash": "e738e464f283",
+   "head": "Establish safeguards to prevent personal data leakage through AI outputs and log",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b12",
+   "level": "blk",
+   "locator": "blk:A006: Prevent PII leakage/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b13",
+   "level": "blk",
+   "locator": "blk:A007: Prevent IP violations/1",
+   "hash": "17301f2ed150",
+   "head": "Implement safeguards and technical controls to prevent AI outputs from violating",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b14",
+   "level": "blk",
+   "locator": "blk:A007: Prevent IP violations/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b15",
+   "level": "blk",
+   "locator": "blk:A008: Prevent leakage of credentials and secrets/1",
+   "hash": "462577b4c201",
+   "head": "Implement safeguards to detect and prevent leakage of secrets in AI system input",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b16",
+   "level": "blk",
+   "locator": "blk:A008: Prevent leakage of credentials and secrets/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b17",
+   "level": "blk",
+   "locator": "blk:B001: Third-party testing of adversarial robustness/1",
+   "hash": "18932099ebb5",
+   "head": "Implement adversarial testing program to validate system resilience against adve",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b18",
+   "level": "blk",
+   "locator": "blk:B001: Third-party testing of adversarial robustness/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b19",
+   "level": "blk",
+   "locator": "blk:B002: Detect adversarial input/1",
+   "hash": "b948f283361b",
+   "head": "Implement monitoring capabilities to detect and enable responding to adversarial",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b20",
+   "level": "blk",
+   "locator": "blk:B002: Detect adversarial input/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b21",
+   "level": "blk",
+   "locator": "blk:B003: Manage public release of technical details/1",
+   "hash": "2706369f37a5",
+   "head": "Implement controls to prevent over-disclosure of technical information about AI ",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b22",
+   "level": "blk",
+   "locator": "blk:B003: Manage public release of technical details/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b23",
+   "level": "blk",
+   "locator": "blk:B004: Prevent AI endpoint scraping/1",
+   "hash": "c5186c2517db",
+   "head": "Implement safeguards to prevent probing or scraping of external AI endpoints.",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b24",
+   "level": "blk",
+   "locator": "blk:B004: Prevent AI endpoint scraping/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b25",
+   "level": "blk",
+   "locator": "blk:B005: Implement real-time input filtering/1",
+   "hash": "67b6903b8bee",
+   "head": "Implement real-time input filtering using automated moderation tools.",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b26",
+   "level": "blk",
+   "locator": "blk:B005: Implement real-time input filtering/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b27",
+   "level": "blk",
+   "locator": "blk:B006: Prevent unauthorized AI agent actions/1",
+   "hash": "be1f0c0e79fc",
+   "head": "Implement safeguards to prevent AI agents from performing actions beyond intende",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b28",
+   "level": "blk",
+   "locator": "blk:B006: Prevent unauthorized AI agent actions/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b29",
+   "level": "blk",
+   "locator": "blk:B007: Enforce user access privileges to AI systems/1",
+   "hash": "f517263b8974",
+   "head": "Establish and maintain user access controls and admin privileges for AI systems ",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b30",
+   "level": "blk",
+   "locator": "blk:B007: Enforce user access privileges to AI systems/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b31",
+   "level": "blk",
+   "locator": "blk:B008: Protect AI system deployment environment/1",
+   "hash": "8a514f68cc00",
+   "head": "Implement security measures for AI system deployment environments including encr",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b32",
+   "level": "blk",
+   "locator": "blk:B008: Protect AI system deployment environment/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b33",
+   "level": "blk",
+   "locator": "blk:B009: Limit output over-exposure/1",
+   "hash": "cdf162d30a65",
+   "head": "Implement output limitations and obfuscation techniques to safeguard against inf",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b34",
+   "level": "blk",
+   "locator": "blk:B009: Limit output over-exposure/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b35",
+   "level": "blk",
+   "locator": "blk:B010: Promote secure patterns in generated code/1",
+   "hash": "c938352f160d",
+   "head": "Implement safeguards to promote secure patterns and prevent known vulnerabilitie",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b36",
+   "level": "blk",
+   "locator": "blk:B010: Promote secure patterns in generated code/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b37",
+   "level": "blk",
+   "locator": "blk:C001: Define AI risk taxonomy/1",
+   "hash": "f611262c7086",
+   "head": "Establish a risk taxonomy based on system capabilities and deployment context.",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b38",
+   "level": "blk",
+   "locator": "blk:C001: Define AI risk taxonomy/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b39",
+   "level": "blk",
+   "locator": "blk:C002: Conduct pre-deployment testing/1",
+   "hash": "f73dd0ada8e2",
+   "head": "Conduct internal testing of AI systems prior to deployment across risk categorie",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b40",
+   "level": "blk",
+   "locator": "blk:C002: Conduct pre-deployment testing/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b41",
+   "level": "blk",
+   "locator": "blk:C003: Prevent harmful outputs/1",
+   "hash": "60d88792e97e",
+   "head": "Implement safeguards or technical controls to prevent harmful outputs including ",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b42",
+   "level": "blk",
+   "locator": "blk:C003: Prevent harmful outputs/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b43",
+   "level": "blk",
+   "locator": "blk:C004: Prevent out-of-scope outputs/1",
+   "hash": "1a5563755549",
+   "head": "Implement safeguards or technical controls to prevent out-of-scope outputs (e.g.",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b44",
+   "level": "blk",
+   "locator": "blk:C004: Prevent out-of-scope outputs/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b45",
+   "level": "blk",
+   "locator": "blk:C005: Prevent agent-specific high risk outputs/1",
+   "hash": "1b2bc072b6ad",
+   "head": "Implement safeguards or technical controls to prevent agent-specific high-risk o",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b46",
+   "level": "blk",
+   "locator": "blk:C005: Prevent agent-specific high risk outputs/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b47",
+   "level": "blk",
+   "locator": "blk:C006: Prevent output vulnerabilities/1",
+   "hash": "36a654a12846",
+   "head": "Implement safeguards to prevent security vulnerabilities in outputs from impacti",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b48",
+   "level": "blk",
+   "locator": "blk:C006: Prevent output vulnerabilities/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b49",
+   "level": "blk",
+   "locator": "blk:C007: Flag high risk outputs for human review/1",
+   "hash": "ee1ee99578c8",
+   "head": "Implement an alerting system that flags high-risk outputs for human review.",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b50",
+   "level": "blk",
+   "locator": "blk:C007: Flag high risk outputs for human review/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b51",
+   "level": "blk",
+   "locator": "blk:C008: Monitor AI risk categories/1",
+   "hash": "b37a035e39ab",
+   "head": "Implement monitoring of AI systems across risk categories.",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b52",
+   "level": "blk",
+   "locator": "blk:C008: Monitor AI risk categories/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b53",
+   "level": "blk",
+   "locator": "blk:C009: Enable real-time feedback and intervention/1",
+   "hash": "89662e336f23",
+   "head": "Implement mechanisms to enable real-time user feedback collection, intervention ",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b54",
+   "level": "blk",
+   "locator": "blk:C009: Enable real-time feedback and intervention/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b55",
+   "level": "blk",
+   "locator": "blk:C010: Third-party testing for harmful outputs/1",
+   "hash": "5843e37dc786",
+   "head": "Appoint expert third parties to evaluate system robustness to harmful outputs in",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b56",
+   "level": "blk",
+   "locator": "blk:C010: Third-party testing for harmful outputs/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b57",
+   "level": "blk",
+   "locator": "blk:C011: Third-party testing for out-of-scope outputs/1",
+   "hash": "58db119ac5c4",
+   "head": "Appoint expert third parties to evaluate system robustness to out-of-scope outpu",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b58",
+   "level": "blk",
+   "locator": "blk:C011: Third-party testing for out-of-scope outputs/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b59",
+   "level": "blk",
+   "locator": "blk:C012: Third-party testing for customer-defined risk/1",
+   "hash": "8699bedd78be",
+   "head": "Appoint expert third-parties to evaluate system robustness to additional high-ri",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b60",
+   "level": "blk",
+   "locator": "blk:C012: Third-party testing for customer-defined risk/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b61",
+   "level": "blk",
+   "locator": "blk:D001: Prevent hallucinated outputs/1",
+   "hash": "23bd5b581a00",
+   "head": "Implement safeguards or technical controls to prevent hallucinated outputs.",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b62",
+   "level": "blk",
+   "locator": "blk:D001: Prevent hallucinated outputs/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b63",
+   "level": "blk",
+   "locator": "blk:D002: Third-party testing for hallucinations/1",
+   "hash": "d6bc0fd967a7",
+   "head": "Appoint expert third-parties to evaluate hallucinated outputs at least every 3 m",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b64",
+   "level": "blk",
+   "locator": "blk:D002: Third-party testing for hallucinations/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b65",
+   "level": "blk",
+   "locator": "blk:D003: Restrict unsafe tool calls/1",
+   "hash": "5bfb6f5f4ceb",
+   "head": "Implement safeguards or technical controls to prevent tool calls in AI systems f",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b66",
+   "level": "blk",
+   "locator": "blk:D003: Restrict unsafe tool calls/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b67",
+   "level": "blk",
+   "locator": "blk:D004: Third-party testing of tool calls/1",
+   "hash": "139aa8e35916",
+   "head": "Appoint expert third-parties to evaluate tool calls in AI systems, including exe",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b68",
+   "level": "blk",
+   "locator": "blk:D004: Third-party testing of tool calls/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b69",
+   "level": "blk",
+   "locator": "blk:E001: AI failure plan for security breaches/1",
+   "hash": "c946c78df988",
+   "head": "Document AI failure plan for AI privacy and security breaches assigning accounta",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b70",
+   "level": "blk",
+   "locator": "blk:E001: AI failure plan for security breaches/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b71",
+   "level": "blk",
+   "locator": "blk:E002: AI failure plan for harmful outputs/1",
+   "hash": "d8e6bdf5bd9c",
+   "head": "Document AI failure plan for harmful AI outputs that cause significant customer ",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b72",
+   "level": "blk",
+   "locator": "blk:E002: AI failure plan for harmful outputs/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b73",
+   "level": "blk",
+   "locator": "blk:E003: AI failure plan for hallucinations/1",
+   "hash": "49008c03c9a7",
+   "head": "Document AI failure plan for hallucinated AI outputs that cause substantial cust",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b74",
+   "level": "blk",
+   "locator": "blk:E003: AI failure plan for hallucinations/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b75",
+   "level": "blk",
+   "locator": "blk:E004: Assign accountability/1",
+   "hash": "530d30a207f7",
+   "head": "Document which AI system changes across the development & deployment lifecycle r",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b76",
+   "level": "blk",
+   "locator": "blk:E004: Assign accountability/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b77",
+   "level": "blk",
+   "locator": "blk:E005: Document data storage security/1",
+   "hash": "51ead6a431c3",
+   "head": "Document data storage security practices considering data sensitivity, regulator",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b78",
+   "level": "blk",
+   "locator": "blk:E005: Document data storage security/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b79",
+   "level": "blk",
+   "locator": "blk:E006: Conduct vendor due diligence/1",
+   "hash": "cf17520e5864",
+   "head": "Establish AI vendor due diligence processes for foundation and upstream model pr",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b80",
+   "level": "blk",
+   "locator": "blk:E006: Conduct vendor due diligence/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b81",
+   "level": "blk",
+   "locator": "blk:E007: [Retired] Document system change approvals/1",
+   "hash": "2af513f5b793",
+   "head": "Merged with E004 - see changelog (Q1 2026 update).",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b82",
+   "level": "blk",
+   "locator": "blk:E007: [Retired] Document system change approvals/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b83",
+   "level": "blk",
+   "locator": "blk:E008: Review internal processes/1",
+   "hash": "68e1489fc94b",
+   "head": "Establish regular internal reviews of key processes and document review records ",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b84",
+   "level": "blk",
+   "locator": "blk:E008: Review internal processes/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b85",
+   "level": "blk",
+   "locator": "blk:E009: Monitor third-party access/1",
+   "hash": "782c2c6f953d",
+   "head": "Implement systems to monitor and log third-party API connections, sessions, and ",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b86",
+   "level": "blk",
+   "locator": "blk:E009: Monitor third-party access/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b87",
+   "level": "blk",
+   "locator": "blk:E010: Establish AI acceptable use policy/1",
+   "hash": "f9141556da71",
+   "head": "Establish and implement an AI acceptable use policy.",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b88",
+   "level": "blk",
+   "locator": "blk:E010: Establish AI acceptable use policy/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b89",
+   "level": "blk",
+   "locator": "blk:E011: Record processing locations/1",
+   "hash": "f5e035c4a3e0",
+   "head": "Document AI data processing locations.",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b90",
+   "level": "blk",
+   "locator": "blk:E011: Record processing locations/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b91",
+   "level": "blk",
+   "locator": "blk:E012: Document regulatory compliance/1",
+   "hash": "719215d29a76",
+   "head": "Document applicable AI laws and standards, required data protections, and strate",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b92",
+   "level": "blk",
+   "locator": "blk:E012: Document regulatory compliance/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b93",
+   "level": "blk",
+   "locator": "blk:E013: Implement quality management system/1",
+   "hash": "175bfa29161f",
+   "head": "Establish a quality management system for AI systems proportionate to the size o",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b94",
+   "level": "blk",
+   "locator": "blk:E013: Implement quality management system/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b95",
+   "level": "blk",
+   "locator": "blk:E014: [Retired] Share transparency reports/1",
+   "hash": "30a783a14b49",
+   "head": "Merged with E017 - see changelog (Q1 2026 update).",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b96",
+   "level": "blk",
+   "locator": "blk:E014: [Retired] Share transparency reports/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b97",
+   "level": "blk",
+   "locator": "blk:E015: Log AI system activity/1",
+   "hash": "a016627e8f14",
+   "head": "Maintain logs of AI system processes, actions, and agent outputs where permitted",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b98",
+   "level": "blk",
+   "locator": "blk:E015: Log AI system activity/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b99",
+   "level": "blk",
+   "locator": "blk:E016: Implement AI disclosure mechanisms/1",
+   "hash": "69e3b72396ed",
+   "head": "Implement clear disclosure mechanisms to inform users when they are interacting ",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b100",
+   "level": "blk",
+   "locator": "blk:E016: Implement AI disclosure mechanisms/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b101",
+   "level": "blk",
+   "locator": "blk:E017: Document system transparency policy/1",
+   "hash": "0063093b8f07",
+   "head": "Establish a system transparency policy and maintain a repository of model cards,",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b102",
+   "level": "blk",
+   "locator": "blk:E017: Document system transparency policy/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b103",
+   "level": "blk",
+   "locator": "blk:F001: Prevent AI cyber misuse/1",
+   "hash": "789d83d2fccb",
+   "head": "Implement or document guardrails to prevent AI-enabled misuse for cyber attacks ",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b104",
+   "level": "blk",
+   "locator": "blk:F001: Prevent AI cyber misuse/2",
+   "hash": "cb3f91d54eee",
+   "head": "---",
+   "status": "live"
+  },
+  {
+   "uid": "ar:b105",
+   "level": "blk",
+   "locator": "blk:F002: Prevent catastrophic misuse/1",
+   "hash": "c1c4d08d6a36",
+   "head": "Implement or document guardrails to prevent AI-enabled catastrophic system misus",
+   "status": "live"
+  }
+ ]
+}

@@ -1,0 +1,1514 @@
+{
+ "control_id": "F001",
+ "title": "Prevent AI cyber misuse",
+ "published_crosswalks": 17,
+ "published_with_shared_vocabulary": 7,
+ "published_without_shared_vocabulary": [
+  "CSA AICM::GRC-09: Acceptable Use of the AI Service",
+  "CSA AICM::GRC-10: AI Impact Assessment",
+  "CSA AICM::GRC-12: Ethics Committee",
+  "Cisco AI Security Framework::AITech-17.1: Sensor Spoofing",
+  "IBM AI Risk Atlas::IBM 65: Output - Dangerous use",
+  "IBM AI Risk Atlas::IBM 66: Output - Spreading disinformation",
+  "IBM AI Risk Atlas::IBM 67: Output - Nonconsensual use",
+  "ISO 42001::A.5.5: Assessing societal impacts of AI systems",
+  "NIST AI RMF::MEASURE 2.7: Security and resilience",
+  "OWASP AIVSS::Agent Identity Impersonation"
+ ],
+ "candidates": 0,
+ "evidence": [
+  {
+   "clause": "IBM AI Risk Atlas::IBM 61: Output - Harmful code generation",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-61-output-harmful-code-generation",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 61: Output - Harmful code generation",
+   "shared_terms": [
+    {
+     "stem": "generation",
+     "rarity": 0.5698,
+     "as_written": [
+      "generation"
+     ]
+    },
+    {
+     "stem": "code",
+     "rarity": 0.5499,
+     "as_written": [
+      "code"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "unintentionally",
+     "rarity": 0.8255,
+     "as_written": [
+      "unintentionally"
+     ]
+    },
+    {
+     "stem": "caus",
+     "rarity": 0.6697,
+     "as_written": [
+      "causes"
+     ]
+    },
+    {
+     "stem": "affect",
+     "rarity": 0.6342,
+     "as_written": [
+      "affects"
+     ]
+    },
+    {
+     "stem": "harm",
+     "rarity": 0.6191,
+     "as_written": [
+      "harm"
+     ]
+    },
+    {
+     "stem": "generate",
+     "rarity": 0.6053,
+     "as_written": [
+      "generate"
+     ]
+    },
+    {
+     "stem": "harmful",
+     "rarity": 0.5323,
+     "as_written": [
+      "harmful"
+     ]
+    },
+    {
+     "stem": "might",
+     "rarity": 0.4597,
+     "as_written": [
+      "might"
+     ]
+    }
+   ],
+   "score": 0.2049,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::TVM-11: Guardrails",
+   "anchor": "anchor:csa-aicm:tvm-11-guardrails",
+   "framework": "CSA AICM",
+   "reference": "TVM-11: Guardrails",
+   "shared_terms": [
+    {
+     "stem": "guardrail",
+     "rarity": 0.6191,
+     "as_written": [
+      "guardrails"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "tvm-11",
+     "rarity": 1.0,
+     "as_written": [
+      "tvm-11"
+     ]
+    },
+    {
+     "stem": "continuously",
+     "rarity": 0.8899,
+     "as_written": [
+      "continuously"
+     ]
+    },
+    {
+     "stem": "scenario",
+     "rarity": 0.7443,
+     "as_written": [
+      "scenarios"
+     ]
+    },
+    {
+     "stem": "regulatory",
+     "rarity": 0.5499,
+     "as_written": [
+      "regulatory"
+     ]
+    },
+    {
+     "stem": "apply",
+     "rarity": 0.4222,
+     "as_written": [
+      "apply"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    },
+    {
+     "stem": "chang",
+     "rarity": 0.3606,
+     "as_written": [
+      "changes"
+     ]
+    },
+    {
+     "stem": "technical",
+     "rarity": 0.355,
+     "as_written": [
+      "technical"
+     ]
+    }
+   ],
+   "score": 0.116,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 53: Inference - Social hacking attack",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-53-inference-social-hacking-attack",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 53: Inference - Social hacking attack",
+   "shared_terms": [
+    {
+     "stem": "content",
+     "rarity": 0.4352,
+     "as_written": [
+      "content"
+     ]
+    },
+    {
+     "stem": "attack",
+     "rarity": 0.4101,
+     "as_written": [
+      "attack",
+      "attacks"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "hack",
+     "rarity": 1.0,
+     "as_written": [
+      "hacking"
+     ]
+    },
+    {
+     "stem": "hypothetical",
+     "rarity": 1.0,
+     "as_written": [
+      "hypothetical"
+     ]
+    },
+    {
+     "stem": "manipulative",
+     "rarity": 1.0,
+     "as_written": [
+      "manipulative"
+     ]
+    },
+    {
+     "stem": "persuade",
+     "rarity": 1.0,
+     "as_written": [
+      "persuade"
+     ]
+    },
+    {
+     "stem": "role-play",
+     "rarity": 1.0,
+     "as_written": [
+      "role-playing"
+     ]
+    },
+    {
+     "stem": "social",
+     "rarity": 0.8899,
+     "as_written": [
+      "social"
+     ]
+    },
+    {
+     "stem": "engineer",
+     "rarity": 0.8255,
+     "as_written": [
+      "engineering"
+     ]
+    },
+    {
+     "stem": "scenario",
+     "rarity": 0.7443,
+     "as_written": [
+      "scenarios"
+     ]
+    },
+    {
+     "stem": "techniqu",
+     "rarity": 0.651,
+     "as_written": [
+      "techniques"
+     ]
+    },
+    {
+     "stem": "harmful",
+     "rarity": 0.5323,
+     "as_written": [
+      "harmful"
+     ]
+    },
+    {
+     "stem": "generat",
+     "rarity": 0.5164,
+     "as_written": [
+      "generating"
+     ]
+    },
+    {
+     "stem": "inference",
+     "rarity": 0.509,
+     "as_written": [
+      "inference"
+     ]
+    }
+   ],
+   "score": 0.0775,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CA SB 53::22757.12: Transparency & Reporting Obligations",
+   "anchor": "anchor:ca-sb-53:22757-12-transparency-reporting-obligations",
+   "framework": "CA SB 53",
+   "reference": "22757.12: Transparency & Reporting Obligations",
+   "shared_terms": [
+    {
+     "stem": "developer",
+     "rarity": 0.7154,
+     "as_written": [
+      "developer",
+      "developers"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "catastrophic",
+     "rarity": 0.8899,
+     "as_written": [
+      "catastrophic"
+     ]
+    },
+    {
+     "stem": "frontier",
+     "rarity": 0.8899,
+     "as_written": [
+      "frontier"
+     ]
+    },
+    {
+     "stem": "oes",
+     "rarity": 0.8899,
+     "as_written": [
+      "oes"
+     ]
+    },
+    {
+     "stem": "submit",
+     "rarity": 0.8899,
+     "as_written": [
+      "submit"
+     ]
+    },
+    {
+     "stem": "publish",
+     "rarity": 0.8255,
+     "as_written": [
+      "publish"
+     ]
+    },
+    {
+     "stem": "large",
+     "rarity": 0.7798,
+     "as_written": [
+      "large"
+     ]
+    },
+    {
+     "stem": "quarterly",
+     "rarity": 0.7443,
+     "as_written": [
+      "quarterly"
+     ]
+    },
+    {
+     "stem": "framework",
+     "rarity": 0.6909,
+     "as_written": [
+      "framework"
+     ]
+    },
+    {
+     "stem": "obligation",
+     "rarity": 0.6053,
+     "as_written": [
+      "obligations"
+     ]
+    },
+    {
+     "stem": "transparency",
+     "rarity": 0.6053,
+     "as_written": [
+      "transparency"
+     ]
+    },
+    {
+     "stem": "requir",
+     "rarity": 0.4597,
+     "as_written": [
+      "requires"
+     ]
+    },
+    {
+     "stem": "report",
+     "rarity": 0.4545,
+     "as_written": [
+      "reporting",
+      "reports"
+     ]
+    }
+   ],
+   "score": 0.0727,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-18.1: Fraudulent Use",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-18-1-fraudulent-use",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-18.1: Fraudulent Use",
+   "shared_terms": [
+    {
+     "stem": "automat",
+     "rarity": 0.5698,
+     "as_written": [
+      "automated",
+      "automating"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "illegal",
+     "rarity": 1.0,
+     "as_written": [
+      "illegal"
+     ]
+    },
+    {
+     "stem": "scal",
+     "rarity": 1.0,
+     "as_written": [
+      "scaling"
+     ]
+    },
+    {
+     "stem": "scam",
+     "rarity": 1.0,
+     "as_written": [
+      "scams"
+     ]
+    },
+    {
+     "stem": "aitech-18",
+     "rarity": 0.8899,
+     "as_written": [
+      "aitech-18"
+     ]
+    },
+    {
+     "stem": "fraud",
+     "rarity": 0.8899,
+     "as_written": [
+      "fraud"
+     ]
+    },
+    {
+     "stem": "fraudulent",
+     "rarity": 0.8899,
+     "as_written": [
+      "fraudulent"
+     ]
+    },
+    {
+     "stem": "specifically",
+     "rarity": 0.8255,
+     "as_written": [
+      "specifically"
+     ]
+    },
+    {
+     "stem": "deception",
+     "rarity": 0.7798,
+     "as_written": [
+      "deception"
+     ]
+    },
+    {
+     "stem": "leverage",
+     "rarity": 0.7443,
+     "as_written": [
+      "leverage"
+     ]
+    },
+    {
+     "stem": "execut",
+     "rarity": 0.6697,
+     "as_written": [
+      "executing"
+     ]
+    },
+    {
+     "stem": "activity",
+     "rarity": 0.5164,
+     "as_written": [
+      "activities"
+     ]
+    },
+    {
+     "stem": "generat",
+     "rarity": 0.5164,
+     "as_written": [
+      "generating"
+     ]
+    }
+   ],
+   "score": 0.0534,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::GRC-02: Risk Management Program",
+   "anchor": "anchor:csa-aicm:grc-02-risk-management-program",
+   "framework": "CSA AICM",
+   "reference": "GRC-02: Risk Management Program",
+   "shared_terms": [
+    {
+     "stem": "maintain",
+     "rarity": 0.3523,
+     "as_written": [
+      "maintain",
+      "maintaining"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "airm",
+     "rarity": 1.0,
+     "as_written": [
+      "airm"
+     ]
+    },
+    {
+     "stem": "grc-02",
+     "rarity": 1.0,
+     "as_written": [
+      "grc-02"
+     ]
+    },
+    {
+     "stem": "leadership-sponsor",
+     "rarity": 1.0,
+     "as_written": [
+      "leadership-sponsored"
+     ]
+    },
+    {
+     "stem": "acceptance",
+     "rarity": 0.8899,
+     "as_written": [
+      "acceptance"
+     ]
+    },
+    {
+     "stem": "formal",
+     "rarity": 0.7798,
+     "as_written": [
+      "formal"
+     ]
+    },
+    {
+     "stem": "treatment",
+     "rarity": 0.7443,
+     "as_written": [
+      "treatment"
+     ]
+    },
+    {
+     "stem": "ownership",
+     "rarity": 0.7154,
+     "as_written": [
+      "ownership"
+     ]
+    },
+    {
+     "stem": "program",
+     "rarity": 0.7154,
+     "as_written": [
+      "program"
+     ]
+    },
+    {
+     "stem": "identification",
+     "rarity": 0.5926,
+     "as_written": [
+      "identification"
+     ]
+    },
+    {
+     "stem": "evaluation",
+     "rarity": 0.5698,
+     "as_written": [
+      "evaluation"
+     ]
+    }
+   ],
+   "score": 0.0421,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-18.2: Malicious Workflows",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-18-2-malicious-workflows",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-18.2: Malicious Workflows",
+   "shared_terms": [
+    {
+     "stem": "maliciou",
+     "rarity": 0.4707,
+     "as_written": [
+      "malicious"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "cyberattack",
+     "rarity": 1.0,
+     "as_written": [
+      "cyberattacks"
+     ]
+    },
+    {
+     "stem": "aitech-18",
+     "rarity": 0.8899,
+     "as_written": [
+      "aitech-18"
+     ]
+    },
+    {
+     "stem": "campaign",
+     "rarity": 0.8899,
+     "as_written": [
+      "campaigns"
+     ]
+    },
+    {
+     "stem": "disinformation",
+     "rarity": 0.8899,
+     "as_written": [
+      "disinformation"
+     ]
+    },
+    {
+     "stem": "scale",
+     "rarity": 0.8899,
+     "as_written": [
+      "scale"
+     ]
+    },
+    {
+     "stem": "theft",
+     "rarity": 0.8899,
+     "as_written": [
+      "theft"
+     ]
+    },
+    {
+     "stem": "deceptive",
+     "rarity": 0.7443,
+     "as_written": [
+      "deceptive"
+     ]
+    },
+    {
+     "stem": "leverage",
+     "rarity": 0.7443,
+     "as_written": [
+      "leverage"
+     ]
+    },
+    {
+     "stem": "execute",
+     "rarity": 0.6697,
+     "as_written": [
+      "execute"
+     ]
+    },
+    {
+     "stem": "like",
+     "rarity": 0.6697,
+     "as_written": [
+      "like"
+     ]
+    },
+    {
+     "stem": "purpos",
+     "rarity": 0.6697,
+     "as_written": [
+      "purposes"
+     ]
+    },
+    {
+     "stem": "generate",
+     "rarity": 0.6053,
+     "as_written": [
+      "generate"
+     ]
+    }
+   ],
+   "score": 0.0391,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "Cisco AI Security Framework::AITech-17.1: Sensor Spoofing",
+   "anchor": "anchor:cisco-ai-security-framework:aitech-17-1-sensor-spoofing",
+   "framework": "Cisco AI Security Framework",
+   "reference": "AITech-17.1: Sensor Spoofing",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "aitech-17",
+     "rarity": 1.0,
+     "as_written": [
+      "aitech-17"
+     ]
+    },
+    {
+     "stem": "falsifi",
+     "rarity": 1.0,
+     "as_written": [
+      "falsified"
+     ]
+    },
+    {
+     "stem": "highly-realistic",
+     "rarity": 1.0,
+     "as_written": [
+      "highly-realistic"
+     ]
+    },
+    {
+     "stem": "sensory",
+     "rarity": 1.0,
+     "as_written": [
+      "sensory"
+     ]
+    },
+    {
+     "stem": "deliberately",
+     "rarity": 0.8899,
+     "as_written": [
+      "deliberately"
+     ]
+    },
+    {
+     "stem": "sensor",
+     "rarity": 0.8899,
+     "as_written": [
+      "sensor"
+     ]
+    },
+    {
+     "stem": "signal",
+     "rarity": 0.8899,
+     "as_written": [
+      "signals"
+     ]
+    },
+    {
+     "stem": "spoof",
+     "rarity": 0.8255,
+     "as_written": [
+      "spoofing"
+     ]
+    },
+    {
+     "stem": "deceptive",
+     "rarity": 0.7443,
+     "as_written": [
+      "deceptive"
+     ]
+    },
+    {
+     "stem": "manipulat",
+     "rarity": 0.6697,
+     "as_written": [
+      "manipulating"
+     ]
+    },
+    {
+     "stem": "mislead",
+     "rarity": 0.6697,
+     "as_written": [
+      "mislead"
+     ]
+    },
+    {
+     "stem": "decision-mak",
+     "rarity": 0.651,
+     "as_written": [
+      "decision-making"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MEASURE 2.7: Security and resilience",
+   "anchor": "anchor:nist-ai-rmf:measure-2-7-security-and-resilience",
+   "framework": "NIST AI RMF",
+   "reference": "MEASURE 2.7: Security and resilience",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "resilience",
+     "rarity": 0.7798,
+     "as_written": [
+      "resilience"
+     ]
+    },
+    {
+     "stem": "evaluat",
+     "rarity": 0.6697,
+     "as_written": [
+      "evaluated"
+     ]
+    },
+    {
+     "stem": "function",
+     "rarity": 0.5241,
+     "as_written": [
+      "function"
+     ]
+    },
+    {
+     "stem": "measure",
+     "rarity": 0.5164,
+     "as_written": [
+      "measure"
+     ]
+    },
+    {
+     "stem": "map",
+     "rarity": 0.5019,
+     "as_written": [
+      "map"
+     ]
+    },
+    {
+     "stem": "identifi",
+     "rarity": 0.4952,
+     "as_written": [
+      "identified"
+     ]
+    },
+    {
+     "stem": "security",
+     "rarity": 0.3523,
+     "as_written": [
+      "security"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 67: Output - Nonconsensual use",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-67-output-nonconsensual-use",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 67: Output - Nonconsensual use",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "imitate",
+     "rarity": 1.0,
+     "as_written": [
+      "imitate"
+     ]
+    },
+    {
+     "stem": "nonconsensual",
+     "rarity": 1.0,
+     "as_written": [
+      "nonconsensual"
+     ]
+    },
+    {
+     "stem": "consent",
+     "rarity": 0.8255,
+     "as_written": [
+      "consent"
+     ]
+    },
+    {
+     "stem": "deepfak",
+     "rarity": 0.8255,
+     "as_written": [
+      "deepfakes"
+     ]
+    },
+    {
+     "stem": "imag",
+     "rarity": 0.8255,
+     "as_written": [
+      "images"
+     ]
+    },
+    {
+     "stem": "modality",
+     "rarity": 0.8255,
+     "as_written": [
+      "modalities"
+     ]
+    },
+    {
+     "stem": "people",
+     "rarity": 0.8255,
+     "as_written": [
+      "people"
+     ]
+    },
+    {
+     "stem": "audio",
+     "rarity": 0.7798,
+     "as_written": [
+      "audio"
+     ]
+    },
+    {
+     "stem": "video",
+     "rarity": 0.7798,
+     "as_written": [
+      "video"
+     ]
+    },
+    {
+     "stem": "intentionally",
+     "rarity": 0.7154,
+     "as_written": [
+      "intentionally"
+     ]
+    },
+    {
+     "stem": "generative",
+     "rarity": 0.651,
+     "as_written": [
+      "generative"
+     ]
+    },
+    {
+     "stem": "might",
+     "rarity": 0.4597,
+     "as_written": [
+      "might"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "ISO 42001::A.5.5: Assessing societal impacts of AI systems",
+   "anchor": "anchor:iso-42001:a-5-5-assessing-societal-impacts-of-ai-systems",
+   "framework": "ISO 42001",
+   "reference": "A.5.5: Assessing societal impacts of AI systems",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "societal",
+     "rarity": 0.8255,
+     "as_written": [
+      "societal"
+     ]
+    },
+    {
+     "stem": "cycle",
+     "rarity": 0.651,
+     "as_written": [
+      "cycle"
+     ]
+    },
+    {
+     "stem": "life",
+     "rarity": 0.651,
+     "as_written": [
+      "life"
+     ]
+    },
+    {
+     "stem": "potential",
+     "rarity": 0.5698,
+     "as_written": [
+      "potential"
+     ]
+    },
+    {
+     "stem": "asses",
+     "rarity": 0.5596,
+     "as_written": [
+      "assess",
+      "assessing"
+     ]
+    },
+    {
+     "stem": "impact",
+     "rarity": 0.4495,
+     "as_written": [
+      "impacts"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::GRC-09: Acceptable Use of the AI Service",
+   "anchor": "anchor:csa-aicm:grc-09-acceptable-use-of-the-ai-service",
+   "framework": "CSA AICM",
+   "reference": "GRC-09: Acceptable Use of the AI Service",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "grc-09",
+     "rarity": 1.0,
+     "as_written": [
+      "grc-09"
+     ]
+    },
+    {
+     "stem": "offer",
+     "rarity": 0.8899,
+     "as_written": [
+      "offered"
+     ]
+    },
+    {
+     "stem": "acceptable",
+     "rarity": 0.7798,
+     "as_written": [
+      "acceptable"
+     ]
+    },
+    {
+     "stem": "continuou",
+     "rarity": 0.7798,
+     "as_written": [
+      "continuous"
+     ]
+    },
+    {
+     "stem": "oversight",
+     "rarity": 0.6697,
+     "as_written": [
+      "oversight"
+     ]
+    },
+    {
+     "stem": "enforce",
+     "rarity": 0.6342,
+     "as_written": [
+      "enforce"
+     ]
+    },
+    {
+     "stem": "effectivenes",
+     "rarity": 0.5499,
+     "as_written": [
+      "effectiveness"
+     ]
+    },
+    {
+     "stem": "service",
+     "rarity": 0.5409,
+     "as_written": [
+      "service"
+     ]
+    },
+    {
+     "stem": "human",
+     "rarity": 0.5323,
+     "as_written": [
+      "human"
+     ]
+    },
+    {
+     "stem": "servic",
+     "rarity": 0.5323,
+     "as_written": [
+      "services"
+     ]
+    },
+    {
+     "stem": "assessment",
+     "rarity": 0.4063,
+     "as_written": [
+      "assessments"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 66: Output - Spreading disinformation",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-66-output-spreading-disinformation",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 66: Output - Spreading disinformation",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "audience",
+     "rarity": 1.0,
+     "as_written": [
+      "audience"
+     ]
+    },
+    {
+     "stem": "deceive",
+     "rarity": 1.0,
+     "as_written": [
+      "deceive"
+     ]
+    },
+    {
+     "stem": "spread",
+     "rarity": 1.0,
+     "as_written": [
+      "spreading"
+     ]
+    },
+    {
+     "stem": "disinformation",
+     "rarity": 0.8899,
+     "as_written": [
+      "disinformation"
+     ]
+    },
+    {
+     "stem": "influence",
+     "rarity": 0.7798,
+     "as_written": [
+      "influence"
+     ]
+    },
+    {
+     "stem": "intentionally",
+     "rarity": 0.7154,
+     "as_written": [
+      "intentionally"
+     ]
+    },
+    {
+     "stem": "mislead",
+     "rarity": 0.6697,
+     "as_written": [
+      "misleading"
+     ]
+    },
+    {
+     "stem": "false",
+     "rarity": 0.651,
+     "as_written": [
+      "false"
+     ]
+    },
+    {
+     "stem": "generative",
+     "rarity": 0.651,
+     "as_written": [
+      "generative"
+     ]
+    },
+    {
+     "stem": "create",
+     "rarity": 0.6342,
+     "as_written": [
+      "create"
+     ]
+    },
+    {
+     "stem": "target",
+     "rarity": 0.6191,
+     "as_written": [
+      "targeted"
+     ]
+    },
+    {
+     "stem": "might",
+     "rarity": 0.4597,
+     "as_written": [
+      "might"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::GRC-10: AI Impact Assessment",
+   "anchor": "anchor:csa-aicm:grc-10-ai-impact-assessment",
+   "framework": "CSA AICM",
+   "reference": "GRC-10: AI Impact Assessment",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "grc-10",
+     "rarity": 1.0,
+     "as_written": [
+      "grc-10"
+     ]
+    },
+    {
+     "stem": "societal",
+     "rarity": 0.8255,
+     "as_written": [
+      "societal"
+     ]
+    },
+    {
+     "stem": "ethical",
+     "rarity": 0.7798,
+     "as_written": [
+      "ethical"
+     ]
+    },
+    {
+     "stem": "stakeholder",
+     "rarity": 0.6697,
+     "as_written": [
+      "stakeholders"
+     ]
+    },
+    {
+     "stem": "criteria",
+     "rarity": 0.6342,
+     "as_written": [
+      "criteria"
+     ]
+    },
+    {
+     "stem": "operational",
+     "rarity": 0.6191,
+     "as_written": [
+      "operational"
+     ]
+    },
+    {
+     "stem": "lifecycle",
+     "rarity": 0.5926,
+     "as_written": [
+      "lifecycle"
+     ]
+    },
+    {
+     "stem": "regularly",
+     "rarity": 0.5323,
+     "as_written": [
+      "regularly"
+     ]
+    },
+    {
+     "stem": "legal",
+     "rarity": 0.4765,
+     "as_written": [
+      "legal"
+     ]
+    },
+    {
+     "stem": "communicate",
+     "rarity": 0.4651,
+     "as_written": [
+      "communicate"
+     ]
+    },
+    {
+     "stem": "impact",
+     "rarity": 0.4495,
+     "as_written": [
+      "impact",
+      "impacts"
+     ]
+    },
+    {
+     "stem": "assessment",
+     "rarity": 0.4063,
+     "as_written": [
+      "assessment"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP AIVSS::Agent Identity Impersonation",
+   "anchor": "anchor:owasp-aivss:agent-identity-impersonation",
+   "framework": "OWASP AIVSS",
+   "reference": "Agent Identity Impersonation",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "impersonation",
+     "rarity": 0.8899,
+     "as_written": [
+      "impersonation"
+     ]
+    },
+    {
+     "stem": "theft",
+     "rarity": 0.8899,
+     "as_written": [
+      "theft"
+     ]
+    },
+    {
+     "stem": "deepfak",
+     "rarity": 0.8255,
+     "as_written": [
+      "deepfakes"
+     ]
+    },
+    {
+     "stem": "spoof",
+     "rarity": 0.8255,
+     "as_written": [
+      "spoofing"
+     ]
+    },
+    {
+     "stem": "credential",
+     "rarity": 0.6909,
+     "as_written": [
+      "credential"
+     ]
+    },
+    {
+     "stem": "identity",
+     "rarity": 0.6053,
+     "as_written": [
+      "identities",
+      "identity"
+     ]
+    },
+    {
+     "stem": "human",
+     "rarity": 0.5323,
+     "as_written": [
+      "human"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::GRC-12: Ethics Committee",
+   "anchor": "anchor:csa-aicm:grc-12-ethics-committee",
+   "framework": "CSA AICM",
+   "reference": "GRC-12: Ethics Committee",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "committee",
+     "rarity": 1.0,
+     "as_written": [
+      "committee"
+     ]
+    },
+    {
+     "stem": "ethic",
+     "rarity": 1.0,
+     "as_written": [
+      "ethics"
+     ]
+    },
+    {
+     "stem": "grc-12",
+     "rarity": 1.0,
+     "as_written": [
+      "grc-12"
+     ]
+    },
+    {
+     "stem": "valu",
+     "rarity": 0.8899,
+     "as_written": [
+      "values"
+     ]
+    },
+    {
+     "stem": "alignment",
+     "rarity": 0.7798,
+     "as_written": [
+      "alignment"
+     ]
+    },
+    {
+     "stem": "ethical",
+     "rarity": 0.7798,
+     "as_written": [
+      "ethical"
+     ]
+    },
+    {
+     "stem": "application",
+     "rarity": 0.5019,
+     "as_written": [
+      "applications"
+     ]
+    },
+    {
+     "stem": "organizational",
+     "rarity": 0.4825,
+     "as_written": [
+      "organizational"
+     ]
+    },
+    {
+     "stem": "standard",
+     "rarity": 0.4707,
+     "as_written": [
+      "standards"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 65: Output - Dangerous use",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-65-output-dangerous-use",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 65: Output - Dangerous use",
+   "shared_terms": [],
+   "clause_terms_not_reached": [
+    {
+     "stem": "intention",
+     "rarity": 1.0,
+     "as_written": [
+      "intention"
+     ]
+    },
+    {
+     "stem": "sole",
+     "rarity": 1.0,
+     "as_written": [
+      "sole"
+     ]
+    },
+    {
+     "stem": "dangerou",
+     "rarity": 0.8255,
+     "as_written": [
+      "dangerous"
+     ]
+    },
+    {
+     "stem": "people",
+     "rarity": 0.8255,
+     "as_written": [
+      "people"
+     ]
+    },
+    {
+     "stem": "generative",
+     "rarity": 0.651,
+     "as_written": [
+      "generative"
+     ]
+    },
+    {
+     "stem": "harm",
+     "rarity": 0.6191,
+     "as_written": [
+      "harming"
+     ]
+    },
+    {
+     "stem": "might",
+     "rarity": 0.4597,
+     "as_written": [
+      "might"
+     ]
+    }
+   ],
+   "score": 0.0,
+   "shared_count": 0,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  }
+ ],
+ "candidate_crosswalks": []
+}

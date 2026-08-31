@@ -1,0 +1,1568 @@
+{
+ "control_id": "E003",
+ "title": "AI failure plan for hallucinations",
+ "published_crosswalks": 13,
+ "published_with_shared_vocabulary": 13,
+ "published_without_shared_vocabulary": [],
+ "candidates": 3,
+ "evidence": [
+  {
+   "clause": "ISO 42001::A.8.4: Communication of incidents",
+   "anchor": "anchor:iso-42001:a-8-4-communication-of-incidents",
+   "framework": "ISO 42001",
+   "reference": "A.8.4: Communication of incidents",
+   "shared_terms": [
+    {
+     "stem": "communication",
+     "rarity": 0.5409,
+     "as_written": [
+      "communication"
+     ]
+    },
+    {
+     "stem": "incident",
+     "rarity": 0.4952,
+     "as_written": [
+      "incident",
+      "incidents"
+     ]
+    },
+    {
+     "stem": "plan",
+     "rarity": 0.4264,
+     "as_written": [
+      "plan"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "communicat",
+     "rarity": 0.7154,
+     "as_written": [
+      "communicating"
+     ]
+    },
+    {
+     "stem": "determine",
+     "rarity": 0.5596,
+     "as_written": [
+      "determine"
+     ]
+    },
+    {
+     "stem": "user",
+     "rarity": 0.3953,
+     "as_written": [
+      "users"
+     ]
+    }
+   ],
+   "score": 0.4668,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MANAGE 4.3: Incident communication",
+   "anchor": "anchor:nist-ai-rmf:manage-4-3-incident-communication",
+   "framework": "NIST AI RMF",
+   "reference": "MANAGE 4.3: Incident communication",
+   "shared_terms": [
+    {
+     "stem": "communication",
+     "rarity": 0.5409,
+     "as_written": [
+      "communication"
+     ]
+    },
+    {
+     "stem": "incident",
+     "rarity": 0.4952,
+     "as_written": [
+      "incident",
+      "incidents"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "recover",
+     "rarity": 0.8899,
+     "as_written": [
+      "recovering"
+     ]
+    },
+    {
+     "stem": "respond",
+     "rarity": 0.8255,
+     "as_written": [
+      "responding"
+     ]
+    },
+    {
+     "stem": "communicat",
+     "rarity": 0.7154,
+     "as_written": [
+      "communicated"
+     ]
+    },
+    {
+     "stem": "community",
+     "rarity": 0.7154,
+     "as_written": [
+      "communities"
+     ]
+    },
+    {
+     "stem": "error",
+     "rarity": 0.6909,
+     "as_written": [
+      "errors"
+     ]
+    },
+    {
+     "stem": "affect",
+     "rarity": 0.6342,
+     "as_written": [
+      "affected"
+     ]
+    },
+    {
+     "stem": "follow",
+     "rarity": 0.5808,
+     "as_written": [
+      "followed"
+     ]
+    },
+    {
+     "stem": "manage",
+     "rarity": 0.5241,
+     "as_written": [
+      "manage"
+     ]
+    },
+    {
+     "stem": "track",
+     "rarity": 0.509,
+     "as_written": [
+      "tracking"
+     ]
+    },
+    {
+     "stem": "relevant",
+     "rarity": 0.3884,
+     "as_written": [
+      "relevant"
+     ]
+    },
+    {
+     "stem": "actor",
+     "rarity": 0.3786,
+     "as_written": [
+      "actors"
+     ]
+    }
+   ],
+   "score": 0.1313,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 9: Agentic AI - Function calling hallucination",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-9-agentic-ai-function-calling-hallucination",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 9: Agentic AI - Function calling hallucination",
+   "shared_terms": [
+    {
+     "stem": "hallucination",
+     "rarity": 0.7443,
+     "as_written": [
+      "hallucination",
+      "hallucinations"
+     ]
+    },
+    {
+     "stem": "action",
+     "rarity": 0.3884,
+     "as_written": [
+      "actions"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "cal",
+     "rarity": 1.0,
+     "as_written": [
+      "calling"
+     ]
+    },
+    {
+     "stem": "mistak",
+     "rarity": 1.0,
+     "as_written": [
+      "mistakes"
+     ]
+    },
+    {
+     "stem": "unnecessary",
+     "rarity": 1.0,
+     "as_written": [
+      "unnecessary"
+     ]
+    },
+    {
+     "stem": "incorrect",
+     "rarity": 0.7154,
+     "as_written": [
+      "incorrect"
+     ]
+    },
+    {
+     "stem": "execute",
+     "rarity": 0.6697,
+     "as_written": [
+      "execute"
+     ]
+    },
+    {
+     "stem": "make",
+     "rarity": 0.651,
+     "as_written": [
+      "make"
+     ]
+    },
+    {
+     "stem": "call",
+     "rarity": 0.5926,
+     "as_written": [
+      "calls"
+     ]
+    },
+    {
+     "stem": "harmful",
+     "rarity": 0.5323,
+     "as_written": [
+      "harmful"
+     ]
+    },
+    {
+     "stem": "function",
+     "rarity": 0.5241,
+     "as_written": [
+      "function"
+     ]
+    },
+    {
+     "stem": "generat",
+     "rarity": 0.5164,
+     "as_written": [
+      "generating"
+     ]
+    },
+    {
+     "stem": "agentic",
+     "rarity": 0.4825,
+     "as_written": [
+      "agentic"
+     ]
+    },
+    {
+     "stem": "result",
+     "rarity": 0.4707,
+     "as_written": [
+      "result"
+     ]
+    }
+   ],
+   "score": 0.1112,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::GOVERN 4.3: Testing and incident sharing",
+   "anchor": "anchor:nist-ai-rmf:govern-4-3-testing-and-incident-sharing",
+   "framework": "NIST AI RMF",
+   "reference": "GOVERN 4.3: Testing and incident sharing",
+   "shared_terms": [
+    {
+     "stem": "incident",
+     "rarity": 0.4952,
+     "as_written": [
+      "incident",
+      "incidents"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "enable",
+     "rarity": 0.6053,
+     "as_written": [
+      "enable"
+     ]
+    },
+    {
+     "stem": "shar",
+     "rarity": 0.6053,
+     "as_written": [
+      "sharing"
+     ]
+    },
+    {
+     "stem": "identification",
+     "rarity": 0.5926,
+     "as_written": [
+      "identification"
+     ]
+    },
+    {
+     "stem": "place",
+     "rarity": 0.5698,
+     "as_written": [
+      "place"
+     ]
+    },
+    {
+     "stem": "practic",
+     "rarity": 0.5698,
+     "as_written": [
+      "practices"
+     ]
+    },
+    {
+     "stem": "govern",
+     "rarity": 0.5499,
+     "as_written": [
+      "govern"
+     ]
+    },
+    {
+     "stem": "organizational",
+     "rarity": 0.4825,
+     "as_written": [
+      "organizational"
+     ]
+    },
+    {
+     "stem": "test",
+     "rarity": 0.4825,
+     "as_written": [
+      "testing"
+     ]
+    }
+   ],
+   "score": 0.1,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::SEF-09: Incident Response",
+   "anchor": "anchor:csa-aicm:sef-09-incident-response",
+   "framework": "CSA AICM",
+   "reference": "SEF-09: Incident Response",
+   "shared_terms": [
+    {
+     "stem": "incident",
+     "rarity": 0.4952,
+     "as_written": [
+      "incident",
+      "incidents"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "sef-09",
+     "rarity": 1.0,
+     "as_written": [
+      "sef-09"
+     ]
+    },
+    {
+     "stem": "severity",
+     "rarity": 0.651,
+     "as_written": [
+      "severity"
+     ]
+    },
+    {
+     "stem": "category",
+     "rarity": 0.6191,
+     "as_written": [
+      "categories"
+     ]
+    },
+    {
+     "stem": "automat",
+     "rarity": 0.5698,
+     "as_written": [
+      "automated"
+     ]
+    },
+    {
+     "stem": "determine",
+     "rarity": 0.5596,
+     "as_written": [
+      "determine"
+     ]
+    },
+    {
+     "stem": "level",
+     "rarity": 0.5409,
+     "as_written": [
+      "levels"
+     ]
+    },
+    {
+     "stem": "response",
+     "rarity": 0.5164,
+     "as_written": [
+      "response"
+     ]
+    },
+    {
+     "stem": "applicable",
+     "rarity": 0.509,
+     "as_written": [
+      "applicable"
+     ]
+    }
+   ],
+   "score": 0.0907,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::BCR-09: Disaster Response Plan",
+   "anchor": "anchor:csa-aicm:bcr-09-disaster-response-plan",
+   "framework": "CSA AICM",
+   "reference": "BCR-09: Disaster Response Plan",
+   "shared_terms": [
+    {
+     "stem": "significant",
+     "rarity": 0.4446,
+     "as_written": [
+      "significant"
+     ]
+    },
+    {
+     "stem": "plan",
+     "rarity": 0.4264,
+     "as_written": [
+      "plan"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "bcr-09",
+     "rarity": 1.0,
+     "as_written": [
+      "bcr-09"
+     ]
+    },
+    {
+     "stem": "maintaina",
+     "rarity": 1.0,
+     "as_written": [
+      "maintaina"
+     ]
+    },
+    {
+     "stem": "man-made",
+     "rarity": 1.0,
+     "as_written": [
+      "man-made"
+     ]
+    },
+    {
+     "stem": "natural",
+     "rarity": 1.0,
+     "as_written": [
+      "natural"
+     ]
+    },
+    {
+     "stem": "updatethe",
+     "rarity": 1.0,
+     "as_written": [
+      "updatethe"
+     ]
+    },
+    {
+     "stem": "disaster",
+     "rarity": 0.8899,
+     "as_written": [
+      "disaster",
+      "disasters"
+     ]
+    },
+    {
+     "stem": "recover",
+     "rarity": 0.8899,
+     "as_written": [
+      "recover"
+     ]
+    },
+    {
+     "stem": "response",
+     "rarity": 0.5164,
+     "as_written": [
+      "response"
+     ]
+    },
+    {
+     "stem": "approve",
+     "rarity": 0.4952,
+     "as_written": [
+      "approve"
+     ]
+    },
+    {
+     "stem": "communicate",
+     "rarity": 0.4651,
+     "as_written": [
+      "communicate"
+     ]
+    },
+    {
+     "stem": "annually",
+     "rarity": 0.4264,
+     "as_written": [
+      "annually"
+     ]
+    },
+    {
+     "stem": "apply",
+     "rarity": 0.4222,
+     "as_written": [
+      "apply"
+     ]
+    }
+   ],
+   "score": 0.0813,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "OWASP Agentic Top 10::ASI08 - Cascading Failures",
+   "anchor": "anchor:owasp-agentic-top-10:asi08-cascading-failures",
+   "framework": "OWASP Agentic Top 10",
+   "reference": "ASI08 - Cascading Failures",
+   "shared_terms": [
+    {
+     "stem": "hallucinat",
+     "rarity": 0.7798,
+     "as_written": [
+      "hallucinated"
+     ]
+    },
+    {
+     "stem": "cause",
+     "rarity": 0.6909,
+     "as_written": [
+      "cause"
+     ]
+    },
+    {
+     "stem": "plan",
+     "rarity": 0.4264,
+     "as_written": [
+      "plan",
+      "planning"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "accumulat",
+     "rarity": 1.0,
+     "as_written": [
+      "accumulates"
+     ]
+    },
+    {
+     "stem": "amplify",
+     "rarity": 1.0,
+     "as_written": [
+      "amplifying"
+     ]
+    },
+    {
+     "stem": "asi08",
+     "rarity": 1.0,
+     "as_written": [
+      "asi08"
+     ]
+    },
+    {
+     "stem": "cascade",
+     "rarity": 1.0,
+     "as_written": [
+      "cascade"
+     ]
+    },
+    {
+     "stem": "implant",
+     "rarity": 1.0,
+     "as_written": [
+      "implanting"
+     ]
+    },
+    {
+     "stem": "interconnect",
+     "rarity": 1.0,
+     "as_written": [
+      "interconnected"
+     ]
+    },
+    {
+     "stem": "propagate",
+     "rarity": 1.0,
+     "as_written": [
+      "propagate"
+     ]
+    },
+    {
+     "stem": "self-reinforcement",
+     "rarity": 1.0,
+     "as_written": [
+      "self-reinforcement"
+     ]
+    },
+    {
+     "stem": "worsen",
+     "rarity": 1.0,
+     "as_written": [
+      "worsens"
+     ]
+    },
+    {
+     "stem": "long-term",
+     "rarity": 0.8899,
+     "as_written": [
+      "long-term"
+     ]
+    },
+    {
+     "stem": "pipelin",
+     "rarity": 0.8899,
+     "as_written": [
+      "pipelines"
+     ]
+    },
+    {
+     "stem": "signal",
+     "rarity": 0.8899,
+     "as_written": [
+      "signals"
+     ]
+    }
+   ],
+   "score": 0.0769,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 89: Non-Technical - Legal accountability",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-89-non-technical-legal-accountability",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 89: Non-Technical - Legal accountability",
+   "shared_terms": [
+    {
+     "stem": "step",
+     "rarity": 0.7154,
+     "as_written": [
+      "steps"
+     ]
+    },
+    {
+     "stem": "legal",
+     "rarity": 0.4765,
+     "as_written": [
+      "legal"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "adds",
+     "rarity": 1.0,
+     "as_written": [
+      "adds"
+     ]
+    },
+    {
+     "stem": "challeng",
+     "rarity": 1.0,
+     "as_written": [
+      "challenging"
+     ]
+    },
+    {
+     "stem": "harder",
+     "rarity": 1.0,
+     "as_written": [
+      "harder"
+     ]
+    },
+    {
+     "stem": "choic",
+     "rarity": 0.8899,
+     "as_written": [
+      "choices"
+     ]
+    },
+    {
+     "stem": "complexity",
+     "rarity": 0.8255,
+     "as_written": [
+      "complexity"
+     ]
+    },
+    {
+     "stem": "good",
+     "rarity": 0.8255,
+     "as_written": [
+      "good"
+     ]
+    },
+    {
+     "stem": "since",
+     "rarity": 0.8255,
+     "as_written": [
+      "since"
+     ]
+    },
+    {
+     "stem": "standardiz",
+     "rarity": 0.8255,
+     "as_written": [
+      "standardized"
+     ]
+    },
+    {
+     "stem": "framework",
+     "rarity": 0.6909,
+     "as_written": [
+      "frameworks"
+     ]
+    },
+    {
+     "stem": "synthetic",
+     "rarity": 0.6909,
+     "as_written": [
+      "synthetic"
+     ]
+    },
+    {
+     "stem": "determin",
+     "rarity": 0.6697,
+     "as_written": [
+      "determining"
+     ]
+    },
+    {
+     "stem": "governance",
+     "rarity": 0.6697,
+     "as_written": [
+      "governance"
+     ]
+    }
+   ],
+   "score": 0.0706,
+   "shared_count": 2,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "EU AI Act::Article 20: Corrective Actions and Duty of Information",
+   "anchor": "anchor:eu-ai-act:article-20-corrective-actions-and-duty-of-information",
+   "framework": "EU AI Act",
+   "reference": "Article 20: Corrective Actions and Duty of Information",
+   "shared_terms": [
+    {
+     "stem": "corrective",
+     "rarity": 0.6697,
+     "as_written": [
+      "corrective"
+     ]
+    },
+    {
+     "stem": "action",
+     "rarity": 0.3884,
+     "as_written": [
+      "actions"
+     ]
+    },
+    {
+     "stem": "monitor",
+     "rarity": 0.3786,
+     "as_written": [
+      "monitoring"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "anyone",
+     "rarity": 1.0,
+     "as_written": [
+      "anyone"
+     ]
+    },
+    {
+     "stem": "realiz",
+     "rarity": 1.0,
+     "as_written": [
+      "realizes"
+     ]
+    },
+    {
+     "stem": "went",
+     "rarity": 1.0,
+     "as_written": [
+      "went"
+     ]
+    },
+    {
+     "stem": "certifi",
+     "rarity": 0.8899,
+     "as_written": [
+      "certified"
+     ]
+    },
+    {
+     "stem": "did",
+     "rarity": 0.8899,
+     "as_written": [
+      "did"
+     ]
+    },
+    {
+     "stem": "distribut",
+     "rarity": 0.8899,
+     "as_written": [
+      "distributing"
+     ]
+    },
+    {
+     "stem": "fix",
+     "rarity": 0.8899,
+     "as_written": [
+      "fix"
+     ]
+    },
+    {
+     "stem": "investigate",
+     "rarity": 0.8899,
+     "as_written": [
+      "investigate"
+     ]
+    },
+    {
+     "stem": "recall",
+     "rarity": 0.8899,
+     "as_written": [
+      "recall"
+     ]
+    },
+    {
+     "stem": "wrong",
+     "rarity": 0.8899,
+     "as_written": [
+      "wrong"
+     ]
+    },
+    {
+     "stem": "duty",
+     "rarity": 0.8255,
+     "as_written": [
+      "duty"
+     ]
+    },
+    {
+     "stem": "immediately",
+     "rarity": 0.8255,
+     "as_written": [
+      "immediately"
+     ]
+    }
+   ],
+   "score": 0.0636,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "EU AI Act::Article 73: Reporting of Serious Incidents",
+   "anchor": "anchor:eu-ai-act:article-73-reporting-of-serious-incidents",
+   "framework": "EU AI Act",
+   "reference": "Article 73: Reporting of Serious Incidents",
+   "shared_terms": [
+    {
+     "stem": "need",
+     "rarity": 0.509,
+     "as_written": [
+      "needed"
+     ]
+    },
+    {
+     "stem": "incident",
+     "rarity": 0.4952,
+     "as_written": [
+      "incident",
+      "incidents"
+     ]
+    },
+    {
+     "stem": "action",
+     "rarity": 0.3884,
+     "as_written": [
+      "action",
+      "actions"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "chance",
+     "rarity": 1.0,
+     "as_written": [
+      "chance"
+     ]
+    },
+    {
+     "stem": "dies",
+     "rarity": 1.0,
+     "as_written": [
+      "dies"
+     ]
+    },
+    {
+     "stem": "link",
+     "rarity": 1.0,
+     "as_written": [
+      "link"
+     ]
+    },
+    {
+     "stem": "seriou",
+     "rarity": 1.0,
+     "as_written": [
+      "serious"
+     ]
+    },
+    {
+     "stem": "seven",
+     "rarity": 1.0,
+     "as_written": [
+      "seven"
+     ]
+    },
+    {
+     "stem": "someone",
+     "rarity": 1.0,
+     "as_written": [
+      "someone"
+     ]
+    },
+    {
+     "stem": "soon",
+     "rarity": 1.0,
+     "as_written": [
+      "soon"
+     ]
+    },
+    {
+     "stem": "there'",
+     "rarity": 1.0,
+     "as_written": [
+      "there's"
+     ]
+    },
+    {
+     "stem": "widespread",
+     "rarity": 1.0,
+     "as_written": [
+      "widespread"
+     ]
+    },
+    {
+     "stem": "find",
+     "rarity": 0.8899,
+     "as_written": [
+      "finding"
+     ]
+    },
+    {
+     "stem": "investigate",
+     "rarity": 0.8899,
+     "as_written": [
+      "investigate"
+     ]
+    },
+    {
+     "stem": "know",
+     "rarity": 0.8899,
+     "as_written": [
+      "know"
+     ]
+    }
+   ],
+   "score": 0.0544,
+   "shared_count": 3,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "CSA AICM::BCR-10: Response Plan Exercise",
+   "anchor": "anchor:csa-aicm:bcr-10-response-plan-exercise",
+   "framework": "CSA AICM",
+   "reference": "BCR-10: Response Plan Exercise",
+   "shared_terms": [
+    {
+     "stem": "plan",
+     "rarity": 0.4264,
+     "as_written": [
+      "plan"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "bcr-10",
+     "rarity": 1.0,
+     "as_written": [
+      "bcr-10"
+     ]
+    },
+    {
+     "stem": "exercise",
+     "rarity": 1.0,
+     "as_written": [
+      "exercise"
+     ]
+    },
+    {
+     "stem": "participation",
+     "rarity": 1.0,
+     "as_written": [
+      "participation"
+     ]
+    },
+    {
+     "stem": "significantchang",
+     "rarity": 1.0,
+     "as_written": [
+      "significantchanges"
+     ]
+    },
+    {
+     "stem": "disaster",
+     "rarity": 0.8899,
+     "as_written": [
+      "disaster"
+     ]
+    },
+    {
+     "stem": "local",
+     "rarity": 0.8899,
+     "as_written": [
+      "local"
+     ]
+    },
+    {
+     "stem": "emergency",
+     "rarity": 0.8255,
+     "as_written": [
+      "emergency"
+     ]
+    },
+    {
+     "stem": "possible",
+     "rarity": 0.651,
+     "as_written": [
+      "possible"
+     ]
+    },
+    {
+     "stem": "response",
+     "rarity": 0.5164,
+     "as_written": [
+      "response"
+     ]
+    },
+    {
+     "stem": "authority",
+     "rarity": 0.4887,
+     "as_written": [
+      "authorities"
+     ]
+    },
+    {
+     "stem": "annually",
+     "rarity": 0.4264,
+     "as_written": [
+      "annually"
+     ]
+    }
+   ],
+   "score": 0.0468,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "NIST AI RMF::MANAGE 1.3: Risk response planning",
+   "anchor": "anchor:nist-ai-rmf:manage-1-3-risk-response-planning",
+   "framework": "NIST AI RMF",
+   "reference": "MANAGE 1.3: Risk response planning",
+   "shared_terms": [
+    {
+     "stem": "plan",
+     "rarity": 0.4264,
+     "as_written": [
+      "plan",
+      "planned",
+      "planning"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "option",
+     "rarity": 1.0,
+     "as_written": [
+      "options"
+     ]
+    },
+    {
+     "stem": "deem",
+     "rarity": 0.8899,
+     "as_written": [
+      "deemed"
+     ]
+    },
+    {
+     "stem": "mitigat",
+     "rarity": 0.8899,
+     "as_written": [
+      "mitigating"
+     ]
+    },
+    {
+     "stem": "priority",
+     "rarity": 0.8255,
+     "as_written": [
+      "priority"
+     ]
+    },
+    {
+     "stem": "avoid",
+     "rarity": 0.7798,
+     "as_written": [
+      "avoiding"
+     ]
+    },
+    {
+     "stem": "high",
+     "rarity": 0.7798,
+     "as_written": [
+      "high"
+     ]
+    },
+    {
+     "stem": "accept",
+     "rarity": 0.6909,
+     "as_written": [
+      "accepting"
+     ]
+    },
+    {
+     "stem": "transfer",
+     "rarity": 0.6909,
+     "as_written": [
+      "transferring"
+     ]
+    },
+    {
+     "stem": "develop",
+     "rarity": 0.5926,
+     "as_written": [
+      "developed"
+     ]
+    },
+    {
+     "stem": "respons",
+     "rarity": 0.5596,
+     "as_written": [
+      "responses"
+     ]
+    },
+    {
+     "stem": "function",
+     "rarity": 0.5241,
+     "as_written": [
+      "function"
+     ]
+    },
+    {
+     "stem": "manage",
+     "rarity": 0.5241,
+     "as_written": [
+      "manage"
+     ]
+    }
+   ],
+   "score": 0.0399,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  },
+  {
+   "clause": "IBM AI Risk Atlas::IBM 71: Output - Hallucination",
+   "anchor": "anchor:ibm-ai-risk-atlas:ibm-71-output-hallucination",
+   "framework": "IBM AI Risk Atlas",
+   "reference": "IBM 71: Output - Hallucination",
+   "shared_terms": [
+    {
+     "stem": "hallucination",
+     "rarity": 0.7443,
+     "as_written": [
+      "hallucination",
+      "hallucinations"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "disconnect",
+     "rarity": 1.0,
+     "as_written": [
+      "disconnected"
+     ]
+    },
+    {
+     "stem": "fabricat",
+     "rarity": 1.0,
+     "as_written": [
+      "fabricated"
+     ]
+    },
+    {
+     "stem": "factually",
+     "rarity": 1.0,
+     "as_written": [
+      "factually"
+     ]
+    },
+    {
+     "stem": "faithfulnes",
+     "rarity": 1.0,
+     "as_written": [
+      "faithfulness"
+     ]
+    },
+    {
+     "stem": "groundednes",
+     "rarity": 1.0,
+     "as_written": [
+      "groundedness"
+     ]
+    },
+    {
+     "stem": "reality",
+     "rarity": 1.0,
+     "as_written": [
+      "reality"
+     ]
+    },
+    {
+     "stem": "relevance",
+     "rarity": 1.0,
+     "as_written": [
+      "relevance"
+     ]
+    },
+    {
+     "stem": "sometim",
+     "rarity": 1.0,
+     "as_written": [
+      "sometimes"
+     ]
+    },
+    {
+     "stem": "untruthful",
+     "rarity": 1.0,
+     "as_written": [
+      "untruthful"
+     ]
+    },
+    {
+     "stem": "inaccurate",
+     "rarity": 0.8899,
+     "as_written": [
+      "inaccurate"
+     ]
+    },
+    {
+     "stem": "instanc",
+     "rarity": 0.8899,
+     "as_written": [
+      "instances"
+     ]
+    },
+    {
+     "stem": "possibly",
+     "rarity": 0.8899,
+     "as_written": [
+      "possibly"
+     ]
+    }
+   ],
+   "score": 0.0326,
+   "shared_count": 1,
+   "grade": "published",
+   "relationship": "AIUC publishes this crosswalk; the vocabulary below is this build's evidence for it, not the mapping itself",
+   "review_status": "approved_as_a_reading_of_published_text"
+  }
+ ],
+ "candidate_crosswalks": [
+  {
+   "clause": "ISO 42001::9.3.3: Management review results",
+   "anchor": "anchor:iso-42001:9-3-3-management-review-results",
+   "framework": "ISO 42001",
+   "reference": "9.3.3: Management review results",
+   "shared_terms": [
+    {
+     "stem": "follow-up",
+     "rarity": 0.6697,
+     "as_written": [
+      "follow-up"
+     ]
+    },
+    {
+     "stem": "improvement",
+     "rarity": 0.651,
+     "as_written": [
+      "improvements"
+     ]
+    },
+    {
+     "stem": "action",
+     "rarity": 0.3884,
+     "as_written": [
+      "actions"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "objectiv",
+     "rarity": 0.6191,
+     "as_written": [
+      "objectives"
+     ]
+    },
+    {
+     "stem": "decision",
+     "rarity": 0.509,
+     "as_written": [
+      "decisions"
+     ]
+    },
+    {
+     "stem": "resourc",
+     "rarity": 0.5019,
+     "as_written": [
+      "resources"
+     ]
+    },
+    {
+     "stem": "result",
+     "rarity": 0.4707,
+     "as_written": [
+      "results"
+     ]
+    }
+   ],
+   "score": 0.4486,
+   "shared_count": 3,
+   "grade": "proposed",
+   "relationship": "AIUC does NOT publish this crosswalk. This build observed shared distinctive vocabulary and proposes it as a candidate for review. It is not a mapping.",
+   "review_status": "needs_review"
+  },
+  {
+   "clause": "ISO 42001::A.3.2: AI roles and responsibilities",
+   "anchor": "anchor:iso-42001:a-3-2-ai-roles-and-responsibilities",
+   "framework": "ISO 42001",
+   "reference": "A.3.2: AI roles and responsibilities",
+   "shared_terms": [
+    {
+     "stem": "responsibility",
+     "rarity": 0.5698,
+     "as_written": [
+      "responsibilities"
+     ]
+    },
+    {
+     "stem": "need",
+     "rarity": 0.509,
+     "as_written": [
+      "needed",
+      "needs"
+     ]
+    },
+    {
+     "stem": "defin",
+     "rarity": 0.4352,
+     "as_written": [
+      "defined",
+      "defining"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "allocat",
+     "rarity": 0.8899,
+     "as_written": [
+      "allocated"
+     ]
+    },
+    {
+     "stem": "role",
+     "rarity": 0.5596,
+     "as_written": [
+      "roles"
+     ]
+    },
+    {
+     "stem": "accord",
+     "rarity": 0.5409,
+     "as_written": [
+      "according"
+     ]
+    }
+   ],
+   "score": 0.432,
+   "shared_count": 3,
+   "grade": "proposed",
+   "relationship": "AIUC does NOT publish this crosswalk. This build observed shared distinctive vocabulary and proposes it as a candidate for review. It is not a mapping.",
+   "review_status": "needs_review"
+  },
+  {
+   "clause": "CSA AICM::LOG-13: Failures and Anomalies Reporting",
+   "anchor": "anchor:csa-aicm:log-13-failures-and-anomalies-reporting",
+   "framework": "CSA AICM",
+   "reference": "LOG-13: Failures and Anomalies Reporting",
+   "shared_terms": [
+    {
+     "stem": "immediate",
+     "rarity": 0.7798,
+     "as_written": [
+      "immediate"
+     ]
+    },
+    {
+     "stem": "accountable",
+     "rarity": 0.7154,
+     "as_written": [
+      "accountable"
+     ]
+    },
+    {
+     "stem": "notification",
+     "rarity": 0.6191,
+     "as_written": [
+      "notification"
+     ]
+    },
+    {
+     "stem": "monitor",
+     "rarity": 0.3786,
+     "as_written": [
+      "monitoring"
+     ]
+    }
+   ],
+   "clause_terms_not_reached": [
+    {
+     "stem": "log-13",
+     "rarity": 1.0,
+     "as_written": [
+      "log-13"
+     ]
+    },
+    {
+     "stem": "anomaly",
+     "rarity": 0.7154,
+     "as_written": [
+      "anomalies"
+     ]
+    },
+    {
+     "stem": "failur",
+     "rarity": 0.7154,
+     "as_written": [
+      "failures"
+     ]
+    },
+    {
+     "stem": "party",
+     "rarity": 0.5808,
+     "as_written": [
+      "party"
+     ]
+    },
+    {
+     "stem": "report",
+     "rarity": 0.4545,
+     "as_written": [
+      "reporting"
+     ]
+    },
+    {
+     "stem": "measur",
+     "rarity": 0.3953,
+     "as_written": [
+      "measures"
+     ]
+    },
+    {
+     "stem": "technical",
+     "rarity": 0.355,
+     "as_written": [
+      "technical"
+     ]
+    }
+   ],
+   "score": 0.3716,
+   "shared_count": 4,
+   "grade": "proposed",
+   "relationship": "AIUC does NOT publish this crosswalk. This build observed shared distinctive vocabulary and proposes it as a candidate for review. It is not a mapping.",
+   "review_status": "needs_review"
+  }
+ ]
+}

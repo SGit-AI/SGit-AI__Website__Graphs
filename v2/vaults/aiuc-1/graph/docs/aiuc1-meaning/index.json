@@ -1,0 +1,130 @@
+{
+ "version": "v0.6.19",
+ "slug": "aiuc1-meaning",
+ "doc": "doc:aiuc1-meaning",
+ "title": "Giving a paragraph and a word meaning",
+ "ladder": {
+  "doc": "document",
+  "sec": "section",
+  "blk": "block",
+  "sen": "sentence",
+  "wrd": "word",
+  "mk": "span",
+  "w": "form"
+ },
+ "totals": {
+  "blocks": 22,
+  "sentences": 45,
+  "words": 796,
+  "spans": 24
+ },
+ "forms": "words.json",
+ "fmt": "fmt.json",
+ "tokens": "tokens.json",
+ "sections": [
+  {
+   "id": "doc:aiuc1-meaning",
+   "title": "Giving a paragraph and a word meaning",
+   "level": 1,
+   "parent": null,
+   "counts": {
+    "blocks": 2,
+    "sentences": 5,
+    "words": 94
+   },
+   "shard": "sec-01.json",
+   "uid": "mn:d1"
+  },
+  {
+   "id": "sec:The three grades, never mixed",
+   "title": "The three grades, never mixed",
+   "level": 2,
+   "parent": "doc:aiuc1-meaning",
+   "counts": {
+    "blocks": 2,
+    "sentences": 2,
+    "words": 30
+   },
+   "shard": "sec-02.json",
+   "uid": "mn:s1"
+  },
+  {
+   "id": "sec:Why the paragraph had to be nailed down first",
+   "title": "Why the paragraph had to be nailed down first",
+   "level": 2,
+   "parent": "doc:aiuc1-meaning",
+   "counts": {
+    "blocks": 3,
+    "sentences": 5,
+    "words": 133
+   },
+   "shard": "sec-03.json",
+   "uid": "mn:s2"
+  },
+  {
+   "id": "sec:What a term is, and why rarity decides",
+   "title": "What a term is, and why rarity decides",
+   "level": 2,
+   "parent": "doc:aiuc1-meaning",
+   "counts": {
+    "blocks": 2,
+    "sentences": 7,
+    "words": 144
+   },
+   "shard": "sec-04.json",
+   "uid": "mn:s3"
+  },
+  {
+   "id": "sec:The gap is the honest half",
+   "title": "The gap is the honest half",
+   "level": 2,
+   "parent": "doc:aiuc1-meaning",
+   "counts": {
+    "blocks": 2,
+    "sentences": 7,
+    "words": 109
+   },
+   "shard": "sec-05.json",
+   "uid": "mn:s4"
+  },
+  {
+   "id": "sec:Anchor nodes",
+   "title": "Anchor nodes",
+   "level": 2,
+   "parent": "doc:aiuc1-meaning",
+   "counts": {
+    "blocks": 2,
+    "sentences": 5,
+    "words": 115
+   },
+   "shard": "sec-06.json",
+   "uid": "mn:s5"
+  },
+  {
+   "id": "sec:What this does not do",
+   "title": "What this does not do",
+   "level": 2,
+   "parent": "doc:aiuc1-meaning",
+   "counts": {
+    "blocks": 4,
+    "sentences": 9,
+    "words": 89
+   },
+   "shard": "sec-07.json",
+   "uid": "mn:s6"
+  },
+  {
+   "id": "sec:Reading it",
+   "title": "Reading it",
+   "level": 2,
+   "parent": "doc:aiuc1-meaning",
+   "counts": {
+    "blocks": 5,
+    "sentences": 5,
+    "words": 82
+   },
+   "shard": "sec-08.json",
+   "uid": "mn:s7"
+  }
+ ]
+}
