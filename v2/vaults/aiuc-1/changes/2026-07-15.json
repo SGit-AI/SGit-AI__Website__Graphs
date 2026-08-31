@@ -1,0 +1,2616 @@
+{
+ "release_id": "2026-07-15",
+ "generated_at": "2026-08-31T23:03:23Z",
+ "generator_version": "0.1.0",
+ "previous_release_id": "2026-04-15",
+ "derived_event_count": 66,
+ "official_record_count": 22,
+ "derived_events": [
+  {
+   "id": "chg_2026_07_15_A008_control_added",
+   "release_id": "2026-07-15",
+   "control_id": "A008",
+   "event_type": "control_added",
+   "summary": "control A008 (Prevent leakage of credentials and secrets) is present in this release and not in 2026-04-15",
+   "before": null,
+   "after": {
+    "content_hash": "sha256:ecee912bb41b666c69e3fff08baa29a991af4bdd61bd31084d4c8b84a5505356",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_set_difference",
+    "confidence": 0.95,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_B010_control_added",
+   "release_id": "2026-07-15",
+   "control_id": "B010",
+   "event_type": "control_added",
+   "summary": "control B010 (Promote secure patterns in generated code) is present in this release and not in 2026-04-15",
+   "before": null,
+   "after": {
+    "content_hash": "sha256:80fce2ae7713557181ab71cb514cbbc528145e0ba9bd034dd6663bb2adbdbb6e",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_set_difference",
+    "confidence": 0.95,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_A001_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "A001",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:8a8c870c1320f4598aabe8d9147b59a210905e8558c0551059f1fea42fc984bc",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:29dd35ab6cd6dec88aba54bb3b0a6268e951ed60086f2d52673725db845ad8ee",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_A002_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "A002",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:76eb6c7621826a0434ef74bc4f38c4100634827c848975587d7671aca7aef8e8",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:65e9da2f1522f8e38362b6f814f80ee64b4272fe78485c4bbab4a806cf5d3233",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_A003_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "A003",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:dcda3b6143fa8c716d342927e9cbbd930bb1b777d778201a82e51e5913a621e7",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:6a63cb8daf0911e33673be30dcb098ce04f6ba36b95f5e81fca119f06119d1f6",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_A003_guidance_updated",
+   "release_id": "2026-07-15",
+   "control_id": "A003",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 0 bullet(s) added, 1 removed",
+   "before": {
+    "content_hash": "sha256:dcda3b6143fa8c716d342927e9cbbd930bb1b777d778201a82e51e5913a621e7",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:6a63cb8daf0911e33673be30dcb098ce04f6ba36b95f5e81fca119f06119d1f6",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_A004_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "A004",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:5bf6259acf20ede5df6a5bb1c16ca321d6d0224ae07f6221af1cf072022290f9",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:7c88693423ba2db1b053e099f824c7bee63fb8b77a6a77c3b0016df1375fff6b",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_A005_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "A005",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:358cddcc7c656c6d498d5dce9cf89c7c40d0536bab45e2cf835130b4a962531f",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:344ff697ac8729d87a8ad6ac727e32cfbd51f4c0202329b9e315f78a6805cafc",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_A006_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "A006",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:32a1440bc63d4291896bd90967dad542caf68096b5fe9e054ca330a6bb0c5b90",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:58684ddde6611d5322daae467e29fdd1063aa1e195f27741875a8e5a2567227e",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_A006_guidance_updated",
+   "release_id": "2026-07-15",
+   "control_id": "A006",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 0 bullet(s) added, 1 removed",
+   "before": {
+    "content_hash": "sha256:32a1440bc63d4291896bd90967dad542caf68096b5fe9e054ca330a6bb0c5b90",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:58684ddde6611d5322daae467e29fdd1063aa1e195f27741875a8e5a2567227e",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_A007_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "A007",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:3191d63a96c0bc6a6b3cbb6c29c2ccdfa960fa02eb3374998e200adf42e542df",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:3d38eaeabdc327d66fca4cddbc8111d153ee808283f052c6e7b5d4255b022e5e",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_B001_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "B001",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:b0b9dc8befa827fd639ba150b6cacd4dec12f9698185b634ef412110a9b8e014",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:ab0387a8ce2c8848555023e728be8ec35cfee423fca3a56947fa7938aacdac3e",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_B002_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "B002",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:8bccebbc3bd5319f183b4c358dc22ff367de32148b90cdc26e07781af537a0a7",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:8846cca55fd6f981ba21789cd98955cfafc7936cbff407b006df0c169972b567",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_B003_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "B003",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:3f773d62c7ba9e9e8b16604e1725228149520d66bce3aaf3de9762f40f5f83b5",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:38a29d7bbe7a0490906b641b7172bd8bf06832a52566f5387f05beb388441027",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_B004_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "B004",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:1f6b562b0db66eeffcbda82fd132f5dc35642410fef4f9e60377abcb5d889ed7",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:0dd9c16252dee37c45daa28ffd5ea7815defd0aa0ad8ecff7ad4f7a068a6f479",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_B005_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "B005",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:9e0a50705c2518fc909b8cafaafc86428c6ed1c374943bfa744e8d8fe4267da3",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:5714d4312e379e34e10d9bfe5badef473ff482147df61175d0120bfabcc74a96",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_B005_guidance_updated",
+   "release_id": "2026-07-15",
+   "control_id": "B005",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 1 bullet(s) added, 1 removed",
+   "before": {
+    "content_hash": "sha256:9e0a50705c2518fc909b8cafaafc86428c6ed1c374943bfa744e8d8fe4267da3",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:5714d4312e379e34e10d9bfe5badef473ff482147df61175d0120bfabcc74a96",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_B006_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "B006",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:716b7c2d678c43c7f57094b39433fdb76e6acdeb51ae538927f9648f0700c61e",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:90c1db279475a2c28259c95850f1f323c89340808a7f56822e8dca162da5da06",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_B006_guidance_updated",
+   "release_id": "2026-07-15",
+   "control_id": "B006",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 1 bullet(s) added, 1 removed",
+   "before": {
+    "content_hash": "sha256:716b7c2d678c43c7f57094b39433fdb76e6acdeb51ae538927f9648f0700c61e",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:90c1db279475a2c28259c95850f1f323c89340808a7f56822e8dca162da5da06",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_B007_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "B007",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:94338d4ecc8d750e78af8cd53b27dd4141a23975f7beb5699f858aaa59b04c6d",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:d2c57174cf8de1dd65445751bc74a8ca086414641b592ceb755400454a2a48ae",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_B008_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "B008",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:d978016de99711aa06a02f54b52252c69a377e919d798bd105cff299778d2b53",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:a1ab3e4e9acf22b6927d90266de39eeedf5d3ce0e50cf821078059c08ce19a93",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_B008_guidance_updated",
+   "release_id": "2026-07-15",
+   "control_id": "B008",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 0 bullet(s) added, 1 removed",
+   "before": {
+    "content_hash": "sha256:d978016de99711aa06a02f54b52252c69a377e919d798bd105cff299778d2b53",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:a1ab3e4e9acf22b6927d90266de39eeedf5d3ce0e50cf821078059c08ce19a93",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_B009_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "B009",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:70613658897bc708294b208f84be96e685f152a2e5f8a116798203182136cb2d",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:16d7780bc158fe5b1be2066c1a78df2a9252768e42422176ac94b42eece6f1f9",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_C001_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "C001",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:19a5c554d775b631e85e293692c20857ee1a80e72c4f7b9cc2afc51bb69a4491",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:edc8042ec8c3d553a477f4ebc011da5ea135119e8a40bd32850b2c2b8dfadad9",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_C002_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "C002",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:e55e4f05e35c05c9f0069b926260c7db0e16630428c6b55b9d378c4a0bf1c0b3",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:a08c052f1a25c9309bd14fa9cfcb61377d8c4707593b9e7a381fa65d81a8bb72",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_C003_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "C003",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:0a73ce0a956ca0a303f6c6627430cd033ffc2f30bf7159d57137c44917b01b29",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:6dc3b715223db73a6fd7df77922d223b3053b36b6bec31e41a0e97a0b154a6b9",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_C004_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "C004",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:ebdc16395e11f76ab80cccdd2be996f979f3fe8c870f72694f7b6492e101042c",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:e14c5bfed4e4a613be46a8fdae84ce27b16ab571b4acb053a0d56a0d6de5d016",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_C005_title_updated",
+   "release_id": "2026-07-15",
+   "control_id": "C005",
+   "event_type": "title_updated",
+   "summary": "the published title changed from 'Prevent customer-defined high risk outputs' to 'Prevent agent-specific high risk outputs'",
+   "before": {
+    "content_hash": "sha256:8cab03717c232dff87df99659d85589e54dc8b572eb5f23293c43b8192cd6e8c",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:f442b144e0fbd894387cbc8ae43d299a4fe7f1c5516781ff6d4a0314db46f762",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_C005_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "C005",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:8cab03717c232dff87df99659d85589e54dc8b572eb5f23293c43b8192cd6e8c",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:f442b144e0fbd894387cbc8ae43d299a4fe7f1c5516781ff6d4a0314db46f762",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_C006_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "C006",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:a226ba3068264fb5dee703607c83843d79972b090cd714c61b62d78c63a640fd",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:c150357970e12c75a65b83b8ff1550ebd13452d42140e8c728aed997a47f0f29",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_C006_guidance_updated",
+   "release_id": "2026-07-15",
+   "control_id": "C006",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 1 bullet(s) added, 1 removed",
+   "before": {
+    "content_hash": "sha256:a226ba3068264fb5dee703607c83843d79972b090cd714c61b62d78c63a640fd",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:c150357970e12c75a65b83b8ff1550ebd13452d42140e8c728aed997a47f0f29",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_C007_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "C007",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:63b5a9a60c56efb58ee82229695e938678059e4a33a1a212c6ed472c2991e620",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:70e85c8357f416de022c744d49ae656a583e12a2b59aa776a853ecfdce80f9a5",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_C008_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "C008",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:30a671dddf0034cd87f9b9a430382698b7e1bef09017d04d3c5b099edfef3ade",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:52833c3963fc59d52260fa1251977e3547c7738b9d8ee80bd6bbf837b5530857",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_C009_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "C009",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:e9f5d078b4a32baae1b29e87dd02be402cbe097b380fffa06af0a21414431cca",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:5ae2d3f0b51f19e88606cbdba192c226a56fc16edad8c75a142ab70d517c8428",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_C010_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "C010",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:d92224e8d2f119131c0d5f7d09ed34a7c34899b86bf4a2f6e8b182a950e7cb4b",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:99a7074c8737b1d0de9c15cb9eb40d444001dd2a89f7923a5b0741f1fe488b22",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_C011_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "C011",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:c023cccf04d658091d1a5eb59b5b58ed5ef062df245ea773b4820bb552a4ddac",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:d97bb1b60526aadb30f4f13ddc77509043f15ed95fb8a2c96a914c0f69c32d6e",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_C012_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "C012",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:cad6d2245ee14cd1bc607690217e48d386b2d3bbba135b399674ca8a0c25b48a",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:c6e36273482b765e58e9ab38311058cbde37e70e694c3aa519c3ace3a4e1f999",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_D001_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "D001",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:1ff487709a09d6ccb1d02bfd35f7c384315d241c29b3368b92d44d98eebe2f04",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:91d1fbc4106b0dc09b7c62cd501b24bfd671c919132e89cbe279ec981873ccca",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_D002_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "D002",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:f0623a31ee8551b63791b2f16693b968c6a0c87bd98a6c763ebba7029ca413cd",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:5fb3025fc30da91edd86c172e541a410f0cfff061f6fb7df4fc950027d69996c",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_D003_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "D003",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:762af1acdf4ba40e1be8761f39fd26994bb62441318e952abaa1d1750eb0a0bf",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:0a5fec6cf887956f94027d5bd4108e10bd8e72460608673f460f875f3a63a4bf",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_D004_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "D004",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:c0d456abf3cb65a1ac3997639a72dd2b3ee6672703eed9ef6cbba28310f527b0",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:e58e996bb07366ec88f787916ce6916fc9864fb96818f089b24a687b6cc94dbd",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E001_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E001",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:347db00010b10af13edbcd6cbd2c7eedbf0bbb51e69108a7d6535e598084e737",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:15d157451ae46f56113bd881cb3221c1534ba7bb42eca0171f3bad1790978114",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E002_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E002",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:7f4e80b391d1f15f698bb09b8f04117f1937a82f5c0e2187aee599ba30d4042b",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:fe831fc46dbf093a2c45c4a04f95746fbe9675fd614a6f8a9c11ebf01571d461",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E003_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E003",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:bd03280299cc25e77a0435a80be71fbc7d9bfd3826120018b4dd7d9de50dea22",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:21e74b181e9139818c5d0008fd7be940640e0d00378f10c24d4de9e827453c4d",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E003_guidance_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E003",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 2 bullet(s) added, 2 removed",
+   "before": {
+    "content_hash": "sha256:bd03280299cc25e77a0435a80be71fbc7d9bfd3826120018b4dd7d9de50dea22",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:21e74b181e9139818c5d0008fd7be940640e0d00378f10c24d4de9e827453c4d",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E004_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E004",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:648473b03711a97d8110c96998fd95bd99205eaf8845419515a5f7d327472b1b",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:96a9f5996a232608d923146b48f08f712b2ae98451358f72d3d0ee2b84ab79b6",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E005_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E005",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:d47c787bf7cea6eb063a5ffb8c12e61748efedc6c2f1d426ded35b959c1364e4",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:61e21fdb179c1d0350a304d393e3e45d4907fcac780fc32b30c91cff1f59f795",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E005_guidance_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E005",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 1 bullet(s) added, 3 removed",
+   "before": {
+    "content_hash": "sha256:d47c787bf7cea6eb063a5ffb8c12e61748efedc6c2f1d426ded35b959c1364e4",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:61e21fdb179c1d0350a304d393e3e45d4907fcac780fc32b30c91cff1f59f795",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E006_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E006",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:ee0cf83fed4e7f6a4fc61fe978ca03fc6b71ad4ffb959026d11366da95e0771d",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:4bcf5a03b527616384b29e0629804b0588faa3b7588948bc88ed33cc6d40a537",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E007_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E007",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:1d2ea4bc595d5cf0a4cb7392997d56d4085bd83bcf4f061296a6dfbe98bfca5f",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:4fc722dac2db4a4e614ace43392493958c32131a3a24fdf202e1a94b3f5c125f",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E008_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E008",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:ab2e15116fa624e372dd038c76720d3c5b99b15ea17a784c128a5001e6280f1d",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:c2207b250faaf5cb9aaf61ab7ef5fbe693affab5584b01170b2a02424c440e7a",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E009_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E009",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:2350457fb1dc10c86821772fdeff2fb4fd20ee9545f4270fe35dbf3806ff590f",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:59286d392d0186164e5769e43e92decf38fdc8ed91af4b8f1eb6a19f7ab86566",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E009_guidance_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E009",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 1 bullet(s) added, 0 removed",
+   "before": {
+    "content_hash": "sha256:2350457fb1dc10c86821772fdeff2fb4fd20ee9545f4270fe35dbf3806ff590f",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:59286d392d0186164e5769e43e92decf38fdc8ed91af4b8f1eb6a19f7ab86566",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E010_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E010",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:6a3bc0e87cd41c41106ed9aed0dffd6a07928a6a600232928f830af2b0656406",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:a4b91c1b174c659cdbea6af274d611cd95e113c6b0a56f8d8e396a41ce28e4a8",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E011_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E011",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:0b1a5271d689acb13047b2b95d76d8904096a76b5ac64901472783e1d6d3184c",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:61a3b93c0552f308fca04906c9c5b8aca8aa70d73fa1298b43a5c9f5aa3862a7",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E012_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E012",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:f3f65d55ec1267a5d3237b7752ded0b99b2e0073eda3244e966926b9cfe1aa5b",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:390b927584ab7b3a896067ab87273908e2da214e5dbdef9503b412888ba52e75",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E013_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E013",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:565eea894b5190db6e0911e454469f11cb5e820a3670bb22527264af69b0488d",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:da6dccce2fb89ecaa2d035973a58db39981e4a4b2bc68957a28a3aa2c02a2733",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E014_title_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E014",
+   "event_type": "title_updated",
+   "summary": "the published title changed from 'Share transparency reports' to '[Retired] Share transparency reports'",
+   "before": {
+    "content_hash": "sha256:6a54960baece4854b2ebe2585f70b06bdacb6f825016d7c65043d6e74a877d6b",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:601241a259081281208ba6addc97c338201235543e353af7b3dd35e683f579ed",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E014_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E014",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:6a54960baece4854b2ebe2585f70b06bdacb6f825016d7c65043d6e74a877d6b",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:601241a259081281208ba6addc97c338201235543e353af7b3dd35e683f579ed",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E014_guidance_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E014",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 1 bullet(s) added, 0 removed",
+   "before": {
+    "content_hash": "sha256:6a54960baece4854b2ebe2585f70b06bdacb6f825016d7c65043d6e74a877d6b",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:601241a259081281208ba6addc97c338201235543e353af7b3dd35e683f579ed",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E015_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E015",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:d45a4e28c516931ee45f01c943e1ef9ce4e81e536dac4f587dbf206a0a58b97c",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:af960c91b9ebd83a394a107e587edbce0556067867922cfcf82c90feceb673aa",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E016_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E016",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:4e97d1f3cd46af50c66e521044d2085d00449be081033644d2a744840273d5db",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:3b02adda4c93169bb9a3c9afa276b06647f903f8c3936b1b288a8bf95cdd8dce",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E017_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E017",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:cd7a57a486c9fbff6eaee4615fd7fc698058a9ac11b6c24afb8e680f8d64933e",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:b4fea3da8a567a2297aa0903ee2bef15975dacf7298a8ab03687c162904e5e56",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_E017_guidance_updated",
+   "release_id": "2026-07-15",
+   "control_id": "E017",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 1 bullet(s) added, 1 removed",
+   "before": {
+    "content_hash": "sha256:cd7a57a486c9fbff6eaee4615fd7fc698058a9ac11b6c24afb8e680f8d64933e",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:b4fea3da8a567a2297aa0903ee2bef15975dacf7298a8ab03687c162904e5e56",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_F001_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "F001",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:eef7ae444ee408bfb0eb2c42cc9a5105edc1f9f39ccba8647d8146b2e5caf9c5",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:96777317deefec500ebf2058a5056223e2d725eb8096bad3b455748b75ad61e1",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_07_15_F002_requirement_updated",
+   "release_id": "2026-07-15",
+   "control_id": "F002",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:cf2d74dd5fa6d25605812a033dd5f6fe4840ab402edd2ddde44ffc4ca8ea34a8",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:36084fc3429060eccb2a0a49cba85f66ac4122720fdbdeb660916e7f4893d4d9",
+    "source_refs": [
+     "src_2026_08_31_page_changelog",
+     "git:d407401393de5629745de6accb35e000e674043f",
+     "src_2026_08_31_page_home"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  }
+ ],
+ "official_change_records": [
+  {
+   "id": "off_2026_07_15_000",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "A008"
+   ],
+   "subject": "A008: Prevent leakage of credentials and secrets",
+   "category": "div New addition",
+   "notes": "Restructured controls: transparency documentation is now the core control E017.1, transparency report sharing policy retagged supplemental as E017.2, and a new supplemental control E017.3 added covering platform and deployer security responsibilities",
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_001",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "B010"
+   ],
+   "subject": "B010: Promote secure patterns in generated code",
+   "category": "div New addition",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_002",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "A003"
+   ],
+   "subject": "A003: Limit AI agent data access",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_003",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "A003"
+   ],
+   "subject": "A003.1 Config: Data access scoping",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_004",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "A004"
+   ],
+   "subject": "A004.1 Documentation: User guidance on confidential information",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_005",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "A005"
+   ],
+   "subject": "A005: Prevent cross-customer data exposure",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_006",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "A005"
+   ],
+   "subject": "A005.2 Config: Customer data isolation controls",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_007",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "A006"
+   ],
+   "subject": "A006: Prevent PII leakage",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_008",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "A007"
+   ],
+   "subject": "A007: Prevent IP violations",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_009",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "B006"
+   ],
+   "subject": "B006.3 Config: Execution-level safeguards",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_010",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "B008"
+   ],
+   "subject": "B008: Protect AI system deployment environment",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_011",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "B009"
+   ],
+   "subject": "B009: Limit output over-exposure",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_012",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "C005"
+   ],
+   "subject": "C005: Prevent agent-specific high risk outputs",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_013",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "C006"
+   ],
+   "subject": "C006.2 Demonstration: Content handling and labelling for untrusted content",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_014",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "C008"
+   ],
+   "subject": "C008.3 Config: Security tooling",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_015",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "E002"
+   ],
+   "subject": "E002: AI failure plan for harmful outputs",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_016",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "E003"
+   ],
+   "subject": "E003: AI failure plan for hallucinations",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_017",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "E003"
+   ],
+   "subject": "E003.1 Documentation: AI failure plan for hallucinations",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_018",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "E005"
+   ],
+   "subject": "E005.1 Documentation: Data storage security practices",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_019",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "E009"
+   ],
+   "subject": "E009: Monitor third-party access",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_020",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "E009"
+   ],
+   "subject": "E009.2 Config: Anomalous third-party access alerting",
+   "category": "div Addition",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_07_15_021",
+   "release_id": "2026-07-15",
+   "control_ids": [
+    "E017"
+   ],
+   "subject": "E017: Document system transparency policy",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q3 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  }
+ ]
+}

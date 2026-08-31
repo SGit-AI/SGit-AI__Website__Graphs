@@ -1,0 +1,80 @@
+{
+ "catalog_id": "aiuc-1-derived-catalog",
+ "catalog_schema_version": "1.0.0",
+ "generator_version": "0.1.0",
+ "generated_at": "2026-08-31T23:03:23Z",
+ "disclaimer": "Unofficial, derivative machine-readable representation of AIUC-1, built by the sgit.ai graph estate. Not approved, certified or endorsed by AIUC. Verify every requirement against the official AIUC-1 sources.",
+ "current_release": "2026-07-15",
+ "current_release_stated_by": "'The most recent version of AIUC-1 was released on' on https://www.aiuc-1.com/changelog",
+ "announced_release": {
+  "release_id": "2026-10-15",
+  "published_label": "October 15, 2026",
+  "publication_state": "announced",
+  "stated_by": "'The next version of AIUC-1 will be released on' on https://www.aiuc-1.com/changelog",
+  "note": "announced by the official changelog page and not yet published; no catalog artefact exists for it"
+ },
+ "release_count": 5,
+ "releases": [
+  {
+   "release_id": "2026-07-15",
+   "published_at": "2026-07-15",
+   "status": "validated",
+   "control_count": 53,
+   "built_from": "official website and official changelog repository",
+   "source_commit_sha": "d407401393de5629745de6accb35e000e674043f",
+   "source_commit_confidence": 0.95,
+   "official_changelog_url": "https://www.aiuc-1.com/changelog",
+   "official_change_rows": 22,
+   "path": "releases/2026-07-15.json",
+   "content_hash": "sha256:0ad271610eae3358cc068355f43a78ac3b2905bfd4cb2dddf471754ec8e6f424"
+  },
+  {
+   "release_id": "2026-04-15",
+   "published_at": "2026-04-15",
+   "status": "partial",
+   "control_count": 51,
+   "built_from": "official changelog repository only",
+   "source_commit_sha": "f578bfbcbbae92a35824fa7602e886e25692e4c6",
+   "source_commit_confidence": 0.95,
+   "official_changelog_url": "https://www.aiuc-1.com/changelog/2026-04-15",
+   "official_change_rows": 38,
+   "path": "releases/2026-04-15.json",
+   "content_hash": "sha256:a87008571e7ac5c400d1642bee25b1957f568210b79f027f730891cb97e9828f"
+  },
+  {
+   "release_id": "2026-01-15",
+   "published_at": "2026-01-15",
+   "status": "partial",
+   "control_count": 51,
+   "built_from": "official changelog repository only",
+   "source_commit_sha": "3f3ad186a434fb4a444c737f5e265c6247831b42",
+   "source_commit_confidence": 0.85,
+   "official_changelog_url": "https://www.aiuc-1.com/changelog/2026-01-15",
+   "official_change_rows": 31,
+   "path": "releases/2026-01-15.json",
+   "content_hash": "sha256:203b6b6fc8275b02e4b022f888a2669adf4cc4d34a7de78f659bee4097bc7523"
+  },
+  {
+   "release_id": "2025-10-01",
+   "published_at": "2025-10-01",
+   "status": "partial",
+   "control_count": 51,
+   "built_from": "official changelog repository only",
+   "source_commit_sha": "736d027651c049512b32b1fb922f329b90a464bd",
+   "source_commit_confidence": 0.85,
+   "official_changelog_url": "https://www.aiuc-1.com/changelog/2025-10-01",
+   "official_change_rows": 13,
+   "path": "releases/2025-10-01.json",
+   "content_hash": "sha256:8c279f70dad3de38084c695e89763620013ed1f25b7f32306088905eb00d24ff"
+  },
+  {
+   "release_id": "2025-07-22",
+   "published_at": "2025-07-22",
+   "status": "unbuilt",
+   "reason": "the official changelog repository carries no commit for this release, so no control set can be traced to a source revision",
+   "stated_by": "the standard-history table on https://www.aiuc-1.com/changelog",
+   "official_changelog_url": "https://www.aiuc-1.com/changelog",
+   "control_count": 0
+  }
+ ]
+}

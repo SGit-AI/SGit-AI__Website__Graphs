@@ -1,0 +1,149 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://graphs.sgit.ai/vaults/aiuc-1/schemas/aiuc1-control.schema.json",
+ "title": "AIUC-1 derived control",
+ "description": "One top-level AIUC-1 item. AIUC calls it a requirement; this catalog follows its brief and calls it a control, and says so in source_terminology.",
+ "type": "object",
+ "required": ["id", "domain", "title", "canonical_status", "applicability", "frequency",
+              "control_type", "summary", "requirements", "keywords", "relationships",
+              "lifecycle", "provenance", "integrity"],
+ "properties": {
+  "id": {"type": "string", "pattern": "^[A-Z]\\d{3}$"},
+  "domain": {
+   "type": "object",
+   "required": ["id"],
+   "properties": {
+    "id": {"type": "string", "pattern": "^[A-Z]$"},
+    "name": {"type": ["string", "null"]},
+    "source_url": {"type": ["string", "null"]}
+   }
+  },
+  "title": {"type": ["string", "null"]},
+  "slug": {"type": ["string", "null"]},
+  "official_url": {"type": ["string", "null"]},
+  "canonical_status": {"enum": ["active", "merged", "deprecated", "retired"]},
+  "source_terminology": {"type": "object"},
+  "applicability": {"$ref": "#/$defs/labelled"},
+  "frequency": {"$ref": "#/$defs/labelled"},
+  "control_type": {"$ref": "#/$defs/labelled"},
+  "capabilities": {"type": "array", "items": {"type": "string"}},
+  "summary": {
+   "type": "object",
+   "required": ["value", "source_refs"],
+   "properties": {
+    "value": {"type": ["string", "null"]},
+    "normalized_value": {"type": ["string", "null"]},
+    "source_refs": {"type": "array", "items": {"type": "string"}}
+   }
+  },
+  "requirements": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["id", "number", "text", "application", "evidence_expectation", "source_refs"],
+    "properties": {
+     "id": {"type": "string", "pattern": "^[A-Z]\\d{3}\\.\\d+$"},
+     "number": {"type": "integer"},
+     "label": {"type": ["string", "null"]},
+     "raw_id": {"type": "string"},
+     "text": {"type": ["string", "null"]},
+     "normalized_text": {"type": ["string", "null"]},
+     "source_bullets": {"type": "array", "items": {"type": "string"}},
+     "application": {"$ref": "#/$defs/labelled"},
+     "evidence_expectation": {
+      "type": "object",
+      "properties": {
+       "label": {"type": ["string", "null"]},
+       "category": {"$ref": "#/$defs/labelled"},
+       "typical_locations": {"type": "array", "items": {"type": "string"}},
+       "typical_evidence": {"type": ["string", "null"]},
+       "normalized_typical_evidence": {"type": ["string", "null"]},
+       "capabilities": {"type": "array", "items": {"type": "string"}}
+      }
+     },
+     "airtable_id": {"type": ["string", "null"]},
+     "source_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+    }
+   }
+  },
+  "implementation_guidance": {"type": "array"},
+  "keywords": {"type": "array", "items": {"type": "string"}},
+  "crosswalks": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["framework", "reference", "relationship", "source_refs"],
+    "properties": {
+     "framework": {"type": ["string", "null"]},
+     "framework_slug": {"type": "string"},
+     "reference": {"type": ["string", "null"]},
+     "text": {"type": ["string", "null"]},
+     "normalized_text": {"type": ["string", "null"]},
+     "gap": {"type": ["string", "null"]},
+     "gap_analysis": {"type": ["string", "null"]},
+     "airtable_id": {"type": ["string", "null"]},
+     "relationship": {"const": "published_crosswalk"},
+     "source_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+    }
+   }
+  },
+  "official_changelog_text": {"type": ["object", "null"]},
+  "relationships": {
+   "type": "object",
+   "required": ["parent_control_id", "related_control_ids", "supersedes", "superseded_by"],
+   "properties": {
+    "parent_control_id": {"type": ["string", "null"]},
+    "related_control_ids": {"type": "array", "items": {"type": "string"}},
+    "supersedes": {"type": "array", "items": {"type": "string"}},
+    "superseded_by": {"type": "array", "items": {"type": "string"}},
+    "note": {"type": ["string", "null"]}
+   }
+  },
+  "lifecycle": {
+   "type": "object",
+   "required": ["first_observed_release", "last_confirmed_release"],
+   "properties": {
+    "first_observed_release": {"type": ["string", "null"]},
+    "last_confirmed_release": {"type": ["string", "null"]},
+    "deprecated_in_release": {"type": ["string", "null"]},
+    "retired_in_release": {"type": ["string", "null"]}
+   }
+  },
+  "provenance": {
+   "type": "object",
+   "required": ["source_refs", "extraction"],
+   "properties": {
+    "source_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "extraction": {
+     "type": "object",
+     "required": ["method", "parser_version", "extracted_at", "review_status"],
+     "properties": {
+      "method": {"type": "string"},
+      "parser_version": {"type": "string"},
+      "extracted_at": {"type": "string", "format": "date-time"},
+      "confirmed_by_own_page": {"type": "boolean"},
+      "review_status": {"enum": ["approved", "needs_review", "rejected"]}
+     }
+    }
+   }
+  },
+  "integrity": {
+   "type": "object",
+   "required": ["normalized_content_hash"],
+   "properties": {
+    "normalized_content_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+   }
+  }
+ },
+ "$defs": {
+  "labelled": {
+   "type": "object",
+   "required": ["value", "raw_text"],
+   "description": "A machine value beside the exact source wording it was mapped from. A value is null when the source wording does not permit an unambiguous mapping.",
+   "properties": {
+    "value": {"type": ["string", "null"]},
+    "raw_text": {"type": ["string", "boolean", "null"]}
+   }
+  }
+ }
+}

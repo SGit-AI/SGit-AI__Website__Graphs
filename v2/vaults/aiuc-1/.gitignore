@@ -1,0 +1,14 @@
+# The build scratch area: the working clone of the official changelog repository,
+# the intermediate parses, and the assembled vault tree. All of it is regenerated
+# by `python3 src/build.py` and `python3 src/publish.py`.
+build/
+
+# The retained response bodies. They are evidence and they belong in the encrypted
+# vault, not in a public git repository: they are gzipped copies of someone else's
+# pages, and NOTICE.md is explicit that reuse rights for that content have not been
+# confirmed. The catalog in this repository keeps every snapshot's PATH and SHA-256,
+# so a reader with the vault can check any claim against the bytes.
+evidence/snapshots/
+
+# The app dataset, injected into the app page by src/publish.py.
+vault-app/data.json

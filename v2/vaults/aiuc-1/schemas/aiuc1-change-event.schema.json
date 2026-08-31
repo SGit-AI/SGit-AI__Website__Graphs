@@ -1,0 +1,31 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://graphs.sgit.ai/vaults/aiuc-1/schemas/aiuc1-change-event.schema.json",
+ "title": "AIUC-1 change event",
+ "description": "A lifecycle change represented as data, so prior releases are never overwritten.",
+ "type": "object",
+ "required": ["id", "release_id", "control_id", "event_type", "summary", "source_refs", "classification"],
+ "properties": {
+  "id": {"type": "string"},
+  "release_id": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+  "control_id": {"type": "string", "pattern": "^[A-Z]\\d{3}$"},
+  "event_type": {
+   "enum": ["control_added", "control_retired", "control_deprecated", "control_renamed",
+            "title_updated", "requirement_added", "requirement_removed", "requirement_updated",
+            "metadata_updated", "guidance_updated", "url_changed", "unclassified_change"]
+  },
+  "summary": {"type": "string", "minLength": 1},
+  "before": {"type": ["object", "null"]},
+  "after": {"type": ["object", "null"]},
+  "source_refs": {"type": "array", "items": {"type": "string"}},
+  "classification": {
+   "type": "object",
+   "required": ["method", "confidence", "review_status"],
+   "properties": {
+    "method": {"type": "string"},
+    "confidence": {"type": "number"},
+    "review_status": {"enum": ["approved", "needs_review", "rejected"]}
+   }
+  }
+ }
+}

@@ -66,7 +66,14 @@ const isStub = f => {
   return t.includes('<meta name="robots" content="noindex">') &&
          t.includes('This page moved');
 };
-const allHtml = files.filter(f => f.endsWith('.html'));
+// Vault content is not a site page. `v2/vaults/<slug>/` holds the source of an encrypted
+// SG/Vault: its app renders inside the vault and never on graphs.sgit.ai, so it carries no
+// site chrome, no canonical link and no sitemap entry, by design. Only the app source
+// (`vault-app/`), its parser fixtures (`tests/`) and the assembled tree (`build/`, which is
+// gitignored) are excluded — a site page ABOUT a vault, at `v2/vaults/<slug>/index.html`,
+// is still a page and is still gated.
+const isVaultContent = f => /^v2\/vaults\/[^/]+\/(vault-app|build|tests)\//.test(rel(f));
+const allHtml = files.filter(f => f.endsWith('.html') && !isVaultContent(f));
 const stubs = allHtml.filter(isStub);
 const htmlFiles = allHtml.filter(f => !stubs.includes(f));
 

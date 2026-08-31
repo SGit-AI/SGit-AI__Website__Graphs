@@ -1,0 +1,502 @@
+{
+ "discovery_version": "1.0.0",
+ "discovered_at": "2026-08-31T23:03:19Z",
+ "root_url": "https://www.aiuc-1.com/",
+ "discovery_method": "published navigation model embedded in the home page payload",
+ "source_ref": "src_2026_08_31_page_home",
+ "domain_count": 6,
+ "control_count": 53,
+ "domains": [
+  {
+   "id": "A",
+   "name": "Data & Privacy",
+   "slug": "data-and-privacy",
+   "url": "/data-and-privacy",
+   "description": "Protect against data leakage, IP leakage, and training on user data without consent",
+   "control_count": 8,
+   "controls": [
+    {
+     "id": "A001",
+     "title": "Establish input data policy",
+     "slug": "establish-data-use-policy",
+     "url": "/data-and-privacy/establish-data-use-policy"
+    },
+    {
+     "id": "A002",
+     "title": "Establish output data policy",
+     "slug": "define-output-rights",
+     "url": "/data-and-privacy/define-output-rights"
+    },
+    {
+     "id": "A003",
+     "title": "Limit AI agent data access",
+     "slug": "implement-contextual-data-safeguards",
+     "url": "/data-and-privacy/implement-contextual-data-safeguards"
+    },
+    {
+     "id": "A004",
+     "title": "Protect IP & trade secrets",
+     "slug": "protect-ip-trade-secrets",
+     "url": "/data-and-privacy/protect-ip-trade-secrets"
+    },
+    {
+     "id": "A005",
+     "title": "Prevent cross-customer data exposure",
+     "slug": "prevent-cross-customer-data-exposure",
+     "url": "/data-and-privacy/prevent-cross-customer-data-exposure"
+    },
+    {
+     "id": "A006",
+     "title": "Prevent PII leakage",
+     "slug": "prevent-pii-leakage",
+     "url": "/data-and-privacy/prevent-pii-leakage"
+    },
+    {
+     "id": "A007",
+     "title": "Prevent IP violations",
+     "slug": "prevent-ip-violations",
+     "url": "/data-and-privacy/prevent-ip-violations"
+    },
+    {
+     "id": "A008",
+     "title": "Prevent leakage of credentials and secrets",
+     "slug": "prevent-secrets-leakage",
+     "url": "/data-and-privacy/prevent-secrets-leakage"
+    }
+   ]
+  },
+  {
+   "id": "B",
+   "name": "Security",
+   "slug": "security",
+   "url": "/security",
+   "description": "Protect against adversarial attacks like jailbreaks and prompt injections as well as unauthorized tool calls",
+   "control_count": 10,
+   "controls": [
+    {
+     "id": "B001",
+     "title": "Third-party testing of adversarial robustness",
+     "slug": "test-adversarial-robustness",
+     "url": "/security/test-adversarial-robustness"
+    },
+    {
+     "id": "B002",
+     "title": "Detect adversarial input",
+     "slug": "detect-adversarial-input",
+     "url": "/security/detect-adversarial-input"
+    },
+    {
+     "id": "B003",
+     "title": "Manage public release of technical details",
+     "slug": "limit-technical-over-disclosure",
+     "url": "/security/limit-technical-over-disclosure"
+    },
+    {
+     "id": "B004",
+     "title": "Prevent AI endpoint scraping",
+     "slug": "prevent-ai-endpoint-scraping",
+     "url": "/security/prevent-ai-endpoint-scraping"
+    },
+    {
+     "id": "B005",
+     "title": "Implement real-time input filtering",
+     "slug": "implement-real-time-input-filtering",
+     "url": "/security/implement-real-time-input-filtering"
+    },
+    {
+     "id": "B006",
+     "title": "Prevent unauthorized AI agent actions",
+     "slug": "enforce-contextual-access-controls",
+     "url": "/security/enforce-contextual-access-controls"
+    },
+    {
+     "id": "B007",
+     "title": "Enforce user access privileges to AI systems",
+     "slug": "enforce-ai-access-privileges",
+     "url": "/security/enforce-ai-access-privileges"
+    },
+    {
+     "id": "B008",
+     "title": "Protect AI system deployment environment",
+     "slug": "protect-model-deployment-environment",
+     "url": "/security/protect-model-deployment-environment"
+    },
+    {
+     "id": "B009",
+     "title": "Limit output over-exposure",
+     "slug": "limit-output-over-exposure",
+     "url": "/security/limit-output-over-exposure"
+    },
+    {
+     "id": "B010",
+     "title": "Promote secure patterns in generated code",
+     "slug": "promote-secure-code-patterns",
+     "url": "/security/promote-secure-code-patterns"
+    }
+   ]
+  },
+  {
+   "id": "C",
+   "name": "Safety",
+   "slug": "safety",
+   "url": "/safety",
+   "description": "Prevent harmful AI outputs and brand risk through testing, monitoring and safeguards",
+   "control_count": 12,
+   "controls": [
+    {
+     "id": "C001",
+     "title": "Define AI risk taxonomy",
+     "slug": "define-ai-risk-taxonomy",
+     "url": "/safety/define-ai-risk-taxonomy"
+    },
+    {
+     "id": "C002",
+     "title": "Conduct pre-deployment testing",
+     "slug": "conduct-pre-deployment-testing",
+     "url": "/safety/conduct-pre-deployment-testing"
+    },
+    {
+     "id": "C003",
+     "title": "Prevent harmful outputs",
+     "slug": "prevent-harmful-outputs",
+     "url": "/safety/prevent-harmful-outputs"
+    },
+    {
+     "id": "C004",
+     "title": "Prevent out-of-scope outputs",
+     "slug": "prevent-out-of-scope-outputs",
+     "url": "/safety/prevent-out-of-scope-outputs"
+    },
+    {
+     "id": "C005",
+     "title": "Prevent agent-specific high risk outputs",
+     "slug": "prevent-other-high-risk-outputs",
+     "url": "/safety/prevent-other-high-risk-outputs"
+    },
+    {
+     "id": "C006",
+     "title": "Prevent output vulnerabilities",
+     "slug": "prevent-output-vulnerabilities",
+     "url": "/safety/prevent-output-vulnerabilities"
+    },
+    {
+     "id": "C007",
+     "title": "Flag high risk outputs for human review",
+     "slug": "flag-high-risk-recommendations",
+     "url": "/safety/flag-high-risk-recommendations"
+    },
+    {
+     "id": "C008",
+     "title": "Monitor AI risk categories",
+     "slug": "monitor-ai-risk-categories",
+     "url": "/safety/monitor-ai-risk-categories"
+    },
+    {
+     "id": "C009",
+     "title": "Enable real-time feedback and intervention",
+     "slug": "collect-real-time-feedback",
+     "url": "/safety/collect-real-time-feedback"
+    },
+    {
+     "id": "C010",
+     "title": "Third-party testing for harmful outputs",
+     "slug": "3rd-party-testing-for-harmful-outputs",
+     "url": "/safety/3rd-party-testing-for-harmful-outputs"
+    },
+    {
+     "id": "C011",
+     "title": "Third-party testing for out-of-scope outputs",
+     "slug": "3rd-party-testing-for-out-of-scope-outputs",
+     "url": "/safety/3rd-party-testing-for-out-of-scope-outputs"
+    },
+    {
+     "id": "C012",
+     "title": "Third-party testing for customer-defined risk",
+     "slug": "3rd-party-testing-for-other-risk",
+     "url": "/safety/3rd-party-testing-for-other-risk"
+    }
+   ]
+  },
+  {
+   "id": "D",
+   "name": "Reliability",
+   "slug": "reliability",
+   "url": "/reliability",
+   "description": "Prevent hallucinations and unreliable tool calls to business systems",
+   "control_count": 4,
+   "controls": [
+    {
+     "id": "D001",
+     "title": "Prevent hallucinated outputs",
+     "slug": "prevent-hallucinated-outputs",
+     "url": "/reliability/prevent-hallucinated-outputs"
+    },
+    {
+     "id": "D002",
+     "title": "Third-party testing for hallucinations",
+     "slug": "3rd-party-testing-for-hallucinations",
+     "url": "/reliability/3rd-party-testing-for-hallucinations"
+    },
+    {
+     "id": "D003",
+     "title": "Restrict unsafe tool calls",
+     "slug": "restrict-unsafe-tool-calls",
+     "url": "/reliability/restrict-unsafe-tool-calls"
+    },
+    {
+     "id": "D004",
+     "title": "Third-party testing of tool calls",
+     "slug": "3rd-party-testing-of-tool-calls",
+     "url": "/reliability/3rd-party-testing-of-tool-calls"
+    }
+   ]
+  },
+  {
+   "id": "E",
+   "name": "Accountability",
+   "slug": "accountability",
+   "url": "/accountability",
+   "description": "Assign accountability, enforce oversight, create emergency responses and vet suppliers",
+   "control_count": 17,
+   "controls": [
+    {
+     "id": "E001",
+     "title": "AI failure plan for security breaches",
+     "slug": "ai-failure-plan-for-security-breaches",
+     "url": "/accountability/ai-failure-plan-for-security-breaches"
+    },
+    {
+     "id": "E002",
+     "title": "AI failure plan for harmful outputs",
+     "slug": "ai-failure-plan-for-harmful-outputs",
+     "url": "/accountability/ai-failure-plan-for-harmful-outputs"
+    },
+    {
+     "id": "E003",
+     "title": "AI failure plan for hallucinations",
+     "slug": "ai-failure-plan-for-hallucinations",
+     "url": "/accountability/ai-failure-plan-for-hallucinations"
+    },
+    {
+     "id": "E004",
+     "title": "Assign accountability",
+     "slug": "assign-accountability",
+     "url": "/accountability/assign-accountability"
+    },
+    {
+     "id": "E005",
+     "title": "Document data storage security",
+     "slug": "assess-cloud-vs-on-prem-processing",
+     "url": "/accountability/assess-cloud-vs-on-prem-processing"
+    },
+    {
+     "id": "E006",
+     "title": "Conduct vendor due diligence",
+     "slug": "conduct-vendor-due-diligence",
+     "url": "/accountability/conduct-vendor-due-diligence"
+    },
+    {
+     "id": "E007",
+     "title": "[Retired] Document system change approvals",
+     "slug": "document-system-change-approvals",
+     "url": "/accountability/document-system-change-approvals"
+    },
+    {
+     "id": "E008",
+     "title": "Review internal processes",
+     "slug": "review-internal-processes",
+     "url": "/accountability/review-internal-processes"
+    },
+    {
+     "id": "E009",
+     "title": "Monitor third-party access",
+     "slug": "monitor-3rd-party-access",
+     "url": "/accountability/monitor-3rd-party-access"
+    },
+    {
+     "id": "E010",
+     "title": "Establish AI acceptable use policy",
+     "slug": "establish-ai-acceptable-use-policy",
+     "url": "/accountability/establish-ai-acceptable-use-policy"
+    },
+    {
+     "id": "E011",
+     "title": "Record processing locations",
+     "slug": "record-processing-locations",
+     "url": "/accountability/record-processing-locations"
+    },
+    {
+     "id": "E012",
+     "title": "Document regulatory compliance",
+     "slug": "document-regulatory-compliance",
+     "url": "/accountability/document-regulatory-compliance"
+    },
+    {
+     "id": "E013",
+     "title": "Implement quality management system",
+     "slug": "implement-quality-management-system",
+     "url": "/accountability/implement-quality-management-system"
+    },
+    {
+     "id": "E014",
+     "title": "[Retired] Share transparency reports",
+     "slug": "share-transparency-reports",
+     "url": "/accountability/share-transparency-reports"
+    },
+    {
+     "id": "E015",
+     "title": "Log AI system activity",
+     "slug": "log-model-activity",
+     "url": "/accountability/log-model-activity"
+    },
+    {
+     "id": "E016",
+     "title": "Implement AI disclosure mechanisms",
+     "slug": "implement-ai-disclosure-mechanisms",
+     "url": "/accountability/implement-ai-disclosure-mechanisms"
+    },
+    {
+     "id": "E017",
+     "title": "Document system transparency policy",
+     "slug": "document-system-transparency-policy",
+     "url": "/accountability/document-system-transparency-policy"
+    }
+   ]
+  },
+  {
+   "id": "F",
+   "name": "Society",
+   "slug": "society",
+   "url": "/society",
+   "description": "Prevent AI from enabling societal harm through cyberattacks or national security risks",
+   "control_count": 2,
+   "controls": [
+    {
+     "id": "F001",
+     "title": "Prevent AI cyber misuse",
+     "slug": "prevent-ai-cyber-misuse",
+     "url": "/society/prevent-ai-cyber-misuse"
+    },
+    {
+     "id": "F002",
+     "title": "Prevent catastrophic misuse",
+     "slug": "prevent-catastrophic-misuse",
+     "url": "/society/prevent-catastrophic-misuse"
+    }
+   ]
+  }
+ ],
+ "reference_pages": [
+  {
+   "key": "changelog",
+   "url": "/changelog",
+   "kind": "page"
+  },
+  {
+   "key": "changelog__2025-10-01",
+   "url": "/changelog/2025-10-01",
+   "kind": "release_changelog"
+  },
+  {
+   "key": "changelog__2026-01-15",
+   "url": "/changelog/2026-01-15",
+   "kind": "release_changelog"
+  },
+  {
+   "key": "changelog__2026-04-15",
+   "url": "/changelog/2026-04-15",
+   "kind": "release_changelog"
+  },
+  {
+   "key": "crosswalks",
+   "url": "/crosswalks",
+   "kind": "page"
+  },
+  {
+   "key": "crosswalks__cisco-ai-security-safety-framework",
+   "url": "/crosswalks/cisco-ai-security-safety-framework",
+   "kind": "crosswalks"
+  },
+  {
+   "key": "crosswalks__csa-aicm",
+   "url": "/crosswalks/csa-aicm",
+   "kind": "crosswalks"
+  },
+  {
+   "key": "crosswalks__eu-ai-act",
+   "url": "/crosswalks/eu-ai-act",
+   "kind": "crosswalks"
+  },
+  {
+   "key": "crosswalks__ibm-ai-risk-atlas",
+   "url": "/crosswalks/ibm-ai-risk-atlas",
+   "kind": "crosswalks"
+  },
+  {
+   "key": "crosswalks__iso-42001",
+   "url": "/crosswalks/iso-42001",
+   "kind": "crosswalks"
+  },
+  {
+   "key": "crosswalks__mitre-atlas",
+   "url": "/crosswalks/mitre-atlas",
+   "kind": "crosswalks"
+  },
+  {
+   "key": "crosswalks__nist-ai-rmf",
+   "url": "/crosswalks/nist-ai-rmf",
+   "kind": "crosswalks"
+  },
+  {
+   "key": "crosswalks__owasp-agentic-top-10",
+   "url": "/crosswalks/owasp-agentic-top-10",
+   "kind": "crosswalks"
+  },
+  {
+   "key": "crosswalks__owasp-aivss",
+   "url": "/crosswalks/owasp-aivss",
+   "kind": "crosswalks"
+  },
+  {
+   "key": "crosswalks__owasp-top-10",
+   "url": "/crosswalks/owasp-top-10",
+   "kind": "crosswalks"
+  },
+  {
+   "key": "evidence",
+   "url": "/evidence",
+   "kind": "page"
+  },
+  {
+   "key": "evidence__capability",
+   "url": "/evidence/capability",
+   "kind": "evidence"
+  },
+  {
+   "key": "evidence__legal",
+   "url": "/evidence/legal",
+   "kind": "evidence"
+  },
+  {
+   "key": "evidence__operational",
+   "url": "/evidence/operational",
+   "kind": "evidence"
+  },
+  {
+   "key": "evidence__technical",
+   "url": "/evidence/technical",
+   "kind": "evidence"
+  },
+  {
+   "key": "evidence__third-party",
+   "url": "/evidence/third-party",
+   "kind": "evidence"
+  },
+  {
+   "key": "scoping",
+   "url": "/scoping",
+   "kind": "page"
+  }
+ ],
+ "release_page_count": 3
+}

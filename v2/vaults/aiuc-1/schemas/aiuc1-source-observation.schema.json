@@ -1,0 +1,35 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://graphs.sgit.ai/vaults/aiuc-1/schemas/aiuc1-source-observation.schema.json",
+ "title": "AIUC-1 source observation",
+ "description": "One captured retrieval of an official public source. Every catalog statement points at one of these.",
+ "type": "object",
+ "required": ["id", "source_type", "url", "retrieved_at", "http", "content"],
+ "properties": {
+  "id": {"type": "string", "pattern": "^src_[a-z0-9_]+$"},
+  "source_type": {"enum": ["official_website", "official_github_repository"]},
+  "url": {"type": "string", "pattern": "^https://"},
+  "final_url": {"type": "string"},
+  "retrieved_at": {"type": "string", "format": "date-time"},
+  "http": {
+   "type": "object",
+   "required": ["status"],
+   "properties": {
+    "status": {"type": "integer"},
+    "content_type": {"type": ["string", "null"]},
+    "etag": {"type": ["string", "null"]},
+    "last_modified": {"type": ["string", "null"]}
+   }
+  },
+  "content": {
+   "type": "object",
+   "required": ["raw_snapshot_path", "raw_sha256"],
+   "properties": {
+    "raw_snapshot_path": {"type": "string"},
+    "raw_sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "bytes": {"type": "integer"}
+   }
+  },
+  "license_or_terms_note": {"type": "string"}
+ }
+}

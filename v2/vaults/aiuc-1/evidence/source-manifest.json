@@ -1,0 +1,1575 @@
+{
+ "manifest_version": "1.0.0",
+ "generator_version": "0.1.0",
+ "generated_at": "2026-08-31T23:03:19Z",
+ "user_agent": "sgit-ai-aiuc1-catalog/0.1.0 (+https://graphs.sgit.ai; derived machine-readable catalog; contact via graphs.sgit.ai)",
+ "rate_limit": "at most one request per second per host",
+ "robots": {
+  "https://www.aiuc-1.com": {
+   "url": "https://www.aiuc-1.com/robots.txt",
+   "observed": "no robots.txt: https://www.aiuc-1.com/robots.txt answered HTTP 404; treated as no directives",
+   "checked_at": "2026-08-31T22:36:05Z"
+  }
+ },
+ "observation_count": 82,
+ "observations": [
+  {
+   "id": "src_2026_08_31_control_a001",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/data-and-privacy/establish-data-use-policy",
+   "final_url": "https://www.aiuc-1.com/data-and-privacy/establish-data-use-policy",
+   "retrieved_at": "2026-08-31T22:33:02Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_a001.html.gz",
+    "raw_sha256": "sha256:cbc082ffedeadc1146cee4611577e946ad97572c00542e7159201bbf52ad0030",
+    "bytes": 873492
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_a002",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/data-and-privacy/define-output-rights",
+   "final_url": "https://www.aiuc-1.com/data-and-privacy/define-output-rights",
+   "retrieved_at": "2026-08-31T22:33:03Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_a002.html.gz",
+    "raw_sha256": "sha256:0cfa09e22a6bb8622f07756b322df9c24fb73347c799337cb4a54ce03832aac9",
+    "bytes": 860019
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_a003",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/data-and-privacy/implement-contextual-data-safeguards",
+   "final_url": "https://www.aiuc-1.com/data-and-privacy/implement-contextual-data-safeguards",
+   "retrieved_at": "2026-08-31T22:33:04Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_a003.html.gz",
+    "raw_sha256": "sha256:19ee461d64bd50c3c03a48ce2b6f597a3c0c00bab121e76616e9c0f7c37a45af",
+    "bytes": 874812
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_a004",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/data-and-privacy/protect-ip-trade-secrets",
+   "final_url": "https://www.aiuc-1.com/data-and-privacy/protect-ip-trade-secrets",
+   "retrieved_at": "2026-08-31T22:33:06Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_a004.html.gz",
+    "raw_sha256": "sha256:0ea373006336689a7d440697bd12b041c82ce68af1d88e1d97ae859b1c8243da",
+    "bytes": 880085
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_a005",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/data-and-privacy/prevent-cross-customer-data-exposure",
+   "final_url": "https://www.aiuc-1.com/data-and-privacy/prevent-cross-customer-data-exposure",
+   "retrieved_at": "2026-08-31T22:33:06Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_a005.html.gz",
+    "raw_sha256": "sha256:90abfdbf7429e5d0348e07b94117540f64590058f212ef7f0e28d9ff7c6e2fe0",
+    "bytes": 871079
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_a006",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/data-and-privacy/prevent-pii-leakage",
+   "final_url": "https://www.aiuc-1.com/data-and-privacy/prevent-pii-leakage",
+   "retrieved_at": "2026-08-31T22:33:07Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_a006.html.gz",
+    "raw_sha256": "sha256:6b93682b2deaefde0ea3dc27d3e464540bad9ec61b6c0ddcc4c5b886f4d2ae92",
+    "bytes": 864898
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_a007",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/data-and-privacy/prevent-ip-violations",
+   "final_url": "https://www.aiuc-1.com/data-and-privacy/prevent-ip-violations",
+   "retrieved_at": "2026-08-31T22:33:08Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_a007.html.gz",
+    "raw_sha256": "sha256:d158cb0d8a7f2f6b25b2e223fbfe236a4cce5ac362300a52c3982c5093f3e49a",
+    "bytes": 873202
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_a008",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/data-and-privacy/prevent-secrets-leakage",
+   "final_url": "https://www.aiuc-1.com/data-and-privacy/prevent-secrets-leakage",
+   "retrieved_at": "2026-08-31T22:33:09Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_a008.html.gz",
+    "raw_sha256": "sha256:7b79d1e377abb692c51442d93a1996cd78dad0b93a78dd4c67a870a75e1e5b68",
+    "bytes": 879534
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_b001",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/security/test-adversarial-robustness",
+   "final_url": "https://www.aiuc-1.com/security/test-adversarial-robustness",
+   "retrieved_at": "2026-08-31T22:33:11Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_b001.html.gz",
+    "raw_sha256": "sha256:f9471d27ef61fd0a3d83b872d244a9693aa0fb3f156a37c826048ed8ce8ac59d",
+    "bytes": 872455
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_b002",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/security/detect-adversarial-input",
+   "final_url": "https://www.aiuc-1.com/security/detect-adversarial-input",
+   "retrieved_at": "2026-08-31T22:33:12Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_b002.html.gz",
+    "raw_sha256": "sha256:bd2deb5089937214e01adb35e24bb9dc12dd656860eee0a60729724256b42844",
+    "bytes": 894212
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_b003",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/security/limit-technical-over-disclosure",
+   "final_url": "https://www.aiuc-1.com/security/limit-technical-over-disclosure",
+   "retrieved_at": "2026-08-31T22:33:13Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_b003.html.gz",
+    "raw_sha256": "sha256:98d985bdec4bdbf91e70b56d0824dd779251c6ce79e7864f4f77bb6a552654c0",
+    "bytes": 863341
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_b004",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/security/prevent-ai-endpoint-scraping",
+   "final_url": "https://www.aiuc-1.com/security/prevent-ai-endpoint-scraping",
+   "retrieved_at": "2026-08-31T22:33:15Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_b004.html.gz",
+    "raw_sha256": "sha256:1ee32d63bacdfba20a7cc23ba4e66fcbbd775ab1c82c1dc3fbf1b236222dd969",
+    "bytes": 881935
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_b005",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/security/implement-real-time-input-filtering",
+   "final_url": "https://www.aiuc-1.com/security/implement-real-time-input-filtering",
+   "retrieved_at": "2026-08-31T22:33:15Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_b005.html.gz",
+    "raw_sha256": "sha256:bc41325b87cfe8f7d975df6e7233efa2f7123f882b4e57f8434e79cf583e55eb",
+    "bytes": 890782
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_b006",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/security/enforce-contextual-access-controls",
+   "final_url": "https://www.aiuc-1.com/security/enforce-contextual-access-controls",
+   "retrieved_at": "2026-08-31T22:33:16Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_b006.html.gz",
+    "raw_sha256": "sha256:14933753d442657cc74e6c4d040bdf47f4e6652b4867e6813e8a860171da03c8",
+    "bytes": 875254
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_b007",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/security/enforce-ai-access-privileges",
+   "final_url": "https://www.aiuc-1.com/security/enforce-ai-access-privileges",
+   "retrieved_at": "2026-08-31T22:33:17Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_b007.html.gz",
+    "raw_sha256": "sha256:ad138c9c57b3afa72c3965d91fa025044e8ce4a437cad3e8890fa73778b3ca6f",
+    "bytes": 864254
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_b008",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/security/protect-model-deployment-environment",
+   "final_url": "https://www.aiuc-1.com/security/protect-model-deployment-environment",
+   "retrieved_at": "2026-08-31T22:33:18Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_b008.html.gz",
+    "raw_sha256": "sha256:9eb260b1a8240e12003e1eab38ec4c06e009c05f965a1825c4112b6feeaccd28",
+    "bytes": 893576
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_b009",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/security/limit-output-over-exposure",
+   "final_url": "https://www.aiuc-1.com/security/limit-output-over-exposure",
+   "retrieved_at": "2026-08-31T22:33:19Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_b009.html.gz",
+    "raw_sha256": "sha256:e42fa9d223c942e0cd37c723f0afee4b0050520b05bc8358ed777b8d3c079f2f",
+    "bytes": 872687
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_b010",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/security/promote-secure-code-patterns",
+   "final_url": "https://www.aiuc-1.com/security/promote-secure-code-patterns",
+   "retrieved_at": "2026-08-31T22:33:20Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_b010.html.gz",
+    "raw_sha256": "sha256:6c505115e014b46ffa43016e1a6d1cc0d7f7bf4d6badd00629044055c4b6ea99",
+    "bytes": 886357
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_c001",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/safety/define-ai-risk-taxonomy",
+   "final_url": "https://www.aiuc-1.com/safety/define-ai-risk-taxonomy",
+   "retrieved_at": "2026-08-31T22:33:22Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_c001.html.gz",
+    "raw_sha256": "sha256:3ee03def5a794ef8289d942d72230bc9879b6a7c4269f0d99ca503ad91b00204",
+    "bytes": 866717
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_c002",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/safety/conduct-pre-deployment-testing",
+   "final_url": "https://www.aiuc-1.com/safety/conduct-pre-deployment-testing",
+   "retrieved_at": "2026-08-31T22:33:56Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_c002.html.gz",
+    "raw_sha256": "sha256:2d5f352c0b3ce8904018aa34159024b08cf399b959bf136bdfba46e5d0e4b2b8",
+    "bytes": 877930
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_c003",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/safety/prevent-harmful-outputs",
+   "final_url": "https://www.aiuc-1.com/safety/prevent-harmful-outputs",
+   "retrieved_at": "2026-08-31T22:33:56Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_c003.html.gz",
+    "raw_sha256": "sha256:9de66a2de2dc3980bfbab731d1a967814a2a86cf2ca3f192612c4f8c3ab22124",
+    "bytes": 885736
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_c004",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/safety/prevent-out-of-scope-outputs",
+   "final_url": "https://www.aiuc-1.com/safety/prevent-out-of-scope-outputs",
+   "retrieved_at": "2026-08-31T22:33:57Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_c004.html.gz",
+    "raw_sha256": "sha256:f2a08ba619b5fd0911e8f1ee4dbd17370726b39181bc82142f9b7ea86bb5651d",
+    "bytes": 872593
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_c005",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/safety/prevent-other-high-risk-outputs",
+   "final_url": "https://www.aiuc-1.com/safety/prevent-other-high-risk-outputs",
+   "retrieved_at": "2026-08-31T22:33:58Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_c005.html.gz",
+    "raw_sha256": "sha256:716d1c768c63b1f31e55cdd613b835340ec45f656c371350e6e4d8278b79147c",
+    "bytes": 872420
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_c006",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/safety/prevent-output-vulnerabilities",
+   "final_url": "https://www.aiuc-1.com/safety/prevent-output-vulnerabilities",
+   "retrieved_at": "2026-08-31T22:33:59Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_c006.html.gz",
+    "raw_sha256": "sha256:097a3bea75d197576e64d2f349c16f0415795cb95375db6052bbf43a12f2a706",
+    "bytes": 874784
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_c007",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/safety/flag-high-risk-recommendations",
+   "final_url": "https://www.aiuc-1.com/safety/flag-high-risk-recommendations",
+   "retrieved_at": "2026-08-31T22:34:01Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_c007.html.gz",
+    "raw_sha256": "sha256:7961ebaa48c1cdea299657f9ad4c56443bec871c1b24fb02cc339ede5a3be2e8",
+    "bytes": 871577
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_c008",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/safety/monitor-ai-risk-categories",
+   "final_url": "https://www.aiuc-1.com/safety/monitor-ai-risk-categories",
+   "retrieved_at": "2026-08-31T22:34:01Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_c008.html.gz",
+    "raw_sha256": "sha256:b6fe7854f28047edb0f5a6b35416811de8dfeb7dd7e6bb8dceb918ff172abc93",
+    "bytes": 872673
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_c009",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/safety/collect-real-time-feedback",
+   "final_url": "https://www.aiuc-1.com/safety/collect-real-time-feedback",
+   "retrieved_at": "2026-08-31T22:34:03Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_c009.html.gz",
+    "raw_sha256": "sha256:b5f0d68a03405293c5d559f6c7634e2f40db9012d2c495189075d6749fa2ba41",
+    "bytes": 865270
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_c010",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/safety/3rd-party-testing-for-harmful-outputs",
+   "final_url": "https://www.aiuc-1.com/safety/3rd-party-testing-for-harmful-outputs",
+   "retrieved_at": "2026-08-31T22:34:03Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_c010.html.gz",
+    "raw_sha256": "sha256:6fbae928de547862e87bf369a3ff45b1a1c3ef06e874c9ecaec7061b10cd0f6c",
+    "bytes": 861880
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_c011",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/safety/3rd-party-testing-for-out-of-scope-outputs",
+   "final_url": "https://www.aiuc-1.com/safety/3rd-party-testing-for-out-of-scope-outputs",
+   "retrieved_at": "2026-08-31T22:34:08Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_c011.html.gz",
+    "raw_sha256": "sha256:b236ac077cc5b6538db4c7b7face99637b56662bfdbf18b48ea46e3be8601e46",
+    "bytes": 853235
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_c012",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/safety/3rd-party-testing-for-other-risk",
+   "final_url": "https://www.aiuc-1.com/safety/3rd-party-testing-for-other-risk",
+   "retrieved_at": "2026-08-31T22:34:09Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_c012.html.gz",
+    "raw_sha256": "sha256:a1220359a63f37aafe7665a3d1c2a02945e3830128c70d638bb94afb4509833b",
+    "bytes": 857797
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_d001",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/reliability/prevent-hallucinated-outputs",
+   "final_url": "https://www.aiuc-1.com/reliability/prevent-hallucinated-outputs",
+   "retrieved_at": "2026-08-31T22:34:11Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_d001.html.gz",
+    "raw_sha256": "sha256:58d3275c6cc756ee4d04d2ffd603f18cb051196a91bbf5f6dc207e6ec46ab531",
+    "bytes": 870940
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_d002",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/reliability/3rd-party-testing-for-hallucinations",
+   "final_url": "https://www.aiuc-1.com/reliability/3rd-party-testing-for-hallucinations",
+   "retrieved_at": "2026-08-31T22:34:12Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_d002.html.gz",
+    "raw_sha256": "sha256:f95872410cfc9dcbfb95350b3d4578237153540e5f864cfa2d1458b758012684",
+    "bytes": 856361
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_d003",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/reliability/restrict-unsafe-tool-calls",
+   "final_url": "https://www.aiuc-1.com/reliability/restrict-unsafe-tool-calls",
+   "retrieved_at": "2026-08-31T22:34:13Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_d003.html.gz",
+    "raw_sha256": "sha256:0444ead56ae8d508170fe563a19e7d79d8ae04d4f5acb102f405aa9293098541",
+    "bytes": 891432
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_d004",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/reliability/3rd-party-testing-of-tool-calls",
+   "final_url": "https://www.aiuc-1.com/reliability/3rd-party-testing-of-tool-calls",
+   "retrieved_at": "2026-08-31T22:34:13Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_d004.html.gz",
+    "raw_sha256": "sha256:457d2115493ae11c960b975e1113ccd16bdfb97fc72310b19b9043e26c176b43",
+    "bytes": 858506
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e001",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/ai-failure-plan-for-security-breaches",
+   "final_url": "https://www.aiuc-1.com/accountability/ai-failure-plan-for-security-breaches",
+   "retrieved_at": "2026-08-31T22:34:16Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e001.html.gz",
+    "raw_sha256": "sha256:3c9429d98eba404219741e4b228b62e3f7794c03396ccb267cdb137994fa8aec",
+    "bytes": 857223
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e002",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/ai-failure-plan-for-harmful-outputs",
+   "final_url": "https://www.aiuc-1.com/accountability/ai-failure-plan-for-harmful-outputs",
+   "retrieved_at": "2026-08-31T22:34:17Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e002.html.gz",
+    "raw_sha256": "sha256:0a565a88d523927e66ccc3c3e59d592fe6a477bd7f20e288c0c039d2c1e76f23",
+    "bytes": 867726
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e003",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/ai-failure-plan-for-hallucinations",
+   "final_url": "https://www.aiuc-1.com/accountability/ai-failure-plan-for-hallucinations",
+   "retrieved_at": "2026-08-31T22:34:18Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e003.html.gz",
+    "raw_sha256": "sha256:776471ec764851c0eaa439f448bf96b059d70d51eff1b28e0cefc0e12af73ef9",
+    "bytes": 864773
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e004",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/assign-accountability",
+   "final_url": "https://www.aiuc-1.com/accountability/assign-accountability",
+   "retrieved_at": "2026-08-31T22:34:18Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e004.html.gz",
+    "raw_sha256": "sha256:ce7d8cc371c5fbaac1af8d926152b7454a99709e226013f88237294318c65da8",
+    "bytes": 865678
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e005",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/assess-cloud-vs-on-prem-processing",
+   "final_url": "https://www.aiuc-1.com/accountability/assess-cloud-vs-on-prem-processing",
+   "retrieved_at": "2026-08-31T22:34:20Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e005.html.gz",
+    "raw_sha256": "sha256:a3207ea75dce505d7dc4fc9ef7cce3ebade834bad4b734c16c6a63d1db8ac96e",
+    "bytes": 855994
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e006",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/conduct-vendor-due-diligence",
+   "final_url": "https://www.aiuc-1.com/accountability/conduct-vendor-due-diligence",
+   "retrieved_at": "2026-08-31T22:34:21Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e006.html.gz",
+    "raw_sha256": "sha256:c0e5145e481b63a2c630346bb95725ee5b0b54e1332f4a7e71dae0a2f4293ba8",
+    "bytes": 859954
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e007",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/document-system-change-approvals",
+   "final_url": "https://www.aiuc-1.com/accountability/document-system-change-approvals",
+   "retrieved_at": "2026-08-31T22:34:22Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e007.html.gz",
+    "raw_sha256": "sha256:e376b9bb5d328ddc238146b994b9a30c7f16e6e6b808aad16e059dcec4038c1d",
+    "bytes": 850300
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e008",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/review-internal-processes",
+   "final_url": "https://www.aiuc-1.com/accountability/review-internal-processes",
+   "retrieved_at": "2026-08-31T22:34:23Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e008.html.gz",
+    "raw_sha256": "sha256:3e712afca28c9902f854c8db67f1b8c56c8b64946ad1cf6737bbfccccc0ab5cc",
+    "bytes": 865382
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e009",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/monitor-3rd-party-access",
+   "final_url": "https://www.aiuc-1.com/accountability/monitor-3rd-party-access",
+   "retrieved_at": "2026-08-31T22:34:24Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e009.html.gz",
+    "raw_sha256": "sha256:e30dc2d8b8aafd1d1098f579b089de65e1c297358fe2ad2c26685e20620a5d34",
+    "bytes": 868675
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e010",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/establish-ai-acceptable-use-policy",
+   "final_url": "https://www.aiuc-1.com/accountability/establish-ai-acceptable-use-policy",
+   "retrieved_at": "2026-08-31T22:34:25Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e010.html.gz",
+    "raw_sha256": "sha256:0a5447ce90c71ceb123f5146ddd0b6f5e12fc9e4efe03b60961d066f468e34d0",
+    "bytes": 879077
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e011",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/record-processing-locations",
+   "final_url": "https://www.aiuc-1.com/accountability/record-processing-locations",
+   "retrieved_at": "2026-08-31T22:34:26Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e011.html.gz",
+    "raw_sha256": "sha256:47f7f2614e29b705682a4da794d0800f670e853ea83853c994eef9f148d64636",
+    "bytes": 861568
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e012",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/document-regulatory-compliance",
+   "final_url": "https://www.aiuc-1.com/accountability/document-regulatory-compliance",
+   "retrieved_at": "2026-08-31T22:34:27Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e012.html.gz",
+    "raw_sha256": "sha256:8b0d4d223de6404ed49c68199d2d24466937da8e4d39116cb40720fa49a8d0b2",
+    "bytes": 857910
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e013",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/implement-quality-management-system",
+   "final_url": "https://www.aiuc-1.com/accountability/implement-quality-management-system",
+   "retrieved_at": "2026-08-31T22:34:28Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e013.html.gz",
+    "raw_sha256": "sha256:ba03499d724d4933fea8dee36a27e4b5ff49b1e0d8b2e45edaba71bf8d7c7a08",
+    "bytes": 893326
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e014",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/share-transparency-reports",
+   "final_url": "https://www.aiuc-1.com/accountability/share-transparency-reports",
+   "retrieved_at": "2026-08-31T22:34:29Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e014.html.gz",
+    "raw_sha256": "sha256:664b8ebb84f0ecb56b2331f50d7a8f86efe03032b4aea4af6c80249e02b3352e",
+    "bytes": 851348
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e015",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/log-model-activity",
+   "final_url": "https://www.aiuc-1.com/accountability/log-model-activity",
+   "retrieved_at": "2026-08-31T22:34:30Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e015.html.gz",
+    "raw_sha256": "sha256:7c2740919ef586c144ed0a0b66e8b10685c958349d86d07a92d2bf36f0937b2d",
+    "bytes": 886686
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e016",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/implement-ai-disclosure-mechanisms",
+   "final_url": "https://www.aiuc-1.com/accountability/implement-ai-disclosure-mechanisms",
+   "retrieved_at": "2026-08-31T22:34:31Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e016.html.gz",
+    "raw_sha256": "sha256:cd3119b581f35207340c405a80430cd71376f0088fa2bde6af9db9d39cb15335",
+    "bytes": 887049
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_e017",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability/document-system-transparency-policy",
+   "final_url": "https://www.aiuc-1.com/accountability/document-system-transparency-policy",
+   "retrieved_at": "2026-08-31T22:34:32Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_e017.html.gz",
+    "raw_sha256": "sha256:e297d3d8cbf92fbc63c466e2a83861436043fcd85f6d46e718650dd061634e89",
+    "bytes": 877800
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_f001",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/society/prevent-ai-cyber-misuse",
+   "final_url": "https://www.aiuc-1.com/society/prevent-ai-cyber-misuse",
+   "retrieved_at": "2026-08-31T22:34:34Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_f001.html.gz",
+    "raw_sha256": "sha256:35735812eb8f2778a196cbbdd476959ddc344c7e93444727abfcdf99cbb364d4",
+    "bytes": 864453
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_control_f002",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/society/prevent-catastrophic-misuse",
+   "final_url": "https://www.aiuc-1.com/society/prevent-catastrophic-misuse",
+   "retrieved_at": "2026-08-31T22:34:35Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_control_f002.html.gz",
+    "raw_sha256": "sha256:07f83ec91c633a9855aebfab1f8db7b10e711bcf369045a5c1c7401a21d8bb6c",
+    "bytes": 861403
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_domain_a",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/data-and-privacy",
+   "final_url": "https://www.aiuc-1.com/data-and-privacy",
+   "retrieved_at": "2026-08-31T22:33:01Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_domain_a.html.gz",
+    "raw_sha256": "sha256:545a1f3259c04105a774f1bc738aa74972c3d0b09dc62be57f249162a1e2fb0c",
+    "bytes": 850538
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_domain_b",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/security",
+   "final_url": "https://www.aiuc-1.com/security",
+   "retrieved_at": "2026-08-31T22:33:11Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_domain_b.html.gz",
+    "raw_sha256": "sha256:c642530019ca1bedf38838982f1b5fbe7cf5e4c4a8b210a91679c6743ea7f6ba",
+    "bytes": 860827
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_domain_c",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/safety",
+   "final_url": "https://www.aiuc-1.com/safety",
+   "retrieved_at": "2026-08-31T22:33:21Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_domain_c.html.gz",
+    "raw_sha256": "sha256:82e4d0454750a790eaa51b8345b138bdcd29899d99dc8e2882fef8634268ef5c",
+    "bytes": 870955
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_domain_d",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/reliability",
+   "final_url": "https://www.aiuc-1.com/reliability",
+   "retrieved_at": "2026-08-31T22:34:09Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_domain_d.html.gz",
+    "raw_sha256": "sha256:ebe2c606aad62fd4ec417aa6cd22d53fab6ff16465a2495ff87230682b4d4e52",
+    "bytes": 835399
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_domain_e",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/accountability",
+   "final_url": "https://www.aiuc-1.com/accountability",
+   "retrieved_at": "2026-08-31T22:34:14Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_domain_e.html.gz",
+    "raw_sha256": "sha256:13ae10f799fe1931b7b680de02a949b6a996856dbda8fc8df3853f249aec68e6",
+    "bytes": 887672
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_domain_f",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/society",
+   "final_url": "https://www.aiuc-1.com/society",
+   "retrieved_at": "2026-08-31T22:34:33Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_domain_f.html.gz",
+    "raw_sha256": "sha256:ffc3bdd2c4daa598bdb35fd1b410705155618d2531337ab7e3920116327f7831",
+    "bytes": 827639
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_changelog",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/changelog",
+   "final_url": "https://www.aiuc-1.com/changelog",
+   "retrieved_at": "2026-08-31T22:35:08Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_changelog.html.gz",
+    "raw_sha256": "sha256:55c614968d3325a71fe0553806527cbc7b2dda39d65bbb2f648eea96f12be018",
+    "bytes": 917275
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_changelog_2025_10_01",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/changelog/2025-10-01",
+   "final_url": "https://www.aiuc-1.com/changelog/2025-10-01",
+   "retrieved_at": "2026-08-31T22:36:08Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_changelog_2025_10_01.html.gz",
+    "raw_sha256": "sha256:0f77293a569efe23c1aaad3548ff14fa094728dc430c975c4347ce14a8dac699",
+    "bytes": 899319
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_changelog_2026_01_15",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/changelog/2026-01-15",
+   "final_url": "https://www.aiuc-1.com/changelog/2026-01-15",
+   "retrieved_at": "2026-08-31T22:36:11Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_changelog_2026_01_15.html.gz",
+    "raw_sha256": "sha256:33d4b10ea9c9f836c7073ba2e2ef263657460ab1043a060e4fa65a19ed8143c1",
+    "bytes": 945926
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_changelog_2026_04_15",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/changelog/2026-04-15",
+   "final_url": "https://www.aiuc-1.com/changelog/2026-04-15",
+   "retrieved_at": "2026-08-31T22:36:13Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_changelog_2026_04_15.html.gz",
+    "raw_sha256": "sha256:0fd82460f4028e6e2dced3141ac5cc01f61750fd44eeb73fb83a4eaf897e7253",
+    "bytes": 966962
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_crosswalks",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/crosswalks",
+   "final_url": "https://www.aiuc-1.com/crosswalks",
+   "retrieved_at": "2026-08-31T22:35:09Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_crosswalks.html.gz",
+    "raw_sha256": "sha256:49c3c494cdba2f6d8278a6b7a1a44393809a263490cbeac0cc11dd8e5d7b4f0a",
+    "bytes": 929950
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_crosswalks_cisco_ai_security_safety_framework",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/crosswalks/cisco-ai-security-safety-framework",
+   "final_url": "https://www.aiuc-1.com/crosswalks/cisco-ai-security-safety-framework",
+   "retrieved_at": "2026-08-31T22:35:10Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_crosswalks_cisco_ai_security_safety_framework.html.gz",
+    "raw_sha256": "sha256:4cee5eb0a0f0d37076716b0884a2acf78248c818adc7f60ff497885a12f7f3c6",
+    "bytes": 1046507
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_crosswalks_csa_aicm",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/crosswalks/csa-aicm",
+   "final_url": "https://www.aiuc-1.com/crosswalks/csa-aicm",
+   "retrieved_at": "2026-08-31T22:35:11Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_crosswalks_csa_aicm.html.gz",
+    "raw_sha256": "sha256:6bf3c9ff4582535df2244e62d4cd5c2696b7daeef6a3428ec97d9d42239ae4f4",
+    "bytes": 2116370
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_crosswalks_eu_ai_act",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/crosswalks/eu-ai-act",
+   "final_url": "https://www.aiuc-1.com/crosswalks/eu-ai-act",
+   "retrieved_at": "2026-08-31T22:35:12Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_crosswalks_eu_ai_act.html.gz",
+    "raw_sha256": "sha256:bc38ccd3cbc2cd5a245c0fdb1377a2b354a6f1dfb36bffd30d6d4c9610dbd3af",
+    "bytes": 970848
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_crosswalks_ibm_ai_risk_atlas",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/crosswalks/ibm-ai-risk-atlas",
+   "final_url": "https://www.aiuc-1.com/crosswalks/ibm-ai-risk-atlas",
+   "retrieved_at": "2026-08-31T22:35:13Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_crosswalks_ibm_ai_risk_atlas.html.gz",
+    "raw_sha256": "sha256:20e9b7d7910fa2e66b41b34291444b6640db9c7c7c97212f79f006ac5bdc8f48",
+    "bytes": 1224422
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_crosswalks_iso_42001",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/crosswalks/iso-42001",
+   "final_url": "https://www.aiuc-1.com/crosswalks/iso-42001",
+   "retrieved_at": "2026-08-31T22:35:14Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_crosswalks_iso_42001.html.gz",
+    "raw_sha256": "sha256:f9f4a49aff93bca76836ad1d56674ef713ccf14c63ebba0d765d893341970662",
+    "bytes": 1192342
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_crosswalks_mitre_atlas",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/crosswalks/mitre-atlas",
+   "final_url": "https://www.aiuc-1.com/crosswalks/mitre-atlas",
+   "retrieved_at": "2026-08-31T22:35:15Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_crosswalks_mitre_atlas.html.gz",
+    "raw_sha256": "sha256:a5e52398d5fe16fb68d3c82cd0f8424c73a34fcf006ffe64220c3ef7a08e805b",
+    "bytes": 914376
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_crosswalks_nist_ai_rmf",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/crosswalks/nist-ai-rmf",
+   "final_url": "https://www.aiuc-1.com/crosswalks/nist-ai-rmf",
+   "retrieved_at": "2026-08-31T22:35:16Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_crosswalks_nist_ai_rmf.html.gz",
+    "raw_sha256": "sha256:de20e29d22bebfc87cb0e43d25b65fa1d899fe1ac03be0071a199d8043b28d49",
+    "bytes": 1148096
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_crosswalks_owasp_agentic_top_10",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/crosswalks/owasp-agentic-top-10",
+   "final_url": "https://www.aiuc-1.com/crosswalks/owasp-agentic-top-10",
+   "retrieved_at": "2026-08-31T22:35:17Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_crosswalks_owasp_agentic_top_10.html.gz",
+    "raw_sha256": "sha256:3ef978ec9126979eb71db90a48a818bc80daa04d8a87dfab74ee127508e3545a",
+    "bytes": 884198
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_crosswalks_owasp_aivss",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/crosswalks/owasp-aivss",
+   "final_url": "https://www.aiuc-1.com/crosswalks/owasp-aivss",
+   "retrieved_at": "2026-08-31T22:35:18Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_crosswalks_owasp_aivss.html.gz",
+    "raw_sha256": "sha256:d9970abce0a72579e3cd996546291d04168e9f21430b4bec5eee27cff83d3acc",
+    "bytes": 854512
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_crosswalks_owasp_top_10",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/crosswalks/owasp-top-10",
+   "final_url": "https://www.aiuc-1.com/crosswalks/owasp-top-10",
+   "retrieved_at": "2026-08-31T22:35:19Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_crosswalks_owasp_top_10.html.gz",
+    "raw_sha256": "sha256:647bbd85bc8f8a105a51a5ae1c7d6dc06c57ca0a6cdcb2fbe2ca4fccee94e110",
+    "bytes": 884767
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_evidence",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/evidence",
+   "final_url": "https://www.aiuc-1.com/evidence",
+   "retrieved_at": "2026-08-31T22:35:20Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_evidence.html.gz",
+    "raw_sha256": "sha256:a40b5cb10b251a3409ff09d06cc3ab8bf8a818ee98480a5fee467c29328e5067",
+    "bytes": 1160113
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_evidence_capability",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/evidence/capability",
+   "final_url": "https://www.aiuc-1.com/evidence/capability",
+   "retrieved_at": "2026-08-31T22:35:21Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_evidence_capability.html.gz",
+    "raw_sha256": "sha256:8add9f967eeedd3a1e2294a9c22d5fe2ac09d606761788661a2f01223c745278",
+    "bytes": 1025420
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_evidence_legal",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/evidence/legal",
+   "final_url": "https://www.aiuc-1.com/evidence/legal",
+   "retrieved_at": "2026-08-31T22:35:22Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_evidence_legal.html.gz",
+    "raw_sha256": "sha256:d89e373733674aa2e53a4d3c6c8048e2c346d1844e13da467f1098492ce8928e",
+    "bytes": 805543
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_evidence_operational",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/evidence/operational",
+   "final_url": "https://www.aiuc-1.com/evidence/operational",
+   "retrieved_at": "2026-08-31T22:35:23Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_evidence_operational.html.gz",
+    "raw_sha256": "sha256:e906d2c5caac6961b4e388f45063f0ff8b88667118fc8408269ec5574cb1e33c",
+    "bytes": 829213
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_evidence_technical",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/evidence/technical",
+   "final_url": "https://www.aiuc-1.com/evidence/technical",
+   "retrieved_at": "2026-08-31T22:35:24Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_evidence_technical.html.gz",
+    "raw_sha256": "sha256:be99fc8bd2866d86d3d9b5ab9035d25985df1fe8dc1651a463fa884ac8fc9ff5",
+    "bytes": 1012887
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_evidence_third_party",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/evidence/third-party",
+   "final_url": "https://www.aiuc-1.com/evidence/third-party",
+   "retrieved_at": "2026-08-31T22:35:25Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_evidence_third_party.html.gz",
+    "raw_sha256": "sha256:57b9b0c96e213b0cb311709fdc7b4d237c657b116901d4fbdc401589802e89e5",
+    "bytes": 791070
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_home",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/",
+   "final_url": "https://www.aiuc-1.com/",
+   "retrieved_at": "2026-08-31T22:32:52Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_home.html.gz",
+    "raw_sha256": "sha256:911e3c0a00be6efc50a07ee94e11981f0143779f444b1451d823314ac094a021",
+    "bytes": 998951
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  },
+  {
+   "id": "src_2026_08_31_page_scoping",
+   "source_type": "official_website",
+   "url": "https://www.aiuc-1.com/scoping",
+   "final_url": "https://www.aiuc-1.com/scoping",
+   "retrieved_at": "2026-08-31T22:35:26Z",
+   "http": {
+    "status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "etag": null,
+    "last_modified": null
+   },
+   "content": {
+    "raw_snapshot_path": "evidence/snapshots/2026-08-31/src_2026_08_31_page_scoping.html.gz",
+    "raw_sha256": "sha256:f31dbe3a8563bfcbf94fabe762ac898916fd3b037a007ae9e6aea46032d5eb1d",
+    "bytes": 837422
+   },
+   "license_or_terms_note": "Public page captured as evidence. Snapshot retained inside the vault only; extracted fragments are quoted for verification. Confirm reuse rights with AIUC before republishing full control text."
+  }
+ ]
+}

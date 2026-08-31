@@ -1,0 +1,71 @@
+{
+ "report_version": "1.0.0",
+ "generated_at": "2026-08-31T23:03:23Z",
+ "generator_version": "0.1.0",
+ "release_id": "2026-07-15",
+ "finding_count": 5,
+ "blocking_count": 0,
+ "counts_by_kind": {
+  "guidance_formatting_difference": 3,
+  "guidance_order_difference": 2
+ },
+ "findings": [
+  {
+   "kind": "guidance_formatting_difference",
+   "control_id": "B005",
+   "reason": "the bullets agree once markdown escaping and links are removed, so the difference is presentation and not meaning",
+   "blocking": false,
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ]
+  },
+  {
+   "kind": "guidance_order_difference",
+   "control_id": "B008",
+   "reason": "the same bullets are published in a different order on the website and in the repository markdown",
+   "blocking": false,
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ]
+  },
+  {
+   "kind": "guidance_formatting_difference",
+   "control_id": "B010",
+   "reason": "the bullets agree once markdown escaping and links are removed, so the difference is presentation and not meaning",
+   "blocking": false,
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ]
+  },
+  {
+   "kind": "guidance_formatting_difference",
+   "control_id": "E014",
+   "reason": "the bullets agree once markdown escaping and links are removed, so the difference is presentation and not meaning",
+   "blocking": false,
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ]
+  },
+  {
+   "kind": "guidance_order_difference",
+   "control_id": "E015",
+   "reason": "the same bullets are published in a different order on the website and in the repository markdown",
+   "blocking": false,
+   "source_refs": [
+    "src_2026_08_31_page_changelog",
+    "git:d407401393de5629745de6accb35e000e674043f",
+    "src_2026_08_31_page_home"
+   ]
+  }
+ ],
+ "website_controls": 53,
+ "repository_controls": 53
+}

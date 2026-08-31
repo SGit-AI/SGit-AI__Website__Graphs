@@ -1,0 +1,12 @@
+{
+ "report_version": "1.0.0",
+ "generated_at": "2026-08-31T22:56:54Z",
+ "generator_version": "0.1.0",
+ "baseline_manifest_generated_at": "2026-08-31T22:54:13Z",
+ "pages_checked": 82,
+ "finding_count": 0,
+ "unknown_count": 0,
+ "findings": [],
+ "review_items": [],
+ "drift_detected": false
+}

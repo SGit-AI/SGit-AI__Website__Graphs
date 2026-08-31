@@ -1,0 +1,22 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://graphs.sgit.ai/vaults/aiuc-1/schemas/aiuc1-graph.schema.json",
+ "title": "AIUC-1 derived graph index",
+ "description": "The counts and the edge vocabulary of the graph built from the catalog.",
+ "type": "object",
+ "required": ["graph_id", "generated_at", "current_release", "node_count", "edge_count",
+              "nodes_by_type", "edges_by_type", "edge_meanings", "content_hash"],
+ "properties": {
+  "graph_id": {"const": "aiuc-1-derived-graph"},
+  "generated_at": {"type": "string", "format": "date-time"},
+  "generator_version": {"type": "string"},
+  "current_release": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+  "disclaimer": {"type": "string"},
+  "node_count": {"type": "integer"},
+  "edge_count": {"type": "integer"},
+  "nodes_by_type": {"type": "object"},
+  "edges_by_type": {"type": "object"},
+  "edge_meanings": {"type": "object"},
+  "content_hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+ }
+}

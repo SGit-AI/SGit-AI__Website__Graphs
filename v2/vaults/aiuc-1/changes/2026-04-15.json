@@ -1,0 +1,1490 @@
+{
+ "release_id": "2026-04-15",
+ "generated_at": "2026-08-31T23:03:23Z",
+ "generator_version": "0.1.0",
+ "previous_release_id": "2026-01-15",
+ "derived_event_count": 24,
+ "official_record_count": 38,
+ "derived_events": [
+  {
+   "id": "chg_2026_04_15_A002_requirement_updated",
+   "release_id": "2026-04-15",
+   "control_id": "A002",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:0595b6c52a39a334d279893f87b0f8e4fe3386e80ee41f6798609c9fb714d7e2",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:76eb6c7621826a0434ef74bc4f38c4100634827c848975587d7671aca7aef8e8",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_A002_guidance_updated",
+   "release_id": "2026-04-15",
+   "control_id": "A002",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 2 bullet(s) added, 1 removed",
+   "before": {
+    "content_hash": "sha256:0595b6c52a39a334d279893f87b0f8e4fe3386e80ee41f6798609c9fb714d7e2",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:76eb6c7621826a0434ef74bc4f38c4100634827c848975587d7671aca7aef8e8",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_A003_title_updated",
+   "release_id": "2026-04-15",
+   "control_id": "A003",
+   "event_type": "title_updated",
+   "summary": "the published title changed from 'Limit AI agent data collection' to 'Limit AI agent data access'",
+   "before": {
+    "content_hash": "sha256:4dfc2cd47ad4d49405ceefdf5ac0881fef335a47a8e818b3a491662810e4393e",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:dcda3b6143fa8c716d342927e9cbbd930bb1b777d778201a82e51e5913a621e7",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_A003_requirement_updated",
+   "release_id": "2026-04-15",
+   "control_id": "A003",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:4dfc2cd47ad4d49405ceefdf5ac0881fef335a47a8e818b3a491662810e4393e",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:dcda3b6143fa8c716d342927e9cbbd930bb1b777d778201a82e51e5913a621e7",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_A003_guidance_updated",
+   "release_id": "2026-04-15",
+   "control_id": "A003",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 3 bullet(s) added, 2 removed",
+   "before": {
+    "content_hash": "sha256:4dfc2cd47ad4d49405ceefdf5ac0881fef335a47a8e818b3a491662810e4393e",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:dcda3b6143fa8c716d342927e9cbbd930bb1b777d778201a82e51e5913a621e7",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_A006_requirement_updated",
+   "release_id": "2026-04-15",
+   "control_id": "A006",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:0f29f52e7be8f1010f08ed8b2cdfaf6cae282c4e452ca645707277db11012dd8",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:32a1440bc63d4291896bd90967dad542caf68096b5fe9e054ca330a6bb0c5b90",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_B002_requirement_updated",
+   "release_id": "2026-04-15",
+   "control_id": "B002",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:4a1d004e7dcbfa4eb7e59f42037640f7beb268f36f079714cfc6a57f393292a4",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:8bccebbc3bd5319f183b4c358dc22ff367de32148b90cdc26e07781af537a0a7",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_B006_guidance_updated",
+   "release_id": "2026-04-15",
+   "control_id": "B006",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 2 bullet(s) added, 1 removed",
+   "before": {
+    "content_hash": "sha256:63f9cbea37a38265a91870722630215b7c7398a47899d2d99c735b317ab8d150",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:716b7c2d678c43c7f57094b39433fdb76e6acdeb51ae538927f9648f0700c61e",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_B008_title_updated",
+   "release_id": "2026-04-15",
+   "control_id": "B008",
+   "event_type": "title_updated",
+   "summary": "the published title changed from 'Protect model deployment environment' to 'Protect AI system deployment environment'",
+   "before": {
+    "content_hash": "sha256:383205c9585569f24dd471845261c70a1cb2525e675b8e944c0b3908ec69fd1c",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:d978016de99711aa06a02f54b52252c69a377e919d798bd105cff299778d2b53",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_B008_requirement_updated",
+   "release_id": "2026-04-15",
+   "control_id": "B008",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:383205c9585569f24dd471845261c70a1cb2525e675b8e944c0b3908ec69fd1c",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:d978016de99711aa06a02f54b52252c69a377e919d798bd105cff299778d2b53",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_B008_guidance_updated",
+   "release_id": "2026-04-15",
+   "control_id": "B008",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 4 bullet(s) added, 2 removed",
+   "before": {
+    "content_hash": "sha256:383205c9585569f24dd471845261c70a1cb2525e675b8e944c0b3908ec69fd1c",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:d978016de99711aa06a02f54b52252c69a377e919d798bd105cff299778d2b53",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_C001_requirement_updated",
+   "release_id": "2026-04-15",
+   "control_id": "C001",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:47a130b1c92955f629005573769be5fd8ff64da6d612c6115c73ef5607528a79",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:19a5c554d775b631e85e293692c20857ee1a80e72c4f7b9cc2afc51bb69a4491",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_C007_title_updated",
+   "release_id": "2026-04-15",
+   "control_id": "C007",
+   "event_type": "title_updated",
+   "summary": "the published title changed from 'Flag high risk outputs' to 'Flag high risk outputs for human review'",
+   "before": {
+    "content_hash": "sha256:33ede39cc2d0685fcb6e13c7225154872853ae828b5ed2eae7e639759abe5d63",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:63b5a9a60c56efb58ee82229695e938678059e4a33a1a212c6ed472c2991e620",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_C007_guidance_updated",
+   "release_id": "2026-04-15",
+   "control_id": "C007",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 1 bullet(s) added, 1 removed",
+   "before": {
+    "content_hash": "sha256:33ede39cc2d0685fcb6e13c7225154872853ae828b5ed2eae7e639759abe5d63",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:63b5a9a60c56efb58ee82229695e938678059e4a33a1a212c6ed472c2991e620",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_C009_requirement_updated",
+   "release_id": "2026-04-15",
+   "control_id": "C009",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:84db42f710915cfe15989f02fa8b895acf8e17630fd7dc12994988bd4d2fb2df",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:e9f5d078b4a32baae1b29e87dd02be402cbe097b380fffa06af0a21414431cca",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_C009_guidance_updated",
+   "release_id": "2026-04-15",
+   "control_id": "C009",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 1 bullet(s) added, 2 removed",
+   "before": {
+    "content_hash": "sha256:84db42f710915cfe15989f02fa8b895acf8e17630fd7dc12994988bd4d2fb2df",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:e9f5d078b4a32baae1b29e87dd02be402cbe097b380fffa06af0a21414431cca",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_D003_guidance_updated",
+   "release_id": "2026-04-15",
+   "control_id": "D003",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 2 bullet(s) added, 2 removed",
+   "before": {
+    "content_hash": "sha256:5e5746d8404fbfe2c3fc818b021bb4039b7924f00edfef499d6ce1ad95fff5c1",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:762af1acdf4ba40e1be8761f39fd26994bb62441318e952abaa1d1750eb0a0bf",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_E005_title_updated",
+   "release_id": "2026-04-15",
+   "control_id": "E005",
+   "event_type": "title_updated",
+   "summary": "the published title changed from 'Assess cloud vs on-prem processing' to 'Document data storage security'",
+   "before": {
+    "content_hash": "sha256:a7ef52648142a96cc0cbcfebcfd174ca30eda9b3f58d5e8e60a9c86346157281",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:d47c787bf7cea6eb063a5ffb8c12e61748efedc6c2f1d426ded35b959c1364e4",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_E005_requirement_updated",
+   "release_id": "2026-04-15",
+   "control_id": "E005",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:a7ef52648142a96cc0cbcfebcfd174ca30eda9b3f58d5e8e60a9c86346157281",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:d47c787bf7cea6eb063a5ffb8c12e61748efedc6c2f1d426ded35b959c1364e4",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_E008_guidance_updated",
+   "release_id": "2026-04-15",
+   "control_id": "E008",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 1 bullet(s) added, 1 removed",
+   "before": {
+    "content_hash": "sha256:c4c88d059942d35bcb594cbe3e220c145ac618b4963751123d5f3726a5f7cdcf",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:ab2e15116fa624e372dd038c76720d3c5b99b15ea17a784c128a5001e6280f1d",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_E015_title_updated",
+   "release_id": "2026-04-15",
+   "control_id": "E015",
+   "event_type": "title_updated",
+   "summary": "the published title changed from 'Log model activity' to 'Log AI system activity'",
+   "before": {
+    "content_hash": "sha256:d501461caee3c9dfccef6e31589305ed188b2991db2a45047ab6756e5c652506",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:d45a4e28c516931ee45f01c943e1ef9ce4e81e536dac4f587dbf206a0a58b97c",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_E015_requirement_updated",
+   "release_id": "2026-04-15",
+   "control_id": "E015",
+   "event_type": "requirement_updated",
+   "summary": "the normative statement changed",
+   "before": {
+    "content_hash": "sha256:d501461caee3c9dfccef6e31589305ed188b2991db2a45047ab6756e5c652506",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:d45a4e28c516931ee45f01c943e1ef9ce4e81e536dac4f587dbf206a0a58b97c",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_E015_guidance_updated",
+   "release_id": "2026-04-15",
+   "control_id": "E015",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 1 bullet(s) added, 0 removed",
+   "before": {
+    "content_hash": "sha256:d501461caee3c9dfccef6e31589305ed188b2991db2a45047ab6756e5c652506",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:d45a4e28c516931ee45f01c943e1ef9ce4e81e536dac4f587dbf206a0a58b97c",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  },
+  {
+   "id": "chg_2026_04_15_E016_guidance_updated",
+   "release_id": "2026-04-15",
+   "control_id": "E016",
+   "event_type": "guidance_updated",
+   "summary": "the control guidance changed: 1 bullet(s) added, 1 removed",
+   "before": {
+    "content_hash": "sha256:f579f69dbff7b5f6f21415ecba6e581b02fa9815efd90a15a17911ed55df5218",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "after": {
+    "content_hash": "sha256:4e97d1f3cd46af50c66e521044d2085d00449be081033644d2a744840273d5db",
+    "source_refs": [
+     "src_2026_08_31_page_changelog_2026_04_15",
+     "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+    ]
+   },
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15",
+    "git:f578bfbcbbae92a35824fa7602e886e25692e4c6"
+   ],
+   "classification": {
+    "method": "release_content_diff",
+    "confidence": 0.9,
+    "review_status": "approved"
+   }
+  }
+ ],
+ "official_change_records": [
+  {
+   "id": "off_2026_04_15_000",
+   "release_id": "2026-04-15",
+   "control_ids": [],
+   "subject": "All requirements",
+   "category": "div Revision",
+   "notes": "Adjusted disclosure to AI agents and systems",
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_001",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "A002"
+   ],
+   "subject": "A002: Establish output data policy",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_002",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "A002"
+   ],
+   "subject": "A002.1 Documentation: Output usage and ownership policy",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_003",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "A002"
+   ],
+   "subject": "A002.2 Config: Opt-in/opt-out and output deletion implementation",
+   "category": "div Addition",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_004",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "A003"
+   ],
+   "subject": "A003: Limit AI agent data collection",
+   "category": "div Specification",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_005",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "A003"
+   ],
+   "subject": "A003.1 Config: Data access scoping",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_006",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "A003"
+   ],
+   "subject": "A003.3 Config: Agent identity management",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_007",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "A003"
+   ],
+   "subject": "A003.4 Config: Agent access and permissions management",
+   "category": "div Addition",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_008",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "B002"
+   ],
+   "subject": "B002: Detect adversarial input",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_009",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "B006"
+   ],
+   "subject": "B006: Prevent unauthorized AI agent actions",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_010",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "B006"
+   ],
+   "subject": "B006.1 Config: Agent service access restrictions",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_011",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "B006"
+   ],
+   "subject": "B006.3 Config: Execution-level safeguards",
+   "category": "div Addition",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_012",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "B008"
+   ],
+   "subject": "B008: Protect AI system deployment environment",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_013",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "B008"
+   ],
+   "subject": "B008.1 Config: Model access controls",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_014",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "B008"
+   ],
+   "subject": "B008.2 Config: API and agentic interface authentication",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_015",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "B008"
+   ],
+   "subject": "B008.3 Config: API and agentic interface transport security",
+   "category": "div Addition",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_016",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "B008"
+   ],
+   "subject": "B008.4 Config: Agentic interface data integrity",
+   "category": "div Addition",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_017",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "C001"
+   ],
+   "subject": "C001: Define AI risk taxonomy",
+   "category": "div Specification",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_018",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "C001"
+   ],
+   "subject": "C001.2 Documentation: Risk taxonomy reviews",
+   "category": "div Specification",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_019",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "C006"
+   ],
+   "subject": "C006: Prevent output vulnerabilities",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_020",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "C006"
+   ],
+   "subject": "C006.1 Config: Output sanitization",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_021",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "C006"
+   ],
+   "subject": "C006.2 Demonstration: Warning labels for untrusted content",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_022",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "C006"
+   ],
+   "subject": "C006.3 Config: Adversarial output detection",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_023",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "C007"
+   ],
+   "subject": "C007: Flag high risk outputs for human review",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_024",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "C007"
+   ],
+   "subject": "C007.1 Documentation: Definition of high-risk output criteria",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_025",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "C007"
+   ],
+   "subject": "C007.3 Documentation: Human review workflows",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_026",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "C009"
+   ],
+   "subject": "C009: Enable real-time feedback and intervention",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_027",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "C009"
+   ],
+   "subject": "C009.2 Documentation: User feedback & intervention reviews",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_028",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "D003"
+   ],
+   "subject": "D003: Restrict unsafe tool calls",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_029",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "D003"
+   ],
+   "subject": "D003.1 Config: Tool authorization & validation",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_030",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "D003"
+   ],
+   "subject": "D003.3 Config: Tool call log",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_031",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "D003"
+   ],
+   "subject": "D003.4 Config: Human-approval workflows",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_032",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "E005"
+   ],
+   "subject": "E005: Document data storage security",
+   "category": "div Clarification",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_033",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "E009"
+   ],
+   "subject": "E009: Monitor third-party access",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_034",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "E015"
+   ],
+   "subject": "E015: Log AI system activity",
+   "category": "div Revision",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_035",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "E015"
+   ],
+   "subject": "E015.2 Config: AI agent logging implementation",
+   "category": "div Addition",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_036",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "E016"
+   ],
+   "subject": "E016: Implement AI disclosure mechanisms",
+   "category": "div Specification",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  },
+  {
+   "id": "off_2026_04_15_037",
+   "release_id": "2026-04-15",
+   "control_ids": [
+    "E016"
+   ],
+   "subject": "E016.4 Demonstration: Automation AI disclosure",
+   "category": "div Specification",
+   "notes": null,
+   "release_label": "Q2 2026",
+   "source_refs": [
+    "src_2026_08_31_page_changelog_2026_04_15"
+   ],
+   "classification": {
+    "method": "official_changelog_parse",
+    "confidence": 1.0,
+    "review_status": "approved",
+    "note": "published by AIUC on its own changelog page and reproduced here without interpretation"
+   }
+  }
+ ]
+}

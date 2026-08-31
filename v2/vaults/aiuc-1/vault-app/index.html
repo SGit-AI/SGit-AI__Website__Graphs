@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AIUC-1, as a graph you can cite</title>
+<style>
+:root{
+  --paper:#fbfaf8; --panel:#ffffff; --ink:#17181c; --muted:#5d6270; --faint:#8a90a0;
+  --line:#e3e2dd; --line-2:#efeeea; --accent:#1f5f8b; --accent-soft:#e8f0f6;
+  --warn:#8a5a12; --warn-soft:#fdf3e0; --good:#256b4a; --good-soft:#e6f2ec;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --measure:74ch;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#14151a;--panel:#1b1d23;--ink:#e9eaee;--muted:#a3a9b8;--faint:#7b8294;
+        --line:#2b2e37;--line-2:#232630;--accent:#79b8e0;--accent-soft:#1c2a35;
+        --warn:#e0b268;--warn-soft:#2e2618;--good:#7fc9a4;--good-soft:#17281f;}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+     font-size:15px;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:var(--accent)}
+h1,h2,h3{line-height:1.25;margin:0 0 .4rem}
+.banner{background:var(--warn-soft);color:var(--warn);border-bottom:1px solid var(--line);
+        padding:.5rem 1rem;font-size:12.5px}
+.banner b{font-weight:650}
+header.top{padding:1.1rem 1rem .8rem;border-bottom:1px solid var(--line);background:var(--panel)}
+header.top h1{font-size:1.35rem;letter-spacing:-.01em}
+header.top p{margin:.15rem 0 0;color:var(--muted);font-size:13px;max-width:var(--measure)}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.6rem}
+.chip{font-size:11.5px;padding:.15rem .5rem;border:1px solid var(--line);border-radius:999px;
+      color:var(--muted);background:var(--paper);white-space:nowrap}
+.chip.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.chip.good{background:var(--good-soft);border-color:var(--good);color:var(--good)}
+nav.tabs{display:flex;gap:.15rem;padding:0 .6rem;border-bottom:1px solid var(--line);
+         background:var(--panel);overflow-x:auto}
+nav.tabs button{appearance:none;background:none;border:0;border-bottom:2px solid transparent;
+  padding:.6rem .7rem;font:inherit;font-size:13.5px;color:var(--muted);cursor:pointer;white-space:nowrap}
+nav.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+main{padding:0}
+.view{display:none}
+.view.on{display:block}
+.split{display:grid;grid-template-columns:minmax(240px,320px) 1fr;min-height:60vh}
+@media (max-width:820px){.split{grid-template-columns:1fr}.rail{border-right:0;border-bottom:1px solid var(--line)}}
+.rail{border-right:1px solid var(--line);background:var(--panel);max-height:78vh;overflow:auto}
+.rail .filters{padding:.7rem .8rem;border-bottom:1px solid var(--line-2);position:sticky;top:0;
+               background:var(--panel);z-index:2}
+.rail input[type=search]{width:100%;padding:.42rem .55rem;border:1px solid var(--line);
+  border-radius:6px;background:var(--paper);color:var(--ink);font:inherit;font-size:13px}
+.filter-row{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.5rem}
+.filter-row button{font:inherit;font-size:11.5px;padding:.12rem .45rem;border-radius:999px;
+  border:1px solid var(--line);background:var(--paper);color:var(--muted);cursor:pointer}
+.filter-row button[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.rail ul{list-style:none;margin:0;padding:0}
+.rail li{border-bottom:1px solid var(--line-2)}
+.rail li button{display:block;width:100%;text-align:left;background:none;border:0;
+  padding:.5rem .8rem;font:inherit;cursor:pointer;color:inherit}
+.rail li button:hover{background:var(--accent-soft)}
+.rail li button[aria-current="true"]{background:var(--accent-soft);box-shadow:inset 3px 0 0 var(--accent)}
+.rail .cid{font-family:var(--mono);font-size:11.5px;color:var(--accent)}
+.rail .ctitle{display:block;font-size:13.5px}
+.rail .cmeta{display:block;font-size:11px;color:var(--faint);margin-top:.1rem}
+.rail .group{padding:.45rem .8rem;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--faint);background:var(--line-2)}
+.detail{padding:1.1rem 1.2rem 3rem;max-width:900px}
+.detail h2{font-size:1.2rem}
+.detail .lede{color:var(--muted);max-width:var(--measure)}
+section.block{margin-top:1.5rem;border-top:1px solid var(--line);padding-top:.9rem}
+section.block > h3{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);
+  margin-bottom:.6rem;font-weight:650}
+.req{border:1px solid var(--line);border-radius:8px;padding:.7rem .8rem;margin-bottom:.6rem;
+     background:var(--panel)}
+.req .rid{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.req .rlabel{font-weight:600;font-size:13.5px}
+.req p{margin:.4rem 0 0;font-size:13.5px}
+.req ul{margin:.4rem 0 0;padding-left:1.1rem;font-size:13.5px}
+.req .ev{margin-top:.55rem;padding-top:.5rem;border-top:1px dashed var(--line);
+         font-size:12.5px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{text-align:left;padding:.38rem .5rem;border-bottom:1px solid var(--line-2);vertical-align:top}
+th{color:var(--faint);font-weight:600;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
+td.mono,.mono{font-family:var(--mono);font-size:11.5px;word-break:break-all}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+details{border:1px solid var(--line);border-radius:8px;margin-bottom:.5rem;background:var(--panel)}
+details > summary{cursor:pointer;padding:.5rem .7rem;font-size:13px;font-weight:600}
+details[open] > summary{border-bottom:1px solid var(--line-2)}
+details .body{padding:.6rem .7rem}
+.cards{display:grid;gap:.6rem;grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.card{border:1px solid var(--line);border-radius:8px;padding:.65rem .75rem;background:var(--panel)}
+.card .n{font-size:1.5rem;font-weight:650;letter-spacing:-.02em}
+.card .k{font-size:11.5px;color:var(--muted)}
+.pad{padding:1.1rem 1.2rem 3rem;max-width:920px}
+.prose p{max-width:var(--measure)}
+.prose li{max-width:var(--measure)}
+.neighbourhood{width:100%;height:auto;display:block;margin:.2rem 0 .4rem}
+.neighbourhood text{font-family:var(--sans);fill:var(--ink)}
+.neighbourhood .edge{stroke:var(--line);stroke-width:1.2}
+.neighbourhood .lbl{fill:var(--faint);font-size:9px}
+.timeline{border-left:2px solid var(--line);margin-left:.5rem;padding-left:1rem}
+.tl-item{position:relative;margin-bottom:1.4rem}
+.tl-item::before{content:"";position:absolute;left:-1.32rem;top:.35rem;width:9px;height:9px;
+  border-radius:50%;background:var(--accent)}
+.tl-item.partial::before{background:var(--warn)}
+.tl-item.unbuilt::before{background:var(--faint)}
+footer{border-top:1px solid var(--line);padding:1rem 1.2rem 2.5rem;color:var(--faint);font-size:12px}
+footer a{color:var(--accent)}
+.empty{color:var(--faint);font-size:13px;padding:1rem}
+</style>
+</head>
+<body>
+<div class="banner"><b>Unofficial and derivative.</b> Not approved, certified or endorsed by
+AIUC, and not a substitute for the standard. Every field here names the official page or
+commit it was read from. Verify against <span id="bannerLink"></span>.</div>
+
+<header class="top">
+  <h1 id="hTitle">AIUC-1, as a graph you can cite</h1>
+  <p id="hLede"></p>
+  <div class="chips" id="hChips"></div>
+</header>
+
+<nav class="tabs" id="tabs" role="tablist"></nav>
+
+<main>
+  <section class="view on" id="view-controls">
+    <div class="split">
+      <div class="rail">
+        <div class="filters">
+          <input type="search" id="q" placeholder="Search controls, requirements, keywords…"
+                 autocomplete="off" spellcheck="false">
+          <div class="filter-row" id="fDomains"></div>
+          <div class="filter-row" id="fFlags"></div>
+        </div>
+        <ul id="controlList"></ul>
+      </div>
+      <div class="detail" id="controlDetail"></div>
+    </div>
+  </section>
+  <section class="view" id="view-graph"><div class="pad" id="graphPane"></div></section>
+  <section class="view" id="view-releases"><div class="pad" id="releasePane"></div></section>
+  <section class="view" id="view-evidence"><div class="pad" id="evidencePane"></div></section>
+  <section class="view" id="view-about"><div class="pad prose" id="aboutPane"></div></section>
+</main>
+
+<footer id="foot"></footer>
+
+<script>
+'use strict';
+const FALLBACK = /*__DATA__*/{};
+
+async function getData(){
+  try{
+    if (window.sg && sg.vfs && sg.vfs.readText){
+      const t = await sg.vfs.readText('data.json');
+      const j = JSON.parse(t);
+      if (j && j.controls) return j;
+    }
+  }catch(e){}
+  try{
+    const r = await fetch('data.json', {cache:'no-store'});
+    if (r.ok){ const j = await r.json(); if (j && j.controls) return j; }
+  }catch(e){}
+  return FALLBACK;
+}
+
+function el(tag, cls, text){
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text != null) e.textContent = text;
+  return e;
+}
+function link(href, text){
+  const a = el('a', null, text || href);
+  a.href = href; a.rel = 'noreferrer';
+  return a;
+}
+function esc(s){ return String(s == null ? '' : s); }
+function titleCase(s){ return esc(s).replace(/_/g,' '); }
+
+const TABS = [
+  ['controls','Controls'], ['graph','The graph'], ['releases','Releases'],
+  ['evidence','Evidence'], ['about','About this catalog']
+];
+
+const state = { data:null, controlId:null, query:'', domains:new Set(), flags:new Set() };
+
+/* ---------- header ---------- */
+function renderHeader(d){
+  const m = d.meta;
+  document.getElementById('bannerLink').appendChild(link(m.official_website, 'aiuc-1.com'));
+  document.getElementById('hLede').textContent =
+    'The public AIUC-1 control standard read from its own pages and its official changelog '
+    + 'repository, normalised, cross-checked, and decomposed into one graph. Release '
+    + m.current_release + '.';
+  const chips = document.getElementById('hChips');
+  const counts = [
+    [d.controls.length + ' controls', false],
+    [d.controls.reduce((n,c)=>n+c.requirements.length,0) + ' requirements', false],
+    [d.controls.reduce((n,c)=>n+c.crosswalks.length,0) + ' crosswalks', false],
+    [d.graph.node_count + ' nodes · ' + d.graph.edge_count + ' edges', false],
+    [Object.keys(d.sources).length + ' source observations', false],
+    [d.releases.length + ' releases', false]
+  ];
+  counts.forEach(([t]) => chips.appendChild(el('span','chip',t)));
+  const v = m.validation;
+  const gate = el('span', 'chip ' + (v.passed ? 'good' : ''),
+    v.passed ? 'gate green: 0 errors' : ('gate red: ' + v.error_count + ' errors'));
+  chips.appendChild(gate);
+}
+
+/* ---------- tabs ---------- */
+function showTab(key){
+  const nav = document.getElementById('tabs');
+  if (!TABS.some(t => t[0] === key)) key = TABS[0][0];
+  nav.querySelectorAll('button').forEach(x =>
+    x.setAttribute('aria-selected', x.dataset.tab === key ? 'true' : 'false'));
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
+  document.getElementById('view-' + key).classList.add('on');
+}
+
+function renderTabs(){
+  const nav = document.getElementById('tabs');
+  TABS.forEach(([key,label]) => {
+    const b = el('button', null, label);
+    b.setAttribute('role','tab');
+    b.dataset.tab = key;
+    b.setAttribute('aria-selected', 'false');
+    b.addEventListener('click', () => showTab(key));
+    nav.appendChild(b);
+  });
+  /* the host intercepts in-page anchors, so read the hash rather than writing it */
+  showTab((location.hash || '').replace('#',''));
+  window.addEventListener('hashchange', () =>
+    showTab((location.hash || '').replace('#','')));
+}
+
+/* ---------- controls ---------- */
+function controlMatches(c){
+  if (state.domains.size && !state.domains.has(c.domain)) return false;
+  for (const f of state.flags){
+    if (f === 'mandatory' && c.applicability !== 'mandatory') return false;
+    if (f === 'optional' && c.applicability !== 'optional') return false;
+    if (f === 'detective' && c.type !== 'detective') return false;
+    if (f === 'quarterly' && c.frequency !== 'every_3_months') return false;
+    if (f === 'merged' && c.status !== 'merged') return false;
+  }
+  const q = state.query.trim().toLowerCase();
+  if (!q) return true;
+  const hay = [c.id, c.title, c.summary, c.keywords.join(' '),
+    c.requirements.map(r => r.id + ' ' + (r.label||'') + ' ' + (r.text||'')).join(' '),
+    c.crosswalks.map(x => x.framework + ' ' + x.reference).join(' ')].join(' ').toLowerCase();
+  return hay.indexOf(q) >= 0;
+}
+
+function renderFilters(d){
+  const fd = document.getElementById('fDomains');
+  d.domains.forEach(dom => {
+    const b = el('button', null, dom.id + ' · ' + dom.name);
+    b.setAttribute('aria-pressed','false');
+    b.title = dom.description || '';
+    b.addEventListener('click', () => {
+      state.domains.has(dom.id) ? state.domains.delete(dom.id) : state.domains.add(dom.id);
+      b.setAttribute('aria-pressed', state.domains.has(dom.id) ? 'true' : 'false');
+      renderList(d);
+    });
+    fd.appendChild(b);
+  });
+  const flags = [['mandatory','mandatory'],['optional','optional'],['detective','detective'],
+                 ['quarterly','every 3 months'],['merged','merged away']];
+  const ff = document.getElementById('fFlags');
+  flags.forEach(([key,label]) => {
+    const b = el('button', null, label);
+    b.setAttribute('aria-pressed','false');
+    b.addEventListener('click', () => {
+      state.flags.has(key) ? state.flags.delete(key) : state.flags.add(key);
+      b.setAttribute('aria-pressed', state.flags.has(key) ? 'true' : 'false');
+      renderList(d);
+    });
+    ff.appendChild(b);
+  });
+  const q = document.getElementById('q');
+  q.addEventListener('input', () => { state.query = q.value; renderList(d); });
+}
+
+function renderList(d){
+  const ul = document.getElementById('controlList');
+  ul.innerHTML = '';
+  const shown = d.controls.filter(controlMatches);
+  if (!shown.length){ ul.appendChild(el('li','empty','No control matches those filters.')); return; }
+  let group = null;
+  shown.forEach(c => {
+    if (c.domain !== group){
+      group = c.domain;
+      const dom = d.domains.find(x => x.id === group);
+      const li = el('li');
+      li.appendChild(el('div','group', group + ' · ' + (dom ? dom.name : '')));
+      ul.appendChild(li);
+    }
+    const li = el('li');
+    const b = el('button');
+    b.setAttribute('aria-current', c.id === state.controlId ? 'true' : 'false');
+    b.appendChild(el('span','cid', c.id));
+    b.appendChild(el('span','ctitle', c.title));
+    b.appendChild(el('span','cmeta',
+      [c.applicability_raw === true ? 'Mandatory' : (c.applicability === 'optional' ? 'Optional' : ''),
+       c.frequency_raw, c.type_raw, c.requirements.length + ' req'].filter(Boolean).join(' · ')));
+    b.addEventListener('click', () => { state.controlId = c.id; renderList(d); renderControl(d, c); });
+    li.appendChild(b);
+    ul.appendChild(li);
+  });
+}
+
+function neighbourhood(d, c){
+  /* the point of the estate: what a control IS shows in the edges traceable from it */
+  const groups = [
+    ['domain', 1, 'has_control'],
+    ['requirements', c.requirements.length, 'has_requirement'],
+    ['crosswalks', c.crosswalks.length, 'maps_to'],
+    ['keywords', c.keywords.length, 'tagged'],
+    ['capabilities', c.capabilities.length, 'applies_to_capability'],
+    ['sources', c.sources.length, 'evidenced_by'],
+    ['releases', d.releases.filter(r => r.status !== 'unbuilt').length, 'includes']
+  ].filter(g => g[1] > 0);
+  const W = 620, H = 240, cx = W/2, cy = H/2;
+  const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('viewBox','0 0 ' + W + ' ' + H);
+  svg.setAttribute('class','neighbourhood');
+  svg.setAttribute('role','img');
+  svg.setAttribute('aria-label', 'Edges traceable from ' + c.id);
+  const mk = (name, attrs) => {
+    const e = document.createElementNS('http://www.w3.org/2000/svg', name);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  };
+  groups.forEach((g, i) => {
+    const a = (Math.PI * 2 * i) / groups.length - Math.PI/2;
+    const rx = 235, ry = 88;
+    const x = cx + Math.cos(a) * rx, y = cy + Math.sin(a) * ry;
+    svg.appendChild(mk('line', {x1:cx, y1:cy, x2:x, y2:y, class:'edge'}));
+    const t1 = mk('text', {x:x, y:y-4, 'text-anchor':'middle', 'font-size':'12',
+                           'font-weight':'600'});
+    t1.textContent = g[1] + ' ' + (g[1] === 1 ? g[0].replace(/ies$/,'y').replace(/s$/,'') : g[0]);
+    svg.appendChild(t1);
+    const t2 = mk('text', {x:x, y:y+9, 'text-anchor':'middle', class:'lbl'});
+    t2.textContent = g[2];
+    svg.appendChild(t2);
+  });
+  svg.appendChild(mk('circle', {cx:cx, cy:cy, r:26, fill:'var(--accent-soft)',
+                                stroke:'var(--accent)', 'stroke-width':'1.5'}));
+  const label = mk('text', {x:cx, y:cy+4, 'text-anchor':'middle', 'font-size':'13',
+                            'font-weight':'700'});
+  label.textContent = c.id;
+  svg.appendChild(label);
+  return svg;
+}
+
+function renderControl(d, c){
+  const pane = document.getElementById('controlDetail');
+  pane.innerHTML = '';
+  const dom = d.domains.find(x => x.id === c.domain);
+  const head = el('div');
+  head.appendChild(el('div','cid mono', c.id + (dom ? '  ·  ' + dom.name : '')));
+  head.appendChild(el('h2', null, c.title));
+  if (c.summary) head.appendChild(el('p','lede', c.summary));
+  const chips = el('div','chips');
+  [[c.applicability_raw === true ? 'Mandatory' : (c.applicability === 'optional' ? 'Optional' : null)],
+   [c.frequency_raw], [c.type_raw], [c.status !== 'active' ? c.status : null]]
+    .forEach(([t]) => { if (t) chips.appendChild(el('span','chip', t)); });
+  c.capabilities.forEach(x => chips.appendChild(el('span','chip', x)));
+  head.appendChild(chips);
+  if (c.url){
+    const p = el('p'); p.style.fontSize = '12.5px'; p.style.marginTop = '.5rem';
+    p.appendChild(document.createTextNode('Official page: '));
+    p.appendChild(link(c.url, c.url.replace(/^https:\/\//,'')));
+    head.appendChild(p);
+  }
+  if (c.note){
+    const w = el('p','lede', c.note); w.style.fontSize='12.5px'; head.appendChild(w);
+  }
+  pane.appendChild(head);
+
+  const graphBlock = el('section','block');
+  graphBlock.appendChild(el('h3', null, 'What this control is, in edges'));
+  graphBlock.appendChild(neighbourhood(d, c));
+  pane.appendChild(graphBlock);
+
+  if (c.requirements.length){
+    const s = el('section','block');
+    s.appendChild(el('h3', null, c.requirements.length + ' requirements (AIUC calls these controls)'));
+    c.requirements.forEach(r => {
+      const box = el('div','req');
+      const h = el('div');
+      h.appendChild(el('span','rid', r.id + '  '));
+      h.appendChild(el('span','rlabel', r.label || ''));
+      if (r.application) h.appendChild(el('span','chip', r.application));
+      box.appendChild(h);
+      if (r.bullets && r.bullets.length){
+        const ul = el('ul');
+        r.bullets.forEach(b => ul.appendChild(el('li', null, b)));
+        box.appendChild(ul);
+      }
+      const ev = el('div','ev');
+      const bits = [];
+      if (r.category) bits.push('Evidence category: ' + r.category);
+      if (r.locations && r.locations.length) bits.push('Typically found in: ' + r.locations.join(', '));
+      if (r.capabilities && r.capabilities.length) bits.push('Applies to: ' + r.capabilities.join(', '));
+      ev.appendChild(el('div', null, bits.join('  ·  ')));
+      if (r.evidence) ev.appendChild(el('div', null, r.evidence));
+      box.appendChild(ev);
+      s.appendChild(box);
+    });
+    pane.appendChild(s);
+  }
+
+  if (c.official){
+    const s = el('section','block');
+    s.appendChild(el('h3', null, 'The same control in the official changelog repository'));
+    if (c.official.statement) s.appendChild(el('p', null, c.official.statement));
+    const lists = [['Control shoulds', c.official.shoulds], ['Control mays', c.official.mays]];
+    lists.forEach(([label, items]) => {
+      if (!items || !items.length) return;
+      const det = el('details');
+      det.appendChild(el('summary', null, label + ' (' + items.length + ')'));
+      const body = el('div','body');
+      const ul = el('ul');
+      items.forEach(x => ul.appendChild(el('li', null, x)));
+      body.appendChild(ul);
+      det.appendChild(body);
+      s.appendChild(det);
+    });
+    pane.appendChild(s);
+  }
+
+  if (c.crosswalks.length){
+    const s = el('section','block');
+    s.appendChild(el('h3', null, c.crosswalks.length + ' crosswalks AIUC publishes'));
+    const byFramework = {};
+    c.crosswalks.forEach(x => { (byFramework[x.framework] = byFramework[x.framework] || []).push(x); });
+    Object.keys(byFramework).sort().forEach(f => {
+      const det = el('details');
+      det.appendChild(el('summary', null, f + ' (' + byFramework[f].length + ')'));
+      const body = el('div','body');
+      const table = el('table');
+      const thead = el('thead');
+      const tr = el('tr');
+      ['Clause','What it says'].forEach(h => tr.appendChild(el('th', null, h)));
+      thead.appendChild(tr); table.appendChild(thead);
+      const tbody = el('tbody');
+      byFramework[f].forEach(x => {
+        const row = el('tr');
+        row.appendChild(el('td', null, x.reference));
+        row.appendChild(el('td', null, x.text || ''));
+        tbody.appendChild(row);
+      });
+      table.appendChild(tbody);
+      const wrap = el('div','scroll'); wrap.appendChild(table);
+      body.appendChild(wrap); det.appendChild(body); s.appendChild(det);
+    });
+    pane.appendChild(s);
+  }
+
+  const prov = el('section','block');
+  prov.appendChild(el('h3', null, 'Provenance'));
+  const table = el('table');
+  const tbody = el('tbody');
+  const rows = [
+    ['First observed release', c.lifecycle.first_observed_release || '—'],
+    ['Last confirmed release', c.lifecycle.last_confirmed_release || '—'],
+    ['Normalised content hash', c.hash]
+  ];
+  rows.forEach(([k, v]) => {
+    const tr = el('tr');
+    tr.appendChild(el('th', null, k));
+    tr.appendChild(el('td','mono', v));
+    tbody.appendChild(tr);
+  });
+  c.sources.forEach(ref => {
+    const tr = el('tr');
+    tr.appendChild(el('th', null, 'Read from'));
+    const td = el('td');
+    const src = d.sources[ref];
+    if (src){
+      td.appendChild(link(src.url, src.url.replace(/^https:\/\//,'')));
+      td.appendChild(el('div','mono', src.sha256 + '  ·  retrieved ' + src.retrieved_at));
+    } else {
+      td.appendChild(el('span','mono', ref));
+    }
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+  const wrap = el('div','scroll'); wrap.appendChild(table);
+  prov.appendChild(wrap);
+  pane.appendChild(prov);
+}
+
+/* ---------- the graph ---------- */
+function renderGraph(d){
+  const pane = document.getElementById('graphPane');
+  pane.appendChild(el('h2', null, 'One graph, ' + d.graph.node_count + ' nodes and '
+    + d.graph.edge_count + ' edges'));
+  pane.appendChild(el('p','lede',
+    'A control carries no meaning on its own. What it is shows in the edges traceable from '
+    + 'it: the domain it sits in, the requirements under it, the evidence each expects, the '
+    + 'external clauses AIUC crosswalks it to, the release it appeared in, the commit that '
+    + 'carries it, and the page it was read from. Every node and edge in this graph is built '
+    + 'from the release artefacts; nothing is asserted here that is not in them.'));
+
+  const s1 = el('section','block');
+  s1.appendChild(el('h3', null, 'Nodes'));
+  const cards = el('div','cards');
+  Object.keys(d.graph.nodes_by_type).sort((a,b) =>
+    d.graph.nodes_by_type[b] - d.graph.nodes_by_type[a]).forEach(k => {
+    const card = el('div','card');
+    card.appendChild(el('div','n', String(d.graph.nodes_by_type[k])));
+    card.appendChild(el('div','k', titleCase(k)));
+    cards.appendChild(card);
+  });
+  s1.appendChild(cards);
+  pane.appendChild(s1);
+
+  const s2 = el('section','block');
+  s2.appendChild(el('h3', null, 'Edges, and what each one means'));
+  const table = el('table');
+  const thead = el('thead'); const tr = el('tr');
+  ['Edge','Count','What it asserts'].forEach(h => tr.appendChild(el('th', null, h)));
+  thead.appendChild(tr); table.appendChild(thead);
+  const tbody = el('tbody');
+  Object.keys(d.graph.edges_by_type).sort((a,b) =>
+    d.graph.edges_by_type[b] - d.graph.edges_by_type[a]).forEach(k => {
+    const row = el('tr');
+    row.appendChild(el('td','mono', k));
+    row.appendChild(el('td', null, String(d.graph.edges_by_type[k])));
+    row.appendChild(el('td', null, d.graph.edge_meanings[k] || ''));
+    tbody.appendChild(row);
+  });
+  table.appendChild(tbody);
+  const wrap = el('div','scroll'); wrap.appendChild(table);
+  s2.appendChild(wrap);
+  pane.appendChild(s2);
+
+  const s3 = el('section','block');
+  s3.appendChild(el('h3', null, 'The frameworks AIUC crosswalks to'));
+  const counts = {};
+  d.controls.forEach(c => c.crosswalks.forEach(x => {
+    counts[x.framework] = (counts[x.framework] || 0) + 1;
+  }));
+  const fw = el('div','cards');
+  Object.keys(counts).sort((a,b) => counts[b] - counts[a]).forEach(k => {
+    const card = el('div','card');
+    card.appendChild(el('div','n', String(counts[k])));
+    card.appendChild(el('div','k', k));
+    fw.appendChild(card);
+  });
+  s3.appendChild(fw);
+  s3.appendChild(el('p','lede',
+    'These mappings are published by AIUC and reproduced as they were read. None was '
+    + 'inferred, extended or scored here, which is why every one of them carries the '
+    + 'relationship published_crosswalk and nothing stronger.'));
+  pane.appendChild(s3);
+
+  const s4 = el('section','block');
+  s4.appendChild(el('h3', null, 'The files behind it'));
+  const ul = el('ul');
+  [['graph/nodes.json', d.graph.node_count + ' nodes'],
+   ['graph/edges.json', d.graph.edge_count + ' edges'],
+   ['graph/index.json', 'counts, the edge vocabulary, and the content hash ' + d.graph.content_hash]]
+   .forEach(([p, note]) => {
+     const li = el('li');
+     li.appendChild(el('span','mono', p));
+     li.appendChild(document.createTextNode(' — ' + note));
+     ul.appendChild(li);
+   });
+  s4.appendChild(ul);
+  pane.appendChild(s4);
+}
+
+/* ---------- releases ---------- */
+function renderReleases(d){
+  const pane = document.getElementById('releasePane');
+  pane.appendChild(el('h2', null, 'Five releases, and how each one is traced'));
+  pane.appendChild(el('p','lede',
+    'The current release is built from the website and confirmed against the official '
+    + 'changelog repository at the matching commit. The earlier releases are built from that '
+    + 'repository alone, and are marked partial for exactly that reason. A release AIUC names '
+    + 'but no commit carries is left unbuilt rather than reconstructed from the nearest one.'));
+  const a = d.meta.announced_release;
+  if (a){
+    const note = el('p','lede', 'AIUC announces a further release, ' + a.published_label
+      + '. Announced is not published: it has no artefact here. Stated by ' + a.stated_by + '.');
+    note.style.fontSize = '13px';
+    pane.appendChild(note);
+  }
+  const tl = el('div','timeline');
+  d.releases.slice().sort((x,y) => y.release_id.localeCompare(x.release_id)).forEach(r => {
+    const item = el('div','tl-item ' + (r.status === 'unbuilt' ? 'unbuilt'
+      : r.status === 'partial' ? 'partial' : ''));
+    item.appendChild(el('h3', null, r.release_id + '  ·  ' + r.status));
+    const meta = el('div','chips');
+    if (r.control_count) meta.appendChild(el('span','chip', r.control_count + ' controls'));
+    if (r.built_from) meta.appendChild(el('span','chip', r.built_from));
+    if (r.derived_events) meta.appendChild(el('span','chip', r.derived_events.length + ' derived events'));
+    if (r.official_changes) meta.appendChild(el('span','chip', r.official_changes.length + ' official change rows'));
+    item.appendChild(meta);
+    if (r.reason) item.appendChild(el('p','lede', r.reason));
+    if (r.commit){
+      const p = el('p'); p.style.fontSize = '12.5px';
+      p.appendChild(document.createTextNode('Built from commit '));
+      p.appendChild(link(r.commit.url, r.commit.short_sha || r.commit.sha.slice(0,7)));
+      p.appendChild(document.createTextNode(' — ' + r.commit.rationale
+        + ' (confidence ' + r.commit.confidence + ').'));
+      item.appendChild(p);
+    }
+    if (r.official_changelog_url){
+      const p = el('p'); p.style.fontSize = '12.5px';
+      p.appendChild(document.createTextNode('Official changelog: '));
+      p.appendChild(link(r.official_changelog_url,
+        r.official_changelog_url.replace(/^https:\/\//,'')));
+      item.appendChild(p);
+    }
+    if (r.official_changes && r.official_changes.length){
+      const det = el('details');
+      det.appendChild(el('summary', null, 'What AIUC says changed ('
+        + r.official_changes.length + ' rows, reproduced verbatim)'));
+      const body = el('div','body');
+      const table = el('table');
+      const thead = el('thead'); const tr = el('tr');
+      ['Item','Category','Change notes'].forEach(h => tr.appendChild(el('th', null, h)));
+      thead.appendChild(tr); table.appendChild(thead);
+      const tbody = el('tbody');
+      r.official_changes.forEach(x => {
+        const row = el('tr');
+        row.appendChild(el('td', null, x.subject));
+        row.appendChild(el('td', null, x.category || ''));
+        row.appendChild(el('td', null, x.notes || ''));
+        tbody.appendChild(row);
+      });
+      table.appendChild(tbody);
+      const wrap = el('div','scroll'); wrap.appendChild(table);
+      body.appendChild(wrap); det.appendChild(body); item.appendChild(det);
+    }
+    if (r.derived_events && r.derived_events.length){
+      const det = el('details');
+      det.appendChild(el('summary', null, 'What this build derived ('
+        + r.derived_events.length + ' events)'));
+      const body = el('div','body');
+      const counts = {};
+      r.derived_events.forEach(e => { counts[e.event_type] = (counts[e.event_type]||0)+1; });
+      const chips = el('div','chips');
+      Object.keys(counts).sort().forEach(k =>
+        chips.appendChild(el('span','chip', titleCase(k) + ' · ' + counts[k])));
+      body.appendChild(chips);
+      const ul = el('ul');
+      r.derived_events.slice(0, 40).forEach(e => {
+        const li = el('li');
+        li.appendChild(el('span','mono', e.control_id + ' '));
+        li.appendChild(document.createTextNode(e.summary));
+        ul.appendChild(li);
+      });
+      body.appendChild(ul);
+      if (r.derived_events.length > 40){
+        body.appendChild(el('p','lede', 'The remaining '
+          + (r.derived_events.length - 40) + ' are in changes/' + r.release_id + '.json.'));
+      }
+      det.appendChild(body); item.appendChild(det);
+    }
+    tl.appendChild(item);
+  });
+  pane.appendChild(tl);
+}
+
+/* ---------- evidence ---------- */
+function renderEvidence(d){
+  const pane = document.getElementById('evidencePane');
+  const refs = Object.keys(d.sources).sort();
+  pane.appendChild(el('h2', null, refs.length + ' source observations'));
+  pane.appendChild(el('p','lede',
+    'One row per page captured. The snapshot column names the retained response body inside '
+    + 'this vault, so any claim above can be checked against the bytes it was read from rather '
+    + 'than against this catalog’s word for it.'));
+  const v = d.meta.validation, rc = d.meta.reconciliation, dr = d.meta.drift;
+  const cards = el('div','cards');
+  [[v.error_count, 'validation errors'],
+   [rc.finding_count, 'reconciliation findings'],
+   [rc.blocking_count, 'of them blocking'],
+   [dr.pages_checked || 0, 'pages re-checked for drift'],
+   [dr.unknown_count == null ? '—' : dr.unknown_count, 'drift items needing review']]
+   .forEach(([n, k]) => {
+     const card = el('div','card');
+     card.appendChild(el('div','n', String(n)));
+     card.appendChild(el('div','k', k));
+     cards.appendChild(card);
+   });
+  pane.appendChild(cards);
+
+  if (rc.findings && rc.findings.length){
+    const s = el('section','block');
+    s.appendChild(el('h3', null, 'What the website and the official repository disagree about'));
+    const ul = el('ul');
+    rc.findings.forEach(f => {
+      const li = el('li');
+      li.appendChild(el('span','mono', f.control_id + ' '));
+      li.appendChild(document.createTextNode(titleCase(f.kind) + ' — ' + f.reason));
+      ul.appendChild(li);
+    });
+    s.appendChild(ul);
+    s.appendChild(el('p','lede',
+      'None of these is resolved here. Resolving one means choosing a source, and that is not '
+      + 'this build’s to choose.'));
+    pane.appendChild(s);
+  }
+
+  const s = el('section','block');
+  s.appendChild(el('h3', null, 'Every page this catalog was read from'));
+  const table = el('table');
+  const thead = el('thead'); const tr = el('tr');
+  ['Page','Status','Retrieved','SHA-256 of the bytes','Snapshot'].forEach(h =>
+    tr.appendChild(el('th', null, h)));
+  thead.appendChild(tr); table.appendChild(thead);
+  const tbody = el('tbody');
+  refs.forEach(ref => {
+    const o = d.sources[ref];
+    const row = el('tr');
+    const td = el('td');
+    td.appendChild(link(o.url, o.url.replace(/^https:\/\/www\.aiuc-1\.com/,'') || '/'));
+    row.appendChild(td);
+    row.appendChild(el('td', null, String(o.status)));
+    row.appendChild(el('td','mono', o.retrieved_at));
+    row.appendChild(el('td','mono', o.sha256.replace('sha256:','').slice(0, 16) + '…'));
+    row.appendChild(el('td','mono', o.snapshot));
+    tbody.appendChild(row);
+  });
+  table.appendChild(tbody);
+  const wrap = el('div','scroll'); wrap.appendChild(table);
+  s.appendChild(wrap);
+  pane.appendChild(s);
+}
+
+/* ---------- about ---------- */
+function renderAbout(d){
+  const pane = document.getElementById('aboutPane');
+  const m = d.meta;
+  pane.appendChild(el('h2', null, 'About this catalog'));
+  const p1 = el('p');
+  p1.appendChild(document.createTextNode(m.disclaimer + ' The official sources are '));
+  p1.appendChild(link(m.official_website, 'aiuc-1.com'));
+  p1.appendChild(document.createTextNode(', its '));
+  p1.appendChild(link(m.official_changelog_url, 'changelog'));
+  p1.appendChild(document.createTextNode(', and the official '));
+  p1.appendChild(link(m.official_changelog_repository, 'AIUC-1-Changelog repository'));
+  p1.appendChild(document.createTextNode('. Where anything here disagrees with those, those are right.'));
+  pane.appendChild(p1);
+
+  const rules = [
+    ['Evidence, not compliance', 'Nothing here says an organisation passes, fails or is '
+      + 'certified. It says what the published standard says, and where it says it.'],
+    ['Every claim names its source', 'A non-null canonical field carries at least one source '
+      + 'reference; every reference resolves to an observation with a URL, a retrieval time '
+      + 'and a content hash. The gate fails otherwise, and it is run red on purpose in the tests.'],
+    ['Conflicts are preserved, not resolved', 'Where the website and the official repository '
+      + 'disagree, both readings are kept. A difference that changes meaning blocks the release; '
+      + 'one that is only markdown escaping or bullet order does not, and says which it is.'],
+    ['Nothing is invented', 'An enum exists only where the source publishes a label that maps '
+      + 'unambiguously. Anything else is null beside its raw text, with a finding attached.'],
+    ['The parser fails closed', 'If a page stops yielding the model this build reads, the run '
+      + 'opens a review item rather than emitting a guess.']
+  ];
+  const s = el('section','block');
+  s.appendChild(el('h3', null, 'The five rules this build holds to'));
+  const ol = el('ol');
+  rules.forEach(([t, body]) => {
+    const li = el('li');
+    li.appendChild(el('strong', null, t + '. '));
+    li.appendChild(document.createTextNode(body));
+    ol.appendChild(li);
+  });
+  s.appendChild(ol);
+  pane.appendChild(s);
+
+  const t = el('section','block');
+  t.appendChild(el('h3', null, 'One inversion, stated once'));
+  t.appendChild(el('p', null,
+    'AIUC-1 calls a top-level item a requirement (A001) and its numbered children controls '
+    + '(A001.1). The brief this catalog was built to calls the top-level item a control and its '
+    + 'children requirements. This catalog follows the brief, and every control record carries '
+    + 'source_terminology saying what the site calls it, so the inversion is visible rather '
+    + 'than silent.'));
+  pane.appendChild(t);
+
+  const f = el('section','block');
+  f.appendChild(el('h3', null, 'Read further, inside this vault'));
+  const ul = el('ul');
+  [['README.md', 'what is here and how to build it'],
+   ['NOTICE.md', 'what this is not, and how the sources were used'],
+   ['docs/methodology.md', 'how a page becomes a record'],
+   ['docs/source-policy.md', 'which source wins, and the open question about redistribution'],
+   ['docs/review-workflow.md', 'what opens a review item and what closes one'],
+   ['docs/limitations.md', 'what this does not do — read before citing'],
+   ['reports/validation-latest.json', 'the gate’s own output'],
+   ['catalog/current.json', 'the full current release, every field and every source ref']]
+   .forEach(([p, note]) => {
+     const li = el('li');
+     const a = link(p, p);
+     li.appendChild(a);
+     li.appendChild(document.createTextNode(' — ' + note));
+     ul.appendChild(li);
+   });
+  f.appendChild(ul);
+  pane.appendChild(f);
+
+  const foot = el('section','block');
+  foot.appendChild(el('h3', null, 'Built'));
+  foot.appendChild(el('p','lede', 'Generator ' + m.generator_version + ', catalog schema '
+    + m.catalog_schema_version + ', assembled ' + m.generated_at
+    + '. A rebuild from the same snapshots and the same generator version produces the same bytes.'));
+  pane.appendChild(foot);
+}
+
+/* ---------- boot ---------- */
+function build(d){
+  state.data = d;
+  renderHeader(d);
+  renderTabs();
+  renderFilters(d);
+  renderList(d);
+  if (d.controls.length){ state.controlId = d.controls[0].id; renderList(d); renderControl(d, d.controls[0]); }
+  renderGraph(d);
+  renderReleases(d);
+  renderEvidence(d);
+  renderAbout(d);
+  const foot = document.getElementById('foot');
+  foot.appendChild(document.createTextNode(
+    'An unofficial derived catalog of AIUC-1, published as an encrypted SG/Vault by the '
+    + 'sgit.ai graph estate. The page you are reading is a little HTML on top of the vault, '
+    + 'rendered straight from it: the link-holder holds the key, and the server never sees the '
+    + 'contents. Verify every requirement against '));
+  foot.appendChild(link(d.meta.official_website, 'aiuc-1.com'));
+  foot.appendChild(document.createTextNode('.'));
+  try { window.parent && window.parent.postMessage({type:'sg-app-ready'}, '*'); } catch(e){}
+}
+
+getData().then(build).catch(err => {
+  console.error('[aiuc-1] build failed', err);
+  document.getElementById('controlDetail').textContent = 'Could not load the catalog data.';
+  try { window.parent && window.parent.postMessage({type:'sg-app-ready'}, '*'); } catch(e){}
+});
+</script>
+</body>
+</html>
