@@ -1,33 +1,40 @@
 {
  "title": "Fractal Semantic Graphs: Meaning Through Connectivity",
  "slug": "fsg",
- "version": "v0.2.0",
+ "version": "v0.3.0",
  "status": "under review",
  "release": "the Leanpub pair",
  "note": "The second edition of the argument the frozen first book made.",
  "chapters": 18,
- "words": 38029,
+ "words": 38824,
  "pdf": "fsg.pdf",
  "pdf_pages": 119,
- "built_at_site_version": "v0.6.20",
+ "built_at_site_version": "v0.6.21",
  "versioning": "This book's version moves only when its content moves; the site's version moves on every push. v1.0.0 is reserved for the actual final release.",
  "front_matter_title": "Fractal Semantic Graphs: Meaning Through Connectivity",
- "former_versions": [],
+ "former_versions": [
+  "v0.2.0"
+ ],
  "changelog": [
   {
    "version": "v0.2.0",
    "site": "v0.5.18",
    "note": "Adopted into per-book versioning. The book was written at site v0.5.12 and self-reviewed at v0.5.15; v0.2.0 was chosen because it succeeds the frozen first edition rather than starting again."
+  },
+  {
+   "version": "v0.3.0",
+   "site": "v0.6.21",
+   "note": "The fractal claim corrected, after a sibling site read chapter 6 and reported the invariant backwards. What survives every zoom is the GRAMMAR (verb edges with inverses, meaning in connectivity, supersede never delete, provenance); the ONTOLOGY is meant to change at every altitude, and a system whose types and verbs are identical all the way down is a hierarchy. The four-row table, the zoom test, the front matter's learning outcome and the reference card all restated. The chapter now anchors the reading to the corpus document that says it outright ('some articles will be substantial enough to need their own ontology and taxonomy... the expected fractal behaviour', 28 July 2026) and records that this estate had already made the same correction in the Universe volume on 23 August and never propagated it. Applying the sharpened test cost the book a verdict: the document-to-word zoom is a decomposition in one vocabulary, so it is a hierarchy, and the chapter had scored it a pass for two book versions because the old test never asked."
   }
  ],
  "content_hashes": {
-  "00__front-matter.md": "d818dc0dddc764268c15d49370b6e6d8761e1c7ae32d1b0967d00575090eec83",
+  "00__front-matter.md": "f81dba6ee3a0bf8af3e7b22437413186f2fce3f918dc6f103f943e9cb6a19f73",
   "01__a-node-is-just-a-node.md": "83ac93490e78a273ae5d95cf348b23a522f562283e5488d40981fc9ab0a650eb",
   "02__why-graphs-at-all.md": "0c2b071c0bd5131985824bae282b06b8c1cad140e7bbb29f22ac50318607fcec",
   "03__every-edge-is-a-verb.md": "306e498f4f666d085fa64b98faff8734ea231437070fbac98352e9971c82ef75",
   "04__anchors-not-standards.md": "859f2c78093fea5bb9003942bd50f62cfcebe071eea93052f46933ef659b4f8e",
   "05__a-type-is-a-path.md": "29157cff8acb765764db4e9a421703966b0f45faae9df5422f60b2477682db3f",
-  "06__fractal-is-a-testable-claim.md": "e0a214c48ebed5f7008ba3d49bca941f2750050fc80760e260c13208f3340611",
+  "06__fractal-is-a-testable-claim.md": "411580ffe5c3aa4826d7cd4b1453b9f133c957b65c1bc3be552b44b9ce4d9c32",
   "07__a-graph-at-every-boundary.md": "d0ee726f5231663bdcf906ac349be7658b604a6ba0ef678eb85197d5fc8655f0",
   "08__documents-are-projections.md": "cd0511959a80d3ef82223a869748f2730a10fea7e6681f62e1845dc4ad1e8264",
   "09__the-universe-method.md": "759549e973f4471c84e966d4c98f62298614ddac84c3449cb89dd9bf100de28d",
@@ -38,7 +45,7 @@
   "14__what-ships-what-is-argued.md": "1f8695d3754d4143e112a58e30bc50220974852ebf3d72a36b61a88401c2ee51",
   "15__your-first-graph.md": "c16b0843ca45a969166af58189ba4a3babf66162f19cbeb38a36d425239e83b6",
   "16__colophon.md": "519ffb4a610545c573b492083c72fac69fc5e872295522272d6842050c64270d",
-  "17__reference-card.md": "33bed2804252afe05a46190043d07bd2108b051dc270364a590c8a4ae19f5156"
+  "17__reference-card.md": "f76c2cba39611c9a821bb3169034f456e53c6bb7f3f72e26c9a1dd236f806f45"
  },
  "build": {
   "title": "Fractal Semantic Graphs: Meaning Through Connectivity",

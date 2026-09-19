@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
-"""Generates the making-of book's review register: reviews/index.json and
-reviews.html, from the markdown under v2/books/making-a-book/reviews/.
+"""Generates each book's review register: reviews/index.json and reviews.html,
+from the markdown under v2/books/<slug>/reviews/.
+
+Any book with a reviews/ folder gets one. It was written for the making-of book
+and hard-coded to it; the fractal correction at v0.6.21 arrived as a reading of
+the OTHER book, and a review workflow that only one book can use is a workflow
+with a book-shaped hole in it.
 
 A review is one reading of the book at one version, with its items recorded so
 each can be answered, disagreed with or left open in public. The micro-format is
@@ -21,8 +26,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-BOOK = ROOT / "v2" / "books" / "making-a-book"
-DIR = BOOK / "reviews"
+BOOKS = ROOT / "v2" / "books"
 VERSION = (ROOT / "admin" / "build" / "version.txt").read_text().strip()
 
 REQUIRED = ("review", "book_version", "reviewed", "reviewer", "state")
@@ -65,7 +69,7 @@ def items_of(body):
     return out
 
 
-def build():
+def build(BOOK, DIR):
     meta = json.loads((BOOK / "book.json").read_text())
     history = set(meta.get("former_versions", [])) | {meta["version"]}
     reviews, errors = [], []
@@ -100,7 +104,7 @@ def build():
         for e in errors:
             print("  ✗ " + e)
         raise SystemExit(f"gen_reviews: {len(errors)} problem(s) against "
-                         f"reviews/REVIEWS.md — nothing written")
+                         f"the review micro-format — nothing written")
     return meta, reviews
 
 
@@ -131,13 +135,13 @@ PAGE = """<!doctype html>
 <p class="lead">Every recorded reading of this book: <b>{n} review(s)</b>, <b>{items} item(s)</b>, <b>{open} still open</b>. A review is not a change-control pack. A pack asks <em>should we change this?</em> A review reports <em>here is what I found when I read it</em>, and its items stay visible whether or not anything was done about them.</p>
 
 <div class="note"><b>The first review is dated after the work it describes, and says so.</b> The founder read this book at v0.1.0 and opened brief 40 with the finding that its title did not hold. That reading produced the retitle and a change-control pack, and <b>was never recorded as a review</b> &mdash; the estate has had a review register since v0.3.7 and did not use it for the one substantive reading of this book. r001 records it late, because a pack records a decision and a review records what a reader saw, including the parts the decision did not act on.<br>
-<b>A review names the version it READ</b>, not the version it produced: r001 is stamped v0.1.0, and the retitle it caused shipped as v0.2.0. The build refuses a review naming a version this book has never been at. The format is <a href="reviews/REVIEWS.md">reviews/REVIEWS.md</a>; the machine surface is <a href="reviews/index.json">reviews/index.json</a>. To see what a reading actually changed, read it beside <a href="changes.html">the version diff</a>.</div>
+<b>A review names the version it READ</b>, not the version it produced. The build refuses a review naming a version this book has never been at. The format is <a href="{spec}">{spec}</a>; the machine surface is <a href="reviews/index.json">reviews/index.json</a>.{diff}</div>
 
 {body}
 
 <div class="agent">
 <h4>For an agent</h4>
-<p><a href="reviews/index.json">reviews/index.json</a> carries every review with its items and their states: <code>open</code>, <code>actioned</code>, <code>declined</code>, <code>superseded</code>. An open item is a finding nobody has answered, and it is the half worth reading. To record a reading, write <code>rNNN__kebab-slug.md</code> into <code>reviews/</code> following <a href="reviews/REVIEWS.md">the micro-format</a>; the build gates it. Never edit a review to match what happened: mark it superseded and leave it.</p>
+<p><a href="reviews/index.json">reviews/index.json</a> carries every review with its items and their states: <code>open</code>, <code>actioned</code>, <code>declined</code>, <code>superseded</code>. An open item is a finding nobody has answered, and it is the half worth reading. To record a reading, write <code>rNNN__kebab-slug.md</code> into <code>reviews/</code> following <a href="{spec}">the micro-format</a>; the build gates it. Never edit a review to match what happened: mark it superseded and leave it.</p>
 </div>
 
 </main>
@@ -151,8 +155,9 @@ BADGE = {"open": "open", "actioned": "done", "declined": "blocked",
          "superseded": "queued"}
 
 
-def main():
-    meta, reviews = build()
+def one(BOOK):
+    DIR = BOOK / "reviews"
+    meta, reviews = build(BOOK, DIR)
     n_items = sum(len(r["items"]) for r in reviews)
     n_open = sum(1 for r in reviews for i in r["items"] if i["state"] == "open")
     (DIR / "index.json").write_text(json.dumps({
@@ -178,10 +183,31 @@ def main():
             f'<div class="tablewrap"><table class="bd-tasks"><thead><tr><th>#</th><th>Finding</th>'
             f'<th>State</th><th>Outcome</th></tr></thead><tbody>\n{rows}\n</tbody></table></div>')
 
+    # A book that has its own copy of the spec links to it; the rest link to the one
+    # canonical copy. A book with no version diff does not advertise one.
+    spec = next((f"reviews/{n}" for n in ("REVIEWS.md", "README.md")
+                 if (DIR / n).exists()),
+                "../making-a-book/reviews/REVIEWS.md")
+    diff = (' To see what a reading actually changed, read it beside '
+            '<a href="changes.html">the version diff</a>.'
+            if (BOOK / "changes.html").exists() else "")
     (BOOK / "reviews.html").write_text(PAGE.format(
         slug=BOOK.name, title=esc(meta["title"]), short=esc(meta["title"].split(":")[0]),
-        n=len(reviews), items=n_items, open=n_open, body="\n".join(blocks)))
-    print(f"gen_reviews: {len(reviews)} review(s), {n_items} item(s), {n_open} open")
+        n=len(reviews), items=n_items, open=n_open, spec=spec, diff=diff,
+        body="\n".join(blocks)))
+    return len(reviews), n_items, n_open
+
+
+def main():
+    done = []
+    for book in sorted(BOOKS.iterdir()):
+        if not (book / "reviews").is_dir():
+            continue
+        n, items, open_ = one(book)
+        done.append(f"{book.name} {n} review(s), {items} item(s), {open_} open")
+    if not done:
+        raise SystemExit("gen_reviews: no book has a reviews/ folder")
+    print("gen_reviews: " + " \u00b7 ".join(done))
 
 
 if __name__ == "__main__":

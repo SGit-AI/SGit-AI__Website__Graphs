@@ -40,8 +40,9 @@ cannot do today.
    distinct inverse, one banned edge, and a test you can run out loud: if the path does
    not read as a sentence in the reader's own language, the edges are wrong.
 3. **Tell a fractal system from a merely hierarchical one**, using a test that either
-   passes or fails: zoom into any node, and if the zoom needs a new file format, a new
-   validator or a special case, the system is not fractal.
+   passes or fails: zoom into any node, and if the inside has the same types and verbs as
+   the outside you have a hierarchy, while if it needs a different grammar the claim is
+   false. What survives every zoom is the grammar; the ontology is meant to change.
 4. **Explain why determinism matters to the argument**, and why an engine whose weights
    are stated formulas rather than fitted numbers is a different kind of object from a
    language model, even when it wears the same shape.

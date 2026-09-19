@@ -11,21 +11,56 @@ you to four specific things.
 
 | Claim | What it commits you to |
 |---|---|
-| **Self-similarity** | The same node and edge grammar at every altitude. A property, a paragraph, a person, a national estate: same rules. |
-| **Scale invariance** | One validator, one query engine, one provenance rule. Not a family of them per level. |
-| **Composition** | Graphs combine into graphs without an adapter layer. Risk registers of risk registers. |
-| **Recursion** | Zoom into any node and it expands into a graph obeying identical rules, **with no new format and no special case**. |
+| **Self-similarity** | The same **grammar** at every altitude: every edge a verb with a named inverse, meaning in connectivity and never in properties, supersede never delete, provenance kept. Never the same schema. A property, a paragraph, a person and a national estate share the grammar and nothing else. |
+| **Scale invariance** | One validator, one query engine, one provenance rule. They check the grammar, which is why they run unchanged over any ontology. |
+| **Composition** | Graphs combine into graphs by declared edges between them, never by merging their vocabularies. Risk registers of risk registers, each in its owner's words. |
+| **Recursion** | Zoom into any node and it expands into a graph with **its own ontology**: its own node types, its own verbs, its own taxonomy, chosen by whoever owns that altitude, still obeying the shared grammar and still joined by an edge to the node you opened. |
 
-That last clause is the falsifiable part, and it is how you check whether a system is
-fractal or merely hierarchical.
+**What "rules" means here, because the word does all the work.** The 12 July brief that
+first set out the four commitments defines them in the same sentence: *"the same node and
+edge grammar, the same validators, the same query engine, and the same provenance rule
+apply at every altitude."* Those four are the rules. The **vocabulary is not on the
+list**, and sixteen days later the same author says so outright, of a regulation being
+turned into a graph:
+
+> some articles will be substantial enough to need their own ontology and taxonomy rather
+> than fitting the one above, which is not a complication but the expected fractal
+> behaviour
+>
+> — *Every Paragraph Is A Graph*, 28 July 2026
+
+Read "rules" as "schema" and the claim collapses into a description of a folder tree,
+which is the opposite of what it says. Read it as grammar, which is what the source says,
+and a new ontology at every altitude is not an exception to the claim; it **is** the
+claim.
+
+**This estate has corrected itself on exactly this point once before, and did not finish
+the job.** On 23 August 2026 the founder recorded that the planning pack had defined
+fractal as *uniformity*, one grammar and one validator and one query engine everywhere,
+and that uniformity is the mechanism rather than the claim; the claim is **composition
+with local override**, where any scope may extend, specialise or override the shared
+vocabulary without asking the centre. The Universe volume carries that correction with
+both definitions kept and the old one marked superseded from its date. It never reached
+this chapter, which went on stating the uniform version for two book versions, nor the
+agent surface, which stated it for four weeks after that. A correction recorded in one
+book and not propagated to the other two is the same failure as a document drifting from
+its source, one layer up, and the only reason it was caught is that a reader of a sibling
+site wrote in to say the claim was backwards.
 
 <div class="claim">
 
-**The zoom test.** Zoom into any node. If the zoom needs a different file format, a
-different validator, or a special case, the claim is false. It is a testable property, not
-a description of a feeling.
+**The zoom test**, in two halves. If zooming in lands you in the same types, the same
+verbs and the same vocabulary all the way down, you have a **hierarchy**, not a fractal; a
+folder tree is the clean example. If zooming in needs a **different grammar**, so that the
+inside is no longer a semantic graph at all, the claim is **false**. Between those two,
+every zoom that opens a new ontology joined by a named edge to the last is the claim
+**working**.
 
 </div>
+
+The second half is the falsifiable part and the first half is the one that gets forgotten,
+because a system that never changes vocabulary looks tidy and passes for fractal until
+somebody tries to attach a world it was not designed for.
 
 Almost every system that calls itself hierarchical passes a weaker test: it has levels,
 and the levels nest. That is not the same thing. A folder tree has levels. A file inside a
@@ -136,25 +171,42 @@ Here is the test applied to the estate's own two zooms, one commitment at a time
 | Commitment | Verdict | The evidence, and the qualification |
 |---|---|---|
 | **Self-similarity** | **passes at the reading layer** | The document ladder, the extraction's concepts and claims, and the derived layers all render as nodes and typed edges in one canvas with one viewer. The schema view over the pilot shows nine node types and twenty-four typed relations, all in the same grammar. |
-| **Scale invariance** | **partial** | One viewer and one query surface across all levels. But not one validator: the extraction has its anchor gate, the core graph has its round-trip gate, the code anatomy has its drift gate. Three gates enforcing one discipline is not the same as one validator, and calling it scale-invariant would be overclaiming. |
+| **Scale invariance** | **partial, and the weakest row** | One viewer and one query surface across all levels. But not one validator: the extraction has its anchor gate, the core graph has its round-trip gate, the code anatomy has its drift gate. Three gates enforcing one discipline is not the same as one validator. The three serialisations belong here too, since a reader per shape is exactly what scale invariance is supposed to buy you out of. |
 | **Composition** | **passes** | The engine's world is assembled from the extraction, the core graph's token analysis, the meaning packs, the senses register and the analogies register, with no adapter layer. Each is a graph; the composition is a graph. |
-| **Recursion, no new format** | **fails at the storage layer, passes at the engine layer** | See below. |
+| **Recursion** | **fails for the document zoom, passes hard at the engine layer** | See below. The verdict here is not the one the first edition of this chapter reached, and the reason is worth more than the row. |
 
 The recursion row is the interesting one, so it gets stated in full rather than
 summarised.
 
-**Where it fails.** The extraction is stored as node and edge lists. The core graph is
-stored as an index plus one shard per section, and a shard is a *nested* structure:
-blocks containing sentences containing words. The code anatomy is a third shape again,
-segments with feeds edges. Three different serialisations for three levels of the same
-zoom. Under the test as this book states it, that is a failure: zooming from a document
-into its sections does require a different file format from zooming from a claim into its
-concepts.
+**The verdict changed when the test was sharpened, and it got worse.** Until book v0.3.0
+this chapter tested recursion by asking whether the zoom needed a different file format,
+and answered that it did: the extraction is node and edge lists, the core graph is an
+index plus nested shards, the code anatomy is segments with feeds edges. Three
+serialisations, scored as a failure, with a decent engineering reason attached.
 
-There is a decent engineering reason (a nested shard is loaded once when a section is
-expanded, which is what makes the tree fast), and a decent reason does not make the claim
-true. It makes the claim *partly* true, and the honest form of the sentence is: **the
-estate is fractal in its grammar and hierarchical in its storage.**
+Under the test as it now stands, **that was the wrong question and it produced a
+flattering answer.** A different serialisation of the same grammar is not a different
+grammar; three readers is a cost against scale invariance, not a falsification of
+recursion. Fixing the test moved that complaint one row up, where it belongs, and left
+recursion to be judged on the thing that actually matters. Which is worse.
+
+**Where it fails: the document zoom is a hierarchy.** Document, section, block, sentence,
+word. Five altitudes, one vocabulary. Every level is a `contains` edge to a smaller thing
+of a kind the level above already knew about, and the viewer that opens a section is the
+viewer that opens a sentence because nothing new has appeared. By the first half of the
+zoom test, **that is a folder tree with very good addressing.** It is genuinely useful,
+the round-trip gate proving it lossless is genuinely hard, and it is not the fractal
+property. The chapter scored it as a pass for two book versions because the old test never
+asked the question.
+
+**Where the fractal move actually is, in the same estate.** Not down the decomposition but
+across it: the *same* pilot document carries two graphs at once, the core graph (sections,
+blocks, sentences, words) and the extraction (concepts, claims, hypotheses, objections,
+examples, with verbs like `departs-from` and `licenses`). Two ontologies, neither derived
+from the other, sharing nodes by anchor. Open a word in one and you are in a lexical
+world; open a claim in the other and you are in an argumentative one. That is a new
+vocabulary reached by a named edge, and it is the thing the estate should have been
+pointing at all along.
 
 **Where it passes, and passes hard.** The engine has an operator called `fractal` whose
 entire job is to be a full instance of the engine, inside the engine. It takes the winning
@@ -171,12 +223,14 @@ construction, which is a stated limit rather than an accident.
 
 <div class="warn">
 
-**Why report a failing row at all.** Because the value of a falsifiable claim is
-destroyed by never falsifying it. A book that stated the zoom test and then reported four
-passes would be asking you to take its word for the test as well as the result. The
-storage-layer failure is real, it is specific, and it is fixable: the shards could be
-node and edge lists at some cost in load time. Nobody has decided whether that cost is
-worth paying, and that is the actual state of the question.
+**Why report a failing row at all, and why report a changed one.** Because the value of a
+falsifiable claim is destroyed by never falsifying it, and because a test that only ever
+gets easier is not being used. Sharpening the zoom test cost this chapter a pass it had
+held for two book versions, and the honest reading of that is not that the estate got
+worse: it is that **the old test was scoring the wrong thing and the estate was collecting
+credit for it.** The document zoom is still the best-gated artefact here. It is simply a
+decomposition rather than a fractal one, and saying so is cheaper than the alternative,
+which is a reader discovering it.
 
 </div>
 

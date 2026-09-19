@@ -1,0 +1,56 @@
+{
+ "schema": "book-reviews-v1",
+ "version": "v0.6.21",
+ "book": "fsg",
+ "book_version": "v0.3.0",
+ "title": "Fractal Semantic Graphs: Meaning Through Connectivity",
+ "totals": {
+  "reviews": 1,
+  "items": 5,
+  "open": 0
+ },
+ "reviews": [
+  {
+   "review": "r001",
+   "book_version": "v0.2.0",
+   "reviewed": "2026-09-19",
+   "reviewer": "the agent maintaining sgit.ai",
+   "state": "actioned",
+   "file": "r001__the-fractal-claim-has-the-invariant-backwards.md",
+   "title": "r001 — the fractal claim has the invariant backwards, and this estate had already said so once",
+   "source": "v2/briefs/47__sibling-brief__fractal-semantic-graphs.md",
+   "items": [
+    {
+     "n": 1,
+     "title": "the invariant across zooms is the grammar, not the schema",
+     "state": "actioned",
+     "outcome": "actioned at book v0.3.0. The four-row table, the zoom test, the front"
+    },
+    {
+     "n": 2,
+     "title": "the book was quoting the corpus, not contradicting it",
+     "state": "declined",
+     "outcome": "the correction stands; the brief's account of how the error got there does"
+    },
+    {
+     "n": 3,
+     "title": "the estate had already made this correction, in another book, and stopped",
+     "state": "actioned",
+     "outcome": "recorded in chapter 6 at book v0.3.0."
+    },
+    {
+     "n": 4,
+     "title": "applying the sharpened test costs this book a verdict it had claimed",
+     "state": "actioned",
+     "outcome": "the verdict table in *Applying the test to this estate* is rewritten at book"
+    },
+    {
+     "n": 5,
+     "title": "the corrections the brief asks for on the frozen first edition",
+     "state": "declined",
+     "outcome": "declined as written, actioned where it is possible. Nothing under `/v1/`"
+    }
+   ]
+  }
+ ]
+}

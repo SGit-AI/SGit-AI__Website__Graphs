@@ -1,6 +1,6 @@
 {
  "schema": "project-issues-v1",
- "version": "v0.6.20",
+ "version": "v0.6.21",
  "note": "Read from v2/team/<role>/issues/, where the folder a file sits in IS its status. Not authored here: to move one, git mv it.",
  "issues": [
   {
@@ -94,6 +94,15 @@
    "href": "../../../v2/team/librarian/issues/open/002-issues-fs-is-missing-from-the-network-page.md"
   },
   {
+   "id": "@librarian-003",
+   "title": "A stranger cannot tell that /v1/ is frozen",
+   "status": "open",
+   "priority": "medium",
+   "owner": "@librarian",
+   "description": "From v0.6.21 — brief 47 asked for four frozen pages to be rewritten.",
+   "href": "../../../v2/team/librarian/issues/open/003-the-freeze-is-not-discoverable-by-a-stranger.md"
+  },
+  {
    "id": "@librarian-001",
    "title": "The process that turns a document into its folder of graph materials has no name",
    "status": "blocked",
@@ -137,6 +146,15 @@
    "owner": "@qa",
    "description": "From v0.6.3 — the naming question, QA's opinion.",
    "href": "../../../v2/team/qa/issues/open/002-file-paths-named-in-prose-must-exist.md"
+  },
+  {
+   "id": "@qa-004",
+   "title": "A correction recorded in one book has to reach the other two",
+   "status": "open",
+   "priority": "high",
+   "owner": "@qa",
+   "description": "From v0.6.21 — brief 47, found while checking the sibling site's reading.",
+   "href": "../../../v2/team/qa/issues/open/004-a-correction-in-one-book-must-reach-the-others.md"
   },
   {
    "id": "@qa-003",

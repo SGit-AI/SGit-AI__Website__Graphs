@@ -176,7 +176,7 @@ PARTNOTE = ('⚠ Participant disclosure: published by the sgit project, which bu
 NETLINE = ('<a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live '
            'graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · '
            '<a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · '
-           '<a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · '
+           '<a href="https://sg-sentinel.sgit.ai">↗ sg-sentinel.sgit.ai</a> · '
            '<a href="https://sgit.ai/network/index.html">↗ the network</a>')
 PARTNOTE_SELF = '⚠ Participant disclosure: published by the sgit project. You are on the disclosure page.'
 

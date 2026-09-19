@@ -106,7 +106,7 @@ can be different types because their edges differ.
 | the kinds of thing, and how they connect | ontology | What types exist and how they may connect. Points **outward**. |
 | a shared landmark | anchor node | A reference point several parties link to. Has no authority. |
 | a rule that decides what something is | node type formula | A required pattern of paths a node either matches or does not. |
-| same rules at every zoom level | fractal | Self-similarity, scale invariance, composition, recursion, **with no new format and no special case**. |
+| same grammar at every zoom level, new vocabulary at each | fractal | Self-similarity, scale invariance, composition, recursion. **The grammar survives every zoom; the ontology does not have to.** Same types all the way down is a hierarchy. |
 | a view, generated when needed | projection | A document rendered from the graph rather than stored. |
 | the real system this stands for | twin | Where the graph stops modelling and continues into something real. |
 | the place it does not reach, named | air gap | A tracked, owned gap where no connection exists. |

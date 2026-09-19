@@ -106,10 +106,13 @@ FRONT = """<!doctype html>
   <h1>A node means nothing on its own.<br>What it <em>is</em> arrives through its edges.</h1>
   <p class="answer">If you followed the phrase here, this is the whole of it: <q>{defquote}</q>.
   <b>Semantic</b>, because meaning comes from the edges rather than from the label on the box.
-  <b>Fractal</b>, because a book, a chapter, a sentence and a word are the same shape, with one
-  grammar and one validator between them.</p>
+  <b>Fractal</b>, because zooming into any node lands you in another semantic graph with <em>its
+  own</em> node types, verbs and taxonomy, joined by a named edge to the one you left. The
+  grammar survives every zoom. The vocabulary is meant to change.</p>
   <p class="prov">Quoted, not paraphrased: <a href="{defwhere}">{defdoc}</a>, section
   &ldquo;{defsection}&rdquo;, carried whole on this site and checked byte for byte on every build.
+  The same idea was called <em>graphs of graphs of graphs</em>, and <em>ontologies of ontologies
+  of ontologies</em>, before it had this name.
   This page is the door; <a href="site/index.html">everything on the site</a> is one page along.</p>
   <div class="ctas">
     <a class="cta1" href="#demo">Show me, in one graph &rarr;</a>
@@ -136,18 +139,47 @@ FRONT = """<!doctype html>
 
 <section class="band" id="zoom">
   <h2>Fractal is a test, not a flourish</h2>
-  <p class="blurb">Zoom into any node. If the zoom needs a different file format, a different
-  validator or a special case, the claim is false. That is falsifiable, so it can be run rather
-  than asserted. Here it is run on this estate&rsquo;s own making-of book, at book version
-  <b>{bookver}</b>.</p>
+  <p class="blurb">The test has two halves and both are worth running. <b>If the inside has the
+  same types and verbs as the outside, all the way down, you have a hierarchy</b>, and a folder
+  tree is the clean example. <b>If the inside needs a different grammar, so that it is no longer
+  a semantic graph, the claim is false.</b> In between, every zoom that opens a new vocabulary
+  joined by a named edge is the claim working.</p>
   <div class="zoom">
     <ol>
 {ladder}
     </ol>
-    <p class="cap">Six levels, one decomposition, one format, one validator, {shards} shards
-    fetched only when something is opened. The markdown rebuilds from the graph byte-for-byte,
-    or the build fails. <a href="{ladderwhere}">Open it and zoom it yourself
-    &rarr;</a></p>
+    <p class="cap">This estate&rsquo;s own making-of book at <b>{bookver}</b>, taken apart six
+    levels and put back byte-for-byte or the build fails: {shards} shards, one format, one
+    validator. That is <b>scale invariance</b>, and it is the honest label, because the
+    vocabulary never changes on the way down. <b>By the first half of the test, this ladder on
+    its own is a hierarchy.</b> The book says so about itself, in the chapter that states the
+    test. <a href="{ladderwhere}">Open it and zoom it yourself &rarr;</a></p>
+  </div>
+  <div class="split" style="margin-top:1.6rem">
+    <div class="note"><b>So where is the fractal part?</b> In the vocabulary changing. The same
+    pilot document on this site carries <em>two</em> graphs at once: a core graph of sections,
+    blocks, sentences and words, and an extraction of concepts, claims, hypotheses and
+    objections joined by verbs like <code>departs-from</code> and <code>licenses</code>. Neither
+    is derived from the other; they share nodes by anchor. Open a word in one and you are in a
+    lexical world, open a claim in the other and you are in an argumentative one.
+    <a href="v2/books/fsg/fractal-is-a-testable-claim.html">The chapter runs the test on this
+    estate and reports where it fails</a>.</div>
+    <div class="note"><b>The meaning of a node is supplied by the ontology at the altitude where
+    it sits</b>, which is why the same node means different things at different altitudes.
+    Article 9 is a binding provision in a graph of instruments, a container of paragraphs inside
+    the regulation, and a source of definitions to the paragraph that cites it. Same node,
+    different edges around it at each level.</div>
+    <div class="note"><b>Nobody is forced to conform.</b> An organisation, a division, a team, a
+    person or a regulator can each define their own world in their own words and connect by
+    drawing edges rather than by adopting a shared schema. That is the consequence of
+    <a href="v1/depth/index.html">don&rsquo;t merge vocabularies, bridge them</a>: shared facts
+    owned by nobody, formulas per party, declared bridges between them.</div>
+    <p class="cap" style="margin-top:1rem">The fullest worked demonstration is not on this site.
+    <a href="https://sgit.ai/demos/fractal-graphs/"><b>sgit.ai walks eleven altitudes across seven
+    published vaults</b></a>, from the text of a law to a threat on a compute instance, each rung
+    modelled by its own author in its own vocabulary and every one openable with the read key on
+    its page. Markdown twin for agents:
+    <a href="https://sgit.ai/demos/fractal-graphs/index.md">index.md</a>.</p>
   </div>
 </section>
 

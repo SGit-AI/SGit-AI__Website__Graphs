@@ -23,6 +23,21 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "47__sibling-brief__fractal-semantic-graphs.md": (
+     "A sibling site's agent reads this book and reports the claim backwards",
+     "The first reading of this work by anyone outside the estate, and the first "
+     "brief here that did not come from the founder. sgit.ai published its own "
+     "Fractal Semantic Graphs page, read chapter 6 while writing it, and sent back "
+     "a correction: what survives a zoom is the GRAMMAR, and the ontology is meant "
+     "to change at every altitude, so a system whose types and verbs are identical "
+     "all the way down is a hierarchy rather than a fractal. That is right and it "
+     "was actioned. Two things the brief could not know are recorded with it: the "
+     "book was quoting the corpus rather than contradicting it, and had simply "
+     "never carried the corpus's own definition of \u201crules\u201d; and this "
+     "estate had already made the same correction in another book on 23 August and "
+     "never propagated it. Four of the brief's seven items ask for frozen "
+     "first-edition pages to be rewritten, which is this site's failure to make the "
+     "freeze discoverable rather than the brief's mistake."),
  "46__founder-memo__the-reader-who-followed-the-link.md": (
      "The reader who followed the link, and the front page that lost him",
      "A LinkedIn comment made the failure concrete: a reader had never heard of "

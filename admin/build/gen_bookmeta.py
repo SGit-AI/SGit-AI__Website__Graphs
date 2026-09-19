@@ -38,12 +38,32 @@ SITE_VERSION = (ROOT / "admin" / "build" / "version.txt").read_text().strip()
 REGISTER = {
     "fsg": {
         "title": "Fractal Semantic Graphs: Meaning Through Connectivity",
-        "version": "v0.2.0",
+        "version": "v0.3.0",
         "changelog": [
             ("v0.2.0", "v0.5.18", "Adopted into per-book versioning. The book was written "
                                   "at site v0.5.12 and self-reviewed at v0.5.15; v0.2.0 "
                                   "was chosen because it succeeds the frozen first "
                                   "edition rather than starting again."),
+            ("v0.3.0", "v0.6.21", "The fractal claim corrected, after a sibling site read "
+                                  "chapter 6 and reported the invariant backwards. What "
+                                  "survives every zoom is the GRAMMAR (verb edges with "
+                                  "inverses, meaning in connectivity, supersede never "
+                                  "delete, provenance); the ONTOLOGY is meant to change "
+                                  "at every altitude, and a system whose types and verbs "
+                                  "are identical all the way down is a hierarchy. The "
+                                  "four-row table, the zoom test, the front matter's "
+                                  "learning outcome and the reference card all restated. "
+                                  "The chapter now anchors the reading to the corpus "
+                                  "document that says it outright ('some articles will be "
+                                  "substantial enough to need their own ontology and "
+                                  "taxonomy... the expected fractal behaviour', 28 July "
+                                  "2026) and records that this estate had already made "
+                                  "the same correction in the Universe volume on 23 "
+                                  "August and never propagated it. Applying the sharpened "
+                                  "test cost the book a verdict: the document-to-word "
+                                  "zoom is a decomposition in one vocabulary, so it is a "
+                                  "hierarchy, and the chapter had scored it a pass for "
+                                  "two book versions because the old test never asked."),
         ],
         "status": "under review",
         "release": "the Leanpub pair",

@@ -21,7 +21,7 @@
   <a class="brand" href="index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="admin/versions.html" title="Site release history">v0.6.20</a>
+  <a class="ver" href="admin/versions.html" title="Site release history">v0.6.21</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -151,10 +151,13 @@
   <h1>A node means nothing on its own.<br>What it <em>is</em> arrives through its edges.</h1>
   <p class="answer">If you followed the phrase here, this is the whole of it: <q>the same structural pattern — nodes with edges, meaning through connectivity — repeats at every level of zoom</q>.
   <b>Semantic</b>, because meaning comes from the edges rather than from the label on the box.
-  <b>Fractal</b>, because a book, a chapter, a sentence and a word are the same shape, with one
-  grammar and one validator between them.</p>
+  <b>Fractal</b>, because zooming into any node lands you in another semantic graph with <em>its
+  own</em> node types, verbs and taxonomy, joined by a named edge to the one you left. The
+  grammar survives every zoom. The vocabulary is meant to change.</p>
   <p class="prov">Quoted, not paraphrased: <a href="v2/universe/thinking-in-graphs.html">Thinking in Graphs: Meaning Through Connectivity</a>, section
   &ldquo;Every Scope Defines Its Own Vocabulary&rdquo;, carried whole on this site and checked byte for byte on every build.
+  The same idea was called <em>graphs of graphs of graphs</em>, and <em>ontologies of ontologies
+  of ontologies</em>, before it had this name.
   This page is the door; <a href="site/index.html">everything on the site</a> is one page along.</p>
   <div class="ctas">
     <a class="cta1" href="#demo">Show me, in one graph &rarr;</a>
@@ -181,10 +184,11 @@
 
 <section class="band" id="zoom">
   <h2>Fractal is a test, not a flourish</h2>
-  <p class="blurb">Zoom into any node. If the zoom needs a different file format, a different
-  validator or a special case, the claim is false. That is falsifiable, so it can be run rather
-  than asserted. Here it is run on this estate&rsquo;s own making-of book, at book version
-  <b>v0.2.0</b>.</p>
+  <p class="blurb">The test has two halves and both are worth running. <b>If the inside has the
+  same types and verbs as the outside, all the way down, you have a hierarchy</b>, and a folder
+  tree is the clean example. <b>If the inside needs a different grammar, so that it is no longer
+  a semantic graph, the claim is false.</b> In between, every zoom that opens a new vocabulary
+  joined by a named edge is the claim working.</p>
   <div class="zoom">
     <ol>
       <li><span class="lv">book</span><span class="bar" style="width:6.8%"></span><span class="ct">1</span></li>
@@ -194,10 +198,38 @@
       <li><span class="lv">sentence</span><span class="bar" style="width:73.4%"></span><span class="ct">1,782</span></li>
       <li><span class="lv">word</span><span class="bar" style="width:100.0%"></span><span class="ct">27,002</span></li>
     </ol>
-    <p class="cap">Six levels, one decomposition, one format, one validator, 160 shards
-    fetched only when something is opened. The markdown rebuilds from the graph byte-for-byte,
-    or the build fails. <a href="v2/books/making-a-book/graph/index.html">Open it and zoom it yourself
-    &rarr;</a></p>
+    <p class="cap">This estate&rsquo;s own making-of book at <b>v0.2.0</b>, taken apart six
+    levels and put back byte-for-byte or the build fails: 160 shards, one format, one
+    validator. That is <b>scale invariance</b>, and it is the honest label, because the
+    vocabulary never changes on the way down. <b>By the first half of the test, this ladder on
+    its own is a hierarchy.</b> The book says so about itself, in the chapter that states the
+    test. <a href="v2/books/making-a-book/graph/index.html">Open it and zoom it yourself &rarr;</a></p>
+  </div>
+  <div class="split" style="margin-top:1.6rem">
+    <div class="note"><b>So where is the fractal part?</b> In the vocabulary changing. The same
+    pilot document on this site carries <em>two</em> graphs at once: a core graph of sections,
+    blocks, sentences and words, and an extraction of concepts, claims, hypotheses and
+    objections joined by verbs like <code>departs-from</code> and <code>licenses</code>. Neither
+    is derived from the other; they share nodes by anchor. Open a word in one and you are in a
+    lexical world, open a claim in the other and you are in an argumentative one.
+    <a href="v2/books/fsg/fractal-is-a-testable-claim.html">The chapter runs the test on this
+    estate and reports where it fails</a>.</div>
+    <div class="note"><b>The meaning of a node is supplied by the ontology at the altitude where
+    it sits</b>, which is why the same node means different things at different altitudes.
+    Article 9 is a binding provision in a graph of instruments, a container of paragraphs inside
+    the regulation, and a source of definitions to the paragraph that cites it. Same node,
+    different edges around it at each level.</div>
+    <div class="note"><b>Nobody is forced to conform.</b> An organisation, a division, a team, a
+    person or a regulator can each define their own world in their own words and connect by
+    drawing edges rather than by adopting a shared schema. That is the consequence of
+    <a href="v1/depth/index.html">don&rsquo;t merge vocabularies, bridge them</a>: shared facts
+    owned by nobody, formulas per party, declared bridges between them.</div>
+    <p class="cap" style="margin-top:1rem">The fullest worked demonstration is not on this site.
+    <a href="https://sgit.ai/demos/fractal-graphs/"><b>sgit.ai walks eleven altitudes across seven
+    published vaults</b></a>, from the text of a law to a threat on a compute instance, each rung
+    modelled by its own author in its own vocabulary and every one openable with the read key on
+    its page. Markdown twin for agents:
+    <a href="https://sgit.ai/demos/fractal-graphs/index.md">index.md</a>.</p>
   </div>
 </section>
 
@@ -221,7 +253,7 @@
     </a>
     <a class="card" href="v2/books/index.html">
       <div class="tag">the whole argument</div>
-      <h3>3 books, 100,160 words</h3>
+      <h3>3 books, 100,955 words</h3>
       <p>The argument from first principles and from the running system; the making-of, for
       anyone who wants to work this way; and the frozen first edition as the record.</p>
       <span class="go">The shelf &rarr;</span>
@@ -319,8 +351,8 @@
     and a gate enforces that in both directions.</div>
   </div>
   <div class="counts">
-    <span><b>273</b> pages</span>
-    <span><b>121</b> narrated releases</span>
+    <span><b>275</b> pages</span>
+    <span><b>122</b> narrated releases</span>
     <span><b>34</b> founder memos, verbatim</span>
     <span><b>21</b> carried source documents</span>
     <span><b>35</b> named techniques</span>
@@ -356,9 +388,9 @@
   <div>
     <div class="brandline">graphs<span>.sgit.ai</span></div>
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
-    <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
+    <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sg-sentinel.sgit.ai">↗ sg-sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="admin/versions.html">v0.6.20</a> · <a href="admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="admin/versions.html">v0.6.21</a> · <a href="admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
@@ -396,7 +428,7 @@
     <a href="llms.txt">llms.txt</a>
   </div>
 </div></footer>
-<script>window.HOME = {"version": "v0.6.20", "schema": "home-front-v1", "note": "Generated by admin/build/gen_home.py. Every quote here is checked against v2/universe/docs/thinking-in-graphs/source.md on every build; every number is counted from the tree.", "definition": {"term": "fractal semantic graphs", "quote": "the same structural pattern — nodes with edges, meaning through connectivity — repeats at every level of zoom", "section": "Every Scope Defines Its Own Vocabulary", "doc": "Thinking in Graphs: Meaning Through Connectivity", "where": "v2/universe/thinking-in-graphs.html"}, "demo": {"source": "v2/universe/docs/thinking-in-graphs/source.md", "section": "The Safe_UInt__Port Example", "where": "v2/universe/thinking-in-graphs.html", "nodes": [{"id": "port", "kind": "field", "label": "field: port", "sub": "value: 8080", "x": 108, "y": 196}, {"id": "sup", "kind": "type", "label": "Safe_UInt__Port", "sub": "type", "x": 356, "y": 196}, {"id": "minv", "kind": "prop", "label": "min_value: 0", "sub": "", "x": 612, "y": 80}, {"id": "maxv", "kind": "prop", "label": "max_value: 65535", "sub": "", "x": 630, "y": 176}, {"id": "nonull", "kind": "prop", "label": "allow_none: False", "sub": "", "x": 616, "y": 272}, {"id": "su", "kind": "type", "label": "Safe_UInt", "sub": "type", "x": 356, "y": 348}, {"id": "pkg", "kind": "pkg", "label": "osbot-utils@3.63.4", "sub": "package", "x": 108, "y": 348}], "edges": [{"id": "e1", "from": "port", "to": "sup", "verb": "type", "needs": [], "says": "This is a network port.", "quote": "This is a network port."}, {"id": "e2", "from": "sup", "to": "minv", "verb": "min_value", "needs": ["e1"], "says": "It is an unsigned integer between 0 and 65535.", "quote": "It is an unsigned integer between 0 and 65535.", "pairs": "e3"}, {"id": "e3", "from": "sup", "to": "maxv", "verb": "max_value", "needs": ["e1"], "says": "It is an unsigned integer between 0 and 65535.", "quote": "It is an unsigned integer between 0 and 65535.", "pairs": "e2"}, {"id": "e4", "from": "sup", "to": "nonull", "verb": "allow_none", "needs": ["e1"], "says": "It cannot be null.", "quote": "It cannot be null."}, {"id": "e5", "from": "sup", "to": "su", "verb": "extends", "needs": ["e1"], "says": "The constraints are inherited, not restated.", "quote": "extends ──→ Safe_UInt"}, {"id": "e6", "from": "su", "to": "pkg", "verb": "part_of", "needs": ["e5"], "says": "These constraints are enforced at runtime by osbot-utils version 3.63.4.", "quote": "These constraints are enforced at runtime by osbot-utils version 3.63.4."}], "bare": [{"says": "There is a field called 'port' with the value 8080.", "quote": "There is a field called 'port' with the value 8080."}, {"says": "The name suggests it might be a network port.", "quote": "The name suggests it might be a network port."}, {"says": "But the graph cannot confirm it.", "quote": "But the graph cannot confirm it."}], "closing": {"quote": "The difference is not in the value.", "second": "The difference is in the **connectivity**.", "rule": "Every claim is backed by a traceable path through the graph.", "section": "The Safe_UInt__Port Example"}}, "ladder": {"book": "Creating a Book Using Agentic Workflows", "book_version": "v0.2.0", "where": "v2/books/making-a-book/graph/index.html", "levels": [{"level": "book", "count": 1}, {"level": "chapter", "count": 17}, {"level": "section", "count": 165}, {"level": "block", "count": 822}, {"level": "sentence", "count": 1782}, {"level": "word", "count": 27002}], "shards": 160}, "inventory": {"pages": 273, "releases": 121, "memos": 34, "methods": 35, "figures": 20, "sources": 21, "tests": 146, "conditions": 72, "books": 3, "book_words": 100160}};</script>
+<script>window.HOME = {"version": "v0.6.21", "schema": "home-front-v1", "note": "Generated by admin/build/gen_home.py. Every quote here is checked against v2/universe/docs/thinking-in-graphs/source.md on every build; every number is counted from the tree.", "definition": {"term": "fractal semantic graphs", "quote": "the same structural pattern — nodes with edges, meaning through connectivity — repeats at every level of zoom", "section": "Every Scope Defines Its Own Vocabulary", "doc": "Thinking in Graphs: Meaning Through Connectivity", "where": "v2/universe/thinking-in-graphs.html"}, "demo": {"source": "v2/universe/docs/thinking-in-graphs/source.md", "section": "The Safe_UInt__Port Example", "where": "v2/universe/thinking-in-graphs.html", "nodes": [{"id": "port", "kind": "field", "label": "field: port", "sub": "value: 8080", "x": 108, "y": 196}, {"id": "sup", "kind": "type", "label": "Safe_UInt__Port", "sub": "type", "x": 356, "y": 196}, {"id": "minv", "kind": "prop", "label": "min_value: 0", "sub": "", "x": 612, "y": 80}, {"id": "maxv", "kind": "prop", "label": "max_value: 65535", "sub": "", "x": 630, "y": 176}, {"id": "nonull", "kind": "prop", "label": "allow_none: False", "sub": "", "x": 616, "y": 272}, {"id": "su", "kind": "type", "label": "Safe_UInt", "sub": "type", "x": 356, "y": 348}, {"id": "pkg", "kind": "pkg", "label": "osbot-utils@3.63.4", "sub": "package", "x": 108, "y": 348}], "edges": [{"id": "e1", "from": "port", "to": "sup", "verb": "type", "needs": [], "says": "This is a network port.", "quote": "This is a network port."}, {"id": "e2", "from": "sup", "to": "minv", "verb": "min_value", "needs": ["e1"], "says": "It is an unsigned integer between 0 and 65535.", "quote": "It is an unsigned integer between 0 and 65535.", "pairs": "e3"}, {"id": "e3", "from": "sup", "to": "maxv", "verb": "max_value", "needs": ["e1"], "says": "It is an unsigned integer between 0 and 65535.", "quote": "It is an unsigned integer between 0 and 65535.", "pairs": "e2"}, {"id": "e4", "from": "sup", "to": "nonull", "verb": "allow_none", "needs": ["e1"], "says": "It cannot be null.", "quote": "It cannot be null."}, {"id": "e5", "from": "sup", "to": "su", "verb": "extends", "needs": ["e1"], "says": "The constraints are inherited, not restated.", "quote": "extends ──→ Safe_UInt"}, {"id": "e6", "from": "su", "to": "pkg", "verb": "part_of", "needs": ["e5"], "says": "These constraints are enforced at runtime by osbot-utils version 3.63.4.", "quote": "These constraints are enforced at runtime by osbot-utils version 3.63.4."}], "bare": [{"says": "There is a field called 'port' with the value 8080.", "quote": "There is a field called 'port' with the value 8080."}, {"says": "The name suggests it might be a network port.", "quote": "The name suggests it might be a network port."}, {"says": "But the graph cannot confirm it.", "quote": "But the graph cannot confirm it."}], "closing": {"quote": "The difference is not in the value.", "second": "The difference is in the **connectivity**.", "rule": "Every claim is backed by a traceable path through the graph.", "section": "The Safe_UInt__Port Example"}}, "ladder": {"book": "Creating a Book Using Agentic Workflows", "book_version": "v0.2.0", "where": "v2/books/making-a-book/graph/index.html", "levels": [{"level": "book", "count": 1}, {"level": "chapter", "count": 17}, {"level": "section", "count": 165}, {"level": "block", "count": 822}, {"level": "sentence", "count": 1782}, {"level": "word", "count": 27002}], "shards": 160}, "inventory": {"pages": 275, "releases": 122, "memos": 34, "methods": 35, "figures": 20, "sources": 21, "tests": 146, "conditions": 72, "books": 3, "book_words": 100955}};</script>
 <script type="module" src="assets/home.js"></script>
 </body>
 </html>
