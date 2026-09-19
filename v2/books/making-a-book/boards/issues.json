@@ -1,6 +1,6 @@
 {
  "schema": "project-issues-v1",
- "version": "v0.6.19",
+ "version": "v0.6.20",
  "note": "Read from v2/team/<role>/issues/, where the folder a file sits in IS its status. Not authored here: to move one, git mv it.",
  "issues": [
   {
@@ -47,6 +47,24 @@
    "owner": "@developer",
    "description": "From newsroom.sgit.ai brief 10 §11, which lost its entire generator to this line.",
    "href": "../../../v2/team/developer/issues/done/005-a-bare-build-rule-matches-at-every-depth.md"
+  },
+  {
+   "id": "@developer-006",
+   "title": "The same ignore trap, one layer out: a published PAGE this time",
+   "status": "resolved",
+   "priority": "high",
+   "owner": "@developer",
+   "description": "From v0.6.20 — adding /site/index.html, the estate page.",
+   "href": "../../../v2/team/developer/issues/done/006-the-same-ignore-trap-one-layer-out.md"
+  },
+  {
+   "id": "@developer-007",
+   "title": "A counter that returns zero reads as a claim that the thing does not exist",
+   "status": "resolved",
+   "priority": "medium",
+   "owner": "@developer",
+   "description": "From v0.6.20 — the front door's numbers strip.",
+   "href": "../../../v2/team/developer/issues/done/007-a-counter-that-returns-zero.md"
   },
   {
    "id": "@editor-001",

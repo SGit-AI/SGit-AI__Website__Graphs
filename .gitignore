@@ -176,7 +176,10 @@ venv.bak/
 .ropeproject
 
 # mkdocs documentation
-/site
+# /site was here, from the stock Python template. This repository does not use mkdocs, and
+# /site/ is a PUBLISHED PAGE of this website (the estate index, added at v0.6.20) — the rule
+# ignored it silently, exactly as a bare `build/` once ignored admin/build/ on a sibling site.
+# A test now refuses any published page git will not track.
 
 # mypy
 .mypy_cache/

@@ -116,7 +116,8 @@ NAV = [
         ("Origins: 2026", "v1/origins/index.html"),
         ("The network", "v1/network/index.html"),
     ], ("v1/shipped/", "v1/origins/", "v1/network/")),
-    ("Site", "v1/documents/index.html", [
+    ("Site", "site/index.html", [
+        ("Everything on this site &middot; the whole estate, indexed", "site/index.html"),
         ("The documents", "v1/documents/index.html"),
         ("&hellip; what the graphs found", "v1/documents/what-the-graphs-found.html"),
         ("The memos", "v2/memos/index.html"),
@@ -127,7 +128,7 @@ NAV = [
         ("Publishing the book", "admin/publishing.html"),
         ("Admin &amp; engineering", "admin/index.html"),
         ("Where we lose", "v1/about/participant.html"),
-    ], ("v1/documents/", "v1/briefs/", "admin/", "v1/about/")),
+    ], ("site/", "v1/documents/", "v1/briefs/", "admin/", "v1/about/")),
 ]
 
 FOOTER = [
@@ -154,6 +155,7 @@ FOOTER = [
         ("Wardley maps", "v1/maps/index.html"),
     ]),
     ("Reality &amp; site", [
+        ("Everything on this site", "site/index.html"),
         ("What ships, what is argued", "v1/shipped/index.html"),
         ("Origins: 2026", "v1/origins/index.html"),
         ("The network", "v1/network/index.html"),

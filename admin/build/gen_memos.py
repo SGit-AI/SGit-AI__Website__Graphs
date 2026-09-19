@@ -23,6 +23,17 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Graphs/blob/dev/v2/briefs"
 
 # one line per memo, shown on the hub. Authored, because "what it gives you" is a judgement.
 BLURB = {
+ "46__founder-memo__the-reader-who-followed-the-link.md": (
+     "The reader who followed the link, and the front page that lost him",
+     "A LinkedIn comment made the failure concrete: a reader had never heard of "
+     "fractal semantic graphs, went looking, and was pointed at this site. The "
+     "founder\u2019s objection is one sentence \u2014 \u201cthat reader will be "
+     "lost\u201d \u2014 and the measurement bears it out: the phrase appeared four "
+     "times on the front page, every one of them inside a book title or a filename, "
+     "and nothing defined it. The page also had no image, no diagram and nothing to "
+     "click, while arguing that meaning is visible through connectivity. The "
+     "instruction is a split rather than a rewrite: move the archive to its own page "
+     "whole, and let the front page answer the question people actually arrive with."),
  "45__founder-memo__what-a-workflow-is.md": (
      "What a workflow is, and the measure of success he judges maturity by",
      "The definition, stated plainly: a workflow is \u201chow you operate\u201d, the steps "

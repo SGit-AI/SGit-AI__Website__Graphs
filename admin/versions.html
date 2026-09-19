@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.19</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.20</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -125,8 +125,9 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl here" href="../v1/documents/index.html">Site<span class="caret">&#9662;</span></a>
+      <a class="nl here" href="../site/index.html">Site<span class="caret">&#9662;</span></a>
       <div class="sub">
+      <a class="sl" href="../site/index.html">Everything on this site &middot; the whole estate, indexed</a>
       <a class="sl" href="../v1/documents/index.html">The documents</a>
       <a class="sl" href="../v1/documents/what-the-graphs-found.html">&hellip; what the graphs found</a>
       <a class="sl" href="../v2/memos/index.html">The memos</a>
@@ -153,6 +154,19 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.6.20</td>
+        <td>19 September 2026</td>
+        <td><b>The front page splits in two, because it was answering the wrong person.</b> A reader commented on LinkedIn that he had never heard of fractal semantic graphs and was going down a rabbit hole on it; the reply pointed him here. What he would have met was the word <b>graphs.sgit.ai</b> as a headline, 1,525 words about books, versions and gates, and the phrase he came for appearing <b>four times, every one of them inside a book title or a filename</b>. Nothing on the page defined it. The page also had no image, no diagram and nothing to click, on a site whose whole argument is that meaning is visible through connectivity.
+        <b>So the archive moved and kept everything.</b> The shelf, the sequence of events, what each section is and the complete first-edition index are now <a href="../site/index.html">/site/</a>, unchanged in substance, because the archive was never the problem: being the first thing a stranger met was. Every link that page carried still resolves.
+        <b>The front door now answers the question people arrive with.</b> It opens with the claim rather than the domain, and it answers the phrase above the fold in the corpus&rsquo;s own words: <em>&ldquo;the same structural pattern &mdash; nodes with edges, meaning through connectivity &mdash; repeats at every level of zoom&rdquo;</em>, quoted from the carried pilot document and <b>checked against it byte for byte on every build</b>, so the definition cannot drift into a paraphrase.
+        <b>Then it stops describing and demonstrates.</b> The corpus&rsquo;s own worked example is on the page as a live graph: a field node holding <code>8080</code>, six edges you add one at a time, and a list of what the graph becomes able to say as you add them. Every one of those sentences is a quotation from the document, not a rewrite, and the build refuses any that is not. The value never changes; only the edges do, which is the entire point the section makes. The nodes drag.
+        <b>The fractal claim is run rather than asserted.</b> Chapter 6 of <em>Fractal Semantic Graphs</em> makes it falsifiable: zoom into any node, and if the zoom needs a different format, validator or special case, the claim is false. The page runs that test on this estate&rsquo;s own making-of book and shows the six levels with their real counts, from one book to 27,002 word nodes, one decomposition and one validator between them.
+        <b>Three instruments that were built and then never linked</b>, the state map, the project board and the figure viewer, are now on the front page with the six others, under a heading that says you can open them.
+        <b>A gate, and the drift it found.</b> <code>home.test.mjs</code> fails the build if the front page stops defining the phrase the site is found by, stops demonstrating it, or stops naming its own archive; it was run red against a page with the definition removed before it was trusted. Writing it turned up that <code>gen_front.py</code> <b>had never been in the build chain</b>, so the front page had been regenerated only when someone remembered: its release count had been <b>nine releases stale</b>. It and the new <code>gen_home.py</code> are in the chain now, where the existing tracking gate can see them.
+        <b>And a second ignore trap, found the way nobody should find one.</b> The stock Python <code>.gitignore</code> this repository started from carries <code>/site</code> for mkdocs, which this repository has never used, so the new page was <b>invisible to git</b> while rendering perfectly and passing every gate. It was noticed by reading <code>git status</code> and seeing one folder listed and not the other. <a href="../v2/team/developer/issues/done/006-the-same-ignore-trap-one-layer-out.md">Issue 005&rsquo;s gate</a> asks whether the thing that builds the site is in the repository; the new one asks whether the site is. A third gate refuses a counter that returns zero, after the methods card rendered <b>&ldquo;0 techniques&rdquo;</b> above a link to thirty-five of them.
+        The founder&rsquo;s instruction and the LinkedIn thread behind it are <a href="../v2/memos/46-founder-memo-the-reader-who-followed-the-link.html">brief 46</a>, verbatim, with the measurements that prompted the split. No book content changed: this is tool work, and no book version moved.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.6.19</td>
         <td>29 August 2026</td>
@@ -319,7 +333,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sentinel.sgit.ai">↗ sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.6.19</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.20</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>
@@ -348,6 +362,7 @@
   </div>
   <div>
     <h4>Reality &amp; site</h4>
+    <a href="../site/index.html">Everything on this site</a>
     <a href="../v1/shipped/index.html">What ships, what is argued</a>
     <a href="../v1/origins/index.html">Origins: 2026</a>
     <a href="../v1/network/index.html">The network</a>

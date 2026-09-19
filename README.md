@@ -88,6 +88,8 @@ python3 admin/build/gen_bookdiff.py      # the book's version diff (needs tags f
 python3 admin/build/gen_bookfiles.py     # each book's file explorer (files.html; run after gen_board)
 python3 admin/build/gen_devpack.py       # the dev packs, rendered
 python3 admin/build/gen_changes.py       # the version diff data (needs tags fetched)
+python3 admin/build/gen_home.py         # the front door's data: the definition, the demo, the ladder
+python3 admin/build/gen_front.py        # index.html (the door) and site/index.html (the estate)
 python3 admin/build/gen_sitemap.py
 python3 admin/build/gen_llms_full.py
 python3 admin/build/chrome.py            # stamps nav, footer and the version badge

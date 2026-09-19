@@ -544,4 +544,34 @@ test('repo: every generator the chain runs is actually in the repository', () =>
   }
 });
 
+test('repo: no published page or asset is ignored by git', () => {
+  /* The generator version of this hazard already has a test. This is the same hazard one
+     step further along: a stock Python .gitignore carries `/site` for mkdocs, and the
+     estate index added at v0.6.20 lives at /site/index.html. Nothing in a normal build
+     says so — the page renders, the links resolve, validate.js is green, and the file is
+     simply never committed. The site deploys with a hole in it.
+
+     So: every page the site publishes, and every stylesheet and module it loads, has to
+     be a file git will actually track. Batched through one check-ignore, because there
+     are hundreds. */
+  const pub = [];
+  const walk = (dir, rel) => {
+    for (const name of readdirSync(dir)) {
+      if (['.git', '.github', 'node_modules', '.sg_vault'].includes(name)) continue;
+      const p = path.join(dir, name);
+      const r = rel ? rel + '/' + name : name;
+      if (statSync(p).isDirectory()) walk(p, r);
+      else if (/\.(html|css|mjs|js|json)$/.test(name)) pub.push(r);
+    }
+  };
+  walk(ROOT, '');
+  assert.ok(pub.length > 200, `found ${pub.length} publishable files`);
+  const r = spawnSync('git', ['-C', ROOT, 'check-ignore', '--stdin'],
+    { input: pub.join('\n'), encoding: 'utf8' });
+  const ignored = (r.stdout || '').split('\n').filter(Boolean);
+  assert.deepEqual(ignored, [],
+    'IGNORED BY GIT, so it would deploy from this machine and be missing from the repo: '
+    + ignored.slice(0, 5).join(', '));
+});
+
 await report('build');

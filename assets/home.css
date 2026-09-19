@@ -1,0 +1,82 @@
+/* graphs.sgit.ai — the front door only. Loaded by index.html and nothing else, because
+   a reader who lands here from a link has one question and the rest of the site does not
+   need the styles that answer it: the hero that names the phrase, the live demo graph,
+   the zoom ladder that runs the fractal test, and the doors. Everything else on the page
+   reuses site.css. */
+
+/* ---------- hero: the claim, then the phrase, then the way in ---------- */
+header.front{max-width:920px;margin:0 auto;padding:2.6rem 1.2rem 1.6rem;text-align:center}
+header.front h1{font-family:var(--serif);font-size:clamp(1.75rem,4.6vw,2.9rem);
+  margin:.55rem 0 .8rem;color:#101114}
+header.front h1 em{font-style:normal;color:var(--accent-dk)}
+header.front .answer{max-width:700px;margin:0 auto 1rem;font-size:1.05rem;color:#34363c;line-height:1.6}
+header.front .answer q{font-style:italic;quotes:"\201C" "\201D"}
+header.front .prov{font-size:.78rem;color:var(--dim2);max-width:640px;margin:0 auto 1.5rem}
+header.front .prov a{color:var(--dim)}
+@media (max-width:560px){header.front{padding:1.6rem 1rem 1.2rem}}
+
+/* ---------- the demo: graph left, what it can say right ---------- */
+port-graph{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,1fr);gap:1rem;
+  max-width:1160px;margin:0 auto;padding:0 1.1rem;align-items:start}
+@media (max-width:900px){port-graph{grid-template-columns:1fr}}
+.pg-canvas{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  box-shadow:var(--shadow);overflow:hidden}
+.pg-canvas svg{display:block;width:100%;height:auto;touch-action:none}
+port-graph.dragging .pg-canvas{cursor:grabbing}
+.pg-node{cursor:grab}
+.pg-node rect{fill:var(--panel2);stroke:var(--line2);stroke-width:1.5}
+.pg-node.k-field rect{fill:#e7f3f1;stroke:var(--accent)}
+.pg-node.k-type rect{fill:#fff;stroke:var(--line2)}
+.pg-node.k-prop rect{fill:#faf7ee;stroke:#e0d6bc}
+.pg-node.k-pkg rect{fill:#f5f1fb;stroke:#d9cfe9}
+.pg-lab{font-family:var(--mono);font-size:12px;fill:#1c1d21}
+.pg-sub{font-family:var(--sans);font-size:10px;fill:var(--dim2)}
+.pg-edge line{stroke:#8a8f98;stroke-width:1.6}
+.pg-edge text{font-family:var(--mono);font-size:10.5px;fill:var(--dim);letter-spacing:.02em}
+
+.pg-side{display:flex;flex-direction:column;gap:.75rem}
+.pg-tally{display:flex;gap:.5rem;flex-wrap:wrap}
+.pg-num{flex:1 1 auto;background:var(--panel);border:1px solid var(--line);border-radius:10px;
+  padding:.45rem .6rem;font-size:.68rem;color:var(--dim);text-align:center;line-height:1.35}
+.pg-num b{display:block;font-family:var(--mono);font-size:1rem;color:#101114;font-weight:700}
+.pg-chips{display:flex;flex-wrap:wrap;gap:.35rem}
+.pg-chips-lab{flex:0 0 100%;font-size:.62rem;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--warm)}
+.pg-chip,.pg-all{font-family:var(--mono);font-size:.72rem;border-radius:99px;cursor:pointer;
+  padding:.3rem .65rem;border:1px solid var(--line2);background:var(--panel);color:#34363c}
+.pg-chip .pg-v{color:var(--accent-dk);font-weight:700}
+.pg-chip:hover:not(:disabled){border-color:var(--accent)}
+.pg-chip.on{background:var(--accent-dk);border-color:var(--accent-dk);color:#fff}
+.pg-chip.on .pg-v{color:#a7e0d8}
+.pg-chip:disabled{opacity:.42;cursor:not-allowed}
+.pg-all{flex:1 1 100%;text-align:center;margin-top:.15rem;background:var(--panel2);font-weight:600}
+.pg-all:hover{border-color:var(--accent)}
+.pg-says{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:0 10px 10px 0;padding:.7rem .9rem}
+.pg-says h4{margin:0 0 .45rem;font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--dim);font-family:var(--sans);display:flex;gap:.4rem;flex-wrap:wrap;align-items:center}
+.pg-conf{font-family:var(--mono);font-size:.62rem;letter-spacing:.03em;text-transform:none;
+  border-radius:99px;padding:.06rem .45rem;border:1px solid}
+.pg-conf.c-none{color:var(--red);border-color:rgba(185,28,28,.35);background:rgba(185,28,28,.07)}
+.pg-conf.c-partial{color:var(--warm);border-color:rgba(180,83,9,.35);background:rgba(180,83,9,.07)}
+.pg-conf.c-full{color:var(--accent-dk);border-color:rgba(15,118,110,.35);background:rgba(15,118,110,.07)}
+.pg-says ul{margin:0;padding-left:1.1rem}
+.pg-says li{font-size:.86rem;color:#34363c;line-height:1.5;margin:.2rem 0}
+
+/* ---------- the zoom ladder: the fractal test, with the counts ---------- */
+.zoom{max-width:820px;margin:0 auto;padding:0 1.1rem}
+.zoom ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.3rem}
+.zoom li{display:grid;grid-template-columns:7.5rem 1fr auto;gap:.7rem;align-items:center;
+  background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:.45rem .8rem}
+.zoom .lv{font-family:var(--mono);font-size:.82rem;color:var(--accent-dk);font-weight:700}
+.zoom .bar{height:9px;border-radius:99px;background:var(--accent);opacity:.75;min-width:5px}
+.zoom .ct{font-family:var(--mono);font-size:.82rem;color:#101114;text-align:right;white-space:nowrap}
+.zoom .cap{font-size:.78rem;color:var(--dim);text-align:center;margin-top:.9rem;line-height:1.6}
+@media (max-width:560px){.zoom li{grid-template-columns:5.6rem 1fr auto;padding:.4rem .6rem}}
+
+/* ---------- the numbers strip ---------- */
+.counts{display:flex;flex-wrap:wrap;gap:.5rem;max-width:1000px;margin:1.4rem auto 0;padding:0 1.1rem;
+  justify-content:center}
+.counts span{background:var(--panel);border:1px solid var(--line);border-radius:99px;
+  padding:.28rem .8rem;font-size:.75rem;color:var(--dim)}
+.counts b{font-family:var(--mono);color:#101114}
