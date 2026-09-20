@@ -1,6 +1,6 @@
 {
  "schema": "book-reviews-v1",
- "version": "v0.6.21",
+ "version": "v0.6.22",
  "book": "fsg",
  "book_version": "v0.3.0",
  "title": "Fractal Semantic Graphs: Meaning Through Connectivity",

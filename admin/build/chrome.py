@@ -90,8 +90,13 @@ NAV = [
         ("The full argument", "v1/depth/index.html"),
         ("A graph at every boundary", "v1/depth/boundaries.html"),
     ], ("v1/depth/",)),
-    ("The vaults", "v1/vaults/index.html", [
-        ("The vaults, opened", "v1/vaults/index.html"),
+    ("The vaults", "v2/vaults/index.html", [
+        ("Four more graph vaults &middot; the second edition&rsquo;s evidence estate", "v2/vaults/index.html"),
+        ("&hellip; Standards Atlas: GDPR", "v2/vaults/standards-atlas-gdpr.html"),
+        ("&hellip; Provenance is not conformance", "v2/vaults/aiuc-1-conformance.html"),
+        ("&hellip; Licence to Operate", "v2/vaults/licence-to-operate.html"),
+        ("&hellip; Scaling Threat Modeling", "v2/vaults/threatmodcon-2025.html"),
+        ("The five analysed in the first edition", "v1/vaults/index.html"),
         ("VoiceDebrief", "v1/vaults/voice-debrief/index.html"),
         ("&hellip; the junction rule", "v1/vaults/voice-debrief/junction.html"),
         ("&hellip; the empty layer", "v1/vaults/voice-debrief/absence.html"),
@@ -103,7 +108,7 @@ NAV = [
         ("&hellip; the acceptance mechanism", "v1/vaults/agentic-browser-isolation/acceptance.html"),
         ("Risk Graph Explorer", "v1/vaults/risk-graph-explorer/index.html"),
         ("The capability scale", "v1/vaults/capability-scale.html"),
-    ], ("v1/vaults/",)),
+    ], ("v1/vaults/", "v2/vaults/")),
     ("Examples", "v1/examples/index.html", [
         ("Worked graphs, with real numbers", "v1/examples/index.html"),
         ("Browser isolation", "v1/examples/browser-isolation.html"),

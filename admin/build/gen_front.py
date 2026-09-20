@@ -179,7 +179,9 @@ FRONT = """<!doctype html>
     published vaults</b></a>, from the text of a law to a threat on a compute instance, each rung
     modelled by its own author in its own vocabulary and every one openable with the read key on
     its page. Markdown twin for agents:
-    <a href="https://sgit.ai/demos/fractal-graphs/index.md">index.md</a>.</p>
+    <a href="https://sgit.ai/demos/fractal-graphs/index.md">index.md</a>. Four of those
+    rungs are now read and gated here, in <a href="v2/vaults/index.html">the evidence
+    estate</a>, alongside the ladder itself.</p>
   </div>
 </section>
 
@@ -273,6 +275,14 @@ FRONT = """<!doctype html>
       <p>A deterministic transformer over these graphs: twelve operators, each in its own folder,
       computing a meaning and showing every step of the arithmetic.</p>
       <span class="go">Run it &rarr;</span>
+    </a>
+    <a class="card" href="v2/vaults/index.html">
+      <div class="tag">four more vaults</div>
+      <h4>The evidence estate</h4>
+      <p>Four published graph vaults, read from the pages that publish them because this
+      estate cannot decrypt one. Every fact carries the sentence it came from, and the
+      build fails if that sentence has moved.</p>
+      <span class="go">Read the estate &rarr;</span>
     </a>
     <a class="card" href="v2/methods/index.html">
       <div class="tag">{nmethods} techniques</div>

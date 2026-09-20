@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scaling Threat Modeling with Semantic Knowledge Graphs &mdash; graphs.sgit.ai</title>
+<meta name="description" content="Eleven linked threat models stacked from the customer to the compute instance, so a flaw in one method can be traced to the revenue it threatens.">
+<link rel="canonical" href="https://graphs.sgit.ai/v2/vaults/threatmodcon-2025.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="graphs.sgit.ai">
+<meta property="og:url" content="https://graphs.sgit.ai/v2/vaults/threatmodcon-2025.html">
+<meta property="og:title" content="Scaling Threat Modeling with Semantic Knowledge Graphs">
+<meta property="og:description" content="Eleven linked threat models stacked from the customer to the compute instance, so a flaw in one method can be traced to the revenue it threatens.">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../index.html">graphs<span>.sgit.ai</span></a>
+  <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
+  <span class="stage-pill">reference draft</span>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.6.22</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/start/index.html">Start here<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/start/index.html">The five-minute version</a>
+      <a class="sl" href="../../v1/why-graphs/index.html">Why graphs at all</a>
+      <a class="sl" href="../../v1/glossary/index.html">Glossary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v2/books/index.html">The books<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v2/books/index.html">The shelf &middot; all three, each with its own version</a>
+      <a class="sl" href="../../v2/books/fsg/index.html">Fractal Semantic Graphs &middot; the argument whole</a>
+      <a class="sl" href="../../v2/books/fsg/about.html">&hellip; about this book</a>
+      <a class="sl" href="../../v2/books/fsg/fsg.pdf">&hellip; read it as one PDF</a>
+      <a class="sl" href="../../v2/books/making-a-book/index.html">Creating a Book &middot; the making-of</a>
+      <a class="sl" href="../../v2/books/making-a-book/about.html">&hellip; about this book</a>
+      <a class="sl" href="../../v2/books/making-a-book/making-a-book.pdf">&hellip; read it as one PDF</a>
+      <a class="sl" href="../../v2/books/fsg-universe/index.html">The Universe volume &middot; the atlas, held</a>
+      <a class="sl" href="../../v2/books/fsg-universe/fsg-universe.pdf">&hellip; read it as one PDF</a>
+      <a class="sl" href="../../v2/team/index.html">The team &middot; seven roles, one folder each</a>
+      <a class="sl" href="../../v2/index.html">How they were built &middot; the second edition</a>
+      <a class="sl" href="../../v2/dev-pack/index.html">&hellip; the dev pack: the plan</a>
+      <a class="sl" href="../../v2/packs/index.html">&hellip; the review packs</a>
+      <a class="sl" href="../../v1/book/index.html">The first edition &middot; frozen</a>
+      <a class="sl" href="../../v1/book/single.html">&hellip; read it in one page</a>
+      <a class="sl" href="../../v1/book/changes.html">&hellip; what changed between versions</a>
+      <a class="sl" href="../../v1/reviews/index.html">&hellip; the reviews</a>
+      <a class="sl" href="../../v1/docs/index.html">&hellip; the sources it came from</a>
+      <a class="sl" href="../../v1/altitudes/index.html">&hellip; the altitude ladder</a>
+      <a class="sl" href="../../v1/book/meaning-through-connectivity.pdf">&hellip; the print PDF (6&times;9)</a>
+      <a class="sl" href="../../v1/book/meaning-through-connectivity-screen.pdf">&hellip; the screen PDF (tablet)</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v2/universe/index.html">The universe<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v2/universe/index.html">Layer 1: the documents, extracted</a>
+      <a class="sl" href="../../v2/universe/thinking-in-graphs.html">&hellip; the pilot: Thinking in Graphs</a>
+      <a class="sl" href="../../v2/universe/thinking-in-graphs.graph.html">&hellip; its graph, standalone &middot; phone-friendly</a>
+      <a class="sl" href="../../v2/universe/thinking-in-graphs.files.html">&hellip; its files, raw and viewed</a>
+      <a class="sl" href="../../v2/memos/index.html">The founder&rsquo;s memos, verbatim</a>
+      <a class="sl" href="../../v2/methods/index.html">The methods register</a>
+      <a class="sl" href="../../v2/lexicon/index.html">The lexicon, in scopes</a>
+      <a class="sl" href="../../v2/artefacts/index.html">The artefact catalogue</a>
+      <a class="sl" href="../../decisions/index.html">The open decisions</a>
+      <a class="sl" href="../../v2/dev-pack/design-00-the-victor-register.html">The immediate-connection register</a>
+      <a class="sl" href="../../v2/dev-pack/retro-00-the-v04-retrospective.html">The v0.4 retrospective</a>
+      <a class="sl" href="../../v2/wclm/index.html">The WCLM &middot; a deterministic transformer</a>
+      <a class="sl" href="../../v2/wclm/operators/index.html">&hellip; its operators, each in its folder</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/grammar/index.html">The grammar<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/grammar/index.html">The rules you can apply tomorrow</a>
+      <a class="sl" href="../../v1/grammar/edge-set.html">The edge set</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/depth/index.html">Depth<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/depth/index.html">The full argument</a>
+      <a class="sl" href="../../v1/depth/boundaries.html">A graph at every boundary</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../../v2/vaults/index.html">The vaults<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v2/vaults/index.html">Four more graph vaults &middot; the second edition&rsquo;s evidence estate</a>
+      <a class="sl" href="../../v2/vaults/standards-atlas-gdpr.html">&hellip; Standards Atlas: GDPR</a>
+      <a class="sl" href="../../v2/vaults/aiuc-1-conformance.html">&hellip; Provenance is not conformance</a>
+      <a class="sl" href="../../v2/vaults/licence-to-operate.html">&hellip; Licence to Operate</a>
+      <a class="sl here" href="../../v2/vaults/threatmodcon-2025.html">&hellip; Scaling Threat Modeling</a>
+      <a class="sl" href="../../v1/vaults/index.html">The five analysed in the first edition</a>
+      <a class="sl" href="../../v1/vaults/voice-debrief/index.html">VoiceDebrief</a>
+      <a class="sl" href="../../v1/vaults/voice-debrief/junction.html">&hellip; the junction rule</a>
+      <a class="sl" href="../../v1/vaults/voice-debrief/absence.html">&hellip; the empty layer</a>
+      <a class="sl" href="../../v1/vaults/regulation-graph/index.html">Regulation Graph</a>
+      <a class="sl" href="../../v1/vaults/regulation-graph/provenance.html">&hellip; the provenance chain</a>
+      <a class="sl" href="../../v1/vaults/regulation-graph/engines.html">&hellip; the query engines</a>
+      <a class="sl" href="../../v1/vaults/risk-mandate/index.html">Risk Mandate</a>
+      <a class="sl" href="../../v1/vaults/agentic-browser-isolation/index.html">Agentic Browser Isolation</a>
+      <a class="sl" href="../../v1/vaults/agentic-browser-isolation/acceptance.html">&hellip; the acceptance mechanism</a>
+      <a class="sl" href="../../v1/vaults/risk-graph-explorer/index.html">Risk Graph Explorer</a>
+      <a class="sl" href="../../v1/vaults/capability-scale.html">The capability scale</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/examples/index.html">Examples<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/examples/index.html">Worked graphs, with real numbers</a>
+      <a class="sl" href="../../v1/examples/browser-isolation.html">Browser isolation</a>
+      <a class="sl" href="../../v1/examples/2fa.html">The 2FA graph</a>
+      <a class="sl" href="../../v1/examples/article-26-5.html">Article 26(5), end to end</a>
+      <a class="sl" href="../../v1/maps/index.html">Wardley maps as graphs</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../v1/shipped/index.html">Reality<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../v1/shipped/index.html">What ships, what is argued</a>
+      <a class="sl" href="../../v1/origins/index.html">Origins: 2026</a>
+      <a class="sl" href="../../v1/network/index.html">The network</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../site/index.html">Site<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../site/index.html">Everything on this site &middot; the whole estate, indexed</a>
+      <a class="sl" href="../../v1/documents/index.html">The documents</a>
+      <a class="sl" href="../../v1/documents/what-the-graphs-found.html">&hellip; what the graphs found</a>
+      <a class="sl" href="../../v2/memos/index.html">The memos</a>
+      <a class="sl" href="../../v2/packs/index.html">The review packs</a>
+      <a class="sl" href="../../v2/dev-pack/index.html">The dev pack: the second book</a>
+      <a class="sl" href="../../admin/comms.html">Comms: tasks &amp; requests</a>
+      <a class="sl" href="../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../admin/publishing.html">Publishing the book</a>
+      <a class="sl" href="../../admin/index.html">Admin &amp; engineering</a>
+      <a class="sl" href="../../v1/about/participant.html">Where we lose</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Graphs">★ GitHub</a>
+  <script src="../../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+  <div class="crumb"><a href="../../index.html">graphs.sgit.ai</a> &rsaquo; <a href="index.html">the evidence estate</a> &rsaquo; Scaling Threat Modeling with Semantic Knowledge Graphs</div>
+  <h1>Scaling Threat Modeling with Semantic Knowledge Graphs</h1>
+  <p class="lead">Eleven linked threat models stacked from the customer to the compute instance, so a flaw in one method can be traced to the revenue it threatens.</p>
+  <p class="small dim">Vault <code>0ict6flm</code> &middot; on <a href="https://sgit.ai/demos/fractal-graphs/">the sgit.ai ladder</a> this is <b>the system, all the way down to the compute instance</b>. The read key is printed on the vault&rsquo;s own page and is the whole credential; it is not repeated here, because a credential copied is a credential that goes stale somewhere.</p>
+<div class="warnbox"><b>Read from a page, not from the vault.</b> This estate cannot open an encrypted vault: the read key is the whole credential and nothing in this build can decrypt one. Every number below is quoted from <a href="https://sgit.ai/demos/vaults/threatmodcon-2025/index.md">the page sgit.ai publishes about this vault</a>, carried here whole at <a href="sources/threatmodcon-2025.md">sources/threatmodcon-2025.md</a> (7,521 bytes, SHA-256 <code>3535cbcdf11f70f9&hellip;</code>, fetched 2026-09-20T00:25:51Z), and the build fails if a quotation is not in that file byte for byte. <b>The first edition&rsquo;s five vault analyses were written by opening the vaults; these four were not</b>, and that difference is worth more than the convenience of hiding it.</div>
+  <h2 id="why">Why this one is here</h2>
+  <p>This is the answer to how far down, and it is the rung the first edition's worked examples never reached. They stop at the estate; this reaches the method and the runtime.</p>
+  <h2 id="reading">The reading</h2>
+<p>The hub states the argument and then counts it: eleven readable layers, and a hundred and seventy-nine threats across them.</p>
+<blockquote class="vq"><b>11 readable layers, 51 nodes, 179 threats, 3 critical</b></blockquote>
+<p>The ladder runs from the customer to the compute instance, each layer carrying its own counts.</p>
+<blockquote class="vq">The zoom ladder runs Customer → Business → Application → Component → Package → Class → Method → Source Code → Environment → Runtime → Compute</blockquote>
+<p>And it is precise about why stacking them is the point, which is the same argument this site makes about altitude.</p>
+<blockquote class="vq">One model answers <em>what could go wrong here</em>. Eleven linked models answer <em>what does this line of code put at risk</em>, which is a different question and the one an executive is actually asking.</blockquote>
+<p>One critical finding is written four ways for four readers, all derived from one model rather than written four times.</p>
+<blockquote class="vq">the finding does not change, the framing does, and both are derived from one underlying model rather than written four times by hand</blockquote>
+  <h2 id="caveats">What it says about itself</h2>
+<div class="note"><b>The vault&rsquo;s own caveat.</b> The bottom rungs are modelled rather than imported. The sgit.ai ladder says so plainly about this vault, and it is the honest limit of the demonstration.</div>
+  <div class="pagenav"><a href="index.html">&larr; the evidence estate</a><a href="https://sgit.ai/demos/fractal-graphs/">the ladder this vault is a rung of &rarr;</a></div>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">graphs<span>.sgit.ai</span></div>
+    <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
+    <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sg-sentinel.sgit.ai">↗ sg-sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
+    <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.6.22</a> · <a href="../../admin/index.html">engineering</a></p>
+  </div>
+  <div>
+    <h4>Start here</h4>
+    <a href="../../v1/start/index.html">&#8594; The five-minute version</a>
+    <a href="../../v1/why-graphs/index.html">Why graphs at all</a>
+    <a href="../../v1/glossary/index.html">Glossary</a>
+    <a href="../../v1/book/index.html">The book</a>
+    <a href="../../v1/book/single.html">&nbsp;&nbsp;&hellip; in one page</a>
+    <a href="../../v1/book/meaning-through-connectivity.pdf">&nbsp;&nbsp;&hellip; as a print PDF</a>
+    <a href="../../v1/book/meaning-through-connectivity-screen.pdf">&nbsp;&nbsp;&hellip; as a screen PDF</a>
+  </div>
+  <div>
+    <h4>The grammar</h4>
+    <a href="../../v1/grammar/index.html">The rules</a>
+    <a href="../../v1/grammar/edge-set.html">The edge set</a>
+    <a href="../../v1/depth/index.html">The full argument</a>
+    <a href="../../v1/depth/boundaries.html">A graph at every boundary</a>
+  </div>
+  <div>
+    <h4>Worked graphs</h4>
+    <a href="../../v1/examples/index.html">All of them</a>
+    <a href="../../v1/examples/browser-isolation.html">Browser isolation</a>
+    <a href="../../v1/examples/2fa.html">The 2FA graph</a>
+    <a href="../../v1/examples/article-26-5.html">Article 26(5)</a>
+    <a href="../../v1/maps/index.html">Wardley maps</a>
+  </div>
+  <div>
+    <h4>Reality &amp; site</h4>
+    <a href="../../site/index.html">Everything on this site</a>
+    <a href="../../v1/shipped/index.html">What ships, what is argued</a>
+    <a href="../../v1/origins/index.html">Origins: 2026</a>
+    <a href="../../v1/network/index.html">The network</a>
+    <a href="../../v1/documents/index.html">The documents</a>
+    <a href="../../admin/comms.html">Comms: tasks &amp; requests</a>
+    <a href="../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

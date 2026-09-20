@@ -20,7 +20,7 @@
   <a class="brand" href="../index.html">graphs<span>.sgit.ai</span></a>
   <a class="parent" href="https://sgit.ai" title="sgit.ai — the parent project: the vault layer, the shipped CLI, and the three live graph vaults this site teaches from">↗ part of <b>sgit.ai</b></a>
   <span class="stage-pill">reference draft</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.21</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.22</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni ni-has">
@@ -90,9 +90,14 @@
       </div>
     </div>
     <div class="ni ni-has">
-      <a class="nl" href="../v1/vaults/index.html">The vaults<span class="caret">&#9662;</span></a>
+      <a class="nl" href="../v2/vaults/index.html">The vaults<span class="caret">&#9662;</span></a>
       <div class="sub">
-      <a class="sl" href="../v1/vaults/index.html">The vaults, opened</a>
+      <a class="sl" href="../v2/vaults/index.html">Four more graph vaults &middot; the second edition&rsquo;s evidence estate</a>
+      <a class="sl" href="../v2/vaults/standards-atlas-gdpr.html">&hellip; Standards Atlas: GDPR</a>
+      <a class="sl" href="../v2/vaults/aiuc-1-conformance.html">&hellip; Provenance is not conformance</a>
+      <a class="sl" href="../v2/vaults/licence-to-operate.html">&hellip; Licence to Operate</a>
+      <a class="sl" href="../v2/vaults/threatmodcon-2025.html">&hellip; Scaling Threat Modeling</a>
+      <a class="sl" href="../v1/vaults/index.html">The five analysed in the first edition</a>
       <a class="sl" href="../v1/vaults/voice-debrief/index.html">VoiceDebrief</a>
       <a class="sl" href="../v1/vaults/voice-debrief/junction.html">&hellip; the junction rule</a>
       <a class="sl" href="../v1/vaults/voice-debrief/absence.html">&hellip; the empty layer</a>
@@ -154,6 +159,15 @@
   <table class="vers">
     <thead><tr><th>Version</th><th>Date</th><th>What changed</th></tr></thead>
     <tbody>
+      <tr>
+        <td class="vnum">v0.6.22</td>
+        <td>20 September 2026</td>
+        <td><b>The evidence estate gets four more graph vaults, and a second cross-vault finding.</b> The second half of <a href="../v2/memos/47-sibling-brief-fractal-semantic-graphs.html">brief 47</a>. The first edition analysed five published vaults and froze with them, so <code>/v1/vaults/</code> cannot take a new one; <a href="../v2/vaults/index.html"><b>/v2/vaults/</b></a> is the live evidence estate and holds the four rungs of the sgit.ai ladder this site had never looked at: <b>Standards Atlas: GDPR</b>, <b>Provenance is not conformance</b>, <b>Licence to Operate</b> and <b>Scaling Threat Modeling with Semantic Knowledge Graphs</b>.
+        <b>The honesty problem, and the gate built for it.</b> The first edition&rsquo;s five analyses were written by opening the vaults. <b>This agent cannot open a vault</b>: the read key is the whole credential and nothing in the build can decrypt one. So every number on these pages is a <b>second-hand reading</b> of the page sgit.ai publishes about that vault, and saying so once in small print is not enough. Each fact carries the sentence it came from, all five source pages are carried whole in <code>v2/vaults/sources/</code> with their SHA-256 and the timestamp they were fetched at, and <b>gen_vaults.py fails the build if a quotation is not in its carried file byte for byte</b>. Thirty-two facts, thirty-two verified quotations. Every page says on itself that it was read from a page rather than from a vault.
+        <b>The second cross-vault finding, which is of a different kind from the first.</b> The capability scale came out of <em>comparing</em> five vaults. This one comes out of a <em>join</em>: AIUC-1 publishes 1,126 crosswalks as text, the conformance layer resolves the EU AI Act ones into node ids in a second published vault, <b>62 resolve onto 27 articles</b>, and the traversal then returns what neither vault knew alone, that <b>8 of those 27 articles have since been amended</b>, so the crosswalk was written against the pre-amendment text. Two organisations, two vocabularies, nobody merged anything, somebody named the edges. That is meaning through connectivity producing a fact.
+        <b>Three diagrams, lifted rather than redrawn.</b> The zoom, the jump and the eleven-rung ladder are inline SVG taken from the sgit.ai page source, carried with a credits file saying exactly what was taken and what was not. Redrawing a picture that is already correct produces two things to keep in step. The ladder is inlined rather than embedded because its twelve links are live; they were written relative to the page they were published on, so the generator resolves them against their origin at render time and leaves the carried file alone. <code>validate.js</code> caught that on the first build, which is the right order of events.
+        <b>What the vaults say about themselves travels with them.</b> Standards Atlas carries a not-legal-advice banner on every view and calls its overlays a seed; the AIUC-1 layer is explicit that it is unofficial, derivative, not endorsed, that its subjects are invented, and that a removal request will be honoured. Those caveats are reproduced on our pages rather than summarised away, which is the same rule this estate applies to its own corpus. One of them is a finding about us: the Standards Atlas graph has <b>six edges typed <code data-banned-verb>relates</code></b>, the one verb this site&rsquo;s grammar bans, and the vault records it rather than fixing it because its seed graph is deliberately immutable.</td>
+      </tr>
       <tr>
         <td class="vnum">v0.6.21</td>
         <td>19 September 2026</td>
@@ -344,7 +358,7 @@
     <p>A reference site about one use of graphs: <b>meaning through connectivity</b> — a node carries no inherent meaning, and what a thing is emerges from the edges traceable from it. Part of the <a href="https://sgit.ai" style="display:inline;padding:0"><b>sgit.ai</b></a> network. All content on this site is released under CC BY 4.0.</p>
     <p class="netline"><a href="https://sgit.ai"><b>↗ sgit.ai</b></a> — the parent project, and the three live graph vaults · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — a key means nothing alone · <a href="https://nhi.sgit.ai">↗ nhi.sgit.ai</a> — graphs need identities too · <a href="https://sg-sentinel.sgit.ai">↗ sg-sentinel.sgit.ai</a> · <a href="https://sgit.ai/network/index.html">↗ the network</a></p>
     <p class="partnote">⚠ Participant disclosure: published by the sgit project, which builds the vault layer and the graph products this site argues for. <a href="../v1/about/participant.html" style="display:inline;padding:0">Read the disclosure</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.6.21</a> · <a href="../admin/index.html">engineering</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.6.22</a> · <a href="../admin/index.html">engineering</a></p>
   </div>
   <div>
     <h4>Start here</h4>

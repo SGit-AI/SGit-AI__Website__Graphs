@@ -1,6 +1,6 @@
 {
  "schema": "project-issues-v1",
- "version": "v0.6.21",
+ "version": "v0.6.22",
  "note": "Read from v2/team/<role>/issues/, where the folder a file sits in IS its status. Not authored here: to move one, git mv it.",
  "issues": [
   {

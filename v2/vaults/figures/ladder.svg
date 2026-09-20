@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" role="img" aria-label="Eleven altitudes from law to compute, each mapped to the published vault where that altitude is a live graph">
+<style>
+      .lad-t{font:600 15px/1 system-ui,sans-serif;fill:#101114}
+      .lad-s{font:12px/1 system-ui,sans-serif;fill:#5b6170}
+      .lad-l{font:600 12.5px/1 system-ui,sans-serif;fill:#2f6fed;text-decoration:underline}
+      .lad-a{cursor:pointer}.lad-a:hover .lad-l{fill:#1d4fb8}
+      .lad-d{font:12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;fill:#5b6170}
+      .lad-h{font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;fill:#8b909c;letter-spacing:.12em}
+      .lad-line{stroke:#2f6fed;stroke-width:2;fill:none}
+      .lad-dot{fill:#fff;stroke:#2f6fed;stroke-width:2.5}
+      .lad-row{stroke:#e6e8ee;stroke-width:1}
+      .lad-band{fill:#f4f6fb}
+    </style>
+    <style>
+      .lad-t{font:600 15px/1 system-ui,sans-serif;fill:#101114}
+      .lad-s{font:12px/1 system-ui,sans-serif;fill:#5b6170}
+      .lad-l{font:600 12.5px/1 system-ui,sans-serif;fill:#2f6fed;text-decoration:underline}
+      .lad-a{cursor:pointer}.lad-a:hover .lad-l{fill:#1d4fb8}
+      .lad-d{font:12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;fill:#5b6170}
+      .lad-h{font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;fill:#8b909c;letter-spacing:.12em}
+      .lad-line{stroke:#2f6fed;stroke-width:2;fill:none}
+      .lad-dot{fill:#fff;stroke:#2f6fed;stroke-width:2.5}
+      .lad-row{stroke:#e6e8ee;stroke-width:1}
+      .lad-band{fill:#f4f6fb}
+    </style>
+    <text x="80" y="36" class="lad-h">ALTITUDE</text>
+    <text x="520" y="36" class="lad-h">WHERE IT IS A LIVE GRAPH · OPEN THE VAULT'S PAGE</text>
+    <rect x="20" y="52" width="960" height="118" rx="8" class="lad-band"/>
+    <text x="970" y="70" class="lad-h" text-anchor="end">THE INSTRUMENT</text>
+    <rect x="20" y="286" width="960" height="176" rx="8" class="lad-band"/>
+    <text x="970" y="304" class="lad-h" text-anchor="end">THE DECISION</text>
+    <rect x="20" y="520" width="960" height="118" rx="8" class="lad-band"/>
+    <text x="970" y="538" class="lad-h" text-anchor="end">THE SYSTEM</text>
+    <line x1="50" y1="92" x2="50" y2="652" class="lad-line"/>
+    <g>
+      <line x1="70" y1="116" x2="980" y2="116" class="lad-row"/>
+      <circle cx="50" cy="92" r="6" class="lad-dot"/>
+      <text x="80" y="90" class="lad-t">Law</text><text x="80" y="107" class="lad-s">articles · paragraphs · points · recitals · definitions</text>
+      <a href="../vaults/regulation-graph/index.html" class="lad-a"><text x="520" y="90" class="lad-l">Regulation Graph</text></a>
+      <text x="645" y="90" class="lad-d">·</text>
+      <a href="../vaults/standards-atlas-gdpr/index.html" class="lad-a"><text x="661" y="90" class="lad-l">Standards Atlas GDPR</text></a>
+      <text x="520" y="107" class="lad-d">1,523 hash-verified nodes · rulings layered on the articles</text>
+    </g>
+    <g>
+      <line x1="70" y1="174" x2="980" y2="174" class="lad-row"/>
+      <circle cx="50" cy="150" r="6" class="lad-dot"/>
+      <text x="80" y="148" class="lad-t">Standard</text><text x="80" y="165" class="lad-s">controls · requirements · crosswalks to other frameworks</text>
+      <a href="../vaults/aiuc-1-conformance/index.html" class="lad-a"><text x="520" y="148" class="lad-l">AIUC-1 conformance layer</text></a>
+      <text x="520" y="165" class="lad-d">53 controls, 2,788 nodes · 62 crosswalks resolved into the law</text>
+    </g>
+    <g>
+      <line x1="70" y1="232" x2="980" y2="232" class="lad-row"/>
+      <circle cx="50" cy="208" r="6" class="lad-dot"/>
+      <text x="80" y="206" class="lad-t">Evidence</text><text x="80" y="223" class="lad-s">evidenced_by vs attested_by: two edges, never one query</text>
+      <a href="../vaults/aiuc-1-conformance/index.html" class="lad-a"><text x="520" y="206" class="lad-l">AIUC-1 conformance layer</text></a>
+      <text x="520" y="223" class="lad-d">per control, per subject, per date · 2 / 48 / 3, by design</text>
+    </g>
+    <g>
+      <line x1="70" y1="290" x2="980" y2="290" class="lad-row"/>
+      <circle cx="50" cy="266" r="6" class="lad-dot"/>
+      <text x="80" y="264" class="lad-t">Fact → Risk</text><text x="80" y="281" class="lad-s">answers become facts; facts give rise to risks</text>
+      <a href="../vaults/risk-graph-explorer/index.html" class="lad-a"><text x="520" y="264" class="lad-l">Risk Graph Explorer</text></a>
+      <text x="520" y="281" class="lad-d">18 facts, 37 risks, 14 provisions · an empty register is correct</text>
+    </g>
+    <g>
+      <line x1="70" y1="348" x2="980" y2="348" class="lad-row"/>
+      <circle cx="50" cy="324" r="6" class="lad-dot"/>
+      <text x="80" y="322" class="lad-t">Owner</text><text x="80" y="339" class="lad-s">the same risk read at seven altitudes, IT to Board</text>
+      <a href="../vaults/agentic-browser-isolation/index.html" class="lad-a"><text x="520" y="322" class="lad-l">Agentic Browser Isolation</text></a>
+      <text x="520" y="339" class="lad-d">17 entry points, 7 altitudes · pending until its owner accepts</text>
+    </g>
+    <g>
+      <line x1="70" y1="406" x2="980" y2="406" class="lad-row"/>
+      <circle cx="50" cy="382" r="6" class="lad-dot"/>
+      <text x="80" y="380" class="lad-t">Acceptance</text><text x="80" y="397" class="lad-s">no delegation, no deny button; decisions become work</text>
+      <a href="../vaults/risk-graph-explorer/views/index.html" class="lad-a"><text x="520" y="380" class="lad-l">Risk Graph Explorer · the seven views</text></a>
+      <text x="520" y="397" class="lad-d">acceptance, what happens next · every path ends at the board</text>
+    </g>
+    <g>
+      <line x1="70" y1="464" x2="980" y2="464" class="lad-row"/>
+      <circle cx="50" cy="440" r="6" class="lad-dot"/>
+      <text x="80" y="438" class="lad-t">Policy</text><text x="80" y="455" class="lad-s">conformance → condition or exclusion; attestations expire</text>
+      <a href="../vaults/aiuc-1-conformance/index.html" class="lad-a"><text x="520" y="438" class="lad-l">AIUC-1 conformance layer</text></a>
+      <text x="702" y="438" class="lad-d">·</text>
+      <a href="../vaults/licence-to-operate/index.html" class="lad-a"><text x="718" y="438" class="lad-l">Licence to Operate</text></a>
+      <text x="520" y="455" class="lad-d">1 condition, 52 exclusions, 0 of 5 · grant, mandate, policy</text>
+    </g>
+    <g>
+      <line x1="70" y1="522" x2="980" y2="522" class="lad-row"/>
+      <circle cx="50" cy="498" r="6" class="lad-dot"/>
+      <text x="80" y="496" class="lad-t">Agent</text><text x="80" y="513" class="lad-s">what it can do · what you authorised · the delta · the barrier</text>
+      <a href="https://abp.sgit.ai/" class="lad-a" rel="noopener" target="_blank"><text x="520" y="496" class="lad-l">abp.sgit.ai ↗</text></a>
+      <text x="520" y="513" class="lad-d">23 capability primitives · where the graph meets a real grant</text>
+    </g>
+    <g>
+      <line x1="70" y1="580" x2="980" y2="580" class="lad-row"/>
+      <circle cx="50" cy="556" r="6" class="lad-dot"/>
+      <text x="80" y="554" class="lad-t">System → Component → Class → Method</text><text x="80" y="571" class="lad-s">the threat model, zoomed in one layer at a time</text>
+      <a href="../vaults/threatmodcon-2025/index.html" class="lad-a"><text x="520" y="554" class="lad-l">ThreatModCon 2025</text></a>
+      <text x="520" y="571" class="lad-d">11 linked models, 51 nodes, 179 threats · Customer → … → Method</text>
+    </g>
+    <g>
+      <line x1="70" y1="638" x2="980" y2="638" class="lad-row"/>
+      <circle cx="50" cy="614" r="6" class="lad-dot"/>
+      <text x="80" y="612" class="lad-t">Source code → Environment → Runtime → Compute</text><text x="80" y="629" class="lad-s">the last four rungs of the same ladder</text>
+      <a href="../vaults/threatmodcon-2025/index.html" class="lad-a"><text x="520" y="612" class="lad-l">ThreatModCon 2025</text></a>
+      <text x="520" y="629" class="lad-d">one SQL injection traced to revenue · modelled layers, see below</text>
+    </g>
+    <circle cx="50" cy="652" r="6" class="lad-dot"/>
+    <text x="80" y="656" class="lad-s">…eleven ontologies, none forced to agree with another; one grammar, checked by one validator.</text>
+  </svg>

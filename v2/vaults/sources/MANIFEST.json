@@ -1,0 +1,37 @@
+{
+ "schema": "carried-sources-v1",
+ "note": "The sgit.ai pages these readings are written from, carried whole and hashed on the day they were read. This estate cannot open an encrypted vault, so every number on the vault pages is quoted from the page below that states it, and gen_vaults.py fails the build if a quote is not in the carried file byte for byte. A second-hand reading, said out loud.",
+ "licence": "CC BY 4.0, as published by sgit.ai",
+ "files": {
+  "aiuc-1-conformance.md": {
+   "url": "https://sgit.ai/demos/vaults/aiuc-1-conformance/index.md",
+   "sha256": "30438d42aab157239d724e389e29da3d02d7ad2f652f60d716c949c0b2578ec8",
+   "bytes": 16273,
+   "fetched": "2026-09-20T00:25:51Z"
+  },
+  "fractal-graphs.md": {
+   "url": "https://sgit.ai/demos/fractal-graphs/index.md",
+   "sha256": "ecb604e83e7ccfdde84d9120cebb3e9052d99eb7eb6a93ca09804d4b4fc0db15",
+   "bytes": 27913,
+   "fetched": "2026-09-20T00:25:51Z"
+  },
+  "licence-to-operate.md": {
+   "url": "https://sgit.ai/demos/vaults/licence-to-operate/index.md",
+   "sha256": "4d06cfe40e33ad8692f5586e5eca05e37b9656bcba00d59fa6f86e74b62aa1f2",
+   "bytes": 7559,
+   "fetched": "2026-09-20T00:25:51Z"
+  },
+  "standards-atlas-gdpr.md": {
+   "url": "https://sgit.ai/demos/vaults/standards-atlas-gdpr/index.md",
+   "sha256": "0de1c796b398f3ab5fc6fdffd48b82181f3381b2573f0d605fa16d501f9cafaf",
+   "bytes": 5892,
+   "fetched": "2026-09-20T00:25:51Z"
+  },
+  "threatmodcon-2025.md": {
+   "url": "https://sgit.ai/demos/vaults/threatmodcon-2025/index.md",
+   "sha256": "3535cbcdf11f70f91f9600eb5a134edccb0f2aaabc583c21091bcf3c44cdff59",
+   "bytes": 7521,
+   "fetched": "2026-09-20T00:25:51Z"
+  }
+ }
+}

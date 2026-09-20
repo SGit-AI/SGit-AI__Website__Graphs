@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" role="img" aria-label="Four worlds in a row: a risk register, security operations, the DNS estate and a network capture, each a small graph with its own vocabulary, joined by jump links on one node each; a bracket above reads that all of it is one node in a bigger graph.">
+<style>
+      .hj-h{font:600 12.5px/1 system-ui,sans-serif;fill:#101114;text-anchor:middle}
+      .hj-n{font:10.5px/1 system-ui,sans-serif;fill:#101114;text-anchor:middle}
+      .hj-v{font:10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;fill:#5b6170;text-anchor:middle}
+      .hj-j{font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;fill:#2f6fed;text-anchor:middle}
+      .hj-c{font:12px/1.35 system-ui,sans-serif;fill:#5b6170;text-anchor:middle}
+      .hj-world{fill:#f4f6fb;stroke:#2f6fed;stroke-width:1.3;stroke-dasharray:4 4}
+      .hj-node{fill:#fff;stroke:#101114;stroke-width:1.3}
+      .hj-hot{fill:#eaf0ff;stroke:#2f6fed;stroke-width:2}
+      .hj-edge{stroke:#9aa3b5;stroke-width:1.1}
+      .hj-jump{stroke:#2f6fed;stroke-width:2;fill:none}
+      .hj-br{stroke:#8b909c;stroke-width:1.2;fill:none}
+    </style>
+    <style>
+      .hj-h{font:600 12.5px/1 system-ui,sans-serif;fill:#101114;text-anchor:middle}
+      .hj-n{font:10.5px/1 system-ui,sans-serif;fill:#101114;text-anchor:middle}
+      .hj-v{font:10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;fill:#5b6170;text-anchor:middle}
+      .hj-j{font:600 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;fill:#2f6fed;text-anchor:middle}
+      .hj-c{font:12px/1.35 system-ui,sans-serif;fill:#5b6170;text-anchor:middle}
+      .hj-world{fill:#f4f6fb;stroke:#2f6fed;stroke-width:1.3;stroke-dasharray:4 4}
+      .hj-node{fill:#fff;stroke:#101114;stroke-width:1.3}
+      .hj-hot{fill:#eaf0ff;stroke:#2f6fed;stroke-width:2}
+      .hj-edge{stroke:#9aa3b5;stroke-width:1.1}
+      .hj-jump{stroke:#2f6fed;stroke-width:2;fill:none}
+      .hj-br{stroke:#8b909c;stroke-width:1.2;fill:none}
+    </style>
+    <path d="M40 46 L40 34 L960 34 L960 46" class="hj-br"/>
+    <text x="500" y="26" class="hj-c" style="fill:#101114;font-weight:600">…and all four together are one node in a bigger graph that analyses them, and that graph in another</text>
+    <circle cx="130" cy="180" r="92" class="hj-world"/>
+    <text x="130" y="78" class="hj-h">Risk register</text>
+    <line x1="130" y1="180" x2="90" y2="150" class="hj-edge"/>
+    <line x1="130" y1="180" x2="135" y2="135" class="hj-edge"/>
+    <line x1="130" y1="180" x2="95" y2="215" class="hj-edge"/>
+    <line x1="130" y1="180" x2="150" y2="220" class="hj-edge"/>
+    <line x1="130" y1="180" x2="188" y2="185" class="hj-edge"/>
+    <circle cx="130" cy="180" r="4" class="hj-node"/>
+    <circle cx="90" cy="150" r="4" class="hj-node"/><text x="90" y="142" class="hj-n">risk</text>
+    <circle cx="135" cy="135" r="4" class="hj-node"/><text x="135" y="127" class="hj-n">role</text>
+    <circle cx="95" cy="215" r="4" class="hj-node"/><text x="95" y="207" class="hj-n">system</text>
+    <circle cx="150" cy="220" r="4" class="hj-node"/><text x="150" y="212" class="hj-n">fact</text>
+    <circle cx="188" cy="185" r="6" class="hj-hot"/><text x="188" y="203" class="hj-j">incident</text>
+    <path d="M195 185 C 248 115, 238 110, 288 160" class="hj-jump"/>
+    <path d="M279 152 L288 160 L278 163" class="hj-jump"/>
+    <text x="242" y="122" class="hj-j">jump</text>
+    <text x="130" y="294" class="hj-v">gives_rise_to · owned_by</text><text x="130" y="309" class="hj-v">reports_to · mitigates</text>
+    <circle cx="380" cy="180" r="92" class="hj-world"/>
+    <text x="380" y="78" class="hj-h">Security operations</text>
+    <line x1="380" y1="180" x2="340" y2="150" class="hj-edge"/>
+    <line x1="380" y1="180" x2="385" y2="135" class="hj-edge"/>
+    <line x1="380" y1="180" x2="345" y2="215" class="hj-edge"/>
+    <line x1="380" y1="180" x2="400" y2="220" class="hj-edge"/>
+    <line x1="380" y1="180" x2="438" y2="185" class="hj-edge"/>
+    <circle cx="380" cy="180" r="4" class="hj-node"/>
+    <circle cx="340" cy="150" r="4" class="hj-node"/><text x="340" y="142" class="hj-n">alert</text>
+    <circle cx="385" cy="135" r="4" class="hj-node"/><text x="385" y="127" class="hj-n">signal</text>
+    <circle cx="345" cy="215" r="4" class="hj-node"/><text x="345" y="207" class="hj-n">ATT&amp;CK</text>
+    <circle cx="400" cy="220" r="4" class="hj-node"/><text x="400" y="212" class="hj-n">attack tree</text>
+    <circle cx="438" cy="185" r="6" class="hj-hot"/><text x="438" y="203" class="hj-j">DNS entry</text>
+    <path d="M445 185 C 498 115, 488 110, 538 160" class="hj-jump"/>
+    <path d="M529 152 L538 160 L528 163" class="hj-jump"/>
+    <text x="492" y="122" class="hj-j">jump</text>
+    <text x="380" y="294" class="hj-v">detected_by · touched</text><text x="380" y="309" class="hj-v">maps_to · precedes</text>
+    <circle cx="630" cy="180" r="92" class="hj-world"/>
+    <text x="630" y="78" class="hj-h">DNS estate</text>
+    <line x1="630" y1="180" x2="590" y2="150" class="hj-edge"/>
+    <line x1="630" y1="180" x2="635" y2="135" class="hj-edge"/>
+    <line x1="630" y1="180" x2="595" y2="215" class="hj-edge"/>
+    <line x1="630" y1="180" x2="650" y2="220" class="hj-edge"/>
+    <line x1="630" y1="180" x2="688" y2="185" class="hj-edge"/>
+    <circle cx="630" cy="180" r="4" class="hj-node"/>
+    <circle cx="590" cy="150" r="4" class="hj-node"/><text x="590" y="142" class="hj-n">zone</text>
+    <circle cx="635" cy="135" r="4" class="hj-node"/><text x="635" y="127" class="hj-n">record</text>
+    <circle cx="595" cy="215" r="4" class="hj-node"/><text x="595" y="207" class="hj-n">parent</text>
+    <circle cx="650" cy="220" r="4" class="hj-node"/><text x="650" y="212" class="hj-n">request</text>
+    <circle cx="688" cy="185" r="6" class="hj-hot"/><text x="688" y="203" class="hj-j">one record</text>
+    <path d="M695 185 C 748 115, 738 110, 788 160" class="hj-jump"/>
+    <path d="M779 152 L788 160 L778 163" class="hj-jump"/>
+    <text x="742" y="122" class="hj-j">jump</text>
+    <text x="630" y="294" class="hj-v">resolves_to · queried_by</text><text x="630" y="309" class="hj-v">served over SQL or a graph DB</text>
+    <circle cx="880" cy="180" r="92" class="hj-world"/>
+    <text x="880" y="78" class="hj-h">Network capture</text>
+    <line x1="880" y1="180" x2="840" y2="150" class="hj-edge"/>
+    <line x1="880" y1="180" x2="885" y2="135" class="hj-edge"/>
+    <line x1="880" y1="180" x2="845" y2="215" class="hj-edge"/>
+    <line x1="880" y1="180" x2="900" y2="220" class="hj-edge"/>
+    <circle cx="880" cy="180" r="4" class="hj-node"/>
+    <circle cx="840" cy="150" r="4" class="hj-node"/><text x="840" y="142" class="hj-n">flow</text>
+    <circle cx="885" cy="135" r="4" class="hj-node"/><text x="885" y="127" class="hj-n">TCP packet</text>
+    <circle cx="845" cy="215" r="4" class="hj-node"/><text x="845" y="207" class="hj-n">bytes</text>
+    <circle cx="900" cy="220" r="4" class="hj-node"/><text x="900" y="212" class="hj-n">host</text>
+    <text x="880" y="294" class="hj-v">carried · sent_to</text><text x="880" y="309" class="hj-v">one packet, own taxonomy</text>
+    <text x="500" y="348" class="hj-c" style="fill:#101114;font-weight:600">Four worlds, four ontologies, one path of named edges. In each you find the same building blocks: nodes, verbs, a taxonomy, provenance.</text>
+  </svg>

@@ -924,3 +924,13 @@ main.doc.bleed{max-width:min(1900px,97vw)}
 .frontidx p{margin:0;font-size:.82rem;line-height:1.7}
 .damend{margin:.7rem 0;padding:.7rem .9rem;background:#efecf8;border-left:3px solid #5b4d8f;border-radius:0 8px 8px 0;font-size:.9rem}
 .damend > div{margin-top:.3rem}
+
+/* ---------- the evidence estate: a reading, and the sentence it rests on ---------- */
+main.doc blockquote.vq{margin:.5rem 0 1.4rem;padding:.6rem 1rem;border-left:3px solid var(--warm);
+  background:var(--panel2);border-radius:0 8px 8px 0;font-size:.9rem;color:#34363c;line-height:1.6}
+main.doc blockquote.vq::before{content:"quoted from the carried source";display:block;
+  font-size:.6rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--warm);margin-bottom:.35rem}
+.vfig{margin:1.4rem 0 2rem;background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:1rem;box-shadow:var(--shadow);overflow-x:auto}
+.vfig svg,.vfig img{display:block;width:100%;height:auto;max-width:100%}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" role="img" aria-label="Three panels: a semantic graph of four nodes; one node zoomed into a legal graph of articles and paragraphs; one paragraph zoomed into a lexical graph of the words it uses. Each zoom has its own ontology; only the grammar is shared.">
+<style>
+      .fz-h{font:600 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;fill:#8b909c;letter-spacing:.1em}
+      .fz-n{font:600 12.5px/1 system-ui,sans-serif;fill:#101114;text-anchor:middle}
+      .fz-e{font:10.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;fill:#2f6fed;text-anchor:middle}
+      .fz-c{font:12px/1.35 system-ui,sans-serif;fill:#5b6170}
+      .fz-node{fill:#fff;stroke:#101114;stroke-width:1.6}
+      .fz-focus{fill:#eaf0ff;stroke:#2f6fed;stroke-width:2.2}
+      .fz-edge{stroke:#9aa3b5;stroke-width:1.3;fill:none}
+      .fz-zoom{stroke:#2f6fed;stroke-width:1.4;stroke-dasharray:4 4;fill:none}
+      .fz-arrow{stroke:#2f6fed;stroke-width:2;fill:none}
+      .fz-word{fill:#fff;stroke:#101114;stroke-width:1.2;rx:4}
+    </style>
+    <style>
+      .fz-h{font:600 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace;fill:#8b909c;letter-spacing:.1em}
+      .fz-n{font:600 12.5px/1 system-ui,sans-serif;fill:#101114;text-anchor:middle}
+      .fz-e{font:10.5px/1 ui-monospace,SFMono-Regular,Menlo,monospace;fill:#2f6fed;text-anchor:middle}
+      .fz-c{font:12px/1.35 system-ui,sans-serif;fill:#5b6170}
+      .fz-node{fill:#fff;stroke:#101114;stroke-width:1.6}
+      .fz-focus{fill:#eaf0ff;stroke:#2f6fed;stroke-width:2.2}
+      .fz-edge{stroke:#9aa3b5;stroke-width:1.3;fill:none}
+      .fz-zoom{stroke:#2f6fed;stroke-width:1.4;stroke-dasharray:4 4;fill:none}
+      .fz-arrow{stroke:#2f6fed;stroke-width:2;fill:none}
+      .fz-word{fill:#fff;stroke:#101114;stroke-width:1.2;rx:4}
+    </style>
+    <!-- panel 1 -->
+    <text x="30" y="34" class="fz-h">1 · A SEMANTIC GRAPH</text>
+    <line x1="80" y1="120" x2="240" y2="120" class="fz-edge"/><text x="160" y="104" class="fz-e">crosswalks_to</text>
+    <line x1="240" y1="120" x2="240" y2="250" class="fz-edge"/><text x="284" y="190" class="fz-e">mitigates</text>
+    <line x1="80" y1="250" x2="240" y2="250" class="fz-edge"/><text x="160" y="278" class="fz-e">gives_rise_to</text>
+    <line x1="80" y1="120" x2="240" y2="250" class="fz-edge"/><text x="128" y="190" class="fz-e">breaches</text>
+    <circle cx="80" cy="120" r="30" class="fz-focus"/><text x="80" y="124" class="fz-n">Law</text>
+    <circle cx="240" cy="120" r="30" class="fz-node"/><text x="240" y="124" class="fz-n">Standard</text>
+    <circle cx="240" cy="250" r="30" class="fz-node"/><text x="240" y="254" class="fz-n">Risk</text>
+    <circle cx="80" cy="250" r="30" class="fz-node"/><text x="80" y="254" class="fz-n">System</text>
+    <text x="30" y="330" class="fz-c">Four nodes, four verbs (each has a named inverse).</text>
+    <text x="30" y="348" class="fz-c">The node carries a name; the edges carry the meaning.</text>
+    <!-- zoom arrow 1 -->
+    <path d="M300 185 C 330 150, 330 150, 362 150" class="fz-arrow"/><path d="M354 144 L362 150 L354 156" class="fz-arrow"/>
+    <text x="331" y="140" class="fz-e">zoom</text>
+    <!-- panel 2 -->
+    <text x="370" y="34" class="fz-h">2 · ZOOM INTO ONE NODE: IT IS A GRAPH</text>
+    <circle cx="510" cy="185" r="125" class="fz-zoom"/>
+    <text x="510" y="50" class="fz-e">the Law node, opened</text>
+    <line x1="510" y1="150" x2="440" y2="215" class="fz-edge"/><line x1="510" y1="150" x2="510" y2="245" class="fz-edge"/><line x1="510" y1="150" x2="585" y2="215" class="fz-edge"/>
+    <text x="453" y="176" class="fz-e">contains</text><text x="565" y="176" class="fz-e">contains</text>
+    <line x1="510" y1="150" x2="605" y2="105" class="fz-edge"/><text x="585" y="145" class="fz-e">amended_by</text>
+    <circle cx="510" cy="150" r="26" class="fz-focus"/><text x="510" y="154" class="fz-n">Art 9</text>
+    <circle cx="440" cy="215" r="20" class="fz-node"/><text x="440" y="219" class="fz-n">9(1)</text>
+    <circle cx="510" cy="245" r="20" class="fz-focus"/><text x="510" y="249" class="fz-n">9(2)</text>
+    <circle cx="585" cy="215" r="20" class="fz-node"/><text x="585" y="219" class="fz-n">9(3)</text>
+    <circle cx="612" cy="100" r="19" class="fz-node"/><text x="612" y="104" class="fz-n" style="font-size:9.5px">2026/1744</text>
+    <text x="370" y="330" class="fz-c">A legal ontology: articles, paragraphs, and an</text>
+    <text x="370" y="348" class="fz-c">amendment as an edge. New types, new verbs.</text>
+    <!-- zoom arrow 2 -->
+    <path d="M640 250 C 670 250, 670 250, 692 250" class="fz-arrow"/><path d="M684 244 L692 250 L684 256" class="fz-arrow"/>
+    <text x="664" y="240" class="fz-e">zoom</text>
+    <!-- panel 3 -->
+    <text x="705" y="34" class="fz-h">3 · ZOOM AGAIN: DOWN TO THE WORD</text>
+    <circle cx="840" cy="185" r="125" class="fz-zoom"/>
+    <text x="840" y="50" class="fz-e">the 9(2) node, opened</text>
+    <line x1="840" y1="150" x2="760" y2="210" class="fz-edge"/><line x1="840" y1="150" x2="840" y2="240" class="fz-edge"/><line x1="840" y1="150" x2="920" y2="210" class="fz-edge"/>
+    <text x="770" y="166" class="fz-e">uses_term</text>
+    <line x1="920" y1="210" x2="920" y2="275" class="fz-edge"/><text x="951" y="246" class="fz-e">defined_in</text>
+    <circle cx="840" cy="150" r="26" class="fz-focus"/><text x="840" y="154" class="fz-n">9(2)</text>
+    <rect x="720" y="198" width="80" height="24" class="fz-word"/><text x="760" y="214" class="fz-n">identify</text>
+    <rect x="800" y="228" width="80" height="24" class="fz-word"/><text x="840" y="244" class="fz-n">foreseeable</text>
+    <rect x="884" y="198" width="72" height="24" class="fz-word"/><text x="920" y="214" class="fz-n">risk</text>
+    <rect x="884" y="266" width="72" height="24" class="fz-node"/><text x="920" y="282" class="fz-n" style="font-size:10.5px">Art 3(…)</text>
+    <text x="705" y="330" class="fz-c">A lexical ontology: terms and definitions.</text>
+    <text x="705" y="348" class="fz-c">A new world, one edge from the world above.</text>
+    <text x="500" y="386" class="fz-c" style="text-anchor:middle;font-weight:600;fill:#101114">The grammar never changes; the ontology does. Each zoom is a new world, joined by an edge to the one above.</text>
+  </svg>
